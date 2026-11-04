@@ -1,0 +1,24 @@
+gene	strategy	clinical_flag	disease_assocs	top_association	cost_if_omitted
+MUC16	retained C-fragment	APPROVED antibody drug; advanced clinical other	889	ovarian cancer 0.51	Highest in the set. CA125 is an approved antibody target and a Phase I CAR-T antigen. Omitting it drops the most clinically validated surface antigen we have.
+NOTCH1	keep one discrete unit	advanced clinical antibody	1694	Adams-Oliver 0.81	Advanced-stage antibody target, pan-cancer. The NRR is the exact epitope clinical antibodies bind.
+NOTCH2	keep one discrete unit	advanced clinical antibody	1923	acroosteolysis 0.83	As NOTCH1.
+NOTCH3	keep one discrete unit	advanced clinical antibody	1888	CADASIL 0.85	As NOTCH1, plus the CADASIL genetics.
+LRP1	keep one discrete unit	advanced clinical other	998	neurodegenerative 0.51	The transcytosis and BBB-delivery receptor. For a delivery library this is arguably the single most on-mission gene in the oversized set.
+LY75	keep one discrete unit	advanced clinical other	209	insomnia 0.36	DEC-205, the dendritic-cell vaccine-delivery receptor. Clinical-stage targeting exists.
+ROS1	whole ectodomain out	APPROVED small-molecule drug	658	NSCLC 0.71	Approved drugs exist but they target the intracellular kinase, not the surface. Low cost to a surface-display library.
+SORL1	keep one discrete unit	none	464	Alzheimer 0.68	No clinical-stage flag, but the strongest Alzheimer association in the set.
+ITGB4	cytoplasmic tail only	none	1405	epidermolysis bullosa 0.83	Strong genetics, no clinical-stage targeting.
+PTPRZ1	natural short isoform	none	409	neurodegenerative 0.52	Glioma phosphatase; druggable-family small molecule only.
+CSPG4	keep one discrete unit	none	360	breast adenocarcinoma 0.25	A real CAR target in melanoma and GBM but no clinical flag in Open Targets.
+SIGLEC1	keep one discrete unit	none	359	neurodegenerative 0.42	Macrophage delivery target; no clinical-stage evidence.
+LRP2	keep one discrete unit	none	3064	Donnai-Barrow 0.80	Huge association count, driven by Mendelian renal disease rather than therapeutics.
+STAB1	retained C-fragment	none	228	hyperferritinemia 0.37	Scavenger receptor; modest.
+STAB2	retained C-fragment	none	209	venous thromboembolism 0.57	Scavenger receptor; modest.
+PLXNB2	whole ectodomain out	none	1225	intellectual disability 0.52	No clinical-stage targeting anywhere in the plexin family.
+PLXND1	whole ectodomain out	none	1640	congenital heart defect 0.60	As PLXNB2.
+PLXNA4	whole ectodomain out	none	1113	neurodegenerative 0.52	As PLXNB2.
+PLXNA2	whole ectodomain out	none	853	neurodegenerative 0.55	As PLXNB2.
+PLXNA3	whole ectodomain out	none	452	hypogonadotropic hypogonadism 0.41	As PLXNB2.
+PLXNB1	whole ectodomain out	none	202	cervical carcinoma 0.33	As PLXNB2.
+PLXNA1	whole ectodomain out	none	180	Dworschak-Punetha 0.75	As PLXNB2.
+PLXNB3	whole ectodomain out	none	93	autoimmune disease 0.23	Lowest association count in the set.

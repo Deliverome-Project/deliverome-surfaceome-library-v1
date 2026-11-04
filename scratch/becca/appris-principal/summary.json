@@ -1,0 +1,75 @@
+{
+  "appris_release": "e115v50",
+  "ensembl_release": "115",
+  "uniprot_release": "2026_03",
+  "library_members": 2369,
+  "human": {
+    "status": {
+      "canonical": 2085,
+      "stored_isoform": 139,
+      "no_uniprot_match": 95,
+      "uniprot_proteoform_not_stored": 34,
+      "no_appris_entry": 9,
+      "no_uniprot_canonical": 7
+    },
+    "sequence_source": {
+      "deeptmhmm_cohort": 1775,
+      "uniprot_reviewed_2026_03": 587,
+      "": 7
+    },
+    "class": {
+      "PRINCIPAL:1": 1528,
+      "PRINCIPAL:2": 514,
+      "PRINCIPAL:4": 234,
+      "PRINCIPAL:3": 59,
+      "PRINCIPAL:M": 15,
+      "PRINCIPAL:5": 3
+    },
+    "ambiguous_principal": 2,
+    "principal_is_mane_select": 2165,
+    "ensg_from_symbol_fallback": 29,
+    "no_uniprot_match_by_difference": {
+      "internal": 65,
+      "n_terminal": 17,
+      "substitution_only": 12,
+      "c_terminal": 1
+    },
+    "substitution_only_variant_verdict": {
+      "none": 6,
+      "all": 5,
+      "partial": 1
+    }
+  },
+  "mouse": {
+    "cohort": 1971,
+    "status": {
+      "canonical": 1383,
+      "uniprot_proteoform_not_stored": 363,
+      "no_uniprot_match": 225
+    },
+    "no_uniprot_match_by_difference": {
+      "internal": 105,
+      "substitution_only": 103,
+      "n_terminal": 15,
+      "c_terminal": 2
+    },
+    "substitution_only_variant_verdict": {
+      "none": 97,
+      "all": 4,
+      "partial": 2
+    }
+  },
+  "pairs": {
+    "n": 1455,
+    "consistent": 1428,
+    "inconsistent": 27,
+    "tolerance": 0.1,
+    "rel_length_diff_median": 0.0032,
+    "rel_length_diff_p90": 0.0343
+  },
+  "cyno": {
+    "cohort": 1921,
+    "paired_to_a_library_gene": 1432,
+    "appris_coverage": "none - APPRIS e115v50 covers Macaca mulatta, not M. fascicularis (taxon 9541)"
+  }
+}

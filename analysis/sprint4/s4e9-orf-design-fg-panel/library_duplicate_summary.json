@@ -1,0 +1,33 @@
+{
+ "identical_groups": 53,
+ "members_in_groups": 108,
+ "groups_by_tranche": {
+  "l1+l2": 42,
+  "l1": 6,
+  "l2": 5
+ },
+ "retired": 55,
+ "retired_by_tranche_and_category": {
+  "l1": {
+   "isoform_is_reference": 1,
+   "allele_variant_of_reference": 1,
+   "ortholog_identical_to_human": 1,
+   "identical_paralog": 4
+  },
+  "l2": {
+   "ortholog_identical_to_human": 39,
+   "isoform_is_reference": 5,
+   "identical_to_other_gene": 2,
+   "duplicate_isoform": 2
+  }
+ },
+ "members_before": {
+  "l1": 2738,
+  "l2": 4327
+ },
+ "members_after": {
+  "l1": 2731,
+  "l2": 4279
+ },
+ "l1_with_designed_cds_after": 2706
+}

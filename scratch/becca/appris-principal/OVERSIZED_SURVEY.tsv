@@ -1,0 +1,100 @@
+gene	orf_kb	tier	peak_tpm	tm_count	extracellular_aa	status	strategy	built_aa	built_ltr_bp	cleaved_fragment_aa	cleaved_ectodomain_aa	cleavage_evidence	assessment	confidence	pmid	clinical_flag	risk	detail_in
+ABCA1	6.8	T2	60.1	15	882	not-viable-at-this-budget							not-viable-at-this-budget	-	12454269		Deleting both nucleotide-binding domains and the C-terminal tail still leaves it 143 aa over budget, so any fitting design must delete a whole transmembrane hal	giant_assessment_round2.tsv;oversized_triage.tsv
+ABCA7	6.4	T2	103.248	15	781	needs-deeper-search							needs-deeper-search	designed	41912785		The one construct of this shape is a disease frameshift allele, and its plasma-membrane call rests on permeabilised imaging in a paper whose own abstract lists 	giant_assessment_round2.tsv;oversized_triage.tsv
+ADGRG4	9.2	T2		7	2745	expression-unknown	build on cleavage			359	51	inferred						giant_cleaved_ranked.tsv;oversized_triage.tsv
+ADGRV1	18.9	T2	494.7	7	5934	ready-to-build	build on cleavage			416	73	inferred						giant_cleaved_ranked.tsv;oversized_triage.tsv
+CACNA1A	7.5	T2	313.493	24	386	skip												oversized_triage.tsv
+CACNA1B	7.0	T2	52.5357	24	357	skip												oversized_triage.tsv
+CACNA1C	6.7	T2	45.1	24	351	skip												oversized_triage.tsv
+CACNA1D	6.5	T2	57.9	24	425	skip												oversized_triage.tsv
+CACNA1E	6.9	T2	50.8	24	409	skip												oversized_triage.tsv
+CACNA1F	5.9	T2	116.2	24	417	skip												oversized_triage.tsv
+CACNA1G	7.1	T2	177.2	24	428	skip												oversized_triage.tsv
+CACNA1H	7.1	T2	224.8	24	445	skip												oversized_triage.tsv
+CACNA1I	6.7	T2	21.1702	24	453	skip												oversized_triage.tsv
+CACNA1S	5.6	T2	238.7	24	331	skip												oversized_triage.tsv
+CDH23	10.1	T1	80.1	1	3041	sufficient							sufficient	literature-exact	20958966		The EC3-EC27 junction is non-native and uncharacterised; cadherin EC-EC linkers coordinate calcium. Homophilic aggregation may cause clumping in a pooled librar	giant_assessment_round2.tsv;oversized_triage.tsv
+CELSR1	9.0	T2	143.5	7	2478	sufficient							sufficient	literature-exact	40295529		Constitutively active: a CTF exposes the tethered agonist, so every transduced cell carries a Gs signal. Route B deletes the agonist entirely. Neither construct	giant_assessment_round2.tsv;oversized_triage.tsv
+CELSR2	8.8	T2	124.6	7	2378	sufficient	build on cleavage			567	52	inferred	sufficient	literature-exact	37224017		As CELSR1. A CTF presents only about 21-24 extracellular residues before TM1 plus the three loops, so it is a poor antigen if a substantial displayed ectodomain	giant_assessment_round2.tsv;giant_cleaved_ranked.tsv;oversized_triage.tsv
+CELSR3	9.9	T2	59.5993	7	2540	sufficient							sufficient	literature-anchored	37224017		Least tolerant of tinkering in the family: a point mutation inside the tethered agonist significantly reduced surface expression and was dropped from the publis	giant_assessment_round2.tsv;oversized_triage.tsv
+CR1	6.1	T1	36.6875	1	1930	sufficient							sufficient	literature-anchored	2972794		Keeps the C4b site, loses both C3b sites; no design under 1,535 aa keeps all three. The YZ1 antibody epitope is absent from LHR-D, so a common anti-CR1 reagent 	giant_assessment_round2.tsv;oversized_triage.tsv
+CSMD1	10.7	T1	62	1	3461	needs-triage												oversized_triage.tsv
+CSMD2	10.5	T1	28.1	1	3408	needs-triage												oversized_triage.tsv
+CSMD3	11.1	T1	27.1	2	3567	needs-triage												oversized_triage.tsv
+CSPG4	7.0	T3	257.518	1	2195	built	membrane-proximal D3 + TM + tail	452	5750					literature-anchored	20309546	none		giant_truncations.tsv;giant_clinical_value.tsv;oversized_triage.tsv
+DCHS1	9.9	T1	68.3678	1	2898	ready-to-build												oversized_triage.tsv
+DSCAM	6.0	T1	23	1	1578	needs-deeper-search							needs-deeper-search	designed	10925149		No vertebrate domain mapping exists. The only human DSCAM ectodomain data is an unpublished thesis reporting Ig1-4 monomeric in solution, which points away from	giant_assessment_round2.tsv;oversized_triage.tsv
+DSCAML1	6.2	T1	43.2	1	1573	needs-deeper-search							needs-deeper-search	designed	11453658		As DSCAM. The A2105T cytoplasmic missense is retained intracellularly and fails to aggregate, so the tail is not safely editable in this family.	giant_assessment_round2.tsv;oversized_triage.tsv
+FAT1	13.8	T1	517.1	1	4160	needs-deeper-search							needs-deeper-search	designed	15922730		A furin site in the membrane-proximal LamG is a prerequisite for ADAM10 shedding, which would leave only a p60 remnant and destroy the display. Use the short ca	giant_assessment_round2.tsv;oversized_triage.tsv
+FAT2	13.1	T1	223.1	1	4030	needs-deeper-search							needs-deeper-search	designed	36797229		As FAT1; its furin site is unpublished and must be found by alignment.	giant_assessment_round2.tsv;oversized_triage.tsv
+FAT3	13.7	T1	89.4	1	4122	ready-to-build												oversized_triage.tsv
+FAT4	14.9	T1	61.5	1	4466	needs-deeper-search							needs-deeper-search	designed	36797229		As FAT1. The full cassette is 1,651 aa and does not fit.	giant_assessment_round2.tsv;oversized_triage.tsv
+FNDC1	5.7	T3	247.4	0		needs-triage												oversized_triage.tsv
+GPR179	7.1	T2	12.8	7	406	ready-to-build												oversized_triage.tsv
+ITGB4	5.5	T1	1065.7	1	683	built	cytoplasmic-tail truncation	1355	8459					literature-exact	9264458	none		giant_truncations.tsv;giant_clinical_value.tsv;oversized_triage.tsv
+LCT	5.8	T1	212.7	1	1863	skip	build on cleavage			1059	1014	inferred						giant_cleaved_ranked.tsv;oversized_triage.tsv
+LRP1	13.6	T1	446.3	1	4400	built	minireceptor, membrane-proximal cluster	764	6686					literature-anchored	11181173	advanced clinical other		giant_truncations.tsv;giant_clinical_value.tsv;oversized_triage.tsv
+LRP1B	13.8	T1	19.3	1	4420	ready-to-build												oversized_triage.tsv
+LRP2	14.0	T1	78.8	1	4398	built	one-cluster megalin minireceptor	781	6737					literature-anchored	12519751	none		giant_truncations.tsv;giant_clinical_value.tsv;oversized_triage.tsv
+LRP4	5.7	T1	130	1	1705	needs-deeper-search							needs-deeper-search	designed	37252960		ER retention is the documented failure mode, not hypothetical. Needs the MESD chaperone for surface delivery, the LRP4 analogue of LRP1 needing RAP. ADAM10 shed	giant_assessment_round2.tsv;oversized_triage.tsv
+LY75	5.2	T1	104.703	1	1639	built	contiguous CTLD block + TM + tail	650	6344					designed	11062267	advanced clinical other		giant_truncations.tsv;giant_clinical_value.tsv;oversized_triage.tsv
+MEGF8	8.5	T1	65.1	1	2620	needs-triage												oversized_triage.tsv
+MGAM	8.3	T1	123.7	1	2719	skip												oversized_triage.tsv
+MUC12	16.4	T1	134.8	1	5364	needs-deeper-search	build on cleavage			249	151	inferred	needs-deeper-search	designed	15943821		Only about 65 PubMed records mention MUC12 at all, and the one mechanistic paper shows SEA cleavage, not surface delivery. SEA domains are explicitly not interc	giant_assessment_round2.tsv;giant_cleaved_ranked.tsv;oversized_triage.tsv
+MUC16	43.5	T3	158.1	1	14451	built	retained C-terminal fragment (c114)	134	4796					literature-exact	25965947	APPROVED antibody drug; advanced clinical other		giant_truncations.tsv;giant_clinical_value.tsv;oversized_triage.tsv
+MUC17	13.5	T1	93.2	1	4368	sufficient	build on cleavage			250	150	inferred	sufficient	literature-exact	31387973		Sheds on vesicles, more so under TNF-alpha. No residue number upstream of the SEA is portable between a paper and UniProt canonical, because repeat counts are a	giant_assessment_round2.tsv;giant_cleaved_ranked.tsv;oversized_triage.tsv
+MUC22	5.3	T1	16.7	1	1634	ready-to-build												oversized_triage.tsv
+MUC3A	10.0	T1	62.5	1		needs-deeper-search							needs-deeper-search	designed	21852426		Nomenclature trap: UniProt lists MUC3 as a synonym of MUC17, and the rodent Muc3 literature may be MUC17 evidence rather than MUC3A. Check a paper's C-terminal 	giant_assessment_round2.tsv;oversized_triage.tsv
+MUC3B	40.4	T1		1		expression-unknown	build on cleavage			243	146	inferred						giant_cleaved_ranked.tsv;oversized_triage.tsv
+MUC4	16.2	T3	62.5	1		sufficient	build on cleavage			725	681	inferred	sufficient	literature-anchored	24676527		The alpha/beta split at 4687/4688 means the NIDO/AMOP half can dissociate, leaving only MUC4-beta tethered. Tightest headroom of the four mucins at about 359 aa	giant_assessment_round2.tsv;giant_cleaved_ranked.tsv;oversized_triage.tsv
+NOTCH1	7.7	T1	151.5	1	1717	built	NRR + TM + ICD	1125	7769	835	15	inferred		literature-anchored	19701457	advanced clinical antibody		giant_truncations.tsv;giant_cleaved_ranked.tsv;giant_clinical_value.tsv;oversized_triage.tsv
+NOTCH2	7.4	T1	1190.3	1	1652	built	NRR + TM + ICD	1075	7619	806	12	inferred		literature-anchored	19701457	advanced clinical antibody		giant_truncations.tsv;giant_cleaved_ranked.tsv;giant_clinical_value.tsv;oversized_triage.tsv
+NOTCH3	7.0	T1	415.749	1	1604	built	NRR + TM + ICD	983	7343	693	15	inferred		literature-anchored	18182388	advanced clinical antibody		giant_truncations.tsv;giant_cleaved_ranked.tsv;giant_clinical_value.tsv;oversized_triage.tsv
+NOTCH4	6.0	T1	73.5495	1	1424	ready-to-build	too little displayed surface			572	16	inferred						giant_cleaved_ranked.tsv;oversized_triage.tsv
+PCDH15	5.9	T1	57.2	1	1350	sufficient							sufficient	literature-anchored	37100771		Two synthetic junctions is the documented failure mode - V7 was toxic in control mice, V8 dead. Do not improvise a shorter variant. Obligate parallel homodimer.	giant_assessment_round2.tsv;oversized_triage.tsv
+PCSK5	5.6	T1	49	1	1629	skip												oversized_triage.tsv
+PIEZO1	7.6	T2	149.5	38	595	sufficient							sufficient	literature-anchored	33361157		The module is constitutively open and pressure-insensitive - an always-on calcium-permeable channel will likely be counterselected in a pooled library. Use a po	giant_assessment_round2.tsv;oversized_triage.tsv
+PIEZO2	8.3	T2	67.8	38	642	needs-deeper-search							needs-deeper-search	designed	29186675		As PIEZO1, plus no evidence any PIEZO2 pore module folds or traffics, and no antigenicity data for its cap.	giant_assessment_round2.tsv;oversized_triage.tsv
+PKD1	12.9	T2	510.715	11	3363	sufficient	build on cleavage			1255	338	experimental+predicted	sufficient	literature-exact	35522707		Needs PKD2 as an ER chaperone; the published work used plain HEK293T, which carries endogenous PKD2, so PKD2-independence is not proven. WT CTF is a constitutiv	giant_assessment_round2.tsv;giant_cleaved_ranked.tsv;oversized_triage.tsv
+PKDREJ	6.8	T2		11	1487	skip												oversized_triage.tsv
+PKHD1	12.2	T1	28.1	1	3835	needs-triage	build on cleavage			454	238	experimental						giant_cleaved_ranked.tsv;oversized_triage.tsv
+PLXNA1	5.7	T1	194.2	1	1218	built	delta-ectodomain plus a 30-residue juxtamembrane stub	708	6518				sufficient	literature-exact	36169302	none	Constitutively active once the autoinhibitory sema brace is deleted - expect cell rounding and selection against high expressers in a pooled library. Pair with 	giant_truncations.tsv;giant_assessment_round2.tsv;giant_clinical_value.tsv;oversized_triage.tsv
+PLXNA2	5.7	T1	128.4	1	1203	built	delta-ectodomain plus a 30-residue juxtamembrane stub	721	6557				sufficient	literature-exact	36658114	none	As PLXNA1.	giant_truncations.tsv;giant_assessment_round2.tsv;giant_clinical_value.tsv;oversized_triage.tsv
+PLXNA3	5.6	T1	63.523	1	1201	built	delta-ectodomain plus a 30-residue juxtamembrane stub	700	6494				needs-deeper-search	designed	11683995	none	No delta-ECD, delta-sema or constitutively active membrane-anchored PlexinA3 exists - the genuine gap in the A-class. Whether its weak Sema3A response is a coup	giant_truncations.tsv;giant_assessment_round2.tsv;giant_clinical_value.tsv;oversized_triage.tsv
+PLXNA4	5.7	T1	91.7	1	1214	built	delta-ectodomain plus a 30-residue juxtamembrane stub	710	6524				sufficient	literature-exact	20606624	none	As PLXNA1.	giant_truncations.tsv;giant_assessment_round2.tsv;giant_clinical_value.tsv;oversized_triage.tsv
+PLXNB1	6.4	T1	168.355	1	1471	built	delta-ectodomain plus a juxtamembrane stub	755	6659	830	185	inferred		literature-anchored	15601954	none		giant_truncations.tsv;giant_cleaved_ranked.tsv;giant_clinical_value.tsv;oversized_triage.tsv
+PLXNB2	5.5	T1	520.1	1	1178	built	delta-ectodomain plus a 30-residue juxtamembrane stub	690	6464	674	33	inferred	sufficient	literature-exact	33514835	none	Class B: the C-terminus is a PDZ-binding motif ending VENKVTDL that docks PDZ-RhoGEF. Do not put a tag, barcode or readthrough cassette there - a deliberate del	giant_truncations.tsv;giant_assessment_round2.tsv;giant_cleaved_ranked.tsv;giant_clinical_value.tsv;oversized_triage.tsv
+PLXNB3	5.7	T3	194.2	1	1211	built	delta-ectodomain plus a 30-residue juxtamembrane stub, native signal replaced	704	6506				needs-deeper-search	designed	15601954	none	The only gene in the family with no truncation precedent of any kind, now confirmed rather than merely unsearched - the published B3 deletions go the opposite w	giant_truncations.tsv;giant_assessment_round2.tsv;giant_clinical_value.tsv;oversized_triage.tsv
+PLXND1	5.8	T1	326.8	1	1225	built	delta-ectodomain plus a 30-residue juxtamembrane stub	730	6584				sufficient	literature-exact	40266804	none	Anoikis. The published delta-EC construct detaches MDCK cells from matrix and then kills them, and suppresses proliferation in H441 and U87-MG - so in a pooled 	giant_truncations.tsv;giant_assessment_round2.tsv;giant_clinical_value.tsv;oversized_triage.tsv
+PTPRB	6.0	T1	85	1	1599	ready-to-build												oversized_triage.tsv
+PTPRD	5.7	T1	91.9	1	1245	needs-deeper-search	build on cleavage			731	84	inferred	needs-deeper-search	designed	7896816		As PTPRS. A PTPRD construct with an intact D2 domain will trans-inhibit endogenous PTPRS in the host line - a real off-target effect, not a theoretical one.	giant_assessment_round2.tsv;giant_cleaved_ranked.tsv;oversized_triage.tsv
+PTPRF	5.7	T1	633.1	1	1234	sufficient							sufficient	literature-anchored	8089133		As PTPRS. The shedding site is not homologous in PTPRF and has never been mapped, so it cannot be mutated out without mapping it first.	giant_assessment_round2.tsv;oversized_triage.tsv
+PTPRQ	7.0	T1	26.6	1	1912	ready-to-build												oversized_triage.tsv
+PTPRS	5.8	T1	127.5	1	1253	sufficient	build on cleavage			751	85	inferred	sufficient	literature-anchored	29934346		Shedding is the dominant risk and it lands inside the stub we must keep. The cut is mapped to P1275-I1276, seven residues from the TM, so after shedding about s	giant_assessment_round2.tsv;giant_cleaved_ranked.tsv;oversized_triage.tsv
+PTPRZ1	6.9	T3	408.6	1	1612	built	short isoform, ECD array deleted	740	6614					literature-anchored	15831233	none		giant_truncations.tsv;giant_clinical_value.tsv;oversized_triage.tsv
+PTPRZ2	6.9	T1		1	1612	expression-unknown												oversized_triage.tsv
+ROS1	7.0	T1	85.8	1	1832	built	ectodomain-deleted, membrane-proximal + TM	575	6119					literature-anchored	39333184	APPROVED small-molecule drug		giant_truncations.tsv;giant_clinical_value.tsv;oversized_triage.tsv
+SCN10A	5.9	T2		24	277	skip												oversized_triage.tsv
+SCN11A	5.4	T2	9	24	283	skip												oversized_triage.tsv
+SCN1A	6.0	T2	34.3	24	353	skip												oversized_triage.tsv
+SCN2A	6.0	T2	69.4963	24	340	skip												oversized_triage.tsv
+SCN3A	6.0	T2	446.4	24	336	skip												oversized_triage.tsv
+SCN4A	5.5	T2	128.7	24	357	skip												oversized_triage.tsv
+SCN5A	6.1	T2	49.7	24	312	skip												oversized_triage.tsv
+SCN7A	5.0	T2	136.3	24	240	skip												oversized_triage.tsv
+SCN8A	5.9	T2	26.299	24	323	skip												oversized_triage.tsv
+SCN9A	6.0	T2	226.7	24	336	skip												oversized_triage.tsv
+SDK1	6.6	T2	42.9	1	2009	sufficient							sufficient	literature-anchored	27644106		UniProt annotates NO signal peptide for SDK1 and the protein opens with a 98-residue Gly-rich extension; the mature protein starts at Q99. Verified here. Buildi	giant_assessment_round2.tsv;oversized_triage.tsv
+SDK2	6.5	T1	53.2	1	1912	sufficient							sufficient	literature-anchored	27644106		Same cis/trans caveat as SDK1. Signal peptide is cleanly annotated here (1-20, mature Q21), unlike SDK1.	giant_assessment_round2.tsv;oversized_triage.tsv
+SI	5.5	T1	513.4	1	1795	skip												oversized_triage.tsv
+SIGLEC1	5.1	T3	25.3868	1	1622	built	V-set d1 plus stalk + TM + tail	579	6131					designed	21347240	none		giant_truncations.tsv;giant_clinical_value.tsv;oversized_triage.tsv
+SORL1	6.6	T1	179.3	1	2056	built	CR cluster + TM + tail	693	6473					designed	16489755	none		giant_truncations.tsv;giant_clinical_value.tsv;oversized_triage.tsv
+STAB1	7.7	T1	428	1	2453	built	STAB2-style C-terminal half	1441	8717					designed	15208308	none		giant_truncations.tsv;giant_clinical_value.tsv;oversized_triage.tsv
+STAB2	7.7	T1	102.551	1	2439	built	190-kDa HARE, C-terminal half	1436	8702	1416	1323	inferred		literature-exact	15208308	none		giant_truncations.tsv;giant_cleaved_ranked.tsv;giant_clinical_value.tsv;oversized_triage.tsv
+TENM1	8.2	T3	65.4	1	2380	needs-triage												oversized_triage.tsv
+TENM2	8.3	T1	138.8	1	2374	needs-triage												oversized_triage.tsv
+TENM4	8.3	T1	119.7	1	2403	needs-triage												oversized_triage.tsv
+TRPM3	5.2	T2	657.8	6	66	skip												oversized_triage.tsv
+TRPM6	6.1	T2	15.6767	6	125	skip												oversized_triage.tsv
+TRPM7	5.6	T2	111.6	6	24	no-displayable-face												oversized_triage.tsv
+USH2A	15.6	T1	87.8	1	5011	sufficient							sufficient	literature-anchored	32637036		The one published membrane-displayed fragment used a heterologous PDGFR anchor and permeabilised immunofluorescence, not a true surface stain. Usherin expresses	giant_assessment_round2.tsv;oversized_triage.tsv

@@ -1,0 +1,80 @@
+{
+  "mouse": {
+    "eligible": 1448,
+    "correspondence_split": 0.8636,
+    "classes": {
+      "multipass": 677,
+      "type I": 615,
+      "GPI": 87,
+      "type II": 58,
+      "type III": 11
+    },
+    "bands": {
+      "near": {
+        "pool": 724,
+        "drawn": 50,
+        "by_class": {
+          "multipass": 20,
+          "type I": 15,
+          "GPI": 7,
+          "type II": 6,
+          "type III": 2
+        }
+      },
+      "diverged": {
+        "pool": 724,
+        "drawn": 50,
+        "by_class": {
+          "type I": 18,
+          "multipass": 16,
+          "GPI": 7,
+          "type II": 7,
+          "type III": 2
+        }
+      }
+    }
+  },
+  "cyno": {
+    "eligible": 1413,
+    "correspondence_split": 0.9616,
+    "classes": {
+      "multipass": 657,
+      "type I": 590,
+      "GPI": 92,
+      "type II": 64,
+      "type III": 10
+    },
+    "bands": {
+      "near": {
+        "pool": 707,
+        "drawn": 50,
+        "by_class": {
+          "multipass": 20,
+          "type I": 15,
+          "GPI": 7,
+          "type II": 6,
+          "type III": 2
+        }
+      },
+      "diverged": {
+        "pool": 706,
+        "drawn": 50,
+        "by_class": {
+          "type I": 18,
+          "multipass": 16,
+          "GPI": 7,
+          "type II": 7,
+          "type III": 2
+        }
+      }
+    }
+  },
+  "seed": 20261011,
+  "per_band": 50,
+  "floors": {
+    "type III": 2,
+    "GPI": 5,
+    "type II": 5
+  },
+  "total": 200
+}

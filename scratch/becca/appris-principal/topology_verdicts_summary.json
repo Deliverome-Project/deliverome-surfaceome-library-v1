@@ -1,0 +1,28 @@
+{
+  "sequences_predicted": 1527,
+  "alternate_forms_judged": 1297,
+  "references_predicted": 230,
+  "verdict": {
+    "keep": 1124,
+    "exclude_lost_surface": 109,
+    "keep_lost_some_tm": 61,
+    "undecidable_no_reference_call": 3
+  },
+  "topology_status": {
+    "surface": 1137,
+    "secreted": 116,
+    "intracellular": 44
+  },
+  "deeptmhmm_label": {
+    "SP+TM": 571,
+    "TM": 566,
+    "SP": 116,
+    "GLOB": 44
+  },
+  "excluded_by_source": {
+    "ensembl_only": 104,
+    "uniprot_only": 3,
+    "both": 2
+  },
+  "excluded_with_evidence": 6
+}

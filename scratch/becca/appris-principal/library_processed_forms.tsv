@@ -1,0 +1,186 @@
+gene	accession	length_aa	chains	cleavage_sites	cleaved_by	full_length_is_surface_species
+THSD7A	Q9UPZ6	1657	2	0		no
+ADGRB2	O60241	1585	1	2	autolysis; furin	no
+ADGRB1	O14514	1584	3	1	unspecified	no
+COL17A1	Q9UMD9	1497	3	0		no
+ADGRL1	O94910	1474	1	1	autolysis	no
+PLA2R1	Q13018	1463	2	0		no
+ADGRL2	O95490	1459	1	1	autolysis	no
+ADGRL3	Q9HAR2	1447	1	1	autolysis	no
+PTPRK	Q15262	1439	1	1	unspecified	no
+MST1R	Q04912	1400	3	0		no
+MET	P08581	1390	1	1	unspecified	no
+INSR	P06213	1382	2	0		no
+IGF1R	P08069	1367	2	0		no
+ADGRF5	Q8IZF2	1346	1	3	autolysis; furin; unspecified	no
+FLT1	P17948	1338	1	1	PSEN1	no
+ADGRA2	Q96PE1	1338	1	2	thrombin	no
+ERBB4	Q15303	1308	2	0		no
+ACE	P12821	1306	2	2	unspecified	no
+INSRR	P14616	1297	3	0		no
+MUC1	P15941	1255	3	1	autolysis	no
+ADGRG6	Q86SQ4	1221	3	2	furin like-convertase; unspecified	no
+CHL1	O00533	1208	2	2	ADAM8	no
+PCDH12	Q9NPG4	1184	2	0		no
+ITGA7	Q13683	1181	4	1	urokinase	no
+SORCS2	Q96PQ0	1159	4	3	unspecified	no
+CD163	Q86VB7	1156	2	4	unspecified	no
+CACNA2D4	Q7Z3S7	1137	3	0		no
+ATP11A	P98196	1134	1	2	CASP3	no
+ATP11C	Q8NB49	1132	1	3	CASP3; CASP3 and CASP7; CASP3, CASP6 and CASP7	no
+ITGA6	P23229	1130	4	1	PLAU in invasive prostate cancer	no
+RET	P07949	1114	3	2	caspase-3	no
+CACNA2D1	P54289	1103	3	0		no
+CACNA2D3	Q8IZS8	1091	3	0		no
+ADGRF3	Q8IZF5	1079	1	1	autolysis	no
+PTK7	Q13308	1070	1	1	MMP14	no
+ITGA8	P53708	1063	3	0		no
+TMPRSS9	Q7Z410	1059	4	3	unspecified	no
+EPHB2	P29323	1055	3	2	a metalloproteinase; gamma-secretase/PS1	no
+ITGA3	P26006	1051	3	0		no
+ITGA5	P08648	1049	3	0		no
+DSG1	Q02413	1049	1	1	Staphylococcus aureus ETA, ETB and ETD	no
+ITGAV	P06756	1048	3	0		no
+CORIN	Q9Y5Q5	1042	6	3	autolysis; unspecified	no
+CRIM1	Q9NZV1	1036	2	0		no
+ITGA9	Q13797	1035	1	1	unspecified	no
+ITGA4	P13612	1032	1	1	unspecified	no
+TMPRSS15	P98073	1019	2	0		no
+ADGRG2	Q8IZP9	1017	3	1	autolysis	no
+KL	Q9UEF7	1012	2	0		no
+CLSTN1	O94985	981	3	2	unspecified	no
+UNC5D	Q6UXZ4	953	1	1	caspase-3	no
+UNC5B	Q8IZJ1	945	1	1	caspase-3	no
+CLCA2	Q9UQC9	943	3	1	autolysis	no
+UNC5C	O95185	931	1	1	caspase-3	no
+ENPP1	P22413	925	2	1	unspecified	no
+CLCA4	Q14CN2	919	3	1	autolysis	no
+ADGRF1	Q5T601	910	3	1	autolysis	no
+DAG1	Q14118	895	2	2	MMP9; autolysis	no
+CDH1	P12830	882	4	4	S.pyogenes SpeB; a metalloproteinase; caspase-3; gamma-secretase/PS1	no
+ADGRD1	Q6QNK2	874	3	1	autolysis	no
+NRG2	O14511	850	2	0		no
+UNC5A	Q6ZN44	842	1	1	caspase-3	no
+CDCP1	Q9H5V8	836	1	1	ST14/MT-SP1	no
+ADGRE5	P48960	835	3	1	autolysis	no
+IL4R	P24394	825	2	0		no
+ADGRE2	Q9UHX3	823	1	1	autolysis	no
+ADAM9	Q13443	819	1	2	furin-like protease; unspecified	no
+ACE2	Q9BYF1	805	2	0		no
+ASAH2	Q9NR71	780	2	1	unspecified	no
+MMEL1	Q495T6	779	2	1	unspecified	no
+KIRREL3	Q8IZU9	778	2	0		no
+APP	P05067	770	13	11	ACE; alpha-secretase; beta-secretase; caspase-6, caspase-8 or caspase-9; caspase-6; when associated with variant 670-N-L-671; caspases; gamma-secretase; site 1; gamma-secretase; site 2; gamma-secretase; site 3; theta-secretase	no
+DPP4	P27487	766	2	0		no
+PIGR	P01833	764	2	0		no
+TFRC	P02786	760	2	1	trypsin; to produce soluble form	no
+FAP	Q12884	760	2	1	unspecified	no
+ADAM10	O14672	748	1	1	furin and PCSK7	no
+ZP2	Q05996	745	2	2	ASTL; unspecified	no
+VCAM1	P19320	739	2	0		no
+NRG3	P56975	720	2	0		no
+ADGRG1	Q9Y653	693	3	1	autolysis	no
+ADGRL4	Q9HBW9	690	1	1	autolysis	no
+SCNN1A	P37088	669	1	2	Furin	no
+CD6	P30203	668	2	0		no
+GGT7	Q9UJ14	662	2	0		no
+COL25A1	Q9BXS0	654	2	1	furin	no
+ADGRE3	Q9BY15	652	1	1	autolysis	no
+APLP1	P51693	650	1	1	caspase-3	no
+XKR4	Q5GH76	650	2	1	caspase-3, caspase-6 and caspase-7	no
+MMP24	Q9Y5R2	645	2	1	furin	no
+UMOD	P07911	640	2	1	unspecified	no
+NRG1	Q02297	640	2	0		no
+GHR	P10912	638	2	0		no
+ZP1	P60852	638	2	0		no
+NRXN3	Q9HDB5	637	3	0		no
+MSLN	Q13421	622	3	0		no
+GPR50	Q13585	617	2	1	Calpain-1/CAPN1	no
+GGT5	P36269	586	2	0		no
+TMPRSS13	Q9BYE2	586	1	2	autolysis; required for cell surface localization and secretion; unspecified	no
+GPC3	P51654	580	2	1	unspecified	no
+GPC2	Q8N158	579	2	0		no
+GPC5	P78333	572	2	0		no
+IL1R1	P14778	569	2	0		no
+GGT1	P19440	569	2	0		no
+MUC21	Q5SSG8	566	1	1	unspecified	no
+ERVMER34-1	Q9H9K5	563	2	0		no
+GPC1	P35052	558	2	0		no
+GPC4	O75487	556	2	0		no
+GPC6	Q9Y625	555	2	0		no
+ADGRG3	Q86Y34	549	3	1	autolysis	no
+ZP4	Q12836	540	2	0		no
+ERVFRD-1	P60508	538	3	1	unspecified	no
+ERVW-1	Q9UQF0	538	3	1	unspecified	no
+ADGRG5	Q8IZF4	528	3	1	autolysis	no
+LAG3	P18627	525	2	0		no
+NECTIN4	Q96NY8	510	2	0		no
+GGT6	Q6P531	493	2	0		no
+TMPRSS2	O15393	492	2	1	autolysis	no
+STEAP3	Q658P3	488	1	1	RHBDL4/RHBDD1	no
+IL6R	P08887	468	2	1	ADAM10 and ADAM17	no
+TNFRSF1B	P20333	461	2	0		no
+TMPRSS5	Q9H3S3	457	1	1	unspecified	no
+TNFRSF1A	P19438	455	2	0		no
+TMPRSS3	P57727	454	1	1	unspecified	no
+AMN	Q9BXJ7	453	2	0		no
+RGMA	Q96B86	450	1	1	autolysis	no
+SDC3	O75056	442	1	1	unspecified	no
+MXRA8	Q9BRK3	442	1	1	unspecified	no
+RGMB	Q6NW40	437	1	1	autolysis	no
+TMPRSS4	Q9NRS4	437	2	1	unspecified	no
+HJV	Q6ZVN8	426	1	1	autolysis	no
+PANX1	Q96RD7	426	2	1	CASP3 or CASP7	no
+F2R	P25116	425	1	2	CTSG; thrombin, GZMK and CTSG	no
+ZP3	P21754	424	2	0		no
+TMPRSS11E	Q9UL52	423	2	0		no
+IL11RA	Q14626	422	2	0		no
+TMPRSS11D	O60235	418	2	0		no
+HPN	P05981	417	2	0		no
+SPN	P16150	400	2	0		no
+IL1R2	P27930	398	2	0		no
+F2RL1	P55085	397	3	1	trypsin and GZMK	no
+CX3CL1	P78423	397	2	1	unspecified	no
+XKR8	Q9H6D3	395	2	1	caspase-3	no
+EDA	Q92838	391	2	1	furin	no
+F2RL3	Q96RI0	385	1	1	thrombin or trypsin	no
+DLK1	P80370	383	2	0		no
+CD14	P08571	375	2	0		no
+F2RL2	O00254	374	1	1	thrombin	no
+XKR9	Q5GH70	373	2	1	caspase-3, caspase-6 and caspase-7	no
+CXCR2	P25025	360	1	1	Staphylococcus aureus/SspP	no
+HLA-E	P13747	358	2	0		no
+EFNB1	P98172	346	3	0		no
+PRSS8	Q16651	343	3	0		no
+HLA-G	P17693	338	2	0		no
+PLAUR	Q03405	335	1	2	PLAU	no
+MRGPRX1	Q96LB2	322	1	3	D.pteronyssinus Der p 1	no
+FCER2	P06734	321	2	1	unspecified	no
+TPSG1	Q9NRR2	321	3	0		no
+TNFSF11	O14788	317	2	1	unspecified	no
+SDC1	P18827	310	1	1	unspecified	no
+JAM3	Q9BX67	310	2	0		no
+RHBDL2	Q9NX52	303	3	0		no
+F11R	Q9Y624	299	1	1	H.pylori PqqE	no
+TNFSF13B	Q9Y275	285	2	1	unspecified	no
+FASLG	P48023	281	4	2	ADAM10; SPPL2A	no
+KITLG	P21583	273	2	0		no
+OLR1	P78380	273	2	0		no
+IL15RA	Q13261	267	2	0		no
+ITM2B	Q9Y287	266	4	1	furin	no
+CD40LG	P29965	261	2	1	unspecified	no
+FCGR3A	P08637	254	1	1	ADAM17	no
+TNFSF15	O95150	251	2	1	unspecified	no
+TNFSF12	O43508	249	2	1	unspecified	no
+TNFSF14	O43557	240	2	1	unspecified	no
+TNF	P01375	233	6	5	ADAM17; SPPL2A or SPPL2B	no
+CLTRN	Q9HBJ8	222	1	1	BACE2	no
+HBEGF	Q99075	208	2	0		no
+EFNA1	P20827	205	2	0		no
+SDC2	P34741	201	1	1	unspecified	no
+SLC31A1	O15431	190	2	1	unspecified	no
+CD160	O95971	181	2	0		no
+BTC	P35070	178	2	0		no
+PDPN	Q86YL7	162	1	1	gamma-secretase	no
+TGFA	P01135	160	2	0		no
+NRG4	Q8WWG1	115	2	0		no

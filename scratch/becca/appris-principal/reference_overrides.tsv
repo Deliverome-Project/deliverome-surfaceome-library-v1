@@ -1,0 +1,8 @@
+gene	form	basis	note
+ACHE	P22303-2	gpi_anchor	The canonical T subunit carries no anchor - it assembles with ColQ or PRiMA. P22303-2 is the H subunit, the GPI-anchored form. NetGPI calls the canonical non-anchored at 0.993
+BCAN	Q96GW7-2	gpi_anchor	Canonical brevican is secreted; Q96GW7-2 is the GPI form. NetGPI calls the canonical non-anchored at 0.994
+CD55	P08174	gpi_anchor	A selection fault rather than biology: canonical DAF is the anchored form, and APPRIS had picked a transcript encoding the secreted one. NetGPI calls the APPRIS-rung form non-anchored at 0.993
+CD58	P19256-2	gpi_anchor	Canonical CD58 is the transmembrane LFA-3. Both anchored candidates predict the same omega site and are identical through it, so the reviewed isoform is named rather than the Ensembl model the ranking preferred
+MICA	Q29983	tm_anchor	The ladder's transcript (ENST00000449934, 332 aa) diverges mid-TM-helix and retains none of it: identical to the canonical through WQTFHVSAVAA, then out of frame, losing the helix's second half and the KKK cytoplasmic cluster that sets its orientation. DeepTMHMM v1 calls it SP with zero TM; v2's dissent is a 10-aa half-helix. Q29983 is the 383-aa form, helix res 307-328 intact. MICA's shed risk is high, so a secreted form is the worst of the two to build.
+NCAM1	P13591-3	gpi_anchor	Canonical P13591 is NCAM-140, the transmembrane form; P13591-3 is NCAM-120, the GPI form. NetGPI calls the canonical non-anchored at 0.992
+TFPI	P10646-2	gpi_anchor	Canonical TFPI-alpha is soluble; P10646-2 is TFPI-beta, the GPI form. NetGPI calls the canonical non-anchored at 0.995

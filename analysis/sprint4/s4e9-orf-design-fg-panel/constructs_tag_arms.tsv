@@ -1,0 +1,4 @@
+gene	arm	note	inter_tag_spacer_aa	inter_tag_repeats	max_internal_repeat_nt	insert_after_residue	protein_aa	insert_nt	barcode
+TFRC	cterm	p003 cassette verbatim — the matched reference	10	2	17	760	811	2551	TGTCTCTCTCAGCTTCTCTC
+TFRC	linker_3x	inter-tag spacer lengthened to 3x GGGGS (15 aa)	15	3	15	760	816	2566	ATAGTCAAGAGCGCACCAGA
+TFRC	linker_4x	inter-tag spacer lengthened to 4x GGGGS (20 aa)	20	4	15	760	821	2581	ACAGTTAGTCGAGAAGCGCA

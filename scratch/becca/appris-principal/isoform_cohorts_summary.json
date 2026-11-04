@@ -1,0 +1,24 @@
+{
+  "tier_1_full": {
+    "forms": 1894,
+    "genes": 945,
+    "already_in_cohort": 618,
+    "evidence": {
+      "prediction (TRIFID)": 1099,
+      "translation (OpenProt TE)": 541,
+      "protein (weak)": 198,
+      "protein (deep peptides)": 56
+    }
+  },
+  "tier_2_observed": {
+    "forms": 795,
+    "genes": 546,
+    "already_in_cohort": 423,
+    "evidence": {
+      "translation (OpenProt TE)": 541,
+      "protein (weak)": 198,
+      "protein (deep peptides)": 56
+    },
+    "reduction_vs_full": "58%"
+  }
+}

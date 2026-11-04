@@ -1,0 +1,33 @@
+# Default DIA QC dashboard: every check, grouped by where a problem would come from.
+# Panels are metric names from deliverome_analysis.dia_qc_dashboard.METRICS. A panel whose
+# columns the export lacks stays in place and says what is missing, so the layout is fixed
+# and doubles as a coverage map.
+title: DIA QC
+columns: 2
+sections:
+  - title: Chromatography at a glance
+    panels: [tic_ms1, tic_ms2, instrument_traces, injection_time, chromatography_diagnosis]
+  - title: Over time
+    panels: [qc_history]
+  - title: Proteins
+    panels: [protein_explorer]
+  - title: Identifications
+    panels: [ids_precursors, ids_protein_groups, completeness_runs, completeness, detection_reproducibility, charge_states]
+  - title: Surface (membrane) proteins
+    panels: [surface_protein_groups, surface_peptides, surface_signal, surface_missed, surface_points_per_peak]
+  - title: Quantitation
+    panels: [intensity, precursor_cv]
+  - title: Quantification with limpa
+    panels: [dpc_fit, protein_se, run_correlation, limpa_vs_spectronaut, pca]
+  - title: Retention time
+    panels: [rt_consistency, charge_state_rt, rt_error, irt_residual, gradient_coverage, irt_standards, rt_flagged]
+  - title: Mass accuracy
+    panels: [ms1_mass_error, ms1_calibration_ppm, ms2_mass_error]
+  - title: Digestion
+    panels: [missed_cleavages]
+  - title: Peak shape and sampling
+    panels: [fwhm, points_per_peak, points_per_peak_ms1, tailing_factor, signal_to_noise, peak_gauss_score, fragment_coelution]
+  - title: Contaminants and standards
+    panels: [contaminant_signal, top_contaminants]
+  - title: Identification evidence
+    panels: [cscore, ion_ladder_score, fragment_coverage]

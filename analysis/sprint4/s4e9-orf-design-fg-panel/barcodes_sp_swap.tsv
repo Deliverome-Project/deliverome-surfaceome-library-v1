@@ -1,0 +1,2 @@
+gene	arm	construct	plasmid	pool_index	barcode	note
+VSIG10	igk_leader_swap	VSIG10_igk	p0048	29	TATCACTCGTTGTTCCACCA	fresh draw 2026-10-18; reserved locally, NOT yet appended to the shared S3 registry. Pairs with p0026 (VSIG10 native SP), which the same cassette abolishes: tagged p(SP) 0.000137 vs 0.999833 here (canary_rp_1792371023 / canary_rp_1792372578).

@@ -1,0 +1,20 @@
+gene	full_aa	cut_after	fragment_aa	shrink	ltr_to_ltr_bp	within_9kb	evidence	note	needs_exogenous_leader
+MUC3B	13477	13234	243	2%	5123	True	cleavage site	Cleavage; by autolysis	yes
+MUC12	5478	5229	249	5%	5141	True	cleavage site	Cleavage	yes
+MUC17	4493	4243	250	6%	5144	True	cleavage site	Cleavage	yes
+ADGRG4	3080	2721	359	12%	5471	True	cleavage site	Cleavage; by autolysis	yes
+ADGRV1	6306	5890	416	7%	5642	True	cleavage site	Cleavage; by autolysis	yes
+PKHD1	4074	3620	454	11%	5756	True	cleavage site	Cleavage	yes
+CELSR2	2923	2356	567	19%	6095	True	cleavage site	Cleavage; by autolysis	yes
+NOTCH4	2003	1431	572	29%	6110	True	chain boundary	Notch 4 extracellular truncation	yes
+PLXNB2	1838	1164	674	37%	6416	True	cleavage site	Cleavage; by proprotein convertases	yes
+NOTCH3	2321	1628	693	30%	6473	True	chain boundary	Notch 3 extracellular truncation	yes
+MUC4	5412	4687	725	13%	6569	True	cleavage site	Cleavage	yes
+PTPRD	1912	1181	731	38%	6587	True	cleavage site	Cleavage	yes
+PTPRS	1948	1197	751	39%	6647	True	cleavage site	Cleavage	yes
+NOTCH2	2471	1665	806	33%	6812	True	chain boundary	Notch 2 extracellular truncation	yes
+PLXNB1	2135	1305	830	39%	6884	True	cleavage site	Cleavage; by proprotein convertases	yes
+NOTCH1	2555	1720	835	33%	6899	True	chain boundary	Notch 1 extracellular truncation	yes
+LCT	1927	868	1059	55%	7571	True	chain boundary	Lactase/phlorizin hydrolase	yes
+PKD1	4303	3048	1255	29%	8159	True	cleavage site	Cleavage; by autolysis	yes
+STAB2	2551	1135	1416	56%	8642	True	chain boundary	190 kDa form stabilin-2	yes

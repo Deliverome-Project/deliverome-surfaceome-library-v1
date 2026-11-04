@@ -1,0 +1,58 @@
+{
+ "T1": {
+  "genes": 967,
+  "iso": 1189,
+  "iso_genes": 573,
+  "orth": 1162,
+  "orth_genes": 739
+ },
+ "T2": {
+  "genes": 880,
+  "iso": 979,
+  "iso_genes": 437,
+  "orth": 1365,
+  "orth_genes": 815
+ },
+ "T3": {
+  "genes": 286,
+  "iso": 151,
+  "iso_genes": 96,
+  "orth": 327,
+  "orth_genes": 217
+ },
+ "LL": {
+  "genes": 139,
+  "iso": 25,
+  "iso_genes": 17,
+  "orth": 111,
+  "orth_genes": 78
+ },
+ "SV": {
+  "genes": 85,
+  "iso": 1,
+  "iso_genes": 1,
+  "orth": 69,
+  "orth_genes": 55
+ },
+ "OE": {
+  "genes": 12,
+  "iso": 12,
+  "iso_genes": 6,
+  "orth": 17,
+  "orth_genes": 9
+ },
+ "ALL": {
+  "genes": 2369,
+  "iso": 2357,
+  "iso_genes": 1130,
+  "orth": 3051,
+  "orth_genes": 1913
+ },
+ "OV": {
+  "genes": 99,
+  "iso": 197,
+  "iso_genes": 55,
+  "orth": 158,
+  "orth_genes": 89
+ }
+}

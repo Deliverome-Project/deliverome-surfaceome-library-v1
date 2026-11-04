@@ -1,0 +1,38 @@
+{
+  "forms": 16048,
+  "alternate_forms": 13687,
+  "appris_match": {
+    "matched": 14894,
+    "no APPRIS row": 1154
+  },
+  "with_trifid": 12546,
+  "appris_label_class": {
+    "MINOR": 10736,
+    "ALTERNATIVE:2": 1138,
+    "ALTERNATIVE:1": 559,
+    "PRINCIPAL": 113
+  },
+  "trifid_median": {
+    "forms_with_observed_evidence": 0.2519,
+    "forms_without": 0.036,
+    "n_with": 915,
+    "n_without": 11631
+  },
+  "unreachable_by_experiment": {
+    "n": 11631,
+    "rankable_by_trifid": 11631,
+    "appris_label_class": {
+      "MINOR": 10051,
+      "ALTERNATIVE:2": 1035,
+      "ALTERNATIVE:1": 484,
+      "PRINCIPAL": 61
+    },
+    "trifid_over_0_5": 1119
+  },
+  "membrane_test_deeptmhmm": {
+    "forms_with_a_call": 2254,
+    "loses_ALL_tm": 372,
+    "loses_SOME_tm_kept": 295,
+    "loses_all_and_in_cohort": 372
+  }
+}

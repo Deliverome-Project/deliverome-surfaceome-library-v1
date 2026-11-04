@@ -1,0 +1,4 @@
+gene	length_aa	placement	closest_cut	protease	tm_start	window_start	window_end	window_aa	insert_after_residue	clearance_from_cut	clearance_from_tm	rationale
+DAG1	895	juxtamembrane insertion	715	MMP9	750	716	749	34	732	17	18	between the MMP9 cut at 715 and the transmembrane span at 750, centred with at least 10 residues clear of each so the tag is neither shed with the ectodomain nor crowded against the membrane
+CHL1	1208	juxtamembrane insertion	1039	ADAM8	1083	1040	1082	43	1060	21	23	between the ADAM8 cut at 1039 and the transmembrane span at 1083, centred with at least 10 residues clear of each so the tag is neither shed with the ectodomain nor crowded against the membrane
+PTK7	1070	juxtamembrane insertion	621	MMP14	705	622	704	83	662	41	43	between the MMP14 cut at 621 and the transmembrane span at 705, centred with at least 10 residues clear of each so the tag is neither shed with the ectodomain nor crowded against the membrane

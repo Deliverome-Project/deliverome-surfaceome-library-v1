@@ -1,0 +1,100 @@
+gene	orf_kb	tier	status	note
+ABCA1	6.8	T2	assessed
+ABCA7	6.4	T2	assessed
+ADGRG4	9.2	T2	inherits an existing recipe	adhesion GPCR, GPS/CTF as CELSR
+ADGRV1	18.9	T2	inherits an existing recipe	adhesion GPCR, GPS/CTF as CELSR
+CACNA1A	7.5	T2	not assessed
+CACNA1B	7.0	T2	not assessed
+CACNA1C	6.7	T2	not assessed
+CACNA1D	6.5	T2	not assessed
+CACNA1E	6.9	T2	not assessed
+CACNA1F	5.9	T2	not assessed
+CACNA1G	7.1	T2	not assessed
+CACNA1H	7.1	T2	not assessed
+CACNA1I	6.7	T2	not assessed
+CACNA1S	5.6	T2	not assessed
+CDH23	10.1	T1	assessed
+CELSR1	9.0	T2	assessed
+CELSR2	8.8	T2	assessed
+CELSR3	9.9	T2	assessed
+CR1	6.1	T1	assessed
+CSMD1	10.7	T1	not assessed
+CSMD2	10.5	T1	not assessed
+CSMD3	11.1	T1	not assessed
+CSPG4	7.0	T3	assessed
+DCHS1	9.9	T1	inherits an existing recipe	cadherin, and the FAT4 binding partner
+DSCAM	6.0	T1	assessed
+DSCAML1	6.2	T1	assessed
+FAT1	13.8	T1	assessed
+FAT2	13.1	T1	assessed
+FAT3	13.7	T1	inherits an existing recipe	FAT cadherin, as FAT1/2/4
+FAT4	14.9	T1	assessed
+FNDC1	5.7	T3	not assessed
+GPR179	7.1	T2	inherits an existing recipe	adhesion-like GPCR, GPS/CTF worth testing
+ITGB4	5.5	T1	assessed
+LCT	5.8	T1	not assessed
+LRP1	13.6	T1	assessed
+LRP1B	13.8	T1	inherits an existing recipe	LDLR minireceptor, LRP1 paralog
+LRP2	14.0	T1	assessed
+LRP4	5.7	T1	assessed
+LY75	5.2	T1	assessed
+MEGF8	8.5	T1	not assessed
+MGAM	8.3	T1	not assessed
+MUC12	16.4	T1	assessed
+MUC16	43.5	T3	assessed
+MUC17	13.5	T1	assessed
+MUC22	5.3	T1	inherits an existing recipe	membrane mucin, as MUC16/MUC17
+MUC3A	10.0	T1	assessed
+MUC3B	40.4	T1	inherits an existing recipe	membrane mucin, as MUC16/MUC17
+MUC4	16.2	T3	assessed
+NOTCH1	7.7	T1	assessed
+NOTCH2	7.4	T1	assessed
+NOTCH3	7.0	T1	assessed
+NOTCH4	6.0	T1	inherits an existing recipe	NOTCH NRR+TM+ICD, as NOTCH1/2/3
+PCDH15	5.9	T1	assessed
+PCSK5	5.6	T1	not assessed
+PIEZO1	7.6	T2	assessed
+PIEZO2	8.3	T2	assessed
+PKD1	12.9	T2	assessed
+PKDREJ	6.8	T2	not assessed
+PKHD1	12.2	T1	not assessed
+PLXNA1	5.7	T1	assessed
+PLXNA2	5.7	T1	assessed
+PLXNA3	5.6	T1	assessed
+PLXNA4	5.7	T1	assessed
+PLXNB1	6.4	T1	assessed
+PLXNB2	5.5	T1	assessed
+PLXNB3	5.7	T3	assessed
+PLXND1	5.8	T1	assessed
+PTPRB	6.0	T1	inherits an existing recipe	receptor phosphatase, as PTPRF/S/D
+PTPRD	5.7	T1	assessed
+PTPRF	5.7	T1	assessed
+PTPRQ	7.0	T1	inherits an existing recipe	receptor phosphatase, as PTPRF/S/D
+PTPRS	5.8	T1	assessed
+PTPRZ1	6.9	T3	assessed
+PTPRZ2	6.9	T1	inherits an existing recipe	receptor phosphatase, PTPRZ1 paralog
+ROS1	7.0	T1	assessed
+SCN10A	5.9	T2	not assessed
+SCN11A	5.4	T2	not assessed
+SCN1A	6.0	T2	not assessed
+SCN2A	6.0	T2	not assessed
+SCN3A	6.0	T2	not assessed
+SCN4A	5.5	T2	not assessed
+SCN5A	6.1	T2	not assessed
+SCN7A	5.0	T2	not assessed
+SCN8A	5.9	T2	not assessed
+SCN9A	6.0	T2	not assessed
+SDK1	6.6	T2	assessed
+SDK2	6.5	T1	assessed
+SI	5.5	T1	not assessed
+SIGLEC1	5.1	T3	assessed
+SORL1	6.6	T1	assessed
+STAB1	7.7	T1	assessed
+STAB2	7.7	T1	assessed
+TENM1	8.2	T3	not assessed
+TENM2	8.3	T1	not assessed
+TENM4	8.3	T1	not assessed
+TRPM3	5.2	T2	not assessed
+TRPM6	6.1	T2	not assessed
+TRPM7	5.6	T2	not assessed
+USH2A	15.6	T1	assessed

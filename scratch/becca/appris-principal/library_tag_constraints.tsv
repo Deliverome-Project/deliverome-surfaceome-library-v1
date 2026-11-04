@@ -1,0 +1,2369 @@
+gene	topology	gpi	processed	c_terminal_tag	n_terminal_tag	c_terminal_reason	n_terminal_reason
+ABCA8	TM	False	no	allowed	allowed
+ABCB1	TM	False	no	allowed	allowed
+ABCB11	TM	False	no	allowed	allowed
+ABCB4	TM	False	no	allowed	allowed
+ABCC1	TM	False	no	allowed	allowed
+ABCC10	TM	False	no	allowed	allowed
+ABCC11	TM	False	no	allowed	allowed
+ABCC2	TM	False	no	at risk	allowed	class-I PDZ motif (STKF), 2.85x over chance
+ABCC3	TM	False	no	allowed	allowed
+ABCC4	TM	False	no	at risk	allowed	class-I PDZ motif (ETAL), 2.85x over chance
+ABCC5	TM	False	no	allowed	allowed
+ABCC6	TM	False	no	allowed	allowed
+ABCG2	TM	False	no	allowed	allowed
+ABCG4	TM	False	no	allowed	allowed
+ACE	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+ACE2	SP+TM	False	yes	at risk	at risk	class-I PDZ motif (QTSF), 2.85x over chance	processed, protease unnamed - shedding unresolved
+ACHE	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+ACKR1	TM	False	no	allowed	allowed
+ACKR2	TM	False	no	allowed	allowed
+ACKR3	TM	False	no	allowed	allowed
+ACKR4	TM	False	no	allowed	allowed
+ACKR5	TM	False	no	allowed	allowed
+ACVR1	SP+TM	False	no	at risk	allowed	class-I PDZ motif (KTDC), 2.85x over chance
+ACVR1B	SP+TM	False	no	allowed	allowed
+ACVR1C	SP+TM	False	no	allowed	allowed
+ACVR2A	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ESSL), 2.85x over chance
+ACVR2B	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ESSI), 2.85x over chance
+ACVRL1	SP+TM	False	no	allowed	allowed
+ADAM10	SP+TM	False	yes	allowed	allowed
+ADAM11	SP+TM	False	no	allowed	allowed
+ADAM12	SP+TM	False	no	allowed	allowed
+ADAM15	SP+TM	False	no	allowed	allowed
+ADAM17	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ETEC), 2.85x over chance
+ADAM19	SP+TM	False	no	allowed	allowed
+ADAM21	SP+TM	False	no	allowed	allowed
+ADAM22	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ETSI), 2.85x over chance
+ADAM23	SP+TM	False	no	allowed	allowed
+ADAM28	SP+TM	False	no	allowed	allowed
+ADAM29	SP+TM	False	no	allowed	allowed
+ADAM32	SP+TM	False	no	allowed	allowed
+ADAM33	SP+TM	False	no	allowed	allowed
+ADAM7	SP+TM	False	no	allowed	allowed
+ADAM8	SP+TM	False	no	allowed	allowed
+ADAM9	SP+TM	False	yes	allowed	allowed
+ADCY1	TM	False	no	allowed	allowed
+ADCY2	TM	False	no	allowed	allowed
+ADCY3	TM	False	no	allowed	allowed
+ADCY5	TM	False	no	allowed	allowed
+ADCY6	TM	False	no	allowed	allowed
+ADCY7	TM	False	no	allowed	allowed
+ADCY8	TM	False	no	allowed	allowed
+ADCY9	TM	False	no	allowed	allowed
+ADCYAP1R1	SP+TM	False	no	allowed	allowed
+ADGRA1	TM	False	no	at risk	allowed	class-I PDZ motif (ETTV), 2.85x over chance
+ADGRA2	SP+TM	False	yes	at risk	allowed	class-I PDZ motif (ETTV), 2.85x over chance
+ADGRA3	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ETTV), 2.85x over chance
+ADGRB1	SP+TM	False	yes	at risk	at risk	class-I PDZ motif (QTEV), 2.85x over chance	processed, protease unnamed - shedding unresolved
+ADGRB2	SP+TM	False	yes	at risk	allowed	class-I PDZ motif (QTEV), 2.85x over chance
+ADGRB3	SP+TM	False	no	at risk	allowed	class-I PDZ motif (QTEV), 2.85x over chance
+ADGRD1	SP+TM	False	yes	at risk	allowed	class-I PDZ motif (LSAV), 2.85x over chance
+ADGRD2		False	no	allowed	allowed
+ADGRE1	SP+TM	False	no	allowed	allowed
+ADGRE2	SP+TM	False	yes	allowed	allowed
+ADGRE3	SP+TM	False	yes	allowed	allowed
+ADGRE5	SP+TM	False	yes	at risk	allowed	class-I PDZ motif (ESGI), 2.85x over chance
+ADGRF1	SP+TM	False	yes	allowed	allowed
+ADGRF3	TM	False	yes	allowed	allowed
+ADGRF5	SP+TM	False	yes	allowed	allowed
+ADGRG1	SP+TM	False	yes	at risk	allowed	class-I PDZ motif (SSRI), 2.85x over chance
+ADGRG2	SP+TM	False	yes	allowed	allowed
+ADGRG3	SP+TM	False	yes	allowed	allowed
+ADGRG5	SP+TM	False	yes	allowed	allowed
+ADGRG6	SP+TM	False	yes	allowed	allowed
+ADGRL1	SP+TM	False	yes	at risk	allowed	class-I PDZ motif (VTSL), 2.85x over chance
+ADGRL2	SP+TM	False	yes	at risk	allowed	class-I PDZ motif (VTSL), 2.85x over chance
+ADGRL3	SP+TM	False	yes	at risk	allowed	class-I PDZ motif (VTSL), 2.85x over chance
+ADGRL4	SP+TM	False	yes	allowed	allowed
+ADIPOR1	TM	False	no	at risk	allowed	class-I PDZ motif (DTLL), 2.85x over chance
+ADIPOR2	TM	False	no	allowed	allowed
+ADORA1	TM	False	no	allowed	allowed
+ADORA2A	TM	False	no	allowed	allowed
+ADORA2B	TM	False	no	allowed	allowed
+ADORA3	TM	False	no	allowed	allowed
+ADRA1A	TM	False	no	allowed	allowed
+ADRA1B	TM	False	no	allowed	allowed
+ADRA1D	TM	False	no	at risk	allowed	class-I PDZ motif (ETDI), 2.85x over chance
+ADRA2A	TM	False	no	allowed	allowed
+ADRA2B	TM	False	no	at risk	allowed	class-I PDZ motif (QTAW), 2.85x over chance
+ADRA2C	TM	False	no	allowed	allowed
+ADRB1	TM	False	no	at risk	allowed	class-I PDZ motif (ESKV), 2.85x over chance
+ADRB2	TM	False	no	at risk	allowed	class-I PDZ motif (DSLL), 2.85x over chance
+ADRB3	TM	False	no	allowed	allowed
+ADTRP	TM	False	no	allowed	allowed
+AGER	SP+TM	False	no	allowed	allowed
+AGTR1	TM	False	no	allowed	allowed
+AGTR2	TM	False	no	allowed	allowed
+AJAP1	SP+TM	False	no	allowed	allowed
+ALCAM	SP+TM	False	no	at risk	allowed	class-I PDZ motif (KTEA), 2.85x over chance
+ALK	SP+TM	False	no	allowed	allowed
+ALPG	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+ALPI	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+ALPL	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+ALPP	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+AMHR2	SP+TM	False	no	at risk	allowed	class-I PDZ motif (LSPV), 2.85x over chance
+AMIGO1	SP+TM	False	no	allowed	allowed
+AMIGO2	SP+TM	False	no	allowed	allowed
+AMIGO3	SP+TM	False	no	allowed	allowed
+AMN	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+ANKH	TM	False	no	allowed	allowed
+ANO1	TM	False	no	allowed	allowed
+ANO2	TM	False	no	at risk	allowed	class-I PDZ motif (HTNV), 2.85x over chance
+ANO3	TM	False	no	allowed	allowed
+ANO4	TM	False	no	allowed	allowed
+ANO6	TM	False	no	allowed	allowed
+ANO7	TM	False	no	allowed	allowed
+ANPEP	TM	False	no	allowed	allowed
+ANTXR1	SP+TM	False	no	allowed	allowed
+ANTXR2	SP+TM	False	no	allowed	allowed
+ANTXRL	SP+TM	False	no	allowed	allowed
+AOC2	TM	False	no	allowed	allowed
+AOC3	TM	False	no	allowed	allowed
+APLNR	TM	False	no	allowed	allowed
+APLP1	SP+TM	False	yes	allowed	allowed
+APLP2	SP+TM	False	no	allowed	allowed
+APP	SP+TM	False	yes	allowed	at risk		sheddase substrate (ACE; alpha-secretase; beta-secretase; ca)
+AQP1	TM	False	no	allowed	allowed
+AQP10	TM	False	no	allowed	allowed
+AQP12B	TM	False	no	allowed	allowed
+AQP2	TM	False	no	at risk	allowed	class-I PDZ motif (GTKA), 2.85x over chance
+AQP3	TM	False	no	allowed	allowed
+AQP4	TM	False	no	at risk	allowed	class-I PDZ motif (LSSV), 2.85x over chance
+AQP5	TM	False	no	allowed	allowed
+AQP7	TM	False	no	allowed	allowed
+AQP9	TM	False	no	allowed	allowed
+AREG	SP+TM	False	no	allowed	allowed
+ARMH4	SP+TM	False	no	allowed	allowed
+ART1	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+ART3	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+ART4	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+ASAH2	TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+ASGR1	TM	False	no	allowed	allowed
+ASGR2	TM	False	no	allowed	allowed
+ASIC1	TM	False	no	allowed	allowed
+ASIC2	TM	False	no	allowed	allowed
+ASIC3	TM	False	no	at risk	allowed	class-I PDZ motif (VTQL), 2.85x over chance
+ASIC5	TM	False	no	allowed	allowed
+ASTN1	SP+TM	False	no	allowed	allowed
+ATP10D	TM	False	no	allowed	allowed
+ATP11A	TM	False	yes	allowed	allowed
+ATP11C	TM	False	yes	allowed	allowed
+ATP12A	TM	False	no	allowed	allowed
+ATP1A1	TM	False	no	at risk	allowed	class-I PDZ motif (ETYY), 2.85x over chance
+ATP1A2	TM	False	no	at risk	allowed	class-I PDZ motif (ETYY), 2.85x over chance
+ATP1A3	TM	False	no	at risk	allowed	class-I PDZ motif (ETYY), 2.85x over chance
+ATP1A4	TM	False	no	at risk	allowed	class-I PDZ motif (ETYY), 2.85x over chance
+ATP1B1	TM	False	no	allowed	allowed
+ATP1B2	TM	False	no	allowed	allowed
+ATP1B3	TM	False	no	allowed	allowed
+ATP2B1	TM	False	no	at risk	allowed	class-I PDZ motif (ETSL), 2.85x over chance
+ATP2B2	TM	False	no	at risk	allowed	class-I PDZ motif (ETSL), 2.85x over chance
+ATP2B3	TM	False	no	at risk	allowed	class-I PDZ motif (ETSL), 2.85x over chance
+ATP2B4	TM	False	no	at risk	allowed	class-I PDZ motif (ETSV), 2.85x over chance
+ATRN	TM	False	no	at risk	allowed	class-I PDZ motif (GTCI), 2.85x over chance
+ATRNL1	SP+TM	False	no	at risk	allowed	class-I PDZ motif (GTCV), 2.85x over chance
+AVPR1A	TM	False	no	allowed	allowed
+AVPR1B	TM	False	no	allowed	allowed
+AVPR2	TM	False	no	allowed	allowed
+AXL	SP+TM	False	no	allowed	allowed
+BACE1	SP+TM	False	no	allowed	allowed
+BACE2	SP+TM	False	no	allowed	allowed
+BAMBI	SP+TM	False	no	allowed	allowed
+BCAM	SP+TM	False	no	allowed	allowed
+BCAN	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+BDKRB1	TM	False	no	allowed	allowed
+BDKRB2	TM	False	no	allowed	allowed
+BEST1	TM	False	no	allowed	allowed
+BEST2	TM	False	no	allowed	allowed
+BEST3	TM	False	no	allowed	allowed
+BEST4	TM	False	no	allowed	allowed
+BMPR1A	SP+TM	False	no	allowed	allowed
+BMPR1B	TM	False	no	allowed	allowed
+BMPR2	SP+TM	False	no	allowed	allowed
+BOC	SP+TM	False	no	allowed	allowed
+BRICD5	TM	False	no	allowed	allowed
+BRS3	TM	False	no	allowed	allowed
+BSG	SP+TM	False	no	allowed	allowed
+BST1	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+BST2	TM	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+BTC	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+BTLA	SP+TM	False	no	allowed	allowed
+BTN1A1	SP+TM	False	no	allowed	allowed
+BTN2A1	SP+TM	False	no	allowed	allowed
+BTN2A2	SP+TM	False	no	allowed	allowed
+BTN3A1	SP+TM	False	no	allowed	allowed
+BTN3A2	SP+TM	False	no	allowed	allowed
+BTN3A3	SP+TM	False	no	allowed	allowed
+BTNL2	SP+TM	False	no	allowed	allowed
+BTNL3	SP+TM	False	no	allowed	allowed
+BTNL9	SP+TM	False	no	allowed	allowed
+C11orf24	SP+TM	False	no	at risk	allowed	class-I PDZ motif (DSEM), 2.85x over chance
+C11orf87	TM	False	no	allowed	allowed
+C14orf180	TM	False	no	allowed	allowed
+C16orf54	TM	False	no	allowed	allowed
+C19orf18	SP+TM	False	no	allowed	allowed
+C19orf38	SP+TM	False	no	allowed	allowed
+C3AR1	TM	False	no	at risk	allowed	class-I PDZ motif (STTV), 2.85x over chance
+C3orf52	TM	False	no	allowed	allowed
+C5AR1	TM	False	no	allowed	allowed
+C5AR2	TM	False	no	allowed	allowed
+C5orf15	SP+TM	False	no	allowed	allowed
+CA12	SP+TM	False	no	allowed	allowed
+CA14	SP+TM	False	no	at risk	allowed	class-I PDZ motif (TTEA), 2.85x over chance
+CA4	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+CA9	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ETGA), 2.85x over chance
+CACHD1	TM	False	no	allowed	allowed
+CACNA2D1	SP+TM	True	yes	forbidden	at risk	GPI: the C-terminus is removed at the omega site	processed, protease unnamed - shedding unresolved
+CACNA2D3	SP	True	yes	forbidden	at risk	GPI: the C-terminus is removed at the omega site	processed, protease unnamed - shedding unresolved
+CACNA2D4	SP	True	yes	forbidden	at risk	GPI: the C-terminus is removed at the omega site	processed, protease unnamed - shedding unresolved
+CACNG1	TM	False	no	allowed	allowed
+CACNG2	TM	False	no	at risk	allowed	class-I PDZ motif (TTPV), 2.85x over chance
+CACNG3	TM	False	no	at risk	allowed	class-I PDZ motif (TTPV), 2.85x over chance
+CACNG4	TM	False	no	at risk	allowed	class-I PDZ motif (TTPV), 2.85x over chance
+CACNG5	TM	False	no	at risk	allowed	class-I PDZ motif (SSPC), 2.85x over chance
+CACNG6	TM	False	no	allowed	allowed
+CACNG7	TM	False	no	at risk	allowed	class-I PDZ motif (TSPC), 2.85x over chance
+CADM1	SP+TM	False	no	allowed	allowed
+CADM2	SP+TM	False	no	allowed	allowed
+CADM3	SP+TM	False	no	allowed	allowed
+CADM4	SP+TM	False	no	allowed	allowed
+CALCR	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ESSA), 2.85x over chance
+CALHM1	TM	False	no	at risk	allowed	class-I PDZ motif (FSKV), 2.85x over chance
+CALHM2	TM	False	no	allowed	allowed
+CALHM3	TM	False	no	at risk	allowed	class-I PDZ motif (HTDV), 2.85x over chance
+CALHM4	TM	False	no	allowed	allowed
+CALHM5	TM	False	no	allowed	allowed
+CASR	SP+TM	False	no	allowed	allowed
+CATSPERE	SP+TM	False	no	allowed	allowed
+CATSPERG	SP+TM	False	no	allowed	allowed
+CATSPERH	SP+TM	False	no	allowed	allowed
+CATSPERQ	TM	False	no	allowed	allowed
+CCKAR	TM	False	no	allowed	allowed
+CCKBR	TM	False	no	allowed	allowed
+CCR1	TM	False	no	allowed	allowed
+CCR10	TM	False	no	allowed	allowed
+CCR2	TM	False	no	allowed	allowed
+CCR3	TM	False	no	allowed	allowed
+CCR4	TM	False	no	allowed	allowed
+CCR5	TM	False	no	allowed	allowed
+CCR6	TM	False	no	allowed	allowed
+CCR7	SP+TM	False	no	allowed	allowed
+CCR8	TM	False	no	allowed	allowed
+CCR9	TM	False	no	allowed	allowed
+CCRL2	TM	False	no	at risk	allowed	class-I PDZ motif (STEV), 2.85x over chance
+CD101	SP+TM	False	no	allowed	allowed
+CD109	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+CD14	SP	True	yes	forbidden	at risk	GPI: the C-terminus is removed at the omega site	processed, protease unnamed - shedding unresolved
+CD151	TM	False	no	allowed	allowed
+CD160	SP	True	yes	forbidden	at risk	GPI: the C-terminus is removed at the omega site	processed, protease unnamed - shedding unresolved
+CD163	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+CD163L1	SP+TM	False	no	allowed	allowed
+CD164	SP+TM	False	no	allowed	allowed
+CD164L2	SP+TM	False	no	at risk	allowed	class-I PDZ motif (QTLI), 2.85x over chance
+CD177	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+CD19	SP+TM	False	no	allowed	allowed
+CD1A	SP+TM	False	no	allowed	allowed
+CD1B	SP+TM	False	no	allowed	allowed
+CD1C	SP+TM	False	no	allowed	allowed
+CD1D	SP+TM	False	no	allowed	allowed
+CD2	SP+TM	False	no	allowed	allowed
+CD200	SP+TM	False	no	allowed	allowed
+CD200R1	SP+TM	False	no	allowed	allowed
+CD200R1L	TM	False	no	allowed	allowed
+CD207	TM	False	no	allowed	allowed
+CD209	TM	False	no	allowed	allowed
+CD22	SP+TM	False	no	allowed	allowed
+CD226	SP+TM	False	no	at risk	allowed	class-I PDZ motif (KTRV), 2.85x over chance
+CD24	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+CD244	SP+TM	False	no	allowed	allowed
+CD248	SP+TM	False	no	at risk	allowed	class-I PDZ motif (RTSV), 2.85x over chance
+CD27	SP+TM	False	no	allowed	allowed
+CD274	SP+TM	False	no	allowed	allowed
+CD276	SP+TM	False	no	allowed	allowed
+CD28	SP+TM	False	no	allowed	allowed
+CD300A	SP+TM	False	no	allowed	allowed
+CD300C	SP+TM	False	no	allowed	allowed
+CD300E	SP+TM	False	no	allowed	allowed
+CD300H	SP+TM	False	no	allowed	allowed
+CD300LD	SP+TM	False	no	allowed	allowed
+CD300LF	SP+TM	False	no	allowed	allowed
+CD300LG	SP+TM	False	no	allowed	allowed
+CD302	SP+TM	False	no	allowed	allowed
+CD320	SP+TM	False	no	allowed	allowed
+CD33	SP+TM	False	no	allowed	allowed
+CD34	SP+TM	False	no	at risk	allowed	class-I PDZ motif (DTEL), 2.85x over chance
+CD36	TM	False	no	allowed	allowed
+CD37	TM	False	no	allowed	allowed
+CD38	TM	False	no	at risk	allowed	class-I PDZ motif (TSEI), 2.85x over chance
+CD4	SP+TM	False	no	at risk	allowed	class-I PDZ motif (CSPI), 2.85x over chance
+CD40	SP+TM	False	no	allowed	allowed
+CD40LG	TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+CD44	SP+TM	False	no	allowed	allowed
+CD46	SP+TM	False	no	at risk	allowed	class-I PDZ motif (FTSL), 2.85x over chance
+CD47	SP+TM	False	no	allowed	allowed
+CD48	SP+TM	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+CD5	SP+TM	False	no	allowed	allowed
+CD52	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+CD53	TM	False	no	allowed	allowed
+CD55	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+CD58	SP+TM	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+CD59	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+CD6	SP+TM	False	yes	at risk	at risk	class-I PDZ motif (ISAA), 2.85x over chance	processed, protease unnamed - shedding unresolved
+CD69	TM	False	no	allowed	allowed
+CD7	SP+TM	False	no	allowed	allowed
+CD70	TM	False	no	allowed	allowed
+CD72	TM	False	no	allowed	allowed
+CD74	TM	False	no	allowed	allowed
+CD80	SP+TM	False	no	allowed	allowed
+CD81	TM	False	no	at risk	allowed	class-I PDZ motif (SSVY), 2.85x over chance
+CD82	TM	False	no	allowed	allowed
+CD83	SP+TM	False	no	allowed	allowed
+CD84	SP+TM	False	no	allowed	allowed
+CD86	SP+TM	False	no	at risk	allowed	class-I PDZ motif (DTCF), 2.85x over chance
+CD8A	SP+TM	False	no	allowed	allowed
+CD8B2	SP+TM	False	no	allowed	allowed
+CD9	TM	False	no	allowed	allowed
+CD93	SP+TM	False	no	at risk	allowed	class-I PDZ motif (GTDC), 2.85x over chance
+CD96	SP+TM	False	no	allowed	allowed
+CD99	SP+TM	False	no	allowed	allowed
+CD99L2	SP+TM	False	no	allowed	allowed
+CDC50A	TM	False	no	allowed	allowed
+CDCP1	SP+TM	False	yes	allowed	allowed
+CDH1	SP+TM	False	yes	allowed	at risk		sheddase substrate (S.pyogenes SpeB; a metalloproteinase; ca)
+CDH10	SP+TM	False	no	allowed	allowed
+CDH11	SP+TM	False	no	allowed	allowed
+CDH12	SP+TM	False	no	allowed	allowed
+CDH13	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+CDH15	SP+TM	False	no	allowed	allowed
+CDH16	SP+TM	False	no	allowed	allowed
+CDH17	SP+TM	False	no	allowed	allowed
+CDH18	SP+TM	False	no	allowed	allowed
+CDH19	SP+TM	False	no	allowed	allowed
+CDH2	SP+TM	False	no	allowed	allowed
+CDH20	SP+TM	False	no	allowed	allowed
+CDH22	SP+TM	False	no	allowed	allowed
+CDH24	SP+TM	False	no	allowed	allowed
+CDH26	SP+TM	False	no	allowed	allowed
+CDH3	SP+TM	False	no	allowed	allowed
+CDH4	SP+TM	False	no	allowed	allowed
+CDH5	SP+TM	False	no	allowed	allowed
+CDH6	SP+TM	False	no	allowed	allowed
+CDH7	SP+TM	False	no	allowed	allowed
+CDH8	SP+TM	False	no	allowed	allowed
+CDH9	SP+TM	False	no	allowed	allowed
+CDHR1	SP+TM	False	no	allowed	allowed
+CDHR2	SP+TM	False	no	at risk	allowed	class-I PDZ motif (TTDL), 2.85x over chance
+CDHR3	SP+TM	False	no	allowed	allowed
+CDHR5	SP+TM	False	no	at risk	allowed	class-I PDZ motif (DSYI), 2.85x over chance
+CDON	SP+TM	False	no	allowed	allowed
+CEACAM1	SP+TM	False	no	allowed	allowed
+CEACAM19	SP+TM	False	no	allowed	allowed
+CEACAM20	SP+TM	False	no	allowed	allowed
+CEACAM21	SP+TM	False	no	allowed	allowed
+CEACAM3	SP+TM	False	no	allowed	allowed
+CEACAM4	SP+TM	False	no	allowed	allowed
+CEACAM5	SP+TM	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+CEACAM6	SP+TM	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+CEACAM7	SP+TM	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+CEACAM8	SP+TM	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+CEMIP2	TM	False	no	allowed	allowed
+CFC1	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+CFTR	TM	False	no	at risk	allowed	class-I PDZ motif (DTRL), 2.85x over chance
+CHL1	SP+TM	False	yes	allowed	at risk		sheddase substrate (ADAM8)
+CHRM1	TM	False	no	allowed	allowed
+CHRM2	TM	False	no	allowed	allowed
+CHRM3	TM	False	no	allowed	allowed
+CHRM4	TM	False	no	allowed	allowed
+CHRM5	TM	False	no	allowed	allowed
+CHRNA4	SP+TM	False	no	allowed	allowed
+CHRNA6	SP+TM	False	no	allowed	allowed
+CHRNA7	SP+TM	False	no	allowed	allowed
+CHRNA9	SP+TM	False	no	allowed	allowed
+CHRNB3	SP+TM	False	no	allowed	allowed
+CHST15	TM	False	no	allowed	allowed
+CIST1	SP+TM	False	no	allowed	allowed
+CLCA2	SP+TM	False	yes	allowed	allowed
+CLCA4	SP	True	yes	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+CLCN1	TM	False	no	allowed	allowed
+CLCN2	TM	False	no	allowed	allowed
+CLDN1	TM	False	no	allowed	allowed
+CLDN10	TM	False	no	allowed	allowed
+CLDN11	TM	False	no	allowed	allowed
+CLDN12	TM	False	no	allowed	allowed
+CLDN14	TM	False	no	allowed	allowed
+CLDN15	TM	False	no	allowed	allowed
+CLDN16	TM	False	no	at risk	allowed	class-I PDZ motif (DTRV), 2.85x over chance
+CLDN17	TM	False	no	at risk	allowed	class-I PDZ motif (TSYV), 2.85x over chance
+CLDN18	TM	False	no	allowed	allowed
+CLDN19	TM	False	no	allowed	allowed
+CLDN2	TM	False	no	allowed	allowed
+CLDN20	TM	False	no	allowed	allowed
+CLDN22	TM	False	no	allowed	allowed
+CLDN23	TM	False	no	at risk	allowed	class-I PDZ motif (DSDL), 2.85x over chance
+CLDN24	TM	False	no	allowed	allowed
+CLDN25	TM	False	no	allowed	allowed
+CLDN3	TM	False	no	allowed	allowed
+CLDN4	TM	False	no	allowed	allowed
+CLDN5	TM	False	no	allowed	allowed
+CLDN6	TM	False	no	allowed	allowed
+CLDN7	TM	False	no	allowed	allowed
+CLDN8	TM	False	no	allowed	allowed
+CLDN9	TM	False	no	allowed	allowed
+CLDND1	TM	False	no	allowed	allowed
+CLEC10A	TM	False	no	allowed	allowed
+CLEC12A	TM	False	no	allowed	allowed
+CLEC12B	TM	False	no	allowed	allowed
+CLEC14A	SP+TM	False	no	at risk	allowed	class-I PDZ motif (SSDA), 2.85x over chance
+CLEC17A	TM	False	no	allowed	allowed
+CLEC1A	TM	False	no	allowed	allowed
+CLEC1B	TM	False	no	allowed	allowed
+CLEC2A	TM	False	no	allowed	allowed
+CLEC2D	TM	False	no	allowed	allowed
+CLEC2L	TM	False	no	allowed	allowed
+CLEC4A	TM	False	no	allowed	allowed
+CLEC4C	TM	False	no	allowed	allowed
+CLEC4E	TM	False	no	allowed	allowed
+CLEC4G	TM	False	no	allowed	allowed
+CLEC4M	TM	False	no	allowed	allowed
+CLEC5A	TM	False	no	allowed	allowed
+CLEC6A	TM	False	no	allowed	allowed
+CLEC7A	TM	False	no	allowed	allowed
+CLEC9A	TM	False	no	at risk	allowed	class-I PDZ motif (RSSV), 2.85x over chance
+CLMP	SP+TM	False	no	allowed	allowed
+CLRN1	TM	False	no	allowed	allowed
+CLRN3	TM	False	no	allowed	allowed
+CLSTN1	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+CLSTN2	SP+TM	False	no	allowed	allowed
+CLSTN3	SP+TM	False	no	allowed	allowed
+CLTRN	SP+TM	False	yes	at risk	at risk	class-I PDZ motif (LTPL), 2.85x over chance	sheddase substrate (BACE2)
+CMKLR1	TM	False	no	allowed	allowed
+CMKLR2	TM	False	no	allowed	allowed
+CNGA1	TM	False	no	allowed	allowed
+CNGA2	TM	False	no	allowed	allowed
+CNGA3	TM	False	no	allowed	allowed
+CNNM1	SP+TM	False	no	allowed	allowed
+CNNM2	SP+TM	False	no	allowed	allowed
+CNNM3	SP+TM	False	no	allowed	allowed
+CNNM4	SP+TM	False	no	allowed	allowed
+CNR1	TM	False	no	allowed	allowed
+CNR2	TM	False	no	at risk	allowed	class-I PDZ motif (LSDC), 2.85x over chance
+CNTFR	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+CNTN1	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+CNTN2	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+CNTN3	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+CNTN4	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+CNTN5	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+CNTN6	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+CNTNAP2	SP+TM	False	no	allowed	allowed
+CNTNAP3	SP+TM	False	no	allowed	allowed
+CNTNAP3B	SP+TM	False	no	allowed	allowed
+CNTNAP4	SP+TM	False	no	allowed	allowed
+CNTNAP5	SP+TM	False	no	allowed	allowed
+COL13A1	TM	False	no	allowed	allowed
+COL17A1	TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+COL23A1	TM	False	no	allowed	allowed
+COL25A1	TM	False	yes	allowed	allowed
+COLEC12	TM	False	no	at risk	allowed	class-I PDZ motif (SSAL), 2.85x over chance
+CORIN	TM	False	yes	allowed	allowed
+CPD	SP+TM	False	no	allowed	allowed
+CPM	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+CR2	SP+TM	False	no	allowed	allowed
+CRB1	SP+TM	False	no	allowed	allowed
+CRB2	SP+TM	False	no	allowed	allowed
+CRB3	SP+TM	False	no	allowed	allowed
+CRHR1	SP+TM	False	no	at risk	allowed	class-I PDZ motif (STAV), 2.85x over chance
+CRHR2	TM	False	no	allowed	allowed
+CRIM1	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+CRIPTO	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+CRLF2	SP+TM	False	no	allowed	allowed
+CRTAM	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ESIV), 2.85x over chance
+CSF1R	SP+TM	False	no	allowed	allowed
+CSF2RA	SP+TM	False	no	allowed	allowed
+CSF2RB	SP+TM	False	no	allowed	allowed
+CSF3R	SP+TM	False	no	allowed	allowed
+CSPG5	SP+TM	False	no	allowed	allowed
+CTLA4	SP+TM	False	no	allowed	allowed
+CX3CL1	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+CX3CR1	TM	False	no	allowed	allowed
+CXADR	SP+TM	False	no	at risk	allowed	class-I PDZ motif (GSIV), 2.85x over chance
+CXCL16	SP+TM	False	no	allowed	allowed
+CXCR1	TM	False	no	at risk	allowed	class-I PDZ motif (SSNL), 2.85x over chance
+CXCR2	TM	False	yes	at risk	allowed	class-I PDZ motif (STTL), 2.85x over chance
+CXCR3	TM	False	no	at risk	allowed	class-I PDZ motif (YSGL), 2.85x over chance
+CXCR4	TM	False	no	allowed	allowed
+CXCR5	TM	False	no	at risk	allowed	class-I PDZ motif (LTTF), 2.85x over chance
+CXCR6	TM	False	no	allowed	allowed
+CXorf66	SP+TM	False	no	allowed	allowed
+CYBB	TM	False	no	allowed	allowed
+CYBRD1	TM	False	no	at risk	allowed	class-I PDZ motif (RSTM), 2.85x over chance
+CYSLTR1	TM	False	no	allowed	allowed
+CYSLTR2	TM	False	no	at risk	allowed	class-I PDZ motif (ETRV), 2.85x over chance
+DAG1	SP+TM	False	yes	allowed	at risk		sheddase substrate (MMP9; autolysis)
+DAGLA	TM	False	no	allowed	allowed
+DCBLD1	SP+TM	False	no	allowed	allowed
+DCBLD2	SP+TM	False	no	allowed	allowed
+DCC	SP+TM	False	no	at risk	allowed	class-I PDZ motif (GSAF), 2.85x over chance
+DCST1	TM	False	no	allowed	allowed
+DCST2	TM	False	no	allowed	allowed
+DCSTAMP	TM	False	no	allowed	allowed
+DDR1	SP+TM	False	no	allowed	allowed
+DDR2	SP+TM	False	no	allowed	allowed
+DGCR2	SP+TM	False	no	at risk	allowed	class-I PDZ motif (NTVV), 2.85x over chance
+DISP1	TM	False	no	allowed	allowed
+DISP2	TM	False	no	allowed	allowed
+DLK1	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+DLL1	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ATEV), 2.85x over chance
+DLL3	SP+TM	False	no	allowed	allowed
+DLL4	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ATEV), 2.85x over chance
+DNER	SP+TM	False	no	allowed	allowed
+DPEP1	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+DPEP2	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+DPEP3	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+DPP10	TM	False	no	allowed	allowed
+DPP4	TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+DPP6	TM	False	no	allowed	allowed
+DRD1	TM	False	no	allowed	allowed
+DRD2	TM	False	no	allowed	allowed
+DRD3	TM	False	no	allowed	allowed
+DRD4	TM	False	no	allowed	allowed
+DRD5	TM	False	no	allowed	allowed
+DSC1	SP+TM	False	no	allowed	allowed
+DSC2	SP+TM	False	no	allowed	allowed
+DSC3	SP+TM	False	no	allowed	allowed
+DSG1	SP+TM	False	yes	allowed	allowed
+DSG2	SP+TM	False	no	allowed	allowed
+DSG3	SP+TM	False	no	allowed	allowed
+DYNAP	TM	False	no	allowed	allowed
+ECE1	TM	False	no	allowed	allowed
+ECSCR	SP+TM	False	no	allowed	allowed
+EDA	TM	False	yes	allowed	allowed
+EDA2R	TM	False	no	allowed	allowed
+EDNRA	SP+TM	False	no	allowed	allowed
+EDNRB	SP+TM	False	no	allowed	allowed
+EFNA1	SP	True	yes	forbidden	at risk	GPI: the C-terminus is removed at the omega site	processed, protease unnamed - shedding unresolved
+EFNA2	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+EFNA3	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+EFNA4	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+EFNA5	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+EFNB1	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+EFNB2	SP+TM	False	no	allowed	allowed
+EFNB3	SP+TM	False	no	allowed	allowed
+EGFR	SP+TM	False	no	allowed	allowed
+ELFN1	SP+TM	False	no	allowed	allowed
+ELFN2	SP+TM	False	no	allowed	allowed
+EMB	SP+TM	False	no	allowed	allowed
+EMCN	SP+TM	False	no	allowed	allowed
+EMP1	TM	False	no	allowed	allowed
+EMP2	TM	False	no	allowed	allowed
+EMP3	TM	False	no	allowed	allowed
+ENG	SP+TM	False	no	at risk	allowed	class-I PDZ motif (SSMA), 2.85x over chance
+ENPEP	TM	False	no	allowed	allowed
+ENPP1	TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+ENPP3	TM	False	no	at risk	allowed	class-I PDZ motif (ETTI), 2.85x over chance
+ENPP4	SP+TM	False	no	allowed	allowed
+ENPP5	SP+TM	False	no	allowed	allowed
+ENPP6	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+ENTPD1	TM	False	no	allowed	allowed
+ENTPD2	SP+TM	False	no	at risk	allowed	class-I PDZ motif (PSTI), 2.85x over chance
+ENTPD3	TM	False	no	allowed	allowed
+ENTPD8	TM	False	no	allowed	allowed
+EPCAM	SP+TM	False	no	allowed	allowed
+EPGN	SP+TM	False	no	allowed	allowed
+EPHA1	SP+TM	False	no	allowed	allowed
+EPHA10	SP+TM	False	no	allowed	allowed
+EPHA2	SP+TM	False	no	allowed	allowed
+EPHA3	SP+TM	False	no	allowed	allowed
+EPHA4	SP+TM	False	no	allowed	allowed
+EPHA5	SP+TM	False	no	allowed	allowed
+EPHA6	TM	False	no	allowed	allowed
+EPHA7	SP+TM	False	no	allowed	allowed
+EPHA8	SP+TM	False	no	allowed	allowed
+EPHB1	SP+TM	False	no	allowed	allowed
+EPHB2	SP+TM	False	yes	allowed	at risk		sheddase substrate (a metalloproteinase; gamma-secretase/PS1)
+EPHB3	SP+TM	False	no	allowed	allowed
+EPHB4	SP+TM	False	no	allowed	allowed
+EPHB6	SP+TM	False	no	allowed	allowed
+EPOR	SP+TM	False	no	allowed	allowed
+ERBB2	SP+TM	False	no	allowed	allowed
+ERBB3	SP+TM	False	no	allowed	allowed
+ERBB4	SP+TM	False	yes	at risk	at risk	class-I PDZ motif (NTVV), 2.85x over chance	processed, protease unnamed - shedding unresolved
+ERMAP	SP+TM	False	no	allowed	allowed
+ERVFRD-1	SP+TM	False	yes	at risk	at risk	class-I PDZ motif (ESPF), 2.85x over chance	processed, protease unnamed - shedding unresolved
+ERVMER34-1	SP+TM	False	yes	at risk	at risk	class-I PDZ motif (TSLL), 2.85x over chance	processed, protease unnamed - shedding unresolved
+ERVV-2	SP+TM	False	no	allowed	allowed
+ERVW-1	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+ESAM	SP+TM	False	no	at risk	allowed	class-I PDZ motif (GSLV), 2.85x over chance
+EVI2A	SP+TM	False	no	allowed	allowed
+EVI2B	SP+TM	False	no	allowed	allowed
+F11R	SP+TM	False	yes	allowed	allowed
+F2R	SP+TM	False	yes	allowed	allowed
+F2RL1		False	yes	allowed	allowed
+F2RL2	SP+TM	False	yes	allowed	allowed
+F2RL3	SP+TM	False	yes	allowed	allowed
+F3	SP+TM	False	no	allowed	allowed
+FAM171A1	SP+TM	False	no	allowed	allowed
+FAM171A2	SP+TM	False	no	allowed	allowed
+FAM174A	SP+TM	False	no	allowed	allowed
+FAM174B	SP+TM	False	no	allowed	allowed
+FAM187A	SP+TM	False	no	allowed	allowed
+FAM187B	SP+TM	False	no	allowed	allowed
+FAM209A	SP+TM	False	no	allowed	allowed
+FAM209B	SP+TM	False	no	allowed	allowed
+FAP	TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+FAS	SP+TM	False	no	at risk	allowed	class-I PDZ motif (QSLV), 2.85x over chance
+FASLG	TM	False	yes	allowed	at risk		sheddase substrate (ADAM10; SPPL2A)
+FCAMR	SP+TM	False	no	allowed	allowed
+FCAR	SP+TM	False	no	allowed	allowed
+FCER1A	SP+TM	False	no	allowed	allowed
+FCER2	TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+FCGR1A	SP+TM	False	no	allowed	allowed
+FCGR2A	SP+TM	False	no	allowed	allowed
+FCGR2B	SP+TM	False	no	allowed	allowed
+FCGR2C	SP+TM	False	no	allowed	allowed
+FCGR3A	SP+TM	False	yes	allowed	at risk		sheddase substrate (ADAM17)
+FCGR3B	SP+TM	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site; class-I PDZ motif (KTNI), 2.85x over chance
+FCGRT	SP+TM	False	no	allowed	allowed
+FCMR	SP+TM	False	no	allowed	allowed
+FCRL1	SP+TM	False	no	allowed	allowed
+FCRL2	SP+TM	False	no	allowed	allowed
+FCRL3	SP+TM	False	no	allowed	allowed
+FCRL4	SP+TM	False	no	allowed	allowed
+FCRL5	SP+TM	False	no	allowed	allowed
+FCRL6	SP+TM	False	no	allowed	allowed
+FFAR1	TM	False	no	allowed	allowed
+FFAR2	TM	False	no	allowed	allowed
+FFAR3	TM	False	no	allowed	allowed
+FFAR4	TM	False	no	allowed	allowed
+FGFR1	SP+TM	False	no	allowed	allowed
+FGFR2	SP+TM	False	no	allowed	allowed
+FGFR3	SP+TM	False	no	allowed	allowed
+FGFR4	SP+TM	False	no	allowed	allowed
+FGFRL1	SP+TM	False	no	allowed	allowed
+FIBCD1	TM	False	no	allowed	allowed
+FLRT1	SP+TM	False	no	allowed	allowed
+FLRT2	SP+TM	False	no	allowed	allowed
+FLRT3	SP+TM	False	no	allowed	allowed
+FLT1	SP+TM	False	yes	allowed	allowed
+FLT3	SP+TM	False	no	allowed	allowed
+FLT3LG	SP+TM	False	no	allowed	allowed
+FLT4	SP+TM	False	no	allowed	allowed
+FLVCR1	TM	False	no	at risk	allowed	class-I PDZ motif (ESAI), 2.85x over chance
+FLVCR2	TM	False	no	allowed	allowed
+FMR1NB	TM	False	no	allowed	allowed
+FNDC10	SP+TM	False	no	allowed	allowed
+FOLH1	TM	False	no	allowed	allowed
+FOLR1	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+FOLR2	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+FPR1	TM	False	no	allowed	allowed
+FPR2	TM	False	no	allowed	allowed
+FPR3	TM	False	no	allowed	allowed
+FRMD3	TM	False	no	allowed	allowed
+FSHR	SP+TM	False	no	allowed	allowed
+FXYD5	SP+TM	False	no	allowed	allowed
+FZD1	TM	False	no	at risk	allowed	class-I PDZ motif (ETTV), 2.85x over chance
+FZD10	SP+TM	False	no	at risk	allowed	class-I PDZ motif (PTCV), 2.85x over chance
+FZD2	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ETTV), 2.85x over chance
+FZD3	SP+TM	False	no	at risk	allowed	class-I PDZ motif (GTSA), 2.85x over chance
+FZD4	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ETVV), 2.85x over chance
+FZD5	SP+TM	False	no	at risk	allowed	class-I PDZ motif (LSHV), 2.85x over chance
+FZD6	SP+TM	False	no	allowed	allowed
+FZD7	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ETAV), 2.85x over chance
+FZD8	SP+TM	False	no	at risk	allowed	class-I PDZ motif (LSQV), 2.85x over chance
+FZD9	SP+TM	False	no	at risk	allowed	class-I PDZ motif (PTHL), 2.85x over chance
+GABBR2	SP+TM	False	no	at risk	allowed	class-I PDZ motif (VSGL), 2.85x over chance
+GABRA1	SP+TM	False	no	allowed	allowed
+GABRA2	SP+TM	False	no	allowed	allowed
+GABRA4	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ESLM), 2.85x over chance
+GABRA6	SP+TM	False	no	allowed	allowed
+GABRE	SP+TM	False	no	allowed	allowed
+GABRP	SP+TM	False	no	allowed	allowed
+GABRR1	SP+TM	False	no	allowed	allowed
+GABRR2	SP+TM	False	no	allowed	allowed
+GABRR3	SP+TM	False	no	allowed	allowed
+GALR1	TM	False	no	at risk	allowed	class-I PDZ motif (CTHV), 2.85x over chance
+GALR2	TM	False	no	allowed	allowed
+GALR3	TM	False	no	allowed	allowed
+GAS1	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+GCGR	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ESPF), 2.85x over chance
+GDPD2	TM	False	no	allowed	allowed
+GDPD4	TM	False	no	allowed	allowed
+GDPD5	TM	False	no	allowed	allowed
+GFRA1	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+GFRA2	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+GFRA3	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+GFRA4	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+GFRAL	SP+TM	False	no	allowed	allowed
+GGT1	TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+GGT5	TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+GGT6	TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+GGT7	TM	False	yes	at risk	at risk	class-I PDZ motif (ATIL), 2.85x over chance	processed, protease unnamed - shedding unresolved
+GHR	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+GHRHR	SP+TM	False	no	at risk	allowed	class-I PDZ motif (TSMC), 2.85x over chance
+GHSR	TM	False	no	allowed	allowed
+GIPR	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ESYC), 2.85x over chance
+GJA1	TM	False	no	allowed	allowed
+GJA10	TM	False	no	allowed	allowed
+GJA3	TM	False	no	allowed	allowed
+GJA4	TM	False	no	allowed	allowed
+GJA5	TM	False	no	allowed	allowed
+GJA8	TM	False	no	allowed	allowed
+GJA9	TM	False	no	allowed	allowed
+GJB1	TM	False	no	at risk	allowed	class-I PDZ motif (CSAC), 2.85x over chance
+GJB2	TM	False	no	allowed	allowed
+GJB3	TM	False	no	at risk	allowed	class-I PDZ motif (LTPI), 2.85x over chance
+GJB4	TM	False	no	allowed	allowed
+GJB6	TM	False	no	allowed	allowed
+GJB7	TM	False	no	allowed	allowed
+GJC2	TM	False	no	allowed	allowed
+GJC3	TM	False	no	allowed	allowed
+GJD3	TM	False	no	allowed	allowed
+GJD4	TM	False	no	allowed	allowed
+GJE1	TM	False	no	allowed	allowed
+GLIPR1	SP+TM	False	no	allowed	allowed
+GLIPR1L1	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+GLP1R	SP+TM	False	no	allowed	allowed
+GLP2R	TM	False	no	at risk	allowed	class-I PDZ motif (ESEI), 2.85x over chance
+GLRA1	SP+TM	False	no	allowed	allowed
+GLRA2	SP+TM	False	no	allowed	allowed
+GLRA3	SP+TM	False	no	allowed	allowed
+GML	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+GNRHR	TM	False	no	allowed	allowed
+GP2	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+GP5	SP+TM	False	no	allowed	allowed
+GP6	SP+TM	False	no	allowed	allowed
+GPA33	SP+TM	False	no	allowed	allowed
+GPBAR1	TM	False	no	allowed	allowed
+GPC1	SP	True	yes	forbidden	at risk	GPI: the C-terminus is removed at the omega site	processed, protease unnamed - shedding unresolved
+GPC2	SP	True	yes	forbidden	at risk	GPI: the C-terminus is removed at the omega site	processed, protease unnamed - shedding unresolved
+GPC3	SP	True	yes	forbidden	at risk	GPI: the C-terminus is removed at the omega site	processed, protease unnamed - shedding unresolved
+GPC4	SP	True	yes	forbidden	at risk	GPI: the C-terminus is removed at the omega site	processed, protease unnamed - shedding unresolved
+GPC5	SP	True	yes	forbidden	at risk	GPI: the C-terminus is removed at the omega site	processed, protease unnamed - shedding unresolved
+GPC6	SP	True	yes	forbidden	at risk	GPI: the C-terminus is removed at the omega site	processed, protease unnamed - shedding unresolved
+GPIHBP1	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+GPM6A	TM	False	no	allowed	allowed
+GPM6B	TM	False	no	at risk	allowed	class-I PDZ motif (CTKF), 2.85x over chance
+GPNMB	SP+TM	False	no	allowed	allowed
+GPR101	TM	False	no	allowed	allowed
+GPR119	TM	False	no	allowed	allowed
+GPR12	TM	False	no	at risk	allowed	class-I PDZ motif (PSDV), 2.85x over chance
+GPR132	TM	False	no	allowed	allowed
+GPR135	TM	False	no	at risk	allowed	class-I PDZ motif (DTSL), 2.85x over chance
+GPR139	TM	False	no	allowed	allowed
+GPR141	TM	False	no	allowed	allowed
+GPR142	TM	False	no	allowed	allowed
+GPR146	TM	False	no	allowed	allowed
+GPR149	TM	False	no	allowed	allowed
+GPR15	TM	False	no	allowed	allowed
+GPR150	TM	False	no	at risk	allowed	class-I PDZ motif (ESAF), 2.85x over chance
+GPR151	TM	False	no	allowed	allowed
+GPR152	TM	False	no	allowed	allowed
+GPR153	TM	False	no	allowed	allowed
+GPR156	TM	False	no	at risk	allowed	class-I PDZ motif (PTLV), 2.85x over chance
+GPR157	TM	False	no	allowed	allowed
+GPR158	SP+TM	False	no	allowed	allowed
+GPR160	TM	False	no	allowed	allowed
+GPR161	TM	False	no	allowed	allowed
+GPR162	TM	False	no	allowed	allowed
+GPR17	TM	False	no	at risk	allowed	class-I PDZ motif (KSEL), 2.85x over chance
+GPR171	TM	False	no	allowed	allowed
+GPR173	TM	False	no	allowed	allowed
+GPR174	TM	False	no	allowed	allowed
+GPR176	TM	False	no	allowed	allowed
+GPR18	TM	False	no	allowed	allowed
+GPR183	TM	False	no	allowed	allowed
+GPR19	TM	False	no	at risk	allowed	class-I PDZ motif (NTFV), 2.85x over chance
+GPR20	TM	False	no	allowed	allowed
+GPR21	TM	False	no	allowed	allowed
+GPR25	TM	False	no	allowed	allowed
+GPR26	TM	False	no	allowed	allowed
+GPR27	TM	False	no	allowed	allowed
+GPR3	TM	False	no	at risk	allowed	class-I PDZ motif (PSDV), 2.85x over chance
+GPR32	TM	False	no	allowed	allowed
+GPR33	TM	False	no	allowed	allowed
+GPR34	TM	False	no	allowed	allowed
+GPR35	TM	False	no	at risk	allowed	class-I PDZ motif (VTLA), 2.85x over chance
+GPR37L1	SP+TM	False	no	at risk	allowed	class-I PDZ motif (GTPC), 2.85x over chance
+GPR39	TM	False	no	allowed	allowed
+GPR4	TM	False	no	allowed	allowed
+GPR42		False	no	allowed	allowed
+GPR45	TM	False	no	at risk	allowed	class-I PDZ motif (QSAV), 2.85x over chance
+GPR50	TM	False	yes	allowed	allowed
+GPR52	TM	False	no	allowed	allowed
+GPR55	TM	False	no	allowed	allowed
+GPR6	TM	False	no	at risk	allowed	class-I PDZ motif (PSEV), 2.85x over chance
+GPR61	TM	False	no	allowed	allowed
+GPR62	TM	False	no	allowed	allowed
+GPR63	TM	False	no	at risk	allowed	class-I PDZ motif (RTVV), 2.85x over chance
+GPR65	TM	False	no	allowed	allowed
+GPR68	TM	False	no	allowed	allowed
+GPR75	TM	False	no	allowed	allowed
+GPR78	TM	False	no	allowed	allowed
+GPR83	SP+TM	False	no	allowed	allowed
+GPR84	TM	False	no	allowed	allowed
+GPR85	TM	False	no	allowed	allowed
+GPR87	TM	False	no	at risk	allowed	class-I PDZ motif (YTDV), 2.85x over chance
+GPR88	TM	False	no	allowed	allowed
+GPRC5A	TM	False	no	allowed	allowed
+GPRC5B	SP+TM	False	no	allowed	allowed
+GPRC5C	SP+TM	False	no	allowed	allowed
+GPRC5D	TM	False	no	allowed	allowed
+GPRC6A	SP+TM	False	no	at risk	allowed	class-I PDZ motif (MSSI), 2.85x over chance
+GRIA1	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ATGL), 2.85x over chance
+GRIA2	SP+TM	False	no	allowed	allowed
+GRIA3	SP+TM	False	no	allowed	allowed
+GRIA4	SP+TM	False	no	allowed	allowed
+GRID1	SP+TM	False	no	at risk	allowed	class-I PDZ motif (GTSI), 2.85x over chance
+GRID2	SP+TM	False	no	at risk	allowed	class-I PDZ motif (GTSI), 2.85x over chance
+GRIK1	SP+TM	False	no	allowed	allowed
+GRIK2	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ETMA), 2.85x over chance
+GRIK3	SP+TM	False	no	allowed	allowed
+GRIK4	SP+TM	False	no	allowed	allowed
+GRM1	SP+TM	False	no	at risk	allowed	class-I PDZ motif (SSTL), 2.85x over chance
+GRM2	SP+TM	False	no	at risk	allowed	class-I PDZ motif (TSSL), 2.85x over chance
+GRM3	SP+TM	False	no	at risk	allowed	class-I PDZ motif (TSSL), 2.85x over chance
+GRM4	SP+TM	False	no	allowed	allowed
+GRM5	SP+TM	False	no	at risk	allowed	class-I PDZ motif (SSSL), 2.85x over chance
+GRM6	SP+TM	False	no	allowed	allowed
+GRM7	SP+TM	False	no	allowed	allowed
+GRM8	SP+TM	False	no	allowed	allowed
+GRPR	TM	False	no	allowed	allowed
+GSG1L	TM	False	no	allowed	allowed
+GSG1L2	TM	False	no	at risk	allowed	class-I PDZ motif (VSIC), 2.85x over chance
+GUCY2C	SP+TM	False	no	at risk	allowed	class-I PDZ motif (STYF), 2.85x over chance
+GUCY2D	SP+TM	False	no	allowed	allowed
+GUCY2F	SP+TM	False	no	allowed	allowed
+GYPA	SP+TM	False	no	allowed	allowed
+GYPB	SP+TM	False	no	allowed	allowed
+GYPC	TM	False	no	allowed	allowed
+GYPE	SP+TM	False	no	allowed	allowed
+HAS3	TM	False	no	allowed	allowed
+HAVCR1	SP+TM	False	no	allowed	allowed
+HAVCR2	SP+TM	False	no	allowed	allowed
+HBEGF	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+HCAR1	TM	False	no	allowed	allowed
+HCAR2	TM	False	no	allowed	allowed
+HCAR3	TM	False	no	allowed	allowed
+HCN1	TM	False	no	at risk	allowed	class-I PDZ motif (ASNL), 2.85x over chance
+HCN2	TM	False	no	at risk	allowed	class-I PDZ motif (SSNL), 2.85x over chance
+HCN3	TM	False	no	allowed	allowed
+HCN4	TM	False	no	at risk	allowed	class-I PDZ motif (PSNL), 2.85x over chance
+HCRTR1	TM	False	no	allowed	allowed
+HCRTR2	TM	False	no	allowed	allowed
+HEG1	SP+TM	False	no	allowed	allowed
+HEPACAM	SP+TM	False	no	allowed	allowed
+HEPACAM2	SP+TM	False	no	allowed	allowed
+HEPH	SP+TM	False	no	allowed	allowed
+HEPHL1	SP+TM	False	no	allowed	allowed
+HFE	SP+TM	False	no	allowed	allowed
+HHLA2	SP+TM	False	no	allowed	allowed
+HJV	SP	True	yes	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+HLA-A	SP+TM	False	no	allowed	allowed
+HLA-B	SP+TM	False	no	allowed	allowed
+HLA-C	SP+TM	False	no	allowed	allowed
+HLA-E	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+HLA-G	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+HPN	TM	False	yes	at risk	at risk	class-I PDZ motif (VTQL), 2.85x over chance	processed, protease unnamed - shedding unresolved
+HRH1	TM	False	no	allowed	allowed
+HRH2	TM	False	no	allowed	allowed
+HRH3	TM	False	no	allowed	allowed
+HRH4	TM	False	no	allowed	allowed
+HS3ST2	TM	False	no	allowed	allowed
+HTR1A	TM	False	no	allowed	allowed
+HTR1B	TM	False	no	allowed	allowed
+HTR1D	TM	False	no	allowed	allowed
+HTR1E	TM	False	no	allowed	allowed
+HTR1F	TM	False	no	allowed	allowed
+HTR2A	TM	False	no	at risk	allowed	class-I PDZ motif (VSCV), 2.85x over chance
+HTR2B	TM	False	no	at risk	allowed	class-I PDZ motif (VSYV), 2.85x over chance
+HTR2C	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ISSV), 2.85x over chance
+HTR3A	SP+TM	False	no	allowed	allowed
+HTR4	TM	False	no	allowed	allowed
+HTR5A	TM	False	no	allowed	allowed
+HTR6	TM	False	no	allowed	allowed
+HTR7	TM	False	no	allowed	allowed
+HYAL2	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+ICAM1	SP+TM	False	no	allowed	allowed
+ICAM2	SP+TM	False	no	allowed	allowed
+ICAM3	SP+TM	False	no	allowed	allowed
+ICAM4	SP+TM	False	no	at risk	allowed	class-I PDZ motif (KSQA), 2.85x over chance
+ICAM5	SP+TM	False	no	at risk	allowed	class-I PDZ motif (LTSA), 2.85x over chance
+ICOS	SP+TM	False	no	allowed	allowed
+ICOSLG	SP+TM	False	no	allowed	allowed
+IFNAR1	SP+TM	False	no	allowed	allowed
+IFNAR2	SP+TM	False	no	allowed	allowed
+IFNGR1	SP+TM	False	no	allowed	allowed
+IFNGR2	SP+TM	False	no	allowed	allowed
+IFNLR1	SP+TM	False	no	allowed	allowed
+IGDCC3	SP+TM	False	no	allowed	allowed
+IGDCC4	SP+TM	False	no	at risk	allowed	class-I PDZ motif (SSSA), 2.85x over chance
+IGF1R	SP+TM	False	yes	at risk	at risk	class-I PDZ motif (SSTC), 2.85x over chance	processed, protease unnamed - shedding unresolved
+IGFLR1	SP+TM	False	no	allowed	allowed
+IGLON5	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+IGSF1	SP+TM	False	no	allowed	allowed
+IGSF11	SP+TM	False	no	at risk	allowed	class-I PDZ motif (GSLV), 2.85x over chance
+IGSF21	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+IGSF23	TM	False	no	allowed	allowed
+IGSF3	SP+TM	False	no	allowed	allowed
+IGSF5	TM	False	no	at risk	allowed	class-I PDZ motif (TTVV), 2.85x over chance
+IGSF8	SP+TM	False	no	allowed	allowed
+IGSF9	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ATLL), 2.85x over chance
+IGSF9B	SP+TM	False	no	at risk	allowed	class-I PDZ motif (LSKL), 2.85x over chance
+IL10RA	SP+TM	False	no	allowed	allowed
+IL10RB	SP+TM	False	no	allowed	allowed
+IL11RA	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+IL12RB1	SP+TM	False	no	allowed	allowed
+IL12RB2	SP+TM	False	no	allowed	allowed
+IL13RA1	SP+TM	False	no	allowed	allowed
+IL13RA2	SP+TM	False	no	allowed	allowed
+IL15RA	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+IL17RA	SP+TM	False	no	allowed	allowed
+IL17RB	SP+TM	False	no	allowed	allowed
+IL17RC	SP+TM	False	no	allowed	allowed
+IL17RD	SP+TM	False	no	allowed	allowed
+IL17RE	SP+TM	False	no	allowed	allowed
+IL18R1	SP+TM	False	no	allowed	allowed
+IL18RAP	SP+TM	False	no	allowed	allowed
+IL1R1	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+IL1R2	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+IL1RAP	SP+TM	False	no	allowed	allowed
+IL1RAPL1	SP+TM	False	no	allowed	allowed
+IL1RAPL2	SP+TM	False	no	allowed	allowed
+IL1RL1	SP+TM	False	no	allowed	allowed
+IL1RL2	SP+TM	False	no	allowed	allowed
+IL20RA	SP+TM	False	no	allowed	allowed
+IL20RB	SP+TM	False	no	allowed	allowed
+IL21R	SP+TM	False	no	allowed	allowed
+IL22RA1	SP+TM	False	no	allowed	allowed
+IL23R	SP+TM	False	no	allowed	allowed
+IL27RA	SP+TM	False	no	allowed	allowed
+IL2RA	SP+TM	False	no	allowed	allowed
+IL2RB	SP+TM	False	no	allowed	allowed
+IL2RG	SP+TM	False	no	allowed	allowed
+IL31RA	SP+TM	False	no	allowed	allowed
+IL3RA	SP+TM	False	no	allowed	allowed
+IL4R	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+IL5RA	SP+TM	False	no	at risk	allowed	class-I PDZ motif (DSVF), 2.85x over chance
+IL6R	SP+TM	False	yes	allowed	at risk		sheddase substrate (ADAM10 and ADAM17)
+IL6ST	SP+TM	False	no	allowed	allowed
+IL7R	SP+TM	False	no	allowed	allowed
+IL9R	SP+TM	False	no	allowed	allowed
+ILDR1	SP+TM	False	no	allowed	allowed
+ILDR2	SP+TM	False	no	allowed	allowed
+IMPG2	SP+TM	False	no	allowed	allowed
+INSR	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+INSRR	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+ISLR	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+ISLR2	SP+TM	False	no	allowed	allowed
+ITFG1	SP+TM	False	no	allowed	allowed
+ITGA1	SP+TM	False	no	allowed	allowed
+ITGA10	SP+TM	False	no	allowed	allowed
+ITGA11	SP+TM	False	no	allowed	allowed
+ITGA2	SP+TM	False	no	allowed	allowed
+ITGA3	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+ITGA4	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+ITGA5	SP+TM	False	yes	at risk	at risk	class-I PDZ motif (TSDA), 2.85x over chance	processed, protease unnamed - shedding unresolved
+ITGA6	SP+TM	False	yes	allowed	allowed
+ITGA7	SP+TM	False	yes	allowed	allowed
+ITGA8	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+ITGA9	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+ITGAV	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+ITGB1	SP+TM	False	no	allowed	allowed
+ITGB2	SP+TM	False	no	allowed	allowed
+ITGB3	SP+TM	False	no	allowed	allowed
+ITGB5	SP+TM	False	no	allowed	allowed
+ITGB6	SP+TM	False	no	at risk	allowed	class-I PDZ motif (STDC), 2.85x over chance
+ITGB7	SP+TM	False	no	allowed	allowed
+ITGB8	SP+TM	False	no	allowed	allowed
+ITM2B	TM	False	yes	allowed	allowed
+IZUMO1R	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+IZUMO2	SP+TM	False	no	allowed	allowed
+IZUMO3	SP+TM	False	no	allowed	allowed
+JAG1	SP+TM	False	no	allowed	allowed
+JAG2	SP+TM	False	no	allowed	allowed
+JAM2	SP+TM	False	no	allowed	allowed
+JAM3	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+JAML	SP+TM	False	no	allowed	allowed
+KCNA1	TM	False	no	at risk	allowed	class-I PDZ motif (LTDV), 2.85x over chance
+KCNA10	TM	False	no	allowed	allowed
+KCNA2	TM	False	no	at risk	allowed	class-I PDZ motif (LTDV), 2.85x over chance
+KCNA3	TM	False	no	at risk	allowed	class-I PDZ motif (FTDV), 2.85x over chance
+KCNA4	TM	False	no	at risk	allowed	class-I PDZ motif (ETDV), 2.85x over chance
+KCNA5	TM	False	no	at risk	allowed	class-I PDZ motif (ETDL), 2.85x over chance
+KCNA6	TM	False	no	at risk	allowed	class-I PDZ motif (LTEV), 2.85x over chance
+KCNA7	TM	False	no	at risk	allowed	class-I PDZ motif (VTEV), 2.85x over chance
+KCNB1	TM	False	no	allowed	allowed
+KCNB2	TM	False	no	at risk	allowed	class-I PDZ motif (ETSM), 2.85x over chance
+KCNC1	TM	False	no	allowed	allowed
+KCNC2	TM	False	no	at risk	allowed	class-I PDZ motif (PSIL), 2.85x over chance
+KCNC3	TM	False	no	allowed	allowed
+KCNC4	TM	False	no	allowed	allowed
+KCND1	TM	False	no	at risk	allowed	class-I PDZ motif (ISSL), 2.85x over chance
+KCND3	TM	False	no	at risk	allowed	class-I PDZ motif (VSAL), 2.85x over chance
+KCNE2	TM	False	no	allowed	allowed
+KCNE3	TM	False	no	at risk	allowed	class-I PDZ motif (VSMI), 2.85x over chance
+KCNE4	TM	False	no	allowed	allowed
+KCNE5	TM	False	no	allowed	allowed
+KCNH1	TM	False	no	allowed	allowed
+KCNH2	TM	False	no	allowed	allowed
+KCNH3	TM	False	no	at risk	allowed	class-I PDZ motif (GTGV), 2.85x over chance
+KCNH4	TM	False	no	allowed	allowed
+KCNH5	TM	False	no	allowed	allowed
+KCNH6	TM	False	no	allowed	allowed
+KCNH7	TM	False	no	allowed	allowed
+KCNH8	TM	False	no	allowed	allowed
+KCNJ1	TM	False	no	at risk	allowed	class-I PDZ motif (DTKM), 2.85x over chance
+KCNJ10	TM	False	no	at risk	allowed	class-I PDZ motif (ISNV), 2.85x over chance
+KCNJ12	TM	False	no	at risk	allowed	class-I PDZ motif (ESEI), 2.85x over chance
+KCNJ13	TM	False	no	allowed	allowed
+KCNJ14	TM	False	no	allowed	allowed
+KCNJ15	TM	False	no	at risk	allowed	class-I PDZ motif (QSNV), 2.85x over chance
+KCNJ2	TM	False	no	at risk	allowed	class-I PDZ motif (ESEI), 2.85x over chance
+KCNJ4	TM	False	no	at risk	allowed	class-I PDZ motif (ESAI), 2.85x over chance
+KCNJ5	TM	False	no	allowed	allowed
+KCNJ6	TM	False	no	at risk	allowed	class-I PDZ motif (ESKV), 2.85x over chance
+KCNJ9	TM	False	no	at risk	allowed	class-I PDZ motif (ESKV), 2.85x over chance
+KCNK10	TM	False	no	allowed	allowed
+KCNK13	TM	False	no	allowed	allowed
+KCNK17	TM	False	no	allowed	allowed
+KCNK18	TM	False	no	allowed	allowed
+KCNK2	TM	False	no	allowed	allowed
+KCNK3	TM	False	no	at risk	allowed	class-I PDZ motif (RSSV), 2.85x over chance
+KCNK4	TM	False	no	allowed	allowed
+KCNK5	TM	False	no	allowed	allowed
+KCNK9	TM	False	no	allowed	allowed
+KCNMA1	TM	False	no	allowed	allowed
+KCNMB1	TM	False	no	allowed	allowed
+KCNMB2	TM	False	no	allowed	allowed
+KCNN1	TM	False	no	allowed	allowed
+KCNN2	TM	False	no	allowed	allowed
+KCNN3	TM	False	no	at risk	allowed	class-I PDZ motif (SSSC), 2.85x over chance
+KCNN4	TM	False	no	allowed	allowed
+KCNQ1	TM	False	no	allowed	allowed
+KCNQ2	TM	False	no	allowed	allowed
+KCNQ4	TM	False	no	allowed	allowed
+KCNQ5	TM	False	no	allowed	allowed
+KCNT1	TM	False	no	at risk	allowed	class-I PDZ motif (ETQL), 2.85x over chance
+KCNT2	TM	False	no	at risk	allowed	class-I PDZ motif (ETQL), 2.85x over chance
+KCNU1	TM	False	no	allowed	allowed
+KDR	SP+TM	False	no	allowed	allowed
+KEL	TM	False	no	allowed	allowed
+KIAA0319	SP+TM	False	no	allowed	allowed
+KIAA2013	TM	False	no	allowed	allowed
+KIR2DL1	SP+TM	False	no	allowed	allowed
+KIR2DL2	SP+TM	False	no	allowed	allowed
+KIR2DL3	SP+TM	False	no	allowed	allowed
+KIR2DL5A	SP+TM	False	no	allowed	allowed
+KIR2DS2	SP+TM	False	no	at risk	allowed	class-I PDZ motif (VSYA), 2.85x over chance
+KIR2DS4		False	no	allowed	allowed
+KIR2DS5	SP+TM	False	no	at risk	allowed	class-I PDZ motif (VSYA), 2.85x over chance
+KIR3DL1	SP+TM	False	no	allowed	allowed
+KIR3DL2	SP+TM	False	no	allowed	allowed
+KIR3DL3		False	no	allowed	allowed
+KIR3DS1	SP+TM	False	no	allowed	allowed
+KIRREL1	SP+TM	False	no	at risk	allowed	class-I PDZ motif (QTHV), 2.85x over chance
+KIRREL2	SP+TM	False	no	at risk	allowed	class-I PDZ motif (QTHV), 2.85x over chance
+KIRREL3	SP+TM	False	yes	at risk	at risk	class-I PDZ motif (QTHV), 2.85x over chance	processed, protease unnamed - shedding unresolved
+KISS1R	TM	False	no	allowed	allowed
+KIT	SP+TM	False	no	allowed	allowed
+KITLG	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+KL	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+KLB	TM	False	no	allowed	allowed
+KLRB1	TM	False	no	allowed	allowed
+KLRF1	TM	False	no	allowed	allowed
+KLRF2	TM	False	no	at risk	allowed	class-I PDZ motif (TSGV), 2.85x over chance
+KLRG1	TM	False	no	allowed	allowed
+KREMEN1	SP+TM	False	no	allowed	allowed
+KREMEN2	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ISAL), 2.85x over chance
+L1CAM	SP+TM	False	no	allowed	allowed
+LAG3	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+LAIR1	SP+TM	False	no	allowed	allowed
+LAX1	TM	False	no	allowed	allowed
+LAYN	SP+TM	False	no	allowed	allowed
+LCTL	SP+TM	False	no	allowed	allowed
+LDLR	SP+TM	False	no	allowed	allowed
+LDLRAD3	SP+TM	False	no	allowed	allowed
+LEPR	SP+TM	False	no	allowed	allowed
+LGR4	SP+TM	False	no	allowed	allowed
+LGR5	SP+TM	False	no	allowed	allowed
+LGR6	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ASHV), 2.85x over chance
+LHCGR	SP+TM	False	no	at risk	allowed	class-I PDZ motif (YTEC), 2.85x over chance
+LHFPL6	TM	False	no	allowed	allowed
+LIFR	SP+TM	False	no	allowed	allowed
+LILRA1	SP+TM	False	no	allowed	allowed
+LILRA2	SP+TM	False	no	allowed	allowed
+LILRA5	SP+TM	False	no	allowed	allowed
+LILRA6	SP+TM	False	no	allowed	allowed
+LILRB1		False	no	allowed	allowed
+LILRB2	SP+TM	False	no	allowed	allowed
+LILRB3	SP+TM	False	no	allowed	allowed
+LILRB4	SP+TM	False	no	allowed	allowed
+LILRB5	SP+TM	False	no	allowed	allowed
+LIM2	TM	False	no	allowed	allowed
+LINGO1	SP+TM	False	no	allowed	allowed
+LINGO2	SP+TM	False	no	allowed	allowed
+LINGO3	SP+TM	False	no	allowed	allowed
+LINGO4	SP+TM	False	no	allowed	allowed
+LMBR1L	TM	False	no	allowed	allowed
+LMBRD2	TM	False	no	allowed	allowed
+LMLN	GLOB	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+LPAR1	TM	False	no	at risk	allowed	class-I PDZ motif (HSVV), 2.85x over chance
+LPAR2	TM	False	no	at risk	allowed	class-I PDZ motif (DSTL), 2.85x over chance
+LPAR3	TM	False	no	allowed	allowed
+LPAR4	TM	False	no	at risk	allowed	class-I PDZ motif (ESTF), 2.85x over chance
+LPAR5	TM	False	no	at risk	allowed	class-I PDZ motif (DSAL), 2.85x over chance
+LPAR6	TM	False	no	at risk	allowed	class-I PDZ motif (ESAA), 2.85x over chance
+LRFN1	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ESTV), 2.85x over chance
+LRFN2	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ESTV), 2.85x over chance
+LRFN3	SP+TM	False	no	allowed	allowed
+LRFN4	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ESVV), 2.85x over chance
+LRFN5	SP+TM	False	no	allowed	allowed
+LRIG1	SP+TM	False	no	allowed	allowed
+LRIG2	SP+TM	False	no	allowed	allowed
+LRIG3	SP+TM	False	no	allowed	allowed
+LRIT1	SP+TM	False	no	allowed	allowed
+LRIT3	SP+TM	False	no	allowed	allowed
+LRP10	SP+TM	False	no	allowed	allowed
+LRP11	SP+TM	False	no	allowed	allowed
+LRP12	SP+TM	False	no	allowed	allowed
+LRP3	SP+TM	False	no	allowed	allowed
+LRP5	SP+TM	False	no	allowed	allowed
+LRP6	SP+TM	False	no	allowed	allowed
+LRP8	SP+TM	False	no	allowed	allowed
+LRRC15	SP+TM	False	no	allowed	allowed
+LRRC19	SP+TM	False	no	allowed	allowed
+LRRC25	SP+TM	False	no	allowed	allowed
+LRRC26	SP+TM	False	no	allowed	allowed
+LRRC32	SP+TM	False	no	allowed	allowed
+LRRC37A3	SP+TM	False	no	allowed	allowed
+LRRC37B	TM	False	no	at risk	allowed	class-I PDZ motif (ISGA), 2.85x over chance
+LRRC38	SP+TM	False	no	allowed	allowed
+LRRC4	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ETQI), 2.85x over chance
+LRRC4B	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ETQI), 2.85x over chance
+LRRC4C	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ETQI), 2.85x over chance
+LRRC55	SP+TM	False	no	allowed	allowed
+LRRC8A	TM	False	no	allowed	allowed
+LRRC8B	TM	False	no	allowed	allowed
+LRRC8C	TM	False	no	allowed	allowed
+LRRC8D	TM	False	no	allowed	allowed
+LRRC8E	TM	False	no	allowed	allowed
+LRRN1	SP+TM	False	no	allowed	allowed
+LRRN2	SP+TM	False	no	allowed	allowed
+LRRN3	SP+TM	False	no	allowed	allowed
+LRRN4	SP+TM	False	no	allowed	allowed
+LRRN4CL	SP+TM	False	no	allowed	allowed
+LRRTM1	SP+TM	False	no	allowed	allowed
+LRRTM2	SP+TM	False	no	allowed	allowed
+LRRTM3	SP+TM	False	no	allowed	allowed
+LRRTM4	SP+TM	False	no	allowed	allowed
+LRTM1	SP+TM	False	no	at risk	allowed	class-I PDZ motif (SSPA), 2.85x over chance
+LRTM2	SP+TM	False	no	at risk	allowed	class-I PDZ motif (SSVA), 2.85x over chance
+LSAMP	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+LSMEM2	TM	False	no	allowed	allowed
+LSR	SP+TM	False	no	allowed	allowed
+LTB	TM	False	no	allowed	allowed
+LTB4R	TM	False	no	allowed	allowed
+LTB4R2	TM	False	no	allowed	allowed
+LTBR	SP+TM	False	no	allowed	allowed
+LVRN	TM	False	no	allowed	allowed
+LY6D	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+LY6E	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+LY6G6C	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+LY6G6D	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+LY6G6F	SP+TM	False	no	allowed	allowed
+LY6H	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+LY6K	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+LY6L	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+LY6S	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+LY9	SP+TM	False	no	allowed	allowed
+LYNX1	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+LYPD1	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+LYPD2	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+LYPD3	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+LYPD5	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+LYPD6	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+LYPD6B	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+LYPD8	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+LYSMD3	TM	False	no	allowed	allowed
+LYSMD4	TM	False	no	allowed	allowed
+LYVE1	SP+TM	False	no	allowed	allowed
+M6PR	SP+TM	False	no	allowed	allowed
+MADCAM1	SP+TM	False	no	allowed	allowed
+MAG	SP+TM	False	no	allowed	allowed
+MANSC4	SP+TM	False	no	allowed	allowed
+MARCO	TM	False	no	allowed	allowed
+MARVELD3	TM	False	no	allowed	allowed
+MAS1	TM	False	no	at risk	allowed	class-I PDZ motif (ETVV), 2.85x over chance
+MAS1L	TM	False	no	allowed	allowed
+MC1R	TM	False	no	allowed	allowed
+MC3R	TM	False	no	allowed	allowed
+MC4R	TM	False	no	at risk	allowed	class-I PDZ motif (SSRY), 2.85x over chance
+MC5R	TM	False	no	allowed	allowed
+MCAM	SP+TM	False	no	allowed	allowed
+MCEMP1	TM	False	no	allowed	allowed
+MCHR1	TM	False	no	allowed	allowed
+MCHR2	TM	False	no	at risk	allowed	class-I PDZ motif (KSHF), 2.85x over chance
+MDGA1	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+MDGA2	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+MEGF10	SP+TM	False	no	allowed	allowed
+MEGF11	SP+TM	False	no	allowed	allowed
+MEGF9	SP+TM	False	no	allowed	allowed
+MELTF	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+MEP1B	SP+TM	False	no	allowed	allowed
+MERTK	SP+TM	False	no	allowed	allowed
+MET	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+MFRP	TM	False	no	allowed	allowed
+MFSD2A	TM	False	no	at risk	allowed	class-I PDZ motif (ASIL), 2.85x over chance
+MFSD2B	TM	False	no	at risk	allowed	class-I PDZ motif (YSLA), 2.85x over chance
+MFSD6	TM	False	no	allowed	allowed
+MICA		False	no	allowed	allowed
+MICB	SP+TM	False	no	allowed	allowed
+MILR1	SP+TM	False	no	allowed	allowed
+MIP	TM	False	no	allowed	allowed
+MLNR	TM	False	no	allowed	allowed
+MME	TM	False	no	allowed	allowed
+MMEL1	TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+MMP14	SP+TM	False	no	allowed	allowed
+MMP15	SP+TM	False	no	allowed	allowed
+MMP16	SP+TM	False	no	allowed	allowed
+MMP17	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+MMP24	SP+TM	False	yes	allowed	allowed
+MMP25	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+MOG	SP+TM	False	no	allowed	allowed
+MOSMO	TM	False	no	allowed	allowed
+MPIG6B	SP+TM	False	no	allowed	allowed
+MPL	SP+TM	False	no	allowed	allowed
+MPZ	SP+TM	False	no	allowed	allowed
+MPZL1	SP+TM	False	no	allowed	allowed
+MPZL2	SP+TM	False	no	allowed	allowed
+MPZL3	SP+TM	False	no	allowed	allowed
+MR1	SP+TM	False	no	allowed	allowed
+MRAP	TM	False	no	allowed	allowed
+MRAP2	TM	False	no	allowed	allowed
+MRC1	SP+TM	False	no	at risk	allowed	class-I PDZ motif (HSVI), 2.85x over chance
+MRC2	SP+TM	False	no	allowed	allowed
+MRGPRD	TM	False	no	allowed	allowed
+MRGPRE	TM	False	no	allowed	allowed
+MRGPRF	TM	False	no	allowed	allowed
+MRGPRX1	TM	False	yes	allowed	allowed
+MRGPRX2	TM	False	no	at risk	allowed	class-I PDZ motif (SSLV), 2.85x over chance
+MRGPRX3	TM	False	no	allowed	allowed
+MRGPRX4	TM	False	no	allowed	allowed
+MS4A1	TM	False	no	allowed	allowed
+MS4A10	TM	False	no	allowed	allowed
+MS4A12	TM	False	no	allowed	allowed
+MS4A13	TM	False	no	allowed	allowed
+MS4A2	TM	False	no	allowed	allowed
+MS4A3	TM	False	no	allowed	allowed
+MS4A4A	TM	False	no	allowed	allowed
+MS4A5	TM	False	no	allowed	allowed
+MS4A6A	TM	False	no	allowed	allowed
+MS4A7	TM	False	no	at risk	allowed	class-I PDZ motif (RSWI), 2.85x over chance
+MSLN	SP	True	yes	forbidden	at risk	GPI: the C-terminus is removed at the omega site	processed, protease unnamed - shedding unresolved
+MSR1	TM	False	no	allowed	allowed
+MST1R	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+MTNR1A	TM	False	no	allowed	allowed
+MTNR1B	TM	False	no	allowed	allowed
+MUC1	SP+TM	False	yes	allowed	allowed
+MUC13	SP+TM	False	no	allowed	allowed
+MUC15	SP+TM	False	no	at risk	allowed	class-I PDZ motif (RTSV), 2.85x over chance
+MUC21	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+MUSK	SP+TM	False	no	allowed	allowed
+MXRA8	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+MYADM	TM	False	no	allowed	allowed
+MYMK	TM	False	no	allowed	allowed
+NAALAD2	TM	False	no	allowed	allowed
+NAALADL1	TM	False	no	allowed	allowed
+NAALADL2	TM	False	no	allowed	allowed
+NCAM1	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+NCAM2	SP+TM	False	no	at risk	allowed	class-I PDZ motif (DSKA), 2.85x over chance
+NCR1	SP+TM	False	no	allowed	allowed
+NCR3	SP+TM	False	no	allowed	allowed
+NCR3LG1	SP+TM	False	no	allowed	allowed
+NECTIN1	SP+TM	False	no	allowed	allowed
+NECTIN2	SP+TM	False	no	allowed	allowed
+NECTIN3	SP+TM	False	no	allowed	allowed
+NECTIN4	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+NEGR1	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+NEO1	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ITTA), 2.85x over chance
+NETO1	SP+TM	False	no	at risk	allowed	class-I PDZ motif (TTRV), 2.85x over chance
+NETO2	SP+TM	False	no	allowed	allowed
+NFAM1	SP+TM	False	no	allowed	allowed
+NFASC	SP+TM	False	no	at risk	allowed	class-I PDZ motif (YSLA), 2.85x over chance
+NGFR	SP+TM	False	no	at risk	allowed	class-I PDZ motif (TSPV), 2.85x over chance
+NIPA2	TM	False	no	at risk	allowed	class-I PDZ motif (LTAF), 2.85x over chance
+NIPAL4	TM	False	no	allowed	allowed
+NLGN1	SP+TM	False	no	at risk	allowed	class-I PDZ motif (TTRV), 2.85x over chance
+NLGN2	SP+TM	False	no	at risk	allowed	class-I PDZ motif (TTRV), 2.85x over chance
+NLGN3	SP+TM	False	no	at risk	allowed	class-I PDZ motif (TTRV), 2.85x over chance
+NLGN4X	SP+TM	False	no	at risk	allowed	class-I PDZ motif (TTRV), 2.85x over chance
+NMBR	TM	False	no	allowed	allowed
+NMUR1	TM	False	no	allowed	allowed
+NMUR2	TM	False	no	allowed	allowed
+NOX1	TM	False	no	allowed	allowed
+NOX3	TM	False	no	allowed	allowed
+NPBWR1	TM	False	no	allowed	allowed
+NPBWR2	TM	False	no	allowed	allowed
+NPC1L1		False	no	allowed	allowed
+NPDC1	SP+TM	False	no	allowed	allowed
+NPFFR1	TM	False	no	allowed	allowed
+NPFFR2	TM	False	no	at risk	allowed	class-I PDZ motif (SSEI), 2.85x over chance
+NPHS1	SP+TM	False	no	allowed	allowed
+NPR1	SP+TM	False	no	allowed	allowed
+NPR2	SP+TM	False	no	allowed	allowed
+NPR3	SP+TM	False	no	at risk	allowed	class-I PDZ motif (FSVA), 2.85x over chance
+NPSR1	TM	False	no	allowed	allowed
+NPTN	SP+TM	False	no	allowed	allowed
+NPY1R	TM	False	no	allowed	allowed
+NPY2R	TM	False	no	at risk	allowed	class-I PDZ motif (ATNV), 2.85x over chance
+NPY4R	TM	False	no	allowed	allowed
+NPY4R2	TM	False	no	allowed	allowed
+NPY5R	TM	False	no	allowed	allowed
+NRCAM	SP+TM	False	no	at risk	allowed	class-I PDZ motif (NSFV), 2.85x over chance
+NRG1	TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+NRG2	TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+NRG3	TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+NRG4	TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+NRN1	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+NRN1L	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+NRP1	SP+TM	False	no	at risk	allowed	class-I PDZ motif (YSEA), 2.85x over chance
+NRP2	SP+TM	False	no	at risk	allowed	class-I PDZ motif (CSEA), 2.85x over chance
+NRROS	SP+TM	False	no	at risk	allowed	class-I PDZ motif (SSVY), 2.85x over chance
+NRXN1	SP+TM	False	no	allowed	allowed
+NRXN2	SP+TM	False	no	allowed	allowed
+NRXN3	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+NT5E	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+NTM	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+NTNG1	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+NTNG2	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+NTRK1	SP+TM	False	no	allowed	allowed
+NTRK2	SP+TM	False	no	allowed	allowed
+NTRK3	SP+TM	False	no	allowed	allowed
+NTSR1	TM	False	no	at risk	allowed	class-I PDZ motif (ETLY), 2.85x over chance
+NTSR2	TM	False	no	allowed	allowed
+NYX	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+OCLN	TM	False	no	allowed	allowed
+OCSTAMP	TM	False	no	allowed	allowed
+OLR1	TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+OMG	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+OPALIN	TM	False	no	allowed	allowed
+OPCML	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+OPN1LW	TM	False	no	at risk	allowed	class-I PDZ motif (VSPA), 2.85x over chance
+OPN1MW	TM	False	no	at risk	allowed	class-I PDZ motif (VSPA), 2.85x over chance
+OPN1MW2	TM	False	no	at risk	allowed	class-I PDZ motif (VSPA), 2.85x over chance
+OPN1MW3	TM	False	no	at risk	allowed	class-I PDZ motif (VSPA), 2.85x over chance
+OPN1SW	TM	False	no	allowed	allowed
+OPN3	TM	False	no	allowed	allowed
+OPN4	TM	False	no	allowed	allowed
+OPN5	TM	False	no	allowed	allowed
+OPRD1	TM	False	no	allowed	allowed
+OPRK1	TM	False	no	allowed	allowed
+OPRL1	TM	False	no	allowed	allowed
+OPRM1	TM	False	no	allowed	allowed
+OR10AC1	TM	False	no	allowed	allowed
+OR10C1	TM	False	no	allowed	allowed
+OR10G2	TM	False	no	allowed	allowed
+OR10G6	SP+TM	False	no	allowed	allowed
+OR10G7	TM	False	no	allowed	allowed
+OR10H1	TM	False	no	allowed	allowed
+OR10H2	TM	False	no	allowed	allowed
+OR10H4	TM	False	no	allowed	allowed
+OR10H5	TM	False	no	allowed	allowed
+OR10J1	TM	False	no	allowed	allowed
+OR10J5	TM	False	no	allowed	allowed
+OR10K1	TM	False	no	allowed	allowed
+OR10K2	TM	False	no	at risk	allowed	class-I PDZ motif (ISLL), 2.85x over chance
+OR10P1	TM	False	no	allowed	allowed
+OR10Q1	TM	False	no	allowed	allowed
+OR10R2	TM	False	no	allowed	allowed
+OR10T2	TM	False	no	allowed	allowed
+OR10V1	TM	False	no	allowed	allowed
+OR10Z1	TM	False	no	allowed	allowed
+OR11A1	TM	False	no	allowed	allowed
+OR11H1	TM	False	no	allowed	allowed
+OR11H12	TM	False	no	allowed	allowed
+OR11H6	SP+TM	False	no	allowed	allowed
+OR11H7		False	no	allowed	allowed
+OR11L1	TM	False	no	allowed	allowed
+OR12D1		False	no	allowed	allowed
+OR12D2	TM	False	no	allowed	allowed
+OR13A1	TM	False	no	allowed	allowed
+OR13D1	TM	False	no	allowed	allowed
+OR14A16	TM	False	no	allowed	allowed
+OR14I1	TM	False	no	allowed	allowed
+OR14J1	TM	False	no	allowed	allowed
+OR14L1	TM	False	no	allowed	allowed
+OR1B1	TM	False	no	allowed	allowed
+OR1C1	TM	False	no	allowed	allowed
+OR1D2	TM	False	no	allowed	allowed
+OR1D5	TM	False	no	allowed	allowed
+OR1E1	TM	False	no	allowed	allowed
+OR1E2	TM	False	no	allowed	allowed
+OR1F1	TM	False	no	allowed	allowed
+OR1J1	TM	False	no	allowed	allowed
+OR1J2	TM	False	no	allowed	allowed
+OR1J4	TM	False	no	allowed	allowed
+OR1L8	TM	False	no	allowed	allowed
+OR1M1	TM	False	no	allowed	allowed
+OR1N1	TM	False	no	allowed	allowed
+OR2A1	TM	False	no	allowed	allowed
+OR2A4	TM	False	no	allowed	allowed
+OR2A42	TM	False	no	allowed	allowed
+OR2A7	TM	False	no	allowed	allowed
+OR2AJ1	TM	False	no	allowed	allowed
+OR2AK2	TM	False	no	at risk	allowed	class-I PDZ motif (RSLY), 2.85x over chance
+OR2AP1	TM	False	no	allowed	allowed
+OR2B11	TM	False	no	allowed	allowed
+OR2B2	TM	False	no	allowed	allowed
+OR2B6	TM	False	no	allowed	allowed
+OR2C1	TM	False	no	allowed	allowed
+OR2C3	TM	False	no	allowed	allowed
+OR2D2	TM	False	no	allowed	allowed
+OR2G3	TM	False	no	allowed	allowed
+OR2H1	TM	False	no	allowed	allowed
+OR2H2	TM	False	no	allowed	allowed
+OR2I1	TM	False	no	allowed	allowed
+OR2L13	TM	False	no	allowed	allowed
+OR2L2	TM	False	no	allowed	allowed
+OR2L3	TM	False	no	allowed	allowed
+OR2L5	TM	False	no	allowed	allowed
+OR2L8	TM	False	no	allowed	allowed
+OR2M3	TM	False	no	allowed	allowed
+OR2S2	TM	False	no	allowed	allowed
+OR2T10	TM	False	no	allowed	allowed
+OR2T11	TM	False	no	at risk	allowed	class-I PDZ motif (TSDA), 2.85x over chance
+OR2T29	TM	False	no	allowed	allowed
+OR2T33	TM	False	no	allowed	allowed
+OR2T5	TM	False	no	allowed	allowed
+OR2T8	TM	False	no	allowed	allowed
+OR2V1	TM	False	no	allowed	allowed
+OR2V2	TM	False	no	allowed	allowed
+OR2W1	TM	False	no	allowed	allowed
+OR2W3	TM	False	no	allowed	allowed
+OR2Y1	TM	False	no	allowed	allowed
+OR3A1	TM	False	no	at risk	allowed	class-I PDZ motif (RSLA), 2.85x over chance
+OR3A2		False	no	allowed	allowed
+OR3A3		False	no	allowed	allowed
+OR4A16	TM	False	no	allowed	allowed
+OR4A47	TM	False	no	allowed	allowed
+OR4B1	TM	False	no	allowed	allowed
+OR4C13	TM	False	no	allowed	allowed
+OR4C5	TM	False	no	allowed	allowed
+OR4C6	TM	False	no	allowed	allowed
+OR4D1	TM	False	no	allowed	allowed
+OR4D10	TM	False	no	allowed	allowed
+OR4D2	TM	False	no	allowed	allowed
+OR4D5	TM	False	no	allowed	allowed
+OR4E2		False	no	allowed	allowed
+OR4F16	TM	False	no	allowed	allowed
+OR4F17	TM	False	no	allowed	allowed
+OR4F5	TM	False	no	allowed	allowed
+OR4F6	TM	False	no	allowed	allowed
+OR4K15	TM	False	no	allowed	allowed
+OR4K17	TM	False	no	allowed	allowed
+OR4K2	TM	False	no	allowed	allowed
+OR4M2B	TM	False	no	allowed	allowed
+OR4N2	TM	False	no	allowed	allowed
+OR4N4	TM	False	no	allowed	allowed
+OR4P4	TM	False	no	allowed	allowed
+OR4Q2		False	no	allowed	allowed
+OR4S1	TM	False	no	allowed	allowed
+OR4S2	TM	False	no	allowed	allowed
+OR51A7	TM	False	no	allowed	allowed
+OR51B2	TM	False	no	allowed	allowed
+OR51B4	TM	False	no	at risk	allowed	class-I PDZ motif (QSRA), 2.85x over chance
+OR51B5	TM	False	no	allowed	allowed
+OR51C1	TM	False	no	allowed	allowed
+OR51E1	TM	False	no	allowed	allowed
+OR51E2	TM	False	no	allowed	allowed
+OR51G2	TM	False	no	allowed	allowed
+OR51I1	TM	False	no	at risk	allowed	class-I PDZ motif (KSQA), 2.85x over chance
+OR51T1	TM	False	no	allowed	allowed
+OR51V1	TM	False	no	allowed	allowed
+OR52A1	TM	False	no	allowed	allowed
+OR52B6	TM	False	no	allowed	allowed
+OR52D1	TM	False	no	at risk	allowed	class-I PDZ motif (KTSI), 2.85x over chance
+OR52H1	TM	False	no	allowed	allowed
+OR52J3	TM	False	no	allowed	allowed
+OR52K1	TM	False	no	allowed	allowed
+OR52K2	TM	False	no	allowed	allowed
+OR52L1	TM	False	no	allowed	allowed
+OR52N2	TM	False	no	allowed	allowed
+OR52N4	TM	False	no	allowed	allowed
+OR52P1	TM	False	no	allowed	allowed
+OR56A3	TM	False	no	allowed	allowed
+OR56B1	TM	False	no	allowed	allowed
+OR56B4	TM	False	no	allowed	allowed
+OR5A2	TM	False	no	allowed	allowed
+OR5AK2	TM	False	no	allowed	allowed
+OR5AL1		False	no	allowed	allowed
+OR5AN1	TM	False	no	allowed	allowed
+OR5AR1	TM	False	no	allowed	allowed
+OR5AS1	TM	False	no	allowed	allowed
+OR5AU1	TM	False	no	allowed	allowed
+OR5B12	TM	False	no	allowed	allowed
+OR5B21	TM	False	no	allowed	allowed
+OR5C1	TM	False	no	allowed	allowed
+OR5D16	TM	False	no	allowed	allowed
+OR5H6	TM	False	no	at risk	allowed	class-I PDZ motif (KSNV), 2.85x over chance
+OR5J2	TM	False	no	allowed	allowed
+OR5V1	TM	False	no	allowed	allowed
+OR6B2	TM	False	no	allowed	allowed
+OR6B3	TM	False	no	allowed	allowed
+OR6C1	TM	False	no	allowed	allowed
+OR6C2	TM	False	no	allowed	allowed
+OR6C3	TM	False	no	allowed	allowed
+OR6C4	TM	False	no	allowed	allowed
+OR6C68	TM	False	no	allowed	allowed
+OR6C70	TM	False	no	allowed	allowed
+OR6C74	TM	False	no	allowed	allowed
+OR6F1	TM	False	no	allowed	allowed
+OR7A10	TM	False	no	allowed	allowed
+OR7A17	TM	False	no	allowed	allowed
+OR7A5	TM	False	no	allowed	allowed
+OR7C1	TM	False	no	allowed	allowed
+OR7C2	TM	False	no	allowed	allowed
+OR7D4	TM	False	no	allowed	allowed
+OR7E24	TM	False	no	allowed	allowed
+OR7G1	TM	False	no	allowed	allowed
+OR7G2	TM	False	no	allowed	allowed
+OR7G3	TM	False	no	allowed	allowed
+OR8B8	TM	False	no	allowed	allowed
+OR8D1	TM	False	no	allowed	allowed
+OR8G3		False	no	allowed	allowed
+OR8G5		False	no	allowed	allowed
+OR8J2		False	no	allowed	allowed
+OR8K3	TM	False	no	allowed	allowed
+OR8K5	TM	False	no	allowed	allowed
+OR8S1		False	no	allowed	allowed
+OR8U1	TM	False	no	allowed	allowed
+OR8U3	TM	False	no	allowed	allowed
+OR8U8	TM	False	no	allowed	allowed
+OR8U9	TM	False	no	allowed	allowed
+OR9A2	TM	False	no	allowed	allowed
+OR9A4	TM	False	no	allowed	allowed
+OR9G1	TM	False	no	allowed	allowed
+OR9G9	TM	False	no	allowed	allowed
+ORAI1	TM	False	no	allowed	allowed
+ORAI2	TM	False	no	allowed	allowed
+ORAI3	TM	False	no	allowed	allowed
+OSMR	SP+TM	False	no	allowed	allowed
+OTOA	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+OTOP1	TM	False	no	allowed	allowed
+OTOP2	TM	False	no	allowed	allowed
+OTOP3	TM	False	no	allowed	allowed
+OXER1	TM	False	no	allowed	allowed
+OXGR1	TM	False	no	allowed	allowed
+OXTR	TM	False	no	at risk	allowed	class-I PDZ motif (PSTA), 2.85x over chance
+P2RX1	TM	False	no	allowed	allowed
+P2RX2	TM	False	no	allowed	allowed
+P2RX3	TM	False	no	allowed	allowed
+P2RX5	TM	False	no	allowed	allowed
+P2RX6	TM	False	no	allowed	allowed
+P2RX7	TM	False	no	at risk	allowed	class-I PDZ motif (KSPY), 2.85x over chance
+P2RY1	TM	False	no	at risk	allowed	class-I PDZ motif (DTSL), 2.85x over chance
+P2RY10	TM	False	no	allowed	allowed
+P2RY11	TM	False	no	allowed	allowed
+P2RY12	TM	False	no	at risk	allowed	class-I PDZ motif (ETPM), 2.85x over chance
+P2RY13	TM	False	no	allowed	allowed
+P2RY14	TM	False	no	allowed	allowed
+P2RY2	TM	False	no	allowed	allowed
+P2RY4	TM	False	no	allowed	allowed
+P2RY6	TM	False	no	allowed	allowed
+P2RY8	TM	False	no	at risk	allowed	class-I PDZ motif (ESVF), 2.85x over chance
+PACC1	TM	False	no	allowed	allowed
+PAM	SP+TM	False	no	allowed	allowed
+PANX1	TM	False	yes	at risk	allowed	class-I PDZ motif (DSSC), 2.85x over chance
+PANX3	TM	False	no	allowed	allowed
+PAQR5	TM	False	no	allowed	allowed
+PAQR6	TM	False	no	allowed	allowed
+PAQR7	TM	False	no	allowed	allowed
+PAQR8	TM	False	no	allowed	allowed
+PAQR9	TM	False	no	allowed	allowed
+PCDH1	SP+TM	False	no	allowed	allowed
+PCDH10	SP+TM	False	no	allowed	allowed
+PCDH12	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+PCDH17	SP+TM	False	no	allowed	allowed
+PCDH18	SP+TM	False	no	allowed	allowed
+PCDH19	SP+TM	False	no	allowed	allowed
+PCDH7	SP+TM	False	no	allowed	allowed
+PCDH8	SP+TM	False	no	allowed	allowed
+PCDH9	SP+TM	False	no	allowed	allowed
+PCDHA1	SP+TM	False	no	allowed	allowed
+PCDHA10	SP+TM	False	no	allowed	allowed
+PCDHA11	SP+TM	False	no	allowed	allowed
+PCDHA12	SP+TM	False	no	allowed	allowed
+PCDHA13	SP+TM	False	no	allowed	allowed
+PCDHA2	SP+TM	False	no	allowed	allowed
+PCDHA3	SP+TM	False	no	allowed	allowed
+PCDHA5	SP+TM	False	no	allowed	allowed
+PCDHA6	SP+TM	False	no	allowed	allowed
+PCDHA7	SP+TM	False	no	allowed	allowed
+PCDHA9	SP+TM	False	no	allowed	allowed
+PCDHAC1	SP+TM	False	no	allowed	allowed
+PCDHAC2	SP+TM	False	no	allowed	allowed
+PCDHB10	SP+TM	False	no	allowed	allowed
+PCDHB11	SP+TM	False	no	allowed	allowed
+PCDHB12	SP+TM	False	no	allowed	allowed
+PCDHB13	SP+TM	False	no	allowed	allowed
+PCDHB14	SP+TM	False	no	allowed	allowed
+PCDHB15	SP+TM	False	no	allowed	allowed
+PCDHB16	SP+TM	False	no	allowed	allowed
+PCDHB2	SP+TM	False	no	allowed	allowed
+PCDHB3	SP+TM	False	no	allowed	allowed
+PCDHB4	SP+TM	False	no	allowed	allowed
+PCDHB5	SP+TM	False	no	allowed	allowed
+PCDHB6	SP+TM	False	no	allowed	allowed
+PCDHB7	SP+TM	False	no	allowed	allowed
+PCDHB8	SP+TM	False	no	allowed	allowed
+PCDHB9	SP+TM	False	no	allowed	allowed
+PCDHGA1	SP+TM	False	no	allowed	allowed
+PCDHGA10	SP+TM	False	no	allowed	allowed
+PCDHGA11	SP+TM	False	no	allowed	allowed
+PCDHGA12	SP+TM	False	no	allowed	allowed
+PCDHGA2	SP+TM	False	no	allowed	allowed
+PCDHGA4	SP+TM	False	no	allowed	allowed
+PCDHGA5	SP+TM	False	no	allowed	allowed
+PCDHGA6	SP+TM	False	no	allowed	allowed
+PCDHGA7	SP+TM	False	no	allowed	allowed
+PCDHGA8	SP+TM	False	no	allowed	allowed
+PCDHGA9	SP+TM	False	no	allowed	allowed
+PCDHGB1	SP+TM	False	no	allowed	allowed
+PCDHGB2	SP+TM	False	no	allowed	allowed
+PCDHGB3	SP+TM	False	no	allowed	allowed
+PCDHGB4	SP+TM	False	no	allowed	allowed
+PCDHGB5	SP+TM	False	no	allowed	allowed
+PCDHGB6	SP+TM	False	no	allowed	allowed
+PCDHGB7	SP+TM	False	no	allowed	allowed
+PCDHGC3	SP+TM	False	no	allowed	allowed
+PCDHGC4	SP+TM	False	no	allowed	allowed
+PCDHGC5	SP+TM	False	no	allowed	allowed
+PDCD1	SP+TM	False	no	allowed	allowed
+PDCD1LG2	SP+TM	False	no	at risk	allowed	class-I PDZ motif (NSAI), 2.85x over chance
+PDGFRA	SP+TM	False	no	at risk	allowed	class-I PDZ motif (DSFL), 2.85x over chance
+PDGFRB	SP+TM	False	no	at risk	allowed	class-I PDZ motif (DSFL), 2.85x over chance
+PDPN	SP+TM	False	yes	allowed	at risk		sheddase substrate (gamma-secretase)
+PEAR1	SP+TM	False	no	allowed	allowed
+PECAM1	SP+TM	False	no	allowed	allowed
+PERP	TM	False	no	at risk	allowed	class-I PDZ motif (YTSA), 2.85x over chance
+PGAP6	SP+TM	False	no	allowed	allowed
+PHEX	TM	False	no	allowed	allowed
+PIANP	SP+TM	False	no	allowed	allowed
+PIGR	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+PIK3IP1	SP+TM	False	no	allowed	allowed
+PILRA	SP+TM	False	no	allowed	allowed
+PILRB	SP+TM	False	no	at risk	allowed	class-I PDZ motif (SSDF), 2.85x over chance
+PKD2L1	TM	False	no	allowed	allowed
+PLA2R1	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+PLAUR	SP	True	yes	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+PLB1	SP+TM	False	no	allowed	allowed
+PLET1	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+PLLP	TM	False	no	allowed	allowed
+PLPP1	TM	False	no	allowed	allowed
+PLPP2	TM	False	no	allowed	allowed
+PLPP3	TM	False	no	allowed	allowed
+PLPP4	TM	False	no	allowed	allowed
+PLPPR1	TM	False	no	allowed	allowed
+PLPPR2	TM	False	no	allowed	allowed
+PLPPR3	TM	False	no	allowed	allowed
+PLPPR4	TM	False	no	allowed	allowed
+PLPPR5	TM	False	no	allowed	allowed
+PLVAP	TM	False	no	allowed	allowed
+PLXDC1	SP+TM	False	no	allowed	allowed
+PLXDC2	SP+TM	False	no	allowed	allowed
+PLXNC1	SP+TM	False	no	allowed	allowed
+PMEPA1	TM	False	no	allowed	allowed
+PMP22	TM	False	no	allowed	allowed
+PODXL	SP+TM	False	no	at risk	allowed	class-I PDZ motif (DTHL), 2.85x over chance
+PODXL2	SP+TM	False	no	at risk	allowed	class-I PDZ motif (DTHL), 2.85x over chance
+POPDC1	TM	False	no	allowed	allowed
+POPDC3	TM	False	no	allowed	allowed
+PRIMA1	SP+TM	False	no	allowed	allowed
+PRLHR	TM	False	no	allowed	allowed
+PRLR	SP+TM	False	no	allowed	allowed
+PRND	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+PRNP	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+PROCR	SP+TM	False	no	allowed	allowed
+PROKR1	TM	False	no	allowed	allowed
+PROKR2	TM	False	no	allowed	allowed
+PROM1	SP+TM	False	no	allowed	allowed
+PROM2	SP+TM	False	no	allowed	allowed
+PRRG1	TM	False	no	allowed	allowed
+PRRG2	SP+TM	False	no	allowed	allowed
+PRRG3	TM	False	no	allowed	allowed
+PRRG4	SP+TM	False	no	allowed	allowed
+PRSS21	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+PRSS41	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+PRSS55	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+PRSS8	SP	True	yes	forbidden	at risk	GPI: the C-terminus is removed at the omega site	processed, protease unnamed - shedding unresolved
+PRTG	SP+TM	False	no	allowed	allowed
+PSCA	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+PTAFR	TM	False	no	allowed	allowed
+PTCH1	TM	False	no	allowed	allowed
+PTCH2	TM	False	no	allowed	allowed
+PTCHD1	TM	False	no	at risk	allowed	class-I PDZ motif (ITTV), 2.85x over chance
+PTGDR	TM	False	no	at risk	allowed	class-I PDZ motif (ESSL), 2.85x over chance
+PTGDR2	TM	False	no	allowed	allowed
+PTGER1	TM	False	no	at risk	allowed	class-I PDZ motif (LSHF), 2.85x over chance
+PTGER2	TM	False	no	allowed	allowed
+PTGER3	TM	False	no	allowed	allowed
+PTGER4	TM	False	no	allowed	allowed
+PTGFR	TM	False	no	allowed	allowed
+PTGFRN	SP+TM	False	no	allowed	allowed
+PTGIR	TM	False	no	at risk	allowed	class-I PDZ motif (CSLC), 2.85x over chance
+PTH1R	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ETVM), 2.85x over chance
+PTH2R	SP+TM	False	no	allowed	allowed
+PTK7	SP+TM	False	yes	allowed	at risk		sheddase substrate (MMP14)
+PTPRA	SP+TM	False	no	allowed	allowed
+PTPRC	SP+TM	False	no	allowed	allowed
+PTPRG	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ESLV), 2.85x over chance
+PTPRH	SP+TM	False	no	allowed	allowed
+PTPRJ	SP+TM	False	no	allowed	allowed
+PTPRK	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+PTPRM	SP+TM	False	no	allowed	allowed
+PTPRO	SP+TM	False	no	allowed	allowed
+PTPRT	SP+TM	False	no	at risk	allowed	class-I PDZ motif (LSSF), 2.85x over chance
+PTPRU	SP+TM	False	no	allowed	allowed
+PTTG1IP2	SP+TM	False	no	allowed	allowed
+PVR	SP+TM	False	no	allowed	allowed
+PVRIG	SP+TM	False	no	allowed	allowed
+QRFPR	TM	False	no	allowed	allowed
+RAET1E	SP+TM	False	no	allowed	allowed
+RAET1G	SP+TM	False	no	allowed	allowed
+RAET1L	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+RECK	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+RELL1	SP+TM	False	no	allowed	allowed
+RELL2	TM	False	no	allowed	allowed
+RELT	SP+TM	False	no	allowed	allowed
+RET	SP+TM	False	yes	allowed	allowed
+RGMA	SP	True	yes	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+RGMB		True	yes	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+RHAG	TM	False	no	allowed	allowed
+RHBDF2	TM	False	no	allowed	allowed
+RHBDL2	TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+RHBG	TM	False	no	at risk	allowed	class-I PDZ motif (DTQA), 2.85x over chance
+RHCG	TM	False	no	allowed	allowed
+RHO	TM	False	no	allowed	allowed
+RNF130	SP+TM	False	no	allowed	allowed
+RNF215	SP+TM	False	no	allowed	allowed
+RNF43	SP+TM	False	no	allowed	allowed
+RNFT2	TM	False	no	allowed	allowed
+ROBO1	SP+TM	False	no	allowed	allowed
+ROBO2	SP+TM	False	no	allowed	allowed
+ROBO3	SP+TM	False	no	allowed	allowed
+ROBO4	SP+TM	False	no	allowed	allowed
+ROR1	SP+TM	False	no	allowed	allowed
+ROR2	SP+TM	False	no	allowed	allowed
+RRH	TM	False	no	allowed	allowed
+RTN4R	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+RTN4RL1	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+RTN4RL2	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+RXFP1	SP+TM	False	no	allowed	allowed
+RXFP2	SP+TM	False	no	allowed	allowed
+RXFP3	TM	False	no	at risk	allowed	class-I PDZ motif (SSAY), 2.85x over chance
+RXFP4	TM	False	no	allowed	allowed
+RYK	SP+TM	False	no	allowed	allowed
+S1PR1	TM	False	no	allowed	allowed
+S1PR2	TM	False	no	at risk	allowed	class-I PDZ motif (NTVV), 2.85x over chance
+S1PR3	TM	False	no	allowed	allowed
+S1PR4	TM	False	no	allowed	allowed
+S1PR5	TM	False	no	allowed	allowed
+SCARA3	TM	False	no	at risk	allowed	class-I PDZ motif (QSFY), 2.85x over chance
+SCARA5	TM	False	no	allowed	allowed
+SCARB1	TM	False	no	allowed	allowed
+SCARF1	SP+TM	False	no	allowed	allowed
+SCARF2	SP+TM	False	no	allowed	allowed
+SCART1	SP+TM	False	no	allowed	allowed
+SCN1B	SP+TM	False	no	allowed	allowed
+SCN2B	SP+TM	False	no	allowed	allowed
+SCN3B	SP+TM	False	no	allowed	allowed
+SCN4B	SP+TM	False	no	at risk	allowed	class-I PDZ motif (PSKV), 2.85x over chance
+SCNN1A	TM	False	yes	allowed	allowed
+SCNN1D	TM	False	no	allowed	allowed
+SCTR	SP+TM	False	no	at risk	allowed	class-I PDZ motif (TSII), 2.85x over chance
+SDC1	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+SDC2	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+SDC3	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+SDC4	SP+TM	False	no	allowed	allowed
+SEL1L2	SP+TM	False	no	allowed	allowed
+SELE	SP+TM	False	no	allowed	allowed
+SELL	SP+TM	False	no	allowed	allowed
+SELP	SP+TM	False	no	allowed	allowed
+SELPLG	SP+TM	False	no	allowed	allowed
+SEMA4A	SP+TM	False	no	allowed	allowed
+SEMA4B	SP+TM	False	no	at risk	allowed	class-I PDZ motif (DSVV), 2.85x over chance
+SEMA4C	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ESSV), 2.85x over chance
+SEMA4D	SP+TM	False	no	allowed	allowed
+SEMA4F	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ETSI), 2.85x over chance
+SEMA4G	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ESSV), 2.85x over chance
+SEMA5A	SP+TM	False	no	allowed	allowed
+SEMA6A	SP+TM	False	no	allowed	allowed
+SEMA6B	SP+TM	False	no	allowed	allowed
+SEMA6C	SP+TM	False	no	allowed	allowed
+SEMA6D	SP+TM	False	no	allowed	allowed
+SEMA7A	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+SERINC1	TM	False	no	allowed	allowed
+SERINC2	TM	False	no	allowed	allowed
+SERINC3	TM	False	no	allowed	allowed
+SERINC5	TM	False	no	allowed	allowed
+SERTM2	TM	False	no	allowed	allowed
+SEZ6	SP+TM	False	no	allowed	allowed
+SEZ6L	SP+TM	False	no	allowed	allowed
+SEZ6L2	SP+TM	False	no	allowed	allowed
+SGMS2	TM	False	no	allowed	allowed
+SHISA6	SP+TM	False	no	allowed	allowed
+SHISA7	SP+TM	False	no	allowed	allowed
+SHISA9	SP+TM	False	no	allowed	allowed
+SHISAL1	SP+TM	False	no	at risk	allowed	class-I PDZ motif (SSSA), 2.85x over chance
+SIGIRR	TM	False	no	allowed	allowed
+SIGLEC10	SP+TM	False	no	allowed	allowed
+SIGLEC11	SP+TM	False	no	allowed	allowed
+SIGLEC12	SP+TM	False	no	allowed	allowed
+SIGLEC14	SP+TM	False	no	allowed	allowed
+SIGLEC15	SP+TM	False	no	allowed	allowed
+SIGLEC5	SP+TM	False	no	allowed	allowed
+SIGLEC6	SP+TM	False	no	allowed	allowed
+SIGLEC7	SP+TM	False	no	allowed	allowed
+SIGLEC8	SP+TM	False	no	allowed	allowed
+SIGLEC9	SP+TM	False	no	allowed	allowed
+SIRPA	SP+TM	False	no	allowed	allowed
+SIRPB2	SP+TM	False	no	allowed	allowed
+SIRPG	SP+TM	False	no	allowed	allowed
+SLAMF1	SP+TM	False	no	allowed	allowed
+SLAMF6	SP+TM	False	no	allowed	allowed
+SLAMF7	SP+TM	False	no	allowed	allowed
+SLAMF8	SP+TM	False	no	allowed	allowed
+SLAMF9	SP+TM	False	no	at risk	allowed	class-I PDZ motif (SSPA), 2.85x over chance
+SLC10A1	TM	False	no	allowed	allowed
+SLC10A2	TM	False	no	allowed	allowed
+SLC10A5	SP+TM	False	no	allowed	allowed
+SLC10A6	TM	False	no	allowed	allowed
+SLC12A2	TM	False	no	allowed	allowed
+SLC12A3	TM	False	no	allowed	allowed
+SLC12A4	TM	False	no	allowed	allowed
+SLC12A5	TM	False	no	allowed	allowed
+SLC12A6	TM	False	no	allowed	allowed
+SLC12A7	TM	False	no	allowed	allowed
+SLC12A8	TM	False	no	allowed	allowed
+SLC13A1	TM	False	no	allowed	allowed
+SLC13A2	TM	False	no	allowed	allowed
+SLC13A3	TM	False	no	allowed	allowed
+SLC13A4	TM	False	no	allowed	allowed
+SLC13A5	TM	False	no	allowed	allowed
+SLC14A1	TM	False	no	at risk	allowed	class-I PDZ motif (ESPL), 2.85x over chance
+SLC14A2	TM	False	no	allowed	allowed
+SLC15A1	TM	False	no	allowed	allowed
+SLC15A2	TM	False	no	at risk	allowed	class-I PDZ motif (KTKL), 2.85x over chance
+SLC16A1	TM	False	no	at risk	allowed	class-I PDZ motif (ESPV), 2.85x over chance
+SLC16A10	TM	False	no	at risk	allowed	class-I PDZ motif (DSII), 2.85x over chance
+SLC16A12	TM	False	no	allowed	allowed
+SLC16A14	TM	False	no	allowed	allowed
+SLC16A2	TM	False	no	allowed	allowed
+SLC16A3	TM	False	no	at risk	allowed	class-I PDZ motif (ETSV), 2.85x over chance
+SLC16A4	TM	False	no	allowed	allowed
+SLC16A5	TM	False	no	allowed	allowed
+SLC16A6	TM	False	no	allowed	allowed
+SLC16A7	TM	False	no	at risk	allowed	class-I PDZ motif (ETNI), 2.85x over chance
+SLC16A8	TM	False	no	allowed	allowed
+SLC16A9	TM	False	no	at risk	allowed	class-I PDZ motif (ASNV), 2.85x over chance
+SLC17A1	TM	False	no	at risk	allowed	class-I PDZ motif (HTRL), 2.85x over chance
+SLC17A2	TM	False	no	allowed	allowed
+SLC17A3	TM	False	no	at risk	allowed	class-I PDZ motif (LTRL), 2.85x over chance
+SLC17A4	TM	False	no	at risk	allowed	class-I PDZ motif (FTHL), 2.85x over chance
+SLC19A1	TM	False	no	allowed	allowed
+SLC19A2	TM	False	no	allowed	allowed
+SLC19A3	TM	False	no	at risk	allowed	class-I PDZ motif (STKL), 2.85x over chance
+SLC1A1	TM	False	no	at risk	allowed	class-I PDZ motif (TSQF), 2.85x over chance
+SLC1A2	TM	False	no	allowed	allowed
+SLC1A3	TM	False	no	at risk	allowed	class-I PDZ motif (ETKM), 2.85x over chance
+SLC1A4	TM	False	no	at risk	allowed	class-I PDZ motif (ESVL), 2.85x over chance
+SLC1A5	TM	False	no	at risk	allowed	class-I PDZ motif (ESVM), 2.85x over chance
+SLC1A6	TM	False	no	at risk	allowed	class-I PDZ motif (ESAM), 2.85x over chance
+SLC1A7	TM	False	no	at risk	allowed	class-I PDZ motif (ETNV), 2.85x over chance
+SLC20A1	TM	False	no	allowed	allowed
+SLC20A2	TM	False	no	allowed	allowed
+SLC22A1	TM	False	no	allowed	allowed
+SLC22A11	TM	False	no	at risk	allowed	class-I PDZ motif (STSL), 2.85x over chance
+SLC22A12	TM	False	no	at risk	allowed	class-I PDZ motif (STQF), 2.85x over chance
+SLC22A13	TM	False	no	at risk	allowed	class-I PDZ motif (STYF), 2.85x over chance
+SLC22A15	TM	False	no	allowed	allowed
+SLC22A16	TM	False	no	allowed	allowed
+SLC22A17	TM	False	no	allowed	allowed
+SLC22A2	TM	False	no	allowed	allowed
+SLC22A24	TM	False	no	at risk	allowed	class-I PDZ motif (VTQF), 2.85x over chance
+SLC22A25	TM	False	no	at risk	allowed	class-I PDZ motif (SSVL), 2.85x over chance
+SLC22A3	TM	False	no	at risk	allowed	class-I PDZ motif (RSHL), 2.85x over chance
+SLC22A4	TM	False	no	at risk	allowed	class-I PDZ motif (ITAF), 2.85x over chance
+SLC22A5	TM	False	no	at risk	allowed	class-I PDZ motif (STAF), 2.85x over chance
+SLC22A6	TM	False	no	allowed	allowed
+SLC22A7	TM	False	no	allowed	allowed
+SLC22A8	TM	False	no	allowed	allowed
+SLC22A9	TM	False	no	at risk	allowed	class-I PDZ motif (VTQF), 2.85x over chance
+SLC23A1	TM	False	no	at risk	allowed	class-I PDZ motif (CTKV), 2.85x over chance
+SLC23A2	TM	False	no	allowed	allowed
+SLC24A1	TM	False	no	allowed	allowed
+SLC24A2	TM	False	no	allowed	allowed
+SLC24A3	TM	False	no	allowed	allowed
+SLC24A4	TM	False	no	allowed	allowed
+SLC26A1	TM	False	no	allowed	allowed
+SLC26A11	TM	False	no	allowed	allowed
+SLC26A2	TM	False	no	allowed	allowed
+SLC26A3	TM	False	no	at risk	allowed	class-I PDZ motif (ETKF), 2.85x over chance
+SLC26A4	TM	False	no	allowed	allowed
+SLC26A5	TM	False	no	allowed	allowed
+SLC26A6	TM	False	no	at risk	allowed	class-I PDZ motif (VTRL), 2.85x over chance
+SLC26A7	TM	False	no	at risk	allowed	class-I PDZ motif (HSEV), 2.85x over chance
+SLC26A8	TM	False	no	allowed	allowed
+SLC26A9	TM	False	no	at risk	allowed	class-I PDZ motif (LTAL), 2.85x over chance
+SLC28A1	TM	False	no	allowed	allowed
+SLC28A2	TM	False	no	allowed	allowed
+SLC28A3	TM	False	no	allowed	allowed
+SLC29A1	TM	False	no	allowed	allowed
+SLC29A2	TM	False	no	allowed	allowed
+SLC29A4	TM	False	no	allowed	allowed
+SLC2A1	TM	False	no	at risk	allowed	class-I PDZ motif (DSQV), 2.85x over chance
+SLC2A11	TM	False	no	at risk	allowed	class-I PDZ motif (STEL), 2.85x over chance
+SLC2A12	TM	False	no	allowed	allowed
+SLC2A14	TM	False	no	at risk	allowed	class-I PDZ motif (TTNV), 2.85x over chance
+SLC2A2	TM	False	no	allowed	allowed
+SLC2A3	TM	False	no	at risk	allowed	class-I PDZ motif (TTNV), 2.85x over chance
+SLC2A4	TM	False	no	allowed	allowed
+SLC2A5	TM	False	no	allowed	allowed
+SLC2A7	TM	False	no	at risk	allowed	class-I PDZ motif (ETSF), 2.85x over chance
+SLC2A9	TM	False	no	allowed	allowed
+SLC30A1	TM	False	no	at risk	allowed	class-I PDZ motif (ESSL), 2.85x over chance
+SLC30A10	TM	False	no	at risk	allowed	class-I PDZ motif (RTHF), 2.85x over chance
+SLC31A1	TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+SLC33A2	TM	False	no	at risk	allowed	class-I PDZ motif (STFL), 2.85x over chance
+SLC34A1	TM	False	no	at risk	allowed	class-I PDZ motif (ATRL), 2.85x over chance
+SLC34A2	TM	False	no	at risk	allowed	class-I PDZ motif (CTAL), 2.85x over chance
+SLC34A3	TM	False	no	allowed	allowed
+SLC35F2	TM	False	no	allowed	allowed
+SLC35G2	TM	False	no	allowed	allowed
+SLC36A1	TM	False	no	allowed	allowed
+SLC36A2	TM	False	no	allowed	allowed
+SLC38A1	TM	False	no	allowed	allowed
+SLC38A12	TM	False	no	at risk	allowed	class-I PDZ motif (ETKL), 2.85x over chance
+SLC38A2	TM	False	no	allowed	allowed
+SLC38A3	TM	False	no	allowed	allowed
+SLC38A4	TM	False	no	allowed	allowed
+SLC38A5	TM	False	no	allowed	allowed
+SLC38A6	TM	False	no	allowed	allowed
+SLC38A8	TM	False	no	allowed	allowed
+SLC39A1	TM	False	no	allowed	allowed
+SLC39A10	SP+TM	False	no	allowed	allowed
+SLC39A12	SP+TM	False	no	allowed	allowed
+SLC39A14	SP+TM	False	no	allowed	allowed
+SLC39A2	TM	False	no	allowed	allowed
+SLC39A3	TM	False	no	allowed	allowed
+SLC39A4	SP+TM	False	no	allowed	allowed
+SLC39A5	SP+TM	False	no	allowed	allowed
+SLC39A6	SP+TM	False	no	allowed	allowed
+SLC39A8	SP+TM	False	no	allowed	allowed
+SLC3A2	TM	False	no	allowed	allowed
+SLC40A1	TM	False	no	at risk	allowed	class-I PDZ motif (TSVV), 2.85x over chance
+SLC41A1	TM	False	no	allowed	allowed
+SLC41A2	TM	False	no	allowed	allowed
+SLC43A1	TM	False	no	allowed	allowed
+SLC43A2	TM	False	no	allowed	allowed
+SLC43A3	TM	False	no	allowed	allowed
+SLC44A1	TM	False	no	at risk	allowed	class-I PDZ motif (ASSA), 2.85x over chance
+SLC44A2	TM	False	no	allowed	allowed
+SLC44A3	TM	False	no	allowed	allowed
+SLC44A4	TM	False	no	allowed	allowed
+SLC44A5	TM	False	no	allowed	allowed
+SLC46A1	TM	False	no	allowed	allowed
+SLC46A2	TM	False	no	allowed	allowed
+SLC47A1	TM	False	no	allowed	allowed
+SLC47A2	TM	False	no	allowed	allowed
+SLC4A1	TM	False	no	allowed	allowed
+SLC4A10	TM	False	no	allowed	allowed
+SLC4A11	TM	False	no	allowed	allowed
+SLC4A2	TM	False	no	allowed	allowed
+SLC4A3	TM	False	no	allowed	allowed
+SLC4A4	TM	False	no	at risk	allowed	class-I PDZ motif (HTSC), 2.85x over chance
+SLC4A7	TM	False	no	at risk	allowed	class-I PDZ motif (ETSL), 2.85x over chance
+SLC4A8	TM	False	no	allowed	allowed
+SLC4A9	TM	False	no	allowed	allowed
+SLC52A1	TM	False	no	allowed	allowed
+SLC52A2	TM	False	no	allowed	allowed
+SLC52A3	TM	False	no	allowed	allowed
+SLC5A1	TM	False	no	allowed	allowed
+SLC5A10	TM	False	no	allowed	allowed
+SLC5A11	TM	False	no	allowed	allowed
+SLC5A12	TM	False	no	at risk	allowed	class-I PDZ motif (TTHF), 2.85x over chance
+SLC5A2	TM	False	no	allowed	allowed
+SLC5A3	TM	False	no	allowed	allowed
+SLC5A4	TM	False	no	allowed	allowed
+SLC5A5	TM	False	no	at risk	allowed	class-I PDZ motif (ETNL), 2.85x over chance
+SLC5A6	TM	False	no	at risk	allowed	class-I PDZ motif (ETSL), 2.85x over chance
+SLC5A8	TM	False	no	at risk	allowed	class-I PDZ motif (GTRL), 2.85x over chance
+SLC5A9	TM	False	no	allowed	allowed
+SLC60A2	TM	False	no	at risk	allowed	class-I PDZ motif (GTNV), 2.85x over chance
+SLC61A1	TM	False	no	allowed	allowed
+SLC68A1	TM	False	no	allowed	allowed
+SLC6A1	TM	False	no	allowed	allowed
+SLC6A11	TM	False	no	at risk	allowed	class-I PDZ motif (ETHF), 2.85x over chance
+SLC6A12	TM	False	no	at risk	allowed	class-I PDZ motif (ETHL), 2.85x over chance
+SLC6A13	TM	False	no	at risk	allowed	class-I PDZ motif (ESHC), 2.85x over chance
+SLC6A14	TM	False	no	allowed	allowed
+SLC6A15	TM	False	no	at risk	allowed	class-I PDZ motif (ESDL), 2.85x over chance
+SLC6A16	TM	False	no	allowed	allowed
+SLC6A2	TM	False	no	allowed	allowed
+SLC6A20	TM	False	no	allowed	allowed
+SLC6A3	TM	False	no	allowed	allowed
+SLC6A4	TM	False	no	allowed	allowed
+SLC6A5	TM	False	no	at risk	allowed	class-I PDZ motif (GTQC), 2.85x over chance
+SLC6A6	TM	False	no	at risk	allowed	class-I PDZ motif (ETMM), 2.85x over chance
+SLC6A7	TM	False	no	at risk	allowed	class-I PDZ motif (ESMM), 2.85x over chance
+SLC6A8	TM	False	no	at risk	allowed	class-I PDZ motif (ESVM), 2.85x over chance
+SLC6A9	TM	False	no	at risk	allowed	class-I PDZ motif (DSRI), 2.85x over chance
+SLC71A2	TM	False	no	at risk	allowed	class-I PDZ motif (CTEL), 2.85x over chance
+SLC7A1	TM	False	no	allowed	allowed
+SLC7A10	TM	False	no	allowed	allowed
+SLC7A11	TM	False	no	allowed	allowed
+SLC7A2	TM	False	no	at risk	allowed	class-I PDZ motif (TSEF), 2.85x over chance
+SLC7A3	TM	False	no	allowed	allowed
+SLC7A4	TM	False	no	allowed	allowed
+SLC7A5	TM	False	no	allowed	allowed
+SLC7A6	TM	False	no	allowed	allowed
+SLC7A7	TM	False	no	allowed	allowed
+SLC7A8	TM	False	no	allowed	allowed
+SLC8A1	SP+TM	False	no	allowed	allowed
+SLC8A2	SP+TM	False	no	allowed	allowed
+SLC8A3	SP+TM	False	no	allowed	allowed
+SLC9A1	TM	False	no	allowed	allowed
+SLC9A2	SP+TM	False	no	allowed	allowed
+SLC9A3	SP+TM	False	no	at risk	allowed	class-I PDZ motif (STHM), 2.85x over chance
+SLC9A4	SP+TM	False	no	allowed	allowed
+SLC9A8	TM	False	no	allowed	allowed
+SLC9B1	TM	False	no	allowed	allowed
+SLC9C1	TM	False	no	allowed	allowed
+SLC9C2	TM	False	no	allowed	allowed
+SLC9D1	SP+TM	False	no	at risk	allowed	class-I PDZ motif (RSSL), 2.85x over chance
+SLCO1A2	TM	False	no	at risk	allowed	class-I PDZ motif (KTKL), 2.85x over chance
+SLCO1B1	TM	False	no	at risk	allowed	class-I PDZ motif (ETHC), 2.85x over chance
+SLCO1B3	TM	False	no	allowed	allowed
+SLCO1B3-SLCO1B7	TM	False	no	allowed	allowed
+SLCO1C1	TM	False	no	at risk	allowed	class-I PDZ motif (ETQL), 2.85x over chance
+SLCO2A1	TM	False	no	allowed	allowed
+SLCO2B1	TM	False	no	at risk	allowed	class-I PDZ motif (DSRV), 2.85x over chance
+SLCO3A1	TM	False	no	at risk	allowed	class-I PDZ motif (ESVL), 2.85x over chance
+SLCO4A1	TM	False	no	at risk	allowed	class-I PDZ motif (QSSV), 2.85x over chance
+SLCO4C1	TM	False	no	allowed	allowed
+SLCO5A1	TM	False	no	allowed	allowed
+SLCO6A1	TM	False	no	at risk	allowed	class-I PDZ motif (ETDL), 2.85x over chance
+SLITRK1	SP+TM	False	no	allowed	allowed
+SLITRK2	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ISQL), 2.85x over chance
+SLITRK3	SP+TM	False	no	allowed	allowed
+SLITRK4	SP+TM	False	no	allowed	allowed
+SLITRK5	SP+TM	False	no	at risk	allowed	class-I PDZ motif (FSQF), 2.85x over chance
+SLITRK6	SP+TM	False	no	allowed	allowed
+SMAGP	TM	False	no	allowed	allowed
+SMIM7	TM	False	no	allowed	allowed
+SMO	SP+TM	False	no	at risk	allowed	class-I PDZ motif (DSDF), 2.85x over chance
+SMPDL3B	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+SNORC	SP+TM	False	no	allowed	allowed
+SORCS1	SP+TM	False	no	allowed	allowed
+SORCS2	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+SORCS3	SP+TM	False	no	at risk	allowed	class-I PDZ motif (CTSV), 2.85x over chance
+SORT1	SP+TM	False	no	allowed	allowed
+SPACA1	SP+TM	False	no	allowed	allowed
+SPACA4	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+SPACA6	SP+TM	False	no	allowed	allowed
+SPAM1	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+SPINT1	SP+TM	False	no	allowed	allowed
+SPINT2	SP+TM	False	no	allowed	allowed
+SPN	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+SPNS2	TM	False	no	allowed	allowed
+SPPL2B	SP+TM	False	no	allowed	allowed
+SPRN	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+SSTR1	TM	False	no	at risk	allowed	class-I PDZ motif (ITTL), 2.85x over chance
+SSTR2	TM	False	no	at risk	allowed	class-I PDZ motif (QTSI), 2.85x over chance
+SSTR3	TM	False	no	at risk	allowed	class-I PDZ motif (ISYL), 2.85x over chance
+SSTR4	TM	False	no	at risk	allowed	class-I PDZ motif (TTTF), 2.85x over chance
+SSTR5	TM	False	no	at risk	allowed	class-I PDZ motif (TSKL), 2.85x over chance
+ST14	TM	False	no	at risk	allowed	class-I PDZ motif (NTGV), 2.85x over chance
+STEAP1	TM	False	no	at risk	allowed	class-I PDZ motif (CSQL), 2.85x over chance
+STEAP1B	TM	False	no	allowed	allowed
+STEAP2	TM	False	no	at risk	allowed	class-I PDZ motif (VTVM), 2.85x over chance
+STEAP3	TM	False	yes	at risk	allowed	class-I PDZ motif (TSHV), 2.85x over chance
+STEAP4	TM	False	no	allowed	allowed
+STRA6	TM	False	no	allowed	allowed
+SUCNR1	TM	False	no	allowed	allowed
+SUSD2	SP+TM	False	no	allowed	allowed
+SUSD3	TM	False	no	allowed	allowed
+SUSD4	SP+TM	False	no	allowed	allowed
+SUSD6	SP+TM	False	no	allowed	allowed
+TAAR1	TM	False	no	allowed	allowed
+TAAR2	TM	False	no	allowed	allowed
+TAAR5	TM	False	no	allowed	allowed
+TAAR6	TM	False	no	allowed	allowed
+TACR1	TM	False	no	allowed	allowed
+TACR2	TM	False	no	allowed	allowed
+TACR3	TM	False	no	allowed	allowed
+TACSTD2	SP+TM	False	no	allowed	allowed
+TARM1	SP+TM	False	no	allowed	allowed
+TAS1R1	SP+TM	False	no	allowed	allowed
+TAS1R2	SP+TM	False	no	allowed	allowed
+TAS1R3	SP+TM	False	no	allowed	allowed
+TAS2R1	TM	False	no	allowed	allowed
+TAS2R10	TM	False	no	allowed	allowed
+TAS2R13	TM	False	no	allowed	allowed
+TAS2R14	TM	False	no	allowed	allowed
+TAS2R19	TM	False	no	allowed	allowed
+TAS2R20	TM	False	no	allowed	allowed
+TAS2R3	TM	False	no	allowed	allowed
+TAS2R31	TM	False	no	allowed	allowed
+TAS2R38	TM	False	no	at risk	allowed	class-I PDZ motif (RTLC), 2.85x over chance
+TAS2R39	TM	False	no	allowed	allowed
+TAS2R4	TM	False	no	allowed	allowed
+TAS2R41	TM	False	no	allowed	allowed
+TAS2R42	TM	False	no	allowed	allowed
+TAS2R43	TM	False	no	allowed	allowed
+TAS2R45	TM	False	no	allowed	allowed
+TAS2R46	TM	False	no	allowed	allowed
+TAS2R5	TM	False	no	allowed	allowed
+TAS2R50	TM	False	no	allowed	allowed
+TAS2R60	TM	False	no	allowed	allowed
+TAS2R7	TM	False	no	allowed	allowed
+TAS2R8	TM	False	no	allowed	allowed
+TAS2R9	TM	False	no	allowed	allowed
+TBXA2R	TM	False	no	allowed	allowed
+TCTA	TM	False	no	allowed	allowed
+TEK	SP+TM	False	no	allowed	allowed
+TEX101	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+TEX29	TM	False	no	allowed	allowed
+TEX38	TM	False	no	at risk	allowed	class-I PDZ motif (PSEL), 2.85x over chance
+TFPI	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+TFR2	TM	False	no	allowed	allowed
+TFRC	TM	False	yes	allowed	allowed
+TGFA	SP+TM	False	yes	at risk	at risk	class-I PDZ motif (ETVV), 2.85x over chance	processed, protease unnamed - shedding unresolved
+TGFBR1	SP+TM	False	no	allowed	allowed
+TGFBR2	SP+TM	False	no	allowed	allowed
+TGFBR3	SP+TM	False	no	at risk	allowed	class-I PDZ motif (SSTA), 2.85x over chance
+TGFBR3L	SP+TM	False	no	allowed	allowed
+THBD	SP+TM	False	no	allowed	allowed
+THSD1	SP+TM	False	no	allowed	allowed
+THSD7A	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+THY1	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+TIE1	SP+TM	False	no	allowed	allowed
+TIGIT	SP+TM	False	no	allowed	allowed
+TIMD4	SP+TM	False	no	allowed	allowed
+TLCD1	TM	False	no	allowed	allowed
+TLCD2	TM	False	no	allowed	allowed
+TLR1	SP+TM	False	no	allowed	allowed
+TLR10	SP+TM	False	no	allowed	allowed
+TLR2	SP+TM	False	no	allowed	allowed
+TLR4	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ATSI), 2.85x over chance
+TLR5	SP+TM	False	no	allowed	allowed
+TLR6	SP+TM	False	no	allowed	allowed
+TM4SF1	TM	False	no	allowed	allowed
+TM4SF18	TM	False	no	allowed	allowed
+TM4SF4	TM	False	no	allowed	allowed
+TM4SF5	TM	False	no	allowed	allowed
+TM7SF3	SP+TM	False	no	allowed	allowed
+TM9SF1	SP+TM	False	no	allowed	allowed
+TMC2	TM	False	no	allowed	allowed
+TMC4		False	no	allowed	allowed
+TMDD1	SP+TM	False	no	allowed	allowed
+TMEFF1	SP+TM	False	no	allowed	allowed
+TMEFF2	SP+TM	False	no	allowed	allowed
+TMEM106A	TM	False	no	allowed	allowed
+TMEM114	TM	False	no	allowed	allowed
+TMEM119	SP+TM	False	no	allowed	allowed
+TMEM123	SP+TM	False	no	allowed	allowed
+TMEM132A	SP+TM	False	no	allowed	allowed
+TMEM132B		False	no	allowed	allowed
+TMEM132D	SP+TM	False	no	allowed	allowed
+TMEM132E	SP+TM	False	no	allowed	allowed
+TMEM134	TM	False	no	allowed	allowed
+TMEM139	TM	False	no	allowed	allowed
+TMEM145	SP+TM	False	no	allowed	allowed
+TMEM150A	TM	False	no	allowed	allowed
+TMEM150C	TM	False	no	allowed	allowed
+TMEM154	SP+TM	False	no	allowed	allowed
+TMEM158	SP+TM	False	no	allowed	allowed
+TMEM169	TM	False	no	at risk	allowed	class-I PDZ motif (TSTV), 2.85x over chance
+TMEM170B	TM	False	no	allowed	allowed
+TMEM174	TM	False	no	allowed	allowed
+TMEM181	TM	False	no	allowed	allowed
+TMEM182	TM	False	no	allowed	allowed
+TMEM184A	TM	False	no	allowed	allowed
+TMEM190	SP+TM	False	no	allowed	allowed
+TMEM198	TM	False	no	allowed	allowed
+TMEM204	TM	False	no	at risk	allowed	class-I PDZ motif (ESPC), 2.85x over chance
+TMEM205	TM	False	no	allowed	allowed
+TMEM210	SP+TM	False	no	allowed	allowed
+TMEM219	TM	False	no	at risk	allowed	class-I PDZ motif (RTRL), 2.85x over chance
+TMEM222	TM	False	no	allowed	allowed
+TMEM225	TM	False	no	allowed	allowed
+TMEM229B	TM	False	no	allowed	allowed
+TMEM238	TM	False	no	allowed	allowed
+TMEM26	TM	False	no	allowed	allowed
+TMEM266	TM	False	no	allowed	allowed
+TMEM268	TM	False	no	allowed	allowed
+TMEM273	SP+TM	False	no	allowed	allowed
+TMEM47	TM	False	no	allowed	allowed
+TMEM63B	SP+TM	False	no	allowed	allowed
+TMEM67	SP+TM	False	no	allowed	allowed
+TMEM81	SP+TM	False	no	allowed	allowed
+TMEM86A	TM	False	no	allowed	allowed
+TMEM86B	TM	False	no	allowed	allowed
+TMEM89	SP+TM	False	no	allowed	allowed
+TMEM8B	TM	False	no	allowed	allowed
+TMEM95	SP+TM	False	no	at risk	allowed	class-I PDZ motif (KSGL), 2.85x over chance
+TMIGD1	SP+TM	False	no	at risk	allowed	class-I PDZ motif (ETAL), 2.85x over chance
+TMIGD2	SP+TM	False	no	allowed	allowed
+TMPRSS11A	TM	False	no	at risk	allowed	class-I PDZ motif (KTGI), 2.85x over chance
+TMPRSS11B	TM	False	no	at risk	allowed	class-I PDZ motif (KTGL), 2.85x over chance
+TMPRSS11D	TM	False	yes	at risk	at risk	class-I PDZ motif (QTGI), 2.85x over chance	processed, protease unnamed - shedding unresolved
+TMPRSS11E	TM	False	yes	at risk	at risk	class-I PDZ motif (KTGI), 2.85x over chance	processed, protease unnamed - shedding unresolved
+TMPRSS11F	TM	False	no	at risk	allowed	class-I PDZ motif (KTGM), 2.85x over chance
+TMPRSS13	TM	False	yes	allowed	allowed
+TMPRSS15	TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+TMPRSS2	TM	False	yes	allowed	allowed
+TMPRSS3	TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+TMPRSS4	TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+TMPRSS5	TM	False	yes	at risk	at risk	class-I PDZ motif (DSLL), 2.85x over chance	processed, protease unnamed - shedding unresolved
+TMPRSS6	TM	False	no	allowed	allowed
+TMPRSS7	TM	False	no	at risk	allowed	class-I PDZ motif (PSLL), 2.85x over chance
+TMPRSS9	TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+TNF	TM	False	yes	allowed	at risk		sheddase substrate (ADAM17; SPPL2A or SPPL2B)
+TNFRSF10A	SP+TM	False	no	allowed	allowed
+TNFRSF10B	SP+TM	False	no	allowed	allowed
+TNFRSF10C	SP+TM	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+TNFRSF10D	SP+TM	False	no	at risk	allowed	class-I PDZ motif (TSCL), 2.85x over chance
+TNFRSF11A	SP+TM	False	no	allowed	allowed
+TNFRSF12A	SP+TM	False	no	allowed	allowed
+TNFRSF13B	TM	False	no	allowed	allowed
+TNFRSF13C	TM	False	no	allowed	allowed
+TNFRSF14	SP+TM	False	no	allowed	allowed
+TNFRSF17	TM	False	no	allowed	allowed
+TNFRSF18	SP+TM	False	no	allowed	allowed
+TNFRSF19	SP+TM	False	no	allowed	allowed
+TNFRSF1A	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+TNFRSF1B	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+TNFRSF21	SP+TM	False	no	allowed	allowed
+TNFRSF25	SP+TM	False	no	allowed	allowed
+TNFRSF4	SP+TM	False	no	allowed	allowed
+TNFRSF8	SP+TM	False	no	allowed	allowed
+TNFRSF9	SP+TM	False	no	allowed	allowed
+TNFSF10	TM	False	no	allowed	allowed
+TNFSF11	TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+TNFSF12	TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+TNFSF13B	TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+TNFSF14	TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+TNFSF15	TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+TNFSF18	TM	False	no	allowed	allowed
+TNFSF4	TM	False	no	allowed	allowed
+TNFSF8	TM	False	no	allowed	allowed
+TNFSF9	TM	False	no	allowed	allowed
+TP53I13	SP+TM	False	no	allowed	allowed
+TPBG	SP+TM	False	no	at risk	allowed	class-I PDZ motif (NSDV), 2.85x over chance
+TPBGL	SP+TM	False	no	at risk	allowed	class-I PDZ motif (GSGL), 2.85x over chance
+TPO	SP+TM	False	no	allowed	allowed
+TPRA1	TM	False	no	allowed	allowed
+TPSG1	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+TRABD2A	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+TRABD2B	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+TREH	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+TREML2	SP+TM	False	no	allowed	allowed
+TRHDE	TM	False	no	allowed	allowed
+TRHR	TM	False	no	allowed	allowed
+TRIL	SP+TM	False	no	allowed	allowed
+TRPA1	TM	False	no	allowed	allowed
+TRPC1	TM	False	no	allowed	allowed
+TRPC3	TM	False	no	allowed	allowed
+TRPC4	TM	False	no	at risk	allowed	class-I PDZ motif (TTRL), 2.85x over chance
+TRPC5	TM	False	no	at risk	allowed	class-I PDZ motif (TTRL), 2.85x over chance
+TRPC6	TM	False	no	allowed	allowed
+TRPC7	TM	False	no	allowed	allowed
+TRPM2	TM	False	no	allowed	allowed
+TRPM4	TM	False	no	allowed	allowed
+TRPM5	TM	False	no	allowed	allowed
+TRPM8	TM	False	no	allowed	allowed
+TRPV1	TM	False	no	allowed	allowed
+TRPV3	TM	False	no	at risk	allowed	class-I PDZ motif (ETSV), 2.85x over chance
+TRPV4	TM	False	no	allowed	allowed
+TRPV5	TM	False	no	allowed	allowed
+TRPV6	TM	False	no	allowed	allowed
+TSHR	SP+TM	False	no	at risk	allowed	class-I PDZ motif (QTVL), 2.85x over chance
+TSPAN1	TM	False	no	allowed	allowed
+TSPAN10	TM	False	no	allowed	allowed
+TSPAN11	TM	False	no	allowed	allowed
+TSPAN12	TM	False	no	allowed	allowed
+TSPAN13	TM	False	no	allowed	allowed
+TSPAN14	TM	False	no	allowed	allowed
+TSPAN15	TM	False	no	allowed	allowed
+TSPAN16	TM	False	no	allowed	allowed
+TSPAN17	TM	False	no	allowed	allowed
+TSPAN18	TM	False	no	allowed	allowed
+TSPAN2	TM	False	no	allowed	allowed
+TSPAN31	TM	False	no	allowed	allowed
+TSPAN33	TM	False	no	allowed	allowed
+TSPAN4	TM	False	no	allowed	allowed
+TSPAN5	TM	False	no	allowed	allowed
+TSPAN6	TM	False	no	allowed	allowed
+TSPAN7	TM	False	no	allowed	allowed
+TSPAN8	TM	False	no	allowed	allowed
+TSPAN9	TM	False	no	allowed	allowed
+TSPO2	TM	False	no	allowed	allowed
+TTYH1	TM	False	no	at risk	allowed	class-I PDZ motif (QSSI), 2.85x over chance
+TTYH2	TM	False	no	allowed	allowed
+TTYH3	TM	False	no	allowed	allowed
+TYRO3	SP+TM	False	no	at risk	allowed	class-I PDZ motif (HSSC), 2.85x over chance
+ULBP1	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+ULBP2	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+ULBP3	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+UMOD	SP	True	yes	forbidden	at risk	GPI: the C-terminus is removed at the omega site	processed, protease unnamed - shedding unresolved
+UNC5A	SP+TM	False	yes	allowed	allowed
+UNC5B	SP+TM	False	yes	allowed	allowed
+UNC5C	SP+TM	False	yes	allowed	allowed
+UNC5D	SP+TM	False	yes	allowed	allowed
+UNC93A	TM	False	no	at risk	allowed	class-I PDZ motif (QTKM), 2.85x over chance
+UPK1B	TM	False	no	allowed	allowed
+UPK3BL1	SP+TM	False	no	allowed	allowed
+UPK3BL2	SP+TM	False	no	allowed	allowed
+UTS2R	TM	False	no	allowed	allowed
+VANGL1	TM	False	no	at risk	allowed	class-I PDZ motif (ETSV), 2.85x over chance
+VANGL2	TM	False	no	at risk	allowed	class-I PDZ motif (ETSV), 2.85x over chance
+VASN	SP+TM	False	no	allowed	allowed
+VCAM1	SP+TM	False	yes	at risk	at risk	class-I PDZ motif (KSKV), 2.85x over chance	processed, protease unnamed - shedding unresolved
+VIPR1	SP+TM	False	no	at risk	allowed	class-I PDZ motif (VSLV), 2.85x over chance
+VIPR2	SP+TM	False	no	at risk	allowed	class-I PDZ motif (TSVI), 2.85x over chance
+VLDLR	SP+TM	False	no	allowed	allowed
+VN1R1	TM	False	no	allowed	allowed
+VN1R2	TM	False	no	allowed	allowed
+VN1R4	TM	False	no	allowed	allowed
+VNN1	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+VNN2	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+VSIG1	SP+TM	False	no	allowed	allowed
+VSIG10	SP+TM	False	no	allowed	allowed
+VSIG10L	SP+TM	False	no	allowed	allowed
+VSIG2	SP+TM	False	no	allowed	allowed
+VSIG4	SP+TM	False	no	at risk	allowed	class-I PDZ motif (KSVC), 2.85x over chance
+VSIG8	SP+TM	False	no	allowed	allowed
+VSIR	SP+TM	False	no	allowed	allowed
+VSTM1	SP+TM	False	no	allowed	allowed
+VSTM4	SP+TM	False	no	allowed	allowed
+VSTM5	SP+TM	False	no	allowed	allowed
+VTCN1	TM	False	no	allowed	allowed
+XCR1	TM	False	no	at risk	allowed	class-I PDZ motif (ASFY), 2.85x over chance
+XG	SP+TM	False	no	allowed	allowed
+XK	TM	False	no	allowed	allowed
+XKR3	TM	False	no	allowed	allowed
+XKR4	TM	False	yes	at risk	allowed	class-I PDZ motif (ETTL), 2.85x over chance
+XKR5	TM	False	no	allowed	allowed
+XKR6	TM	False	no	at risk	allowed	class-I PDZ motif (ESSL), 2.85x over chance
+XKR7	TM	False	no	at risk	allowed	class-I PDZ motif (ETTV), 2.85x over chance
+XKR8	TM	False	yes	allowed	allowed
+XKR9	TM	False	yes	allowed	allowed
+XPNPEP2	SP	True	no	forbidden	allowed	GPI: the C-terminus is removed at the omega site
+XPR1	TM	False	no	allowed	allowed
+ZACN	SP+TM	False	no	allowed	allowed
+ZNRF3	SP+TM	False	no	allowed	allowed
+ZP1	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+ZP2	SP+TM	False	yes	allowed	allowed
+ZP3	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved
+ZP4	SP+TM	False	yes	allowed	at risk		processed, protease unnamed - shedding unresolved

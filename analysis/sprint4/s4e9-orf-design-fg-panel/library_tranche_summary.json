@@ -1,0 +1,64 @@
+{
+ "source_manifest": "processed://sprint4/s4e9-orf-design-fg-panel/library-candidates/candidate_manifest.tsv",
+ "isoform_panel_matched": 144,
+ "ortholog_panel_matched": 196,
+ "unmatched_panel_rows": [
+  {
+   "panel_row": "isoform:LYPD1",
+   "accession": "Q8N2G4-3"
+  },
+  {
+   "panel_row": "isoform:SCNN1A",
+   "accession": "P37088-5"
+  },
+  {
+   "panel_row": "isoform:SLC12A6",
+   "accession": "Q9UHW9-6"
+  },
+  {
+   "panel_row": "isoform:SLC29A1",
+   "accession": "Q99808-2"
+  },
+  {
+   "panel_row": "isoform:LRRC37B",
+   "accession": "<no accession>"
+  },
+  {
+   "panel_row": "isoform:NRG4",
+   "accession": "<no accession>"
+  },
+  {
+   "panel_row": "ortholog:cyno:ATP1B1",
+   "accession": "panel Q4R4V5 vs manifest <none>"
+  },
+  {
+   "panel_row": "ortholog:mouse:LYPD6B",
+   "accession": "panel Q9D7F2-1 vs manifest <none>"
+  },
+  {
+   "panel_row": "ortholog:mouse:PTPRJ",
+   "accession": "panel Q64455 vs manifest <none>"
+  },
+  {
+   "panel_row": "ortholog:mouse:INSR",
+   "accession": "panel M4TKR7 vs manifest <none>"
+  }
+ ],
+ "counts": {
+  "l1": {
+   "library_reference": 2360,
+   "expression_rescue": 25,
+   "isoform": 144,
+   "ortholog": 196
+  },
+  "l2": {
+   "isoform": 1696,
+   "ortholog": 2621,
+   "giant_truncation": 24
+  }
+ },
+ "totals": {
+  "l1": 2725,
+  "l2": 4341
+ }
+}

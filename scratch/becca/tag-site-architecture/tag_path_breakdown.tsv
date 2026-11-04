@@ -1,0 +1,6 @@
+placement	members	pct_of_library	rests_on
+N-term, after signal peptide	1129	47.7	predicted cleavage site
+N-term at residue 1, multipass	525	22.2	Tedman GPCR screen
+N-term at residue 1, single-pass (type III)	32	1.4	topogenesis, untested
+C-terminal	166	7.0	topology only
+internal loop or snorkel	515	21.8	AlphaFold model per gene

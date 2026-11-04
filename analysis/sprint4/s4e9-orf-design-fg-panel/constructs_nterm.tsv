@@ -1,0 +1,9 @@
+gene	placement	note	insert_nt	cds_nt	protein_aa	barcode	sites_n	sites_in_insert
+HEG1	nterm	cassette after the signal peptide (residue 29)	4414	4299	1432	AGCAATCTCCACGGCACTCG	0	none
+ERBB2	nterm	cassette after the signal peptide (residue 22)	4036	3921	1306	GCCTATAACGGAGACAGAAT	0	none
+AXL	nterm	cassette after the signal peptide (residue 25)	2953	2838	945	GGTGGTTCTTGTAGGAGCAT	0	none
+SLC9A3	nterm	cassette after the signal peptide (residue 25)	2773	2658	885	AGGAATCAGTGCTAACAGAC	0	none
+VSIG10	nterm	cassette after the signal peptide (residue 30)	1891	1776	591	AGATCAACCTACAGCAACCG	0	none
+NECTIN4	nterm	cassette after the signal peptide (residue 31)	1801	1686	561	GAGGCACGGAACTAGCAATT	0	none
+FOLR1	nterm	cassette after the signal peptide (residue 24)	1042	927	308	CCAGACAAGAGGCGACCAGA	0	none
+PTPRC	nterm	cassette after the signal peptide (residue 25)	4189	4074	1357	CTCCGCTCTTATCTCTGAAC	0	none

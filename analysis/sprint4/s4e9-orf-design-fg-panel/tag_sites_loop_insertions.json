@@ -1,0 +1,100 @@
+{
+  "source": "accessible-surfaceome tag_sites deterministic pipeline, dev-sync @69c2bf452; scripts/regenerate_tag_sites.py --gene SLC2A4 P14672 --gene MS4A1 P11836",
+  "note": "the two panel genes with no extracellular terminus; loop insertions only",
+  "sites": {
+    "SLC2A4": [
+      {
+        "site_id": "SLC2A4-snorkel-c",
+        "det_path": "snorkel",
+        "site_kind": "terminal_c",
+        "residue_label": "D509",
+        "insert_after_residue": 509,
+        "topology_state": "I",
+        "extracellular": false,
+        "tag_type": "ALFA",
+        "tag_length_aa": 15,
+        "linker": "GS both sides",
+        "confidence": "low",
+        "plddt": 42.8,
+        "rationale": "C-terminus not extracellular (topology 'I' at residue L) and no accessible N-terminus \u2014 C-terminal snorkel presents the tag on the surface via a TM-snorkeling linker (fallback: no natively accessible terminus)"
+      },
+      {
+        "site_id": "SLC2A4-surface_loop-193",
+        "det_path": "surface_loop",
+        "site_kind": "internal",
+        "residue_label": "E193",
+        "insert_after_residue": 193,
+        "topology_state": "O",
+        "extracellular": true,
+        "tag_type": "ALFA, DogTag",
+        "tag_length_aa": 15,
+        "linker": "GS both sides",
+        "confidence": "medium",
+        "plddt": 88.8,
+        "rationale": "ordered surface loop (11 aa): pLDDT>=70, DSSP loop/turn, exposed junction residue (max RSA), indel-tolerant, 3D-clear of features"
+      },
+      {
+        "site_id": "SLC2A4-surface_loop-66",
+        "det_path": "surface_loop",
+        "site_kind": "internal",
+        "residue_label": "P66",
+        "insert_after_residue": 66,
+        "topology_state": "O",
+        "extracellular": true,
+        "tag_type": "ALFA, DogTag",
+        "tag_length_aa": 15,
+        "linker": "GS both sides",
+        "confidence": "medium",
+        "plddt": 78.3,
+        "rationale": "ordered surface loop (9 aa): pLDDT>=70, DSSP loop/turn, exposed junction residue (max RSA), indel-tolerant, 3D-clear of features"
+      }
+    ],
+    "MS4A1": [
+      {
+        "site_id": "MS4A1-snorkel-c",
+        "det_path": "snorkel",
+        "site_kind": "terminal_c",
+        "residue_label": "P297",
+        "insert_after_residue": 297,
+        "topology_state": "I",
+        "extracellular": false,
+        "tag_type": "ALFA",
+        "tag_length_aa": 15,
+        "linker": "GS both sides",
+        "confidence": "low",
+        "plddt": 67.9,
+        "rationale": "C-terminus not extracellular (topology 'I' at residue L) and no accessible N-terminus \u2014 C-terminal snorkel presents the tag on the surface via a TM-snorkeling linker (fallback: no natively accessible terminus)"
+      },
+      {
+        "site_id": "MS4A1-surface_loop-161",
+        "det_path": "surface_loop",
+        "site_kind": "internal",
+        "residue_label": "Y161",
+        "insert_after_residue": 161,
+        "topology_state": "O",
+        "extracellular": true,
+        "tag_type": "ALFA, DogTag",
+        "tag_length_aa": 15,
+        "linker": "GS both sides",
+        "confidence": "medium",
+        "plddt": 74.9,
+        "rationale": "ordered surface loop (13 aa): pLDDT>=70, DSSP loop/turn, exposed junction residue (max RSA), indel-tolerant, 3D-clear of features"
+      },
+      {
+        "site_id": "MS4A1-surface_loop-171",
+        "det_path": "surface_loop",
+        "site_kind": "internal",
+        "residue_label": "N171",
+        "insert_after_residue": 171,
+        "topology_state": "O",
+        "extracellular": true,
+        "tag_type": "ALFA, DogTag",
+        "tag_length_aa": 15,
+        "linker": "GS both sides",
+        "confidence": "medium",
+        "plddt": 87.0,
+        "rationale": "ordered surface loop (13 aa): pLDDT>=70, DSSP loop/turn, exposed junction residue (max RSA), indel-tolerant, 3D-clear of features"
+      }
+    ]
+  }
+}

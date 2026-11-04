@@ -1,0 +1,15 @@
+{
+  "backbone": "processed://sprint4/s4e9-orf-design-fg-panel/p0039_EFS_IRES_puro_backbone.gb",
+  "cds_cyno": "external://ensembl/release-115/cds/Macaca_fascicularis.Macaca_fascicularis_6.0.cds.all.fa.gz",
+  "cds_human": "external://ensembl/release-115/cds/Homo_sapiens.GRCh38.cds.all.fa.gz",
+  "cds_mouse": "external://ensembl/release-115/cds/Mus_musculus.GRCm39.cds.all.fa.gz",
+  "ensembl_release": "115",
+  "pep_cyno": "external://ensembl/release-115/pep/Macaca_fascicularis.Macaca_fascicularis_6.0.pep.all.fa.gz",
+  "pep_human": "external://ensembl/release-115/pep/Homo_sapiens.GRCh38.pep.all.fa.gz",
+  "pep_mouse": "external://ensembl/release-115/pep/Mus_musculus.GRCm39.pep.all.fa.gz",
+  "reference_vector": "processed://sprint4/s4e9-orf-design-fg-panel/p0039_AXL_vector.gb",
+  "uniprot_cyno": "external://uniprot/2026-10-11/uniprot_cyno_all_isoforms.tsv.gz",
+  "uniprot_human": "external://uniprot/2026-10-11/uniprot_human_reviewed.tsv.gz, external://uniprot/2026-10-11/uniprot_human_reviewed_isoforms.tsv.gz",
+  "uniprot_mouse": "external://uniprot/2026-10-11/uniprot_mouse_reviewed_isoforms.tsv.gz",
+  "uniprot_snapshot": "2026-10-11"
+}

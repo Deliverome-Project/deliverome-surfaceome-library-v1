@@ -1,0 +1,1569 @@
+{
+ "ABCA1": {
+  "orf_kb": 6.8,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Abca1"
+   },
+   {
+    "species": "cyno",
+    "symbol": "ABCA1"
+   }
+  ],
+  "tier": "T2"
+ },
+ "ABCA7": {
+  "orf_kb": 6.4,
+  "surface_isoform_ids": [
+   "Q8IZY2-2"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Abca7"
+   },
+   {
+    "species": "cyno",
+    "symbol": "ABCA7"
+   }
+  ],
+  "tier": "T2"
+ },
+ "ADGRG4": {
+  "orf_kb": 9.2,
+  "surface_isoform_ids": [
+   "Q8IZF6-2",
+   "Q8IZF6-3"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "cyno",
+    "symbol": "ADGRG4"
+   }
+  ],
+  "tier": "T2"
+ },
+ "ADGRV1": {
+  "orf_kb": 18.9,
+  "surface_isoform_ids": [
+   "Q8WXG9-2"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Adgrv1"
+   },
+   {
+    "species": "cyno",
+    "symbol": "ADGRV1"
+   }
+  ],
+  "tier": "T2"
+ },
+ "CACNA1A": {
+  "orf_kb": 7.5,
+  "surface_isoform_ids": [
+   "O00555-2",
+   "O00555-3",
+   "O00555-4",
+   "O00555-5",
+   "O00555-6"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Cacna1a"
+   },
+   {
+    "species": "cyno",
+    "symbol": "CACNA1A"
+   }
+  ],
+  "tier": "T2"
+ },
+ "CACNA1B": {
+  "orf_kb": 7.0,
+  "surface_isoform_ids": [
+   "Q00975-2"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Cacna1b"
+   }
+  ],
+  "tier": "T2"
+ },
+ "CACNA1C": {
+  "orf_kb": 6.7,
+  "surface_isoform_ids": [
+   "Q13936-10",
+   "Q13936-11",
+   "Q13936-12",
+   "Q13936-13",
+   "Q13936-14",
+   "Q13936-15",
+   "Q13936-16",
+   "Q13936-17",
+   "Q13936-18",
+   "Q13936-19",
+   "Q13936-2",
+   "Q13936-20",
+   "Q13936-21",
+   "Q13936-22",
+   "Q13936-23",
+   "Q13936-24",
+   "Q13936-25",
+   "Q13936-26",
+   "Q13936-27",
+   "Q13936-28",
+   "Q13936-29",
+   "Q13936-3",
+   "Q13936-30",
+   "Q13936-31",
+   "Q13936-32",
+   "Q13936-33",
+   "Q13936-34",
+   "Q13936-35",
+   "Q13936-36",
+   "Q13936-37",
+   "Q13936-4",
+   "Q13936-5",
+   "Q13936-6",
+   "Q13936-7",
+   "Q13936-8",
+   "Q13936-9"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Cacna1c"
+   }
+  ],
+  "tier": "T2"
+ },
+ "CACNA1D": {
+  "orf_kb": 6.5,
+  "surface_isoform_ids": [
+   "Q01668-2",
+   "Q01668-3",
+   "Q01668-4"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Cacna1d"
+   },
+   {
+    "species": "cyno",
+    "symbol": "CACNA1D"
+   }
+  ],
+  "tier": "T2"
+ },
+ "CACNA1E": {
+  "orf_kb": 6.9,
+  "surface_isoform_ids": [
+   "Q15878-2",
+   "Q15878-3"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Cacna1e"
+   },
+   {
+    "species": "cyno",
+    "symbol": "CACNA1E"
+   }
+  ],
+  "tier": "T2"
+ },
+ "CACNA1F": {
+  "orf_kb": 5.9,
+  "surface_isoform_ids": [
+   "O60840-2",
+   "O60840-4",
+   "O60840-5",
+   "O60840-6",
+   "O60840-7"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Cacna1f"
+   },
+   {
+    "species": "cyno",
+    "symbol": "CACNA1F"
+   }
+  ],
+  "tier": "T2"
+ },
+ "CACNA1G": {
+  "orf_kb": 7.1,
+  "surface_isoform_ids": [
+   "O43497-10",
+   "O43497-11",
+   "O43497-12",
+   "O43497-13",
+   "O43497-15",
+   "O43497-16",
+   "O43497-17",
+   "O43497-18",
+   "O43497-19",
+   "O43497-2",
+   "O43497-20",
+   "O43497-21",
+   "O43497-22",
+   "O43497-23",
+   "O43497-24",
+   "O43497-25",
+   "O43497-26",
+   "O43497-27",
+   "O43497-28",
+   "O43497-29",
+   "O43497-3",
+   "O43497-30",
+   "O43497-31",
+   "O43497-32",
+   "O43497-33",
+   "O43497-34",
+   "O43497-35",
+   "O43497-36",
+   "O43497-4",
+   "O43497-5",
+   "O43497-6",
+   "O43497-7",
+   "O43497-8",
+   "O43497-9"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Cacna1g"
+   }
+  ],
+  "tier": "T2"
+ },
+ "CACNA1H": {
+  "orf_kb": 7.1,
+  "surface_isoform_ids": [
+   "O95180-2"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Cacna1h"
+   }
+  ],
+  "tier": "T2"
+ },
+ "CACNA1I": {
+  "orf_kb": 6.7,
+  "surface_isoform_ids": [
+   "Q9P0X4-2",
+   "Q9P0X4-3",
+   "Q9P0X4-4"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Cacna1i"
+   },
+   {
+    "species": "cyno",
+    "symbol": "CACNA1I"
+   }
+  ],
+  "tier": "T2"
+ },
+ "CACNA1S": {
+  "orf_kb": 5.6,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Cacna1s"
+   },
+   {
+    "species": "cyno",
+    "symbol": "CACNA1S"
+   }
+  ],
+  "tier": "T2"
+ },
+ "CDH23": {
+  "orf_kb": 10.1,
+  "surface_isoform_ids": [
+   "Q9H251-2",
+   "Q9H251-3",
+   "Q9H251-4",
+   "Q9H251-7",
+   "Q9H251-8",
+   "Q9H251-9"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Cdh23"
+   }
+  ],
+  "tier": "T1"
+ },
+ "CELSR1": {
+  "orf_kb": 9.0,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Celsr1"
+   },
+   {
+    "species": "cyno",
+    "symbol": "CELSR1"
+   }
+  ],
+  "tier": "T2"
+ },
+ "CELSR2": {
+  "orf_kb": 8.8,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Celsr2"
+   }
+  ],
+  "tier": "T2"
+ },
+ "CELSR3": {
+  "orf_kb": 9.9,
+  "surface_isoform_ids": [
+   "Q9NYQ7-2"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Celsr3"
+   },
+   {
+    "species": "cyno",
+    "symbol": "CELSR3"
+   }
+  ],
+  "tier": "T2"
+ },
+ "CR1": {
+  "orf_kb": 6.1,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "cyno",
+    "symbol": "CR1"
+   }
+  ],
+  "tier": "T1"
+ },
+ "CSMD1": {
+  "orf_kb": 10.7,
+  "surface_isoform_ids": [
+   "Q96PZ7-2"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Csmd1"
+   }
+  ],
+  "tier": "T1"
+ },
+ "CSMD2": {
+  "orf_kb": 10.5,
+  "surface_isoform_ids": [
+   "Q7Z408-4"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Csmd2"
+   },
+   {
+    "species": "cyno",
+    "symbol": "CSMD2"
+   }
+  ],
+  "tier": "T1"
+ },
+ "CSMD3": {
+  "orf_kb": 11.1,
+  "surface_isoform_ids": [
+   "Q7Z407-2",
+   "Q7Z407-3",
+   "Q7Z407-4"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Csmd3"
+   },
+   {
+    "species": "cyno",
+    "symbol": "CSMD3"
+   }
+  ],
+  "tier": "T1"
+ },
+ "CSPG4": {
+  "orf_kb": 7.0,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Cspg4"
+   },
+   {
+    "species": "cyno",
+    "symbol": "CSPG4"
+   }
+  ],
+  "tier": "T3"
+ },
+ "DCHS1": {
+  "orf_kb": 9.9,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Dchs1"
+   },
+   {
+    "species": "cyno",
+    "symbol": "DCHS1"
+   }
+  ],
+  "tier": "T1"
+ },
+ "DSCAM": {
+  "orf_kb": 6.0,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Dscam"
+   },
+   {
+    "species": "cyno",
+    "symbol": "DSCAM"
+   }
+  ],
+  "tier": "T1"
+ },
+ "DSCAML1": {
+  "orf_kb": 6.2,
+  "surface_isoform_ids": [
+   "Q8TD84-2"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Dscaml1"
+   },
+   {
+    "species": "cyno",
+    "symbol": "DSCAML1"
+   }
+  ],
+  "tier": "T1"
+ },
+ "FAT1": {
+  "orf_kb": 13.8,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Fat1"
+   },
+   {
+    "species": "cyno",
+    "symbol": "FAT1"
+   }
+  ],
+  "tier": "T1"
+ },
+ "FAT2": {
+  "orf_kb": 13.1,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Fat2"
+   },
+   {
+    "species": "cyno",
+    "symbol": "FAT2"
+   }
+  ],
+  "tier": "T1"
+ },
+ "FAT3": {
+  "orf_kb": 13.7,
+  "surface_isoform_ids": [
+   "Q8TDW7-1"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Fat3"
+   },
+   {
+    "species": "cyno",
+    "symbol": "FAT3"
+   }
+  ],
+  "tier": "T1"
+ },
+ "FAT4": {
+  "orf_kb": 14.9,
+  "surface_isoform_ids": [
+   "Q6V0I7-2",
+   "Q6V0I7-3"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Fat4"
+   },
+   {
+    "species": "cyno",
+    "symbol": "FAT4"
+   }
+  ],
+  "tier": "T1"
+ },
+ "FNDC1": {
+  "orf_kb": 5.7,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "cyno",
+    "symbol": "FNDC1"
+   }
+  ],
+  "tier": "T3"
+ },
+ "GPR179": {
+  "orf_kb": 7.1,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Gpr179"
+   },
+   {
+    "species": "cyno",
+    "symbol": "GPR179"
+   }
+  ],
+  "tier": "T2"
+ },
+ "ITGB4": {
+  "orf_kb": 5.5,
+  "surface_isoform_ids": [
+   "P16144-2",
+   "P16144-3",
+   "P16144-4",
+   "P16144-5"
+  ],
+  "surface_orthologs": [],
+  "tier": "T1"
+ },
+ "LCT": {
+  "orf_kb": 5.8,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Lct"
+   },
+   {
+    "species": "cyno",
+    "symbol": "LCT"
+   }
+  ],
+  "tier": "T1"
+ },
+ "LRP1": {
+  "orf_kb": 13.6,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Lrp1"
+   },
+   {
+    "species": "cyno",
+    "symbol": "LRP1"
+   }
+  ],
+  "tier": "T1"
+ },
+ "LRP1B": {
+  "orf_kb": 13.8,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Lrp1b"
+   },
+   {
+    "species": "cyno",
+    "symbol": "LRP1B"
+   }
+  ],
+  "tier": "T1"
+ },
+ "LRP2": {
+  "orf_kb": 14.0,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Lrp2"
+   },
+   {
+    "species": "cyno",
+    "symbol": "LRP2"
+   }
+  ],
+  "tier": "T1"
+ },
+ "LRP4": {
+  "orf_kb": 5.7,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Lrp4"
+   },
+   {
+    "species": "cyno",
+    "symbol": "LRP4"
+   }
+  ],
+  "tier": "T1"
+ },
+ "LY75": {
+  "orf_kb": 5.2,
+  "surface_isoform_ids": [
+   "O60449-2",
+   "O60449-3"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Ly75"
+   },
+   {
+    "species": "cyno",
+    "symbol": "LY75"
+   }
+  ],
+  "tier": "T1"
+ },
+ "MEGF8": {
+  "orf_kb": 8.5,
+  "surface_isoform_ids": [
+   "Q7Z7M0-2"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Megf8"
+   },
+   {
+    "species": "cyno",
+    "symbol": "MEGF8"
+   }
+  ],
+  "tier": "T1"
+ },
+ "MGAM": {
+  "orf_kb": 8.3,
+  "surface_isoform_ids": [
+   "O43451-1"
+  ],
+  "surface_orthologs": [],
+  "tier": "T1"
+ },
+ "MUC12": {
+  "orf_kb": 16.4,
+  "surface_isoform_ids": [
+   "Q9UKN1-2"
+  ],
+  "surface_orthologs": [],
+  "tier": "T1"
+ },
+ "MUC16": {
+  "orf_kb": 43.5,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [],
+  "tier": "T3"
+ },
+ "MUC17": {
+  "orf_kb": 13.5,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [],
+  "tier": "T1"
+ },
+ "MUC22": {
+  "orf_kb": 5.3,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [],
+  "tier": "T1"
+ },
+ "MUC3A": {
+  "orf_kb": 10.0,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [],
+  "tier": "T1"
+ },
+ "MUC3B": {
+  "orf_kb": 40.4,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [],
+  "tier": "T1"
+ },
+ "MUC4": {
+  "orf_kb": 16.2,
+  "surface_isoform_ids": [
+   "Q99102-10",
+   "Q99102-12",
+   "Q99102-13",
+   "Q99102-17"
+  ],
+  "surface_orthologs": [],
+  "tier": "T3"
+ },
+ "NOTCH1": {
+  "orf_kb": 7.7,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Notch1"
+   },
+   {
+    "species": "cyno",
+    "symbol": "NOTCH1"
+   }
+  ],
+  "tier": "T1"
+ },
+ "NOTCH2": {
+  "orf_kb": 7.4,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Notch2"
+   },
+   {
+    "species": "cyno",
+    "symbol": "NOTCH2"
+   }
+  ],
+  "tier": "T1"
+ },
+ "NOTCH3": {
+  "orf_kb": 7.0,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Notch3"
+   }
+  ],
+  "tier": "T1"
+ },
+ "NOTCH4": {
+  "orf_kb": 6.0,
+  "surface_isoform_ids": [
+   "Q99466-2"
+  ],
+  "surface_orthologs": [],
+  "tier": "T1"
+ },
+ "PCDH15": {
+  "orf_kb": 5.9,
+  "surface_isoform_ids": [
+   "Q96QU1-2",
+   "Q96QU1-4",
+   "Q96QU1-6",
+   "Q96QU1-7"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Pcdh15"
+   },
+   {
+    "species": "cyno",
+    "symbol": "PCDH15"
+   }
+  ],
+  "tier": "T1"
+ },
+ "PCSK5": {
+  "orf_kb": 5.6,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Pcsk5"
+   },
+   {
+    "species": "cyno",
+    "symbol": "PCSK5"
+   }
+  ],
+  "tier": "T1"
+ },
+ "PIEZO1": {
+  "orf_kb": 7.6,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Piezo1"
+   }
+  ],
+  "tier": "T2"
+ },
+ "PIEZO2": {
+  "orf_kb": 8.3,
+  "surface_isoform_ids": [
+   "Q9H5I5-2",
+   "Q9H5I5-3",
+   "Q9H5I5-4"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Piezo2"
+   },
+   {
+    "species": "cyno",
+    "symbol": "PIEZO2"
+   }
+  ],
+  "tier": "T2"
+ },
+ "PKD1": {
+  "orf_kb": 12.9,
+  "surface_isoform_ids": [
+   "P98161-2",
+   "P98161-3"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Pkd1"
+   }
+  ],
+  "tier": "T2"
+ },
+ "PKDREJ": {
+  "orf_kb": 6.8,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "cyno",
+    "symbol": "PKDREJ"
+   }
+  ],
+  "tier": "T2"
+ },
+ "PKHD1": {
+  "orf_kb": 12.2,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Pkhd1"
+   },
+   {
+    "species": "cyno",
+    "symbol": "PKHD1"
+   }
+  ],
+  "tier": "T1"
+ },
+ "PLXNA1": {
+  "orf_kb": 5.7,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Plxna1"
+   },
+   {
+    "species": "cyno",
+    "symbol": "PLXNA1"
+   }
+  ],
+  "tier": "T1"
+ },
+ "PLXNA2": {
+  "orf_kb": 5.7,
+  "surface_isoform_ids": [
+   "O75051-2"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Plxna2"
+   },
+   {
+    "species": "cyno",
+    "symbol": "PLXNA2"
+   }
+  ],
+  "tier": "T1"
+ },
+ "PLXNA3": {
+  "orf_kb": 5.6,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Plxna3"
+   },
+   {
+    "species": "cyno",
+    "symbol": "PLXNA3"
+   }
+  ],
+  "tier": "T1"
+ },
+ "PLXNA4": {
+  "orf_kb": 5.7,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Plxna4"
+   },
+   {
+    "species": "cyno",
+    "symbol": "PLXNA4"
+   }
+  ],
+  "tier": "T1"
+ },
+ "PLXNB1": {
+  "orf_kb": 6.4,
+  "surface_isoform_ids": [
+   "O43157-2"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Plxnb1"
+   },
+   {
+    "species": "cyno",
+    "symbol": "PLXNB1"
+   }
+  ],
+  "tier": "T1"
+ },
+ "PLXNB2": {
+  "orf_kb": 5.5,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Plxnb2"
+   },
+   {
+    "species": "cyno",
+    "symbol": "PLXNB2"
+   }
+  ],
+  "tier": "T1"
+ },
+ "PLXNB3": {
+  "orf_kb": 5.7,
+  "surface_isoform_ids": [
+   "Q9ULL4-2"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Plxnb3"
+   }
+  ],
+  "tier": "T3"
+ },
+ "PLXND1": {
+  "orf_kb": 5.8,
+  "surface_isoform_ids": [
+   "Q9Y4D7-2"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Plxnd1"
+   }
+  ],
+  "tier": "T1"
+ },
+ "PTPRB": {
+  "orf_kb": 6.0,
+  "surface_isoform_ids": [
+   "P23467-2",
+   "P23467-3",
+   "P23467-4"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Ptprb"
+   },
+   {
+    "species": "cyno",
+    "symbol": "PTPRB"
+   }
+  ],
+  "tier": "T1"
+ },
+ "PTPRD": {
+  "orf_kb": 5.7,
+  "surface_isoform_ids": [
+   "P23468-2",
+   "P23468-3",
+   "P23468-4",
+   "P23468-5",
+   "P23468-6",
+   "P23468-7"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Ptprd"
+   },
+   {
+    "species": "cyno",
+    "symbol": "PTPRD"
+   }
+  ],
+  "tier": "T1"
+ },
+ "PTPRF": {
+  "orf_kb": 5.7,
+  "surface_isoform_ids": [
+   "P10586-2"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Ptprf"
+   }
+  ],
+  "tier": "T1"
+ },
+ "PTPRQ": {
+  "orf_kb": 7.0,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Ptprq"
+   },
+   {
+    "species": "cyno",
+    "symbol": "PTPRQ"
+   }
+  ],
+  "tier": "T1"
+ },
+ "PTPRS": {
+  "orf_kb": 5.8,
+  "surface_isoform_ids": [
+   "Q13332-2",
+   "Q13332-3",
+   "Q13332-4",
+   "Q13332-5",
+   "Q13332-6",
+   "Q13332-7"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Ptprs"
+   }
+  ],
+  "tier": "T1"
+ },
+ "PTPRZ1": {
+  "orf_kb": 6.9,
+  "surface_isoform_ids": [
+   "P23471-2",
+   "P23471-3"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Ptprz1"
+   },
+   {
+    "species": "cyno",
+    "symbol": "PTPRZ1"
+   }
+  ],
+  "tier": "T3"
+ },
+ "PTPRZ2": {
+  "orf_kb": 6.9,
+  "surface_isoform_ids": [
+   "P23471-2",
+   "P23471-3"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Ptprz1"
+   },
+   {
+    "species": "cyno",
+    "symbol": "PTPRZ1"
+   }
+  ],
+  "tier": "T1"
+ },
+ "ROS1": {
+  "orf_kb": 7.0,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Ros1"
+   },
+   {
+    "species": "cyno",
+    "symbol": "ROS1"
+   }
+  ],
+  "tier": "T1"
+ },
+ "SCN10A": {
+  "orf_kb": 5.9,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Scn10a"
+   },
+   {
+    "species": "cyno",
+    "symbol": "SCN10A"
+   }
+  ],
+  "tier": "T2"
+ },
+ "SCN11A": {
+  "orf_kb": 5.4,
+  "surface_isoform_ids": [
+   "Q9UI33-2",
+   "Q9UI33-3"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "cyno",
+    "symbol": "SCN11A"
+   }
+  ],
+  "tier": "T2"
+ },
+ "SCN1A": {
+  "orf_kb": 6.0,
+  "surface_isoform_ids": [
+   "P35498-2",
+   "P35498-3"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Scn1a"
+   },
+   {
+    "species": "cyno",
+    "symbol": "SCN1A"
+   }
+  ],
+  "tier": "T2"
+ },
+ "SCN2A": {
+  "orf_kb": 6.0,
+  "surface_isoform_ids": [
+   "Q99250-2"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Scn2a"
+   },
+   {
+    "species": "cyno",
+    "symbol": "SCN2A"
+   }
+  ],
+  "tier": "T2"
+ },
+ "SCN3A": {
+  "orf_kb": 6.0,
+  "surface_isoform_ids": [
+   "Q9NY46-2",
+   "Q9NY46-3",
+   "Q9NY46-4"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Scn3a"
+   },
+   {
+    "species": "cyno",
+    "symbol": "SCN3A"
+   }
+  ],
+  "tier": "T2"
+ },
+ "SCN4A": {
+  "orf_kb": 5.5,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Scn4a"
+   },
+   {
+    "species": "cyno",
+    "symbol": "SCN4A"
+   }
+  ],
+  "tier": "T2"
+ },
+ "SCN5A": {
+  "orf_kb": 6.1,
+  "surface_isoform_ids": [
+   "Q14524-2",
+   "Q14524-3",
+   "Q14524-4",
+   "Q14524-5",
+   "Q14524-6"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Scn5a"
+   },
+   {
+    "species": "cyno",
+    "symbol": "SCN5A"
+   }
+  ],
+  "tier": "T2"
+ },
+ "SCN7A": {
+  "orf_kb": 5.0,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Scn7a"
+   },
+   {
+    "species": "cyno",
+    "symbol": "SCN7A"
+   }
+  ],
+  "tier": "T2"
+ },
+ "SCN8A": {
+  "orf_kb": 5.9,
+  "surface_isoform_ids": [
+   "Q9UQD0-2",
+   "Q9UQD0-3",
+   "Q9UQD0-4",
+   "Q9UQD0-5"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Scn8a"
+   },
+   {
+    "species": "cyno",
+    "symbol": "SCN8A"
+   }
+  ],
+  "tier": "T2"
+ },
+ "SCN9A": {
+  "orf_kb": 6.0,
+  "surface_isoform_ids": [
+   "Q15858-2",
+   "Q15858-3",
+   "Q15858-4"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Scn9a"
+   },
+   {
+    "species": "cyno",
+    "symbol": "SCN9A"
+   }
+  ],
+  "tier": "T2"
+ },
+ "SDK1": {
+  "orf_kb": 6.6,
+  "surface_isoform_ids": [
+   "Q7Z5N4-2",
+   "Q7Z5N4-3"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Sdk1"
+   },
+   {
+    "species": "cyno",
+    "symbol": "SDK1"
+   }
+  ],
+  "tier": "T2"
+ },
+ "SDK2": {
+  "orf_kb": 6.5,
+  "surface_isoform_ids": [
+   "Q58EX2-3",
+   "Q58EX2-4"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Sdk2"
+   },
+   {
+    "species": "cyno",
+    "symbol": "SDK2"
+   }
+  ],
+  "tier": "T1"
+ },
+ "SI": {
+  "orf_kb": 5.5,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Sis"
+   },
+   {
+    "species": "cyno",
+    "symbol": "SI"
+   }
+  ],
+  "tier": "T1"
+ },
+ "SIGLEC1": {
+  "orf_kb": 5.1,
+  "surface_isoform_ids": [
+   "Q9BZZ2-3"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Siglec1"
+   },
+   {
+    "species": "cyno",
+    "symbol": "SIGLEC1"
+   }
+  ],
+  "tier": "T3"
+ },
+ "SORL1": {
+  "orf_kb": 6.6,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Sorl1"
+   },
+   {
+    "species": "cyno",
+    "symbol": "SORL1"
+   }
+  ],
+  "tier": "T1"
+ },
+ "STAB1": {
+  "orf_kb": 7.7,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Stab1"
+   },
+   {
+    "species": "cyno",
+    "symbol": "STAB1"
+   }
+  ],
+  "tier": "T1"
+ },
+ "STAB2": {
+  "orf_kb": 7.7,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Stab2"
+   },
+   {
+    "species": "cyno",
+    "symbol": "STAB2"
+   }
+  ],
+  "tier": "T1"
+ },
+ "TENM1": {
+  "orf_kb": 8.2,
+  "surface_isoform_ids": [
+   "Q9UKZ4-2"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Tenm1"
+   },
+   {
+    "species": "cyno",
+    "symbol": "TENM1"
+   }
+  ],
+  "tier": "T3"
+ },
+ "TENM2": {
+  "orf_kb": 8.3,
+  "surface_isoform_ids": [
+   "Q9NT68-2"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Tenm2"
+   },
+   {
+    "species": "cyno",
+    "symbol": "TENM2"
+   }
+  ],
+  "tier": "T1"
+ },
+ "TENM4": {
+  "orf_kb": 8.3,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Tenm4"
+   }
+  ],
+  "tier": "T1"
+ },
+ "TRPM3": {
+  "orf_kb": 5.2,
+  "surface_isoform_ids": [
+   "Q9HCF6-10",
+   "Q9HCF6-11",
+   "Q9HCF6-2",
+   "Q9HCF6-3",
+   "Q9HCF6-4",
+   "Q9HCF6-5",
+   "Q9HCF6-6",
+   "Q9HCF6-7",
+   "Q9HCF6-8"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Trpm3"
+   },
+   {
+    "species": "cyno",
+    "symbol": "TRPM3"
+   }
+  ],
+  "tier": "T2"
+ },
+ "TRPM6": {
+  "orf_kb": 6.1,
+  "surface_isoform_ids": [
+   "Q9BX84-2",
+   "Q9BX84-3",
+   "Q9BX84-4"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Trpm6"
+   },
+   {
+    "species": "cyno",
+    "symbol": "TRPM6"
+   }
+  ],
+  "tier": "T2"
+ },
+ "TRPM7": {
+  "orf_kb": 5.6,
+  "surface_isoform_ids": [],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Trpm7"
+   },
+   {
+    "species": "cyno",
+    "symbol": "TRPM7"
+   }
+  ],
+  "tier": "T2"
+ },
+ "USH2A": {
+  "orf_kb": 15.6,
+  "surface_isoform_ids": [
+   "O75445-3"
+  ],
+  "surface_orthologs": [
+   {
+    "species": "mouse",
+    "symbol": "Ush2a"
+   },
+   {
+    "species": "cyno",
+    "symbol": "USH2A"
+   }
+  ],
+  "tier": "T1"
+ }
+}

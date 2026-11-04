@@ -1,0 +1,7 @@
+map	leader_last_3aa	plus1_codon	plus1_aa	what_follows	note
+Addgene 100697 (EMMA part)	STG	GAC	D	DSSRDGRI	EMMA fusion scar into the Esp3I site
+Addgene 169486 (Fussenegger)	STG	GAC	D	DASGSTGV	NheI/BamHI/AgeI cloning sites
+Addgene 219810 (HA-TurboID)	STG	GAC	D	DAAQEFTM	the pSecTag2-style SfiI context
+Addgene 259743 (SynTrogo ligand)	STG	GAC	D	DGPVATMV	AgeI then a Kozak
+Addgene 259744 (SynTrogo receptor)	STG	GAC	D	DYPYDVPD	straight into the HA epitope
+Invitrogen pDisplay	STG	GAC	D	DYPYDVPD	straight into the HA epitope

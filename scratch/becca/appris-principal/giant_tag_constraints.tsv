@@ -1,0 +1,8 @@
+gene	c_terminal_tag	reason
+PLXNB2	forbidden	Ends VTDL, a class-I PDZ-binding motif docking PDZ-RhoGEF. Verified here: Thr at position -2, Leu at 0. Appending anything reproduces the deliberate deltaVTDL loss-of-function mutant, Addgene 86239.
+PLXNB3	forbidden	Ends VTDL, same motif, verified here.
+PLXND1	forbidden	Ends SEA, a class-I PDZ-binding motif docking GIPC1/Synectin, which routes the receptor to recycling endosomes. Verified here: Ser at -2, Ala at 0. Without that interaction the receptor missorts and loses signalling.
+PLXNA1	allowed	Ends ALSS, no PDZ motif. Verified.
+PLXNA2	allowed	Ends SIES, no PDZ motif. Verified.
+PLXNA3	allowed	Ends SSDS, no PDZ motif. Verified.
+PLXNA4	allowed	Ends SLDS, no PDZ motif. Verified.

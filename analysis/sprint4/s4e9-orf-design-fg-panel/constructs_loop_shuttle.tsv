@@ -1,0 +1,5 @@
+gene	insert_nt	shuttled_nt	added_nt	esp3i_sites	bbsi_sites	bsai_sites	oh5	oh3	digest_regenerates_insert
+SLC2A4_E193	1702	1718	16	2	0	0	GACC	AAAG	True
+SLC2A4_P66	1702	1718	16	2	0	0	GACC	AAAG	True
+MS4A1_N171	1066	1082	16	2	0	0	GACC	AAAG	True
+MS4A1_Y161	1066	1082	16	2	0	0	GACC	AAAG	True

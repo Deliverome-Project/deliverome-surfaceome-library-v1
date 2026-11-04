@@ -1,0 +1,3 @@
+barcode	pool_index	construct	orf	position	assigned_by	status	notes
+GCATTCTAGCATCTTCGTCC	27	p0034	CCR5		s1e2 pool	designed	F263; analysis/sprint4/s4e9-orf-design-fg-panel; provisional P-number, not yet built; supersedes the earlier p0034 row (barcode ATCACGCGACGAGAGAAGCT, TFRC, pool index 21) -- that barcode is now p0047; renumbered 2026-10-18, registry is append-only so the earlier row stands
+CTATTGTACCACGAGGCTTC	28	p0035	AVPR2		s1e2 pool	designed	L302; analysis/sprint4/s4e9-orf-design-fg-panel; provisional P-number, not yet built; supersedes the earlier p0035 row (barcode TGTCTCTCTCAGCTTCTCTC, TFRC, pool index 22) -- that barcode is now p0037; renumbered 2026-10-18, registry is append-only so the earlier row stands

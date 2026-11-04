@@ -1,0 +1,20 @@
+gene	fragment_aa	ectodomain_kept	evidence	peak_tpm	already_built	verdict	corrected_from
+STAB2	1416	1323	inferred	102.551	yes	build on cleavage
+LCT	1059	1014	inferred	212.7	no	build on cleavage
+MUC4	725	681	inferred	62.5	no	build on cleavage
+PKD1	1255	338	experimental+predicted	510.715	no	build on cleavage	26
+PKHD1	454	238	experimental	28.1	no	build on cleavage
+PLXNB1	830	185	inferred	168.355	yes	build on cleavage
+MUC12	249	151	inferred	134.8	no	build on cleavage
+MUC17	250	150	inferred	93.2	no	build on cleavage
+MUC3B	243	146	inferred	unknown	no	build on cleavage
+PTPRS	751	85	inferred	127.5	no	build on cleavage
+PTPRD	731	84	inferred	91.9	no	build on cleavage
+ADGRV1	416	73	inferred	494.7	no	build on cleavage	18
+CELSR2	567	52	inferred	124.6	no	build on cleavage	24
+ADGRG4	359	51	inferred	unknown	no	build on cleavage	19
+PLXNB2	674	33	inferred	520.1	yes	use the literature design instead
+NOTCH4	572	16	inferred	73.5495	no	too little displayed surface
+NOTCH3	693	15	inferred	415.749	yes	use the literature design instead
+NOTCH1	835	15	inferred	151.5	yes	use the literature design instead
+NOTCH2	806	12	inferred	1190.3	yes	use the literature design instead

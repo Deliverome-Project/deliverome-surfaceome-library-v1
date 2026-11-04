@@ -1,0 +1,9 @@
+gene	plasmid	pool_index	barcode	note
+HEG1	p0022	9	AGCAATCTCCACGGCACTCG	
+ERBB2	p0023	10	GCCTATAACGGAGACAGAAT	
+AXL	p0024	11	GGTGGTTCTTGTAGGAGCAT	
+SLC9A3	p0025	12	AGGAATCAGTGCTAACAGAC	
+VSIG10	p0026	13	AGATCAACCTACAGCAACCG	SHIPS as the comparator arm of a pair with p0048 (VSIG10_igk), resolved 2026-10-18. This arm IS a predicted non-expressor: tagged SignalP 6 calls THIS construct OTHER with no cleavage site, p(SP) 0.000137 (canary_rp_1792371023, run on the sequence in constructs/designed/p0026.gb; submitted sequences archived at processed://sprint4/s4e9-orf-design-fg-panel/reprediction/, where the junction-31 record is byte-identical to this construct's protein). Junction 32, the only other position its 30..32 interval allows, also fails at p(SP) 0.0 (canary_rp_1792371276) -- but that is a MODELLED sequence, verified residue-exact and never built or registered, so it says not to expect a one-residue fix rather than constituting a second tested construct. It ships deliberately rather than as an oversight: p0048 replaces the failing signal peptide with the Igk leader and recovers a 0.982 cleavage site (canary_rp_1792372578), so the pair reads as a leader contrast, and if this arm expresses after all then SignalP was wrong about it -- worth one well. Becca approved both arms.
+NECTIN4	p0027	14	GAGGCACGGAACTAGCAATT	
+FOLR1	p0028	15	CCAGACAAGAGGCGACCAGA	
+PTPRC	p0029	16	CTCCGCTCTTATCTCTGAAC	

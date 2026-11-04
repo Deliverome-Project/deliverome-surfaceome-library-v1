@@ -1,0 +1,696 @@
+gene_symbol	shed_present	shed_severity	shed_evidence	sheddase
+A2ML1	1	moderate	weak	
+ABI3BP	1	moderate	moderate	Thrombin (cleavage at Arg337)
+ACE	1	high	strong	
+ACE2	1	moderate	strong	ADAM17, ADAM10, MT1-MMP (MMP14), neutrophil elastase
+ADAM10	1	moderate	strong	
+ADAM15	1	moderate	moderate	
+ADAM22	1	moderate	moderate	BACE1
+ADAM29	1	low	weak	
+ADAM33	1	high	strong	
+ADAM8	1	moderate	moderate	autocatalytic (ADAM8 self-shedding)
+ADGRA2	1	moderate	moderate	MMP9, thrombin
+ADGRB1	1	high	strong	GPS autoproteolysis (intrinsic); furin + MMP-14 (extrinsic, for Vasculostatin-40)
+ADGRB2	1	moderate	moderate	furin (second ECR site); GPS autoproteolysis (primary site)
+ADGRD1	1	moderate	moderate	intrinsic GPS autoproteolysis (no exogenous sheddase identified)
+ADGRD2	1	moderate	moderate	
+ADGRE2	1	moderate	moderate	thrombin (demonstrated in chimeric construct; endogenous sheddase unknown)
+ADGRE5	1	moderate	strong	
+ADGRF1	1	moderate	moderate	intrinsic GPS autoproteolysis (no exogenous sheddase)
+ADGRF5	1	moderate	moderate	autoproteolytic (GPS/SEA domain self-cleavage, t½ ~12 min)
+ADGRG1	1	moderate	strong	
+ADGRG2	1	low	moderate	
+ADGRG4	1	moderate	moderate	
+ADGRG5	1	moderate	moderate	autoproteolytic (GPS/GAIN domain self-cleavage)
+ADGRG6	1	moderate	moderate	
+ADGRL1	1	moderate	moderate	autoproteolytic (GPS cleavage, no exogenous sheddase identified)
+ADGRL2	1	low	weak	meprin β (inferred from ADGRL3 paralog data)
+ADGRL3	1	moderate	strong	meprin β
+ADGRL4	1	moderate	moderate	
+ADGRV1	1	moderate	moderate	Autoproteolytic (GAIN domain GPS site; no exogenous sheddase identified)
+ADRB1	1	moderate	moderate	Unknown protease (cleavage site Arg31-Leu32; GalNAc-T2-regulated)
+AGER	1	moderate	strong	ADAM10
+AGRN	1	high	strong	
+AIMP1	1	moderate	moderate	MMP-9, elastase, cathepsin L (C-terminal EMAP-II); MMP1 (N-terminal TN41 fragment); MMP-family member (p43-ARF, apoptosis-induced)
+ALCAM	1	high	strong	ADAM17/TACE (isoform 1); MMP14 (isoform 2)
+ALK	1	moderate	strong	MMP9
+ALPI	1	high	strong	GPI-specific phospholipase (endogenous GPI cleavage)
+ALPL	1	moderate	strong	GPLD1 (GPI-specific phospholipase D)
+ALPP	1	moderate	moderate	GPI-specific phospholipase (mechanism inferred; specific sheddase not named in ledger)
+AMHR2	1	moderate	moderate	
+ANGPTL4	1	high	strong	FURIN; plasmin
+ANPEP	1	high	strong	MMP14
+ANXA1	1	moderate	moderate	membrane-associated serine protease (identity not specified)
+AOC1	1	high	moderate	
+AOC3	1	high	strong	MMP-2, MMP-9 (type IV collagenases)
+APLNR	1	low	moderate	
+APLP1	1	high	strong	ADAM10, BACE1, gamma-secretase (presenilin), matriptase (cleavage at Arg124 in E1 domain)
+APLP2	1	moderate	strong	α-secretase (dominant in HEK293 cells); β-secretase-like activity (dominant in human CSF); PKC-activated sheddase in corneal epithelial cells
+APP	1	high	strong	ADAM10 (α-secretase, primary); BACE1 (β-secretase); η-secretase
+AREG	1	high	strong	ADAM17
+ART1	1	moderate	moderate	metalloprotease (family-level; specific sheddase not identified for human ART1)
+ASAH2	1	moderate	strong	
+ASTL	1	moderate	strong	Cortical granule exocytosis (not a classical sheddase; exocytosis-driven release)
+ASTN1	1	low	moderate	ER signal peptidase
+ASTN2	1	moderate	moderate	ER signal peptidase (intramembrane proteolysis within TM2)
+ATP6AP2	1	moderate	strong	Site-1 protease (S1P / MBTPS1)
+ATP6V0A2	1	moderate	moderate	
+AXL	1	moderate	strong	ADAM10, ADAM17 (TACE)
+AZU1	1	moderate	moderate	
+BCAM	1	moderate	strong	ADAM10 (primary); MMPs (general)
+BCAN	1	moderate	moderate	ADAMTS-4, ADAMTS-5, MMP12, MMP19
+BSG	1	moderate	strong	MMP14 (sheds 22-kDa N-terminal fragment); MMP-dependent (Tang et al.); ADAM12
+BSPH1	1	moderate	moderate	ubiquitin-proteasome system (UPS)
+BST1	1	moderate	strong	
+BTC	1	moderate	strong	ADAM10 (primary); ADAM17/TACE reported in some contexts
+BTLA	1	moderate	moderate	
+BTN2A1	1	moderate	moderate	
+BTN2A2	1	moderate	moderate	
+BTN3A1	1	moderate	moderate	
+C1QTNF9	1	moderate	moderate	MMP9
+CA12	1	moderate	strong	ADAM17
+CA9	1	moderate	moderate	
+CACHD1	1	moderate	strong	BACE1
+CACNA2D1	1	moderate	strong	ADAM17
+CACNA2D3	1	moderate	moderate	
+CADM1	1	moderate	strong	unidentified protease(s) (α-shedding and β-shedding activities documented; specific sheddase identity not named in ledger)
+CADM2	1	moderate	moderate	
+CALR	1	moderate	moderate	cathepsins
+CATSPER1	1	moderate	strong	Unknown protease; inhibited by seminal protease inhibitor SPINK3
+CCN3	1	moderate	moderate	MMPs (multiple, unspecified)
+CCN5	1	moderate	moderate	MMPs (multiple; specific isoforms not named in ledger)
+CD109	1	moderate	strong	meprin β
+CD14	1	moderate	strong	Cathepsin D, neutrophil elastase, PR3 (proteinase 3)
+CD160	1	moderate	strong	metalloprotease (specific identity not named in ledger)
+CD163	1	high	strong	ADAM17
+CD164	1	moderate	strong	ADAM10
+CD177	1	moderate	strong	PI-PLC (phosphatidylinositol-specific phospholipase C)
+CD1E	1	low	strong	lysosomal protease(s) (identity not specified in ledger)
+CD200	1	moderate	moderate	
+CD200R1	1	moderate	moderate	
+CD22	1	moderate	moderate	
+CD226	1	moderate	strong	
+CD24	1	moderate	moderate	
+CD248	1	moderate	strong	MMP-1, MMP-3 (broad MMP inhibitor blocks release)
+CD274	1	moderate	moderate	ADAM9
+CD276	1	moderate	moderate	matrix metalloproteinases (MMPs)
+CD320	1	low	weak	
+CD33	1	moderate	moderate	
+CD38	1	moderate	moderate	
+CD4	1	moderate	moderate	ADAM10
+CD40	1	moderate	strong	ADAM17
+CD40LG	1	high	strong	
+CD44	1	moderate	moderate	MT1-MMP (MMP14); gamma-secretase
+CD46	1	moderate	strong	MMP-1 (hepatocytes); MMP family (T cells)
+CD47	1	moderate	moderate	
+CD52	1	moderate	strong	Phospholipase C (PLC)
+CD55	1	moderate	moderate	Bacillus thuringiensis toxin(s) (specific sheddase not identified); GPI-anchor-mediated spontaneous shedding also documented
+CD58	1	moderate	strong	
+CD59	1	moderate	strong	GDPD5 (GPI-specific phospholipase D); neutrophil serine proteases
+CD69	1	low	weak	
+CD72	1	moderate	strong	
+CD74	1	moderate	strong	
+CD83	1	moderate	moderate	
+CD84	1	moderate	strong	GPVI pathway-dependent (specific sheddase not named in ledger)
+CD86	1	moderate	moderate	
+CD93	1	moderate	strong	
+CDCP1	1	moderate	strong	serine protease (cleavage at Arg-368/Lys-369)
+CDH1	1	moderate	strong	H. pylori HtrA serine protease; MMP-7; MMP-9; CAPN15 (near TM domain)
+CDH11	1	low	weak	ADAM10
+CDH13	1	moderate	moderate	phospholipase (GPI-anchor cleavage); specific sheddase for proteolytic fragment not identified
+CDH18	1	moderate	moderate	ADAMs / MMPs (class-level; specific sheddase for CDH18 not named in ledger)
+CDH2	1	moderate	moderate	ADAM10
+CDH5	1	moderate	strong	ADAM10 (primary); ADAM17; MMP-2
+CDH6	1	moderate	moderate	ADAM10, ADAM19
+CDHR2	1	low	moderate	ADAMs/MMPs (global metalloproteinase inhibitor BB-94 used; specific sheddase not identified)
+CDSN	1	moderate	strong	KLK5 (primary), KLK7 (secondary)
+CEACAM5	1	high	strong	
+CEACAM8	1	moderate	moderate	
+CELSR3	1	moderate	moderate	ADAM10
+CFC1	1	moderate	moderate	PGAP6 (inferred by analogy from CRIPTO; direct CFC1 data absent)
+CHL1	1	moderate	moderate	ADAM8
+CLCA2	1	high	strong	CLCA2 intrinsic zinc-dependent metalloprotease (HEXXH motif, E165)
+CLCA4	1	moderate	strong	Autoproteolytic (intrinsic HEXXH metalloprotease motif, zinc-dependent)
+CLDN5	1	moderate	moderate	ADAM17 (implicated in blue-light-induced degradation); TNF-α-induced sheddase not explicitly named
+CLDN8	1	moderate	moderate	H. pylori / C. jejuni serine protease HtrA
+CLEC12A	1	moderate	moderate	
+CLEC14A	1	low	weak	
+CLEC1B	1	moderate	moderate	
+CLEC2D	1	moderate	moderate	
+CLEC3A	1	high	moderate	MMP-7 (matrilysin)
+CLEC4C	1	moderate	moderate	
+CLEC7A	1	moderate	strong	
+CLN5	1	moderate	strong	SPPL3 (primary); SPPL2b (secondary, cleaves residual N-terminal fragment)
+CLSTN1	1	moderate	weak	ADAM10 (inferred)
+CLSTN2	1	moderate	strong	α-secretase / β-secretase (primary); γ-secretase (secondary); ADAM10 implicated
+CLSTN3	1	high	strong	ADAM10/ADAM17 (primary); gamma-secretase (secondary)
+CLTRN	1	high	strong	BACE2
+CNMD	1	moderate	weak	
+CNTFR	1	moderate	strong	
+CNTNAP2	1	moderate	strong	ADAM10, ADAM17 (alpha-secretase); furin (priming); presenilin/gamma-secretase (CTF cleavage)
+CNTNAP4	1	moderate	moderate	ADAM10
+COL13A1	1	moderate	strong	furin
+COL17A1	1	high	strong	ADAM10, ADAM17, MMP2
+COL18A1	1	high	strong	
+COL23A1	1	high	strong	Furin (primary); MMPs and ADAMs (secondary)
+COL25A1	1	high	strong	Furin convertase
+COL6A2	1	low	weak	ADAMTS17
+COL6A3	1	high	strong	MMP family (hypoxia-induced MMPs)
+COLEC12	1	moderate	moderate	
+CORIN	1	moderate	strong	unknown (autocleavage documented for R539C variant; sheddase identity for wild-type not specified in ledger)
+CPD	1	low	moderate	BACE1
+CR1	1	moderate	moderate	
+CR2	1	moderate	moderate	
+CRIM1	1	moderate	moderate	BACE1 (candidate; not directly validated for CRIM1)
+CRIPTO3	1	moderate	strong	PGAP6/TMEM8A
+CRISP3	1	moderate	moderate	
+CSF1R	1	moderate	strong	ADAM17 (primary); MMP8 (inflammatory context)
+CSF3R	1	moderate	moderate	
+CSPG4	1	moderate	strong	ADAMTS4
+CTXND2	1	low	weak	BACE2
+CX3CL1	1	moderate	strong	ADAM10, ADAM17
+CXADR	1	moderate	strong	Neutrophil elastase (NE); also PR3, CG, MMP-3
+CXCL12	1	moderate	moderate	DPP4 (dipeptidyl peptidase 4)
+CXCL16	1	moderate	moderate	ADAM10, ADAM17
+DAG1	1	moderate	moderate	
+DCBLD2	1	moderate	strong	RHBDL2
+DCC	1	moderate	moderate	ADAM17 (TACE)
+DCHS1	1	moderate	moderate	
+DDR1	1	moderate	strong	MT1-MMP (MMP14); additional sheddases implied by PRTH-101 shedding-blockade data
+DDR2	1	moderate	moderate	
+DLK1	1	moderate	strong	ADAM17 (TACE)
+DLL1	1	moderate	moderate	
+DLL3	1	moderate	moderate	
+DLL4	1	moderate	moderate	
+DPP4	1	moderate	strong	
+DSC1	1	moderate	moderate	KLK5 (primary), KLK7
+DSC2	1	moderate	strong	
+DSCAML1	1	moderate	moderate	gamma-secretase (presenilin complex)
+DSG1	1	moderate	moderate	ADAM10
+DSG2	1	moderate	strong	ADAM10, ADAM17, HpHtrA
+DSG3	1	moderate	moderate	KLK7, KLK10, ADAM10, caspases
+EBAG9	1	high	strong	ADAM9
+ECRG4	1	moderate	strong	thrombin-like enzyme (furin/protein convertase/thrombin consensus sites predicted; thrombin-like processing documented on neutrophil surface)
+EDA	1	high	strong	furin
+EDA2R	1	moderate	moderate	metalloproteinase (specific identity not named)
+EFNA1	1	moderate	strong	ADAM12, ADAM9
+EFNA3	1	low	moderate	
+EFNA5	1	moderate	moderate	ADAM10
+EFNB1	1	moderate	strong	ADAM9; ADAM10 (inferred by analogy from ephrinB2 data)
+EFNB3	1	moderate	strong	RHBDL2; ADAM10
+EGF	1	high	strong	ADAM17
+EGFL8	1	low	moderate	HTRA1
+EMCN	1	moderate	strong	ADAM10, ADAM17
+EMILIN1	1	moderate	moderate	
+ENG	1	moderate	strong	MMP-14 (MT1-MMP); thrombin
+ENOX2	1	high	strong	
+ENPP3	1	low	moderate	
+ENPP6	1	moderate	moderate	
+ENPP7	1	moderate	strong	trypsin (cleavage at Arg440); luminal trypsin-like proteases
+ENTPD1	1	moderate	moderate	
+ENTPD2	1	moderate	moderate	
+ENTPD3	1	moderate	strong	
+EPCAM	1	moderate	strong	ADAM17/TACE; matriptase (secondary)
+EPGN	1	high	strong	ADAM17
+EPHA1	1	moderate	strong	metalloproteases (including ADAM10)
+EPHA2	1	moderate	strong	MT1-MMP (MMP14); ADAM10
+EPHA4	1	moderate	moderate	gamma-secretase (for intramembrane step post-shedding); primary sheddase not named in ledger
+EPHA5	1	moderate	moderate	ADAM family (specific member not identified for EphA5)
+EPHA7	1	moderate	moderate	ADAM family (specific sheddase not named for EPHA7)
+EPHB2	1	moderate	moderate	ADAM10
+EPHB3	1	moderate	moderate	ADAM family (specific member not identified for EphB3 in ledger)
+EPHB4	1	moderate	moderate	ADAM family (specific member not identified in ledger)
+EPOR	1	moderate	moderate	ADAM family metalloproteases
+ERAP2	1	low	moderate	Autocatalytic (ERAP2 itself)
+ERBB2	1	high	strong	ADAM10/ADAM17 (metalloprotease family; specific sheddase not named in ledger)
+ERBB4	1	moderate	strong	TACE/ADAM17
+EREG	1	high	moderate	ADAM17
+ERV3-1	1	high	strong	BACE2
+ERVMER34-1	1	high	strong	BACE2 (candidate; identified as specific interacting partner for both SHED and transmembrane HEMO)
+ERVV-2	1	high	moderate	
+F11R	1	moderate	strong	ADAM10, ADAM17
+F2RL1	1	low	moderate	trypsin, matriptase, mast cell tryptase, KLK6, L-asparaginase, neutrophil elastase, coagulation factors (TF-VIIa)
+FAM171A1	1	low	weak	ADAM10
+FAM3C	1	moderate	moderate	serine proteases (uPA/plasminogen system; aprotinin/AEBSF-sensitive)
+FAP	1	moderate	moderate	
+FAS	1	low	weak	
+FASLG	1	high	strong	MMP-3, MMP-7, MMP-9, plasmin (ADAM-10 disputed)
+FAT2	1	moderate	moderate	ADAM10 (inferred from FAT1 paralog)
+FAT4	1	moderate	moderate	ADAM10
+FCAR	1	moderate	moderate	
+FCER1A	1	moderate	moderate	
+FCER2	1	moderate	strong	ADAM10
+FCGR1A	1	moderate	moderate	
+FCGR3A	1	high	strong	ADAM17 (primary); MMP-MT6 (secondary)
+FCGR3B	1	moderate	strong	ADAM17
+FGA	1	low	moderate	TAFIa (thrombin-activatable fibrinolysis inhibitor, activated form)
+FGFR2	1	moderate	strong	ADAM10
+FGFR3	1	moderate	strong	ADAM17
+FGFR4	1	moderate	strong	ADAM17
+FGFRL1	1	moderate	moderate	
+FGL2	1	moderate	strong	ADAM10, ADAM17
+FLRT1	1	moderate	moderate	
+FLRT2	1	moderate	moderate	ADAM17 (inferred from substrate topology; direct cleavage of FLRT2 not mapped in ledger)
+FLRT3	1	moderate	moderate	
+FLT3LG	1	moderate	moderate	
+FLT4	1	moderate	strong	BACE2
+FNDC4	1	high	strong	
+FNDC5	1	high	strong	
+FOLH1	1	low	moderate	
+FPR2	1	moderate	strong	CPAF (chlamydial protease-like activating factor)
+FREM2	1	moderate	moderate	FurinA (proprotein convertase)
+FREM3	1	low	weak	FurinA (zebrafish ortholog; inferred for FREM3)
+FXYD5	1	moderate	moderate	MMP8
+GAS1	1	moderate	moderate	ADAM10, ADAM17
+GFRA1	1	moderate	moderate	
+GFRAL	1	moderate	strong	MT1-MMP (MMP14)
+GJA10	1	moderate	strong	calpain-1
+GLDN	1	moderate	strong	furin
+GLG1	1	moderate	moderate	metalloproteinase (class not further specified)
+GLIPR1L2	1	low	weak	
+GOLM1	1	high	strong	furin (proprotein convertase)
+GP1BA	1	moderate	strong	ADAM17 (primary); ADAM10/17 redundancy excluded for ADAM10 alone
+GP6	1	moderate	strong	ADAM10 (facilitated by Tspan15/Tspan33)
+GP9	1	moderate	moderate	
+GPC1	1	moderate	moderate	ADAM17, MMP9
+GPC3	1	moderate	moderate	sheddase enzymes (specific identity not named in ledger); Furin (intracellular processing cleavage)
+GPC4	1	moderate	strong	ADAM9 (partial mediator)
+GPC5	1	moderate	moderate	GPI-anchor phospholipase (specific enzyme not named in ledger; NOTUM co-measured but not confirmed as the sheddase)
+GPC6	1	moderate	moderate	GDE2 (GDPD5)
+GPNMB	1	high	strong	ADAM10
+GPR37	1	moderate	strong	ADAM10
+GPR37L1	1	moderate	strong	ADAM10 (for paralog GPR37; MMP/ADAM family implicated for GPR37L1 directly)
+GPR50	1	low	moderate	Calpain (intracellular CTD cleavage); ADAM17 (possible ectodomain sheddase, interaction documented but cleavage product not confirmed)
+GRIA3	1	moderate	strong	Granzyme B
+GSDMC	1	low	moderate	ADAM17
+HAPLN1	1	moderate	moderate	MMP2
+HAVCR1	1	moderate	moderate	
+HAVCR2	1	moderate	strong	ADAM17 (inferred from inhibitor rescue data)
+HBEGF	1	high	strong	ADAM17 (primary), MMP-10, ADAM12
+HEG1	1	moderate	moderate	
+HEPACAM	1	moderate	moderate	calpain-1, cathepsin B (cysteine proteases); proteasome involvement also documented
+HEPACAM2	1	low	weak	
+HJV	1	high	strong	TMPRSS6 (matriptase-2); furin
+HLA-A	1	moderate	moderate	ADAM17
+HLA-B	1	moderate	strong	ADAM17 (via iRhom2 regulation)
+HLA-C	1	moderate	strong	ADAM17
+HLA-E	1	moderate	moderate	
+HLA-F	1	low	moderate	
+HPN	1	moderate	moderate	HPN itself (auto-proteolytic)
+HSPA1A	1	low	weak	SKI-1 (subtilisin/kexin isozyme 1)
+HSPG2	1	moderate	moderate	MT1-MMP (MMP14); additional ECM proteases in cancer/inflammation
+HVCN1	1	moderate	strong	neutrophil elastase
+HYAL2	1	low	moderate	
+ICAM1	1	moderate	moderate	Cathepsin C (CTSC)
+ICAM3	1	moderate	moderate	
+ICAM5	1	moderate	strong	MMP-9 (primary); also MMP family broadly, ADAM10, ADAM17, BACE1, MT3-MMP, MT5-MMP
+ICOSLG	1	moderate	moderate	alpha-secretase (ADAM family; GM6001-sensitive, per a2_evi_26)
+IFNAR2	1	moderate	moderate	TACE/ADAM17, presenilins (PSEN)
+IGF2R	1	moderate	strong	TACE/ADAM-17; serine protease (IFNγ/LPS-induced)
+IGFBP3	1	moderate	moderate	PAPPA2
+IGLON5	1	moderate	strong	
+IL10RA	1	moderate	moderate	
+IL10RB	1	moderate	moderate	KLK2 (kallikrein-2)
+IL11RA	1	moderate	strong	ADAM10, RHBDL2
+IL12RB1	1	moderate	moderate	
+IL13RA2	1	moderate	strong	
+IL15	1	moderate	moderate	ADAM family (blocked by TMI-005/Apratastat)
+IL15RA	1	moderate	moderate	ADAM-family metalloprotease (TMI-005/Apratastat-sensitive); ADAM17 mRNA co-expressed (a2_evi_07)
+IL17RC	1	moderate	moderate	
+IL17RD	1	moderate	moderate	TACE (ADAM17)
+IL1A	1	high	moderate	Calpain 1 (CAPN1); Calpain 2 (CAPN2) investigated as additional sheddase
+IL1R1	1	moderate	moderate	matrix metalloproteases (MMPs)
+IL1R2	1	high	strong	metalloprotease (class not further specified in ledger)
+IL1RL1	1	moderate	moderate	ADAM17
+IL23R	1	moderate	moderate	ADAM17
+IL27RA	1	high	strong	ADAM17 (ADAM family metalloprotease)
+IL2RA	1	moderate	strong	ADAM10, ADAM17
+IL2RB	1	moderate	strong	ADAM17 (and metalloprotease family, inhibited by TIMP-3)
+IL5RA	1	moderate	strong	
+IL6R	1	high	strong	ADAM17, ADAM10, meprin β
+IL6ST	1	moderate	strong	BACE1, ADAM17
+IMPG1	1	moderate	moderate	
+IMPG2	1	moderate	moderate	
+INSR	1	moderate	strong	BACE1 (β-secretase 1); MMP14 (MT1-MMP)
+ITGA2B	1	low	moderate	
+ITGAD	1	moderate	moderate	
+ITGAL	1	moderate	moderate	
+ITGAM	1	moderate	moderate	
+ITGAV	1	moderate	moderate	γ-secretase complex
+ITM2A	1	moderate	moderate	
+ITM2B	1	moderate	strong	furin (primary, Bri23 peptide); ADAM10 (secondary, BRICHOS-containing ectodomain)
+IZUMO1R	1	moderate	strong	
+JAG1	1	moderate	strong	ADAM10
+JAM3	1	moderate	strong	ADAM10, ADAM17
+JAML	1	moderate	strong	zinc metalloprotease (ADAM family, specific identity not resolved in ledger)
+KCNE2	1	moderate	moderate	
+KIAA0319	1	high	strong	
+KIRREL1	1	moderate	strong	RHBDL2
+KIRREL2	1	moderate	strong	
+KIRREL3	1	moderate	strong	MT1-MMP (MMP14)
+KITLG	1	moderate	moderate	
+KL	1	high	strong	ADAM10 (primary in DCT/renal tissue); ADAM17 (primary in podocytes and insulin-stimulated cells)
+KLB	1	moderate	moderate	
+KNG1	1	moderate	moderate	plasma kallikrein; neutrophil elastase; P. aeruginosa metalloproteinase elastase
+KREMEN2	1	low	weak	
+L1CAM	1	high	strong	ADAM10, ADAM17
+LAD1	1	high	moderate	
+LAG3	1	moderate	strong	ADAM10, ADAM17
+LAIR1	1	moderate	strong	
+LAMA3	1	moderate	moderate	MMP (family; specific sheddase not named)
+LDLR	1	moderate	strong	MT1-MMP (MMP-14), ADAM-17
+LEPR	1	moderate	strong	ADAM10
+LGALS3	1	moderate	moderate	
+LGALS3BP	1	low	weak	
+LIFR	1	moderate	moderate	ADAM metalloprotease (family; specific member not identified)
+LILRA5	1	moderate	moderate	
+LILRB1	1	moderate	moderate	
+LILRB2	1	low	weak	
+LILRB3	1	moderate	moderate	
+LILRB4	1	moderate	moderate	
+LINGO2	1	moderate	strong	ADAM10
+LMAN2	1	moderate	moderate	
+LMTK3	1	moderate	moderate	
+LPL	1	moderate	moderate	
+LRIG2	1	moderate	moderate	ADAM-family (ADAM17/TACE implicated by context; specific sheddase for LRIG2 ECD not named in ledger)
+LRIG3	1	moderate	strong	ADAM17
+LRP1	1	high	strong	MT1-MMP (MMP14)
+LRP1B	1	moderate	strong	metalloproteinase family (specific enzyme not identified); ADAM-17 and MMP-14 are candidate sheddases by paralog analogy (LRP1)
+LRP2	1	moderate	moderate	MMP-14
+LRP6	1	moderate	strong	MMP14 (primary); gamma-secretase-like activity (secondary)
+LRP8	1	moderate	moderate	α-secretase (ADAM family); γ-secretase
+LRRC15	1	moderate	moderate	
+LRRC32	1	moderate	moderate	
+LRRC37A	1	moderate	moderate	
+LRRC37A2	1	moderate	moderate	
+LRRC37A3	1	moderate	weak	
+LRRC37B	1	moderate	weak	
+LRRC4B	1	moderate	strong	Matrix metalloproteinases (MMPs); presenilin/γ-secretase
+LRRC4C	1	moderate	moderate	
+LRRFIP1	1	high	strong	ADAM family proteases
+LRRN1	1	moderate	moderate	
+LRRN3	1	moderate	moderate	alpha-secretase and gamma-secretase
+LRRTM1	1	moderate	moderate	ADAM10
+LTBP1	1	moderate	moderate	Granzyme B (GzmB)
+LVRN	1	moderate	moderate	
+LYPD3	1	moderate	strong	ADAM10, ADAM17 (TACE)
+LYVE1	1	moderate	strong	MMP-14, MMP9
+MADCAM1	1	moderate	moderate	
+MCAM	1	moderate	strong	
+MEGF10	1	moderate	moderate	iRhom1-dependent (sheddase identity not further specified in ledger)
+MELTF	1	moderate	moderate	
+MEP1A	1	high	strong	furin
+MEP1B	1	moderate	strong	ADAM10, ADAM17
+MERTK	1	high	strong	ADAM17 (primary); ADAM9 also implicated in RPE
+MET	1	moderate	moderate	MMP3, ADAM10, ADAM17
+MGAM	1	moderate	moderate	
+MICA	1	high	strong	ADAM10, ADAM9, MMP9
+MICB	1	high	strong	ADAM10, ADAM17, MMP9
+MILR1	1	moderate	moderate	
+MME	1	moderate	moderate	
+MMEL1	1	moderate	moderate	
+MMP14	1	moderate	strong	ADAM family (endosomal); ADAMTS9; ADAMTS20
+MMP17	1	moderate	strong	endogenous metalloproteinase (identity not specified)
+MMP23B	1	moderate	moderate	
+MMP25	1	moderate	strong	
+MOG	1	low	weak	
+MRC2	1	moderate	strong	MT1-MMP (implicated)
+MSLN	1	high	strong	ADAM family, MMP family, BACE family
+MUC1	1	moderate	strong	ADAM10
+MUC13	1	moderate	moderate	Salmonella SiiE adhesin-mediated (pathogen-induced); Bifidobacterium bifidum glycosidase/protease (bacterial enzyme)
+MUC15	1	moderate	strong	matrix metalloproteinases (MMP class; specific MMP not identified)
+MUC16	1	high	strong	Cathepsin K (CTSK) documented to cleave cell-surface MUC16; specific sheddase for canonical CA125 release not named in ledger
+MUC17	1	moderate	moderate	
+MUC4	1	moderate	moderate	
+MUSK	1	moderate	moderate	
+MYOC	1	moderate	moderate	calpain II (central calpain II proteolytic site); specific extracellular sheddase not identified
+NAGPA	1	moderate	moderate	
+NCAM1	1	moderate	moderate	ADAM10
+NCAM2	1	moderate	strong	BACE1 (primary); metalloproteinases; gamma-secretase
+NCR1	1	moderate	strong	Cathepsin G
+NCR3LG1	1	high	strong	ADAM10, ADAM17
+NECTIN1	1	moderate	moderate	ADAM17; ADAM-family (phorbol-ester-inducible)
+NECTIN3	1	moderate	moderate	MMP-9
+NECTIN4	1	moderate	moderate	ADAM17
+NEGR1	1	moderate	strong	ADAM10
+NEO1	1	moderate	strong	alpha-secretase (ADAM family); matriptase-2 (TMPRSS6); subtilisin/chymotrypsin (experimental)
+NGFR	1	moderate	strong	ADAM17
+NINJ1	1	moderate	moderate	matrix metalloproteinase (MMP, specific family member not specified)
+NLGN1	1	moderate	strong	ADAM10 (alpha-secretase)
+NLGN2	1	moderate	moderate	ADAM10
+NLGN3	1	high	strong	ADAM10
+NLGN4X	1	moderate	moderate	metalloprotease (specific identity not resolved in ledger)
+NOTCH1	1	moderate	moderate	ADAM10 (primary); ADAM-family metalloproteases
+NOTCH2	1	moderate	strong	ADAM10, ADAM17
+NOTCH3	1	moderate	strong	ADAM metalloprotease (S2 cleavage)
+NOTCH4	1	moderate	moderate	ADAM10 / ADAM17 (TACE)
+NPHS1	1	moderate	moderate	MMP-7
+NRCAM	1	moderate	moderate	ADAM10, MMPs
+NRG1	1	high	strong	ADAM10, ADAM17, BACE1
+NRG2	1	high	strong	ADAM10 (primary); BACE2 (secondary)
+NRG3	1	moderate	moderate	ADAM10
+NRG4	1	high	moderate	MMP family (broad-spectrum MMP inhibitor galardin/GM6001 blocks cleavage)
+NRN1	1	moderate	moderate	phospholipase C (PLC)
+NRP1	1	moderate	moderate	HpHtrA (serine protease); MMP-7 (predicted)
+NRXN1	1	moderate	strong	ADAM10
+NRXN2	1	moderate	strong	ADAM10
+NRXN3	1	moderate	strong	ADAM10, ADAM17
+NT5E	1	moderate	moderate	GPI-specific phospholipase D (GPI-PLD); additional proteolytic sheddase(s) not named in ledger
+NTM	1	moderate	moderate	ADAM10
+NTRK2	1	moderate	moderate	Legumain
+NTSR1	1	moderate	moderate	MMPs (specific family member not identified)
+NXPE3	1	high	moderate	
+OLR1	1	moderate	strong	ADAM10
+OMG	1	moderate	moderate	PI-PLC (experimental); endogenous GPI-cleaving enzyme(s) presumed in vivo
+OPCML	1	moderate	strong	ADAM10 (inferred by analogy from NTM/LSAMP; pan-metalloproteinase-sensitive for OPCML itself)
+PCDH12	1	moderate	moderate	ADAM10
+PCDH15	1	moderate	moderate	ADAMs/MMPs (broad metalloproteinase class; specific sheddase not identified)
+PCDH18	1	low	weak	
+PCDH19	1	moderate	strong	MMP/ADAM family (extracellular step); gamma-secretase (intramembrane step)
+PCDH8	1	moderate	moderate	ADAM13
+PCDH9	1	moderate	strong	Matrix metalloproteinases (MMPs); γ-secretase (secondary)
+PCDHGA9	1	moderate	moderate	
+PCDHGC3	1	moderate	strong	ADAM10 (ectodomain); presenilin/γ-secretase (intramembrane stub)
+PDCD1	1	moderate	moderate	
+PDGFRB	1	moderate	strong	MMP14
+PDPN	1	moderate	moderate	
+PDZD2	1	moderate	moderate	caspase (specific caspase not identified beyond caspase-3 dependency)
+PECAM1	1	moderate	moderate	
+PIANP	1	high	strong	ADAM10, ADAM17, MMPs, γ-secretase (PS1/PS2)
+PIGR	1	high	strong	
+PIK3IP1	1	moderate	moderate	ADAM family proteases
+PKD1	1	moderate	moderate	GPS (GAIN domain autoproteolysis, intrinsic to PC1)
+PKHD1	1	moderate	moderate	proprotein convertase (ECD site); gamma-secretase-like activity (Notch-like ICD cleavage)
+PLA2R1	1	high	strong	ADAM10 (constitutive and stimulated); ADAM17 (stimulated)
+PLAC1	1	moderate	moderate	metalloproteinase (class inferred, specific enzyme not identified)
+PLAUR	1	high	strong	unspecified proteases (GPI-anchor/linker cleavage)
+PLB1	1	moderate	moderate	
+PLD3	1	high	strong	
+PLEC	1	moderate	moderate	
+PLET1	1	moderate	moderate	
+PLXDC2	1	moderate	moderate	BACE2
+PLXNA1	1	low	weak	MMP-7 (predicted)
+PLXNB2	1	low	weak	proprotein convertase (family; specific member not identified in ledger)
+PLXND1	1	moderate	moderate	unidentified cancer cell-expressed proteinase
+PMEL	1	moderate	moderate	
+PRG4	1	moderate	moderate	elastase, cathepsin G
+PRLR	1	moderate	moderate	
+PRNP	1	moderate	strong	ADAM10
+PROCR	1	high	strong	metalloprotease (specific identity not named in ledger)
+PROM1	1	moderate	moderate	
+PRSS35	1	moderate	strong	proprotein convertases
+PRSS55	1	moderate	moderate	
+PRSS8	1	moderate	strong	GPLD1 (GPI-specific phospholipase D1); PGAP6 (phospholipase)
+PRTG	1	moderate	moderate	
+PSCA	1	moderate	moderate	
+PTCH1	1	moderate	moderate	
+PTH1R	1	moderate	strong	ADAM19
+PTK7	1	moderate	strong	ADAM proteinase; MT1-MMP
+PTPRA	1	moderate	strong	ADAM17 (TACE)
+PTPRD	1	moderate	moderate	BACE1, ADAM10
+PTPRF	1	moderate	moderate	
+PTPRG	1	moderate	moderate	metalloproteinase (specific identity not determined; Furin-independent)
+PTPRK	1	moderate	moderate	furin
+PTPRM	1	moderate	strong	ADAM (specific family member not specified); calpain (glioma-specific)
+PTPRN	1	moderate	moderate	
+PTPRS	1	moderate	moderate	ADAM10
+PTPRT	1	moderate	moderate	ADAM10
+PTPRZ1	1	moderate	strong	
+PTPRZ2	1	high	strong	
+QSOX1	1	high	strong	
+RAET1E	1	moderate	moderate	
+RAET1L	1	high	strong	
+RARRES1	1	high	strong	MMP23 (matrix metalloprotease 23); broader MMP family implicated
+RELT	1	moderate	moderate	
+RGMA	1	high	strong	GPI-PLD (GPI anchor cleavage); furin/proprotein convertase family; SKI-1 (site-1 protease)
+RGMB	1	moderate	moderate	
+RNF13	1	low	strong	
+ROBO2	1	low	weak	
+ROBO4	1	high	strong	ADAM10, ADAM17
+RTN4R	1	moderate	strong	zinc metalloproteinase (hydroxamate-sensitive; specific identity not resolved in ledger)
+RTN4RL1	1	moderate	moderate	
+RTN4RL2	1	moderate	strong	Membrane-type matrix metalloproteinases (MT-MMPs); sensitive to TIMP-2 and TIMP-3 but not TIMP-1
+RYK	1	moderate	moderate	ADAM family sheddase (specific member not identified in ledger)
+S1PR2	1	low	moderate	mu-calpain
+SCARF1	1	moderate	strong	
+SCN1B	1	moderate	strong	BACE1 (β-secretase 1); γ-secretase (secondary cleavage)
+SCN2B	1	moderate	strong	ADAM10, BACE1
+SCNN1A	1	low	strong	Furin
+SCUBE1	1	moderate	strong	
+SCUBE2	1	moderate	moderate	MMP-2 (also MMP-9 implicated in TBI context)
+SCUBE3	1	high	strong	MMP-2, MMP-9, serum-associated protease
+SDC1	1	high	strong	MMP-9, heparanase (HPSE), ADAM family sheddases, membrane-type MMPs
+SDC2	1	moderate	moderate	MMP-7
+SDC3	1	moderate	strong	
+SDC4	1	moderate	strong	MMP9, ADAMTS4 (inferred from mRNA induction); γ-secretase cleaves residual CTF
+SDK2	1	low	weak	BACE1
+SELE	1	moderate	moderate	
+SELL	1	high	strong	ADAM17 (exclusive sheddase; PS1/γ-secretase for secondary intramembrane cleavage)
+SELP	1	moderate	moderate	
+SELPLG	1	moderate	strong	ADAM10 (T cells); ADAM-family metalloproteinase (monocytes)
+SEMA3A	1	moderate	moderate	furin-like proteases; neutrophil-associated protease (Mrgprb2-activated)
+SEMA4A	1	moderate	moderate	metalloproteinase (class not further specified)
+SEMA4B	1	moderate	moderate	ADAM17, ADAM10, BACE1
+SEMA4C	1	moderate	moderate	
+SEMA4D	1	high	strong	MMP3, MMP2, TACE/ADAM17, MT1-MMP (multiple MMPs documented)
+SEMA5A	1	moderate	moderate	
+SEMA5B	1	high	strong	
+SEMA6C	1	low	weak	
+SEMA7A	1	moderate	strong	ADAM17
+SEMG1	1	high	strong	PSA (KLK3 / prostate-specific antigen)
+SEZ6	1	high	strong	BACE1 (primary); ADAM10 (secondary)
+SEZ6L	1	high	strong	BACE1
+SEZ6L2	1	moderate	moderate	BACE1, cathepsin D
+SHH	1	high	strong	ADAM10
+SI	1	moderate	strong	
+SIGIRR	1	moderate	moderate	
+SIGLEC1	1	moderate	moderate	
+SIGLEC11	1	moderate	moderate	
+SIGLEC12	1	moderate	moderate	TMPRSS4
+SIGLEC5	1	moderate	strong	
+SIGLEC8	1	moderate	strong	
+SIGLEC9	1	moderate	moderate	
+SIRPA	1	moderate	strong	ADAM10
+SIRPB1	1	low	weak	
+SLAMF7	1	moderate	strong	
+SLC10A4	1	low	moderate	thrombin
+SLC39A10	1	moderate	moderate	
+SLC39A4	1	moderate	moderate	
+SLC39A6	1	moderate	moderate	
+SLC8A3	1	moderate	moderate	calpain-1, caspase-3
+SLIT2	1	high	strong	TLL1 (Tolloid-like 1), activated by furin/prohormone convertases
+SLIT3	1	high	strong	BMP1 (primary); TLL1 (candidate by paralog orthology)
+SLITRK1	1	moderate	moderate	ADAM10
+SMAGP	1	low	weak	
+SMPDL3B	1	moderate	moderate	PI-PLC (encoded by PLCXD1)
+SNAP23	1	low	moderate	Acyl-protein thioesterase 1 (APT1; depalmitoylation, not proteolytic cleavage)
+SOD3	1	high	strong	furin (pre-secretory); unknown carboxypeptidase (post-secretory)
+SORCS1	1	moderate	moderate	matrix metalloprotease (class inferred; specific sheddase not named for SORCS1)
+SORCS3	1	moderate	strong	
+SORL1	1	moderate	strong	ADAM17 (TACE)
+SORT1	1	moderate	strong	ADAM10
+SPACA1	1	moderate	moderate	unidentified serine protease (STI-sensitive)
+SPACA4	1	low	moderate	PGAP6
+SPAM1	1	moderate	strong	
+SPINT1	1	moderate	moderate	Neutrophil elastase (NE); additional sheddase identity not specified in ledger
+SPINT2	1	moderate	moderate	
+SPN	1	moderate	strong	ADAM10
+SPOCK1	1	high	strong	Serine protease(s) (inhibited by serine protease inhibitors; specific identity not determined)
+ST14	1	moderate	moderate	prostasin (PRSS8) — activation-dependent
+ST6GAL1	1	moderate	strong	BACE1
+STAB1	1	moderate	strong	serine protease (specific identity not named in ledger)
+SUMF1	1	low	strong	furin (primary); PACE4, PC5a (secondary)
+SUSD2	1	moderate	strong	
+TACSTD2	1	moderate	strong	ADAM10 (primary); TACE/ADAM17 (secondary)
+TECTA	1	high	strong	TMPRSS2
+TECTB	1	high	strong	TMPRSS2 (proteolytic); endogenous GPI-phospholipase (GPI-anchor cleavage)
+TEK	1	moderate	moderate	matrix metalloproteinases (MMPs)
+TENM1	1	moderate	moderate	signal peptide peptidase-like 2a (SPPase-like 2a; ICD cleavage); sheddase for ECD/TCAP release not specified
+TENM2	1	high	strong	furin (site 1); additional regulated protease at site 3 (identity not specified in ledger)
+TENM4	1	moderate	moderate	
+TEX101	1	moderate	strong	
+TFPI2	1	moderate	moderate	ADAMTS1
+TFR2	1	moderate	strong	
+TFRC	1	moderate	strong	ADAM17, TMPRSS11E, TMPRSS6 (matriptase-2)
+TGFA	1	high	strong	ADAM17 (TACE)
+TGFBR1	1	moderate	strong	ADAM17 (TACE)
+TGFBR3	1	moderate	strong	PRSS8 (endogenous); MMPs
+THBD	1	moderate	strong	Neutrophil elastase, cathepsin G, MMPs (MMP family), ADAM10
+THBS1	1	moderate	moderate	HTRA1
+THBS4	1	moderate	moderate	
+THSD7A	1	moderate	strong	ADAM10
+TIE1	1	moderate	strong	ADAM17 (TACE)
+TIMD4	1	moderate	strong	ADAM17
+TIMP2	1	low	weak	MMP9
+TLR4	1	moderate	moderate	
+TMEFF1	1	moderate	moderate	ST14 (matriptase)
+TMEFF2	1	moderate	moderate	
+TMEM106B	1	low	moderate	multiple lysosomal cysteine-type proteases (identity not individually specified)
+TMEM67	1	moderate	strong	ADAMTS9
+TMPRSS11D	1	moderate	strong	Autocatalytic (TMPRSS11D self-cleavage)
+TMPRSS13	1	moderate	strong	TMPRSS13 (autocatalytic)
+TMPRSS2	1	moderate	moderate	autoproteolytic (TMPRSS2 itself); specific exogenous sheddase not identified in ledger
+TMPRSS5	1	low	weak	
+TMPRSS6	1	moderate	strong	autocatalytic (matriptase-2 self-shedding)
+TMX2	1	low	weak	
+TNF	1	high	strong	ADAM17 (TACE)
+TNFRSF10A	1	moderate	strong	TACE (ADAM17)
+TNFRSF10D	1	moderate	moderate	
+TNFRSF12A	1	moderate	strong	γ-secretase
+TNFRSF13B	1	moderate	strong	Furin (primary, B cells); MMPs (platelets)
+TNFRSF13C	1	moderate	moderate	
+TNFRSF14	1	moderate	strong	ADAM17
+TNFRSF17	1	high	strong	γ-secretase (presenilin complex)
+TNFRSF1A	1	high	strong	ADAM17 (TACE); also ADAM10
+TNFRSF1B	1	high	strong	ADAM17 (TACE)
+TNFRSF21	1	high	strong	MMP-14 (MT1-MMP)
+TNFRSF4	1	moderate	moderate	
+TNFRSF8	1	high	strong	ADAM10 (primary in cHL); TACE/ADAM17 (activated lymphocytes)
+TNFRSF9	1	moderate	strong	ADAM10 (primary); ADAM17 (secondary)
+TNFSF10	1	moderate	moderate	
+TNFSF11	1	moderate	moderate	
+TNFSF12	1	high	strong	
+TNFSF13	1	high	strong	furin
+TNFSF13B	1	high	strong	furin
+TNFSF14	1	moderate	moderate	
+TNFSF15	1	high	strong	ADAM17 (TACE)
+TNFSF18	1	high	strong	
+TNFSF4	1	moderate	moderate	
+TNFSF8	1	moderate	strong	
+TNFSF9	1	moderate	moderate	
+TRABD2A	1	moderate	strong	GDE3, GDE6 (GPI-specific glycerophosphodiesterases)
+TRABD2B	1	moderate	moderate	MMP15
+TREM1	1	moderate	strong	MMPs (matrix metalloproteinases)
+TREM2	1	moderate	strong	ADAM10, ADAM17
+TREML1	1	high	strong	ADAM10 and ADAM17
+TSHR	1	moderate	moderate	
+ULBP1	1	moderate	strong	ADAM10, ADAM17
+ULBP2	1	high	strong	ADAM10 (primary); ADAM17 (secondary); MMP family (BB-94-sensitive)
+ULBP3	1	moderate	strong	
+UMOD	1	high	strong	
+UNC5B	1	moderate	moderate	
+UNC5CL	1	moderate	moderate	autoproteolytic (self-cleavage; no external sheddase identified)
+UNC5D	1	low	moderate	caspase (intracellular cleavage only)
+UPK3A	1	moderate	moderate	MMP (broad-spectrum; GM6001-sensitive)
+VAPA	1	moderate	moderate	MMP1/MMP2 (Drosophila Mmp1/2)
+VAPB	1	moderate	moderate	MMP1/2 (Drosophila Mmp1/2; human ortholog unconfirmed)
+VASH1	1	moderate	moderate	
+VASN	1	high	strong	ADAM17 (TACE)
+VCAM1	1	moderate	strong	ADAM17, BACE2
+VLDLR	1	moderate	strong	ADAM17
+VNN1	1	moderate	strong	
+VNN2	1	moderate	moderate	
+VSIG4	1	moderate	strong	
+VSIR	1	moderate	strong	ADAM10, MMP-9 (MMP family)
+VSTM1	1	high	strong	Proteinase 3 (PR3)
+VTCN1	1	moderate	moderate	
+VWF	1	high	strong	ADAMTS13
+WFDC1	1	low	moderate	Cathepsin L
+WNT3	1	low	weak	Astacin family metalloproteinase (HAS-7 in Hydra; human ortholog unknown)
+WNT5A	1	moderate	moderate	Tiki (TRABD2A/TRABD2B)
+XPNPEP2	1	moderate	moderate	
+ZP1	1	moderate	strong	furin
+ZP2	1	moderate	strong	Furin (C-terminal ectodomain release); Ovastacin/ASTL (post-fertilization N-terminal cleavage)
+ZP3	1	low	strong	Furin (proprotein convertase)
+ZP4	1	high	strong	Furin (and furin-family members); sperm proteasome also degrades ZP4 ECD during fertilization
+ZPLD1	1	moderate	moderate	

@@ -1,0 +1,19 @@
+{
+  "species": "mouse",
+  "orthologs": 1452,
+  "changed": 481,
+  "median_score_current": 0.854,
+  "median_score_picked": 0.8635,
+  "picked_source": {
+    "current": 971,
+    "uniprot": 365,
+    "ensembl": 116
+  },
+  "picked_reviewed": 1227,
+  "current_reviewed": 949,
+  "median_length_ratio_current": 0.9961,
+  "median_length_ratio_picked": 0.9972,
+  "gain_over_5pct": 92,
+  "soluble_guard_rejected_a_candidate": 46,
+  "never_worse": true
+}

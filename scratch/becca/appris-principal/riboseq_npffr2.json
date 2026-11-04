@@ -1,0 +1,115 @@
+{
+  "gene": "NPFFR2",
+  "accession": "Q9Y5X5",
+  "ensembl_gene": "ENSG00000056291",
+  "phase1_all": {
+    "n_orfs": 7264,
+    "n_genes": 4896,
+    "transcript_biotypes": {
+      "protein_coding": 5056,
+      "lncRNA": 1917,
+      "processed_transcript": 291
+    },
+    "hits_for_aliases": {
+      "NPFFR2": 0,
+      "NPFF2": 0,
+      "GPR74": 0,
+      "NPGPR": 0
+    }
+  },
+  "phase2_primary": {
+    "n_orfs": 10127,
+    "n_genes": 5838,
+    "orf_types": {
+      "uORF": 6437,
+      "lncRNA": 2108,
+      "dORF": 657,
+      "PT": 538,
+      "uoORF": 267,
+      "intORF": 107,
+      "doORF": 13
+    },
+    "hits_for_aliases": {
+      "NPFFR2": 0,
+      "NPFF2": 0,
+      "GPR74": 0,
+      "NPGPR": 0
+    }
+  },
+  "phase2_comprehensive": {
+    "n_orfs": 28359,
+    "n_genes": 10549,
+    "orf_types": {
+      "uORF": 15089,
+      "lncRNA": 5277,
+      "intORF": 2542,
+      "uoORF": 2128,
+      "PT": 1598,
+      "dORF": 1492,
+      "doORF": 232,
+      "CDS": 1
+    },
+    "hits_for_aliases": {
+      "NPFFR2": 0,
+      "NPFF2": 0,
+      "GPR74": 0,
+      "NPGPR": 0
+    }
+  },
+  "orf_type_vocabulary": [
+    "CDS",
+    "PT",
+    "dORF",
+    "doORF",
+    "intORF",
+    "lncRNA",
+    "uORF",
+    "uoORF"
+  ],
+  "uniprot_proteoform_lengths": {
+    "Q9Y5X5": 522,
+    "Q9Y5X5-3": 423,
+    "Q9Y5X5-2": 420,
+    "Q9Y5X5-4": 132
+  },
+  "ensembl_115_translations": [
+    {
+      "transcript": "ENST00000395999",
+      "length": 423,
+      "ccds": "CCDS47072.1",
+      "mane_select": false,
+      "uniprot_equivalent": "Q9Y5X5-3"
+    },
+    {
+      "transcript": "ENST00000308744",
+      "length": 420,
+      "ccds": "CCDS3552.1",
+      "mane_select": true,
+      "uniprot_equivalent": "Q9Y5X5-2"
+    },
+    {
+      "transcript": "ENST00000358749",
+      "length": 420,
+      "ccds": "CCDS3552.1",
+      "mane_select": false,
+      "uniprot_equivalent": "Q9Y5X5-2"
+    },
+    {
+      "transcript": "ENST00000940437",
+      "length": 420,
+      "ccds": "CCDS3552.1",
+      "mane_select": false,
+      "uniprot_equivalent": "Q9Y5X5-2"
+    },
+    {
+      "transcript": "ENST00000344413",
+      "length": 304,
+      "ccds": "",
+      "mane_select": false,
+      "uniprot_equivalent": ""
+    }
+  ],
+  "ensembl_encodes_uniprot_canonical": false,
+  "short_form_is_suffix_of_canonical": true,
+  "n_terminal_extension_length": 102
+}

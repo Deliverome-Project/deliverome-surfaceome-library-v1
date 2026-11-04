@@ -1,0 +1,12 @@
+panel	label	metric	value
+A	CNR1	immunostaining_au	129.6
+A	CCR5	immunostaining_au	302.2
+A	OR51E2	immunostaining_au	923.1
+A	ACKR3	immunostaining_au	2199.5
+A	AVPR2	immunostaining_au	6366.6
+A	screen	median_au	873.2
+A	screen	n_receptors	766
+B	SLC2A4 P66 vs E193 → G320	shared_tract_bp_before	972
+B	SLC2A4 P66 vs E193 → G320	shared_tract_bp_after	762
+B	MS4A1 Y161 vs N171 → P79	shared_tract_bp_before	505
+B	MS4A1 Y161 vs N171 → P79	shared_tract_bp_after	432

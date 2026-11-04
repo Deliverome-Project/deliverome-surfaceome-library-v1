@@ -1,0 +1,26 @@
+{
+  "uniprot_release": "2026_03",
+  "peptideatlas_build": "Human 2026-01",
+  "genes_with_isoforms": 1223,
+  "isoforms_scored": 2802,
+  "tier": {
+    "not_detected": 1516,
+    "undetectable": 790,
+    "weak": 342,
+    "expressed": 142,
+    "likely_expressed": 12
+  },
+  "undetectable_share": 28.2,
+  "current_cohort": {
+    "scored": 2331,
+    "tier": {
+      "not_detected": 1227,
+      "undetectable": 686,
+      "weak": 290,
+      "expressed": 117,
+      "likely_expressed": 11
+    }
+  },
+  "expressed_but_not_in_cohort": 26,
+  "in_cohort_but_not_detected": 1227
+}

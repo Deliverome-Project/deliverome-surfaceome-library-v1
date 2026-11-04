@@ -1,0 +1,161 @@
+{
+ "note": "Inputs for reproduce_isoform_universe.py. Each is downloaded and checked against its sha256.",
+ "files": {
+  "appris_homo_sapiens_e115v50.txt": {
+   "source": "external:appris/e115v50/appris_homo_sapiens_e115v50.txt",
+   "sha256": "17213ba9ed55ea9f1ceb93b70eff04341701338cacfe7e4c2eb9c20fe451d302",
+   "origin": "APPRIS e115v50 principal isoforms (see external://appris/e115v50/provenance.json)",
+   "cache_as": "appris_homo_sapiens_e115v50.txt"
+  },
+  "appris_mus_musculus_e115v50.txt": {
+   "source": "external:appris/e115v50/appris_mus_musculus_e115v50.txt",
+   "sha256": "ae526662d2364ffba96b1bc040c41fc37d1504a7900d8b96c03a5500733df597",
+   "origin": "APPRIS e115v50 principal isoforms, mouse",
+   "cache_as": "appris_mus_musculus_e115v50.txt"
+  },
+  "appris_data.appris.txt": {
+   "source": "external:appris/2026_06.v50/e115v50/homo_sapiens/appris_data.appris.txt",
+   "sha256": "59fd520d238b541293be59e3c46d3b5794813800c3f156c383f25b97040dabc4",
+   "origin": "https://apprisws.bioinfo.cnio.es/pub/releases/2026_06.v50/datafiles/homo_sapiens/e115v50/appris_data.appris.txt (APPRIS full scores incl. TRIFID), fetched 2026-11-02",
+   "cache_as": "appris_full.txt"
+  },
+  "Homo_sapiens.GRCh38.pep.all.fa.gz": {
+   "source": "external:ensembl/release-115/pep/Homo_sapiens.GRCh38.pep.all.fa.gz",
+   "sha256": "7991ab37d09986eefdb5c77032b15370ab0e99918b78f235f3230c0302851c96",
+   "origin": "https://ftp.ensembl.org/pub/release-115/fasta/homo_sapiens/pep/",
+   "cache_as": "Homo_sapiens.GRCh38.pep.all.fa.gz"
+  },
+  "Mus_musculus.GRCm39.pep.all.fa.gz": {
+   "source": "external:ensembl/release-115/pep/Mus_musculus.GRCm39.pep.all.fa.gz",
+   "sha256": "560dddca2516fbc6649df6bc95c28a8d1f9e5019d5ae0cf6071a0360f482aeb0",
+   "origin": "https://ftp.ensembl.org/pub/release-115/fasta/mus_musculus/pep/",
+   "cache_as": "Mus_musculus.GRCm39.pep.all.fa.gz"
+  },
+  "Macaca_fascicularis.Macaca_fascicularis_6.0.pep.all.fa.gz": {
+   "source": "external:ensembl/release-115/pep/Macaca_fascicularis.Macaca_fascicularis_6.0.pep.all.fa.gz",
+   "sha256": "ac1f93034ef236ae06cfb6118e185ab1980a741d9ad30b261d1163c095acb1bd",
+   "origin": "https://ftp.ensembl.org/pub/release-115/fasta/macaca_fascicularis/pep/",
+   "cache_as": "Macaca_fascicularis.Macaca_fascicularis_6.0.pep.all.fa.gz"
+  },
+  "uniprot_human_reviewed_isoforms.tsv.gz": {
+   "source": "external:uniprot/2026-10-11/uniprot_human_reviewed_isoforms.tsv.gz",
+   "sha256": "11b2e36430c66460b9515d9048f55cd6a0c439507ddf9bd54fbe35dd47a68da4",
+   "origin": "UniProt REST stream, reviewed human incl. isoforms (release 2026_03 per select_principal.py), cached 2026-10-08, archived 2026-10-11",
+   "cache_as": "uniprot_human_reviewed_isoforms.tsv.gz"
+  },
+  "uniprot_human_reviewed.tsv.gz": {
+   "source": "external:uniprot/2026-10-11/uniprot_human_reviewed.tsv.gz",
+   "sha256": "64cb00f2f091193649c3553bf77465cd365ef01cc3c889394b6d9e482c96e307",
+   "origin": "UniProt REST stream, reviewed human canonical, archived 2026-10-11",
+   "cache_as": "uniprot_human_reviewed.tsv.gz"
+  },
+  "uniprot_mouse_reviewed_isoforms.tsv.gz": {
+   "source": "external:uniprot/2026-10-11/uniprot_mouse_reviewed_isoforms.tsv.gz",
+   "sha256": "4b711788bf84a978d50352f8fc407492ff392eef1366ba15821c369d7756a18c",
+   "origin": "UniProt REST stream, reviewed mouse incl. isoforms, archived 2026-10-11",
+   "cache_as": "uniprot_mouse_reviewed_isoforms.tsv.gz"
+  },
+  "uniprot_cyno_all_isoforms.tsv.gz": {
+   "source": "external:uniprot/2026-10-11/uniprot_cyno_all_isoforms.tsv.gz",
+   "sha256": "a0f835563180739f748cc8fd48fe81a5640703813d26e9eb9be51a7b0077c615",
+   "origin": "UniProt REST stream, all M. fascicularis incl. isoforms, archived 2026-10-11",
+   "cache_as": "uniprot_cyno_all_isoforms.tsv.gz"
+  },
+  "openprot_min2pep.tsv.zip": {
+   "source": "external:openprot/2.2/human-openprot-2_2-refprots+altprots+isoforms-min_2_pep-uniprot2022_06_01.tsv.zip",
+   "sha256": "bd0aeba6d64b23fb45119a01eafd89c18b5454da4230bbb2c61bea09a40e3860",
+   "origin": "https://api.openprot.org/api/2.0/HS/downloads/human-openprot-2_2-refprots+altprots+isoforms-min_2_pep-uniprot2022_06_01.tsv.zip (OpenProt 2.2, released 2025-02-06), fetched 2026-11-02"
+  },
+  "peptideatlas_build607_pools.json": {
+   "source": "external:peptideatlas/build-607/universe_pools_replay_2026-11-02.json",
+   "sha256": "b5cd250a13bb0dec1daa9e9ba4095f112554f48d839c9e2f63a9764786627c88",
+   "origin": "PeptideAtlas build 607 (Human 2026-01) GetPeptides, queried 2026-11-02 in 20-accession requests replaying the 2026-10-08 cache fill: reference disagreements, canonicals of genes with isoforms, all their proteoforms, then the rest of the universe (stage lists in peptideatlas_stages.json)",
+   "cache_as": "peptideatlas_build607_pools.json"
+  },
+  "peptideatlas_stages.json": {
+   "source": "external:peptideatlas/build-607/universe_pools_replay_2026-11-02_stages.json",
+   "sha256": "ddf40467bf70278ba3b81d90d073add1a07f80e24b1d1717c732865cfc3fc832",
+   "origin": "the accession lists of each replay stage, in query order"
+  },
+  "uniprot_human_gpi.tsv": {
+   "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/panel-inputs/2026-11-01/uniprot_human_gpi.tsv",
+   "sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "origin": "UniProt REST release 2026_03: keyword:KW-0336 AND organism_id:9606 AND reviewed:true",
+   "cache_as": "uniprot_human_gpi.tsv"
+  },
+  "surface_subcategory.tsv": {
+   "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/universe-inputs/2026-11-02/surface_subcategory_as_of_2026-10-11.tsv",
+   "sha256": "954d3df004b1880a1d5dbf140bacbab939449b93735bf0663bf583cec85605d5",
+   "origin": "RECONSTRUCTED: the 2026-11-01 D1 architecture snapshot (panel-inputs) without EPGN's GPI_anchored row, which D1 gained after 2026-10-11; the only variant that reproduces the ortholog repicks"
+  },
+  "gpi_supplement.tsv": {
+   "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/panel-inputs/2026-11-01/gpi_supplement.tsv",
+   "sha256": "53c767e419c92cb76d4a34989edc61a42adfe62dd88e5eb8d3110da08413d720",
+   "origin": "cited GPI supplement rows"
+  },
+  "gpi_exclusions.tsv": {
+   "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/panel-inputs/2026-11-01/gpi_exclusions.tsv",
+   "sha256": "deeadc311547d251833b16791c68e12c25a2f537684e5a2c5d064437390a7d60",
+   "origin": "GPI exclusions"
+  },
+  "reference_selection.tsv": {
+   "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/panel-inputs/2026-11-01/reference_selection.tsv",
+   "sha256": "884d90db0670d866595490207f29a927e17d2c3a96ead8a8febab79586c361b1",
+   "origin": "read only for its decision column; see the script"
+  },
+  "surfaceome/data/external/deeptmhmm_surfaceome_inputs/human_isoforms_from_afdb_non_hla.fasta": {
+   "source": "external:accessible-surfaceome/f9c73691/data/external/deeptmhmm_surfaceome_inputs/human_isoforms_from_afdb_non_hla.fasta",
+   "sha256": "93ba62b41e6532e7c09ed57784b7d983edf0021b8fba212712d87675f13482ab",
+   "origin": "accessible-surfaceome commit f9c73691 (git LFS), data/external/deeptmhmm_surfaceome_inputs/human_isoforms_from_afdb_non_hla.fasta",
+   "repo_path": "data/external/deeptmhmm_surfaceome_inputs/human_isoforms_from_afdb_non_hla.fasta"
+  },
+  "surfaceome/data/external/deeptmhmm_surfaceome_inputs/human_canonical_non_hla.fasta": {
+   "source": "external:accessible-surfaceome/f9c73691/data/external/deeptmhmm_surfaceome_inputs/human_canonical_non_hla.fasta",
+   "sha256": "31219b860ad6f78a3328eb4b0c2dc2dd1d72f217314bd63473f0b4477e13ec8f",
+   "origin": "accessible-surfaceome commit f9c73691 (git LFS), data/external/deeptmhmm_surfaceome_inputs/human_canonical_non_hla.fasta",
+   "repo_path": "data/external/deeptmhmm_surfaceome_inputs/human_canonical_non_hla.fasta"
+  },
+  "surfaceome/data/external/uniprot_ensembl_xrefs/ensg_to_uniprot.tsv": {
+   "source": "external:accessible-surfaceome/f9c73691/data/external/uniprot_ensembl_xrefs/ensg_to_uniprot.tsv",
+   "sha256": "f75b5af0b76ba3962da9ab147a5d73d1213af7188dd7651d354465ffbde87cbc",
+   "origin": "accessible-surfaceome commit f9c73691 (git LFS), data/external/uniprot_ensembl_xrefs/ensg_to_uniprot.tsv",
+   "repo_path": "data/external/uniprot_ensembl_xrefs/ensg_to_uniprot.tsv"
+  },
+  "surfaceome/data/processed/deeptmhmm/deeptmhmm_human_canonical.tsv": {
+   "source": "external:accessible-surfaceome/f9c73691/data/processed/deeptmhmm/deeptmhmm_human_canonical.tsv",
+   "sha256": "10d905f453b3b98d1256e71b280d3b271126829d3571ad575beed5974864d39a",
+   "origin": "accessible-surfaceome commit f9c73691 (git LFS), data/processed/deeptmhmm/deeptmhmm_human_canonical.tsv",
+   "repo_path": "data/processed/deeptmhmm/deeptmhmm_human_canonical.tsv"
+  },
+  "surfaceome/data/processed/deeptmhmm/deeptmhmm_human_isoforms.tsv": {
+   "source": "external:accessible-surfaceome/f9c73691/data/processed/deeptmhmm/deeptmhmm_human_isoforms.tsv",
+   "sha256": "e3bbcb3439802413b54e1b9724b89c576fa472a814f6f979fcb379c387ec5a94",
+   "origin": "accessible-surfaceome commit f9c73691 (git LFS), data/processed/deeptmhmm/deeptmhmm_human_isoforms.tsv",
+   "repo_path": "data/processed/deeptmhmm/deeptmhmm_human_isoforms.tsv"
+  },
+  "surfaceome/data/external/deeptmhmm_surfaceome_inputs/mouse_ortholog_one2one_highconf_non_hla.fasta": {
+   "source": "external:accessible-surfaceome/f9c73691/data/external/deeptmhmm_surfaceome_inputs/mouse_ortholog_one2one_highconf_non_hla.fasta",
+   "sha256": "522861162bee49edc5261b0c241439eaf1f7248898c4dba6f8ce0a256ccca314",
+   "origin": "accessible-surfaceome commit f9c73691 (git LFS), data/external/deeptmhmm_surfaceome_inputs/mouse_ortholog_one2one_highconf_non_hla.fasta",
+   "repo_path": "data/external/deeptmhmm_surfaceome_inputs/mouse_ortholog_one2one_highconf_non_hla.fasta"
+  },
+  "surfaceome/data/external/deeptmhmm_surfaceome_inputs/mouse_ortholog_one2one_highconf_non_hla_metadata.csv": {
+   "source": "external:accessible-surfaceome/f9c73691/data/external/deeptmhmm_surfaceome_inputs/mouse_ortholog_one2one_highconf_non_hla_metadata.csv",
+   "sha256": "1b999526c2d60c786815f4af64710357b69950a010585a6346af7c3a76b81e7f",
+   "origin": "accessible-surfaceome commit f9c73691 (git LFS), data/external/deeptmhmm_surfaceome_inputs/mouse_ortholog_one2one_highconf_non_hla_metadata.csv",
+   "repo_path": "data/external/deeptmhmm_surfaceome_inputs/mouse_ortholog_one2one_highconf_non_hla_metadata.csv"
+  },
+  "surfaceome/data/external/deeptmhmm_surfaceome_inputs/cyno_ortholog_one2one_highconf_non_hla.fasta": {
+   "source": "external:accessible-surfaceome/f9c73691/data/external/deeptmhmm_surfaceome_inputs/cyno_ortholog_one2one_highconf_non_hla.fasta",
+   "sha256": "e13618a6b094266e3418ef34768fe32b5bef7a62db816836aa469760351b6a46",
+   "origin": "accessible-surfaceome commit f9c73691 (git LFS), data/external/deeptmhmm_surfaceome_inputs/cyno_ortholog_one2one_highconf_non_hla.fasta",
+   "repo_path": "data/external/deeptmhmm_surfaceome_inputs/cyno_ortholog_one2one_highconf_non_hla.fasta"
+  },
+  "surfaceome/data/external/deeptmhmm_surfaceome_inputs/cyno_ortholog_one2one_highconf_non_hla_metadata.csv": {
+   "source": "external:accessible-surfaceome/f9c73691/data/external/deeptmhmm_surfaceome_inputs/cyno_ortholog_one2one_highconf_non_hla_metadata.csv",
+   "sha256": "466526ac36dcc2d3e1e4b5b90484e17ff4800df2a6d0f8c73432f160f7916901",
+   "origin": "accessible-surfaceome commit f9c73691 (git LFS), data/external/deeptmhmm_surfaceome_inputs/cyno_ortholog_one2one_highconf_non_hla_metadata.csv",
+   "repo_path": "data/external/deeptmhmm_surfaceome_inputs/cyno_ortholog_one2one_highconf_non_hla_metadata.csv"
+  }
+ }
+}

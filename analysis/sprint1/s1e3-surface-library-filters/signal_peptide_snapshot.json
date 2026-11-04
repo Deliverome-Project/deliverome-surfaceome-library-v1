@@ -1,0 +1,27 @@
+{
+  "snapshot": "2026-09-11-v1",
+  "s3_prefix": "sprint1/s1e3-surface-library-filters/signal-peptide-review-2026-09-11-v1",
+  "expected": {
+    "all": 2344,
+    "precedent": 519,
+    "broad": 1667,
+    "low_tedman": 253,
+    "measured": 528,
+    "native_sp": 1121,
+    "addition": 546
+  },
+  "inputs": {
+    "cohort.jsonl.gz": {
+      "sha256": "09f1bc750479b369ce56a781c2376b66eb2901c52ac332f61fe32859e6473ef1",
+      "s3_key": "sprint1/s1e3-surface-library-filters/signal-peptide-review-2026-09-11-v1/inputs/cohort.jsonl.gz"
+    },
+    "library_membership.tsv": {
+      "sha256": "bfb483e8879ce8f4285985c0f04e6a83875b6e19b5d755634410faf221dfcc52",
+      "s3_key": "sprint1/s1e3-surface-library-filters/signal-peptide-review-2026-09-11-v1/inputs/library_membership.tsv"
+    },
+    "tedman-v1.xlsx": {
+      "sha256": "c0fbcbd1df5ab488e026239fb55aa92a7a8d9171154bec20bc837f6fb9685286",
+      "s3_key": "sprint1/s1e3-surface-library-filters/signal-peptide-review-2026-09-11-v1/inputs/tedman-v1.xlsx"
+    }
+  }
+}

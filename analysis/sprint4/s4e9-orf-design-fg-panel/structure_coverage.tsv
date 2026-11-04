@@ -1,0 +1,6 @@
+set	candidates	sampled	with_alphafold	alphafold_frac
+library_reference	2360	35	35	1.000
+expression_rescue	25	25	25	1.000
+isoform	1840	15	5	0.333
+ortholog	2817	35	26	0.743
+giant_truncation	24	23	21	0.913

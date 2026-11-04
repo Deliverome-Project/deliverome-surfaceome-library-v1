@@ -1,0 +1,177 @@
+{
+  "what": "Tag sites used by this experiment, copied out of the accessible-surfaceome deterministic tag_sites pipeline. Recorded HERE because that pipeline is still in progress -- its viewer/public/tag-sites/*.json store is the input to the public D1 sync, and we deliberately did NOT commit or publish these runs there.",
+  "generated_utc": "2026-09-27T02:52:59+00:00",
+  "source_repo": "accessible-surfaceome, worktree .claude/worktrees/dev-sync",
+  "source_commit": "69c2bf452b5416f99062a354b88fa5cf64a04fe1",
+  "source_describe": "69c2bf452",
+  "command": "uv run python scripts/regenerate_tag_sites.py --gene SLC2A4 P14672 --gene MS4A1 P11836 --gene SLC20A2 Q08357",
+  "pipeline_inputs": {
+    "topology": "data/external/deeptmhmm_surfaceome_predictions/human_canonical_non_hla/predicted_topologies.3line (committed DeepTMHMM prediction)",
+    "structure": "AlphaFold DB model fetched by accession, cached under data/cache/afdb_pdb/",
+    "uniprot_features": "fetched live; used only as a hazard VETO (disulfide, glycosylation, binding/active site, modified residue, cross-link)",
+    "conservation": "mouse + cyno ortholog sequences from the Surfaceome API record"
+  },
+  "not_published": {
+    "d1": "dry-run only, nothing written",
+    "official_json_store": "runs left untracked; the four by-product genes (SLC39A14, HTR3A, ASTN1, and the SLC20A2 re-run) are not needed and were removed"
+  },
+  "ranking_note": "The emitted JSON is sorted lexicographically by site_id, which is NOT a ranking. The surface_loop path ranks by (-own RSA, conservation, -gap_freq); pLDDT is a >=70 pass/fail reliability gate only.",
+  "sites": {
+    "SLC2A4": [
+      {
+        "site_id": "SLC2A4-snorkel-c",
+        "det_path": "snorkel",
+        "site_kind": "terminal_c",
+        "residue_label": "D509",
+        "insert_after_residue": 509,
+        "topology_state": "I",
+        "extracellular": false,
+        "tag_type": "ALFA",
+        "tag_length_aa": 15,
+        "linker": "GS both sides",
+        "confidence": "low",
+        "plddt": 42.8,
+        "rationale": "C-terminus not extracellular (topology 'I' at residue L) and no accessible N-terminus \u2014 C-terminal snorkel presents the tag on the surface via a TM-snorkeling linker (fallback: no natively accessible terminus)"
+      },
+      {
+        "site_id": "SLC2A4-surface_loop-193",
+        "det_path": "surface_loop",
+        "site_kind": "internal",
+        "residue_label": "E193",
+        "insert_after_residue": 193,
+        "topology_state": "O",
+        "extracellular": true,
+        "tag_type": "ALFA, DogTag",
+        "tag_length_aa": 15,
+        "linker": "GS both sides",
+        "confidence": "medium",
+        "plddt": 88.8,
+        "rationale": "ordered surface loop (11 aa): pLDDT>=70, DSSP loop/turn, exposed junction residue (max RSA), indel-tolerant, 3D-clear of features"
+      },
+      {
+        "site_id": "SLC2A4-surface_loop-66",
+        "det_path": "surface_loop",
+        "site_kind": "internal",
+        "residue_label": "P66",
+        "insert_after_residue": 66,
+        "topology_state": "O",
+        "extracellular": true,
+        "tag_type": "ALFA, DogTag",
+        "tag_length_aa": 15,
+        "linker": "GS both sides",
+        "confidence": "medium",
+        "plddt": 78.3,
+        "rationale": "ordered surface loop (9 aa): pLDDT>=70, DSSP loop/turn, exposed junction residue (max RSA), indel-tolerant, 3D-clear of features"
+      }
+    ],
+    "MS4A1": [
+      {
+        "site_id": "MS4A1-snorkel-c",
+        "det_path": "snorkel",
+        "site_kind": "terminal_c",
+        "residue_label": "P297",
+        "insert_after_residue": 297,
+        "topology_state": "I",
+        "extracellular": false,
+        "tag_type": "ALFA",
+        "tag_length_aa": 15,
+        "linker": "GS both sides",
+        "confidence": "low",
+        "plddt": 67.9,
+        "rationale": "C-terminus not extracellular (topology 'I' at residue L) and no accessible N-terminus \u2014 C-terminal snorkel presents the tag on the surface via a TM-snorkeling linker (fallback: no natively accessible terminus)"
+      },
+      {
+        "site_id": "MS4A1-surface_loop-161",
+        "det_path": "surface_loop",
+        "site_kind": "internal",
+        "residue_label": "Y161",
+        "insert_after_residue": 161,
+        "topology_state": "O",
+        "extracellular": true,
+        "tag_type": "ALFA, DogTag",
+        "tag_length_aa": 15,
+        "linker": "GS both sides",
+        "confidence": "medium",
+        "plddt": 74.9,
+        "rationale": "ordered surface loop (13 aa): pLDDT>=70, DSSP loop/turn, exposed junction residue (max RSA), indel-tolerant, 3D-clear of features"
+      },
+      {
+        "site_id": "MS4A1-surface_loop-171",
+        "det_path": "surface_loop",
+        "site_kind": "internal",
+        "residue_label": "N171",
+        "insert_after_residue": 171,
+        "topology_state": "O",
+        "extracellular": true,
+        "tag_type": "ALFA, DogTag",
+        "tag_length_aa": 15,
+        "linker": "GS both sides",
+        "confidence": "medium",
+        "plddt": 87.0,
+        "rationale": "ordered surface loop (13 aa): pLDDT>=70, DSSP loop/turn, exposed junction residue (max RSA), indel-tolerant, 3D-clear of features"
+      }
+    ],
+    "SLC20A2": [
+      {
+        "site_id": "SLC20A2-disorder-205",
+        "det_path": "disorder",
+        "site_kind": "internal",
+        "residue_label": "V205",
+        "insert_after_residue": 205,
+        "topology_state": "O",
+        "extracellular": true,
+        "tag_type": "ALFA",
+        "tag_length_aa": 15,
+        "linker": "GS both sides",
+        "confidence": "medium",
+        "plddt": 61.7,
+        "rationale": "exposed, 3D-clear insertion point within a low-pLDDT disordered extracellular run (>=4 aa)"
+      },
+      {
+        "site_id": "SLC20A2-surface_loop-529",
+        "det_path": "surface_loop",
+        "site_kind": "internal",
+        "residue_label": "E529",
+        "insert_after_residue": 529,
+        "topology_state": "O",
+        "extracellular": true,
+        "tag_type": "ALFA, DogTag",
+        "tag_length_aa": 15,
+        "linker": "GS both sides",
+        "confidence": "medium",
+        "plddt": 82.6,
+        "rationale": "ordered surface loop (10 aa): pLDDT>=70, DSSP loop/turn, exposed junction residue (max RSA), indel-tolerant, 3D-clear of features"
+      },
+      {
+        "site_id": "SLC20A2-terminal-c",
+        "det_path": "terminal",
+        "site_kind": "terminal_c",
+        "residue_label": "V652",
+        "insert_after_residue": 652,
+        "topology_state": "O",
+        "extracellular": true,
+        "tag_type": "ALFA",
+        "tag_length_aa": 15,
+        "linker": "GS both sides",
+        "confidence": "high",
+        "plddt": 84.6,
+        "rationale": "extracellular C-terminus (topology 'O' at residue L) \u2014 direct C-terminal tag"
+      },
+      {
+        "site_id": "SLC20A2-terminal-n",
+        "det_path": "terminal",
+        "site_kind": "terminal_n",
+        "residue_label": null,
+        "insert_after_residue": null,
+        "topology_state": "O",
+        "extracellular": true,
+        "tag_type": "ALFA",
+        "tag_length_aa": 15,
+        "linker": "GS both sides",
+        "confidence": "high",
+        "plddt": 55.1,
+        "rationale": "extracellular N-terminus (topology 'O' at residue 1) \u2014 direct N-terminal tag"
+      }
+    ]
+  }
+}

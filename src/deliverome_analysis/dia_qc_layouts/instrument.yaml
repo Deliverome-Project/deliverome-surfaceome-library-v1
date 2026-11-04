@@ -1,0 +1,15 @@
+# Instrument-facing checks: chromatography, mass accuracy and peak sampling. Useful for
+# deciding whether a bad run is the LC/MS or the sample.
+title: DIA QC - instrument
+columns: 2
+sections:
+  - title: Chromatography at a glance
+    panels: [tic_ms1, tic_ms2, instrument_traces, injection_time, chromatography_diagnosis]
+  - title: Over time
+    panels: [qc_history]
+  - title: Retention time
+    panels: [charge_states, rt_consistency, charge_state_rt, rt_error, irt_residual, irt_standards, gradient_coverage, rt_flagged]
+  - title: Mass accuracy
+    panels: [ms1_mass_error, ms1_calibration_ppm, ms2_mass_error]
+  - title: Peak shape and sampling
+    panels: [fwhm, points_per_peak, points_per_peak_ms1, tailing_factor, signal_to_noise, peak_gauss_score, fragment_coelution]

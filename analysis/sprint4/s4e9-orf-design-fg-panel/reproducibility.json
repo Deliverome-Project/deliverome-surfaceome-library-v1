@@ -1,0 +1,121 @@
+{
+  "checked_utc": "2026-10-08T00:00:57+00:00",
+  "enzymes": [
+    "BbsI",
+    "Esp3I",
+    "BsaI"
+  ],
+  "seed": 0,
+  "versions": {
+    "dnachisel": "3.2.16",
+    "biopython": "1.87",
+    "numpy": "2.4.6"
+  },
+  "genes": [
+    {
+      "gene": "ACKR3",
+      "transcript": "ENST00000272928.4",
+      "native_sha256": "bac83e40143f4cbfcb12122d266f2e6c4db584f9cf7d95fd5b475d649f6c3fbd",
+      "domesticated_sha256": "04b4e32080d02f1df335691b5bb958d4311cee0a1a19d8c33e5c4caa413c4dea",
+      "reproduced": true
+    },
+    {
+      "gene": "AVPR2",
+      "transcript": "ENST00000646375.2",
+      "native_sha256": "52ee8cf8f0cda8ec4d583d3b7e66eec0e30c462b5148d19ef8d448da9510eaf9",
+      "domesticated_sha256": "4175f581bb7e7655549fd0138c9d0a848ae4a3e5d1387ce0007d2dbaf0d0e410",
+      "reproduced": true
+    },
+    {
+      "gene": "AXL",
+      "transcript": "ENST00000301178.9",
+      "native_sha256": "cc5333d903e318b768b23b9dca49a528b04155a7478fbdd14287b0b1469b665b",
+      "domesticated_sha256": "3f46f670579f1877051a169648a435fac90cb621f71d7186119846ee9c131acc",
+      "reproduced": true
+    },
+    {
+      "gene": "CCR5",
+      "transcript": "ENST00000292303.5",
+      "native_sha256": "99b0b248eeba8cc745e3363598a190a92f59903ad233920dcc45e94f1beb58ac",
+      "domesticated_sha256": "9463545bfd0d78f6f9265c644e3d7f48bd05166629d1a461724bdc68db6c5b76",
+      "reproduced": true
+    },
+    {
+      "gene": "CNR1",
+      "transcript": "ENST00000369501.3",
+      "native_sha256": "6ad9f7144914ca1dd3faac077d3922d24b9391edd264b3de181985563906b6ee",
+      "domesticated_sha256": "57560452fe0c2c01c707675c5445abe2c5acac5caa5c6480ebd0327e8e32445c",
+      "reproduced": true
+    },
+    {
+      "gene": "ERBB2",
+      "transcript": "ENST00000269571.10",
+      "native_sha256": "e166839ef380c9ac17200efd94272f5358fb27e4557c28f7360497a8ce323a65",
+      "domesticated_sha256": "14a8704055fdf77ba0ad83f3b710ef175076d1a5a845ae8e7219c2803a00abc3",
+      "reproduced": true
+    },
+    {
+      "gene": "FOLR1",
+      "transcript": "ENST00000393676.5",
+      "native_sha256": "e196630d19b744fb0f23e71842214f171c271178b6da93fa68c89e3a47be65c6",
+      "domesticated_sha256": "e196630d19b744fb0f23e71842214f171c271178b6da93fa68c89e3a47be65c6",
+      "reproduced": true
+    },
+    {
+      "gene": "HEG1",
+      "transcript": "ENST00000311127.9",
+      "native_sha256": "eb3c34ba985d52aad50a9f19cbfe70605dfc5a66a84052bd31170e6421896d17",
+      "domesticated_sha256": "54d4696b10db801d5c0f817420b3bdd85bf558d0800ec13ee468a28e5f3587f5",
+      "reproduced": true
+    },
+    {
+      "gene": "MS4A1",
+      "transcript": "ENST00000345732.9",
+      "native_sha256": "9a0f615d6d8b7b21a4561ece4f31b5645a73776351397bb605d2baa00bce4caf",
+      "domesticated_sha256": "9b1ada3078f4dcd05354314956658f82fa0506a691cca9ffa9b67b9a2f5ed107",
+      "reproduced": true
+    },
+    {
+      "gene": "NECTIN4",
+      "transcript": "ENST00000368012.4",
+      "native_sha256": "39dd6177499d0d3c9535434728205ce7efb6bd4353cb74370879915ed6163510",
+      "domesticated_sha256": "eed8b94a310a9a8890c3e7adf252b02ced282503605c0c31bf15c5bbeb3a6d85",
+      "reproduced": true
+    },
+    {
+      "gene": "OR51E2",
+      "transcript": "ENST00000396950.4",
+      "native_sha256": "6848a93cd5ef4e71e05e666660ac9551aa8a3532733a00b75384618163fd6df9",
+      "domesticated_sha256": "dd7a01c0a635f181250ed64beee8c11434e270290c19053668814340f8e6f8cb",
+      "reproduced": true
+    },
+    {
+      "gene": "PTPRC",
+      "transcript": "ENST00000442510.8",
+      "native_sha256": "9f132bd6b19eab0ab27ad7e683ae5d71e042c8fbaf8b3d3cb492624b8fe3b1c9",
+      "domesticated_sha256": "d9825f56550495c6bd66257474260030afb2ad9682a8715611aa30b5691630c1",
+      "reproduced": true
+    },
+    {
+      "gene": "SLC2A4",
+      "transcript": "ENST00000317370.13",
+      "native_sha256": "f111f897055b6d884127b2f4a658ec649c11edabe6e93cf52ab6ea65943ec0ad",
+      "domesticated_sha256": "83d1ccbd692a5331438f0a8f8b07fa5ca5b20e826eecdac1a36a391c286b312d",
+      "reproduced": true
+    },
+    {
+      "gene": "SLC9A3",
+      "transcript": "ENST00000264938.8",
+      "native_sha256": "2efa0a3641f4351d45d115317f9acdecb553a811d842b01eefb0cd152eca7a3c",
+      "domesticated_sha256": "9282fea53385a37017544da82625866ca45a81328ae76cab955b49062d5fc8cb",
+      "reproduced": true
+    },
+    {
+      "gene": "VSIG10",
+      "transcript": "ENST00000359236.10",
+      "native_sha256": "26af303b88cd0511ddf1817d11e84ce69c7009f82a5db45bc9f6989ded67bdb6",
+      "domesticated_sha256": "ba3b48e2d67f62062667b2e9bf23e02ed17d8ebcf3a78c55508d4838a29fc295",
+      "reproduced": true
+    }
+  ]
+}

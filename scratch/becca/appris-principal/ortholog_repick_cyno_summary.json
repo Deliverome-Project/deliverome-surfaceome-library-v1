@@ -1,0 +1,19 @@
+{
+  "species": "cyno",
+  "orthologs": 1429,
+  "changed": 363,
+  "median_score_current": 0.9467,
+  "median_score_picked": 0.9613,
+  "picked_source": {
+    "current": 1066,
+    "ensembl": 327,
+    "uniprot": 36
+  },
+  "picked_reviewed": 58,
+  "current_reviewed": 53,
+  "median_length_ratio_current": 0.9957,
+  "median_length_ratio_picked": 1.0,
+  "gain_over_5pct": 209,
+  "soluble_guard_rejected_a_candidate": 39,
+  "never_worse": false
+}

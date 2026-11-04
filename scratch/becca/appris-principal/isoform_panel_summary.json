@@ -1,0 +1,34 @@
+{
+  "seed": 20261009,
+  "panel_size": 150,
+  "floors": {
+    "type III": 2,
+    "GPI": 5,
+    "type II": 5
+  },
+  "allocation": {
+    "observed": {
+      "type I": 43,
+      "type II": 10,
+      "multipass": 34,
+      "GPI": 10,
+      "type III": 3
+    },
+    "prediction_only": {
+      "multipass": 17,
+      "type I": 18,
+      "GPI": 6,
+      "type II": 7,
+      "type III": 2
+    }
+  },
+  "by_class": {
+    "type I": 61,
+    "multipass": 51,
+    "type II": 17,
+    "GPI": 16,
+    "type III": 5
+  },
+  "genes": 137,
+  "already_in_cohort": 61
+}

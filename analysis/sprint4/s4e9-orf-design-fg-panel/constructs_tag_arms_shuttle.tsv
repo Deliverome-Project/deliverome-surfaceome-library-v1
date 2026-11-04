@@ -1,0 +1,4 @@
+gene	insert_nt	shuttled_nt	added_nt	esp3i_sites	bbsi_sites	bsai_sites	oh5	oh3	digest_regenerates_insert
+TFRC_cterm	2551	2567	16	2	0	0	GACC	AAAG	True
+TFRC_linker_3x	2566	2582	16	2	0	0	GACC	AAAG	True
+TFRC_linker_4x	2581	2597	16	2	0	0	GACC	AAAG	True

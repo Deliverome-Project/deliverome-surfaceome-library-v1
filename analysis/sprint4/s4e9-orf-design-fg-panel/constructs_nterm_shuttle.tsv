@@ -1,0 +1,9 @@
+gene	insert_nt	shuttled_nt	added_nt	esp3i_sites	bbsi_sites	bsai_sites	oh5	oh3	digest_regenerates_insert
+HEG1	4414	4430	16	2	0	0	GACC	AAAG	True
+ERBB2	4036	4052	16	2	0	0	GACC	AAAG	True
+AXL	2953	2969	16	2	0	0	GACC	AAAG	True
+SLC9A3	2773	2789	16	2	0	0	GACC	AAAG	True
+VSIG10	1891	1907	16	2	0	0	GACC	AAAG	True
+NECTIN4	1801	1817	16	2	0	0	GACC	AAAG	True
+FOLR1	1042	1058	16	2	0	0	GACC	AAAG	True
+PTPRC	4189	4205	16	2	0	0	GACC	AAAG	True

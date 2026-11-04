@@ -1,0 +1,23 @@
+{
+  "tedman_expressed_bar_au": 1025.2,
+  "in_library_and_below_bar": 276,
+  "eligible_after_filters": 244,
+  "leader_arms": 25,
+  "also_recoded": 10,
+  "skipped": {
+    "not_in_library": 237,
+    "above_bar": 250,
+    "excluded_class": 0,
+    "has_signal_peptide": 30,
+    "n_terminus_cytoplasmic": 1,
+    "no_topology": 1
+  },
+  "classes": {
+    "A (Olfactory)": 7,
+    "Taste": 7,
+    "A": 7,
+    "B": 2,
+    "Vomeronasal": 1,
+    "C": 1
+  }
+}

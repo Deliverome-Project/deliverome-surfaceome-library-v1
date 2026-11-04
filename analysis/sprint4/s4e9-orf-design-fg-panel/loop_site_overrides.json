@@ -1,0 +1,158 @@
+{
+ "source": "Becca, 2026-10-13 (G320, P79) and 2026-10-15 (E67, V319, I162), selected in chat and recorded here verbatim; 2026-10-18 (Q187 replaces P79); 2026-10-18 late (F146 replaces Q187; after-162 corrected to after-161)",
+ "note": "Hand-selected loop insertion sites that REPLACE deterministic-pipeline arms. Kept separate from tag_sites_loop_insertions.json, which is a verbatim record of pipeline output: attributing a selected site to the pipeline would misstate its provenance. The 2026-10-15 moves come from the tag-site model's ranked picks; its region bounds were checked against DeepTMHMM v1 on the designed CDS and agree to the residue on all five regions (MS4A1 79-84 and 142-188; SLC2A4 46-81, 309-322, 375-379), so the one-residue shifts off P66/G320/Y161 are genuinely adjacent residues and not a frame-convention difference. Room is quoted as residues available on each side of the junction within the extracellular run. Room is quoted N/C EXCLUSIVE of the junction residue; the first four sites were recorded inclusive and are corrected as of 2026-10-18.",
+ "replaces": {
+  "SLC2A4_E193": "SLC2A4_G320",
+  "MS4A1_N171": "MS4A1_P79",
+  "SLC2A4_P66": "SLC2A4_E67",
+  "SLC2A4_G320": "SLC2A4_V319",
+  "MS4A1_Y161": "MS4A1_I162",
+  "MS4A1_P79": "MS4A1_Q187",
+  "MS4A1_Q187": "MS4A1_F146",
+  "MS4A1_I162": "MS4A1_Y161 (off-by-one correction, not a repoint)"
+ },
+ "sites": {
+  "SLC2A4": [
+   {
+    "variant": "E67",
+    "insert_after_residue": 67,
+    "residue": "E",
+    "model_rank": 1,
+    "within_protein_score": 0.748,
+    "absolute_score": 0.553,
+    "topological_domain": "Extracellular 46-81 (DeepTMHMM v1)",
+    "region_length_aa": 36,
+    "room_each_side_aa": [
+     21,
+     14
+    ],
+    "nearest_tm_distance_aa": 15,
+    "selected_because": "the lead site: most room of any GLUT4 loop, and the GLUT4myc literature loop (Kanai 1993 PMID 7686158; Quon 1994 PMID 8202531)",
+    "verified": "designed CDS 2026-10-15: residue 67 is E, next G, inside the 46-81 run"
+   },
+   {
+    "variant": "V319",
+    "insert_after_residue": 319,
+    "residue": "V",
+    "model_rank": 2,
+    "within_protein_score": 0.57,
+    "absolute_score": 0.562,
+    "topological_domain": "Extracellular 309-322 (DeepTMHMM v1)",
+    "region_length_aa": 14,
+    "room_each_side_aa": [
+     10,
+     3
+    ],
+    "nearest_tm_distance_aa": 4,
+    "selected_because": "a second extracellular region 252 residues from E67, so the pair separates loop identity from protein identity",
+    "verified": "designed CDS 2026-10-15: residue 319 is V, next G, inside the 309-322 run. Note UniProt P14672 annotates this region 309-323 (15 aa); v1 gives 309-322 (14 aa). The pick is inside both."
+   }
+  ],
+  "MS4A1": [
+   {
+    "variant": "F146",
+    "insert_after_residue": 146,
+    "residue": "F",
+    "topological_domain": "Extracellular 142-188 (DeepTMHMM v1)",
+    "dssp_loop": "7-residue coil 143-149",
+    "rsa": 0.73,
+    "plddt": 72.2,
+    "clearance_to_nearest_cys_sg_A": 16.0,
+    "selected_because": "best remaining CD20 junction: largest 3D clearance of any candidate, genuine coil, most exposed",
+    "fails": "DSSP loop length 7 against the tag-sites floor of 8 -- a soft length criterion, not structure or clearance",
+    "verified": "designed CDS 2026-10-18: residue 146 is F, next L, inside the 142-188 run"
+   },
+   {
+    "variant": "Y161",
+    "insert_after_residue": 161,
+    "residue": "Y",
+    "model_rank": 1,
+    "plddt": 74.9,
+    "rsa": 0.78,
+    "dssp": "coil",
+    "topological_domain": "Extracellular 142-188 (DeepTMHMM v1)",
+    "clearance_to_nearest_cys_sg_A": 11.9,
+    "selected_because": "the pipeline's rank-1 CD20 site; labelled by the residue BEFORE the junction",
+    "verified": "designed CDS 2026-10-18: junction Y|I between Y161 and I162, outside the 167-183 disulfide"
+   },
+   {
+    "variant": "Q187",
+    "insert_after_residue": 187,
+    "residue": "Q",
+    "model_rank": 2,
+    "within_protein_score": 0.281,
+    "absolute_score": 0.419,
+    "topological_domain": "Extracellular 142-188 (DeepTMHMM v1)",
+    "region_length_aa": 47,
+    "room_each_side_aa": [
+     45,
+     1
+    ],
+    "nearest_tm_distance_aa": 2,
+    "selected_because": "Becca, 2026-10-18: take the model's rank-2 CD20 site and drop the P79 floor probe. Outside the 167-183 disulfide, unlike residue 182, which sits inside it and is the same hazard that retired N171.",
+    "verified": "designed CDS 2026-10-18: residue 187 is Q, next S, inside the 142-188 run (DeepTMHMM v1 on the designed proteoform), outside the 167-183 disulfide",
+    "accepted_tradeoffs": [
+     "C-side room is 1 residue and TM4 starts at 189, so this is a tight-side site like P79 mirrored onto the C flank rather than a comfortable one",
+     "both CD20 arms now sit in 142-188; the model flags this shares_a_region_with_another_pick and calls it a weaker hedge than two separate loops",
+     "MS4A1 has only two extracellular runs (79-84 and 142-188), so dropping P79 gives up the only possible second independent loop on CD20"
+    ],
+    "status": "REJECTED 2026-10-18, never ordered. Built and published for part of one day, then reverted.",
+    "rejected_because": "In the 178-190 helix at pLDDT 84-93 and 5.6 A from C167 -- the worst clearance of any CD20 junction measured. Also not a candidate at any rank in the tag-sites pipeline: the ranked CD20 list is TWO items (after-161, after-171), so the 'model rank 2 / 45th of 53' figures this file carried were not reproducible from that pipeline and should not have been recorded as its output. 182 fails the same way and is additionally inside the disulfide span."
+   },
+   {
+    "variant": "I162",
+    "insert_after_residue": 162,
+    "residue": "I",
+    "model_rank": 1,
+    "within_protein_score": 0.588,
+    "absolute_score": 0.552,
+    "topological_domain": "Extracellular 142-188 (DeepTMHMM v1)",
+    "region_length_aa": 47,
+    "room_each_side_aa": [
+     20,
+     26
+    ],
+    "nearest_tm_distance_aa": 21,
+    "selected_because": "the most room of any CD20 junction and the furthest from a TM; sits inside the rituximab epitope, which is a readout consequence rather than a design fault",
+    "verified": "designed CDS 2026-10-15: residue 162 is I, next N, inside the 142-188 run and OUTSIDE the 167-183 disulfide",
+    "status": "SUPERSEDED by Y161 -- same intended site, corrected by one residue."
+   },
+   {
+    "variant": "P79",
+    "insert_after_residue": 79,
+    "residue": "P",
+    "epictope_percentile": 56.6,
+    "uniprot": "P11836",
+    "topological_domain": "Extracellular 79-84",
+    "region_length_aa": 6,
+    "nearest_tm_distance_aa": 1,
+    "selected_because": "RETAINED DELIBERATELY AS THE FLOOR PROBE, NOT ENDORSED. The tag-site model does not offer this site at all: the 79-84 region is 6 aa against a 10-aa floor, and because MS4A1 has a viable region (142-188, 47 aa) the fallback never reaches the stub. Its distance to TM1 is 1 residue. Keeping it is what makes p0032 vs p0033 an experiment rather than a duplicate: the model separates the two as far as it can on one protein, so if P79 displays as well as I162 the length floor is wrong and that is a result about the gate, not about CD20. Do not read this entry as a recommendation.",
+    "verified": "UniProt P11836 topology 2026-10-13: extracellular 79-84 between TM1 (57-78) and TM2 (85-105)",
+    "model_recommended": false,
+    "model_rank": "45th of 53 MS4A1 candidates",
+    "below_length_floor": true,
+    "length_floor_aa": 10,
+    "room_each_side_aa": [
+     0,
+     5
+    ],
+    "room_note": "N side is ZERO: the 79-84 run starts at 79 and the junction is after 79, so no residue of the run lies N of it. This was recorded as 1 while the room convention was inclusive of the junction residue \u2014 the least honest possible number for a probe whose entire point is that there is nothing on that side. It is also what makes P79 an extreme rather than a representative floor test: the tag-location session measured a tight side of 1 as matching only 2.8% of 176 published internal sites, and 0 is tighter still, so a failure here indicts the extreme and not the 10-aa floor.",
+    "status": "RETIRED 2026-10-18, replaced by Q187. Not built, not ordered.",
+    "retired_because": "Becca took the model's rank-2 site instead. The MIN_LOOP_LEN floor is now unprobed by this batch: no arm inserts into a run shorter than 14 aa, so the 10-aa floor and the 51-aa cargo recalibration it needs stay open and must be answered elsewhere."
+   }
+  ]
+ },
+ "retired": {
+  "SLC2A4_E193": "first residue of the 9-aa 193-201 region, 1 residue from TM5; its arm confounded loop length with region identity",
+  "MS4A1_N171": "inside CD20's 167-183 disulfide bond (UniProt P11836), so a 19-aa insertion would have landed within a disulfide-closed loop",
+  "SLC2A4_P66": "superseded by E67, one residue downstream, on the tag-site model's rank-1 pick",
+  "SLC2A4_G320": "superseded by V319, one residue upstream; V319 also has 3 residues of C-side room against G320's 2",
+  "MS4A1_Y161": "superseded by I162, one residue downstream; both sit mid-loop, 20-21 residues from the nearest TM"
+ },
+ "held_pending_decision": {
+  "SLC2A4_E375": "tag-site model rank 3 (within-protein 0.479 / absolute 0.523), but the 375-379 run is 5 aa \u2014 SHORTER than the 6-aa MS4A1 79-84 stub the same analysis excluded as below the length floor \u2014 with 0/4 residues of room (N-exclusive) and 1 residue to TM10. GLUT4's extracellular runs are 36/3/9/14/5/4 aa, so only two can take a 19-aa cassette and any third GLUT4 construct is necessarily a floor probe. Not built; awaiting Becca.",
+  "MS4A1_Q187": "tag-site model rank 2 (0.281 / 0.419). Inside 142-188 but with only 1 residue of C-side room and 2 to TM4, and it would put both CD20 picks in one loop (the analysis flags this shares_a_region_with_another_pick and calls it a weaker hedge than two separate loops). Taking it also drops P79, the documented MIN_LOOP_LEN probe. Not built; awaiting Becca."
+ },
+ "structure_gate_note": "Topology is not sufficient to clear an internal site; secondary structure and 3D clearance are separate gates and they disqualified two sites topology had passed. Measured on AF-P11836-F1-model_v6, which matches the designed 297-aa proteoform residue-for-residue: residues 178-190 are a contiguous alpha-helical dihedral run at pLDDT 84-93, so 182 and 187 are in a HELIX, not a loop. Clearance to the nearest disulfide cysteine SG, junction by junction: after-146 16.0 A, after-161 11.9 A, after-162 8.3 A, after-182 7.4 A, after-187 5.6 A. Note 187 is outside the 167-183 disulfide SPAN and still 5.6 A from C167 in space, which is why a span test alone cleared it.",
+ "upstream_table_warning": "The tag-sites pipeline still publishes MS4A1 N171 with the rationale '3D-clear of features' although N171 is inside the 167-183 disulfide. Their features.py treats a disulfide as two hazard POINTS vetoed by >=10 A distance, but the constraint for a disulfide is ENCLOSURE, not distance, so a residue topologically inside the closed loop passes when it is far enough away in space. Reported by that session 2026-10-18 across 24,018 published internal deterministic sites over 2,413 genes. Treat any site inside a disulfide span in that table as unvalidated until the gate is fixed. Our retirement of N171 was independently correct."
+}

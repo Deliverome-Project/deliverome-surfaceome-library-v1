@@ -1,0 +1,100 @@
+gene	orf_kb	tier	extracellular_aa	largest_segment_aa	tm_count	peak_tpm	status	family	reason
+ABCA1	6.8	T2	882	597	15	60.1	not-viable-at-this-budget		assessed this session
+ABCA7	6.4	T2	781	507	15	103.248	needs-deeper-search		assessed this session
+ADGRG4	9.2	T2	2745	2713	7		expression-unknown	adhesion GPCR	a recipe exists (adhesion GPCR) but every expression source is null for this gene - confirm it is expressed before spending a build slot
+ADGRV1	18.9	T2	5934	5879	7	494.7	ready-to-build	adhesion GPCR	adhesion GPCR: GPS-cleaved CTF + exogenous leader
+CACNA1A	7.5	T2	386	87	24	313.493	skip	voltage-gated or TRP channel	adhesion GPCR: GPS-cleaved CTF + exogenous leader
+CACNA1B	7.0	T2	357	87	24	52.5357	skip	voltage-gated or TRP channel	adhesion GPCR: GPS-cleaved CTF + exogenous leader
+CACNA1C	6.7	T2	351	60	24	45.1	skip	voltage-gated or TRP channel	adhesion GPCR: GPS-cleaved CTF + exogenous leader
+CACNA1D	6.5	T2	425	90	24	57.9	skip	voltage-gated or TRP channel	adhesion GPCR: GPS-cleaved CTF + exogenous leader
+CACNA1E	6.9	T2	409	87	24	50.8	skip	voltage-gated or TRP channel	adhesion GPCR: GPS-cleaved CTF + exogenous leader
+CACNA1F	5.9	T2	417	90	24	116.2	skip	voltage-gated or TRP channel	adhesion GPCR: GPS-cleaved CTF + exogenous leader
+CACNA1G	7.1	T2	428	136	24	177.2	skip	voltage-gated or TRP channel	adhesion GPCR: GPS-cleaved CTF + exogenous leader
+CACNA1H	7.1	T2	445	141	24	224.8	skip	voltage-gated or TRP channel	adhesion GPCR: GPS-cleaved CTF + exogenous leader
+CACNA1I	6.7	T2	453	145	24	21.1702	skip	voltage-gated or TRP channel	adhesion GPCR: GPS-cleaved CTF + exogenous leader
+CACNA1S	5.6	T2	331	61	24	238.7	skip	voltage-gated or TRP channel	adhesion GPCR: GPS-cleaved CTF + exogenous leader
+CDH23	10.1	T1	3041	3041	1	80.1	sufficient		assessed this session
+CELSR1	9.0	T2	2478	2448	7	143.5	sufficient	adhesion GPCR	assessed this session
+CELSR2	8.8	T2	2378	2349	7	124.6	sufficient	adhesion GPCR	assessed this session
+CELSR3	9.9	T2	2540	2508	7	59.5993	sufficient	adhesion GPCR	assessed this session
+CR1	6.1	T1	1930	1930	1	36.6875	sufficient		assessed this session
+CSMD1	10.7	T1	3461	3461	1	62	needs-triage		no family recipe and no published assessment
+CSMD2	10.5	T1	3408	3408	1	28.1	needs-triage		no family recipe and no published assessment
+CSMD3	11.1	T1	3567	3567	2	27.1	needs-triage		no family recipe and no published assessment
+CSPG4	7.0	T3	2195	2195	1	257.518	built		construct built this session
+DCHS1	9.9	T1	2898	2898	1	68.3678	ready-to-build	cadherin	cadherin: EC1-4 + membrane-proximal cassette + TM + tail
+DSCAM	6.0	T1	1578	1578	1	23	needs-deeper-search	Ig adhesion	assessed this session
+DSCAML1	6.2	T1	1573	1573	1	43.2	needs-deeper-search	Ig adhesion	assessed this session
+FAT1	13.8	T1	4160	4160	1	517.1	needs-deeper-search	FAT cadherin	assessed this session
+FAT2	13.1	T1	4030	4030	1	223.1	needs-deeper-search	FAT cadherin	assessed this session
+FAT3	13.7	T1	4122	4122	1	89.4	ready-to-build	FAT cadherin	FAT cadherin: EC1-4 + membrane-proximal cassette + TM + tail
+FAT4	14.9	T1	4466	4466	1	61.5	needs-deeper-search	FAT cadherin	assessed this session
+FNDC1	5.7	T3			0	247.4	needs-triage		no family recipe and no published assessment
+GPR179	7.1	T2	406	356	7	12.8	ready-to-build	adhesion GPCR	adhesion GPCR: GPS-cleaved CTF + exogenous leader
+ITGB4	5.5	T1	683	683	1	1065.7	built		construct built this session
+LCT	5.8	T1	1863	1863	1	212.7	skip	brush-border or secreted enzyme	construct built this session
+LRP1	13.6	T1	4400	4400	1	446.3	built		construct built this session
+LRP1B	13.8	T1	4420	4420	1	19.3	ready-to-build	LDLR family	LDLR family: one ligand-binding cluster + TM + tail
+LRP2	14.0	T1	4398	4398	1	78.8	built	LDLR family	construct built this session
+LRP4	5.7	T1	1705	1705	1	130	needs-deeper-search	LDLR family	assessed this session
+LY75	5.2	T1	1639	1639	1	104.703	built		construct built this session
+MEGF8	8.5	T1	2620	2620	1	65.1	needs-triage		no family recipe and no published assessment
+MGAM	8.3	T1	2719	2719	1	123.7	skip	brush-border or secreted enzyme	no family recipe and no published assessment
+MUC12	16.4	T1	5364	5364	1	134.8	needs-deeper-search	membrane mucin	assessed this session
+MUC16	43.5	T3	14451	14451	1	158.1	built	membrane mucin	construct built this session
+MUC17	13.5	T1	4368	4368	1	93.2	sufficient	membrane mucin	assessed this session
+MUC22	5.3	T1	1634	1634	1	16.7	ready-to-build	membrane mucin	membrane mucin: repeat stub + SEA + TM + tail, exogenous leader
+MUC3A	10.0	T1			1	62.5	needs-deeper-search	membrane mucin	assessed this session
+MUC3B	40.4	T1			1		expression-unknown	membrane mucin	a recipe exists (membrane mucin) but every expression source is null for this gene - confirm it is expressed before spending a build slot
+MUC4	16.2	T3			1	62.5	sufficient	membrane mucin	assessed this session
+NOTCH1	7.7	T1	1717	1717	1	151.5	built	NOTCH	construct built this session
+NOTCH2	7.4	T1	1652	1652	1	1190.3	built	NOTCH	construct built this session
+NOTCH3	7.0	T1	1604	1604	1	415.749	built	NOTCH	construct built this session
+NOTCH4	6.0	T1	1424	1424	1	73.5495	ready-to-build	NOTCH	NOTCH: NRR + TM + ICD
+PCDH15	5.9	T1	1350	1350	1	57.2	sufficient		assessed this session
+PCSK5	5.6	T1	1629	1629	1	49	skip	brush-border or secreted enzyme	assessed this session
+PIEZO1	7.6	T2	595	234	38	149.5	sufficient		assessed this session
+PIEZO2	8.3	T2	642	248	38	67.8	needs-deeper-search		assessed this session
+PKD1	12.9	T2	3363	3051	11	510.715	sufficient		assessed this session
+PKDREJ	6.8	T2	1487	1165	11		skip	voltage-gated or TRP channel	assessed this session
+PKHD1	12.2	T1	3835	3835	1	28.1	needs-triage		no family recipe and no published assessment
+PLXNA1	5.7	T1	1218	1218	1	194.2	built	plexin	construct built this session
+PLXNA2	5.7	T1	1203	1203	1	128.4	built	plexin	construct built this session
+PLXNA3	5.6	T1	1201	1201	1	63.523	built	plexin	construct built this session
+PLXNA4	5.7	T1	1214	1214	1	91.7	built	plexin	construct built this session
+PLXNB1	6.4	T1	1471	1471	1	168.355	built	plexin	construct built this session
+PLXNB2	5.5	T1	1178	1178	1	520.1	built	plexin	construct built this session
+PLXNB3	5.7	T3	1211	1211	1	194.2	built	plexin	construct built this session
+PLXND1	5.8	T1	1225	1225	1	326.8	built	plexin	construct built this session
+PTPRB	6.0	T1	1599	1599	1	85	ready-to-build	receptor phosphatase	receptor phosphatase: Ig block + juxtamembrane stub + TM + PTP domains
+PTPRD	5.7	T1	1245	1245	1	91.9	needs-deeper-search	receptor phosphatase	assessed this session
+PTPRF	5.7	T1	1234	1234	1	633.1	sufficient	receptor phosphatase	assessed this session
+PTPRQ	7.0	T1	1912	1912	1	26.6	ready-to-build	receptor phosphatase	receptor phosphatase: Ig block + juxtamembrane stub + TM + PTP domains
+PTPRS	5.8	T1	1253	1253	1	127.5	sufficient	receptor phosphatase	assessed this session
+PTPRZ1	6.9	T3	1612	1612	1	408.6	built	receptor phosphatase	construct built this session
+PTPRZ2	6.9	T1	1612	1612	1		expression-unknown	receptor phosphatase	a recipe exists (receptor phosphatase) but every expression source is null for this gene - confirm it is expressed before spending a build slot
+ROS1	7.0	T1	1832	1832	1	85.8	built		construct built this session
+SCN10A	5.9	T2	277	69	24		skip	voltage-gated or TRP channel	construct built this session
+SCN11A	5.4	T2	283	75	24	9	skip	voltage-gated or TRP channel	construct built this session
+SCN1A	6.0	T2	353	100	24	34.3	skip	voltage-gated or TRP channel	construct built this session
+SCN2A	6.0	T2	340	99	24	69.4963	skip	voltage-gated or TRP channel	construct built this session
+SCN3A	6.0	T2	336	100	24	446.4	skip	voltage-gated or TRP channel	construct built this session
+SCN4A	5.5	T2	357	119	24	128.7	skip	voltage-gated or TRP channel	construct built this session
+SCN5A	6.1	T2	312	85	24	49.7	skip	voltage-gated or TRP channel	construct built this session
+SCN7A	5.0	T2	240	79	24	136.3	skip	voltage-gated or TRP channel	construct built this session
+SCN8A	5.9	T2	323	82	24	26.299	skip	voltage-gated or TRP channel	construct built this session
+SCN9A	6.0	T2	336	79	24	226.7	skip	voltage-gated or TRP channel	construct built this session
+SDK1	6.6	T2	2009	2009	1	42.9	sufficient	Ig adhesion	assessed this session
+SDK2	6.5	T1	1912	1912	1	53.2	sufficient	Ig adhesion	assessed this session
+SI	5.5	T1	1795	1795	1	513.4	skip	brush-border or secreted enzyme	assessed this session
+SIGLEC1	5.1	T3	1622	1622	1	25.3868	built		construct built this session
+SORL1	6.6	T1	2056	2056	1	179.3	built		construct built this session
+STAB1	7.7	T1	2453	2453	1	428	built	stabilin	construct built this session
+STAB2	7.7	T1	2439	2439	1	102.551	built	stabilin	construct built this session
+TENM1	8.2	T3	2380	2380	1	65.4	needs-triage		no family recipe and no published assessment
+TENM2	8.3	T1	2374	2374	1	138.8	needs-triage		no family recipe and no published assessment
+TENM4	8.3	T1	2403	2403	1	119.7	needs-triage		no family recipe and no published assessment
+TRPM3	5.2	T2	66	55	6	657.8	skip	voltage-gated or TRP channel	no family recipe and no published assessment
+TRPM6	6.1	T2	125	79	6	15.6767	skip	voltage-gated or TRP channel	no family recipe and no published assessment
+TRPM7	5.6	T2	24	13	6	111.6	no-displayable-face	voltage-gated or TRP channel	24 aa extracellular, largest segment 13 aa - nothing to display
+USH2A	15.6	T1	5011	5011	1	87.8	sufficient		assessed this session

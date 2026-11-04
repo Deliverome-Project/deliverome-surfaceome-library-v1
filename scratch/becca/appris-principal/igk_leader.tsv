@@ -1,0 +1,15 @@
+field	value
+name	Murine Ig kappa-chain V-J2-C signal peptide
+dna_60nt	ATGGAGACAGACACACTCCTGCTATGGGTACTGCTGCTCTGGGTTCCAGGTTCCACTGGT
+protein_20aa	METDTLLLWVLLLWVPGSTG
+species	Mus musculus
+source	Thermo Fisher pSecTag2/Hygro manual, annotated vector sequence, bases 905-964 (the manual labels 905-967, which runs three bases past the cleavage site)
+source_archived	external://thermofisher-vector-manuals/2026-10-11/pSecTag2_Hygro_manual.pdf
+corroboration	printed three times in the manual, once per reading frame, all identical; and carried base-for-base by Addgene 219810, 259743, 259744 and Invitrogen pDisplay
+bbsi	clean
+esp3i_bsmbi	clean
+bsai	clean
+use_this	The 20-aa form, METDTLLLWVLLLWVPGSTG / 60 nt ending in GGT. Settled by annotation: five independent vector maps stop the signal peptide at that Gly, and the trailing Asp appears only where the next vector element starts with GAC. See igk_leader_comparison.tsv.
+caveat_species	Addgene 100697 lists the species as human while its depositor comment calls the leader mouse-derived. Thermo names it murine. Treated as murine here.
+variant_emma	Addgene 100697, the EMMA position-6 part, is the same protein with two synonymous differences (GAA for GAG at codon 2, CTG for CTC at codon 6). It is not a Golden Gate domestication: both variants are clean for every Golden Gate enzyme, so nothing needed removing. Treat it as a different source clone.
+trailing_gac	Keep it. All six vectors put GAC (Asp) at +1, and Asp is the native first residue of the mature mouse kappa chain. Keeping it holds the cleavage junction identical across every arm; dropping it makes +1 the receptor's own first residue, which varies per receptor and would confound a rescue experiment with per-construct cleavage efficiency. Cost is one codon.

@@ -1,0 +1,50 @@
+# L1 surface-protein ORF library: design review
+
+This repository holds the design of Deliverome's L1 ORF library for external review, and
+the code to rerun it. Start with the brief:
+[`analysis/sprint4/s4e9-orf-design-fg-panel/reviewer-package/BRIEF.md`](analysis/sprint4/s4e9-orf-design-fg-panel/reviewer-package/BRIEF.md).
+
+## Rerun the design
+
+You need [uv](https://docs.astral.sh/uv/) and the frozen input bundle (77 files,
+~830 MB, distributed separately with a SHA-256 for every file). No credentials or network
+access are used.
+
+```bash
+uv sync --locked
+```
+
+```bash
+cd analysis/sprint4/s4e9-orf-design-fg-panel/reviewer-package
+uv run --locked python run_review.py --bundle /path/to/l1-reviewer-bundle
+```
+
+The run checks the bundle, reruns the library's 14 decision stages and reports whether each
+reproduces its published record, then recomputes every number in the brief. It takes
+about three minutes. The package README beside the brief describes each stage and the
+bundle's contents.
+
+## Layout
+
+The folders keep the paths they have in the lab's analysis repository, so the scripts and
+the brief's links work unchanged.
+
+| Path | What it is |
+|---|---|
+| `analysis/sprint4/s4e9-orf-design-fg-panel/` | the library pipeline, its committed tables, and `reviewer-package/` (brief, runner, bundle tools) |
+| `analysis/sprint1/s1e3-surface-library-filters/` | the gene filter |
+| `scratch/becca/appris-principal/` | proteoform selection, panels, CDS resolution and construct assembly |
+| `src/deliverome_analysis/` | the shared utilities (S3 access, sequence tools, topology, plotting), complete |
+| `historical/` | script versions two stages rerun as they were when their records were made |
+| `EXPORT_MANIFEST.json` | which analysis-repo commit each managed file came from, with its SHA-256 |
+
+## Adding to this repository
+
+Add files freely. This repository is exported from Deliverome-Project/deliverome-analysis
+(`export_review_repo.py`), and a re-export only updates the files listed in
+`EXPORT_MANIFEST.json`. If you edit one of those, the next export leaves your version in
+place and lists it, so the change can be carried back to the analysis repository by hand.
+Files you add are never touched.
+
+New utilities go in `src/deliverome_analysis/`, with dependencies declared in
+`pyproject.toml` and locked in `uv.lock` (`uv add <package>`), never installed ad hoc.

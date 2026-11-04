@@ -1,0 +1,12 @@
+{
+  "orthologs_scored": 1376,
+  "median_identity_to_human_reference": {
+    "current (longest symbol match)": 0.8546,
+    "reviewed (Swiss-Prot canonical)": 0.863,
+    "appris (mouse principal)": 0.8614,
+    "correspondence (best match)": 0.8624
+  },
+  "correspondence_changes_the_pick": 279,
+  "current_pick_unreviewed": 479,
+  "correspondence_beats_current_by_over_5pct": 67
+}

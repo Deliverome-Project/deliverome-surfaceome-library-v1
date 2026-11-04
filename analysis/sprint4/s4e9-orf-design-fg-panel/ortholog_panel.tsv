@@ -1,0 +1,201 @@
+species	band	human_symbol	ortholog_symbol	picked_acc	correspondence	topology_label	anchor_call	topology_class
+cyno	diverged	ACHE	ACHE	ENSMFAP00000037256	0.759	GLOB	anchored	GPI
+cyno	diverged	ALPI	ALPI	A0A2K5VFX3	0.9413	SP	anchored	GPI
+cyno	diverged	AQP10	AQP10	A0A2K5UBW2	0.9568	TM		multipass
+cyno	diverged	CD38	CD38	Q5VAN0	0.9269	TM		type II
+cyno	diverged	CD58	CD58	ENSMFAP00000043026	0.792	SP+TM	anchored	GPI
+cyno	diverged	CD86	CD86	ENSMFAP00000003391	0.9271	SP+TM		type I
+cyno	diverged	CDH24	CDH24	A0A2K5TYV3	0.8771	SP+TM		type I
+cyno	diverged	CDH3	CDH3	A0A2K5WPN9	0.8975	SP+TM		type I
+cyno	diverged	CEACAM8	CEACAM8	ENSMFAP00000046090	0.7801	TM	anchored	GPI
+cyno	diverged	CLDN8	CLDN8	ENSMFAP00000050557	0.9474	TM		multipass
+cyno	diverged	CLEC9A	CLEC9A	A0A2K5WDG5	0.7458	TM		type II
+cyno	diverged	CR2	CR2	A0A2K5URA2	0.9286	SP+TM		type I
+cyno	diverged	CRB1	CRB1	ENSMFAP00000001477	0.9552	SP+TM		type I
+cyno	diverged	CXCL16	CXCL16	A0A2K5UTE0	0.7778	SP+TM		type I
+cyno	diverged	ENG	ENG	A0A2K5WGQ8	0.8729	SP+TM		type I
+cyno	diverged	FPR2	FPR2	G7PYI7	0.9601	TM		multipass
+cyno	diverged	GPR20	GPR20	A0A7N9D678	0.905	TM		multipass
+cyno	diverged	GPR78	GPR78	A0A2K5UEN4	0.9008	TM		multipass
+cyno	diverged	IL13RA2	IL13RA2	A0A2K5WCT5	0.8943	SP+TM		type I
+cyno	diverged	KCNA3	KCNA3	A0A2K5UDR0	0.8174	TM		multipass
+cyno	diverged	KLRF1	KLRF1	Q8MI05	0.9004	TM		type II
+cyno	diverged	LIM2	LIM2	G7PYH7	0.7767	TM		multipass
+cyno	diverged	LY6K	LY6K	A0A7N9CPV3	0.8424	SP	anchored	GPI
+cyno	diverged	MERTK	MERTK	A0A2K5V1H9	0.9542	SP+TM		type I
+cyno	diverged	MFRP	MFRP	A0A2K5UF00	0.9585	TM		type II
+cyno	diverged	MPIG6B	MPIG6B	ENSMFAP00000002610	0.8216	SP+TM		type I
+cyno	diverged	NFASC	NFASC	ENSMFAP00000023063	0.8738	TM		type I
+cyno	diverged	NLGN2	NLGN2	A0A2K5W1Q1	0.9021	SP+TM		type I
+cyno	diverged	OPN4	OPN4	A0A2K5VU14	0.954	TM		multipass
+cyno	diverged	P2RX6	P2RX6	A0A2K5W0L3	0.9388	TM		multipass
+cyno	diverged	PGAP6	PGAP6	A0A2K5TVG5	0.9403	SP+TM		multipass
+cyno	diverged	PROCR	PROCR	ENSMFAP00000033235	0.937	SP+TM		type I
+cyno	diverged	SLAMF8	SLAMF8	ENSMFAP00000025665	0.9614	SP+TM		type I
+cyno	diverged	SLAMF9	SLAMF9	G7NWC0	0.8581	SP+TM		type I
+cyno	diverged	SLC13A1	SLC13A1	ENSMFAP00000015341	0.9613	TM		multipass
+cyno	diverged	SLC22A11	SLC22A11	A0A7N9CPF0	0.96	TM		multipass
+cyno	diverged	SLC22A17	SLC22A17	ENSMFAP00000044499	0.8209	TM		multipass
+cyno	diverged	SLC26A6	SLC26A6	A0A2K5WID5	0.9486	TM		multipass
+cyno	diverged	SLC4A1	SLC4A1	ENSMFAP00000062109	0.9431	TM		multipass
+cyno	diverged	SLC5A12	SLC5A12	G7PQI7	0.925	TM		multipass
+cyno	diverged	SLITRK5	SLITRK5	A0A2K5TPB5	0.9008	SP+TM		type I
+cyno	diverged	SPACA4	SPACA4	G7PY25	0.8898	SP	anchored	GPI
+cyno	diverged	SPAM1	SPAM1	P38568	0.9	SP	anchored	GPI
+cyno	diverged	SUSD3	SUSD3	ENSMFAP00000023948	0.9451	TM		type III
+cyno	diverged	TFRC	TFRC	A0A2K5X958	0.9105	TM		type II
+cyno	diverged	TMPRSS11B	TMPRSS11B	A0A2K5UJX5	0.9327	TM		type II
+cyno	diverged	TNFRSF17	TNFRSF17	A0A2K5UD97	0.9185	TM		type III
+cyno	diverged	TNFRSF1B	TNFRSF1B	A0A2K5VET2	0.7758	TM		type I
+cyno	diverged	TNFSF18	TNFSF18	A0A2K5UCD9	0.8643	TM		type II
+cyno	diverged	TPSG1	TPSG1	A0A2K5V8Z0	0.9097	SP+TM		type I
+cyno	near	ABCB11	ABCB11	D2CFL3	0.9683	TM		multipass
+cyno	near	ACKR4	ACKR4	G7NXZ5	0.9629	TM		multipass
+cyno	near	APLNR	APLNR	G7PQ45	0.9868	TM		multipass
+cyno	near	APLP2	APLP2	ENSMFAP00000000700	0.9854	SP+TM		type I
+cyno	near	AQP2	AQP2	A0A7N9CSL2	0.9926	TM		multipass
+cyno	near	ATP1B2	ATP1B2	A0A2K5X586	0.9931	TM		type II
+cyno	near	BAMBI	BAMBI	A0A2K5TQC0	0.9846	SP+TM		type I
+cyno	near	CACNG5	CACNG5	A0A2K5TXN9	0.9927	TM		multipass
+cyno	near	CD28	CD28	Q0PDN3	0.9818	SP+TM		type I
+cyno	near	CDH19	CDH19	A0A2K5UEG2	0.9663	SP+TM		type I
+cyno	near	CDH4	CDH4	A0A2K5VYM4	0.9869	SP+TM		type I
+cyno	near	CLDND1	CLDND1	Q4R4Z3	0.996	TM		multipass
+cyno	near	CLSTN1	CLSTN1	A0A2K5U5A4	0.9847	SP+TM		type I
+cyno	near	CNTN1	CNTN1	ENSMFAP00000022549	0.9931	SP	anchored	GPI
+cyno	near	CNTN6	CNTN6	A0A2K5U8V1	0.9708	SP	anchored	GPI
+cyno	near	CRHR2	CRHR2	ENSMFAP00000039940	0.9732	TM		multipass
+cyno	near	DPP10	DPP10	A0A2K5VC42	0.9875	TM		type II
+cyno	near	DPP4	DPP4	A0A2K5VXJ1	0.9804	TM		type II
+cyno	near	DRD1	DRD1	G7P6Y1	0.9978	TM		multipass
+cyno	near	ECE1	ECE1	ENSMFAP00000023673	0.9894	TM		type II
+cyno	near	EDNRB	EDNRB	ENSMFAP00000046906	0.9819	SP+TM		multipass
+cyno	near	EFNA5	EFNA5	G7P813	0.9956	SP	anchored	GPI
+cyno	near	ENPP4	ENPP4	G7P4R7	0.9779	SP+TM		type I
+cyno	near	FLRT1	FLRT1	A0A2K5UJR4	0.9896	SP+TM		type I
+cyno	near	GABRA1	GABRA1	Q4R534	0.9978	SP+TM		multipass
+cyno	near	GLRA2	GLRA2	G7Q291	0.9978	SP+TM		multipass
+cyno	near	GRM4	GRM4	ENSMFAP00000023962	0.9978	SP+TM		multipass
+cyno	near	LRP12	LRP12	A0A2K5UC79	0.986	SP+TM		type I
+cyno	near	LY6G6C	LY6G6C	A0A7N9CPL8	0.984	SP	anchored	GPI
+cyno	near	LYPD6B	LYPD6B	A0A2K5WSK6	0.9662	SP	anchored	GPI
+cyno	near	MMEL1	MMEL1	A0A2K5WVY7	0.9743	TM		type II
+cyno	near	MOG	MOG	Q9BGS7	0.9757	SP+TM		multipass
+cyno	near	NPSR1	NPSR1	ENSMFAP00000044932	0.973	TM		multipass
+cyno	near	NRG1	NRG1	ENSMFAP00000005206	0.9875	TM		type III
+cyno	near	OMG	OMG	I7G955	0.9818	SP	anchored	GPI
+cyno	near	OR2Y1	OR2Y1	A0A2K5UNU9	0.9678	TM		multipass
+cyno	near	PTPRG	PTPRG	A0A2K5VKI2	0.9869	SP+TM		type I
+cyno	near	RTN4R	RTN4R	ENSMFAP00000032892	0.9831	SP	anchored	GPI
+cyno	near	SEZ6L2	SEZ6L2	ENSMFAP00000024902	0.9924	SP+TM		type I
+cyno	near	SLC16A12	SLC16A12	A0A2K5WEE5	0.9864	TM		multipass
+cyno	near	SLC22A3	SLC22A3	A0A2K5W6I5	0.973	TM		multipass
+cyno	near	SLC52A3	SLC52A3	G7PGR4	0.9723	TM		multipass
+cyno	near	SLC5A5	SLC5A5	A0A7N9CXE2	0.9782	TM		multipass
+cyno	near	TIE1	TIE1	G7NUW7	0.9622	TM		type I
+cyno	near	TMEM132B	TMEM132B	A0A2K5UD88	0.9705	TM		type III
+cyno	near	TMEM219	TMEM219	A0A2K5X699	0.9875	TM		multipass
+cyno	near	TRIL	TRIL	A0A2K5UM00	0.963	SP+TM		type I
+cyno	near	UNC5C	UNC5C	G7P5Y1	0.9957	SP+TM		type I
+cyno	near	UNC5D	UNC5D	ENSMFAP00000044288	0.9948	SP+TM		type I
+cyno	near	VTCN1	VTCN1	ENSMFAP00000008020	0.9858	TM		type II
+mouse	diverged	ACE	Ace	P09470	0.8323	SP+TM		type I
+mouse	diverged	ADGRG1	Adgrg1	Q8K209	0.8006	SP+TM		multipass
+mouse	diverged	ADGRG6	Adgrg6	A0A571BEJ4	0.8453	SP+TM		multipass
+mouse	diverged	AMIGO3	Amigo3	Q8C2S7	0.7697	SP+TM		type I
+mouse	diverged	ATP1B3	Atp1b3	P97370	0.724	TM		type II
+mouse	diverged	C5AR2	C5ar2	Q8BW93	0.6163	TM		multipass
+mouse	diverged	CD14	Cd14	P10810	0.664	SP	anchored	GPI
+mouse	diverged	CD22	Cd22	P35329	0.5853	SP+TM		type I
+mouse	diverged	CD302	Cd302	Q9DCG2	0.7543	SP+TM		type I
+mouse	diverged	CD53	Cd53	Q61451	0.8447	TM		multipass
+mouse	diverged	CD74	Cd74	P04441	0.7365	TM		type II
+mouse	diverged	CD84	Cd84	Q18PI6	0.5805	SP+TM		type I
+mouse	diverged	CD93	Cd93	O89103	0.6779	SP+TM		type I
+mouse	diverged	CLEC12B	Clec12b	Q149M0	0.7174	TM		type II
+mouse	diverged	EMB	Emb	P21995	0.6333	SP+TM		type I
+mouse	diverged	ENPP1	Enpp1	P06802	0.7924	TM		type II
+mouse	diverged	FASLG	Fasl	ENSMUSP00000000834	0.7794	TM		type II
+mouse	diverged	FPR1	Fpr1	P33766	0.761	TM		multipass
+mouse	diverged	GPC2	Gpc2	Q8BKV1	0.8256	SP	anchored	GPI
+mouse	diverged	GPR101	Gpr101	Q80T62	0.7025	TM		multipass
+mouse	diverged	GPR146	Gpr146	Q99LE2	0.7417	TM		multipass
+mouse	diverged	GYPC	Gypc	Q78HU7	0.5625	TM		type III
+mouse	diverged	HFE	Hfe	P70387	0.6852	SP+TM		type I
+mouse	diverged	IL2RA	Il2ra	Q8C2H9	0.6397	SP+TM		type I
+mouse	diverged	LRIG1	Lrig1	P70193	0.839	SP+TM		type I
+mouse	diverged	LRRC15	Lrrc15	Q80X72	0.8193	SP+TM		type I
+mouse	diverged	LY6G6D	Ly6g6d	Q9Z1Q3	0.637	SP	anchored	GPI
+mouse	diverged	LY9	Ly9	Q01965	0.5786	SP+TM		type I
+mouse	diverged	LYPD2	Lypd2	Q9DD23	0.6772	SP	anchored	GPI
+mouse	diverged	MRC1	Mrc1	Q61830	0.8283	SP+TM		type I
+mouse	diverged	MSLN	Msln	Q61468	0.5984	SP	anchored	GPI
+mouse	diverged	NPC1L1	Npc1l1	Q6T3U4	0.7787	SP+TM		multipass
+mouse	diverged	NT5E	Nt5e	Q61503	0.8611	SP	anchored	GPI
+mouse	diverged	NTSR2	Ntsr2	P70310	0.7861	TM		multipass
+mouse	diverged	OPN1SW	Opn1sw	P51491	0.8613	TM		multipass
+mouse	diverged	OPN4	Opn4	Q9QXZ9-2	0.7636	TM		multipass
+mouse	diverged	OR51B4	Or51b4	F8VQ01	0.7588	TM		multipass
+mouse	diverged	P2RY10	P2ry10	Q8BFU7	0.8378	TM		multipass
+mouse	diverged	PCDHB7	Pcdhb15	Q91Y04	0.7844	SP+TM		type I
+mouse	diverged	PCDHGB6	Pcdhgb6	Q91XX4	0.8441	SP+TM		type I
+mouse	diverged	PEAR1	Pear1	Q8VIK5	0.8428	SP+TM		type I
+mouse	diverged	TAS1R3	Tas1r3	Q925D8	0.7401	SP+TM		multipass
+mouse	diverged	TMEM132B	Tmem132b	F7BAB2	0.8633	SP+TM		type III
+mouse	diverged	TMPRSS11E	Tmprss11e	Q5S248	0.747	TM		type II
+mouse	diverged	TNFRSF9	Tnfrsf9	P20334	0.6211	SP+TM		type I
+mouse	diverged	TNFSF18	Tnfsf18	Q7TS55	0.5537	TM		type II
+mouse	diverged	TRPV5	Trpv5	P69744	0.8066	TM		multipass
+mouse	diverged	TSPAN1	Tspan1	Q99J59	0.6722	TM		multipass
+mouse	diverged	VSIG10L	Vsig10l	D3YZF7	0.6935	SP+TM		type I
+mouse	diverged	XPNPEP2	Xpnpep2	B1AVD1	0.8071	SP	anchored	GPI
+mouse	near	ABCC4	Abcc4	E9Q236	0.8717	TM		multipass
+mouse	near	ADIPOR2	Adipor2	Q8BQS5	0.9301	TM		multipass
+mouse	near	ANO3	Ano3	A2AHL1	0.9317	TM		multipass
+mouse	near	ANO6	Ano6	Q6P9J9	0.9034	TM		multipass
+mouse	near	ATP1B1	Atp1b1	P14094	0.9375	TM		type II
+mouse	near	ATP1B2	Atp1b2	P14231	0.9724	TM		type II
+mouse	near	ATRNL1	Atrnl1	Q6A051	0.9608	SP+TM		type I
+mouse	near	C11orf87	AI593442	ENSMUSP00000149532	0.8643	TM		type III
+mouse	near	CADM1	Cadm1	E9PYN1	0.981	SP+TM		type I
+mouse	near	CADM2	Cadm2	Q8BLQ9-2	0.9876	SP+TM		type I
+mouse	near	CDH6	Cdh6	Q3KNZ1	0.9734	SP+TM		type I
+mouse	near	CNNM4	Cnnm4	Q69ZF7	0.8981	SP+TM		multipass
+mouse	near	CNTN1	Cntn1	P12960	0.952	SP	anchored	GPI
+mouse	near	CNTN3	Cntn3	Q07409	0.9095	SP	anchored	GPI
+mouse	near	DNER	Dner	Q8JZM4	0.9104	SP+TM		type I
+mouse	near	DRD2	Drd2	P61168	0.955	TM		multipass
+mouse	near	EDA	Eda	O54693	0.9463	TM		type II
+mouse	near	FAP	Fap	P97321	0.8988	TM		type II
+mouse	near	GPR88	Gpr88	Q9EPB7	0.9557	TM		multipass
+mouse	near	GRM5	Grm5	Q3UVX5	0.9521	SP+TM		multipass
+mouse	near	IGF1R	Igf1r	ENSMUSP00000005671	0.9613	SP+TM		type I
+mouse	near	ITM2B	Itm2b	O89051	0.9549	TM		type II
+mouse	near	LMBRD2	Lmbrd2	Q8C561	0.9453	TM		multipass
+mouse	near	LRFN3	Lrfn3	Q8BLY3	0.9618	SP+TM		type I
+mouse	near	LYPD1	Lypd1	Q8BLC3	0.9362	SP	anchored	GPI
+mouse	near	MDGA1	Mdga1	Q0PMG2	0.9634	SP	anchored	GPI
+mouse	near	MMP14	Mmp14	P53690	0.9674	SP+TM		type I
+mouse	near	MPZ	Mpz	ENSMUSP00000066701	0.9395	SP+TM		type I
+mouse	near	NEGR1	Negr1	Q80Z24	0.9435	SP	anchored	GPI
+mouse	near	NPR2	Npr2	Q6VVW5	0.9866	SP+TM		type I
+mouse	near	NRG1	Nrg1	ENSMUSP00000147156	0.9328	TM		type III
+mouse	near	NTRK3	Ntrk3	Q6VNS1	0.9758	SP+TM		type I
+mouse	near	OPCML	Opcml	G5E8G3	0.9855	SP	anchored	GPI
+mouse	near	OPN3	Opn3	Q9WUK7	0.8756	TM		multipass
+mouse	near	PANX1	Panx1	Q9JIP4	0.8685	TM		multipass
+mouse	near	PCDH18	Pcdh18	Q8VHR0	0.9278	SP+TM		type I
+mouse	near	PCDHGC4	Pcdhgc4	Q91XX0	0.9798	TM		type I
+mouse	near	PHEX	Phex	P70669	0.9599	TM		type II
+mouse	near	PLPP3	Plpp3	Q99JY8	0.9455	TM		multipass
+mouse	near	PLXNC1	Plxnc1	Q9QZC2	0.9066	SP+TM		type I
+mouse	near	RHBDF2	Rhbdf2	Q80WQ6	0.9202	TM		multipass
+mouse	near	RTN4RL2	Rtn4rl2	Q7M6Z0	0.9524	SP	anchored	GPI
+mouse	near	SLC24A3	Slc24a3	Q99PD7	0.9643	TM		multipass
+mouse	near	SLC29A2	Slc29a2	Q61672	0.8925	TM		multipass
+mouse	near	SLC38A4	Slc38a4	Q8R1S9	0.8775	TM		multipass
+mouse	near	SLC5A10	Slc5a10	Q5SWY8	0.8893	TM		multipass
+mouse	near	TGFBR1	Tgfbr1	Q64729	0.9543	SP+TM		type I
+mouse	near	TM9SF1	Tm9sf1	Q9DBU0	0.9752	SP+TM		multipass
+mouse	near	TSPAN11	Tspan11	Q9D1D1	0.8735	TM		multipass
+mouse	near	TSPAN4	Tspan4	Q9DCK3	0.937	TM		multipass

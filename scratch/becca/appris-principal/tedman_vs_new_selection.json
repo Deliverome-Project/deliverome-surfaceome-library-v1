@@ -1,0 +1,52 @@
+{
+  "tedman_genes": 766,
+  "of_which_library_members": 529,
+  "all_tedman_genes": {
+    "tedman_vs_ours": {
+      "compared": 760,
+      "same": 727,
+      "differs": 33,
+      "agreement": 95.7
+    },
+    "tedman_vs_mane": {
+      "compared": 751,
+      "same": 727,
+      "differs": 24,
+      "agreement": 96.8
+    },
+    "tedman_vs_new": {
+      "compared": 526,
+      "same": 509,
+      "differs": 17,
+      "agreement": 96.8
+    }
+  },
+  "library_members_only": {
+    "tedman_vs_ours": {
+      "compared": 527,
+      "same": 507,
+      "differs": 20,
+      "agreement": 96.2
+    },
+    "tedman_vs_mane": {
+      "compared": 520,
+      "same": 509,
+      "differs": 11,
+      "agreement": 97.9
+    },
+    "tedman_vs_new": {
+      "compared": 526,
+      "same": 509,
+      "differs": 17,
+      "agreement": 96.8
+    }
+  },
+  "new_vs_ours": {
+    "compared": 524,
+    "same": 495,
+    "differs": 29,
+    "agreement": 94.5
+  },
+  "moved_toward_tedman": 13,
+  "moved_away_from_tedman": 12
+}

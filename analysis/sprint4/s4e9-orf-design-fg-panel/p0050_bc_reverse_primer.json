@@ -1,0 +1,244 @@
+{
+  "forward": {
+    "id": "O-0013",
+    "sequence": "AGTCGTTAGCTGCCGTTCC"
+  },
+  "reverse": {
+    "sequence": "CTGGGGACTTTCCACACCTG",
+    "offset_after_asci": 22,
+    "length": 20,
+    "tm_c": 68.05899096461474,
+    "tm_difference": 0.5242829745380959,
+    "anneal_c": 68.53470799007664,
+    "amplicon_bp": 150,
+    "reverse_flags": [],
+    "pair_flags": [
+      "1 conserved miRNA seed site(s) in the amplicon (UGUGCUU) - compare against the same span before any edit, most are pre-existing"
+    ],
+    "cross_dimer_dg": -1.870560493306264
+  },
+  "runners_up": [
+    {
+      "sequence": "CCTGGGGACTTTCCACACC",
+      "offset_after_asci": 24,
+      "length": 19,
+      "tm_c": 68.33631152374909,
+      "tm_difference": 0.8016035336724485,
+      "anneal_c": 68.53470799007664,
+      "amplicon_bp": 151,
+      "reverse_flags": [],
+      "pair_flags": [
+        "1 conserved miRNA seed site(s) in the amplicon (UGUGCUU) - compare against the same span before any edit, most are pre-existing"
+      ],
+      "cross_dimer_dg": -1.870560493306264
+    },
+    {
+      "sequence": "AGCCTGGGGACTTTCCAC",
+      "offset_after_asci": 27,
+      "length": 18,
+      "tm_c": 67.4839029229862,
+      "tm_difference": 0.05080506709043675,
+      "anneal_c": 68.4839029229862,
+      "amplicon_bp": 153,
+      "reverse_flags": [],
+      "pair_flags": [
+        "1 conserved miRNA seed site(s) in the amplicon (UGUGCUU) - compare against the same span before any edit, most are pre-existing"
+      ],
+      "cross_dimer_dg": -2.4451636622052066
+    },
+    {
+      "sequence": "GAGCCTGGGGACTTTCCAC",
+      "offset_after_asci": 27,
+      "length": 19,
+      "tm_c": 68.32356430066028,
+      "tm_difference": 0.7888563105836397,
+      "anneal_c": 68.53470799007664,
+      "amplicon_bp": 154,
+      "reverse_flags": [],
+      "pair_flags": [
+        "1 conserved miRNA seed site(s) in the amplicon (UGUGCUU) - compare against the same span before any edit, most are pre-existing"
+      ],
+      "cross_dimer_dg": -3.0489236622052087
+    },
+    {
+      "sequence": "TACTTCTGCCTGCTGGGG",
+      "offset_after_asci": 45,
+      "length": 18,
+      "tm_c": 67.14806142477181,
+      "tm_difference": 0.38664656530482944,
+      "anneal_c": 68.14806142477181,
+      "amplicon_bp": 171,
+      "reverse_flags": [],
+      "pair_flags": [
+        "1 conserved miRNA seed site(s) in the amplicon (UGUGCUU) - compare against the same span before any edit, most are pre-existing"
+      ],
+      "cross_dimer_dg": -3.0424958244073133
+    },
+    {
+      "sequence": "ATACTTCTGCCTGCTGGGG",
+      "offset_after_asci": 45,
+      "length": 19,
+      "tm_c": 67.11116155925151,
+      "tm_difference": 0.42354643082512666,
+      "anneal_c": 68.11116155925151,
+      "amplicon_bp": 172,
+      "reverse_flags": [],
+      "pair_flags": [
+        "1 conserved miRNA seed site(s) in the amplicon (UGUGCUU) - compare against the same span before any edit, most are pre-existing"
+      ],
+      "cross_dimer_dg": -3.0424958244073133
+    }
+  ],
+  "n_candidates": 1436,
+  "n_passing": 18,
+  "products_by_member": {
+    "p0051": 150,
+    "p0052": 150,
+    "p0053": 150,
+    "p0054": 150,
+    "p0055": 150,
+    "p0056": 150,
+    "p0057": 150,
+    "p0058": 150,
+    "p0059": 150,
+    "p0060": 150,
+    "p0061": 150,
+    "p0062": 150,
+    "p0063": 150,
+    "p0064": 150,
+    "p0065": 150,
+    "p0066": 150,
+    "p0067": 150,
+    "p0068": 150,
+    "p0069": 150,
+    "p0070": 150,
+    "p0071": 150,
+    "p0072": 150,
+    "p0073": 150,
+    "p0074": 150,
+    "p0075": 150,
+    "p0050": null
+  },
+  "pair_report": {
+    "forward": {
+      "name": "O-0013",
+      "sequence": "AGTCGTTAGCTGCCGTTCC",
+      "length": 19,
+      "gc_percent": 57.89473684210527,
+      "tm_c": 67.53470799007664,
+      "tm_primer3_c": 63.04264726684647,
+      "product": "Q5",
+      "hairpin": {
+        "dg": 0.0,
+        "tm": NaN,
+        "found": false,
+        "ascii": ""
+      },
+      "self_dimer": {
+        "dg": -4.429590493303164,
+        "tm": -1.560950465357223,
+        "found": true,
+        "ascii": "SEQ\t AGTCGTT    GCCGTTCC\nSEQ\t        AGCT\nSTR\t        TCGA\nSTR\tCCTTGCCG    TTGCTGA-\n"
+      },
+      "self_end_stability": {
+        "dg": -0.25635598660943654,
+        "tm": -3.733477350168357,
+        "found": true,
+        "ascii": ""
+      },
+      "palindrome_length": 4,
+      "palindrome_seq": "AGCT",
+      "palindrome_pos": 8,
+      "binding_sites": [
+        {
+          "strand": "+",
+          "start": 7678,
+          "end": 7696,
+          "mismatches": 0,
+          "three_prime_intact": true
+        }
+      ],
+      "homology": {
+        "longest_shared": 19,
+        "shared_sequence": "AGTCGTTAGCTGCCGTTCC",
+        "copies": 1,
+        "extra_copies": 0
+      }
+    },
+    "reverse": {
+      "name": "p0050_bc_rev_SV40",
+      "sequence": "CTGGGGACTTTCCACACCTG",
+      "length": 20,
+      "gc_percent": 60.0,
+      "tm_c": 68.05899096461474,
+      "tm_primer3_c": 63.121223827218955,
+      "product": "Q5",
+      "hairpin": {
+        "dg": -0.30101032440421294,
+        "tm": 43.0235121171134,
+        "found": true,
+        "ascii": "SEQ\t-//-///---\\\\\\-\\\\----\nSTR\tCTGGGGACTTTCCACACCTG\n"
+      },
+      "self_dimer": {
+        "dg": -2.473854479909489,
+        "tm": -4.8081343714486025,
+        "found": true,
+        "ascii": "SEQ\t   C  G   CTT   A  CCTG\nSEQ\t    TG GGA   TCC CA\nSTR\t    AC CCT   AGG GT\nSTR\tGTCC  A   TTC   G  C---\n"
+      },
+      "self_end_stability": {
+        "dg": -1.7758204933093658,
+        "tm": -35.271164014176264,
+        "found": true,
+        "ascii": ""
+      },
+      "palindrome_length": 0,
+      "palindrome_seq": "",
+      "palindrome_pos": 0,
+      "binding_sites": [
+        {
+          "strand": "-",
+          "start": 7808,
+          "end": 7827,
+          "mismatches": 0,
+          "three_prime_intact": true
+        }
+      ],
+      "homology": {
+        "longest_shared": 20,
+        "shared_sequence": "CTGGGGACTTTCCACACCTG",
+        "copies": 1,
+        "extra_copies": 0
+      }
+    },
+    "tm_difference": 0.5242829745380959,
+    "anneal_c": 68.53470799007664,
+    "anneal_at_ceiling": false,
+    "cross_dimer": {
+      "dg": -1.870560493306264,
+      "tm": -29.392351253181687,
+      "found": true,
+      "ascii": "SEQ\t               GTTAGCTGCCGTTCC\nSEQ\t           AGTC\nSTR\t           TCAG\nSTR\tGTCCACACCTT    GGGTC----------\n"
+    },
+    "cross_end_stability": {
+      "dg": -1.6213104933093674,
+      "tm": -34.47372333877499,
+      "found": true,
+      "ascii": ""
+    },
+    "products": [
+      [
+        7678,
+        7827,
+        150
+      ]
+    ],
+    "amplicon_seed_sites": [
+      {
+        "site": "AAGCACA",
+        "family": "UGUGCUU",
+        "tier": "broadly_conserved",
+        "position": 59
+      }
+    ]
+  }
+}

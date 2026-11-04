@@ -1,0 +1,191 @@
+[project]
+name = "deliverome-analysis"
+version = "0.1.0"
+description = "Scientist-driven exploratory + reviewed analyses for the Deliverome project."
+readme = "README.md"
+requires-python = ">=3.14"
+authors = [{ name = "Deliverome Project" }]
+
+dependencies = [
+    # Core scientific Python
+    "pandas>=2.2",
+    "pyarrow>=16.0", # parquet reads from S3
+    "numpy>=1.26",
+    "scipy>=1.13",
+    "openpyxl>=3.1", # read vendor .xlsx deliverables (e.g. Syncell Microscoop) + reference tables
+    # Gene-symbol resolution (MyGene.info) — canonicalizes symbols/aliases to
+    # HGNC-approved symbol + Ensembl id, matching accessible-surfaceome's
+    # resolver config. Used via deliverome_analysis.gene_resolver.
+    "mygene>=3.2",
+    # Plotting (matches accessible-surfaceome)
+    "matplotlib>=3.9",
+    "seaborn>=0.13",
+    # Microscopy image I/O — OME-TIFF (well-plate imaging experiments)
+    "tifffile>=2024.2",
+    "scikit-image>=0.26.0", # segmentation
+    # LZW/JPEG codecs for tifffile. Incucyte exports LZW-compressed TIFFs,
+    # which tifffile cannot decode on its own.
+    "imagecodecs>=2026.3.6",
+    "pillow>=13.0.0", # image extraction and processing
+    "pypdf>=6.21.1", # figure digitization; 6.21.1 fixes 8 of the 2026-10 advisories, 6.21.2 (quarantine clears 2026-10-28) the other 3
+    # S3 access
+    "boto3>=1.34",
+    "botocore>=1.34",
+    # Env loading
+    "python-dotenv>=1.0",
+    "pyyaml>=6,<7", # compact Agentflow run records
+    # Interactive notebooks: marimo.
+    # We deliberately do NOT ship Jupyter — .ipynb files merge poorly, store
+    # outputs inline, and silently diverge from the underlying code. marimo
+    # is a reactive notebook whose files are PLAIN .py — git-diff-friendly,
+    # script-runnable (`uv run python file.py`), and reproducible.
+    # See docs/experiment-conventions.md for when to reach for it.
+    "marimo>=0.9",
+    "dnachisel>=3.2.16",
+    # Codon-usage tables. Already resolved as a dnachisel dependency; declared
+    # here because seqtools.synonymous_codons imports it directly.
+    "python-codon-tables>=0.1.18",
+    # Sequence records (GenBank parsing) and NCBI Entrez access.
+    "biopython>=1.83",
+    # RNA secondary-structure prediction. Used to judge whether a sequence edit
+    # perturbs a structured element (e.g. domesticating an IRES for Type IIS
+    # assembly). Prefer COMPARATIVE use — an absolute MFE fold of a long RNA is
+    # not trustworthy; benchmark against natural variants or shuffled controls.
+    "viennarna>=2.7",
+    # Primer thermodynamics: hairpin, homodimer and heterodimer via primer3's
+    # own ntthal engine, which does a full thermodynamic alignment (gapped,
+    # with proper salt/Mg corrections) rather than the ungapped estimate in
+    # deliverome_analysis.primers. Used for the dimer numbers; Tm still comes
+    # from our NEB-equivalent model, because primer3 uses a different salt
+    # convention and we want to match the calculator the lab actually quotes.
+    # GPL-2.0-or-later: fine for internal analysis, check before distributing.
+    "primer3-py>=2.3.1",
+    "archs4py>=1.0.4",
+    "s3fs>=2026.7.0",
+    "requests>=2.34.2",
+    "anndata>=0.12.19",
+    "scanpy>=1.11.5",
+    "pydeseq2>=0.5.4",
+    "xlrd>=2.0.1,<3",
+    "duckdb>=1.5.6",
+]
+
+[project.optional-dependencies]
+anthropic = ["anthropic>=0.40"]  # only if a script calls Claude directly
+# Escape hatch only — install with `uv sync --extra jupyter` if you really
+# need Jupyter for a one-off (e.g. a colleague's notebook you have to open).
+# New work should use marimo or a plain .py script instead.
+jupyter = [
+    "jupyter>=1.1",
+    "ipykernel>=6.29",
+    "jupyterlab>=4.2",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.6",
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+    "pre-commit>=3.7",
+]
+flow = [
+    "agentflow-cytometry",
+]
+flow-gui = [
+    { include-group = "flow" },
+    "agentflow-cytometry[gui]",
+]
+modal = [
+    "modal==1.6.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/deliverome_analysis"]
+
+[tool.uv]
+package = true
+# uv carries its own root certificates; releases before 0.13.4 trust the eMudhra intermediates
+# compromised on 2026-10-19. Every uv command in this repo refuses to run on an older uv.
+required-version = ">=0.13.4"
+# Supply-chain quarantine at the resolver: uv never picks a release under 7 days old, for
+# direct and transitive dependencies alike, whoever runs `uv lock` (people, Dependabot, CI).
+# Needs uv >= 0.9.x with relative durations; the shared dependency guard is the CI backstop.
+exclude-newer = "7 days"
+# Security fixes that cannot wait out the quarantine. certifi 2026.10.19 drops the root behind
+# the compromised eMudhra intermediates (requests, boto3 and httpx verify against it). Remove
+# an entry once its release is older than 7 days.
+exclude-newer-package = { certifi = false }
+# The dependency guard rejects any newly-pinned package
+# under 7 days old. The scanpy/pydeseq2/statsmodels stack pulled in day-old transitive
+# releases; hold them to the prior known-good versions until the newer ones age past the
+# quarantine, then relax or drop these.
+constraint-dependencies = [
+    "joblib<1.6.0",
+    "wrapt<2.4.0",
+    "patsy<1.0.3",
+    "scverse-misc<0.1.5",
+    # Agentflow/Bokeh dependency: September releases are inside the seven-day quarantine.
+    "xyzservices<2026.9",
+    # via modal (dependency-group "modal"); both under 7 days old on 2026-10-07.
+    "synchronicity<0.12.6",
+    "cbor2<6.1.5",
+    # Security floor, not a quarantine hold: older certifi trusts the eMudhra intermediates
+    # compromised on 2026-10-19. The shared dependency guard enforces the same floor.
+    "certifi>=2026.10.19",
+]
+
+[tool.uv.sources]
+agentflow-cytometry = { git = "https://github.com/Deliverome-Project/agentflow.git", rev = "09b54d797af171349685ea3ae354bc55f18321b1" }
+
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+extend-exclude = ["scratch", "analysis/*/data"]
+# pre-commit passes changed files to ruff by explicit path, which overrides extend-exclude
+# unless force-exclude is set — without this, scratch/ (meant to be lint-exempt) is still linted
+# and its pushes are blocked. force-exclude makes the scratch exclusion effective in pre-commit.
+force-exclude = true
+
+[tool.ruff.format]
+# ruff >=0.16.9 also formats Python code blocks inside Markdown. Leave docs, READMEs and
+# experiment write-ups as written: reflowing them churns experiment folders (which the
+# pre-push S3 check then treats as changed) for no change to any code that runs.
+exclude = ["*.md"]
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "F",    # pyflakes
+    "W",    # pycodestyle warnings
+    "I",    # isort
+    "UP",   # pyupgrade
+    "B",    # flake8-bugbear
+    "RUF",  # ruff-specific
+]
+ignore = [
+    "E501",  # line-too-long: matplotlib formatting lines get unwieldy
+    "B008",  # function-call-in-default-argument: pandas patterns trip this
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["B011"]
+# marimo files (.py with @app.cell decorators) shadow names across cells by
+# design — let those through.
+"**/notebook.py" = ["F401", "F811", "B018", "RUF005"]
+"**/*_marimo.py" = ["F401", "F811", "B018", "RUF005"]
+
+[tool.pytest.ini_options]
+# tests/ holds shared-package and tooling tests; analysis/ holds each experiment's
+# own tests (in an experiment-local tests/ dir, or a test_*.py beside its code). Both
+# are collected so an experiment's tests actually run in CI — they used to be invisible.
+# Experiment tests that need uncommitted inputs (S3 data, the flow group) must skip when
+# those are absent, the same way the live S3 tests do; CI has neither.
+testpaths = ["tests", "analysis"]
+addopts = ["-q", "--strict-markers"]
+markers = [
+    "slow: exercises the DNA Chisel solver (a few seconds each, still offline/deterministic)",
+]

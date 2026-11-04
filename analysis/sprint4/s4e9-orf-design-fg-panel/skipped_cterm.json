@@ -1,0 +1,42 @@
+[
+  {
+    "gene": "HEG1",
+    "placement": "cterm",
+    "skipped": "C-terminus is not extracellular \u2014 the cassette would face the cytosol and cannot be stained on an intact cell; use nterm or a loop"
+  },
+  {
+    "gene": "ERBB2",
+    "placement": "cterm",
+    "skipped": "C-terminus is not extracellular \u2014 the cassette would face the cytosol and cannot be stained on an intact cell; use nterm or a loop"
+  },
+  {
+    "gene": "AXL",
+    "placement": "cterm",
+    "skipped": "C-terminus is not extracellular \u2014 the cassette would face the cytosol and cannot be stained on an intact cell; use nterm or a loop"
+  },
+  {
+    "gene": "SLC9A3",
+    "placement": "cterm",
+    "skipped": "C-terminus is not extracellular \u2014 the cassette would face the cytosol and cannot be stained on an intact cell; use nterm or a loop"
+  },
+  {
+    "gene": "VSIG10",
+    "placement": "cterm",
+    "skipped": "C-terminus is not extracellular \u2014 the cassette would face the cytosol and cannot be stained on an intact cell; use nterm or a loop"
+  },
+  {
+    "gene": "NECTIN4",
+    "placement": "cterm",
+    "skipped": "C-terminus is not extracellular \u2014 the cassette would face the cytosol and cannot be stained on an intact cell; use nterm or a loop"
+  },
+  {
+    "gene": "FOLR1",
+    "placement": "cterm",
+    "skipped": "GPI-anchored: the transamidase cuts at the omega residue (234) and replaces everything downstream with the anchor, so a C-terminal cassette is either removed with the GPI signal or blocks anchoring and the protein is secreted. Use nterm."
+  },
+  {
+    "gene": "PTPRC",
+    "placement": "cterm",
+    "skipped": "C-terminus is not extracellular \u2014 the cassette would face the cytosol and cannot be stained on an intact cell; use nterm or a loop"
+  }
+]

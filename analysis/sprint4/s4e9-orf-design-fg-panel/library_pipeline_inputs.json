@@ -1,0 +1,166 @@
+{
+ "snapshot": "2026-11-01",
+ "prefix": "sprint4/s4e9-orf-design-fg-panel/library-design/pipeline-inputs/2026-11-01/",
+ "files": {
+  "appris_homo_sapiens_e115v50.txt": {
+   "source": "external:appris/e115v50/appris_homo_sapiens_e115v50.txt",
+   "sha256": "17213ba9ed55ea9f1ceb93b70eff04341701338cacfe7e4c2eb9c20fe451d302",
+   "origin": "immutable external key"
+  },
+  "Homo_sapiens.GRCh38.pep.all.fa.gz": {
+   "source": "external:ensembl/release-115/pep/Homo_sapiens.GRCh38.pep.all.fa.gz",
+   "sha256": "7991ab37d09986eefdb5c77032b15370ab0e99918b78f235f3230c0302851c96",
+   "origin": "immutable external key"
+  },
+  "uniprot_human_reviewed_isoforms.tsv.gz": {
+   "source": "external:uniprot/2026-10-11/uniprot_human_reviewed_isoforms.tsv.gz",
+   "sha256": "11b2e36430c66460b9515d9048f55cd6a0c439507ddf9bd54fbe35dd47a68da4",
+   "origin": "immutable external key"
+  },
+  "Ribo-seq_ORFs.all.bed": {
+   "source": "snapshot",
+   "sha256": "3ebf5fcf7efc6d853c14eafc8578e660dab175e2bdae7b0459ed9df4a23075a0",
+   "origin": "GENCODE Ribo-seq ORFs, https://ftp.ebi.ac.uk/pub/databases/gencode/riboseq_orfs/ (phase1 all; phase2 primary, comprehensive), fetched 2026-11-01"
+  },
+  "Ribo-seq_ORFs.all.faa": {
+   "source": "snapshot",
+   "sha256": "0c03979a27cfb48716a5dc4d544c5a4034dd40aa51af03e848b0039324563625",
+   "origin": "GENCODE Ribo-seq ORFs, https://ftp.ebi.ac.uk/pub/databases/gencode/riboseq_orfs/ (phase1 all; phase2 primary, comprehensive), fetched 2026-11-01"
+  },
+  "Ribo-seq_ORFs.comprehensive.bed": {
+   "source": "snapshot",
+   "sha256": "0e2c9be4303c1ea7c32a0d1af958d8d02c7765891cf54fed23b2a3199d8d60c3",
+   "origin": "GENCODE Ribo-seq ORFs, https://ftp.ebi.ac.uk/pub/databases/gencode/riboseq_orfs/ (phase1 all; phase2 primary, comprehensive), fetched 2026-11-01"
+  },
+  "Ribo-seq_ORFs.comprehensive.faa": {
+   "source": "snapshot",
+   "sha256": "ae1de6476fffa56feb33b1c4cc120e7dc3d586f16a8b8fd1d0d925fe8453f163",
+   "origin": "GENCODE Ribo-seq ORFs, https://ftp.ebi.ac.uk/pub/databases/gencode/riboseq_orfs/ (phase1 all; phase2 primary, comprehensive), fetched 2026-11-01"
+  },
+  "Ribo-seq_ORFs.primary.bed": {
+   "source": "snapshot",
+   "sha256": "e05acb0ab51094f0ca96f35ff37864f6c2addfac22e004f09712e93af8634f6f",
+   "origin": "GENCODE Ribo-seq ORFs, https://ftp.ebi.ac.uk/pub/databases/gencode/riboseq_orfs/ (phase1 all; phase2 primary, comprehensive), fetched 2026-11-01"
+  },
+  "Ribo-seq_ORFs.primary.faa": {
+   "source": "snapshot",
+   "sha256": "521d95a14c49fd625b33c704452430d6fdd89dca2a97a8c66a57897ee3dadbe9",
+   "origin": "GENCODE Ribo-seq ORFs, https://ftp.ebi.ac.uk/pub/databases/gencode/riboseq_orfs/ (phase1 all; phase2 primary, comprehensive), fetched 2026-11-01"
+  },
+  "deeptmhmm_human_canonical.tsv": {
+   "source": "snapshot",
+   "sha256": "10d905f453b3b98d1256e71b280d3b271126829d3571ad575beed5974864d39a",
+   "origin": "accessible-surfaceome f9c73691 data/processed/deeptmhmm/ (LFS)"
+  },
+  "deeptmhmm_human_isoforms.tsv": {
+   "source": "snapshot",
+   "sha256": "e3bbcb3439802413b54e1b9724b89c576fa472a814f6f979fcb379c387ec5a94",
+   "origin": "accessible-surfaceome f9c73691 data/processed/deeptmhmm/ (LFS)"
+  },
+  "ensg_to_uniprot.tsv": {
+   "source": "snapshot",
+   "sha256": "f75b5af0b76ba3962da9ab147a5d73d1213af7188dd7651d354465ffbde87cbc",
+   "origin": "accessible-surfaceome f9c73691 data/external/uniprot_ensembl_xrefs/ (LFS)"
+  },
+  "human_canonical_non_hla.fasta": {
+   "source": "snapshot",
+   "sha256": "31219b860ad6f78a3328eb4b0c2dc2dd1d72f217314bd63473f0b4477e13ec8f",
+   "origin": "accessible-surfaceome f9c73691 data/external/deeptmhmm_surfaceome_inputs/ (LFS)"
+  },
+  "library_members.json": {
+   "source": "snapshot",
+   "sha256": "5812a4f96d1c0bd73a878284a8e6187574835b7bae4a33f6886ff6ca6cba9178",
+   "origin": "scratch/becca/tag-site-architecture/library_members.json (frozen root, 2,368 genes)"
+  },
+  "library_reference_missing_topology.3line": {
+   "source": "snapshot",
+   "sha256": "9d1125992948fca72cd53147352415a6839237a84fa84ef6f8ef12cfde5591be",
+   "origin": "scratch/becca/appris-principal/ (committed)"
+  },
+  "peptideatlas_build607_pools.json": {
+   "source": "snapshot",
+   "sha256": "3491e3cc2e7377e0e996aa5163561da7a782a7654d7d3aee995b739a8e7b20b1",
+   "origin": "PeptideAtlas GetPeptides CGI, atlas_build_id 607 (Human 2026-01), queried 2026-11-01 by select_reference.py"
+  },
+  "reference_overrides.tsv": {
+   "source": "snapshot",
+   "sha256": "1c3d16c51431668749896ef88364c1496e42e96436527ad9e73d85837e12e501",
+   "origin": "scratch/becca/appris-principal/reference_overrides.tsv"
+  },
+  "topology_shortlist.3line": {
+   "source": "snapshot",
+   "sha256": "d44ea1d6f32cb88ea1e922cf1d931e3916262cc1807a6baa529f14045aa04774",
+   "origin": "scratch/becca/appris-principal/ (committed)"
+  },
+  "giant_features.json": {
+   "source": "external:uniprot/2026_03/rest-2026-10-11/giant_features.json",
+   "sha256": "fa26d9485e22cd88df7f8807ab3cd8411237699ba3a66a38017ce3f02addd1d8",
+   "origin": "UniProt REST search (release 2026_03, 2026-09-02), fetched 2026-10-11 by fetch_giant_features.py; every accession and sequence equals uniprot/2026-10-11/uniprot_human_reviewed.tsv.gz, and a re-fetch on 2026-11-02 (still 2026_03) returns identical Signal/Transmembrane features and lengths for all 100 genes"
+  },
+  "deep_dives_1.3.0.tar.gz": {
+   "source": "external:accessible-surfaceome/release-1.3.0/deep_dives_1.3.0.tar.gz",
+   "sha256": "4ba846e8f10c98625cfab9557ffd8b9c2c63438c3d1d6c972251d71b4ac0e967",
+   "origin": "accessible-surfaceome release 1.3.0, Zenodo doi:10.5281/zenodo.23445521 (cut 2026-10-18), downloaded 2026-11-02; md5 matches the deposit (md5 1c22acbe846f6d300acce6a0d7589b12)"
+  },
+  "deep-dive-preset-membership.tsv": {
+   "source": "external:accessible-surfaceome/release-1.3.0/deep-dive-preset-membership.tsv",
+   "sha256": "e3fbc3bde25af406ec8140a5bd12f9eb090560d4898e79bbaabe7ce6976bd0e5",
+   "origin": "accessible-surfaceome release 1.3.0, Zenodo doi:10.5281/zenodo.23445521 (cut 2026-10-18), downloaded 2026-11-02; md5 matches the deposit (md5 e6d4748c502a5e6c87cbcb819b173ba5)"
+  },
+  "Homo_sapiens.GRCh38.115.gtf.gz": {
+   "source": "external:ensembl/release-115/gtf/Homo_sapiens.GRCh38.115.gtf.gz",
+   "sha256": "2f8e31578c3aa2f35646927c4a3b3b0dcf0321e57c0ebd3ecc81afcbc836d1a8",
+   "origin": "https://ftp.ensembl.org/pub/release-115/gtf/homo_sapiens/, fetched 2026-11-02; BSD sum matches the release CHECKSUMS"
+  },
+  "genomewide_expression_tpm.csv": {
+   "source": "external:expression-tpm/deliverome-internal-5a1416ea/genomewide_expression_tpm.csv",
+   "sha256": "9d098e07588e1d9b6cfacc0f77b4bfda1f20d39ca315332ef60b863c0bf72efb",
+   "origin": "deliverome-internal commit 5a1416ea genomewide_expressed_genes_protein_coding_collapsed.csv (GTEx v10, HPA, TCGA), as reused by S1E3 since 2026-08-04"
+  },
+  "genomewide_expression_tpm_rederived.csv": {
+   "source": "external:expression-tpm/rederived-2026-08-04/genomewide_expression_tpm_rederived.csv",
+   "sha256": "6f2d04e660488cc10a40138077446e5107bcc5d05a8cfde43317298629834ab9",
+   "origin": "S1E3 pipeline/build_expression_reference.py re-derivation, 2026-08-04"
+  },
+  "hpa_celline_per_gene.csv": {
+   "source": "external:expression-tpm/rederived-2026-08-04/hpa_celline_per_gene.csv",
+   "sha256": "ba9735fa00dc31fb793e86af494cc63ed1054315ce9de2297c8a6740782aeeff",
+   "origin": "HPA rna_celline per gene, S1E3 re-derivation 2026-08-04"
+  },
+  "mygene_response.json": {
+   "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/pipeline-inputs/2026-11-02/s1e3/mygene_response.json",
+   "sha256": "31f979fef43afb5f9def96cafd2e71e4bfb834b1864acd7744557d68e6c534b1",
+   "origin": "MyGene.info symbol resolution for the plain expression join, queried 2026-11-02"
+  },
+  "mygene_response_full.json": {
+   "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/pipeline-inputs/2026-11-02/s1e3/mygene_response_full.json",
+   "sha256": "ae8923e4f252c90b513e04439546ce7c2133650ef963331348a337888a1be8c1",
+   "origin": "MyGene.info symbol resolution for the --full expression join, queried 2026-11-02"
+  },
+  "coreceptor_calls.tsv": {
+   "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/pipeline-inputs/2026-11-02/s1e3/coreceptor_calls.tsv",
+   "sha256": "7dd6bb2bdf9ac28842cec13f687a907be819a34a21a5b38c54650a1cbdbeb8b9",
+   "origin": "S1E3 curated calls, copied from processed://sprint1/s1e3-surface-library-filters/partner-audit-2026-09-10/inputs/"
+  },
+  "oe_calls_136.tsv": {
+   "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/pipeline-inputs/2026-11-02/s1e3/oe_calls_136.tsv",
+   "sha256": "3a06de670ac0f74eee3f7da96efe797b49c948ed6c2864987e2734fc6351f218",
+   "origin": "S1E3 curated calls, copied from processed://sprint1/s1e3-surface-library-filters/partner-audit-2026-09-10/inputs/"
+  },
+  "willow_screen_rescue_genes.json": {
+   "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/pipeline-inputs/2026-11-02/s1e3/willow_screen_rescue_genes.json",
+   "sha256": "492cca35821e41af1cc5443d5f1284d376db56815f908f6a8dd91fd58408585b",
+   "origin": "S1E3 curated calls, copied from processed://sprint1/s1e3-surface-library-filters/partner-audit-2026-09-10/inputs/"
+  },
+  "willow_screen_rescue_isoforms.json": {
+   "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/pipeline-inputs/2026-11-02/s1e3/willow_screen_rescue_isoforms.json",
+   "sha256": "da4a3f0f3a4925f6cea0f7a3e872ffac462d4dca316ec92b397a51e5453d18f2",
+   "origin": "S1E3 curated calls, copied from processed://sprint1/s1e3-surface-library-filters/partner-audit-2026-09-10/inputs/"
+  },
+  "coreceptor_rationales.json": {
+   "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/pipeline-inputs/2026-11-02/s1e3/coreceptor_rationales.json",
+   "sha256": "20f648614dbfb9dfd6ebae68edcb3a559f040fa031ba4113e7df096404635a87",
+   "origin": "S1E3 curated calls, copied from processed://sprint1/s1e3-surface-library-filters/partner-audit-2026-09-10/inputs/"
+  }
+ }
+}

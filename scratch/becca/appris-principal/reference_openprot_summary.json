@@ -1,0 +1,39 @@
+{
+  "openprot_release": "2.2 (Ensembl GRCh38.106, UniProt 2022_06)",
+  "disagreements": 111,
+  "openprot_verdict": {
+    "openprot_tied": 47,
+    "openprot_favours_mane": 32,
+    "openprot_favours_appris": 11,
+    "only_mane_has_a_row": 6,
+    "openprot_favours_mane_on_ms": 6,
+    "openprot_favours_appris_on_ms": 4,
+    "no_openprot_data": 3,
+    "only_appris_has_a_row": 2
+  },
+  "previously_unresolved": {
+    "n": 82,
+    "now_called_by_openprot": 30,
+    "verdict": {
+      "openprot_tied": 42,
+      "openprot_favours_mane": 19,
+      "openprot_favours_appris": 6,
+      "only_mane_has_a_row": 5,
+      "no_openprot_data": 3,
+      "openprot_favours_mane_on_ms": 3,
+      "openprot_favours_appris_on_ms": 2,
+      "only_appris_has_a_row": 2
+    }
+  },
+  "agreement_where_both_spoke": {
+    "peptides=weak_evidence_mane / openprot_favours_mane": 7,
+    "peptides=resolved_mane / openprot_favours_mane": 6,
+    "peptides=weak_evidence_appris / openprot_favours_appris": 3,
+    "peptides=weak_evidence_appris / openprot_favours_appris_on_ms": 2,
+    "peptides=weak_evidence_appris / openprot_favours_mane_on_ms": 1,
+    "peptides=weak_evidence_mane / openprot_favours_mane_on_ms": 1,
+    "peptides=resolved_mane / openprot_favours_appris": 1,
+    "peptides=weak_evidence_mane / openprot_favours_appris": 1,
+    "peptides=resolved_mane / openprot_favours_mane_on_ms": 1
+  }
+}

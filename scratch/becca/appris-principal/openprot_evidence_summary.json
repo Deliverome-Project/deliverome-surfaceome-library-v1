@@ -1,0 +1,29 @@
+{
+  "openprot_release": "2.2 (Ensembl GRCh38.106, UniProt 2022_06)",
+  "forms": 16048,
+  "match": {
+    "no OpenProt row": 8198,
+    "by ensembl protein": 7213,
+    "by uniprot accession": 637
+  },
+  "with_openprot_scores": 7850,
+  "ribo_seq_translated": 2194,
+  "rescued_by_riboseq": {
+    "expressed": 31,
+    "likely_expressed": 5,
+    "not_detected": 323,
+    "not_detected_low_gene_coverage": 5,
+    "reference": 1410,
+    "undetectable": 350,
+    "weak": 70
+  },
+  "te_score_by_tier": {
+    "expressed": 31,
+    "likely_expressed": 5,
+    "not_detected": 323,
+    "not_detected_low_gene_coverage": 5,
+    "reference": 1410,
+    "undetectable": 350,
+    "weak": 70
+  }
+}

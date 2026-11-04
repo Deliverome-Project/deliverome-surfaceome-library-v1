@@ -1,0 +1,6 @@
+species	band	topology_class	rejected	reason	replacement	candidates
+mouse	near	type I	mouse:INSR:M4TKR7	no designed CDS (no transcript encodes the drawn form)	mouse:CADM2:Q8BLQ9-2	269
+mouse	diverged	type I	mouse:PTPRJ:Q64455	no designed CDS (no transcript encodes the drawn form)	mouse:EMB:P21995	313
+mouse	diverged	GPI	mouse:LYPD6B:Q9D7F2-1	no designed CDS (no transcript encodes the drawn form)	mouse:NT5E:Q61503	39
+cyno	near	type I	cyno:MMP16:G7PC63	protein identical to human	cyno:UNC5C:G7P5Y1	239
+cyno	near	type II	cyno:ATP1B1:Q4R4V5	no designed CDS (no transcript encodes the drawn form)	cyno:ECE1:ENSMFAP00000023673	22

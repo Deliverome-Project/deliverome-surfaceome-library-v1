@@ -1,0 +1,12 @@
+[
+  {
+    "gene": "SLC2A4",
+    "placement": "nterm",
+    "skipped": "no extracellular terminus \u2014 cassette must go in an extracellular loop; terminal placement is not possible"
+  },
+  {
+    "gene": "MS4A1",
+    "placement": "nterm",
+    "skipped": "no extracellular terminus \u2014 cassette must go in an extracellular loop; terminal placement is not possible"
+  }
+]

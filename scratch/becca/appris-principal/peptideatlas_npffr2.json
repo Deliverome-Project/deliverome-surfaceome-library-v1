@@ -1,0 +1,22 @@
+{
+  "accession": "Q9Y5X5",
+  "atlas_build": "Human 2026-01",
+  "atlas_build_id": 607,
+  "atlas_url": "https://db.systemsbiology.net/sbeams/cgi/PeptideAtlas/GetProtein?atlas_build_id=607&protein_name=Q9Y5X5&action=QUERY",
+  "retrieved": "2026-10-08",
+  "canonical_length": 522,
+  "disputed_extension": [
+    1,
+    102
+  ],
+  "distinct_peptides_observed": 8,
+  "total_observations": 15,
+  "detectable_tryptic_in_extension": 4,
+  "observed_in_extension": 0,
+  "detectable_tryptic_from_first_observation": 10,
+  "observed_from_first_observation": 4,
+  "fisher_one_sided_p": 0.2098,
+  "binomial_one_sided_p": 0.1756,
+  "extension_fraction_of_sequence": 0.1954,
+  "verdict": "not statistically supported"
+}

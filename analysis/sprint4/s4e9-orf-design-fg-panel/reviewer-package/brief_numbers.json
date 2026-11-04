@@ -1,0 +1,382 @@
+{
+ "gene_list": {
+  "frozen_root_genes": 2368,
+  "added": [
+   "SLC67A1"
+  ],
+  "excluded_from_filter_output": [
+   "EPPIN"
+  ],
+  "library_genes": 2369
+ },
+ "reference": {
+  "genes": 2369,
+  "decision": {
+   "mane_appris_agree": 2172,
+   "unresolved_default_mane": 82,
+   "appris_only": 77,
+   "weak_evidence_mane": 13,
+   "resolved_mane": 9,
+   "no_reference_uniprot_canonical": 9,
+   "weak_evidence_appris": 7
+  },
+  "mane_appris_disagreements": 111,
+  "final_source": {
+   "mane": 2277,
+   "appris": 74,
+   "uniprot_canonical": 11,
+   "named": 7
+  },
+  "decision_by_source": {
+   "mane_appris_agree": {
+    "mane": 2166,
+    "named": 6
+   },
+   "resolved_mane": {
+    "mane": 9
+   },
+   "unresolved_default_mane": {
+    "mane": 82
+   },
+   "appris_only": {
+    "appris": 74,
+    "named": 1,
+    "uniprot_canonical": 2
+   },
+   "weak_evidence_mane": {
+    "mane": 13
+   },
+   "weak_evidence_appris": {
+    "mane": 7
+   },
+   "no_reference_uniprot_canonical": {
+    "uniprot_canonical": 9
+   }
+  },
+  "needs_review": 20,
+  "changes_uniprot_canonical": 217,
+  "named_overrides": [
+   "ACHE",
+   "BCAN",
+   "CD55",
+   "CD58",
+   "MICA",
+   "NCAM1",
+   "TFPI"
+  ]
+ },
+ "tranches": {
+  "l1_rows": 2739,
+  "l1_retired_duplicates": 7,
+  "l1_active": 2732,
+  "l1_active_by_set": {
+   "library_reference": 2357,
+   "ortholog": 200,
+   "isoform": 150,
+   "expression_rescue": 25
+  },
+  "l2_active": 4279,
+  "all_rows_with_orf": 7079,
+  "l1_active_orf_nt_median": 1389,
+  "genes_without_reference_member": {
+   "encoded_by_another_member": [
+    "OPN1MW2",
+    "OPN1MW3",
+    "OR2A42",
+    "UPK3BL2"
+   ],
+   "no_designed_cds": [
+    "FCGR2C",
+    "KIR2DS4",
+    "OR10AC1",
+    "OR12D1",
+    "OR4Q2",
+    "OR52P1",
+    "OR5AL1",
+    "OR8J2"
+   ]
+  },
+  "isoform_panel": {
+   "seed": 20261009,
+   "inputs": "panel_inputs.json snapshot",
+   "replaced": 8,
+   "panel_size": 150,
+   "floors": {
+    "type III": 2,
+    "GPI": 5,
+    "type II": 5
+   },
+   "allocation": {
+    "observed": {
+     "type I": 43,
+     "type II": 10,
+     "multipass": 34,
+     "GPI": 10,
+     "type III": 3
+    },
+    "prediction_only": {
+     "multipass": 17,
+     "type I": 18,
+     "GPI": 6,
+     "type II": 7,
+     "type III": 2
+    }
+   },
+   "by_class": {
+    "type I": 61,
+    "multipass": 51,
+    "type II": 17,
+    "GPI": 16,
+    "type III": 5
+   },
+   "genes": 137,
+   "already_in_cohort": 62
+  },
+  "ortholog_panel": {
+   "mouse": {
+    "eligible": 1448,
+    "correspondence_split": 0.8636,
+    "classes": {
+     "multipass": 677,
+     "type I": 615,
+     "GPI": 87,
+     "type II": 58,
+     "type III": 11
+    },
+    "bands": {
+     "near": {
+      "pool": 724,
+      "drawn": 50,
+      "by_class": {
+       "multipass": 20,
+       "type I": 15,
+       "GPI": 7,
+       "type II": 6,
+       "type III": 2
+      }
+     },
+     "diverged": {
+      "pool": 724,
+      "drawn": 50,
+      "by_class": {
+       "type I": 18,
+       "multipass": 16,
+       "GPI": 7,
+       "type II": 7,
+       "type III": 2
+      }
+     }
+    }
+   },
+   "cyno": {
+    "eligible": 1413,
+    "correspondence_split": 0.9616,
+    "classes": {
+     "multipass": 657,
+     "type I": 590,
+     "GPI": 92,
+     "type II": 64,
+     "type III": 10
+    },
+    "bands": {
+     "near": {
+      "pool": 707,
+      "drawn": 50,
+      "by_class": {
+       "multipass": 20,
+       "type I": 15,
+       "GPI": 7,
+       "type II": 6,
+       "type III": 2
+      }
+     },
+     "diverged": {
+      "pool": 706,
+      "drawn": 50,
+      "by_class": {
+       "type I": 18,
+       "multipass": 16,
+       "GPI": 7,
+       "type II": 7,
+       "type III": 2
+      }
+     }
+    }
+   },
+   "seed": 20261011,
+   "per_band": 50,
+   "floors": {
+    "type III": 2,
+    "GPI": 5,
+    "type II": 5
+   },
+   "total": 200,
+   "replaced": 5
+  }
+ },
+ "domestication": {
+  "members_with_edit_count": 2707,
+  "edits_median": 3,
+  "edits_max": 20,
+  "members_needing_no_edit": 327,
+  "esp3i_sites_per_vector": {
+   "2": 2732
+  },
+  "vector_bp_min_median_max": [
+   7753,
+   8956,
+   12706
+  ],
+  "igk_leader_members": 25
+ },
+ "tag_paths": {
+  "tool": "deeptmhmm_v1",
+  "members": 2707,
+  "placement": {
+   "N after SP": 1299,
+   "N at residue 1, multipass": 561,
+   "N at residue 1, single-pass (type III)": 62,
+   "C-terminal": 218,
+   "internal": 567
+  },
+  "placement_by_set": {
+   "N after SP": {
+    "library_reference": 1120,
+    "isoform": 76,
+    "ortholog": 103
+   },
+   "N at residue 1, multipass": {
+    "library_reference": 520,
+    "isoform": 14,
+    "ortholog": 27
+   },
+   "N at residue 1, single-pass (type III)": {
+    "library_reference": 35,
+    "isoform": 16,
+    "ortholog": 11
+   },
+   "C-terminal": {
+    "library_reference": 164,
+    "isoform": 21,
+    "ortholog": 33
+   },
+   "internal": {
+    "library_reference": 518,
+    "isoform": 23,
+    "ortholog": 26
+   }
+  },
+  "gpi_rerouted": [
+   "BST2",
+   "RGMB"
+  ],
+  "topology_version": {
+   "topo_2026_05_16": 2309,
+   "topo_2026_05_25": 206,
+   "topo_2026_10_14_l1_designed": 157,
+   "topo_2026_10_09_ortholog_repick": 29,
+   "topo_2026_10_11_ortholog_gap": 3,
+   "topo_2026_11_01_l1_designed": 3
+  },
+  "topology_cohort": {
+   "human_canonical": 2152,
+   "human_isoforms": 207,
+   "library_designed_orf": 160,
+   "cyno_ortholog": 88,
+   "mouse_ortholog": 68,
+   "mouse_ortholog_repick": 28,
+   "cyno_ortholog_repick": 4
+  },
+  "internal_without_inter_tm_loop_ge_8": [
+   "BST2",
+   "RGMB",
+   "TMEM139",
+   "TMEM169",
+   "TMEM268",
+   "TMEM86A",
+   "TMEM86B"
+  ],
+  "internal_inter_tm_run_median": 52
+ },
+ "gpi": {
+  "gpi_set_genes": 157,
+  "basis": {
+   "netgpi_anchored": 138,
+   "curated_netgpi_negative_low_confidence": 15,
+   "conflict_curated_vs_confident_netgpi_negative": 4,
+   "netgpi_not_anchored": 2
+  },
+  "conflict_genes": [
+   "CFC1",
+   "CRIPTO",
+   "GML",
+   "RAET1G"
+  ],
+  "l1_gpi_members": 191,
+  "l1_gpi_members_by_rung_before_reroute": {
+   "N after SP": 182,
+   "N at residue 1": 7,
+   "C-terminal": 2
+  },
+  "l1_conflict_members": {
+   "CFC1": "N after SP",
+   "CRIPTO": "N after SP",
+   "GML": "N after SP",
+   "RAET1G": "N after SP"
+  }
+ },
+ "structure_match": {
+  "compared_rows": 2642,
+  "verdict_all_rows": {
+   "identical": 2417,
+   "different": 199,
+   "contained": 26
+  },
+  "verdict_active": {
+   "identical": 2411,
+   "different": 198,
+   "contained": 26
+  },
+  "different_active_by_set": {
+   "library_reference": 191,
+   "ortholog": 7
+  },
+  "different_same_length_active": 22
+ },
+ "swap_risk": {
+  "members": 2707,
+  "gate_bp": 100,
+  "schemes": {
+   "shared": {
+    "worst_partner_tract_median": 30.0,
+    "members_over_gate_100": 482,
+    "cterm_members": 218,
+    "cterm_worst_partner_median": 181.0,
+    "cterm_worst_partner_max": 2529
+   },
+   "whole_cassette_widened": {
+    "worst_partner_tract_median": 30.0,
+    "members_over_gate_100": 264,
+    "cterm_members": 218,
+    "cterm_worst_partner_median": 36.0,
+    "cterm_worst_partner_max": 36
+   },
+   "linkers_only": {
+    "worst_partner_tract_median": 30.0,
+    "members_over_gate_100": 264,
+    "cterm_members": 218,
+    "cterm_worst_partner_median": 36.0,
+    "cterm_worst_partner_max": 36
+   }
+  },
+  "whole_cassette_9nt_rule": "FAILED after 60 of 218 C-terminal members",
+  "issued_linker_only_encodings": 218,
+  "issue_batches": [
+   "1",
+   "2"
+  ],
+  "cterm_junction_edits": {
+   "l1-p1957": "SLC41A2: last codon GAC->GAT"
+  }
+ }
+}

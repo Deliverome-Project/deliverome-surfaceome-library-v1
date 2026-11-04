@@ -1,0 +1,9 @@
+panel_tier	topology_class	rejected	reason	replacement	candidates
+observed	type I	LRRC37B:ENST00000582117	no designed CDS (no transcript encodes the drawn form)	PCDHGA7:Q9Y5G6-2	339
+observed	multipass	SLC29A1:Q99808-2	no designed CDS (no transcript encodes the drawn form)	ADGRE1:Q14246-4	269
+observed	multipass	SLC12A6:Q9UHW9-6	no designed CDS (no transcript encodes the drawn form)	SLC43A2:ENST00000572801;ENST00000633994	268
+observed	multipass	SCNN1A:P37088-5	no designed CDS (no transcript encodes the drawn form)	GPR161:Q8N6U8-4	267
+observed	GPI	LYPD1:Q8N2G4-3	no designed CDS (no transcript encodes the drawn form)	PRSS8:Q16651-2	33
+observed	GPI	CD177:Q8N6Q3	designed protein duplicates l1-p0263	LYPD5:Q6UWN5-2	32
+observed	GPI	ACHE:P22303-2	is the gene's selected reference form	CD58:P19256-3	31
+prediction_only	type III	NRG4:ENST00000563910	no designed CDS (no transcript encodes the drawn form)	SUSD3:ENST00000617293	10

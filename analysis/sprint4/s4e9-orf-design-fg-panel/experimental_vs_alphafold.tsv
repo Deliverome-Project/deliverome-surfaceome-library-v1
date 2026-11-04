@@ -1,0 +1,13 @@
+gene	pdb	residue	site	af_ss	exp_ss	af_loop_len	exp_loop_len	af_window_rsa	exp_window_rsa	exp_oligomer_rsa	af_passes	exp_passes
+MS4A1	8vgn	79	P79 (p0032)	C	C	2	2	0.209	0.138	0.138	False	False
+MS4A1	8vgn	161	Y161 (p0033)	C	C	13	15	0.778	0.755	0.524	True	True
+MS4A1	8vgn	171	N171 (retired)	C	C	13	15	0.803	0.796	0.796	True	True
+MS4A1	8vgn		lane:AlphaFold									159;160;161;162;163;164;165;166;167;168;169;170;171
+MS4A1	8vgn		lane:experimental (monomer)									157;158;159;160;161;162;163;164;165;166;167;168;169;170;171
+MS4A1	8vgn		lane:experimental (oligomer)									157;158;159;160;161;162;163;164;165;166;167;168;169;170;171
+SLC2A4	7wsm	66	P66 (p0030)	C	H	9	0	0.929	0.898	0.898	True	False
+SLC2A4	7wsm	193	E193 (retired)	C	C	11	12	0.607	0.647	0.647	True	True
+SLC2A4	7wsm	320	G320 (p0031)	C	C	5	5	0.723	0.655	0.655	False	False
+SLC2A4	7wsm		lane:AlphaFold									65;66;67;68;69;70;71;72;73;193;194;195;196;197;198;199;200;201
+SLC2A4	7wsm		lane:experimental (monomer)									193;194;195;196;197;198;199;200;201
+SLC2A4	7wsm		lane:experimental (oligomer)									193;194;195;196;197;198;199;200;201

@@ -1,0 +1,30 @@
+{
+  "uniprot_release": "2026_03",
+  "peptideatlas_build": "Human 2026-01",
+  "genes": 2369,
+  "forms_total": 16048,
+  "reference_forms": 2361,
+  "alternate_forms": 13687,
+  "source": {
+    "ensembl_only": 10880,
+    "both": 4296,
+    "uniprot_only": 872
+  },
+  "tier": {
+    "not_detected": 7631,
+    "undetectable": 5449,
+    "reference": 2361,
+    "not_detected_low_gene_coverage": 294,
+    "weak": 245,
+    "expressed": 57,
+    "likely_expressed": 11
+  },
+  "low_coverage_threshold_pct": 10.0,
+  "gene_coverage_pct": {
+    "median": 58.8,
+    "genes_under_threshold": 380,
+    "genes_total": 2369
+  },
+  "ensembl_only_forms": 10880,
+  "ensembl_only_expressed": 3
+}

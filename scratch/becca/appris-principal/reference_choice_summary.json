@@ -1,0 +1,104 @@
+{
+  "appris_release": "e115v50",
+  "ensembl_release": "115",
+  "tedman_constructs": 946,
+  "genes_compared": 766,
+  "tedman_transcripts_retired_from_ensembl_115": 0,
+  "agreement": {
+    "tedman_vs_mine": {
+      "compared": 765,
+      "same": 732,
+      "differs": 33
+    },
+    "appris_vs_mine": {
+      "compared": 762,
+      "same": 698,
+      "differs": 64
+    },
+    "appris_vs_tedman": {
+      "compared": 763,
+      "same": 723,
+      "differs": 40
+    }
+  },
+  "length_difference_where_they_differ": {
+    "tedman_minus_mine": {
+      "n_differing_in_length": 28,
+      "differ_at_same_length": 5,
+      "shorter_than_reference": 23,
+      "median_abs": 14.0,
+      "p90_abs": 35,
+      "max_abs": 102,
+      "within_5_aa": 3,
+      "histogram": {
+        "<= -100": 1,
+        "-99..-20": 9,
+        "-19..-5": 11,
+        "-4..-1": 2,
+        "0": 0,
+        "1..4": 1,
+        "5..19": 2,
+        "20..99": 2,
+        ">= 100": 0
+      },
+      "difference_kind": {
+        "n_terminal": 23,
+        "substitution_only": 5,
+        "internal": 4,
+        "c_terminal": 1
+      }
+    },
+    "appris_minus_mine": {
+      "n_differing_in_length": 53,
+      "differ_at_same_length": 11,
+      "shorter_than_reference": 47,
+      "median_abs": 16,
+      "p90_abs": 50,
+      "max_abs": 102,
+      "within_5_aa": 7,
+      "histogram": {
+        "<= -100": 1,
+        "-99..-20": 18,
+        "-19..-5": 22,
+        "-4..-1": 6,
+        "0": 0,
+        "1..4": 0,
+        "5..19": 3,
+        "20..99": 3,
+        ">= 100": 0
+      },
+      "difference_kind": {
+        "n_terminal": 35,
+        "internal": 16,
+        "substitution_only": 11,
+        "c_terminal": 2
+      }
+    },
+    "appris_minus_tedman": {
+      "n_differing_in_length": 32,
+      "differ_at_same_length": 8,
+      "shorter_than_reference": 27,
+      "median_abs": 16.0,
+      "p90_abs": 51,
+      "max_abs": 88,
+      "within_5_aa": 8,
+      "histogram": {
+        "<= -100": 0,
+        "-99..-20": 10,
+        "-19..-5": 12,
+        "-4..-1": 5,
+        "0": 0,
+        "1..4": 2,
+        "5..19": 1,
+        "20..99": 2,
+        ">= 100": 0
+      },
+      "difference_kind": {
+        "internal": 17,
+        "n_terminal": 13,
+        "substitution_only": 8,
+        "c_terminal": 2
+      }
+    }
+  }
+}

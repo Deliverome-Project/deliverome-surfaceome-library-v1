@@ -1,0 +1,56 @@
+candidate_id	key	library	set	kept_candidate_id	kept_key	kept_library	category	protein_aa	rationale
+l2-p1704	ort:cyno:ABCG4:G7PPA4	l2	ortholog	l1-p0014	lib:ABCG4	l1	ortholog_identical_to_human	646	ortholog protein identical to the human member
+l1-p2387	iso:ACHE:P22303-2	l1	isoform	l1-p0017	lib:ACHE	l1	isoform_is_reference	617	ACHE: the GPI rule moved the reference onto P22303-2 (the anchored H subunit); the isoform universe still took the MANE/UniProt-canonical T subunit as its reference, so it offered P22303-2 as an alternate. Both build ENST00000302913.
+l2-p1713	ort:cyno:ACVR2A:ENSMFAP00000033947	l2	ortholog	l1-p0026	lib:ACVR2A	l1	ortholog_identical_to_human	513	ortholog protein identical to the human member
+l2-p1716	ort:cyno:ADAM10:A0A2K5WCT6	l2	ortholog	l1-p0029	lib:ADAM10	l1	ortholog_identical_to_human	748	ortholog protein identical to the human member
+l2-p1775	ort:cyno:AMIGO1:G7NV59	l2	ortholog	l1-p0105	lib:AMIGO1	l1	ortholog_identical_to_human	493	ortholog protein identical to the human member
+l2-p1779	ort:cyno:ANKH:A0A2K5WPU8	l2	ortholog	l1-p0109	lib:ANKH	l1	ortholog_identical_to_human	492	ortholog protein identical to the human member
+l2-p0220	iso:BCAN:Q96GW7-2	l2	isoform	l1-p0173	lib:BCAN	l1	isoform_is_reference	671	isoform panel offered the selected reference as an alternate form
+l2-p1835	ort:cyno:CACNG2:A0A2K5WFY4	l2	ortholog	l1-p0220	lib:CACNG2	l1	ortholog_identical_to_human	323	ortholog protein identical to the human member
+l2-p1836	ort:cyno:CACNG3:Q4R589	l2	ortholog	l1-p0221	lib:CACNG3	l1	ortholog_identical_to_human	315	ortholog protein identical to the human member
+l2-p3143	ort:mouse:CACNG7:P62956	l2	ortholog	l1-p0225	lib:CACNG7	l1	ortholog_identical_to_human	275	ortholog protein identical to the human member
+l2-p1840	ort:cyno:CADM2:ENSMFAP00000005970	l2	ortholog	l1-p0227	lib:CADM2	l1	ortholog_identical_to_human	404	ortholog protein identical to the human member
+l1-p2411	iso:CD177:Q8N6Q3	l1	isoform	l1-p0263	lib:CD177	l1	allele_variant_of_reference	437	CD177: Q8N6Q3 differs from the GRCh38 reference at 3 residues (V184G, D204N, M205R), which UniProt annotates as sequence conflicts from one cDNA (CAC83724), not a splice form. The resolver's allele-variant route then built it from the reference's own transcript, so the member was the reference. Building the 3 residues would order a cDNA artefact, not an isoform.
+l2-p0316	iso:CD55:P08174	l2	isoform	l1-p0308	lib:CD55	l1	isoform_is_reference	381	isoform panel offered the selected reference as an alternate form
+l2-p1978	ort:cyno:CNR1:G7P3K6	l2	ortholog	l1-p0448	lib:CNR1	l1	ortholog_identical_to_human	472	ortholog protein identical to the human member
+l2-p2046	ort:cyno:EFNA3:A0A2K5VZR7	l2	ortholog	l1-p0545	lib:EFNA3	l1	ortholog_identical_to_human	238	ortholog protein identical to the human member
+l2-p2124	ort:cyno:FZD2:A0A2K5WLJ1	l2	ortholog	l1-p0664	lib:FZD2	l1	ortholog_identical_to_human	565	ortholog protein identical to the human member
+l2-p2149	ort:cyno:GJB1:ENSMFAP00000046231	l2	ortholog	l1-p0710	lib:GJB1	l1	ortholog_identical_to_human	283	ortholog protein identical to the human member
+l2-p2157	ort:cyno:GLRA3:ENSMFAP00000036409	l2	ortholog	l1-p0727	lib:GLRA3	l1	ortholog_identical_to_human	449	ortholog protein identical to the human member
+l2-p2168	ort:cyno:GPM6A:ENSMFAP00000015699	l2	ortholog	l1-p0742	lib:GPM6A	l1	ortholog_identical_to_human	278	ortholog protein identical to the human member
+l2-p2169	ort:cyno:GPM6B:ENSMFAP00000054418	l2	ortholog	l1-p0743	lib:GPM6B	l1	ortholog_identical_to_human	328	ortholog protein identical to the human member
+l2-p2174	ort:cyno:GPR139:A0A7N9DEU4	l2	ortholog	l1-p0750	lib:GPR139	l1	ortholog_identical_to_human	353	ortholog protein identical to the human member
+l2-p2189	ort:cyno:GPR173:G7Q2S6	l2	ortholog	l1-p0768	lib:GPR173	l1	ortholog_identical_to_human	373	ortholog protein identical to the human member
+l2-p3514	ort:mouse:GPR85:P60894	l2	ortholog	l1-p0802	lib:GPR85	l1	ortholog_identical_to_human	370	ortholog protein identical to the human member
+l2-p2218	ort:cyno:GRIA1:ENSMFAP00000023470	l2	ortholog	l1-p0810	lib:GRIA1	l1	ortholog_identical_to_human	906	ortholog protein identical to the human member
+l2-p2224	ort:cyno:GRIK2:ENSMFAP00000045067	l2	ortholog	l1-p0817	lib:GRIK2	l1	ortholog_identical_to_human	908	ortholog protein identical to the human member
+l2-p2343	ort:cyno:JAM2:ENSMFAP00000050136	l2	ortholog	l1-p0982	lib:JAM2	l1	ortholog_identical_to_human	298	ortholog protein identical to the human member
+l2-p0847	iso:KIR2DS5:ENST00000611422	l2	isoform	l1-p1054	lib:KIR2DL5A	l1	identical_to_other_gene	375	another gene's member (paralog or read-through) encodes the same protein
+l2-p2394	ort:cyno:LRRC4C:G7PQD6	l2	ortholog	l1-p1140	lib:LRRC4C	l1	ortholog_identical_to_human	640	ortholog protein identical to the human member
+l2-p2399	ort:cyno:LRRTM2:A0A2K5X4Y3	l2	ortholog	l1-p1153	lib:LRRTM2	l1	ortholog_identical_to_human	516	ortholog protein identical to the human member
+l2-p2400	ort:cyno:LRRTM3:Q9BGP6	l2	ortholog	l1-p1154	lib:LRRTM3	l1	ortholog_identical_to_human	581	ortholog protein identical to the human member
+l1-p2585	ort:cyno:MMP16:G7PC63	l1	ortholog	l1-p1225	lib:MMP16	l1	ortholog_identical_to_human	607	MMP16: the cyno ortholog G7PC63 is identical in protein to human MMP16; the panel exists to test sequence drift and this one has none. The near band admitted it because no step excluded 100% identity.
+l2-p3755	ort:mouse:MOSMO:Q8C784	l2	ortholog	l1-p1230	lib:MOSMO	l1	ortholog_identical_to_human	167	ortholog protein identical to the human member
+l2-p2489	ort:cyno:NPR2:A0A2K5WQM7	l2	ortholog	l1-p1310	lib:NPR2	l1	ortholog_identical_to_human	1047	ortholog protein identical to the human member
+l1-p1350	lib:OPN1MW2	l1	library_reference	l1-p1349	lib:OPN1MW	l1	identical_paralog	364	OPN1MW2 is a tandem copy of OPN1MW in the X-linked opsin array and encodes the same protein; keep OPN1MW, the array's first copy.
+l1-p1351	lib:OPN1MW3	l1	library_reference	l1-p1349	lib:OPN1MW	l1	identical_paralog	364	OPN1MW3, as OPN1MW2: the same protein as OPN1MW.
+l1-p1406	lib:OR2A42	l1	library_reference	l1-p1404	lib:OR2A1	l1	identical_paralog	310	OR2A42 encodes the same protein as OR2A1 (a segmental duplication); keep OR2A1.
+l2-p1148	iso:PILRA:Q9UKJ1	l2	isoform	l1-p1645	lib:PILRA	l1	isoform_is_reference	303	isoform panel offered the selected reference as an alternate form
+l2-p2690	ort:cyno:SERINC1:G7P394	l2	ortholog	l1-p1796	lib:SERINC1	l1	ortholog_identical_to_human	453	ortholog protein identical to the human member
+l2-p2745	ort:cyno:SLC23A2:ENSMFAP00000043424	l2	ortholog	l1-p1894	lib:SLC23A2	l1	ortholog_identical_to_human	650	ortholog protein identical to the human member
+l2-p1524	iso:SLCO1B3:Q9NPD5-2	l2	isoform	l1-p2038	lib:SLCO1B3-SLCO1B7	l1	identical_to_other_gene	748	another gene's member (paralog or read-through) encodes the same protein
+l2-p2866	ort:cyno:SSTR1:A0A2K5UEB0	l2	ortholog	l1-p2072	lib:SSTR1	l1	ortholog_identical_to_human	391	ortholog protein identical to the human member
+l2-p1553	iso:SUSD6:Q92537	l2	isoform	l1-p2088	lib:SUSD6	l1	isoform_is_reference	303	isoform panel offered the selected reference as an alternate form
+l2-p1560	iso:TFPI:P10646-2	l2	isoform	l1-p2129	lib:TFPI	l1	isoform_is_reference	251	isoform panel offered the selected reference as an alternate form
+l2-p2904	ort:cyno:TMEFF2:A0A2K5UWD7	l2	ortholog	l1-p2162	lib:TMEFF2	l1	ortholog_identical_to_human	374	ortholog protein identical to the human member
+l2-p2956	ort:cyno:TSPAN18:ENSMFAP00000046487	l2	ortholog	l1-p2292	lib:TSPAN18	l1	ortholog_identical_to_human	248	ortholog protein identical to the human member
+l2-p2962	ort:cyno:TSPAN5:A0A7N9DCS4	l2	ortholog	l1-p2297	lib:TSPAN5	l1	ortholog_identical_to_human	268	ortholog protein identical to the human member
+l2-p4286	ort:mouse:TSPAN5:P62080	l2	ortholog	l1-p2297	lib:TSPAN5	l1	ortholog_identical_to_human	268	ortholog protein identical to the human member
+l1-p2318	lib:UPK3BL2	l1	library_reference	l1-p2317	lib:UPK3BL1	l1	identical_paralog	263	UPK3BL2 encodes the same protein as UPK3BL1 (a segmental duplication); keep UPK3BL1.
+l2-p2491	ort:cyno:NPTN:A0A2K5W4W3	l2	ortholog	l1-p2471	iso:NPTN:Q9Y639-5	l1	ortholog_identical_to_human	394	ortholog protein identical to the human member
+l2-p2507	ort:cyno:NTM:A0A2K5VKK3	l2	ortholog	l1-p2475	iso:NTM:Q9P121-4	l1	ortholog_identical_to_human	355	ortholog protein identical to the human member
+l2-p1711	ort:cyno:ACVR1B:A0A2K5UYX4	l2	ortholog	l2-p0023	iso:ACVR1B:P36896-5	l2	ortholog_identical_to_human	453	ortholog protein identical to the human member
+l2-p1951	ort:cyno:CLDN19:A0A7N9C8X1	l2	ortholog	l2-p0376	iso:CLDN19:Q8N6F1	l2	ortholog_identical_to_human	224	ortholog protein identical to the human member
+l2-p0656	iso:HLA-A:P04439-2	l2	isoform	l2-p0653	iso:HLA-A:ENST00000376806	l2	duplicate_isoform	371	two isoform keys resolving to the same protein
+l2-p1043	iso:NRXN1:Q9ULB1-4	l2	isoform	l2-p1036	iso:NRXN1:ENST00000412315	l2	duplicate_isoform	139	two isoform keys resolving to the same protein
+l2-p2822	ort:cyno:SLC6A1:A0A7N9DDM1	l2	ortholog	l2-p1486	iso:SLC6A1:ENST00000644803	l2	ortholog_identical_to_human	608	ortholog protein identical to the human member

@@ -1,0 +1,9 @@
+construct	gene	arm	leader_aa	plus1_aa	tedman_au	n_term_ecto_aa	n_term_disulfide	cassette	cassette_aa_len	receptor_met1_kept	signal_peptide_replaced	coding_nt	protein_aa	domestication_edits	insert_nt_with_barcode_placeholder	barcode
+CNR1_plain	CNR1	leader_free			129.6	116	none	tandem	51	True	False	1569	523	0	1687	ATAGTCAAGAGCGCACCAGA
+CNR1_igk	CNR1	igk_leader	METDTLLLWVLLLWVPGSTG	D	129.6	116	none	tandem	51	True	False	1632	544	0	1750	GAGAGTAGTCAAGCACCAAG
+CCR5_plain	CCR5	leader_free			302.2	30	C20-C269	tandem	51	True	False	1209	403	0	1327	ACAGTTAGTCGAGAAGCGCA
+CCR5_igk	CCR5	igk_leader	METDTLLLWVLLLWVPGSTG	D	302.2	30	C20-C269	tandem	51	True	False	1272	424	0	1390	CGAGGCAGGCTACACACAGA
+OR51E2_plain	OR51E2	leader_free			923.1	23	C4-C168	tandem	51	True	False	1113	371	0	1231	GTCGTATCTTCTCCGGCGTA
+OR51E2_igk	OR51E2	igk_leader	METDTLLLWVLLLWVPGSTG	D	923.1	23	C4-C168	tandem	51	True	False	1176	392	0	1294	TCCATCGCCACAGTAGTAGC
+ACKR3_plain	ACKR3	leader_free			2199.5	45	3 N-terminal Cys (21, 26, 34); pairing not resolved here	tandem	51	True	False	1239	413	0	1357	TATCAAGTGCTAAGTCAGGC
+AVPR2_plain	AVPR2	leader_free			6366.8	38	none	tandem	51	True	False	1266	422	0	1384	ATCACGCGACGAGAGAAGCT

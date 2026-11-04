@@ -1,0 +1,2 @@
+gene	form	note
+CD58	P19256-2	Both anchored candidates predict the same omega site (208, S) and are identical through it, so they yield the same mature protein and differ only in the cleaved GPI signal. The ranking picks ENST00000369487 because APPRIS labels it ALTERNATIVE while P19256-2 carries no APPRIS label at all - an artifact of not being transcript-mapped, not evidence. The reviewed UniProt isoform is the better record, so it is named here rather than by tuning the global ranking around one gene.
