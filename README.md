@@ -6,9 +6,19 @@ the code to rerun it. Start with the brief:
 
 ## Rerun the design
 
-You need [uv](https://docs.astral.sh/uv/) and the frozen input bundle (77 files,
-~830 MB, distributed separately with a SHA-256 for every file). No credentials or network
-access are used.
+You need [uv](https://docs.astral.sh/uv/) and the frozen input bundle: 77 files with a
+SHA-256 each, attached to this repository's release
+[`bundle-2026-11-02`](https://github.com/Deliverome-Project/l1-library-review/releases/tag/bundle-2026-11-02)
+(850 MB tarball, SHA-256 `e23be8a29a1cace93ce998f6e77c914b91f1678c6216f39b3958d4dfe03a74ab`).
+After the download, no credentials or network access are used.
+
+```bash
+gh release download bundle-2026-11-02 --repo Deliverome-Project/l1-library-review --dir ..
+```
+
+```bash
+mkdir ../l1-reviewer-bundle && tar -xf ../l1-reviewer-bundle-2026-11-02.tar -C ../l1-reviewer-bundle
+```
 
 ```bash
 uv sync --locked
@@ -16,7 +26,7 @@ uv sync --locked
 
 ```bash
 cd analysis/sprint4/s4e9-orf-design-fg-panel/reviewer-package
-uv run --locked python run_review.py --bundle /path/to/l1-reviewer-bundle
+uv run --locked python run_review.py --bundle ../../../../../l1-reviewer-bundle
 ```
 
 The run checks the bundle, reruns the library's 14 decision stages and reports whether each

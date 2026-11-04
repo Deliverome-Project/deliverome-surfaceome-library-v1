@@ -109,6 +109,12 @@ generated from this one by `export_review_repo.py`. It contains:
 - the complete `deliverome_analysis` package, `pyproject.toml` and `uv.lock`;
 - in `historical/`, the old script versions that stages 4 and 5 rerun.
 
+The input bundle is attached to that repository's release
+[`bundle-2026-11-02`](https://github.com/Deliverome-Project/l1-library-review/releases/tag/bundle-2026-11-02)
+(tarball SHA-256 `e23be8a29a1cace93ce998f6e77c914b91f1678c6216f39b3958d4dfe03a74ab`; the same
+file is staged at `processed://sprint4/s4e9-orf-design-fg-panel/reviewer-package/2026-11-02/`).
+A rebuilt bundle goes on a new release with a new date, never over an existing one.
+
 `EXPORT_MANIFEST.json` there records the source commit and a SHA-256 per managed file. To
 update it after changes here:
 
