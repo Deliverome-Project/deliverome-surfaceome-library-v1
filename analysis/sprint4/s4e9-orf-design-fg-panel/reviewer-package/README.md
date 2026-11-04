@@ -95,3 +95,27 @@ uv run --locked python bundle.py pack --bundle ~/l1-bundle --out l1-reviewer-bun
 `collect` reruns every stage with S3 in record mode and a fresh home directory, so the
 bundle holds exactly what the pipeline reads. `stage` uploads a tarball under this
 experiment's `processed://` prefix; nothing in the package publishes anywhere else.
+
+## The review repository
+
+Reviewers get the code from a separate private repository,
+[Deliverome-Project/l1-library-review](https://github.com/Deliverome-Project/l1-library-review),
+generated from this one by `export_review_repo.py`. It contains:
+
+- the library's folders whole (s4e9, the S1E3 gene filter, `scratch/becca/appris-principal`,
+  `scratch/becca/tag-site-architecture`);
+- every other file the replay opens (listed in `review_repo_files.txt`, found by tracing a
+  replay);
+- the complete `deliverome_analysis` package, `pyproject.toml` and `uv.lock`;
+- in `historical/`, the old script versions that stages 4 and 5 rerun.
+
+`EXPORT_MANIFEST.json` there records the source commit and a SHA-256 per managed file. To
+update it after changes here:
+
+```bash
+uv run --locked python export_review_repo.py --dest ~/git/l1-library-review
+```
+
+A re-export never touches files added in the review repo. A managed file that was edited there is left in place and listed,
+so the edit can be carried back here by hand. If a new script is needed by the replay,
+rebuild the list from a traced run (`--trace`) before exporting.
