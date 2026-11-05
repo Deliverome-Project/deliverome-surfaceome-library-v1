@@ -316,9 +316,15 @@ def verify_candidate_cds(work: Path) -> str:
     rec = json.loads(record("library-candidates/candidate_cds.json", work / "rec.json").read_text())
     differ = sorted(k for k in rec if k not in new or new[k]["cds"] != rec[k]["cds"])
     assert not differ, f"designed CDS does not reproduce for {len(differ)}: {differ[:5]}"
+    # An ORF without a stop reads through into the vector; Ensembl omits it from some
+    # records, which the resolver now repairs (stop_added). None may slip through.
+    no_stop = sorted(k for k, v in rec.items() if v["cds"][-3:] not in ("TAA", "TAG", "TGA"))
+    assert not no_stop, f"{len(no_stop)} designed CDS end without a stop codon: {no_stop[:5]}"
     extra = sorted(set(new) - set(rec))
     return (
-        f"all {len(rec)} recorded designed CDS reproduce; extra in rerun: {extra or 'none'}"
+        f"all {len(rec)} recorded designed CDS reproduce and end in a stop codon "
+        f"({sum('stop_added' in v for v in rec.values())} appended); "
+        f"extra in rerun: {extra or 'none'}"
         " (iso:MICA:Q29983 is MICA's selected reference, so the dedupe stage retires it)"
     )
 

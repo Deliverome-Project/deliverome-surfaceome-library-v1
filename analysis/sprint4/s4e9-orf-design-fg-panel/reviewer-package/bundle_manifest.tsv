@@ -33,9 +33,9 @@ external	uniprot/2026-10-11/uniprot_human_reviewed.tsv.gz	7084106	64cb00f2f09119
 external	uniprot/2026-10-11/uniprot_human_reviewed_isoforms.tsv.gz	11362720	11b2e36430c66460b9515d9048f55cd6a0c439507ddf9bd54fbe35dd47a68da4	public_release	UniProt 2026_03 table download
 external	uniprot/2026-10-11/uniprot_mouse_reviewed_isoforms.tsv.gz	8086797	4b711788bf84a978d50352f8fc407492ff392eef1366ba15821c369d7756a18c	public_release	UniProt 2026_03 table download
 external	uniprot/2026_03/rest-2026-10-11/giant_features.json	758811	fa26d9485e22cd88df7f8807ab3cd8411237699ba3a66a38017ce3f02addd1d8	public_derived	UniProt 2026_03 REST query
-processed	scratch/becca/tag-site-corpus-audit/audit.tsv	118291	ea26bd1f504001e6bd5815cefa23dc9b48a7047818e66c328a4b6e62a7b96802	deliverome_curation	audit of the 176 S5E13 literature tag-site positives against their papers (PR 236)
-processed	sprint4/s4e9-orf-design-fg-panel/library-candidates/candidate_cds.json	13997496	6942cce4c3b3fb7e4bec0edce267438067a2f3e479df9543acc143025536f896	deliverome_record	published L1 library record
-processed	sprint4/s4e9-orf-design-fg-panel/library-candidates/candidate_constructs.json	14597506	ca9880f5747161bf82aec96e3576e3f6ee941bf3dedf6649682a59c5137ecd87	deliverome_record	published L1 library record
+processed	scratch/becca/tag-site-corpus-audit/audit.tsv	136111	eb8cadf9a34bb9268d03d61b984888e57be906180825c70b0a0d309656136946	deliverome_curation	audit of the 176 S5E13 literature tag-site positives against their papers (PR 236)
+processed	sprint4/s4e9-orf-design-fg-panel/library-candidates/candidate_cds.json	13997808	03c3413d70e15612868133d15839e092dba20fb05f3e8318d17f48928c91c662	deliverome_record	published L1 library record
+processed	sprint4/s4e9-orf-design-fg-panel/library-candidates/candidate_constructs.json	14597545	cdc5fa5e119e7590d910b44db03138a829f7a59e6d8ec430d8ebbe9f21008e3f	deliverome_record	published L1 library record
 processed	sprint4/s4e9-orf-design-fg-panel/library-candidates/giant_constructs.json	63065	4de48361a855429f5dbbcabfc61df5c8e753f6991be282c68539e799e51abd8a	deliverome_record	published L1 library record
 processed	sprint4/s4e9-orf-design-fg-panel/library-design/expression_rescue_arms.tsv	984	e69d5745d9e4abadb13244a52b7d8d652b654dcbfae6f330482e6421e2df77ba	deliverome_record	published L1 library record
 processed	sprint4/s4e9-orf-design-fg-panel/library-design/panel-inputs/2026-11-01/deeptmhmm_human_canonical.tsv	139719	10d905f453b3b98d1256e71b280d3b271126829d3571ad575beed5974864d39a	surfaceome_repo	accessible-surfaceome commit f9c73691 (snapshot copy)

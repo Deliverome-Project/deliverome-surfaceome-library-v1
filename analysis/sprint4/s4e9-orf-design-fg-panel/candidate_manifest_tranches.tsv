@@ -1052,9 +1052,9 @@ l1-p1050	lib:KIAA2013	library_reference	human	ENST00000376572	named transcript	0
 l1-p1051	lib:KIR2DL1	library_reference	human	ENST00000336077	named transcript	0	1047	8614	1	2	6	2	1137	False	deferred	not reserved	l1		l1-p1051		
 l1-p1052	lib:KIR2DL2	library_reference	human	ENST00000618796	protein match	0	1047	8614	1	2	6	2	1137	False	deferred	not reserved	l1		l1-p1052		
 l1-p1053	lib:KIR2DL3	library_reference	human	ENST00000342376	named transcript	0	1026	8593	1	2	6	2	1116	False	deferred	not reserved	l1		l1-p1053		
-l1-p1054	lib:KIR2DL5A	library_reference	human	ENST00000639951	protein match	0	1125	8692	0	0	6	2	1215	False	deferred	not reserved	l1		l1-p1054		KIR2DS5
-l1-p1055	lib:KIR2DS2	library_reference	human	ENST00000639296	protein match	0	912	8479	1	2	6	2	1002	False	deferred	not reserved	l1		l1-p1055		
-l1-p1056	lib:KIR2DS5	library_reference	human	ENST00000639440	protein match	0	912	8479	1	2	6	2	1002	False	deferred	not reserved	l1		l1-p1056		
+l1-p1054	lib:KIR2DL5A	library_reference	human	ENST00000639951	protein match	0	1128	8695	0	0	6	2	1218	False	deferred	not reserved	l1		l1-p1054		KIR2DS5
+l1-p1055	lib:KIR2DS2	library_reference	human	ENST00000639296	protein match	0	915	8482	1	2	6	2	1005	False	deferred	not reserved	l1		l1-p1055		
+l1-p1056	lib:KIR2DS5	library_reference	human	ENST00000639440	protein match	0	915	8482	1	2	6	2	1005	False	deferred	not reserved	l1		l1-p1056		
 l1-p1057	lib:KIR3DL1	library_reference	human	ENST00000391728	named transcript	0	1335	8902	2	3	6	2	1425	False	deferred	not reserved	l1		l1-p1057		
 l1-p1058	lib:KIR3DL2	library_reference	human	ENST00000326321	named transcript	0	1368	8935	2	3	6	2	1458	False	deferred	not reserved	l1		l1-p1058		
 l1-p1059	lib:KIR3DL3	library_reference	human	ENST00000291860	named transcript	0	1233	8800	2	2	6	2	1323	False	deferred	not reserved	l1		l1-p1059		
@@ -3569,7 +3569,7 @@ l2-p0842	iso:KCNT2:Q6UVM3-2	isoform	human	ENST00000367433	named transcript	0	333
 l2-p0843	iso:KIAA0319:Q5VV43-3	isoform	human	ENST00000430948	named transcript	0	3084	10651	6	6	6	2	3174	False	deferred	not reserved	l2		l1-p3277		
 l2-p0844	iso:KIAA2013:ENST00000923856	isoform	human	ENST00000923856	named transcript	0	1902	9469	5	7	6	2	1992	False	deferred	not reserved	l2		l1-p3278		
 l2-p0845	iso:KIAA2013:Q8IYS2-2	isoform	human	ENST00000376576	named transcript	0	2004	9571	5	7	6	2	2094	False	deferred	not reserved	l2		l1-p3279		
-l2-p0846	iso:KIR2DS2:ENST00000613017	isoform	human	ENST00000613017	named transcript	0	1026	8593	1	2	6	2	1116	False	deferred	not reserved	l2		l1-p3280		
+l2-p0846	iso:KIR2DS2:ENST00000613017	isoform	human	ENST00000613017	named transcript	0	1029	8596	1	2	6	2	1119	False	deferred	not reserved	l2		l1-p3280		
 l2-p0847	iso:KIR2DS5:ENST00000611422	isoform	human	ENST00000611422	named transcript	0	1128	8695	0	0	6	2	1218	False	deferred	not reserved	l2		l1-p3281	duplicate_of:l1-p1054 (identical_to_other_gene)	
 l2-p0848	iso:KIR3DL2:P43630-2	isoform	human	ENST00000270442	named transcript	0	1317	8884	2	3	6	2	1407	False	deferred	not reserved	l2		l1-p3282		
 l2-p0849	iso:KIR3DL3:Q8N743	isoform	human	ENST00000613010	named transcript	0	1233	8800	2	2	6	2	1323	False	deferred	not reserved	l2		l1-p3283		
@@ -4447,7 +4447,7 @@ l2-p1721	ort:cyno:ADAM19:A0A2K5X099	ortholog	cyno	ENSMFAT00000017190	protein mat
 l2-p1722	ort:cyno:ADAM22:ENSMFAP00000008740	ortholog	cyno	ENSMFAT00000021297	gene symbol	0	2919	10486	3	3	6	2	3009	False	deferred	not reserved	l2		l1-p4229		
 l2-p1723	ort:cyno:ADAM23:ENSMFAP00000014313	ortholog	cyno	ENSMFAT00000064797	gene symbol	0	2505	10072	4	6	6	2	2595	False	deferred	not reserved	l2		l1-p4230		
 l2-p1724	ort:cyno:ADAM28:ENSMFAP00000043408	ortholog	cyno	ENSMFAT00000017698	gene symbol	0	2331	9898	2	2	6	2	2421	False	deferred	not reserved	l2		l1-p4231		
-l2-p1725	ort:cyno:ADAM29:A0A7N9D9D5	ortholog	cyno	ENSMFAT00000013341	protein match	0	2472	10039	0	0	6	2	2562	False	deferred	not reserved	l2		l1-p4232		
+l2-p1725	ort:cyno:ADAM29:A0A7N9D9D5	ortholog	cyno	ENSMFAT00000013341	protein match	0	2475	10042	0	0	6	2	2565	False	deferred	not reserved	l2		l1-p4232		
 l2-p1726	ort:cyno:ADAM32:A0A2K5VEU7	ortholog	cyno	ENSMFAT00000031376	protein match	0	2373	9940	5	5	6	2	2463	False	deferred	not reserved	l2		l1-p4233		
 l2-p1727	ort:cyno:ADAM33:A0A2K5VE01	ortholog	cyno	ENSMFAT00000031117	protein match	0	2361	9928	3	3	6	2	2451	False	deferred	not reserved	l2		l1-p4234		
 l2-p1728	ort:cyno:ADAM7:ENSMFAP00000056585	ortholog	cyno	ENSMFAT00000095924	gene symbol	0	2265	9832	2	2	6	2	2355	False	deferred	not reserved	l2		l1-p4235		
@@ -4645,7 +4645,7 @@ l2-p1919	ort:cyno:CDH18:A0A2K5UPM6	ortholog	cyno	ENSMFAT00000064868	protein matc
 l2-p1920	ort:cyno:CDH1:A0A2K5V299	ortholog	cyno	ENSMFAT00000069381	protein match	0	2649	10216	4	7	6	2	2739	False	deferred	not reserved	l2		l1-p4440		
 l2-p1921	ort:cyno:CDH20:ENSMFAP00000057910	ortholog	cyno	ENSMFAT00000092851	gene symbol	0	2406	9973	1	1	6	2	2496	False	deferred	not reserved	l2		l1-p4441		
 l2-p1922	ort:cyno:CDH22:A0A2K5WXP9	ortholog	cyno	ENSMFAT00000016286	protein match	0	2934	10501	1	1	6	2	3024	False	deferred	not reserved	l2		l1-p4442		
-l2-p1923	ort:cyno:CDH26:A0A2K5WI33	ortholog	cyno	ENSMFAT00000010961	protein match	0	2493	10060	3	3	6	2	2583	False	deferred	not reserved	l2		l1-p4444		
+l2-p1923	ort:cyno:CDH26:A0A2K5WI33	ortholog	cyno	ENSMFAT00000010961	protein match	0	2496	10063	3	3	6	2	2586	False	deferred	not reserved	l2		l1-p4444		
 l2-p1924	ort:cyno:CDH2:A0A2K5UCE0	ortholog	cyno	ENSMFAT00000038229	protein match	0	2721	10288	2	2	6	2	2811	False	deferred	not reserved	l2		l1-p4445		
 l2-p1925	ort:cyno:CDH5:A0A2K5TSK2	ortholog	cyno	ENSMFAT00000027054	protein match	0	2346	9913	3	3	6	2	2436	False	deferred	not reserved	l2		l1-p4448		
 l2-p1926	ort:cyno:CDH6:A0A2K5TW62	ortholog	cyno	ENSMFAT00000022980	protein match	0	2373	9940	2	2	6	2	2463	False	deferred	not reserved	l2		l1-p4449		
@@ -4679,7 +4679,7 @@ l2-p1953	ort:cyno:CLDN20:A0A2K5UJE1	ortholog	cyno	ENSMFAT00000058792	protein mat
 l2-p1954	ort:cyno:CLDN22:G7P6L6	ortholog	cyno	ENSMFAT00000046020	protein match	0	660	8227	2	4	6	2	750	False	deferred	not reserved	l2		l1-p4478		
 l2-p1955	ort:cyno:CLDN24:A0A2K5UDT5	ortholog	cyno	ENSMFAT00000041301	protein match	0	663	8230	3	5	6	2	753	False	deferred	not reserved	l2		l1-p4479		
 l2-p1956	ort:cyno:CLDN2:G7Q3E1	ortholog	cyno	ENSMFAT00000065158	protein match	0	693	8260	1	1	6	2	783	False	deferred	not reserved	l2		l1-p4480		
-l2-p1957	ort:cyno:CLDN3:A0A2K5UKU0	ortholog	cyno	ENSMFAT00000061595	protein match	0	1044	8611	1	1	6	2	1134	False	deferred	not reserved	l2		l1-p4481		
+l2-p1957	ort:cyno:CLDN3:A0A2K5UKU0	ortholog	cyno	ENSMFAT00000061595	protein match	0	1047	8614	1	1	6	2	1137	False	deferred	not reserved	l2		l1-p4481		
 l2-p1958	ort:cyno:CLDN4:A0A2K5UJH5	ortholog	cyno	ENSMFAT00000058898	protein match	0	630	8197	0	0	6	2	720	False	deferred	not reserved	l2		l1-p4482		
 l2-p1959	ort:cyno:CLDN7:A0A2K5WU76	ortholog	cyno	ENSMFAT00000015012	protein match	0	636	8203	2	3	6	2	726	False	deferred	not reserved	l2		l1-p4483		
 l2-p1960	ort:cyno:CLEC12A:A0A2K5WXQ4	ortholog	cyno	ENSMFAT00000016291	protein match	0	816	8383	1	1	6	2	906	False	deferred	not reserved	l2		l1-p4486		
@@ -4923,7 +4923,7 @@ l2-p2197	ort:cyno:GPR27:A0A7N9CHY2	ortholog	cyno	ENSMFAT00000087925	protein matc
 l2-p2198	ort:cyno:GPR32:A0A2K5WC38	ortholog	cyno	ENSMFAT00000008881	protein match	0	1110	8677	3	4	6	2	1200	False	deferred	not reserved	l2		l1-p4744		
 l2-p2199	ort:cyno:GPR34:Q2ACI0	ortholog	cyno	ENSMFAT00000096095	protein match	0	1146	8713	0	0	6	2	1236	False	deferred	not reserved	l2		l1-p4745		
 l2-p2200	ort:cyno:GPR37L1:G8F5U1	ortholog	cyno	ENSMFAT00000002704	protein match	0	1446	9013	3	5	6	2	1536	False	deferred	not reserved	l2		l1-p4746		
-l2-p2201	ort:cyno:GPR39:A0A2K5VVS5	ortholog	cyno	ENSMFAT00000003056	protein match	0	897	8464	2	2	6	2	987	False	deferred	not reserved	l2		l1-p4747		
+l2-p2201	ort:cyno:GPR39:A0A2K5VVS5	ortholog	cyno	ENSMFAT00000003056	protein match	0	900	8467	2	2	6	2	990	False	deferred	not reserved	l2		l1-p4747		
 l2-p2202	ort:cyno:GPR3:A0A2K5UKC9	ortholog	cyno	ENSMFAT00000060533	protein match	0	993	8560	1	1	6	2	1083	False	deferred	not reserved	l2		l1-p4748		
 l2-p2203	ort:cyno:GPR50:G7Q1X1	ortholog	cyno	ENSMFAT00000010329	protein match	0	1887	9454	1	1	6	2	1977	False	deferred	not reserved	l2		l1-p4749		
 l2-p2204	ort:cyno:GPR55:G7PK96	ortholog	cyno	ENSMFAT00000059854	protein match	0	960	8527	5	6	6	2	1050	False	deferred	not reserved	l2		l1-p4750		
@@ -5255,8 +5255,8 @@ l2-p2529	ort:cyno:OR2W3:A0A2K5UHT1	ortholog	cyno	ENSMFAT00000053875	protein matc
 l2-p2530	ort:cyno:OR3A1:A0A2K5UQS2	ortholog	cyno	ENSMFAT00000065268	protein match	0	963	8530	2	2	6	2	1053	False	deferred	not reserved	l2		l1-p5099		
 l2-p2531	ort:cyno:OR3A2:A0A7N9D5M3	ortholog	cyno	ENSMFAT00000018821	protein match	0	1044	8611	1	1	6	2	1134	False	deferred	not reserved	l2		l1-p5100		
 l2-p2532	ort:cyno:OR3A3:A0A7N9DET0	ortholog	cyno	ENSMFAT00000053381	protein match	0	948	8515	2	2	6	2	1038	False	deferred	not reserved	l2		l1-p5101		
-l2-p2533	ort:cyno:OR4B1:A0A7N9CWP4	ortholog	cyno	ENSMFAT00000077549	protein match	0	927	8494	2	2	6	2	1017	False	deferred	not reserved	l2		l1-p5102		
-l2-p2534	ort:cyno:OR4D10:A0A7N9CUA1	ortholog	cyno	ENSMFAT00000086494	protein match	0	912	8479	1	2	6	2	1002	False	deferred	not reserved	l2		l1-p5103		
+l2-p2533	ort:cyno:OR4B1:A0A7N9CWP4	ortholog	cyno	ENSMFAT00000077549	protein match	0	930	8497	2	2	6	2	1020	False	deferred	not reserved	l2		l1-p5102		
+l2-p2534	ort:cyno:OR4D10:A0A7N9CUA1	ortholog	cyno	ENSMFAT00000086494	protein match	0	915	8482	1	2	6	2	1005	False	deferred	not reserved	l2		l1-p5103		
 l2-p2535	ort:cyno:OR4N2:A0A2K5UGC5	ortholog	cyno	ENSMFAT00000049354	protein match	0	924	8491	3	4	6	2	1014	False	deferred	not reserved	l2		l1-p5104		
 l2-p2536	ort:cyno:OR51B5:A0A7N9DAM2	ortholog	cyno	ENSMFAT00000093288	protein match	0	939	8506	0	0	6	2	1029	False	deferred	not reserved	l2		l1-p5105		
 l2-p2537	ort:cyno:OR51E1:A0A7N9DCS0	ortholog	cyno	ENSMFAT00000083366	protein match	0	1032	8599	2	2	6	2	1122	False	deferred	not reserved	l2		l1-p5106		
@@ -5365,7 +5365,7 @@ l2-p2639	ort:cyno:RELT:Q9N092	ortholog	cyno	ENSMFAT00000087306	gene symbol	5	129
 l2-p2640	ort:cyno:RET:A0A2K5V8L5	ortholog	cyno	ENSMFAT00000034955	protein match	0	3351	10918	9	10	6	2	3441	False	deferred	not reserved	l2		l1-p5213		
 l2-p2641	ort:cyno:RGMA:ENSMFAP00000017223	ortholog	cyno	ENSMFAT00000067763	gene symbol	0	1353	8920	2	2	6	2	1443	False	deferred	not reserved	l2		l1-p5214		
 l2-p2642	ort:cyno:RGMB:A0A2K5TY93	ortholog	cyno	ENSMFAT00000023718	protein match	0	1314	8881	3	3	6	2	1404	False	deferred	not reserved	l2		l1-p5215		
-l2-p2643	ort:cyno:RHAG:ENSMFAP00000030986	ortholog	cyno	ENSMFAT00000005196	gene symbol	0	1302	8869	1	2	6	2	1392	False	deferred	not reserved	l2		l1-p5216		
+l2-p2643	ort:cyno:RHAG:ENSMFAP00000030986	ortholog	cyno	ENSMFAT00000005196	gene symbol	0	1305	8872	1	2	6	2	1395	False	deferred	not reserved	l2		l1-p5216		
 l2-p2644	ort:cyno:RHBDF2:ENSMFAP00000004596	ortholog	cyno	ENSMFAT00000023262	gene symbol	0	2484	10051	1	1	6	2	2574	False	deferred	not reserved	l2		l1-p5217		
 l2-p2645	ort:cyno:RHBDL2:A0A2K5V670	ortholog	cyno	ENSMFAT00000070766	protein match	0	912	8479	2	4	6	2	1002	False	deferred	not reserved	l2		l1-p5218		
 l2-p2646	ort:cyno:RHCG:G7P9E9	ortholog	cyno	ENSMFAT00000007910	protein match	0	1440	9007	3	3	6	2	1530	False	deferred	not reserved	l2		l1-p5219		
@@ -5574,7 +5574,7 @@ l2-p2848	ort:cyno:SLCO4A1:A0A2K5WDR2	ortholog	cyno	ENSMFAT00000009486	protein ma
 l2-p2849	ort:cyno:SLCO4C1:A0A2K5WSL5	ortholog	cyno	ENSMFAT00000014449	protein match	0	2175	9742	2	3	6	2	2265	False	deferred	not reserved	l2		l1-p5436		
 l2-p2850	ort:cyno:SLCO5A1:G7PC00	ortholog	cyno	ENSMFAT00000027284	protein match	0	2547	10114	4	5	6	2	2637	False	deferred	not reserved	l2		l1-p5437		
 l2-p2851	ort:cyno:SLCO6A1:A0A2K5WXZ1	ortholog	cyno	ENSMFAT00000016263	protein match	0	2172	9739	1	1	6	2	2262	False	deferred	not reserved	l2		l1-p5438		
-l2-p2852	ort:cyno:SLITRK1:G7PVK2	ortholog	cyno	ENSMFAT00000000414	protein match	0	1989	9556	7	8	6	2	2079	False	deferred	not reserved	l2		l1-p5439		
+l2-p2852	ort:cyno:SLITRK1:G7PVK2	ortholog	cyno	ENSMFAT00000000414	protein match	0	1992	9559	7	8	6	2	2082	False	deferred	not reserved	l2		l1-p5439		
 l2-p2853	ort:cyno:SLITRK2:G7Q1V4	ortholog	cyno	ENSMFAT00000064831	protein match	0	2538	10105	1	1	6	2	2628	False	deferred	not reserved	l2		l1-p5440		
 l2-p2854	ort:cyno:SLITRK3:G7NZH4	ortholog	cyno	ENSMFAT00000064595	protein match	0	2940	10507	4	4	6	2	3030	False	deferred	not reserved	l2		l1-p5441		
 l2-p2855	ort:cyno:SLITRK4:A0A2K5UMT4	ortholog	cyno	ENSMFAT00000064013	protein match	0	2514	10081	3	3	6	2	2604	False	deferred	not reserved	l2		l1-p5442		
@@ -5655,7 +5655,7 @@ l2-p2929	ort:cyno:TNFRSF10A:ENSMFAP00000050236	ortholog	cyno	ENSMFAT00000083508	
 l2-p2930	ort:cyno:TNFRSF11A:A0A2K5VA70	ortholog	cyno	ENSMFAT00000034401	protein match	0	1776	9343	6	6	6	2	1866	False	deferred	not reserved	l2		l1-p5526		
 l2-p2931	ort:cyno:TNFRSF18:ENSMFAP00000051604	ortholog	cyno	ENSMFAT00000084076	gene symbol	0	510	8077	3	3	6	2	600	False	deferred	not reserved	l2		l1-p5528		
 l2-p2932	ort:cyno:TNFRSF19:A0A2K5UDZ9	ortholog	cyno	ENSMFAT00000041662	protein match	0	1254	8821	6	6	6	2	1344	False	deferred	not reserved	l2		l1-p5529		
-l2-p2933	ort:cyno:TNFRSF1A:A0A7N9CVF2	ortholog	cyno	ENSMFAT00000086556	protein match	0	1302	8869	0	0	6	2	1392	False	deferred	not reserved	l2		l1-p5530		
+l2-p2933	ort:cyno:TNFRSF1A:A0A7N9CVF2	ortholog	cyno	ENSMFAT00000086556	protein match	0	1305	8872	0	0	6	2	1395	False	deferred	not reserved	l2		l1-p5530		
 l2-p2934	ort:cyno:TNFRSF21:A0A2K5VIJ8	ortholog	cyno	ENSMFAT00000032719	protein match	0	1968	9535	2	2	6	2	2058	False	deferred	not reserved	l2		l1-p5532		
 l2-p2935	ort:cyno:TNFRSF25:A0A2K5WJ09	ortholog	cyno	ENSMFAT00000011378	protein match	0	1470	9037	1	1	6	2	1560	False	deferred	not reserved	l2		l1-p5533		
 l2-p2936	ort:cyno:TNFRSF4:A0A2K5TJH8	ortholog	cyno	ENSMFAT00000028339	protein match	0	1137	8704	2	2	6	2	1227	False	deferred	not reserved	l2		l1-p5534		

@@ -353,6 +353,21 @@
    "wrong_species_numbering": 5,
    "terminal_misfiled": 5
   },
+  "outside_training_rows": 15,
+  "outside_training_verdict": {
+   "region_only": 6,
+   "confirmed_exact": 4,
+   "confirmed_shifted": 4,
+   "not_supported": 1
+  },
+  "outside_training_pinned_to_a_residue": [
+   "CFTR 891",
+   "NRG3 275",
+   "NRXN1 371",
+   "SLC12A5 248",
+   "SLC4A2 862",
+   "TRPV1 606"
+  ],
   "shifted_by_numbering_basis": {
    "ortholog:mouse": 14,
    "mature_protein": 3,

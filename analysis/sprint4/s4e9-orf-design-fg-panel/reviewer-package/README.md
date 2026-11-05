@@ -111,10 +111,10 @@ generated from this one by `export_review_repo.py`. It contains:
 - in `historical/`, the old script versions that stages 4 and 5 rerun.
 
 The input bundle is attached to that repository's release
-[`bundle-2026-11-05-r2`](https://github.com/Deliverome-Project/l1-library-review/releases/tag/bundle-2026-11-05-r2)
-(tarball SHA-256 `6410d63cd6d59e4253f0e4241a27a01e1d9cb929c78fd78b6aea1ffc4b16b430`; the same
-file is staged at `processed://sprint4/s4e9-orf-design-fg-panel/reviewer-package/2026-11-05-r2/`).
-A rebuilt bundle goes on a new release with a new date, never over an existing one; earlier releases are `bundle-2026-11-02` (before l1-p2740..2742) and `bundle-2026-11-05` (before the audited tag-site positives were added).
+[`bundle-2026-11-05-r3`](https://github.com/Deliverome-Project/l1-library-review/releases/tag/bundle-2026-11-05-r3)
+(tarball SHA-256 `4c27cb883f00ecd424d9829cdafcb676e42f1800cf7a61a86cf05db83eca1fcf`; the same
+file is staged at `processed://sprint4/s4e9-orf-design-fg-panel/reviewer-package/2026-11-05-r3/`).
+A rebuilt bundle goes on a new release with a new date, never over an existing one; earlier releases are `bundle-2026-11-02` (before l1-p2740..2742), `bundle-2026-11-05` (before the audited tag-site positives were added) and `bundle-2026-11-05-r2` (before the stop-codon fix of 13 designed CDS and the extended audit).
 
 `EXPORT_MANIFEST.json` there records the source commit and a SHA-256 per managed file. To
 update it after changes here:

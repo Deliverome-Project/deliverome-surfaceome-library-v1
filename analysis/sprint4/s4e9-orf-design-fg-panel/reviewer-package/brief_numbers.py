@@ -194,12 +194,23 @@ def measure() -> dict:
     # --- literature tag-site positives behind the S5E13 ranker, read against their papers
     from deliverome_analysis.s3 import processed
 
-    audit = _tsv(processed.download(AUDIT_KEY))
+    rows = _tsv(processed.download(AUDIT_KEY))
     corrected = _tsv(processed.download(CORRECTED_KEY))
+    # The ranker's positives are the training rows; the audit also covers live API rows
+    # outside training, reported separately so they never change the training counts.
+    audit = [r for r in rows if r["in_training"] == "1"]
+    outside = [r for r in rows if r["in_training"] != "1"]
     shifted = [r for r in audit if r["verdict"] == "confirmed_shifted"]
     n["tag_site_audit"] = {
         "positives": len(audit),
         "verdict": dict(Counter(r["verdict"] for r in audit).most_common()),
+        "outside_training_rows": len(outside),
+        "outside_training_verdict": dict(Counter(r["verdict"] for r in outside).most_common()),
+        "outside_training_pinned_to_a_residue": sorted(
+            f"{r['gene']} {int(float(r['corrected_residue']))}"
+            for r in outside
+            if not r["insert_after_residue"] and r["corrected_residue"]
+        ),
         "shifted_by_numbering_basis": dict(
             Counter(r["paper_numbering_basis"] for r in shifted).most_common()
         ),

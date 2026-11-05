@@ -35,6 +35,15 @@ ENSEMBL = inputs.ASSEMBLIES
 # transcript that is otherwise exactly right. Anything accepted this way is
 # recorded with its distance so the call stays visible.
 VARIANT_TOLERANCE = 3
+#: Appended when an Ensembl CDS record ends on a sense codon. Ensembl leaves the stop out
+#: of some records (four KIR transcripts on alternate-haplotype scaffolds and nine cyno
+#: models in release 115) although the protein is complete and equals UniProt. An ORF
+#: without a stop would read through into the vector, so one is supplied: TAA, the stop
+#: the library's C-terminal constructs already use. The native codon cannot be read from
+#: the pinned inputs (the primary-assembly GTF does not cover those scaffolds, and no
+#: genome sequence is pinned). Entries that get one carry ``stop_added``.
+ADDED_STOP = "TAA"
+STOPS = {"TAA", "TAG", "TGA"}
 CODONS = {
     "TTT": "F", "TTC": "F", "TTA": "L", "TTG": "L", "CTT": "L", "CTC": "L", "CTA": "L",
     "CTG": "L", "ATT": "I", "ATC": "I", "ATA": "I", "ATG": "M", "GTT": "V", "GTC": "V",
@@ -116,6 +125,8 @@ class Resolver:
         prot = translate(seq).rstrip("*")
         if "*" in prot:                      # a premature stop is never right
             return None
+        if seq[-3:] not in STOPS:
+            seq += ADDED_STOP
         if want_protein is not None:
             if len(prot) != len(want_protein):
                 return None
@@ -190,10 +201,14 @@ def main() -> int:
             enst, seq, route, dist = hit
             out[key] = {"species": sp, "transcript": enst, "cds": seq,
                         "origin": group, "route": route, "variant_residues": dist}
+            if res[sp].cds[enst][1].upper()[-3:] not in STOPS:
+                out[key]["stop_added"] = ADDED_STOP
             rows.append({"key": key, "group": group, "transcript": enst,
                          "status": "ok", "route": route,
                          "detail": f"{len(seq)} nt" + (f"; {dist} residue(s) from the "
-                                                      f"UniProt sequence" if dist else "")})
+                                                      f"UniProt sequence" if dist else "")
+                         + ("; Ensembl record has no stop, TAA appended"
+                            if "stop_added" in out[key] else "")})
         else:
             rows.append({"key": key, "group": group, "transcript": ";".join(transcripts) or "-",
                          "status": "unresolved", "route": "-",
@@ -248,6 +263,8 @@ def main() -> int:
         print(f"  {g:16} {by[(g,'ok')]:6} {by[(g,'unresolved')]:11}")
     print(f"\n  routes used: {dict(route)}")
     print(f"  accepted with 1-{VARIANT_TOLERANCE} residue(s) differing: {variant}")
+    print(f"  stop codon appended (Ensembl record ends on a sense codon): "
+          f"{sorted(k for k, v in out.items() if 'stop_added' in v)}")
     print(f"  resolved {len(out)} of {len(rows)} ({len(out)/len(rows):.1%})")
     Path("candidate_inputs_provenance.json").write_text(
         json.dumps(inputs.provenance(), indent=2, sort_keys=True))

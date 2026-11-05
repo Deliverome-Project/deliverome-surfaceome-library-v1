@@ -10,16 +10,16 @@ still being worked on before the order are tracked in the
 
 You need [uv](https://docs.astral.sh/uv/) and the frozen input bundle: 79 files with a
 SHA-256 each, attached to this repository's release
-[`bundle-2026-11-05-r2`](https://github.com/Deliverome-Project/l1-library-review/releases/tag/bundle-2026-11-05-r2)
-(850 MB tarball, SHA-256 `6410d63cd6d59e4253f0e4241a27a01e1d9cb929c78fd78b6aea1ffc4b16b430`).
+[`bundle-2026-11-05-r3`](https://github.com/Deliverome-Project/l1-library-review/releases/tag/bundle-2026-11-05-r3)
+(850 MB tarball, SHA-256 `4c27cb883f00ecd424d9829cdafcb676e42f1800cf7a61a86cf05db83eca1fcf`).
 After the download, no credentials or network access are used.
 
 ```bash
-gh release download bundle-2026-11-05-r2 --repo Deliverome-Project/l1-library-review --dir ..
+gh release download bundle-2026-11-05-r3 --repo Deliverome-Project/l1-library-review --dir ..
 ```
 
 ```bash
-mkdir ../l1-reviewer-bundle && tar -xf ../l1-reviewer-bundle-2026-11-05-r2.tar -C ../l1-reviewer-bundle
+mkdir ../l1-reviewer-bundle && tar -xf ../l1-reviewer-bundle-2026-11-05-r3.tar -C ../l1-reviewer-bundle
 ```
 
 ```bash
