@@ -54,7 +54,7 @@ The six issues above map to #11–#12 (structure models), #4 (cargo), #5–#6 (l
 | [#12](https://github.com/Deliverome-Project/l1-library-review/issues/12) Apply verified offsets for the 26 'contained' members | unassigned | open |  |
 | [#15](https://github.com/Deliverome-Project/l1-library-review/issues/15) Choose which S5E13 ranker ships: v4, the audit-corrected retrain, or a PU variant | `tier-retrain` ([#232](https://github.com/Deliverome-Project/deliverome-analysis/pull/232)), `ranker-pu-segment` ([#245](https://github.com/Deliverome-Project/deliverome-analysis/pull/245)) | measurements done; decision pending | yes |
 | [#16](https://github.com/Deliverome-Project/l1-library-review/issues/16) Decide what role the agentic tag-site proposer plays for L1 multipass members | `agentic-tag-sites` ([#233](https://github.com/Deliverome-Project/deliverome-analysis/pull/233)) | benchmark reported | yes |
-| [#22](https://github.com/Deliverome-Project/l1-library-review/issues/22) Apply the tag-site literature audit to the live API and D1 | `tag-site-live-fix` ([surfaceome #459](https://github.com/Deliverome-Project/accessible-surfaceome/pull/459)) | PR open |  |
+| [#22](https://github.com/Deliverome-Project/l1-library-review/issues/22) Apply the tag-site literature audit to the live API and D1 | `tag-site-live-fix` ([surfaceome #459](https://github.com/Deliverome-Project/accessible-surfaceome/pull/459)) | done 2026-11-05 (D1 written; PR not yet merged) |  |
 | [#26](https://github.com/Deliverome-Project/l1-library-review/issues/26) Give the disorder lane a secondary-structure gate | unassigned | open |  |
 
 ### Library composition

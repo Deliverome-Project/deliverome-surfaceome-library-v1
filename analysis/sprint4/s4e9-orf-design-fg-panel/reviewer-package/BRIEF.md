@@ -294,8 +294,10 @@ The audit also read the 15 live literature rows outside the training set (`in_tr
 6 that carried no residue were pinned to one from the paper (CFTR 891, NRXN1 371, TRPV1 606,
 NRG3 275, SLC12A5 248, SLC4A2 862), ABCC1 at 4 is confirmed, ITGB7 23 shifts to 42, CNR1 25 is
 unsupported, and 6 stay region only; the 176-row table above is unchanged by them. The live
-tag-site API was not edited and still serves the uncorrected rows (checked 2026-11-05: ABCB1's
-sites are still at 101, 320, 736, 741 and 961). Nothing in the L1 tag paths depends on these
+tag-site API was corrected to these verdicts on 2026-11-05, as version `2026-11-05-lit-audit`
+([accessible-surfaceome PR 459](https://github.com/Deliverome-Project/accessible-surfaceome/pull/459)):
+178 rows written and 18 withdrawn, so ABCB1's sites, for example, are now served at 105, 324,
+740, 745 and 965. Nothing in the L1 tag paths depends on these
 sites.
 
 ## 6. Domestication and the cassette's linker encoding
