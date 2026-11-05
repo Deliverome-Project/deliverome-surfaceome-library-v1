@@ -1,8 +1,10 @@
 # L1 surface-protein ORF library: design review
 
 This repository holds the design of Deliverome's L1 ORF library for external review, and
-the code to rerun it. Start with the brief:
-[`analysis/sprint4/s4e9-orf-design-fg-panel/reviewer-package/BRIEF.md`](analysis/sprint4/s4e9-orf-design-fg-panel/reviewer-package/BRIEF.md).
+the code to rerun it. Start with the brief,
+[`BRIEF.md`](analysis/sprint4/s4e9-orf-design-fg-panel/reviewer-package/BRIEF.md). The issues
+still being worked on before the order are tracked in the
+[cover note](analysis/sprint4/s4e9-orf-design-fg-panel/reviewer-package/COVER_NOTE.md).
 
 ## Rerun the design
 

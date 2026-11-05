@@ -5,9 +5,9 @@ reading frames (ORFs): 2,732 active members, each a human, mouse or cynomolgus p
 with an epitope-tag cassette placed where it should be displayed outside the cell, cloned
 into a common lentiviral vector and identified by a DNA barcode. Nothing in L1 has been
 ordered. This brief sets out how each member was chosen and built, what is pinned so the
-design can be rerun, and the decisions we would like reviewers to weigh in on. The design
-is fixed as of **2026-11-02**; the open issues in the last two sections are stated as of
-that date and are being worked on.
+design can be rerun, and the decisions we would like reviewers to weigh in on. It describes
+the design as of **2026-11-02**; issues still being worked on before the order are listed
+separately in the [cover note](COVER_NOTE.md).
 
 Every count below is measured by [`brief_numbers.py`](brief_numbers.py) from the library's
 own tables and written to [`brief_numbers.json`](brief_numbers.json); the reviewer package
@@ -290,7 +290,7 @@ each stage must reproduce what the library actually used.
 | Source | Version pinned | Public? |
 |---|---|---|
 | accessible-surfaceome | release 1.3.0 (Zenodo) | yes |
-| accessible-surfaceome | commit f9c73691: FASTAs, DeepTMHMM tables, ortholog cohorts | repository files (see question 7 below) |
+| accessible-surfaceome | commit f9c73691: FASTAs, DeepTMHMM tables, ortholog cohorts | repository files, shared in the bundle |
 | Ensembl | release 115: human, mouse, cyno CDS and peptides; human GTF | yes |
 | UniProt | release 2026_03 tables (downloaded 2026-10-11) and REST features | yes |
 | APPRIS | e115v50 principal isoforms; 2026_06.v50 scores | yes |
@@ -315,20 +315,16 @@ fill batches, and a curated GPI attribute taken as of 2026-10-11.
 
 ## 8. Decisions we would like reviewers to weigh in on
 
-Status of each as of 2026-11-02. Questions 1–6 and 9 are open in the design; 7 and 8 are
-choices already made that we want challenged.
+The first two are choices already made that we want challenged; the third is open. Six
+further issues are still being worked on before L1 is ordered; they are listed with their
+status in the accompanying [cover note](COVER_NOTE.md), so this brief can stay a description
+of the design.
 
 | # | Question | Why it matters | What would resolve it |
 |---:|---|---|---|
-| 1 | **Structure models of a different protein.** 198 active members have a model of another proteoform and 26 a model of a longer one. | Tag-site coordinates would be numbered against a sequence the construct does not contain, and nothing downstream flags it. | Fold each "different" member from its designed CDS; verify and apply the offset for the 26 "contained" ones. |
-| 2 | **Internal-rung cargo**: ALFA alone (19 aa) or the 51-aa tandem. | At 19 aa the cassette fits 16-residue loops (e.g. the SLC16A9/12/14 block); the tandem does not, so this decides whether whole paralog groups have a site. | Decide whether internal members need SpyTag003, then calibrate the loop-length floor at that cargo size. |
-| 3 | **Loop gates** `MIN_LOOP_LEN = 8` (minimum contiguous coil/turn run) and `LOOP_SS` (coil, turn, bend or 3₁₀ only). | They change the top-ranked site for 56% and 72% of internal members respectively. In a published-junction benchmark, 28% of large-cargo insertions sit in loops shorter than 8 (n = 18). | Wet data from a ladder of coil-run lengths; the benchmark corpus is 78% small epitope tags and cannot settle it. |
-| 4 | **GPI single-pass members and the internal worklist.** The member-level ladder reroutes BST2 and RGMB to internal, but the per-gene internal-site worklist and its site generator are topology-only and do not hold them. | A GPI single-pass protein needs an ectodomain site, not a terminal or inter-TM one; until the site lanes cover it, these members have a rung but no junction. | Build the GPI internal set from the anchored genes and add the GPI branch to the per-gene rung derivation. |
-| 5 | **Vendor manufacturability scan** (GC windows, long repeats, homopolymers, hairpins) has not been run on L1. | Synthesis houses quote and schedule on these features; finding them before the order is cheaper than a failed region. | Run the scan over the L1 vectors and separate backbone regions already synthesized from new ones. |
-| 6 | **RAET1G GPI call.** Curation calls RAET1G GPI-anchored; NetGPI calls all five forms non-anchored with confidence (0.98–0.99); the set keeps it as GPI. CFC1, CRIPTO and GML carry the same conflict. | All four sit on the N-after-SP rung, so placement does not change; the conflict matters for any analysis that splits results by anchor type, and for RAET1G it is unresolved which annotation is right. | A literature or experimental check of RAET1G's anchor, recorded as a curation decision. |
-| 7 | **MANE by default for the 111 disagreements.** | 82 have no distinguishing evidence either way; a different default would change their proteoform. | Reviewer view on the default, or targeted evidence for the 20 flagged genes. |
-| 8 | **N-terminal tagging at residue 1 for type III single-pass proteins** (62 members). | Rests on a topogenesis argument only: the single helix carries the whole orientation decision, and a 51-aa cassette changes the charge balance it reads. | A small panel testing N-terminal versus loop placement on type III proteins. |
-| 9 | **Eight library genes with no buildable CDS** (FCGR2C, KIR2DS4, OR10AC1, OR12D1, OR4Q2, OR52P1, OR5AL1, OR8J2). | They pass the gene filter but are absent from L1, so any per-gene coverage figure is 8 short. | Source a CDS outside Ensembl, or record their removal as exclusions. |
+| 1 | **MANE by default for the 111 disagreements.** | 82 have no distinguishing evidence either way; a different default would change their proteoform. | Reviewer view on the default, or targeted evidence for the 20 flagged genes. |
+| 2 | **N-terminal tagging at residue 1 for type III single-pass proteins** (62 members). | Rests on a topogenesis argument only: the single helix carries the whole orientation decision, and a 51-aa cassette changes the charge balance it reads. | A small panel testing N-terminal versus loop placement on type III proteins. |
+| 3 | **Eight library genes with no buildable CDS** (FCGR2C, KIR2DS4, OR10AC1, OR12D1, OR4Q2, OR52P1, OR5AL1, OR8J2). | They pass the gene filter but are absent from L1, so any per-gene coverage figure is 8 short. | Source a CDS outside Ensembl, or record their removal as exclusions. |
 
 ## Materials and provenance
 
@@ -349,6 +345,7 @@ choices already made that we want challenged.
 |---|---|---|---|
 | 2026-11-02 | No external-facing summary of L1 | This brief and a credential-free reviewer package | External review of the design before ordering |
 | 2026-11-04 | Package shipped from the analysis repository | A private review repository with the full bundle as a release asset, internal inputs included | Reviewers need only this design's code; Becca approved sharing every bundled input |
+| 2026-11-04 | Order-blocking issues listed among the review questions | Moved to a separate cover note; the brief keeps three design questions | The brief describes the design; the cover note tracks work in progress and changes as issues close (Becca) |
 
 ## References
 
