@@ -387,6 +387,13 @@
   "corrected_corpus_residue_positives": 146,
   "corrected_corpus_region_labels": 13
  },
+ "tag_site_gold_standard": {
+  "sites": 153,
+  "proteins": 106,
+  "surface_shown_sites": 112,
+  "surface_shown_proteins": 86,
+  "surface_negative_sites": 9
+ },
  "swap_risk": {
   "members": 2710,
   "gate_bp": 100,

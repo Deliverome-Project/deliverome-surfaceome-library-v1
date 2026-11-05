@@ -28,6 +28,7 @@ FIGURES = HERE / "figures"
 #: The audit of the S5E13 literature positives (PR 236) and the corrected training corpus.
 AUDIT_KEY = "scratch/becca/tag-site-corpus-audit/audit.tsv"
 CORRECTED_KEY = "sprint5/s5e13-tag-site-benchmarking/corpus_audit_corpus.tsv"
+GOLD_KEY = "scratch/becca/tag-site-corpus-audit/gold_standard.tsv"
 
 PLACEMENTS = [
     "N after SP",
@@ -224,6 +225,15 @@ def measure() -> dict:
             r["verdict"] in ("confirmed_exact", "confirmed_shifted") for r in corrected
         ),
         "corrected_corpus_region_labels": sum(r["verdict"] == "region_only" for r in corrected),
+    }
+    gold = _tsv(processed.download(GOLD_KEY))
+    shown = [r for r in gold if r["surface_shown"] == "yes"]
+    n["tag_site_gold_standard"] = {
+        "sites": len(gold),
+        "proteins": len({r["uniprot_acc"] for r in gold}),
+        "surface_shown_sites": len(shown),
+        "surface_shown_proteins": len({r["uniprot_acc"] for r in shown}),
+        "surface_negative_sites": sum(r["surface_shown"] == "no" for r in gold),
     }
 
     # --- cassette encoding and swap risk -------------------------------------------------

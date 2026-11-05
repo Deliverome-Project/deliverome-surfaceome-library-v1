@@ -9,7 +9,7 @@ checked by this package.
 | Item | Notes |
 |---|---|
 | This repository, with its git history | a clone, or a `git bundle` of the branch. History is needed only for two stages (below). |
-| The frozen input bundle | a folder (or tarball) holding `s3/external/...` and `s3/processed/...`, 79 files, ~830 MB unpacked |
+| The frozen input bundle | a folder (or tarball) holding `s3/external/...` and `s3/processed/...`, 80 files, ~830 MB unpacked |
 | [uv](https://docs.astral.sh/uv/) | installs the locked Python environment from `uv.lock` |
 | ~10 GB free disk, ~5 minutes | the whole run is offline |
 
@@ -72,7 +72,7 @@ Each bundle file is labeled in `bundle_manifest.tsv`:
 | `public_release` | 24 | byte-identical to a named public release (Ensembl 115, UniProt 2026_03, APPRIS, OpenProt 2.2, surfaceome 1.3.0 on Zenodo, GENCODE Ribo-seq ORFs, the published GPCR screen table) |
 | `public_derived` | 7 | public data, as queried by us (PeptideAtlas build 607, MyGene.info, a UniProt keyword query) |
 | `surfaceome_repo` | 15 | files of the accessible-surfaceome repository at commit f9c73691 |
-| `deliverome_curation` | 27 | internal inputs: curation calls, the compiled expression table, the vector backbone map, DeepTMHMM predictions, and the audited S5E13 tag-site positives the brief cites |
+| `deliverome_curation` | 28 | internal inputs: curation calls, the compiled expression table, the vector backbone map, DeepTMHMM predictions, and the audited S5E13 tag-site positives the brief cites |
 | `deliverome_record` | 6 | the published library records the replay is compared with |
 
 Reviewers receive the full bundle, all five classes (Becca, 2026-11-04). A bundle can still
@@ -111,10 +111,10 @@ generated from this one by `export_review_repo.py`. It contains:
 - in `historical/`, the old script versions that stages 4 and 5 rerun.
 
 The input bundle is attached to that repository's release
-[`bundle-2026-11-05-r3`](https://github.com/Deliverome-Project/l1-library-review/releases/tag/bundle-2026-11-05-r3)
-(tarball SHA-256 `4c27cb883f00ecd424d9829cdafcb676e42f1800cf7a61a86cf05db83eca1fcf`; the same
-file is staged at `processed://sprint4/s4e9-orf-design-fg-panel/reviewer-package/2026-11-05-r3/`).
-A rebuilt bundle goes on a new release with a new date, never over an existing one; earlier releases are `bundle-2026-11-02` (before l1-p2740..2742), `bundle-2026-11-05` (before the audited tag-site positives were added) and `bundle-2026-11-05-r2` (before the stop-codon fix of 13 designed CDS and the extended audit).
+[`bundle-2026-11-05-r4`](https://github.com/Deliverome-Project/l1-library-review/releases/tag/bundle-2026-11-05-r4)
+(tarball SHA-256 `e0f708ee826b0210767ad58096d559d2e850c2f15162772335b18b051ab037a7`; the same
+file is staged at `processed://sprint4/s4e9-orf-design-fg-panel/reviewer-package/2026-11-05-r4/`).
+A rebuilt bundle goes on a new release with a new date, never over an existing one; earlier releases are `bundle-2026-11-02` (before l1-p2740..2742), `bundle-2026-11-05` (before the audited tag-site positives were added) `bundle-2026-11-05-r2` (before the stop-codon fix of 13 designed CDS and the extended audit) and `bundle-2026-11-05-r3` (before the tag-site gold standard).
 
 `EXPORT_MANIFEST.json` there records the source commit and a SHA-256 per managed file. To
 update it after changes here:

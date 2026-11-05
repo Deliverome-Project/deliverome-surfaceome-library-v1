@@ -99,6 +99,11 @@ SOURCES: list[tuple[str, str, str]] = [
         "audit of the 176 S5E13 literature tag-site positives against their papers (PR 236)",
     ),
     (
+        r"processed/scratch/becca/tag-site-corpus-audit/gold_standard\.tsv",
+        "deliverome_curation",
+        "gold standard: the audit's confirmed sites, one per (accession, residue) (PR 236)",
+    ),
+    (
         r"processed/sprint5/s5e13-tag-site-benchmarking/corpus_audit_corpus\.tsv",
         "deliverome_curation",
         "S5E13 training corpus with the audit's corrections (PR 232)",

@@ -272,8 +272,11 @@ procedure in `scratch/becca/tag-site-corpus-audit/README.md` on that branch):
 
 The corrected training set (146 positives at the paper's residue, 13 region labels, the 17
 dropped) is `processed://sprint5/s5e13-tag-site-benchmarking/corpus_audit_corpus.tsv`, and the
-per-site audit with each paper's quote is `processed://scratch/becca/tag-site-corpus-audit/audit.tsv`;
-both are in the reviewer bundle. The audit also read the 15 live literature rows outside the
+per-site audit with each paper's quote is `processed://scratch/becca/tag-site-corpus-audit/audit.tsv`.
+Its confirmed sites, one row per protein and residue, form a gold standard of 153 sites on 106
+proteins (112 sites on 86 proteins with surface display shown, 9 shown not to reach the
+surface), `processed://scratch/becca/tag-site-corpus-audit/gold_standard.tsv`. All three are in
+the reviewer bundle. The audit also read the 15 live literature rows outside the
 training set (`in_training = 0` in the same file): 6 that carried no residue were pinned to one
 from the paper (CFTR 891, NRXN1 371, TRPV1 606, NRG3 275, SLC12A5 248, SLC4A2 862), ABCC1 at 4
 is confirmed, ITGB7 23 shifts to 42, CNR1 25 is unsupported, and 6 stay region only. The
@@ -383,8 +386,8 @@ of the design.
 | Tag paths | `../l1_tag_paths.tsv`, [`../TAG_PATHS.md`](../TAG_PATHS.md) | committed |
 | Cassette encodings and swap risk | `../l1_cassette_encodings.tsv`, `../l1_swap_risk.tsv`, `../l1_swap_risk_summary.json` | committed |
 | Model-vs-protein check | `../proteoform_match.tsv` | committed |
-| Reviewer bundle | [`bundle_manifest.tsv`](bundle_manifest.tsv) (79 files, SHA-256 each) | shared in full as a dated release asset of the review repository (current: `bundle-2026-11-05-r3`) |
-| Audited tag-site positives (S5E13 ranker) | `audit.tsv`, `corpus_audit_corpus.tsv` (paths in section 5) | in the reviewer bundle; audit is [PR 236](https://github.com/Deliverome-Project/deliverome-analysis/pull/236) |
+| Reviewer bundle | [`bundle_manifest.tsv`](bundle_manifest.tsv) (80 files, SHA-256 each) | shared in full as a dated release asset of the review repository (current: `bundle-2026-11-05-r4`) |
+| Audited tag-site positives (S5E13 ranker) | `audit.tsv`, `corpus_audit_corpus.tsv`, `gold_standard.tsv` (paths in section 5) | in the reviewer bundle; audit is [PR 236](https://github.com/Deliverome-Project/deliverome-analysis/pull/236) |
 | Numbers and figures in this brief | [`brief_numbers.py`](brief_numbers.py) → [`brief_numbers.json`](brief_numbers.json), `figures/` | committed |
 
 ## Decision log
