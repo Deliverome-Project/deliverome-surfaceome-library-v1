@@ -1,6 +1,6 @@
 {
  "source_repository": "Deliverome-Project/deliverome-analysis",
- "source_commit": "e7f69b7b217c7b32f20e6da1d8330a698dff155e",
+ "source_commit": "1f8c07d81460b612ae14b13e6931da1b840247d9",
  "source_ref": "HEAD",
  "files": {
   ".gitignore": "9e560f31483d07e05b0bc261db55f6d4814378150f3a28dfff6e6703db694c37",
@@ -207,8 +207,8 @@
   "analysis/sprint4/s4e9-orf-design-fg-panel/reserve_barcodes.py": "90cc4b30d31b6c8b497e7015de5405edf7e96a3205d87fb52514c703ef25b803",
   "analysis/sprint4/s4e9-orf-design-fg-panel/residue_offsets.tsv": "90ead677d83fa0d8bbed6bafcec64be46c59300527061f72c8c8bcd24503f840",
   "analysis/sprint4/s4e9-orf-design-fg-panel/retrofit_mirna_handle.py": "08b1c909a3e882016eb443708bf2335a8f58afccc68a5df1036df0956f27e0b8",
-  "analysis/sprint4/s4e9-orf-design-fg-panel/reviewer-package/BRIEF.md": "098492ca5869ed8ed496f77c3c9edb5269807cb68688c59adb4666a25875adb3",
-  "analysis/sprint4/s4e9-orf-design-fg-panel/reviewer-package/COVER_NOTE.md": "32f929a62cf8f0fe87813e103c76c62203b5982bcfd734967e0a5dc1ad198e02",
+  "analysis/sprint4/s4e9-orf-design-fg-panel/reviewer-package/BRIEF.md": "36a12097ef891243ac2b53dfaaf05229f3d3a55a4e578edc1d9b2a0c657914ba",
+  "analysis/sprint4/s4e9-orf-design-fg-panel/reviewer-package/COVER_NOTE.md": "d5b3c669fa5e383a85ab80d9480901a290909233e9280ac8317476506c090888",
   "analysis/sprint4/s4e9-orf-design-fg-panel/reviewer-package/README.md": "8e85f2382270f74715daaf9a65135cef95da9e161e5385b040fbfc54114733c2",
   "analysis/sprint4/s4e9-orf-design-fg-panel/reviewer-package/brief_numbers.json": "8173a96a5563f2e5fd8b26fc37920578686bc874020d73b551282ec4d8c29e60",
   "analysis/sprint4/s4e9-orf-design-fg-panel/reviewer-package/brief_numbers.py": "9d48e093e6c29633245242cab64f362a8c68f64a2e3fa20b4f47cde841592d6b",

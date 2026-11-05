@@ -197,6 +197,9 @@ from its gene's canonical (SLC9D1's ordered isoform has 3 TM helices against the
 | C-terminal | C-terminus extracellular | topology only | 218 |
 | internal | neither terminus extracellular, or GPI-anchored with an ecto-C call | needs a loop or ectodomain site | 567 |
 
+A site is written as `insert_after_residue` *n*: 1-based on the member's designed protein, so
+the cassette goes after codon *n*, at nucleotide 3*n* counted from the A of the start codon.
+
 Two rules sit on top of the ladder. A GPI-anchored protein's C-terminus is removed at its
 ω-site, so a C-terminal call for one is rerouted to internal; this touches 2 members, BST2
 and RGMB. Shedding risk is recorded but never moves a rung, because none of the members at
@@ -365,10 +368,10 @@ fill batches, and a curated GPI attribute taken as of 2026-10-11.
 
 ## 8. Decisions we would like reviewers to weigh in on
 
-The first two are choices already made that we want challenged; the third is open. Six
-further issues are still being worked on before L1 is ordered; they are listed with their
-status in the accompanying [cover note](COVER_NOTE.md), so this brief can stay a description
-of the design.
+The first two are choices already made that we want challenged; the third is open. Everything
+still being worked on before L1 is ordered is tracked, with its owner and status, in the
+accompanying [cover note](COVER_NOTE.md) and as issues on the review repository, so this brief
+can stay a description of the design.
 
 | # | Question | Why it matters | What would resolve it |
 |---:|---|---|---|
