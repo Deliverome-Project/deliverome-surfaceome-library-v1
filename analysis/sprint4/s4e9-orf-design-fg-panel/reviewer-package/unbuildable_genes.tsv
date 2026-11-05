@@ -1,0 +1,71 @@
+gene	uniprot	uniprot_aa	transcript	biotype	ensembl_aa	vs_uniprot
+FCGR2C	P31995	323	ENST00000466542	protein_coding_LoF	323	same length, 2 residue(s) differ
+KIR2DS4	P43632	304	ENST00000339924	protein_coding_LoF	297	-7 aa; 182/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000391729	protein_coding_LoF	225	-79 aa; 174/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000610558	protein_coding	171	-133 aa; 110/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000610808	protein_coding_LoF	297	-7 aa; 182/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000611311	protein_coding	304	identical
+KIR2DS4	P43632	304	ENST00000611873	protein_coding_LoF	297	-7 aa; 182/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000612783	protein_coding	304	identical
+KIR2DS4	P43632	304	ENST00000613022	protein_coding	454	+150 aa; 282/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000613379	protein_coding_LoF	374	+70 aa; 164/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000613654	protein_coding	304	identical
+KIR2DS4	P43632	304	ENST00000614639	protein_coding	301	-3 aa; 301/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000615270	protein_coding_LoF	297	-7 aa; 182/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000615996	protein_coding_LoF	374	+70 aa; 166/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000616914	protein_coding_LoF	297	-7 aa; 180/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000617469	protein_coding	304	identical
+KIR2DS4	P43632	304	ENST00000617550	protein_coding	239	-65 aa; 179/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000617783	protein_coding	398	+94 aa; 304/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000617825	protein_coding	304	identical
+KIR2DS4	P43632	304	ENST00000618023	protein_coding_LoF	297	-7 aa; 180/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000619141	protein_coding_LoF	297	-7 aa; 180/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000619771	protein_coding	304	identical
+KIR2DS4	P43632	304	ENST00000619816	protein_coding_LoF	225	-79 aa; 174/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000620669	protein_coding	304	identical
+KIR2DS4	P43632	304	ENST00000621436	protein_coding	304	identical
+KIR2DS4	P43632	304	ENST00000621713	protein_coding_LoF	297	-7 aa; 180/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000621830	protein_coding_LoF	225	-79 aa; 172/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000621991	protein_coding_LoF	297	-7 aa; 182/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000638401	protein_coding_LoF	297	-7 aa; 182/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000638472	protein_coding_LoF	297	-7 aa; 182/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000638566	protein_coding	304	identical
+KIR2DS4	P43632	304	ENST00000638649	protein_coding	454	+150 aa; 282/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000638933	protein_coding_LoF	297	-7 aa; 180/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000639095	protein_coding_LoF	225	-79 aa; 172/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000639404	protein_coding_LoF	225	-79 aa; 172/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000639581	protein_coding_LoF	297	-7 aa; 180/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000639960	protein_coding_LoF	225	-79 aa; 172/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000640180	protein_coding_LoF	225	-79 aa; 174/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000640257	protein_coding_LoF	225	-79 aa; 174/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000640635	protein_coding_LoF	297	-7 aa; 182/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000640817	protein_coding	304	identical
+KIR2DS4	P43632	304	ENST00000640926	protein_coding_LoF	225	-79 aa; 174/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000640941	protein_coding	304	identical
+KIR2DS4	P43632	304	ENST00000642862	protein_coding	304	identical
+KIR2DS4	P43632	304	ENST00000644051	protein_coding	304	identical
+KIR2DS4	P43632	304	ENST00000644154	protein_coding	304	identical
+KIR2DS4	P43632	304	ENST00000671694	protein_coding	222	-82 aa; 170/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000671832	protein_coding	222	-82 aa; 170/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000671987	protein_coding	287	-17 aa; 287/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000672173	protein_coding	287	-17 aa; 287/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000672464	protein_coding	222	-82 aa; 170/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000672678	protein_coding	287	-17 aa; 287/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000672747	protein_coding	287	-17 aa; 287/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000672856	protein_coding	222	-82 aa; 170/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000673305	protein_coding	222	-82 aa; 170/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000673394	protein_coding	287	-17 aa; 287/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000673412	protein_coding	222	-82 aa; 170/304 reference residues aligned
+KIR2DS4	P43632	304	ENST00000673435	protein_coding	287	-17 aa; 287/304 reference residues aligned
+OR10AC1	Q8NH08	325	ENST00000439431	protein_coding_LoF	326	+1 aa; 97/325 reference residues aligned
+OR10AC1	Q8NH08	325	ENST00000645657	protein_coding_LoF	326	+1 aa; 97/325 reference residues aligned
+OR12D1	P0DN82	320	ENST00000514827	protein_coding_LoF	315	-5 aa; 203/320 reference residues aligned
+OR12D1	P0DN82	320	ENST00000703726	protein_coding	320	identical
+OR4Q2	P0C623	314	ENST00000541415	protein_coding_LoF	314	same length, 121 residue(s) differ
+OR4Q2	P0C623	314	ENST00000710368	protein_coding	313	-1 aa; 312/314 reference residues aligned
+OR52P1	Q8NH57	321	ENST00000438474	protein_coding_LoF	320	-1 aa; 191/321 reference residues aligned
+OR5AL1	P0C617	329	ENST00000440231	protein_coding_LoF	328	-1 aa; 194/329 reference residues aligned
+OR5AL1	P0C617	329	ENST00000710330	protein_coding	329	identical
+OR8J2	Q8NGG1	315	ENST00000570683	protein_coding_LoF	315	same length, 1 residue(s) differ
+OR8J2	Q8NGG1	315	ENST00000641465	protein_coding_LoF	315	same length, 1 residue(s) differ
+OR8J2	Q8NGG1	315	ENST00000708991	protein_coding_LoF	315	same length, 1 residue(s) differ

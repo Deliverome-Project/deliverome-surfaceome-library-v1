@@ -49,10 +49,28 @@ the extracellular side, and its barcode cannot be confused with another member's
 
 The 2,357 references cover 2,369 library genes. Of the 12 genes without a reference member,
 4 are paralogs whose identical protein is built under another symbol (OPN1MW2, OPN1MW3,
-OR2A42, UPK3BL2; section 4), and 8 have no buildable CDS in Ensembl 115: three pseudogenes
-with a premature stop (FCGR2C, OR52P1, OR8J2), KIR2DS4 with no clean transcript, and four
-olfactory receptors whose transcripts differ by a few residues from the selected form
-(OR10AC1, OR12D1, OR4Q2, OR5AL1). Those 8 are absent from L1. Member CDS have a median
+OR2A42, UPK3BL2; section 4), and 8 have no member because the human reference genome
+(GRCh38) carries a broken copy of them. Ensembl 115 annotates each primary-assembly
+transcript as `protein_coding_LoF`, so none has a MANE Select transcript, and the ladder took
+the APPRIS principal, which is that broken transcript. CDS resolution refuses any
+transcript that does not translate to an intact protein, and found no other.
+[`unbuildable_genes.py`](unbuildable_genes.py) compares each with its reviewed UniProt
+entry, which describes the intact protein:
+
+| Gene | Defect in the GRCh38 copy | Intact copy in Ensembl 115 |
+|---|---|---|
+| FCGR2C | premature stop at codon 57 (UniProt Q), plus one residue difference | none |
+| OR8J2 | premature stop at codon 64 (UniProt R) | none |
+| OR10AC1, OR52P1 | frameshift: under two thirds of the protein aligns | none |
+| OR4Q2 | frameshift and compensating frameshift (121 residues out of frame) | a patch-scaffold transcript, 1 residue short of UniProt |
+| KIR2DS4 | 297-aa loss-of-function form | identical to UniProt on alternative KIR haplotype scaffolds |
+| OR12D1 | 5 residues short, out of frame from residue ~200 | identical to UniProt on an alternative MHC haplotype scaffold |
+| OR5AL1 | 1 residue short, out of frame | identical to UniProt on a patch scaffold |
+
+The last three are buildable from Ensembl 115 as it stands: the resolver did not reach their
+alternative-haplotype transcripts, because their selected form carries no UniProt accession
+and its length is the broken copy's. The first five would need the intact allele written
+from UniProt rather than taken from an Ensembl transcript. Those 8 are absent from L1. Member CDS have a median
 length of 1,389 nt; finished vectors are 7,753–12,706 bp (median 8,956).
 
 ## 2. Genes: from the surfaceome universe to 2,369
@@ -324,7 +342,7 @@ of the design.
 |---:|---|---|---|
 | 1 | **MANE by default for the 111 disagreements.** | 82 have no distinguishing evidence either way; a different default would change their proteoform. | Reviewer view on the default, or targeted evidence for the 20 flagged genes. |
 | 2 | **N-terminal tagging at residue 1 for type III single-pass proteins** (62 members). | Rests on a topogenesis argument only: the single helix carries the whole orientation decision, and a 51-aa cassette changes the charge balance it reads. | A small panel testing N-terminal versus loop placement on type III proteins. |
-| 3 | **Eight library genes with no buildable CDS** (FCGR2C, KIR2DS4, OR10AC1, OR12D1, OR4Q2, OR52P1, OR5AL1, OR8J2). | They pass the gene filter but are absent from L1, so any per-gene coverage figure is 8 short. | Source a CDS outside Ensembl, or record their removal as exclusions. |
+| 3 | **Eight library genes whose reference-genome copy is broken** (section 1). | They pass the gene filter but are absent from L1, so any per-gene coverage figure is 8 short; the gene filter selects genes, but the reference genome encodes a non-functional allele for these. | Build KIR2DS4, OR12D1 and OR5AL1 from their intact alternative-haplotype transcripts; for the other five, decide between building the UniProt allele and recording an exclusion. |
 
 ## Materials and provenance
 
