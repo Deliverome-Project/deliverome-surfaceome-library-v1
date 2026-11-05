@@ -1053,8 +1053,8 @@ l1-p1051	KIR2DL1	library_reference	N after SP	71	l1-p1052	71	l1-p1052	71	l1-p105
 l1-p1052	KIR2DL2	library_reference	N after SP	71	l1-p1051	71	l1-p1051	71	l1-p1051
 l1-p1053	KIR2DL3	library_reference	N after SP	30	l1-p0179	30	l1-p0179	30	l1-p0179
 l1-p1054	KIR2DL5A	library_reference	N after SP	29	l1-p1748	29	l1-p1748	29	l1-p1748
-l1-p1055	KIR2DS2	library_reference	N after SP	48	l1-p1056	48	l1-p1056	48	l1-p1056
-l1-p1056	KIR2DS5	library_reference	N after SP	48	l1-p1055	48	l1-p1055	48	l1-p1055
+l1-p1055	KIR2DS2	library_reference	N after SP	125	l1-p2740	125	l1-p2740	125	l1-p2740
+l1-p1056	KIR2DS5	library_reference	N after SP	48	l1-p2740	48	l1-p2740	48	l1-p2740
 l1-p1057	KIR3DL1	library_reference	N after SP	50	l1-p1051	50	l1-p1051	50	l1-p1051
 l1-p1058	KIR3DL2	library_reference	N after SP	29	l1-p1463	29	l1-p1463	29	l1-p1463
 l1-p1059	KIR3DL3	library_reference	N after SP	33	l1-p0279	33	l1-p0279	33	l1-p0279
@@ -1440,7 +1440,7 @@ l1-p1441	OR3A3	library_reference	N at residue 1, multipass	35	l1-p1440	35	l1-p14
 l1-p1442	OR4A16	library_reference	N at residue 1, multipass	29	l1-p0735	29	l1-p0735	29	l1-p0735
 l1-p1443	OR4A47	library_reference	N at residue 1, multipass	29	l1-p1791	29	l1-p1791	29	l1-p1791
 l1-p1444	OR4B1	library_reference	N at residue 1, multipass	30	l1-p1448	30	l1-p1448	30	l1-p1448
-l1-p1445	OR4C13	library_reference	N at residue 1, multipass	29	l1-p2489	29	l1-p2489	29	l1-p2489
+l1-p1445	OR4C13	library_reference	N at residue 1, multipass	31	l1-p2742	31	l1-p2742	31	l1-p2742
 l1-p1446	OR4C5	library_reference	N at residue 1, multipass	29	l1-p1901	29	l1-p1901	29	l1-p1901
 l1-p1447	OR4C6	library_reference	N at residue 1, multipass	30	l1-p1011	30	l1-p1011	30	l1-p1011
 l1-p1448	OR4D1	library_reference	N at residue 1, multipass	30	l1-p1444	30	l1-p1444	30	l1-p1444
@@ -2083,7 +2083,7 @@ l1-p2084	SUCNR1	library_reference	N at residue 1, multipass	30	l1-p1829	30	l1-p1
 l1-p2085	SUSD2	library_reference	N after SP	30	l1-p2022	30	l1-p2022	30	l1-p2022
 l1-p2086	SUSD3	library_reference	N at residue 1, single-pass (type III)	232	l1-p2733	232	l1-p2733	232	l1-p2733
 l1-p2087	SUSD4	library_reference	N after SP	29	l1-p0310	29	l1-p0310	29	l1-p0310
-l1-p2088	SUSD6	library_reference	N after SP	29	l1-p1276	29	l1-p1276	29	l1-p1276
+l1-p2088	SUSD6	library_reference	N after SP	30	l1-p2741	30	l1-p2741	30	l1-p2741
 l1-p2089	TAAR1	library_reference	N at residue 1, multipass	29	l1-p1709	29	l1-p1709	29	l1-p1709
 l1-p2090	TAAR2	library_reference	N at residue 1, multipass	31	l1-p0910	31	l1-p0910	31	l1-p0910
 l1-p2091	TAAR5	library_reference	N at residue 1, multipass	30	l1-p1241	30	l1-p1241	30	l1-p1241
@@ -2706,3 +2706,6 @@ l1-p2736	EMB	ortholog	N after SP	28	l1-p1427	28	l1-p1427	28	l1-p1427
 l1-p2737	NT5E	ortholog	N after SP	30	l1-p1332	30	l1-p1332	30	l1-p1332
 l1-p2738	CADM2	ortholog	N after SP	48	l1-p0227	48	l1-p0227	48	l1-p0227
 l1-p2739	SLC67A1	library_reference	internal	27	l1-p0907	27	l1-p0907	27	l1-p0907
+l1-p2740	KIR2DS4	library_reference	N after SP	125	l1-p1055	125	l1-p1055	125	l1-p1055
+l1-p2741	OR12D1	library_reference	N at residue 1, multipass	30	l1-p2088	30	l1-p2088	30	l1-p2088
+l1-p2742	OR5AL1	library_reference	N at residue 1, multipass	31	l1-p1445	31	l1-p1445	31	l1-p1445

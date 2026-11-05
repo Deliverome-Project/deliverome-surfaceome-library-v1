@@ -47,6 +47,8 @@ MAX_CASSETTE_SHARED = len(TAIL) + 14
 #: Different genes whose ORFs share >100 nt of 3' coding sequence, accepted because the
 #: shared stretch lies upstream of the cassette and no encoding can shorten it: clustered
 #: protocadherins (shared constant exons) and close paralogs. A new gene here is a decision.
+#: KIR2DS2/KIR2DS4 (125 nt) accepted by Becca on 2026-11-05 when KIR2DS4 joined L1 as
+#: l1-p2740: a small share of the library, and swaps scale with abundance.
 ACCEPTED_DIFFERENT_GENE_HOMOLOGY = frozenset(
     {
         "CNTNAP3",
@@ -65,6 +67,8 @@ ACCEPTED_DIFFERENT_GENE_HOMOLOGY = frozenset(
         "OR8U9",
         "RAET1L",
         "ULBP2",
+        "KIR2DS2",
+        "KIR2DS4",
     }
     | {f"PCDHA{n}" for n in (1, 2, 3, 5, 6, 7, 9, 10, 11, 12, 13)}
     | {"PCDHAC1", "PCDHAC2"}

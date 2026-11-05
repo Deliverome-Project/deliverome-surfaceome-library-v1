@@ -120,6 +120,15 @@ def collect(out: Path) -> int:
         "HOME": tempfile.mkdtemp(prefix="l1-bundle-home-"),
         "PYTHONHASHSEED": "0",
     }
+    # The fresh HOME hides developer caches; it must not also hide the AWS profile that
+    # the credentials come from (AWS_PROFILE would then name a profile that does not exist).
+    for var, name in (
+        ("AWS_CONFIG_FILE", "config"),
+        ("AWS_SHARED_CREDENTIALS_FILE", "credentials"),
+    ):
+        real = Path.home() / ".aws" / name
+        if var not in env and real.is_file():
+            env[var] = str(real)
     rc = subprocess.run([sys.executable, "library_pipeline.py", "verify"], cwd=S4E9, env=env)
     work = Path(tempfile.mkdtemp())
     rc2 = subprocess.run(
@@ -147,6 +156,8 @@ def manifest(bundle: Path) -> int:
                 "origin": origin,
             }
         )
+    if not rows:
+        raise SystemExit(f"{root} holds no files; refusing to overwrite {MANIFEST.name}")
     with MANIFEST.open("w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=list(rows[0]), delimiter="\t", lineterminator="\n")
         w.writeheader()

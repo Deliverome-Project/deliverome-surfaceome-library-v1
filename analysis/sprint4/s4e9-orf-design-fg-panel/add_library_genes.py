@@ -20,6 +20,13 @@ other reference went through, run from the same pinned inputs:
 An added gene is not eligible for the isoform or ortholog panels: those draw from the pinned
 isoform universe and ortholog repick (``panel_inputs.json``), which predate it.
 
+**Rebuilt genes** are root genes that had no member because GRCh38 carries a
+loss-of-function copy (Ensembl ``protein_coding_LoF``) and the ladder's pick was that
+transcript. A named override with basis ``reference_allele_lof`` in
+``reference_overrides.tsv`` points the reference at the intact UniProt protein; the gene then
+goes through the same stages as an addition. Only its own reference row may change, and every
+other recorded row and CDS must still reproduce.
+
 The pre-tranche ``candidate_manifest.tsv`` and ``candidate_vectors.fasta.gz`` on S3 number
 members by sorted position, a namespace the tranche split abandoned, so they are left as the
 historical intermediate. Added genes' vectors go to ``library-candidates/added_vectors.fasta``
@@ -58,6 +65,16 @@ SUMMARY = lp.AP / "reference_selection_summary.json"
 DESIGN = "library-design/"
 CANDIDATES = "library-candidates/"
 VECTORS = CANDIDATES + "added_vectors.fasta"
+OVERRIDES = lp.AP / "reference_overrides.tsv"
+REBUILD_BASIS = "reference_allele_lof"
+
+
+def rebuilt_genes() -> list[str]:
+    """Root genes whose reference a ``reference_allele_lof`` override repoints."""
+    with OVERRIDES.open() as fh:
+        return [
+            r["gene"] for r in csv.DictReader(fh, delimiter="\t") if r["basis"] == REBUILD_BASIS
+        ]
 
 
 def unix(path: Path) -> list[str]:
@@ -68,6 +85,8 @@ def reproduce(work: Path) -> dict:
     """Rerun every stage for root + additions and check nothing recorded moved."""
     with lp.ADDITIONS.open() as fh:
         additions = [r["gene"] for r in csv.DictReader(fh, delimiter="\t")]
+    rebuilt = rebuilt_genes()
+    additions += [g for g in rebuilt if g not in additions]
     with MANIFEST.open() as fh:
         reader = csv.DictReader(fh, delimiter="\t")
         cols, rows = list(reader.fieldnames or []), list(reader)
@@ -78,7 +97,8 @@ def reproduce(work: Path) -> dict:
     rec = unix(lp.record(DESIGN + "reference_selection.tsv", work / "rec_ref.tsv"))
     new = unix(out / "reference_selection.tsv")
     assert new[0] == rec[0], "reference_selection.tsv header changed"
-    gone = sorted(set(rec) - set(new))
+    # A rebuilt gene's row is replaced by its override; no other recorded row may move.
+    gone = sorted(line for line in set(rec) - set(new) if line.split("\t")[0] not in rebuilt)
     assert not gone, f"{len(gone)} recorded reference row(s) changed, e.g. {gone[0][:80]}"
     added_rows = {line.split("\t")[0] for line in set(new) - set(rec)}
     assert added_rows <= set(additions), f"reference rows for unlisted genes: {added_rows}"
@@ -183,7 +203,8 @@ def main(argv=None) -> int:
             w = csv.DictWriter(fh, fieldnames=r["cols"], delimiter="\t", lineterminator="\n")
             w.writeheader()
             w.writerows(r["rows"] + r["added"])
-        lines = unix(COVERAGE)
+        # Replace a rebuilt gene's "unresolved" line rather than adding a second one.
+        lines = [ln for ln in unix(COVERAGE) if ln.split("\t")[0] not in r["coverage"]]
         COVERAGE.write_text("\n".join(lines + list(r["coverage"].values())) + "\n")
         SUMMARY.write_text((r["reference_dir"] / "reference_selection_summary.json").read_text())
         print(f"appended {len(r['added'])} row(s) to {MANIFEST.name}; updated {COVERAGE.name}")

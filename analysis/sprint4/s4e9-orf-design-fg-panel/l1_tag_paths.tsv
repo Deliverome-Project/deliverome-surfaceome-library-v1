@@ -2706,3 +2706,6 @@ l1-p2736	l1	ortholog	mouse	EMB	N after SP	N after SP	0	1	30	330	0	235	31	n_termi
 l1-p2737	l1	ortholog	mouse	NT5E	N after SP	N after SP	0	0	28	576	0	548	29	no_tm	moderate	moderate	mouse_ortholog	topo_2026_05_16	e5ec91bc62b704599a9da73d1ac165cdae853d5bde33dc94b44cb33397d6423a
 l1-p2738	l1	ortholog	mouse	CADM2	N after SP	N after SP	0	1	23	404	0	314	24	n_terminal	moderate	moderate	mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	0aeb680fd74e5ea9493c7f533347bacf015df40a376fbaa0466425ab017ddffc
 l1-p2739	l1	library_reference	human	SLC67A1	internal	internal	0	12	0	424	16	16	262	inter_tm			human_canonical	topo_2026_05_16	42e60206bc50fc6304e4f5d4cb2b1bbf21fd04ca8fa4e288b69f92df7d5215c1
+l1-p2740	l1	library_reference	human	KIR2DS4	N after SP	N after SP	0	1	21	304	0	224	22	n_terminal			human_canonical	topo_2026_05_16	8383d4262724f95b3c2b29768b2aa5130a24324b8ddc0dc786133620d9daefcc
+l1-p2741	l1	library_reference	human	OR12D1	N at residue 1, multipass	N at residue 1	0	7	0	320	32	32	163	inter_tm			human_canonical	topo_2026_05_16	c8ad7588b84e59fe348b80798a30348b0c623442aa6668e55d53fb7d4c97f828
+l1-p2742	l1	library_reference	human	OR5AL1	N at residue 1, multipass	N at residue 1	0	7	0	329	32	40	1	n_terminal			human_canonical	topo_2026_05_16	7c6df0f8d3641c1ee273e26a005c9ca322ca00b6376f30e17f12b6d52d6939bf

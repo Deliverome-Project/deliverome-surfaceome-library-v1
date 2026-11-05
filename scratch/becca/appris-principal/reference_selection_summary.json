@@ -14,11 +14,11 @@
   },
   "selected_source": {
     "mane": 2277,
-    "appris": 74,
+    "appris": 71,
     "uniprot_canonical": 11,
-    "named": 7
+    "named": 10
   },
-  "changes_current_reference": 217,
+  "changes_current_reference": 214,
   "needs_review": 20,
   "both_lanes": [
     "ATP2B2",

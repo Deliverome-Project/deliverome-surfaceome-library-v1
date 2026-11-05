@@ -1,7 +1,7 @@
 # The L1 surface-protein ORF library: design brief for external review
 
 L1 is the first tranche of Deliverome's barcoded library of cell-surface protein open
-reading frames (ORFs): 2,732 active members, each a human, mouse or cynomolgus proteoform
+reading frames (ORFs): 2,735 active members, each a human, mouse or cynomolgus proteoform
 with an epitope-tag cassette placed where it should be displayed outside the cell, cloned
 into a common lentiviral vector and identified by a DNA barcode. Nothing in L1 has been
 ordered. This brief sets out how each member was chosen and built, what is pinned so the
@@ -41,21 +41,21 @@ the extracellular side, and its barcode cannot be confused with another member's
 
 | Candidate set | L1 active members | What it adds |
 |---|---:|---|
-| library reference | 2,357 | one reference proteoform per library gene |
+| library reference | 2,360 | one reference proteoform per library gene |
 | isoform | 150 | alternative human proteoforms of 137 genes |
 | ortholog | 200 | 100 mouse + 100 cyno proteoforms |
 | expression rescue | 25 | Igκ-leader and recoded arms of poorly expressed GPCRs |
-| **total** | **2,732** | 7 further members were retired as duplicate proteins |
+| **total** | **2,735** | 7 further members were retired as duplicate proteins |
 
-The 2,357 references cover 2,369 library genes. Of the 12 genes without a reference member,
+The 2,360 references cover 2,369 library genes. Of the 9 genes without a reference member,
 4 are paralogs whose identical protein is built under another symbol (OPN1MW2, OPN1MW3,
-OR2A42, UPK3BL2; section 4), and 8 have no member because the human reference genome
-(GRCh38) carries a broken copy of them. Ensembl 115 annotates each primary-assembly
-transcript as `protein_coding_LoF`, so none has a MANE Select transcript, and the ladder took
-the APPRIS principal, which is that broken transcript. CDS resolution refuses any
-transcript that does not translate to an intact protein, and found no other.
-[`unbuildable_genes.py`](unbuildable_genes.py) compares each with its reviewed UniProt
-entry, which describes the intact protein:
+OR2A42, UPK3BL2; section 4), and 5 have no member because the human reference genome
+(GRCh38) carries a broken copy and Ensembl 115 has no intact one. Ensembl 115 annotates their
+primary-assembly transcripts as `protein_coding_LoF`, so none has a MANE Select transcript, the
+ladder took the APPRIS principal (that broken transcript), and CDS resolution refuses any
+transcript that does not translate to an intact protein. Each is compared with its reviewed
+UniProt entry, which describes the intact protein, by
+[`unbuildable_genes.py`](unbuildable_genes.py):
 
 | Gene | Defect in the GRCh38 copy | Intact copy in Ensembl 115 |
 |---|---|---|
@@ -63,15 +63,16 @@ entry, which describes the intact protein:
 | OR8J2 | premature stop at codon 64 (UniProt R) | none |
 | OR10AC1, OR52P1 | frameshift: under two thirds of the protein aligns | none |
 | OR4Q2 | frameshift and compensating frameshift (121 residues out of frame) | a patch-scaffold transcript, 1 residue short of UniProt |
-| KIR2DS4 | 297-aa loss-of-function form | identical to UniProt on alternative KIR haplotype scaffolds |
-| OR12D1 | 5 residues short, out of frame from residue ~200 | identical to UniProt on an alternative MHC haplotype scaffold |
-| OR5AL1 | 1 residue short, out of frame | identical to UniProt on a patch scaffold |
 
-The last three are buildable from Ensembl 115 as it stands: the resolver did not reach their
-alternative-haplotype transcripts, because their selected form carries no UniProt accession
-and its length is the broken copy's. The first five would need the intact allele written
-from UniProt rather than taken from an Ensembl transcript. Those 8 are absent from L1. Member CDS have a median
-length of 1,389 nt; finished vectors are 7,753–12,706 bp (median 8,956).
+Three further genes had the same defect but an intact copy, identical to UniProt, on an
+alternative-haplotype or patch scaffold of Ensembl 115. They are built from it, through a
+named override (section 3): KIR2DS4 (`l1-p2740`, alternative KIR haplotype), OR12D1
+(`l1-p2741`, alternative MHC haplotype) and OR5AL1 (`l1-p2742`, patch scaffold).
+[`check_reference_allele_lof.py`](../../../../scratch/becca/appris-principal/check_reference_allele_lof.py)
+recomputes from the pinned files that each primary copy is loss-of-function (3, 8 and 10
+internal stops) and that the transcript built equals the UniProt protein
+(`reference_allele_lof_evidence.tsv`). Member CDS have a median
+length of 1,386 nt; finished vectors are 7,753–12,706 bp (median 8,953).
 
 ## 2. Genes: from the surfaceome universe to 2,369
 
@@ -132,21 +133,22 @@ because 74 of the 111 disagreements carry APPRIS's lowest-confidence principal l
 (`PRINCIPAL:4`), so "APPRIS wins" would side with APPRIS exactly where it is least sure.
 Twenty genes with weak evidence either way are flagged for review.
 
-Seven genes carry a named override that takes precedence: six GPI-anchored proteins whose
-anchor sits on a non-canonical form (ACHE, BCAN, CD55, CD58, NCAM1, TFPI) and MICA, whose
-ladder pick lost its transmembrane helix. A soluble-form guard also rejects a pick that
+Ten genes carry a named override that takes precedence: six GPI-anchored proteins whose
+anchor sits on a non-canonical form (ACHE, BCAN, CD55, CD58, NCAM1, TFPI); MICA, whose
+ladder pick lost its transmembrane helix; and KIR2DS4, OR12D1 and OR5AL1, whose ladder pick
+is the loss-of-function copy in GRCh38 (section 1). A soluble-form guard also rejects a pick that
 topology calls signal-peptide-only or globular, unless it is GPI-anchored.
 
-The source finally taken, across 2,369 genes: **MANE 2,277, APPRIS 74, UniProt canonical
-11, named override 7**. For 217 genes the reference differs from the UniProt-canonical
+The source finally taken, across 2,369 genes: **MANE 2,277, APPRIS 71, UniProt canonical
+11, named override 10**. For 214 genes the reference differs from the UniProt-canonical
 accession the library used before this ladder, which is why every downstream record is
 matched on sequence rather than accession (section 5).
 
 ![Reference ladder outcomes](figures/l1_reference_ladder.png)
 
 *Figure 1. How each of the 2,369 library genes got its reference proteoform. One bar per
-ladder outcome; color is the source finally taken (the 7 named overrides are 6 within
-"MANE = APPRIS" and 1 within "APPRIS only", too thin to see at this scale). Unit: gene;
+ladder outcome; color is the source finally taken (the 10 named overrides are 6 within
+"MANE = APPRIS" and 4 within "APPRIS only", too thin to see at this scale). Unit: gene;
 n = 2,369; values are counts, log scale. Data: `library-design/reference_selection.tsv`.
 Regenerated by [`brief_numbers.py`](brief_numbers.py).*
 
@@ -189,8 +191,8 @@ from its gene's canonical (SLC9D1's ordered isoform has 3 TM helices against the
 
 | Rung | Rule | Rests on | Members |
 |---|---|---|---:|
-| N after SP | the residue after the signal peptide is extracellular | predicted cleavage site | 1,299 |
-| N at residue 1, multipass | N-terminus extracellular, no signal peptide, >1 TM | the GPCR surface screen's validated N-terminal tags | 561 |
+| N after SP | the residue after the signal peptide is extracellular | predicted cleavage site | 1,300 |
+| N at residue 1, multipass | N-terminus extracellular, no signal peptide, >1 TM | the GPCR surface screen's validated N-terminal tags | 563 |
 | N at residue 1, single-pass (type III) | same, 1 TM | topogenesis argument only; untested | 62 |
 | C-terminal | C-terminus extracellular | topology only | 218 |
 | internal | neither terminus extracellular, or GPI-anchored with an ecto-C call | needs a loop or ectodomain site | 567 |
@@ -203,7 +205,7 @@ proteolytic risk has a usable inter-TM loop to move to.
 ![Placement rung per member](figures/l1_tag_rungs.png)
 
 *Figure 2. Tag-placement rung for every L1 active member with a designed tag path, by
-candidate set. Unit: member; n = 2,707 (the 25 expression-rescue arms carry their own
+candidate set. Unit: member; n = 2,710 (the 25 expression-rescue arms carry their own
 designs); values are counts. Topology: DeepTMHMM v1, matched on the ordered protein.
 Data: `l1_tag_paths.tsv`. Regenerated by [`brief_numbers.py`](brief_numbers.py).*
 
@@ -219,7 +221,7 @@ DeepTMHMM v1 (1.0.24) is the topology of record, chosen over v2 because v1 recal
 signal peptides against v2's 92.9%; v2 is kept alongside and not substituted. A v1 row is
 selected by its tool-version stamp, not by the presence of a per-residue string, because v2
 rows carry a v1-alphabet back-projection that differs from genuine v1 output. Every active
-member has a v1 row for its exact sequence: 2,152 from the human canonical cohort, 207 from
+member has a v1 row for its exact sequence: 2,155 from the human canonical cohort, 207 from
 human isoforms, 188 from the ortholog cohorts, and 160 run on the designed ORFs themselves.
 
 ### GPI anchors
@@ -242,23 +244,23 @@ fetched by accession can be of a different proteoform:
 
 | Verdict | Active L1 members | Meaning |
 |---|---:|---|
-| identical | 2,411 | the model is of exactly this protein |
+| identical | 2,414 | the model is of exactly this protein |
 | contained | 26 | our protein is a subsequence of the modeled one; needs an offset the lanes do not apply |
 | different | 198 | the model is another proteoform; its numbering cannot be carried onto the construct |
 
 191 of the 198 "different" are library references, the set resolved by gene symbol to a
 canonical accession. A length test does not catch them: 22 have the same length as their
-model. (These counts cover the 2,635 active members compared. The comparison table holds
-2,642 L1 rows including retired members: 2,417 identical, 199 different, 26 contained. The
+model. (These counts cover the 2,638 active members compared. The comparison table holds
+2,645 L1 rows including retired members: 2,420 identical, 199 different, 26 contained. The
 s4e9 record lists 25 further members with a model that were not compared, for lack of a
-designed CDS or a returned sequence, for 2,667 with a model.)
+designed CDS or a returned sequence, for 2,670 with a model.)
 
 ## 6. Domestication and the cassette's linker encoding
 
 **Domestication.** Every ORF is cleared of BbsI (the Fragmid assembly enzyme), Esp3I (the
 shuttle enzyme) and BsaI (not cleared from the backbone) by synonymous edits only, with no
 codon optimization, so the protein and native codon usage are kept. Across L1, the median
-member needs 3 edits (maximum 20); 327 need none. Every vector carries exactly two Esp3I
+member needs 3 edits (maximum 20); 330 need none. Every vector carries exactly two Esp3I
 sites, the inward-pointing pair that lets the barcoded insert move to another backbone in one
 reaction.
 
@@ -270,12 +272,12 @@ members the cassette is the last coding sequence before that tail, so one shared
 would give every pair a 51-aa identical stretch. We gate the swap tract at 100 nt (5.0%
 predicted swapping on the fit we use), preferring 80.
 
-| Encoding of the C-terminal cassette | C-terminal members: median / max tract | Members over 100 nt (all 2,707) |
+| Encoding of the C-terminal cassette | C-terminal members: median / max tract | Members over 100 nt (all 2,710) |
 |---|---:|---:|
-| one shared cassette (p003 codons) | 181 / 2,529 nt | 482 |
+| one shared cassette (p003 codons) | 181 / 2,529 nt | 484 |
 | every codon recoded, end unique in last 9 nt | encoder exhausts after 60 of 218 members | — |
-| every codon recoded, last 15-nt block unique | 36 / 36 nt | 264 |
-| **linkers only recoded, last 15-nt block unique (issued)** | **36 / 36 nt** | **264** |
+| every codon recoded, last 15-nt block unique | 36 / 36 nt | 266 |
+| **linkers only recoded, last 15-nt block unique (issued)** | **36 / 36 nt** | **266** |
 
 SpyTag003 and P-ALFA-P keep p003's codons, which are the ones shown to display; only the four
 `GGGGS` blocks are recoded. Recoding the tags too buys nothing (36 nt either way). The
@@ -283,9 +285,11 @@ terminal 15-nt block must be unique per member because a 9-nt rule allows only 6
 ends and a 12-nt rule 180, both fewer than 218. The 218 encodings are issued in two seeded
 batches and pinned, so adding a member cannot redraw an issued one.
 
-All 264 members still over the bar are explained by their ORFs, not the cassette: most are
-same-gene isoform/ortholog pairs sharing a C-terminus, the rest different genes with shared 3'
-coding sequence (clustered protocadherins, close olfactory-receptor paralogs). One C-terminal
+All 266 members still over the bar are explained by their ORFs, not the cassette: 211 are
+same-gene isoform/ortholog pairs sharing a C-terminus, and 55 are different genes with shared
+3' coding sequence (clustered protocadherins, close paralogs such as olfactory receptors and
+KIR2DS2/KIR2DS4). Each different-gene family is accepted by name, and a library test fails on
+any new one. One C-terminal
 member, SLC41A2, needs a synonymous last-codon change (GAC→GAT) to avoid creating an Esp3I
 site at the cassette junction.
 
@@ -293,7 +297,7 @@ site at the cassette junction.
 
 *Figure 3. Fraction of members whose worst-partner shared tract exceeds a given length, with
 one shared cassette (maroon) and with the issued linker-only encodings (teal). Unit: member;
-n = 2,707; each member counted once at its longest tract to any other member; dashed line,
+n = 2,710; each member counted once at its longest tract to any other member; dashed line,
 the 100-nt gate. The curves separate where C-terminal members sit and converge in the tail,
 which is ORF-encoded shared sequence the cassette cannot change. Data: `l1_swap_risk.tsv`.
 Regenerated by [`brief_numbers.py`](brief_numbers.py).*
@@ -342,7 +346,7 @@ of the design.
 |---:|---|---|---|
 | 1 | **MANE by default for the 111 disagreements.** | 82 have no distinguishing evidence either way; a different default would change their proteoform. | Reviewer view on the default, or targeted evidence for the 20 flagged genes. |
 | 2 | **N-terminal tagging at residue 1 for type III single-pass proteins** (62 members). | Rests on a topogenesis argument only: the single helix carries the whole orientation decision, and a 51-aa cassette changes the charge balance it reads. | A small panel testing N-terminal versus loop placement on type III proteins. |
-| 3 | **Eight library genes whose reference-genome copy is broken** (section 1). | They pass the gene filter but are absent from L1, so any per-gene coverage figure is 8 short; the gene filter selects genes, but the reference genome encodes a non-functional allele for these. | Build KIR2DS4, OR12D1 and OR5AL1 from their intact alternative-haplotype transcripts; for the other five, decide between building the UniProt allele and recording an exclusion. |
+| 3 | **Five library genes with no intact copy in Ensembl 115** (FCGR2C, OR8J2, OR10AC1, OR52P1, OR4Q2; section 1). | They pass the gene filter but are absent from L1, so any per-gene coverage figure is 5 short. FCGR2C has a known intact (ORF) allele carried by a minority of people ([Breunis et al., 2007](https://pubmed.ncbi.nlm.nih.gov/17827395/)). | Build the intact UniProt allele by correcting the stop codons (FCGR2C, OR8J2) or the frameshifts, or record each as an exclusion. |
 
 ## Materials and provenance
 
@@ -354,7 +358,7 @@ of the design.
 | Tag paths | `../l1_tag_paths.tsv`, [`../TAG_PATHS.md`](../TAG_PATHS.md) | committed |
 | Cassette encodings and swap risk | `../l1_cassette_encodings.tsv`, `../l1_swap_risk.tsv`, `../l1_swap_risk_summary.json` | committed |
 | Model-vs-protein check | `../proteoform_match.tsv` | committed |
-| Reviewer bundle | [`bundle_manifest.tsv`](bundle_manifest.tsv) (77 files, SHA-256 each) | shared in full as the release asset `bundle-2026-11-02` of the review repository |
+| Reviewer bundle | [`bundle_manifest.tsv`](bundle_manifest.tsv) (77 files, SHA-256 each) | shared in full as a dated release asset of the review repository (current: `bundle-2026-11-05`) |
 | Numbers and figures in this brief | [`brief_numbers.py`](brief_numbers.py) → [`brief_numbers.json`](brief_numbers.json), `figures/` | committed |
 
 ## Decision log
@@ -364,8 +368,12 @@ of the design.
 | 2026-11-02 | No external-facing summary of L1 | This brief and a credential-free reviewer package | External review of the design before ordering |
 | 2026-11-04 | Package shipped from the analysis repository | A private review repository with the full bundle as a release asset, internal inputs included | Reviewers need only this design's code; Becca approved sharing every bundled input |
 | 2026-11-04 | Order-blocking issues listed among the review questions | Moved to a separate cover note; the brief keeps three design questions | The brief describes the design; the cover note tracks work in progress and changes as issues close (Becca) |
+| 2026-11-05 | 8 library genes without a member | KIR2DS4, OR12D1, OR5AL1 built from intact alternative-haplotype transcripts (`l1-p2740`–`l1-p2742`); 5 remain | Becca: the intact protein exists in Ensembl 115; the KIR2DS2/KIR2DS4 125-nt overlap accepted as a paralog pair |
 
 ## References
 
+- [Breunis et al., 2007](https://pubmed.ncbi.nlm.nih.gov/17827395/). Copy number variation of
+  the activating FCGR2C gene predisposes to idiopathic thrombocytopenic purpura. Blood
+  111:1029–1038.
 - [McGee et al., 2024](https://pubmed.ncbi.nlm.nih.gov/38484704/). Modular vector assembly
   enables rapid assessment of emerging CRISPR technologies. Cell Genomics 4:100519.

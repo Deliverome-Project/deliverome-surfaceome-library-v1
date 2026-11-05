@@ -2738,3 +2738,6 @@ l1-p2736	ortholog	mouse	EMB	P21995	False	P21995	True
 l1-p2737	ortholog	mouse	NT5E	Q61503	False	Q61503	True
 l1-p2738	ortholog	mouse	CADM2	Q8BLQ9-2	False	Q8BLQ9-2	True
 l1-p2739	library_reference	human	SLC67A1	Q96BI1	False	Q96BI1	True
+l1-p2740	library_reference	human	KIR2DS4	P43632	False	P43632	True
+l1-p2741	library_reference	human	OR12D1	P0DN82	False	P0DN82	True
+l1-p2742	library_reference	human	OR5AL1	P0C617	False	P0C617	True

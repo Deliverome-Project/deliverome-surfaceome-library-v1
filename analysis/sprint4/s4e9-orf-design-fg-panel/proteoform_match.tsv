@@ -1288,6 +1288,7 @@ l1-p1052	library_reference	KIR2DL2	P43627	348	348	identical	0
 l1-p1053	library_reference	KIR2DL3	P43628	341	341	identical	0
 l1-p1054	library_reference	KIR2DL5A	Q8N109	375	375	identical	0
 l1-p1055	library_reference	KIR2DS2	P43631	304	304	identical	0
+l1-p2740	library_reference	KIR2DS4	P43632	304	304	identical	0
 l1-p1056	library_reference	KIR2DS5	Q14953	304	304	identical	0
 l1-p1057	library_reference	KIR3DL1	P43629	444	444	identical	0
 l1-p1058	library_reference	KIR3DL2	P43630	455	455	identical	0
@@ -1579,6 +1580,7 @@ l1-p1380	library_reference	OR11H12	B2RN74	326	326	identical	0
 l1-p1381	library_reference	OR11H6	Q8NGC7	330	330	identical	0
 l1-p1382	library_reference	OR11H7	Q8NGC8	314	314	identical	0
 l1-p1383	library_reference	OR11L1	Q8NGX0	322	322	identical	0
+l1-p2741	library_reference	OR12D1	P0DN82	320	320	identical	0
 l1-p1384	library_reference	OR12D2	P58182	307	307	identical	0
 l1-p1385	library_reference	OR13A1	Q8NGR1	328	328	identical	0
 l1-p1387	library_reference	OR14A16	Q8NHC5	309	309	identical	0
@@ -1680,6 +1682,7 @@ l1-p1488	library_reference	OR56B1	Q8NGI3	324	324	identical	0
 l1-p1489	library_reference	OR56B4	Q8NH76	319	319	identical	0
 l1-p1490	library_reference	OR5A2	Q8NGI9	324	324	identical	0
 l1-p1491	library_reference	OR5AK2	Q8NH90	309	309	identical	0
+l1-p2742	library_reference	OR5AL1	P0C617	329	329	identical	0
 l1-p1492	library_reference	OR5AN1	Q8NGI8	311	311	identical	0
 l1-p1493	library_reference	OR5AR1	Q8NGP9	310	310	identical	0
 l1-p1494	library_reference	OR5AS1	Q8N127	324	324	identical	0

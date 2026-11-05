@@ -853,6 +853,36 @@ removed. As `l1-p2739`:
 
 None of the other 2,368 reference rows, 7,016 CDS or panels moved.
 
+**Rebuilding a gene whose reference-genome copy is broken.** Eight library genes had no
+member because GRCh38 carries a loss-of-function copy (Ensembl 115 biotype
+`protein_coding_LoF`): none has a MANE transcript, the ladder's APPRIS pick was the broken
+transcript, and CDS resolution refuses a transcript that does not translate to an intact
+protein. Three of them have a transcript encoding the intact UniProt protein, residue for
+residue, on an alternative-haplotype or patch scaffold of Ensembl 115. A named override with
+basis `reference_allele_lof` in `reference_overrides.tsv` points each one's reference at that
+protein; `add_library_genes.py` then builds it like an addition, and fails unless every other
+recorded reference row and CDS reproduces. The overrides file is pinned as a new input
+snapshot, `library-design/pipeline-inputs/2026-11-04/reference_overrides.tsv`.
+Both halves of each override are recomputed from the pinned releases by
+`scratch/becca/appris-principal/check_reference_allele_lof.py`, which fails unless every GRCh38
+primary-assembly transcript of the gene is `protein_coding_LoF` with internal stops and the
+transcript built from translates exactly to the named UniProt 2026_03 sequence; its per-transcript
+table is `reference_allele_lof_evidence.tsv` (primary copies: KIR2DS4 3 internal stops,
+OR12D1 8, OR5AL1 10).
+
+| Member | Gene | Defect in GRCh38 | CDS from | Tag rung | Structure |
+|---|---|---|---|---|---|
+| `l1-p2740` | KIR2DS4 | 297-aa loss-of-function form | ENST00000617825 (alternative KIR haplotype), 304 aa = P43632 | N after SP | AlphaFold model of P43632, identical |
+| `l1-p2741` | OR12D1 | frameshift | ENST00000703726 (alternative MHC haplotype), 320 aa = P0DN82 | N at residue 1, multipass | AlphaFold model of P0DN82, identical |
+| `l1-p2742` | OR5AL1 | frameshift | ENST00000710330 (patch scaffold), 329 aa = P0C617 | N at residue 1, multipass | AlphaFold model of P0C617, identical |
+
+All three have a published DeepTMHMM v1 row (`topo_2026_05_16`, `human_canonical`), need no
+domestication edit and are not C-terminal, so no cassette encoding is issued or moved.
+KIR2DS4 shares 125 nt of 3' coding sequence up to its barcode with KIR2DS2 (`l1-p1055`), a
+paralog, which is over the 100-nt swap bar for the pair. The other five (FCGR2C and OR8J2,
+with a premature stop; OR10AC1, OR52P1 and OR4Q2, frameshifted) have no intact Ensembl 115
+transcript and remain without a member.
+
 ### Open questions
 
 | Question | Why it matters | What would resolve it |
@@ -901,6 +931,7 @@ None of the other 2,368 reference rows, 7,016 CDS or panels moved.
 | 2026-11-02 | Gene list, isoform universe, ortholog repick, rescue arms and giants pinned as unreproducible records | All rerun offline from named releases on external:// (surfaceome 1.3.0, Ensembl 115, UniProt 2026_03, APPRIS 2026_06.v50, OpenProt 2.2, PeptideAtlas build 607); the universe and repick at their producing commits | Reproducibility years out (Becca). OpenProt 2.2 and the APPRIS full scores were still downloadable, so not lost. EPPIN's removal is now a recorded exclusion, not a hand edit |
 | 2026-11-02 | Linker encodings pinned as issued | Each encoding records its issue batch; verify replays the batches from scratch | Shows the 218 encodings follow from the seed and the issue order alone |
 | 2026-11-02 | Cyno ECE1 (l1-p2734) listed as needing no fold | Folded from its designed CDS with ColabFold | The coverage baseline had counted its accession as resolved, so the fold-completeness test passed with the gap open |
+| 2026-11-04 | KIR2DS4, OR12D1, OR5AL1 without a member (GRCh38 carries a loss-of-function copy) | Built as l1-p2740..2742 from their intact alternative-haplotype transcripts via `reference_allele_lof` overrides | Becca: the intact protein is in Ensembl 115; CDS resolution had searched only by the broken copy's length |
 | 2026-11-03 | Snorkel cited to PMID 24391846; GFRAL and RAET1G described as NetGPI additions | Snorkel cited to Brown et al. 2013, PMID 24023844; both described as curated calls NetGPI does not support | The old PMID is an unrelated docking paper (Hsin et al. 2013); NetGPI finds no anchored form for either gene. Found by the reviewer-package review, with re-measured counts (191 GPI members, 199 different models) |
 | 2026-10-13 | Walton ≤100 bp tract bar applied library-wide | Bar applies to the pool and the shared cassette, not to isoforms and orthologs | Median canonical-isoform overlap is 1,071 nt with zero of 2,150 pairs under the bar; applying it would remove the panels entirely |
 

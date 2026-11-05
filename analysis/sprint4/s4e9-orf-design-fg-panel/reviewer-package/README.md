@@ -111,10 +111,10 @@ generated from this one by `export_review_repo.py`. It contains:
 - in `historical/`, the old script versions that stages 4 and 5 rerun.
 
 The input bundle is attached to that repository's release
-[`bundle-2026-11-02`](https://github.com/Deliverome-Project/l1-library-review/releases/tag/bundle-2026-11-02)
-(tarball SHA-256 `e23be8a29a1cace93ce998f6e77c914b91f1678c6216f39b3958d4dfe03a74ab`; the same
-file is staged at `processed://sprint4/s4e9-orf-design-fg-panel/reviewer-package/2026-11-02/`).
-A rebuilt bundle goes on a new release with a new date, never over an existing one.
+[`bundle-2026-11-05`](https://github.com/Deliverome-Project/l1-library-review/releases/tag/bundle-2026-11-05)
+(tarball SHA-256 `2818737c6552174f1f11b17e5b86de5268a90e8fea3737944e7e66030bd6dbf2`; the same
+file is staged at `processed://sprint4/s4e9-orf-design-fg-panel/reviewer-package/2026-11-05/`).
+A rebuilt bundle goes on a new release with a new date, never over an existing one; `bundle-2026-11-02` is the earlier bundle, from before l1-p2740..2742.
 
 `EXPORT_MANIFEST.json` there records the source commit and a SHA-256 per managed file. To
 update it after changes here:

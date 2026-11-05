@@ -1055,7 +1055,6 @@ lib:KIR2DL2	library	ENST00000618796	ok	protein match	1047 nt
 lib:KIR2DL3	library	ENST00000342376	ok	named transcript	1026 nt
 lib:KIR2DL5A	library	ENST00000639951	ok	protein match	1125 nt
 lib:KIR2DS2	library	ENST00000639296	ok	protein match	912 nt
-lib:KIR2DS4	library	ENST00000339924	unresolved	-	no transcript encodes KIR2DS4
 lib:KIR2DS5	library	ENST00000639440	ok	protein match	912 nt
 lib:KIR3DL1	library	ENST00000391728	ok	named transcript	1335 nt
 lib:KIR3DL2	library	ENST00000326321	ok	named transcript	1368 nt
@@ -1385,7 +1384,6 @@ lib:OR11H12	library	ENST00000550708	ok	named transcript	981 nt
 lib:OR11H6	library	ENST00000315519	ok	named transcript	993 nt
 lib:OR11H7	library	ENST00000708727	ok	gene symbol	945 nt
 lib:OR11L1	library	ENST00000355784	ok	named transcript	969 nt
-lib:OR12D1	library	ENST00000514827	unresolved	-	no transcript encodes OR12D1
 lib:OR12D2	library	ENST00000642051	ok	named transcript	924 nt
 lib:OR13A1	library	ENST00000553795	ok	named transcript	987 nt
 lib:OR13D1	library	ENST00000641530	ok	named transcript	945 nt
@@ -1496,7 +1494,6 @@ lib:OR56B1	library	ENST00000317121	ok	named transcript	975 nt
 lib:OR56B4	library	ENST00000316529	ok	named transcript	960 nt
 lib:OR5A2	library	ENST00000302040	ok	named transcript	975 nt
 lib:OR5AK2	library	ENST00000326855	ok	named transcript	930 nt
-lib:OR5AL1	library	ENST00000440231	unresolved	-	no transcript encodes OR5AL1
 lib:OR5AN1	library	ENST00000641998	ok	named transcript	936 nt
 lib:OR5AR1	library	ENST00000624596	ok	named transcript	933 nt
 lib:OR5AS1	library	ENST00000641320	ok	named transcript	975 nt
@@ -7142,4 +7139,7 @@ ort:cyno:ERVW-1:A0A7N9CT41	ortholog_cyno	ENSMFAT00000091659	ok	protein match	148
 ort:cyno:TNFSF18:A0A2K5UCD9	ortholog_cyno	ENSMFAT00000092472	ok	protein match	600 nt
 ort:cyno:NFAM1:ENSMFAP00000061830	ortholog_cyno	ENSMFAT00000097243	ok	gene symbol	816 nt
 ort:cyno:P2RY10:A0A7N9IDB6	ortholog_cyno	ENSMFAT00000095836	ok	protein match	1020 nt
+lib:KIR2DS4	library	ENST00000617825	ok	protein match	915 nt
+lib:OR12D1	library	ENST00000703726	ok	protein match	963 nt
+lib:OR5AL1	library	ENST00000710330	ok	protein match	990 nt
 lib:SLC67A1	library	ENST00000649076	ok	named transcript	1275 nt

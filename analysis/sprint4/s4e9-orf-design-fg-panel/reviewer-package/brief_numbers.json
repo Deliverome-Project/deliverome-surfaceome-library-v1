@@ -23,9 +23,9 @@
   "mane_appris_disagreements": 111,
   "final_source": {
    "mane": 2277,
-   "appris": 74,
+   "appris": 71,
    "uniprot_canonical": 11,
-   "named": 7
+   "named": 10
   },
   "decision_by_source": {
    "mane_appris_agree": {
@@ -39,8 +39,8 @@
     "mane": 82
    },
    "appris_only": {
-    "appris": 74,
-    "named": 1,
+    "appris": 71,
+    "named": 4,
     "uniprot_canonical": 2
    },
    "weak_evidence_mane": {
@@ -54,30 +54,33 @@
    }
   },
   "needs_review": 20,
-  "changes_uniprot_canonical": 217,
+  "changes_uniprot_canonical": 214,
   "named_overrides": [
    "ACHE",
    "BCAN",
    "CD55",
    "CD58",
+   "KIR2DS4",
    "MICA",
    "NCAM1",
+   "OR12D1",
+   "OR5AL1",
    "TFPI"
   ]
  },
  "tranches": {
-  "l1_rows": 2739,
+  "l1_rows": 2742,
   "l1_retired_duplicates": 7,
-  "l1_active": 2732,
+  "l1_active": 2735,
   "l1_active_by_set": {
-   "library_reference": 2357,
+   "library_reference": 2360,
    "ortholog": 200,
    "isoform": 150,
    "expression_rescue": 25
   },
   "l2_active": 4279,
-  "all_rows_with_orf": 7079,
-  "l1_active_orf_nt_median": 1389,
+  "all_rows_with_orf": 7082,
+  "l1_active_orf_nt_median": 1386,
   "genes_without_reference_member": {
    "encoded_by_another_member": [
     "OPN1MW2",
@@ -87,12 +90,9 @@
    ],
    "no_designed_cds": [
     "FCGR2C",
-    "KIR2DS4",
     "OR10AC1",
-    "OR12D1",
     "OR4Q2",
     "OR52P1",
-    "OR5AL1",
     "OR8J2"
    ]
   },
@@ -215,38 +215,38 @@
   }
  },
  "domestication": {
-  "members_with_edit_count": 2707,
+  "members_with_edit_count": 2710,
   "edits_median": 3,
   "edits_max": 20,
-  "members_needing_no_edit": 327,
+  "members_needing_no_edit": 330,
   "esp3i_sites_per_vector": {
-   "2": 2732
+   "2": 2735
   },
   "vector_bp_min_median_max": [
    7753,
-   8956,
+   8953,
    12706
   ],
   "igk_leader_members": 25
  },
  "tag_paths": {
   "tool": "deeptmhmm_v1",
-  "members": 2707,
+  "members": 2710,
   "placement": {
-   "N after SP": 1299,
-   "N at residue 1, multipass": 561,
+   "N after SP": 1300,
+   "N at residue 1, multipass": 563,
    "N at residue 1, single-pass (type III)": 62,
    "C-terminal": 218,
    "internal": 567
   },
   "placement_by_set": {
    "N after SP": {
-    "library_reference": 1120,
+    "library_reference": 1121,
     "isoform": 76,
     "ortholog": 103
    },
    "N at residue 1, multipass": {
-    "library_reference": 520,
+    "library_reference": 522,
     "isoform": 14,
     "ortholog": 27
    },
@@ -271,7 +271,7 @@
    "RGMB"
   ],
   "topology_version": {
-   "topo_2026_05_16": 2309,
+   "topo_2026_05_16": 2312,
    "topo_2026_05_25": 206,
    "topo_2026_10_14_l1_designed": 157,
    "topo_2026_10_09_ortholog_repick": 29,
@@ -279,7 +279,7 @@
    "topo_2026_11_01_l1_designed": 3
   },
   "topology_cohort": {
-   "human_canonical": 2152,
+   "human_canonical": 2155,
    "human_isoforms": 207,
    "library_designed_orf": 160,
    "cyno_ortholog": 88,
@@ -326,14 +326,14 @@
   }
  },
  "structure_match": {
-  "compared_rows": 2642,
+  "compared_rows": 2645,
   "verdict_all_rows": {
-   "identical": 2417,
+   "identical": 2420,
    "different": 199,
    "contained": 26
   },
   "verdict_active": {
-   "identical": 2411,
+   "identical": 2414,
    "different": 198,
    "contained": 26
   },
@@ -344,26 +344,26 @@
   "different_same_length_active": 22
  },
  "swap_risk": {
-  "members": 2707,
+  "members": 2710,
   "gate_bp": 100,
   "schemes": {
    "shared": {
     "worst_partner_tract_median": 30.0,
-    "members_over_gate_100": 482,
+    "members_over_gate_100": 484,
     "cterm_members": 218,
     "cterm_worst_partner_median": 181.0,
     "cterm_worst_partner_max": 2529
    },
    "whole_cassette_widened": {
     "worst_partner_tract_median": 30.0,
-    "members_over_gate_100": 264,
+    "members_over_gate_100": 266,
     "cterm_members": 218,
     "cterm_worst_partner_median": 36.0,
     "cterm_worst_partner_max": 36
    },
    "linkers_only": {
     "worst_partner_tract_median": 30.0,
-    "members_over_gate_100": 264,
+    "members_over_gate_100": 266,
     "cterm_members": 218,
     "cterm_worst_partner_median": 36.0,
     "cterm_worst_partner_max": 36

@@ -7078,3 +7078,6 @@ l1-p2736	ort:mouse:EMB:P21995	ortholog	mouse	ENSMUST00000022242	protein match	0	
 l1-p2737	ort:mouse:NT5E:Q61503	ortholog	mouse	ENSMUST00000034992	protein match	0	1731	9298	1	1	6	2	1821	False	deferred	not reserved	l1	ortholog_panel	l2-p3816		
 l1-p2738	ort:mouse:CADM2:Q8BLQ9-2	ortholog	mouse	ENSMUST00000114292	protein match	0	1215	8782	1	1	6	2	1305	False	deferred	not reserved	l1	ortholog_panel	l2-p3144		
 l1-p2739	lib:SLC67A1	library_reference	human	ENST00000649076	named transcript	0	1275	8842	4	5	6	2	1365	False	deferred	not reserved	l1		l1-p2739		
+l1-p2740	lib:KIR2DS4	library_reference	human	ENST00000617825	protein match	0	915	8482	0	0	6	2	1005	False	deferred	not reserved	l1		l1-p2740		
+l1-p2741	lib:OR12D1	library_reference	human	ENST00000703726	protein match	0	963	8530	0	0	6	2	1053	False	deferred	not reserved	l1		l1-p2741		
+l1-p2742	lib:OR5AL1	library_reference	human	ENST00000710330	protein match	0	990	8557	0	0	6	2	1080	False	deferred	not reserved	l1		l1-p2742		
