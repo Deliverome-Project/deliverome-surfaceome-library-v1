@@ -8,18 +8,18 @@ still being worked on before the order are tracked in the
 
 ## Rerun the design
 
-You need [uv](https://docs.astral.sh/uv/) and the frozen input bundle: 83 files with a
+You need [uv](https://docs.astral.sh/uv/) and the frozen input bundle: 85 files with a
 SHA-256 each, attached to this repository's release
-[`bundle-2026-11-05-r5`](https://github.com/Deliverome-Project/l1-library-review/releases/tag/bundle-2026-11-05-r5)
-(850 MB tarball, SHA-256 `4d40d359e35f8b2d44c3d45d81dd195e810cf633767ebd60b8be499af98351e3`).
+[`bundle-2026-11-05-r6`](https://github.com/Deliverome-Project/l1-library-review/releases/tag/bundle-2026-11-05-r6)
+(1.07 GB tarball, SHA-256 `e98164e1ce1ef35aa9b81014edcb9657772a2232c1e1963b010a5482c2d840f1`).
 After the download, no credentials or network access are used.
 
 ```bash
-gh release download bundle-2026-11-05-r5 --repo Deliverome-Project/l1-library-review --dir ..
+gh release download bundle-2026-11-05-r6 --repo Deliverome-Project/l1-library-review --dir ..
 ```
 
 ```bash
-mkdir ../l1-reviewer-bundle && tar -xf ../l1-reviewer-bundle-2026-11-05-r5.tar -C ../l1-reviewer-bundle
+mkdir ../l1-reviewer-bundle && tar -xf ../l1-reviewer-bundle-2026-11-05-r6.tar -C ../l1-reviewer-bundle
 ```
 
 ```bash
@@ -31,7 +31,7 @@ cd analysis/sprint4/s4e9-orf-design-fg-panel/reviewer-package
 uv run --locked python run_review.py --bundle ../../../../../l1-reviewer-bundle
 ```
 
-The run checks the bundle, reruns the library's 14 decision stages and reports whether each
+The run checks the bundle, reruns the library's 15 decision stages and reports whether each
 reproduces its published record, then recomputes every number in the brief. It takes
 about three minutes. The package README beside the brief describes each stage and the
 bundle's contents.

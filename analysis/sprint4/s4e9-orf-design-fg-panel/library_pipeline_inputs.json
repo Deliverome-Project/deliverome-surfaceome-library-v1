@@ -161,6 +161,31 @@
    "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/pipeline-inputs/2026-11-02/s1e3/coreceptor_rationales.json",
    "sha256": "20f648614dbfb9dfd6ebae68edcb3a559f040fa031ba4113e7df096404635a87",
    "origin": "S1E3 curated calls, copied from processed://sprint1/s1e3-surface-library-filters/partner-audit-2026-09-10/inputs/"
+  },
+  "mouse_ortholog_one2one_highconf_non_hla_metadata.csv": {
+   "source": "external:accessible-surfaceome/f9c73691/data/external/deeptmhmm_surfaceome_inputs/mouse_ortholog_one2one_highconf_non_hla_metadata.csv",
+   "sha256": "1b999526c2d60c786815f4af64710357b69950a010585a6346af7c3a76b81e7f",
+   "origin": "accessible-surfaceome f9c73691 (2026-04-27): the recorded mouse ortholog list the L1 universe was built from"
+  },
+  "cyno_ortholog_one2one_highconf_non_hla_metadata.csv": {
+   "source": "external:accessible-surfaceome/f9c73691/data/external/deeptmhmm_surfaceome_inputs/cyno_ortholog_one2one_highconf_non_hla_metadata.csv",
+   "sha256": "466526ac36dcc2d3e1e4b5b90484e17ff4800df2a6d0f8c73432f160f7916901",
+   "origin": "accessible-surfaceome f9c73691 (2026-04-27): the recorded cyno ortholog list the L1 universe was built from"
+  },
+  "Compara.115.homo_sapiens.protein_default.homologies.tsv.gz": {
+   "source": "external:ensembl/release-115/compara/homologies/homo_sapiens/Compara.115.protein_default.homologies.tsv.gz",
+   "sha256": "8e8243ae5c34ee62bb853f5a11b3e7488d596ac1a777c02e8eed00d1b575beb4",
+   "origin": "https://ftp.ensembl.org/pub/release-115/tsv/ensembl-compara/homologies/homo_sapiens/, fetched 2026-11-04; matches Ensembl CHECKSUMS (stored alongside). Human-cyno pairs"
+  },
+  "Compara.115.mus_musculus.protein_default.homologies.tsv.gz": {
+   "source": "external:ensembl/release-115/compara/homologies/mus_musculus/Compara.115.protein_default.homologies.tsv.gz",
+   "sha256": "ed82f17dda96df6b47d0885e07bb3adc7d274c760e10437fa3a58e7081206dd0",
+   "origin": "https://ftp.ensembl.org/pub/release-115/tsv/ensembl-compara/homologies/mus_musculus/, fetched 2026-11-04; matches Ensembl CHECKSUMS (stored alongside). Human-mouse pairs"
+  },
+  "isoform_cohorts.tsv": {
+   "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/panel-inputs/2026-11-01/isoform_cohorts.tsv",
+   "sha256": "391203a90912dc3501c89df723b7595cdf87c5ee95ca81f453ddb82000a9b815",
+   "origin": "the isoform universe as recorded (panel_inputs.json snapshot 2026-11-01)"
   }
  }
 }

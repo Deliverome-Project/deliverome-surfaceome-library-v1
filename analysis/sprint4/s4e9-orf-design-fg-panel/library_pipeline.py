@@ -458,6 +458,22 @@ def verify_ortholog_repick(work: Path) -> str:
     return riu.verify_ortholog_repick(work)
 
 
+def verify_universe_coverage(work: Path) -> str:
+    import check_universe_coverage as cuc
+
+    out, summary = work / "universe_coverage.tsv", work / "universe_coverage_summary.json"
+    s = cuc.run(out, summary)
+    assert same_bytes(out, HERE / out.name), "universe_coverage.tsv differs"
+    assert same_bytes(summary, HERE / summary.name), "universe_coverage_summary.json differs"
+    return (
+        f"all {sum(s['recorded_pairs_checked'].values())} recorded ortholog pairs are 1:1 "
+        f"high-confidence in Compara 115; {s['library_genes_in_april_set']} of "
+        f"{s['library_genes']} library genes were in the April query set "
+        f"({s['mouse']['eligible_not_listed']} mouse / {s['cyno']['eligible_not_listed']} cyno "
+        "eligible genes never queried; recorded, not repaired)"
+    )
+
+
 def verify_tranches(work: Path) -> str:
     run([str(HERE / "dedupe_library_members.py"), "--check"], HERE)
     return "no two active members share a designed protein"
@@ -544,6 +560,17 @@ STAGES = [
         "verified",
         "",
         verify_ortholog_repick,
+    ),
+    Stage(
+        "universe_coverage",
+        "which library genes the isoform and ortholog universes could draw from: the "
+        "universes were built from the April 2026 surfaceome_expressed query set, not the "
+        "library gene list, so 594 library genes were never offered to them",
+        "analysis/sprint4/s4e9-orf-design-fg-panel/check_universe_coverage.py",
+        "Ensembl Compara 115 homology dumps (external://), accessible-surfaceome f9c73691 "
+        "query set and ortholog lists, Ensembl 115 peptides, UniProt 2026_03 isoforms",
+        "verified",
+        verify=verify_universe_coverage,
     ),
     Stage(
         "panels",

@@ -9,7 +9,7 @@ checked by this package.
 | Item | Notes |
 |---|---|
 | This repository, with its git history | a clone, or a `git bundle` of the branch. History is needed only for two stages (below). |
-| The frozen input bundle | a folder (or tarball) holding `s3/external/...` and `s3/processed/...`, 83 files, ~830 MB unpacked |
+| The frozen input bundle | a folder (or tarball) holding `s3/external/...` and `s3/processed/...`, 85 files, ~1.05 GB unpacked |
 | [uv](https://docs.astral.sh/uv/) | installs the locked Python environment from `uv.lock` |
 | ~10 GB free disk, ~5 minutes | the whole run is offline |
 
@@ -29,7 +29,7 @@ uv run --locked python run_review.py --bundle /path/to/l1-reviewer-bundle
 ```
 
 It first checks every bundle file against [`bundle_manifest.tsv`](bundle_manifest.tsv) (SHA-256), then
-reruns each of the 14 pipeline stages and prints what each decides and whether it reproduces
+reruns each of the 15 pipeline stages and prints what each decides and whether it reproduces
 its published record, then recomputes the brief's numbers and compares them with
 [`brief_numbers.json`](brief_numbers.json). A summary is written to `review_report.json`. One stage:
 
@@ -46,6 +46,7 @@ uv run --locked python run_review.py --bundle /path/to/bundle --stage reference
 | 3 | reference | each gene's reference proteoform (the ladder) | `reference_selection.tsv`, byte for byte |
 | 4 | isoform_universe | every alternate form and its evidence tier | summaries byte for byte; cohort table row for row (see the hash-seed limit in the brief) |
 | 5 | ortholog_repick | each gene's mouse and cyno proteoform | byte for byte |
+| 5b | universe_coverage | how many library genes the isoform and ortholog pools could draw from (Compara 115) | `universe_coverage.tsv` and its summary, byte for byte |
 | 6 | panels | the 150-isoform and 200-ortholog draws | byte for byte |
 | 7 | rescue_arms | 25 expression-rescue arms | byte for byte |
 | 8 | giants | truncations of oversized genes (L2) | byte for byte |
@@ -69,7 +70,7 @@ Each bundle file is labeled in `bundle_manifest.tsv`:
 
 | Class | Files | Meaning |
 |---|---:|---|
-| `public_release` | 24 | byte-identical to a named public release (Ensembl 115, UniProt 2026_03, APPRIS, OpenProt 2.2, surfaceome 1.3.0 on Zenodo, GENCODE Ribo-seq ORFs, the published GPCR screen table) |
+| `public_release` | 26 | byte-identical to a named public release (Ensembl 115 including the Compara homology dumps, UniProt 2026_03, APPRIS, OpenProt 2.2, surfaceome 1.3.0 on Zenodo, GENCODE Ribo-seq ORFs, the published GPCR screen table) |
 | `public_derived` | 7 | public data, as queried by us (PeptideAtlas build 607, MyGene.info, a UniProt keyword query) |
 | `surfaceome_repo` | 15 | files of the accessible-surfaceome repository at commit f9c73691 |
 | `deliverome_curation` | 31 | internal inputs: curation calls, the compiled expression table, the vector backbone map, DeepTMHMM predictions, and the audited S5E13 tag-site positives the brief cites |
@@ -111,10 +112,10 @@ generated from this one by `export_review_repo.py`. It contains:
 - in `historical/`, the old script versions that stages 4 and 5 rerun.
 
 The input bundle is attached to that repository's release
-[`bundle-2026-11-05-r5`](https://github.com/Deliverome-Project/l1-library-review/releases/tag/bundle-2026-11-05-r5)
-(tarball SHA-256 `4d40d359e35f8b2d44c3d45d81dd195e810cf633767ebd60b8be499af98351e3`; the same
-file is staged at `processed://sprint4/s4e9-orf-design-fg-panel/reviewer-package/2026-11-05-r5/`).
-A rebuilt bundle goes on a new release with a new date, never over an existing one; earlier releases are `bundle-2026-11-02` (before l1-p2740..2742), `bundle-2026-11-05` (before the audited tag-site positives were added) `bundle-2026-11-05-r2` (before the stop-codon fix of 13 designed CDS and the extended audit) `bundle-2026-11-05-r3` (before the tag-site gold standard) and `bundle-2026-11-05-r4` (before the final audit refresh: failed, added and region-label files).
+[`bundle-2026-11-05-r6`](https://github.com/Deliverome-Project/l1-library-review/releases/tag/bundle-2026-11-05-r6)
+(tarball SHA-256 `e98164e1ce1ef35aa9b81014edcb9657772a2232c1e1963b010a5482c2d840f1`; the same
+file is staged at `processed://sprint4/s4e9-orf-design-fg-panel/reviewer-package/2026-11-05-r6/`).
+A rebuilt bundle goes on a new release with a new date, never over an existing one; earlier releases are `bundle-2026-11-02` (before l1-p2740..2742), `bundle-2026-11-05` (before the audited tag-site positives were added) `bundle-2026-11-05-r2` (before the stop-codon fix of 13 designed CDS and the extended audit) `bundle-2026-11-05-r3` (before the tag-site gold standard) `bundle-2026-11-05-r4` (before the final audit refresh: failed, added and region-label files) and `bundle-2026-11-05-r5` (before the universe-coverage stage and its Compara dumps).
 
 `EXPORT_MANIFEST.json` there records the source commit and a SHA-256 per managed file. To
 update it after changes here:

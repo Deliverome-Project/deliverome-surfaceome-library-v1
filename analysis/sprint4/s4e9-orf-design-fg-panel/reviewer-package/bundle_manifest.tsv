@@ -17,6 +17,8 @@ external	appris/e115v50/appris_mus_musculus_e115v50.txt	2291340	ae526662d2364ffb
 external	ensembl/release-115/cds/Homo_sapiens.GRCh38.cds.all.fa.gz	31915256	53671b18f72fc63e7c7eb32f34d6072d192cd2aa517842c13b2e9f9102026878	public_release	Ensembl release 115 FTP
 external	ensembl/release-115/cds/Macaca_fascicularis.Macaca_fascicularis_6.0.cds.all.fa.gz	16178619	db4df9cdaa50a12bd9973a0f5c700d7576d011dfd822770ebc88fd645fbb1551	public_release	Ensembl release 115 FTP
 external	ensembl/release-115/cds/Mus_musculus.GRCm39.cds.all.fa.gz	17141378	dbd5ea4bd67e41d216d3567625059102ff1f505e071e41d17a3f3f48ae49b625	public_release	Ensembl release 115 FTP
+external	ensembl/release-115/compara/homologies/homo_sapiens/Compara.115.protein_default.homologies.tsv.gz	107298025	8e8243ae5c34ee62bb853f5a11b3e7488d596ac1a777c02e8eed00d1b575beb4	public_release	Ensembl release 115 FTP
+external	ensembl/release-115/compara/homologies/mus_musculus/Compara.115.protein_default.homologies.tsv.gz	110527677	ed82f17dda96df6b47d0885e07bb3adc7d274c760e10437fa3a58e7081206dd0	public_release	Ensembl release 115 FTP
 external	ensembl/release-115/gtf/Homo_sapiens.GRCh38.115.gtf.gz	104395529	2f8e31578c3aa2f35646927c4a3b3b0dcf0321e57c0ebd3ecc81afcbc836d1a8	public_release	Ensembl release 115 FTP
 external	ensembl/release-115/pep/Homo_sapiens.GRCh38.pep.all.fa.gz	19621018	7991ab37d09986eefdb5c77032b15370ab0e99918b78f235f3230c0302851c96	public_release	Ensembl release 115 FTP
 external	ensembl/release-115/pep/Macaca_fascicularis.Macaca_fascicularis_6.0.pep.all.fa.gz	10146822	ac1f93034ef236ae06cfb6118e185ab1980a741d9ad30b261d1163c095acb1bd	public_release	Ensembl release 115 FTP

@@ -229,6 +229,22 @@
   ],
   "igk_leader_members": 25
  },
+ "panel_pool": {
+  "library_genes": 2369,
+  "library_genes_in_april_set": 1775,
+  "mouse_eligible": 1870,
+  "mouse_listed": 1452,
+  "mouse_never_queried": 418,
+  "cyno_eligible": 1848,
+  "cyno_listed": 1432,
+  "cyno_never_queried": 416,
+  "isoform_genes_not_in_universe": 451,
+  "isoform_genes_outside_april_set": 92,
+  "recorded_pairs_checked": {
+   "mouse": 1972,
+   "cyno": 1927
+  }
+ },
  "tag_paths": {
   "tool": "deeptmhmm_v1",
   "members": 2710,

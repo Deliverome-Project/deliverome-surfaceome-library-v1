@@ -128,6 +128,21 @@ def measure() -> dict:
         ],
         "igk_leader_members": sum(r["has_igk_leader"] == "True" for r in active),
     }
+    # The pool the panels were drawn from (check_universe_coverage.py, verify stage 5b).
+    pool = json.loads((S4E9 / "universe_coverage_summary.json").read_text())
+    n["panel_pool"] = {
+        "library_genes": pool["library_genes"],
+        "library_genes_in_april_set": pool["library_genes_in_april_set"],
+        "mouse_eligible": pool["mouse"]["eligible_in_compara115"],
+        "mouse_listed": pool["mouse"]["in_ortholog_list"],
+        "mouse_never_queried": pool["mouse"]["eligible_not_listed"],
+        "cyno_eligible": pool["cyno"]["eligible_in_compara115"],
+        "cyno_listed": pool["cyno"]["in_ortholog_list"],
+        "cyno_never_queried": pool["cyno"]["eligible_not_listed"],
+        "isoform_genes_not_in_universe": pool["isoform"]["isoform_gene_not_in_universe"],
+        "isoform_genes_outside_april_set": pool["isoform"]["of_which_outside_april_set"],
+        "recorded_pairs_checked": pool["recorded_pairs_checked"],
+    }
     for name in ("isoform", "ortholog"):
         s = json.loads((S4E9 / f"{name}_panel_summary.json").read_text())
         n["tranches"][f"{name}_panel"] = s

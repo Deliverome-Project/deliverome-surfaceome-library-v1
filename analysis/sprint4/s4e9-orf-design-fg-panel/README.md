@@ -406,6 +406,30 @@ The ortholog panel is 200 and the isoform panel 150 — 192 and 137 genes respec
 | Isoforms | 150 | 100 observed + 50 prediction-only; type I 61, multipass 51, type II 17, GPI 16, type III 5 | `library-design/isoform_panel.tsv` |
 | Orthologs | 200 | mouse 100 + cyno 100, split near/diverged at 50 per band, seed 20261011, minimum floors on type III, GPI and type II; type I 66, multipass 72, GPI 28, type II 26, type III 8 | `library-design/ortholog_panel.tsv` |
 
+**The panels were drawn from April's gene set, not the library's.** Both universes were
+built from accessible-surfaceome files frozen at commit f9c73691 (2026-04-27), whose human
+query set is deliverome-internal's expression-filtered `surfaceome_expressed` list (2,359
+proteins, 2,355 gene symbols). The library gene list came later, from the S1E3 filter over
+surfaceome release 1.3.0, and only 1,775 of its 2,369 genes are in the April set. Later
+Compara pulls (2026-06-01, 2026-09-20/21, and the 2026-10-12 consolidation onto Compara
+115) went into the surfaceome D1 tables, not into the f9c73691 files these universes read,
+so the other 594 library genes were never queried. `check_universe_coverage.py` measures it
+from pinned inputs (Ensembl Compara 115 dumps, the f9c73691 query set and ortholog lists,
+Ensembl 115, UniProt 2026_03) and writes `universe_coverage.tsv`, one row per library gene:
+
+| | Mouse | Cyno |
+|---|---:|---:|
+| Library genes with a one-to-one high-confidence ortholog in Compara 115 | 1,870 | 1,848 |
+| … in the ortholog list the panel drew from | 1,452 | 1,432 |
+| … never queried (all outside the April set) | 418 | 416 |
+| Recorded pairs that are not one-to-one high-confidence in Compara 115 | 0 of 1,972 | 0 of 1,927 |
+
+The isoform universe has the same cause for 92 genes: 451 library genes with a
+non-canonical UniProt isoform have no row in it, 92 of them outside the April set; the
+other 359 were offered and excluded by the universe's own rules, which this does not
+re-examine. The panels are a valid seeded draw from that smaller pool and are kept as they
+are; the gap is recorded rather than repaired.
+
 The 515 internal-rung members carry 607 surface isoforms across 287 genes and 818 surface
 orthologs across 474 genes, so a build covering every form of that rung alone would be 1,940
 constructs rather than 515.
@@ -743,6 +767,7 @@ uv run --locked python library_pipeline.py verify --stage gene_list  # one stage
 | 3 | reference | each gene's reference proteoform | byte for byte |
 | 4 | isoform universe → cohorts | every alternate form, its evidence, and its cohort tier | every intermediate summary exactly; `isoform_cohorts.tsv` row for row (see below) |
 | 5 | ortholog repick | each gene's mouse and cyno proteoform | byte for byte |
+| 5b | universe coverage | which library genes the isoform and ortholog universes could draw from | every recorded ortholog pair is 1:1 high-confidence in Compara 115; coverage table byte for byte (see below) |
 | 6 | panels | the 150-isoform and 200-ortholog draws | byte for byte (original draw and rule-based redraw) |
 | 7 | rescue arms | 25 expression-rescue arms, their CDS and constructs | byte for byte |
 | 8 | giants | truncations of oversized genes and their ORFs | byte for byte |
@@ -758,8 +783,9 @@ Each step runs from these pinned sources:
 | Source | Version pinned | Used by |
 |---|---|---|
 | accessible-surfaceome | release 1.3.0 (Zenodo doi:10.5281/zenodo.23445521): deep-dive records, preset table | 1 |
-| accessible-surfaceome | commit f9c73691: canonical and isoform FASTAs, DeepTMHMM tables, ortholog cohorts | 3, 4, 5, 7 |
-| Ensembl | release 115: human, mouse and cyno cds and pep; human GTF | 3, 4, 5, 7, 9 |
+| accessible-surfaceome | commit f9c73691: canonical and isoform FASTAs, DeepTMHMM tables, ortholog cohorts | 3, 4, 5, 5b, 7 |
+| Ensembl | release 115: human, mouse and cyno cds and pep; human GTF | 3, 4, 5, 5b, 7, 9 |
+| Ensembl Compara | release 115 protein homology dumps (human and mouse files, with Ensembl's CHECKSUMS) | 5b |
 | UniProt | release 2026_03: reviewed and isoform tables (snapshot of 2026-10-11), giant features | 3, 4, 5, 8, 9 |
 | APPRIS | e115v50 principal isoforms; 2026_06.v50 full scores (TRIFID) | 3, 4, 5 |
 | OpenProt | 2.2 (refprots+altprots+isoforms, min 2 peptides, UniProt 2022_06_01) | 4 |
@@ -934,6 +960,7 @@ transcript and remain without a member.
 | 2026-11-04 | KIR2DS4, OR12D1, OR5AL1 without a member (GRCh38 carries a loss-of-function copy) | Built as l1-p2740..2742 from their intact alternative-haplotype transcripts via `reference_allele_lof` overrides | Becca: the intact protein is in Ensembl 115; CDS resolution had searched only by the broken copy's length |
 | 2026-11-03 | Snorkel cited to PMID 24391846; GFRAL and RAET1G described as NetGPI additions | Snorkel cited to Brown et al. 2013, PMID 24023844; both described as curated calls NetGPI does not support | The old PMID is an unrelated docking paper (Hsin et al. 2013); NetGPI finds no anchored form for either gene. Found by the reviewer-package review, with re-measured counts (191 GPI members, 199 different models) |
 | 2026-11-04 | 13 designed CDSs ended on a sense codon: the Ensembl 115 record has no stop (l1-p1054..1056 KIR2DL5A, KIR2DS2, KIR2DS5; L2 l2-p0846 KIR2DS2 isoform and nine cyno orthologs) | `resolve_candidate_cds.py` appends TAA when the record ends without a stop and marks the entry `stop_added`; orf_nt, vector_bp and insert_nt grow by 3 for those rows. Proteins and domestication edits are unchanged | Becca. Without a stop the ORF reads through into the vector. TAA is the stop the C-terminal constructs already use; the native codon cannot be read from the pinned inputs (four KIR records sit on alternate-haplotype scaffolds the primary GTF omits). Previous S3 versions: candidate_cds.json `ftYKdsVZYDD8M49CEt4rDJMn.x.QmKkn`, candidate_constructs.json `Nkbr70dq6lfjWkb.ASYGWZpU8yRocj_Y`. Found by the N-terminal reviewer package's frame check |
+| 2026-11-05 | Isoform and ortholog panels described as drawn from library genes with a form or ortholog | Recorded as drawn from the April 2026 `surfaceome_expressed` query set (1,775 of 2,369 library genes); coverage measured against Compara 115 by `check_universe_coverage.py` | Becca: record the gap and keep the panels. The 418 mouse / 416 cyno eligible genes were never queried because later Compara pulls went to D1, not to the f9c73691 files the universes read; every recorded pair is one-to-one high-confidence in Compara 115 |
 | 2026-10-13 | Walton ≤100 bp tract bar applied library-wide | Bar applies to the pool and the shared cassette, not to isoforms and orthologs | Median canonical-isoform overlap is 1,071 nt with zero of 2,150 pairs under the bar; applying it would remove the panels entirely |
 
 ## Provenance

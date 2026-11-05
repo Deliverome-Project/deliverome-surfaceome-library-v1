@@ -61,8 +61,8 @@ The six issues above map to #11–#12 (structure models), #4 (cargo), #5–#6 (l
 
 | Issue | Owner | Status | Needs Becca |
 |---|---|---|---|
-| [#17](https://github.com/Deliverome-Project/l1-library-review/issues/17) Ortholog pool built from an April gene list: 418 eligible library genes were never drawable | `l1-recode-dups` ([#234](https://github.com/Deliverome-Project/deliverome-analysis/pull/234)) | decision pending | yes |
-| [#18](https://github.com/Deliverome-Project/l1-library-review/issues/18) Isoform universe misses 451 library genes with non-canonical UniProt isoforms | `l1-recode-dups` ([#234](https://github.com/Deliverome-Project/deliverome-analysis/pull/234)) | open |  |
+| [#17](https://github.com/Deliverome-Project/l1-library-review/issues/17) Ortholog pool built from an April gene list: 418 eligible library genes were never drawable | `l1-recode-dups` ([#234](https://github.com/Deliverome-Project/deliverome-analysis/pull/234)) | decided 2026-11-05: keep panels, gap recorded | yes |
+| [#18](https://github.com/Deliverome-Project/l1-library-review/issues/18) Isoform universe misses 451 library genes with non-canonical UniProt isoforms | `l1-recode-dups` ([#234](https://github.com/Deliverome-Project/deliverome-analysis/pull/234)) | 92 recorded (April pool); 359 not re-examined |  |
 | [#19](https://github.com/Deliverome-Project/l1-library-review/issues/19) Make the ortholog gene-to-UniProt step replayable (pin UniProt 2026_04) | `l1-recode-dups` ([#234](https://github.com/Deliverome-Project/deliverome-analysis/pull/234)) | in progress (UniProt download rate-limited) |  |
 | [#20](https://github.com/Deliverome-Project/l1-library-review/issues/20) Five library genes without an intact Ensembl 115 copy: build the UniProt allele or exclude | Becca | open | yes |
 | [#21](https://github.com/Deliverome-Project/l1-library-review/issues/21) Resolve the RAET1G (and CFC1, CRIPTO, GML) GPI curation conflict | unassigned | open |  |
