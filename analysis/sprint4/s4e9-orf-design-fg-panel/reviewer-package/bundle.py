@@ -104,6 +104,11 @@ SOURCES: list[tuple[str, str, str]] = [
         "gold standard: the audit's confirmed sites, one per (accession, residue) (PR 236)",
     ),
     (
+        r"processed/scratch/becca/tag-site-corpus-audit/(failed_sites|added_sites|region_labels)\.tsv",
+        "deliverome_curation",
+        "tag-site audit: failed sites, sites recovered from wrong-gene papers, region labels (PR 236)",
+    ),
+    (
         r"processed/sprint5/s5e13-tag-site-benchmarking/corpus_audit_corpus\.tsv",
         "deliverome_curation",
         "S5E13 training corpus with the audit's corrections (PR 232)",

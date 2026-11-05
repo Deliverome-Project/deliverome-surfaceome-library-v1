@@ -29,6 +29,7 @@ FIGURES = HERE / "figures"
 AUDIT_KEY = "scratch/becca/tag-site-corpus-audit/audit.tsv"
 CORRECTED_KEY = "sprint5/s5e13-tag-site-benchmarking/corpus_audit_corpus.tsv"
 GOLD_KEY = "scratch/becca/tag-site-corpus-audit/gold_standard.tsv"
+AUDIT_DIR = "scratch/becca/tag-site-corpus-audit/"
 
 PLACEMENTS = [
     "N after SP",
@@ -234,7 +235,31 @@ def measure() -> dict:
         "surface_shown_sites": len(shown),
         "surface_shown_proteins": len({r["uniprot_acc"] for r in shown}),
         "surface_negative_sites": sum(r["surface_shown"] == "no" for r in gold),
+        "function_shown_sites": sum(r["function_shown"] == "yes" for r in gold),
+        "training_proteins_covered": len(
+            {r["uniprot_acc"] for r in audit} & {r["uniprot_acc"] for r in gold}
+        ),
+        "training_proteins": len({r["uniprot_acc"] for r in audit}),
+        "sites_only_from_added": sorted(
+            f"{r['gene']} {r['insert_after_residue']}"
+            for r in gold
+            if all("added" in sid for sid in r["site_ids"].split(";"))
+        ),
     }
+    failed = _tsv(processed.download(AUDIT_DIR + "failed_sites.tsv"))
+    regions = _tsv(processed.download(AUDIT_DIR + "region_labels.tsv"))
+    windowed = [r for r in regions if r["window_start"]]
+    added = _tsv(processed.download(AUDIT_DIR + "added_sites.tsv"))
+    n["tag_site_gold_standard"]["added_rows"] = len(added)
+    n["tag_site_gold_standard"]["added_rows_confirmed"] = sum(
+        r["verdict"].startswith("confirmed") for r in added
+    )
+    n["tag_site_gold_standard"]["failed_sites_excluded"] = len(failed)
+    n["tag_site_gold_standard"]["region_labels"] = len(regions)
+    n["tag_site_gold_standard"]["region_labels_with_window"] = len(windowed)
+    n["tag_site_gold_standard"]["region_label_window_proteins"] = len(
+        {r["uniprot_acc"] for r in windowed}
+    )
 
     # --- cassette encoding and swap risk -------------------------------------------------
     swap = json.loads((S4E9 / "l1_swap_risk_summary.json").read_text())

@@ -346,9 +346,9 @@
  "tag_site_audit": {
   "positives": 176,
   "verdict": {
-   "confirmed_exact": 124,
-   "confirmed_shifted": 22,
-   "region_only": 13,
+   "confirmed_exact": 125,
+   "confirmed_shifted": 23,
+   "region_only": 11,
    "not_supported": 7,
    "wrong_species_numbering": 5,
    "terminal_misfiled": 5
@@ -374,7 +374,8 @@
    "flanking_residues_only": 2,
    "isoform:NRG1 type III (700 aa)": 1,
    "ortholog:rat": 1,
-   "ortholog:chicken": 1
+   "ortholog:chicken": 1,
+   "human TMEM123 (Q8N131) canonical numbering; endogenous CRISPR knock-in in U2OS (human) cells": 1
   },
   "abcb1_shifts": [
    4,
@@ -388,11 +389,28 @@
   "corrected_corpus_region_labels": 13
  },
  "tag_site_gold_standard": {
-  "sites": 153,
-  "proteins": 106,
-  "surface_shown_sites": 112,
-  "surface_shown_proteins": 86,
-  "surface_negative_sites": 9
+  "sites": 156,
+  "proteins": 113,
+  "surface_shown_sites": 120,
+  "surface_shown_proteins": 93,
+  "surface_negative_sites": 4,
+  "function_shown_sites": 75,
+  "training_proteins_covered": 108,
+  "training_proteins": 127,
+  "sites_only_from_added": [
+   "GABRA5 35",
+   "GABRA6 23",
+   "GABRG1 39",
+   "GABRG2 43",
+   "GABRG3 21",
+   "KCNK3 214"
+  ],
+  "added_rows": 10,
+  "added_rows_confirmed": 8,
+  "failed_sites_excluded": 5,
+  "region_labels": 22,
+  "region_labels_with_window": 19,
+  "region_label_window_proteins": 16
  },
  "swap_risk": {
   "members": 2710,

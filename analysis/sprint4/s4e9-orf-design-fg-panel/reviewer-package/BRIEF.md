@@ -268,23 +268,35 @@ procedure in `scratch/becca/tag-site-corpus-audit/README.md` on that branch):
 
 | Verdict | Positives | Meaning |
 |---|---:|---|
-| confirmed exact | 124 | the paper places the tag at the cited residue |
-| confirmed shifted | 22 | the paper places it at another residue, mostly because it numbers a mouse ortholog (14 of 22); all five ABCB1 sites are +4 |
-| region only | 13 | the paper supports the loop or domain, not one residue |
+| confirmed exact | 125 | the paper places the tag at the cited residue |
+| confirmed shifted | 23 | the paper places it at another residue, mostly because it numbers a mouse ortholog (14 of 23); all five ABCB1 sites are +4 |
+| region only | 11 | the paper supports the loop or domain, not one residue |
 | not supported | 17 | 7 cite a paper that tagged a different gene or showed the site intracellular, 5 are numbered in a species that cannot be mapped to the human residue, 5 are terminal tags filed as internal |
 
-The corrected training set (146 positives at the paper's residue, 13 region labels, the 17
-dropped) is `processed://sprint5/s5e13-tag-site-benchmarking/corpus_audit_corpus.tsv`, and the
-per-site audit with each paper's quote is `processed://scratch/becca/tag-site-corpus-audit/audit.tsv`.
-Its confirmed sites, one row per protein and residue, form a gold standard of 153 sites on 106
-proteins (112 sites on 86 proteins with surface display shown, 9 shown not to reach the
-surface), `processed://scratch/becca/tag-site-corpus-audit/gold_standard.tsv`. All three are in
-the reviewer bundle. The audit also read the 15 live literature rows outside the
-training set (`in_training = 0` in the same file): 6 that carried no residue were pinned to one
-from the paper (CFTR 891, NRXN1 371, TRPV1 606, NRG3 275, SLC12A5 248, SLC4A2 862), ABCC1 at 4
-is confirmed, ITGB7 23 shifts to 42, CNR1 25 is unsupported, and 6 stay region only. The
-176-row table above is unchanged by them. The live tag-site API was not edited and still serves the
-uncorrected rows. Nothing in the L1 tag paths depends on these sites.
+The per-site audit, with each paper's quote, is
+`processed://scratch/becca/tag-site-corpus-audit/audit.tsv`. The corrected training set used by
+the S5E13 retrain (PR 232), `processed://sprint5/s5e13-tag-site-benchmarking/corpus_audit_corpus.tsv`,
+was built before two region-only sites (MMP14, TMEM123) were resolved and holds 146 positives
+at the paper's residue, 13 region labels and the 17 dropped.
+
+The audit's confirmed sites, one row per protein and residue, form a gold standard
+(`gold_standard.tsv`): 156 sites on 113 proteins, 120 of them on 93 proteins with surface
+display shown, 4 shown not to reach the surface and 75 with function shown; it covers 108 of
+the 127 training proteins. It excludes five confirmed positions where the paper shows the
+construct failed (`failed_sites.tsv`, kept as candidate negatives) and adds six real sites from
+papers the agent had filed under the wrong gene (KCNK3 214 and five GABA-A subunits:
+GABRA5 35, GABRA6 23, GABRG1 39, GABRG2 43, GABRG3 21; `added_sites.tsv`). The 22 region-level
+sites are in `region_labels.tsv`, 19 of them with a candidate window on the human canonical
+sequence (16 proteins). All of these files are under
+`processed://scratch/becca/tag-site-corpus-audit/` and in the reviewer bundle.
+
+The audit also read the 15 live literature rows outside the training set (`in_training = 0`):
+6 that carried no residue were pinned to one from the paper (CFTR 891, NRXN1 371, TRPV1 606,
+NRG3 275, SLC12A5 248, SLC4A2 862), ABCC1 at 4 is confirmed, ITGB7 23 shifts to 42, CNR1 25 is
+unsupported, and 6 stay region only; the 176-row table above is unchanged by them. The live
+tag-site API was not edited and still serves the uncorrected rows (checked 2026-11-05: ABCB1's
+sites are still at 101, 320, 736, 741 and 961). Nothing in the L1 tag paths depends on these
+sites.
 
 ## 6. Domestication and the cassette's linker encoding
 
@@ -389,8 +401,8 @@ can stay a description of the design.
 | Tag paths | `../l1_tag_paths.tsv`, [`../TAG_PATHS.md`](../TAG_PATHS.md) | committed |
 | Cassette encodings and swap risk | `../l1_cassette_encodings.tsv`, `../l1_swap_risk.tsv`, `../l1_swap_risk_summary.json` | committed |
 | Model-vs-protein check | `../proteoform_match.tsv` | committed |
-| Reviewer bundle | [`bundle_manifest.tsv`](bundle_manifest.tsv) (80 files, SHA-256 each) | shared in full as a dated release asset of the review repository (current: `bundle-2026-11-05-r4`) |
-| Audited tag-site positives (S5E13 ranker) | `audit.tsv`, `corpus_audit_corpus.tsv`, `gold_standard.tsv` (paths in section 5) | in the reviewer bundle; audit is [PR 236](https://github.com/Deliverome-Project/deliverome-analysis/pull/236) |
+| Reviewer bundle | [`bundle_manifest.tsv`](bundle_manifest.tsv) (83 files, SHA-256 each) | shared in full as a dated release asset of the review repository (current: `bundle-2026-11-05-r5`) |
+| Audited tag-site positives (S5E13 ranker) | `audit.tsv`, `gold_standard.tsv`, `failed_sites.tsv`, `added_sites.tsv`, `region_labels.tsv`, `corpus_audit_corpus.tsv` (paths in section 5) | in the reviewer bundle; audit is [PR 236](https://github.com/Deliverome-Project/deliverome-analysis/pull/236) |
 | Numbers and figures in this brief | [`brief_numbers.py`](brief_numbers.py) → [`brief_numbers.json`](brief_numbers.json), `figures/` | committed |
 
 ## Decision log
