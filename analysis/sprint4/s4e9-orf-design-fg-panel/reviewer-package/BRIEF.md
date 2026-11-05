@@ -340,7 +340,7 @@ choices already made that we want challenged.
 | Tag paths | `../l1_tag_paths.tsv`, [`../TAG_PATHS.md`](../TAG_PATHS.md) | committed |
 | Cassette encodings and swap risk | `../l1_cassette_encodings.tsv`, `../l1_swap_risk.tsv`, `../l1_swap_risk_summary.json` | committed |
 | Model-vs-protein check | `../proteoform_match.tsv` | committed |
-| Reviewer bundle | [`bundle_manifest.tsv`](bundle_manifest.tsv) (77 files, SHA-256 each) | built locally; distribution not yet decided |
+| Reviewer bundle | [`bundle_manifest.tsv`](bundle_manifest.tsv) (77 files, SHA-256 each) | shared in full as the release asset `bundle-2026-11-02` of the review repository |
 | Numbers and figures in this brief | [`brief_numbers.py`](brief_numbers.py) → [`brief_numbers.json`](brief_numbers.json), `figures/` | committed |
 
 ## Decision log
@@ -348,6 +348,7 @@ choices already made that we want challenged.
 | Date | Was | Now | Why |
 |---|---|---|---|
 | 2026-11-02 | No external-facing summary of L1 | This brief and a credential-free reviewer package | External review of the design before ordering |
+| 2026-11-04 | Package shipped from the analysis repository | A private review repository with the full bundle as a release asset, internal inputs included | Reviewers need only this design's code; Becca approved sharing every bundled input |
 
 ## References
 

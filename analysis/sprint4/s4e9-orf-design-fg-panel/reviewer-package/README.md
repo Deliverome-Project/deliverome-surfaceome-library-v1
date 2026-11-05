@@ -75,7 +75,8 @@ Each bundle file is labeled in `bundle_manifest.tsv`:
 | `deliverome_curation` | 25 | internal inputs: curation calls, the compiled expression table, the vector backbone map, DeepTMHMM predictions |
 | `deliverome_record` | 6 | the published library records the replay is compared with |
 
-A bundle can be packed without a class (`bundle.py pack --exclude-class ...`); the stages
+Reviewers receive the full bundle, all five classes (Becca, 2026-11-04). A bundle can still
+be packed without a class (`bundle.py pack --exclude-class ...`); the stages
 that read the missing files then fail with a message naming the absent key.
 
 ## Building the bundle (lab side)
