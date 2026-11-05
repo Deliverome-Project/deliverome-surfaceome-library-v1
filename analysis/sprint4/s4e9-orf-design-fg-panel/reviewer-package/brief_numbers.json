@@ -343,6 +343,35 @@
   },
   "different_same_length_active": 22
  },
+ "tag_site_audit": {
+  "positives": 176,
+  "verdict": {
+   "confirmed_exact": 124,
+   "confirmed_shifted": 22,
+   "region_only": 13,
+   "not_supported": 7,
+   "wrong_species_numbering": 5,
+   "terminal_misfiled": 5
+  },
+  "shifted_by_numbering_basis": {
+   "ortholog:mouse": 14,
+   "mature_protein": 3,
+   "flanking_residues_only": 2,
+   "isoform:NRG1 type III (700 aa)": 1,
+   "ortholog:rat": 1,
+   "ortholog:chicken": 1
+  },
+  "abcb1_shifts": [
+   4,
+   4,
+   4,
+   4,
+   4
+  ],
+  "corrected_corpus_rows": 176,
+  "corrected_corpus_residue_positives": 146,
+  "corrected_corpus_region_labels": 13
+ },
  "swap_risk": {
   "members": 2710,
   "gate_bp": 100,

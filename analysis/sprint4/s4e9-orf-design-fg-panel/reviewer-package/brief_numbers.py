@@ -25,6 +25,9 @@ S4E9 = HERE.parent
 PREFIX = "sprint4/s4e9-orf-design-fg-panel/"
 OUT = HERE / "brief_numbers.json"
 FIGURES = HERE / "figures"
+#: The audit of the S5E13 literature positives (PR 236) and the corrected training corpus.
+AUDIT_KEY = "scratch/becca/tag-site-corpus-audit/audit.tsv"
+CORRECTED_KEY = "sprint5/s5e13-tag-site-benchmarking/corpus_audit_corpus.tsv"
 
 PLACEMENTS = [
     "N after SP",
@@ -186,6 +189,30 @@ def measure() -> dict:
         "different_same_length_active": sum(
             r["verdict"] == "different" and r["orf_aa"] == r["model_aa"] for r in pma
         ),
+    }
+
+    # --- literature tag-site positives behind the S5E13 ranker, read against their papers
+    from deliverome_analysis.s3 import processed
+
+    audit = _tsv(processed.download(AUDIT_KEY))
+    corrected = _tsv(processed.download(CORRECTED_KEY))
+    shifted = [r for r in audit if r["verdict"] == "confirmed_shifted"]
+    n["tag_site_audit"] = {
+        "positives": len(audit),
+        "verdict": dict(Counter(r["verdict"] for r in audit).most_common()),
+        "shifted_by_numbering_basis": dict(
+            Counter(r["paper_numbering_basis"] for r in shifted).most_common()
+        ),
+        "abcb1_shifts": sorted(
+            int(float(r["corrected_residue"])) - int(r["insert_after_residue"])
+            for r in shifted
+            if r["gene"] == "ABCB1"
+        ),
+        "corrected_corpus_rows": len(corrected),
+        "corrected_corpus_residue_positives": sum(
+            r["verdict"] in ("confirmed_exact", "confirmed_shifted") for r in corrected
+        ),
+        "corrected_corpus_region_labels": sum(r["verdict"] == "region_only" for r in corrected),
     }
 
     # --- cassette encoding and swap risk -------------------------------------------------

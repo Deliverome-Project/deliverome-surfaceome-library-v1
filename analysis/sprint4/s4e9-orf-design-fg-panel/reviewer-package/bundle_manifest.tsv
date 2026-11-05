@@ -33,6 +33,7 @@ external	uniprot/2026-10-11/uniprot_human_reviewed.tsv.gz	7084106	64cb00f2f09119
 external	uniprot/2026-10-11/uniprot_human_reviewed_isoforms.tsv.gz	11362720	11b2e36430c66460b9515d9048f55cd6a0c439507ddf9bd54fbe35dd47a68da4	public_release	UniProt 2026_03 table download
 external	uniprot/2026-10-11/uniprot_mouse_reviewed_isoforms.tsv.gz	8086797	4b711788bf84a978d50352f8fc407492ff392eef1366ba15821c369d7756a18c	public_release	UniProt 2026_03 table download
 external	uniprot/2026_03/rest-2026-10-11/giant_features.json	758811	fa26d9485e22cd88df7f8807ab3cd8411237699ba3a66a38017ce3f02addd1d8	public_derived	UniProt 2026_03 REST query
+processed	scratch/becca/tag-site-corpus-audit/audit.tsv	118291	ea26bd1f504001e6bd5815cefa23dc9b48a7047818e66c328a4b6e62a7b96802	deliverome_curation	audit of the 176 S5E13 literature tag-site positives against their papers (PR 236)
 processed	sprint4/s4e9-orf-design-fg-panel/library-candidates/candidate_cds.json	13997496	6942cce4c3b3fb7e4bec0edce267438067a2f3e479df9543acc143025536f896	deliverome_record	published L1 library record
 processed	sprint4/s4e9-orf-design-fg-panel/library-candidates/candidate_constructs.json	14597506	ca9880f5747161bf82aec96e3576e3f6ee941bf3dedf6649682a59c5137ecd87	deliverome_record	published L1 library record
 processed	sprint4/s4e9-orf-design-fg-panel/library-candidates/giant_constructs.json	63065	4de48361a855429f5dbbcabfc61df5c8e753f6991be282c68539e799e51abd8a	deliverome_record	published L1 library record
@@ -76,3 +77,4 @@ processed	sprint4/s4e9-orf-design-fg-panel/library-design/reference_disagreement
 processed	sprint4/s4e9-orf-design-fg-panel/library-design/reference_selection.tsv	508810	eb2e90e7444ce75560fc1d6b16a7407d599b6acf2ac69bb979803c5f444874ab	deliverome_record	published L1 library record
 processed	sprint4/s4e9-orf-design-fg-panel/library-design/universe-inputs/2026-11-02/surface_subcategory_as_of_2026-10-11.tsv	241476	954d3df004b1880a1d5dbf140bacbab939449b93735bf0663bf583cec85605d5	deliverome_curation	Deliverome pipeline-input snapshot
 processed	sprint4/s4e9-orf-design-fg-panel/p0039_EFS_IRES_puro_backbone.gb	25060	57915c1a5db2f0856a6bf6ae1e1d1d9f71661fb37cf68a4938e74cae289485b4	deliverome_curation	p0039 backbone map
+processed	sprint5/s5e13-tag-site-benchmarking/corpus_audit_corpus.tsv	11673	85c7d7019abec0e20b0489d0772b6278a6401da4082fd0b703179a2aabd45ad2	deliverome_curation	S5E13 training corpus with the audit's corrections (PR 232)
