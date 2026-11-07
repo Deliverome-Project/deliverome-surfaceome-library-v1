@@ -570,9 +570,11 @@ differ from ours:
 | 10 | 1,244 | always identical pairs | minimum distance 3 (corrects one error) |
 | 12 | 111 | identical pairs in 12 of 20 draws | minimum distance 4 |
 
-  L1's barcodes are not reserved yet, so a prefix-distance screen at reservation (for example,
-  minimum Hamming distance 3 over the first 10 bases, which the pool satisfies for all 2,735)
-  keeps optical screening open at no cost to sequencing. This assumes the readout starts at the
+  L1's barcodes are not reserved yet, so reservation now applies a prefix-distance screen:
+  every barcode drawn stays at least 3 substitutions from every other barcode in use over its
+  first 10 bases, which corrects one in situ read error and which the pool satisfies for all
+  2,735 members ([`barcode_prefix_screen.py`](../barcode_prefix_screen.py), tested in CI). It
+  costs nothing for sequencing. This assumes the readout starts at the
   barcode's 5′ end, as Feldman's does.
 
   Expression is expected but untested: like lentiGuide-BC, where the barcode sits in the Pol II
@@ -608,7 +610,7 @@ can stay a description of the design.
 | 3 | **Five library genes with no intact copy in Ensembl 115** (FCGR2C, OR8J2, OR10AC1, OR52P1, OR4Q2; section 1). | They pass the gene filter but are absent from L1, so any per-gene coverage figure is 5 short. FCGR2C has a known intact (ORF) allele carried by a minority of people ([Breunis et al., 2007](https://pubmed.ncbi.nlm.nih.gov/17827395/)). | Build the intact UniProt allele by correcting the stop codons (FCGR2C, OR8J2) or the frameshifts, or record each as an exclusion. |
 | 4 | **Isoform and ortholog panels drawn from a 1,775-gene April pool** (section 4). | 418 mouse and 416 cyno orthologs, and 92 genes' isoforms, could never be drawn, so the panels say nothing about those genes' forms. | Reviewer view on keeping the panels as drawn (the current decision) versus rebuilding both universes over the 2,369 library genes and redrawing with the same seeds and strata, which would change many members. |
 | 5 | **How strongly to weight the pool by length** (section 8). | The ordering plan is computed at Moon et al.'s 3.5-fold lower titer per kb (up to 110× more of the longest member than the median); Sweeney and Vink's data imply about 2-fold per kb over our 4.4–9.4-kb packaged range, and an overcorrection inverts the bias. | Whether the four-plasmid titer test planned before pooling (section 8) is enough to set the factor. |
-| 6 | **Whether the barcode region should change before it is ordered** (section 9). | The fragment supports 10x Feature Barcoding as designed. Optical pooled screening needs a prefix-distance screen when barcodes are reserved and a new padlock, and gains from restoring Feldman's RT-site base; T7 in situ transcription needs a promoter, cleanly placed in sense. Each is cheap now and impossible after synthesis. | Which of these assays we should keep possible, and whether any of the three changes costs something we have not counted. |
+| 6 | **Whether the barcode region should change before it is ordered** (section 9). | The fragment supports 10x Feature Barcoding as designed. Optical pooled screening needs a new padlock (the prefix-distance screen is now applied at barcode reservation), and gains from restoring Feldman's RT-site base; T7 in situ transcription needs a promoter, cleanly placed in sense. Each is cheap now and impossible after synthesis. | Which of these assays we should keep possible, and whether any of the three changes costs something we have not counted. |
 
 ## Materials and provenance
 
@@ -632,7 +634,7 @@ can stay a description of the design.
 | 2026-11-02 | No external-facing summary of L1 | This brief and a credential-free reviewer package | External review of the design before ordering |
 | 2026-11-04 | Package shipped from the analysis repository | A private review repository with the full bundle as a release asset, internal inputs included | Reviewers need only this design's code; Becca approved sharing every bundled input |
 | 2026-11-04 | Order-blocking issues listed among the review questions | Moved to a separate cover note; the brief keeps three design questions | The brief describes the design; the cover note tracks work in progress and changes as issues close (Becca) |
-| 2026-11-07 | Barcode region described only for amplicon sequencing | Checked for optical pooled screening, 10x Feature Barcoding and T7 in situ transcription; prefix-distance screen proposed for barcode reservation | Becca |
+| 2026-11-07 | Barcode region described only for amplicon sequencing | Checked for optical pooled screening, 10x Feature Barcoding and T7 in situ transcription; prefix-distance screen (distance 3 over 10 bases) added to barcode reservation | Becca |
 | 2026-11-07 | Isoform gap described as 359 unexamined genes; one ortholog panel | All 451 isoform absences explained by the cohort rules; a CDS-gated Compara 116 ortholog redraw exists for review, not adopted | Becca |
 | 2026-11-07 | No ordering plan | Plates by insert length (order numbers `L1-O…`), 4 µg ordered / 3 µg assumed at 100 ng/µL in Addgene, three pooling and one backup plate sets; length-weighted pooling after Moon et al., with extra DNA for inserts over 4.3 kb | Becca |
 | 2026-11-05 | Panels described as drawn from library genes | Recorded as drawn from the April 2026 pool (1,775 of 2,369 genes), kept as drawn, and posed as reviewer question 4 | Becca: record the gap and keep the panels |

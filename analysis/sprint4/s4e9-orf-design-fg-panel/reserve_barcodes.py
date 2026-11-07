@@ -41,6 +41,7 @@ import csv
 import re
 from pathlib import Path
 
+from barcode_prefix_screen import PrefixScreen
 from build_constructs import CS1, ENZYMES, FWD_PRIMER, REV_PRIMER
 
 from deliverome_analysis import seqtools
@@ -275,6 +276,9 @@ def main(argv=None) -> int:
         if r.get("index")
     }
 
+    # Keep every barcode in use distinct over the bases in situ sequencing reads
+    # (barcode_prefix_screen.py). Barcodes already built are registered, not checked.
+    prefix = PrefixScreen(existing=used_bc)
     reserved, rejected = [], []
     for idx in sorted(pool):
         if len(reserved) == len(wanted):
@@ -287,6 +291,11 @@ def main(argv=None) -> int:
         ok, why = screens_pass(bc)
         if not ok:
             rejected.append((idx, bc, why))
+            continue
+        if not prefix.try_accept(bc):
+            rejected.append(
+                (idx, bc, f"within {prefix.min_distance - 1} of another over {prefix.bases} nt")
+            )
             continue
         reserved.append((idx, bc))
     if len(reserved) < len(wanted):
