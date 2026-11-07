@@ -201,7 +201,12 @@ and replacing 186. Of the 186 forms it drops, 183 still pass the coding-sequence
 those removals come from redrawing a wider pool, not from defects. The other three (cyno OPN3,
 ADCY2 and PRRG1) lack a supported start. Coding completeness is not domain equivalence: some
 drawn forms are much shorter than the human library protein (cyno SLC8A1 624 vs 973 aa,
-IL31RA 598 vs 764), and that correspondence review comes before adoption. Until it is adopted,
+IL31RA 598 vs 764), so each form was compared with the human library protein for signal
+peptide, TM helices, orientation, GPI and Pfam domains: 183 of 200 keep the human architecture,
+11 lose a feature and should be replaced by the next conserving form in the same seeded draw
+(cyno SLC8A1 loses TM6–10 and its C-terminal exchanger domain; cyno IL31RA its signal peptide
+and N-terminal 142 residues; cyno MS4A10 TM1, which flips its orientation), and 6 need a decision
+([review, draft](https://github.com/Deliverome-Project/deliverome-analysis/pull/273)). Until it is adopted,
 the current panel is the ordered one, a valid seeded draw from the smaller April pool, with the
 gap recorded (question 4, section 9;
 [`ORTHOLOG_CDS_POLICY.md`](../ORTHOLOG_CDS_POLICY.md)).
@@ -425,8 +430,10 @@ order of synthesized-insert length, shortest first, so each plate holds members 
 length. Each member gets an order number in that order, `L1-O0001` to `L1-O2735`, with its
 plate and well (column-major, A01, B01, …) in [`l1_order_plan.tsv`](l1_order_plan.tsv). The member
 ids themselves will be renumbered into this order when membership is frozen for the order, by
-a pipeline stage that keeps each old `l1-pNNNN` id as an alias and records the mapping; until
-then the order number carries the plate position. 2,735 members fill 29 plates per set.
+a pipeline stage that gives each active member a new id `l1-m0001`… in plate order, keeps the
+old `l1-pNNNN` id as `design_id`, and records the mapping
+([draft](https://github.com/Deliverome-Project/deliverome-analysis/pull/272)); until it merges,
+the order number carries the plate position. 2,735 members fill 29 plates per set.
 
 **Amounts.** 4 µg is ordered per member and 3 µg assumed delivered, normalized to
 100 ng/µL (30 µL), and split into five plate sets with the same layout:
