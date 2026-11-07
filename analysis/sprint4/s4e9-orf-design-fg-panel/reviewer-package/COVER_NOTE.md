@@ -81,8 +81,8 @@ The six issues above map to #11–#12 (structure models), #4 (cargo), #5–#6 (l
 
 | Issue | Owner | Status | Needs Becca |
 |---|---|---|---|
-| [#29](https://github.com/Deliverome-Project/l1-library-review/issues/29) Reviewer question: default to MANE for the 111 MANE/APPRIS disagreements | Becca | posed in the brief (section 9, question 1) |  |
-| [#30](https://github.com/Deliverome-Project/l1-library-review/issues/30) Reviewer question: N-terminal tagging at residue 1 for type III single-pass proteins (62 members) | Becca | posed in the brief (section 9, question 2) |  |
+| [#29](https://github.com/Deliverome-Project/l1-library-review/issues/29) Reviewer question: default to MANE for the 111 MANE/APPRIS disagreements | Becca | posed in the brief (section 10, question 1) |  |
+| [#30](https://github.com/Deliverome-Project/l1-library-review/issues/30) Reviewer question: N-terminal tagging at residue 1 for type III single-pass proteins (62 members) | Becca | posed in the brief (section 10, question 2) |  |
 | [#31](https://github.com/Deliverome-Project/l1-library-review/issues/31) Give outside reviewers access to this repository | Becca | not started | yes |
 | [#32](https://github.com/Deliverome-Project/l1-library-review/issues/32) Merge order: #234, then #243, then #254 | Becca | #234 merged 2026-11-05; #243 and #254 open as drafts | yes |
 

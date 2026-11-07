@@ -208,7 +208,7 @@ peptide, TM helices, orientation, GPI and Pfam domains: 183 of 200 keep the huma
 and N-terminal 142 residues; cyno MS4A10 TM1, which flips its orientation), and 6 need a decision
 ([review, draft](https://github.com/Deliverome-Project/deliverome-analysis/pull/273)). Until it is adopted,
 the current panel is the ordered one, a valid seeded draw from the smaller April pool, with the
-gap recorded (question 4, section 9;
+gap recorded (question 4, section 10;
 [`ORTHOLOG_CDS_POLICY.md`](../ORTHOLOG_CDS_POLICY.md)).
 
 Barcode-swap screening (section 6) does not apply between a gene's members: an isoform
@@ -501,7 +501,7 @@ shortest (FOLR1) to the longest (HEG1) and 3.5-fold predicts 68-fold. Their per-
 barcode counts in plasmid and integrated DNA fit the slope directly, though gene-specific effects
 are not separated from length with 16 genes. Pilot design and evidence:
 [`scratch/becca/l1-length-titer/`](https://github.com/Deliverome-Project/deliverome-analysis/pull/271)
-(question 5, section 9).
+(question 5, section 10).
 
 **Experimental plan before the library is pooled.** The per-kb factor is measured on four
 plasmids we already have, built on the L1 backbone, two at each end of the length range:
@@ -527,9 +527,76 @@ plasmids we already have, built on the L1 backbone, two at each end of the lengt
   the pooling plates are diluted. The 91-clone pilot is kept for the case where the four
   disagree with each other by more than the factor they are meant to measure.
 
-## 9. Decisions we would like reviewers to weigh in on
+## 9. Other assays the barcode region could support
 
-Questions 1, 2, 4 and 5 are choices already made that we want challenged; the third is open. Everything
+Every insert ends in the same readout block, transcribed from the EFS promoter upstream of the
+IRES:
+
+| Element | Sequence | Source |
+|---|---|---|
+| 5′ handle | `AGTCGTTAGCTGCCGTTCC` | [Tycko et al., 2020](https://pubmed.ncbi.nlm.nih.gov/33326746/), subpool-3 amplification primer (JT-832) |
+| Barcode | 20 nt, one per member | s1e2 pool, not yet reserved for L1 |
+| Gap | `GGATCTGGAC` | 10 nt |
+| RT site | `CCTTTGGGCAAGCACACGTC` | lentiGuide-BC 3′ site (Feldman et al. 2019), one base changed |
+| 10x Capture Sequence 1 | `GCTTTAAGGCCGGTCCTAGCAA` | 10x Feature Barcoding |
+
+Three assays could read it. Each is checked here against the sequences in `build_constructs.py`,
+because what the fragment carries when it is ordered decides which of them stay possible.
+
+**Optical pooled screening (in situ sequencing).** Feldman et al. read lentiGuide-BC barcodes
+in fixed cells by in situ reverse transcription, padlock gap-fill and sequencing by synthesis
+([Feldman et al., 2019](https://pubmed.ncbi.nlm.nih.gov/31626775/)). Three of their elements
+differ from ours:
+
+- *The RT site is not Feldman's exactly.* Their in situ RT primer (GACGTGTGCTTACCCAAAGG) binds the
+  transcript at `CCTTTGGGTAAGCACACGTC`; ours reads `CCTTTGGGCAAGCACACGTC`, one mismatch at
+  position 9, under one of the primer's locked-nucleic-acid bases. The site starts 10 nt after
+  the barcode, not immediately after it. Feldman's primer would bind with a central LNA mismatch;
+  restoring the T, or ordering a matched primer, removes the question.
+- *Feldman's padlock does not fit.* Its arms (`GTGTTCAATCAACATTCC` 5′ of the barcode,
+  `ACTGGCTATTCATTCGC` 3′ of it) match neither of our flanks, so a new padlock is needed: one arm
+  on the 3′ end of the Tycko handle (19 nt, Tm about 54 °C at 50 mM Na⁺, higher than Feldman's
+  44–46 °C arms) and one on the 10-nt gap, which is shorter than Feldman's 17-nt arm and would
+  have to run into the RT site. The handle and the gap-plus-RT region occur nowhere else in the
+  backbone or in any of the 2,735 L1 ORFs as a 15-mer (one ORF carries a 12-mer of the handle,
+  13 carry a 12-mer of the gap-plus-RT region).
+- *In situ sequencing reads only the first 9–12 bases.* Over the s1e2 pool, barcodes are unique
+  over 20 nt but not over short prefixes, and drawing L1's barcodes at random would leave
+  identical prefixes:
+
+| Bases read | Pool (28,506): prefix collisions | Random 2,735 drawn | Best 2,735 a screen can draw from the pool |
+|---:|---:|---|---|
+| 8 | 13,967 identical pairs | always identical pairs | minimum distance 2 (detects one error) |
+| 10 | 1,244 | always identical pairs | minimum distance 3 (corrects one error) |
+| 12 | 111 | identical pairs in 12 of 20 draws | minimum distance 4 |
+
+  L1's barcodes are not reserved yet, so a prefix-distance screen at reservation (for example,
+  minimum Hamming distance 3 over the first 10 bases, which the pool satisfies for all 2,735)
+  keeps optical screening open at no cost to sequencing. This assumes the readout starts at the
+  barcode's 5′ end, as Feldman's does.
+
+  Expression is expected but untested: like lentiGuide-BC, where the barcode sits in the Pol II
+  selection transcript, ours sits in the EFS transcript upstream of the IRES.
+
+**10x 3′ Feature Barcoding.** The 3′ v3 Feature Barcoding gel beads carry the reverse complement
+of CS1, so the RNA must carry `GCTTTAAGGCCGGTCCTAGCAA` in sense
+([Replogle et al., 2020](https://pubmed.ncbi.nlm.nih.gov/32231336/)). Our EFS transcript does,
+30 nt downstream of the barcode, so the orientation is right. What is untested is capture of an
+internal site in a long Pol II mRNA; Replogle et al. placed CS1 in a short sgRNA stem loop.
+
+**T7 in situ transcription (ZOMBIE and similar).** Not possible as designed: no T7 promoter is
+present. One could be added inside the Esp3I-flanked unit in two places:
+
+| Placement | Effect | Scan of the junctions (BbsI, Esp3I, BsaI; splice donor `GT[AG]AG`) |
+|---|---|---|
+| Sense, between the stop and the Tycko handle | adds 20 nt between ORF and barcode, small against the distances that drive template switching; the in situ RNA is sense, so the RT site above still works | clean |
+| Antisense, after CS1, reading back across the barcode | adds no ORF–barcode distance; the in situ RNA is antisense, so RT needs a primer on the handle instead | no enzyme site, but the promoter core reads `GTGAG` in the Pol II transcript, a splice-donor motif inside the packaged genome |
+
+The sense placement is the clean one.
+
+## 10. Decisions we would like reviewers to weigh in on
+
+Questions 1, 2, 4 and 5 are choices already made that we want challenged; 3 and 6 are open. Everything
 still being worked on before L1 is ordered is tracked, with its owner and status, in the
 accompanying [cover note](COVER_NOTE.md) and as issues on the review repository, so this brief
 can stay a description of the design.
@@ -541,6 +608,7 @@ can stay a description of the design.
 | 3 | **Five library genes with no intact copy in Ensembl 115** (FCGR2C, OR8J2, OR10AC1, OR52P1, OR4Q2; section 1). | They pass the gene filter but are absent from L1, so any per-gene coverage figure is 5 short. FCGR2C has a known intact (ORF) allele carried by a minority of people ([Breunis et al., 2007](https://pubmed.ncbi.nlm.nih.gov/17827395/)). | Build the intact UniProt allele by correcting the stop codons (FCGR2C, OR8J2) or the frameshifts, or record each as an exclusion. |
 | 4 | **Isoform and ortholog panels drawn from a 1,775-gene April pool** (section 4). | 418 mouse and 416 cyno orthologs, and 92 genes' isoforms, could never be drawn, so the panels say nothing about those genes' forms. | Reviewer view on keeping the panels as drawn (the current decision) versus rebuilding both universes over the 2,369 library genes and redrawing with the same seeds and strata, which would change many members. |
 | 5 | **How strongly to weight the pool by length** (section 8). | The ordering plan is computed at Moon et al.'s 3.5-fold lower titer per kb (up to 110× more of the longest member than the median); Sweeney and Vink's data imply about 2-fold per kb over our 4.4–9.4-kb packaged range, and an overcorrection inverts the bias. | Whether the four-plasmid titer test planned before pooling (section 8) is enough to set the factor. |
+| 6 | **Whether the barcode region should change before it is ordered** (section 9). | The fragment supports 10x Feature Barcoding as designed. Optical pooled screening needs a prefix-distance screen when barcodes are reserved and a new padlock, and gains from restoring Feldman's RT-site base; T7 in situ transcription needs a promoter, cleanly placed in sense. Each is cheap now and impossible after synthesis. | Which of these assays we should keep possible, and whether any of the three changes costs something we have not counted. |
 
 ## Materials and provenance
 
@@ -564,6 +632,7 @@ can stay a description of the design.
 | 2026-11-02 | No external-facing summary of L1 | This brief and a credential-free reviewer package | External review of the design before ordering |
 | 2026-11-04 | Package shipped from the analysis repository | A private review repository with the full bundle as a release asset, internal inputs included | Reviewers need only this design's code; Becca approved sharing every bundled input |
 | 2026-11-04 | Order-blocking issues listed among the review questions | Moved to a separate cover note; the brief keeps three design questions | The brief describes the design; the cover note tracks work in progress and changes as issues close (Becca) |
+| 2026-11-07 | Barcode region described only for amplicon sequencing | Checked for optical pooled screening, 10x Feature Barcoding and T7 in situ transcription; prefix-distance screen proposed for barcode reservation | Becca |
 | 2026-11-07 | Isoform gap described as 359 unexamined genes; one ortholog panel | All 451 isoform absences explained by the cohort rules; a CDS-gated Compara 116 ortholog redraw exists for review, not adopted | Becca |
 | 2026-11-07 | No ordering plan | Plates by insert length (order numbers `L1-O…`), 4 µg ordered / 3 µg assumed at 100 ng/µL in Addgene, three pooling and one backup plate sets; length-weighted pooling after Moon et al., with extra DNA for inserts over 4.3 kb | Becca |
 | 2026-11-05 | Panels described as drawn from library genes | Recorded as drawn from the April 2026 pool (1,775 of 2,369 genes), kept as drawn, and posed as reviewer question 4 | Becca: record the gap and keep the panels |
@@ -574,6 +643,13 @@ can stay a description of the design.
 - [Moon et al., 2026](https://pubmed.ncbi.nlm.nih.gov/42031729/). A combinatorial domain
   screening platform reveals epigenetic effector interactions for transcriptional perturbation.
   Nat Commun 17. doi:10.1038/s41467-026-72227-9.
+- [Feldman et al., 2019](https://pubmed.ncbi.nlm.nih.gov/31626775/). Optical pooled screens in
+  human cells. Cell 179:787–799. doi:10.1016/j.cell.2019.09.016.
+- [Replogle et al., 2020](https://pubmed.ncbi.nlm.nih.gov/32231336/). Combinatorial single-cell
+  CRISPR screens by direct guide RNA capture and targeted sequencing. Nat Biotechnol 38:954–961.
+- [Tycko et al., 2020](https://pubmed.ncbi.nlm.nih.gov/33326746/). High-throughput discovery and
+  characterization of human transcriptional effectors. Cell 183:2020–2035.
+  doi:10.1016/j.cell.2020.11.024.
 - [Sweeney & Vink, 2021](https://pubmed.ncbi.nlm.nih.gov/34095341/). The impact of lentiviral
   vector genome size and producer cell genomic to gag-pol mRNA ratios on packaging efficiency
   and titre. Mol Ther Methods Clin Dev 21:574–584.
