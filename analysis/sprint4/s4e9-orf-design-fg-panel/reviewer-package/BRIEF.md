@@ -419,7 +419,8 @@ fill batches, and a curated GPI attribute taken as of 2026-10-11.
 
 ## 8. How the library is ordered
 
-**Plates.** Every active member is ordered as purified plasmid in 96-well V-bottom plates, in
+**Plates.** Every active member is ordered as purified plasmid in IDTE buffer (10 mM Tris,
+0.1 mM EDTA, pH 8.0), stored at −80 °C, in 96-well V-bottom plates, in
 order of synthesized-insert length, shortest first, so each plate holds members of similar
 length. Each member gets an order number in that order, `L1-O0001` to `L1-O2735`, with its
 plate and well (column-major, A01, B01, …) in [`l1_order_plan.tsv`](l1_order_plan.tsv). The member
@@ -486,7 +487,12 @@ reported fold changes imply about 1.9–2.7-fold per kb, below Moon et al.'s 3.5
 Deliverome dataset yet supports a fitted slope. A 91-clone pilot that pools a length-spanning
 subset equimolar and compares plasmid with integrated barcode counts would pin the factor to
 about ×/÷1.1 before the full pool is made; if pooling cannot wait, 2-fold per kb is the
-better-supported weighting. Pilot design and evidence:
+better-supported weighting. A cheaper first test is already on the bench: the 16 P-series
+plasmids in the next pool (p0022–p0035, p0037, p0048) use the same backbone and span
+5,063–8,435 nt packaged, over which 2-fold per kb predicts a 10-fold titer drop from the
+shortest (FOLR1) to the longest (HEG1) and 3.5-fold predicts 68-fold. Their per-construct
+barcode counts in plasmid and integrated DNA fit the slope directly, though gene-specific effects
+are not separated from length with 16 genes. Pilot design and evidence:
 [`scratch/becca/l1-length-titer/`](https://github.com/Deliverome-Project/deliverome-analysis/pull/271)
 (question 5, section 9).
 
