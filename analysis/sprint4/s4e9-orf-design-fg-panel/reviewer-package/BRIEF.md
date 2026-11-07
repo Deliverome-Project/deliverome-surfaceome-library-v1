@@ -503,6 +503,30 @@ are not separated from length with 16 genes. Pilot design and evidence:
 [`scratch/becca/l1-length-titer/`](https://github.com/Deliverome-Project/deliverome-analysis/pull/271)
 (question 5, section 9).
 
+**Experimental plan before the library is pooled.** The per-kb factor is measured on four
+plasmids we already have, built on the L1 backbone, two at each end of the length range:
+
+| Plasmid | Gene | Packaged length (nt) |
+|---|---|---:|
+| p0028 | FOLR1 | 5,063 |
+| p0032 | MS4A1 | 5,183 |
+| p0023 | ERBB2 | 8,057 |
+| p0022 | HEG1 | 8,435 |
+
+- Virus is made from each plasmid on the same day by the same protocol, from equal pmol of
+  transfer plasmid, in three replicate preps.
+- Titer is read as integrated copies (qPCR or ddPCR) at low MOI, not as mScarlet3-positive
+  cells, because the reporter also depends on how well each ORF expresses.
+- The slope of log titer against packaged length gives the factor. Across the ~3.3 kb between
+  the pairs, 2-fold per kb predicts a ~10-fold drop and 3.5-fold per kb a ~60–70-fold drop.
+- Two plasmids per end matter more than a fifth plasmid in the middle: with one per end a
+  single gene's own titer effect is indistinguishable from length, while a pair that disagrees
+  shows it. Four plasmids call the right factor about as often as five (about 90% at 2-fold
+  construct-to-construct scatter, 77% at 3.2-fold), and two about 83% and 72%.
+- The order plan is then recomputed with `FACTOR` in `order_plan.py` set to the measured value before
+  the pooling plates are diluted. The 91-clone pilot is kept for the case where the four
+  disagree with each other by more than the factor they are meant to measure.
+
 ## 9. Decisions we would like reviewers to weigh in on
 
 Questions 1, 2, 4 and 5 are choices already made that we want challenged; the third is open. Everything
@@ -516,7 +540,7 @@ can stay a description of the design.
 | 2 | **N-terminal tagging at residue 1 for type III single-pass proteins** (62 members). | Rests on a topogenesis argument only: the single helix carries the whole orientation decision, and a 51-aa cassette changes the charge balance it reads. | A small panel testing N-terminal versus loop placement on type III proteins. |
 | 3 | **Five library genes with no intact copy in Ensembl 115** (FCGR2C, OR8J2, OR10AC1, OR52P1, OR4Q2; section 1). | They pass the gene filter but are absent from L1, so any per-gene coverage figure is 5 short. FCGR2C has a known intact (ORF) allele carried by a minority of people ([Breunis et al., 2007](https://pubmed.ncbi.nlm.nih.gov/17827395/)). | Build the intact UniProt allele by correcting the stop codons (FCGR2C, OR8J2) or the frameshifts, or record each as an exclusion. |
 | 4 | **Isoform and ortholog panels drawn from a 1,775-gene April pool** (section 4). | 418 mouse and 416 cyno orthologs, and 92 genes' isoforms, could never be drawn, so the panels say nothing about those genes' forms. | Reviewer view on keeping the panels as drawn (the current decision) versus rebuilding both universes over the 2,369 library genes and redrawing with the same seeds and strata, which would change many members. |
-| 5 | **How strongly to weight the pool by length** (section 8). | The ordering plan is computed at Moon et al.'s 3.5-fold lower titer per kb (up to 110× more of the longest member than the median); Sweeney and Vink's data imply about 2-fold per kb over our 4.4–9.4-kb packaged range, and an overcorrection inverts the bias. | Whether the 91-clone pilot is worth running before the pool, or whether to pool at 2-fold per kb now. |
+| 5 | **How strongly to weight the pool by length** (section 8). | The ordering plan is computed at Moon et al.'s 3.5-fold lower titer per kb (up to 110× more of the longest member than the median); Sweeney and Vink's data imply about 2-fold per kb over our 4.4–9.4-kb packaged range, and an overcorrection inverts the bias. | Whether the four-plasmid titer test planned before pooling (section 8) is enough to set the factor. |
 
 ## Materials and provenance
 
