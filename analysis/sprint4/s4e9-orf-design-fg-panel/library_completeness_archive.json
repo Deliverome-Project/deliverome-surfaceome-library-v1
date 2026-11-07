@@ -1,0 +1,91 @@
+{
+  "source_commit": "3b3e240f28609d26ff319cf62475f5bd50e61ff8",
+  "files": {
+    "code/CDS_AUDIT.md": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/completeness-review/2026-11-05/code/CDS_AUDIT.md",
+      "sha256": "324e88ff4eba5fd374f30c2fef549a5b92b1455db1cb4f18074390c9fa51b7df",
+      "bytes": 17428
+    },
+    "code/audit_library_completeness.py": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/completeness-review/2026-11-05/code/audit_library_completeness.py",
+      "sha256": "11771fd4e45a11ec6dee4ed7b9921b6723995095490a0f8bd861f137ba6f3466",
+      "bytes": 28124
+    },
+    "code/library_completeness_inputs.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/completeness-review/2026-11-05/code/library_completeness_inputs.json",
+      "sha256": "387abc1ac477f5cd33f1261939d5d6c5b33f5d273d31b18da6e9f051a347c823",
+      "bytes": 3903
+    },
+    "code/priority_cds_forms_inputs.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/completeness-review/2026-11-05/code/priority_cds_forms_inputs.json",
+      "sha256": "8475983271a3e477b26a5ea32895305a809fbac98c1c65685c2e4d813cb20bae",
+      "bytes": 4171
+    },
+    "code/review_priority_cds_forms.py": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/completeness-review/2026-11-05/code/review_priority_cds_forms.py",
+      "sha256": "efdcef917047a62f0b866b7dce6b2885ebeacaef4d29117c708f79f25ff5415a",
+      "bytes": 17902
+    },
+    "completeness/library_completeness.tsv": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/completeness-review/2026-11-05/completeness/library_completeness.tsv",
+      "sha256": "858d05b5ee7640f81161f9ccce5ea1cc91398203014cbe3f875e6bc7359e9249",
+      "bytes": 16012118
+    },
+    "completeness/library_completeness.tsv.gz": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/completeness-review/2026-11-05/completeness/library_completeness.tsv.gz",
+      "sha256": "23d20de75d058a785c031efe845fb5951805aad300338b9ccc005baa04ab0ccd",
+      "bytes": 2987357
+    },
+    "completeness/library_completeness_groups.tsv": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/completeness-review/2026-11-05/completeness/library_completeness_groups.tsv",
+      "sha256": "15d26651fa8b783e63589dde35e0a1f3271218289e481c5689f752ef3d0cdf7f",
+      "bytes": 5373
+    },
+    "completeness/library_completeness_review.tsv": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/completeness-review/2026-11-05/completeness/library_completeness_review.tsv",
+      "sha256": "a416cdacf98c338aedbc1293e850201b85d7fa47722f22df8d005e339d6ff2c8",
+      "bytes": 305799
+    },
+    "completeness/library_completeness_summary.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/completeness-review/2026-11-05/completeness/library_completeness_summary.json",
+      "sha256": "41dc1438355f2d8abaa4c07bde5e9a58796a7ccd4cdac95e7edc58ddff13e207",
+      "bytes": 10928
+    },
+    "priority/priority_cds_form_recommendations.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/completeness-review/2026-11-05/priority/priority_cds_form_recommendations.json",
+      "sha256": "91d638b4ea579a5e9bc96ed2a61d49c9045939359905713d638d1f858a65c142",
+      "bytes": 771334
+    },
+    "priority/priority_cds_form_recommendations.tsv": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/completeness-review/2026-11-05/priority/priority_cds_form_recommendations.tsv",
+      "sha256": "d911262185085b9ead7d73894be3e4fa51b08368b31c9d24e9ff045b5ea31343",
+      "bytes": 3450
+    },
+    "priority/priority_cds_form_review_run.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/completeness-review/2026-11-05/priority/priority_cds_form_review_run.json",
+      "sha256": "110ddd921a296091c63cf9ca04b8fb7f7d6947b1d6574ca5efaf4699592f2361",
+      "bytes": 1635
+    },
+    "replay.py": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/completeness-review/2026-11-05/replay.py",
+      "sha256": "d2f6aa0bfb8840fa2d1778d229e994bb38a0011ffa5ebeb9493d2ce09f2b5a47",
+      "bytes": 1989
+    },
+    "stage-1.log": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/completeness-review/2026-11-05/stage-1.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "stage-2.log": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/completeness-review/2026-11-05/stage-2.log",
+      "sha256": "4ef5b72936b125fdf4b3d498b57a937dbc383018afd3d5ba3f1cbb027171927b",
+      "bytes": 589
+    },
+    "workflow.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/completeness-review/2026-11-05/workflow.json",
+      "sha256": "3e60435a37d25d9f4cb69743d5ff64e347e4a38211ff4b1ee6e64c59a431946e",
+      "bytes": 1958
+    }
+  },
+  "prior_native_bundle": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/"
+}

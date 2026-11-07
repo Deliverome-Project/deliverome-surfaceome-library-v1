@@ -563,9 +563,9 @@ STAGES = [
     ),
     Stage(
         "universe_coverage",
-        "which library genes the isoform and ortholog universes could draw from: the "
-        "universes were built from the April 2026 surfaceome_expressed query set, not the "
-        "library gene list, so 594 library genes were never offered to them",
+        "recorded ortholog coverage relative to April 2026 surfaceome_expressed and the "
+        "selected isoform cohort relative to the current library gene list; "
+        "isoform cohort absence is not universe absence",
         "analysis/sprint4/s4e9-orf-design-fg-panel/check_universe_coverage.py",
         "Ensembl Compara 115 homology dumps (external://), accessible-surfaceome f9c73691 "
         "query set and ortholog lists, Ensembl 115 peptides, UniProt 2026_03 isoforms",

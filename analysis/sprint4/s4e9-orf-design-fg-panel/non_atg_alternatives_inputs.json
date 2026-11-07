@@ -1,0 +1,53 @@
+{
+  "purpose": "Read-only review of 54 uncertain native forms and their ATG alternatives; no sequence changes or canonical activation.",
+  "files": {
+    "baseline_evidence.json": {
+      "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/native-start/library_non_atg_evidence.json",
+      "sha256": "d34be722043b775de37b29bb1958af2db390c4af15573c9b185840108139c884"
+    },
+    "compara_evidence.json": {
+      "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/compara-start/compara116_non_atg_evidence.json",
+      "sha256": "ae129fc919d1a30d53bdecd900170bf3aca9f5dc86101025cbfcfc63a3901dcd"
+    },
+    "candidate_cds.json": {
+      "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild-inputs/2026-11-05/candidate_cds.json",
+      "sha256": "03c3413d70e15612868133d15839e092dba20fb05f3e8318d17f48928c91c662"
+    },
+    "compara116_candidate_cds.json": {
+      "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/cds/compara116_candidate_cds.json",
+      "sha256": "ca01b26c75d1bea4140a8bf35f1d82f7748942b390f480b9be3985b9c7233c2e"
+    },
+    "candidate_manifest_tranches_review.tsv": {
+      "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/review/candidate_manifest_tranches_review.tsv",
+      "sha256": "87cc321f33b59447f4377c3c601ddc921f00f92bcd33e3f9738aad2efd52fc66"
+    },
+    "compara116_member_map.tsv": {
+      "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/review/compara116_member_map.tsv",
+      "sha256": "a0a5a63cd174d89291d2e4403ddb490ab7f8aebef028fe58655790fb148740d0"
+    },
+    "topology.parquet": {
+      "source": "external:accessible-surfaceome/topology/2026-11-05-l1-compara116/topology.parquet",
+      "sha256": "604521dcbc920f520ea566aee3da638dad6540772c0f38d1792a631ca301e048"
+    },
+    "cds115_human.fa.gz": {
+      "source": "external:ensembl/release-115/cds/Homo_sapiens.GRCh38.cds.all.fa.gz",
+      "sha256": "53671b18f72fc63e7c7eb32f34d6072d192cd2aa517842c13b2e9f9102026878"
+    },
+    "cds115_mouse.fa.gz": {
+      "source": "external:ensembl/release-115/cds/Mus_musculus.GRCm39.cds.all.fa.gz",
+      "sha256": "dbd5ea4bd67e41d216d3567625059102ff1f505e071e41d17a3f3f48ae49b625"
+    },
+    "cds115_cyno.fa.gz": {
+      "source": "external:ensembl/release-115/cds/Macaca_fascicularis.Macaca_fascicularis_6.0.cds.all.fa.gz",
+      "sha256": "db4df9cdaa50a12bd9973a0f5c700d7576d011dfd822770ebc88fd645fbb1551"
+    },
+    "cds116_cyno.fa.gz": {
+      "source": "external:ensembl/release-116/cds/Macaca_fascicularis.Macaca_fascicularis_6.0.cds.all.fa.gz",
+      "sha256": "c020084ea95df949ffb4fc1dbb96b765819e37fa84cd76f0fe5ed3e100e448d3"
+    },
+    "candidate_constructs_compara116.json": {
+      "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/bundle/candidate_constructs_compara116.json",
+      "sha256": "7817653c75c54a295a4bbf7764f89e0e17dd3d94a30c29f0069f97ee06433929"
+    }
+  }
+}

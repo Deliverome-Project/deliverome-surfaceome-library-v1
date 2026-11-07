@@ -1,0 +1,58 @@
+{
+  "ensembl_release": 115,
+  "expected_baseline_non_ATG": 60,
+  "files": {
+    "candidate_cds.json": {
+      "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild-inputs/2026-11-05/candidate_cds.json",
+      "sha256": "03c3413d70e15612868133d15839e092dba20fb05f3e8318d17f48928c91c662",
+      "origin": "current library state captured 2026-11-05 before the ortholog redraw"
+    },
+    "candidate_manifest_tranches.tsv": {
+      "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild-inputs/2026-11-05/candidate_manifest_tranches.tsv",
+      "sha256": "7ad0538b831b521a10526f290f3b40eb9ec1f2333f0d674f88a831092c13cdf4",
+      "origin": "current library state captured 2026-11-05 before the ortholog redraw"
+    },
+    "Homo_sapiens.GRCh38.cds.all.fa.gz": {
+      "source": "external:ensembl/release-115/cds/Homo_sapiens.GRCh38.cds.all.fa.gz",
+      "sha256": "53671b18f72fc63e7c7eb32f34d6072d192cd2aa517842c13b2e9f9102026878"
+    },
+    "Homo_sapiens.GRCh38.115.gtf.gz": {
+      "source": "external:ensembl/release-115/gtf/Homo_sapiens.GRCh38.115.gtf.gz",
+      "sha256": "2f8e31578c3aa2f35646927c4a3b3b0dcf0321e57c0ebd3ecc81afcbc836d1a8",
+      "origin": "https://ftp.ensembl.org/pub/release-115/gtf/homo_sapiens/Homo_sapiens.GRCh38.115.gtf.gz"
+    },
+    "human_gtf115_CHECKSUMS": {
+      "source": "external:ensembl/release-115/gtf/homo_sapiens/CHECKSUMS",
+      "sha256": "349732c93ebb34c682e0633d22395b5c4f76126e23d10d0d5416990dc40239ad",
+      "origin": "https://ftp.ensembl.org/pub/release-115/gtf/homo_sapiens/CHECKSUMS"
+    },
+    "Mus_musculus.GRCm39.cds.all.fa.gz": {
+      "source": "external:ensembl/release-115/cds/Mus_musculus.GRCm39.cds.all.fa.gz",
+      "sha256": "dbd5ea4bd67e41d216d3567625059102ff1f505e071e41d17a3f3f48ae49b625"
+    },
+    "Macaca_fascicularis.Macaca_fascicularis_6.0.cds.all.fa.gz": {
+      "source": "external:ensembl/release-115/cds/Macaca_fascicularis.Macaca_fascicularis_6.0.cds.all.fa.gz",
+      "sha256": "db4df9cdaa50a12bd9973a0f5c700d7576d011dfd822770ebc88fd645fbb1551"
+    },
+    "Macaca_fascicularis.Macaca_fascicularis_6.0.115.gtf.gz": {
+      "source": "external:ensembl/release-115/gtf/Macaca_fascicularis.Macaca_fascicularis_6.0.115.gtf.gz",
+      "sha256": "1df1858a473de5185c5168aefc53776c9d3adcf33b1abc3b774d68dd20bba9b5",
+      "origin": "https://ftp.ensembl.org/pub/release-115/gtf/macaca_fascicularis/Macaca_fascicularis.Macaca_fascicularis_6.0.115.gtf.gz"
+    },
+    "cyno_gtf115_CHECKSUMS": {
+      "source": "external:ensembl/release-115/gtf/macaca_fascicularis/CHECKSUMS",
+      "sha256": "21821cb9c9d4c7780bc8bd0b89c24d631ef2a71cccb2166c3d419b6d7e8bda43",
+      "origin": "https://ftp.ensembl.org/pub/release-115/gtf/macaca_fascicularis/CHECKSUMS"
+    },
+    "Mus_musculus.GRCm39.115.gtf.gz": {
+      "source": "external:ensembl/release-115/gtf/Mus_musculus.GRCm39.115.gtf.gz",
+      "sha256": "fa45f9fed56e85d5c83e5912f88d76e277729da0761f99e33e4c88d4b08a9ec0",
+      "origin": "https://ftp.ensembl.org/pub/release-115/gtf/mus_musculus/Mus_musculus.GRCm39.115.gtf.gz"
+    },
+    "mouse_gtf115_CHECKSUMS": {
+      "source": "external:ensembl/release-115/gtf/mus_musculus/CHECKSUMS",
+      "sha256": "f780d6404f4c6700e5d09df9705ee910563be138991bd0612ff2398ffa204552",
+      "origin": "https://ftp.ensembl.org/pub/release-115/gtf/mus_musculus/CHECKSUMS"
+    }
+  }
+}

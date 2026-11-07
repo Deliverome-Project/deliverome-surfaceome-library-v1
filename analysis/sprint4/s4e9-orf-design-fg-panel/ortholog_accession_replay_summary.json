@@ -1,0 +1,35 @@
+{
+  "release": "2026_04",
+  "species": {
+    "mouse": {
+      "release_entries": 261799,
+      "recorded_rows": 1972,
+      "outcomes": {
+        "confirmed_accession": 1387,
+        "different_accession": 584,
+        "not_recorded_ok": 1
+      },
+      "confirmed_same_length": 1387,
+      "max_candidates": 136
+    },
+    "cyno": {
+      "release_entries": 62196,
+      "recorded_rows": 1927,
+      "outcomes": {
+        "confirmed_accession": 105,
+        "different_accession": 88,
+        "no_candidate": 1728,
+        "not_recorded_ok": 6
+      },
+      "confirmed_same_length": 105,
+      "max_candidates": 11
+    }
+  },
+  "exact_search_validations_passed": 5,
+  "total_outcomes": {
+    "confirmed_accession": 1492,
+    "different_accession": 672,
+    "no_candidate": 1728,
+    "not_recorded_ok": 7
+  }
+}

@@ -1,0 +1,242 @@
+{
+  "rule_version": "library-completeness-v1",
+  "rules": {
+    "COMP001": "Audit all active L1/L2 rows; count retired exclusions explicitly.",
+    "COMP002": "Use the documented comparison release and exact transcript identity, never infer original release or use gene-symbol fallback.",
+    "COMP003": "Require exact pinned CDS or a checksum-bound recorded stop/boundary exception.",
+    "COMP004": "NF tags report unconfirmed start/end; no inference of proven truncation.",
+    "COMP005": "Compare complete strand-oriented start/stop triplets at spliced CDS boundaries.",
+    "COMP006": "Retain biotype, TSL, phase and gene/assembly mapping evidence without automatic exclusion.",
+    "COMP007": "Separately sourced rescue/giant constructed arms are not missing transcript CDSs."
+  },
+  "snapshots": {
+    "current": {
+      "manifest_rows": 7082,
+      "active_rows": 7014,
+      "retired_rows_excluded": 68,
+      "counts_by_library_set_species_start": {
+        "l1|expression_rescue|human|construct_only_ATG": 25,
+        "l1|isoform|human|ATG": 149,
+        "l1|isoform|human|non_ATG": 1,
+        "l1|library_reference|human|ATG": 2357,
+        "l1|library_reference|human|non_ATG": 3,
+        "l1|ortholog|cyno|ATG": 97,
+        "l1|ortholog|cyno|non_ATG": 3,
+        "l1|ortholog|mouse|ATG": 100,
+        "l2|giant_truncation|human|construct_only_ATG": 24,
+        "l2|isoform|human|ATG": 1666,
+        "l2|isoform|human|non_ATG": 12,
+        "l2|ortholog|cyno|ATG": 1222,
+        "l2|ortholog|cyno|non_ATG": 38,
+        "l2|ortholog|mouse|ATG": 1314,
+        "l2|ortholog|mouse|non_ATG": 3
+      },
+      "primary_review_flag_counts": {
+        "FASTA_GTF_CDS_length:unassessable_stop_annotation": 17,
+        "cds_start_NF_not_confirmed": 13,
+        "mRNA_end_NF_not_confirmed": 5,
+        "mRNA_start_NF_not_confirmed": 13,
+        "non_ATG_initiation_review": 60,
+        "start_feature:no_start_feature": 56,
+        "stop_feature:no_stop_feature": 17,
+        "transcript_biotype_review:nonsense_mediated_decay": 37,
+        "transcript_biotype_review:protein_coding_LoF": 2,
+        "unknown_transcript_annotation": 26
+      },
+      "primary_annotation_status": {
+        "annotation_review": 146,
+        "boundary_features_supported": 6819,
+        "construct_only_not_transcript_CDS": 49
+      }
+    },
+    "compara116": {
+      "manifest_rows": 7271,
+      "active_rows": 6875,
+      "retired_rows_excluded": 396,
+      "counts_by_library_set_species_start": {
+        "l1|expression_rescue|human|construct_only_ATG": 25,
+        "l1|isoform|human|ATG": 149,
+        "l1|isoform|human|non_ATG": 1,
+        "l1|library_reference|human|ATG": 2357,
+        "l1|library_reference|human|non_ATG": 3,
+        "l1|ortholog|cyno|ATG": 97,
+        "l1|ortholog|cyno|non_ATG": 3,
+        "l1|ortholog|mouse|ATG": 100,
+        "l2|giant_truncation|human|construct_only_ATG": 24,
+        "l2|isoform|human|ATG": 1666,
+        "l2|isoform|human|non_ATG": 12,
+        "l2|ortholog|cyno|ATG": 1153,
+        "l2|ortholog|cyno|non_ATG": 36,
+        "l2|ortholog|mouse|ATG": 1246,
+        "l2|ortholog|mouse|non_ATG": 3
+      },
+      "primary_review_flag_counts": {
+        "FASTA_GTF_CDS_length:unassessable_stop_annotation": 17,
+        "cds_start_NF_not_confirmed": 13,
+        "mRNA_end_NF_not_confirmed": 5,
+        "mRNA_start_NF_not_confirmed": 13,
+        "non_ATG_initiation_review": 58,
+        "start_feature:no_start_feature": 55,
+        "stop_feature:no_stop_feature": 17,
+        "transcript_biotype_review:nonsense_mediated_decay": 36,
+        "transcript_biotype_review:protein_coding_LoF": 2,
+        "unknown_transcript_annotation": 26
+      },
+      "primary_annotation_status": {
+        "annotation_review": 143,
+        "boundary_features_supported": 6683,
+        "construct_only_not_transcript_CDS": 49
+      }
+    }
+  },
+  "annotation_inputs": {
+    "rule_version": "library-completeness-v1",
+    "source_release_policy": "Baseline keys are compared to pinned115 (not a claim of original source release); selected newly resolved keys use documented116; supplementary116 observations stay separate.",
+    "files": {
+      "cds115_human.gz": {
+        "source": "external:ensembl/release-115/cds/Homo_sapiens.GRCh38.cds.all.fa.gz",
+        "sha256": "53671b18f72fc63e7c7eb32f34d6072d192cd2aa517842c13b2e9f9102026878",
+        "release": 115,
+        "species": "human",
+        "kind": "cds"
+      },
+      "gtf115_human.gz": {
+        "source": "external:ensembl/release-115/gtf/Homo_sapiens.GRCh38.115.gtf.gz",
+        "sha256": "2f8e31578c3aa2f35646927c4a3b3b0dcf0321e57c0ebd3ecc81afcbc836d1a8",
+        "origin": "https://ftp.ensembl.org/pub/release-115/gtf/homo_sapiens/Homo_sapiens.GRCh38.115.gtf.gz",
+        "release": 115,
+        "species": "human",
+        "kind": "gtf"
+      },
+      "cds115_mouse.gz": {
+        "source": "external:ensembl/release-115/cds/Mus_musculus.GRCm39.cds.all.fa.gz",
+        "sha256": "dbd5ea4bd67e41d216d3567625059102ff1f505e071e41d17a3f3f48ae49b625",
+        "release": 115,
+        "species": "mouse",
+        "kind": "cds"
+      },
+      "gtf115_mouse.gz": {
+        "source": "external:ensembl/release-115/gtf/Mus_musculus.GRCm39.115.gtf.gz",
+        "sha256": "fa45f9fed56e85d5c83e5912f88d76e277729da0761f99e33e4c88d4b08a9ec0",
+        "origin": "https://ftp.ensembl.org/pub/release-115/gtf/mus_musculus/Mus_musculus.GRCm39.115.gtf.gz",
+        "release": 115,
+        "species": "mouse",
+        "kind": "gtf"
+      },
+      "cds115_cyno.gz": {
+        "source": "external:ensembl/release-115/cds/Macaca_fascicularis.Macaca_fascicularis_6.0.cds.all.fa.gz",
+        "sha256": "db4df9cdaa50a12bd9973a0f5c700d7576d011dfd822770ebc88fd645fbb1551",
+        "release": 115,
+        "species": "cyno",
+        "kind": "cds"
+      },
+      "gtf115_cyno.gz": {
+        "source": "external:ensembl/release-115/gtf/Macaca_fascicularis.Macaca_fascicularis_6.0.115.gtf.gz",
+        "sha256": "1df1858a473de5185c5168aefc53776c9d3adcf33b1abc3b774d68dd20bba9b5",
+        "origin": "https://ftp.ensembl.org/pub/release-115/gtf/macaca_fascicularis/Macaca_fascicularis.Macaca_fascicularis_6.0.115.gtf.gz",
+        "release": 115,
+        "species": "cyno",
+        "kind": "gtf"
+      },
+      "cds116_mouse.gz": {
+        "source": "external:ensembl/release-116/cds/Mus_musculus.GRCm39.cds.all.fa.gz",
+        "sha256": "8c0a53a7fe973adaf6d884884ec86a329deebfb519d0d4f736bd1c0c67f09964",
+        "origin": "https://ftp.ensembl.org/pub/release-116/fasta/mus_musculus/cds/Mus_musculus.GRCm39.cds.all.fa.gz",
+        "release": 116,
+        "species": "mouse",
+        "kind": "cds"
+      },
+      "cds116_cyno.gz": {
+        "source": "external:ensembl/release-116/cds/Macaca_fascicularis.Macaca_fascicularis_6.0.cds.all.fa.gz",
+        "sha256": "c020084ea95df949ffb4fc1dbb96b765819e37fa84cd76f0fe5ed3e100e448d3",
+        "origin": "https://ftp.ensembl.org/pub/release-116/fasta/macaca_fascicularis/cds/Macaca_fascicularis.Macaca_fascicularis_6.0.cds.all.fa.gz",
+        "release": 116,
+        "species": "cyno",
+        "kind": "cds"
+      },
+      "gtf116_cyno.gz": {
+        "source": "external:ensembl/release-116/gtf/Macaca_fascicularis.Macaca_fascicularis_6.0.116.gtf.gz",
+        "sha256": "8fc17ccec2d2f90b271495bfa7641ca496e14537a82636615a27c6a33cb5746c",
+        "origin": "https://ftp.ensembl.org/pub/release-116/gtf/macaca_fascicularis/Macaca_fascicularis.Macaca_fascicularis_6.0.116.gtf.gz",
+        "release": 116,
+        "species": "cyno",
+        "kind": "gtf"
+      },
+      "gtf116_mouse.gz": {
+        "source": "external:ensembl/release-116/gtf/Mus_musculus.GRCm39.116.gtf.gz",
+        "sha256": "5c29fd9e3157cf40fdbbf76ab25bfe7f79aa61313e0b672664ddb0cb251c02e1",
+        "origin": "https://ftp.ensembl.org/pub/release-116/gtf/mus_musculus/Mus_musculus.GRCm39.116.gtf.gz",
+        "release": 116,
+        "species": "mouse",
+        "kind": "gtf"
+      }
+    }
+  },
+  "snapshot_provenance": {
+    "current": {
+      "manifest": {
+        "file": "candidate_manifest_tranches.tsv",
+        "sha256": "7ad0538b831b521a10526f290f3b40eb9ec1f2333f0d674f88a831092c13cdf4"
+      },
+      "cds": {
+        "file": "candidate_cds.json",
+        "sha256": "03c3413d70e15612868133d15839e092dba20fb05f3e8318d17f48928c91c662"
+      },
+      "constructs": {
+        "file": "candidate_constructs.json",
+        "sha256": "cdc5fa5e119e7590d910b44db03138a829f7a59e6d8ec430d8ebbe9f21008e3f"
+      }
+    },
+    "compara116": {
+      "manifest": {
+        "file": "candidate_manifest_tranches_review.tsv",
+        "sha256": "87cc321f33b59447f4377c3c601ddc921f00f92bcd33e3f9738aad2efd52fc66"
+      },
+      "cds": {
+        "file": "candidate_cds_compara116.json",
+        "sha256": "519196dada83f49b6ac9e7927a3044bba7ace093efb479e93bc13ec32a8df899"
+      },
+      "constructs": {
+        "file": "candidate_constructs_compara116.json",
+        "sha256": "7817653c75c54a295a4bbf7764f89e0e17dd3d94a30c29f0069f97ee06433929"
+      }
+    }
+  },
+  "script_commit": "3b3e240f28609d26ff319cf62475f5bd50e61ff8",
+  "script_has_uncommitted_changes": false,
+  "script_sha256": "11771fd4e45a11ec6dee4ed7b9921b6723995095490a0f8bd861f137ba6f3466",
+  "command_argv": [
+    "audit_library_completeness.py",
+    "--snapshot",
+    "current",
+    "analysis/sprint4/s4e9-orf-design-fg-panel/candidate_manifest_tranches.tsv",
+    "../ortholog-116/inputs/candidate_cds.json",
+    "../compara116-adoption/inputs/candidate_constructs.json",
+    "--snapshot",
+    "compara116",
+    "../cds-review-final/adoption/review/candidate_manifest_tranches_review.tsv",
+    "../cds-review-final/adoption/bundle/candidate_cds_compara116.json",
+    "../cds-review-final/adoption/bundle/candidate_constructs_compara116.json",
+    "--inputs",
+    "analysis/sprint4/s4e9-orf-design-fg-panel/library_completeness_inputs.json",
+    "--input-dir",
+    "../library-completeness/inputs",
+    "--baseline-cds",
+    "../ortholog-116/inputs/candidate_cds.json",
+    "--member-map",
+    "../cds-review-final/adoption/review/compara116_member_map.tsv",
+    "--out",
+    "../completeness-review-final/completeness"
+  ],
+  "baseline_cds_sha256": "03c3413d70e15612868133d15839e092dba20fb05f3e8318d17f48928c91c662",
+  "member_map_sha256": "a0a5a63cd174d89291d2e4403ddb490ab7f8aebef028fe58655790fb148740d0",
+  "sequences_changed": 0,
+  "automatic_model_replacements": 0,
+  "interpretation": "NF means a boundary is not confirmed; neither ATG nor absence of NF proves full length.",
+  "output_sha256": {
+    "library_completeness.tsv": "858d05b5ee7640f81161f9ccce5ea1cc91398203014cbe3f875e6bc7359e9249",
+    "library_completeness.tsv.gz": "23d20de75d058a785c031efe845fb5951805aad300338b9ccc005baa04ab0ccd",
+    "library_completeness_groups.tsv": "15d26651fa8b783e63589dde35e0a1f3271218289e481c5689f752ef3d0cdf7f",
+    "library_completeness_review.tsv": "a416cdacf98c338aedbc1293e850201b85d7fa47722f22df8d005e339d6ff2c8"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "compara_release": 116,
+  "library_genes": 2369,
+  "species": {
+    "mouse": {
+      "status": {
+        "eligible": 1876,
+        "no_one2one_high_confidence_pair": 484,
+        "human_gene_mapping_missing": 9
+      },
+      "eligible_not_in_april_list": 431
+    },
+    "cyno": {
+      "status": {
+        "eligible": 1862,
+        "no_one2one_high_confidence_pair": 498,
+        "human_gene_mapping_missing": 9
+      },
+      "eligible_not_in_april_list": 426
+    }
+  },
+  "ensembl_candidate_proteins": 22544,
+  "stage": "gene-level eligibility; proteoform selection and panel redraw pending",
+  "input_sha256": {
+    "library_members.json": "b64127fbb219778c912986b51da3a61c66c16c4484dbe248e4f39e8c583c5b12",
+    "candidate_manifest_tranches.tsv": "7ad0538b831b521a10526f290f3b40eb9ec1f2333f0d674f88a831092c13cdf4",
+    "Homo_sapiens.GRCh38.pep.all.fa.gz": "9b43da92651b35814597af6a8b18f500b768679a49fa4678224f384917ce7668",
+    "Mus_musculus.GRCm39.pep.all.fa.gz": "480d4a6eb540b1cc26bb4a80ad8f8a50aba514791c576ed41362127f56809a37",
+    "Macaca_fascicularis.Macaca_fascicularis_6.0.pep.all.fa.gz": "6b6972f7e8f1d547437f7b396c1d8c6100fba892d7a372355bdcb7604164c512",
+    "Compara.116.homo_sapiens.protein_default.homologies.tsv.gz": "fc101ab6e90966091064e5f2e695e46da50d9bc50f4543340ded7d0ccd6e7933",
+    "Compara.116.mus_musculus.protein_default.homologies.tsv.gz": "5ebd0a7bd141840da13d3d4275ae7050d82e894674cb418f30d5570321bf1e0d",
+    "Compara.116.macaca_fascicularis.protein_default.homologies.tsv.gz": "09b3926a1925d8266ae783a531dd53ff64d2b1af8518b8135c163dcec221639e",
+    "mouse_ortholog_one2one_highconf_non_hla_metadata.csv": "1b999526c2d60c786815f4af64710357b69950a010585a6346af7c3a76b81e7f",
+    "cyno_ortholog_one2one_highconf_non_hla_metadata.csv": "466526ac36dcc2d3e1e4b5b90484e17ff4800df2a6d0f8c73432f160f7916901"
+  }
+}

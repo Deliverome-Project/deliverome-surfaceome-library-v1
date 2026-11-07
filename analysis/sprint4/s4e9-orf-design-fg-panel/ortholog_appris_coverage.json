@@ -1,0 +1,476 @@
+{
+  "mouse": {
+    "Ensembl116_GTF_tags": {
+      "source_available": true,
+      "interpretation": "Assignments are tags in the pinned release116 GTF. Missing tags do not exclude a model.",
+      "target_genes": 1876,
+      "candidate_transcripts": 20730,
+      "genes_with_any_source_assignment": 0,
+      "candidate_transcripts_with_any_assignment": 0,
+      "genes_with_candidate_assignment": 0,
+      "candidate_transcripts_with_principal_assignment": 0,
+      "genes_with_candidate_principal_assignment": 0,
+      "eligible_principal_transcripts": 0,
+      "genes_with_eligible_principal": 0,
+      "rejected_principal_transcripts": 0,
+      "principal_assignments_absent_from_candidate_universe": 0,
+      "genes_without_available_source_assignment": 1876,
+      "principal_rejection_reason_counts": {},
+      "rejected_principal_records": []
+    },
+    "external_APPRIS": {
+      "source_available": true,
+      "interpretation": "Pinned APPRIS release116 assignments validated by matching-source CDS/GTF identity/version and exact protein equality to116 peptides; rank carries its exact source release.",
+      "target_genes": 1876,
+      "candidate_transcripts": 20730,
+      "genes_with_any_source_assignment": 1876,
+      "candidate_transcripts_with_any_assignment": 6657,
+      "genes_with_candidate_assignment": 1876,
+      "candidate_transcripts_with_principal_assignment": 4956,
+      "genes_with_candidate_principal_assignment": 1870,
+      "eligible_principal_transcripts": 4951,
+      "genes_with_eligible_principal": 1868,
+      "rejected_principal_transcripts": 5,
+      "principal_assignments_absent_from_candidate_universe": 0,
+      "genes_without_available_source_assignment": 0,
+      "principal_rejection_reason_counts": {
+        "FASTA_GTF_CDS_length:unassessable_stop_annotation": 1,
+        "cds_end_NF_not_confirmed": 1,
+        "mRNA_end_NF_not_confirmed": 5,
+        "mRNA_start_NF_not_confirmed": 1,
+        "stop_feature:no_stop_feature": 1
+      },
+      "rejected_principal_records": [
+        {
+          "gene": "ENSMUSG00000022587",
+          "transcript": "ENSMUST00000190810",
+          "eligibility_reasons": "mRNA_end_NF_not_confirmed"
+        },
+        {
+          "gene": "ENSMUSG00000022587",
+          "transcript": "ENSMUST00000191127",
+          "eligibility_reasons": "mRNA_end_NF_not_confirmed"
+        },
+        {
+          "gene": "ENSMUSG00000038178",
+          "transcript": "ENSMUST00000108433",
+          "eligibility_reasons": "mRNA_end_NF_not_confirmed"
+        },
+        {
+          "gene": "ENSMUSG00000039270",
+          "transcript": "ENSMUST00000107359",
+          "eligibility_reasons": "mRNA_end_NF_not_confirmed"
+        },
+        {
+          "gene": "ENSMUSG00000047197",
+          "transcript": "ENSMUST00000062931",
+          "eligibility_reasons": "FASTA_GTF_CDS_length:unassessable_stop_annotation;cds_end_NF_not_confirmed;mRNA_end_NF_not_confirmed;mRNA_start_NF_not_confirmed;stop_feature:no_stop_feature"
+        }
+      ],
+      "source_provenance": {
+        "cds": {
+          "source": "external:ensembl/release-116/cds/Mus_musculus.GRCm39.cds.all.fa.gz",
+          "sha256": "8c0a53a7fe973adaf6d884884ec86a329deebfb519d0d4f736bd1c0c67f09964",
+          "origin": "https://ftp.ensembl.org/pub/release-116/fasta/mus_musculus/cds/Mus_musculus.GRCm39.cds.all.fa.gz",
+          "release": 116,
+          "species": "mouse",
+          "kind": "cds"
+        },
+        "gtf": {
+          "source": "external:ensembl/release-116/gtf/Mus_musculus.GRCm39.116.gtf.gz",
+          "sha256": "5c29fd9e3157cf40fdbbf76ab25bfe7f79aa61313e0b672664ddb0cb251c02e1",
+          "origin": "https://ftp.ensembl.org/pub/release-116/gtf/mus_musculus/Mus_musculus.GRCm39.116.gtf.gz",
+          "release": 116,
+          "species": "mouse",
+          "kind": "gtf"
+        },
+        "appris": {
+          "source": "external:appris/2026_08.v50/e116v50/mus_musculus/appris_data.principal.txt",
+          "sha256": "1e9d500c61149d9a9fbe2af6b5657fa77bc72201d610357be435b59d2c0abe04",
+          "origin": "https://apprisws.bioinfo.cnio.es/pub/releases/2026_08.v50/datafiles/mus_musculus/e116v50/appris_data.principal.txt",
+          "species": "mouse",
+          "release": 116,
+          "appris_release": "2026_08.v50",
+          "appris_dataset": "e116v50",
+          "kind": "appris"
+        }
+      },
+      "assignment_source_release": 116,
+      "principal_stable_ID_overlaps_before_protein_validation": 4962,
+      "principal_validation_states": {
+        "source116_to_target116_protein_mismatch": 3,
+        "source116_translation_unassessable": 1,
+        "source_or_target_protein_unassessable": 2,
+        "verified_identical_protein": 4956
+      },
+      "unverified_principal_overlap_records": [
+        {
+          "gene": "ENSMUSG00000022199",
+          "transcript": "ENSMUST00000228495",
+          "validation_evidence": {
+            "assignment_source_release": 116,
+            "assignment_labels": [
+              "PRINCIPAL:4"
+            ],
+            "source_provenance": {
+              "cds": {
+                "source": "external:ensembl/release-116/cds/Mus_musculus.GRCm39.cds.all.fa.gz",
+                "sha256": "8c0a53a7fe973adaf6d884884ec86a329deebfb519d0d4f736bd1c0c67f09964",
+                "origin": "https://ftp.ensembl.org/pub/release-116/fasta/mus_musculus/cds/Mus_musculus.GRCm39.cds.all.fa.gz",
+                "release": 116,
+                "species": "mouse",
+                "kind": "cds"
+              },
+              "gtf": {
+                "source": "external:ensembl/release-116/gtf/Mus_musculus.GRCm39.116.gtf.gz",
+                "sha256": "5c29fd9e3157cf40fdbbf76ab25bfe7f79aa61313e0b672664ddb0cb251c02e1",
+                "origin": "https://ftp.ensembl.org/pub/release-116/gtf/mus_musculus/Mus_musculus.GRCm39.116.gtf.gz",
+                "release": 116,
+                "species": "mouse",
+                "kind": "gtf"
+              },
+              "appris": {
+                "source": "external:appris/2026_08.v50/e116v50/mus_musculus/appris_data.principal.txt",
+                "sha256": "1e9d500c61149d9a9fbe2af6b5657fa77bc72201d610357be435b59d2c0abe04",
+                "origin": "https://apprisws.bioinfo.cnio.es/pub/releases/2026_08.v50/datafiles/mus_musculus/e116v50/appris_data.principal.txt",
+                "species": "mouse",
+                "release": 116,
+                "appris_release": "2026_08.v50",
+                "appris_dataset": "e116v50",
+                "kind": "appris"
+              }
+            },
+            "gene": "ENSMUSG00000022199",
+            "transcript": "ENSMUST00000228495",
+            "target_116_protein_sha256": "dffddca55c63eb93a4faa71690ca2c6984ac9b6db9c8052f4f44c4bffeb3a7da",
+            "interpretation": "Protein-validated APPRIS release116 support; version-matched116 assignment.",
+            "source_transcript_version": "ENSMUST00000228495.4",
+            "source_cds_sha256": "50ceba4c2bf93c2e19807eabaa486a949754501da5bb9c68a033eed7f85fd229",
+            "source_identity_checks": {
+              "stable_gene_coherent": true,
+              "transcript_version_coherent": true,
+              "gene_version_coherent": true,
+              "assembly_coherent": true,
+              "chromosome_coherent": true,
+              "strand_coherent": true
+            },
+            "source_protein_sha256": "325bd526d49d8c98025f0c8a78627ae9fa3ad4f6861351199f0e5019738c99fe",
+            "source_116_protein_sha256": "325bd526d49d8c98025f0c8a78627ae9fa3ad4f6861351199f0e5019738c99fe",
+            "validation_status": "source116_to_target116_protein_mismatch"
+          }
+        },
+        {
+          "gene": "ENSMUSG00000029868",
+          "transcript": "ENSMUST00000031902",
+          "validation_evidence": {
+            "assignment_source_release": 116,
+            "assignment_labels": [
+              "PRINCIPAL:1"
+            ],
+            "source_provenance": {
+              "cds": {
+                "source": "external:ensembl/release-116/cds/Mus_musculus.GRCm39.cds.all.fa.gz",
+                "sha256": "8c0a53a7fe973adaf6d884884ec86a329deebfb519d0d4f736bd1c0c67f09964",
+                "origin": "https://ftp.ensembl.org/pub/release-116/fasta/mus_musculus/cds/Mus_musculus.GRCm39.cds.all.fa.gz",
+                "release": 116,
+                "species": "mouse",
+                "kind": "cds"
+              },
+              "gtf": {
+                "source": "external:ensembl/release-116/gtf/Mus_musculus.GRCm39.116.gtf.gz",
+                "sha256": "5c29fd9e3157cf40fdbbf76ab25bfe7f79aa61313e0b672664ddb0cb251c02e1",
+                "origin": "https://ftp.ensembl.org/pub/release-116/gtf/mus_musculus/Mus_musculus.GRCm39.116.gtf.gz",
+                "release": 116,
+                "species": "mouse",
+                "kind": "gtf"
+              },
+              "appris": {
+                "source": "external:appris/2026_08.v50/e116v50/mus_musculus/appris_data.principal.txt",
+                "sha256": "1e9d500c61149d9a9fbe2af6b5657fa77bc72201d610357be435b59d2c0abe04",
+                "origin": "https://apprisws.bioinfo.cnio.es/pub/releases/2026_08.v50/datafiles/mus_musculus/e116v50/appris_data.principal.txt",
+                "species": "mouse",
+                "release": 116,
+                "appris_release": "2026_08.v50",
+                "appris_dataset": "e116v50",
+                "kind": "appris"
+              }
+            },
+            "gene": "ENSMUSG00000029868",
+            "transcript": "ENSMUST00000031902",
+            "target_116_protein_sha256": "532f9cacc9395ecd6b6f3875e2ba0d167a806011ee861360fc00e2f0751b4393",
+            "interpretation": "Protein-validated APPRIS release116 support; version-matched116 assignment.",
+            "source_transcript_version": "ENSMUST00000031902.8",
+            "source_cds_sha256": "db2aec4b3eb41b6e8e4f54923b04f0768fd154bcb0fe8c069d016a6b4fb76257",
+            "source_identity_checks": {
+              "stable_gene_coherent": true,
+              "transcript_version_coherent": true,
+              "gene_version_coherent": true,
+              "assembly_coherent": true,
+              "chromosome_coherent": true,
+              "strand_coherent": true
+            },
+            "source_protein_sha256": "30cafdc1d8d6c96360ee2240ab74facd7167ffce76a3942fd0a5c67b9ed815fe",
+            "source_116_protein_sha256": "30cafdc1d8d6c96360ee2240ab74facd7167ffce76a3942fd0a5c67b9ed815fe",
+            "validation_status": "source116_to_target116_protein_mismatch"
+          }
+        },
+        {
+          "gene": "ENSMUSG00000046808",
+          "transcript": "ENSMUST00000126664",
+          "validation_evidence": {
+            "assignment_source_release": 116,
+            "assignment_labels": [
+              "PRINCIPAL:1"
+            ],
+            "source_provenance": {
+              "cds": {
+                "source": "external:ensembl/release-116/cds/Mus_musculus.GRCm39.cds.all.fa.gz",
+                "sha256": "8c0a53a7fe973adaf6d884884ec86a329deebfb519d0d4f736bd1c0c67f09964",
+                "origin": "https://ftp.ensembl.org/pub/release-116/fasta/mus_musculus/cds/Mus_musculus.GRCm39.cds.all.fa.gz",
+                "release": 116,
+                "species": "mouse",
+                "kind": "cds"
+              },
+              "gtf": {
+                "source": "external:ensembl/release-116/gtf/Mus_musculus.GRCm39.116.gtf.gz",
+                "sha256": "5c29fd9e3157cf40fdbbf76ab25bfe7f79aa61313e0b672664ddb0cb251c02e1",
+                "origin": "https://ftp.ensembl.org/pub/release-116/gtf/mus_musculus/Mus_musculus.GRCm39.116.gtf.gz",
+                "release": 116,
+                "species": "mouse",
+                "kind": "gtf"
+              },
+              "appris": {
+                "source": "external:appris/2026_08.v50/e116v50/mus_musculus/appris_data.principal.txt",
+                "sha256": "1e9d500c61149d9a9fbe2af6b5657fa77bc72201d610357be435b59d2c0abe04",
+                "origin": "https://apprisws.bioinfo.cnio.es/pub/releases/2026_08.v50/datafiles/mus_musculus/e116v50/appris_data.principal.txt",
+                "species": "mouse",
+                "release": 116,
+                "appris_release": "2026_08.v50",
+                "appris_dataset": "e116v50",
+                "kind": "appris"
+              }
+            },
+            "gene": "ENSMUSG00000046808",
+            "transcript": "ENSMUST00000126664",
+            "target_116_protein_sha256": "25a24c15c635e0b3446a4b2b65a8dfb975cd6d1817be24d0b1fcdda7d8f6c280",
+            "interpretation": "Protein-validated APPRIS release116 support; version-matched116 assignment.",
+            "source_transcript_version": "ENSMUST00000126664.8",
+            "source_cds_sha256": "4e129ec23ca3f17d8672c8ee9a9cb81ea01e4560a9af5c7e8e85a7998f8c95ae",
+            "source_identity_checks": {
+              "stable_gene_coherent": true,
+              "transcript_version_coherent": true,
+              "gene_version_coherent": true,
+              "assembly_coherent": true,
+              "chromosome_coherent": true,
+              "strand_coherent": true
+            },
+            "source_protein_sha256": "25a24c15c635e0b3446a4b2b65a8dfb975cd6d1817be24d0b1fcdda7d8f6c280",
+            "source_116_protein_sha256": "25a24c15c635e0b3446a4b2b65a8dfb975cd6d1817be24d0b1fcdda7d8f6c280",
+            "validation_status": "source_or_target_protein_unassessable"
+          }
+        },
+        {
+          "gene": "ENSMUSG00000050577",
+          "transcript": "ENSMUST00000216665",
+          "validation_evidence": {
+            "assignment_source_release": 116,
+            "assignment_labels": [
+              "PRINCIPAL:1"
+            ],
+            "source_provenance": {
+              "cds": {
+                "source": "external:ensembl/release-116/cds/Mus_musculus.GRCm39.cds.all.fa.gz",
+                "sha256": "8c0a53a7fe973adaf6d884884ec86a329deebfb519d0d4f736bd1c0c67f09964",
+                "origin": "https://ftp.ensembl.org/pub/release-116/fasta/mus_musculus/cds/Mus_musculus.GRCm39.cds.all.fa.gz",
+                "release": 116,
+                "species": "mouse",
+                "kind": "cds"
+              },
+              "gtf": {
+                "source": "external:ensembl/release-116/gtf/Mus_musculus.GRCm39.116.gtf.gz",
+                "sha256": "5c29fd9e3157cf40fdbbf76ab25bfe7f79aa61313e0b672664ddb0cb251c02e1",
+                "origin": "https://ftp.ensembl.org/pub/release-116/gtf/mus_musculus/Mus_musculus.GRCm39.116.gtf.gz",
+                "release": 116,
+                "species": "mouse",
+                "kind": "gtf"
+              },
+              "appris": {
+                "source": "external:appris/2026_08.v50/e116v50/mus_musculus/appris_data.principal.txt",
+                "sha256": "1e9d500c61149d9a9fbe2af6b5657fa77bc72201d610357be435b59d2c0abe04",
+                "origin": "https://apprisws.bioinfo.cnio.es/pub/releases/2026_08.v50/datafiles/mus_musculus/e116v50/appris_data.principal.txt",
+                "species": "mouse",
+                "release": 116,
+                "appris_release": "2026_08.v50",
+                "appris_dataset": "e116v50",
+                "kind": "appris"
+              }
+            },
+            "gene": "ENSMUSG00000050577",
+            "transcript": "ENSMUST00000216665",
+            "target_116_protein_sha256": "bccc489136189624095dfdc84829fe08a873f7431fb6f82ac2b4cf22fd2d3ce1",
+            "interpretation": "Protein-validated APPRIS release116 support; version-matched116 assignment.",
+            "source_transcript_version": "ENSMUST00000216665.3",
+            "source_cds_sha256": "973b8827c119bd9cfd389bf143b957202415b3d1f65664bd5a7f15d50b53bf4b",
+            "source_identity_checks": {
+              "stable_gene_coherent": true,
+              "transcript_version_coherent": true,
+              "gene_version_coherent": true,
+              "assembly_coherent": true,
+              "chromosome_coherent": true,
+              "strand_coherent": true
+            },
+            "validation_status": "source116_translation_unassessable"
+          }
+        },
+        {
+          "gene": "ENSMUSG00000081859",
+          "transcript": "ENSMUST00000121432",
+          "validation_evidence": {
+            "assignment_source_release": 116,
+            "assignment_labels": [
+              "PRINCIPAL:1"
+            ],
+            "source_provenance": {
+              "cds": {
+                "source": "external:ensembl/release-116/cds/Mus_musculus.GRCm39.cds.all.fa.gz",
+                "sha256": "8c0a53a7fe973adaf6d884884ec86a329deebfb519d0d4f736bd1c0c67f09964",
+                "origin": "https://ftp.ensembl.org/pub/release-116/fasta/mus_musculus/cds/Mus_musculus.GRCm39.cds.all.fa.gz",
+                "release": 116,
+                "species": "mouse",
+                "kind": "cds"
+              },
+              "gtf": {
+                "source": "external:ensembl/release-116/gtf/Mus_musculus.GRCm39.116.gtf.gz",
+                "sha256": "5c29fd9e3157cf40fdbbf76ab25bfe7f79aa61313e0b672664ddb0cb251c02e1",
+                "origin": "https://ftp.ensembl.org/pub/release-116/gtf/mus_musculus/Mus_musculus.GRCm39.116.gtf.gz",
+                "release": 116,
+                "species": "mouse",
+                "kind": "gtf"
+              },
+              "appris": {
+                "source": "external:appris/2026_08.v50/e116v50/mus_musculus/appris_data.principal.txt",
+                "sha256": "1e9d500c61149d9a9fbe2af6b5657fa77bc72201d610357be435b59d2c0abe04",
+                "origin": "https://apprisws.bioinfo.cnio.es/pub/releases/2026_08.v50/datafiles/mus_musculus/e116v50/appris_data.principal.txt",
+                "species": "mouse",
+                "release": 116,
+                "appris_release": "2026_08.v50",
+                "appris_dataset": "e116v50",
+                "kind": "appris"
+              }
+            },
+            "gene": "ENSMUSG00000081859",
+            "transcript": "ENSMUST00000121432",
+            "target_116_protein_sha256": "ba03f192201ffbfcb3547439129d08f2d3b6a2c4d8ad1519963eab78dc98ef6a",
+            "interpretation": "Protein-validated APPRIS release116 support; version-matched116 assignment.",
+            "source_transcript_version": "ENSMUST00000121432.4",
+            "source_cds_sha256": "03a057529a9c8eb5f837b96ce4f8e77dc672d13ad16215f08c495261487d9fe3",
+            "source_identity_checks": {
+              "stable_gene_coherent": true,
+              "transcript_version_coherent": true,
+              "gene_version_coherent": true,
+              "assembly_coherent": true,
+              "chromosome_coherent": true,
+              "strand_coherent": true
+            },
+            "source_protein_sha256": "ba03f192201ffbfcb3547439129d08f2d3b6a2c4d8ad1519963eab78dc98ef6a",
+            "source_116_protein_sha256": "ba03f192201ffbfcb3547439129d08f2d3b6a2c4d8ad1519963eab78dc98ef6a",
+            "validation_status": "source_or_target_protein_unassessable"
+          }
+        },
+        {
+          "gene": "ENSMUSG00000116376",
+          "transcript": "ENSMUST00000229074",
+          "validation_evidence": {
+            "assignment_source_release": 116,
+            "assignment_labels": [
+              "PRINCIPAL:1"
+            ],
+            "source_provenance": {
+              "cds": {
+                "source": "external:ensembl/release-116/cds/Mus_musculus.GRCm39.cds.all.fa.gz",
+                "sha256": "8c0a53a7fe973adaf6d884884ec86a329deebfb519d0d4f736bd1c0c67f09964",
+                "origin": "https://ftp.ensembl.org/pub/release-116/fasta/mus_musculus/cds/Mus_musculus.GRCm39.cds.all.fa.gz",
+                "release": 116,
+                "species": "mouse",
+                "kind": "cds"
+              },
+              "gtf": {
+                "source": "external:ensembl/release-116/gtf/Mus_musculus.GRCm39.116.gtf.gz",
+                "sha256": "5c29fd9e3157cf40fdbbf76ab25bfe7f79aa61313e0b672664ddb0cb251c02e1",
+                "origin": "https://ftp.ensembl.org/pub/release-116/gtf/mus_musculus/Mus_musculus.GRCm39.116.gtf.gz",
+                "release": 116,
+                "species": "mouse",
+                "kind": "gtf"
+              },
+              "appris": {
+                "source": "external:appris/2026_08.v50/e116v50/mus_musculus/appris_data.principal.txt",
+                "sha256": "1e9d500c61149d9a9fbe2af6b5657fa77bc72201d610357be435b59d2c0abe04",
+                "origin": "https://apprisws.bioinfo.cnio.es/pub/releases/2026_08.v50/datafiles/mus_musculus/e116v50/appris_data.principal.txt",
+                "species": "mouse",
+                "release": 116,
+                "appris_release": "2026_08.v50",
+                "appris_dataset": "e116v50",
+                "kind": "appris"
+              }
+            },
+            "gene": "ENSMUSG00000116376",
+            "transcript": "ENSMUST00000229074",
+            "target_116_protein_sha256": "5ff894a8e0c394f3727e578fb847f180a3a40be1757d879fd67f5834689257bc",
+            "interpretation": "Protein-validated APPRIS release116 support; version-matched116 assignment.",
+            "source_transcript_version": "ENSMUST00000229074.3",
+            "source_cds_sha256": "8f57a1da2865f804f4493f28e3e3e3c0b1761d5ef6f382108b32842e506ba33d",
+            "source_identity_checks": {
+              "stable_gene_coherent": true,
+              "transcript_version_coherent": true,
+              "gene_version_coherent": true,
+              "assembly_coherent": true,
+              "chromosome_coherent": true,
+              "strand_coherent": true
+            },
+            "source_protein_sha256": "1a4d4f4a28c5a6bbd371f8e9f74908b7f29ed8b4dfcdfaaa6a759efb21e148d3",
+            "source_116_protein_sha256": "1a4d4f4a28c5a6bbd371f8e9f74908b7f29ed8b4dfcdfaaa6a759efb21e148d3",
+            "validation_status": "source116_to_target116_protein_mismatch"
+          }
+        }
+      ]
+    }
+  },
+  "cyno": {
+    "Ensembl116_GTF_tags": {
+      "source_available": true,
+      "interpretation": "Assignments are tags in the pinned release116 GTF. Missing tags do not exclude a model.",
+      "target_genes": 1862,
+      "candidate_transcripts": 4474,
+      "genes_with_any_source_assignment": 0,
+      "candidate_transcripts_with_any_assignment": 0,
+      "genes_with_candidate_assignment": 0,
+      "candidate_transcripts_with_principal_assignment": 0,
+      "genes_with_candidate_principal_assignment": 0,
+      "eligible_principal_transcripts": 0,
+      "genes_with_eligible_principal": 0,
+      "rejected_principal_transcripts": 0,
+      "principal_assignments_absent_from_candidate_universe": 0,
+      "genes_without_available_source_assignment": 1862,
+      "principal_rejection_reason_counts": {},
+      "rejected_principal_records": []
+    },
+    "external_APPRIS": {
+      "source_available": false,
+      "interpretation": "No external APPRIS table is pinned for this species; this is unavailable evidence, not evidence that APPRIS has no assignment.",
+      "target_genes": 1862,
+      "candidate_transcripts": 4474,
+      "genes_with_any_source_assignment": 0,
+      "candidate_transcripts_with_any_assignment": 0,
+      "genes_with_candidate_assignment": 0,
+      "candidate_transcripts_with_principal_assignment": 0,
+      "genes_with_candidate_principal_assignment": 0,
+      "eligible_principal_transcripts": 0,
+      "genes_with_eligible_principal": 0,
+      "rejected_principal_transcripts": 0,
+      "principal_assignments_absent_from_candidate_universe": 0,
+      "genes_without_available_source_assignment": 1862,
+      "principal_rejection_reason_counts": {},
+      "rejected_principal_records": []
+    }
+  }
+}

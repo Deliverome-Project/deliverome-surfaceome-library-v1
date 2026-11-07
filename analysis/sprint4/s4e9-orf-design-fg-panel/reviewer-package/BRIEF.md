@@ -182,10 +182,29 @@ Compara 115 homology dumps by a pipeline stage of its own (`check_universe_cover
 | … never queried | 418 | 416 |
 | Recorded pairs that are not one-to-one high-confidence | 0 of 1,972 | 0 of 1,927 |
 
-For isoforms, 451 library genes with a non-canonical UniProt isoform have no row in the
-universe; 92 of them for the same reason, and 359 because the universe's own rules excluded
-them, which this check does not re-examine. The panels are kept as a valid seeded draw from
-that smaller pool, and the gap is recorded rather than repaired (question 4, section 8).
+For isoforms, the universe does cover every library gene: all 451 library genes with a
+non-canonical UniProt isoform but no member in the isoform cohort have scored rows, and the
+cohort's own rules exclude each one (`audit_isoform_coverage.py`, which fails on an
+unexplained absence). For 399 of those genes, every alternate form is below the evidence bar,
+which requires a diagnostic peptide, a positive OpenProt translation score or an APPRIS TRIFID
+score above 0.5. The other 52 include forms excluded for lost surface anchoring. Lack of evidence
+is not evidence that an isoform is absent.
+
+**A replacement ortholog panel is drawn but not adopted.** A redraw over the full library
+gene list uses Ensembl Compara 116 one-to-one, high-confidence pairs (3,643 sampleable
+gene-species representatives) and admits an ortholog form only if its coding sequence is
+supported: a native ATG start, supported start and stop coordinates, a terminal stop, no
+internal stop, and a translation identical to the selected protein. Ranking prefers verified
+APPRIS principal transcripts for mouse; cyno has no APPRIS dataset. It keeps the same seed,
+quotas and band cutoffs, and fills all 200 slots with no shortfall, keeping 14 current picks
+and replacing 186. Of the 186 forms it drops, 183 still pass the coding-sequence gate, so
+those removals come from redrawing a wider pool, not from defects. The other three (cyno OPN3,
+ADCY2 and PRRG1) lack a supported start. Coding completeness is not domain equivalence: some
+drawn forms are much shorter than the human library protein (cyno SLC8A1 624 vs 973 aa,
+IL31RA 598 vs 764), and that correspondence review comes before adoption. Until it is adopted,
+the current panel is the ordered one, a valid seeded draw from the smaller April pool, with the
+gap recorded (question 4, section 9;
+[`ORTHOLOG_CDS_POLICY.md`](../ORTHOLOG_CDS_POLICY.md)).
 
 Barcode-swap screening (section 6) does not apply between a gene's members: an isoform
 shares its parent's sequence by construction (median overlap 1,071 nt over 2,150 pairs, none
@@ -398,9 +417,75 @@ exactly these differences and no others. Two further inputs are reconstructions,
 only variant that reproduces the record: the PeptideAtlas cache replayed in its original four
 fill batches, and a curated GPI attribute taken as of 2026-10-11.
 
-## 8. Decisions we would like reviewers to weigh in on
+## 8. How the library is ordered
 
-Questions 1, 2 and 4 are choices already made that we want challenged; the third is open. Everything
+**Plates.** Every active member is ordered as purified plasmid in 96-well V-bottom plates, in
+order of synthesized-insert length, shortest first, so each plate holds members of similar
+length. Each member gets an order number in that order, `L1-O0001` to `L1-O2735`, with its
+plate and well (column-major, A01, B01, …) in [`l1_order_plan.tsv`](l1_order_plan.tsv). The
+`candidate_id` (`l1-pNNNN`) is kept, because every library record is keyed on it; the order
+number is the plate name. 2,735 members fill 29 plates per set.
+
+**Amounts.** 4 µg is ordered per member and 3 µg assumed delivered, normalized to
+100 ng/µL (30 µL), and split into five plate sets with the same layout:
+
+| Plate set | Plates | Volume per well | DNA per member |
+|---|---:|---:|---:|
+| Addgene deposit | 29 | 15 µL | 1.5 µg |
+| Pooling A, B, C | 3 × 29 | 3 µL each | 0.3 µg each |
+| Backup | 29 | the rest, 6 µL | 0.6 µg |
+
+**Why pool by length.** Longer lentiviral genomes give lower functional titer. Comparing
+packaged genomes of 3.9, 6.9 and 10.1 kb, Sweeney and Vink found titer fell 3–4-fold per extra
+kilobase while physical particle yield stayed constant; the loss is shallower below about 7 kb
+(about 2-fold per kb from their infectivity data) and steeper near 10 kb, where packaging
+itself fails ([Sweeney & Vink, 2021](https://pubmed.ncbi.nlm.nih.gov/34095341/)). Moon et al.
+offset it in a pooled lentiviral library by pooling 0.2 × 3.5<sup>L/1000</sup> pmol of each
+plasmid, L the effector length ([Moon et al., 2026](https://pubmed.ncbi.nlm.nih.gov/42031729/));
+their dropout fell from 48.7% to 4.2%, though the same library also changed its barcoding, so
+the gain cannot be credited to pooling alone. Our backbone is constant, so differences in
+insert length (276–5,229 nt, median 1,476) are differences in packaged
+length. At 3.5-fold per kb, the model predicts the longest member transduces
+110× less efficiently than the median one and 495× less than the shortest.
+
+**How the weighting is applied.** Each member's pooled amount follows the factor in pmol,
+converted to mass with its own vector length, and is scaled so a member with a 4.3-kb insert
+fills exactly one pooling well (300 ng) per pool:
+
+- The 53 members with inserts over 4.3 kb need more than one well per pool, so
+  they are ordered with extra DNA (26.7 µg extra in total at 3.5-fold per kb, up to
+  6.9 µg ordered for the longest).
+- Every other member needs less than a well, down to 13 nL for the shortest at
+  3.5-fold per kb, which cannot be pipetted by hand. Because the plates are length-ordered, each
+  of pooling plates 1–27 is diluted to one concentration and a fixed 3 µL is pooled from every
+  well; that lands each member within the error in the table below of its own target. The plate
+  concentrations are in [`l1_order_pooling_plates.tsv`](l1_order_pooling_plates.tsv).
+- The last two plates (143 members, the long tail) are pooled well by well at each member's
+  own volume.
+
+| Fold lower titer per kb | Longest vs median | Longest vs shortest | Extra DNA for inserts > 4.3 kb | Largest single order | Pooling-plate dilutions | Worst within-plate error |
+|---|---:|---:|---:|---:|---:|---:|
+| 2.0× | 14× | 31× | 13.3 µg | 5.3 µg | 5.0–51 ng/µL | 1.16× (1.25× on plate 1) |
+| 2.5× | 31× | 94× | 18.2 µg | 5.8 µg | 2.2–42 ng/µL | 1.21× (1.33× on plate 1) |
+| 3.5× | 110× | 495× | 26.7 µg | 6.9 µg | 0.6–32 ng/µL | 1.29× (1.45× on plate 1) |
+
+![Pooled volume by insert length](figures/l1_pooling_volume_by_length.png)
+
+*Figure 4. Volume of each member pooled per pool, at 100 ng/µL, against its synthesized-insert
+length, under three assumed per-kb titer losses. Unit: member; n = 2,735. Dashed lines: one
+3-µL pooling well and the 4.3-kb insert threshold; dotted line: 0.5 µL, the smallest volume
+worth pipetting by hand. Data: `l1_order_plan.tsv`. Regenerated by
+[`order_plan.py`](order_plan.py).*
+
+**The factor is not measured for our vectors, and it matters.** Between 2- and 3.5-fold per kb
+the correction for the longest member against the median ranges from 14× to 110×, so an
+overcorrection would make the long members the overrepresented ones. A pilot that pools a
+length-spanning subset equimolar and compares plasmid with integrated barcode counts would fix
+the factor before the full pool is made (question 5, section 9).
+
+## 9. Decisions we would like reviewers to weigh in on
+
+Questions 1, 2, 4 and 5 are choices already made that we want challenged; the third is open. Everything
 still being worked on before L1 is ordered is tracked, with its owner and status, in the
 accompanying [cover note](COVER_NOTE.md) and as issues on the review repository, so this brief
 can stay a description of the design.
@@ -411,6 +496,7 @@ can stay a description of the design.
 | 2 | **N-terminal tagging at residue 1 for type III single-pass proteins** (62 members). | Rests on a topogenesis argument only: the single helix carries the whole orientation decision, and a 51-aa cassette changes the charge balance it reads. | A small panel testing N-terminal versus loop placement on type III proteins. |
 | 3 | **Five library genes with no intact copy in Ensembl 115** (FCGR2C, OR8J2, OR10AC1, OR52P1, OR4Q2; section 1). | They pass the gene filter but are absent from L1, so any per-gene coverage figure is 5 short. FCGR2C has a known intact (ORF) allele carried by a minority of people ([Breunis et al., 2007](https://pubmed.ncbi.nlm.nih.gov/17827395/)). | Build the intact UniProt allele by correcting the stop codons (FCGR2C, OR8J2) or the frameshifts, or record each as an exclusion. |
 | 4 | **Isoform and ortholog panels drawn from a 1,775-gene April pool** (section 4). | 418 mouse and 416 cyno orthologs, and 92 genes' isoforms, could never be drawn, so the panels say nothing about those genes' forms. | Reviewer view on keeping the panels as drawn (the current decision) versus rebuilding both universes over the 2,369 library genes and redrawing with the same seeds and strata, which would change many members. |
+| 5 | **How strongly to weight the pool by length** (section 8). | The ordering plan follows Moon et al. at 3.5-fold lower titer per kb, which asks for up to 110× more of the longest member than the median; Sweeney and Vink's data suggest a shallower loss over most of our range, and an overcorrection inverts the bias. | A pilot that measures our own per-kb factor from plasmid versus integrated barcode counts, or a reviewer view on damping the correction until it is measured. |
 
 ## Materials and provenance
 
@@ -424,6 +510,7 @@ can stay a description of the design.
 | Model-vs-protein check | `../proteoform_match.tsv` | committed |
 | Reviewer bundle | [`bundle_manifest.tsv`](bundle_manifest.tsv) (85 files, SHA-256 each) | shared in full as a dated release asset of the review repository (current: `bundle-2026-11-05-r6`) |
 | Audited tag-site positives (S5E13 ranker) | `audit.tsv`, `gold_standard.tsv`, `failed_sites.tsv`, `added_sites.tsv`, `region_labels.tsv`, `corpus_audit_corpus.tsv` (paths in section 5) | in the reviewer bundle; audit is [PR 236](https://github.com/Deliverome-Project/deliverome-analysis/pull/236) |
+| Order plan: plate map, volumes, pooling weights | [`order_plan.py`](order_plan.py) → [`l1_order_plan.tsv`](l1_order_plan.tsv), [`l1_order_pooling_plates.tsv`](l1_order_pooling_plates.tsv), `l1_order_plan_summary.json` | committed; not yet sent to a vendor |
 | Numbers and figures in this brief | [`brief_numbers.py`](brief_numbers.py) → [`brief_numbers.json`](brief_numbers.json), `figures/` | committed |
 
 ## Decision log
@@ -433,11 +520,19 @@ can stay a description of the design.
 | 2026-11-02 | No external-facing summary of L1 | This brief and a credential-free reviewer package | External review of the design before ordering |
 | 2026-11-04 | Package shipped from the analysis repository | A private review repository with the full bundle as a release asset, internal inputs included | Reviewers need only this design's code; Becca approved sharing every bundled input |
 | 2026-11-04 | Order-blocking issues listed among the review questions | Moved to a separate cover note; the brief keeps three design questions | The brief describes the design; the cover note tracks work in progress and changes as issues close (Becca) |
+| 2026-11-07 | Isoform gap described as 359 unexamined genes; one ortholog panel | All 451 isoform absences explained by the cohort rules; a CDS-gated Compara 116 ortholog redraw exists for review, not adopted | Becca |
+| 2026-11-07 | No ordering plan | Plates by insert length (order numbers `L1-O…`), 4 µg ordered / 3 µg assumed at 100 ng/µL in Addgene, three pooling and one backup plate sets; length-weighted pooling after Moon et al., with extra DNA for inserts over 4.3 kb | Becca |
 | 2026-11-05 | Panels described as drawn from library genes | Recorded as drawn from the April 2026 pool (1,775 of 2,369 genes), kept as drawn, and posed as reviewer question 4 | Becca: record the gap and keep the panels |
 | 2026-11-05 | 8 library genes without a member | KIR2DS4, OR12D1, OR5AL1 built from intact alternative-haplotype transcripts (`l1-p2740`–`l1-p2742`); 5 remain | Becca: the intact protein exists in Ensembl 115; the KIR2DS2/KIR2DS4 125-nt overlap accepted as a paralog pair |
 
 ## References
 
+- [Moon et al., 2026](https://pubmed.ncbi.nlm.nih.gov/42031729/). A combinatorial domain
+  screening platform reveals epigenetic effector interactions for transcriptional perturbation.
+  Nat Commun 17. doi:10.1038/s41467-026-72227-9.
+- [Sweeney & Vink, 2021](https://pubmed.ncbi.nlm.nih.gov/34095341/). The impact of lentiviral
+  vector genome size and producer cell genomic to gag-pol mRNA ratios on packaging efficiency
+  and titre. Mol Ther Methods Clin Dev 21:574–584.
 - [Breunis et al., 2007](https://pubmed.ncbi.nlm.nih.gov/17827395/). Copy number variation of
   the activating FCGR2C gene predisposes to idiopathic thrombocytopenic purpura. Blood
   111:1029–1038.

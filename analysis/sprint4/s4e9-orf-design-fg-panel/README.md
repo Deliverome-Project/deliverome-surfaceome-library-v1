@@ -1,5 +1,8 @@
 # s4e9 — orf-design-fg-panel
 
+For continuation of the ortholog CDS work, start with the [agent handoff](AGENT_HANDOFF.md).
+It identifies merged work, durable artifacts, remaining adoption decisions, and compute approvals.
+
 ## Notion page
 
 https://www.notion.so/3e9ab86c76838139a7acc9694de6e82f
@@ -404,18 +407,18 @@ The ortholog panel is 200 and the isoform panel 150 — 192 and 137 genes respec
 | Panel | Members | Composition | Key |
 |---|---|---|---|
 | Isoforms | 150 | 100 observed + 50 prediction-only; type I 61, multipass 51, type II 17, GPI 16, type III 5 | `library-design/isoform_panel.tsv` |
-| Orthologs | 200 | mouse 100 + cyno 100, split near/diverged at 50 per band, seed 20261011, minimum floors on type III, GPI and type II; type I 66, multipass 72, GPI 28, type II 26, type III 8 | `library-design/ortholog_panel.tsv` |
+| Orthologs, current manifest | 200 | mouse 100 + cyno 100, split near/diverged at 50 per band, seed 20261011, minimum floors on type III, GPI and type II; type I 66, multipass 72, GPI 28, type II 26, type III 8 | `library-design/ortholog_panel.tsv` |
+| Ortholog replacement, Compara 116 | 200 | same seed, species/band sizes and class floors; type I 54, multipass 81, GPI 28, type II 28, type III 9 | `ortholog_panel_compara116.tsv` |
 
-**The panels were drawn from April's gene set, not the library's.** Both universes were
-built from accessible-surfaceome files frozen at commit f9c73691 (2026-04-27), whose human
-query set is deliverome-internal's expression-filtered `surfaceome_expressed` list (2,359
-proteins, 2,355 gene symbols). The library gene list came later, from the S1E3 filter over
-surfaceome release 1.3.0, and only 1,775 of its 2,369 genes are in the April set. Later
-Compara pulls (2026-06-01, 2026-09-20/21, and the 2026-10-12 consolidation onto Compara
-115) went into the surfaceome D1 tables, not into the f9c73691 files these universes read,
-so the other 594 library genes were never queried. `check_universe_coverage.py` measures it
-from pinned inputs (Ensembl Compara 115 dumps, the f9c73691 query set and ortholog lists,
-Ensembl 115, UniProt 2026_03) and writes `universe_coverage.tsv`, one row per library gene:
+**The recorded ortholog panel draws from April's gene set.** Its pool uses
+accessible-surfaceome files frozen at commit f9c73691 (2026-04-27), whose human query
+set is deliverome-internal's expression-filtered `surfaceome_expressed` list (2,359
+proteins, 2,355 gene symbols). Only 1,775 of the current library's 2,369 genes are in
+that set. Later Compara pulls went into surfaceome D1 rather than these frozen
+files, leaving 594 library genes unqueried for this ortholog pool.
+`check_universe_coverage.py` measures the recorded ortholog pool from pinned
+Compara 115 and April inputs and separately measures selected isoform cohort
+membership; `universe_coverage.tsv` contains one row per current library gene.
 
 | | Mouse | Cyno |
 |---|---:|---:|
@@ -424,11 +427,83 @@ Ensembl 115, UniProt 2026_03) and writes `universe_coverage.tsv`, one row per li
 | … never queried (all outside the April set) | 418 | 416 |
 | Recorded pairs that are not one-to-one high-confidence in Compara 115 | 0 of 1,972 | 0 of 1,927 |
 
-The isoform universe has the same cause for 92 genes: 451 library genes with a
-non-canonical UniProt isoform have no row in it, 92 of them outside the April set; the
-other 359 were offered and excluded by the universe's own rules, which this does not
-re-examine. The panels are a valid seeded draw from that smaller pool and are kept as they
-are; the gap is recorded rather than repaired.
+The isoform universe uses the committed library gene list. All 451 library genes
+with a non-canonical UniProt isoform but no selected isoform cohort member have
+scored universe rows, including the 92 outside April's set. Their absence is
+explained by the existing cohort rules: 399 genes have only alternates below its
+evidence criterion; the other 52 include topology exclusions. A form passes the
+evidence criterion when it has a diagnostic peptide, positive OpenProt translation
+score, or APPRIS TRIFID score above 0.5; evidence-passing forms can still be
+excluded for lost surface anchoring. Insufficient evidence is not evidence that an isoform is absent.
+`audit_isoform_coverage.py` records every form decision and fails on an unexplained
+absence; [the audit note](ISOFORM_COVERAGE.md) gives the full accounting and
+historical replay limits. The current panels, member IDs and constructs are unchanged.
+The replacement ortholog panel draws over the full current library gene list;
+its member-ID allocation and construct regeneration follow selection.
+
+The [CDS eligibility review](ORTHOLOG_CDS_POLICY.md) gates the full transcript pool
+before protein ranking and supplies a 200-member review panel with verified native
+CDSs and no pending predictions. Its [panel-change ledger](ortholog_cds_panel_changes.tsv)
+distinguishes the full redraw from sequence correction. The policy and prediction
+records are saved; activation and construct regeneration remain separate decisions.
+
+The replacement gene-level pool uses the union of the human, mouse and cynomolgus
+Compara 116 protein homology dumps, read in both orientations. Ensembl documents each
+species-specific dump as an arbitrary subset, so one species file alone does not prove
+complete coverage. One-to-one high-confidence relationships remain the eligibility
+rule. Genes missing an unambiguous primary-assembly mapping remain explicit accounting
+rows. The selected reference transcript disambiguates pseudoautosomal X/Y copies and
+renamed symbols. A pre-existing library candidate is not required for admission.
+
+| Rebuilt pool, before proteoform and topology checks | Mouse | Cyno |
+|---|---:|---:|
+| One-to-one high-confidence pair with available Ensembl translations | 1,876 | 1,862 |
+| Of these, absent from the April ortholog lists | 431 | 426 |
+| No one-to-one high-confidence pair | 484 | 498 |
+| Library gene lacks an unambiguous primary-assembly mapping | 9 | 9 |
+
+The proteoform comparison uses each human reference's translated designed CDS, rather
+than recovering a sequence by length. It scores 3,737 gene/species pairs against the
+Compara-linked Ensembl translations, pinned UniProt 2026_03 proteoforms, and the
+recorded cohort form where its ortholog gene still agrees. The correspondence metric
+and reviewed/APPRIS/current-pick tie preferences are retained; a final accession sort
+makes new ties deterministic. UniProt candidate lookup within an ortholog gene retains
+the existing symbol rule, whose replayability is a separate open task.
+
+The completed checks include 323 new DeepTMHMM v1 (1.0.24) predictions and 242 NetGPI
+1.1 predictions. Predicting winners, then rescoring, avoids running every unselected
+alternative. The usable surface pool has 1,870 mouse and 1,836 cynomolgus forms. Every
+excluded or unresolved pair remains in the accounting tables. Cynomolgus OR4Q2 has a
+qualifying pair but cannot be scored because the human reference lacks a designed CDS;
+27 selected forms are known non-surface, and four anchor predictions are explicitly
+uncertain. Neither missing predictions nor an old manifest entry restricts the draw.
+
+The replacement panel contains 100 mouse and 100 cynomolgus forms, with 50 near and
+50 diverged forms per species. It retains 11 of the existing panel's proteins and
+replaces 189; 45 picks come from genes absent from the April lists. Every pick has an
+exact Ensembl translation or an existing designed CDS, and no two picks share a protein
+or duplicate an active non-ortholog L1 member. Fifty forms have no existing library
+member ID. The new panel and its change/rejection tables are review records; the
+current manifest and ordered constructs are unchanged. The isoform panel is unchanged.
+
+Both private and public D1 contain the 323 new topology rows, 2,359 NetGPI records
+(242 new and 2,117 historical), and 2,187 separate curation/source/derived records. NetGPI
+records preserve the raw header and row, tool version, one-based prediction number,
+submitted ID, exact likelihood string, omega position/residue, source checksum and
+job ID when recorded. The 2,117 legacy predictions without a verified original input
+remain `unresolved_legacy`; no sequence is inferred from accession or length.
+The prior UniProt GPI-keyword and curated architecture inputs, supplements,
+exclusions, blind-spot notes, manual form choices and derived gene calls
+remain independent of predictor output. The human GPI set and its four recorded
+curation conflicts are preserved, not re-decided by this ortholog run.
+
+Methods and provenance: `rebuild_ortholog_pool.py`, `score_ortholog_pool.py` and
+`draw_rebuilt_ortholog_panel.py`, `export_ortholog_predictions.py`, and
+`ortholog_rebuild_inputs.json`; [Compara 116 homology dump documentation](https://ftp.ensembl.org/pub/release-116/tsv/ensembl-compara/homologies/homo_sapiens/README.gene_trees.tsv_dumps.txt).
+The immutable run archive is `processed://sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/`,
+with `prediction_runs.json` recording input/output paths, external run IDs and the
+curation policy. The D1 importer and independent GPI tables are in
+[surfaceome PR 463](https://github.com/Deliverome-Project/accessible-surfaceome/pull/463).
 
 The 515 internal-rung members carry 607 surface isoforms across 287 genes and 818 surface
 orthologs across 474 genes, so a build covering every form of that rung alone would be 1,940
@@ -960,7 +1035,8 @@ transcript and remain without a member.
 | 2026-11-04 | KIR2DS4, OR12D1, OR5AL1 without a member (GRCh38 carries a loss-of-function copy) | Built as l1-p2740..2742 from their intact alternative-haplotype transcripts via `reference_allele_lof` overrides | Becca: the intact protein is in Ensembl 115; CDS resolution had searched only by the broken copy's length |
 | 2026-11-03 | Snorkel cited to PMID 24391846; GFRAL and RAET1G described as NetGPI additions | Snorkel cited to Brown et al. 2013, PMID 24023844; both described as curated calls NetGPI does not support | The old PMID is an unrelated docking paper (Hsin et al. 2013); NetGPI finds no anchored form for either gene. Found by the reviewer-package review, with re-measured counts (191 GPI members, 199 different models) |
 | 2026-11-04 | 13 designed CDSs ended on a sense codon: the Ensembl 115 record has no stop (l1-p1054..1056 KIR2DL5A, KIR2DS2, KIR2DS5; L2 l2-p0846 KIR2DS2 isoform and nine cyno orthologs) | `resolve_candidate_cds.py` appends TAA when the record ends without a stop and marks the entry `stop_added`; orf_nt, vector_bp and insert_nt grow by 3 for those rows. Proteins and domestication edits are unchanged | Becca. Without a stop the ORF reads through into the vector. TAA is the stop the C-terminal constructs already use; the native codon cannot be read from the pinned inputs (four KIR records sit on alternate-haplotype scaffolds the primary GTF omits). Previous S3 versions: candidate_cds.json `ftYKdsVZYDD8M49CEt4rDJMn.x.QmKkn`, candidate_constructs.json `Nkbr70dq6lfjWkb.ASYGWZpU8yRocj_Y`. Found by the N-terminal reviewer package's frame check |
-| 2026-11-05 | Isoform and ortholog panels described as drawn from library genes with a form or ortholog | Recorded as drawn from the April 2026 `surfaceome_expressed` query set (1,775 of 2,369 library genes); coverage measured against Compara 115 by `check_universe_coverage.py` | Becca: record the gap and keep the panels. The 418 mouse / 416 cyno eligible genes were never queried because later Compara pulls went to D1, not to the f9c73691 files the universes read; every recorded pair is one-to-one high-confidence in Compara 115 |
+| 2026-11-05 | Ortholog panel described as drawn from library genes with an ortholog | Recorded as drawn from the April 2026 `surfaceome_expressed` query set (1,775 of 2,369 library genes); coverage measured against Compara 115 by `check_universe_coverage.py` | Becca: record the gap and keep the panels. The 418 mouse / 416 cyno eligible genes were never queried because later Compara pulls went to D1, not to the f9c73691 files the universes read; every recorded pair is one-to-one high-confidence in Compara 115 |
+| 2026-11-05 | Keep the current ortholog panel while documenting its restricted pool | Rebuild ortholog eligibility over all 2,369 current library genes using Compara 116, then redraw with the existing seed and strata after proteoform/topology checks | Becca clarifies that keeping the panel is temporary, and requests the latest Compara release even when newer than 115. The old panel is not the final choice. |
 | 2026-10-13 | Walton ≤100 bp tract bar applied library-wide | Bar applies to the pool and the shared cassette, not to isoforms and orthologs | Median canonical-isoform overlap is 1,071 nt with zero of 2,150 pairs under the bar; applying it would remove the panels entirely |
 
 ## Provenance
@@ -969,7 +1045,9 @@ transcript and remain without a member.
   file when the note was first written; the map was published to the construct registry on
   2026-10-06, so the gap it described — and the matching one in `s1e2/enzyme_scan.py` — is
   closed for p003.
-- Tedman construct design: Nat Commun 2026, [doi:10.1038/s41467-026-76564-7](https://doi.org/10.1038/s41467-026-76564-7)
+- Tedman construct design: [Tedman et al., 2026](https://pubmed.ncbi.nlm.nih.gov/42736269/),
+  *Efficient experimental characterization of the GPCRome via deep receptor scanning*,
+  Nat Commun. [doi:10.1038/s41467-026-76564-7](https://doi.org/10.1038/s41467-026-76564-7).
   (via PubMed, PMC13575135); screen values from
   `deliverome-external://tedman-gpcr-surface-screen/2025-09-19/`.
 - Barcodes: `analysis/sprint1/s1e2-fragmid-vector-design/barcodes_20nt_30k.tsv`.

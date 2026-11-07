@@ -55,6 +55,13 @@ import pandas as pd
 # appended by s4e9 publish_topology_supplement.py. Those three are not in D1 yet.
 SNAPSHOT_KEY = "accessible-surfaceome/topology/2026-11-01/topology.parquet"
 
+# The replacement panel's additional 323 v1 predictions are reusable explicitly.
+# Keep the original library replay frozen until downstream member/construct adoption.
+# Both D1 databases also carry these rows as topo_2026_11_05_l1_compara116.
+ORTHOLOG_COMPARA116_SNAPSHOT_KEY = (
+    "accessible-surfaceome/topology/2026-11-05-l1-compara116/topology.parquet"
+)
+
 # --- DeepTMHMM TOOL versions. NOT library tranches. -----------------------------------
 # "L1"/"L2" are *library tranches* (which candidates we order). "v1"/"v2" are *DeepTMHMM
 # tool versions* (which predictor produced a topology string). They are unrelated axes,
@@ -120,8 +127,18 @@ NON_PREDICTOR_TOOL_VERSIONS = frozenset({"uniprot_features_v1"})
 #: hold all three species; a match there is already member-specific.
 SPECIES_COHORTS: dict[str, tuple[str, ...]] = {
     "human": ("human_canonical", "human_isoforms", "library_designed_orf"),
-    "cyno": ("cyno_ortholog", "cyno_ortholog_repick", "library_designed_orf"),
-    "mouse": ("mouse_ortholog", "mouse_ortholog_repick", "library_designed_orf"),
+    "cyno": (
+        "cyno_ortholog",
+        "cyno_ortholog_repick",
+        "cyno_ortholog_cds_policy",
+        "library_designed_orf",
+    ),
+    "mouse": (
+        "mouse_ortholog",
+        "mouse_ortholog_repick",
+        "mouse_ortholog_cds_policy",
+        "library_designed_orf",
+    ),
 }
 
 #: Spellings seen in the manifest and in topology_public for the same organism.
@@ -281,6 +298,7 @@ def resolve(
     *,
     tool: str | None = PREFERRED_TOOL,
     cohorts: tuple[str, ...] | None = None,
+    snapshot: pd.DataFrame | None = None,
 ) -> pd.DataFrame:
     """Resolve many sequences at once. One row per input, in input order.
 
@@ -289,8 +307,12 @@ def resolve(
     can never be read as being about the other predictor. Unmatched inputs keep their key,
     length and hash so the result doubles as the work list for a run -- that is the point
     of not dropping them.
+
+    ``snapshot`` supplies an already checksummed input for replaying an older
+    analysis after the shared default snapshot advances. It receives the same
+    tool-provenance and cohort filters as the default snapshot.
     """
-    df = load_snapshot()
+    df = load_snapshot() if snapshot is None else snapshot
     if cohorts is not None:
         df = df[df["cohort"].isin(cohorts)]
     df = _with_tool(df, tool)

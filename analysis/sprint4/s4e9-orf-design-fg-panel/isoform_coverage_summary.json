@@ -1,0 +1,42 @@
+{
+  "missing_cohort_genes": 451,
+  "missing_from_original_library": 0,
+  "missing_from_scored_universe": 0,
+  "form_decisions": {
+    "exclude_lost_surface": 16,
+    "insufficient_evidence": 2400,
+    "loses_all_tm_vs_reference": 30,
+    "reference": 450,
+    "soluble_restriction": 15
+  },
+  "gene_reason_combinations": {
+    "insufficient_evidence": 399,
+    "insufficient_evidence;exclude_lost_surface": 12,
+    "insufficient_evidence;loses_all_tm_vs_reference": 25,
+    "insufficient_evidence;loses_all_tm_vs_reference;exclude_lost_surface": 2,
+    "insufficient_evidence;soluble_restriction": 10,
+    "loses_all_tm_vs_reference": 1,
+    "soluble_restriction": 2
+  },
+  "unexplained": 0,
+  "genes_without_reference_rows": [
+    "LILRB1"
+  ],
+  "historical_script_commits": {
+    "universe": "88786350",
+    "openprot": "88786350",
+    "appris": "a9646c44",
+    "shortlist": "39e19e2c",
+    "apply": "e944c759",
+    "cohorts": "6fb98222",
+    "orthologs": "c4dbe752"
+  },
+  "immutable_input_manifest_sha256": "b7542ec430167977a50e190c85bf78bf66306653aedf6a8d7e581600b43366ce",
+  "historical_library_sha256": "fb8a914278670af8fc018395bd7d4aa12c6b8eb1c7c390daaf64c4228eb31752",
+  "recorded_cohort_sha256": "391203a90912dc3501c89df723b7595cdf87c5ee95ca81f453ddb82000a9b815",
+  "replay_limitation": "Original Ensembl-only shortlist sequences can differ between same-length siblings; the replay retains the committed shortlist and historical verdict joins. These reason records do not establish exact-sequence topology for a new construct.",
+  "output_sha256": {
+    "isoform_coverage_forms.tsv": "baf595a0f371bf2752d2054c698aca90bd8504dcdbc2632e94a47daea4f1afbf",
+    "isoform_coverage_genes.tsv": "dba1f6716a3d3a62d7ab3b58ef401381a7968f9f461ea594273c274cea61e598"
+  }
+}

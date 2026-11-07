@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-05",
+  "s3_prefix": "sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/",
+  "topology_version": "topo_2026_11_05_l1_compara116",
+  "pick_tables": [],
+  "netgpi": [],
+  "topology": [],
+  "curation": [
+    {
+      "path": "legacy-gpi/uniprot_human_gpi.tsv",
+      "kind": "uniprot_gpi_keyword_KW0336_2026_03"
+    },
+    {
+      "path": "legacy-gpi/surface_subcategory.tsv",
+      "kind": "curated_architecture_gpi_attribute",
+      "where": {
+        "subcategory": "GPI_anchored"
+      }
+    }
+  ]
+}

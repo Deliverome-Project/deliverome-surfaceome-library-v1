@@ -40,6 +40,8 @@ import sys
 import tempfile
 from pathlib import Path
 
+from member_id_allocations import next_l1_member_number
+
 from deliverome_analysis import library_design as ld
 from deliverome_analysis import seqtools
 from deliverome_analysis.s3 import processed
@@ -171,7 +173,7 @@ def main(argv=None) -> int:
     l1_panel = [
         r for r in rows if r["library"] == ld.LIBRARY_L1 and r["set"] in ("isoform", "ortholog")
     ]
-    next_n = max(int(r["candidate_id"].split("-p")[1]) for r in rows if r["library"] == "l1") + 1
+    next_n = next_l1_member_number(rows)
     changes, added = [], []
     for r in l1_panel:
         if ld.is_active(r) and r["key"] not in target_set:

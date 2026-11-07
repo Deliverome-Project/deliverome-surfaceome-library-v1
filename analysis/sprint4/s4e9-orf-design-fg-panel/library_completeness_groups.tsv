@@ -1,0 +1,31 @@
+snapshot	library	candidate_set	species	start_status	members	members_with_review_flags	cds_start_NF_members	cds_end_NF_members	mRNA_start_NF_members	mRNA_end_NF_members	unknown_annotation_members	exact_pinned_CDS_or_recorded_stop_members	flag_counts_json
+current	l1	expression_rescue	human	construct_only_ATG	25	0	0	0	0	0	0	0	{}
+current	l1	isoform	human	ATG	149	4	0	0	0	0	0	149	"{""transcript_biotype_review:nonsense_mediated_decay"": 4}"
+current	l1	isoform	human	non_ATG	1	1	1	0	1	0	0	1	"{""cds_start_NF_not_confirmed"": 1, ""mRNA_start_NF_not_confirmed"": 1, ""non_ATG_initiation_review"": 1, ""start_feature:no_start_feature"": 1}"
+current	l1	library_reference	human	ATG	2357	24	0	0	0	0	14	2357	"{""FASTA_GTF_CDS_length:unassessable_stop_annotation"": 8, ""stop_feature:no_stop_feature"": 8, ""transcript_biotype_review:nonsense_mediated_decay"": 1, ""transcript_biotype_review:protein_coding_LoF"": 1, ""unknown_transcript_annotation"": 14}"
+current	l1	library_reference	human	non_ATG	3	3	0	0	0	0	0	3	"{""non_ATG_initiation_review"": 3, ""start_feature:no_start_feature"": 2, ""transcript_biotype_review:protein_coding_LoF"": 1}"
+current	l1	ortholog	cyno	ATG	97	0	0	0	0	0	0	97	{}
+current	l1	ortholog	cyno	non_ATG	3	3	0	0	0	0	0	3	"{""non_ATG_initiation_review"": 3, ""start_feature:no_start_feature"": 2}"
+current	l1	ortholog	mouse	ATG	100	1	0	0	0	0	0	100	"{""transcript_biotype_review:nonsense_mediated_decay"": 1}"
+current	l2	giant_truncation	human	construct_only_ATG	24	0	0	0	0	0	0	0	{}
+current	l2	isoform	human	ATG	1666	41	1	0	1	4	11	1666	"{""cds_start_NF_not_confirmed"": 1, ""mRNA_end_NF_not_confirmed"": 4, ""mRNA_start_NF_not_confirmed"": 1, ""start_feature:no_start_feature"": 1, ""transcript_biotype_review:nonsense_mediated_decay"": 25, ""unknown_transcript_annotation"": 11}"
+current	l2	isoform	human	non_ATG	12	12	9	0	9	0	1	12	"{""cds_start_NF_not_confirmed"": 9, ""mRNA_start_NF_not_confirmed"": 9, ""non_ATG_initiation_review"": 12, ""start_feature:no_start_feature"": 10, ""transcript_biotype_review:nonsense_mediated_decay"": 1, ""unknown_transcript_annotation"": 1}"
+current	l2	ortholog	cyno	ATG	1222	9	0	0	0	0	0	1222	"{""FASTA_GTF_CDS_length:unassessable_stop_annotation"": 9, ""stop_feature:no_stop_feature"": 9}"
+current	l2	ortholog	cyno	non_ATG	38	38	0	0	0	0	0	38	"{""non_ATG_initiation_review"": 38, ""start_feature:no_start_feature"": 37}"
+current	l2	ortholog	mouse	ATG	1314	7	1	0	1	1	0	1314	"{""cds_start_NF_not_confirmed"": 1, ""mRNA_end_NF_not_confirmed"": 1, ""mRNA_start_NF_not_confirmed"": 1, ""start_feature:no_start_feature"": 1, ""transcript_biotype_review:nonsense_mediated_decay"": 5}"
+current	l2	ortholog	mouse	non_ATG	3	3	1	0	1	0	0	3	"{""cds_start_NF_not_confirmed"": 1, ""mRNA_start_NF_not_confirmed"": 1, ""non_ATG_initiation_review"": 3, ""start_feature:no_start_feature"": 2}"
+compara116	l1	expression_rescue	human	construct_only_ATG	25	0	0	0	0	0	0	0	{}
+compara116	l1	isoform	human	ATG	149	4	0	0	0	0	0	149	"{""transcript_biotype_review:nonsense_mediated_decay"": 4}"
+compara116	l1	isoform	human	non_ATG	1	1	1	0	1	0	0	1	"{""cds_start_NF_not_confirmed"": 1, ""mRNA_start_NF_not_confirmed"": 1, ""non_ATG_initiation_review"": 1, ""start_feature:no_start_feature"": 1}"
+compara116	l1	library_reference	human	ATG	2357	24	0	0	0	0	14	2357	"{""FASTA_GTF_CDS_length:unassessable_stop_annotation"": 8, ""stop_feature:no_stop_feature"": 8, ""transcript_biotype_review:nonsense_mediated_decay"": 1, ""transcript_biotype_review:protein_coding_LoF"": 1, ""unknown_transcript_annotation"": 14}"
+compara116	l1	library_reference	human	non_ATG	3	3	0	0	0	0	0	3	"{""non_ATG_initiation_review"": 3, ""start_feature:no_start_feature"": 2, ""transcript_biotype_review:protein_coding_LoF"": 1}"
+compara116	l1	ortholog	cyno	ATG	97	0	0	0	0	0	0	97	{}
+compara116	l1	ortholog	cyno	non_ATG	3	3	0	0	0	0	0	3	"{""non_ATG_initiation_review"": 3, ""start_feature:no_start_feature"": 3}"
+compara116	l1	ortholog	mouse	ATG	100	0	0	0	0	0	0	100	{}
+compara116	l2	giant_truncation	human	construct_only_ATG	24	0	0	0	0	0	0	0	{}
+compara116	l2	isoform	human	ATG	1666	41	1	0	1	4	11	1666	"{""cds_start_NF_not_confirmed"": 1, ""mRNA_end_NF_not_confirmed"": 4, ""mRNA_start_NF_not_confirmed"": 1, ""start_feature:no_start_feature"": 1, ""transcript_biotype_review:nonsense_mediated_decay"": 25, ""unknown_transcript_annotation"": 11}"
+compara116	l2	isoform	human	non_ATG	12	12	9	0	9	0	1	12	"{""cds_start_NF_not_confirmed"": 9, ""mRNA_start_NF_not_confirmed"": 9, ""non_ATG_initiation_review"": 12, ""start_feature:no_start_feature"": 10, ""transcript_biotype_review:nonsense_mediated_decay"": 1, ""unknown_transcript_annotation"": 1}"
+compara116	l2	ortholog	cyno	ATG	1153	9	0	0	0	0	0	1153	"{""FASTA_GTF_CDS_length:unassessable_stop_annotation"": 9, ""stop_feature:no_stop_feature"": 9}"
+compara116	l2	ortholog	cyno	non_ATG	36	36	0	0	0	0	0	36	"{""non_ATG_initiation_review"": 36, ""start_feature:no_start_feature"": 35}"
+compara116	l2	ortholog	mouse	ATG	1246	7	1	0	1	1	0	1246	"{""cds_start_NF_not_confirmed"": 1, ""mRNA_end_NF_not_confirmed"": 1, ""mRNA_start_NF_not_confirmed"": 1, ""start_feature:no_start_feature"": 1, ""transcript_biotype_review:nonsense_mediated_decay"": 5}"
+compara116	l2	ortholog	mouse	non_ATG	3	3	1	0	1	0	0	3	"{""cds_start_NF_not_confirmed"": 1, ""mRNA_start_NF_not_confirmed"": 1, ""non_ATG_initiation_review"": 3, ""start_feature:no_start_feature"": 2}"

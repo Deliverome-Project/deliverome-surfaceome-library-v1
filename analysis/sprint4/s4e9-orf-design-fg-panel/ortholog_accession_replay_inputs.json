@@ -1,0 +1,190 @@
+{
+  "uniprot_release": "2026_04",
+  "release_date": "04-November-2026",
+  "retrieved_date": "2026-11-05",
+  "historical_code": "https://github.com/Deliverome-Project/accessible-surfaceome/blob/f9c73691889c1ddb50f63f482ed0c42c9cf7b40a/src/surface_proteome/candidates/download_deeptmhmm_sequence_sets.py",
+  "historical_rule": [
+    "primary symbol exact match",
+    "any gene token exact match",
+    "reviewed",
+    "length",
+    "accession"
+  ],
+  "search_validations": [
+    {
+      "species": "cyno",
+      "symbol": "CXCR6",
+      "name": "cyno_CXCR6_validation.tsv"
+    },
+    {
+      "species": "cyno",
+      "symbol": "PSEN1",
+      "name": "cyno_PSEN1_validation.tsv"
+    },
+    {
+      "species": "cyno",
+      "symbol": "SLITRK1",
+      "name": "cyno_SLITRK1_validation.tsv"
+    },
+    {
+      "species": "mouse",
+      "symbol": "Nalcn",
+      "name": "mouse_Nalcn_validation.tsv"
+    },
+    {
+      "species": "mouse",
+      "symbol": "Ngfr",
+      "name": "mouse_Ngfr_validation.tsv"
+    }
+  ],
+  "inputs": [
+    {
+      "name": "cyno.headers",
+      "source": "external://uniprot/2026_04/ortholog-accession-replay-2026-11-05/cyno.headers",
+      "sha256": "628351cc571acc847048d622458f7788e30ef5270d2074858fe044dc9049ef5e",
+      "retrieval_url": "https://rest.uniprot.org/uniprotkb/stream?query=organism_id%3A9541&format=tsv&fields=accession%2Cid%2Cgene_primary%2Cgene_names%2Creviewed%2Clength%2Corganism_name%2Corganism_id"
+    },
+    {
+      "name": "cyno.tsv.gz",
+      "source": "external://uniprot/2026_04/ortholog-accession-replay-2026-11-05/cyno.tsv.gz",
+      "sha256": "8e513ae218732e7197adc8723f100e4ba7f687fdcf817cdef25cb5af49f519f0",
+      "retrieval_url": "https://rest.uniprot.org/uniprotkb/stream?query=organism_id%3A9541&format=tsv&fields=accession%2Cid%2Cgene_primary%2Cgene_names%2Creviewed%2Clength%2Corganism_name%2Corganism_id"
+    },
+    {
+      "name": "cyno_CXCR6_validation.headers",
+      "source": "external://uniprot/2026_04/ortholog-accession-replay-2026-11-05/cyno_CXCR6_validation.headers",
+      "sha256": "b7a3c2aa2dd48c0cd021d54ce0733397ab17df129c887c81254e9a4f8a9e455a",
+      "retrieval_url": "https://rest.uniprot.org/uniprotkb/search?format=tsv&size=500&fields=accession%2Cid%2Cgene_primary%2Cgene_names%2Creviewed%2Clength%2Corganism_name%2Corganism_id&query=gene_exact%3A%22CXCR6%22+AND+organism_id%3A9541"
+    },
+    {
+      "name": "cyno_CXCR6_validation.tsv",
+      "source": "external://uniprot/2026_04/ortholog-accession-replay-2026-11-05/cyno_CXCR6_validation.tsv",
+      "sha256": "ae5f2dd08d8e71856136bef64c8ae00d1b84bca0797fe909ffed26b0b7a1ff85",
+      "retrieval_url": "https://rest.uniprot.org/uniprotkb/search?format=tsv&size=500&fields=accession%2Cid%2Cgene_primary%2Cgene_names%2Creviewed%2Clength%2Corganism_name%2Corganism_id&query=gene_exact%3A%22CXCR6%22+AND+organism_id%3A9541"
+    },
+    {
+      "name": "cyno_G7PVK2_entry.headers",
+      "source": "external://uniprot/2026_04/ortholog-accession-replay-2026-11-05/cyno_G7PVK2_entry.headers",
+      "sha256": "3d7936eaa3966ef1ca0f343fc04efbe1c2285b19032e2a55bff21743d8979903",
+      "retrieval_url": "https://rest.uniprot.org/uniprotkb/search?format=tsv&fields=accession,id,gene_primary,gene_names,reviewed,length,organism_name,organism_id&query=accession%3AG7PVK2"
+    },
+    {
+      "name": "cyno_G7PVK2_entry.tsv",
+      "source": "external://uniprot/2026_04/ortholog-accession-replay-2026-11-05/cyno_G7PVK2_entry.tsv",
+      "sha256": "efda0e1db86e1eb3e24f6741210220d88491e2d931c8043b078b32e82776a824",
+      "retrieval_url": "https://rest.uniprot.org/uniprotkb/search?format=tsv&fields=accession,id,gene_primary,gene_names,reviewed,length,organism_name,organism_id&query=accession%3AG7PVK2"
+    },
+    {
+      "name": "cyno_PSEN1_validation.headers",
+      "source": "external://uniprot/2026_04/ortholog-accession-replay-2026-11-05/cyno_PSEN1_validation.headers",
+      "sha256": "0a3a4a283617ffe2d4116c4ebed7b996f6e2d48060b456156ea4cef03cec4a90",
+      "retrieval_url": "https://rest.uniprot.org/uniprotkb/search?format=tsv&size=500&fields=accession%2Cid%2Cgene_primary%2Cgene_names%2Creviewed%2Clength%2Corganism_name%2Corganism_id&query=gene_exact%3A%22PSEN1%22+AND+organism_id%3A9541"
+    },
+    {
+      "name": "cyno_PSEN1_validation.tsv",
+      "source": "external://uniprot/2026_04/ortholog-accession-replay-2026-11-05/cyno_PSEN1_validation.tsv",
+      "sha256": "c238a43b29a01c9422a6cd3c75d95615f753c2f8f9f78b14826da91ed9082581",
+      "retrieval_url": "https://rest.uniprot.org/uniprotkb/search?format=tsv&size=500&fields=accession%2Cid%2Cgene_primary%2Cgene_names%2Creviewed%2Clength%2Corganism_name%2Corganism_id&query=gene_exact%3A%22PSEN1%22+AND+organism_id%3A9541"
+    },
+    {
+      "name": "cyno_SLITRK1_search.headers",
+      "source": "external://uniprot/2026_04/ortholog-accession-replay-2026-11-05/cyno_SLITRK1_search.headers",
+      "sha256": "2e1a4c18bc3407a36d9427933cf9c693b9a746507ccf58064dc5e07bf5fa6390",
+      "retrieval_url": "https://rest.uniprot.org/uniprotkb/search?format=tsv&size=500&fields=accession,id,gene_primary,gene_names,reviewed,length,organism_name,organism_id&query=gene_exact%3A%22SLITRK1%22%20AND%20organism_id%3A9541"
+    },
+    {
+      "name": "cyno_SLITRK1_search.tsv",
+      "source": "external://uniprot/2026_04/ortholog-accession-replay-2026-11-05/cyno_SLITRK1_search.tsv",
+      "sha256": "ad2742c8fcc682994e07ff5029630971c35c0b0092480642b81489881ab3eb5b",
+      "retrieval_url": "https://rest.uniprot.org/uniprotkb/search?format=tsv&size=500&fields=accession,id,gene_primary,gene_names,reviewed,length,organism_name,organism_id&query=gene_exact%3A%22SLITRK1%22%20AND%20organism_id%3A9541"
+    },
+    {
+      "name": "cyno_SLITRK1_validation.headers",
+      "source": "external://uniprot/2026_04/ortholog-accession-replay-2026-11-05/cyno_SLITRK1_validation.headers",
+      "sha256": "0c6c159371f093bee27d5cfd5eb704a2691c61415138c3caeec033bff9eeaed9",
+      "retrieval_url": "https://rest.uniprot.org/uniprotkb/search?format=tsv&size=500&fields=accession%2Cid%2Cgene_primary%2Cgene_names%2Creviewed%2Clength%2Corganism_name%2Corganism_id&query=gene_exact%3A%22SLITRK1%22+AND+organism_id%3A9541"
+    },
+    {
+      "name": "cyno_SLITRK1_validation.tsv",
+      "source": "external://uniprot/2026_04/ortholog-accession-replay-2026-11-05/cyno_SLITRK1_validation.tsv",
+      "sha256": "ad2742c8fcc682994e07ff5029630971c35c0b0092480642b81489881ab3eb5b",
+      "retrieval_url": "https://rest.uniprot.org/uniprotkb/search?format=tsv&size=500&fields=accession%2Cid%2Cgene_primary%2Cgene_names%2Creviewed%2Clength%2Corganism_name%2Corganism_id&query=gene_exact%3A%22SLITRK1%22+AND+organism_id%3A9541"
+    },
+    {
+      "name": "cyno_count.headers",
+      "source": "external://uniprot/2026_04/ortholog-accession-replay-2026-11-05/cyno_count.headers",
+      "sha256": "8445516a164dae66df787a27d0de832646c4c166ef67dac2e96a0dbaa592192d",
+      "retrieval_url": "https://rest.uniprot.org/uniprotkb/search?query=organism_id%3A9541&format=tsv&size=1&fields=accession"
+    },
+    {
+      "name": "cyno_count.tsv",
+      "source": "external://uniprot/2026_04/ortholog-accession-replay-2026-11-05/cyno_count.tsv",
+      "sha256": "7e77913e2853f2220779401d2521915bf3a44d0b0d6bc4bc69b188ce26abcd14",
+      "retrieval_url": "https://rest.uniprot.org/uniprotkb/search?query=organism_id%3A9541&format=tsv&size=1&fields=accession"
+    },
+    {
+      "name": "cyno_metadata.csv",
+      "source": "external://accessible-surfaceome/f9c73691/data/external/deeptmhmm_surfaceome_inputs/cyno_ortholog_one2one_highconf_non_hla_metadata.csv",
+      "sha256": "466526ac36dcc2d3e1e4b5b90484e17ff4800df2a6d0f8c73432f160f7916901"
+    },
+    {
+      "name": "historical_download_deeptmhmm_sequence_sets.py",
+      "source": "external://accessible-surfaceome/f9c73691/accession-replay-source-2026-11-05/download_deeptmhmm_sequence_sets.py",
+      "sha256": "e6a3ea85db1d61fa43d40135601895105920283d25406a15c03750fabc8bd0b5",
+      "retrieval_url": "https://github.com/Deliverome-Project/accessible-surfaceome/blob/f9c73691889c1ddb50f63f482ed0c42c9cf7b40a/src/surface_proteome/candidates/download_deeptmhmm_sequence_sets.py"
+    },
+    {
+      "name": "mouse.headers",
+      "source": "external://uniprot/2026_04/ortholog-accession-replay-2026-11-05/mouse.headers",
+      "sha256": "798b3e36d4b033cc6ca9db0f48a84f67b28ef0b3c4423d8e4f21a2bdcfab5213",
+      "retrieval_url": "https://rest.uniprot.org/uniprotkb/stream?query=organism_id%3A10090&format=tsv&fields=accession%2Cid%2Cgene_primary%2Cgene_names%2Creviewed%2Clength%2Corganism_name%2Corganism_id"
+    },
+    {
+      "name": "mouse.tsv.gz",
+      "source": "external://uniprot/2026_04/ortholog-accession-replay-2026-11-05/mouse.tsv.gz",
+      "sha256": "1728ef195f840a1820e82a14aba52f89808ed6cb187b3fd24c25c8dbb3809b1e",
+      "retrieval_url": "https://rest.uniprot.org/uniprotkb/stream?query=organism_id%3A10090&format=tsv&fields=accession%2Cid%2Cgene_primary%2Cgene_names%2Creviewed%2Clength%2Corganism_name%2Corganism_id"
+    },
+    {
+      "name": "mouse_Nalcn_validation.headers",
+      "source": "external://uniprot/2026_04/ortholog-accession-replay-2026-11-05/mouse_Nalcn_validation.headers",
+      "sha256": "d64afc95273e2fc8379440e8bebe95fec25fad73b586df8a823cd37b98f9859c",
+      "retrieval_url": "https://rest.uniprot.org/uniprotkb/search?format=tsv&size=500&fields=accession%2Cid%2Cgene_primary%2Cgene_names%2Creviewed%2Clength%2Corganism_name%2Corganism_id&query=gene_exact%3A%22Nalcn%22+AND+organism_id%3A10090"
+    },
+    {
+      "name": "mouse_Nalcn_validation.tsv",
+      "source": "external://uniprot/2026_04/ortholog-accession-replay-2026-11-05/mouse_Nalcn_validation.tsv",
+      "sha256": "6a64e339af49f00ce06c80416e83fb475fad001bd3bbee46c5525d1bd87a3510",
+      "retrieval_url": "https://rest.uniprot.org/uniprotkb/search?format=tsv&size=500&fields=accession%2Cid%2Cgene_primary%2Cgene_names%2Creviewed%2Clength%2Corganism_name%2Corganism_id&query=gene_exact%3A%22Nalcn%22+AND+organism_id%3A10090"
+    },
+    {
+      "name": "mouse_Ngfr_validation.headers",
+      "source": "external://uniprot/2026_04/ortholog-accession-replay-2026-11-05/mouse_Ngfr_validation.headers",
+      "sha256": "0192d9e442e2f66c73fedc647d1dc777f24c1ce1c0fd39d177efee5d88397b40",
+      "retrieval_url": "https://rest.uniprot.org/uniprotkb/search?format=tsv&size=500&fields=accession%2Cid%2Cgene_primary%2Cgene_names%2Creviewed%2Clength%2Corganism_name%2Corganism_id&query=gene_exact%3A%22Ngfr%22+AND+organism_id%3A10090"
+    },
+    {
+      "name": "mouse_Ngfr_validation.tsv",
+      "source": "external://uniprot/2026_04/ortholog-accession-replay-2026-11-05/mouse_Ngfr_validation.tsv",
+      "sha256": "de456e4053bee38fc50f8417d9721a9b65ea4353fab8fd1c2e2e7e2ecf7c2ce2",
+      "retrieval_url": "https://rest.uniprot.org/uniprotkb/search?format=tsv&size=500&fields=accession%2Cid%2Cgene_primary%2Cgene_names%2Creviewed%2Clength%2Corganism_name%2Corganism_id&query=gene_exact%3A%22Ngfr%22+AND+organism_id%3A10090"
+    },
+    {
+      "name": "mouse_count.headers",
+      "source": "external://uniprot/2026_04/ortholog-accession-replay-2026-11-05/mouse_count.headers",
+      "sha256": "8fb3be87d2ab749eedb7b92a6a244513c3447e4114f490ecb1ce172c0a268773",
+      "retrieval_url": "https://rest.uniprot.org/uniprotkb/search?query=organism_id%3A10090&format=tsv&size=1&fields=accession"
+    },
+    {
+      "name": "mouse_count.tsv",
+      "source": "external://uniprot/2026_04/ortholog-accession-replay-2026-11-05/mouse_count.tsv",
+      "sha256": "b1151806b65851609c3e16d8bc1de4b983b72bcc4c77c4e55e671d0d7cdbceb8",
+      "retrieval_url": "https://rest.uniprot.org/uniprotkb/search?query=organism_id%3A10090&format=tsv&size=1&fields=accession"
+    },
+    {
+      "name": "mouse_metadata.csv",
+      "source": "external://accessible-surfaceome/f9c73691/data/external/deeptmhmm_surfaceome_inputs/mouse_ortholog_one2one_highconf_non_hla_metadata.csv",
+      "sha256": "1b999526c2d60c786815f4af64710357b69950a010585a6346af7c3a76b81e7f"
+    }
+  ]
+}

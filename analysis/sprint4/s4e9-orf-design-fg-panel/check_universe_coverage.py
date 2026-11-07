@@ -1,12 +1,13 @@
 """Which library genes the isoform and ortholog universes could draw from, and why not the rest.
 
-Both universes were built from accessible-surfaceome files frozen at commit f9c73691
+The recorded ortholog pool was built from accessible-surfaceome files frozen at commit f9c73691
 (2026-04-27), whose human query set is deliverome-internal's expression-filtered
-"surfaceome_expressed" list (2,359 genes). The library gene list came later, from the S1E3
+"surfaceome_expressed" list (2,359 proteins, 2,355 gene symbols). The library gene list came later, from the S1E3
 filter over surfaceome release 1.3.0. Later Compara pulls (2026-06-01, 2026-09-20/21, and
 the 2026-10-12 consolidation onto Compara 115) went into the surfaceome D1 tables, not into
 the f9c73691 files the library reads. So a library gene outside the April set was never
-queried for orthologs, and its isoforms were never offered to the isoform universe.
+queried for orthologs. The isoform universe instead iterates its committed library gene
+list: April membership supplies topology/cohort annotations, not an eligibility gate.
 
 This measures that, from pinned inputs only:
 
@@ -17,7 +18,7 @@ This measures that, from pinned inputs only:
   mouse), filtered to `ortholog_one2one` with `is_high_confidence == 1`, the rule the April
   BioMart pull applied;
 * gene symbol -> Ensembl gene from the Ensembl 115 human peptide FASTA, primary assembly;
-* the isoform universe as recorded (`isoform_cohorts.tsv`) and UniProt 2026_03 reviewed
+* the selected isoform cohort (`isoform_cohorts.tsv`) and UniProt 2026_03 reviewed
   isoforms.
 
 It asserts every recorded ortholog pair is one-to-one high-confidence in Compara 115, and
@@ -119,7 +120,7 @@ def measure(paths: dict[str, Path], genes: list[str]) -> tuple[list[dict], dict]
             if "-" in r["Entry"] and not r["Entry"].endswith("-1") and r["Gene Names (primary)"]
         }
     with paths["isoform_cohorts.tsv"].open() as fh:
-        in_iso_universe = {r["gene"] for r in csv.DictReader(fh, delimiter="\t")}
+        in_iso_cohort = {r["gene"] for r in csv.DictReader(fh, delimiter="\t")}
 
     rows = []
     for g in sorted(genes):
@@ -134,7 +135,7 @@ def measure(paths: dict[str, Path], genes: list[str]) -> tuple[list[dict], dict]
             row[f"{sp}_one2one_hc_compara115"] = eligible
             row[f"{sp}_in_ortholog_list"] = bool(ensg & listed[sp])
         row["has_uniprot_isoform"] = g in has_isoform
-        row["in_isoform_universe"] = g in in_iso_universe
+        row["in_isoform_cohort"] = g in in_iso_cohort
         rows.append(row)
 
     def count(pred):
@@ -159,11 +160,11 @@ def measure(paths: dict[str, Path], genes: list[str]) -> tuple[list[dict], dict]
                 1 for r in missing if not r["in_april_query_set"]
             ),
         }
-    iso_missing = [r for r in rows if r["has_uniprot_isoform"] and not r["in_isoform_universe"]]
+    iso_missing = [r for r in rows if r["has_uniprot_isoform"] and not r["in_isoform_cohort"]]
     summary["isoform"] = {
         "genes_with_uniprot_isoform": count(lambda r: r["has_uniprot_isoform"]),
-        "in_isoform_universe": count(lambda r: r["in_isoform_universe"]),
-        "isoform_gene_not_in_universe": len(iso_missing),
+        "in_isoform_cohort": count(lambda r: r["in_isoform_cohort"]),
+        "isoform_gene_not_in_cohort": len(iso_missing),
         "of_which_outside_april_set": sum(1 for r in iso_missing if not r["in_april_query_set"]),
     }
     return rows, summary

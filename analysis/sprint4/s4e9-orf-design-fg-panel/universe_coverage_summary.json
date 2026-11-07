@@ -21,8 +21,8 @@
  },
  "isoform": {
   "genes_with_uniprot_isoform": 1216,
-  "in_isoform_universe": 945,
-  "isoform_gene_not_in_universe": 451,
+  "in_isoform_cohort": 945,
+  "isoform_gene_not_in_cohort": 451,
   "of_which_outside_april_set": 92
  }
 }

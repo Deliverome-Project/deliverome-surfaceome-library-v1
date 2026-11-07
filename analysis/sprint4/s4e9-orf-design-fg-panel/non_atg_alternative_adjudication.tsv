@@ -1,0 +1,55 @@
+member_key	proposed_library	priority	symbol	species	source_release	selected_transcript	selected_length	start_stop_supported_alternative_count	best_annotation_supported_alternative	recommendation	review_status	approved_for_canonical_activation	N_terminal_replacement_candidate_transcripts	ATG_alternative_transcripts_already_active	active_member_duplicate_check_complete_for_species
+ort:cyno:OPN3:A0A2K5VXZ0	l1	0	OPN3	cyno	116	ENSMFAT00000003874	413	2	ENSMFAT00000003881	retain_blocked_different_protein_models	curation_required	False			True
+ort:cyno:ADCY2:A0A2K5TV06	l1	1	ADCY2	cyno	116	ENSMFAT00000022563	1090	4	ENSMFAT00000076933	retain_blocked_different_protein_models	curation_required	False			True
+ort:cyno:PRRG1:ENSMFAP00000048244	l1	2	PRRG1	cyno	116	ENSMFAT00000077093	216	2	ENSMFAT00000088950	review_N_terminal_replacement_candidate	curation_required	False	ENSMFAT00000088950;ENSMFAT00000094044		True
+iso:SLC9D1:ENST00000622371	l1	3	SLC9D1	human	115	ENST00000622371	126	25	ENST00000434316	retain_blocked_different_protein_models	curation_required	False		ENST00000434316;ENST00000474393;ENST00000909168;ENST00000909171;ENST00000909174;ENST00000909175;ENST00000955127;ENST00000955130	True
+lib:OR8G3	l1	3	OR8G3	human	115	ENST00000641572	310	0		retain_blocked_no_start_stop_supported_alternative	curation_required	False			True
+iso:ADCY3:ENST00000606682	l2	4	ADCY3	human	115	ENST00000606682	791	26	ENST00000679454	retain_blocked_different_protein_models	curation_required	False		ENST00000679454;ENST00000260600;ENST00000405392;ENST00000912211;ENST00000912215;ENST00000948876;ENST00000948879;ENST00000948882	True
+iso:ITGA6:ENST00000416789	l2	4	ITGA6	human	115	ENST00000416789	258	12	ENST00000684293	retain_blocked_different_protein_models	curation_required	False		ENST00000684293;ENST00000264107;ENST00000409080;ENST00000442250	True
+iso:LRP8:ENST00000465675	l2	4	LRP8	human	115	ENST00000465675	841	55	ENST00000306052	retain_blocked_different_protein_models	curation_required	False		ENST00000306052;ENST00000354412;ENST00000371454;ENST00000662198;ENST00000662604	True
+iso:LSAMP:ENST00000333617	l2	4	LSAMP	human	115	ENST00000333617	345	1	ENST00000490035	retain_blocked_different_protein_models	curation_required	False		ENST00000490035	True
+iso:MPZL1:ENST00000367853	l2	4	MPZL1	human	115	ENST00000367853	183	8	ENST00000359523	retain_blocked_different_protein_models	curation_required	False		ENST00000359523;ENST00000474859;ENST00000886874;ENST00000966247	True
+iso:NEO1:ENST00000560328	l2	4	NEO1	human	115	ENST00000560328	1130	18	ENST00000261908	retain_blocked_different_protein_models	curation_required	False		ENST00000261908;ENST00000339362;ENST00000558964;ENST00000560262;ENST00000881911;ENST00000881913;ENST00000881915;ENST00000881916;ENST00000881918;ENST00000944648	True
+iso:OR10C1:ENST00000546473	l2	4	OR10C1	human	115	ENST00000546473	314	0		retain_blocked_no_start_stop_supported_alternative	curation_required	False		ENST00000377138	True
+iso:PTCH1:ENST00000375290	l2	4	PTCH1	human	115	ENST00000375290	486	9	ENST00000331920	retain_blocked_different_protein_models	curation_required	False		ENST00000331920;ENST00000429896;ENST00000430669;ENST00000437951;ENST00000468211;ENST00000692981;ENST00000711046	True
+iso:SLC38A6:ENST00000529212	l2	4	SLC38A6	human	115	ENST00000529212	229	6	ENST00000267488	retain_blocked_different_protein_models	curation_required	False		ENST00000267488;ENST00000354886	True
+iso:TMEM222:ENST00000498220	l2	4	TMEM222	human	115	ENST00000498220	199	10	ENST00000374076	retain_blocked_different_protein_models	curation_required	False		ENST00000374076;ENST00000608611;ENST00000611517;ENST00000915855;ENST00000915856	True
+iso:VANGL2:ENST00000696602	l2	4	VANGL2	human	115	ENST00000696602	569	1	ENST00000368061	retain_blocked_different_protein_models	curation_required	False		ENST00000368061	True
+ort:cyno:ADGRB1:A0A2K5V0W5	l2	4	ADGRB1	cyno	115	ENSMFAT00000068903	1330	0		retain_blocked_no_start_stop_supported_alternative	curation_required	False			True
+ort:cyno:AJAP1:A0A7N9DBQ0	l2	4	AJAP1	cyno	115	ENSMFAT00000091144	379	0		retain_blocked_no_start_stop_supported_alternative	curation_required	False			True
+ort:cyno:ASGR1:A0A2K5V9D6	l2	4	ASGR1	cyno	115	ENSMFAT00000034690	183	0		retain_blocked_no_start_stop_supported_alternative	curation_required	False			True
+ort:cyno:CD34:A0A2K5UCU4	l2	4	CD34	cyno	115	ENSMFAT00000039300	390	2	ENSMFAT00000039387	retain_blocked_different_protein_models	curation_required	False			True
+ort:cyno:CD6:A0A2K5U1K4	l2	4	CD6	cyno	115	ENSMFAT00000024901	648	0		retain_blocked_no_start_stop_supported_alternative	curation_required	False			True
+ort:cyno:CHRNA4:A0A2K5X6R8	l2	4	CHRNA4	cyno	115	ENSMFAT00000019466	596	0		retain_blocked_no_start_stop_supported_alternative	curation_required	False			True
+ort:cyno:CLEC12A:A0A2K5WXQ4	l2	4	CLEC12A	cyno	115	ENSMFAT00000016291	271	2	ENSMFAT00000009877	retain_blocked_different_protein_models	curation_required	False			True
+ort:cyno:DLL4:ENSMFAP00000031438	l2	4	DLL4	cyno	115	ENSMFAT00000005654	663	1	ENSMFAT00000093792	retain_blocked_different_protein_models	curation_required	False			True
+ort:cyno:DSG1:A0A2K5V7X8	l2	4	DSG1	cyno	115	ENSMFAT00000035202	1047	0		retain_blocked_no_start_stop_supported_alternative	curation_required	False			True
+ort:cyno:EPHA8:A0A2K5U2R1	l2	4	EPHA8	cyno	115	ENSMFAT00000025334	838	0		retain_blocked_no_start_stop_supported_alternative	curation_required	False			True
+ort:cyno:GFRA3:A0A2K5VJ28	l2	4	GFRA3	cyno	115	ENSMFAT00000032878	345	0		retain_blocked_no_start_stop_supported_alternative	curation_required	False			True
+ort:cyno:GPR32:A0A2K5WC38	l2	4	GPR32	cyno	115	ENSMFAT00000008881	369	0		retain_blocked_no_start_stop_supported_alternative	curation_required	False			True
+ort:cyno:HTR3A:ENSMFAP00000025960	l2	4	HTR3A	cyno	115	ENSMFAT00000034115	489	1	ENSMFAT00000034120	retain_blocked_different_protein_models	curation_required	False			True
+ort:cyno:JAML:ENSMFAP00000059554	l2	4	JAML	cyno	115	ENSMFAT00000080684	383	4	ENSMFAT00000081303	retain_blocked_different_protein_models	curation_required	False			True
+ort:cyno:KIRREL1:A0A2K5UCC3	l2	4	KIRREL1	cyno	115	ENSMFAT00000038116	552	0		retain_blocked_no_start_stop_supported_alternative	curation_required	False			True
+ort:cyno:MPZL1:A0A2K5VTC5	l2	4	MPZL1	cyno	115	ENSMFAT00000002270	312	0		retain_blocked_no_start_stop_supported_alternative	curation_required	False			True
+ort:cyno:NPFFR2:ENSMFAP00000030749	l2	4	NPFFR2	cyno	115	ENSMFAT00000004956	423	2	ENSMFAT00000004968	review_N_terminal_replacement_candidate	curation_required	False	ENSMFAT00000004968		True
+ort:cyno:NRN1L:A0A7N9CJZ3	l2	4	NRN1L	cyno	115	ENSMFAT00000090690	164	1	ENSMFAT00000028348	retain_blocked_different_protein_models	curation_required	False			True
+ort:cyno:NRXN2:A0A2K5W6Q8	l2	4	NRXN2	cyno	115	ENSMFAT00000007006	1400	1	ENSMFAT00000007031	retain_blocked_different_protein_models	curation_required	False			True
+ort:cyno:NTSR2:A0A2K5VDE2	l2	4	NTSR2	cyno	115	ENSMFAT00000030880	368	0		retain_blocked_no_start_stop_supported_alternative	curation_required	False			True
+ort:cyno:OR9A4:A0A7N9CUW4	l2	4	OR9A4	cyno	115	ENSMFAT00000028942	283	0		retain_blocked_no_start_stop_supported_alternative	curation_required	False			True
+ort:cyno:SCARB1:A0A2K5X789	l2	4	SCARB1	cyno	115	ENSMFAT00000019491	499	0		retain_blocked_no_start_stop_supported_alternative	curation_required	False			True
+ort:cyno:SCARF2:A0A2K5VUS8	l2	4	SCARF2	cyno	115	ENSMFAT00000002705	800	0		retain_blocked_no_start_stop_supported_alternative	curation_required	False			True
+ort:cyno:SLC2A9:A0A2K5W025	l2	4	SLC2A9	cyno	115	ENSMFAT00000004552	503	0		retain_blocked_no_start_stop_supported_alternative	curation_required	False			True
+ort:cyno:SLC8A1:A0A2K5WN44	l2	4	SLC8A1	cyno	115	ENSMFAT00000012696	973	2	ENSMFAT00000012589	retain_blocked_different_protein_models	curation_required	False			True
+ort:cyno:SLC9A3:A0A2K5WAF0	l2	4	SLC9A3	cyno	115	ENSMFAT00000008315	728	0		retain_blocked_no_start_stop_supported_alternative	curation_required	False			True
+ort:cyno:SORCS1:ENSMFAP00000031390	l2	4	SORCS1	cyno	115	ENSMFAT00000005605	926	0		retain_blocked_no_start_stop_supported_alternative	curation_required	False			True
+ort:cyno:SUSD2:A0A2K5UEM5	l2	4	SUSD2	cyno	115	ENSMFAT00000043925	791	0		retain_blocked_no_start_stop_supported_alternative	curation_required	False			True
+ort:cyno:TAAR1:A0A2K5UPD2	l2	4	TAAR1	cyno	115	ENSMFAT00000064741	339	0		retain_blocked_no_start_stop_supported_alternative	curation_required	False			True
+ort:cyno:TMEFF1:ENSMFAP00000010532	l2	4	TMEFF1	cyno	115	ENSMFAT00000041200	411	3	ENSMFAT00000041339	retain_blocked_different_protein_models	curation_required	False			True
+ort:cyno:TMEM158:A0A7N9CQF0	l2	4	TMEM158	cyno	115	ENSMFAT00000090754	324	0		retain_blocked_no_start_stop_supported_alternative	curation_required	False			True
+ort:cyno:TMPRSS13:A0A2K5VBL3	l2	4	TMPRSS13	cyno	115	ENSMFAT00000030244	607	0		retain_blocked_no_start_stop_supported_alternative	curation_required	False			True
+ort:cyno:TNFRSF18:ENSMFAP00000051604	l2	4	TNFRSF18	cyno	115	ENSMFAT00000084076	169	0		retain_blocked_no_start_stop_supported_alternative	curation_required	False			True
+ort:cyno:TNFSF13B:A0A2K5V2X4	l2	4	TNFSF13B	cyno	115	ENSMFAT00000069626	285	0		retain_blocked_no_start_stop_supported_alternative	curation_required	False			True
+ort:cyno:VSIG8:A0A2K5W8V6	l2	4	VSIG8	cyno	115	ENSMFAT00000007772	384	0		retain_blocked_no_start_stop_supported_alternative	curation_required	False			True
+ort:mouse:PCDH1:F7BJK1	l2	4	PCDH1	mouse	115	ENSMUST00000161701	1077	3	ENSMUST00000057185	retain_blocked_different_protein_models	curation_required	False			True
+ort:cyno:KCNA3:A0A2K5UDR0	retired_baseline	5	KCNA3	cyno	115	ENSMFAT00000040883	475	0		retain_blocked_no_start_stop_supported_alternative	curation_required	False			True
+ort:cyno:TIE1:G7NUW7	retired_baseline	5	TIE1	cyno	115	ENSMFAT00000006798	1138	0		retain_blocked_no_start_stop_supported_alternative	curation_required	False			True

@@ -139,7 +139,7 @@ def measure() -> dict:
         "cyno_eligible": pool["cyno"]["eligible_in_compara115"],
         "cyno_listed": pool["cyno"]["in_ortholog_list"],
         "cyno_never_queried": pool["cyno"]["eligible_not_listed"],
-        "isoform_genes_not_in_universe": pool["isoform"]["isoform_gene_not_in_universe"],
+        "isoform_genes_not_in_cohort": pool["isoform"]["isoform_gene_not_in_cohort"],
         "isoform_genes_outside_april_set": pool["isoform"]["of_which_outside_april_set"],
         "recorded_pairs_checked": pool["recorded_pairs_checked"],
     }
@@ -207,6 +207,9 @@ def measure() -> dict:
             r["verdict"] == "different" and r["orf_aa"] == r["model_aa"] for r in pma
         ),
     }
+
+    # --- the ordering plan (order_plan.py)
+    n["order_plan"] = json.loads((HERE / "l1_order_plan_summary.json").read_text())
 
     # --- literature tag-site positives behind the S5E13 ranker, read against their papers
     from deliverome_analysis.s3 import processed

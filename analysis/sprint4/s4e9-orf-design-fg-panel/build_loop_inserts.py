@@ -313,7 +313,7 @@ def build(gene: str, variant: str, cds: str, after: int, barcode: str, tag: str)
         "insert_after_residue": after,
         "residue_before": native[after - 1],
         "residue_after": native[after],
-        "tag": "ALFA v1.5, P-flanked, GS linkers",
+        "tag": "SpyTag003/ALFA tandem, P-flanked ALFA, GGGGS linkers",
         "tag_aa": len(LOOP_TAG_AA),
         "protein_aa": len(protein) - 1,
         "insert_nt": len(insert),

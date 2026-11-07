@@ -49,6 +49,7 @@ from pathlib import Path
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 import library_pipeline as lp  # noqa: E402
+from member_id_allocations import next_l1_member_number  # noqa: E402
 
 sys.path.insert(0, str(lp.AP))
 import assemble_candidates  # noqa: E402
@@ -132,7 +133,7 @@ def reproduce(work: Path) -> dict:
         for r in rows
         if r["library"] == ld.LIBRARY_L1 and ld.is_active(r) and r["key"] in rec_cds
     }
-    next_n = max(int(r["candidate_id"].split("-p")[1]) for r in rows if r["library"] == "l1") + 1
+    next_n = next_l1_member_number(rows)
 
     ids = {r["key"]: r["candidate_id"] for r in rows if r["library"] == ld.LIBRARY_L1}
     added, constructs, fasta = [], {}, []

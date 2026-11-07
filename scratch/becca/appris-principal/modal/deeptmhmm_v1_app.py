@@ -23,7 +23,10 @@ that no longer installs.
 
 from __future__ import annotations
 
+import hashlib
 import json
+import re
+from functools import lru_cache
 import time
 from pathlib import Path
 
@@ -90,6 +93,40 @@ def _shard(records: list[tuple[str, str]], budget: int) -> list[list[tuple[str, 
     return shards
 
 
+def _sha_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for block in iter(lambda: handle.read(8 * 1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+@lru_cache(maxsize=1)
+def _runtime_identity() -> dict:
+    """Observe the mounted academic package; never infer a patch release."""
+    package = Path(PACKAGE)
+    predict = package / "predict.py"
+    version = re.search(r'ArgumentParser\(description=[\'"]DeepTMHMM v([^\'"]+)[\'"]', predict.read_text())
+    if not version or version.group(1) != "1.0":
+        raise ValueError("Mounted predict.py does not declare the expected DeepTMHMM v1.0")
+    models = [package / f"deeptmhmm_cv_{i}.model" for i in range(5)]
+    checkpoints = sorted(package.rglob("*.pt"))
+    if not checkpoints:
+        raise ValueError("Mounted package has no ESM checkpoint to fingerprint")
+    files = sorted(set(package.rglob("*.py")) | set(models) | set(checkpoints))
+    fingerprints = {str(path.relative_to(package)): _sha_file(path) for path in files}
+    return {
+        "tool_version": "deeptmhmm-1.0-academic",
+        "model_version": version.group(1),
+        "version_source": 'predict.py ArgumentParser description="DeepTMHMM v1.0"',
+        "runner_sha256": _sha_file(Path(__file__)),
+        "package_predict_sha256": fingerprints["predict.py"],
+        "package_files_sha256": fingerprints,
+        "model_files": [str(path.relative_to(package)) for path in models],
+        "esm_checkpoint_files": [str(path.relative_to(package)) for path in checkpoints],
+    }
+
+
 def _run_predict(records: list[tuple[str, str]], tag: str) -> dict:
     """Invoke the vendored predict.py and return its 3-line topology output."""
     import subprocess
@@ -97,6 +134,7 @@ def _run_predict(records: list[tuple[str, str]], tag: str) -> dict:
     import tempfile
 
     started = time.time()
+    identity = _runtime_identity()
     with tempfile.TemporaryDirectory() as tmp:
         fasta = Path(tmp) / "in.fasta"
         fasta.write_text("".join(f">{n}\n{s}\n" for n, s in records))
@@ -121,6 +159,10 @@ def _run_predict(records: list[tuple[str, str]], tag: str) -> dict:
             "ok": True,
             "seconds": round(time.time() - started, 1),
             "three_line": three.read_text(),
+            "runtime_identity": identity,
+            "submitted_fasta_sha256": _sha_file(fasta),
+            "output_sha256": _sha_file(three),
+            "sequence_sha256s": [hashlib.sha256(seq.encode()).hexdigest() for _, seq in records],
         }
 
 
@@ -157,6 +199,8 @@ def canary(n: int = 8, fasta: str = "../topology_shortlist.fasta") -> None:
 
 @app.local_entrypoint()
 def sweep(fasta: str = "../topology_shortlist.fasta", out: str = "../topology_shortlist.3line") -> None:
+    if any(Path(out + suffix).exists() for suffix in ("", ".runtime.json", ".failures.json")):
+        raise FileExistsError("Prediction outputs must use fresh paths")
     records = _read_fasta(Path(fasta).read_text())
     short = [r for r in records if len(r[1]) <= LONG_SEQUENCE]
     long_ = [r for r in records if len(r[1]) > LONG_SEQUENCE]
@@ -171,4 +215,16 @@ def sweep(fasta: str = "../topology_shortlist.fasta", out: str = "../topology_sh
     bad = [r for r in results if not r.get("ok")]
     Path(out).write_text("".join(r["three_line"] for r in ok))
     Path(out + ".failures.json").write_text(json.dumps(bad, indent=2))
+    identities = [r["runtime_identity"] for r in ok]
+    if identities and any(identity != identities[0] for identity in identities[1:]):
+        raise ValueError("Prediction workers used different package identities")
+    runtime = dict(identities[0]) if identities else {}
+    runtime.update({
+        "schema_version": "deeptmhmm-academic-sweep-1",
+        "submitted_fasta_sha256": _sha_file(Path(fasta)),
+        "output_sha256": _sha_file(Path(out)),
+        "shards": [{k: v for k, v in r.items() if k != "three_line"} for r in results],
+        "failed_shards": len(bad),
+    })
+    Path(out + ".runtime.json").write_text(json.dumps(runtime, indent=2, sort_keys=True) + "\n")
     print(f"wrote {out}: {len(ok)} shards ok, {len(bad)} failed")

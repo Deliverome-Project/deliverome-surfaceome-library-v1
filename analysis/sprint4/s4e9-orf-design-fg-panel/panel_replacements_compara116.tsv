@@ -1,0 +1,11 @@
+species	band	topology_class	rejected	reason	replacement	candidates
+mouse	near	multipass	mouse:P2RY2:P35383	no exact Ensembl translation or existing designed CDS	mouse:PTCH1:Q61115	512
+mouse	near	type I	mouse:KIRREL3:Q8BR86	no exact Ensembl translation or existing designed CDS	mouse:SEMA6C:Q9WTM3	268
+mouse	diverged	multipass	mouse:KCNMB1:Q8CAE3	no exact Ensembl translation or existing designed CDS	mouse:OR1F1:ENSMUSP00000058956	388
+mouse	diverged	type I	mouse:CD2:Q9R201	no exact Ensembl translation or existing designed CDS	mouse:ADAM28:Q9JLN6-3	321
+cyno	near	multipass	cyno:ABCG4:G7PPA4	protein duplicates active non-ortholog l1-p0014	cyno:ADCY2:A0A2K5TV06	461
+cyno	near	multipass	cyno:ABCB11:D2CFL3	no exact Ensembl translation or existing designed CDS	cyno:CLDN7:A0A2K5WU76	460
+cyno	near	multipass	cyno:KCNK2:ENSMFAP00000000308	protein duplicates active non-ortholog l1-p1028	cyno:FZD3:G7PCZ7	459
+cyno	near	multipass	cyno:OPRM1:Q95M54	no exact Ensembl translation or existing designed CDS	cyno:SLC6A3:Q9GJT6	458
+cyno	near	type II	cyno:ATP1B1:Q4R4V5	no exact Ensembl translation or existing designed CDS	cyno:TCTA:ENSMFAP00000033240	38
+cyno	diverged	GPI	cyno:DPEP3:Q4R7M2	no exact Ensembl translation or existing designed CDS	cyno:DPEP2:ENSMFAP00000045871	50

@@ -209,6 +209,7 @@ def save_figure(
     formats=("png",),
     gist_url=None,
     dpi=300,
+    transparent=False,
 ):
     """Save figure in multiple formats.
 
@@ -236,6 +237,9 @@ def save_figure(
     hashes that produced it (see :mod:`deliverome_analysis.provenance`).
     dpi : int
         Resolution in dots per inch. Defaults to 300.
+    transparent : bool
+        PNG only: save with a transparent background instead of white. For slide overlays
+        stacked on a white base figure (an on-click build); leave False for anything else.
     """
     import json
 
@@ -255,7 +259,10 @@ def save_figure(
         # edge so text doesn't sit flush against the image border.
         save_kwargs = {"format": fmt, "dpi": dpi, "bbox_inches": "tight", "pad_inches": 0.15}
         if fmt == "png":
-            save_kwargs.update(facecolor="white", transparent=False)
+            if transparent:
+                save_kwargs.update(facecolor="none", transparent=True)
+            else:
+                save_kwargs.update(facecolor="white", transparent=False)
         if fmt == "png":
             save_kwargs["metadata"] = {PNG_KEY: stamp_json}
             if gist_url:

@@ -1,0 +1,83 @@
+{
+  "rule_version": "library-completeness-v1",
+  "source_release_policy": "Baseline keys are compared to pinned115 (not a claim of original source release); selected newly resolved keys use documented116; supplementary116 observations stay separate.",
+  "files": {
+    "cds115_human.gz": {
+      "source": "external:ensembl/release-115/cds/Homo_sapiens.GRCh38.cds.all.fa.gz",
+      "sha256": "53671b18f72fc63e7c7eb32f34d6072d192cd2aa517842c13b2e9f9102026878",
+      "release": 115,
+      "species": "human",
+      "kind": "cds"
+    },
+    "gtf115_human.gz": {
+      "source": "external:ensembl/release-115/gtf/Homo_sapiens.GRCh38.115.gtf.gz",
+      "sha256": "2f8e31578c3aa2f35646927c4a3b3b0dcf0321e57c0ebd3ecc81afcbc836d1a8",
+      "origin": "https://ftp.ensembl.org/pub/release-115/gtf/homo_sapiens/Homo_sapiens.GRCh38.115.gtf.gz",
+      "release": 115,
+      "species": "human",
+      "kind": "gtf"
+    },
+    "cds115_mouse.gz": {
+      "source": "external:ensembl/release-115/cds/Mus_musculus.GRCm39.cds.all.fa.gz",
+      "sha256": "dbd5ea4bd67e41d216d3567625059102ff1f505e071e41d17a3f3f48ae49b625",
+      "release": 115,
+      "species": "mouse",
+      "kind": "cds"
+    },
+    "gtf115_mouse.gz": {
+      "source": "external:ensembl/release-115/gtf/Mus_musculus.GRCm39.115.gtf.gz",
+      "sha256": "fa45f9fed56e85d5c83e5912f88d76e277729da0761f99e33e4c88d4b08a9ec0",
+      "origin": "https://ftp.ensembl.org/pub/release-115/gtf/mus_musculus/Mus_musculus.GRCm39.115.gtf.gz",
+      "release": 115,
+      "species": "mouse",
+      "kind": "gtf"
+    },
+    "cds115_cyno.gz": {
+      "source": "external:ensembl/release-115/cds/Macaca_fascicularis.Macaca_fascicularis_6.0.cds.all.fa.gz",
+      "sha256": "db4df9cdaa50a12bd9973a0f5c700d7576d011dfd822770ebc88fd645fbb1551",
+      "release": 115,
+      "species": "cyno",
+      "kind": "cds"
+    },
+    "gtf115_cyno.gz": {
+      "source": "external:ensembl/release-115/gtf/Macaca_fascicularis.Macaca_fascicularis_6.0.115.gtf.gz",
+      "sha256": "1df1858a473de5185c5168aefc53776c9d3adcf33b1abc3b774d68dd20bba9b5",
+      "origin": "https://ftp.ensembl.org/pub/release-115/gtf/macaca_fascicularis/Macaca_fascicularis.Macaca_fascicularis_6.0.115.gtf.gz",
+      "release": 115,
+      "species": "cyno",
+      "kind": "gtf"
+    },
+    "cds116_mouse.gz": {
+      "source": "external:ensembl/release-116/cds/Mus_musculus.GRCm39.cds.all.fa.gz",
+      "sha256": "8c0a53a7fe973adaf6d884884ec86a329deebfb519d0d4f736bd1c0c67f09964",
+      "origin": "https://ftp.ensembl.org/pub/release-116/fasta/mus_musculus/cds/Mus_musculus.GRCm39.cds.all.fa.gz",
+      "release": 116,
+      "species": "mouse",
+      "kind": "cds"
+    },
+    "cds116_cyno.gz": {
+      "source": "external:ensembl/release-116/cds/Macaca_fascicularis.Macaca_fascicularis_6.0.cds.all.fa.gz",
+      "sha256": "c020084ea95df949ffb4fc1dbb96b765819e37fa84cd76f0fe5ed3e100e448d3",
+      "origin": "https://ftp.ensembl.org/pub/release-116/fasta/macaca_fascicularis/cds/Macaca_fascicularis.Macaca_fascicularis_6.0.cds.all.fa.gz",
+      "release": 116,
+      "species": "cyno",
+      "kind": "cds"
+    },
+    "gtf116_cyno.gz": {
+      "source": "external:ensembl/release-116/gtf/Macaca_fascicularis.Macaca_fascicularis_6.0.116.gtf.gz",
+      "sha256": "8fc17ccec2d2f90b271495bfa7641ca496e14537a82636615a27c6a33cb5746c",
+      "origin": "https://ftp.ensembl.org/pub/release-116/gtf/macaca_fascicularis/Macaca_fascicularis.Macaca_fascicularis_6.0.116.gtf.gz",
+      "release": 116,
+      "species": "cyno",
+      "kind": "gtf"
+    },
+    "gtf116_mouse.gz": {
+      "source": "external:ensembl/release-116/gtf/Mus_musculus.GRCm39.116.gtf.gz",
+      "sha256": "5c29fd9e3157cf40fdbbf76ab25bfe7f79aa61313e0b672664ddb0cb251c02e1",
+      "origin": "https://ftp.ensembl.org/pub/release-116/gtf/mus_musculus/Mus_musculus.GRCm39.116.gtf.gz",
+      "release": 116,
+      "species": "mouse",
+      "kind": "gtf"
+    }
+  }
+}

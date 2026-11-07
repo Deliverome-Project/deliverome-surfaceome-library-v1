@@ -1,0 +1,74 @@
+{
+  "uniprot_release": "2026_04",
+  "purpose": "Read-only evidence for prioritized reference proteins, three cyno orthologs, and the separate SLC9D1 alternative isoform.",
+  "files": {
+    "candidate_cds.json": {
+      "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild-inputs/2026-11-05/candidate_cds.json",
+      "sha256": "03c3413d70e15612868133d15839e092dba20fb05f3e8318d17f48928c91c662"
+    },
+    "reference_selection.tsv": {
+      "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/priority-inputs/reference_selection.tsv",
+      "sha256": "eb2e90e7444ce75560fc1d6b16a7407d599b6acf2ac69bb979803c5f444874ab"
+    },
+    "baseline_evidence.json": {
+      "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/native-start/library_non_atg_evidence.json",
+      "sha256": "d34be722043b775de37b29bb1958af2db390c4af15573c9b185840108139c884"
+    },
+    "compara_evidence.json": {
+      "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/compara-start/compara116_non_atg_evidence.json",
+      "sha256": "ae129fc919d1a30d53bdecd900170bf3aca9f5dc86101025cbfcfc63a3901dcd"
+    },
+    "alternative_adjudication.json": {
+      "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/alternatives/non_atg_alternative_adjudication.json",
+      "sha256": "e08d694234b6384b82dba1f171eaa7c4442bcc737e09c8c1b9e17ff3097be562"
+    },
+    "Homo_sapiens.GRCh38.115.gtf.gz": {
+      "source": "external:ensembl/release-115/gtf/Homo_sapiens.GRCh38.115.gtf.gz",
+      "sha256": "2f8e31578c3aa2f35646927c4a3b3b0dcf0321e57c0ebd3ecc81afcbc836d1a8"
+    },
+    "Homo_sapiens.GRCh38.cds.all.fa.gz": {
+      "source": "external:ensembl/release-115/cds/Homo_sapiens.GRCh38.cds.all.fa.gz",
+      "sha256": "53671b18f72fc63e7c7eb32f34d6072d192cd2aa517842c13b2e9f9102026878"
+    },
+    "P0DMU2.json": {
+      "source": "external:uniprot/2026_04/priority-cds-form-review-2026-11-05/P0DMU2.json",
+      "sha256": "046edd346e46cad8310c84c9ea7fe8d37a1b96d9444109ab4ef9d25b84a2e1e0",
+      "origin": "https://rest.uniprot.org/uniprotkb/P0DMU2.json"
+    },
+    "P0DMU2.headers": {
+      "source": "external:uniprot/2026_04/priority-cds-form-review-2026-11-05/P0DMU2.headers",
+      "sha256": "a2266bc5cbdee903aa7c7a233c70674f3b2d1ba7a6429101dc777aaf677c0793",
+      "origin": "https://rest.uniprot.org/uniprotkb/P0DMU2.json"
+    },
+    "Q8WUG5.json": {
+      "source": "external:uniprot/2026_04/priority-cds-form-review-2026-11-05/Q8WUG5.json",
+      "sha256": "909108c16b3e15ccd8752bd0c4296b56236977ff52ef96290f81a8e1744a6347",
+      "origin": "https://rest.uniprot.org/uniprotkb/Q8WUG5.json"
+    },
+    "Q8WUG5.headers": {
+      "source": "external:uniprot/2026_04/priority-cds-form-review-2026-11-05/Q8WUG5.headers",
+      "sha256": "4657a5c840c5f5a1eeb3e59b48732e22203b9d46d7963385a1f6b5cdb724914a",
+      "origin": "https://rest.uniprot.org/uniprotkb/Q8WUG5.json"
+    },
+    "Q9H1D0.json": {
+      "source": "external:uniprot/2026_04/priority-cds-form-review-2026-11-05/Q9H1D0.json",
+      "sha256": "fba2469a813a51741579ab4d86cd4b1d750847a8c0f989fca53033b606eee487",
+      "origin": "https://rest.uniprot.org/uniprotkb/Q9H1D0.json"
+    },
+    "Q9H1D0.headers": {
+      "source": "external:uniprot/2026_04/priority-cds-form-review-2026-11-05/Q9H1D0.headers",
+      "sha256": "4657a5c840c5f5a1eeb3e59b48732e22203b9d46d7963385a1f6b5cdb724914a",
+      "origin": "https://rest.uniprot.org/uniprotkb/Q9H1D0.json"
+    },
+    "Q8WUG5-2.fasta": {
+      "source": "external:uniprot/2026_04/priority-cds-form-review-2026-11-05/Q8WUG5-2.fasta",
+      "sha256": "99211adcbb4786b179ad16522f464c42ae135b5963ff5e9021ca373a786bd31c",
+      "origin": "https://rest.uniprot.org/uniprotkb/Q8WUG5-2.fasta"
+    },
+    "Q8WUG5-2.headers": {
+      "source": "external:uniprot/2026_04/priority-cds-form-review-2026-11-05/Q8WUG5-2.headers",
+      "sha256": "6c37cb93ba3a579a6919046dfa5ca1fa2949e7ad2c2890d9dd2120fbdda55362",
+      "origin": "https://rest.uniprot.org/uniprotkb/Q8WUG5-2.fasta"
+    }
+  }
+}

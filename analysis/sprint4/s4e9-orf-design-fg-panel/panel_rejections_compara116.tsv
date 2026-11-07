@@ -1,0 +1,210 @@
+form_id	reason
+cyno:ABCB11:D2CFL3	no exact Ensembl translation or existing designed CDS
+cyno:ABCC1:Q864R9	no exact Ensembl translation or existing designed CDS
+cyno:ABCG4:G7PPA4	protein duplicates active non-ortholog l1-p0014
+cyno:ACKR1:A0A2P0NCE7	no exact Ensembl translation or existing designed CDS
+cyno:ACVR2A:ENSMFAP00000033947	protein duplicates active non-ortholog l1-p0026
+cyno:ADAM10:A0A2K5WCT6	protein duplicates active non-ortholog l1-p0029
+cyno:AMIGO1:G7NV59	protein duplicates active non-ortholog l1-p0105
+cyno:ANKH:A0A2K5WPU8	protein duplicates active non-ortholog l1-p0109
+cyno:ATP1B1:Q4R4V5	no exact Ensembl translation or existing designed CDS
+cyno:ATP2B1:ENSMFAP00000028743	protein duplicates active non-ortholog l1-p0159
+cyno:AVPR2:E3VJQ2	no exact Ensembl translation or existing designed CDS
+cyno:BEST1:Q6UY87	no exact Ensembl translation or existing designed CDS
+cyno:BST1:E5G6H5	no exact Ensembl translation or existing designed CDS
+cyno:BTN3A2:A0A330KW99	no exact Ensembl translation or existing designed CDS
+cyno:C3AR1:Q6TAC8	no exact Ensembl translation or existing designed CDS
+cyno:CACNG2:A0A2K5WFY4	protein duplicates active non-ortholog l1-p0220
+cyno:CACNG3:Q4R589	protein duplicates active non-ortholog l1-p0221
+cyno:CADM2:ENSMFAP00000005970	protein duplicates active non-ortholog l1-p0227
+cyno:CATSPERG:Q4R6B2	no exact Ensembl translation or existing designed CDS
+cyno:CCR5:P61814	no exact Ensembl translation or existing designed CDS
+cyno:CCR8:G7NYJ2	no exact Ensembl translation or existing designed CDS
+cyno:CD2:Q6SZ61	no exact Ensembl translation or existing designed CDS
+cyno:CFTR:Q7JII8	no exact Ensembl translation or existing designed CDS
+cyno:CNR1:G7P3K6	protein duplicates active non-ortholog l1-p0448
+cyno:CX3CL1:A0A872TN34	no exact Ensembl translation or existing designed CDS
+cyno:DPEP3:Q4R7M2	no exact Ensembl translation or existing designed CDS
+cyno:EFNA3:A0A2K5VZR7	protein duplicates active non-ortholog l1-p0545
+cyno:EPHA2:Q1KL86	no exact Ensembl translation or existing designed CDS
+cyno:ESAM:Q95KI3	no exact Ensembl translation or existing designed CDS
+cyno:FFAR1:Q76JV1	no exact Ensembl translation or existing designed CDS
+cyno:FSHR:P32212	no exact Ensembl translation or existing designed CDS
+cyno:FZD2:A0A2K5WLJ1	protein duplicates active non-ortholog l1-p0664
+cyno:GDPD4:Q95JR7	no exact Ensembl translation or existing designed CDS
+cyno:GJB1:ENSMFAP00000046231	protein duplicates active non-ortholog l1-p0710
+cyno:GJD4:Q9N0B3	no exact Ensembl translation or existing designed CDS
+cyno:GLP1R:F8V479	no exact Ensembl translation or existing designed CDS
+cyno:GLP2R:G1E7B0	no exact Ensembl translation or existing designed CDS
+cyno:GLRA3:ENSMFAP00000036409	protein duplicates active non-ortholog l1-p0727
+cyno:GPM6A:ENSMFAP00000015699	protein duplicates active non-ortholog l1-p0742
+cyno:GPM6B:ENSMFAP00000054418	protein duplicates active non-ortholog l1-p0743
+cyno:GPR139:A0A7N9DEU4	protein duplicates active non-ortholog l1-p0750
+cyno:GPR173:G7Q2S6	protein duplicates active non-ortholog l1-p0768
+cyno:GRIA1:ENSMFAP00000023470	protein duplicates active non-ortholog l1-p0810
+cyno:GRIA4:Q38PU5	no exact Ensembl translation or existing designed CDS
+cyno:GRIK2:ENSMFAP00000045067	protein duplicates active non-ortholog l1-p0817
+cyno:IL2RB:Q38J85	no exact Ensembl translation or existing designed CDS
+cyno:IL7R:Q38IC7	no exact Ensembl translation or existing designed CDS
+cyno:ITM2B:Q60HC1	protein duplicates active non-ortholog l1-p0976
+cyno:JAM2:ENSMFAP00000050136	protein duplicates active non-ortholog l1-p0982
+cyno:KCNC2:ENSMFAP00000019689	protein duplicates active non-ortholog l1-p0996
+cyno:KCND3:ENSMFAP00000004692	protein duplicates active non-ortholog l1-p1000
+cyno:KCNJ10:ENSMFAP00000053973	protein duplicates active non-ortholog l1-p1014
+cyno:KCNJ6:ENSMFAP00000044785	protein duplicates active non-ortholog l1-p1022
+cyno:KCNK2:ENSMFAP00000000308	protein duplicates active non-ortholog l1-p1028
+cyno:KCNU1:A5LFX5	no exact Ensembl translation or existing designed CDS
+cyno:KL:Q8WP17	no exact Ensembl translation or existing designed CDS
+cyno:LHFPL6:ENSMFAP00000043699	protein duplicates active non-ortholog l1-p1088
+cyno:LINGO1:Q9N008	no exact Ensembl translation or existing designed CDS
+cyno:LPAR2:Q95KH4	no exact Ensembl translation or existing designed CDS
+cyno:LRFN2:Q9BE71	no exact Ensembl translation or existing designed CDS
+cyno:LRRC4C:G7PQD6	protein duplicates active non-ortholog l1-p1140
+cyno:LRRTM2:A0A2K5X4Y3	protein duplicates active non-ortholog l1-p1153
+cyno:LRRTM3:Q9BGP6	protein duplicates active non-ortholog l1-p1154
+cyno:MC1R:A3KF60	no exact Ensembl translation or existing designed CDS
+cyno:MC4R:Q8HXX3	no exact Ensembl translation or existing designed CDS
+cyno:MMP16:G7PC63	protein duplicates active non-ortholog l1-p1225
+cyno:MRGPRD:Q6L786	no exact Ensembl translation or existing designed CDS
+cyno:MRGPRE:Q5U9D7	no exact Ensembl translation or existing designed CDS
+cyno:MRGPRX2:Q5U9D9	no exact Ensembl translation or existing designed CDS
+cyno:NCR1:Q95JB9	no exact Ensembl translation or existing designed CDS
+cyno:NPC1L1:A0MJA6	no exact Ensembl translation or existing designed CDS
+cyno:NPR2:A0A2K5WQM7	protein duplicates active non-ortholog l1-p1310
+cyno:NPTN:A0A2K5W4W3	protein duplicates active non-ortholog l1-p2471
+cyno:NTM:A0A2K5VKK3	protein duplicates active non-ortholog l1-p2475
+cyno:NTRK3:Q5IFJ9	no exact Ensembl translation or existing designed CDS
+cyno:OPRM1:Q95M54	no exact Ensembl translation or existing designed CDS
+cyno:OXTR:E3V2E7	no exact Ensembl translation or existing designed CDS
+cyno:PDGFRA:Q0PW86	no exact Ensembl translation or existing designed CDS
+cyno:PIANP:Q95K74	protein duplicates active non-ortholog l1-p1642
+cyno:PRLR:G8F5S4	no exact Ensembl translation or existing designed CDS
+cyno:RELT:Q9N092	no exact Ensembl translation or existing designed CDS
+cyno:RHO:Q28886	no exact Ensembl translation or existing designed CDS
+cyno:SERINC1:G7P394	protein duplicates active non-ortholog l1-p1796
+cyno:SERINC5:Q4R6L9	no exact Ensembl translation or existing designed CDS
+cyno:SLC10A1:A2V9Y7	no exact Ensembl translation or existing designed CDS
+cyno:SLC1A5:Q4R8W8	no exact Ensembl translation or existing designed CDS
+cyno:SLC22A2:A0A0R8GBN8	no exact Ensembl translation or existing designed CDS
+cyno:SLC22A8:Q4W8A2	no exact Ensembl translation or existing designed CDS
+cyno:SLC23A2:ENSMFAP00000043424	protein duplicates active non-ortholog l1-p1894
+cyno:SLC47A1:A0A0R8GG88	no exact Ensembl translation or existing designed CDS
+cyno:SLC47A2:A0A0R8GFF9	no exact Ensembl translation or existing designed CDS
+cyno:SLC6A4:A7KAX8	no exact Ensembl translation or existing designed CDS
+cyno:SLCO1B3:L7TAY6	no exact Ensembl translation or existing designed CDS
+cyno:SLCO2B1:A0A4Y1JKK9	no exact Ensembl translation or existing designed CDS
+cyno:SPAM1:P38568	no exact Ensembl translation or existing designed CDS
+cyno:SSTR1:A0A2K5UEB0	protein duplicates active non-ortholog l1-p2072
+cyno:TLR10:B3Y673	no exact Ensembl translation or existing designed CDS
+cyno:TLR1:B3Y610	no exact Ensembl translation or existing designed CDS
+cyno:TLR2:Q95M53	no exact Ensembl translation or existing designed CDS
+cyno:TLR4:B3Y631	no exact Ensembl translation or existing designed CDS
+cyno:TLR5:B3Y638	no exact Ensembl translation or existing designed CDS
+cyno:TLR6:B3Y645	no exact Ensembl translation or existing designed CDS
+cyno:TMEFF2:A0A2K5UWD7	protein duplicates active non-ortholog l1-p2162
+cyno:TMEM170B:ENSMFAP00000002125	protein duplicates active non-ortholog l1-p2179
+cyno:TMEM266:Q9N0B5	no exact Ensembl translation or existing designed CDS
+cyno:TMEM47:ENSMFAP00000045781	protein duplicates active non-ortholog l1-p2198
+cyno:TNF:P79337	no exact Ensembl translation or existing designed CDS
+cyno:TNFRSF9:A9YYE7	no exact Ensembl translation or existing designed CDS
+cyno:TPBG:Q4R8Y9	no exact Ensembl translation or existing designed CDS
+cyno:TRPC1:ENSMFAP00000008741	protein duplicates active non-ortholog l1-p2267
+cyno:TSPAN18:ENSMFAP00000046487	protein duplicates active non-ortholog l1-p2292
+cyno:TSPAN5:A0A7N9DCS4	protein duplicates active non-ortholog l1-p2297
+cyno:TTYH1:Q9MZZ8	no exact Ensembl translation or existing designed CDS
+mouse:ADAM9:Q61072	no exact Ensembl translation or existing designed CDS
+mouse:ADGRE5:Q9Z0M6	no exact Ensembl translation or existing designed CDS
+mouse:BACE2:Q9JL18	no exact Ensembl translation or existing designed CDS
+mouse:BEST2:Q8BGM5	no exact Ensembl translation or existing designed CDS
+mouse:BOC:Q6AZB0	no exact Ensembl translation or existing designed CDS
+mouse:BST1:Q64277	no exact Ensembl translation or existing designed CDS
+mouse:BTLA:Q7TSA3-3	no exact Ensembl translation or existing designed CDS
+mouse:CACNG7:P62956	protein duplicates active non-ortholog l1-p0225
+mouse:CD160:Q8VC80	no exact Ensembl translation or existing designed CDS
+mouse:CD2:Q9R201	no exact Ensembl translation or existing designed CDS
+mouse:CD44:P15379-7	no exact Ensembl translation or existing designed CDS
+mouse:CD84:Q18PI6	no exact Ensembl translation or existing designed CDS
+mouse:CDH1:P09803	no exact Ensembl translation or existing designed CDS
+mouse:CDH5:Q3TJ23	no exact Ensembl translation or existing designed CDS
+mouse:CDH6:Q3KNZ1	no exact Ensembl translation or existing designed CDS
+mouse:CDH9:P70407	no exact Ensembl translation or existing designed CDS
+mouse:CLEC12B:Q149M0	no exact Ensembl translation or existing designed CDS
+mouse:CNTNAP2:Q9CPW0	no exact Ensembl translation or existing designed CDS
+mouse:CXCR4:P70658-2	no exact Ensembl translation or existing designed CDS
+mouse:CYBRD1:Q925G2-2	no exact Ensembl translation or existing designed CDS
+mouse:CYSLTR1:Q99JA4-2	no exact Ensembl translation or existing designed CDS
+mouse:DRD3:P30728-2	no exact Ensembl translation or existing designed CDS
+mouse:EMP2:Q8CGC1	no exact Ensembl translation or existing designed CDS
+mouse:ENPP1:P06802	no exact Ensembl translation or existing designed CDS
+mouse:EPHA10:Q8BYG9	no exact Ensembl translation or existing designed CDS
+mouse:ERMAP:Q9JLN5-3	no exact Ensembl translation or existing designed CDS
+mouse:FCMR:A1KXC4	no exact Ensembl translation or existing designed CDS
+mouse:FZD6:Q8R382	no exact Ensembl translation or existing designed CDS
+mouse:GJA4:Q6PHB9	no exact Ensembl translation or existing designed CDS
+mouse:GPA33:Q9JKA5	no exact Ensembl translation or existing designed CDS
+mouse:GPR156:Q6PCP7	no exact Ensembl translation or existing designed CDS
+mouse:GPR39:Q5U431	no exact Ensembl translation or existing designed CDS
+mouse:GPR65:Q61038	no exact Ensembl translation or existing designed CDS
+mouse:GPR85:P60894	protein duplicates active non-ortholog l1-p0802
+mouse:GPRC5A:Q8BHL4	no exact Ensembl translation or existing designed CDS
+mouse:HYAL2:Q542F2	no exact Ensembl translation or existing designed CDS
+mouse:ICAM1:Q922B3	no exact Ensembl translation or existing designed CDS
+mouse:IGSF8:Q8R366	no exact Ensembl translation or existing designed CDS
+mouse:IL10RB:Q61190	no exact Ensembl translation or existing designed CDS
+mouse:IL2RA:Q8C2H9	no exact Ensembl translation or existing designed CDS
+mouse:IL2RB:Q8R308	no exact Ensembl translation or existing designed CDS
+mouse:IL9R:Q2M2M3	no exact Ensembl translation or existing designed CDS
+mouse:INSR:M4TKR7	no exact Ensembl translation or existing designed CDS
+mouse:ITGA11:P61622	no exact Ensembl translation or existing designed CDS
+mouse:KCNA7:Q17ST2-2	no exact Ensembl translation or existing designed CDS
+mouse:KCNH2:O35219	no exact Ensembl translation or existing designed CDS
+mouse:KCNH8:P59111	no exact Ensembl translation or existing designed CDS
+mouse:KCNMA1:Q08460-3	no exact Ensembl translation or existing designed CDS
+mouse:KCNMB1:Q8CAE3	no exact Ensembl translation or existing designed CDS
+mouse:KCNN1:Q9EQR3	no exact Ensembl translation or existing designed CDS
+mouse:KIRREL3:Q8BR86	no exact Ensembl translation or existing designed CDS
+mouse:LRRN4:Q6EI14	no exact Ensembl translation or existing designed CDS
+mouse:LYPD6B:Q9D7F2-1	no exact Ensembl translation or existing designed CDS
+mouse:MC4R:Q49NR1	no exact Ensembl translation or existing designed CDS
+mouse:MET:P16056	no exact Ensembl translation or existing designed CDS
+mouse:MOG:Q61885	no exact Ensembl translation or existing designed CDS
+mouse:MOSMO:Q8C784	protein duplicates active non-ortholog l1-p1230
+mouse:MPZL2:O70255	no exact Ensembl translation or existing designed CDS
+mouse:NCR1:Q8C567	no exact Ensembl translation or existing designed CDS
+mouse:NEO1:P97798-2	no exact Ensembl translation or existing designed CDS
+mouse:NPC1L1:Q6T3U4	no exact Ensembl translation or existing designed CDS
+mouse:OMG:Q63912	no exact Ensembl translation or existing designed CDS
+mouse:OPN5:Q6VZZ7-2	no exact Ensembl translation or existing designed CDS
+mouse:OR8U3:Q8VGS1	no exact Ensembl translation or existing designed CDS
+mouse:OTOP1:Q80VM9-3	no exact Ensembl translation or existing designed CDS
+mouse:P2RY2:P35383	no exact Ensembl translation or existing designed CDS
+mouse:PCDHGB7:Q6NXY6	no exact Ensembl translation or existing designed CDS
+mouse:PROM1:O54990	no exact Ensembl translation or existing designed CDS
+mouse:PRSS8:Q9ESD1	no exact Ensembl translation or existing designed CDS
+mouse:PTPRJ:Q64455	no exact Ensembl translation or existing designed CDS
+mouse:SLC12A8:Q8VI23-2	no exact Ensembl translation or existing designed CDS
+mouse:SLC14A2:Q8R4T9	no exact Ensembl translation or existing designed CDS
+mouse:SLC15A2:Q9ES07	no exact Ensembl translation or existing designed CDS
+mouse:SLC17A1:Q91WV5	no exact Ensembl translation or existing designed CDS
+mouse:SLC22A12:Q8CFZ5	no exact Ensembl translation or existing designed CDS
+mouse:SLC22A7:Q91WU2	no exact Ensembl translation or existing designed CDS
+mouse:SLC2A7:P0C6A1	no exact Ensembl translation or existing designed CDS
+mouse:SLC4A2:P13808	no exact Ensembl translation or existing designed CDS
+mouse:SLC5A5:Q99PN0	no exact Ensembl translation or existing designed CDS
+mouse:SLC6A2:Q8R2I2	no exact Ensembl translation or existing designed CDS
+mouse:SLC6A5:Q761V0	no exact Ensembl translation or existing designed CDS
+mouse:STEAP3:Q8CI59	no exact Ensembl translation or existing designed CDS
+mouse:TAS2R60:Q7TQA9	no exact Ensembl translation or existing designed CDS
+mouse:THSD7A:Q69ZU6	no exact Ensembl translation or existing designed CDS
+mouse:TLR2:Q9QUN7	no exact Ensembl translation or existing designed CDS
+mouse:TLR5:Q9JLF7	no exact Ensembl translation or existing designed CDS
+mouse:TM4SF4:Q91XD3	no exact Ensembl translation or existing designed CDS
+mouse:TM7SF3:Q9CRG1	no exact Ensembl translation or existing designed CDS
+mouse:TMC4:Q7TQ65	no exact Ensembl translation or existing designed CDS
+mouse:TMEM158:Q6F5E0	no exact Ensembl translation or existing designed CDS
+mouse:TMPRSS13:Q5U405	no exact Ensembl translation or existing designed CDS
+mouse:TNFRSF17:O88472-2	no exact Ensembl translation or existing designed CDS
+mouse:TPSG1:Q9QUL7	no exact Ensembl translation or existing designed CDS
+mouse:TRPC1:Q61056	no exact Ensembl translation or existing designed CDS
+mouse:TSPAN5:P62080	protein duplicates active non-ortholog l1-p2297
+mouse:VCAM1:P29533	no exact Ensembl translation or existing designed CDS

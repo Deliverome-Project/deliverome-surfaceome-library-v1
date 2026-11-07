@@ -1,4 +1,4 @@
-gene	ensembl_gene	in_april_query_set	mouse_one2one_hc_compara115	mouse_in_ortholog_list	cyno_one2one_hc_compara115	cyno_in_ortholog_list	has_uniprot_isoform	in_isoform_universe
+gene	ensembl_gene	in_april_query_set	mouse_one2one_hc_compara115	mouse_in_ortholog_list	cyno_one2one_hc_compara115	cyno_in_ortholog_list	has_uniprot_isoform	in_isoform_cohort
 ABCA8	ENSG00000141338	True	True	True	True	True	True	True
 ABCB1	ENSG00000085563	True	False	False	False	False	True	True
 ABCB11	ENSG00000073734	True	True	True	True	True	False	False

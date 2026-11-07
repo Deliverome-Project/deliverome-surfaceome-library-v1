@@ -1,0 +1,425 @@
+{
+  "source_commit": "9124f51140f8980e2205c12d3be17f5eaa688a2c",
+  "files": {
+    "adoption.log": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "adoption/bundle/candidate_cds_compara116.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/bundle/candidate_cds_compara116.json",
+      "sha256": "519196dada83f49b6ac9e7927a3044bba7ace093efb479e93bc13ec32a8df899",
+      "bytes": 14064272
+    },
+    "adoption/bundle/candidate_constructs_compara116.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/bundle/candidate_constructs_compara116.json",
+      "sha256": "7817653c75c54a295a4bbf7764f89e0e17dd3d94a30c29f0069f97ee06433929",
+      "bytes": 14667461
+    },
+    "adoption/bundle/compara116_adoption_validation.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/bundle/compara116_adoption_validation.json",
+      "sha256": "0577025648b73fbf2dc36908dd5c4bf29a9a42552111afe6839f22bfd50a1005",
+      "bytes": 1489
+    },
+    "adoption/cds/compara116_candidate_cds.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/cds/compara116_candidate_cds.json",
+      "sha256": "ca01b26c75d1bea4140a8bf35f1d82f7748942b390f480b9be3985b9c7233c2e",
+      "bytes": 390985
+    },
+    "adoption/cds/compara116_cds_coverage.tsv": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/cds/compara116_cds_coverage.tsv",
+      "sha256": "b00fedc6387d874bc630fe89cd6df022b6ccf0f7fe99f37df5f9c7d7eaf0f114",
+      "bytes": 92602
+    },
+    "adoption/cds/compara116_cds_provenance.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/cds/compara116_cds_provenance.json",
+      "sha256": "8fcd6e43f1ef2add0f17b49465751b447c8a5cd980c2b5670918cc1c1ca465a4",
+      "bytes": 217121
+    },
+    "adoption/construct.stderr.log": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/construct.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "adoption/construct.stdout.log": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/construct.stdout.log",
+      "sha256": "4ca5e08935335dfd4c62a83e67982f9f17e164cd970216ed3a451e5c4f3d2528",
+      "bytes": 976
+    },
+    "adoption/constructs/compara116_assembly_rows.tsv": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/constructs/compara116_assembly_rows.tsv",
+      "sha256": "5daea5a1bcc253047666552c8687a3d1dca82b0a7f67f600e8ef0a65efcf2df5",
+      "bytes": 45735
+    },
+    "adoption/constructs/compara116_candidate_constructs.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/constructs/compara116_candidate_constructs.json",
+      "sha256": "80deed0aefa601d3b2673f574a827a88d9401ee2843239fe8eccd5e48c99c744",
+      "bytes": 408405
+    },
+    "adoption/constructs/compara116_construct_provenance.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/constructs/compara116_construct_provenance.json",
+      "sha256": "4ca5e08935335dfd4c62a83e67982f9f17e164cd970216ed3a451e5c4f3d2528",
+      "bytes": 976
+    },
+    "adoption/constructs/compara116_pretag_vectors.fasta.gz": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/constructs/compara116_pretag_vectors.fasta.gz",
+      "sha256": "febd0339a9f653fa78c0ce1d129f7202a758b60bdab61c8b30ad9e3167392083",
+      "bytes": 174338
+    },
+    "adoption/finalize.stderr.log": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/finalize.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "adoption/finalize.stdout.log": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/finalize.stdout.log",
+      "sha256": "0577025648b73fbf2dc36908dd5c4bf29a9a42552111afe6839f22bfd50a1005",
+      "bytes": 1489
+    },
+    "adoption/plan.stderr.log": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/plan.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "adoption/plan.stdout.log": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/plan.stdout.log",
+      "sha256": "32432b4f697eaaf53e8df1b1f7f55371e87d45a77a0cdc22d44e3955cd80b66e",
+      "bytes": 4546
+    },
+    "adoption/plan/compara116_id_allocations.tsv": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/plan/compara116_id_allocations.tsv",
+      "sha256": "ecb75624d8f26b719742b6fed606d2a47a3d3996ed6c35c0125bd93b8496c57f",
+      "bytes": 31895
+    },
+    "adoption/plan/compara116_member_adoption_summary.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/plan/compara116_member_adoption_summary.json",
+      "sha256": "32432b4f697eaaf53e8df1b1f7f55371e87d45a77a0cdc22d44e3955cd80b66e",
+      "bytes": 4546
+    },
+    "adoption/plan/compara116_member_map.tsv": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/plan/compara116_member_map.tsv",
+      "sha256": "a0a5a63cd174d89291d2e4403ddb490ab7f8aebef028fe58655790fb148740d0",
+      "bytes": 33744
+    },
+    "adoption/reconcile.stderr.log": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/reconcile.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "adoption/reconcile.stdout.log": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/reconcile.stdout.log",
+      "sha256": "63a454c52be982af983f898bffffeb06393e00d7dd045ab9df12ee9b6a15b2ae",
+      "bytes": 4684
+    },
+    "adoption/resolve.stderr.log": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/resolve.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "adoption/resolve.stdout.log": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/resolve.stdout.log",
+      "sha256": "a2c381152690d71bc5c707bdfd7f4844a08a4a72c5d99ba1f5d5708bec768b11",
+      "bytes": 281
+    },
+    "adoption/review/candidate_manifest_tranches_review.tsv": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/review/candidate_manifest_tranches_review.tsv",
+      "sha256": "87cc321f33b59447f4377c3c601ddc921f00f92bcd33e3f9738aad2efd52fc66",
+      "bytes": 1090828
+    },
+    "adoption/review/compara116_id_allocations.tsv": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/review/compara116_id_allocations.tsv",
+      "sha256": "ecb75624d8f26b719742b6fed606d2a47a3d3996ed6c35c0125bd93b8496c57f",
+      "bytes": 31895
+    },
+    "adoption/review/compara116_member_adoption_summary.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/review/compara116_member_adoption_summary.json",
+      "sha256": "63a454c52be982af983f898bffffeb06393e00d7dd045ab9df12ee9b6a15b2ae",
+      "bytes": 4684
+    },
+    "adoption/review/compara116_member_map.tsv": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/review/compara116_member_map.tsv",
+      "sha256": "a0a5a63cd174d89291d2e4403ddb490ab7f8aebef028fe58655790fb148740d0",
+      "bytes": 33744
+    },
+    "adoption/run.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/adoption/run.json",
+      "sha256": "0228eaac87588e78f663bc7f9d392b133bace805db4faaad7c0a729bc80537f7",
+      "bytes": 27878
+    },
+    "alternatives.log": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/alternatives.log",
+      "sha256": "886ac6ef0d47ee35362af82744e3ceb3318d42dd98ba8935f2e59370f5266bcb",
+      "bytes": 823
+    },
+    "alternatives/non_atg_alternative_adjudication.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/alternatives/non_atg_alternative_adjudication.json",
+      "sha256": "e08d694234b6384b82dba1f171eaa7c4442bcc737e09c8c1b9e17ff3097be562",
+      "bytes": 4154156
+    },
+    "alternatives/non_atg_alternative_adjudication.tsv": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/alternatives/non_atg_alternative_adjudication.tsv",
+      "sha256": "442a98a00eda2143f52cf4c487ee435fed8cd5f4637465bec673c2f0059746ab",
+      "bytes": 9880
+    },
+    "audit-after.log": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/audit-after.log",
+      "sha256": "06b1bbf6cd603b820d7e883140d02a65df1abe6ce867f6dbea1f0c26b7971949",
+      "bytes": 4951
+    },
+    "audit-after/library_cds_audit.tsv": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/audit-after/library_cds_audit.tsv",
+      "sha256": "648174d95500c5e9b0bdaf58c17e2454727f40ca7a34514df3c787fd9c5a288d",
+      "bytes": 8820175
+    },
+    "audit-after/library_cds_audit.tsv.gz": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/audit-after/library_cds_audit.tsv.gz",
+      "sha256": "0149cb0449d923ba1b0b8656c5c463d242a564df3a41c6fb414a81aa4451011d",
+      "bytes": 2073329
+    },
+    "audit-after/library_cds_audit_summary.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/audit-after/library_cds_audit_summary.json",
+      "sha256": "06b1bbf6cd603b820d7e883140d02a65df1abe6ce867f6dbea1f0c26b7971949",
+      "bytes": 4951
+    },
+    "audit-after/library_cds_transitions.tsv": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/audit-after/library_cds_transitions.tsv",
+      "sha256": "6720eb60aa589e99b82ffefe90d55257f2e83050a4e46c3f1f43f250ab37290d",
+      "bytes": 493494
+    },
+    "audit-before.log": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/audit-before.log",
+      "sha256": "3b114d6bd36c005497f2a464980dcb27ea1f4624ce309737d555687e425f74f9",
+      "bytes": 5299
+    },
+    "audit-before/library_cds_audit.tsv": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/audit-before/library_cds_audit.tsv",
+      "sha256": "6c0d4c09e7e36375312d1a8c39e35412d48d8d6767d11eccfae16f56872b182c",
+      "bytes": 8674476
+    },
+    "audit-before/library_cds_audit.tsv.gz": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/audit-before/library_cds_audit.tsv.gz",
+      "sha256": "0b4c3ae57e821f7ed966ec8b75520a58d63b9a2435e488ba3716a45f1b04873c",
+      "bytes": 2074786
+    },
+    "audit-before/library_cds_audit_summary.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/audit-before/library_cds_audit_summary.json",
+      "sha256": "3b114d6bd36c005497f2a464980dcb27ea1f4624ce309737d555687e425f74f9",
+      "bytes": 5299
+    },
+    "audit-before/library_cds_issues.tsv": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/audit-before/library_cds_issues.tsv",
+      "sha256": "258b722efe230f0778ec1c87e1619ea28221db1b633e1e23f69a224b3d13baac",
+      "bytes": 82563
+    },
+    "audit-before/library_cds_transitions.tsv": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/audit-before/library_cds_transitions.tsv",
+      "sha256": "8f1895d4837e619882faceb66c7454e5c37c9e021368d76c29bccc12e1f0aa5c",
+      "bytes": 498332
+    },
+    "code/CDS_AUDIT.md": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/code/CDS_AUDIT.md",
+      "sha256": "4683bcd7c27cce0e92d069a3021522a87a611240a4ea7a4088e0c9c64ad2ac21",
+      "bytes": 11742
+    },
+    "code/adopt_compara116_members.py": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/code/adopt_compara116_members.py",
+      "sha256": "da83373731e0800b1718b59bfb440c318a811505b775945d6efd5083ea7c2426",
+      "bytes": 12825
+    },
+    "code/audit_compara116_non_atg.py": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/code/audit_compara116_non_atg.py",
+      "sha256": "c71a125d4fbdf761f3adc68b600768a09594423cfd222586bd7e2da8420162a8",
+      "bytes": 12640
+    },
+    "code/audit_library_cds.py": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/code/audit_library_cds.py",
+      "sha256": "32b55a6a8ba1f42ca90a95188bc9d758670a71cad7052edfbe571313435ac995",
+      "bytes": 14655
+    },
+    "code/audit_library_non_atg.py": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/code/audit_library_non_atg.py",
+      "sha256": "1880423ba9064af0b107bd3f0a22eecf1157d34124e2b9d5fded2c34cbd40851",
+      "bytes": 21568
+    },
+    "code/audit_non_atg_alternatives.py": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/code/audit_non_atg_alternatives.py",
+      "sha256": "8e98ce2127803b43809f805e6dd38949af9f4c2d4b38449d7b3be2fc3cba11ad",
+      "bytes": 21353
+    },
+    "code/build_cds_boundary_variants.py": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/code/build_cds_boundary_variants.py",
+      "sha256": "5c995e983b6279787f7c0a24b2361623c50c7cbd4618e9046bf6194732c7e744",
+      "bytes": 6316
+    },
+    "code/build_compara116_constructs.py": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/code/build_compara116_constructs.py",
+      "sha256": "2817961422e3003b7f7c3bf042d834fa69d87d9d3ab5359f47b9a9434520c9f7",
+      "bytes": 7378
+    },
+    "code/compara116_cds_inputs.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/code/compara116_cds_inputs.json",
+      "sha256": "e5bed6e0f8b313de9a8be202b39086a437c95e32e85099141cd42c17bd6da7cf",
+      "bytes": 3231
+    },
+    "code/compara116_non_atg_inputs.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/code/compara116_non_atg_inputs.json",
+      "sha256": "0df53727090905ee4f988fabe035881f2e3dd4227b92efef8e6901a541ccc4f2",
+      "bytes": 5653
+    },
+    "code/finalize_compara116_adoption.py": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/code/finalize_compara116_adoption.py",
+      "sha256": "f60d47c518f8bd3d40dab87ee53972e5a25f453a7c4788edccbe57cb551e9f99",
+      "bytes": 4698
+    },
+    "code/library_non_atg_inputs.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/code/library_non_atg_inputs.json",
+      "sha256": "dbd5cbc460d8e6ad5bde01c7d423b7026ab6864edcfde1f20111d40fb735981f",
+      "bytes": 3387
+    },
+    "code/member_id_allocations.py": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/code/member_id_allocations.py",
+      "sha256": "621ee927029e615b3b65a8155b5c8e0b6fdb85a55d5b9c33fe9c4bca5336bbcd",
+      "bytes": 1701
+    },
+    "code/non_atg_alternatives_inputs.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/code/non_atg_alternatives_inputs.json",
+      "sha256": "7e8240522bf439b70d4f7fc3fc591e86c16db1854f522d46fbe8b7820a043c36",
+      "bytes": 3185
+    },
+    "code/repair_cds_boundaries.py": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/code/repair_cds_boundaries.py",
+      "sha256": "4d23819f2cd64df627613ea019e2f72db717d561765926bf7d18f69124ceb217",
+      "bytes": 5233
+    },
+    "code/resolve_compara116_cds.py": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/code/resolve_compara116_cds.py",
+      "sha256": "75fb954397539b083c4e97ea40529d88a98f9e6c4d78fe57e0001d99191016c4",
+      "bytes": 12443
+    },
+    "code/run_compara116_adoption.py": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/code/run_compara116_adoption.py",
+      "sha256": "948d9f50766b59b0b192a9166be4d482447081631065ed5a3d1daafd2494cadb",
+      "bytes": 9520
+    },
+    "compara-start.log": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/compara-start.log",
+      "sha256": "33519099fa349a1514439d99afbb53c54b51fda65d37123913fc5a1e703c3d5d",
+      "bytes": 632
+    },
+    "compara-start/compara116_non_atg_evidence.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/compara-start/compara116_non_atg_evidence.json",
+      "sha256": "ae129fc919d1a30d53bdecd900170bf3aca9f5dc86101025cbfcfc63a3901dcd",
+      "bytes": 216168
+    },
+    "compara-start/compara116_non_atg_gtf_features.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/compara-start/compara116_non_atg_gtf_features.json",
+      "sha256": "cb51b018589c883115080ad0791bf00864d3efee4ec72a11c4e590b8601e6459",
+      "bytes": 73988
+    },
+    "engineered.log": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/engineered.log",
+      "sha256": "dbed594f33dec527816ec6419b53ba6dd5b02f6999c4ba44e082b0e4a21b534c",
+      "bytes": 1339
+    },
+    "engineered/cds_boundary_build_summary.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/engineered/cds_boundary_build_summary.json",
+      "sha256": "dbed594f33dec527816ec6419b53ba6dd5b02f6999c4ba44e082b0e4a21b534c",
+      "bytes": 1339
+    },
+    "engineered/cds_boundary_variants.tsv": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/engineered/cds_boundary_variants.tsv",
+      "sha256": "60eb958c926991669e94eb33739689a7217c0bc0f2a859686e4fc7352a43c770",
+      "bytes": 22800
+    },
+    "engineered/engineered_candidate_cds.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/engineered/engineered_candidate_cds.json",
+      "sha256": "c61325d0155d7c49f9e1012c1c8db23f5312a84a3b08f1e4ae07b54667752301",
+      "bytes": 14403808
+    },
+    "engineered/engineered_candidate_constructs.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/engineered/engineered_candidate_constructs.json",
+      "sha256": "6fea29d57929d2abf69e8749d825fcba5136882486de5427b66fd2e6f379e4a1",
+      "bytes": 14667623
+    },
+    "engineered/engineered_proteins.fasta": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/engineered/engineered_proteins.fasta",
+      "sha256": "b5961bbb973bdada02d299d2c73cac6925eed4f56d4d04078508ef0f270d1c6d",
+      "bytes": 35150
+    },
+    "engineered/missing_deeptmhmm.fasta": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/engineered/missing_deeptmhmm.fasta",
+      "sha256": "bc20cd91fb3e16154c3ab317eba94612b7127053040990e022035fc3cea208bd",
+      "bytes": 30820
+    },
+    "inputs/backbone.gb": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/inputs/backbone.gb",
+      "sha256": "57915c1a5db2f0856a6bf6ae1e1d1d9f71661fb37cf68a4938e74cae289485b4",
+      "bytes": 25060
+    },
+    "inputs/initial_id_allocations.tsv": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/inputs/initial_id_allocations.tsv",
+      "sha256": "ecb75624d8f26b719742b6fed606d2a47a3d3996ed6c35c0125bd93b8496c57f",
+      "bytes": 31895
+    },
+    "inputs/native_candidate_cds.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/inputs/native_candidate_cds.json",
+      "sha256": "03c3413d70e15612868133d15839e092dba20fb05f3e8318d17f48928c91c662",
+      "bytes": 13997808
+    },
+    "inputs/native_candidate_constructs.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/inputs/native_candidate_constructs.json",
+      "sha256": "cdc5fa5e119e7590d910b44db03138a829f7a59e6d8ec430d8ebbe9f21008e3f",
+      "bytes": 14597545
+    },
+    "inputs/native_candidate_manifest.tsv": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/inputs/native_candidate_manifest.tsv",
+      "sha256": "7ad0538b831b521a10526f290f3b40eb9ec1f2333f0d674f88a831092c13cdf4",
+      "bytes": 1051127
+    },
+    "native-start.log": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/native-start.log",
+      "sha256": "0f9b63c1438c089d63de6e70b3336313c200c63fc5db755215c297ef91bcad21",
+      "bytes": 653
+    },
+    "native-start/library_cds_boundary_decisions.tsv": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/native-start/library_cds_boundary_decisions.tsv",
+      "sha256": "b896790f42bb9514592848dc0b53e9d793e2459e4ed9129758591d535e082a83",
+      "bytes": 93425
+    },
+    "native-start/library_non_atg_evidence.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/native-start/library_non_atg_evidence.json",
+      "sha256": "d34be722043b775de37b29bb1958af2db390c4af15573c9b185840108139c884",
+      "bytes": 2340455
+    },
+    "native-start/library_non_atg_repair_candidates.tsv": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/native-start/library_non_atg_repair_candidates.tsv",
+      "sha256": "55485939985be74dc0ba4e54094762cc612532e87ae695a2d6bb93dedfa0b881",
+      "bytes": 16572
+    },
+    "repairs.log": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/repairs.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "repairs/cds_boundary_edit_ledger.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/repairs/cds_boundary_edit_ledger.json",
+      "sha256": "5530d00cfb3d268510d8fedc0eea9bd65c1c544a206895a606180a928fd1abff",
+      "bytes": 345659
+    },
+    "repairs/cds_boundary_overrides.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/repairs/cds_boundary_overrides.json",
+      "sha256": "6cd2fa21a08a0fb2af78f587c84899ae5b96581fec4b2f5496aa211df56520f1",
+      "bytes": 459769
+    },
+    "replay_review.py": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/replay_review.py",
+      "sha256": "b150e9c3c3f6e2e678808b360b054039327cc1dad6538bfad329c584e2fafbd3",
+      "bytes": 3709
+    },
+    "workflow.json": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/cds-boundary-review/2026-11-05/workflow.json",
+      "sha256": "ef242a71bcc9c633378860eb1f1844c0de1fd3b522c43e77fa697074dc3387ba",
+      "bytes": 13172
+    }
+  }
+}

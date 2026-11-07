@@ -480,7 +480,9 @@ def top_surface_proteins(prec: pd.DataFrame, ann: pd.DataFrame, n: int = 25) -> 
     p = p[p["tier"].isin(SURFACE_CLASSES)]
     tot = prec.groupby("run")["intensity"].sum()
     g = p.groupby(["run", "tier", "protein"], observed=True)["intensity"].sum().reset_index()
-    g["share_pct"] = 100 * g["intensity"] / g["run"].map(tot)
+    # reindex, not .map: with no surface group g is empty, and pandas 3 keeps the str dtype of
+    # an empty `run` column through .map, so the division would fail on str / float.
+    g["share_pct"] = 100 * g["intensity"] / tot.reindex(g["run"]).to_numpy()
     g = g.sort_values("intensity", ascending=False).groupby(["run", "tier"], observed=True).head(n)
     return g.drop(columns="intensity").reset_index(drop=True)
 
