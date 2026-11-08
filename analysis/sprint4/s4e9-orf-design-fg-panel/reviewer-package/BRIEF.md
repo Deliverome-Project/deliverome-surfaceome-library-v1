@@ -551,7 +551,8 @@ differ from ours:
 - *The RT site is not Feldman's exactly.* Their in situ RT primer (GACGTGTGCTTACCCAAAGG) binds the
   transcript at `CCTTTGGGTAAGCACACGTC`; ours reads `CCTTTGGGCAAGCACACGTC`, one mismatch at
   position 9, under one of the primer's locked-nucleic-acid bases. The site starts 10 nt after
-  the barcode, not immediately after it. Feldman's primer would bind with a central LNA mismatch;
+  the barcode, against 17 nt in Feldman's vector (Addgene #127168), where the padlock arm on the
+  RT side fills that gap. Feldman's primer would bind with a central LNA mismatch;
   restoring the T, or ordering a matched primer, removes the question.
 - *Feldman's padlock does not fit.* Its arms (`GTGTTCAATCAACATTCC` 5′ of the barcode,
   `ACTGGCTATTCATTCGC` 3′ of it) match neither of our flanks, so a new padlock is needed: one arm
