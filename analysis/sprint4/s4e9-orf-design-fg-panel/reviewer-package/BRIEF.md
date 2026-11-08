@@ -548,19 +548,34 @@ in fixed cells by in situ reverse transcription, padlock gap-fill and sequencing
 ([Feldman et al., 2019](https://pubmed.ncbi.nlm.nih.gov/31626775/)). Three of their elements
 differ from ours:
 
-- *The RT site is not Feldman's exactly.* Their in situ RT primer (GACGTGTGCTTACCCAAAGG) binds the
-  transcript at `CCTTTGGGTAAGCACACGTC`; ours reads `CCTTTGGGCAAGCACACGTC`, one mismatch at
-  position 9, under one of the primer's locked-nucleic-acid bases. The site starts 10 nt after
-  the barcode, against 17 nt in Feldman's vector (Addgene #127168), where the padlock arm on the
-  RT side fills that gap. Feldman's primer would bind with a central LNA mismatch;
-  restoring the T, or ordering a matched primer, removes the question.
-- *Feldman's padlock does not fit.* Its arms (`GTGTTCAATCAACATTCC` 5′ of the barcode,
-  `ACTGGCTATTCATTCGC` 3′ of it) match neither of our flanks, so a new padlock is needed: one arm
-  on the 3′ end of the Tycko handle (19 nt, Tm about 54 °C at 50 mM Na⁺, higher than Feldman's
-  44–46 °C arms) and one on the 10-nt gap, which is shorter than Feldman's 17-nt arm and would
-  have to run into the RT site. The handle and the gap-plus-RT region occur nowhere else in the
-  backbone or in any of the 2,735 L1 ORFs as a 15-mer (one ORF carries a 12-mer of the handle,
-  13 carry a 12-mer of the gap-plus-RT region).
+- *The RT site differs from Feldman's by one base, and restoring it would add a splice donor.*
+  Their in situ RT primer (GACGTGTGCTTACCCAAAGG) binds the transcript at
+  `CCTTTGGGTAAGCACACGTC`; ours reads `CCTTTGGGCAAGCACACGTC`, a C at position 9 under one of the
+  primer's locked-nucleic-acid bases. Our C is inherited from the p003 maps (every built
+  P-series construct reads C), and whatever its origin it removes a `GTAAG` splice-donor
+  consensus that Feldman's T creates inside the packaged transcript. So the C stays, and the RT
+  primer is ordered matched to it (GACGTGTGCTTGCCCAAAGG, Feldman's with that one base changed).
+- *Feldman's padlock does not fit as designed.* His RT-side arm (`ACTGGCTATTCATTCGC`) sits
+  directly 3′ of the barcode in LentiGuide-BC (Addgene #127168), filling the 17 nt between
+  barcode and RT site; ours has a 10-nt gap (`GGATCTGGAC`) there. His other arm
+  (`GTGTTCAATCAACATTCC`) is in no deposited plasmid map: it enters with the cloned barcode
+  insert, so it is inferred, not shown, to sit directly 5′ of his barcode. It does not occur in
+  L1. Two designs:
+
+| | Fragment change | 5′ arm (on the Tycko handle) | RT-side arm |
+|---|---|---|---|
+| A | none | `GTTAGCTGCCGTTCC`, the handle's last 15 nt | the 10-nt gap is too short alone, so it runs 6 nt into the RT site (`GGATCTGGACCCTTTG`) and pairs with cDNA primed by the RT primer itself, which is untested and which Feldman's layout avoids |
+| B (proposed) | replace the 10-nt gap with Feldman's 17-nt arm; keep the C | as in A | Feldman's `ACTGGCTATTCATTCGC`, unchanged |
+
+  Under B only the 5′ arm is new, and it is Tm-matched to Feldman's arms (45.7 °C against his
+  46.1 and 43.5 °C, nearest-neighbor at 50 mM Na⁺). B adds 7 nt on the far side of the barcode,
+  which does not lengthen the ORF-to-barcode distance that drives template switching. Its
+  junctions are clean: no BbsI, Esp3I or BsaI site beyond the shuttle's own, no splice-donor
+  motif, and no Pumilio, AU-rich, CPEB, UGUA or poly(A) motif. The pool keeps 28,305 barcodes
+  through the junction screens (28,146 today). The new arm, the 5′ arm and the arm-plus-RT
+  region occur nowhere else in the backbone or the 2,735 L1 ORFs as a 15-mer (three ORFs carry
+  a 12-mer of the arm-plus-RT region, one a 12-mer of the 5′ arm). Adopting B is a change to the
+  synthesized fragment (question 6).
 - *In situ sequencing reads only the first 9–12 bases.* Over the s1e2 pool, barcodes are unique
   over 20 nt but not over short prefixes, and drawing L1's barcodes at random would leave
   identical prefixes:
@@ -611,7 +626,7 @@ can stay a description of the design.
 | 3 | **Five library genes with no intact copy in Ensembl 115** (FCGR2C, OR8J2, OR10AC1, OR52P1, OR4Q2; section 1). | They pass the gene filter but are absent from L1, so any per-gene coverage figure is 5 short. FCGR2C has a known intact (ORF) allele carried by a minority of people ([Breunis et al., 2007](https://pubmed.ncbi.nlm.nih.gov/17827395/)). | Build the intact UniProt allele by correcting the stop codons (FCGR2C, OR8J2) or the frameshifts, or record each as an exclusion. |
 | 4 | **Isoform and ortholog panels drawn from a 1,775-gene April pool** (section 4). | 418 mouse and 416 cyno orthologs, and 92 genes' isoforms, could never be drawn, so the panels say nothing about those genes' forms. | Reviewer view on keeping the panels as drawn (the current decision) versus rebuilding both universes over the 2,369 library genes and redrawing with the same seeds and strata, which would change many members. |
 | 5 | **How strongly to weight the pool by length** (section 8). | The ordering plan is computed at Moon et al.'s 3.5-fold lower titer per kb (up to 110× more of the longest member than the median); Sweeney and Vink's data imply about 2-fold per kb over our 4.4–9.4-kb packaged range, and an overcorrection inverts the bias. | Whether the four-plasmid titer test planned before pooling (section 8) is enough to set the factor. |
-| 6 | **Whether the barcode region should change before it is ordered** (section 9). | The fragment supports 10x Feature Barcoding as designed. Optical pooled screening needs a new padlock (the prefix-distance screen is now applied at barcode reservation), and gains from restoring Feldman's RT-site base; T7 in situ transcription needs a promoter, cleanly placed in sense. Each is cheap now and impossible after synthesis. | Which of these assays we should keep possible, and whether any of the three changes costs something we have not counted. |
+| 6 | **Whether the barcode region should change before it is ordered** (section 9). | The fragment supports 10x Feature Barcoding as designed. Optical pooled screening needs a new padlock and an RT primer matched to our site; replacing the 10-nt gap with Feldman's RT-side arm (option B) lets his arm transfer unchanged (the prefix-distance screen is now applied at barcode reservation); T7 in situ transcription needs a promoter, cleanly placed in sense. Each is cheap now and impossible after synthesis. | Which of these assays we should keep possible, and whether any of the three changes costs something we have not counted. |
 
 ## Materials and provenance
 
