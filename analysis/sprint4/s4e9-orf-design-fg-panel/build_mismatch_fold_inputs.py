@@ -19,13 +19,14 @@ import csv
 import json
 from pathlib import Path
 
+from deliverome_analysis import library_design as ld
 from deliverome_analysis import seqtools
 from deliverome_analysis.s3 import processed
 
 HERE = Path(__file__).parent
 MATCH = HERE / "proteoform_match.tsv"
 TRANCHES = HERE / "candidate_manifest_tranches.tsv"
-CDS_KEY = "sprint4/s4e9-orf-design-fg-panel/library-candidates/candidate_cds.json"
+CDS_KEY = ld.CDS_KEY
 FASTA = HERE / "fold_inputs_mismatched.fasta"
 MANIFEST = HERE / "fold_inputs_mismatched.tsv"
 

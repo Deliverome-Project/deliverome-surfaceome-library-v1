@@ -114,11 +114,26 @@ def main(argv=None) -> int:
     ap.add_argument("--refresh", action="store_true")
     ap.add_argument("--library", default="l1", help="tranche to measure: l1 or l2")
     ap.add_argument("--out", type=Path, default=None, help="where to cache the result")
+    ap.add_argument(
+        "--new-only",
+        action="store_true",
+        help="measure only candidates the cached table lacks and append them; recorded rows "
+        "are not re-queried, so a library addition does not silently re-measure the rest",
+    )
     args = ap.parse_args(argv)
 
     out = args.out or (HERE / f"{args.library}_structure_gap.tsv")
-    if args.refresh or not out.exists():
+    if args.new_only and out.exists():
+        have = list(csv.DictReader(out.open(), delimiter="\t"))
+        known = {r["candidate_id"] for r in have}
+        todo = [r for r in members(args.library) if r["candidate_id"] not in known]
+        print(f"{len(todo)} candidate(s) not yet measured")
+        rows = have + measure(todo) if todo else have
+    elif args.refresh or not out.exists():
         rows = measure(members(args.library))
+    else:
+        rows = None
+    if rows is not None:
         cols = [
             "candidate_id",
             "set",

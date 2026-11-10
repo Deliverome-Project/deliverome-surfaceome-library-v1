@@ -21,8 +21,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+from deliverome_analysis import constructs, seqtools
 from deliverome_analysis import plasmid_qc as qc
-from deliverome_analysis import seqtools
 from deliverome_analysis.s3 import processed
 
 HERE = Path(__file__).parent
@@ -395,12 +395,12 @@ def main(argv=None) -> int:
         target = OUT / f"{plasmid}.gb"
         target.write_text(_stamp_identity(gb.read_text(), plasmid, name, sp_by_gene))
         if not args.dry_run:
-            processed.upload(target, f"{PREFIX}/{plasmid}.gb")
+            processed.upload(target, constructs.map_key(plasmid))  # wherever the map is filed now
         published.append(plasmid)
 
     print(
         f"\n{len(published)} map(s) pass and were "
-        f"{'checked only (dry run)' if args.dry_run else f'published to processed://{PREFIX}/'}"
+        f"{'checked only (dry run)' if args.dry_run else "published to each map's current processed://constructs/ folder"}"
         f": {', '.join(published)}"
     )
     if held:

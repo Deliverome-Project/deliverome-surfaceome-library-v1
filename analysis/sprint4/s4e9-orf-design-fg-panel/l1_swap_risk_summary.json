@@ -2,11 +2,11 @@
   "members": 2710,
   "unplaced_not_measured": [],
   "placement": {
-    "internal": 567,
-    "N at residue 1, multipass": 563,
-    "N after SP": 1300,
-    "C-terminal": 218,
-    "N at residue 1, single-pass (type III)": 62
+    "internal": 571,
+    "N at residue 1, multipass": 571,
+    "N after SP": 1294,
+    "C-terminal": 215,
+    "N at residue 1, single-pass (type III)": 59
   },
   "gate_bp": 100,
   "preferred_bp": 80,
@@ -14,13 +14,13 @@
   "cterm_junction_edits": {
     "l1-p1957": "SLC41A2: last codon GAC->GAT"
   },
-  "whole_cassette_draw": "FAILED after 60 of 218 C-terminal members: l1-p0078: ran out of encoding space after 60 of 218 members were issued (spanning flank homology 24 nt with l1-p1733; 0 prefixes and 60 suffixes already taken by its own partners). Could not encode 'GGGGSRGVPHIVMVDAYKRYKGGGGSGGGGSPSRLEEELRRRLTEPGGGGS' (51 aa) in 20000 attempts. Rejections: homopolymer=20000. Dominant cause is 'homopolymer': max_homopolymer=4 is too tight for this peptide.",
-  "whole_cassette_widened_draw": "issued 218 new, pinned 0, in 2 s",
-  "linkers_only_draw": "issued 0 new, pinned 218, in 0 s",
+  "whole_cassette_draw": "FAILED after 60 of 215 C-terminal members: l1-p0207: ran out of encoding space after 60 of 215 members were issued (spanning flank homology 24 nt with l1-p0116; 0 prefixes and 60 suffixes already taken by its own partners). Could not encode 'GGGGSRGVPHIVMVDAYKRYKGGGGSGGGGSPSRLEEELRRRLTEPGGGGS' (51 aa) in 20000 attempts. Rejections: homopolymer=20000. Dominant cause is 'homopolymer': max_homopolymer=4 is too tight for this peptide.",
+  "whole_cassette_widened_draw": "issued 215 new, pinned 0, in 2 s",
+  "linkers_only_draw": "issued 25 new, pinned 218, in 0 s",
   "linkers_only_audit": {
-    "members": 218,
-    "distinct_encodings": 218,
-    "shared_core_kmers": 34,
+    "members": 243,
+    "distinct_encodings": 243,
+    "shared_core_kmers": 35,
     "longest_shared_substring": 75,
     "junction_runthrough_5": 11,
     "junction_runthrough_3": 12,
@@ -30,7 +30,7 @@
   "shared": {
     "members": 2710,
     "worst_partner_tract_median": 30.0,
-    "p90": 196.49999999999955,
+    "p90": 188.0,
     "p99": 2112.899999999987,
     "max": 3912,
     "max_pair": [
@@ -38,15 +38,15 @@
       "l1-p2491"
     ],
     "members_at_floor_24nt": 0,
-    "members_over_preferred_80": 504,
-    "members_over_gate_100": 484,
-    "pairs_over_gate_100": 24085,
+    "members_over_preferred_80": 484,
+    "members_over_gate_100": 470,
+    "pairs_over_gate_100": 23430,
     "members_over_gate_by_set": {
-      "library_reference": 315,
+      "library_reference": 311,
       "isoform": 120,
-      "ortholog": 49
+      "ortholog": 39
     },
-    "cterm_members": 218,
+    "cterm_members": 215,
     "cterm_worst_partner_median": 181.0,
     "cterm_worst_partner_max": 2529,
     "swap_rate_at_median": 0.0156,
@@ -55,7 +55,7 @@
   "whole_cassette_widened": {
     "members": 2710,
     "worst_partner_tract_median": 30.0,
-    "p90": 96.0,
+    "p90": 72.59999999999945,
     "p99": 1897.6499999999978,
     "max": 3912,
     "max_pair": [
@@ -63,15 +63,15 @@
       "l1-p2491"
     ],
     "members_at_floor_24nt": 0,
-    "members_over_preferred_80": 286,
-    "members_over_gate_100": 266,
-    "pairs_over_gate_100": 432,
+    "members_over_preferred_80": 269,
+    "members_over_gate_100": 255,
+    "pairs_over_gate_100": 425,
     "members_over_gate_by_set": {
-      "library_reference": 151,
+      "library_reference": 147,
       "isoform": 99,
-      "ortholog": 16
+      "ortholog": 9
     },
-    "cterm_members": 218,
+    "cterm_members": 215,
     "cterm_worst_partner_median": 36.0,
     "cterm_worst_partner_max": 36,
     "swap_rate_at_median": 0.0156,
@@ -80,7 +80,7 @@
   "linkers_only": {
     "members": 2710,
     "worst_partner_tract_median": 30.0,
-    "p90": 96.0,
+    "p90": 72.59999999999945,
     "p99": 1897.6499999999978,
     "max": 3912,
     "max_pair": [
@@ -88,15 +88,15 @@
       "l1-p2491"
     ],
     "members_at_floor_24nt": 0,
-    "members_over_preferred_80": 286,
-    "members_over_gate_100": 266,
-    "pairs_over_gate_100": 432,
+    "members_over_preferred_80": 269,
+    "members_over_gate_100": 255,
+    "pairs_over_gate_100": 425,
     "members_over_gate_by_set": {
-      "library_reference": 151,
+      "library_reference": 147,
       "isoform": 99,
-      "ortholog": 16
+      "ortholog": 9
     },
-    "cterm_members": 218,
+    "cterm_members": 215,
     "cterm_worst_partner_median": 36.0,
     "cterm_worst_partner_max": 36,
     "swap_rate_at_median": 0.0156,

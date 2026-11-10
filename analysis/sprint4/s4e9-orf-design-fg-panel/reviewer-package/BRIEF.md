@@ -20,8 +20,8 @@ with topology from **DeepTMHMM v1**.
 | Term | Meaning here |
 |---|---|
 | Member | One construct in the library: a gene's chosen proteoform, its designed coding sequence (CDS), tag cassette and barcode. Named `l1-pNNNN`. A gene can have several members (its reference plus an isoform or ortholog). |
-| Tranche | L1 is the set ordered first; L2 (4,279 active members) is designed by the same pipeline and not yet ordered. |
-| Candidate set | Why a member exists: `library_reference` (the gene's reference proteoform), `isoform`, `ortholog` (mouse or cyno), or `expression_rescue` (a re-engineered arm of a poorly expressed receptor). |
+| Tranche | L1 is the set ordered first; L2 (4,153 active members) is designed by the same pipeline and not yet ordered. |
+| Candidate set | Why a member exists: `library_reference` (the gene's reference proteoform), `isoform`, `ortholog` (mouse or cyno), or `expression_rescue` (a second member for a GPCR that is barely detected at the surface in Tedman et al.'s screen, built with the murine Igκ signal peptide in front of the native receptor; defined in section 1). |
 | Proteoform | The exact protein sequence a member encodes. It is the designed CDS translated, which is not always the gene's UniProt canonical sequence. |
 | Fragmid | A modular Golden Gate (BbsI) part system for lentiviral vectors ([McGee et al., 2024](https://pubmed.ncbi.nlm.nih.gov/38484704/)). Our vector is assembled from Fragmid-style parts, which is why BbsI must not cut inside an ORF. |
 | p003 | Our first built and expressed construct: TfR1 (TFRC) carrying the tag cassette on its extracellular C-terminus, upstream of an IRES-driven selection marker. Its tag codons and junction grammar are the template every member reuses. |
@@ -30,6 +30,7 @@ with topology from **DeepTMHMM v1**.
 | Barcode | A 20-nt sequence downstream of the ORF, read by sequencing to identify which member a cell carries. |
 | Swap tract | The longest stretch of sequence a member shares with any other member, measured up to its barcode. During reverse transcription a template switch inside a shared stretch can attach one member's barcode to another's ORF. |
 | Domestication | Removing BbsI, Esp3I and BsaI recognition sites from an ORF by synonymous substitutions only. |
+| TRIFID | APPRIS's machine-learning score, from 0 to 1, of how likely a splice isoform is to be functionally important. It was trained on isoforms detected in large-scale proteomics ([Pozo et al., 2021](https://pubmed.ncbi.nlm.nih.gov/34046593/)) and APPRIS assigns it to every transcript ([Rodriguez et al., 2022](https://pubmed.ncbi.nlm.nih.gov/34755885/)). It is a prediction, not an observation: isoforms admitted on TRIFID alone are the isoform panel's "prediction-only" members. Scores come from APPRIS 2026_06.v50 for Ensembl 115 (`external://appris/2026_06.v50/e115v50/homo_sapiens/appris_data.appris.txt`, pinned by SHA-256). |
 
 ## 1. The question the library answers
 
@@ -44,34 +45,26 @@ the extracellular side, and its barcode cannot be confused with another member's
 | library reference | 2,360 | one reference proteoform per library gene |
 | isoform | 150 | alternative human proteoforms of 137 genes |
 | ortholog | 200 | 100 mouse + 100 cyno proteoforms |
-| expression rescue | 25 | Igκ-leader and recoded arms of poorly expressed GPCRs |
+| expression rescue | 25 | the murine Igκ signal peptide fused to 25 GPCRs that a published screen barely detects at the surface (below), to test whether a leader restores display |
 | **total** | **2,735** | 7 further members were retired as duplicate proteins |
 
-The 2,360 references cover 2,369 library genes. Of the 9 genes without a reference member,
-4 are paralogs whose identical protein is built under another symbol (OPN1MW2, OPN1MW3,
-OR2A42, UPK3BL2; section 4), and 5 have no member because the human reference genome
-(GRCh38) carries a broken copy and Ensembl 115 has no intact one. Ensembl 115 annotates their
-primary-assembly transcripts as `protein_coding_LoF`, so none has a MANE Select transcript, the
-ladder took the APPRIS principal (that broken transcript), and CDS resolution refuses any
-transcript that does not translate to an intact protein. Each is compared with its reviewed
-UniProt entry, which describes the intact protein, by
-[`unbuildable_genes.py`](unbuildable_genes.py):
+**Expression-rescue members.** [Tedman et al. (2026)](https://pubmed.ncbi.nlm.nih.gov/42736269/)
+measured surface immunostaining for 763 canonical human GPCRs expressed one per cell in HEK293T;
+526 of them are library genes, and 276 of those fall below the screen's own "expressed" bar
+(the 67th percentile, 1,025 a.u.). For 25 of the 276, L1 carries a second member besides the
+reference: the murine Igκ signal peptide and the +1 Asp of the mature κ chain, fused to the
+receptor's own CDS, so the mature protein is the native receptor with one extra N-terminal
+residue. A signal peptide is the published fix for CB1, whose long N-terminal tail translocates
+poorly without one ([Andersson et al., 2003](https://pubmed.ncbi.nlm.nih.gov/12920192/)). The
+25 are drawn as evenly as possible across GPCR classes, lowest expressor first within each
+class, because olfactory receptors fill 17 of the screen's 30 lowest places and a straight
+ranking would test only them. A receptor that already has a signal peptide, or whose N-terminus
+is cytoplasmic in DeepTMHMM v1, is not eligible, since a leader would add a second signal or
+invert the topology. Each pair (reference and rescue member) measures whether the leader alone
+changes display ([`select_expression_rescue_arms.py`](../../../../scratch/becca/appris-principal/select_expression_rescue_arms.py)).
 
-| Gene | Defect in the GRCh38 copy | Intact copy in Ensembl 115 |
-|---|---|---|
-| FCGR2C | premature stop at codon 57 (UniProt Q), plus one residue difference | none |
-| OR8J2 | premature stop at codon 64 (UniProt R) | none |
-| OR10AC1, OR52P1 | frameshift: under two thirds of the protein aligns | none |
-| OR4Q2 | frameshift and compensating frameshift (121 residues out of frame) | a patch-scaffold transcript, 1 residue short of UniProt |
-
-Three further genes had the same defect but an intact copy, identical to UniProt, on an
-alternative-haplotype or patch scaffold of Ensembl 115. They are built from it, through a
-named override (section 3): KIR2DS4 (`l1-p2740`, alternative KIR haplotype), OR12D1
-(`l1-p2741`, alternative MHC haplotype) and OR5AL1 (`l1-p2742`, patch scaffold).
-[`check_reference_allele_lof.py`](../../../../scratch/becca/appris-principal/check_reference_allele_lof.py)
-recomputes from the pinned files that each primary copy is loss-of-function (3, 8 and 10
-internal stops) and that the transcript built equals the UniProt protein
-(`reference_allele_lof_evidence.tsv`). Member CDS have a median
+The 2,360 references cover 2,369 library genes; section 3 explains the 9 genes without a
+reference member. Member CDS have a median
 length of 1,386 nt; finished vectors are 7,753–12,706 bp (median 8,953).
 
 ## 2. Genes: from the surfaceome universe to 2,369
@@ -88,24 +81,31 @@ filter ([`final_library.py`](../../../sprint1/s1e3-surface-library-filters/final
 | Accessibility | `surface_accessibility` is not `no` | the protein must be reachable from outside |
 | Specificity | `surface_dominant` or `mixed` | mostly intracellular proteins would read as non-expressors |
 | Anchored | at least one transmembrane helix, or GPI-anchored | a secreted protein cannot be displayed |
-| Co-receptor | no obligate partner, or every partner expressed (median cell-line TPM ≥ 5) | an obligate partner that the host cell lacks would fail the member for reasons unrelated to it |
-| Expression | maximum TPM ≥ 5 in the expression reference | an unexpressed gene has no use case |
-| Localization | the surface call is not a non-surface reason | excludes, e.g., ER residents |
+| Co-receptor | no obligate partner, or every obligate partner has a median TPM ≥ 5 across the 1,206 Human Protein Atlas (HPA) cell lines | an obligate partner that the host cell lacks would fail the member for reasons unrelated to it |
+| Expression | the catalog does not flag the gene as having low endogenous expression, or its highest expression is ≥ 5 TPM in at least one of GTEx v10 tissue medians, HPA tissue consensus (nTPM), HPA cell lines or TCGA tumors | a gene expressed in no normal tissue, tumor or cell line gives no cell a binder could be used on |
+| Localization | the catalog's reason for its surface call is not one of: secreted only, inner-leaflet anchored, cytoplasmic, nuclear, nuclear envelope, mitochondrial interior, endomembrane resident (ER, Golgi, endolysosome), presented only as an MHC peptide, or surface only as a partner in a complex. A complex partner is kept if it has its own transmembrane helix and its reviewed partners pass the co-receptor rule | each of these reasons means the protein's own sequence is not displayed on the outer surface, so a tag on it would not be either |
 | ORF size | ≤ 5,000 nt | synthesis and packaging limit; larger genes go to truncation (L2) |
 | Ectodomain | ≥ 30 extracellular residues (GPI proteins exempt) | below that there is no domain to display |
 
-Three named additions are included as flagged tiers rather than merged: low-literature
-UniProt-surface genes, GPCRs with screen-validated surface expression from a published GPCR
-surface-expression screen (the Tedman 2025 table, recorded in the s4e9 inputs), and
-overexpression-surface rescues (the DLL3/GLUT4/FcRn pattern).
+Genes that pass every gate above make up the core: **2,134** genes. Three further groups enter
+as named tiers, each with its own rule, because each has direct evidence of surface expression
+that the gates miss:
 
-Rerun over release 1.3.0 the filter passes **2,370** genes. One is removed by a recorded
-exclusion: EPPIN, which every source except one curated attribute calls not GPI-anchored and
-which reaches the sperm surface only through a protein complex. The library's gene list is
-the frozen 2,368-gene root plus dated additions; SLC67A1 is the one addition, admitted because
-release 1.3.0 calls 12 TM helices on its canonical where the earlier cohort had none. The
-library is therefore **2,369 genes**. Genes are appended, never re-derived, so an addition
-cannot renumber an existing member.
+| Tier | Rule | Genes |
+|---|---|---:|
+| Low-literature UniProt surface | UniProt annotates the protein at the cell surface, fewer than 100 papers describe it, the catalog does not place it in its canonical tier, and it is membrane-anchored, has a maximum TPM ≥ 5 and an ORF ≤ 5,000 nt. The catalog's surface call rests on literature, so for little-studied proteins UniProt's annotation stands in for it | 139 |
+| Screen-validated GPCRs | GPCRs that the gates exclude but whose anti-HA surface immunostaining is ≥ 1,000 a.u. in a pooled HEK293T screen of the human GPCRome ([Tedman et al., 2026](https://pubmed.ncbi.nlm.nih.gov/42736269/)) | 85 |
+| Overexpression surface | proteins the catalog calls mostly intracellular but that have a functional plasma-membrane pool when overexpressed, judged from the catalog's recorded evidence (the DLL3, GLUT4 and FcRn pattern); only the specificity gate excludes them | 12 |
+
+Over release 1.3.0 the filter therefore passes **2,370** genes. One is removed by a recorded
+exclusion ([`gene_list_exclusions.tsv`](../gene_list_exclusions.tsv)): EPPIN, which every
+source except one curated catalog attribute calls not GPI-anchored, and which reaches the
+sperm surface only through a complex with other proteins, so it carries no anchor of its own.
+The library is the remaining **2,369 genes**.
+
+The gene list is fixed. A later catalog release changes it only through a dated addition
+or exclusion recorded in the repository, never by rerunning the filter, so no existing member
+is renumbered or dropped by a change upstream.
 
 ## 3. Proteoforms: one reference per gene, chosen by a ladder
 
@@ -136,13 +136,13 @@ Twenty genes with weak evidence either way are flagged for review.
 Ten genes carry a named override that takes precedence: six GPI-anchored proteins whose
 anchor sits on a non-canonical form (ACHE, BCAN, CD55, CD58, NCAM1, TFPI); MICA, whose
 ladder pick lost its transmembrane helix; and KIR2DS4, OR12D1 and OR5AL1, whose ladder pick
-is the loss-of-function copy in GRCh38 (section 1). A soluble-form guard also rejects a pick that
+is the loss-of-function copy in GRCh38 (below). A soluble-form guard also rejects a pick that
 topology calls signal-peptide-only or globular, unless it is GPI-anchored.
 
 The source finally taken, across 2,369 genes: **MANE 2,277, APPRIS 71, UniProt canonical
-11, named override 10**. For 214 genes the reference differs from the UniProt-canonical
-accession the library used before this ladder, which is why every downstream record is
-matched on sequence rather than accession (section 5).
+11, named override 10**. For 214 genes the reference is not the UniProt-canonical sequence,
+so a record fetched by UniProt accession can describe a different protein; every downstream
+record is therefore matched on sequence rather than accession (section 5).
 
 ![Reference ladder outcomes](figures/l1_reference_ladder.png)
 
@@ -152,6 +152,34 @@ ladder outcome; color is the source finally taken (the 10 named overrides are 6 
 n = 2,369; values are counts, log scale. Data: `library-design/reference_selection.tsv`.
 Regenerated by [`brief_numbers.py`](brief_numbers.py).*
 
+### Genes without a buildable reference copy
+
+The 2,360 references cover 2,369 library genes. Of the 9 genes without a reference member,
+4 are paralogs whose identical protein is built under another symbol (OPN1MW2, OPN1MW3,
+OR2A42, UPK3BL2; section 4), and 5 have no member because the human reference genome
+(GRCh38) carries a broken copy and Ensembl 115 has no intact one. Ensembl 115 annotates their
+primary-assembly transcripts as `protein_coding_LoF`, so none has a MANE Select transcript, the
+ladder took the APPRIS principal (that broken transcript), and CDS resolution refuses any
+transcript that does not translate to an intact protein. Each is compared with its reviewed
+UniProt entry, which describes the intact protein, by
+[`unbuildable_genes.py`](unbuildable_genes.py):
+
+| Gene | Defect in the GRCh38 copy | Intact copy in Ensembl 115 |
+|---|---|---|
+| FCGR2C | premature stop at codon 57 (UniProt Q), plus one residue difference | none |
+| OR8J2 | premature stop at codon 64 (UniProt R) | none |
+| OR10AC1, OR52P1 | frameshift: under two thirds of the protein aligns | none |
+| OR4Q2 | frameshift and compensating frameshift (121 residues out of frame) | a patch-scaffold transcript, 1 residue short of UniProt |
+
+Three further genes have the same defect but an intact copy, identical to UniProt, on an
+alternative-haplotype or patch scaffold of Ensembl 115. They are built from it, through a
+named override (above): KIR2DS4 (`l1-p2740`, alternative KIR haplotype), OR12D1
+(`l1-p2741`, alternative MHC haplotype) and OR5AL1 (`l1-p2742`, patch scaffold).
+[`check_reference_allele_lof.py`](../../../../scratch/becca/appris-principal/check_reference_allele_lof.py)
+recomputes from the pinned files that each primary copy is loss-of-function (3, 8 and 10
+internal stops) and that the transcript built equals the UniProt protein
+(`reference_allele_lof_evidence.tsv`).
+
 ## 4. Isoforms and orthologs
 
 Both panels are seeded, class-stratified draws, balanced across membrane architecture
@@ -160,56 +188,54 @@ the rare architectures whose placement is least certain.
 
 | Panel | Members | Draw | Composition |
 |---|---:|---|---|
-| Isoforms | 150 (137 genes) | seed 20261009; 100 with observed evidence (mass spectrometry or Ribo-seq) + 50 prediction-only | type I 61, multipass 51, type II 17, GPI 16, type III 5 |
-| Orthologs | 200 | seed 20261011; 100 mouse + 100 cyno, each split 50/50 into "near" and "diverged" bands at the median sequence correspondence to human (0.864 mouse, 0.962 cyno) | type I 66, multipass 72, GPI 28, type II 26, type III 8 |
+| Isoforms | 150 (137 genes) | seed 20261009; 100 with observed evidence (mass spectrometry or Ribo-seq) + 50 prediction-only (TRIFID above 0.5, no observed evidence) | type I 61, multipass 51, type II 17, GPI 16, type III 5 |
+| Orthologs | 200 | 100 mouse (seed 20261011) + 100 cyno (seed 20261012), each split 50/50 into "near" and "diverged" bands at a fixed sequence-correspondence score to the human library protein (0.8644 mouse, 0.9595 cyno) | multipass 81, type I 54, GPI 28, type II 28, type III 9 |
 
-A drawn form the library cannot use is replaced by continuing the same seeded draw within
-its own stratum, so every valid pick keeps its place and the panel regenerates from code.
-Thirteen picks were replaced: one isoform that is its gene's reference, one ortholog identical
-to human, one isoform whose designed protein duplicates another member's, and ten forms that
-no transcript encodes.
+In both panels a drawn form the library cannot use is replaced by continuing the same seeded
+draw within its own stratum, so every valid pick keeps its place and the panel regenerates from
+code. Seven isoform picks were replaced this way: one whose designed protein duplicates another
+member's, and six that no transcript encodes.
 
-**The pool both panels were drawn from is narrower than the library.** The isoform and ortholog
-universes were built from an April 2026 query set (the expression-filtered
-`surfaceome_expressed` list behind accessible-surfaceome commit f9c73691), which holds 1,775 of
-the 2,369 library genes; the other 594 were never queried. Checked against the pinned Ensembl
-Compara 115 homology dumps by a pipeline stage of its own (`check_universe_coverage.py`):
+**Isoforms are drawn from a pool narrower than the library.** The isoform universe was built
+from an April 2026 query set (the expression-filtered `surfaceome_expressed` list behind
+accessible-surfaceome commit f9c73691), which holds 1,775 of the 2,369 library genes, so the
+isoforms of 92 library genes could not be drawn. Within that universe every library gene is
+accounted for: all 451 library genes with a non-canonical UniProt isoform but no member in the
+isoform cohort have scored rows, and the cohort's own rules exclude each one
+(`audit_isoform_coverage.py`, which fails on an unexplained absence). For 399 of those genes,
+every alternate form is below the evidence bar, which requires a diagnostic peptide, a positive
+OpenProt translation score or a TRIFID score above 0.5. The other 52 include forms excluded for
+lost surface anchoring. Lack of evidence is not evidence that an isoform is absent.
 
-| | Mouse | Cyno |
-|---|---:|---:|
-| Library genes with a one-to-one, high-confidence ortholog in Compara 115 | 1,870 | 1,848 |
-| … in the list the panel drew from | 1,452 | 1,432 |
-| … never queried | 418 | 416 |
-| Recorded pairs that are not one-to-one high-confidence | 0 of 1,972 | 0 of 1,927 |
+**Orthologs are drawn from every library gene, and admitted only with a supported coding
+sequence.** The pool is the Ensembl Compara 116 one-to-one, high-confidence mouse and cyno
+orthologs of all 2,369 library genes (3,643 sampleable gene–species representatives). A form is
+eligible only if its coding sequence has a native ATG start, supported start and stop
+coordinates, a terminal stop and no internal stop, and translates exactly to the selected
+protein; no start or stop is repaired. Among a gene's eligible mouse forms the APPRIS principal
+(APPRIS 2026_08.v50 for Ensembl 116) ranks first; cyno has no APPRIS dataset, so no form is
+preferred on that ground. Every one of the 200 CDSs matches its pinned Ensembl source file
+([`ORTHOLOG_CDS_POLICY.md`](../ORTHOLOG_CDS_POLICY.md)).
 
-For isoforms, the universe does cover every library gene: all 451 library genes with a
-non-canonical UniProt isoform but no member in the isoform cohort have scored rows, and the
-cohort's own rules exclude each one (`audit_isoform_coverage.py`, which fails on an
-unexplained absence). For 399 of those genes, every alternate form is below the evidence bar,
-which requires a diagnostic peptide, a positive OpenProt translation score or an APPRIS TRIFID
-score above 0.5. The other 52 include forms excluded for lost surface anchoring. Lack of evidence
-is not evidence that an isoform is absent.
+Coding completeness is not domain equivalence, so each drawn form is compared with the human
+library protein for signal peptide, TM helices, N-terminal orientation, GPI anchor and Pfam 39.0
+domains ([`ORTHOLOG_CORRESPONDENCE_REVIEW.md`](../ORTHOLOG_CORRESPONDENCE_REVIEW.md)). A form
+that loses a human feature across an insertion or deletion is replaced by the next
+architecture-conserving form in the same seeded draw and stratum. Eleven are replaced this way;
+for example, cyno SLC8A1 loses TM6–10 and its C-terminal exchanger domain, cyno IL31RA its signal
+peptide and N-terminal 142 residues, and cyno MS4A10 its TM1, which flips its orientation. Six
+forms are kept as drawn because the comparison does not show a lost feature:
 
-**A replacement ortholog panel is drawn but not adopted.** A redraw over the full library
-gene list uses Ensembl Compara 116 one-to-one, high-confidence pairs (3,643 sampleable
-gene-species representatives) and admits an ortholog form only if its coding sequence is
-supported: a native ATG start, supported start and stop coordinates, a terminal stop, no
-internal stop, and a translation identical to the selected protein. Ranking prefers verified
-APPRIS principal transcripts for mouse; cyno has no APPRIS dataset. It keeps the same seed,
-quotas and band cutoffs, and fills all 200 slots with no shortfall, keeping 14 current picks
-and replacing 186. Of the 186 forms it drops, 183 still pass the coding-sequence gate, so
-those removals come from redrawing a wider pool, not from defects. The other three (cyno OPN3,
-ADCY2 and PRRG1) lack a supported start. Coding completeness is not domain equivalence: some
-drawn forms are much shorter than the human library protein (cyno SLC8A1 624 vs 973 aa,
-IL31RA 598 vs 764), so each form was compared with the human library protein for signal
-peptide, TM helices, orientation, GPI and Pfam domains: 183 of 200 keep the human architecture,
-11 lose a feature and should be replaced by the next conserving form in the same seeded draw
-(cyno SLC8A1 loses TM6–10 and its C-terminal exchanger domain; cyno IL31RA its signal peptide
-and N-terminal 142 residues; cyno MS4A10 TM1, which flips its orientation), and 6 need a decision
-([review, draft](https://github.com/Deliverome-Project/deliverome-analysis/pull/273)). Until it is adopted,
-the current panel is the ordered one, a valid seeded draw from the smaller April pool, with the
-gap recorded (question 4, section 10;
-[`ORTHOLOG_CDS_POLICY.md`](../ORTHOLOG_CDS_POLICY.md)).
+| Form | Comparison | Why it is kept |
+|---|---|---|
+| cyno MARCO; mouse TMIGD1, IGSF1, TMPRSS7 | a human Pfam domain is not detected | the aligned span carries no insertion or deletion, so the miss is more likely detection than loss |
+| mouse OR10G6 | lacks the human protein's first 21 residues | DeepTMHMM calls those residues a signal peptide; all 7 helices are kept |
+| mouse CACHD1 | the mouse form has a signal peptide | the human library form is the one without it, so another mouse form would not match better |
+
+The adopted panel and each form's source are in
+[`ortholog_panel_adopted.tsv`](../ortholog_panel_adopted.tsv), built by
+[`adopt_ortholog_cds_policy.py`](../adopt_ortholog_cds_policy.py), which `library_pipeline.py`
+replays from the pinned draw.
 
 Barcode-swap screening (section 6) does not apply between a gene's members: an isoform
 shares its parent's sequence by construction (median overlap 1,071 nt over 2,150 pairs, none
@@ -233,11 +259,11 @@ from its gene's canonical (SLC9D1's ordered isoform has 3 TM helices against the
 
 | Rung | Rule | Rests on | Members |
 |---|---|---|---:|
-| N after SP | the residue after the signal peptide is extracellular | predicted cleavage site | 1,300 |
-| N at residue 1, multipass | N-terminus extracellular, no signal peptide, >1 TM | the GPCR surface screen's validated N-terminal tags | 563 |
-| N at residue 1, single-pass (type III) | same, 1 TM | topogenesis argument only; untested | 62 |
-| C-terminal | C-terminus extracellular | topology only | 218 |
-| internal | neither terminus extracellular, or GPI-anchored with an ecto-C call | needs a loop or ectodomain site | 567 |
+| N after SP | the residue after the signal peptide is extracellular | predicted cleavage site | 1,294 |
+| N at residue 1, multipass | N-terminus extracellular, no signal peptide, >1 TM | the GPCR surface screen's validated N-terminal tags | 571 |
+| N at residue 1, single-pass (type III) | same, 1 TM | topogenesis argument only; untested | 59 |
+| C-terminal | C-terminus extracellular | topology only | 215 |
+| internal | neither terminus extracellular, or GPI-anchored with an ecto-C call | needs a loop or ectodomain site | 571 |
 
 A site is written as `insert_after_residue` *n*: 1-based on the member's designed protein, so
 the cassette goes after codon *n*, at nucleotide 3*n* counted from the A of the start codon.
@@ -275,8 +301,8 @@ GPI anchoring is called per form, not per gene, because the anchored species is 
 the reference (ACHE's canonical is non-anchored while P22303-2 is anchored). The GPI set is
 NetGPI 1.1 over reference and alternative forms, unioned with curation under a confidence
 rule: 157 genes, of which 138 are NetGPI-anchored and 19 are curated GPI that NetGPI does
-not call. 191 L1 members belong to GPI genes; 182 are N-terminal after the signal peptide,
-7 N-terminal at residue 1, and 2 rerouted from C-terminal.
+not call. 191 L1 members belong to GPI genes; 184 are N-terminal after the signal peptide,
+5 N-terminal at residue 1, and 2 rerouted from C-terminal.
 
 ### Structure models
 
@@ -289,16 +315,15 @@ fetched by accession can be of a different proteoform:
 
 | Verdict | Active L1 members | Meaning |
 |---|---:|---|
-| identical | 2,414 | the model is of exactly this protein |
+| identical | 2,382 | the model is of exactly this protein |
 | contained | 26 | our protein is a subsequence of the modeled one; needs an offset the lanes do not apply |
-| different | 198 | the model is another proteoform; its numbering cannot be carried onto the construct |
+| different | 196 | the model is another proteoform; its numbering cannot be carried onto the construct |
 
-191 of the 198 "different" are library references, the set resolved by gene symbol to a
-canonical accession. A length test does not catch them: 22 have the same length as their
-model. (These counts cover the 2,638 active members compared. The comparison table holds
-2,645 L1 rows including retired members: 2,420 identical, 199 different, 26 contained. The
-s4e9 record lists 25 further members with a model that were not compared, for lack of a
-designed CDS or a returned sequence, for 2,670 with a model.)
+191 of the 196 "different" are library references, the set resolved by gene symbol to a
+canonical accession. A length test does not catch them: 20 have the same length as their
+model. These counts cover the 2,604 active members compared. 61 ortholog members have neither
+an AlphaFold DB model nor a ColabFold fold yet, so their internal sites cannot be scored until
+they are folded.
 
 ### The literature positives behind the internal-site ranker
 
@@ -338,7 +363,7 @@ NRG3 275, SLC12A5 248, SLC4A2 862), ABCC1 at 4 is confirmed, ITGB7 23 shifts to 
 unsupported, and 6 stay region only; the 176-row table above is unchanged by them. The live
 tag-site API was corrected to these verdicts on 2026-11-05, as version `2026-11-05-lit-audit`
 ([accessible-surfaceome PR 459](https://github.com/Deliverome-Project/accessible-surfaceome/pull/459)):
-178 rows written and 18 withdrawn, so ABCB1's sites, for example, are now served at 105, 324,
+178 rows written and 18 withdrawn, so ABCB1's sites, for example, are served at 105, 324,
 740, 745 and 965. Nothing in the L1 tag paths depends on these
 sites.
 
@@ -354,26 +379,26 @@ reaction.
 **Why the linkers are recoded.** For an N-terminal or internal member the cassette lies
 upstream of the ORF's own C-terminus, so it never enters the swap tract; two such members
 share only the constant 24-nt tail before the barcode (stop codon, a 2-nt pad and a 19-nt
-primer handle) plus whatever C-terminal codons their ORFs share. For the 218 C-terminal
+primer handle) plus whatever C-terminal codons their ORFs share. For the 215 C-terminal
 members the cassette is the last coding sequence before that tail, so one shared encoding
 would give every pair a 51-aa identical stretch. We gate the swap tract at 100 nt (5.0%
 predicted swapping on the fit we use), preferring 80.
 
 | Encoding of the C-terminal cassette | C-terminal members: median / max tract | Members over 100 nt (all 2,710) |
 |---|---:|---:|
-| one shared cassette (p003 codons) | 181 / 2,529 nt | 484 |
-| every codon recoded, end unique in last 9 nt | encoder exhausts after 60 of 218 members | — |
-| every codon recoded, last 15-nt block unique | 36 / 36 nt | 266 |
-| **linkers only recoded, last 15-nt block unique (issued)** | **36 / 36 nt** | **266** |
+| one shared cassette (p003 codons) | 181 / 2,529 nt | 470 |
+| every codon recoded, end unique in last 9 nt | encoder exhausts after 60 of 215 members | — |
+| every codon recoded, last 15-nt block unique | 36 / 36 nt | 255 |
+| **linkers only recoded, last 15-nt block unique (issued)** | **36 / 36 nt** | **255** |
 
 SpyTag003 and P-ALFA-P keep p003's codons, which are the ones shown to display; only the four
 `GGGGS` blocks are recoded. Recoding the tags too buys nothing (36 nt either way). The
 terminal 15-nt block must be unique per member because a 9-nt rule allows only 60 distinct
-ends and a 12-nt rule 180, both fewer than 218. The 218 encodings are issued in two seeded
-batches and pinned, so adding a member cannot redraw an issued one.
+ends and a 12-nt rule 180, both fewer than 215. Encodings are issued in seeded batches and pinned (three batches, 243
+encodings, 28 of them held by retired members), so adding a member cannot redraw an issued one.
 
-All 266 members still over the bar are explained by their ORFs, not the cassette: 211 are
-same-gene isoform/ortholog pairs sharing a C-terminus, and 55 are different genes with shared
+All 255 members still over the bar are explained by their ORFs, not the cassette: 202 are
+same-gene isoform/ortholog pairs sharing a C-terminus, and 53 are different genes with shared
 3' coding sequence (clustered protocadherins, close paralogs such as olfactory receptors and
 KIR2DS2/KIR2DS4). Each different-gene family is accepted by name, and a library test fails on
 any new one. One C-terminal
@@ -391,26 +416,33 @@ Regenerated by [`brief_numbers.py`](brief_numbers.py).*
 
 ## 7. Reproducibility: what is pinned, and the one permanent limit
 
-The pipeline ([`library_pipeline.py`](../library_pipeline.py)) lists 15 stages from gene list
+The pipeline ([`library_pipeline.py`](../library_pipeline.py)) lists 16 stages from gene list
 to cassette. `verify` reruns each one offline from pinned inputs and compares it with the
-published record; on 2026-11-05 all 15 reproduce. Nothing is rebuilt from today's sources:
+published record; on 2026-11-10 all 16 reproduce. Nothing is rebuilt from today's sources:
 each stage must reproduce what the library actually used.
 
-| Source | Version pinned | Public? |
-|---|---|---|
-| accessible-surfaceome | release 1.3.0 (Zenodo) | yes |
-| accessible-surfaceome | commit f9c73691: FASTAs, DeepTMHMM tables, ortholog cohorts | repository files, shared in the bundle |
-| Ensembl | release 115: human, mouse, cyno CDS and peptides; human GTF | yes |
-| UniProt | release 2026_03 tables (downloaded 2026-10-11) and REST features | yes |
-| APPRIS | e115v50 principal isoforms; 2026_06.v50 scores | yes |
-| OpenProt | 2.2 | yes |
-| PeptideAtlas | human build 607, replayed in the original query batches | public data, our queries |
-| GENCODE Ribo-seq ORFs | phase 1 all; phase 2 primary and comprehensive | yes |
-| MyGene.info | responses of 2026-11-02 | public data, our queries |
-| Expression | Deliverome-compiled TPM table (GTEx v10, HPA, TCGA) | internal compilation |
-| DeepTMHMM | 1.0.24, topology snapshot 2026-11-01 | predictions run by us |
-| NetGPI | 1.1 predictions | predictions run by us |
-| GPCR surface screen | supplementary table, 2025-09-19 | published |
+**Pinned releases.** Every release the design rests on is in the reviewer bundle whole, not
+only the files the replay reads, so a reviewer can inspect it. Each bundled file carries its
+release, version, source URL and SHA-256 in [`bundle_manifest.tsv`](bundle_manifest.tsv); the
+full table, with sizes and sources, is [`pinned_releases.md`](pinned_releases.md).
+
+| Release | Version | Pinned on | In the bundle (`s3/external/…`) | Public? |
+|---|---|---|---|---|
+| Ensembl | 115 (human, mouse, cyno CDS, peptides, GTFs; Compara homologies) | 2026-10-11 | `ensembl/release-115/` | yes |
+| Ensembl | 116 (mouse, cyno CDS, peptides, GTFs; Compara homologies) | 2026-11-05 | `ensembl/release-116/` | yes |
+| UniProtKB | 2026_03 tables and REST features; 2026_04 accession queries | 2026-10-11 | `uniprot/` | yes |
+| APPRIS | e115v50 principal; 2026_06.v50 full annotations with TRIFID; 2026_08.v50 mouse | 2026-10-08 | `appris/` | yes |
+| OpenProt | 2.2 | 2026-11-02 | `openprot/2.2/` | yes |
+| PeptideAtlas | human build 607, replayed in the original query batches | 2026-11-02 | `peptideatlas/build-607/` | public data, our queries |
+| GENCODE Ribo-seq ORFs | phase 1 all; phase 2 primary and comprehensive | 2026-11-01 | pipeline-input snapshot (`s3/processed/…`) | yes |
+| Pfam | 39.0 | 2026-11-07 | `pfam/39.0/` | yes |
+| accessible-surfaceome | release 1.3.0 (Zenodo) | 2026-11-02 | `accessible-surfaceome/release-1.3.0/` | yes |
+| accessible-surfaceome | commit f9c73691: FASTAs, DeepTMHMM tables, ortholog cohorts | 2026-11-02 | `accessible-surfaceome/f9c73691/` | repository files, shared in the bundle |
+| DeepTMHMM | 1.0.24 / 1.0 academic; five topology snapshots, of record 2026-11-06 | 2026-10-15 | `accessible-surfaceome/topology/` | predictions run by us |
+| NetGPI | 1.1 predictions | 2026-11-06 | ortholog predictions (`s3/processed/…`) and committed tables | predictions run by us |
+| Expression | Deliverome-compiled TPM (GTEx v10, HPA, TCGA) | 2026-11-02 | `expression-tpm/` | internal compilation |
+| GPCR surface screen | Tedman et al. 2026, supplementary table | 2026-08-14 | `tedman-gpcr-surface-screen/` | published |
+| MyGene.info | responses of 2026-11-02 | 2026-11-02 | pipeline-input snapshot (`s3/processed/…`) | public data, our queries |
 
 **The permanent limit.** The isoform-universe step built Python sets whose iteration order
 follows the interpreter's string-hash seed, and the original run did not record its seed.
@@ -436,13 +468,24 @@ old `l1-pNNNN` id as `design_id`, and records the mapping
 the order number carries the plate position. 2,735 members fill 29 plates per set.
 
 **Amounts.** 4 µg is ordered per member and 3 µg assumed delivered, normalized to
-100 ng/µL (30 µL), and split into five plate sets with the same layout:
+100 ng/µL (30 µL), and split into three plate sets with the same layout:
 
-| Plate set | Plates | Volume per well | DNA per member |
+| Plate set | Plates | Volume per well | DNA per member at 100 ng/µL |
 |---|---:|---:|---:|
-| Addgene deposit | 29 | 15 µL | 1.5 µg |
-| Pooling A, B, C | 3 × 29 | 3 µL each | 0.3 µg each |
-| Backup | 29 | the rest, 6 µL | 0.6 µg |
+| Pooling A, B | 2 × 29 | 5 µL each | 0.5 µg each |
+| Stock | 29 | 20 µL | 2.0 µg |
+
+100 ng/µL is an assumption, and the vendor may deliver less. The volumes are fixed, so a lower
+concentration lowers the DNA in every well in proportion:
+
+| Delivered concentration | DNA per pooling well | DNA per stock well | One pool, all members (3.5-fold per kb weighting) |
+|---:|---:|---:|---:|
+| 100 ng/µL | 0.5 µg | 2.0 µg | 138 µg |
+| 75 ng/µL | 0.375 µg | 1.5 µg | 104 µg |
+| 50 ng/µL | 0.25 µg | 1.0 µg | 69 µg |
+
+The pooling weights are relative, so which members need extra DNA does not change with
+concentration; only the size of each pool does.
 
 **Why pool by length.** Longer lentiviral genomes give lower functional titer. Comparing
 packaged genomes of 3.9, 6.9 and 10.1 kb, Sweeney and Vink found titer fell 3–4-fold per extra
@@ -459,14 +502,14 @@ length. At 3.5-fold per kb, the model predicts the longest member transduces
 
 **How the weighting is applied.** Each member's pooled amount follows the factor in pmol,
 converted to mass with its own vector length, and is scaled so a member with a 4.3-kb insert
-fills exactly one pooling well (300 ng) per pool:
+fills exactly one pooling well (500 ng at 100 ng/µL) per pool:
 
-- The 53 members with inserts over 4.3 kb need more than one well per pool, so
-  they are ordered with extra DNA (26.7 µg extra in total at 3.5-fold per kb, up to
-  6.9 µg ordered for the longest).
-- Every other member needs less than a well, down to 13 nL for the shortest at
+- The 55 members whose weighted amount exceeds one well (those with inserts over about 4.3 kb)
+  are ordered with extra DNA (31.0 µg extra in total at 3.5-fold per kb, up to 7.3 µg ordered
+  for the longest).
+- Every other member needs less than a well, down to 21 nL for the shortest at
   3.5-fold per kb, which cannot be pipetted by hand. Because the plates are length-ordered, each
-  of pooling plates 1–27 is diluted to one concentration and a fixed 3 µL is pooled from every
+  of pooling plates 1–27 is diluted to one concentration and a fixed 5 µL is pooled from every
   well; that lands each member within the error in the table below of its own target. The plate
   concentrations are in [`l1_order_pooling_plates.tsv`](l1_order_pooling_plates.tsv).
 - The last two plates (143 members, the long tail) are pooled well by well at each member's
@@ -474,15 +517,15 @@ fills exactly one pooling well (300 ng) per pool:
 
 | Fold lower titer per kb | Longest vs median | Longest vs shortest | Extra DNA for inserts > 4.3 kb | Largest single order | Pooling-plate dilutions | Worst within-plate error |
 |---|---:|---:|---:|---:|---:|---:|
-| 2.0× | 14× | 31× | 13.3 µg | 5.3 µg | 5.0–51 ng/µL | 1.16× (1.25× on plate 1) |
-| 2.5× | 31× | 94× | 18.2 µg | 5.8 µg | 2.2–42 ng/µL | 1.21× (1.33× on plate 1) |
-| 3.5× | 110× | 495× | 26.7 µg | 6.9 µg | 0.6–32 ng/µL | 1.29× (1.45× on plate 1) |
+| 2.0× | 14× | 31× | 15.3 µg | 5.4 µg | 5.0–51 ng/µL | 1.18× (1.25× on plate 1) |
+| 2.5× | 31× | 94× | 21.0 µg | 6.0 µg | 2.2–42 ng/µL | 1.23× (1.33× on plate 1) |
+| 3.5× | 110× | 495× | 31.0 µg | 7.3 µg | 0.6–32 ng/µL | 1.32× (1.45× on plate 1) |
 
 ![Pooled volume by insert length](figures/l1_pooling_volume_by_length.png)
 
 *Figure 4. Volume of each member pooled per pool, at 100 ng/µL, against its synthesized-insert
 length, under three assumed per-kb titer losses. Unit: member; n = 2,735. Dashed lines: one
-3-µL pooling well and the 4.3-kb insert threshold; dotted line: 0.5 µL, the smallest volume
+5-µL pooling well and the 4.3-kb insert threshold; dotted line: 0.5 µL, the smallest volume
 worth pipetting by hand. Data: `l1_order_plan.tsv`. Regenerated by
 [`order_plan.py`](order_plan.py).*
 
@@ -501,7 +544,7 @@ shortest (FOLR1) to the longest (HEG1) and 3.5-fold predicts 68-fold. Their per-
 barcode counts in plasmid and integrated DNA fit the slope directly, though gene-specific effects
 are not separated from length with 16 genes. Pilot design and evidence:
 [`scratch/becca/l1-length-titer/`](https://github.com/Deliverome-Project/deliverome-analysis/pull/271)
-(question 5, section 10).
+(question 5, section 11).
 
 **Experimental plan before the library is pooled.** The per-kb factor is measured on four
 plasmids we already have, built on the L1 backbone, two at each end of the length range:
@@ -535,7 +578,7 @@ IRES:
 | Element | Sequence | Source |
 |---|---|---|
 | 5′ handle | `AGTCGTTAGCTGCCGTTCC` | [Tycko et al., 2020](https://pubmed.ncbi.nlm.nih.gov/33326746/), subpool-3 amplification primer (JT-832) |
-| Barcode | 20 nt, one per member | s1e2 pool, not yet reserved for L1 |
+| Barcode | 20 nt, one per member | s1e2 pool; a block of 3,200 is reserved for L1 and assigned to members when the order is frozen |
 | Gap | `GGATCTGGAC` | 10 nt |
 | RT site | `CCTTTGGGCAAGCACACGTC` | lentiGuide-BC 3′ site (Feldman et al. 2019), one base changed |
 | 10x Capture Sequence 1 | `GCTTTAAGGCCGGTCCTAGCAA` | 10x Feature Barcoding |
@@ -548,34 +591,85 @@ in fixed cells by in situ reverse transcription, padlock gap-fill and sequencing
 ([Feldman et al., 2019](https://pubmed.ncbi.nlm.nih.gov/31626775/)). Three of their elements
 differ from ours:
 
-- *The RT site differs from Feldman's by one base, and restoring it would add a splice donor.*
-  Their in situ RT primer (GACGTGTGCTTACCCAAAGG) binds the transcript at
-  `CCTTTGGGTAAGCACACGTC`; ours reads `CCTTTGGGCAAGCACACGTC`, a C at position 9 under one of the
-  primer's locked-nucleic-acid bases. Our C is inherited from the p003 maps (every built
-  P-series construct reads C), and whatever its origin it removes a `GTAAG` splice-donor
-  consensus that Feldman's T creates inside the packaged transcript. So the C stays, and the RT
-  primer is ordered matched to it (GACGTGTGCTTGCCCAAAGG, Feldman's with that one base changed).
-- *Feldman's padlock does not fit as designed.* His RT-side arm (`ACTGGCTATTCATTCGC`) sits
-  directly 3′ of the barcode in LentiGuide-BC (Addgene #127168), filling the 17 nt between
-  barcode and RT site; ours has a 10-nt gap (`GGATCTGGAC`) there. His other arm
-  (`GTGTTCAATCAACATTCC`) is in no deposited plasmid map: it enters with the cloned barcode
+- *Why today's layout is weak for optical screening.* The 10-nt gap after the barcode
+  (`GGATCTGGAC`) is not from lentiGuide-BC, where Feldman has a 17-nt padlock arm in that
+  position. Ours came in with the p003 map with no recorded reason; read as codons it is GGA TCT GGA (Gly-Ser-Gly), so it
+  may be a linker or cloning scar (inferred, not documented). With only 10 nt before the RT
+  site, a padlock arm on that side would have to run into the RT site and pair with
+  primer-made cDNA. Feldman's arm sits directly after the barcode and ends where his RT primer
+  begins, with no overlap.
+- *Proposed 3′ flank (draft, not yet adopted).* Feldman's padlock arms match neither of our
+  flanks, and his RT site cannot be copied verbatim. The proposal replaces our 30-nt gap plus
+  RT site (`GGATCTGGACCCTTTGGGCAAGCACACGTC`) with his RT-side padlock arm, verbatim, followed by
+  his RT site with one base changed:
+
+| Element (transcript sense) | Today | Proposed |
+|---|---|---|
+| After the barcode | 10-nt gap `GGATCTGGAC` | Feldman's 17-nt padlock arm `ACTGGCTATTCATTCGC` (Addgene #127168) |
+| RT site | `CCTTTGGGCAAGCACACGTC` (C at 9) | `CCTTTGGGAAAGCACACGTC` (A at 9) |
+| RT primer | none ordered | `GACGTGTGCTTTCCCAAAGG`, with Feldman's LNA positions |
+| Barcode to CS1 | 30 nt | 37 nt; the ORF-to-barcode distance is unchanged |
+
+  Why an A at position 9 (RT site and the arm before it, primer3 at 50 mM Na⁺, no Mg²⁺):
+
+| Base 9 | Splice-donor motif | Hairpin with the arm | Added miRNA seed 7-mer | RT-site Tm |
+|---|---|---|---|---:|
+| T (Feldman) | `GGG·GTAAG`, in the packaged transcript | Tm 42.5 °C, ΔG −0.38 | none | 53.4 °C |
+| C (today) | none | `GGGC`/`GCCC` stem, Tm 62.2 °C, ΔG −2.13 | miR-636 | 56.7 °C |
+| A (proposed) | none | Tm 43.4 °C, ΔG −0.36 | none | 54.0 °C |
+
+  Feldman's own primer would bind the A site with one A:A mismatch, so the matched primer above
+  is ordered instead. The padlock then needs one new arm, on the barcode-proximal 15 nt of the
+  Tycko handle (`GTTAGCTGCCGTTCC`, 45.7 °C nearest-neighbor at 50 mM Na⁺, against 46.1 °C for
+  Feldman's RT-side arm); the handle itself does not change. Feldman's other arm
+  (`GTGTTCAATCAACATTCC`) is in no deposited plasmid map: it enters with his cloned barcode
   insert, so it is inferred, not shown, to sit directly 5′ of his barcode. It does not occur in
-  L1. Two designs:
+  L1. Seven-mers on the fixed flank that match human miRNA seeds remain: `ACTGGCT`
+  (miR-575/4676-5p), `CTATTCA` (miR-5585-3p), `CTTTGGG` (miR-186-3p) and `AAGCACA`
+  (miR-218-5p, broadly conserved), the last two present today as well. The flank carries no
+  `GT[AG]AG` and no BbsI, Esp3I or BsaI site, and the arm and the arm-plus-RT region occur
+  nowhere else in the backbone or the 2,735 L1 ORFs as a 15-mer. A draft map of one member
+  with the new flank is
+  [`p0039_AXL_vector_feldman3p_DRAFT.gb`](../p0039_AXL_vector_feldman3p_DRAFT.gb); it
+  differs from `p0039_AXL_vector.gb` only in this flank (+7 bp). Priming RT from CS1 instead
+  stays an alternative that needs no RT site at all, but it is untested: a PubMed and a
+  Consensus search (2026-11-08) found no published optical screen that uses a 10x capture
+  sequence as the in situ RT primer. In the proposed layout CS1 sits 37 nt from the barcode,
+  which does not affect 10x capture, since read 2 of the feature library starts from the
+  handle-side primer.
+- *The new junction changes which barcodes can be used.* Screening the s1e2 pool in its full
+  context (handle + barcode + flank + CS1 + shuttle) for BbsI, Esp3I and BsaI sites, splice-donor
+  motifs and conserved miRNA seed 7-mers that span either barcode junction:
 
-| | Fragment change | 5′ arm (on the Tycko handle) | RT-side arm |
-|---|---|---|---|
-| A | none | `GTTAGCTGCCGTTCC`, the handle's last 15 nt | the 10-nt gap is too short alone, so it runs 6 nt into the RT site (`GGATCTGGACCCTTTG`) and pairs with cDNA primed by the RT primer itself, which is untested and which Feldman's layout avoids |
-| B (proposed) | replace the 10-nt gap with Feldman's 17-nt arm; keep the C | as in A | Feldman's `ACTGGCTATTCATTCGC`, unchanged |
+| Flank | Barcodes passing (of 28,506) | Failing: seed across a junction / Type IIS / splice donor | Drawable at prefix distance 3 over 10 nt |
+|---|---:|---|---:|
+| Today | 23,807 | 4,339 / 88 / 272 | 3,856 |
+| Proposed | 21,394 | 6,911 / 201 / 0 | 3,741 |
+| Both (L1 draw rule until the flank is chosen) | 19,950 | 8,196 / 88 / 272 | 3,665 |
 
-  Under B only the 5′ arm is new, and it is Tm-matched to Feldman's arms (45.7 °C against his
-  46.1 and 43.5 °C, nearest-neighbor at 50 mM Na⁺). B adds 7 nt on the far side of the barcode,
-  which does not lengthen the ORF-to-barcode distance that drives template switching. Its
-  junctions are clean: no BbsI, Esp3I or BsaI site beyond the shuttle's own, no splice-donor
-  motif, and no Pumilio, AU-rich, CPEB, UGUA or poly(A) motif. The pool keeps 28,305 barcodes
-  through the junction screens (28,146 today). The new arm, the 5′ arm and the arm-plus-RT
-  region occur nowhere else in the backbone or the 2,735 L1 ORFs as a 15-mer (three ORFs carry
-  a 12-mer of the arm-plus-RT region, one a 12-mer of the 5′ arm). Adopting B is a change to the
-  synthesized fragment (question 6).
+  The proposal loses 3,857 barcodes that pass today and gains 1,444 that fail today, and still
+  leaves room for all 2,735 members under the prefix screen. The junction seed screen is
+  part of `reserve_barcodes.py`, which takes the 3′ flank as
+  `--three-prime {current,t9a-draft}` and reports these counts with `--pool-stats`. The
+  failure counts are by first reason only (enzyme, then splice donor, then seed), so a barcode
+  failing two screens is counted once.
+- *Two barcodes already assigned would fail the junction seed screen:* CNR1
+  (`GAGAGTAGTCAAGCACCAAG`, completing `AAGGGAT`) and TFRC (`TGTCTCTCTCAGCTTCTCTC`, completing
+  `GTTCCTG`). Both are kept as assigned (Becca, 2026-11-08); every new L1 barcode must pass the
+  screen.
+- *Until the 3′ flank is chosen, L1 barcodes must pass under both flanks*, so none has to be
+  redrawn whichever flank is adopted (`l1_screens_pass` in `reserve_barcodes.py`;
+  `--three-prime both`). That leaves 19,950 pool barcodes, of which 3,665 can be drawn at
+  prefix distance 3 over 10 nt, enough for all 2,735 members.
+- *A block of 3,200 barcodes is reserved for L1* in the shared barcode registry, drawn in pool
+  order under every screen in this section, under both flanks, plus an RNA-binding-protein motif
+  screen of the barcode and its junctions: no Pumilio element (`TGTA[ACT]ATA`), AU-rich element
+  (`ATTTA`), CPEB element (`TTTTAT`, `TTTTAAT`), poly(A) signal (`AATAAA`, `ATTAAA`) or pair of
+  CFIm25 sites (`TGTA`) within 50 nt ([`reserve_l1_block.py`](../reserve_l1_block.py),
+  [`l1_barcode_block_provisional.tsv`](../l1_barcode_block_provisional.tsv)). The block is
+  larger than L1 so that members added before the order draw from it; members receive their
+  barcodes when the order is frozen, and unused barcodes are released. 444 barcodes that meet
+  the same screens remain in the pool for other constructs.
 - *In situ sequencing reads only the first 9–12 bases.* Over the s1e2 pool, barcodes are unique
   over 20 nt but not over short prefixes, and drawing L1's barcodes at random would leave
   identical prefixes:
@@ -586,8 +680,7 @@ differ from ours:
 | 10 | 1,244 | always identical pairs | minimum distance 3 (corrects one error) |
 | 12 | 111 | identical pairs in 12 of 20 draws | minimum distance 4 |
 
-  L1's barcodes are not reserved yet, so reservation now applies a prefix-distance screen:
-  every barcode drawn stays at least 3 substitutions from every other barcode in use over its
+  L1's barcodes are drawn under a prefix-distance screen: every barcode drawn stays at least 3 substitutions from every other barcode in use over its
   first 10 bases, which corrects one in situ read error and which the pool satisfies for all
   2,735 members ([`barcode_prefix_screen.py`](../barcode_prefix_screen.py), tested in CI). It
   costs nothing for sequencing. This assumes the readout starts at the
@@ -608,13 +701,70 @@ present. One could be added inside the Esp3I-flanked unit in two places:
 | Placement | Effect | Scan of the junctions (BbsI, Esp3I, BsaI; splice donor `GT[AG]AG`) |
 |---|---|---|
 | Sense, between the stop and the Tycko handle | adds 20 nt between ORF and barcode, small against the distances that drive template switching; the in situ RNA is sense, so the RT site above still works | clean |
-| Antisense, after CS1, reading back across the barcode | adds no ORF–barcode distance; the in situ RNA is antisense, so RT needs a primer on the handle instead | no enzyme site, but the promoter core reads `GTGAG` in the Pol II transcript, a splice-donor motif inside the packaged genome |
+| Antisense, after CS1, reading back across the barcode | adds no ORF–barcode distance; the in situ RNA is antisense, so RT needs a primer on the handle instead | no enzyme site, but the promoter core reads `ATA·GTGAGT` in the Pol II transcript, a near-consensus splice donor that the `CTCAC` core makes unavoidable; a T3 promoter does the same |
 
-The sense placement is the clean one.
+The sense placement is the only clean one, at a cost of about 1% more template switching from
+the added 20 nt.
 
-## 10. Decisions we would like reviewers to weigh in on
+## 10. The vector: promoter and selection marker
 
-Questions 1, 2, 4 and 5 are choices already made that we want challenged; 3 and 6 are open. Everything
+Every member is built into one lentiviral vector, p0039, which runs
+`EFS promoter – insert – IRES2 – PuroR – WPRE` between the LTRs. The insert (Kozak, ORF with
+its tag cassette and stop, barcode and readout block) replaces a 195-bp cloning site and stuffer
+directly after the 212-bp EFS promoter. Two choices in that layout decide how strongly each member is
+expressed and which cells survive selection, and one of them is still open.
+
+**Selection is coupled to the ORF through the IRES.** Puromycin resistance is translated from
+the same transcript as the member, so a cell survives selection only if it transcribes the
+ORF. The layout follows from P-0008, a TfR1 construct with the same EFS–TFRC–tag unit but
+PuroR driven by its own SV40 promoter and no IRES, which gave puromycin-resistant cells with
+low TfR1 expression. A separate selection promoter lets a cell survive while transcribing the
+ORF poorly, and in a pooled screen those cells would read as members that fail to reach the
+surface. The cost of the IRES is that selection depends on the member's own transcript, so
+a member that is transcribed weakly is also selected weakly, and will be underrepresented
+after puromycin rather than present and dark.
+
+**EFS is the current promoter; EF1a is the alternative under consideration.** S5E11
+([README](../../../sprint5/s5e11-promoter-series/README.md)) compared promoters driving the
+TfR1–barcode–IRES2–mScarlet3–P2A–PuroR cassette in four cell types, 72 h after transduction and
+before puromycin. mScarlet3 sits after the IRES, so it reports how much bicistronic transcript a
+cell makes, not TfR1 display. Each point is one well per virus volume.
+
+| Readout | EFS (P-0003) | EF1a (P-0011) | PGK (P-0012) |
+|---|---|---|---|
+| Promoter length | 212 bp | 1,179 bp (includes intron A) | not used here |
+| mScarlet3 geometric mean of positive cells, relative to EFS at the same volume | 1 | 3.6–4.0× (HEK293T), 1.7–2.4× (HeLa), 1.7–2.2× (Nalm6) | 0.29–0.65× |
+| % mScarlet3-positive per µL virus, HEK293T (slope of a linear fit) | 1.24 | 1.03 | 0.71 |
+| Area covered by cells after 48 h puromycin, HEK293T at 35 µL, relative to no puromycin (one image each) | 65% | 87% | 32% |
+
+K562 has no EFS well, so it is left out of the ratio. Each cell type's positive gate is set on
+its own untransduced well, so ratios compare within a cell type only.
+
+Read together, EF1a does not transduce more cells, but the cells it does transduce make several
+times more transcript, and more of them survive puromycin. Under the IRES coupling above, that
+matters most for weakly transcribed members, which EFS may lose at selection. The costs of
+switching are specific:
+
+| Consideration | EFS | EF1a |
+|---|---|---|
+| Packaged genome | as in section 8 | 967 bp longer for every member; at the 2-fold per kb in section 8 that is roughly a 2-fold titer cost across the whole library, on top of the length spread between members |
+| Splicing | no intron | intron A sits upstream of every ORF; the splice-donor screen of the barcode region (section 9) was run against the EFS context only |
+| Type IIS sites | none of BbsI, Esp3I, BsaI | none of BbsI, Esp3I, BsaI (checked in the P-0011 map) |
+| Expression evidence | the promoter p003 was characterized with | mScarlet3 only; no surface-tag readout yet |
+
+**The promoter can change after the order.** Each insert is flanked by its own Esp3I sites (the
+shuttle enzyme, section 6), which leave `GACC` and `TCAG` overhangs, so the synthesized inserts can be moved into an EF1a
+destination with the same slot without resynthesis. What is fixed at synthesis is the vector
+the vendor builds them into first.
+
+**Still open.** S5E11 has not measured surface display of the tag, has one well per condition,
+and its day-7 post-selection readout is not yet analyzed. A side-by-side of a few library
+members of differing expression, EFS versus EF1a, scored for surface tag after selection, would
+decide whether the switch is worth the titer.
+
+## 11. Decisions we would like reviewers to weigh in on
+
+Questions 1, 2, 4 and 5 are choices already made that we want challenged; 3, 6 and 7 are open. Everything
 still being worked on before L1 is ordered is tracked, with its owner and status, in the
 accompanying [cover note](COVER_NOTE.md) and as issues on the review repository, so this brief
 can stay a description of the design.
@@ -622,25 +772,27 @@ can stay a description of the design.
 | # | Question | Why it matters | What would resolve it |
 |---:|---|---|---|
 | 1 | **MANE by default for the 111 disagreements.** | 82 have no distinguishing evidence either way; a different default would change their proteoform. | Reviewer view on the default, or targeted evidence for the 20 flagged genes. |
-| 2 | **N-terminal tagging at residue 1 for type III single-pass proteins** (62 members). | Rests on a topogenesis argument only: the single helix carries the whole orientation decision, and a 51-aa cassette changes the charge balance it reads. | A small panel testing N-terminal versus loop placement on type III proteins. |
-| 3 | **Five library genes with no intact copy in Ensembl 115** (FCGR2C, OR8J2, OR10AC1, OR52P1, OR4Q2; section 1). | They pass the gene filter but are absent from L1, so any per-gene coverage figure is 5 short. FCGR2C has a known intact (ORF) allele carried by a minority of people ([Breunis et al., 2007](https://pubmed.ncbi.nlm.nih.gov/17827395/)). | Build the intact UniProt allele by correcting the stop codons (FCGR2C, OR8J2) or the frameshifts, or record each as an exclusion. |
-| 4 | **Isoform and ortholog panels drawn from a 1,775-gene April pool** (section 4). | 418 mouse and 416 cyno orthologs, and 92 genes' isoforms, could never be drawn, so the panels say nothing about those genes' forms. | Reviewer view on keeping the panels as drawn (the current decision) versus rebuilding both universes over the 2,369 library genes and redrawing with the same seeds and strata, which would change many members. |
+| 2 | **N-terminal tagging at residue 1 for type III single-pass proteins** (59 members). | Rests on a topogenesis argument only: the single helix carries the whole orientation decision, and a 51-aa cassette changes the charge balance it reads. | A small panel testing N-terminal versus loop placement on type III proteins. |
+| 3 | **Five library genes with no intact copy in Ensembl 115** (FCGR2C, OR8J2, OR10AC1, OR52P1, OR4Q2; section 3). | They pass the gene filter but are absent from L1, so any per-gene coverage figure is 5 short. FCGR2C has a known intact (ORF) allele carried by a minority of people ([Breunis et al., 2007](https://pubmed.ncbi.nlm.nih.gov/17827395/)). | Build the intact UniProt allele by correcting the stop codons (FCGR2C, OR8J2) or the frameshifts, or record each as an exclusion. |
+| 4 | **Isoform panel drawn from a 1,775-gene April pool** (section 4). | The isoforms of 92 library genes could never be drawn, so the panel says nothing about those genes' forms. | Reviewer view on keeping the panel as drawn (the current decision) versus rebuilding the isoform universe over the 2,369 library genes and redrawing with the same seed and strata, which would change many members. |
 | 5 | **How strongly to weight the pool by length** (section 8). | The ordering plan is computed at Moon et al.'s 3.5-fold lower titer per kb (up to 110× more of the longest member than the median); Sweeney and Vink's data imply about 2-fold per kb over our 4.4–9.4-kb packaged range, and an overcorrection inverts the bias. | Whether the four-plasmid titer test planned before pooling (section 8) is enough to set the factor. |
-| 6 | **Whether the barcode region should change before it is ordered** (section 9). | The fragment supports 10x Feature Barcoding as designed. Optical pooled screening needs a new padlock and an RT primer matched to our site; replacing the 10-nt gap with Feldman's RT-side arm (option B) lets his arm transfer unchanged (the prefix-distance screen is now applied at barcode reservation); T7 in situ transcription needs a promoter, cleanly placed in sense. Each is cheap now and impossible after synthesis. | Which of these assays we should keep possible, and whether any of the three changes costs something we have not counted. |
+| 6 | **Whether the barcode region should change before it is ordered** (section 9). | The fragment supports 10x Feature Barcoding as designed. For optical pooled screening we propose replacing the 10-nt gap and RT site with Feldman's 17-nt padlock arm and his RT site with A at position 9 (no splice donor, no hairpin, a matched RT primer), which keeps room for all 2,735 barcodes under the prefix screen; T7 in situ transcription needs a promoter, cleanly placed only in sense. Each is cheap now and impossible after synthesis. | Whether to adopt the proposed 3′ flank, which of these assays to keep possible, and whether any change costs something we have not counted. |
+| 7 | **EFS or EF1a as the library promoter** (section 10). | Selection runs through the IRES, so a weakly transcribed member is also weakly selected; EF1a gave 1.7–4.0-fold more IRES-reporter signal than EFS but adds 967 bp, about a 2-fold titer cost, to every member. | Surface-tag readout after selection for a few members, EFS versus EF1a; or reviewer experience with either promoter for pooled ORF libraries. |
 
 ## Materials and provenance
 
 | Element | Location | Status |
 |---|---|---|
 | Full design record | [`../README.md`](../README.md) | committed |
-| Pipeline and verifier | [`../library_pipeline.py`](../library_pipeline.py) | committed; 15/15 stages reproduce 2026-11-05 |
+| Pipeline and verifier | [`../library_pipeline.py`](../library_pipeline.py) | committed; 16/16 stages reproduce 2026-11-10 |
 | Pinned-input manifests | `../library_pipeline_inputs.json`, `../reproduce_isoform_universe_inputs.json`, `scratch/becca/appris-principal/panel_inputs.json` | committed, SHA-256 per input |
 | Tag paths | `../l1_tag_paths.tsv`, [`../TAG_PATHS.md`](../TAG_PATHS.md) | committed |
 | Cassette encodings and swap risk | `../l1_cassette_encodings.tsv`, `../l1_swap_risk.tsv`, `../l1_swap_risk_summary.json` | committed |
 | Model-vs-protein check | `../proteoform_match.tsv` | committed |
-| Reviewer bundle | [`bundle_manifest.tsv`](bundle_manifest.tsv) (85 files, SHA-256 each) | shared in full as a dated release asset of the review repository (current: `bundle-2026-11-05-r6`) |
+| Reviewer bundle | [`bundle_manifest.tsv`](bundle_manifest.tsv) (336 files, SHA-256 and release each; [`pinned_releases.md`](pinned_releases.md)) | shared in full as a dated release asset of the review repository (current: `bundle-2026-11-10`, two tarballs: the files the replay reads, and the rest of every pinned release) |
 | Audited tag-site positives (S5E13 ranker) | `audit.tsv`, `gold_standard.tsv`, `failed_sites.tsv`, `added_sites.tsv`, `region_labels.tsv`, `corpus_audit_corpus.tsv` (paths in section 5) | in the reviewer bundle; audit is [PR 236](https://github.com/Deliverome-Project/deliverome-analysis/pull/236) |
 | Order plan: plate map, volumes, pooling weights | [`order_plan.py`](order_plan.py) → [`l1_order_plan.tsv`](l1_order_plan.tsv), [`l1_order_pooling_plates.tsv`](l1_order_pooling_plates.tsv), `l1_order_plan_summary.json` | committed; not yet sent to a vendor |
+| Promoter comparison (EFS, EF1a, PGK) | [`s5e11-promoter-series`](../../../sprint5/s5e11-promoter-series/README.md): `gmfi_fold_change.tsv`, `dose_response_fits.tsv`, `puro_survival.tsv` | committed; day-7 readout pending |
 | Numbers and figures in this brief | [`brief_numbers.py`](brief_numbers.py) → [`brief_numbers.json`](brief_numbers.json), `figures/` | committed |
 
 ## Decision log
@@ -650,9 +802,13 @@ can stay a description of the design.
 | 2026-11-02 | No external-facing summary of L1 | This brief and a credential-free reviewer package | External review of the design before ordering |
 | 2026-11-04 | Package shipped from the analysis repository | A private review repository with the full bundle as a release asset, internal inputs included | Reviewers need only this design's code; Becca approved sharing every bundled input |
 | 2026-11-04 | Order-blocking issues listed among the review questions | Moved to a separate cover note; the brief keeps three design questions | The brief describes the design; the cover note tracks work in progress and changes as issues close (Becca) |
-| 2026-11-07 | Barcode region described only for amplicon sequencing | Checked for optical pooled screening, 10x Feature Barcoding and T7 in situ transcription; prefix-distance screen (distance 3 over 10 bases) added to barcode reservation | Becca |
-| 2026-11-07 | Isoform gap described as 359 unexamined genes; one ortholog panel | All 451 isoform absences explained by the cohort rules; a CDS-gated Compara 116 ortholog redraw exists for review, not adopted | Becca |
-| 2026-11-07 | No ordering plan | Plates by insert length (order numbers `L1-O…`), 4 µg ordered / 3 µg assumed at 100 ng/µL in Addgene, three pooling and one backup plate sets; length-weighted pooling after Moon et al., with extra DNA for inserts over 4.3 kb | Becca |
+| 2026-11-10 | Ortholog panel drawn from the April 2026 pool with Compara 115 (seed 20261011 for both species); a CDS-gated Compara 116 redraw held for review; five plate sets (Addgene 15 µL, three 3-µL pools, backup) | The Compara 116 CDS-gated draw over all library genes adopted, with the 11 correspondence replacements and the 6 ambiguous forms kept as drawn (18 members kept, 126 moved from L2, 56 new, 182 retired); three plate sets (two 5-µL pools and a 20-µL stock), with DNA shown at 75 and 50 ng/µL as well; broken-genome genes moved to section 3; TRIFID defined | Becca: adopt the reviewed panel; plate volumes; the brief must read in order for a first-time reviewer |
+| 2026-11-10 | Gene gates and added tiers stated in summary; expression-rescue members named but not defined | Every gate states its exact rule; the three tiers carry their rules and gene counts (core 2,134, low-literature 139, screen-validated GPCR 85, overexpression surface 12); expression-rescue members defined in section 1; 3,200 L1 barcodes reserved provisionally | Becca: the brief must stand alone for a first-time reviewer |
+| 2026-11-10 | Vector layout and promoter not described | Section 10 records the IRES-coupled selection and the EFS-versus-EF1a comparison from S5E11; EFS kept for now, posed as reviewer question 7 | P-0008 (separate SV40-puro) gave low TfR1 expression; EF1a is brighter but longer (Becca) |
+| 2026-11-08 | Barcode 3′ flank: 10-nt gap + RT site with C at position 9; reservation screened enzymes and splice donors only | Proposed (draft): Feldman's 17-nt padlock arm + his RT site with A at position 9; reservation also rejects miRNA seeds across either barcode junction, and L1 barcodes must pass under both candidate flanks until one is chosen; CNR1 and TFRC keep their barcodes | Feldman's arm and primer then transfer unchanged, A avoids both the splice donor (T) and the arm hairpin (C); junction seeds are the one place a barcode screened alone can gain a site |
+| 2026-11-07 | Barcode region described only for amplicon sequencing | Checked for optical pooled screening, 10x Feature Barcoding and T7 in situ transcription; prefix-distance screen (distance 3 over 10 bases) added to barcode reservation | Keep optical pooled screening, 10x capture and in situ transcription possible before synthesis fixes the fragment |
+| 2026-11-07 | Isoform gap described as 359 unexamined genes; one ortholog panel | All 451 isoform absences explained by the cohort rules; a CDS-gated Compara 116 ortholog redraw exists for review, not adopted | Audits merged on main (#257, #262) |
+| 2026-11-07 | No ordering plan | Plates by insert length (order numbers `L1-O…`), 4 µg ordered / 3 µg assumed at 100 ng/µL in Addgene, three pooling and one backup plate sets; length-weighted pooling after Moon et al., with extra DNA for inserts over 4.3 kb | Becca's ordering plan; longer packaged genomes give lower titer |
 | 2026-11-05 | Panels described as drawn from library genes | Recorded as drawn from the April 2026 pool (1,775 of 2,369 genes), kept as drawn, and posed as reviewer question 4 | Becca: record the gap and keep the panels |
 | 2026-11-05 | 8 library genes without a member | KIR2DS4, OR12D1, OR5AL1 built from intact alternative-haplotype transcripts (`l1-p2740`–`l1-p2742`); 5 remain | Becca: the intact protein exists in Ensembl 115; the KIR2DS2/KIR2DS4 125-nt overlap accepted as a paralog pair |
 
@@ -661,6 +817,16 @@ can stay a description of the design.
 - [Moon et al., 2026](https://pubmed.ncbi.nlm.nih.gov/42031729/). A combinatorial domain
   screening platform reveals epigenetic effector interactions for transcriptional perturbation.
   Nat Commun 17. doi:10.1038/s41467-026-72227-9.
+- [Tedman et al., 2026](https://pubmed.ncbi.nlm.nih.gov/42736269/). Efficient experimental
+  characterization of the GPCRome via deep receptor scanning. Nat Commun 17.
+  doi:10.1038/s41467-026-76564-7.
+- [Andersson et al., 2003](https://pubmed.ncbi.nlm.nih.gov/12920192/). Membrane assembly of the
+  cannabinoid receptor 1: impact of a long N-terminal tail. Mol Pharmacol 64:570–577.
+  doi:10.1124/mol.64.3.570.
+- [Pozo et al., 2021](https://pubmed.ncbi.nlm.nih.gov/34046593/). Assessing the functional
+  relevance of splice isoforms. NAR Genom Bioinform 3:lqab044. doi:10.1093/nargab/lqab044.
+- [Rodriguez et al., 2022](https://pubmed.ncbi.nlm.nih.gov/34755885/). APPRIS: selecting
+  functionally important isoforms. Nucleic Acids Res 50:D54–D59. doi:10.1093/nar/gkab1058.
 - [Feldman et al., 2019](https://pubmed.ncbi.nlm.nih.gov/31626775/). Optical pooled screens in
   human cells. Cell 179:787–799. doi:10.1016/j.cell.2019.09.016.
 - [Replogle et al., 2020](https://pubmed.ncbi.nlm.nih.gov/32231336/). Combinatorial single-cell

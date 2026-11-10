@@ -12,6 +12,12 @@ dependencies = [
     "pyarrow>=16.0", # parquet reads from S3
     "numpy>=1.26",
     "scipy>=1.13",
+    # Supervised models + cross-validation. Used by the tag-site location
+    # classifier, which needs grouped CV (fold by gene, never by site) and
+    # tree ensembles that take NaN natively — a protein with no INDELi-E run
+    # has a genuinely missing feature, not a zero.
+    "scikit-learn>=1.5",
+    "xgboost>=2.1",
     "openpyxl>=3.1", # read vendor .xlsx deliverables (e.g. Syncell Microscoop) + reference tables
     # Gene-symbol resolution (MyGene.info) — canonicalizes symbols/aliases to
     # HGNC-approved symbol + Ensembl id, matching accessible-surfaceome's
@@ -88,6 +94,9 @@ dev = [
     "pytest>=8.0",
     "pytest-cov>=5.0",
     "pre-commit>=3.7",
+]
+domains = [
+    "pyhmmer>=0.12.3",
 ]
 flow = [
     "agentflow-cytometry",

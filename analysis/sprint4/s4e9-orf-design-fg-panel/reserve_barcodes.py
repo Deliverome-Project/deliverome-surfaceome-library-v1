@@ -54,7 +54,16 @@ POOL_KEY = "sprint1/s1e2-fragmid-vector-design/barcodes_20nt_30k.tsv"
 SPLICE_DONOR = re.compile(r"GT[AG]AG")
 # Trailing context a barcode actually sits in: reverse primer site, then the AG pad and
 # the inward-pointing Esp3I shuttle site (see shuttle.py).
-TRAILING = REV_PRIMER + CS1 + "AG" + "A" + "GAGACG"
+SHUTTLE_TAIL = "AG" + "A" + "GAGACG"
+TRAILING = REV_PRIMER + CS1 + SHUTTLE_TAIL
+#: DRAFT, not adopted (2026-11-08): Feldman's lentiGuide-BC RT-side padlock arm, then his
+#: RT site with T->A at position 9 (removes a GTAAG splice donor). See BRIEF.md section 9.
+#: REV_PRIMER is unchanged until this is adopted; pass it as ``three_prime`` to screen for it.
+FELDMAN_T9A_3PRIME = "ACTGGCTATTCATTCGC" + "CCTTTGGGAAAGCACACGTC"
+#: Human miRNA seed target sites (TargetScan 8.0, from the s1e2 barcode design). Junction
+#: 7-mers are screened against the conserved and broadly conserved families.
+SEED_TSV = HERE.parents[1] / "sprint1/s1e2-fragmid-vector-design/mirna_seed_sites.tsv"
+SEED_TIERS = frozenset({"broadly_conserved", "conserved"})
 
 # Constructs needing a barcode, in the order they get P-numbers.
 CONSTRUCTS = [
@@ -174,8 +183,46 @@ def read_registry() -> tuple[set[str], set[int], list[str], set[tuple[str, str]]
     return used_bc, used_ix, sorted(skipped), done, used_p
 
 
-def screens_pass(bc: str) -> tuple[bool, str]:
-    context = FWD_PRIMER + bc + TRAILING
+def load_junction_seeds(tiers: frozenset[str] = SEED_TIERS) -> frozenset[str]:
+    """Human miRNA 7mer-m8 target sites (DNA, transcript sense) in the given TargetScan tiers."""
+    out = set()
+    with SEED_TSV.open() as fh:
+        for line in fh:
+            if line.startswith("#") or line.startswith("target_site"):
+                continue
+            p = line.rstrip("\n").split("\t")
+            if len(p) >= 3 and p[2] in tiers:
+                out.add(p[0])
+    return frozenset(out)
+
+
+_SEEDS = load_junction_seeds()
+
+
+def junction_seed_hits(bc: str, three_prime: str = REV_PRIMER, seeds=None) -> list[str]:
+    """Seed 7-mers that span a barcode junction: handle|barcode or barcode|3' flank.
+
+    The s1e2 generator screened each barcode for seeds on its own, so a site can only be
+    new where the barcode meets its fixed flanks. Only windows holding bases from both
+    sides of a junction are checked.
+    """
+    seeds = _SEEDS if seeds is None else seeds
+    k = 7
+    hits = []
+    left = FWD_PRIMER[-(k - 1) :] + bc[: k - 1]
+    right = bc[-(k - 1) :] + three_prime[: k - 1]
+    for side in (left, right):
+        hits += [side[i : i + k] for i in range(len(side) - k + 1) if side[i : i + k] in seeds]
+    return hits
+
+
+def screens_pass(bc: str, three_prime: str = REV_PRIMER) -> tuple[bool, str]:
+    """Boundary enzymes, splice donor and junction miRNA seeds, in the barcode's real context.
+
+    ``three_prime`` is the fixed sequence from the barcode's 3' end up to CS1: today's
+    ``REV_PRIMER`` (10-nt gap + RT site) or a candidate such as ``FELDMAN_T9A_3PRIME``.
+    """
+    context = FWD_PRIMER + bc + three_prime + CS1 + SHUTTLE_TAIL
     sites = seqtools.find_sites(context, ENZYMES)
     # the shuttle's own Esp3I site is expected; anything else is a boundary-enzyme hit
     extra = [s for s in sites if s[0] != "Esp3I"] + [
@@ -185,6 +232,9 @@ def screens_pass(bc: str) -> tuple[bool, str]:
         return False, f"boundary enzyme {extra}"
     if SPLICE_DONOR.search(context):
         return False, f"splice donor {SPLICE_DONOR.search(context).group(0)}"
+    seeds = junction_seed_hits(bc, three_prime)
+    if seeds:
+        return False, f"junction miRNA seed {','.join(seeds)}"
     return True, ""
 
 
@@ -229,6 +279,58 @@ def _locally_assigned() -> tuple[set[tuple[str, str]], set[str]]:
     return done, bcs
 
 
+FAIL_REASONS = ("boundary enzyme", "splice donor", "junction miRNA seed")
+THREE_PRIME_FLANKS = {
+    "current": (REV_PRIMER,),
+    "t9a-draft": (FELDMAN_T9A_3PRIME,),
+    "both": (REV_PRIMER, FELDMAN_T9A_3PRIME),
+}
+#: L1 library barcodes must pass every screen, junction miRNA seeds included, under BOTH
+#: candidate 3' flanks until the flank is chosen (Becca, 2026-11-08), so that no barcode
+#: has to be redrawn whichever flank is adopted. The L1 allocator (review issue #1) must
+#: screen with ``l1_screens_pass``.
+L1_DRAW_FLANKS = THREE_PRIME_FLANKS["both"]
+
+
+def screens_pass_flanks(bc: str, flanks: tuple[str, ...]) -> tuple[bool, str]:
+    """``screens_pass`` under every flank in ``flanks``; the first failure is reported."""
+    for three_prime in flanks:
+        ok, why = screens_pass(bc, three_prime)
+        if not ok:
+            return ok, why
+    return True, ""
+
+
+def l1_screens_pass(bc: str) -> tuple[bool, str]:
+    """The L1 library draw rule: pass under both candidate 3' flanks."""
+    return screens_pass_flanks(bc, L1_DRAW_FLANKS)
+
+
+def pool_stats(flanks: tuple[str, ...], label: str) -> int:
+    """Pass/fail counts of the whole pool, and how many the prefix screen can then draw."""
+    rows = csv.DictReader(Path(processed.download(POOL_KEY)).open(), delimiter="\t")
+    pool = sorted((int(r["index"]), r["barcode"].strip().upper()) for r in rows if r.get("index"))
+    reasons: dict[str, int] = {}
+    passing = []
+    for _idx, bc in pool:
+        ok, why = screens_pass_flanks(bc, flanks)
+        if ok:
+            passing.append(bc)
+        else:
+            key = next(r for r in FAIL_REASONS if why.startswith(r))
+            reasons[key] = reasons.get(key, 0) + 1
+    prefix = PrefixScreen()
+    drawable = sum(prefix.try_accept(bc) for bc in passing)
+    print(f"3' flank {label}: {len(passing):,} of {len(pool):,} pool barcodes pass")
+    for k, v in sorted(reasons.items()):
+        print(f"  fail, {k}: {v:,}")
+    print(
+        f"  drawable under the prefix screen ({prefix.min_distance} over {prefix.bases} nt): "
+        f"{drawable:,}"
+    )
+    return 0
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--out-dir", type=Path, default=HERE)
@@ -238,7 +340,24 @@ def main(argv=None) -> int:
         help="draw and screen but write nothing. This allocator was one-shot with no way "
         "to look first, which is why it was never safe to run against a stale target list.",
     )
+    ap.add_argument(
+        "--three-prime",
+        choices=sorted(THREE_PRIME_FLANKS),
+        default="current",
+        help="fixed 3' flank(s) to screen barcodes against: today's REV_PRIMER, the T9A "
+        "draft, or both (the L1 draw rule until the flank is chosen)",
+    )
+    ap.add_argument(
+        "--pool-stats",
+        action="store_true",
+        help="screen the whole s1e2 pool against the chosen flank, print pass and fail "
+        "counts by reason, and exit without drawing anything",
+    )
     args = ap.parse_args(argv)
+    flanks = THREE_PRIME_FLANKS[args.three_prime]
+
+    if args.pool_stats:
+        return pool_stats(flanks, args.three_prime)
 
     used_bc, used_ix, skipped, done, used_p = read_registry()
     # A construct already assigned in one of this folder's barcode tables is DONE, even
@@ -288,7 +407,7 @@ def main(argv=None) -> int:
         bc = pool[idx]
         if bc in used_bc:
             continue
-        ok, why = screens_pass(bc)
+        ok, why = screens_pass_flanks(bc, flanks)
         if not ok:
             rejected.append((idx, bc, why))
             continue

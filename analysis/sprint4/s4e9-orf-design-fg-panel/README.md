@@ -407,7 +407,8 @@ The ortholog panel is 200 and the isoform panel 150 — 192 and 137 genes respec
 | Panel | Members | Composition | Key |
 |---|---|---|---|
 | Isoforms | 150 | 100 observed + 50 prediction-only; type I 61, multipass 51, type II 17, GPI 16, type III 5 | `library-design/isoform_panel.tsv` |
-| Orthologs, current manifest | 200 | mouse 100 + cyno 100, split near/diverged at 50 per band, seed 20261011, minimum floors on type III, GPI and type II; type I 66, multipass 72, GPI 28, type II 26, type III 8 | `library-design/ortholog_panel.tsv` |
+| Orthologs, L1 (adopted 2026-11-10) | 200 | the CDS-eligible Compara 116 draw with 11 correspondence replacements; see "The L1 ortholog panel" below | `ortholog_panel_adopted.tsv` |
+| Orthologs, original draw (retired from L1) | 200 | mouse 100 + cyno 100, split near/diverged at 50 per band, seed 20261011, minimum floors on type III, GPI and type II; type I 66, multipass 72, GPI 28, type II 26, type III 8 | `library-design/ortholog_panel.tsv` |
 | Ortholog replacement, Compara 116 | 200 | same seed, species/band sizes and class floors; type I 54, multipass 81, GPI 28, type II 28, type III 9 | `ortholog_panel_compara116.tsv` |
 
 **The recorded ortholog panel draws from April's gene set.** Its pool uses
@@ -445,7 +446,80 @@ The [CDS eligibility review](ORTHOLOG_CDS_POLICY.md) gates the full transcript p
 before protein ranking and supplies a 200-member review panel with verified native
 CDSs and no pending predictions. Its [panel-change ledger](ortholog_cds_panel_changes.tsv)
 distinguishes the full redraw from sequence correction. The policy and prediction
-records are saved; activation and construct regeneration remain separate decisions.
+records are saved. A [correspondence review](ORTHOLOG_CORRESPONDENCE_REVIEW.md) compares
+every panel form with its human library protein (signal peptide, TM helices, topology, GPI,
+Pfam domains): 183 forms keep the human architecture, 11 lack a human feature and 6 need a
+decision. The reviewed panel is the L1 ortholog panel (next section).
+
+### The L1 ortholog panel
+
+The L1 ortholog panel is the CDS-eligible draw (`ortholog_panel_cds_eligible.tsv`) with
+each form the correspondence review recommends replacing swapped for its proposed
+replacement, the first architecture-conserving form after the drawn ones in the same
+species, band and human topology class. The six forms the review asks about are kept as
+drawn: none is shown to lose a human feature (Becca, 2026-11-10;
+`ortholog_panel_adoption_judgements.tsv`).
+
+| Replaced form | Missing human feature | Replacement |
+|---|---|---|
+| cyno ADGRB2 | one TSP_1 repeat (55-residue deletion) | cyno MRGPRX3 |
+| cyno MS4A10 | TM1 (40-residue deletion) | cyno CCR5 |
+| cyno SLC8A1 | TM6–TM10 and `Na_Ca_ex` (C-terminal truncation) | cyno MRGPRX4 |
+| cyno TMEM67 | TM2 (33-residue deletion) | cyno GPR78 |
+| cyno FLT4 | second Ig domain (47-residue insertion) | cyno CSF2RB |
+| cyno IL31RA | signal peptide, `IL6Ra-bind`, first `fn3` | cyno CD84 |
+| cyno IL6R | signal peptide (internal after an N-terminal extension) | cyno AMIGO3 |
+| cyno ITGA10 | signal peptide (N-terminal extension) | cyno TNFRSF10B |
+| cyno NFASC | signal peptide, N-terminal orientation | cyno NCR1 |
+| mouse ADGRE5 | one `EGF_CA` domain | mouse AVPR1B |
+| mouse BTLA | the Ig domain | mouse IL15RA |
+
+Kept as drawn: cyno MARCO and mouse OR10G6, TMIGD1, IGSF1, TMPRSS7 and CACHD1.
+
+Every form is built from its exact pinned CDS: the archived final-v2 `selected_cds.json.gz`
+for a drawn form, and the final-v2 eligibility ledger's chosen encoding for a replacement.
+Each CDS translates to the panel's protein hash. `adopt_ortholog_cds_policy.py` reconciles
+members on the designed protein, with ids never renumbered:
+
+| Form's protein | Members | Action |
+|---|---:|---|
+| an active L1 ortholog's, identical CDS | 18 | keeps its id |
+| an active L2 ortholog's, identical CDS | 126 | new L1 id; L2 row retired `moved_to:<id>` |
+| no member's | 56 | new L1 id, built from the pinned CDS |
+| (old L1 ortholog not in the panel) | 182 | retired `dropped_from_panel:ortholog_cds_policy` |
+
+The 182 new ids are `l1-p2932`–`l1-p3113`, above the 189 ids the never-activated first
+Compara 116 panel reserved (`compara116_id_allocations.tsv`). An identical protein whose
+recorded CDS differs would stop the run; none does. Eight moved members carry a different
+transcript id in their record for the same DNA. L2 keeps its other 2,451 active orthologs:
+the policy governs the L1 draw, and 42 of their CDSs would not pass its automatic gate
+(39 need review, 3 fail source integrity) while 20 are absent from the Compara 116 ledger.
+
+The designed-CDS and construct records are append-only: the new records
+(`library-candidates/2026-11-10-ortholog-cds-policy/`, named by `library_design.CDS_KEY`
+and `CONSTRUCTS_KEY`) hold every earlier entry unchanged plus the 56 new forms; their
+p0039 vectors are in `added_vectors.fasta` there. Topology comes from the
+`2026-11-06-ortholog-cds-policy` snapshot (`topology.SNAPSHOT_KEY`), which keeps all
+71,316 rows of the 2026-11-01 snapshot. Every active L1 member has a v1 row; no existing
+L1 member's match changed, and 166 L2 orthologs gained one. The 25 new C-terminal members
+got linker encodings in issue batch 3; the 28 retired members that hold an encoding keep
+it, and batch 3 is drawn around them.
+
+| After adoption | Value |
+|---|---:|
+| Active L1 members (reference 2,360, isoform 150, ortholog 100 mouse + 100 cyno, rescue 25) | 2,735 |
+| … with a designed CDS | 2,710 |
+| Active L2 members (ortholog 2,451, isoform 1,678, giant truncation 24) | 4,153 |
+| C-terminal members | 215 |
+| Internal-site members | 571 |
+| Members over the 100-nt swap bar | 255 |
+| New members with an identical AlphaFold model | 116 of 182 |
+| New members whose AlphaFold model is a different protein | 5 (same length, 1–few residues) |
+| New members without any model | 61, not yet folded |
+
+The 61 new members without a model block `tests/test_library_structure_coverage.py` until
+they are folded with ColabFold (`scripts/fold_missing_structures_modal.py`, about 4 GPU-hours
+at the L1 rate), which needs a spending decision.
 
 The replacement gene-level pool uses the union of the human, mouse and cynomolgus
 Compara 116 protein homology dumps, read in both orientations. Ensembl documents each
@@ -841,13 +915,14 @@ uv run --locked python library_pipeline.py verify --stage gene_list  # one stage
 | 2 | GPI set | which forms are GPI-anchored (NetGPI 1.1 per form ∪ curation) | byte for byte |
 | 3 | reference | each gene's reference proteoform | byte for byte |
 | 4 | isoform universe → cohorts | every alternate form, its evidence, and its cohort tier | every intermediate summary exactly; `isoform_cohorts.tsv` row for row (see below) |
-| 5 | ortholog repick | each gene's mouse and cyno proteoform | byte for byte |
+| 5 | ortholog repick | each gene's mouse and cyno proteoform in the April pool (source of L2 orthologs) | byte for byte |
 | 5b | universe coverage | which library genes the isoform and ortholog universes could draw from | every recorded ortholog pair is 1:1 high-confidence in Compara 115; coverage table byte for byte (see below) |
-| 6 | panels | the 150-isoform and 200-ortholog draws | byte for byte (original draw and rule-based redraw) |
+| 6 | panels | the 150-isoform draw and the original 200-ortholog draw (retired from L1) | byte for byte (original draw and rule-based redraw) |
+| 6b | ortholog adoption | the L1 ortholog panel: CDS-eligible draw, review swaps, member map | final-v2 draw replays to the panel; adopted panel, member map, manifest and appended CDS/construct records byte for byte |
 | 7 | rescue arms | 25 expression-rescue arms, their CDS and constructs | byte for byte |
 | 8 | giants | truncations of oversized genes and their ORFs | byte for byte |
-| 9 | candidate CDS | each candidate's designed CDS | all 7,017 recorded CDS |
-| 10 | constructs | domesticated ORFs and p0039 vectors | all 7,017 ORFs and 7,066 vectors (about 30 s) |
+| 9 | candidate CDS | each candidate's designed CDS | all 7,020 resolver-recorded CDS; current record = those + 56 appended |
+| 10 | constructs | domesticated ORFs and p0039 vectors | all 7,076 ORFs and 7,125 vectors (about 30 s) |
 | 11 | tranches | L1/L2 membership; duplicate proteins retired | no two active members share a protein |
 | 12 | topology | DeepTMHMM v1 per designed protein | every active member has one |
 | 13 | tag paths | each member's placement rung | byte for byte |
@@ -867,7 +942,7 @@ Each step runs from these pinned sources:
 | PeptideAtlas | Human build 607, replayed in the original query batches | 3, 4 |
 | GENCODE Ribo-seq ORFs | phase 1 all; phase 2 primary and comprehensive | 3 |
 | Expression | deliverome-internal TPM table at 5a1416ea; S1E3 re-derivation 2026-08-04; MyGene responses of 2026-11-02 | 1 |
-| DeepTMHMM | 1.0.24 (v1), topology snapshot 2026-11-01 | 4, 12, 13 |
+| DeepTMHMM | 1.0.24 and 1.0 academic (v1), topology snapshot 2026-11-06-ortholog-cds-policy | 4, 12, 13 |
 | NetGPI | 1.1 predictions (committed) | 2, 5 |
 | Tedman 2025 GPCR screen | supplementary table, 2025-09-19 | 7 |
 
@@ -1037,6 +1112,7 @@ transcript and remain without a member.
 | 2026-11-04 | 13 designed CDSs ended on a sense codon: the Ensembl 115 record has no stop (l1-p1054..1056 KIR2DL5A, KIR2DS2, KIR2DS5; L2 l2-p0846 KIR2DS2 isoform and nine cyno orthologs) | `resolve_candidate_cds.py` appends TAA when the record ends without a stop and marks the entry `stop_added`; orf_nt, vector_bp and insert_nt grow by 3 for those rows. Proteins and domestication edits are unchanged | Becca. Without a stop the ORF reads through into the vector. TAA is the stop the C-terminal constructs already use; the native codon cannot be read from the pinned inputs (four KIR records sit on alternate-haplotype scaffolds the primary GTF omits). Previous S3 versions: candidate_cds.json `ftYKdsVZYDD8M49CEt4rDJMn.x.QmKkn`, candidate_constructs.json `Nkbr70dq6lfjWkb.ASYGWZpU8yRocj_Y`. Found by the N-terminal reviewer package's frame check |
 | 2026-11-05 | Ortholog panel described as drawn from library genes with an ortholog | Recorded as drawn from the April 2026 `surfaceome_expressed` query set (1,775 of 2,369 library genes); coverage measured against Compara 115 by `check_universe_coverage.py` | Becca: record the gap and keep the panels. The 418 mouse / 416 cyno eligible genes were never queried because later Compara pulls went to D1, not to the f9c73691 files the universes read; every recorded pair is one-to-one high-confidence in Compara 115 |
 | 2026-11-05 | Keep the current ortholog panel while documenting its restricted pool | Rebuild ortholog eligibility over all 2,369 current library genes using Compara 116, then redraw with the existing seed and strata after proteoform/topology checks | Becca clarifies that keeping the panel is temporary, and requests the latest Compara release even when newer than 115. The old panel is not the final choice. |
+| 2026-11-10 | L1 ortholog panel drawn from the April Compara 115 pool; CDS-eligible Compara 116 panel held for review | CDS-eligible panel adopted into L1 with the 11 correspondence replacements; 6 asks kept as drawn; 18 members kept, 126 moved from L2, 56 new (`l1-p2932`–`l1-p3113`), 182 retired; CDS/construct records and topology snapshot versioned | Becca: adopt the reviewed panel. A replaced form lacks a human feature the assay depends on; an ask shows no lost feature |
 | 2026-10-13 | Walton ≤100 bp tract bar applied library-wide | Bar applies to the pool and the shared cassette, not to isoforms and orthologs | Median canonical-isoform overlap is 1,071 nt with zero of 2,150 pairs under the bar; applying it would remove the panels entirely |
 
 ## Provenance

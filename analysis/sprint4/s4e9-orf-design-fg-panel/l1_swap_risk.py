@@ -29,9 +29,10 @@ Three schemes for the C-terminal cassette are measured on the same members:
     SpyTag003 and P-ALFA-P held on p003's codons; only the four GGGGS blocks vary
     (Becca, 2026-10-29). The issued encodings are written to ``l1_cassette_encodings.tsv``.
 
-Members come from ``candidate_manifest_tranches.tsv`` (retired duplicates excluded, see
+Members come from ``candidate_manifest_tranches.tsv`` (retired members excluded, see
 ``dedupe_l1_members.py``), placement from ``l1_tag_paths.tsv``, sequence from the designed
-CDS on S3.
+CDS on S3. A retired member keeps the encoding it was issued: it stays in
+``l1_cassette_encodings.tsv``, new batches are drawn around it, and it is not measured.
 
     uv run --locked python l1_swap_risk.py
 """
@@ -122,34 +123,66 @@ def domesticate_junction(body: str) -> tuple[str, str]:
     raise SystemExit(f"no synonymous last codon clears the cassette junction for ...{body[-9:]}")
 
 
-def load_members() -> tuple[list[dict], list[str]]:
+def load_members(with_retired_holders: bool = False) -> tuple[list[dict], list[str]]:
     """Members with a placement, and the ids of active members that have none yet.
 
     A member with no DeepTMHMM v1 topology has no tag path, so whether its cassette sits
     before the barcode is unknown; it is reported, not guessed.
+
+    ``with_retired_holders`` adds every retired member that holds an issued encoding, as a
+    C-terminal member (``retired``: True), in its manifest position. Those encodings stay
+    issued -- an issued encoding is never redrawn or handed to another member -- so a new
+    batch is drawn around them and a replay of an earlier batch needs their flanks.
+    Measurements (``l1_swap_risk.tsv``) are over active members only.
     """
     proteins = ld.designed_proteins(MANIFEST, library=ld.LIBRARY_L1)
     keys = set(proteins)
     cds = ld.designed_cds(MANIFEST, library=ld.LIBRARY_L1)
+    paths = {r["candidate_id"]: r for r in csv.DictReader(TAG_PATHS.open(), delimiter="\t")}
+    holders: dict[str, str] = {}
+    if with_retired_holders:
+        issued = issued_batches()
+        record = ld.load_designed_cds()
+        for r in csv.DictReader(MANIFEST.open(), delimiter="\t"):
+            if (
+                r["library"] == ld.LIBRARY_L1
+                and not ld.is_active(r)
+                and r["candidate_id"] in issued
+            ):
+                holders[r["candidate_id"]] = record[r["key"]]["cds"]
+    order = [
+        r["candidate_id"]
+        for r in csv.DictReader(MANIFEST.open(), delimiter="\t")
+        if r["library"] == ld.LIBRARY_L1
+    ]
     out = []
-    for r in csv.DictReader(TAG_PATHS.open(), delimiter="\t"):
-        cid = r["candidate_id"]
-        if cid not in keys:
+    for cid in order:
+        if cid in holders:
+            seq, gene, cset, placement = holders[cid], "", "retired", "C-terminal"
+        elif cid in keys and cid in paths:
+            r = paths[cid]
+            seq, gene, cset, placement = (
+                cds[cid],
+                r["gene_symbol"],
+                r["candidate_set"],
+                r["placement"],
+            )
+        else:
             continue
-        seq = cds[cid]
         body = seq[:-3] if seqtools.translate(seq[-3:]) == "*" else seq
         edit = ""
-        if r["placement"] == "C-terminal":
+        if placement == "C-terminal":
             body, edit = domesticate_junction(body)
         out.append(
             {
                 "id": cid,
-                "gene": r["gene_symbol"],
-                "set": r["candidate_set"],
-                "placement": r["placement"],
-                "cterm": r["placement"] == "C-terminal",
+                "gene": gene,
+                "set": cset,
+                "placement": placement,
+                "cterm": placement == "C-terminal",
                 "body": body,
                 "junction_edit": edit,
+                "retired": cid in holders,
             }
         )
     return out, sorted(keys - {m["id"] for m in out})
@@ -241,11 +274,15 @@ def summarize(members: list[dict], upstream: list[str]) -> tuple[dict, np.ndarra
 
 def verify_issuance() -> str:
     """Replay every issued batch from scratch and require the recorded encodings back."""
-    members, _ = load_members()
+    members, _ = load_members(with_retired_holders=True)
     tag_fixed = seqtools.pin_codons(CASSETTE, CASSETTE_AA, TAG_SEGMENTS)
     batches = issued_batches()
     cterm = {m["id"] for m in members if m["cterm"]}
     missing = sorted(cterm - set(batches))
+    stale = sorted(set(batches) - cterm)
+    assert not stale, (
+        f"issued encodings held by neither a C-terminal nor a retired member: {stale[:5]}"
+    )
     assert not missing, f"C-terminal members with no issued encoding: {missing[:5]}"
     for k in sorted({b for _, b in batches.values()}):
         upto = {cid for cid, (_, b) in batches.items() if b <= k}
@@ -273,7 +310,8 @@ def main(argv=None) -> int:
         print(verify_issuance())
         return 0
 
-    members, unplaced = load_members()
+    everyone, unplaced = load_members(with_retired_holders=True)
+    members = [m for m in everyone if not m["retired"]]
     if unplaced:
         print(f"{len(unplaced)} active member(s) have no tag path and are not measured: {unplaced}")
     tag_fixed = seqtools.pin_codons(CASSETTE, CASSETTE_AA, TAG_SEGMENTS)
@@ -297,11 +335,16 @@ def main(argv=None) -> int:
         report[f"{name}_draw"] = note
         if whole:
             scenarios[name] = {k: v.sequence for k, v in whole.variants.items()}
-    linkers, note = draw(members, fixed=tag_fixed, identity=LINKER_ONLY_JUNCTION_IDENTITY, pin=True)
+    # Drawn around every issued encoding, a retired member's included, and pinned: only
+    # members without one get a new encoding, in a new batch.
+    linkers, note = draw(
+        everyone, fixed=tag_fixed, identity=LINKER_ONLY_JUNCTION_IDENTITY, pin=True
+    )
     report["linkers_only_draw"] = note
     if not linkers:
         raise SystemExit(f"linkers-only draw failed: {note}")
-    scenarios["linkers_only"] = {k: v.sequence for k, v in linkers.variants.items()}
+    issued_all = {k: v.sequence for k, v in linkers.variants.items()}
+    scenarios["linkers_only"] = {m["id"]: issued_all[m["id"]] for m in members if m["cterm"]}
     report["linkers_only_audit"] = linkers.audit()
 
     per_member: dict[str, tuple[np.ndarray, np.ndarray]] = {}
@@ -341,8 +384,8 @@ def main(argv=None) -> int:
     with ENCODINGS.open("w", newline="") as fh:
         w = csv.writer(fh, delimiter="\t", lineterminator="\n")
         w.writerow(["candidate_id", "scheme", "cassette_aa", "cassette_nt", "gc", "issued_batch"])
-        for cid in sorted(scenarios["linkers_only"]):
-            dna = scenarios["linkers_only"][cid]
+        for cid in sorted(issued_all):
+            dna = issued_all[cid]
             assert seqtools.translate(dna) == CASSETTE_AA
             assert all(dna[3 * i : 3 * i + 3] == c for i, c in tag_fixed.items())
             batch = batches[cid][1] if cid in batches else new_batch

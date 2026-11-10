@@ -47,12 +47,18 @@ def main() -> int:
     )
     # A gap that turned out not to be one: the accession resolved on a second look, so there
     # is nothing to fold. Keeping these explicit stops them reading as unfinished work.
+    # The list only ever shrinks here: an unfolded member is a gap until someone records,
+    # by hand in the previous baseline, that it needs no fold. Deriving it afresh would file
+    # every newly added member without a model as "no fold needed" and pass the fold test
+    # with the gap open (2026-11-10, 61 new ortholog members).
+    previous = json.loads(OUT.read_text())["l1"]["no_fold_needed"] if OUT.exists() else []
     no_fold_needed = sorted(
         {
             r["accession"]
             for r in l1
             if not truthy(r["has_alphafold"]) and r["accession"] and r["accession"] not in folded
         }
+        & set(previous)
     )
 
     baseline = {

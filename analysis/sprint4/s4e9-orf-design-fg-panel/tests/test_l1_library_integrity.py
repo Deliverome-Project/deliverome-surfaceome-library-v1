@@ -135,7 +135,14 @@ def test_every_c_terminal_member_has_exactly_one_issued_encoding(encodings):
     cterm = {r["candidate_id"] for r in _tsv("l1_tag_paths.tsv") if r["placement"] == "C-terminal"}
     issued = [r["candidate_id"] for r in encodings]
     assert len(issued) == len(set(issued)), "a member was issued two encodings"
-    assert set(issued) == cterm
+    assert cterm <= set(issued), f"C-terminal members without an encoding: {cterm - set(issued)}"
+    # An issued encoding stays with the member it was issued to, even once that member is
+    # retired (it is never redrawn or handed on); every other holder must be retired.
+    retired = {
+        r["candidate_id"] for r in _tsv("candidate_manifest_tranches.tsv") if r["retired_reason"]
+    }
+    stray = set(issued) - cterm - retired
+    assert not stray, f"encodings held by members that are neither C-terminal nor retired: {stray}"
 
 
 def test_no_issued_encoding_carries_a_type_iis_site(encodings):

@@ -50,14 +50,19 @@ def sha256(path: Path) -> str:
 
 
 def check_bundle(bundle: Path) -> int:
-    """Every manifest row present with its recorded hash; returns the file count."""
+    """Every file the replay reads present with its recorded hash; returns the file count.
+
+    Rows marked ``read_by_replay = no`` are the rest of the pinned releases, shipped as a
+    separate supplement tarball; they are checked when present and not required.
+    """
     with MANIFEST.open() as fh:
         rows = list(csv.DictReader(fh, delimiter="\t"))
     bad = []
     for r in rows:
         path = bundle / "s3" / r["bucket"] / r["key"]
         if not path.is_file():
-            bad.append(f"missing  {r['bucket']}://{r['key']}")
+            if r.get("read_by_replay", "yes") == "yes":
+                bad.append(f"missing  {r['bucket']}://{r['key']}")
         elif sha256(path) != r["sha256"]:
             bad.append(f"changed  {r['bucket']}://{r['key']}")
     if bad:

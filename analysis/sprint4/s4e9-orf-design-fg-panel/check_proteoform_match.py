@@ -33,13 +33,14 @@ import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
+from deliverome_analysis import library_design as ld
 from deliverome_analysis import seqtools
 from deliverome_analysis.s3 import processed
 
 HERE = Path(__file__).parent
 GAP = HERE / "l1_structure_gap.tsv"
 MANIFEST = HERE / "candidate_manifest_tranches.tsv"
-CDS_KEY = "sprint4/s4e9-orf-design-fg-panel/library-candidates/candidate_cds.json"
+CDS_KEY = ld.CDS_KEY
 OUT = HERE / "proteoform_match.tsv"
 WORKERS = 12
 
@@ -67,7 +68,16 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--set", dest="which", default=None)
     ap.add_argument("--out", type=Path, default=OUT)
+    ap.add_argument(
+        "--new-only",
+        action="store_true",
+        help="compare only candidates the existing table lacks, and keep its recorded rows",
+    )
     args = ap.parse_args(argv)
+    kept = []
+    if args.new_only and args.out.exists():
+        kept = list(csv.DictReader(args.out.open(), delimiter="\t"))
+    known = {r["candidate_id"] for r in kept}
 
     cds = json.load(open(processed.download(CDS_KEY)))
     man = {r["candidate_id"]: r for r in csv.DictReader(MANIFEST.open(), delimiter="\t")}
@@ -76,6 +86,7 @@ def main(argv=None) -> int:
         for r in csv.DictReader(GAP.open(), delimiter="\t")
         if r["has_alphafold"] in ("True", "true", "1")
         and (args.which is None or r["set"] == args.which)
+        and r["candidate_id"] not in known
     ]
     print(f"checking {len(rows)} L1 candidate(s) that have a model, residue-exact")
 
@@ -104,6 +115,7 @@ def main(argv=None) -> int:
             }
         )
 
+    out_rows = kept + out_rows
     with args.out.open("w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=list(out_rows[0]), delimiter="\t", lineterminator="\n")
         w.writeheader()
@@ -120,7 +132,7 @@ def main(argv=None) -> int:
         if sub:
             print(f"              by set: {by}")
     worst = [r for r in out_rows if r["verdict"] == "different"]
-    for r in sorted(worst, key=lambda r: -abs(r["model_aa"] - r["orf_aa"]))[:10]:
+    for r in sorted(worst, key=lambda r: -abs(int(r["model_aa"]) - int(r["orf_aa"])))[:10]:
         print(
             f"     {r['symbol']:<12} {r['accession']:<8} model {r['model_aa']:>5} "
             f"vs ORF {r['orf_aa']:>5}"

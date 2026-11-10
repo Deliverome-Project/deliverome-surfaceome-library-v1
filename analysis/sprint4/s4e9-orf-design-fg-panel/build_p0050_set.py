@@ -47,6 +47,8 @@ from Bio.Seq import Seq
 from Bio.SeqFeature import FeatureLocation, SeqFeature
 from Bio.SeqRecord import SeqRecord
 
+from deliverome_analysis import constructs
+
 HERE = Path(__file__).parent
 TABLE = HERE / "p0050_set.tsv"
 BACKBONE = "p0050"
@@ -91,7 +93,7 @@ def _count(seq: str, site: str) -> int:
 
 def _fetch(name: str, workdir: Path) -> Path:
     """Download ``constructs/designed/<name>.gb`` from S3; fall back to a committed copy."""
-    key = f"constructs/designed/{name}.gb"
+    key = constructs.map_key(name)
     dest = workdir / f"{name}.gb"
     try:
         from deliverome_analysis import s3
@@ -206,9 +208,7 @@ def main(argv: list[str] | None = None) -> int:
         if args.upload:
             from deliverome_analysis import s3
 
-            s3.processed.upload(
-                out, f"constructs/designed/{row['plasmid']}.gb", content_type="text/plain"
-            )
+            s3.processed.upload(out, constructs.map_key(row["plasmid"]), content_type="text/plain")
     with (args.out_dir / "MANIFEST.tsv").open("w") as fh:
         fh.write("plasmid\tsource\tlength_bp\tsha256\n")
         for m in manifest:

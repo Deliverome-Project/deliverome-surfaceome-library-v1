@@ -31,11 +31,10 @@ from pathlib import Path
 
 from Bio import BiopythonWarning, SeqIO
 
-from deliverome_analysis import seqtools
+from deliverome_analysis import constructs, seqtools
 from deliverome_analysis.s3 import processed
 
 DESIGNS = ("p0016", "p0017", "p0018", "p0019", "p0020", "p0021")
-KEY = "constructs/designed/{}.gb"
 LONG_PREFIX = "analysis/sprint4/s4e9-orf-design-fg-panel/"
 SHORT_PREFIX = "s4e9-orf-design-fg-panel/"
 # the superseded first-pass retrofit note, identified by the claim that is now false
@@ -83,7 +82,7 @@ def main(argv=None) -> int:
     for name in DESIGNS:
         with warnings.catch_warnings():
             warnings.simplefilter("ignore", BiopythonWarning)
-            rec = SeqIO.read(processed.download(KEY.format(name)), "genbank")
+            rec = SeqIO.read(processed.download(constructs.map_key(name)), "genbank")
         before = str(rec.annotations.get("comment", ""))
         after, changes = tidy(before)
         if not changes:
@@ -108,8 +107,8 @@ def main(argv=None) -> int:
             SeqIO.write(rec, path, "genbank")
             if over := [ln for ln in path.read_text().splitlines() if len(ln) > 80]:
                 raise SystemExit(f"{name}: {len(over)} line(s) still over 80 columns")
-            processed.upload(path, KEY.format(name), content_type="chemical/seq-na-genbank")
-        back = SeqIO.read(processed.download(KEY.format(name)), "genbank")
+            processed.upload(path, constructs.map_key(name), content_type="chemical/seq-na-genbank")
+        back = SeqIO.read(processed.download(constructs.map_key(name)), "genbank")
         if str(back.seq).upper() != seq:
             raise SystemExit(f"{name}: sequence changed, which this script must never do")
         if len(back.features) != n_feat:

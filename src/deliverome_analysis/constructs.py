@@ -64,6 +64,27 @@ def key_for(name: str, *, bucket=None) -> str:
     return find_key(name, bucket.list_keys(prefix=PREFIX))
 
 
+def map_key(name: str, *, new_status: str = "designed", bucket=None) -> str:
+    """The key to read or write the map called ``name``, wherever it is filed now.
+
+    An existing map is found in its current status folder, so a script that edits a map
+    and writes it back writes it to the same place even after the map moved from
+    ``designed/`` to ``ordered/``. A name with no map yet gets
+    ``constructs/<new_status>/<name>.gb``, the home of a new design. An ambiguous name
+    is still an error.
+    """
+    if bucket is None:
+        from deliverome_analysis import s3
+
+        bucket = s3.processed
+    try:
+        return find_key(name, bucket.list_keys(prefix=PREFIX))
+    except ConstructNotFound as error:
+        if "ambiguous" in str(error):
+            raise
+        return f"{PREFIX}{new_status}/{name.strip('/')}.gb"
+
+
 def fetch(name: str, *, fallback: Path | None = None, bucket=None) -> Path:
     """Download the map called ``name`` and return its local path.
 

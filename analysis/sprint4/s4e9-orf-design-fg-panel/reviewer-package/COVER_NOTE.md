@@ -33,12 +33,12 @@ The six issues above map to #11–#12 (structure models), #4 (cargo), #5–#6 (l
 
 | Issue | Owner | Status | Needs Becca |
 |---|---|---|---|
-| [#1](https://github.com/Deliverome-Project/l1-library-review/issues/1) Reserve barcodes for the 2,735 active L1 members | unassigned | not started |  |
+| [#1](https://github.com/Deliverome-Project/l1-library-review/issues/1) Reserve barcodes for the 2,735 active L1 members | Becca | a block of 3,200 reserved provisionally in the shared registry (2026-11-10, [`reserve_l1_block.py`](../reserve_l1_block.py)): each passes both candidate 3′ flanks, the in situ prefix screen and an RNA-binding-protein motif screen; assignment to members waits for the frozen order. 444 prefix-distinct barcodes remain in the pool for other constructs |  |
 | [#2](https://github.com/Deliverome-Project/l1-library-review/issues/2) Assemble the tag cassette into every L1 insert, per rung | unassigned | blocked on site choices |  |
 | [#3](https://github.com/Deliverome-Project/l1-library-review/issues/3) Choose a concrete internal site for each of the 567 internal-rung members | tag-site pipeline review ([#224](https://github.com/Deliverome-Project/deliverome-analysis/pull/224)) | in progress across the S5E13 PRs |  |
 | [#4](https://github.com/Deliverome-Project/l1-library-review/issues/4) Decide the internal-rung cargo: ALFA alone (19 aa) or the 51-aa SpyTag003/ALFA tandem | Becca | open | yes |
 | [#8](https://github.com/Deliverome-Project/l1-library-review/issues/8) Gate v4 picks on the member's own structure placement (9 cytoplasmic, 13 membrane-core picks) | `topology-loop-qc` ([#246](https://github.com/Deliverome-Project/deliverome-analysis/pull/246)) | finding reported; decision pending | yes |
-| [#11](https://github.com/Deliverome-Project/l1-library-review/issues/11) Fold the 199 L1 members whose AlphaFold model is a different protein | unassigned | open |  |
+| [#11](https://github.com/Deliverome-Project/l1-library-review/issues/11) Fold the 196 active L1 members whose AlphaFold model is a different protein, and the 61 new ortholog members with no model | unassigned | open; the 61 need about 4 GPU-hours on Modal, not yet approved | yes |
 | [#13](https://github.com/Deliverome-Project/l1-library-review/issues/13) Run the vendor manufacturability scan on the L1 vectors | unassigned | not run on L1 |  |
 | [#14](https://github.com/Deliverome-Project/l1-library-review/issues/14) Review and merge the N-terminal placement package (1,300 N-after-SP members) | `nterm-reviewer-package` ([#254](https://github.com/Deliverome-Project/deliverome-analysis/pull/254)) | PR open (draft) |  |
 
@@ -61,7 +61,7 @@ The six issues above map to #11–#12 (structure models), #4 (cargo), #5–#6 (l
 
 | Issue | Owner | Status | Needs Becca |
 |---|---|---|---|
-| [#17](https://github.com/Deliverome-Project/l1-library-review/issues/17) Ortholog pool built from an April gene list: 418 eligible library genes were never drawable | Becca; correspondence review in a side session | redraw over Compara 116 merged as a review panel ([#262](https://github.com/Deliverome-Project/deliverome-analysis/pull/262)); adoption not decided | yes |
+| [#17](https://github.com/Deliverome-Project/l1-library-review/issues/17) Ortholog pool built from an April gene list: 418 eligible library genes were never drawable | Becca | adopted 2026-11-10: the Compara 116 CDS-gated draw over all library genes, with 11 correspondence replacements (`adopt_ortholog_cds_policy.py`) | |
 | [#18](https://github.com/Deliverome-Project/l1-library-review/issues/18) Isoform universe misses 451 library genes with non-canonical UniProt isoforms | ([#257](https://github.com/Deliverome-Project/deliverome-analysis/pull/257), merged) | resolved: all 451 explained by the cohort rules (399 below the evidence bar, 52 incl. topology) |  |
 | [#19](https://github.com/Deliverome-Project/l1-library-review/issues/19) Make the ortholog gene-to-UniProt step replayable (pin UniProt 2026_04) | ([#258](https://github.com/Deliverome-Project/deliverome-analysis/pull/258), merged) | replayed against UniProt 2026_04: 1,492 of 3,892 picks confirmed; the original search responses were never saved (permanent limit) |  |
 | [#20](https://github.com/Deliverome-Project/l1-library-review/issues/20) Five library genes without an intact Ensembl 115 copy: build the UniProt allele or exclude | Becca | open | yes |
@@ -81,8 +81,8 @@ The six issues above map to #11–#12 (structure models), #4 (cargo), #5–#6 (l
 
 | Issue | Owner | Status | Needs Becca |
 |---|---|---|---|
-| [#29](https://github.com/Deliverome-Project/l1-library-review/issues/29) Reviewer question: default to MANE for the 111 MANE/APPRIS disagreements | Becca | posed in the brief (section 10, question 1) |  |
-| [#30](https://github.com/Deliverome-Project/l1-library-review/issues/30) Reviewer question: N-terminal tagging at residue 1 for type III single-pass proteins (62 members) | Becca | posed in the brief (section 10, question 2) |  |
+| [#29](https://github.com/Deliverome-Project/l1-library-review/issues/29) Reviewer question: default to MANE for the 111 MANE/APPRIS disagreements | Becca | posed in the brief (section 11, question 1) |  |
+| [#30](https://github.com/Deliverome-Project/l1-library-review/issues/30) Reviewer question: N-terminal tagging at residue 1 for type III single-pass proteins (62 members) | Becca | posed in the brief (section 11, question 2) |  |
 | [#31](https://github.com/Deliverome-Project/l1-library-review/issues/31) Give outside reviewers access to this repository | Becca | not started | yes |
 | [#32](https://github.com/Deliverome-Project/l1-library-review/issues/32) Merge order: #234, then #243, then #254 | Becca | #234 merged 2026-11-05; #243 and #254 open as drafts | yes |
 

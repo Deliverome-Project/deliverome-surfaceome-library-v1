@@ -9,7 +9,7 @@ checked by this package.
 | Item | Notes |
 |---|---|
 | This repository, with its git history | a clone, or a `git bundle` of the branch. History is needed only for two stages (below). |
-| The frozen input bundle | a folder (or tarball) holding `s3/external/...` and `s3/processed/...`, 85 files, ~1.05 GB unpacked |
+| The frozen input bundle | a folder (or tarball) holding `s3/external/...` and `s3/processed/...`: 98 files the replay reads, ~1.14 GB. A second tarball adds the rest of every pinned release (238 files, ~1.40 GB); the replay does not need it |
 | [uv](https://docs.astral.sh/uv/) | installs the locked Python environment from `uv.lock` |
 | ~10 GB free disk, ~5 minutes | the whole run is offline |
 
@@ -66,15 +66,20 @@ prediction for its exact sequence, not that the predictor would return the same 
 
 ## What is in the bundle, and what is public
 
-Each bundle file is labeled in `bundle_manifest.tsv`:
+Each bundle file is labeled in `bundle_manifest.tsv` with its sharing class, its release,
+version and source URL, and whether the replay reads it (`read_by_replay`). Every release the
+design rests on is bundled whole, not only the files the replay opens, so a reviewer can
+inspect it; [`pinned_releases.md`](pinned_releases.md) lists them (release, version, date
+pinned, size, place in the bundle), and `bundle.py audit` fails if anything an input manifest
+pins is missing.
 
-| Class | Files | Meaning |
-|---|---:|---|
-| `public_release` | 26 | byte-identical to a named public release (Ensembl 115 including the Compara homology dumps, UniProt 2026_03, APPRIS, OpenProt 2.2, surfaceome 1.3.0 on Zenodo, GENCODE Ribo-seq ORFs, the published GPCR screen table) |
-| `public_derived` | 7 | public data, as queried by us (PeptideAtlas build 607, MyGene.info, a UniProt keyword query) |
-| `surfaceome_repo` | 15 | files of the accessible-surfaceome repository at commit f9c73691 |
-| `deliverome_curation` | 31 | internal inputs: curation calls, the compiled expression table, the vector backbone map, DeepTMHMM predictions, and the audited S5E13 tag-site positives the brief cites |
-| `deliverome_record` | 6 | the published library records the replay is compared with |
+| Class | Read by the replay | Rest of the pinned releases | Meaning |
+|---|---:|---:|---|
+| `public_release` | 26 | 31 | byte-identical to a named public release (Ensembl 115 and 116 including the Compara homology dumps, UniProt, APPRIS, OpenProt 2.2, Pfam 39.0, surfaceome 1.3.0 on Zenodo, GENCODE Ribo-seq ORFs, the published GPCR screen table) |
+| `public_derived` | 7 | 36 | public data, as queried by us (PeptideAtlas build 607, MyGene.info, UniProt keyword and accession queries) |
+| `surfaceome_repo` | 15 | 1 | files of the accessible-surfaceome repository at commit f9c73691 |
+| `deliverome_curation` | 35 | 48 | internal inputs: curation calls, the compiled expression table, the vector backbone map, DeepTMHMM and NetGPI predictions, the ortholog draw inputs, and the audited S5E13 tag-site positives the brief cites |
+| `deliverome_record` | 15 | 122 | published library records: what the replay is compared with, the Compara 116 ortholog draw and its verification, and the ortholog correspondence review |
 
 Reviewers receive the full bundle, all five classes (Becca, 2026-11-04). A bundle can still
 be packed without a class (`bundle.py pack --exclude-class ...`); the stages
@@ -91,11 +96,21 @@ uv run --locked python bundle.py manifest --bundle ~/l1-bundle
 ```
 
 ```bash
-uv run --locked python bundle.py pack --bundle ~/l1-bundle --out l1-reviewer-bundle.tar
+uv run --locked python bundle.py audit
+```
+
+```bash
+uv run --locked python bundle.py pack --bundle ~/l1-bundle --out l1-reviewer-bundle.tar --part replay
+```
+
+```bash
+uv run --locked python bundle.py pack --bundle ~/l1-bundle --out l1-pinned-releases.tar --part supplement
 ```
 
 `collect` reruns every stage with S3 in record mode and a fresh home directory, so the
-bundle holds exactly what the pipeline reads. `stage` uploads a tarball under this
+bundle holds everything the pipeline reads, then adds every pinned release whole and checks
+each file an input manifest pins against its SHA-256. The two parts are packed separately to
+stay under GitHub's 2 GiB limit per release asset. `stage` uploads a tarball under this
 experiment's `processed://` prefix; nothing in the package publishes anywhere else.
 
 ## The review repository
@@ -112,10 +127,19 @@ generated from this one by `export_review_repo.py`. It contains:
 - in `historical/`, the old script versions that stages 4 and 5 rerun.
 
 The input bundle is attached to that repository's release
-[`bundle-2026-11-05-r6`](https://github.com/Deliverome-Project/l1-library-review/releases/tag/bundle-2026-11-05-r6)
-(tarball SHA-256 `e98164e1ce1ef35aa9b81014edcb9657772a2232c1e1963b010a5482c2d840f1`; the same
-file is staged at `processed://sprint4/s4e9-orf-design-fg-panel/reviewer-package/2026-11-05-r6/`).
-A rebuilt bundle goes on a new release with a new date, never over an existing one; earlier releases are `bundle-2026-11-02` (before l1-p2740..2742), `bundle-2026-11-05` (before the audited tag-site positives were added) `bundle-2026-11-05-r2` (before the stop-codon fix of 13 designed CDS and the extended audit) `bundle-2026-11-05-r3` (before the tag-site gold standard) `bundle-2026-11-05-r4` (before the final audit refresh: failed, added and region-label files) and `bundle-2026-11-05-r5` (before the universe-coverage stage and its Compara dumps).
+[`bundle-2026-11-10`](https://github.com/Deliverome-Project/l1-library-review/releases/tag/bundle-2026-11-10)
+as two tarballs: `l1-reviewer-bundle-2026-11-10.tar` (what the replay reads, 1.14 GB, SHA-256
+`6ef210e96175b0f995bcefbf42c71e1f716e0073534a40a6120b583577ffef38`) and
+`l1-pinned-releases-2026-11-10.tar` (the rest of every pinned release, 1.40 GB, SHA-256
+`60a659ff9c1e7d13212ddf0b10cf75abb2a4938fe3f28e913d3ed4a094774d0b`). The same files are staged
+at `processed://sprint4/s4e9-orf-design-fg-panel/reviewer-package/2026-11-10/`.
+A rebuilt bundle goes on a new release with a new date, never over an existing one; earlier
+releases are `bundle-2026-11-02` (before l1-p2740..2742), `bundle-2026-11-05` (before the
+audited tag-site positives were added), `bundle-2026-11-05-r2` (before the stop-codon fix of 13
+designed CDS and the extended audit), `bundle-2026-11-05-r3` (before the tag-site gold
+standard), `bundle-2026-11-05-r4` (before the final audit refresh), `bundle-2026-11-05-r5`
+(before the universe-coverage stage and its Compara dumps) and `bundle-2026-11-05-r6` (before
+the Compara 116 ortholog panel was adopted and every pinned release was bundled whole).
 
 `EXPORT_MANIFEST.json` there records the source commit and a SHA-256 per managed file. To
 update it after changes here:

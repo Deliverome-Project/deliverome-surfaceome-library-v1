@@ -69,8 +69,8 @@
   ]
  },
  "tranches": {
-  "l1_rows": 2742,
-  "l1_retired_duplicates": 7,
+  "l1_rows": 2924,
+  "l1_retired_duplicates": 189,
   "l1_active": 2735,
   "l1_active_by_set": {
    "library_reference": 2360,
@@ -78,8 +78,8 @@
    "isoform": 150,
    "expression_rescue": 25
   },
-  "l2_active": 4279,
-  "all_rows_with_orf": 7082,
+  "l2_active": 4153,
+  "all_rows_with_orf": 7264,
   "l1_active_orf_nt_median": 1386,
   "genes_without_reference_member": {
    "encoded_by_another_member": [
@@ -218,7 +218,7 @@
   "members_with_edit_count": 2710,
   "edits_median": 3,
   "edits_max": 20,
-  "members_needing_no_edit": 330,
+  "members_needing_no_edit": 334,
   "esp3i_sites_per_vector": {
    "2": 2735
   },
@@ -249,37 +249,37 @@
   "tool": "deeptmhmm_v1",
   "members": 2710,
   "placement": {
-   "N after SP": 1300,
-   "N at residue 1, multipass": 563,
-   "N at residue 1, single-pass (type III)": 62,
-   "C-terminal": 218,
-   "internal": 567
+   "N after SP": 1294,
+   "N at residue 1, multipass": 571,
+   "N at residue 1, single-pass (type III)": 59,
+   "C-terminal": 215,
+   "internal": 571
   },
   "placement_by_set": {
    "N after SP": {
     "library_reference": 1121,
     "isoform": 76,
-    "ortholog": 103
+    "ortholog": 97
    },
    "N at residue 1, multipass": {
     "library_reference": 522,
     "isoform": 14,
-    "ortholog": 27
+    "ortholog": 35
    },
    "N at residue 1, single-pass (type III)": {
     "library_reference": 35,
     "isoform": 16,
-    "ortholog": 11
+    "ortholog": 8
    },
    "C-terminal": {
     "library_reference": 164,
     "isoform": 21,
-    "ortholog": 33
+    "ortholog": 30
    },
    "internal": {
     "library_reference": 518,
     "isoform": 23,
-    "ortholog": 26
+    "ortholog": 30
    }
   },
   "gpi_rerouted": [
@@ -287,29 +287,35 @@
    "RGMB"
   ],
   "topology_version": {
-   "topo_2026_05_16": 2312,
+   "topo_2026_05_16": 2318,
    "topo_2026_05_25": 206,
-   "topo_2026_10_14_l1_designed": 157,
-   "topo_2026_10_09_ortholog_repick": 29,
-   "topo_2026_10_11_ortholog_gap": 3,
-   "topo_2026_11_01_l1_designed": 3
+   "topo_2026_10_14_l1_designed": 146,
+   "topo_2026_10_09_ortholog_repick": 18,
+   "topo_2026_11_05_l1_compara116": 15,
+   "topo_2026_11_05_ortholog_cds_policy": 4,
+   "topo_2026_11_01_l1_designed": 2,
+   "topo_2026_10_11_ortholog_gap": 1
   },
   "topology_cohort": {
    "human_canonical": 2155,
    "human_isoforms": 207,
-   "library_designed_orf": 160,
-   "cyno_ortholog": 88,
-   "mouse_ortholog": 68,
-   "mouse_ortholog_repick": 28,
-   "cyno_ortholog_repick": 4
+   "library_designed_orf": 148,
+   "cyno_ortholog": 91,
+   "mouse_ortholog": 71,
+   "mouse_ortholog_repick": 27,
+   "cyno_ortholog_repick": 7,
+   "cyno_ortholog_cds_policy": 2,
+   "mouse_ortholog_cds_policy": 2
   },
   "internal_without_inter_tm_loop_ge_8": [
    "BST2",
    "RGMB",
    "TMEM139",
+   "TMEM139",
    "TMEM169",
    "TMEM268",
    "TMEM86A",
+   "TMEM86B",
    "TMEM86B"
   ],
   "internal_inter_tm_run_median": 52
@@ -330,8 +336,8 @@
   ],
   "l1_gpi_members": 191,
   "l1_gpi_members_by_rung_before_reroute": {
-   "N after SP": 182,
-   "N at residue 1": 7,
+   "N after SP": 184,
+   "N at residue 1": 5,
    "C-terminal": 2
   },
   "l1_conflict_members": {
@@ -342,31 +348,51 @@
   }
  },
  "structure_match": {
-  "compared_rows": 2645,
+  "compared_rows": 2766,
   "verdict_all_rows": {
-   "identical": 2420,
-   "different": 199,
+   "identical": 2536,
+   "different": 204,
    "contained": 26
   },
   "verdict_active": {
-   "identical": 2414,
-   "different": 198,
+   "identical": 2382,
+   "different": 196,
    "contained": 26
   },
   "different_active_by_set": {
    "library_reference": 191,
-   "ortholog": 7
+   "ortholog": 5
   },
-  "different_same_length_active": 22
+  "different_same_length_active": 20
  },
  "order_plan": {
   "members": 2735,
   "plates_per_set": 29,
   "plate_sets": {
-   "addgene_ul": 15.0,
-   "pooling_ul_each": 3.0,
-   "pooling_sets": 3,
-   "backup_ul": 6.0
+   "stock_ul": 20.0,
+   "pooling_ul_each": 5.0,
+   "pooling_sets": 2,
+   "spare_ul": 0.0
+  },
+  "concentration_scenarios": {
+   "100_ng_ul": {
+    "pooling_well_ug": 0.5,
+    "stock_well_ug": 2.0,
+    "delivered_ug": 3.0,
+    "pool_ug_total_per_pool_x3.5": 138.1
+   },
+   "75_ng_ul": {
+    "pooling_well_ug": 0.375,
+    "stock_well_ug": 1.5,
+    "delivered_ug": 2.25,
+    "pool_ug_total_per_pool_x3.5": 103.6
+   },
+   "50_ng_ul": {
+    "pooling_well_ug": 0.25,
+    "stock_well_ug": 1.0,
+    "delivered_ug": 1.5,
+    "pool_ug_total_per_pool_x3.5": 69.1
+   }
   },
   "ordered_ug": 4.0,
   "assumed_ug": 3.0,
@@ -380,45 +406,45 @@
    7753,
    12706
   ],
-  "members_insert_over_threshold": 53,
+  "members_insert_over_threshold": 56,
   "reference_member": {
    "insert_nt": 4300,
-   "vector_bp": 11788
+   "vector_bp": 11848
   },
   "weighting": {
    "x2.0": {
-    "members_needing_extra": 53,
-    "extra_ug_assumed_total": 13.3,
-    "order_ug_max": 5.26,
-    "pool_ul_shortest": 0.1213,
-    "pool_ul_median": 0.3218,
-    "pool_ul_longest": 6.1567,
-    "members_below_hand_pipetting": 1867,
-    "pool_ug_total_per_pool": 158.2,
+    "members_needing_extra": 55,
+    "extra_ug_assumed_total": 15.3,
+    "order_ug_max": 5.39,
+    "pool_ul_shortest": 0.2011,
+    "pool_ul_median": 0.5336,
+    "pool_ul_longest": 10.2092,
+    "members_below_hand_pipetting": 1271,
+    "pool_ug_total_per_pool": 262.6,
     "longest_vs_shortest_pmol": 31.0,
     "longest_vs_median_pmol": 13.5
    },
    "x2.5": {
-    "members_needing_extra": 53,
-    "extra_ug_assumed_total": 18.2,
-    "order_ug_max": 5.83,
-    "pool_ul_shortest": 0.0494,
-    "pool_ul_median": 0.1713,
-    "pool_ul_longest": 7.5749,
-    "members_below_hand_pipetting": 2157,
-    "pool_ug_total_per_pool": 115.8,
+    "members_needing_extra": 55,
+    "extra_ug_assumed_total": 21.0,
+    "order_ug_max": 6.02,
+    "pool_ul_shortest": 0.0819,
+    "pool_ul_median": 0.2841,
+    "pool_ul_longest": 12.5609,
+    "members_below_hand_pipetting": 1876,
+    "pool_ug_total_per_pool": 192.8,
     "longest_vs_shortest_pmol": 93.5,
     "longest_vs_median_pmol": 31.2
    },
    "x3.5": {
-    "members_needing_extra": 53,
-    "extra_ug_assumed_total": 26.7,
-    "order_ug_max": 6.94,
-    "pool_ul_shortest": 0.0128,
-    "pool_ul_median": 0.0663,
-    "pool_ul_longest": 10.3545,
-    "members_below_hand_pipetting": 2388,
-    "pool_ug_total_per_pool": 82.4,
+    "members_needing_extra": 55,
+    "extra_ug_assumed_total": 31.0,
+    "order_ug_max": 7.25,
+    "pool_ul_shortest": 0.0212,
+    "pool_ul_median": 0.1099,
+    "pool_ul_longest": 17.1701,
+    "members_below_hand_pipetting": 2206,
+    "pool_ug_total_per_pool": 138.1,
     "longest_vs_shortest_pmol": 495.2,
     "longest_vs_median_pmol": 110.1
    }
@@ -427,31 +453,31 @@
    "x2.0": {
     "plate_dilution_plates": 27,
     "conc_ng_ul_range": [
-     5.043,
-     51.063
+     5.02,
+     51.166
     ],
     "max_error_fold_plate_dilution": 1.25,
-    "max_error_fold_excluding_plate_1": 1.16,
+    "max_error_fold_excluding_plate_1": 1.18,
     "per_well_members": 143
    },
    "x2.5": {
     "plate_dilution_plates": 27,
     "conc_ng_ul_range": [
-     2.183,
-     42.157
+     2.172,
+     42.326
     ],
     "max_error_fold_plate_dilution": 1.33,
-    "max_error_fold_excluding_plate_1": 1.21,
+    "max_error_fold_excluding_plate_1": 1.23,
     "per_well_members": 143
    },
    "x3.5": {
     "plate_dilution_plates": 27,
     "conc_ng_ul_range": [
-     0.617,
-     31.577
+     0.614,
+     31.798
     ],
     "max_error_fold_plate_dilution": 1.45,
-    "max_error_fold_excluding_plate_1": 1.29,
+    "max_error_fold_excluding_plate_1": 1.32,
     "per_well_members": 143
    }
   }
@@ -531,31 +557,32 @@
   "schemes": {
    "shared": {
     "worst_partner_tract_median": 30.0,
-    "members_over_gate_100": 484,
-    "cterm_members": 218,
+    "members_over_gate_100": 470,
+    "cterm_members": 215,
     "cterm_worst_partner_median": 181.0,
     "cterm_worst_partner_max": 2529
    },
    "whole_cassette_widened": {
     "worst_partner_tract_median": 30.0,
-    "members_over_gate_100": 266,
-    "cterm_members": 218,
+    "members_over_gate_100": 255,
+    "cterm_members": 215,
     "cterm_worst_partner_median": 36.0,
     "cterm_worst_partner_max": 36
    },
    "linkers_only": {
     "worst_partner_tract_median": 30.0,
-    "members_over_gate_100": 266,
-    "cterm_members": 218,
+    "members_over_gate_100": 255,
+    "cterm_members": 215,
     "cterm_worst_partner_median": 36.0,
     "cterm_worst_partner_max": 36
    }
   },
-  "whole_cassette_9nt_rule": "FAILED after 60 of 218 C-terminal members",
-  "issued_linker_only_encodings": 218,
+  "whole_cassette_9nt_rule": "FAILED after 60 of 215 C-terminal members",
+  "issued_linker_only_encodings": 243,
   "issue_batches": [
    "1",
-   "2"
+   "2",
+   "3"
   ],
   "cterm_junction_edits": {
    "l1-p1957": "SLC41A2: last codon GAC->GAT"

@@ -2,10 +2,30 @@
  "members": 2735,
  "plates_per_set": 29,
  "plate_sets": {
-  "addgene_ul": 15.0,
-  "pooling_ul_each": 3.0,
-  "pooling_sets": 3,
-  "backup_ul": 6.0
+  "stock_ul": 20.0,
+  "pooling_ul_each": 5.0,
+  "pooling_sets": 2,
+  "spare_ul": 0.0
+ },
+ "concentration_scenarios": {
+  "100_ng_ul": {
+   "pooling_well_ug": 0.5,
+   "stock_well_ug": 2.0,
+   "delivered_ug": 3.0,
+   "pool_ug_total_per_pool_x3.5": 138.1
+  },
+  "75_ng_ul": {
+   "pooling_well_ug": 0.375,
+   "stock_well_ug": 1.5,
+   "delivered_ug": 2.25,
+   "pool_ug_total_per_pool_x3.5": 103.6
+  },
+  "50_ng_ul": {
+   "pooling_well_ug": 0.25,
+   "stock_well_ug": 1.0,
+   "delivered_ug": 1.5,
+   "pool_ug_total_per_pool_x3.5": 69.1
+  }
  },
  "ordered_ug": 4.0,
  "assumed_ug": 3.0,
@@ -19,45 +39,45 @@
   7753,
   12706
  ],
- "members_insert_over_threshold": 53,
+ "members_insert_over_threshold": 56,
  "reference_member": {
   "insert_nt": 4300,
-  "vector_bp": 11788
+  "vector_bp": 11848
  },
  "weighting": {
   "x2.0": {
-   "members_needing_extra": 53,
-   "extra_ug_assumed_total": 13.3,
-   "order_ug_max": 5.26,
-   "pool_ul_shortest": 0.1213,
-   "pool_ul_median": 0.3218,
-   "pool_ul_longest": 6.1567,
-   "members_below_hand_pipetting": 1867,
-   "pool_ug_total_per_pool": 158.2,
+   "members_needing_extra": 55,
+   "extra_ug_assumed_total": 15.3,
+   "order_ug_max": 5.39,
+   "pool_ul_shortest": 0.2011,
+   "pool_ul_median": 0.5336,
+   "pool_ul_longest": 10.2092,
+   "members_below_hand_pipetting": 1271,
+   "pool_ug_total_per_pool": 262.6,
    "longest_vs_shortest_pmol": 31.0,
    "longest_vs_median_pmol": 13.5
   },
   "x2.5": {
-   "members_needing_extra": 53,
-   "extra_ug_assumed_total": 18.2,
-   "order_ug_max": 5.83,
-   "pool_ul_shortest": 0.0494,
-   "pool_ul_median": 0.1713,
-   "pool_ul_longest": 7.5749,
-   "members_below_hand_pipetting": 2157,
-   "pool_ug_total_per_pool": 115.8,
+   "members_needing_extra": 55,
+   "extra_ug_assumed_total": 21.0,
+   "order_ug_max": 6.02,
+   "pool_ul_shortest": 0.0819,
+   "pool_ul_median": 0.2841,
+   "pool_ul_longest": 12.5609,
+   "members_below_hand_pipetting": 1876,
+   "pool_ug_total_per_pool": 192.8,
    "longest_vs_shortest_pmol": 93.5,
    "longest_vs_median_pmol": 31.2
   },
   "x3.5": {
-   "members_needing_extra": 53,
-   "extra_ug_assumed_total": 26.7,
-   "order_ug_max": 6.94,
-   "pool_ul_shortest": 0.0128,
-   "pool_ul_median": 0.0663,
-   "pool_ul_longest": 10.3545,
-   "members_below_hand_pipetting": 2388,
-   "pool_ug_total_per_pool": 82.4,
+   "members_needing_extra": 55,
+   "extra_ug_assumed_total": 31.0,
+   "order_ug_max": 7.25,
+   "pool_ul_shortest": 0.0212,
+   "pool_ul_median": 0.1099,
+   "pool_ul_longest": 17.1701,
+   "members_below_hand_pipetting": 2206,
+   "pool_ug_total_per_pool": 138.1,
    "longest_vs_shortest_pmol": 495.2,
    "longest_vs_median_pmol": 110.1
   }
@@ -66,31 +86,31 @@
   "x2.0": {
    "plate_dilution_plates": 27,
    "conc_ng_ul_range": [
-    5.043,
-    51.063
+    5.02,
+    51.166
    ],
    "max_error_fold_plate_dilution": 1.25,
-   "max_error_fold_excluding_plate_1": 1.16,
+   "max_error_fold_excluding_plate_1": 1.18,
    "per_well_members": 143
   },
   "x2.5": {
    "plate_dilution_plates": 27,
    "conc_ng_ul_range": [
-    2.183,
-    42.157
+    2.172,
+    42.326
    ],
    "max_error_fold_plate_dilution": 1.33,
-   "max_error_fold_excluding_plate_1": 1.21,
+   "max_error_fold_excluding_plate_1": 1.23,
    "per_well_members": 143
   },
   "x3.5": {
    "plate_dilution_plates": 27,
    "conc_ng_ul_range": [
-    0.617,
-    31.577
+    0.614,
+    31.798
    ],
    "max_error_fold_plate_dilution": 1.45,
-   "max_error_fold_excluding_plate_1": 1.29,
+   "max_error_fold_excluding_plate_1": 1.32,
    "per_well_members": 143
   }
  }

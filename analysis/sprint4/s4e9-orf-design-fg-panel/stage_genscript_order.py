@@ -21,7 +21,7 @@ from pathlib import Path
 from Bio import SeqIO
 from Bio.Seq import Seq
 
-from deliverome_analysis import seqtools
+from deliverome_analysis import constructs, seqtools
 from deliverome_analysis.s3 import processed
 
 HERE = Path(__file__).parent
@@ -103,7 +103,7 @@ def main(argv=None) -> int:
         rows.append((name, len(s), desc, s, flag))
 
     for name, desc in FROM_S3.items():
-        rec = SeqIO.read(processed.download(f"constructs/designed/{name}.gb"), "genbank")
+        rec = SeqIO.read(processed.download(constructs.map_key(name)), "genbank")
         s = str(rec.seq).upper()
         if seqtools.find_sites(s, ["BbsI"]):
             raise SystemExit(f"{name}: still carries a BbsI site — not staging")

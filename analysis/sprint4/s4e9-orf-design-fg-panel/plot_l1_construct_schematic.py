@@ -36,7 +36,7 @@ from Bio import SeqIO
 from matplotlib.patches import FancyArrowPatch, Polygon, Rectangle
 from PIL import Image
 
-from deliverome_analysis import s3
+from deliverome_analysis import constructs, s3
 from deliverome_analysis.plotting import (
     COLORS,
     SEQUENTIAL_PALETTES,
@@ -45,7 +45,7 @@ from deliverome_analysis.plotting import (
 )
 
 HERE = Path(__file__).parent
-MAPS = {"P-0039": "constructs/designed/p0024.gb", "P-0050": "constructs/designed/p0053.gb"}
+MAPS = {"P-0039": "p0024", "P-0050": "p0053"}  # map names; constructs.map_key finds the folder
 ESP3I = "CGTCTC"
 BASE, OVERLAY = "l1_orf_construct", "l1_orf_construct_internal"
 
@@ -110,7 +110,7 @@ def main(argv=None) -> int:
     ap.add_argument("--out-dir", type=Path, default=HERE / "figures")
     args = ap.parse_args(argv)
 
-    recs = {name: load(key) for name, key in MAPS.items()}
+    recs = {name: load(constructs.map_key(m)) for name, m in MAPS.items()}
     a, b = recs["P-0039"], recs["P-0050"]
     oh5, oh3 = overhangs(a)
     assert overhangs(b) == (oh5, oh3)

@@ -8,7 +8,11 @@ from collections.abc import Iterable, Mapping, Sequence
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-DEFAULT_RESERVATIONS = (HERE / "compara116_id_allocations.tsv",)
+#: Every published allocation ledger, oldest first. compara116's reserved l1-p2743..2931
+#: for a panel that was never activated; ortholog_cds_policy's are live members (2026-11-10).
+COMPARA116_RESERVATIONS = HERE / "compara116_id_allocations.tsv"
+ORTHOLOG_CDS_POLICY_ALLOCATIONS = HERE / "ortholog_cds_policy_id_allocations.tsv"
+DEFAULT_RESERVATIONS = (COMPARA116_RESERVATIONS, ORTHOLOG_CDS_POLICY_ALLOCATIONS)
 
 
 def next_l1_member_number(

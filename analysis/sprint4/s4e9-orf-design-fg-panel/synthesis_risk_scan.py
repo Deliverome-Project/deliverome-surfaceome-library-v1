@@ -41,21 +41,28 @@ from pathlib import Path
 
 from Bio import BiopythonWarning, SeqIO
 
-from deliverome_analysis import seqtools
+from deliverome_analysis import constructs, seqtools
 
 DESIGNED = (
-    "constructs/designed/p0016.gb",
-    "constructs/designed/p0017.gb",
-    "constructs/designed/p0018.gb",
-    "constructs/designed/p0019.gb",
-    "constructs/designed/p0020.gb",
-    "constructs/designed/p0021.gb",
-    "constructs/designed/p0039.gb",
-    "constructs/designed/p0040.gb",
+    "p0016",
+    "p0017",
+    "p0018",
+    "p0019",
+    "p0020",
+    "p0021",
+    "p0039",
+    "p0040",
 )
 # Sequences that exist as physical DNA: plasmids we ordered and received, and Addgene
 # deposits. Anything found verbatim in one of these has demonstrably been synthesised.
 PROVEN_PROCESSED = ("constructs/ordered/", "constructs/reference/addgene/")
+# ordered/ holds every plasmid we have ordered, not only those delivered. These were ordered
+# from GenScript but not yet received (Reagent Inventory Status "Ordered", read 2026-11-09),
+# so their sequence is not yet evidence that it synthesises. Drop a name once it arrives.
+NOT_YET_RECEIVED = frozenset(
+    {"p0022", "p0023", "p0024", "p0025", "p0029", "p0038", "p0041"}
+    | {f"p{n:04d}" for n in range(51, 76)}
+)
 PROVEN_EXTERNAL = ("du-2025-dimmer-mirna-circuits/2026-10-06/",)
 GC_WINDOW = 50
 GC_LOW, GC_HIGH = 0.25, 0.75
@@ -72,7 +79,7 @@ def proven_sequences() -> dict[str, str]:
     out: dict[str, str] = {}
     for prefix in PROVEN_PROCESSED:
         for key in processed.list_keys(prefix):
-            if not key.endswith((".gb", ".gbk")):
+            if not key.endswith((".gb", ".gbk")) or Path(key).stem in NOT_YET_RECEIVED:
                 continue
             with warnings.catch_warnings():
                 warnings.simplefilter("ignore", BiopythonWarning)
@@ -255,7 +262,7 @@ def main(argv=None) -> int:
 
     from deliverome_analysis.s3 import processed
 
-    keys = args.key or list(DESIGNED)
+    keys = args.key or [constructs.map_key(n) for n in DESIGNED]
     paths = [(Path(k).stem, Path(processed.download(k))) for k in keys]
 
     proven = proven_sequences()

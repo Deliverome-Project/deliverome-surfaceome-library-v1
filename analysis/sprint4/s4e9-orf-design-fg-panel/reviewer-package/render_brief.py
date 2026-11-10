@@ -142,7 +142,7 @@ def _inline(paragraph, el, base: Path, style: dict | None = None) -> None:
         paragraph.add_run().add_picture(str(base / el.get("src")), width=Inches(6.3))
         return
     if tag == "a" and el.get("href"):
-        _hyperlink(paragraph, el.get("href"), el.text_content(), style)
+        _hyperlink(paragraph, el.get("href"), " ".join(el.text_content().split("\n")), style)
         return
     if tag == "br":
         paragraph.add_run().add_break()
@@ -157,6 +157,10 @@ def _inline(paragraph, el, base: Path, style: dict | None = None) -> None:
 def _run(paragraph, text: str, style: dict, pt=None) -> None:
     from docx.shared import Pt
 
+    if not style.get("pre"):
+        # Markdown source wraps paragraphs at ~100 columns; a newline there is a soft wrap,
+        # not a line break, and Word and Google Docs would otherwise show it as one.
+        text = " ".join(text.split("\n"))
     run = paragraph.add_run(text)
     run.bold, run.italic = style.get("bold"), style.get("italic")
     if style.get("code"):
@@ -198,7 +202,7 @@ def to_docx(md_path: Path, commit: str, out: Path) -> None:
                     _inline(cell, c, base, {"bold": c.tag == "th"})
             doc.add_paragraph()
         elif tag == "pre":
-            _run(doc.add_paragraph(), el.text_content(), {"code": True})
+            _run(doc.add_paragraph(), el.text_content(), {"code": True, "pre": True})
         elif tag == "hr":
             doc.add_paragraph()
         else:

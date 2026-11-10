@@ -129,7 +129,7 @@ _PROCESSED_KEY_PATTERN = re.compile(r"^sprint\d+/s\d+e\d+-[a-z0-9]+(-[a-z0-9]+)*
 #                  re-export can correct a map, whereas external is append-only
 #                  and a mis-named key there is permanent. Layout is by status,
 #                  read from the Plasmid inventory: constructs/ordered/p003.gb,
-#                  constructs/designed/p0016.gb, and third-party maps under
+#                  constructs/designed/p0076.gb, and third-party maps under
 #                  constructs/reference/{source}/, e.g. reference/addgene/52961.gbk.
 # Anything matched here is still confined to the processed bucket — the
 # exemption is only about the in-bucket key shape, not access scope.

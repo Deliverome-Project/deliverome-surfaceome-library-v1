@@ -312,19 +312,29 @@ def run_candidate_cds(work: Path, reference: Path | None = None) -> dict:
 
 
 def verify_candidate_cds(work: Path) -> str:
+    from deliverome_analysis import library_design as ld
+    from deliverome_analysis.s3 import processed
+
     new = run_candidate_cds(work)
-    rec = json.loads(record("library-candidates/candidate_cds.json", work / "rec.json").read_text())
+    # The resolver's own record is the pre-adoption one; the current record extends it.
+    rec = json.loads(Path(processed.download(ld.BASE_CDS_KEY, work / "rec.json")).read_text())
     differ = sorted(k for k in rec if k not in new or new[k]["cds"] != rec[k]["cds"])
     assert not differ, f"designed CDS does not reproduce for {len(differ)}: {differ[:5]}"
+    cur = json.loads(Path(processed.download(ld.CDS_KEY, work / "cur.json")).read_text())
+    moved = sorted(k for k in rec if cur.get(k) != rec[k])
+    assert not moved, f"{len(moved)} entries changed in the current CDS record: {moved[:5]}"
+    appended = sorted(set(cur) - set(rec))
     # An ORF without a stop reads through into the vector; Ensembl omits it from some
     # records, which the resolver now repairs (stop_added). None may slip through.
-    no_stop = sorted(k for k, v in rec.items() if v["cds"][-3:] not in ("TAA", "TAG", "TGA"))
+    no_stop = sorted(k for k, v in cur.items() if v["cds"][-3:] not in ("TAA", "TAG", "TGA"))
     assert not no_stop, f"{len(no_stop)} designed CDS end without a stop codon: {no_stop[:5]}"
+    assert all(k.startswith("ort:") for k in appended), "only ortholog forms were appended"
     extra = sorted(set(new) - set(rec))
     return (
-        f"all {len(rec)} recorded designed CDS reproduce and end in a stop codon "
-        f"({sum('stop_added' in v for v in rec.values())} appended); "
-        f"extra in rerun: {extra or 'none'}"
+        f"all {len(rec)} resolver-recorded designed CDS reproduce; the current record adds "
+        f"{len(appended)} ortholog-policy forms (verified in ortholog_adoption) and every "
+        f"entry ends in a stop codon ({sum('stop_added' in v for v in cur.values())} appended "
+        f"stops); extra in rerun: {extra or 'none'}"
         " (iso:MICA:Q29983 is MICA's selected reference, so the dedupe stage retires it)"
     )
 
@@ -340,12 +350,12 @@ def verify_constructs(work: Path) -> str:
     import domesticate_candidates
     from Bio import SeqIO
 
+    from deliverome_analysis import library_design as ld
     from deliverome_analysis import seqtools
+    from deliverome_analysis.s3 import processed
 
-    cds = json.loads(record("library-candidates/candidate_cds.json", work / "c.json").read_text())
-    con = json.loads(
-        record("library-candidates/candidate_constructs.json", work / "k.json").read_text()
-    )
+    cds = json.loads(Path(processed.download(ld.CDS_KEY, work / "c.json")).read_text())
+    con = json.loads(Path(processed.download(ld.CONSTRUCTS_KEY, work / "k.json")).read_text())
     # The tranche manifest is the record; the pre-tranche candidate_manifest.tsv is a
     # historical intermediate (positional ids, and it predates MICA's repoint).
     with (HERE / "candidate_manifest_tranches.tsv").open() as fh:
@@ -474,16 +484,34 @@ def verify_universe_coverage(work: Path) -> str:
     )
 
 
+def verify_ortholog_adoption(work: Path) -> str:
+    """The L1 ortholog panel: the final-v2 draw, the correspondence swaps, the members."""
+    import adopt_ortholog_cds_policy as adopt
+    import review_ortholog_correspondence as review
+
+    rows, _, _ = review.replay_draw(work / "draw")  # asserts the committed panel back
+    detail = adopt.verify(work / "adopt")
+    return f"final-v2 draw over {len(rows)} sampleable forms reproduces the panel; {detail}"
+
+
 def verify_tranches(work: Path) -> str:
     run([str(HERE / "dedupe_library_members.py"), "--check"], HERE)
     return "no two active members share a designed protein"
 
 
 def verify_topology(work: Path) -> str:
+    from deliverome_analysis import topology
+    from deliverome_analysis.s3 import external
+
+    snap = Path(external.download(topology.SNAPSHOT_KEY, work / "topology.parquet"))
+    assert sha256(snap) == topology.SNAPSHOT_SHA256, "topology snapshot differs from its pin"
     fasta = work / "gap.fasta"
     run([str(HERE / "publish_topology_supplement.py"), "fasta", "--out", str(fasta)], HERE)
     assert fasta.read_text() == "", "active members without a DeepTMHMM v1 topology remain"
-    return "every active L1 member has a v1 topology in the pinned snapshot"
+    return (
+        f"every active L1 member has a v1 topology in the pinned snapshot "
+        f"({topology.SNAPSHOT_KEY.split('/')[-2]}, SHA-256 checked)"
+    )
 
 
 def verify_tag_paths(work: Path) -> str:
@@ -553,7 +581,8 @@ STAGES = [
     ),
     Stage(
         "ortholog_repick",
-        "each gene's mouse and cyno ortholog proteoform",
+        "each gene's mouse and cyno ortholog proteoform in the April (Compara 115) pool: the "
+        "source of the L2 ortholog members and of the L1 ortholog panel retired on 2026-11-10",
         "scratch/becca/appris-principal/repick_orthologs.py",
         "rebuilt universe table, NetGPI ortholog calls, Ensembl 115 + UniProt 2026_03 "
         "ortholog files, surfaceome f9c73691 cohorts (repick_orthologs.py @c4dbe752)",
@@ -563,8 +592,8 @@ STAGES = [
     ),
     Stage(
         "universe_coverage",
-        "recorded ortholog coverage relative to April 2026 surfaceome_expressed and the "
-        "selected isoform cohort relative to the current library gene list; "
+        "recorded ortholog coverage of that April pool relative to the library gene list, and "
+        "the selected isoform cohort relative to the current library gene list; "
         "isoform cohort absence is not universe absence",
         "analysis/sprint4/s4e9-orf-design-fg-panel/check_universe_coverage.py",
         "Ensembl Compara 115 homology dumps (external://), accessible-surfaceome f9c73691 "
@@ -574,12 +603,25 @@ STAGES = [
     ),
     Stage(
         "panels",
-        "the 150-isoform and 200-ortholog panels: seeded stratified draws, "
-        "rejected picks replaced by continuing the draw",
+        "the 150-isoform panel (L1) and the original 200-ortholog panel (retired from L1 on "
+        "2026-11-10, kept as the record): seeded stratified draws, rejected picks replaced by "
+        "continuing the draw",
         "sample_isoform_panel.py / sample_ortholog_panel.py --snapshot; redraw_panels.py",
         "panel_inputs.json snapshot (13 files) + panel_rejections.tsv",
         "verified",
         verify=verify_panels,
+    ),
+    Stage(
+        "ortholog_adoption",
+        "the L1 ortholog panel: the Compara 116 CDS-eligible draw (final-v2, seeds 20261011/"
+        "20261012), with the 11 correspondence-review swaps and 6 asks kept "
+        "(ortholog_panel_adoption_judgements.tsv); members kept, moved from L2 or added",
+        "draw_eligible_ortholog_panel.py (replayed by review_ortholog_correspondence.py); "
+        "adopt_ortholog_cds_policy.py",
+        "final-v2 archive (processed://.../ortholog-cds-eligibility/2026-11-05/final-v2/), "
+        "ortholog-rebuild-inputs/2026-11-05 manifest + CDS, committed review tables",
+        "verified",
+        verify=verify_ortholog_adoption,
     ),
     Stage(
         "rescue_arms",
@@ -602,7 +644,8 @@ STAGES = [
         "candidate_cds",
         "each candidate's designed CDS, verified to encode its protein",
         "scratch/becca/appris-principal/resolve_candidate_cds.py (candidate_inputs.py)",
-        "Ensembl 115 CDS/pep, UniProt 2026-10-11 (S3); reference record; panel snapshot",
+        "Ensembl 115 CDS/pep, UniProt 2026-10-11 (S3); reference record; panel snapshot; "
+        "the 56 ortholog-policy forms appended from final-v2 (stage ortholog_adoption)",
         "verified",
         verify=verify_candidate_cds,
     ),
@@ -610,14 +653,15 @@ STAGES = [
         "constructs",
         "domesticated ORFs (BbsI/Esp3I/BsaI) and p0039 vectors",
         "domesticate_candidates.py, assemble_candidates.py (seed 20261011)",
-        "candidate_cds.json, p0039 backbone (S3)",
+        "library_design.CDS_KEY / CONSTRUCTS_KEY records, p0039 backbone (S3)",
         "verified",
         verify=verify_constructs,
     ),
     Stage(
         "tranches",
         "L1/L2 membership; duplicates retired on the designed protein",
-        "split_library_tranches.py (once), dedupe_library_members.py, redraw_panels.py",
+        "split_library_tranches.py (once), dedupe_library_members.py, redraw_panels.py, "
+        "adopt_ortholog_cds_policy.py",
         "candidate_manifest_tranches.tsv (committed record)",
         "verified",
         verify=verify_tranches,
@@ -626,7 +670,8 @@ STAGES = [
         "topology",
         "DeepTMHMM v1 topology for every active member's designed protein",
         "publish_topology_supplement.py + modal deeptmhmm_v1_app.py",
-        "external://accessible-surfaceome/topology/2026-11-01/topology.parquet",
+        "external://accessible-surfaceome/topology/2026-11-06-ortholog-cds-policy/"
+        "topology.parquet (topology.SNAPSHOT_KEY, SHA-256 pinned)",
         "verified",
         verify=verify_topology,
     ),
@@ -642,7 +687,8 @@ STAGES = [
         "cassettes",
         "each C-terminal L1 member's tag cassette: SpyTag003 and P-ALFA-P on p003's codons, "
         "GGGGS linkers recoded so the terminal 15-nt block is unique; issued in batches, pinned",
-        "l1_swap_risk.py (seed 20261029); l1_cassette_encodings.tsv records each batch",
+        "l1_swap_risk.py (seed 20261029); l1_cassette_encodings.tsv records each batch, "
+        "including retired members' encodings, which stay issued",
         "member CDS, tag paths, p003 cassette codons",
         "verified",
         verify=verify_cassettes,

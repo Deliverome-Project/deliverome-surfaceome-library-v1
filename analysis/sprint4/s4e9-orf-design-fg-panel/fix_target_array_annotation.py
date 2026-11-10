@@ -28,11 +28,10 @@ from typing import NamedTuple
 from Bio import SeqIO
 from Bio.SeqFeature import FeatureLocation, SeqFeature
 
-from deliverome_analysis import seqtools
+from deliverome_analysis import constructs, seqtools
 from deliverome_analysis.s3 import processed
 
 DESIGNS = ("p0016", "p0017", "p0018", "p0019", "p0020", "p0021")
-KEY = "constructs/designed/{}.gb"
 FLANK5, FLANK3 = ("GCGATCGC", "AsiSI"), ("GTTTAAAC", "PmeI")
 SPACER = "TACT"  # the 4 nt that precede each site, giving the 21-nt period
 
@@ -176,7 +175,7 @@ def main(argv=None) -> int:
 
     staged = []
     for name in DESIGNS:
-        rec = SeqIO.read(processed.download(KEY.format(name)), "genbank")
+        rec = SeqIO.read(processed.download(constructs.map_key(name)), "genbank")
         before = str(rec.seq).upper()
         arm = arm_of(rec)
         if arm is None:
@@ -221,8 +220,8 @@ def main(argv=None) -> int:
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / f"{name}.gb"
             SeqIO.write(rec, path, "genbank")
-            processed.upload(path, KEY.format(name), content_type="chemical/seq-na-genbank")
-        back = SeqIO.read(processed.download(KEY.format(name)), "genbank")
+            processed.upload(path, constructs.map_key(name), content_type="chemical/seq-na-genbank")
+        back = SeqIO.read(processed.download(constructs.map_key(name)), "genbank")
         if str(back.seq).upper() != before:
             raise SystemExit(f"{name}: uploaded sequence does not match the original")
         if str(array_feature(back, arm).extract(back.seq)).upper() != (SPACER + arm.site) * 4:

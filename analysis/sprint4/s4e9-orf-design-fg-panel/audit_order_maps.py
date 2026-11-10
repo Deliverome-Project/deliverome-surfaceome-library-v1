@@ -14,8 +14,8 @@ from __future__ import annotations
 import csv
 from pathlib import Path
 
+from deliverome_analysis import constructs, seqtools
 from deliverome_analysis import plasmid_qc as qc
-from deliverome_analysis import seqtools
 from deliverome_analysis.s3 import processed
 
 HERE = Path(__file__).parent
@@ -84,7 +84,7 @@ def main() -> int:
 
     blocked = 0
     for plasmid, spec in plans:
-        key = f"constructs/designed/{plasmid}.gb"
+        key = constructs.map_key(plasmid)
         if not processed.exists(key):
             print(
                 f"{spec.plasmid}:\n  [FAIL] map_present               "

@@ -2497,201 +2497,24 @@ l1-p2526	l1	isoform	human	TMPRSS4	C-terminal	C-terminal	0	1	0	432	0	379	54	c_ter
 l1-p2527	l1	isoform	human	TNFRSF18	N after SP	N after SP	0	1	25	234	0	140	26	n_terminal			human_isoforms	topo_2026_05_25	57edd5b25610ab9902315a51a5b12d3a4da1dfeddb65752428573cf695f708d7
 l1-p2528	l1	isoform	human	TRPV1	C-terminal	C-terminal	0	3	0	521	17	17	455	inter_tm			library_designed_orf	topo_2026_10_14_l1_designed	a38895f18cca5cb1b9786f5d54c70bb29966244908be5bd03d78f6937c3cd6bc
 l1-p2529	l1	isoform	human	ZP3	N at residue 1, single-pass (type III)	N at residue 1	0	1	0	373	0	336	1	n_terminal	low	strong	human_isoforms	topo_2026_05_25	cdca0b016b8aeb875a3ce7b017cc7191c21226b6ae7721c62fe23f30f000dd92
-l1-p2530	l1	ortholog	cyno	ABCB11	internal	internal	0	12	0	1323	62	62	83	inter_tm			cyno_ortholog	topo_2026_05_16	7e41ad198887d3f4eba06ab34f016522e2e5cebdb049d93271a9638704313fa1
-l1-p2531	l1	ortholog	cyno	ACHE	N at residue 1, single-pass (type III)	N at residue 1	0	0	0	516	0	516	1	no_tm			library_designed_orf	topo_2026_10_14_l1_designed	712b4e1715dcdcd90607fe47decf2c6e670a0fefbf83fe0a17d88d1334ba39c2
-l1-p2532	l1	ortholog	cyno	ACKR4	N at residue 1, multipass	N at residue 1	0	7	0	350	22	41	1	n_terminal			cyno_ortholog	topo_2026_05_16	e47d496f4a9c169fd68f6496af285929ffc4140a30ec51565b628cf8d6145a66
-l1-p2533	l1	ortholog	cyno	ALPI	N after SP	N after SP	0	0	19	527	0	508	20	no_tm	high	strong	cyno_ortholog	topo_2026_05_16	a0d8604d9eb54b8a03e016ed4dd349613f5b2506b0e33ae573249d1773df3d88
-l1-p2534	l1	ortholog	cyno	APLNR	N at residue 1, multipass	N at residue 1	0	7	0	380	29	30	1	n_terminal	low	moderate	cyno_ortholog	topo_2026_05_16	1966c0361356cc8b81b4b2aeb1d3e253f10bc675162c1d913966a18a48b5112c
-l1-p2535	l1	ortholog	cyno	APLP2	N after SP	N after SP	0	1	31	751	0	650	32	n_terminal	moderate	strong	library_designed_orf	topo_2026_10_14_l1_designed	f062ac8f2ccb6a822057ba0a58450675f42f170cd2708656538d53afd88a70a6
-l1-p2536	l1	ortholog	cyno	AQP10	internal	internal	0	6	0	301	37	37	122	inter_tm			cyno_ortholog	topo_2026_05_16	cc7bb887c6fa83314aa1d9a2c8c4855034905e90e7bd8967ec945f9a26ee74ae
-l1-p2537	l1	ortholog	cyno	AQP2	internal	internal	0	6	0	271	26	26	177	inter_tm			cyno_ortholog	topo_2026_05_16	230a0366088d9ef530502405fec29bc2a7bde365266a6112de2c111d133dfd6e
-l1-p2538	l1	ortholog	cyno	ATP1B2	C-terminal	C-terminal	0	1	0	290	0	229	62	c_terminal			cyno_ortholog	topo_2026_05_16	5c540202fffa69282cdc9553b0b5b0dc724731715e4e70201e68c99104753542
-l1-p2539	l1	ortholog	cyno	BAMBI	N after SP	N after SP	0	1	26	260	0	126	27	n_terminal			cyno_ortholog	topo_2026_05_16	5a325582dc5fb3c660456b19a682219c78deaa208fce68a266fc30b04744a891
 l1-p2540	l1	ortholog	cyno	CACNG5	internal	internal	0	4	0	275	71	71	30	inter_tm			cyno_ortholog	topo_2026_05_16	97dcb63e3ff5796cd78829120e7d55b813845556b531eb5721c56dbf0db3dc60
-l1-p2541	l1	ortholog	cyno	CD28	N after SP	N after SP	0	1	18	220	0	135	19	n_terminal			cyno_ortholog	topo_2026_05_16	0b90beeb9ac447eeb44c5b548a50bda547914991d09b94b9591615d8b2cf9a44
 l1-p2542	l1	ortholog	cyno	CD38	C-terminal	C-terminal	0	1	0	301	0	257	45	c_terminal	moderate	moderate	cyno_ortholog	topo_2026_05_16	42a4c3764363bdf0b7dd3218c10c3b8f5662c86616a4c59241ea9341d6c58ac8
-l1-p2543	l1	ortholog	cyno	CD58	N after SP	N after SP	0	1	28	240	0	188	29	n_terminal	moderate	strong	cyno_ortholog	topo_2026_05_16	7910cf0b55d2ebe1de10d4641973e229889672494ff3f4408e3f20a3373538dc
-l1-p2544	l1	ortholog	cyno	CD86	N after SP	N after SP	0	1	19	323	0	222	20	n_terminal	moderate	moderate	library_designed_orf	topo_2026_10_14_l1_designed	700ab2c2d04b4b14c578967061bed1fa0ab43bece32e4d0f8df5217b9aaaef1b
-l1-p2545	l1	ortholog	cyno	CDH19	N after SP	N after SP	0	1	21	772	0	575	22	n_terminal			cyno_ortholog	topo_2026_05_16	be4a07e071630b8da62f0f80f94c682f6024b2d55d015ae30413fed95e1ea0ed
-l1-p2546	l1	ortholog	cyno	CDH24	N after SP	N after SP	0	1	27	711	0	576	28	n_terminal			cyno_ortholog	topo_2026_05_16	36431da75911b44ce9c1e4ad57a03a9bd5166b5199c8002fbbfad71073773ef2
-l1-p2547	l1	ortholog	cyno	CDH3	N after SP	N after SP	0	1	23	829	0	632	24	n_terminal			cyno_ortholog	topo_2026_05_16	f76684a5ed1630be5ba1f18a85219b65258ad24d81c9679bde4e49be462636a1
 l1-p2548	l1	ortholog	cyno	CDH4	N after SP	N after SP	0	1	20	916	0	714	21	n_terminal			cyno_ortholog	topo_2026_05_16	307c44b48885c4f2497e7d84a7e0d045b38cc716e3e59bfe06d06c78b79f575e
-l1-p2549	l1	ortholog	cyno	CEACAM8	N at residue 1, single-pass (type III)	N at residue 1	0	1	0	382	0	370	1	n_terminal	moderate	moderate	cyno_ortholog	topo_2026_05_16	3e81f3ad2cc2974ae47f2dc54654b16d7956083a7e52904a4dd80867a2467c8f
-l1-p2550	l1	ortholog	cyno	CLDN8	internal	internal	0	4	0	228	54	54	28	inter_tm	moderate	moderate	cyno_ortholog	topo_2026_05_16	e8bc04a6eee04a68992d9af6f823581e717f1c884ec6d5e545e034e4d0e2c556
 l1-p2551	l1	ortholog	cyno	CLDND1	internal	internal	0	4	0	253	109	109	30	inter_tm			cyno_ortholog_repick	topo_2026_10_09_ortholog_repick	e228cf1ff8ea53858cf53cf2eafcad7f199dfdeacbb049221d8cb011b4f6fe1c
-l1-p2552	l1	ortholog	cyno	CLEC9A	C-terminal	C-terminal	0	1	0	295	0	185	111	c_terminal			cyno_ortholog	topo_2026_05_16	f10583e1ff130cc2486c95823d86a1ba06200573066fd29e8c2398db4695cf95
-l1-p2553	l1	ortholog	cyno	CLSTN1	N after SP	N after SP	0	1	28	981	0	833	29	n_terminal	moderate	weak	cyno_ortholog	topo_2026_05_16	66ae7453a0d2601754ab3ff7e2509c515d6aa33b44a95fc214da370a9bcb47bc
-l1-p2554	l1	ortholog	cyno	CNTN1	N after SP	N after SP	0	0	20	1018	0	998	21	no_tm			library_designed_orf	topo_2026_10_14_l1_designed	6db383a08b90591546cbad2647089cb317928c9cb5c519646c0cae5521ce7428
-l1-p2555	l1	ortholog	cyno	CNTN6	N after SP	N after SP	0	0	19	1029	0	1010	20	no_tm			cyno_ortholog	topo_2026_05_16	e136f072388c8bc8969c36714a6980cade0ca02dbbde27dfbbb1d36343343f09
-l1-p2556	l1	ortholog	cyno	CR2	N after SP	N after SP	0	1	20	1093	0	1015	21	n_terminal	moderate	moderate	cyno_ortholog	topo_2026_05_16	03b7ab61d6460f01eadeccb208604a0bda2b78e8ec7782380bb1362768adbff6
-l1-p2557	l1	ortholog	cyno	CRB1	N after SP	N after SP	0	1	27	1406	0	1316	28	n_terminal			cyno_ortholog	topo_2026_05_16	d1e1ea456e3015f0f46b2d88d140673437b5a17eb5e4c1e1cfe1c41c49e29bde
-l1-p2558	l1	ortholog	cyno	CRHR2	N at residue 1, multipass	N at residue 1	0	7	0	411	16	114	1	n_terminal			cyno_ortholog	topo_2026_05_16	cafb8373eb8ad6acb0ba6b9df19e1408d9b8091b7f22bd1f27d9ba1032dbc010
-l1-p2559	l1	ortholog	cyno	CXCL16	N after SP	N after SP	0	1	45	270	0	176	46	n_terminal	moderate	moderate	library_designed_orf	topo_2026_10_14_l1_designed	26307d0066ee88984d2b02c44258a8c9dd511d13ca6e19750bde5dcfcf6d3631
-l1-p2560	l1	ortholog	cyno	DPP10	C-terminal	C-terminal	0	1	0	800	0	741	60	c_terminal			cyno_ortholog_repick	topo_2026_10_11_ortholog_gap	5227b23472936e14b118760b9c1acdfa205e3cfe68366ebf9c6a983520fc9d3a
 l1-p2561	l1	ortholog	cyno	DPP4	C-terminal	C-terminal	0	1	0	766	0	739	28	c_terminal	moderate	strong	cyno_ortholog	topo_2026_05_16	2aa47171dbce92a914e2d5dca357ccdee173c85c45fae5a4f0fffd6f2936b66f
-l1-p2562	l1	ortholog	cyno	DRD1	N at residue 1, multipass	N at residue 1	0	7	0	446	35	35	160	inter_tm			cyno_ortholog	topo_2026_05_16	b4e7977f3148c8ebfb3e7e0d1cc10d93376979dff8bf23fc6d2ba7f09ceecb3e
-l1-p2563	l1	ortholog	cyno	EDNRB	N after SP	N after SP	0	7	26	442	28	72	27	n_terminal			library_designed_orf	topo_2026_10_14_l1_designed	7e08e52c38933db121fb6ca088e5a5d9d68767b6dfad0331204bcaaf0fc6df53
-l1-p2564	l1	ortholog	cyno	EFNA5	N after SP	N after SP	0	0	20	228	0	208	21	no_tm	moderate	moderate	cyno_ortholog	topo_2026_05_16	cb2156f5f62045c887cc2aca2875c6b5434f31f3f7b7df21f847b4f41f759d26
-l1-p2565	l1	ortholog	cyno	ENG	N after SP	N after SP	0	1	23	661	0	571	24	n_terminal	moderate	strong	cyno_ortholog	topo_2026_05_16	bac71d8158e395bd4ddfb36aed7c02d21be1323c12006e7f69d916b853602014
-l1-p2566	l1	ortholog	cyno	ENPP4	N after SP	N after SP	0	1	18	453	0	389	19	n_terminal			cyno_ortholog	topo_2026_05_16	46c147426c6151ee33c06861b2c9afb16deb790c2ab37158a57b6467f3fa8fc6
-l1-p2567	l1	ortholog	cyno	FLRT1	N after SP	N after SP	0	1	51	674	0	503	52	n_terminal	moderate	moderate	cyno_ortholog	topo_2026_05_16	dbbd3ec7afa555ea073118d733e307a267418037d79aa4a80901481060f8a6e9
-l1-p2568	l1	ortholog	cyno	FPR2	N at residue 1, multipass	N at residue 1	0	7	0	351	43	43	163	inter_tm	moderate	strong	cyno_ortholog	topo_2026_05_16	c3d47bd645201384c5d6de028a5c6bd67158a1966d26b8aa2b671a2c38bcca32
-l1-p2569	l1	ortholog	cyno	GABRA1	N after SP	N after SP	0	4	27	456	11	224	28	n_terminal			cyno_ortholog_repick	topo_2026_10_09_ortholog_repick	dff7c7dbbd99f2c51113026f7e18f5519605b79c61dc94b5bb12563f7f92eb4d
-l1-p2570	l1	ortholog	cyno	GLRA2	N after SP	N after SP	0	4	27	452	11	229	28	n_terminal			cyno_ortholog	topo_2026_05_16	2df6993ecd3912e28cdbc803666b70fc55baeb5c6545d3152397e30704c8e86a
-l1-p2571	l1	ortholog	cyno	GPR20	N at residue 1, multipass	N at residue 1	0	7	0	332	15	54	1	n_terminal			cyno_ortholog	topo_2026_05_16	20298a81415d8c2f5f8ce27ce4bee2557589587366ef6b94d75e3999ab18e809
 l1-p2572	l1	ortholog	cyno	GPR78	N at residue 1, multipass	N at residue 1	0	7	0	361	26	26	144	inter_tm			cyno_ortholog	topo_2026_05_16	d2c29a09c250fb26644f48aadc129757d2bfe6d32904286af00eb33d3ca6eb5d
-l1-p2573	l1	ortholog	cyno	GRM4	N after SP	N after SP	0	7	32	912	30	555	33	n_terminal			cyno_ortholog	topo_2026_05_16	d3296333ef042d44e8bae51ab5978765fbb6c037e3a2a25893ac2346f6a19753
-l1-p2574	l1	ortholog	cyno	IL13RA2	N after SP	N after SP	0	1	21	388	0	321	22	n_terminal	moderate	strong	cyno_ortholog	topo_2026_05_16	bd16a1428582377aa2d7e6e3103612a106a724076ced9c8dc38b60e0986012e5
-l1-p2575	l1	ortholog	cyno	KCNA3	internal	internal	0	6	0	475	41	41	154	inter_tm			cyno_ortholog	topo_2026_05_16	a7fe0ddf0e4b49e46f8ad860023e4de6a365eafacf8a5839ae17a616b347c7c4
-l1-p2576	l1	ortholog	cyno	KLRF1	C-terminal	C-terminal	0	1	0	231	0	172	60	c_terminal			cyno_ortholog	topo_2026_05_16	ccd919527db2e69aeb6ae14416df0fcfca160782d839661b9e14ade17b510335
-l1-p2577	l1	ortholog	cyno	LIM2	internal	internal	0	4	0	215	82	82	26	inter_tm			cyno_ortholog	topo_2026_05_16	fb64adbc787f6251bf82df1602ac1ddd3a00e2d0fc5dfee486d93dfc2051fc5d
-l1-p2578	l1	ortholog	cyno	LRP12	N after SP	N after SP	0	1	32	859	0	460	33	n_terminal			cyno_ortholog	topo_2026_05_16	c992ae6f0922b561b5ece47d3f1edf13ed02bba21bbef22477bdd3f5b545ae42
-l1-p2579	l1	ortholog	cyno	LY6G6C	N after SP	N after SP	0	0	18	125	0	107	19	no_tm			cyno_ortholog	topo_2026_05_16	8517bdef910d9703df69e317902ca02b39ff746d1965422376079be9f7098c21
-l1-p2580	l1	ortholog	cyno	LY6K	N after SP	N after SP	0	0	17	165	0	148	18	no_tm			cyno_ortholog	topo_2026_05_16	d0e6e2531aaf7f9e0a5e21d96bea26ce49ace02ded5ba839cb0c7abcfa5c2976
 l1-p2581	l1	ortholog	cyno	LYPD6B	N after SP	N after SP	0	0	60	206	0	146	61	no_tm			cyno_ortholog	topo_2026_05_16	dfd7b64867cb918c46e149ec278546c0038a688abf5c962ecee5020965fef8a1
-l1-p2582	l1	ortholog	cyno	MERTK	N after SP	N after SP	0	1	25	1005	0	482	26	n_terminal	high	strong	cyno_ortholog	topo_2026_05_16	677810ad3aef5276ddef01cdd8170c55b7bb9f0fd94972ea507577c56f2a2282
-l1-p2583	l1	ortholog	cyno	MFRP	C-terminal	C-terminal	0	1	0	579	0	489	91	c_terminal			cyno_ortholog	topo_2026_05_16	015a60123bbddf48e159fc5cf0fa338273988942a860fd1618093ca64408a81a
-l1-p2584	l1	ortholog	cyno	MMEL1	C-terminal	C-terminal	0	1	0	779	0	733	47	c_terminal	moderate	moderate	cyno_ortholog	topo_2026_05_16	afa438417834853f3686c9f2256346748be7707343471f792d5df50d1c447eff
-l1-p2586	l1	ortholog	cyno	MOG	N after SP	N after SP	0	3	29	247	1	126	30	n_terminal	low	weak	cyno_ortholog_repick	topo_2026_10_09_ortholog_repick	7d6542be6dfaa418cdb0de8ef51f28602f099e6cf97ab454c9aa17de1f285511
 l1-p2587	l1	ortholog	cyno	MPIG6B	N after SP	N after SP	0	1	20	217	0	121	21	n_terminal			cyno_ortholog	topo_2026_05_16	b68074608ff6c21ebd9787132903d47bcc6aa0ccaf510aa7e2b3d8a8843f1796
-l1-p2588	l1	ortholog	cyno	NFASC	internal	internal	0	2	0	1331	1123	1123	78	inter_tm			cyno_ortholog	topo_2026_05_16	d8a3229d904af7241a015cb272ed2a676eb29d4260da490a4e389c393bfc0fa5
-l1-p2589	l1	ortholog	cyno	NLGN2	N after SP	N after SP	0	1	14	848	0	655	15	n_terminal	moderate	moderate	cyno_ortholog	topo_2026_05_16	d63a4945e858c59013e928a5bf0ee3e2cb59ff2432962cdbc851acd7cadcd029
-l1-p2590	l1	ortholog	cyno	NPSR1	N at residue 1, multipass	N at residue 1	0	7	0	371	23	52	1	n_terminal			cyno_ortholog	topo_2026_05_16	067677e3f4d92e00ceb2f8adc56c4a1b64e6399bec436af4b9cb1784ae29c1b9
 l1-p2591	l1	ortholog	cyno	NRG1	N at residue 1, single-pass (type III)	N at residue 1	0	1	0	640	0	242	1	n_terminal	high	strong	cyno_ortholog	topo_2026_05_16	19af35645f79e7bbee2a9ab4c9e49c1c9a94cb436fb9037b741ec14bac3250f2
 l1-p2592	l1	ortholog	cyno	OMG	N after SP	N after SP	0	0	24	440	0	416	25	no_tm	moderate	moderate	cyno_ortholog	topo_2026_05_16	7101e54c06e7f7ac634557ea7b7735e8db146676d4815e9f594cc6b2f4d41c32
-l1-p2593	l1	ortholog	cyno	OPN4	N at residue 1, multipass	N at residue 1	0	7	0	478	27	72	1	n_terminal			cyno_ortholog	topo_2026_05_16	0bc7e1547a4199a2cbe5be4af381fe3e8acd26c1c0eace6a70a0106771d225e8
-l1-p2594	l1	ortholog	cyno	OR2Y1	N at residue 1, multipass	N at residue 1	0	7	0	311	29	29	167	inter_tm			cyno_ortholog	topo_2026_05_16	fa70b077be85894e82a59d37288a17fbf7f9b39ac7a584571d13bae8e7520845
-l1-p2595	l1	ortholog	cyno	P2RX6	internal	internal	0	2	0	438	285	285	60	inter_tm			cyno_ortholog	topo_2026_05_16	88005951d17639de1f8e76f7abaf74d342a5d7539b5c78c0b2ad3bd6bcb096db
-l1-p2596	l1	ortholog	cyno	PGAP6	N after SP	N after SP	0	7	34	771	18	511	35	n_terminal			cyno_ortholog	topo_2026_05_16	22b4914dfeb897e06fda0ad02aa5ce8b9769e01098e23329d5effec9a395d103
 l1-p2597	l1	ortholog	cyno	PROCR	N after SP	N after SP	0	1	17	238	0	193	18	n_terminal	high	strong	cyno_ortholog	topo_2026_05_16	aaf92cf1a6615830719b35817c7718ca38ba5693e739a45adc62291b353f6e8a
-l1-p2598	l1	ortholog	cyno	PTPRG	N after SP	N after SP	0	1	26	1445	0	711	27	n_terminal	moderate	moderate	cyno_ortholog	topo_2026_05_16	30c0ecf5fcc3980a660e233d9f9727e2bd646c7ac2c8a18a6342c75664d9b9a7
-l1-p2599	l1	ortholog	cyno	RTN4R	N after SP	N after SP	0	0	26	472	0	446	27	no_tm	moderate	strong	cyno_ortholog	topo_2026_05_16	dee2e0e46a9781f09f032d8270bce0a8fa6eb4b686dcbaa704ee84e281a265bb
-l1-p2600	l1	ortholog	cyno	SEZ6L2	N after SP	N after SP	0	1	27	923	0	830	28	n_terminal	moderate	moderate	cyno_ortholog	topo_2026_05_16	038ee5d61e3f694743a26b39427efe88f590a16d2b54a540b55c006418fb091a
-l1-p2601	l1	ortholog	cyno	SLAMF8	N after SP	N after SP	0	1	22	285	0	211	23	n_terminal			cyno_ortholog	topo_2026_05_16	b784f8477b9eff2d2c6d7048d16a17eec681201e04e3df629b3639169204bab3
-l1-p2602	l1	ortholog	cyno	SLAMF9	N after SP	N after SP	0	1	18	288	0	216	19	n_terminal			cyno_ortholog	topo_2026_05_16	f9bb2c69e39dd03369776a5c29b9b65a8827e28df21ab79dcd1b569221af2385
-l1-p2603	l1	ortholog	cyno	SLC13A1	C-terminal	C-terminal	0	15	0	595	27	27	257	inter_tm			cyno_ortholog	topo_2026_05_16	7f9a6cdf4abb679e8b9fc869902588b67825e5b28dc0c8798f7bcb803bbcb6b4
-l1-p2604	l1	ortholog	cyno	SLC16A12	internal	internal	0	12	0	516	22	22	66	inter_tm			cyno_ortholog	topo_2026_05_16	1155f4c75c92ac43ea393b15cdc33f2a911ab074a7b46f7bd1f1da74d90b67c2
-l1-p2605	l1	ortholog	cyno	SLC22A11	internal	internal	0	12	0	550	106	106	38	inter_tm			cyno_ortholog	topo_2026_05_16	c7c87d7a461da427f1bd593d209f4e9c3340f3a7909bb1d99365d9185a7aaa81
-l1-p2606	l1	ortholog	cyno	SLC22A17	N at residue 1, multipass	N at residue 1	0	11	0	537	24	98	1	n_terminal			cyno_ortholog	topo_2026_05_16	52f79c8ab50e76da15507bb44c0d1210d49d4eb41de1d5de507535626a3fce59
-l1-p2607	l1	ortholog	cyno	SLC22A3	internal	internal	0	12	0	553	112	112	42	inter_tm			cyno_ortholog	topo_2026_05_16	378e6688f2db46261e09576f3caa26ea08ade14dcc6d58a53891f853b1c057c9
-l1-p2608	l1	ortholog	cyno	SLC26A6	internal	internal	0	12	0	759	32	32	232	inter_tm			cyno_ortholog	topo_2026_05_16	d159e4d7bccae3dc4ad63a5a71f6c068ce70038ef7788d736ff5cb344a22529f
-l1-p2609	l1	ortholog	cyno	SLC4A1	internal	internal	0	14	0	914	36	36	628	inter_tm			library_designed_orf	topo_2026_10_14_l1_designed	3d849fea8eb2cc808f2330396658e37b90fb29453880f9fc3e502e087c6ab26e
-l1-p2610	l1	ortholog	cyno	SLC52A3	C-terminal	C-terminal	0	11	0	469	63	63	159	inter_tm			cyno_ortholog	topo_2026_05_16	999e107e992152f55130aecf6b21a6bc39077aa60c08135e08ca00be6ce7fbc9
-l1-p2611	l1	ortholog	cyno	SLC5A12	N at residue 1, multipass	N at residue 1	0	13	0	627	45	45	460	inter_tm			cyno_ortholog	topo_2026_05_16	98865f67b2ba4da876835af3e696a05751153321d37e4f639a6b3ca4afeecf1c
-l1-p2612	l1	ortholog	cyno	SLC5A5	N at residue 1, multipass	N at residue 1	0	13	0	643	61	61	467	inter_tm			cyno_ortholog	topo_2026_05_16	165927d594a0ed6a4e11e6d7918b3ca6cf0284c06d54a722d09b910be1f238c5
-l1-p2613	l1	ortholog	cyno	SLITRK5	N after SP	N after SP	0	1	38	918	0	626	39	n_terminal			cyno_ortholog	topo_2026_05_16	a60b7fba58a0085a2f201720fe46c09911a3813d2d4d7c66b1eb10cdcc8f4fb1
-l1-p2614	l1	ortholog	cyno	SPACA4	N after SP	N after SP	0	0	19	127	0	108	20	no_tm	low	moderate	cyno_ortholog	topo_2026_05_16	f0ac97c6a10470f4ba4accb818ba3184602d88a702b789979964e43be65e5032
-l1-p2615	l1	ortholog	cyno	SPAM1	N after SP	N after SP	0	0	35	510	0	475	36	no_tm	moderate	strong	cyno_ortholog	topo_2026_05_16	d98f3b90d6fb5c41828f39862ee8af90045b4051879b36582ab954869f34ba87
-l1-p2616	l1	ortholog	cyno	SUSD3	N at residue 1, single-pass (type III)	N at residue 1	0	1	0	254	0	103	1	n_terminal			cyno_ortholog	topo_2026_05_16	832df77dd966420665b9ca43dc111191be4b128186e9ec0dc39481270f161fb7
 l1-p2617	l1	ortholog	cyno	TFRC	C-terminal	C-terminal	0	1	0	732	0	646	87	c_terminal	moderate	strong	cyno_ortholog	topo_2026_05_16	152bb44e72c871815e00e01d59787018646b101e93cef41c2c95d08f28bd8ba5
-l1-p2618	l1	ortholog	cyno	TIE1	N at residue 1, single-pass (type III)	N at residue 1	0	1	0	1138	0	763	1	n_terminal	moderate	strong	cyno_ortholog	topo_2026_05_16	55d6a3be358bf7a628df70ec0036847cb9ee92c5d657d2f307c11349a82c681e
-l1-p2619	l1	ortholog	cyno	TMEM132B	N at residue 1, single-pass (type III)	N at residue 1	0	1	0	1078	0	896	1	n_terminal			cyno_ortholog	topo_2026_05_16	4d8aed4fa25813c450b70f76a80f02de1450f610436d465b1c52366b810a8ff6
-l1-p2620	l1	ortholog	cyno	TMEM219	internal	internal	0	2	0	239	160	160	44	inter_tm			cyno_ortholog	topo_2026_05_16	25a6aa4028d3c4fa63ffbd1190cb6a46e9aaf415a3fd35da5b106dddee70e70b
-l1-p2621	l1	ortholog	cyno	TMPRSS11B	C-terminal	C-terminal	0	1	0	416	0	380	37	c_terminal			cyno_ortholog	topo_2026_05_16	bff089edf7fe976e68ca73616e77955e21b4f732630d61227c3a0d69bea6149d
-l1-p2622	l1	ortholog	cyno	TNFRSF17	N at residue 1, single-pass (type III)	N at residue 1	0	1	0	183	0	52	1	n_terminal	high	strong	cyno_ortholog	topo_2026_05_16	7e654fcc2cd15a208d7510a1f51a26a00c36e2adfdf98c77cfe060631d130da6
-l1-p2623	l1	ortholog	cyno	TNFRSF1B	N at residue 1, single-pass (type III)	N at residue 1	0	1	0	571	0	372	1	n_terminal	high	strong	cyno_ortholog	topo_2026_05_16	52b81f057eb8c258fc1157b89cdfa1a37a445fdc1c52826ffd70005d89450a12
-l1-p2624	l1	ortholog	cyno	TNFSF18	C-terminal	C-terminal	0	1	0	199	0	128	72	c_terminal	high	strong	cyno_ortholog	topo_2026_05_16	aa0d01e35c98222a9711dd35f1092969e88cb4443d79069322a8d5b2012dfdb3
-l1-p2625	l1	ortholog	cyno	TPSG1	N after SP	N after SP	0	1	20	319	0	262	21	n_terminal			cyno_ortholog	topo_2026_05_16	cfe452807e539335bc51593569437464cccc22bba45b23053b27229e394c929f
-l1-p2626	l1	ortholog	cyno	TRIL	N after SP	N after SP	0	1	23	811	0	674	24	n_terminal			cyno_ortholog	topo_2026_05_16	341d6888c3ee4938a4014d3b240ba7fb102ca60212b53448b31193339ac47e33
 l1-p2627	l1	ortholog	cyno	UNC5D	N after SP	N after SP	0	1	32	953	0	349	33	n_terminal	low	moderate	cyno_ortholog	topo_2026_05_16	408ea083b60035a5899c6eecd1fc5c45c466e6991adb6d0af93ca778521c0423
 l1-p2628	l1	ortholog	cyno	VTCN1	C-terminal	C-terminal	0	1	0	282	0	255	28	c_terminal	moderate	moderate	cyno_ortholog	topo_2026_05_16	e82265adf2cd29326c4be4688136684a2c206728b9c36d3cb35fce7cb2930dce
-l1-p2629	l1	ortholog	mouse	ABCC4	internal	internal	0	12	0	1325	41	41	732	inter_tm			mouse_ortholog	topo_2026_05_16	fd9716d8a4c11d5dcdac26f599325667e4677ef2bf966ace39b7405dcd2fd2ed
-l1-p2630	l1	ortholog	mouse	ACE	N after SP	N after SP	0	1	34	1312	0	1227	35	n_terminal	high	strong	mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	93f6d6761a9b2b5a23ace0c82aeeeb126360c4f02e5f41647fa9a7955d2bdc69
-l1-p2631	l1	ortholog	mouse	ADGRG1	N after SP	N after SP	0	7	22	687	28	382	23	n_terminal	moderate	strong	mouse_ortholog	topo_2026_05_16	f6535da98ff37fbe81fe5b773ea9ef2dd5abaaa23418dd95828bcef19125f5ba
-l1-p2632	l1	ortholog	mouse	ADGRG6	N after SP	N after SP	0	7	37	1220	26	801	38	n_terminal	moderate	moderate	mouse_ortholog_repick	topo_2026_10_11_ortholog_gap	8e09f77ea5719e1b327c0099949be8ca955b8ff02febec82ef457752502d9d16
-l1-p2633	l1	ortholog	mouse	ADIPOR2	C-terminal	C-terminal	0	7	0	386	16	17	370	c_terminal			mouse_ortholog	topo_2026_05_16	19509f4e47e52c059b845ea5f70a251e33e91e5adb0fe0cf289caf9d03f25e64
-l1-p2634	l1	ortholog	mouse	AMIGO3	N after SP	N after SP	0	1	19	508	0	364	20	n_terminal			mouse_ortholog	topo_2026_05_16	82fccc550749488caa013d830574a3561fcd21a03123b298cc2ff1f13659b0f2
-l1-p2635	l1	ortholog	mouse	ANO3	internal	internal	0	8	0	981	99	99	659	inter_tm			mouse_ortholog	topo_2026_05_16	6c4ca32b6983490863bb87ca26d5a27025f4d245eee41c2cab4135373552b216
-l1-p2636	l1	ortholog	mouse	ANO6	internal	internal	0	8	0	911	97	97	574	inter_tm			mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	35c511e78507cf0dd9b877c81ea5bac723aafdc3520c02daf5c70760ba5dd223
 l1-p2637	l1	ortholog	mouse	ATP1B1	C-terminal	C-terminal	0	1	0	304	0	248	57	c_terminal			mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	b1f65186ab8512fc23d73da73c75b2109d112ec4adbba6cb2dbd439184f7719a
-l1-p2638	l1	ortholog	mouse	ATP1B2	C-terminal	C-terminal	0	1	0	290	0	229	62	c_terminal			mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	d7a7258cc3e89ade0cc89e533d26f7bb93849b0508d4abd6d2c80ea376e0cf4a
-l1-p2639	l1	ortholog	mouse	ATP1B3	C-terminal	C-terminal	0	1	0	278	0	218	61	c_terminal			mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	34038be9c730316166ea9a1ddbafeddaeaad2a6d11e9b7925f35a64fabeb3eee
-l1-p2640	l1	ortholog	mouse	ATRNL1	N after SP	N after SP	0	1	59	1378	0	1169	60	n_terminal			mouse_ortholog	topo_2026_05_16	410271091565258465f0980fb8b84adaa8d924b877d9855bac07ec68e19ef687
 l1-p2641	l1	ortholog	mouse	C11orf87	N at residue 1, single-pass (type III)	N at residue 1	0	1	0	199	0	60	1	n_terminal			mouse_ortholog	topo_2026_05_16	d67679c882101c4986709934e398103734475be015f6ce275beea8eac8991bd9
-l1-p2642	l1	ortholog	mouse	C5AR2	N at residue 1, multipass	N at residue 1	0	7	0	344	24	38	1	n_terminal			mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	bd96b152976355e24ed985f1945810e00bda061b9e24ce9accc5e2d45da4e731
-l1-p2643	l1	ortholog	mouse	CADM1	N after SP	N after SP	0	1	47	474	0	360	48	n_terminal	moderate	strong	mouse_ortholog_repick	topo_2026_10_11_ortholog_gap	88956152e03d7fdfb0c41732add640b8fff7fd0b6d568a10bc3bae3468274ab5
 l1-p2644	l1	ortholog	mouse	CD14	N after SP	N after SP	0	0	15	366	0	351	16	no_tm	moderate	strong	mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	ed7389a52b3e26de178e194667a7414697e3b90439a02caa1df3808128790284
-l1-p2645	l1	ortholog	mouse	CD22	N after SP	N after SP	0	1	18	868	0	690	19	n_terminal	moderate	moderate	mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	54be3499a58317703d8bea62e66408d154cf34e3f185e803805b0c1b0fb3796a
-l1-p2646	l1	ortholog	mouse	CD302	N after SP	N after SP	0	1	20	228	0	147	21	n_terminal			mouse_ortholog	topo_2026_05_16	7a8013f2ee8ae7f0bb99d81309d5693bec6b895af1f297e3569d2125652a8b8b
-l1-p2647	l1	ortholog	mouse	CD53	internal	internal	0	4	0	219	76	76	106	inter_tm			mouse_ortholog	topo_2026_05_16	dae303f0a2f7f26b5d12b5794ff02215dc7ad8cd2eb5be58a9c0506d6c76a5cd
-l1-p2648	l1	ortholog	mouse	CD74	C-terminal	C-terminal	0	1	0	279	0	224	56	c_terminal	moderate	strong	mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	20169cf2c9b6fa5d18e5fa6b29350a5bf9bc26dc046b2332d51a307fdc90ece9
-l1-p2649	l1	ortholog	mouse	CD84	N after SP	N after SP	0	1	21	329	0	198	22	n_terminal	moderate	strong	mouse_ortholog	topo_2026_05_16	8b26ca3bdb722e4236624c602e8dff6a13987d853f9baaa007ed9c8cd9a85828
-l1-p2650	l1	ortholog	mouse	CD93	N after SP	N after SP	0	1	22	644	0	552	23	n_terminal	moderate	strong	mouse_ortholog	topo_2026_05_16	817d8b5f791ca0acd0d4c7a898616b41741b7b853aaa6928d629b7369a6c5a6a
-l1-p2651	l1	ortholog	mouse	CDH6	N after SP	N after SP	0	1	21	790	0	592	22	n_terminal	moderate	moderate	mouse_ortholog	topo_2026_05_16	e546304f9cd6a235445fd3abb768783cb4f39a03c27234c4ab8892a6062573e2
-l1-p2652	l1	ortholog	mouse	CLEC12B	C-terminal	C-terminal	0	1	0	275	0	214	62	c_terminal			mouse_ortholog	topo_2026_05_16	c2cac3bc79202effda87df1e8966c6231ecc146d6a64260dbc208263332cb29e
-l1-p2653	l1	ortholog	mouse	CNNM4	N after SP	N after SP	0	5	34	771	7	148	35	n_terminal			mouse_ortholog	topo_2026_05_16	715bd05f5a32e2c6db295735c527b784777d1cb565c4cb28f51b9952f268dd75
-l1-p2654	l1	ortholog	mouse	CNTN1	N after SP	N after SP	0	0	20	1020	0	1000	21	no_tm			mouse_ortholog	topo_2026_05_16	dd3b8807023c3634c9cf1170a3ace03f6a0db18ef986164d0dab767a9b9a9262
-l1-p2655	l1	ortholog	mouse	CNTN3	N after SP	N after SP	0	0	19	1028	0	1009	20	no_tm			mouse_ortholog	topo_2026_05_16	2bb02954bbe7d5c7fdcb55514d2ed4d190630ef3e882cd1843b5c36554e8ec2c
-l1-p2656	l1	ortholog	mouse	DNER	N after SP	N after SP	0	1	39	737	0	601	40	n_terminal			mouse_ortholog	topo_2026_05_16	f44f7dbc9a3f7910d444053b9784334ab4178dbcd07853bb9af35960ff1678f5
-l1-p2657	l1	ortholog	mouse	DRD2	N at residue 1, multipass	N at residue 1	0	7	0	444	15	35	1	n_terminal			mouse_ortholog	topo_2026_05_16	b766704b7c575a7653868447251ee75c30423fbf2ac18593978e84c4be2926ac
-l1-p2658	l1	ortholog	mouse	EDA	C-terminal	C-terminal	0	1	0	391	0	332	60	c_terminal	high	strong	mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	94b401d895769c5835de8e746179054b4eb28e46002a631cee2b0e33847e9387
-l1-p2659	l1	ortholog	mouse	ENPP1	C-terminal	C-terminal	0	1	0	906	0	827	80	c_terminal			library_designed_orf	topo_2026_10_14_l1_designed	0b40d661f765bdee2dc0f8eac114478231134aacdb53564329494a150bde7284
-l1-p2660	l1	ortholog	mouse	FAP	C-terminal	C-terminal	0	1	0	761	0	736	26	c_terminal	moderate	moderate	mouse_ortholog	topo_2026_05_16	f3f0dca243a4cff24a9b2de32e163578c72075a17033bf62b1382a4d8e91616a
-l1-p2661	l1	ortholog	mouse	FASLG	C-terminal	C-terminal	0	1	0	279	0	179	101	c_terminal	high	strong	mouse_ortholog	topo_2026_05_16	411e871008b15f38f5448a05049d29214c57db463e7074b856b7cc395aa0a2e1
-l1-p2662	l1	ortholog	mouse	FPR1	N at residue 1, multipass	N at residue 1	0	7	0	364	46	46	171	inter_tm			mouse_ortholog	topo_2026_05_16	f5fae01fec2cafada1a9dfde5893ec4354045446bf83f7f3dbbd2095d5bc548a
-l1-p2663	l1	ortholog	mouse	GPC2	N after SP	N after SP	0	0	23	579	0	556	24	no_tm			mouse_ortholog	topo_2026_05_16	4af969835d820f985a9b2d2a0f9d56d2e797e9a2547587f05e7459c46aec71b0
-l1-p2664	l1	ortholog	mouse	GPR101	N at residue 1, multipass	N at residue 1	0	7	0	511	20	31	1	n_terminal			mouse_ortholog	topo_2026_05_16	1775558a30fd5f77b14f60f52324e79b195bac746cc56f83bd348d3d7a33d37c
-l1-p2665	l1	ortholog	mouse	GPR146	N at residue 1, multipass	N at residue 1	0	7	0	333	20	26	1	n_terminal			mouse_ortholog	topo_2026_05_16	93424f6d3b500ba4d51bc7fa0c814567b3ec8caabfd9ca0787c03e30c67201f7
-l1-p2666	l1	ortholog	mouse	GPR88	N at residue 1, multipass	N at residue 1	0	7	0	384	23	35	1	n_terminal			mouse_ortholog	topo_2026_05_16	249c963f7270222e8d269156d3dcbf186a8661fead55fce9b31880e7171fe85e
-l1-p2667	l1	ortholog	mouse	GRM5	N after SP	N after SP	0	7	18	1203	23	560	19	n_terminal			mouse_ortholog	topo_2026_05_16	65bcb4ac089a591ba3c117c0cf3e019b441453115d4ed81f4edf79b11b937ac1
-l1-p2668	l1	ortholog	mouse	GYPC	N at residue 1, single-pass (type III)	N at residue 1	0	1	0	95	0	25	1	n_terminal			mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	f28f4c47a33d7eed22f623be80dc47ffa3d98295f46ede99e312ef31acaccc6f
-l1-p2669	l1	ortholog	mouse	HFE	N after SP	N after SP	0	1	24	359	0	292	25	n_terminal			mouse_ortholog	topo_2026_05_16	c786b167210bedef39073dd11eab8718f39d6a6c355953c89621cb6a716e8e8b
-l1-p2670	l1	ortholog	mouse	IGF1R	N after SP	N after SP	0	1	30	1369	0	906	31	n_terminal			mouse_ortholog	topo_2026_05_16	23a615b2e01b5110279f07cad07506402bfe84e77625cf1467230add5535d24e
-l1-p2671	l1	ortholog	mouse	IL2RA	N after SP	N after SP	0	1	21	268	0	215	22	n_terminal	moderate	strong	mouse_ortholog	topo_2026_05_16	436087cce7b4a69fee088de5e1d2d1f54e4fcc8233707ae41226dc827a10dd70
-l1-p2672	l1	ortholog	mouse	ITM2B	C-terminal	C-terminal	0	1	0	266	0	191	76	c_terminal	moderate	strong	mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	ad575211215a9e43399decd27d3a655c08d992a3cbc5b1519ca8fb8bba405429
-l1-p2673	l1	ortholog	mouse	LMBRD2	N at residue 1, multipass	N at residue 1	0	9	0	694	54	54	55	inter_tm			mouse_ortholog	topo_2026_05_16	ea52eec441b9c641ea2cf5cf813ea2786a8e54fa72e414a0e642445086336166
-l1-p2674	l1	ortholog	mouse	LRFN3	N after SP	N after SP	0	1	16	626	0	523	17	n_terminal			mouse_ortholog	topo_2026_05_16	1bb51ddf67b655022f9bd9fde032d37afb4c598a5c2f83b1bd664f096bcfa31b
-l1-p2675	l1	ortholog	mouse	LRIG1	N after SP	N after SP	0	1	35	1091	0	759	36	n_terminal			mouse_ortholog	topo_2026_05_16	e9f15eb531fd0157f09ca16b055711d14ee49f9d0e2451f912d9307f422e4e97
-l1-p2676	l1	ortholog	mouse	LRRC15	N after SP	N after SP	0	1	19	579	0	519	20	n_terminal	moderate	moderate	mouse_ortholog	topo_2026_05_16	c1dcc654f455a2eaddfbcebde066ee4c0bac3db0e40280726d623cbff9598bc1
-l1-p2677	l1	ortholog	mouse	LY6G6D	N after SP	N after SP	0	0	19	135	0	116	20	no_tm			mouse_ortholog	topo_2026_05_16	8e765ceae189055943099cd04b30364b598e448fc4f6632795d9889c9e3566ba
-l1-p2678	l1	ortholog	mouse	LY9	N after SP	N after SP	0	1	47	654	0	406	48	n_terminal			mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	9fa3efc0f7012c5b0f819374effe04f2f49781ee30041c105c57566dc66eda43
-l1-p2679	l1	ortholog	mouse	LYPD1	N after SP	N after SP	0	0	20	141	0	121	21	no_tm			mouse_ortholog	topo_2026_05_16	8d4b6a5a5e3fef9f19919c663216b6266a30846a6d0e5c435816b670962bd25d
-l1-p2680	l1	ortholog	mouse	LYPD2	N after SP	N after SP	0	0	22	127	0	105	23	no_tm			mouse_ortholog	topo_2026_05_16	9772e253ad3febbe5458d95a682ddd9702e6d4e5cc78dcbec045b39a9a00f17c
-l1-p2681	l1	ortholog	mouse	MDGA1	N after SP	N after SP	0	0	18	956	0	938	19	no_tm			mouse_ortholog	topo_2026_05_16	ceb81b5b817ccfbabef226578b27110aa47bd5a6138e839e0e0d50698815e34b
-l1-p2682	l1	ortholog	mouse	MMP14	N after SP	N after SP	0	1	28	582	0	513	29	n_terminal	moderate	strong	mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	0baf633765c7fd4d193bd3ad0af804d6bcb72c3a077a6a4bfc6a86770305b74a
-l1-p2683	l1	ortholog	mouse	MPZ	N after SP	N after SP	0	1	29	248	0	126	30	n_terminal			library_designed_orf	topo_2026_10_14_l1_designed	01e1d8f6aa674a32c0341c58d624a1036b4cb4ee1045a18b1c25a8c5ab583b11
-l1-p2684	l1	ortholog	mouse	MRC1	N after SP	N after SP	0	1	19	1456	0	1369	20	n_terminal			mouse_ortholog	topo_2026_05_16	9a1fa1d2e5a5d370341ad37a588db250885f0ba9f82dc202bee4b8de8d2e4385
-l1-p2685	l1	ortholog	mouse	MSLN	N after SP	N after SP	0	0	37	625	0	588	38	no_tm	high	strong	mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	0852d5b5b86ec9c6bc995884fca71afa0615dfc5ef950c6cd61642bee8fda30e
-l1-p2686	l1	ortholog	mouse	NEGR1	N after SP	N after SP	0	0	29	348	0	319	30	no_tm	moderate	strong	mouse_ortholog	topo_2026_05_16	18def6d17231a2e82f59310bc96695ff9037673b113856b63514c60317951205
-l1-p2687	l1	ortholog	mouse	NPC1L1	N after SP	N after SP	0	13	20	1333	260	265	21	n_terminal			mouse_ortholog	topo_2026_05_16	2f73f8731a518c74f1d990bfe393b488312520f2edce33798ea0dcf43d1a430c
-l1-p2688	l1	ortholog	mouse	NPR2	N after SP	N after SP	0	1	19	1047	0	436	20	n_terminal			mouse_ortholog	topo_2026_05_16	3dae0e282d41b3676a8ee24c0ffcf739d4f11dc9b0c951ea47096a6b3bcc7c58
-l1-p2689	l1	ortholog	mouse	NRG1	N at residue 1, single-pass (type III)	N at residue 1	0	1	0	640	0	242	1	n_terminal	high	strong	mouse_ortholog	topo_2026_05_16	d0fc7975989b707d82e807a6dab81d63396a251b38c667cefe4d73b90d928c1b
-l1-p2690	l1	ortholog	mouse	NTRK3	N after SP	N after SP	0	1	31	825	0	402	32	n_terminal			mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	5caf1a98999fc278f65e6866a63c398a934bed6b130293dec47f7e171f0f51aa
-l1-p2691	l1	ortholog	mouse	NTSR2	N at residue 1, multipass	N at residue 1	0	7	0	416	29	32	1	n_terminal			mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	9d9fdac888f614be3c7da8e4a963cf92d5620facba0077d069fd0a628f5c16b5
-l1-p2692	l1	ortholog	mouse	OPCML	N after SP	N after SP	0	0	33	345	0	312	34	no_tm	moderate	strong	mouse_ortholog	topo_2026_05_16	24c53e52fec428bba3faf1ad2a19d485bc1024be37a5ec79dc12a5094bdca0b3
-l1-p2693	l1	ortholog	mouse	OPN1SW	N at residue 1, multipass	N at residue 1	0	7	0	346	26	33	1	n_terminal			mouse_ortholog	topo_2026_05_16	966857f62dc482998ea41d7367672082678535287a8f1d760093fc43fb997edc
-l1-p2694	l1	ortholog	mouse	OPN3	N at residue 1, multipass	N at residue 1	0	7	0	400	26	41	1	n_terminal			mouse_ortholog	topo_2026_05_16	b57bf09c2f16355ae856038f7b7ce3d5364c3e4c7160c6bc574e4f5c6c45ebe1
-l1-p2695	l1	ortholog	mouse	OPN4	N at residue 1, multipass	N at residue 1	0	7	0	466	24	70	1	n_terminal			mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	24b2e21b65fdc0be4f412cc041d47a56a76fec837014d130b96788e7087d79f8
-l1-p2696	l1	ortholog	mouse	OR51B4	N at residue 1, multipass	N at residue 1	0	7	0	311	32	32	163	inter_tm			mouse_ortholog	topo_2026_05_16	0096075d00e243f6ae60fa0b64ef717e44aaa1de91f4800f881a49b915fa90e4
-l1-p2697	l1	ortholog	mouse	P2RY10	N at residue 1, multipass	N at residue 1	0	7	0	328	24	24	159	inter_tm			mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	6c2c9d12a9dced3931a2ed2e571f516fee56540272a5f110ffca76538fe4577d
-l1-p2698	l1	ortholog	mouse	PANX1	internal	internal	0	4	0	426	45	45	62	inter_tm			mouse_ortholog	topo_2026_05_16	95013d52c2d18fae9d04883f2df2cd6f8077cf5ed791f32307e7b70ad52f2386
-l1-p2699	l1	ortholog	mouse	PCDH18	N after SP	N after SP	0	1	27	1134	0	672	28	n_terminal	low	weak	mouse_ortholog	topo_2026_05_16	8b47c8590bc3e71b9bbdc0b7330351ecf4a7e2f313fb436bc1cb55c84c934a4d
-l1-p2700	l1	ortholog	mouse	PCDHB7	N after SP	N after SP	0	1	28	786	0	662	29	n_terminal			mouse_ortholog	topo_2026_05_16	5446fe6a860f771366fe6db692118ead04a248e7cd9aee529def2ea6f0bca188
-l1-p2701	l1	ortholog	mouse	PCDHGB6	N after SP	N after SP	0	1	30	930	0	661	31	n_terminal			mouse_ortholog	topo_2026_05_16	419d29357c410b24dfb6ea4ec5d85ea24e3704b654dad9cd14ea7ed16ca3c925
-l1-p2702	l1	ortholog	mouse	PCDHGC4	N after SP	N after SP	0	1	32	941	0	663	33	n_terminal			library_designed_orf	topo_2026_10_14_l1_designed	d8e1b7c1304c6da5a3922dbdc7c05095a6a3074be50dbefd93efd089356e4ef5
-l1-p2703	l1	ortholog	mouse	PEAR1	N after SP	N after SP	0	1	18	1034	0	738	19	n_terminal			mouse_ortholog	topo_2026_05_16	7ed604ddc293f7f8712c3c6db8e045198bcf548123f48b73a743e1c5b11f1390
-l1-p2704	l1	ortholog	mouse	PHEX	C-terminal	C-terminal	0	1	0	749	0	709	41	c_terminal			mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	be46283633e4fa56d2a85da4548b4b3eb656accab7505527691ab99fbfbe9957
-l1-p2705	l1	ortholog	mouse	PLPP3	internal	internal	0	6	0	312	48	48	151	inter_tm			mouse_ortholog	topo_2026_05_16	885df6db549f896a87597596fed4bea75f7b26ab659599d32d8fc1ead74073e9
-l1-p2706	l1	ortholog	mouse	PLXNC1	N after SP	N after SP	0	1	34	1574	0	917	35	n_terminal			mouse_ortholog	topo_2026_05_16	27fe03473898fc37297a6338c9a1c2f053a710b2260289be48b048f565c6e96c
-l1-p2707	l1	ortholog	mouse	RHBDF2	C-terminal	C-terminal	0	7	0	827	239	239	399	inter_tm			mouse_ortholog	topo_2026_05_16	d55cae3946f7955b1e862d3354bf8035609d2b1cb463359ba816fbab58b844fa
-l1-p2708	l1	ortholog	mouse	RTN4RL2	N after SP	N after SP	0	0	29	420	0	391	30	no_tm	moderate	strong	mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	b4fe1aaa376c8333e1f7e0195fc4725f42608ee7051c207ef739373ea3c48f95
-l1-p2709	l1	ortholog	mouse	SLC24A3	C-terminal	C-terminal	0	11	0	645	67	67	43	inter_tm			mouse_ortholog	topo_2026_05_16	6436ba2042db14608482c5dd0ae51125649492ceaa6b74061d8c130dcdefe22d
-l1-p2710	l1	ortholog	mouse	SLC29A2	C-terminal	C-terminal	0	11	0	456	39	39	30	inter_tm			mouse_ortholog	topo_2026_05_16	ea34f745f1a3f63d7679105c283e0c93b0b9a89890a6f25c048aebabba35dd14
-l1-p2711	l1	ortholog	mouse	SLC38A4	C-terminal	C-terminal	0	11	0	547	89	89	243	inter_tm			mouse_ortholog	topo_2026_05_16	ae5c8b7c161344985df636db1a37c40b350721eb82ac1eecd0d2ade867a55b51
-l1-p2712	l1	ortholog	mouse	SLC5A10	N at residue 1, multipass	N at residue 1	0	14	0	596	48	48	213	inter_tm			mouse_ortholog	topo_2026_05_16	1b19802e463fcf837554d445b1283182a23c12ebeff1f811e98758a1a5a646a9
-l1-p2713	l1	ortholog	mouse	TAS1R3	N after SP	N after SP	0	7	20	858	25	552	21	n_terminal			mouse_ortholog	topo_2026_05_16	7f56393ecaad3a18469461b5d25ea04e46665740c808258d1b1198123a46c675
-l1-p2714	l1	ortholog	mouse	TGFBR1	N after SP	N after SP	0	1	29	503	0	96	30	n_terminal	moderate	strong	mouse_ortholog	topo_2026_05_16	af6478f9176a44894bb77f6521ae0dbc6e7c4045c8cad33139df6b58064543b2
-l1-p2715	l1	ortholog	mouse	TM9SF1	N after SP	N after SP	0	9	32	606	15	204	33	n_terminal			mouse_ortholog	topo_2026_05_16	085574aa864704015fd01044aa857e5952970429d03f3214ac0c933ac36430d7
-l1-p2716	l1	ortholog	mouse	TMEM132B	N after SP	N after SP	0	1	22	1078	0	874	23	n_terminal			library_designed_orf	topo_2026_10_14_l1_designed	30628a7364644cb0a67b13fd63759cb6b641d40fc6ee322d89fc0703bd06b783
-l1-p2717	l1	ortholog	mouse	TMPRSS11E	C-terminal	C-terminal	0	1	0	423	0	384	40	c_terminal			mouse_ortholog	topo_2026_05_16	3d30be5abafd1498c7793d1606f913f6e0fd05db90ba3d1a1ce05f5d79ec3087
-l1-p2718	l1	ortholog	mouse	TNFRSF9	N after SP	N after SP	0	1	23	256	0	167	24	n_terminal	moderate	strong	mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	7d3247e9c5e2713468093876f68b107f2747954131ebd3aace59899f2ac5105c
-l1-p2719	l1	ortholog	mouse	TNFSF18	C-terminal	C-terminal	0	1	0	173	0	131	43	c_terminal	high	strong	mouse_ortholog	topo_2026_05_16	da3e4e9376e3dd76853f91199c2167f84e07bfca582cf0e824f39ea4b31dca3d
-l1-p2720	l1	ortholog	mouse	TRPV5	internal	internal	0	6	0	723	44	44	506	inter_tm			mouse_ortholog	topo_2026_05_16	7e62c87d4ce0f462501c166b05cb9fc5f37968e6bfb18df9f565dd04a652e19d
-l1-p2721	l1	ortholog	mouse	TSPAN11	internal	internal	0	4	0	253	106	106	114	inter_tm			mouse_ortholog	topo_2026_05_16	4be883a241d199fa008dc435d42c2208d9ca5455bcb580177e05748b9ca71fa4
-l1-p2722	l1	ortholog	mouse	TSPAN1	internal	internal	0	4	0	240	100	100	111	inter_tm			mouse_ortholog	topo_2026_05_16	ebe4b508a411a63090b922e8bfd51863423671c759e48dc37e190f43c59ca987
 l1-p2723	l1	ortholog	mouse	TSPAN4	internal	internal	0	4	0	238	95	95	107	inter_tm			mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	6249eb94b2479394f8fc876b3199e2cec0724ac573d66449a1ae9a209512bc8b
-l1-p2724	l1	ortholog	mouse	VSIG10L	N after SP	N after SP	0	1	21	868	0	742	22	n_terminal			mouse_ortholog	topo_2026_05_16	caa0528bac43bd426b3516044d056e48fef06c5dbf950a5b30fefdb834e2bba3
-l1-p2725	l1	ortholog	mouse	XPNPEP2	N after SP	N after SP	0	0	21	674	0	653	22	no_tm	moderate	moderate	mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	759d78ca5ac1167c1fb8434ec308dd6037375ff1ef3b43c1aa3fbe19b67fb738
 l1-p2726	l1	isoform	human	CD58	N after SP	N after SP	0	1	28	248	0	187	29	n_terminal	moderate	strong	human_isoforms	topo_2026_05_25	949394b3a52086a79273290af38e29c7817d26f6006b7cc7892174724539ef99
 l1-p2727	l1	isoform	human	LYPD5	N at residue 1, single-pass (type III)	N at residue 1	0	0	0	208	0	208	1	no_tm			human_isoforms	topo_2026_05_25	b359418b799d6c3df9688f31646a613a170bc905b159031a51db976472e51575
 l1-p2728	l1	isoform	human	PRSS8	N after SP	N after SP	0	0	29	289	0	260	30	no_tm	moderate	strong	human_isoforms	topo_2026_05_25	910e874574aae4152c606f48c2db9390e8bcbe54b71e23ba58a2bf87592301e5
@@ -2700,12 +2523,189 @@ l1-p2730	l1	isoform	human	GPR161	N at residue 1, multipass	N at residue 1	0	5	0	
 l1-p2731	l1	isoform	human	SLC43A2	C-terminal	C-terminal	0	1	0	62	0	22	41	c_terminal			library_designed_orf	topo_2026_11_01_l1_designed	62185f50e7dd53b5cb674cb88dde0701df893894eab51437a98a88fa0afc86e8
 l1-p2732	l1	isoform	human	PCDHGA7	N after SP	N after SP	0	1	28	817	0	664	29	n_terminal			human_isoforms	topo_2026_05_25	78b5f92a7c73614cfd122bb7c2fbd49be4ffe4a6d5a22764b7ebfc7208693273
 l1-p2733	l1	isoform	human	SUSD3	N at residue 1, single-pass (type III)	N at residue 1	0	1	0	211	0	104	1	n_terminal			library_designed_orf	topo_2026_11_01_l1_designed	e8bb2a94ae7ce435fa4861ceea5aff2e7a89597391bd4992c58c97c94c80494f
-l1-p2734	l1	ortholog	cyno	ECE1	C-terminal	C-terminal	0	1	0	754	0	681	74	c_terminal			library_designed_orf	topo_2026_11_01_l1_designed	2d6d2fad7bf7d1a53b4cd7c4ed6d21ea5327bc12c344447e7106f0ee4361e24e
-l1-p2735	l1	ortholog	cyno	UNC5C	N after SP	N after SP	0	1	33	931	0	345	34	n_terminal			cyno_ortholog	topo_2026_05_16	c840a7d1b997935bcf5d26de71ffd7e9b5b58aacd7d9b41eee352063a0e35648
-l1-p2736	l1	ortholog	mouse	EMB	N after SP	N after SP	0	1	30	330	0	235	31	n_terminal			mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	1f1372529dc510ee11c7a4ce05bdb1edc3385e602af6fccde242074be3f7bc02
-l1-p2737	l1	ortholog	mouse	NT5E	N after SP	N after SP	0	0	28	576	0	548	29	no_tm	moderate	moderate	mouse_ortholog	topo_2026_05_16	e5ec91bc62b704599a9da73d1ac165cdae853d5bde33dc94b44cb33397d6423a
-l1-p2738	l1	ortholog	mouse	CADM2	N after SP	N after SP	0	1	23	404	0	314	24	n_terminal	moderate	moderate	mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	0aeb680fd74e5ea9493c7f533347bacf015df40a376fbaa0466425ab017ddffc
 l1-p2739	l1	library_reference	human	SLC67A1	internal	internal	0	12	0	424	16	16	262	inter_tm			human_canonical	topo_2026_05_16	42e60206bc50fc6304e4f5d4cb2b1bbf21fd04ca8fa4e288b69f92df7d5215c1
 l1-p2740	l1	library_reference	human	KIR2DS4	N after SP	N after SP	0	1	21	304	0	224	22	n_terminal			human_canonical	topo_2026_05_16	8383d4262724f95b3c2b29768b2aa5130a24324b8ddc0dc786133620d9daefcc
 l1-p2741	l1	library_reference	human	OR12D1	N at residue 1, multipass	N at residue 1	0	7	0	320	32	32	163	inter_tm			human_canonical	topo_2026_05_16	c8ad7588b84e59fe348b80798a30348b0c623442aa6668e55d53fb7d4c97f828
 l1-p2742	l1	library_reference	human	OR5AL1	N at residue 1, multipass	N at residue 1	0	7	0	329	32	40	1	n_terminal			human_canonical	topo_2026_05_16	7c6df0f8d3641c1ee273e26a005c9ca322ca00b6376f30e17f12b6d52d6939bf
+l1-p2932	l1	ortholog	cyno	MRGPRX3	N at residue 1, multipass	N at residue 1	0	7	0	322	17	27	1	n_terminal			cyno_ortholog	topo_2026_05_16	46fd7e72e8a458bd966ba251e475aee4f41396a0f8c244987ead5c3978f98de3
+l1-p2933	l1	ortholog	cyno	ADGRL3	N after SP	N after SP	0	7	19	1528	18	930	20	n_terminal	moderate	strong	cyno_ortholog_repick	topo_2026_11_05_l1_compara116	a7828a81b8a586906325f7d2e80c15a468d9f34786d3f998a6379993c6871002
+l1-p2934	l1	ortholog	cyno	CD109	N after SP	N after SP	0	0	18	1442	0	1424	19	no_tm	moderate	strong	cyno_ortholog	topo_2026_05_16	a72a126842113681b08a84dd12254b336fe959158453b07cb03a425a6021e518
+l1-p2935	l1	ortholog	cyno	CD160	N after SP	N after SP	0	0	23	181	0	158	24	no_tm	moderate	strong	cyno_ortholog	topo_2026_05_16	277ad67ee1ade5b16b50372fd41f6cf6bf0973cf6af5d80b727661eddcfea0d1
+l1-p2936	l1	ortholog	cyno	CD207	C-terminal	C-terminal	0	1	0	328	0	264	65	c_terminal			cyno_ortholog	topo_2026_05_16	01b4d79f15f9988ee3db3df69f723fff9000d8c6748d2621e0631b3133ee33da
+l1-p2937	l1	ortholog	cyno	CD72	C-terminal	C-terminal	0	1	0	359	0	243	117	c_terminal	moderate	strong	cyno_ortholog	topo_2026_05_16	51db9a5c354ce7cee64a242f32d87262a3f0a58774d863eaaa5ee5d01f90051e
+l1-p2938	l1	ortholog	cyno	CHRM3	N at residue 1, multipass	N at residue 1	0	7	0	621	22	98	1	n_terminal			cyno_ortholog	topo_2026_05_16	af23e138af23439e9cb38489593e3448ef1d13100e83d80eb8402702c427ea80
+l1-p2939	l1	ortholog	cyno	CNGA3	internal	internal	0	4	0	694	54	54	325	inter_tm			cyno_ortholog	topo_2026_05_16	449c994632695c662f28b3fab57f572c925ff0c9477b91f6d72a4c41eb3467c8
+l1-p2940	l1	ortholog	cyno	FFAR1	N at residue 1, multipass	N at residue 1	0	7	0	298	30	30	147	inter_tm			cyno_ortholog	topo_2026_05_16	a4edfd0ea4a894875ae85356141177da6033871f07caf174f0ff9a9488a6fed6
+l1-p2941	l1	ortholog	cyno	CSF2RB	N after SP	N after SP	0	1	22	902	0	427	23	n_terminal			cyno_ortholog	topo_2026_05_16	37fd008a974f1534dc4e3fb1dd9fa4d152323aca037dffa57e178df0d46faa10
+l1-p2942	l1	ortholog	cyno	FOLR2	N after SP	N after SP	0	0	38	272	0	234	39	no_tm			cyno_ortholog	topo_2026_05_16	47ec0f484bd3c679a8d762cfad7c38177255c05c1498ae7dc6a258e87c070a17
+l1-p2943	l1	ortholog	cyno	GGT7	C-terminal	C-terminal	0	1	0	679	0	533	147	c_terminal			cyno_ortholog	topo_2026_05_16	e7117e31ede36b31541950eabcc5fe0c1d87ee7589fd937258c3a72848d5013b
+l1-p2944	l1	ortholog	cyno	GLIPR1L1	N after SP	N after SP	0	0	20	240	0	220	21	no_tm			cyno_ortholog	topo_2026_05_16	1983612a80bd26885a127606623fef840507e8957b6b7679af0a1bb94e2fddef
+l1-p2945	l1	ortholog	cyno	GPNMB	N after SP	N after SP	0	1	21	573	0	479	22	n_terminal	high	strong	cyno_ortholog	topo_2026_05_16	3f75399536da4d41ced9b48ac156c2577157b0ede99ad5c8de875f71fa13aebd
+l1-p2946	l1	ortholog	cyno	GPRC5A	N at residue 1, multipass	N at residue 1	0	7	0	355	22	28	1	n_terminal			cyno_ortholog	topo_2026_05_16	fe31c21f03540ac51f86cb5c330a40d81c41fcb9e69839cfbb2ae047cc602eb1
+l1-p2947	l1	ortholog	cyno	IL12RB1	N after SP	N after SP	0	1	23	662	0	524	24	n_terminal	moderate	moderate	cyno_ortholog	topo_2026_05_16	ce3001c97444819ca2834c42d8d79a7535c24e805cf0c282c4643de5c28264a5
+l1-p2948	l1	ortholog	cyno	IL22RA1	N after SP	N after SP	0	1	17	573	0	210	18	n_terminal			cyno_ortholog	topo_2026_05_16	7adb2bb1b0d82b42211150f63bf7e6b266f29811554a48bb18c52d31b8357566
+l1-p2949	l1	ortholog	cyno	CD84	N after SP	N after SP	0	1	17	324	0	204	18	n_terminal	moderate	strong	cyno_ortholog_repick	topo_2026_11_05_l1_compara116	da70671a589d34f4c2993e666deb393ee5e7160f77e648fb3b74179dccf51a92
+l1-p2950	l1	ortholog	cyno	AMIGO3	N after SP	N after SP	0	1	19	503	0	364	20	n_terminal			cyno_ortholog	topo_2026_05_16	6b7962b934204b20064b1523fc2b2efb320372e31f34c3c2fa551c74df3e4c17
+l1-p2951	l1	ortholog	cyno	IL9R	N after SP	N after SP	0	1	45	514	0	227	46	n_terminal			cyno_ortholog	topo_2026_05_16	247f4af78707fd4a93d5e15a8063c71c443f3d03597f94fb8d15c89b65d442f3
+l1-p2952	l1	ortholog	cyno	TNFRSF10B	N after SP	N after SP	0	1	55	445	0	160	56	n_terminal			cyno_ortholog	topo_2026_05_16	7e4dd085beefadba9fce2eb1ca2dd0b2fb9f03f17b77e5e10a8f93abc1192e3f
+l1-p2953	l1	ortholog	cyno	KCNK17	internal	internal	0	4	0	332	87	87	44	inter_tm			cyno_ortholog	topo_2026_05_16	c46a82bfb316176234dcd6286964b39996317a9b7e50ad05e884053c1c2d3a5f
+l1-p2954	l1	ortholog	cyno	KLRG1	C-terminal	C-terminal	0	1	0	189	0	133	57	c_terminal			cyno_ortholog	topo_2026_05_16	f76f140635a745650b64a6b16d0b6cfd1cadbff5442791435a54db69f983d72c
+l1-p2955	l1	ortholog	cyno	LY6L	N after SP	N after SP	0	0	16	138	0	122	17	no_tm			cyno_ortholog	topo_2026_05_16	9a0e099ed2362b844e0f5b2f25871ea719cba168fa7a9013edfdac38a294368e
+l1-p2956	l1	ortholog	cyno	LYPD2	N after SP	N after SP	0	0	41	141	0	100	42	no_tm			cyno_ortholog	topo_2026_05_16	0b487a8b573d03558f7c528e170eb26c7fdec5c63e0606d846c89890cee64db3
+l1-p2957	l1	ortholog	cyno	MARCO	C-terminal	C-terminal	0	1	0	520	0	455	66	c_terminal			cyno_ortholog	topo_2026_05_16	c4ef5a8abc743e076546c46eb1020a3ee382b2f4bce19b61768f49b04d640b8b
+l1-p2958	l1	ortholog	cyno	MRAP	N at residue 1, single-pass (type III)	N at residue 1	0	1	0	172	0	37	1	n_terminal			cyno_ortholog	topo_2026_05_16	430c97a8cbf3e93963ae467d4631ca90ce9a5b86fbae935e0477ce6ead41f679
+l1-p2959	l1	ortholog	cyno	CCR5	N at residue 1, multipass	N at residue 1	0	7	0	379	26	59	1	n_terminal			cyno_ortholog	topo_2026_05_16	fed504b8a667e3cee8fce063b5338f2d440e9fbb3e37afe4a9f7a46441da53b5
+l1-p2960	l1	ortholog	cyno	NCR3	N after SP	N after SP	0	1	18	201	0	121	19	n_terminal			cyno_ortholog	topo_2026_05_16	6deda196e81decff349b24c76b94539c326e20492ef75fc214d3c4a6ad50d509
+l1-p2961	l1	ortholog	cyno	NCR1	N after SP	N after SP	0	1	21	307	0	234	22	n_terminal	moderate	strong	cyno_ortholog_cds_policy	topo_2026_11_05_ortholog_cds_policy	21bf461e24fd2bb675d965b1a6f29907fe632d5f611d1e6a349e563d695f3bde
+l1-p2962	l1	ortholog	cyno	NIPAL4	N at residue 1, multipass	N at residue 1	0	9	0	618	19	269	1	n_terminal			cyno_ortholog	topo_2026_05_16	141a857c93a6d082ab04b1ab6e5be8e8c0293ad6b3e16cc1d89f3ab095282538
+l1-p2963	l1	ortholog	cyno	OR3A2	N at residue 1, multipass	N at residue 1	0	7	0	347	30	60	1	n_terminal			cyno_ortholog	topo_2026_05_16	59f90517d70733e3eaed3a56c35b1854c827e75b2c6da77b202d2c78b0e57bd5
+l1-p2964	l1	ortholog	cyno	OR51C1	N at residue 1, multipass	N at residue 1	0	7	0	311	32	32	164	inter_tm			cyno_ortholog	topo_2026_05_16	a919a0a82eb0731fb690f354f34013b07b13adc6fa3c2b7a66c865b8d6353d36
+l1-p2965	l1	ortholog	cyno	OR7E24	N at residue 1, multipass	N at residue 1	0	7	0	335	32	39	1	n_terminal			cyno_ortholog	topo_2026_05_16	b20af35db3b1a28163197729c40ed0376f498c6adccf83cffdfbfb5f5324bfab
+l1-p2966	l1	ortholog	cyno	PCDHB16	N after SP	N after SP	0	1	28	776	0	659	29	n_terminal			cyno_ortholog	topo_2026_05_16	ca061ff872b74dae98e2da986122252a69612b43a061267c054f29e826da0916
+l1-p2967	l1	ortholog	cyno	PLAUR	N after SP	N after SP	0	0	22	335	0	313	23	no_tm	high	strong	cyno_ortholog_repick	topo_2026_10_09_ortholog_repick	36f2f5b6e7e0c3e928782752a1079374585b078549cc603415f64893a52a0360
+l1-p2968	l1	ortholog	cyno	PVR	N after SP	N after SP	0	1	18	409	0	318	19	n_terminal			cyno_ortholog	topo_2026_05_16	543b66e916d041563deead734709b343b03a20507d594186f0e1515ba8923f2a
+l1-p2969	l1	ortholog	cyno	SLC47A1	C-terminal	C-terminal	0	13	0	569	20	20	138	inter_tm			cyno_ortholog_cds_policy	topo_2026_11_05_ortholog_cds_policy	6348fc06096bec92421b7ad6a6f0ba0d08aab8f7bb7a9dd9d938cbb039c3e0bf
+l1-p2970	l1	ortholog	cyno	MRGPRX4	N at residue 1, multipass	N at residue 1	0	7	0	322	17	27	1	n_terminal			cyno_ortholog	topo_2026_05_16	a81bcbc17e748d7a05477d139f9dcce9aea6ff824dc24ba2bf2753e8b130c8f3
+l1-p2971	l1	ortholog	cyno	SLC9B1	internal	internal	0	14	0	515	18	18	452	inter_tm			cyno_ortholog	topo_2026_05_16	e17f6ef68f5a1f21fd3b34ab0b4406105201a91e30b330ed8f20f2a69bfda34e
+l1-p2972	l1	ortholog	cyno	TEX29	N at residue 1, single-pass (type III)	N at residue 1	0	1	0	151	0	56	1	n_terminal			cyno_ortholog	topo_2026_05_16	f8cc1b46089fd7dfb61b62b99218ba6b15a1e82bd1c02626770d97c3bf0e5d54
+l1-p2973	l1	ortholog	cyno	TMEM210	N after SP	N after SP	0	1	30	147	0	14	31	n_terminal			cyno_ortholog	topo_2026_05_16	8be785e8b4cd17cc6d319346975a531d531b074b2becc2da582a8c0cc6086aab
+l1-p2974	l1	ortholog	cyno	TNFRSF13B	N at residue 1, single-pass (type III)	N at residue 1	0	1	0	293	0	161	1	n_terminal	moderate	strong	cyno_ortholog	topo_2026_05_16	503c97f2b2e51d637e4c1c98cc8691d77ea8fd4b9c3f9b7f28b62203608ff11b
+l1-p2975	l1	ortholog	cyno	TRPM2	internal	internal	0	8	0	1500	72	72	949	inter_tm			cyno_ortholog	topo_2026_05_16	f7846460cfb36571b291bf5fd6ed32ec97fc1f9ed509cfe3ed363b9bd5fe890f
+l1-p2976	l1	ortholog	cyno	ZACN	N after SP	N after SP	0	4	24	411	10	209	25	n_terminal			cyno_ortholog	topo_2026_05_16	437f4b84b089bd02033f4630917646699f53caba094870e0fa38e47805fd70df
+l1-p2977	l1	ortholog	cyno	ADCY3	internal	internal	0	12	0	1145	46	46	795	inter_tm			cyno_ortholog	topo_2026_05_16	dd6189e0fd8a8cf51ea26dda3a1f9a7f9922d27fad9afb1ff06937f84b6fec7f
+l1-p2978	l1	ortholog	cyno	ADGRG6	N after SP	N after SP	0	7	37	1219	26	800	38	n_terminal	moderate	moderate	cyno_ortholog_repick	topo_2026_11_05_l1_compara116	c6986ef63bbf44c7f213c1df516588a63541063460800d7a0d5bd207a3fa4693
+l1-p2979	l1	ortholog	cyno	ASTN1	N after SP	N after SP	0	2	21	1294	0	895	400	c_terminal	low	moderate	cyno_ortholog	topo_2026_05_16	f2df801c958020a0ec33b6ea285f9e5223f31250e8f68176f3437df359900b28
+l1-p2980	l1	ortholog	cyno	CACNA2D1	N after SP	N after SP	0	1	24	1091	0	1037	25	n_terminal	moderate	strong	cyno_ortholog	topo_2026_05_16	6ad10a864b82fdf4abea9c497b38bc7b3a6b048df109a9f2a5de30c83148f827
+l1-p2981	l1	ortholog	cyno	CLDN14	internal	internal	0	4	0	239	53	53	29	inter_tm			cyno_ortholog	topo_2026_05_16	780078fbf374d3ebc5a1be25a1559374599c3971af10e33b2e80a6da7fb6c912
+l1-p2982	l1	ortholog	cyno	CMKLR2	N at residue 1, multipass	N at residue 1	0	7	0	355	30	39	1	n_terminal			cyno_ortholog	topo_2026_05_16	9b88e094195b07e4d7f217a7de57e038a3520397905b7fc41083ecfce0679804
+l1-p2983	l1	ortholog	cyno	COL25A1	C-terminal	C-terminal	0	1	0	654	0	600	55	c_terminal	high	strong	cyno_ortholog	topo_2026_05_16	230f193465f2492848c8eeda4d67bb733994efb6cb617e423d1f574a4440bfe8
+l1-p2984	l1	ortholog	cyno	CORIN	C-terminal	C-terminal	0	1	0	1042	0	976	67	c_terminal	moderate	strong	cyno_ortholog	topo_2026_05_16	9f492126924ef3fcab2e9a345cd4c84c5a3d493ad2c687740eefd5b7f4cbf8b3
+l1-p2985	l1	ortholog	cyno	CPM	N after SP	N after SP	0	0	17	443	0	426	18	no_tm			cyno_ortholog	topo_2026_05_16	2ea129799c27358eb07bf9336309ae5a59917653020899974fc3a14ed4af7080
+l1-p2986	l1	ortholog	cyno	EDA	C-terminal	C-terminal	0	1	0	389	0	329	61	c_terminal	high	strong	cyno_ortholog	topo_2026_05_16	2e76662af6682196116190ef363cd58a247782f811ed006a032b8779b19f7a15
+l1-p2987	l1	ortholog	cyno	ENTPD2	N after SP	N after SP	0	1	28	495	0	436	29	n_terminal	moderate	moderate	cyno_ortholog	topo_2026_05_16	11e23fcae70a077290b1f79437c9fcf6cda4d58260aad86e1f0f827d233facf5
+l1-p2988	l1	ortholog	cyno	EPGN	N after SP	N after SP	0	1	20	154	0	90	21	n_terminal	high	strong	cyno_ortholog	topo_2026_05_16	d8432a425e3ab5cae6a9e0088e074d856849337cd28c4c91dbb1b9b36ab514f1
+l1-p2989	l1	ortholog	cyno	EPHB2	N after SP	N after SP	0	1	18	987	0	525	19	n_terminal	moderate	moderate	cyno_ortholog	topo_2026_05_16	447c3da84a5decb1a8604305506351cc9df121584bbdb1fe122c722a59a94051
+l1-p2990	l1	ortholog	cyno	ERBB4	N after SP	N after SP	0	1	25	1308	0	626	26	n_terminal	moderate	strong	cyno_ortholog	topo_2026_05_16	24170a37ecd87838202dd743d7dce032e4be6933d600a5f788ba71024fede812
+l1-p2991	l1	ortholog	cyno	FZD3	N after SP	N after SP	0	7	22	666	35	181	23	n_terminal			cyno_ortholog	topo_2026_05_16	bca8ed0d19bac8b797e990c8aa8b87f12eea20f858ea4effb1bd69be2625e630
+l1-p2992	l1	ortholog	cyno	GPR19	N at residue 1, multipass	N at residue 1	0	7	0	415	23	67	1	n_terminal			cyno_ortholog	topo_2026_05_16	201a42131d57569c3ddc1650b1af65c4b0b83d1fb2a152c85765699fdf2505ef
+l1-p2993	l1	ortholog	cyno	GRID1	N after SP	N after SP	0	3	20	1009	172	541	21	n_terminal			cyno_ortholog	topo_2026_05_16	62fe63b64629ceaa8abad5483f2b3e0710197a2ccbafb5a1640d7cade0ab4487
+l1-p2994	l1	ortholog	cyno	GRPR	N at residue 1, multipass	N at residue 1	0	7	0	384	30	40	1	n_terminal			cyno_ortholog	topo_2026_05_16	faebd76b5b1d8f29159fd8dbee8273b0c4ca01ae554f160662ea3cde0590da9d
+l1-p2995	l1	ortholog	cyno	HCRTR1	N at residue 1, multipass	N at residue 1	0	7	0	425	31	44	1	n_terminal			cyno_ortholog	topo_2026_05_16	bd5b7cb577ecb22d33b86c7f84dda8a2b05c78daa9e4576345159da8808312ec
+l1-p2996	l1	ortholog	cyno	HEPACAM2	N after SP	N after SP	0	1	31	462	0	319	32	n_terminal	low	weak	cyno_ortholog	topo_2026_05_16	f3e5ba5c4c773fb96a84692ed088513ee91ae55b2789611854458c482c9325aa
+l1-p2997	l1	ortholog	cyno	HTR2A	N at residue 1, multipass	N at residue 1	0	7	0	471	21	76	1	n_terminal			cyno_ortholog	topo_2026_05_16	01f71c475e0eaa715b9adbd19dedd83c99ed7807835e38ac3cd3a92c7e03951a
+l1-p2998	l1	ortholog	cyno	ITGB5	N after SP	N after SP	0	1	24	799	0	698	25	n_terminal			cyno_ortholog	topo_2026_05_16	137814ee69a520a98398e2764a48400e37fd4e6ecd75965be1ec1c912273b3d9
+l1-p2999	l1	ortholog	cyno	KIAA2013	internal	internal	0	2	0	632	553	553	37	inter_tm			cyno_ortholog	topo_2026_05_16	4cca910dcc8f73d0fec008653f9aa13a2c7e3d6f51b5099e0d1c908af2801e31
+l1-p3000	l1	ortholog	cyno	KLB	N at residue 1, single-pass (type III)	N at residue 1	0	1	0	1044	0	996	1	n_terminal	moderate	moderate	cyno_ortholog	topo_2026_05_16	0dee68f333cbf59f16e6087c519a715077f32ad25404d682287fedccf098904d
+l1-p3001	l1	ortholog	cyno	MC4R	N at residue 1, multipass	N at residue 1	0	7	0	332	17	43	1	n_terminal			cyno_ortholog	topo_2026_05_16	fd85b8c2d5321a261dd2039591ce9e26011fbb65a89dc0b19026cc379cbb8c76
+l1-p3002	l1	ortholog	cyno	MEGF10	N after SP	N after SP	0	1	25	1137	0	832	26	n_terminal	moderate	moderate	cyno_ortholog	topo_2026_05_16	aa90dd488f8c231fbc02ea2496ccfc00a78982fd2b77e2738204bc3891a20fc4
+l1-p3003	l1	ortholog	cyno	MME	C-terminal	C-terminal	0	1	0	750	0	702	49	c_terminal	moderate	moderate	cyno_ortholog	topo_2026_05_16	d033b369261946a31bec41d2e2b702ca252b5315e9d941c1ca6df130b34decde
+l1-p3004	l1	ortholog	cyno	MRC2	N after SP	N after SP	0	1	30	1438	0	1343	31	n_terminal	moderate	strong	cyno_ortholog	topo_2026_05_16	6d4a7a4412e492153733b4894a8fd95cdb3fa7d41e9455b5500f363c0370410d
+l1-p3005	l1	ortholog	cyno	NCAM1	N after SP	N after SP	0	0	19	761	0	742	20	no_tm	moderate	moderate	cyno_ortholog_repick	topo_2026_11_05_l1_compara116	7d900fe6ed495d42df7177405c30f6895b07a1d37c083e3459605f330f827ebc
+l1-p3006	l1	ortholog	cyno	NRN1	N after SP	N after SP	0	0	27	142	0	115	28	no_tm	moderate	moderate	cyno_ortholog	topo_2026_05_16	9bdd5a6294753296d1c9337759ce5b977b75729731b846c455701e0ed545aa17
+l1-p3007	l1	ortholog	cyno	NT5E	N after SP	N after SP	0	0	26	574	0	548	27	no_tm	moderate	moderate	cyno_ortholog	topo_2026_05_16	c57c42801f1d99a0c2311af3e012eeb9bd0560948cfc7be2834d692c0407fdd4
+l1-p3008	l1	ortholog	cyno	OPRL1	N at residue 1, multipass	N at residue 1	0	7	0	370	24	51	1	n_terminal			cyno_ortholog	topo_2026_05_16	01568d5bde5aea80052a72067ebc3c85e660efa816fce59516bfe218360e98f8
+l1-p3009	l1	ortholog	cyno	OR4K2	N at residue 1, multipass	N at residue 1	0	7	0	314	29	29	165	inter_tm			cyno_ortholog	topo_2026_05_16	91fe4ea672e189cd66cbc6657b252ac978da77c357cc7d0f12152864356b0e9b
+l1-p3010	l1	ortholog	cyno	OR51E2	N at residue 1, multipass	N at residue 1	0	7	0	320	32	32	163	inter_tm			cyno_ortholog	topo_2026_05_16	94014c314642c4b0bdd728bfa57a06701862ab18cc451760a8e2d6b8e5fea6e9
+l1-p3011	l1	ortholog	cyno	PCDH9	N after SP	N after SP	0	1	23	1203	0	792	24	n_terminal	moderate	strong	cyno_ortholog_repick	topo_2026_11_05_l1_compara116	5cf6c8dd36f96054e116e1ae0fdf2ec285d51137c5e0a7d6484aa35a37993aac
+l1-p3012	l1	ortholog	cyno	SLC16A9	internal	internal	0	12	0	509	18	18	35	inter_tm			cyno_ortholog	topo_2026_05_16	a52d9852828a4b41e819b09dbae20ebdadec5e4b18919188d09d98154b199aa9
+l1-p3013	l1	ortholog	cyno	SLC22A8	internal	internal	0	12	0	542	83	83	41	inter_tm			cyno_ortholog	topo_2026_05_16	47bc581d9472570bbf6b6f017252f88f8799780dabf1a3f93a33512f7b0cf2ff
+l1-p3014	l1	ortholog	cyno	SLC2A1	internal	internal	0	12	0	492	30	30	36	inter_tm			cyno_ortholog	topo_2026_05_16	3a34faf8a3f5c4b06edfd1f619fa5021f557a03b455391e024558247ec734109
+l1-p3015	l1	ortholog	cyno	SLC4A11	internal	internal	0	14	0	883	69	69	497	inter_tm			cyno_ortholog	topo_2026_05_16	5b8a3749558b75b9e851680dbfb1ec6b7b169b448775ba0a9c64999622defe02
+l1-p3016	l1	ortholog	cyno	TGFBR3	N after SP	N after SP	0	1	27	860	0	768	28	n_terminal	moderate	strong	cyno_ortholog	topo_2026_05_16	a56bec89cd0960e1be154bf7f58d28909595719eb25584507fb0146f5aff1008
+l1-p3017	l1	ortholog	cyno	TNFSF11	C-terminal	C-terminal	0	1	0	317	0	249	69	c_terminal	moderate	moderate	cyno_ortholog	topo_2026_05_16	7d576ac3b25105730be0afff2e9b1f82227734ef10626b1de174e2943fccd046
+l1-p3018	l1	ortholog	mouse	AVPR1B	N at residue 1, multipass	N at residue 1	0	7	0	421	29	35	1	n_terminal			mouse_ortholog	topo_2026_05_16	e4b355a3190aaf68e384c14f8322606c0e3c670fa8773fbdebd2b7735c1b8a0f
+l1-p3019	l1	ortholog	mouse	ANPEP	C-terminal	C-terminal	0	1	0	966	0	934	33	c_terminal	high	strong	mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	5e6ac12fa13e81c819549f9b860f3256c7852a96f61c14ebe759c62d51c5acd0
+l1-p3020	l1	ortholog	mouse	ANTXR2	N after SP	N after SP	0	1	33	487	0	285	34	n_terminal			mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	4f8a0cfb711dc9dbde008af8b6672d5a09ee41f168683a467644da503e35f89b
+l1-p3021	l1	ortholog	mouse	ASGR1	C-terminal	C-terminal	0	1	0	284	0	227	58	c_terminal			mouse_ortholog	topo_2026_05_16	bd3279d6438e04222c4139c47f475fe99b25bbe6585e80811cb323a9cc27fb9c
+l1-p3022	l1	ortholog	mouse	IL15RA	N after SP	N after SP	0	1	32	263	0	186	33	n_terminal	moderate	moderate	mouse_ortholog	topo_2026_05_16	97db62239005fc1bc63eb19188874b68708e37347c4b640d338731da6cefe94a
+l1-p3023	l1	ortholog	mouse	CDH15	N after SP	N after SP	0	1	21	784	0	583	22	n_terminal			mouse_ortholog	topo_2026_05_16	3841312eaa8574a4679c2d02135653f860753949c61c7548f4eb213028c27d53
+l1-p3024	l1	ortholog	mouse	CHRNA6	N after SP	N after SP	0	4	30	494	15	209	31	n_terminal			mouse_ortholog	topo_2026_05_16	93ee30fd43b26508c581d58c875b2b02bf8fe3406d9a8c58c675753bbede530f
+l1-p3025	l1	ortholog	mouse	CLEC1B	C-terminal	C-terminal	0	1	0	229	0	177	53	c_terminal	moderate	moderate	mouse_ortholog	topo_2026_05_16	f4bd94d08aaa68d8c4339862edeed94c555fdf2c52e5d4a9a8d566465157b21a
+l1-p3026	l1	ortholog	mouse	CLEC4E	C-terminal	C-terminal	0	1	0	214	0	173	42	c_terminal			mouse_ortholog	topo_2026_05_16	0c92c9756115ac746a2b6755d2db703b4afd7a6beb08849dac847fbc3cbf1527
+l1-p3027	l1	ortholog	mouse	CORIN	C-terminal	C-terminal	0	1	0	1047	0	980	68	c_terminal	moderate	strong	mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	2e0b1d2ce9936bfe50465a86c30d325da341a4a907c71df496dcce661de1ee41
+l1-p3028	l1	ortholog	mouse	CPM	N after SP	N after SP	0	0	17	443	0	426	18	no_tm			mouse_ortholog	topo_2026_05_16	6f1ff8aaecd788a353cf05ccef39f4a0ff87954fd2346b5d16d6151e63e5829c
+l1-p3029	l1	ortholog	mouse	CRB3	N after SP	N after SP	0	1	22	113	0	32	23	n_terminal			mouse_ortholog	topo_2026_05_16	b4ce9eb8cf31fe53bd0f61f2bbe12ef691fd7b3c6ab3ef2b4fa5c3c85527ac59
+l1-p3030	l1	ortholog	mouse	DPEP2	N after SP	N after SP	0	0	31	478	0	447	32	no_tm			mouse_ortholog_repick	topo_2026_11_05_l1_compara116	fc067a71b4c3ac4efad630e804e610ccd18d7a555aace9d2f7c6f8c583646a1e
+l1-p3031	l1	ortholog	mouse	DRD4	N at residue 1, multipass	N at residue 1	0	7	0	387	20	30	1	n_terminal			mouse_ortholog	topo_2026_05_16	ea5646a72f796952131fd283a6f2dd2a2a3f3c73315b4c3d60b2b5c5787cc92b
+l1-p3032	l1	ortholog	mouse	ENG	N after SP	N after SP	0	1	25	652	0	560	26	n_terminal	moderate	strong	mouse_ortholog	topo_2026_05_16	bdfa0f51e6c2deb20cb8b4c43b03dab7a8c46917f567fe1cb044c0f825e3edaf
+l1-p3033	l1	ortholog	mouse	GABRR3	N after SP	N after SP	0	4	21	464	11	243	22	n_terminal			mouse_ortholog	topo_2026_05_16	7cdaa436b9f8a1b765f4fd71b2762dc1292359743cf7f99f6bd28753cf4fceb8
+l1-p3034	l1	ortholog	mouse	GAS1	N after SP	N after SP	0	0	38	343	0	305	39	no_tm	moderate	moderate	mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	736341e38af4001a7c4ad866c016f4564e20fe7edf0b4c83282e06a381992c43
+l1-p3035	l1	ortholog	mouse	GFRA3	N after SP	N after SP	0	0	28	397	0	369	29	no_tm			mouse_ortholog	topo_2026_05_16	e03a668b3defa1c5524378c515a974a1716940b0b4e4f0e9bf943eaf10427f77
+l1-p3036	l1	ortholog	mouse	ICAM1	N after SP	N after SP	0	1	23	537	0	464	24	n_terminal	moderate	moderate	mouse_ortholog	topo_2026_05_16	bc1a8ba0d49ed0e1dd4317eabf4b6c50b15929c9d7358c2e98a1ad8ec0eef942
+l1-p3037	l1	ortholog	mouse	IL17RA	N after SP	N after SP	0	1	31	864	0	293	32	n_terminal			mouse_ortholog	topo_2026_05_16	d3f58366ab5b841f5ac815afeb355f6edebb485d107e904a66fc95c9464d35a6
+l1-p3038	l1	ortholog	mouse	IL17RC	N after SP	N after SP	0	1	16	715	0	465	17	n_terminal	moderate	moderate	mouse_ortholog_repick	topo_2026_11_05_l1_compara116	6be46e5976f9be6302552e85b4f53119a1fb157e3c29432fd3676ca4e891a42d
+l1-p3039	l1	ortholog	mouse	IZUMO2	N after SP	N after SP	0	1	20	220	0	167	21	n_terminal			mouse_ortholog	topo_2026_05_16	6ae71c005b6b54a36756aff447896ab8d5cdb2c344deae1bfa5d0f1d6a918394
+l1-p3040	l1	ortholog	mouse	MS4A7	internal	internal	0	4	0	234	39	39	138	inter_tm			mouse_ortholog_repick	topo_2026_11_05_l1_compara116	8d6b12aab2b1cd618ee771af8a734f5d63053aa563e0674a5ceb3298298af9f9
+l1-p3041	l1	ortholog	mouse	NPY5R	N at residue 1, multipass	N at residue 1	0	7	0	466	32	62	1	n_terminal			mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	6a38453196afde15627d57dc66d70466cadb08c0366544d96de1ffa6596c1648
+l1-p3042	l1	ortholog	mouse	NRN1L	N after SP	N after SP	0	0	32	162	0	130	33	no_tm			mouse_ortholog	topo_2026_05_16	5acceec370a4c89250ca526b24c2c9de0c171541834a98c70cc653a0fec67c8b
+l1-p3043	l1	ortholog	mouse	OR10G6	N at residue 1, multipass	N at residue 1	0	7	0	310	29	29	165	inter_tm			mouse_ortholog	topo_2026_05_16	fefcef6f795590482b266905a39d230e715dd92ad9cab61829a5c7913dcff644
+l1-p3044	l1	ortholog	mouse	PCDHB15	N after SP	N after SP	0	1	24	794	0	665	25	n_terminal			mouse_ortholog	topo_2026_05_16	67d4cd0ab1bbd5dbebf0f0f4466d654e4c48e4743bfcdc4c9bd1ffb8834c6b06
+l1-p3045	l1	ortholog	mouse	PLPP1	internal	internal	0	6	0	283	52	52	122	inter_tm			mouse_ortholog	topo_2026_05_16	e596c0269c70577003ca33a314072d8e42f1628e090b0a53506ab07bd29c622e
+l1-p3046	l1	ortholog	mouse	PLVAP	C-terminal	C-terminal	0	1	0	438	0	391	48	c_terminal			mouse_ortholog	topo_2026_05_16	6887f2006882fd3f73c646180edf25c2961fbdd580c2ef5e0f0192c90a9fd496
+l1-p3047	l1	ortholog	mouse	PROCR	N after SP	N after SP	0	1	19	242	0	195	20	n_terminal	high	strong	mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	132a64941b909822b1a01febb3c946aaccb250019b9a6cb210d55699804c7a70
+l1-p3048	l1	ortholog	mouse	SIGIRR	N at residue 1, single-pass (type III)	N at residue 1	0	1	0	409	0	119	1	n_terminal	moderate	moderate	mouse_ortholog	topo_2026_05_16	5a31e48be38608899484bd39338c7f88849fed68fff6d755c624f3f3ed5e4c2e
+l1-p3049	l1	ortholog	mouse	SLC13A1	C-terminal	C-terminal	0	15	0	594	28	28	257	inter_tm			mouse_ortholog	topo_2026_05_16	2ba8cfc33e52b5eec3d9c8a01d3794d0044aa6eb442f05cb16d85c015723d360
+l1-p3050	l1	ortholog	mouse	SLC14A2	internal	internal	0	20	0	930	49	49	260	inter_tm			mouse_ortholog_cds_policy	topo_2026_11_05_ortholog_cds_policy	6fa7ff1ee8f17f0fb1b1ceed41a8970a34a9b1efb973597e8815e58cb5eaa72e
+l1-p3051	l1	ortholog	mouse	SLC34A2	internal	internal	0	10	0	697	131	131	232	inter_tm			mouse_ortholog	topo_2026_05_16	2bc7243b6ce3297515d3793f5e4718bd460089ac0844ed1dbb1929ce241f9877
+l1-p3052	l1	ortholog	mouse	SLC3A2	C-terminal	C-terminal	0	1	0	526	0	428	99	c_terminal			mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	866e9edc2b83dc64ca2ede2808cebd4d3d86861b6efca753bb2317c0ce4ed5ce
+l1-p3053	l1	ortholog	mouse	SLC43A1	internal	internal	0	12	0	564	44	44	34	inter_tm			mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	cb7dd2983c9dc7cd1cf6cf3392ea13137b44c4ce10cdb29ced6efa09f1c87860
+l1-p3054	l1	ortholog	mouse	SLC44A4	internal	internal	0	10	0	707	172	172	56	inter_tm			mouse_ortholog	topo_2026_05_16	408430a844022c41846ae7b0bc24fdfd0c6eee73d0bb57256ea8a44c61d1e63e
+l1-p3055	l1	ortholog	mouse	SLC46A2	internal	internal	0	12	0	479	39	39	42	inter_tm			mouse_ortholog	topo_2026_05_16	229093b855a8b88c0a93d0bec8ade8e988eb333cf115f0ebc9fbb11abd5e0dc2
+l1-p3056	l1	ortholog	mouse	SLC5A4	N at residue 1, multipass	N at residue 1	0	14	0	656	49	49	225	inter_tm			mouse_ortholog	topo_2026_05_16	39023d9952a018bebbbf5bf3d0b8094ea6755c3d6cf1a87f0a68b95bae17ea63
+l1-p3057	l1	ortholog	mouse	SPINT1	N after SP	N after SP	0	1	26	507	0	418	27	n_terminal	moderate	moderate	mouse_ortholog	topo_2026_05_16	abc119f58e3e2b81d20619bd8de050b1900297ab0d608793c85127662c71acd5
+l1-p3058	l1	ortholog	mouse	TFPI	N after SP	N after SP	0	0	28	247	0	219	29	no_tm			mouse_ortholog_repick	topo_2026_11_05_l1_compara116	868e9605a7ef6546be9f49f8312ebacfc0383389783156ddf52217f20ef45521
+l1-p3059	l1	ortholog	mouse	TM7SF3	N after SP	N after SP	0	7	19	565	32	267	20	n_terminal			mouse_ortholog_cds_policy	topo_2026_11_05_ortholog_cds_policy	c770cf3288daea2abc6336bbdc567c3795ccecdf9985896cb8ad6d69735f5d5a
+l1-p3060	l1	ortholog	mouse	TMEM139	internal	internal	0	2	0	214	6	6	32	inter_tm			mouse_ortholog	topo_2026_05_16	abb9aa7f6a8b080d8af5fad8c82a3c1b745eb06844e6b8f3949e84cc1ab16375
+l1-p3061	l1	ortholog	mouse	TMEM210	N after SP	N after SP	0	1	30	147	0	17	31	n_terminal			mouse_ortholog	topo_2026_05_16	80fb508f100d9b78499a72ed20590d2f1ea7d0cc093d127500fa9490b934518b
+l1-p3062	l1	ortholog	mouse	TMEM86B	internal	internal	0	8	0	226	7	7	141	inter_tm			mouse_ortholog	topo_2026_05_16	d50753b501ea914e54ab31459880de95f34bd6237cc15943f31a307040705fc7
+l1-p3063	l1	ortholog	mouse	TMIGD1	N after SP	N after SP	0	1	26	261	0	196	27	n_terminal			mouse_ortholog	topo_2026_05_16	6a356da2a5af53e62fa7dbc8ef45c0d7db860d7f521c72c852aaa269f02816fb
+l1-p3064	l1	ortholog	mouse	TMPRSS2	C-terminal	C-terminal	0	1	0	490	0	386	105	c_terminal	moderate	moderate	mouse_ortholog	topo_2026_05_16	2b0690f291065e3bb4374d231e7beea5517de1d69e2e5ba67da6dff3b791b855
+l1-p3065	l1	ortholog	mouse	VSIG2	N after SP	N after SP	0	1	24	328	0	218	25	n_terminal			mouse_ortholog	topo_2026_05_16	543e1e62c3a78ebdd5025713e5f89f831468623768502f209b9ad8b0c2bf802d
+l1-p3066	l1	ortholog	mouse	ADGRB1	N after SP	N after SP	0	7	30	1582	19	921	31	n_terminal	high	strong	mouse_ortholog	topo_2026_05_16	741e0482abc7ba763234459428a0650d1845ac04595ceba4c38110ba454f5068
+l1-p3067	l1	ortholog	mouse	CACHD1	N after SP	N after SP	0	1	49	1267	0	1043	50	n_terminal	moderate	strong	mouse_ortholog_repick	topo_2026_11_05_l1_compara116	ae74f22fbbe5819d010f81c0d1e3aa3251c3e44329b3b669eddc874a2aa6342e
+l1-p3068	l1	ortholog	mouse	CACNA2D3	N after SP	N after SP	0	0	33	1091	0	1058	34	no_tm	moderate	moderate	mouse_ortholog	topo_2026_05_16	434fe3dbaadeee70d85b28878e90e1782a7499a2189211fa9487e2e7fefa1f54
+l1-p3069	l1	ortholog	mouse	CLEC2L	C-terminal	C-terminal	0	1	0	211	0	125	87	c_terminal			mouse_ortholog	topo_2026_05_16	bf18cce061277cf97e1b3080fe6f1f7a846e08ef5aabff64747670485e262332
+l1-p3070	l1	ortholog	mouse	CNNM3	N after SP	N after SP	0	3	32	713	8	111	33	n_terminal			mouse_ortholog	topo_2026_05_16	f221f4830048eaa93f8a7966497c901137374ab04534e383954e73bc8aa5e04d
+l1-p3071	l1	ortholog	mouse	CNR1	N at residue 1, multipass	N at residue 1	0	7	0	473	18	117	1	n_terminal			mouse_ortholog	topo_2026_05_16	1fc281bc0377a44d573c730a9c58649a3f9c3d9af338c2e7ba3f6cc82975de42
+l1-p3072	l1	ortholog	mouse	CNTN4	N after SP	N after SP	0	0	18	1026	0	1008	19	no_tm			mouse_ortholog	topo_2026_05_16	f77265a3bb40cd1c89d9da53dc7f0d27aba030e9507c73ebce6d31b090ac8374
+l1-p3073	l1	ortholog	mouse	CNTNAP4	N after SP	N after SP	0	1	27	1308	0	1214	28	n_terminal	moderate	moderate	mouse_ortholog_repick	topo_2026_11_05_l1_compara116	b60ad9d23988ef7d5f4977df459d079e3df36bff291b8f150cc8e8bc9631bb3e
+l1-p3074	l1	ortholog	mouse	COL23A1	C-terminal	C-terminal	0	1	0	532	0	488	45	c_terminal	high	strong	mouse_ortholog	topo_2026_05_16	94c6489b2bb5f4c5b0512e6c7e1bb8a043f2151b3e9cbb30e20634b01a752bf6
+l1-p3075	l1	ortholog	mouse	CPD	N after SP	N after SP	0	1	37	1377	0	1259	38	n_terminal	low	moderate	mouse_ortholog	topo_2026_05_16	1b056885e28c4b9f0bece152bae9a068f1cc3e23a811e6c53c138d3a4ef1b66c
+l1-p3076	l1	ortholog	mouse	EFNB2	N after SP	N after SP	0	1	28	336	0	201	29	n_terminal			mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	b8cb7baa82764aa62556da17638119a25973818ad3c3236f25e65acd23dfe1cb
+l1-p3077	l1	ortholog	mouse	EPHA2	N after SP	N after SP	0	1	21	977	0	516	22	n_terminal	moderate	strong	mouse_ortholog	topo_2026_05_16	3b05193572d110a06ca57d0012b3b036b365916510a60ea98cfeca8c1fc279e9
+l1-p3078	l1	ortholog	mouse	FIBCD1	C-terminal	C-terminal	0	1	0	459	0	408	52	c_terminal			mouse_ortholog	topo_2026_05_16	99fb63f90887b152e536da91571cb150554b7e8d56fb706a3544aa83ad44b75e
+l1-p3079	l1	ortholog	mouse	GPC6	N after SP	N after SP	0	0	23	555	0	532	24	no_tm	moderate	moderate	mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	4803de21d700735edbac61bd4ef31e7a4552095ba23ed0df01440153ad83331a
+l1-p3080	l1	ortholog	mouse	GPR19	N at residue 1, multipass	N at residue 1	0	7	0	415	18	64	1	n_terminal			mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	e7b5522fa057451a1d0e598a16e123b631d328cd8bf8ea48f021653dd5a0af78
+l1-p3081	l1	ortholog	mouse	GPR6	N at residue 1, multipass	N at residue 1	0	7	0	363	18	75	1	n_terminal			mouse_ortholog	topo_2026_05_16	5c8d600f686a6bc64db6ca0646d15f6cd7cae8c68f7bf4d2abaa3b9684b06ecf
+l1-p3082	l1	ortholog	mouse	HTR5A	N at residue 1, multipass	N at residue 1	0	7	0	357	20	40	1	n_terminal			mouse_ortholog	topo_2026_05_16	f00d497fa4f3b635f5e9f78042658f76cff4fc42fc2556468d2f47aad5ad1fad
+l1-p3083	l1	ortholog	mouse	IGLON5	N after SP	N after SP	0	0	30	336	0	306	31	no_tm	moderate	strong	mouse_ortholog	topo_2026_05_16	bdc769d09ec646ea13aa9e63e338fce6d08dc1ef1f393e25061a71b229ddaa69
+l1-p3084	l1	ortholog	mouse	IGSF1	N after SP	N after SP	0	3	20	1326	690	690	562	inter_tm			mouse_ortholog_repick	topo_2026_11_05_l1_compara116	255cc6cd8ac6a35b93d771a4deae4eb6271ad8bfbff023af2ce85f3c26f3a3b6
+l1-p3085	l1	ortholog	mouse	ITFG1	N after SP	N after SP	0	1	32	610	0	531	33	n_terminal			mouse_ortholog	topo_2026_05_16	4aa352fb56695baffae0a0150f54b0737ed2247487e89474e64a988ba798c864
+l1-p3086	l1	ortholog	mouse	ITGA3	N after SP	N after SP	0	1	32	1053	0	961	33	n_terminal			mouse_ortholog	topo_2026_05_16	3712bb3717bb5c2feaf33d0e1d40390a73f7a484627bee03e00245e822b5d64c
+l1-p3087	l1	ortholog	mouse	KCNE3	N at residue 1, single-pass (type III)	N at residue 1	0	1	0	103	0	57	1	n_terminal			mouse_ortholog	topo_2026_05_16	cc1eac9bd788a892ea67e1b4eca021c912422235153c8a83c722cdacb9040bb9
+l1-p3088	l1	ortholog	mouse	LHFPL6	internal	internal	0	4	0	200	55	55	29	inter_tm			mouse_ortholog	topo_2026_05_16	cf0d3b9dc190284a16993961851ef23ccfb3b021aad137d31d76de0760bd9e5d
+l1-p3089	l1	ortholog	mouse	LMBR1L	N at residue 1, multipass	N at residue 1	0	9	0	489	31	31	320	inter_tm			mouse_ortholog	topo_2026_05_16	9436f08d6fd36e6c1dc3603efad75322b32cb02f97f7ca8c8b0ecd04b7dd8677
+l1-p3090	l1	ortholog	mouse	NCAM1	N after SP	N after SP	0	0	19	725	0	706	20	no_tm	moderate	moderate	mouse_ortholog_repick	topo_2026_11_05_l1_compara116	c2a4205e3f38aefcdd2b71f38a4f2021334105e3b778e2869bc892ee4a7e4d81
+l1-p3091	l1	ortholog	mouse	NGFR	N after SP	N after SP	0	1	31	427	0	223	32	n_terminal	moderate	strong	mouse_ortholog	topo_2026_05_16	a37caf19d3b6537018d31e6c9be3c5478c3754df16cb0c1fae87ac0d77ecac9d
+l1-p3092	l1	ortholog	mouse	NLGN3	N after SP	N after SP	0	1	34	845	0	672	35	n_terminal	high	strong	mouse_ortholog	topo_2026_05_16	929ebeb39dac007be4ef273dc46d7d312617f050ee14528d99fafc7d036725ed
+l1-p3093	l1	ortholog	mouse	NRG3	internal	internal	0	2	0	697	276	276	87	inter_tm	moderate	moderate	mouse_ortholog_repick	topo_2026_11_05_l1_compara116	2f3468cfc89813f14bd8b900dc4a128df1886801c411c7169d378fdc2bb16a8b
+l1-p3094	l1	ortholog	mouse	NRXN1	N after SP	N after SP	0	1	30	1507	0	1402	31	n_terminal	moderate	strong	mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	b994152a29d1581bac2c018fd02d8823a326a2717c265a81bcff034d614c8bad
+l1-p3095	l1	ortholog	mouse	NTNG1	N after SP	N after SP	0	0	18	539	0	521	19	no_tm			mouse_ortholog	topo_2026_05_16	42b5b8891965a554fd5718973bbf098147328d51370ff0f7283d37ad284c5e89
+l1-p3096	l1	ortholog	mouse	OR51E2	N at residue 1, multipass	N at residue 1	0	7	0	320	32	32	163	inter_tm			mouse_ortholog	topo_2026_05_16	5a2215b887d9f348398c5d5d194049a98f0889e8cdbc0147af74f5c811c36c07
+l1-p3097	l1	ortholog	mouse	PCDH7	N after SP	N after SP	0	1	30	1255	0	849	31	n_terminal			mouse_ortholog_repick	topo_2026_10_11_ortholog_gap	08841da7ff9a4b3b26b162a4914bc82b8b3cdeed669d0e1da591ec70cf722a80
+l1-p3098	l1	ortholog	mouse	POPDC3	N at residue 1, multipass	N at residue 1	0	3	0	291	6	24	1	n_terminal			mouse_ortholog	topo_2026_05_16	a661cd08849d0a49097a534c68882efb8e0d3bfab2fe43dfdcdec764c6906f5a
+l1-p3099	l1	ortholog	mouse	PRTG	N after SP	N after SP	0	1	29	1191	0	914	30	n_terminal	moderate	moderate	mouse_ortholog	topo_2026_05_16	3845cb7d93580432dc53783c218a4ba29292014c35f00aca7ba1251250646e23
+l1-p3100	l1	ortholog	mouse	PTCH1	internal	internal	0	12	0	1434	315	315	108	inter_tm	moderate	moderate	mouse_ortholog	topo_2026_05_16	8a782d3db08c855444bc0152b529fc9d7c78ba4d09c6c3cfc9c6f8d45f217ee2
+l1-p3101	l1	ortholog	mouse	RHO	N at residue 1, multipass	N at residue 1	0	7	0	348	28	38	1	n_terminal			mouse_ortholog	topo_2026_05_16	3d54128c9903874252e55ca3564692491e2209d67d4e0b9c2cf02d941018d764
+l1-p3102	l1	ortholog	mouse	RTN4R	N after SP	N after SP	0	0	26	473	0	447	27	no_tm	moderate	strong	mouse_ortholog	topo_2026_05_16	f7a926e090faafcb3edc0302dff39edcad64b29408a89f30429c5d1d07f3576d
+l1-p3103	l1	ortholog	mouse	SLC26A9	internal	internal	0	14	0	790	35	35	137	inter_tm			mouse_ortholog	topo_2026_05_16	22f2aad74a699fe815dd708c44a554026f4892c8755df8fe6062ef096210f802
+l1-p3104	l1	ortholog	mouse	SLC39A10	N after SP	N after SP	0	6	25	833	38	384	26	n_terminal	moderate	moderate	mouse_ortholog	topo_2026_05_16	2b37945a8cf7ab32a0988e87a813cb12898846d382dbffb314c5fb5b56a08966
+l1-p3105	l1	ortholog	mouse	SLC61A1	N at residue 1, multipass	N at residue 1	0	13	0	450	12	12	65	inter_tm			mouse_ortholog	topo_2026_05_16	ba222e64830f69b52343e5e01cb45ee48c0ebd490856dada4fa5b3d617f60520
+l1-p3106	l1	ortholog	mouse	SLC6A11	internal	internal	0	12	0	627	65	65	154	inter_tm			mouse_ortholog	topo_2026_05_16	a50617064cd400623e2154f4fd646a9a0374d4cc077d404837024840e3224489
+l1-p3107	l1	ortholog	mouse	SLC6A13	internal	internal	0	12	0	602	62	62	142	inter_tm			mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	8d2a72b7e046b521e2fc716c0e501deca3f61e9b53615ae7a0d60e64e6a8c0f3
+l1-p3108	l1	ortholog	mouse	SMO	N after SP	N after SP	0	7	32	791	47	203	33	n_terminal			mouse_ortholog_repick	topo_2026_11_05_l1_compara116	9394fdee9c71036b2871617a638251b846a5424b89ff8970a29d758a2bc36c4c
+l1-p3109	l1	ortholog	mouse	TACR1	N at residue 1, multipass	N at residue 1	0	7	0	407	23	33	1	n_terminal			mouse_ortholog	topo_2026_05_16	2ce1b5060e6a065634c0d46d86b81ea509edf53e493b42bb8c9593e8c041af82
+l1-p3110	l1	ortholog	mouse	TMEM132E	N after SP	N after SP	0	1	23	1074	0	864	24	n_terminal			mouse_ortholog	topo_2026_05_16	185f91f89419633dee896b09fcac89136f4aa1c1be62af5910178e06894df11e
+l1-p3111	l1	ortholog	mouse	TMEM229B	internal	internal	0	4	0	167	19	19	96	inter_tm			mouse_ortholog	topo_2026_05_16	969cd57ee0882504935a31126d3178b858a799614de31518c2b6f1efad3579c9
+l1-p3112	l1	ortholog	mouse	TMPRSS11F	C-terminal	C-terminal	0	1	0	439	0	390	50	c_terminal			mouse_ortholog	topo_2026_05_16	2c2e6362f305293d9134e7fdb2ea4d22c60846cf89cb8be888e6711804ec9b16
+l1-p3113	l1	ortholog	mouse	TMPRSS7	C-terminal	C-terminal	0	1	0	829	0	746	84	c_terminal			mouse_ortholog	topo_2026_05_16	fb347af40c1177bcf9ad5226af78751fc843b29de35b86b48a9d7a4aa98fe6cf

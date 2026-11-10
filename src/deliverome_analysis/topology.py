@@ -50,13 +50,20 @@ from functools import lru_cache
 import pandas as pd
 
 # --- pinned topology snapshot. Bump THIS to adopt a newer export. ---------------------
-# Export of topology_public including the library_designed_orf cohort (2026-10-14r2), plus
-# three v1 rows (topo_2026_11_01_l1_designed) for members added by the s4e9 panel redraw,
-# appended by s4e9 publish_topology_supplement.py. Those three are not in D1 yet.
-SNAPSHOT_KEY = "accessible-surfaceome/topology/2026-11-01/topology.parquet"
+# 2026-11-10: the ortholog CDS-policy snapshot, adopted with that panel (s4e9
+# adopt_ortholog_cds_policy.py). It is the 2026-11-01 export (topology_public with the
+# library_designed_orf cohort, plus three topo_2026_11_01_l1_designed rows) plus the 323
+# topo_2026_11_05_l1_compara116 rows and the 58 topo_2026_11_05_ortholog_cds_policy rows
+# (deeptmhmm-1.0-academic), 71,697 rows; every 2026-11-01 row is preserved. Adopting it
+# changed no existing L1 member's matched row; 166 L2 orthologs gained a v1 match.
+SNAPSHOT_KEY = "accessible-surfaceome/topology/2026-11-06-ortholog-cds-policy/topology.parquet"
+#: SHA-256 of the object at :data:`SNAPSHOT_KEY`.
+SNAPSHOT_SHA256 = "7683d75a3e04228d95fcfb8fe9b7e9b46b38c0ea254ca42550a666f5d8bbf216"
 
-# The replacement panel's additional 323 v1 predictions are reusable explicitly.
-# Keep the original library replay frozen until downstream member/construct adoption.
+#: The snapshot before 2026-11-10, kept so an analysis run against it can be replayed.
+PREVIOUS_SNAPSHOT_KEY = "accessible-surfaceome/topology/2026-11-01/topology.parquet"
+
+# The first Compara 116 replacement panel's 323 v1 predictions (also in SNAPSHOT_KEY).
 # Both D1 databases also carry these rows as topo_2026_11_05_l1_compara116.
 ORTHOLOG_COMPARA116_SNAPSHOT_KEY = (
     "accessible-surfaceome/topology/2026-11-05-l1-compara116/topology.parquet"

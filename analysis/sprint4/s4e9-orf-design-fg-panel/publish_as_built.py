@@ -113,13 +113,38 @@ def collect() -> list[dict]:
     return rows
 
 
+COLS = ["key", "source", "plasmid", "kind", "length_nt", "matches_map", "coverage", "note"]
+
+
+def merge_manifest(existing: list[dict], new: list[dict]) -> list[dict]:
+    """The manifest after publishing ``new``: every existing row is kept.
+
+    ``collect()`` only sees the batch folders that happen to be in ``~/Downloads`` now,
+    so its rows are a partial view. Writing them alone would drop every earlier order
+    whose download has since been cleared (on 2026-11-09 that would have removed all 13
+    rows for P-0003..P-0013). A republished key replaces its own row in place; a new key
+    is appended.
+    """
+    fresh = {r["key"]: {c: str(r.get(c, "")) for c in COLS} for r in new}
+    merged = [fresh.pop(r["key"], {c: r.get(c, "") for c in COLS}) for r in existing]
+    return merged + list(fresh.values())
+
+
+def read_manifest() -> tuple[list[dict], str | None]:
+    """The live manifest rows and its ETag (None when there is no manifest yet)."""
+    if not processed.exists(MANIFEST):
+        return [], None
+    etag = processed.etag(MANIFEST)
+    text = Path(processed.download(MANIFEST)).read_text()
+    return list(csv.DictReader(text.splitlines(), delimiter="\t")), etag
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args(argv)
 
     rows = collect()
-    cols = ["key", "source", "plasmid", "kind", "length_nt", "matches_map", "coverage", "note"]
     print(f"{'key':<46}{'plasmid':<9}{'nt':>6}{'cov':>8}  matches")
     for r in rows:
         print(
@@ -129,21 +154,35 @@ def main(argv=None) -> int:
     bad = [r for r in rows if "NO EXACT MATCH" in r["note"]]
     print(f"\n{len(rows)} file(s); {len(bad)} unmatched")
 
+    existing, etag = read_manifest()
+    merged = merge_manifest(existing, rows)
+    # Re-uploading an identical file would only restamp its provenance; skip those.
+    changed = [
+        r
+        for r in rows
+        if not processed.exists(r["key"])
+        or Path(processed.download(r["key"])).read_bytes() != Path(r["_path"]).read_bytes()
+    ]
+    print(
+        f"manifest: {len(existing)} existing row(s) kept, "
+        f"{len(merged) - len(existing)} added -> {len(merged)}; "
+        f"{len(changed)} file(s) new or changed, {len(rows) - len(changed)} already on S3"
+    )
+
     if args.dry_run:
         print("dry run — S3 not written")
         return 0
 
     with tempfile.TemporaryDirectory() as tmp:
-        for r in rows:
+        for r in changed:
             processed.upload(r["_path"], r["key"], content_type="text/plain")
         man = Path(tmp) / "MANIFEST.tsv"
         with man.open("w", newline="") as h:
-            w = csv.DictWriter(
-                h, fieldnames=cols, delimiter="\t", extrasaction="ignore", lineterminator="\n"
-            )
+            w = csv.DictWriter(h, fieldnames=COLS, delimiter="\t", lineterminator="\n")
             w.writeheader()
-            w.writerows(rows)
-        processed.upload(man, MANIFEST, content_type="text/tab-separated-values")
+            w.writerows(merged)
+        # Conditional on the ETag read above, so a concurrent publish cannot be overwritten.
+        processed.upload_if(man, MANIFEST, if_match=etag, content_type="text/tab-separated-values")
 
     live = sorted(processed.list_keys(PREFIX))
     print(f"\nuploaded; {PREFIX} now holds {len(live)} object(s):")

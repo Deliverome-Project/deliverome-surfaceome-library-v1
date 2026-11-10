@@ -32,6 +32,7 @@ import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 from Bio import BiopythonWarning, SeqIO
 
+from deliverome_analysis import constructs
 from deliverome_analysis.plotting import get_categorical_colors, save_figure, setup_plotting_style
 from deliverome_analysis.s3 import processed
 
@@ -132,9 +133,7 @@ def main(argv=None) -> int:
     for name, _, _ in ROWS:
         with warnings.catch_warnings():
             warnings.simplefilter("ignore", BiopythonWarning)
-            records[name] = SeqIO.read(
-                processed.download(f"constructs/designed/{name}.gb"), "genbank"
-            )
+            records[name] = SeqIO.read(processed.download(constructs.map_key(name)), "genbank")
 
     span = max(genome(r)[1] - genome(r)[0] for r in records.values())
     fig, (ax, az) = plt.subplots(

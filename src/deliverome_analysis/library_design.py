@@ -52,7 +52,30 @@ LIBRARIES: tuple[str, ...] = (LIBRARY_L1, LIBRARY_L2)
 #: Designed coding sequences for every candidate, keyed by the manifest's ``key``.
 #: The authoritative record of what the library synthesises -- not UniProt, not Ensembl
 #: REST, both of which return a *different* proteoform for many members.
-CDS_KEY = "sprint4/s4e9-orf-design-fg-panel/library-candidates/candidate_cds.json"
+#:
+#: Append-only by version: each adoption publishes the previous record plus its new
+#: entries under a new dated key, with every earlier entry unchanged, and this constant
+#: moves to it. 2026-11-10: the ortholog CDS-policy panel (s4e9
+#: ``adopt_ortholog_cds_policy.py``) appended 56 ortholog forms to the
+#: :data:`BASE_CDS_KEY` record.
+CDS_KEY = (
+    "sprint4/s4e9-orf-design-fg-panel/library-candidates/"
+    "2026-11-10-ortholog-cds-policy/candidate_cds.json"
+)
+
+#: Domesticated ORF per candidate (``construct``, edit counts), keyed like :data:`CDS_KEY`
+#: and versioned with it.
+CONSTRUCTS_KEY = (
+    "sprint4/s4e9-orf-design-fg-panel/library-candidates/"
+    "2026-11-10-ortholog-cds-policy/candidate_constructs.json"
+)
+
+#: The records :data:`CDS_KEY` and :data:`CONSTRUCTS_KEY` extend. They stay the published
+#: output of the pre-adoption stages (``library_pipeline.py`` replays those against them).
+BASE_CDS_KEY = "sprint4/s4e9-orf-design-fg-panel/library-candidates/candidate_cds.json"
+BASE_CONSTRUCTS_KEY = (
+    "sprint4/s4e9-orf-design-fg-panel/library-candidates/candidate_constructs.json"
+)
 
 #: Columns the MEMBER owns. A topology row carrying any of these has it renamed
 #: ``topology_*``, so "which species is this row about" is never one ambiguous column.
@@ -116,13 +139,22 @@ def is_active(row: Mapping[str, str]) -> bool:
     return not (row.get(RETIRED_COLUMN) or "").strip()
 
 
-def designed_cds(manifest: str | Path, *, library: str) -> dict[str, str]:
-    """Designed coding sequence (DNA, as synthesised) per active ``candidate_id``."""
-    _check_library(library)
+def load_designed_cds() -> dict[str, dict]:
+    """The whole designed-CDS record at :data:`CDS_KEY`, keyed by manifest ``key``.
+
+    Includes retired members' entries; the record is append-only, so a retired member's
+    CDS stays readable.
+    """
     from deliverome_analysis.s3 import processed
 
     with open(processed.download(CDS_KEY)) as fh:
-        cds = json.load(fh)
+        return json.load(fh)
+
+
+def designed_cds(manifest: str | Path, *, library: str) -> dict[str, str]:
+    """Designed coding sequence (DNA, as synthesised) per active ``candidate_id``."""
+    _check_library(library)
+    cds = load_designed_cds()
     with open(manifest) as fh:
         return {
             row["candidate_id"]: cds[row["key"]]["cds"]
@@ -143,10 +175,8 @@ def designed_proteins(manifest: str | Path, *, library: str) -> dict[str, dict[s
     """
     _check_library(library)
     from deliverome_analysis import seqtools
-    from deliverome_analysis.s3 import processed
 
-    with open(processed.download(CDS_KEY)) as fh:
-        cds = json.load(fh)
+    cds = load_designed_cds()
 
     out: dict[str, dict[str, str]] = {}
     with open(manifest) as fh:

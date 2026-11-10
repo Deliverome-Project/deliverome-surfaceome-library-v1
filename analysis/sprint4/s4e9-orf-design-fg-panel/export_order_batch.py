@@ -39,6 +39,8 @@ import hashlib
 import shutil
 from pathlib import Path
 
+from deliverome_analysis import constructs
+
 HERE = Path(__file__).parent
 #: Where rebuild_order_maps.py leaves the assembled maps.
 CACHE = Path.home() / ".cache" / "deliverome-analysis" / "rebuilt_maps"
@@ -195,7 +197,7 @@ def main(argv: list[str] | None = None) -> int:
                 "architecture": description,
                 "barcode": row.get("barcode", ""),
                 "sha256_gb": hashlib.sha256(out.read_bytes()).hexdigest()[:16],
-                "s3_key": f"processed://constructs/designed/{row['plasmid']}.gb",
+                "s3_key": "processed://" + constructs.map_key(row["plasmid"]),
             }
         )
 

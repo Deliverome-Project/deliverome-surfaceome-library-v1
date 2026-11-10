@@ -5,14 +5,18 @@ synthesized-insert length (shortest first), so a plate holds members of similar 
 order number (``L1-O0001`` ...) follows that order; the member's ``candidate_id`` is kept, since
 every library record is keyed on it.
 
-Amounts (Becca, 2026-11-07): 4 ug ordered per member, 3 ug assumed delivered, normalized to
-100 ng/uL, so 30 uL per member, split into five plate sets with the same layout:
+Amounts (Becca, 2026-11-10): 4 ug ordered per member, 3 ug assumed delivered, normalized to
+100 ng/uL, so 30 uL per member, split into three plate sets with the same layout:
 
-| Plate set | Volume per well | DNA |
+| Plate set | Volume per well | DNA at 100 ng/uL |
 |---|---:|---:|
-| Addgene deposit | 15 uL | 1.5 ug |
-| Pooling A, B, C | 3 uL each | 0.3 ug each |
-| Backup | the remainder (6 uL) | 0.6 ug |
+| Pooling A, B | 5 uL each | 0.5 ug each |
+| Stock | 20 uL | 2.0 ug |
+
+The vendor may deliver below 100 ng/uL. The volumes are fixed, so a lower concentration lowers
+the DNA in every well in proportion; the summary reports each plate set's DNA, and each pool's
+total, at 100, 75 and 50 ng/uL. Pooling weights are relative, so the members needing extra DNA
+do not change with concentration.
 
 Length-weighted pooling follows Moon et al. 2026 (Nat Commun, PMC13319239), who pooled
 ``0.2 * 3.5^(L/1000)`` pmol of each plasmid, L the effector length, to offset lower lentiviral
@@ -20,7 +24,7 @@ titer for longer genomes (Sweeney & Vink 2021, PMC8141603: 3-4x lower functional
 extra kb of packaged genome). Our backbone is constant, so differences in insert length are
 differences in packaged length, and the weight per member is ``factor^((L - L_ref)/1000)`` in
 pmol, converted to mass with the member's own vector length. The reference is set so that a
-member with a 4.3-kb insert needs exactly one pooling well (300 ng) per pool; members above
+member with a 4.3-kb insert needs exactly one pooling well (500 ng) per pool; members above
 4.3 kb need more than a well holds, which is what the extra order covers. Shorter members need
 less than a well, down to nanoliters, which is a pipetting question the plan reports.
 
@@ -47,7 +51,8 @@ PLATES = HERE / "l1_order_pooling_plates.tsv"
 FIGURES = HERE / "figures"
 
 ORDERED_UG, ASSUMED_UG, CONC_NG_UL = 4.0, 3.0, 100.0
-ADDGENE_UL, POOL_UL, N_POOLS = 15.0, 3.0, 3
+STOCK_UL, POOL_UL, N_POOLS = 20.0, 5.0, 2
+CONC_SCENARIOS = (100.0, 75.0, 50.0)  # ng/uL: assumed, and two lower deliveries
 EXTRA_THRESHOLD_NT = 4300  # members whose insert is longer get extra DNA for pooling
 FACTOR = 3.5  # fold lower functional titer per extra kb (Moon et al. 2026)
 SENSITIVITY = (2.0, 2.5, 3.5)
@@ -83,7 +88,8 @@ def pool_ng(insert_nt: int, vector_bp: int, factor: float, ref: tuple[int, int])
 
 def plan(rows: list[dict]) -> tuple[list[dict], dict]:
     available_ul = ASSUMED_UG * 1000 / CONC_NG_UL
-    backup_ul = available_ul - ADDGENE_UL - N_POOLS * POOL_UL
+    spare_ul = available_ul - STOCK_UL - N_POOLS * POOL_UL
+    assert spare_ul >= 0, "plate sets exceed the assumed delivery"
     # Reference: a 4.3-kb insert in a vector of the median length for inserts near 4.3 kb.
     near = sorted(
         int(float(r["vector_bp"]))
@@ -108,7 +114,7 @@ def plan(rows: list[dict]) -> tuple[list[dict], dict]:
             ng = pool_ng(ins, vec, f, ref)
             row[f"pool_ng_per_pool_x{f}"] = round(ng, 2)
             row[f"pool_ul_per_pool_x{f}"] = round(ng / CONC_NG_UL, 4)
-            # DNA beyond the three standard pooling wells, ordered on top of the 4 ug.
+            # DNA beyond the standard pooling wells, ordered on top of the 4 ug.
             extra_ug = max(0.0, N_POOLS * (ng - POOL_UL * CONC_NG_UL)) / 1000
             row[f"extra_ug_assumed_x{f}"] = round(extra_ug, 3)
             row[f"order_ug_x{f}"] = round(ORDERED_UG + extra_ug * ORDERED_UG / ASSUMED_UG, 2)
@@ -141,10 +147,21 @@ def plan(rows: list[dict]) -> tuple[list[dict], dict]:
         "members": len(out),
         "plates_per_set": math.ceil(len(out) / 96),
         "plate_sets": {
-            "addgene_ul": ADDGENE_UL,
+            "stock_ul": STOCK_UL,
             "pooling_ul_each": POOL_UL,
             "pooling_sets": N_POOLS,
-            "backup_ul": backup_ul,
+            "spare_ul": spare_ul,
+        },
+        "concentration_scenarios": {
+            f"{c:g}_ng_ul": {
+                "pooling_well_ug": round(POOL_UL * c / 1000, 3),
+                "stock_well_ug": round(STOCK_UL * c / 1000, 3),
+                "delivered_ug": round(available_ul * c / 1000, 3),
+                "pool_ug_total_per_pool_x3.5": round(
+                    sum(r["pool_ng_per_pool_x3.5"] for r in out) * c / CONC_NG_UL / 1000, 1
+                ),
+            }
+            for c in CONC_SCENARIOS
         },
         "ordered_ug": ORDERED_UG,
         "assumed_ug": ASSUMED_UG,
@@ -163,10 +180,10 @@ def plan(rows: list[dict]) -> tuple[list[dict], dict]:
 
 
 def pooling_plates(rows: list[dict]) -> list[dict]:
-    """Per pooling plate: one dilution so a fixed 3 uL from every well delivers the weighting.
+    """Per pooling plate: one dilution so a fixed 5 uL from every well delivers the weighting.
 
     Plates are length-ordered, so each holds a narrow length range and a single concentration
-    (the plate median's weighted mass per 3 uL) approximates every member's target; the
+    (the plate median's weighted mass per 5 uL) approximates every member's target; the
     within-plate error is the spread of the members' targets around it. The last
     ``PER_WELL_PLATES`` plates are pooled per well at each member's own volume instead.
     """
@@ -215,7 +232,7 @@ def figure(rows: list[dict]) -> None:
             alpha=0.8,
         )
     ax.axhline(POOL_UL, color=get_color("neutral"), ls="--", lw=1.5)
-    ax.text(300, POOL_UL * 1.15, "one pooling well (3 \u00b5L)", color=get_color("neutral"))
+    ax.text(300, POOL_UL * 1.15, "one pooling well (5 \u00b5L)", color=get_color("neutral"))
     ax.axhline(MIN_HAND_UL, color=get_color("neutral"), ls=":", lw=1.5)
     ax.text(300, MIN_HAND_UL * 1.15, "0.5 \u00b5L", color=get_color("neutral"))
     ax.axvline(EXTRA_THRESHOLD_NT, color=get_color("neutral"), ls="--", lw=1)

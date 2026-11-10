@@ -23,10 +23,10 @@ from pathlib import Path
 
 from Bio import BiopythonWarning, SeqIO
 
+from deliverome_analysis import constructs
 from deliverome_analysis.s3 import processed
 
 REGISTRY_KEY = "sprint1/s1e2-fragmid-vector-design/barcode_assignments.tsv"
-KEY = "constructs/designed/{}.gb"
 # notes that no longer describe the design, keyed by construct
 NOTES = {
     "p0018": "miR-L iFFL, EF1a regulator / PGK on the ORF, intron in PuroR CDS, 4x17 sites",
@@ -35,11 +35,11 @@ NOTES = {
 
 
 def barcode_span(name: str) -> str | None:
-    if not processed.exists(KEY.format(name)):
+    if not processed.exists(constructs.map_key(name)):
         return None
     with warnings.catch_warnings():
         warnings.simplefilter("ignore", BiopythonWarning)
-        rec = SeqIO.read(processed.download(KEY.format(name)), "genbank")
+        rec = SeqIO.read(processed.download(constructs.map_key(name)), "genbank")
     f = next(
         (f for f in rec.features if f.qualifiers.get("label", [""])[0].startswith("20bp-BC")),
         None,

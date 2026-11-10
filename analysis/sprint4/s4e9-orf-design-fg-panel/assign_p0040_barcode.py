@@ -32,12 +32,11 @@ from Bio.Seq import Seq
 sys.path.insert(0, str(Path(__file__).parent))
 from reserve_barcodes import POOL_KEY, REGISTRY_KEY, read_registry, screens_pass
 
-from deliverome_analysis import seqtools
+from deliverome_analysis import constructs, seqtools
 from deliverome_analysis.s3 import processed
 
 CONSTRUCT = "p0040"
 PARENT = "p0016"
-KEY = "constructs/designed/{}.gb"
 ORF = "TFRC"
 NOTE = "miR-L iFFL, PGK, intron in PuroR CDS, 4x17 sites, TACC spacer (no miR-374 8mer)"
 
@@ -71,8 +70,8 @@ def main(argv=None) -> int:
 
     with warnings.catch_warnings():
         warnings.simplefilter("ignore", BiopythonWarning)
-        rec = SeqIO.read(processed.download(KEY.format(CONSTRUCT)), "genbank")
-        parent = SeqIO.read(processed.download(KEY.format(PARENT)), "genbank")
+        rec = SeqIO.read(processed.download(constructs.map_key(CONSTRUCT)), "genbank")
+        parent = SeqIO.read(processed.download(constructs.map_key(PARENT)), "genbank")
     before, parent_seq = str(rec.seq).upper(), str(parent.seq).upper()
 
     feat = next(f for f in rec.features if f.qualifiers.get("label", [""])[0].startswith("20bp-BC"))
@@ -139,10 +138,14 @@ def main(argv=None) -> int:
     with tempfile.TemporaryDirectory() as tmp:
         path = Path(tmp) / f"{CONSTRUCT}.gb"
         SeqIO.write(rec, path, "genbank")
-        processed.upload(path, KEY.format(CONSTRUCT), content_type="chemical/seq-na-genbank")
+        processed.upload(
+            path, constructs.map_key(CONSTRUCT), content_type="chemical/seq-na-genbank"
+        )
     with warnings.catch_warnings():
         warnings.simplefilter("ignore", BiopythonWarning)
-        reread = str(SeqIO.read(processed.download(KEY.format(CONSTRUCT)), "genbank").seq).upper()
+        reread = str(
+            SeqIO.read(processed.download(constructs.map_key(CONSTRUCT)), "genbank").seq
+        ).upper()
     if reread != after:
         raise SystemExit("re-read does not match what was uploaded")
     print(f"{CONSTRUCT} written and re-read; barcode is pool index {ix}")

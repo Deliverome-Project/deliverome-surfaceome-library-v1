@@ -32,11 +32,10 @@ from pathlib import Path
 from Bio import SeqIO
 from Bio.Seq import Seq
 
-from deliverome_analysis import seqtools
+from deliverome_analysis import constructs, seqtools
 from deliverome_analysis.s3 import processed
 
 DESIGNS = ("p0016", "p0017", "p0018", "p0019", "p0020", "p0021")
-KEY = "constructs/designed/{}.gb"
 NEW_BASE = "A"  # the transition; see the module docstring
 SPLICE_DONOR = re.compile(r"GT[AG]AG")
 NOTE = (
@@ -49,7 +48,7 @@ DATE = "2026-10-06"
 
 
 def fix(name: str):
-    rec = SeqIO.read(processed.download(KEY.format(name)), "genbank")
+    rec = SeqIO.read(processed.download(constructs.map_key(name)), "genbank")
     seq = str(rec.seq).upper()
     sites = seqtools.find_sites(seq, ["BbsI"])
     if not sites:
@@ -118,8 +117,8 @@ def main(argv=None) -> int:
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / f"{name}.gb"
             SeqIO.write(rec, path, "genbank")
-            processed.upload(path, KEY.format(name), content_type="chemical/seq-na-genbank")
-        back = str(SeqIO.read(processed.download(KEY.format(name)), "genbank").seq).upper()
+            processed.upload(path, constructs.map_key(name), content_type="chemical/seq-na-genbank")
+        back = str(SeqIO.read(processed.download(constructs.map_key(name)), "genbank").seq).upper()
         if back != after:
             raise SystemExit(f"{name}: re-read does not match what was uploaded")
     print(f"\nuploaded {len(staged)} record(s); each re-read and confirmed BbsI-free")

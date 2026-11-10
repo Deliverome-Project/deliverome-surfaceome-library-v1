@@ -29,11 +29,10 @@ from pathlib import Path
 from Bio import SeqIO
 from Bio.Seq import Seq
 
-from deliverome_analysis import seqtools
+from deliverome_analysis import constructs, seqtools
 from deliverome_analysis.s3 import processed
 
 DESIGNS = ("p0016", "p0017", "p0018", "p0019", "p0020", "p0021")
-KEY = "constructs/designed/{}.gb"
 OLD_HANDLE = "TGGACCCGGGTCAGGCTCC"
 NEW_HANDLE = "AGTCGTTAGCTGCCGTTCC"  # O-0013, TFRC_bc_fwd_JT832
 OLD_PAD, NEW_PAD = "GG", "CC"  # the 2 nt between the stop codon and the handle
@@ -81,7 +80,7 @@ def main(argv=None) -> int:
 
     staged = []
     for name in DESIGNS:
-        rec = SeqIO.read(processed.download(KEY.format(name)), "genbank")
+        rec = SeqIO.read(processed.download(constructs.map_key(name)), "genbank")
         before = str(rec.seq).upper()
         after, did = before, []
         if OLD_HANDLE in after:
@@ -129,8 +128,8 @@ def main(argv=None) -> int:
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / f"{name}.gb"
             SeqIO.write(rec, path, "genbank")
-            processed.upload(path, KEY.format(name), content_type="chemical/seq-na-genbank")
-        back = str(SeqIO.read(processed.download(KEY.format(name)), "genbank").seq).upper()
+            processed.upload(path, constructs.map_key(name), content_type="chemical/seq-na-genbank")
+        back = str(SeqIO.read(processed.download(constructs.map_key(name)), "genbank").seq).upper()
         if back != after:
             raise SystemExit(f"{name}: re-read does not match what was uploaded")
     print(f"\nuploaded {len(staged)} record(s); each re-read and confirmed on the new handle")

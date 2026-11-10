@@ -33,10 +33,9 @@ from Bio import BiopythonWarning, SeqIO
 from Bio.Seq import Seq
 from Bio.SeqFeature import FeatureLocation
 
-from deliverome_analysis import seqtools
+from deliverome_analysis import constructs, seqtools
 from deliverome_analysis.s3 import processed
 
-KEY = "constructs/designed/{}.gb"
 DESIGNS = ("p0018", "p0019")
 DONOR = "p0016"  # carries PGK_v1, already in the series
 OLD_LABEL, NEW_LABEL = "EFS_v1", "PGK_v1"
@@ -106,7 +105,7 @@ def main(argv=None) -> int:
 
     with warnings.catch_warnings():
         warnings.simplefilter("ignore", BiopythonWarning)
-        donor = SeqIO.read(processed.download(KEY.format(DONOR)), "genbank")
+        donor = SeqIO.read(processed.download(constructs.map_key(DONOR)), "genbank")
     pgk_feat = feature(donor, NEW_LABEL)
     pgk = str(pgk_feat.extract(donor.seq)).upper()
     pgk_label = pgk_feat.qualifiers.get("label", [NEW_LABEL])[0]
@@ -116,7 +115,7 @@ def main(argv=None) -> int:
     for name in DESIGNS:
         with warnings.catch_warnings():
             warnings.simplefilter("ignore", BiopythonWarning)
-            rec = SeqIO.read(processed.download(KEY.format(name)), "genbank")
+            rec = SeqIO.read(processed.download(constructs.map_key(name)), "genbank")
         before = str(rec.seq).upper()
         if NEW_LABEL in [f.qualifiers.get("label", [""])[0].split(" [")[0] for f in rec.features]:
             print(f"{name}: already on {NEW_LABEL}, nothing to do")
@@ -187,10 +186,10 @@ def main(argv=None) -> int:
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / f"{name}.gb"
             SeqIO.write(rec, path, "genbank")
-            processed.upload(path, KEY.format(name), content_type="chemical/seq-na-genbank")
+            processed.upload(path, constructs.map_key(name), content_type="chemical/seq-na-genbank")
         with warnings.catch_warnings():
             warnings.simplefilter("ignore", BiopythonWarning)
-            back = SeqIO.read(processed.download(KEY.format(name)), "genbank")
+            back = SeqIO.read(processed.download(constructs.map_key(name)), "genbank")
         if str(back.seq).upper() != after:
             raise SystemExit(f"{name}: re-read does not match what was uploaded")
         if longest_hairpin(str(back.seq).upper()) >= 60:

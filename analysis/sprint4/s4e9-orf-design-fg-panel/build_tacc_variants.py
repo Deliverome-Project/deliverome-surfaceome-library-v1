@@ -34,10 +34,9 @@ from pathlib import Path
 from Bio import BiopythonWarning, SeqIO
 from Bio.Seq import Seq
 
-from deliverome_analysis import seqtools
+from deliverome_analysis import constructs, seqtools
 from deliverome_analysis.s3 import processed
 
-KEY = "constructs/designed/{}.gb"
 SITE = "ATTATAATGCTTATCTA"
 OLD_SPACER, NEW_SPACER = "TACT", "TACC"
 OLD_ARRAY, NEW_ARRAY = (OLD_SPACER + SITE) * 4, (NEW_SPACER + SITE) * 4
@@ -66,12 +65,12 @@ def main(argv=None) -> int:
         # Checked here, not only in the write path: the child has since been given its
         # own barcode, so rebuilding it from the parent would silently put the parent's
         # barcode back. A dry run that claims it would proceed invites exactly that.
-        if list(processed.list_keys(KEY.format(child))):
+        if list(processed.list_keys(constructs.map_key(child))):
             print(f"{child}: already built from {parent}, nothing to do")
             continue
         with warnings.catch_warnings():
             warnings.simplefilter("ignore", BiopythonWarning)
-            rec = SeqIO.read(processed.download(KEY.format(parent)), "genbank")
+            rec = SeqIO.read(processed.download(constructs.map_key(parent)), "genbank")
         before = str(rec.seq).upper()
         if before.count(OLD_ARRAY) != 1:
             raise SystemExit(f"{parent}: expected one TACT array, found {before.count(OLD_ARRAY)}")
@@ -133,15 +132,17 @@ def main(argv=None) -> int:
         return 0
 
     for child, rec, after in staged:
-        if list(processed.list_keys(KEY.format(child))):
+        if list(processed.list_keys(constructs.map_key(child))):
             raise SystemExit(f"{child}: a record appeared since the check; refusing to clobber")
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / f"{child}.gb"
             SeqIO.write(rec, path, "genbank")
-            processed.upload(path, KEY.format(child), content_type="chemical/seq-na-genbank")
+            processed.upload(
+                path, constructs.map_key(child), content_type="chemical/seq-na-genbank"
+            )
         with warnings.catch_warnings():
             warnings.simplefilter("ignore", BiopythonWarning)
-            back = SeqIO.read(processed.download(KEY.format(child)), "genbank")
+            back = SeqIO.read(processed.download(constructs.map_key(child)), "genbank")
         if str(back.seq).upper() != after:
             raise SystemExit(f"{child}: re-read does not match what was uploaded")
     print(f"\nuploaded {len(staged)} new record(s)")

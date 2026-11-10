@@ -29,7 +29,7 @@ from pathlib import Path
 
 from Bio import SeqIO
 
-from deliverome_analysis import primers
+from deliverome_analysis import constructs, primers
 from deliverome_analysis.seqtools import reverse_complement
 
 HERE = Path(__file__).parent
@@ -50,7 +50,7 @@ def _load(name: str, maps: Path | None, work: Path) -> str:
         from deliverome_analysis import s3
 
         path = work / f"{name}.gb"
-        s3.processed.download(f"constructs/designed/{name}.gb", path)
+        s3.processed.download(constructs.map_key(name), path)
     return str(SeqIO.read(path, "genbank").seq).upper()
 
 
