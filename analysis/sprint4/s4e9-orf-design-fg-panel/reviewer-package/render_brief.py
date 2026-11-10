@@ -213,6 +213,19 @@ def to_docx(md_path: Path, commit: str, out: Path) -> None:
     doc.save(out)
 
 
+def overwrite(src: Path, dst: Path) -> None:
+    """Write ``src``'s bytes into ``dst`` in place, with a fresh modification time.
+
+    A synced Drive folder keeps a file's ID, and so every link to it, only while the same
+    file is rewritten; a copy that carries the source's older modification time (``copy2``)
+    or replaces the file can reach Drive as a new file, leaving readers on a stale one.
+    """
+    data = src.read_bytes()
+    with open(dst, "r+b" if dst.exists() else "wb") as fh:
+        fh.write(data)
+        fh.truncate()
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--dest", type=Path, required=True)
@@ -245,8 +258,8 @@ def main(argv=None) -> int:
         docx = work / f"{stem}.docx"
         to_docx(HERE / name, commit, docx)
         for f in (pdf, docx):
-            shutil.copy2(f, dest / f.name)
-        shutil.copy2(HERE / name, dest / f"{stem}.md")
+            overwrite(f, dest / f.name)
+        overwrite(HERE / name, dest / f"{stem}.md")
         print(f"wrote {stem}.pdf, .docx and .md to {dest} ({commit[:10]})")
     return 0
 

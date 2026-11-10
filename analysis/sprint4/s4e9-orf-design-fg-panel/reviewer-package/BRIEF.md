@@ -6,8 +6,13 @@ with an epitope-tag cassette placed where it should be displayed outside the cel
 into a common lentiviral vector and identified by a DNA barcode. Nothing in L1 has been
 ordered. This brief sets out how each member was chosen and built, what is pinned so the
 design can be rerun, and the decisions we would like reviewers to weigh in on. It describes
-the design as of **2026-11-05**; issues still being worked on before the order are listed
+the design as of **2026-11-10**; issues still being worked on before the order are listed
 separately in the [cover note](COVER_NOTE.md).
+
+*Figures and links:* this Markdown file refers to figures and code by their paths in the
+repository, so outside it (for example on Google Drive) the figures do not display and the
+links do not open. The Word and PDF copies of this brief embed every figure and link each path
+to the repository at the commit they were rendered from.
 
 Every count below is measured by [`brief_numbers.py`](brief_numbers.py) from the library's
 own tables and written to [`brief_numbers.json`](brief_numbers.json); the reviewer package
