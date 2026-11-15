@@ -1,0 +1,166 @@
+{
+ "thresholds": {
+  "outside": 14.0,
+  "margin": 2.3,
+  "core": 13.0,
+  "min_plddt": 50.0,
+  "min_topology_ratio": 3.9,
+  "max_kr_excess_outside": 4
+ },
+ "attribution": {
+  "outside": {
+   "decided_by": "derived by calibrate.py from the evidence above (rule written by the l1-membrane-side-gate session, PR #291, 2026-11-10, to Becca's requirement that every cutoff be justified from evidence)",
+   "implemented_by": "l1-membrane-side-gate session (Claude Code), PR #291"
+  },
+  "margin": {
+   "decided_by": "derived by calibrate.py from the evidence above (rule written by the l1-membrane-side-gate session, PR #291, 2026-11-10, to Becca's requirement that every cutoff be justified from evidence)",
+   "implemented_by": "l1-membrane-side-gate session (Claude Code), PR #291"
+  },
+  "core": {
+   "decided_by": "derived by calibrate.py from the evidence above (rule written by the l1-membrane-side-gate session, PR #291, 2026-11-10, to Becca's requirement that every cutoff be justified from evidence)",
+   "implemented_by": "l1-membrane-side-gate session (Claude Code), PR #291"
+  },
+  "min_plddt": {
+   "decided_by": "derived by calibrate.py from the evidence above (rule written by the l1-membrane-side-gate session, PR #291, 2026-11-10, to Becca's requirement that every cutoff be justified from evidence)",
+   "implemented_by": "l1-membrane-side-gate session (Claude Code), PR #291"
+  },
+  "min_topology_ratio": {
+   "decided_by": "derived by calibrate.py from the evidence above (rule written by the l1-membrane-side-gate session, PR #291, 2026-11-10, to Becca's requirement that every cutoff be justified from evidence)",
+   "implemented_by": "l1-membrane-side-gate session (Claude Code), PR #291"
+  },
+  "max_kr_excess_outside": {
+   "decided_by": "derived by calibrate.py from the evidence above (rule written by the l1-membrane-side-gate session, PR #291, 2026-11-10, to Becca's requirement that every cutoff be justified from evidence)",
+   "implemented_by": "l1-membrane-side-gate session (Claude Code), PR #291"
+  }
+ },
+ "evidence": {
+  "tmdet_status_counts": {
+   "used": 440,
+   "different_model": 46,
+   "no_entry": 26
+  },
+  "tmdet_rmsd_median": 0.255,
+  "helix_axis_vs_tmdet_deg_median": 7.8,
+  "helix_axis_vs_tmdet_deg_p90": 16.919999999999998,
+  "tmdet_half_thickness_median": 13.01000023,
+  "tmdet_half_thickness_p10_p90": [
+   9.76000023,
+   17.01000023
+  ],
+  "side_flips_helix_axis_vs_tmdet_members": 1,
+  "tmdet_abs_dz_by_plddt": {
+   "[0, 30)": {
+    "n": 3181,
+    "median": 3.2,
+    "p90": 12.15
+   },
+   "[30, 40)": {
+    "n": 9473,
+    "median": 3.65,
+    "p90": 12.95
+   },
+   "[40, 50)": {
+    "n": 5133,
+    "median": 2.98,
+    "p90": 11.19
+   },
+   "[50, 60)": {
+    "n": 4991,
+    "median": 2.28,
+    "p90": 8.11
+   },
+   "[60, 70)": {
+    "n": 6244,
+    "median": 2.39,
+    "p90": 8.08
+   },
+   "[70, 80)": {
+    "n": 10634,
+    "median": 2.3,
+    "p90": 7.14
+   },
+   "[80, 90)": {
+    "n": 29256,
+    "median": 2.28,
+    "p90": 6.57
+   },
+   "[90, 101)": {
+    "n": 35877,
+    "median": 2.2,
+    "p90": 6.2
+   }
+  },
+  "tmdet_loop_residues": 104789,
+  "published_displayed_multipass_sites": 88,
+  "published_displayed_multipass_z_percentiles": {
+   "0": 14.0,
+   "1": 14.2,
+   "5": 15.6,
+   "10": 17.1,
+   "25": 22.3,
+   "50": 30.2
+  },
+  "published_displayed_shallowest": [
+   {
+    "gene": "CNR1",
+    "insert_after_residue": 179,
+    "z": 14.03,
+    "plddt": 95.5
+   },
+   {
+    "gene": "XPR1",
+    "insert_after_residue": 428,
+    "z": 14.2,
+    "plddt": 69.3
+   },
+   {
+    "gene": "AQP5",
+    "insert_after_residue": 116,
+    "z": 14.63,
+    "plddt": 97.4
+   },
+   {
+    "gene": "ATP1A1",
+    "insert_after_residue": 318,
+    "z": 14.79,
+    "plddt": 82.3
+   },
+   {
+    "gene": "KCNQ1",
+    "insert_after_residue": 148,
+    "z": 15.24,
+    "plddt": 92.6
+   }
+  ],
+  "helix_axis_abs_dz_median_plddt50": 2.3,
+  "tmdet_p90_upper95_by_plddt": {
+   "[90, 101)": 6.71,
+   "[80, 90)": 7.25,
+   "[70, 80)": 8.29,
+   "[60, 70)": 9.38,
+   "[50, 60)": 9.19,
+   "[40, 50)": 14.23
+  },
+  "uniprot_confirmed_members": 50,
+  "uniprot_inverted_members": [
+   "SLC68A1"
+  ],
+  "uniprot_residues_agree_disagree": [
+   14744,
+   173
+  ],
+  "confirmed_min_topology_ratio": 3.97,
+  "confirmed_max_kr_excess_outside": 4
+ },
+ "uniprot_inverted_design_ids": [
+  "l1-p1995"
+ ],
+ "inputs": {
+  "panel_commit": "6bf341f231e0841ffea13e589c4119a909fde93f",
+  "topology_snapshot": "accessible-surfaceome/topology/2026-11-06-ortholog-cds-policy/topology.parquet",
+  "topology_tool": "deeptmhmm_v1",
+  "gold_standard": "processed://scratch/becca/tag-site-corpus-audit/gold_standard.tsv",
+  "tmalphafold": "https://tmalphafold.ttk.hu/api/tmdet/{acc}.json (TMDET on AlphaFold DB models)",
+  "uniprot_features": "EBI Proteins API, TOPO_DOM with ECO:0000269"
+ }
+}

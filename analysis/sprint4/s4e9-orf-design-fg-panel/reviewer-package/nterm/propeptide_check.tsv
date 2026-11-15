@@ -1,0 +1,1309 @@
+candidate_id	design_id	gene_symbol	arm	native_cleavage	cassette_after_native_residue	uniprot	n_terminal_propeptides	propeptide_removal	furin_motifs_cleave_after	cassette_inside_propeptide	cassette_upstream_of_furin_motif
+l1-p0306	l1-p0306	CD52	no_nterm_arm			no_propeptide				0	0
+l1-p0837	l1-p0837	GYPE	no_nterm_arm			no_propeptide				0	0
+l1-p0277	l1-p0277	CD24	native_site	26	46	no_propeptide				0	0
+l1-p0835	l1-p0835	GYPB	no_nterm_arm			no_propeptide				0	0
+l1-p2197	l1-p2197	TMEM273	native_site	23	25	no_propeptide				0	0
+l1-p3029	l1-p3029	CRB3	igk_swap	24	26	no_propeptide			80	0	1
+l1-p1691	l1-p1691	PSCA	igk_swap	11	13	no_propeptide				0	0
+l1-p0239	l1-p0239	CATSPERH	no_nterm_arm			no_propeptide				0	0
+l1-p1176	l1-p1176	LYNX1	native_site	20	21	no_propeptide				0	0
+l1-p0473	l1-p0473	CRB3	native_site	26	46	no_propeptide				0	0
+l1-p2057	l1-p2057	SNORC	native_site	24	28	no_propeptide				0	0
+l1-p2063	l1-p2063	SPACA4	native_site	19	20	no_propeptide				0	0
+l1-p1168	l1-p1168	LY6G6C	native_site	18	19	no_propeptide				0	0
+l1-p1178	l1-p1178	LYPD2	native_site	22	24	no_propeptide				0	0
+l1-p0310	l1-p0310	CD59	native_site	25	26	no_propeptide				0	0
+l1-p1166	l1-p1166	LY6D	native_site	20	21	no_propeptide				0	0
+l1-p2229	l1-p2229	TNFRSF12A	native_site	27	28	no_propeptide				0	0
+l1-p1167	l1-p1167	LY6E	native_site	20	21	no_propeptide				0	0
+l1-p1169	l1-p1169	LY6G6D	native_site	19	20	no_propeptide				0	0
+l1-p1174	l1-p1174	LY6S	native_site	26	27	no_propeptide				0	0
+l1-p1173	l1-p1173	LY6L	native_site	17	19	no_propeptide				0	0
+l1-p2955	l1-p2955	LY6L	native_site	16	17	no_propeptide				0	0
+l1-p1177	l1-p1177	LYPD1	igk_swap	20	22	no_propeptide				0	0
+l1-p2956	l1-p2956	LYPD2	igk_swap	41	43	no_propeptide				0	0
+l1-p1324	l1-p1324	NRN1	no_nterm_arm			no_propeptide				0	0
+l1-p3006	l1-p3006	NRN1	no_nterm_arm			no_propeptide				0	0
+l1-p2188	l1-p2188	TMEM210	no_nterm_arm			no_propeptide				0	0
+l1-p2973	l1-p2973	TMEM210	no_nterm_arm			no_propeptide				0	0
+l1-p3061	l1-p3061	TMEM210	no_nterm_arm			no_propeptide				0	0
+l1-p0834	l1-p0834	GYPA	native_site	19	23	no_propeptide				0	0
+l1-p2071	l1-p2071	SPRN	native_site	24	26	no_propeptide				0	0
+l1-p1672	l1-p1672	PRIMA1	native_site	35	43	no_propeptide				0	0
+l1-p0571	l1-p0571	EPGN	native_site	20	39	no_propeptide				0	0
+l1-p1718	l1-p1718	PTTG1IP2	igk_swap	30	35	no_propeptide				0	0
+l1-p2448	l1-p2448	HLA-G	native_site	24	26	no_propeptide				0	0
+l1-p2988	l1-p2988	EPGN	igk_swap	20	27	no_propeptide				0	0
+l1-p0728	l1-p0728	GML	native_site	17	18	no_propeptide				0	0
+l1-p0607	l1-p0607	FAM174B	native_site	26	42	no_propeptide				0	0
+l1-p2204	l1-p2204	TMEM89	native_site	22	25	no_propeptide				0	0
+l1-p2132	l1-p2132	TGFA	native_site	22	39	propeptide	24-39:identical	constitutive		0	0
+l1-p1171	l1-p1171	LY6H	native_site	46	47	no_propeptide				0	0
+l1-p2140	l1-p2140	THY1	native_site	19	20	no_propeptide				0	0
+l1-p1636	l1-p1636	PDPN	native_site	20	21	no_propeptide				0	0
+l1-p3042	l1-p3042	NRN1L	native_site	32	33	no_propeptide				0	0
+l1-p1172	l1-p1172	LY6K	native_site	17	31	no_propeptide				0	0
+l1-p1325	l1-p1325	NRN1L	native_site	35	37	no_propeptide				0	0
+l1-p0610	l1-p0610	FAM209A	native_site	19	38	no_propeptide				0	0
+l1-p0611	l1-p0611	FAM209B	native_site	19	33	no_propeptide				0	0
+l1-p1181	l1-p1181	LYPD6	no_nterm_arm			no_propeptide				0	0
+l1-p0262	l1-p0262	CD164L2	native_site	29	30	no_propeptide				0	0
+l1-p1675	l1-p1675	PRND	no_nterm_arm			no_propeptide				0	0
+l1-p2206	l1-p2206	TMEM95	no_nterm_arm			no_propeptide				0	0
+l1-p2184	l1-p2184	TMEM190	native_site	21	23	no_propeptide				0	0
+l1-p0189	l1-p0189	BTC	native_site	31	32	no_propeptide				0	0
+l1-p0661	l1-p0661	FXYD5	native_site	21	41	no_propeptide				0	0
+l1-p2410	l1-p2410	CD164	native_site	22	39	no_propeptide				0	0
+l1-p0258	l1-p0258	CD160	native_site	26	28	no_propeptide			81	0	1
+l1-p2935	l1-p2935	CD160	native_site	24	26	no_propeptide			81	0	1
+l1-p2176	l1-p2176	TMEM154	native_site	22	24	no_propeptide				0	0
+l1-p0741	l1-p0741	GPIHBP1	native_site	20	22	no_propeptide				0	0
+l1-p0328	l1-p0328	CD99	native_site	21	40	no_propeptide				0	0
+l1-p0477	l1-p0477	CRIPTO	native_site	30	46	no_propeptide				0	0
+l1-p0606	l1-p0606	FAM174A	no_nterm_arm			no_propeptide				0	0
+l1-p2434	l1-p2434	ECSCR	native_site	24	30	no_propeptide				0	0
+l1-p0288	l1-p0288	CD300LD	native_site	18	19	no_propeptide				0	0
+l1-p2344	l1-p2344	XG	native_site	21	27	no_propeptide				0	0
+l1-p0261	l1-p0261	CD164	native_site	22	39	no_propeptide				0	0
+l1-p1778	l1-p1778	SDC4	native_site	18	37	no_propeptide				0	0
+l1-p0889	l1-p0889	ICOS	native_site	20	26	no_propeptide				0	0
+l1-p1808	l1-p1808	SHISAL1	native_site	25	26	no_propeptide				0	0
+l1-p2341	l1-p2341	VSTM5	igk_swap	33	35	no_propeptide				0	0
+l1-p0287	l1-p0287	CD300H	native_site	24	25	no_propeptide				0	0
+l1-p0546	l1-p0546	EFNA4	igk_swap	25	26	no_propeptide				0	0
+l1-p1278	l1-p1278	NCR3	native_site	18	20	no_propeptide				0	0
+l1-p1776	l1-p1776	SDC2	native_site	18	38	no_propeptide				0	0
+l1-p2960	l1-p2960	NCR3	native_site	18	19	no_propeptide				0	0
+l1-p1683	l1-p1683	PRRG2	native_site	20	49	propeptide	24-49:identical	constitutive		0	0
+l1-p0286	l1-p0286	CD300E	native_site	17	18	no_propeptide				0	0
+l1-p0320	l1-p0320	CD83	native_site	19	21	no_propeptide				0	0
+l1-p0538	l1-p0538	ECSCR	native_site	24	41	no_propeptide				0	0
+l1-p0543	l1-p0543	EFNA1	no_nterm_arm			no_propeptide				0	0
+l1-p2581	l1-p2581	LYPD6B	igk_swap	60	64	no_propeptide				0	0
+l1-p1182	l1-p1182	LYPD6B	igk_swap	60	62	no_propeptide				0	0
+l1-p1651	l1-p1651	PLET1	native_site	25	27	no_propeptide				0	0
+l1-p0841	l1-p0841	HBEGF	native_site	23	62	propeptide	20-62:identical	constitutive	31	0	0
+l1-p2166	l1-p2166	TMEM123	native_site	26	28	no_propeptide				0	0
+l1-p0324	l1-p0324	CD8B2	native_site	18	19	no_propeptide				0	0
+l1-p3117	l1-p3117	EFNA3	native_site	24	26	no_propeptide				0	0
+l1-p0329	l1-p0329	CD99L2	native_site	25	36	no_propeptide				0	0
+l1-p0544	l1-p0544	EFNA2	native_site	26	27	no_propeptide				0	0
+l1-p0204	l1-p0204	C19orf18	native_site	25	40	no_propeptide				0	0
+l1-p1235	l1-p1235	MPZL2	native_site	26	27	no_propeptide				0	0
+l1-p1769	l1-p1769	SCN2B	native_site	29	31	no_propeptide				0	0
+l1-p1770	l1-p1770	SCN3B	igk_swap	24	25	no_propeptide				0	0
+l1-p2587	l1-p2587	MPIG6B	native_site	20	27	no_propeptide				0	0
+l1-p1768	l1-p1768	SCN1B	igk_swap	19	20	no_propeptide				0	0
+l1-p0283	l1-p0283	CD28	igk_swap	18	20	no_propeptide				0	0
+l1-p3039	l1-p3039	IZUMO2	native_site	20	21	no_propeptide				0	0
+l1-p0978	l1-p0978	IZUMO2	native_site	20	22	no_propeptide				0	0
+l1-p2415	l1-p2415	CD7	native_site	25	29	no_propeptide				0	0
+l1-p0438	l1-p0438	CLTRN	native_site	14	15	no_propeptide				0	0
+l1-p0370	l1-p0370	CFC1	native_site	25	42	no_propeptide				0	0
+l1-p0485	l1-p0485	CTLA4	native_site	37	38	no_propeptide				0	0
+l1-p0285	l1-p0285	CD300C	igk_swap	26	27	no_propeptide				0	0
+l1-p0652	l1-p0652	FNDC10	native_site	21	30	no_propeptide				0	0
+l1-p1685	l1-p1685	PRRG4	native_site	17	49	propeptide	18-49:identical	constitutive		0	0
+l1-p1646	l1-p1646	PILRB	igk_swap	24	29	no_propeptide				0	0
+l1-p0547	l1-p0547	EFNA5	native_site	20	26	no_propeptide				0	0
+l1-p1771	l1-p1771	SCN4B	igk_swap	30	31	no_propeptide				0	0
+l1-p0205	l1-p0205	C19orf38	igk_swap	14	15	no_entry				0	0
+l1-p0291	l1-p0291	CD302	native_site	22	23	no_propeptide				0	0
+l1-p0623	l1-p0623	FCGR3B	igk_swap	20	22	no_propeptide				0	0
+l1-p0384	l1-p0384	CIST1	native_site	24	30	no_propeptide				0	0
+l1-p2527	l1-p2527	TNFRSF18	native_site	25	26	no_propeptide				0	0
+l1-p0323	l1-p0323	CD8A	native_site	21	22	no_propeptide				0	0
+l1-p0647	l1-p0647	FLT3LG	native_site	27	30	no_propeptide				0	0
+l1-p1236	l1-p1236	MPZL3	igk_swap	31	32	no_propeptide				0	0
+l1-p0596	l1-p0596	EVI2A	native_site	30	40	no_propeptide				0	0
+l1-p2339	l1-p2339	VSTM1	native_site	16	20	no_propeptide				0	0
+l1-p0309	l1-p0309	CD58	igk_swap	28	29	no_propeptide				0	0
+l1-p1183	l1-p1183	LYPD8	igk_swap	19	20	no_propeptide				0	0
+l1-p0545	l1-p0545	EFNA3	native_site	24	26	no_propeptide				0	0
+l1-p1151	l1-p1151	LRRN4CL	native_site	22	24	no_propeptide				0	0
+l1-p1677	l1-p1677	PROCR	native_site	17	20	no_propeptide				0	0
+l1-p2597	l1-p2597	PROCR	native_site	17	19	no_propeptide				0	0
+l1-p0979	l1-p0979	IZUMO3	native_site	20	21	no_propeptide				0	0
+l1-p0313	l1-p0313	CD7	native_site	25	26	no_propeptide				0	0
+l1-p2944	l1-p2944	GLIPR1L1	igk_swap	20	22	no_propeptide				0	0
+l1-p1231	l1-p1231	MPIG6B	native_site	17	19	no_propeptide				0	0
+l1-p2234	l1-p2234	TNFRSF18	native_site	25	26	no_propeptide				0	0
+l1-p0722	l1-p0722	GLIPR1L1	native_site	23	24	no_propeptide				0	0
+l1-p3047	l1-p3047	PROCR	native_site	19	22	no_propeptide				0	0
+l1-p0304	l1-p0304	CD48	native_site	28	29	no_propeptide				0	0
+l1-p0977	l1-p0977	IZUMO1R	native_site	19	20	no_propeptide				0	0
+l1-p0364	l1-p0364	CEACAM4	igk_swap	34	36	no_propeptide				0	0
+l1-p2142	l1-p2142	TIGIT	native_site	21	22	no_propeptide				0	0
+l1-p2307	l1-p2307	ULBP1	native_site	25	27	no_propeptide				0	0
+l1-p2309	l1-p2309	ULBP3	igk_swap	29	31	no_propeptide				0	0
+l1-p1724	l1-p1724	RAET1L	igk_swap	25	26	no_propeptide			27	0	1
+l1-p2308	l1-p2308	ULBP2	native_site	25	26	no_propeptide				0	0
+l1-p1229	l1-p1229	MOG	native_site	29	30	no_propeptide				0	0
+l1-p3058	l1-p3058	TFPI	native_site	28	31	no_propeptide				0	0
+l1-p1233	l1-p1233	MPZ	native_site	29	30	no_propeptide				0	0
+l1-p2126	l1-p2126	TEX101	native_site	23	25	no_propeptide				0	0
+l1-p1180	l1-p1180	LYPD5	native_site	25	26	no_propeptide				0	0
+l1-p2129	l1-p2129	TFPI	native_site	28	36	no_propeptide				0	0
+l1-p0135	l1-p0135	AREG	no_nterm_arm			propeptide	20-100:identical	constitutive		0	0
+l1-p0363	l1-p0363	CEACAM3	igk_swap	34	36	no_propeptide				0	0
+l1-p2067	l1-p2067	SPINT2	native_site	27	28	no_propeptide				0	0
+l1-p1676	l1-p1676	PRNP	native_site	22	35	no_propeptide				0	0
+l1-p0489	l1-p0489	CXCL16	native_site	29	31	no_propeptide				0	0
+l1-p0622	l1-p0622	FCGR3A	igk_swap	20	22	no_propeptide				0	0
+l1-p0655	l1-p0655	FOLR2	native_site	21	23	no_propeptide				0	0
+l1-p2201	l1-p2201	TMEM81	native_site	30	31	no_propeptide				0	0
+l1-p2242	l1-p2242	TNFRSF9	igk_swap	23	25	no_propeptide				0	0
+l1-p0617	l1-p0617	FCER1A	native_site	25	26	no_propeptide				0	0
+l1-p0654	l1-p0654	FOLR1	native_site	22	24	no_propeptide				0	0
+l1-p2226	l1-p2226	TNFRSF10C	native_site	25	34	no_propeptide				0	0
+l1-p0171	l1-p0171	BAMBI	igk_swap	26	28	no_propeptide				0	0
+l1-p0280	l1-p0280	CD27	native_site	20	22	no_propeptide				0	0
+l1-p0555	l1-p0555	EMCN	native_site	18	37	no_propeptide				0	0
+l1-p3063	l1-p3063	TMIGD1	native_site	26	27	no_propeptide				0	0
+l1-p2207	l1-p2207	TMIGD1	native_site	28	29	no_propeptide				0	0
+l1-p1644	l1-p1644	PIK3IP1	native_site	19	21	no_propeptide				0	0
+l1-p1722	l1-p1722	RAET1E	native_site	30	32	no_propeptide				0	0
+l1-p2317	l1-p2317	UPK3BL1	native_site	33	37	no_propeptide				0	0
+l1-p3022	l1-p3022	IL15RA	native_site	32	34	no_propeptide				0	0
+l1-p0210	l1-p0210	C5orf15	igk_swap	45	56	no_entry				0	0
+l1-p0367	l1-p0367	CEACAM7	native_site	34	36	no_propeptide				0	0
+l1-p0721	l1-p0721	GLIPR1	igk_swap	21	23	no_propeptide				0	0
+l1-p0917	l1-p0917	IL15RA	native_site	30	31	no_propeptide				0	0
+l1-p0270	l1-p0270	CD200	native_site	30	31	no_propeptide				0	0
+l1-p0693	l1-p0693	GFRA4	native_site	20	21	no_propeptide			66	0	1
+l1-p1234	l1-p1234	MPZL1	native_site	37	38	no_propeptide				0	0
+l1-p1288	l1-p1288	NFAM1	native_site	42	43	no_propeptide				0	0
+l1-p0272	l1-p0272	CD200R1L	native_site	23	32	no_propeptide				0	0
+l1-p0887	l1-p0887	ICAM4	igk_swap	23	30	no_propeptide			30	0	0
+l1-p1726	l1-p1726	RELL1	native_site	23	42	no_propeptide				0	0
+l1-p2097	l1-p2097	TARM1	native_site	18	23	no_propeptide				0	0
+l1-p0938	l1-p0938	IL2RA	native_site	21	22	no_propeptide				0	0
+l1-p2942	l1-p2942	FOLR2	native_site	38	40	no_propeptide				0	0
+l1-p1066	l1-p1066	KITLG	native_site	25	26	no_propeptide				0	0
+l1-p1264	l1-p1264	MUC1	native_site	23	42	no_propeptide				0	0
+l1-p1633	l1-p1633	PDCD1LG2	igk_swap	19	21	no_propeptide				0	0
+l1-p0885	l1-p0885	ICAM2	native_site	24	25	no_propeptide				0	0
+l1-p0299	l1-p0299	CD40	native_site	20	21	no_propeptide				0	0
+l1-p1187	l1-p1187	M6PR	native_site	26	28	no_propeptide				0	0
+l1-p2240	l1-p2240	TNFRSF4	native_site	28	29	no_propeptide				0	0
+l1-p2208	l1-p2208	TMIGD2	native_site	22	23	no_propeptide				0	0
+l1-p0292	l1-p0292	CD320	native_site	35	47	no_propeptide				0	0
+l1-p1642	l1-p1642	PIANP	native_site	31	45	no_propeptide			78	0	1
+l1-p2165	l1-p2165	TMEM119	native_site	25	28	no_propeptide				0	0
+l1-p2232	l1-p2232	TNFRSF14	igk_swap	36	37	no_propeptide				0	0
+l1-p1826	l1-p1826	SLAMF8	native_site	22	23	no_propeptide				0	0
+l1-p0616	l1-p0616	FCAR	native_site	21	23	no_propeptide				0	0
+l1-p1077	l1-p1077	LAIR1	native_site	21	22	no_propeptide				0	0
+l1-p0317	l1-p0317	CD80	native_site	34	35	no_propeptide				0	0
+l1-p1632	l1-p1632	PDCD1	no_nterm_arm			no_propeptide				0	0
+l1-p0190	l1-p0190	BTLA	igk_swap	30	31	no_propeptide				0	0
+l1-p1827	l1-p1827	SLAMF9	native_site	18	21	no_propeptide				0	0
+l1-p0281	l1-p0281	CD274	igk_swap	18	20	no_propeptide				0	0
+l1-p0289	l1-p0289	CD300LF	native_site	19	21	no_propeptide				0	0
+l1-p2136	l1-p2136	TGFBR3L	native_site	16	27	no_propeptide				0	0
+l1-p0362	l1-p0362	CEACAM21	native_site	34	35	no_propeptide				0	0
+l1-p1137	l1-p1137	LRRC38	native_site	27	29	no_propeptide				0	0
+l1-p2062	l1-p2062	SPACA1	native_site	29	48	no_propeptide				0	0
+l1-p0603	l1-p0603	F3	native_site	32	34	no_propeptide				0	0
+l1-p1170	l1-p1170	LY6G6F	native_site	17	19	no_propeptide				0	0
+l1-p0982	l1-p0982	JAM2	native_site	28	31	no_propeptide				0	0
+l1-p1141	l1-p1141	LRRC55	native_site	34	35	no_propeptide				0	0
+l1-p0284	l1-p0284	CD300A	native_site	17	18	no_propeptide				0	0
+l1-p0360	l1-p0360	CEACAM19	native_site	32	33	no_propeptide				0	0
+l1-p0598	l1-p0598	F11R	native_site	27	28	no_propeptide				0	0
+l1-p1092	l1-p1092	LILRA5	native_site	41	42	no_propeptide				0	0
+l1-p2177	l1-p2177	TMEM158	native_site	20	36	no_propeptide				0	0
+l1-p0840	l1-p0840	HAVCR2	igk_swap	21	23	no_propeptide				0	0
+l1-p2438	l1-p2438	F3	native_site	32	34	no_propeptide				0	0
+l1-p0890	l1-p0890	ICOSLG	native_site	18	19	no_propeptide				0	0
+l1-p1645	l1-p1645	PILRA	igk_swap	26	30	no_propeptide				0	0
+l1-p2088	l1-p2088	SUSD6	native_site	39	40	no_propeptide				0	0
+l1-p1055	l1-p1055	KIR2DS2	native_site	21	24	no_propeptide				0	0
+l1-p1056	l1-p1056	KIR2DS5	native_site	21	23	no_propeptide				0	0
+l1-p1277	l1-p1277	NCR1	native_site	21	22	no_propeptide				0	0
+l1-p2740	l1-p2740	KIR2DS4	native_site	21	23	no_propeptide				0	0
+l1-p1132	l1-p1132	LRRC25	native_site	20	22	no_propeptide				0	0
+l1-p1687	l1-p1687	PRSS41	native_site	19	27	propeptide	7-41:mapped	activation_only	63	1	1
+l1-p1720	l1-p1720	PVRIG	native_site	19	22	no_propeptide				0	0
+l1-p2961	l1-p2961	NCR1	native_site	21	24	no_propeptide				0	0
+l1-p0621	l1-p0621	FCGR2B	native_site	45	47	no_propeptide				0	0
+l1-p0983	l1-p0983	JAM3	igk_swap	31	33	no_propeptide				0	0
+l1-p1775	l1-p1775	SDC1	native_site	22	29	no_propeptide				0	0
+l1-p2403	l1-p2403	CA4	native_site	19	22	no_propeptide				0	0
+l1-p0933	l1-p0933	IL20RB	igk_swap	32	34	no_propeptide				0	0
+l1-p2338	l1-p2338	VSIR	native_site	32	33	no_propeptide				0	0
+l1-p0213	l1-p0213	CA4	native_site	19	20	no_propeptide				0	0
+l1-p0139	l1-p0139	ART4	native_site	46	47	no_propeptide				0	0
+l1-p0570	l1-p0570	EPCAM	native_site	23	24	no_propeptide				0	0
+l1-p1686	l1-p1686	PRSS21	native_site	23	26	propeptide	20-41:identical	activation_only		1	0
+l1-p0620	l1-p0620	FCGR2A	native_site	33	36	no_propeptide				0	0
+l1-p2160	l1-p2160	TMDD1	native_site	24	26	no_propeptide				0	0
+l1-p0187	l1-p0187	BST1	native_site	32	33	no_propeptide				0	0
+l1-p0733	l1-p0733	GPA33	native_site	21	22	no_propeptide				0	0
+l1-p2340	l1-p2340	VSTM4	native_site	23	24	no_propeptide				0	0
+l1-p2258	l1-p2258	TPSG1	native_site	19	23	no_propeptide			59	0	1
+l1-p2262	l1-p2262	TREML2	native_site	18	20	no_propeptide				0	0
+l1-p1186	l1-p1186	LYVE1	igk_swap	27	28	no_propeptide				0	0
+l1-p0303	l1-p0303	CD47	native_site	18	20	no_propeptide				0	0
+l1-p2096	l1-p2096	TACSTD2	native_site	30	31	no_propeptide				0	0
+l1-p2064	l1-p2064	SPACA6	igk_swap	26	28	no_propeptide				0	0
+l1-p2949	l1-p2949	CD84	igk_swap	17	18	no_propeptide				0	0
+l1-p0911	l1-p0911	IL10RB	igk_swap	19	21	no_propeptide				0	0
+l1-p1305	l1-p1305	NPDC1	native_site	34	37	no_propeptide			84	0	1
+l1-p2495	l1-p2495	PVRIG	igk_swap	39	41	no_propeptide				0	0
+l1-p0137	l1-p0137	ART1	native_site	24	27	no_propeptide				0	0
+l1-p0265	l1-p0265	CD1A	native_site	18	21	no_propeptide				0	0
+l1-p0554	l1-p0554	EMB	native_site	32	41	no_propeptide				0	0
+l1-p2335	l1-p2335	VSIG2	igk_swap	23	25	no_propeptide				0	0
+l1-p0321	l1-p0321	CD84	native_site	21	22	no_propeptide				0	0
+l1-p1814	l1-p1814	SIGLEC15	native_site	19	21	no_propeptide				0	0
+l1-p2437	l1-p2437	EPOR	native_site	25	27	no_propeptide				0	0
+l1-p3065	l1-p3065	VSIG2	igk_swap	24	26	no_propeptide				0	0
+l1-p0322	l1-p0322	CD86	native_site	25	26	no_propeptide				0	0
+l1-p0290	l1-p0290	CD300LG	native_site	18	19	no_propeptide				0	0
+l1-p1362	l1-p1362	OR10G6	routed_multipass			no_propeptide				0	0
+l1-p1824	l1-p1824	SLAMF6	native_site	21	22	no_propeptide				0	0
+l1-p0266	l1-p0266	CD1B	igk_swap	18	20	no_propeptide				0	0
+l1-p0267	l1-p0267	CD1C	native_site	19	20	no_propeptide				0	0
+l1-p0549	l1-p0549	EFNB2	igk_swap	25	26	no_propeptide				0	0
+l1-p0195	l1-p0195	BTN3A2	native_site	29	30	no_propeptide				0	0
+l1-p1133	l1-p1133	LRRC26	native_site	26	27	no_propeptide				0	0
+l1-p1266	l1-p1266	MUC15	igk_swap	23	27	no_propeptide				0	0
+l1-p1723	l1-p1723	RAET1G	native_site	28	29	no_propeptide				0	0
+l1-p3129	l1-p3129	BTN2A1	native_site	28	29	no_propeptide				0	0
+l1-p0268	l1-p0268	CD1D	native_site	19	21	no_propeptide				0	0
+l1-p0613	l1-p0613	FAS	native_site	25	35	no_propeptide				0	0
+l1-p1649	l1-p1649	PLAUR	native_site	22	23	no_propeptide				0	0
+l1-p1823	l1-p1823	SLAMF1	native_site	20	21	no_propeptide				0	0
+l1-p1825	l1-p1825	SLAMF7	native_site	22	24	no_propeptide				0	0
+l1-p2490	l1-p2490	PRSS8	native_site	30	33	propeptide	30-32:unmapped	activation_only		0	0
+l1-p2967	l1-p2967	PLAUR	native_site	22	23	no_propeptide				0	0
+l1-p0276	l1-p0276	CD226	igk_swap	18	19	no_propeptide				0	0
+l1-p0900	l1-p0900	IGLON5	native_site	30	33	no_propeptide				0	0
+l1-p3076	l1-p3076	EFNB2	igk_swap	28	30	no_propeptide				0	0
+l1-p3083	l1-p3083	IGLON5	igk_swap	27	31	no_propeptide				0	0
+l1-p0212	l1-p0212	CA14	native_site	18	21	no_propeptide				0	0
+l1-p0894	l1-p0894	IFNGR2	native_site	21	24	no_propeptide				0	0
+l1-p0863	l1-p0863	HLA-G	native_site	24	26	no_propeptide				0	0
+l1-p1158	l1-p1158	LSAMP	native_site	31	33	no_propeptide				0	0
+l1-p0732	l1-p0732	GP6	native_site	20	21	no_propeptide				0	0
+l1-p0550	l1-p0550	EFNB3	native_site	27	28	no_propeptide				0	0
+l1-p1190	l1-p1190	MANSC4	igk_swap	22	23	no_propeptide				0	0
+l1-p1053	l1-p1053	KIR2DL3	native_site	21	22	no_propeptide				0	0
+l1-p1237	l1-p1237	MR1	igk_swap	22	24	no_propeptide				0	0
+l1-p1821	l1-p1821	SIRPB2	native_site	32	34	no_propeptide				0	0
+l1-p1218	l1-p1218	MILR1	igk_swap	19	23	no_propeptide				0	0
+l1-p1689	l1-p1689	PRSS8	native_site	32	34	propeptide	30-32:identical	activation_only		0	0
+l1-p3034	l1-p3034	GAS1	igk_swap	38	42	no_propeptide				0	0
+l1-p0366	l1-p0366	CEACAM6	igk_swap	34	36	no_propeptide				0	0
+l1-p1333	l1-p1333	NTM	native_site	33	35	no_propeptide				0	0
+l1-p0685	l1-p0685	GAS1	igk_swap	39	42	no_propeptide				0	0
+l1-p1082	l1-p1082	LDLRAD3	native_site	17	26	no_propeptide				0	0
+l1-p1156	l1-p1156	LRTM1	native_site	20	22	no_propeptide				0	0
+l1-p1347	l1-p1347	OPCML	native_site	33	35	no_propeptide				0	0
+l1-p0548	l1-p0548	EFNB1	igk_swap	29	30	no_propeptide				0	0
+l1-p1179	l1-p1179	LYPD3	native_site	30	31	no_propeptide				0	0
+l1-p0271	l1-p0271	CD200R1	native_site	26	36	no_propeptide				0	0
+l1-p0856	l1-p0856	HFE	native_site	22	23	no_propeptide				0	0
+l1-p1051	l1-p1051	KIR2DL1	native_site	21	23	no_propeptide				0	0
+l1-p1052	l1-p1052	KIR2DL2	native_site	21	23	no_propeptide				0	0
+l1-p0368	l1-p0368	CEACAM8	native_site	34	36	no_propeptide				0	0
+l1-p0269	l1-p0269	CD2	native_site	24	26	no_propeptide				0	0
+l1-p1688	l1-p1688	PRSS55	native_site	18	21	no_propeptide				0	0
+l1-p0211	l1-p0211	CA12	native_site	24	28	no_propeptide				0	0
+l1-p1284	l1-p1284	NEGR1	native_site	33	35	no_propeptide				0	0
+l1-p3138	l1-p3138	OPCML	native_site	33	35	no_propeptide				0	0
+l1-p0899	l1-p0899	IGFLR1	native_site	22	23	no_propeptide				0	0
+l1-p2414	l1-p2414	CD46	native_site	34	35	no_propeptide				0	0
+l1-p2475	l1-p2475	NTM	igk_swap	33	34	no_propeptide				0	0
+l1-p2396	l1-p2396	ART3	native_site	26	32	no_propeptide				0	0
+l1-p3136	l1-p3136	SLAMF1	native_site	22	28	no_propeptide				0	0
+l1-p0862	l1-p0862	HLA-E	native_site	21	22	no_propeptide				0	0
+l1-p0496	l1-p0496	CXorf66	igk_swap	17	34	no_propeptide				0	0
+l1-p0860	l1-p0860	HLA-B	native_site	24	25	no_propeptide				0	0
+l1-p0293	l1-p0293	CD33	native_site	16	17	no_propeptide				0	0
+l1-p0839	l1-p0839	HAVCR1	native_site	20	21	no_propeptide				0	0
+l1-p0278	l1-p0278	CD244	native_site	21	23	no_propeptide				0	0
+l1-p0488	l1-p0488	CXADR	no_nterm_arm			no_propeptide				0	0
+l1-p0624	l1-p0624	FCGRT	native_site	23	25	no_propeptide				0	0
+l1-p0859	l1-p0859	HLA-A	native_site	24	25	no_propeptide				0	0
+l1-p0861	l1-p0861	HLA-C	native_site	24	25	no_propeptide				0	0
+l1-p2644	l1-p2644	CD14	native_site	17	20	no_propeptide				0	0
+l1-p0609	l1-p0609	FAM187B	native_site	17	18	no_propeptide				0	0
+l1-p0940	l1-p0940	IL2RG	native_site	22	35	no_propeptide				0	0
+l1-p1131	l1-p1131	LRRC19	igk_swap	24	27	no_propeptide				0	0
+l1-p1157	l1-p1157	LRTM2	igk_swap	35	36	no_propeptide				0	0
+l1-p0478	l1-p0478	CRLF2	native_site	22	25	no_propeptide				0	0
+l1-p0450	l1-p0450	CNTFR	native_site	22	23	no_propeptide				0	0
+l1-p1781	l1-p1781	SELL	igk_swap	38	40	propeptide	29-38:identical	constitutive	55	0	1
+l1-p2447	l1-p2447	HLA-C	native_site	24	26	no_propeptide				0	0
+l1-p0432	l1-p0432	CLMP	igk_swap	18	20	no_propeptide				0	0
+l1-p0601	l1-p0601	F2RL2	native_site	21	32	propeptide	22-38:identical	activation_only		1	0
+l1-p0619	l1-p0619	FCGR1A	native_site	15	17	no_propeptide				0	0
+l1-p1079	l1-p1079	LAYN	native_site	24	27	no_propeptide				0	0
+l1-p2162	l1-p2162	TMEFF2	igk_swap	38	58	no_propeptide				0	0
+l1-p0256	l1-p0256	CD14	native_site	19	21	no_propeptide				0	0
+l1-p1054	l1-p1054	KIR2DL5A	native_site	21	24	no_propeptide				0	0
+l1-p0302	l1-p0302	CD46	native_site	34	35	no_propeptide				0	0
+l1-p1739	l1-p1739	RNF215	native_site	43	45	no_propeptide				0	0
+l1-p0250	l1-p0250	CCR7	native_site	24	33	no_propeptide				0	0
+l1-p0942	l1-p0942	IL3RA	native_site	19	21	no_propeptide				0	0
+l1-p2143	l1-p2143	TIMD4	native_site	24	25	no_propeptide				0	0
+l1-p0916	l1-p0916	IL13RA2	native_site	21	23	no_propeptide				0	0
+l1-p2161	l1-p2161	TMEFF1	native_site	39	58	no_propeptide				0	0
+l1-p0308	l1-p0308	CD55	native_site	34	35	no_propeptide				0	0
+l1-p1060	l1-p1060	KIR3DS1	igk_swap	21	23	no_propeptide				0	0
+l1-p1188	l1-p1188	MADCAM1	igk_swap	23	24	no_propeptide				0	0
+l1-p2255	l1-p2255	TPBGL	igk_swap	26	27	no_propeptide				0	0
+l1-p0514	l1-p0514	DLK1	native_site	23	24	no_propeptide				0	0
+l1-p1216	l1-p1216	MICA	native_site	23	24	no_propeptide				0	0
+l1-p1217	l1-p1217	MICB	native_site	22	23	no_propeptide			64	0	1
+l1-p0186	l1-p0186	BSG	native_site	21	22	no_propeptide				0	0
+l1-p0294	l1-p0294	CD34	igk_swap	31	32	no_propeptide				0	0
+l1-p0602	l1-p0602	F2RL3	native_site	19	29	propeptide	18-47:identical	activation_only		1	0
+l1-p2227	l1-p2227	TNFRSF10D	native_site	55	66	no_propeptide				0	0
+l1-p1822	l1-p1822	SIRPG	native_site	28	29	no_propeptide				0	0
+l1-p2332	l1-p2332	VSIG1	native_site	21	22	no_propeptide				0	0
+l1-p0229	l1-p0229	CADM4	native_site	24	25	no_propeptide				0	0
+l1-p0138	l1-p0138	ART3	native_site	26	29	no_propeptide				0	0
+l1-p0595	l1-p0595	ESAM	native_site	29	30	no_propeptide				0	0
+l1-p0625	l1-p0625	FCMR	igk_swap	16	17	no_propeptide				0	0
+l1-p0479	l1-p0479	CRTAM	native_site	17	20	no_propeptide				0	0
+l1-p2253	l1-p2253	TP53I13	native_site	27	30	no_propeptide				0	0
+l1-p0694	l1-p0694	GFRAL	igk_swap	14	19	no_propeptide				0	0
+l1-p0984	l1-p0984	JAML	native_site	19	23	no_propeptide				0	0
+l1-p2471	l1-p2471	NPTN	native_site	28	29	no_propeptide			86	0	1
+l1-p1813	l1-p1813	SIGLEC14	native_site	16	18	no_propeptide				0	0
+l1-p0486	l1-p0486	CX3CL1	native_site	24	25	no_propeptide				0	0
+l1-p0600	l1-p0600	F2RL1	native_site	24	43	propeptide	26-36:mapped	activation_only		0	0
+l1-p3035	l1-p3035	GFRA3	native_site	28	34	no_propeptide				0	0
+l1-p0228	l1-p0228	CADM3	native_site	24	28	no_propeptide				0	0
+l1-p0926	l1-p0926	IL1R2	native_site	24	25	no_propeptide				0	0
+l1-p1313	l1-p1313	NPTN	native_site	28	29	no_propeptide			86	0	1
+l1-p2336	l1-p2336	VSIG4	native_site	19	20	no_propeptide				0	0
+l1-p2413	l1-p2413	CD46	native_site	34	35	no_propeptide				0	0
+l1-p0481	l1-p0481	CSF2RA	native_site	19	23	no_propeptide				0	0
+l1-p0692	l1-p0692	GFRA3	native_site	31	33	no_propeptide				0	0
+l1-p2068	l1-p2068	SPN	native_site	19	26	no_propeptide				0	0
+l1-p0806	l1-p0806	GPRC5B	native_site	28	31	no_propeptide				0	0
+l1-p0094	l1-p0094	AGER	native_site	23	24	no_propeptide				0	0
+l1-p0227	l1-p0227	CADM2	native_site	23	26	no_propeptide				0	0
+l1-p3145	l1-p3145	GPRC5B	native_site	28	35	no_propeptide				0	0
+l1-p2968	l1-p2968	PVR	igk_swap	18	21	no_propeptide				0	0
+l1-p1059	l1-p1059	KIR3DL3	igk_swap	25	27	no_propeptide				0	0
+l1-p0097	l1-p0097	AJAP1	igk_swap	43	61	no_propeptide			100	0	1
+l1-p0519	l1-p0519	DPEP1	igk_swap	16	18	no_propeptide				0	0
+l1-p2976	l1-p2976	ZACN	native_site	24	26	no_propeptide				0	0
+l1-p1783	l1-p1783	SELPLG	native_site	17	41	propeptide	18-41:identical	constitutive	41	0	0
+l1-p2355	l1-p2355	ZACN	native_site	24	26	no_propeptide				0	0
+l1-p0608	l1-p0608	FAM187A	native_site	17	22	no_propeptide				0	0
+l1-p0857	l1-p0857	HHLA2	native_site	22	23	no_propeptide				0	0
+l1-p2337	l1-p2337	VSIG8	native_site	21	22	no_propeptide				0	0
+l1-p0474	l1-p0474	CRHR1	native_site	23	27	no_propeptide				0	0
+l1-p0852	l1-p0852	HEPACAM	native_site	33	35	no_propeptide				0	0
+l1-p1719	l1-p1719	PVR	native_site	27	28	no_propeptide				0	0
+l1-p2235	l1-p2235	TNFRSF19	native_site	29	30	no_propeptide				0	0
+l1-p2239	l1-p2239	TNFRSF25	native_site	24	28	no_propeptide				0	0
+l1-p1738	l1-p1738	RNF130	native_site	27	28	no_propeptide				0	0
+l1-p0944	l1-p0944	IL5RA	native_site	20	24	no_propeptide				0	0
+l1-p1751	l1-p1751	RTN4RL2	native_site	29	30	no_propeptide				0	0
+l1-p2254	l1-p2254	TPBG	native_site	38	41	no_propeptide				0	0
+l1-p0912	l1-p0912	IL11RA	igk_swap	25	26	no_propeptide				0	0
+l1-p0700	l1-p0700	GHRHR	native_site	22	23	no_propeptide				0	0
+l1-p0800	l1-p0800	GPR83	native_site	16	22	no_propeptide				0	0
+l1-p1807	l1-p1807	SHISA9	native_site	23	41	no_propeptide				0	0
+l1-p2359	l1-p2359	ZP3	native_site	22	25	no_propeptide				0	0
+l1-p0599	l1-p0599	F2R	native_site	22	23	propeptide	22-41:identical	activation_only	28	1	1
+l1-p0858	l1-p0858	HJV	native_site	35	36	no_propeptide				0	0
+l1-p0541	l1-p0541	EDNRA	native_site	20	40	no_propeptide				0	0
+l1-p0915	l1-p0915	IL13RA1	native_site	26	32	no_propeptide				0	0
+l1-p1290	l1-p1290	NGFR	native_site	28	30	no_propeptide				0	0
+l1-p3091	l1-p3091	NGFR	native_site	31	33	no_propeptide				0	0
+l1-p0954	l1-p0954	ISLR	native_site	18	19	no_propeptide				0	0
+l1-p0626	l1-p0626	FCRL1	native_site	16	17	no_propeptide				0	0
+l1-p1728	l1-p1728	RELT	native_site	25	38	no_propeptide				0	0
+l1-p0902	l1-p0902	IGSF11	native_site	22	23	no_propeptide				0	0
+l1-p0631	l1-p0631	FCRL6	igk_swap	17	19	no_propeptide				0	0
+l1-p1164	l1-p1164	LTBR	native_site	28	29	no_propeptide				0	0
+l1-p0263	l1-p0263	CD177	native_site	21	22	no_propeptide				0	0
+l1-p1731	l1-p1731	RGMB	native_site	48	50	no_propeptide				0	0
+l1-p1830	l1-p1830	SLC10A5	native_site	21	24	no_propeptide				0	0
+l1-p2325	l1-p2325	VIPR2	native_site	20	21	no_propeptide				0	0
+l1-p0565	l1-p0565	ENPP6	native_site	22	23	no_propeptide				0	0
+l1-p0678	l1-p0678	GABRP	native_site	23	34	no_propeptide				0	0
+l1-p1345	l1-p1345	OMG	native_site	24	25	no_propeptide				0	0
+l1-p1774	l1-p1774	SCTR	native_site	27	28	no_propeptide				0	0
+l1-p2225	l1-p2225	TNFRSF10B	igk_swap	53	70	no_propeptide				0	0
+l1-p2592	l1-p2592	OMG	native_site	24	25	no_propeptide				0	0
+l1-p0807	l1-p0807	GPRC5C	native_site	23	25	no_propeptide				0	0
+l1-p1750	l1-p1750	RTN4RL1	native_site	24	26	no_propeptide				0	0
+l1-p0542	l1-p0542	EDNRB	native_site	26	45	no_propeptide				0	0
+l1-p1269	l1-p1269	MXRA8	native_site	30	35	no_propeptide				0	0
+l1-p1777	l1-p1777	SDC3	igk_swap	47	60	no_propeptide				0	0
+l1-p0469	l1-p0469	CPM	native_site	17	18	no_propeptide				0	0
+l1-p2985	l1-p2985	CPM	native_site	17	19	no_propeptide				0	0
+l1-p3028	l1-p3028	CPM	native_site	17	19	no_propeptide				0	0
+l1-p1057	l1-p1057	KIR3DL1	igk_swap	21	23	no_propeptide				0	0
+l1-p2952	l1-p2952	TNFRSF10B	native_site	54	70	no_propeptide				0	0
+l1-p0597	l1-p0597	EVI2B	igk_swap	23	38	no_propeptide				0	0
+l1-p1097	l1-p1097	LILRB4	native_site	21	25	no_propeptide				0	0
+l1-p0200	l1-p0200	C11orf24	native_site	20	22	no_propeptide				0	0
+l1-p0725	l1-p0725	GLRA1	native_site	28	34	no_propeptide				0	0
+l1-p0727	l1-p0727	GLRA3	native_site	33	37	no_propeptide				0	0
+l1-p1730	l1-p1730	RGMA	igk_swap	47	49	propeptide	48-168:identical	stays_attached		1	0
+l1-p0674	l1-p0674	GABRA2	no_nterm_arm			no_propeptide				0	0
+l1-p0726	l1-p0726	GLRA2	native_site	27	38	no_propeptide				0	0
+l1-p0108	l1-p0108	AMN	native_site	19	20	no_propeptide				0	0
+l1-p0563	l1-p0563	ENPP4	native_site	18	23	no_propeptide				0	0
+l1-p0676	l1-p0676	GABRA6	native_site	19	20	no_propeptide				0	0
+l1-p1816	l1-p1816	SIGLEC6	native_site	26	27	no_propeptide				0	0
+l1-p1279	l1-p1279	NCR3LG1	native_site	24	25	no_propeptide				0	0
+l1-p1058	l1-p1058	KIR3DL2	igk_swap	25	27	no_propeptide				0	0
+l1-p2056	l1-p2056	SMPDL3B	native_site	18	19	no_propeptide				0	0
+l1-p2236	l1-p2236	TNFRSF1A	native_site	29	39	no_propeptide			40	0	1
+l1-p0673	l1-p0673	GABRA1	native_site	27	33	no_propeptide				0	0
+l1-p2324	l1-p2324	VIPR1	native_site	30	31	no_propeptide				0	0
+l1-p0298	l1-p0298	CD4	native_site	25	26	no_propeptide				0	0
+l1-p0382	l1-p0382	CHRNB3	igk_swap	21	22	no_propeptide				0	0
+l1-p0877	l1-p0877	HTR2C	igk_swap	32	36	no_propeptide				0	0
+l1-p1073	l1-p1073	KREMEN1	native_site	19	31	no_propeptide				0	0
+l1-p0214	l1-p0214	CA9	native_site	37	48	no_propeptide				0	0
+l1-p0947	l1-p0947	IL7R	native_site	20	35	no_propeptide				0	0
+l1-p1953	l1-p1953	SLC39A8	native_site	22	26	no_propeptide				0	0
+l1-p2237	l1-p2237	TNFRSF1B	native_site	22	28	no_propeptide				0	0
+l1-p0853	l1-p0853	HEPACAM2	igk_swap	31	32	no_propeptide				0	0
+l1-p1074	l1-p1074	KREMEN2	no_nterm_arm			no_propeptide				0	0
+l1-p2996	l1-p2996	HEPACAM2	igk_swap	31	32	no_propeptide				0	0
+l1-p0723	l1-p0723	GLP1R	native_site	23	24	no_propeptide				0	0
+l1-p1819	l1-p1819	SIGLEC9	native_site	17	18	no_propeptide				0	0
+l1-p0691	l1-p0691	GFRA2	igk_swap	21	36	no_propeptide				0	0
+l1-p3033	l1-p3033	GABRR3	igk_swap	21	26	no_propeptide				0	0
+l1-p0680	l1-p0680	GABRR2	native_site	20	34	no_propeptide				0	0
+l1-p0690	l1-p0690	GFRA1	native_site	23	26	no_propeptide				0	0
+l1-p0198	l1-p0198	BTNL3	native_site	17	18	no_propeptide				0	0
+l1-p0702	l1-p0702	GIPR	native_site	25	26	no_propeptide			44	0	1
+l1-p0681	l1-p0681	GABRR3	igk_swap	24	27	no_propeptide				0	0
+l1-p0903	l1-p0903	IGSF21	native_site	24	25	no_propeptide				0	0
+l1-p1817	l1-p1817	SIGLEC7	native_site	18	23	no_propeptide				0	0
+l1-p0053	l1-p0053	ADCYAP1R1	native_site	20	22	no_propeptide				0	0
+l1-p0945	l1-p0945	IL6R	native_site	19	20	no_propeptide				0	0
+l1-p2224	l1-p2224	TNFRSF10A	igk_swap	23	24	no_propeptide				0	0
+l1-p0226	l1-p0226	CADM1	native_site	44	46	no_propeptide				0	0
+l1-p0883	l1-p0883	HYAL2	native_site	20	24	no_propeptide				0	0
+l1-p1749	l1-p1749	RTN4R	native_site	26	27	no_propeptide				0	0
+l1-p3102	l1-p3102	RTN4R	igk_swap	26	27	no_propeptide				0	0
+l1-p0230	l1-p0230	CALCR	native_site	24	25	no_propeptide				0	0
+l1-p0590	l1-p0590	ERMAP	native_site	29	33	no_propeptide				0	0
+l1-p1341	l1-p1341	NYX	native_site	18	21	no_propeptide				0	0
+l1-p0564	l1-p0564	ENPP5	native_site	22	23	no_propeptide				0	0
+l1-p0686	l1-p0686	GCGR	native_site	25	27	no_propeptide				0	0
+l1-p0878	l1-p0878	HTR3A	native_site	23	29	no_propeptide				0	0
+l1-p3030	l1-p3030	DPEP2	igk_swap	31	36	no_propeptide				0	0
+l1-p0381	l1-p0381	CHRNA9	igk_swap	22	23	no_propeptide				0	0
+l1-p0679	l1-p0679	GABRR1	native_site	24	25	no_propeptide			47	0	1
+l1-p0784	l1-p0784	GPR37L1	native_site	25	29	no_propeptide			46	0	1
+l1-p1093	l1-p1093	LILRA6	native_site	23	25	no_propeptide				0	0
+l1-p0197	l1-p0197	BTNL2	igk_swap	28	29	no_propeptide				0	0
+l1-p1091	l1-p1091	LILRA2	native_site	23	24	no_propeptide				0	0
+l1-p1947	l1-p1947	SLC39A14	native_site	30	39	no_propeptide				0	0
+l1-p0520	l1-p0520	DPEP2	native_site	32	45	no_propeptide				0	0
+l1-p3020	l1-p3020	ANTXR2	native_site	33	39	no_propeptide				0	0
+l1-p0118	l1-p0118	ANTXR2	native_site	33	39	no_propeptide				0	0
+l1-p0521	l1-p0521	DPEP3	native_site	36	45	no_propeptide				0	0
+l1-p0893	l1-p0893	IFNGR1	native_site	17	19	no_propeptide				0	0
+l1-p1090	l1-p1090	LILRA1	native_site	23	24	no_propeptide				0	0
+l1-p0416	l1-p0416	CLEC14A	native_site	21	24	no_propeptide				0	0
+l1-p2087	l1-p2087	SUSD4	igk_swap	47	51	no_propeptide				0	0
+l1-p0025	l1-p0025	ACVR1C	native_site	25	27	no_propeptide				0	0
+l1-p0105	l1-p0105	AMIGO1	native_site	27	28	no_propeptide				0	0
+l1-p0379	l1-p0379	CHRNA6	igk_swap	30	31	no_propeptide				0	0
+l1-p3024	l1-p3024	CHRNA6	native_site	30	32	no_propeptide				0	0
+l1-p0305	l1-p0305	CD5	native_site	24	25	no_propeptide				0	0
+l1-p1818	l1-p1818	SIGLEC8	native_site	16	21	no_propeptide				0	0
+l1-p1124	l1-p1124	LRP11	native_site	37	40	no_propeptide				0	0
+l1-p1663	l1-p1663	PLXDC1	native_site	18	35	no_propeptide				0	0
+l1-p1805	l1-p1805	SHISA6	native_site	25	44	no_propeptide				0	0
+l1-p0169	l1-p0169	BACE1	no_nterm_arm			propeptide	22-45:identical	constitutive		0	0
+l1-p0380	l1-p0380	CHRNA7	native_site	22	23	no_propeptide				0	0
+l1-p0919	l1-p0919	IL17RB	igk_swap	14	16	no_propeptide				0	0
+l1-p0028	l1-p0028	ACVRL1	native_site	23	26	no_propeptide				0	0
+l1-p2133	l1-p2133	TGFBR1	native_site	33	34	no_propeptide				0	0
+l1-p2950	l1-p2950	AMIGO3	native_site	19	27	no_propeptide				0	0
+l1-p0107	l1-p0107	AMIGO3	native_site	19	21	no_propeptide				0	0
+l1-p0640	l1-p0640	FGFRL1	native_site	25	26	no_propeptide				0	0
+l1-p0024	l1-p0024	ACVR1B	native_site	31	32	no_propeptide				0	0
+l1-p2259	l1-p2259	TRABD2A	native_site	21	25	no_propeptide				0	0
+l1-p0677	l1-p0677	GABRE	native_site	22	40	no_propeptide				0	0
+l1-p1265	l1-p1265	MUC13	native_site	20	33	no_propeptide				0	0
+l1-p3057	l1-p3057	SPINT1	native_site	29	35	no_propeptide				0	0
+l1-p0586	l1-p0586	EPOR	native_site	25	28	no_propeptide				0	0
+l1-p0627	l1-p0627	FCRL2	igk_swap	17	19	no_propeptide				0	0
+l1-p1820	l1-p1820	SIRPA	native_site	30	31	no_propeptide				0	0
+l1-p0023	l1-p0023	ACVR1	native_site	22	27	no_propeptide				0	0
+l1-p2065	l1-p2065	SPAM1	igk_swap	35	36	no_propeptide				0	0
+l1-p1283	l1-p1283	NECTIN4	native_site	31	32	no_propeptide				0	0
+l1-p0027	l1-p0027	ACVR2B	native_site	22	23	no_propeptide				0	0
+l1-p2469	l1-p2469	MUC13	native_site	20	33	no_propeptide				0	0
+l1-p0026	l1-p0026	ACVR2A	native_site	23	24	no_propeptide				0	0
+l1-p0194	l1-p0194	BTN3A1	native_site	29	31	no_propeptide				0	0
+l1-p2066	l1-p2066	SPINT1	native_site	35	46	no_propeptide				0	0
+l1-p2330	l1-p2330	VNN1	native_site	21	22	no_propeptide				0	0
+l1-p2951	l1-p2951	IL9R	igk_swap	45	49	no_propeptide				0	0
+l1-p0629	l1-p0629	FCRL4	native_site	17	18	no_propeptide				0	0
+l1-p0892	l1-p0892	IFNAR2	native_site	26	33	no_propeptide				0	0
+l1-p1153	l1-p1153	LRRTM2	native_site	33	35	no_propeptide				0	0
+l1-p2449	l1-p2449	HTR3A	native_site	29	30	no_propeptide				0	0
+l1-p1280	l1-p1280	NECTIN1	native_site	30	31	no_propeptide				0	0
+l1-p2260	l1-p2260	TRABD2B	native_site	19	23	no_propeptide				0	0
+l1-p0170	l1-p0170	BACE2	igk_swap	22	62	propeptide	21-62:identical	constitutive		0	0
+l1-p2462	l1-p2462	LRRTM4	native_site	30	31	no_propeptide				0	0
+l1-p0895	l1-p0895	IFNLR1	igk_swap	22	24	no_propeptide				0	0
+l1-p2331	l1-p2331	VNN2	native_site	22	24	no_propeptide				0	0
+l1-p0948	l1-p0948	IL9R	native_site	44	49	no_propeptide				0	0
+l1-p0106	l1-p0106	AMIGO2	native_site	39	40	no_propeptide				0	0
+l1-p1152	l1-p1152	LRRTM1	igk_swap	36	37	no_propeptide				0	0
+l1-p2395	l1-p2395	APLP2	native_site	31	40	no_propeptide				0	0
+l1-p0193	l1-p0193	BTN2A2	native_site	32	33	no_propeptide				0	0
+l1-p0102	l1-p0102	ALPL	igk_swap	17	19	no_propeptide				0	0
+l1-p2390	l1-p2390	ADCYAP1R1	native_site	20	24	no_propeptide				0	0
+l1-p1076	l1-p1076	LAG3	igk_swap	19	20	no_propeptide				0	0
+l1-p1287	l1-p1287	NETO2	native_site	26	27	no_propeptide				0	0
+l1-p0191	l1-p0191	BTN1A1	native_site	26	28	no_propeptide				0	0
+l1-p0359	l1-p0359	CEACAM1	native_site	34	35	no_propeptide				0	0
+l1-p2488	l1-p2488	PODXL	native_site	24	34	no_propeptide				0	0
+l1-p0192	l1-p0192	BTN2A1	native_site	28	29	no_propeptide				0	0
+l1-p0072	l1-p0072	ADGRG5	native_site	21	22	no_propeptide				0	0
+l1-p0101	l1-p0101	ALPI	native_site	19	20	no_propeptide				0	0
+l1-p1664	l1-p1664	PLXDC2	igk_swap	30	45	no_propeptide			67	0	1
+l1-p1335	l1-p1335	NTNG2	native_site	17	18	no_propeptide				0	0
+l1-p0100	l1-p0100	ALPG	native_site	19	20	no_propeptide				0	0
+l1-p0180	l1-p0180	BMPR1A	native_site	23	35	no_propeptide				0	0
+l1-p0884	l1-p0884	ICAM1	native_site	27	28	no_propeptide				0	0
+l1-p1286	l1-p1286	NETO1	native_site	22	36	no_propeptide				0	0
+l1-p0282	l1-p0282	CD276	igk_swap	28	29	no_propeptide				0	0
+l1-p0730	l1-p0730	GP2	native_site	28	32	no_propeptide				0	0
+l1-p0103	l1-p0103	ALPP	native_site	22	23	no_propeptide				0	0
+l1-p0199	l1-p0199	BTNL9	igk_swap	34	36	no_propeptide				0	0
+l1-p0593	l1-p0593	ERVV-2	no_nterm_arm			no_propeptide				0	0
+l1-p0666	l1-p0666	FZD4	native_site	36	39	no_propeptide				0	0
+l1-p2442	l1-p2442	GP2	native_site	28	29	no_propeptide				0	0
+l1-p3036	l1-p3036	ICAM1	native_site	27	28	no_propeptide				0	0
+l1-p0591	l1-p0591	ERVFRD-1	native_site	16	18	no_propeptide				0	0
+l1-p0594	l1-p0594	ERVW-1	native_site	20	22	no_propeptide				0	0
+l1-p0934	l1-p0934	IL21R	native_site	19	21	no_propeptide				0	0
+l1-p1281	l1-p1281	NECTIN2	native_site	31	33	no_propeptide				0	0
+l1-p1806	l1-p1806	SHISA7	native_site	19	35	no_propeptide				0	0
+l1-p1334	l1-p1334	NTNG1	igk_swap	18	22	no_propeptide				0	0
+l1-p3095	l1-p3095	NTNG1	igk_swap	18	21	no_propeptide				0	0
+l1-p1951	l1-p1951	SLC39A5	native_site	24	31	no_propeptide				0	0
+l1-p2333	l1-p2333	VSIG10	igk_swap	30	32	no_propeptide				0	0
+l1-p2360	l1-p2360	ZP4	native_site	19	20	no_propeptide				0	0
+l1-p0923	l1-p0923	IL18R1	native_site	19	24	no_propeptide				0	0
+l1-p1311	l1-p1311	NPR3	igk_swap	26	29	no_propeptide				0	0
+l1-p2427	l1-p2427	DGCR2	native_site	23	24	no_propeptide				0	0
+l1-p0949	l1-p0949	ILDR1	native_site	23	24	no_propeptide				0	0
+l1-p0886	l1-p0886	ICAM3	native_site	29	30	no_propeptide				0	0
+l1-p0071	l1-p0071	ADGRG3	native_site	20	32	no_propeptide				0	0
+l1-p1282	l1-p1282	NECTIN3	igk_swap	55	56	no_propeptide				0	0
+l1-p0511	l1-p0511	DGCR2	native_site	23	24	no_propeptide				0	0
+l1-p1706	l1-p1706	PTH2R	native_site	24	30	no_propeptide				0	0
+l1-p0939	l1-p0939	IL2RB	native_site	26	28	no_propeptide				0	0
+l1-p1815	l1-p1815	SIGLEC5	native_site	16	18	no_propeptide				0	0
+l1-p0724	l1-p0724	GLP2R	igk_swap	66	68	no_propeptide				0	0
+l1-p0932	l1-p0932	IL20RA	native_site	29	31	no_propeptide				0	0
+l1-p0675	l1-p0675	GABRA4	igk_swap	35	39	no_propeptide				0	0
+l1-p0740	l1-p0740	GPC6	native_site	23	26	no_propeptide				0	0
+l1-p3079	l1-p3079	GPC6	native_site	23	25	no_propeptide				0	0
+l1-p0264	l1-p0264	CD19	native_site	20	21	no_propeptide				0	0
+l1-p0738	l1-p0738	GPC4	igk_swap	22	25	no_propeptide				0	0
+l1-p0930	l1-p0930	IL1RL1	native_site	17	19	no_propeptide				0	0
+l1-p0891	l1-p0891	IFNAR1	native_site	22	23	no_propeptide				0	0
+l1-p0735	l1-p0735	GPC1	native_site	23	26	no_propeptide				0	0
+l1-p1668	l1-p1668	PODXL	native_site	24	34	no_propeptide				0	0
+l1-p0731	l1-p0731	GP5	native_site	16	17	no_propeptide				0	0
+l1-p1228	l1-p1228	MMP25	native_site	21	107	propeptide	22-107:identical	constitutive		0	0
+l1-p0592	l1-p0592	ERVMER34-1	igk_swap	24	26	no_propeptide				0	0
+l1-p2173	l1-p2173	TMEM145	native_site	29	30	no_propeptide				0	0
+l1-p0117	l1-p0117	ANTXR1	native_site	27	28	no_propeptide				0	0
+l1-p0664	l1-p0664	FZD2	native_site	23	30	no_propeptide				0	0
+l1-p3059	l1-p3059	TM7SF3	native_site	19	23	no_propeptide				0	0
+l1-p0484	l1-p0484	CSPG5	native_site	33	39	no_propeptide				0	0
+l1-p1267	l1-p1267	MUC21	no_nterm_arm			no_propeptide				0	0
+l1-p2521	l1-p2521	TGFBR2	igk_swap	23	24	no_propeptide				0	0
+l1-p1080	l1-p1080	LCTL	native_site	22	24	no_propeptide				0	0
+l1-p2134	l1-p2134	TGFBR2	native_site	23	41	no_propeptide				0	0
+l1-p0327	l1-p0327	CD96	igk_swap	21	23	no_propeptide				0	0
+l1-p0925	l1-p0925	IL1R1	native_site	20	21	no_propeptide				0	0
+l1-p0927	l1-p0927	IL1RAP	native_site	20	21	no_propeptide				0	0
+l1-p2156	l1-p2156	TM7SF3	native_site	21	22	no_propeptide				0	0
+l1-p0739	l1-p0739	GPC5	native_site	24	27	no_propeptide				0	0
+l1-p0104	l1-p0104	AMHR2	native_site	17	19	no_propeptide				0	0
+l1-p2945	l1-p2945	GPNMB	igk_swap	22	23	no_propeptide				0	0
+l1-p2948	l1-p2948	IL22RA1	igk_swap	17	19	no_propeptide				0	0
+l1-p0669	l1-p0669	FZD7	native_site	32	41	no_propeptide				0	0
+l1-p0935	l1-p0935	IL22RA1	igk_swap	17	20	no_propeptide				0	0
+l1-p1332	l1-p1332	NT5E	native_site	26	27	no_propeptide				0	0
+l1-p3007	l1-p3007	NT5E	native_site	26	28	no_propeptide				0	0
+l1-p0931	l1-p0931	IL1RL2	native_site	19	20	no_propeptide				0	0
+l1-p2137	l1-p2137	THBD	igk_swap	23	25	no_propeptide				0	0
+l1-p0615	l1-p0615	FCAMR	no_nterm_arm			no_propeptide				0	0
+l1-p0910	l1-p0910	IL10RA	native_site	21	25	no_propeptide				0	0
+l1-p0736	l1-p0736	GPC2	native_site	26	27	no_propeptide				0	0
+l1-p0737	l1-p0737	GPC3	native_site	24	25	no_propeptide				0	0
+l1-p2452	l1-p2452	ILDR2	native_site	20	26	no_propeptide				0	0
+l1-p0663	l1-p0663	FZD10	native_site	20	30	no_propeptide				0	0
+l1-p1130	l1-p1130	LRRC15	native_site	21	22	no_propeptide				0	0
+l1-p1154	l1-p1154	LRRTM3	native_site	30	34	no_propeptide				0	0
+l1-p2464	l1-p2464	LSR	native_site	41	47	no_propeptide				0	0
+l1-p1160	l1-p1160	LSR	native_site	41	42	no_propeptide				0	0
+l1-p1223	l1-p1223	MMP14	native_site	28	111	propeptide	21-111:identical	constitutive		0	0
+l1-p0098	l1-p0098	ALCAM	native_site	27	28	no_propeptide				0	0
+l1-p2261	l1-p2261	TREH	native_site	21	22	no_propeptide				0	0
+l1-p0196	l1-p0196	BTN3A3	native_site	29	30	no_propeptide				0	0
+l1-p0667	l1-p0667	FZD5	native_site	26	27	no_propeptide				0	0
+l1-p0516	l1-p0516	DLL3	native_site	26	27	no_propeptide				0	0
+l1-p0744	l1-p0744	GPNMB	native_site	22	37	no_propeptide				0	0
+l1-p1155	l1-p1155	LRRTM4	native_site	30	31	no_propeptide				0	0
+l1-p0671	l1-p0671	FZD9	native_site	22	25	no_propeptide				0	0
+l1-p1098	l1-p1098	LILRB5	native_site	23	25	no_propeptide				0	0
+l1-p1102	l1-p1102	LINGO3	native_site	24	26	no_propeptide				0	0
+l1-p2070	l1-p2070	SPPL2B	native_site	25	26	no_propeptide				0	0
+l1-p1103	l1-p1103	LINGO4	igk_swap	29	30	no_propeptide				0	0
+l1-p1705	l1-p1705	PTH1R	native_site	26	27	no_propeptide				0	0
+l1-p1812	l1-p1812	SIGLEC12	native_site	18	20	no_propeptide				0	0
+l1-p2241	l1-p2241	TNFRSF8	native_site	18	20	no_propeptide				0	0
+l1-p0361	l1-p0361	CEACAM20	native_site	30	32	no_propeptide				0	0
+l1-p1095	l1-p1095	LILRB2	native_site	23	24	no_propeptide				0	0
+l1-p0924	l1-p0924	IL18RAP	igk_swap	19	21	no_propeptide				0	0
+l1-p2463	l1-p2463	LSR	native_site	41	47	no_propeptide				0	0
+l1-p1207	l1-p1207	MEGF9	native_site	35	49	no_propeptide				0	0
+l1-p1226	l1-p1226	MMP17	native_site	38	125	propeptide	36-125:identical	constitutive		0	0
+l1-p3141	l1-p3141	GPC3	native_site	24	25	no_propeptide				0	0
+l1-p1669	l1-p1669	PODXL2	native_site	32	48	no_propeptide				0	0
+l1-p1101	l1-p1101	LINGO2	native_site	27	29	no_propeptide				0	0
+l1-p2157	l1-p2157	TM9SF1	native_site	32	33	no_propeptide				0	0
+l1-p1225	l1-p1225	MMP16	igk_swap	36	119	propeptide	32-119:identical	constitutive		0	0
+l1-p1756	l1-p1756	RYK	native_site	46	49	no_propeptide				0	0
+l1-p1780	l1-p1780	SELE	native_site	21	22	no_propeptide				0	0
+l1-p3085	l1-p3085	ITFG1	native_site	32	33	no_propeptide				0	0
+l1-p0956	l1-p0956	ITFG1	native_site	33	34	no_propeptide				0	0
+l1-p0907	l1-p0907	IGSF8	native_site	27	29	no_propeptide				0	0
+l1-p1100	l1-p1100	LINGO1	native_site	35	37	no_propeptide				0	0
+l1-p2228	l1-p2228	TNFRSF11A	native_site	29	30	no_propeptide				0	0
+l1-p0017	l1-p0017	ACHE	native_site	31	32	no_propeptide				0	0
+l1-p2428	l1-p2428	DLL3	native_site	26	27	no_propeptide				0	0
+l1-p2468	l1-p2468	MSLN	native_site	38	42	no_propeptide				0	0
+l1-p0950	l1-p0950	ILDR2	native_site	20	21	no_propeptide				0	0
+l1-p1259	l1-p1259	MSLN	native_site	38	42	no_propeptide				0	0
+l1-p1674	l1-p1674	PRLR	native_site	24	25	no_propeptide				0	0
+l1-p1121	l1-p1121	LRIT1	native_site	21	22	no_propeptide				0	0
+l1-p1189	l1-p1189	MAG	igk_swap	19	21	no_propeptide				0	0
+l1-p0378	l1-p0378	CHRNA4	native_site	26	28	no_propeptide				0	0
+l1-p0172	l1-p0172	BCAM	native_site	31	32	no_propeptide				0	0
+l1-p1115	l1-p1115	LRFN3	no_nterm_arm			no_propeptide				0	0
+l1-p0936	l1-p0936	IL23R	igk_swap	23	26	no_propeptide				0	0
+l1-p0119	l1-p0119	ANTXRL	native_site	27	38	no_propeptide				0	0
+l1-p1096	l1-p1096	LILRB3	native_site	21	23	no_propeptide				0	0
+l1-p1116	l1-p1116	LRFN4	native_site	16	17	no_propeptide				0	0
+l1-p1232	l1-p1232	MPL	native_site	21	23	no_propeptide				0	0
+l1-p2441	l1-p2441	GHR	native_site	18	21	no_propeptide				0	0
+l1-p0937	l1-p0937	IL27RA	igk_swap	32	33	no_propeptide				0	0
+l1-p0699	l1-p0699	GHR	native_site	18	28	no_propeptide				0	0
+l1-p2357	l1-p2357	ZP1	igk_swap	27	29	no_propeptide				0	0
+l1-p1140	l1-p1140	LRRC4C	native_site	44	45	no_propeptide				0	0
+l1-p2310	l1-p2310	UMOD	native_site	23	25	no_propeptide				0	0
+l1-p1227	l1-p1227	MMP24	igk_swap	52	155	propeptide	53-155:identical	constitutive		0	0
+l1-p1199	l1-p1199	MCAM	native_site	23	29	no_propeptide				0	0
+l1-p1106	l1-p1106	LMLN	igk_swap	43	49	no_propeptide				0	0
+l1-p1950	l1-p1950	SLC39A4	native_site	22	23	no_propeptide				0	0
+l1-p0644	l1-p0644	FLRT3	native_site	28	29	no_propeptide				0	0
+l1-p0123	l1-p0123	APLP1	native_site	38	39	no_propeptide			83	0	1
+l1-p0064	l1-p0064	ADGRE3	native_site	22	23	no_propeptide				0	0
+l1-p0326	l1-p0326	CD93	native_site	23	26	no_propeptide				0	0
+l1-p1094	l1-p1094	LILRB1	native_site	23	24	no_propeptide				0	0
+l1-p3032	l1-p3032	ENG	native_site	25	27	no_propeptide				0	0
+l1-p1138	l1-p1138	LRRC4	igk_swap	38	39	no_propeptide				0	0
+l1-p1175	l1-p1175	LY9	igk_swap	47	48	no_propeptide				0	0
+l1-p2238	l1-p2238	TNFRSF21	native_site	41	49	no_propeptide				0	0
+l1-p2465	l1-p2465	LY9	igk_swap	45	50	no_propeptide				0	0
+l1-p0559	l1-p0559	ENG	native_site	25	26	no_propeptide				0	0
+l1-p0643	l1-p0643	FLRT2	native_site	35	36	no_propeptide				0	0
+l1-p0913	l1-p0913	IL12RB1	no_nterm_arm			no_propeptide				0	0
+l1-p1134	l1-p1134	LRRC32	native_site	17	19	no_propeptide				0	0
+l1-p2450	l1-p2450	IL31RA	native_site	32	33	no_propeptide				0	0
+l1-p2947	l1-p2947	IL12RB1	no_nterm_arm			no_propeptide				0	0
+l1-p0665	l1-p0665	FZD3	native_site	22	24	no_propeptide				0	0
+l1-p1795	l1-p1795	SEMA7A	native_site	44	47	no_propeptide				0	0
+l1-p2991	l1-p2991	FZD3	igk_swap	22	25	no_propeptide				0	0
+l1-p0922	l1-p0922	IL17RE	native_site	23	30	no_propeptide				0	0
+l1-p0311	l1-p0311	CD6	native_site	19	21	no_propeptide				0	0
+l1-p1224	l1-p1224	MMP15	native_site	46	131	propeptide	42-131:identical	constitutive		0	0
+l1-p0173	l1-p0173	BCAN	native_site	22	23	no_propeptide				0	0
+l1-p2322	l1-p2322	VASN	native_site	23	24	no_propeptide				0	0
+l1-p0642	l1-p0642	FLRT1	igk_swap	51	53	no_propeptide				0	0
+l1-p2353	l1-p2353	XPNPEP2	native_site	21	22	no_propeptide				0	0
+l1-p2034	l1-p2034	SLC9D1	native_site	22	31	no_propeptide				0	0
+l1-p1122	l1-p1122	LRIT3	native_site	19	20	no_propeptide				0	0
+l1-p3142	l1-p3142	LMLN	igk_swap	43	49	no_propeptide				0	0
+l1-p0517	l1-p0517	DLL4	native_site	26	27	no_propeptide				0	0
+l1-p0929	l1-p0929	IL1RAPL2	native_site	24	27	no_propeptide				0	0
+l1-p0069	l1-p0069	ADGRG1	native_site	25	26	no_propeptide				0	0
+l1-p1779	l1-p1779	SEL1L2	native_site	23	24	no_propeptide				0	0
+l1-p0077	l1-p0077	ADGRL4	native_site	19	20	no_propeptide				0	0
+l1-p1946	l1-p1946	SLC39A12	native_site	23	31	no_propeptide				0	0
+l1-p1328	l1-p1328	NRROS	igk_swap	28	29	no_propeptide				0	0
+l1-p0670	l1-p0670	FZD8	igk_swap	27	28	no_propeptide				0	0
+l1-p0660	l1-p0660	FSHR	native_site	17	18	no_propeptide				0	0
+l1-p0928	l1-p0928	IL1RAPL1	native_site	18	28	no_propeptide				0	0
+l1-p2047	l1-p2047	SLITRK1	native_site	17	19	no_propeptide				0	0
+l1-p1810	l1-p1810	SIGLEC10	native_site	16	18	no_propeptide				0	0
+l1-p1811	l1-p1811	SIGLEC11	native_site	27	32	no_propeptide				0	0
+l1-p1087	l1-p1087	LHCGR	native_site	26	27	no_propeptide				0	0
+l1-p1209	l1-p1209	MEP1B	native_site	22	24	propeptide	23-61:identical	activation_only		1	0
+l1-p0365	l1-p0365	CEACAM5	native_site	34	35	no_propeptide				0	0
+l1-p0668	l1-p0668	FZD6	igk_swap	18	19	no_propeptide				0	0
+l1-p0446	l1-p0446	CNNM3	native_site	25	29	no_propeptide				0	0
+l1-p1062	l1-p1062	KIRREL2	native_site	20	22	no_propeptide				0	0
+l1-p1149	l1-p1149	LRRN3	native_site	22	25	no_propeptide				0	0
+l1-p0336	l1-p0336	CDH13	native_site	22	138	propeptide	23-138:identical	constitutive		0	0
+l1-p1123	l1-p1123	LRP10	native_site	16	20	no_propeptide				0	0
+l1-p1139	l1-p1139	LRRC4B	native_site	37	48	no_propeptide				0	0
+l1-p1148	l1-p1148	LRRN2	native_site	18	21	no_propeptide				0	0
+l1-p3070	l1-p3070	CNNM3	native_site	28	36	no_propeptide				0	0
+l1-p0503	l1-p0503	DCBLD1	native_site	34	36	no_propeptide				0	0
+l1-p3038	l1-p3038	IL17RC	igk_swap	20	21	no_propeptide				0	0
+l1-p1147	l1-p1147	LRRN1	native_site	25	26	no_propeptide				0	0
+l1-p3134	l1-p3134	PECAM1	native_site	27	29	no_propeptide				0	0
+l1-p1117	l1-p1117	LRFN5	native_site	17	18	no_propeptide				0	0
+l1-p3151	l1-p3151	PECAM1	native_site	27	29	no_propeptide				0	0
+l1-p0920	l1-p0920	IL17RC	native_site	20	22	no_propeptide				0	0
+l1-p0035	l1-p0035	ADAM21	native_site	31	196	propeptide	32-196:identical	constitutive		0	0
+l1-p0515	l1-p0515	DLL1	native_site	21	22	no_propeptide				0	0
+l1-p3090	l1-p3090	NCAM1	native_site	19	24	no_propeptide				0	0
+l1-p0628	l1-p0628	FCRL3	igk_swap	18	19	no_propeptide				0	0
+l1-p0518	l1-p0518	DNER	native_site	34	41	no_propeptide				0	0
+l1-p1208	l1-p1208	MELTF	native_site	19	20	no_propeptide				0	0
+l1-p1638	l1-p1638	PECAM1	native_site	27	29	no_propeptide				0	0
+l1-p0921	l1-p0921	IL17RD	native_site	26	41	no_propeptide				0	0
+l1-p2323	l1-p2323	VCAM1	igk_swap	24	25	no_propeptide				0	0
+l1-p1150	l1-p1150	LRRN4	native_site	18	20	no_propeptide				0	0
+l1-p0301	l1-p0301	CD44	native_site	20	21	no_propeptide				0	0
+l1-p0955	l1-p0955	ISLR2	native_site	19	20	no_propeptide				0	0
+l1-p2358	l1-p2358	ZP2	igk_swap	38	43	no_propeptide				0	0
+l1-p0029	l1-p0029	ADAM10	native_site	19	213	propeptide	20-213:identical	constitutive	51;77	0	0
+l1-p0124	l1-p0124	APLP2	native_site	31	40	no_propeptide				0	0
+l1-p0125	l1-p0125	APP	native_site	17	21	no_propeptide				0	0
+l1-p0042	l1-p0042	ADAM7	native_site	18	176	propeptide	19-176:identical	constitutive		0	0
+l1-p1753	l1-p1753	RXFP2	native_site	36	38	no_propeptide				0	0
+l1-p1952	l1-p1952	SLC39A6	no_nterm_arm			no_propeptide				0	0
+l1-p0279	l1-p0279	CD248	native_site	17	24	no_propeptide				0	0
+l1-p1061	l1-p1061	KIRREL1	native_site	18	19	no_propeptide				0	0
+l1-p1752	l1-p1752	RXFP1	igk_swap	22	25	no_propeptide				0	0
+l1-p1275	l1-p1275	NCAM1	igk_swap	19	21	no_propeptide				0	0
+l1-p1784	l1-p1784	SEMA4A	native_site	31	36	no_propeptide				0	0
+l1-p3005	l1-p3005	NCAM1	native_site	19	25	no_propeptide				0	0
+l1-p0941	l1-p0941	IL31RA	igk_swap	51	53	no_propeptide				0	0
+l1-p1643	l1-p1643	PIGR	native_site	17	19	no_propeptide				0	0
+l1-p2282	l1-p2282	TSHR	igk_swap	21	22	no_propeptide				0	0
+l1-p0030	l1-p0030	ADAM11	native_site	23	225	propeptide	24-225:identical	constitutive		0	0
+l1-p0970	l1-p0970	ITGB2	native_site	22	23	no_propeptide				0	0
+l1-p0975	l1-p0975	ITGB8	igk_swap	42	43	no_propeptide				0	0
+l1-p1126	l1-p1126	LRP3	native_site	36	39	no_propeptide				0	0
+l1-p1788	l1-p1788	SEMA4F	native_site	34	35	no_propeptide				0	0
+l1-p1113	l1-p1113	LRFN1	native_site	31	32	no_propeptide				0	0
+l1-p1640	l1-p1640	PGAP6	native_site	34	36	no_propeptide				0	0
+l1-p0341	l1-p0341	CDH19	native_site	21	43	propeptide	22-43:identical	constitutive	43	0	0
+l1-p0136	l1-p0136	ARMH4	native_site	27	33	no_propeptide				0	0
+l1-p0038	l1-p0038	ADAM28	native_site	18	198	propeptide	19-198:identical	constitutive		0	0
+l1-p0447	l1-p0447	CNNM4	native_site	37	39	no_propeptide				0	0
+l1-p0504	l1-p0504	DCBLD2	igk_swap	66	67	no_propeptide				0	0
+l1-p1602	l1-p1602	PCDHB16	native_site	28	29	no_propeptide				0	0
+l1-p2966	l1-p2966	PCDHB16	no_nterm_arm			no_propeptide				0	0
+l1-p1063	l1-p1063	KIRREL3	native_site	25	34	no_propeptide				0	0
+l1-p0345	l1-p0345	CDH24	igk_swap	19	44	propeptide	21-44:mapped	constitutive	44	0	0
+l1-p1740	l1-p1740	RNF43	native_site	33	34	no_propeptide				0	0
+l1-p0349	l1-p0349	CDH5	no_nterm_arm			propeptide	26-47:identical	constitutive	47	0	0
+l1-p2148	l1-p2148	TLR2	igk_swap	20	26	no_propeptide				0	0
+l1-p3023	l1-p3023	CDH15	native_site	21	59	propeptide	21-59:mapped	constitutive	44	0	0
+l1-p0351	l1-p0351	CDH7	native_site	27	47	propeptide	28-47:identical	constitutive	47	0	0
+l1-p2146	l1-p2146	TLR1	native_site	24	26	no_propeptide				0	0
+l1-p0040	l1-p0040	ADAM32	native_site	17	174	propeptide	17-174:identical	constitutive		0	0
+l1-p1601	l1-p1601	PCDHB15	native_site	26	30	no_propeptide				0	0
+l1-p2055	l1-p2055	SMO	native_site	31	49	no_propeptide				0	0
+l1-p0333	l1-p0333	CDH10	native_site	22	54	propeptide	23-54:identical	constitutive	54	0	0
+l1-p0971	l1-p0971	ITGB3	no_nterm_arm			no_propeptide				0	0
+l1-p0973	l1-p0973	ITGB6	igk_swap	21	23	no_propeptide				0	0
+l1-p0347	l1-p0347	CDH3	no_nterm_arm			propeptide	1-67:mapped	constitutive		0	0
+l1-p0353	l1-p0353	CDH9	igk_swap	21	53	propeptide	22-53:identical	constitutive	53	0	0
+l1-p1114	l1-p1114	LRFN2	no_nterm_arm			no_propeptide				0	0
+l1-p0340	l1-p0340	CDH18	native_site	24	53	propeptide	25-53:identical	constitutive	53	0	0
+l1-p0350	l1-p0350	CDH6	native_site	21	53	propeptide	19-53:identical	constitutive	53	0	0
+l1-p3133	l1-p3133	NTRK1	native_site	33	38	no_propeptide				0	0
+l1-p2455	l1-p2455	ITGB1	native_site	20	26	no_propeptide				0	0
+l1-p3108	l1-p3108	SMO	native_site	34	35	no_propeptide				0	0
+l1-p1608	l1-p1608	PCDHB7	native_site	28	29	no_propeptide				0	0
+l1-p0335	l1-p0335	CDH12	native_site	25	54	propeptide	24-54:identical	constitutive	54	0	0
+l1-p1607	l1-p1607	PCDHB6	native_site	27	28	no_propeptide				0	0
+l1-p3044	l1-p3044	PCDHB15	native_site	26	28	no_propeptide				0	0
+l1-p1598	l1-p1598	PCDHB12	native_site	26	30	no_propeptide				0	0
+l1-p1605	l1-p1605	PCDHB4	igk_swap	27	28	no_propeptide				0	0
+l1-p1606	l1-p1606	PCDHB5	native_site	30	31	no_propeptide				0	0
+l1-p0334	l1-p0334	CDH11	native_site	22	53	propeptide	23-53:identical	constitutive	53	0	0
+l1-p1336	l1-p1336	NTRK1	native_site	33	38	no_propeptide				0	0
+l1-p1604	l1-p1604	PCDHB3	native_site	30	31	no_propeptide				0	0
+l1-p2151	l1-p2151	TLR6	native_site	31	33	no_propeptide				0	0
+l1-p1597	l1-p1597	PCDHB11	native_site	28	29	no_propeptide				0	0
+l1-p1610	l1-p1610	PCDHB9	native_site	27	29	no_propeptide				0	0
+l1-p0969	l1-p0969	ITGB1	native_site	20	21	no_propeptide				0	0
+l1-p0974	l1-p0974	ITGB7	native_site	19	20	no_propeptide				0	0
+l1-p1599	l1-p1599	PCDHB13	native_site	28	29	no_propeptide				0	0
+l1-p1600	l1-p1600	PCDHB14	igk_swap	31	32	no_propeptide				0	0
+l1-p1603	l1-p1603	PCDHB2	native_site	30	31	no_propeptide				0	0
+l1-p2029	l1-p2029	SLC9A4	native_site	26	31	no_propeptide				0	0
+l1-p0352	l1-p0352	CDH8	native_site	29	61	propeptide	30-61:identical	constitutive	61	0	0
+l1-p0972	l1-p0972	ITGB5	native_site	24	25	no_propeptide				0	0
+l1-p2998	l1-p2998	ITGB5	native_site	24	25	no_propeptide				0	0
+l1-p1596	l1-p1596	PCDHB10	native_site	31	33	no_propeptide				0	0
+l1-p0343	l1-p0343	CDH20	native_site	34	59	propeptide	35-59:identical	constitutive	59	0	0
+l1-p1609	l1-p1609	PCDHB8	native_site	28	29	no_propeptide				0	0
+l1-p2454	l1-p2454	ITGB1	native_site	20	26	no_propeptide				0	0
+l1-p2456	l1-p2456	ITGB1	native_site	20	21	no_propeptide				0	0
+l1-p0639	l1-p0639	FGFR4	native_site	21	30	no_propeptide				0	0
+l1-p1708	l1-p1708	PTPRA	native_site	19	26	no_propeptide				0	0
+l1-p2386	l1-p2386	ACE2	native_site	17	23	no_propeptide				0	0
+l1-p0016	l1-p0016	ACE2	native_site	17	18	no_propeptide				0	0
+l1-p0638	l1-p0638	FGFR3	native_site	22	28	no_propeptide				0	0
+l1-p2147	l1-p2147	TLR10	native_site	19	26	no_propeptide				0	0
+l1-p2265	l1-p2265	TRIL	native_site	25	26	no_propeptide				0	0
+l1-p2027	l1-p2027	SLC9A2	native_site	33	34	no_propeptide				0	0
+l1-p2388	l1-p2388	ADAM33	native_site	29	203	propeptide	30-203:mapped	constitutive		0	0
+l1-p0041	l1-p0041	ADAM33	native_site	29	203	propeptide	30-203:identical	constitutive		0	0
+l1-p0337	l1-p0337	CDH15	native_site	21	60	propeptide	22-60:identical	constitutive	45	0	0
+l1-p0896	l1-p0896	IGDCC3	native_site	35	38	no_propeptide				0	0
+l1-p1296	l1-p1296	NLGN4X	igk_swap	41	42	no_propeptide				0	0
+l1-p0044	l1-p0044	ADAM9	native_site	28	29	no_propeptide			56	0	1
+l1-p2439	l1-p2439	FGFR2	native_site	21	25	no_propeptide				0	0
+l1-p0039	l1-p0039	ADAM29	native_site	18	193	propeptide	19-193:identical	constitutive		0	0
+l1-p0553	l1-p0553	ELFN2	native_site	22	23	no_propeptide				0	0
+l1-p2483	l1-p2483	PCDHGB6	igk_swap	30	31	no_propeptide				0	0
+l1-p0637	l1-p0637	FGFR2	native_site	21	25	no_propeptide				0	0
+l1-p0636	l1-p0636	FGFR1	native_site	21	32	no_propeptide				0	0
+l1-p2085	l1-p2085	SUSD2	native_site	27	28	no_propeptide				0	0
+l1-p0063	l1-p0063	ADGRE2	native_site	23	24	no_propeptide				0	0
+l1-p0033	l1-p0033	ADAM17	native_site	17	214	propeptide	18-214:identical	constitutive		0	0
+l1-p0043	l1-p0043	ADAM8	native_site	20	23	no_propeptide			44	0	1
+l1-p0943	l1-p0943	IL4R	native_site	23	27	no_propeptide				0	0
+l1-p1338	l1-p1338	NTRK3	native_site	31	33	no_propeptide				0	0
+l1-p0605	l1-p0605	FAM171A2	native_site	26	31	no_propeptide				0	0
+l1-p2498	l1-p2498	SEMA4C	igk_swap	20	25	no_propeptide				0	0
+l1-p0344	l1-p0344	CDH22	igk_swap	38	53	no_propeptide			62	0	1
+l1-p0552	l1-p0552	ELFN1	no_nterm_arm			no_propeptide				0	0
+l1-p1786	l1-p1786	SEMA4C	igk_swap	20	25	no_propeptide				0	0
+l1-p2499	l1-p2499	SEMA4C	igk_swap	20	25	no_propeptide				0	0
+l1-p0338	l1-p0338	CDH16	native_site	18	21	no_propeptide				0	0
+l1-p3130	l1-p3130	CDH3	native_site	24	107	propeptide	25-107:identical	constitutive		0	0
+l1-p1765	l1-p1765	SCARF1	native_site	19	23	no_propeptide				0	0
+l1-p1782	l1-p1782	SELP	igk_swap	41	43	no_propeptide				0	0
+l1-p1945	l1-p1945	SLC39A10	native_site	25	38	no_propeptide				0	0
+l1-p2061	l1-p2061	SORT1	native_site	33	77	propeptide	34-77:identical	constitutive	77	0	0
+l1-p0037	l1-p0037	ADAM23	igk_swap	59	286	propeptide	60-286:identical	constitutive		0	0
+l1-p0339	l1-p0339	CDH17	native_site	22	24	no_propeptide				0	0
+l1-p0346	l1-p0346	CDH26	native_site	29	31	no_propeptide			54	0	1
+l1-p3104	l1-p3104	SLC39A10	igk_swap	25	38	no_propeptide				0	0
+l1-p3135	l1-p3135	SEMA4C	igk_swap	20	22	no_propeptide				0	0
+l1-p1681	l1-p1681	PROM2	native_site	26	27	no_propeptide				0	0
+l1-p2028	l1-p2028	SLC9A3	native_site	25	29	no_propeptide				0	0
+l1-p2500	l1-p2500	SEMA4C	igk_swap	20	25	no_propeptide				0	0
+l1-p0065	l1-p0065	ADGRE5	native_site	20	21	no_propeptide				0	0
+l1-p1294	l1-p1294	NLGN2	native_site	14	15	no_propeptide				0	0
+l1-p0331	l1-p0331	CDCP1	native_site	29	30	no_propeptide				0	0
+l1-p0483	l1-p0483	CSF3R	native_site	24	25	no_propeptide				0	0
+l1-p1276	l1-p1276	NCAM2	native_site	19	20	no_propeptide				0	0
+l1-p1785	l1-p1785	SEMA4B	native_site	43	44	no_propeptide				0	0
+l1-p2050	l1-p2050	SLITRK4	native_site	18	21	no_propeptide				0	0
+l1-p1337	l1-p1337	NTRK2	native_site	31	33	no_propeptide				0	0
+l1-p2099	l1-p2099	TAS1R2	native_site	21	25	no_propeptide				0	0
+l1-p2149	l1-p2149	TLR4	igk_swap	23	24	no_propeptide				0	0
+l1-p2432	l1-p2432	DSC3	native_site	28	135	propeptide	28-135:mapped	constitutive		0	0
+l1-p2430	l1-p2430	DSC1	native_site	29	134	propeptide	30-134:mapped	constitutive		0	0
+l1-p2052	l1-p2052	SLITRK6	native_site	26	27	no_propeptide				0	0
+l1-p2098	l1-p2098	TAS1R1	native_site	22	23	no_propeptide				0	0
+l1-p1293	l1-p1293	NLGN1	native_site	45	46	no_propeptide				0	0
+l1-p1789	l1-p1789	SEMA4G	native_site	17	27	no_propeptide				0	0
+l1-p0357	l1-p0357	CDHR5	native_site	25	26	no_propeptide				0	0
+l1-p2048	l1-p2048	SLITRK2	native_site	21	25	no_propeptide				0	0
+l1-p3092	l1-p3092	NLGN3	native_site	34	36	no_propeptide				0	0
+l1-p0275	l1-p0275	CD22	native_site	21	22	no_propeptide				0	0
+l1-p2431	l1-p2431	DSC2	native_site	31	135	propeptide	28-135:mapped	constitutive		0	0
+l1-p1295	l1-p1295	NLGN3	native_site	37	38	no_propeptide				0	0
+l1-p3143	l1-p3143	NCAM1	igk_swap	19	21	no_propeptide				0	0
+l1-p2389	l1-p2389	ADAM9	native_site	28	29	no_propeptide			56	0	1
+l1-p2135	l1-p2135	TGFBR3	native_site	20	22	no_propeptide				0	0
+l1-p2100	l1-p2100	TAS1R3	native_site	20	22	no_propeptide				0	0
+l1-p2138	l1-p2138	THSD1	igk_swap	22	23	no_propeptide				0	0
+l1-p0510	l1-p0510	DDR2	native_site	23	24	no_propeptide				0	0
+l1-p2150	l1-p2150	TLR5	native_site	20	22	no_propeptide				0	0
+l1-p0354	l1-p0354	CDHR1	native_site	19	20	no_propeptide				0	0
+l1-p1125	l1-p1125	LRP12	native_site	32	39	no_propeptide				0	0
+l1-p1081	l1-p1081	LDLR	native_site	24	25	no_propeptide				0	0
+l1-p3016	l1-p3016	TGFBR3	native_site	29	31	no_propeptide				0	0
+l1-p0914	l1-p0914	IL12RB2	igk_swap	27	29	no_propeptide				0	0
+l1-p1787	l1-p1787	SEMA4D	native_site	23	24	no_propeptide				0	0
+l1-p3128	l1-p3128	ADAM15	native_site	17	206	propeptide	18-206:mapped	constitutive		0	0
+l1-p0032	l1-p0032	ADAM15	native_site	17	206	propeptide	18-206:identical	constitutive		0	0
+l1-p3037	l1-p3037	IL17RA	native_site	31	33	no_propeptide				0	0
+l1-p1680	l1-p1680	PROM1	native_site	21	31	no_propeptide				0	0
+l1-p2479	l1-p2479	PAM	native_site	20	30	propeptide	21-30:mapped	constitutive		0	0
+l1-p0918	l1-p0918	IL17RA	native_site	32	35	no_propeptide				0	0
+l1-p1766	l1-p1766	SCARF2	native_site	43	44	no_propeptide				0	0
+l1-p2334	l1-p2334	VSIG10L	igk_swap	21	32	no_propeptide				0	0
+l1-p1268	l1-p1268	MUSK	igk_swap	21	25	no_propeptide				0	0
+l1-p0821	l1-p0821	GRM2	native_site	18	21	no_propeptide				0	0
+l1-p2326	l1-p2326	VLDLR	native_site	24	27	no_propeptide				0	0
+l1-p0060	l1-p0060	ADGRD1	igk_swap	28	30	no_propeptide				0	0
+l1-p0445	l1-p0445	CNNM2	igk_swap	65	70	no_propeptide				0	0
+l1-p0825	l1-p0825	GRM6	native_site	29	30	no_propeptide				0	0
+l1-p0822	l1-p0822	GRM3	native_site	24	28	no_propeptide				0	0
+l1-p1703	l1-p1703	PTGFRN	native_site	21	23	no_propeptide				0	0
+l1-p0332	l1-p0332	CDH1	native_site	22	154	propeptide	23-154:identical	constitutive		0	0
+l1-p0811	l1-p0811	GRIA2	native_site	24	25	no_propeptide				0	0
+l1-p0356	l1-p0356	CDHR3	native_site	19	20	no_propeptide				0	0
+l1-p0062	l1-p0062	ADGRE1	igk_swap	20	28	no_propeptide				0	0
+l1-p1792	l1-p1792	SEMA6B	native_site	25	26	no_propeptide				0	0
+l1-p0604	l1-p0604	FAM171A1	native_site	21	28	no_propeptide				0	0
+l1-p2306	l1-p2306	TYRO3	native_site	40	42	no_propeptide				0	0
+l1-p0168	l1-p0168	AXL	native_site	32	34	no_propeptide				0	0
+l1-p0530	l1-p0530	DSC1	native_site	29	134	propeptide	30-134:identical	constitutive		0	0
+l1-p0812	l1-p0812	GRIA3	native_site	28	29	no_propeptide				0	0
+l1-p0501	l1-p0501	DAG1	native_site	27	33	no_propeptide				0	0
+l1-p0532	l1-p0532	DSC3	native_site	28	135	propeptide	28-135:identical	constitutive		0	0
+l1-p0482	l1-p0482	CSF2RB	native_site	22	23	no_propeptide				0	0
+l1-p2311	l1-p2311	UNC5A	native_site	25	26	no_propeptide				0	0
+l1-p0531	l1-p0531	DSC2	native_site	31	135	propeptide	28-135:identical	constitutive		0	0
+l1-p0813	l1-p0813	GRIA4	native_site	21	22	no_propeptide				0	0
+l1-p2941	l1-p2941	CSF2RB	igk_swap	24	25	no_propeptide				0	0
+l1-p0031	l1-p0031	ADAM12	native_site	28	204	propeptide	26-204:mapped	constitutive		0	0
+l1-p0342	l1-p0342	CDH2	native_site	25	159	propeptide	26-159:identical	constitutive		0	0
+l1-p0810	l1-p0810	GRIA1	igk_swap	18	19	no_propeptide				0	0
+l1-p1085	l1-p1085	LGR5	native_site	21	22	no_propeptide				0	0
+l1-p0817	l1-p0817	GRIK2	native_site	31	32	no_propeptide				0	0
+l1-p0827	l1-p0827	GRM8	native_site	33	36	no_propeptide				0	0
+l1-p0066	l1-p0066	ADGRF1	native_site	19	20	no_propeptide				0	0
+l1-p0823	l1-p0823	GRM4	native_site	32	39	no_propeptide				0	0
+l1-p0509	l1-p0509	DDR1	native_site	20	22	no_propeptide				0	0
+l1-p0826	l1-p0826	GRM7	native_site	34	38	no_propeptide				0	0
+l1-p0348	l1-p0348	CDH4	native_site	20	169	propeptide	21-169:identical	constitutive		0	0
+l1-p2445	l1-p2445	GRIA1	no_nterm_arm			no_propeptide				0	0
+l1-p2548	l1-p2548	CDH4	native_site	20	169	propeptide	21-169:mapped	constitutive		0	0
+l1-p0034	l1-p0034	ADAM19	native_site	24	202	propeptide	26-202:mapped	constitutive		0	0
+l1-p0946	l1-p0946	IL6ST	native_site	22	24	no_propeptide				0	0
+l1-p0386	l1-p0386	CLCA4	native_site	21	22	no_propeptide				0	0
+l1-p0818	l1-p0818	GRIK3	igk_swap	31	32	no_propeptide				0	0
+l1-p2515	l1-p2515	SLC8A3	native_site	32	35	no_propeptide				0	0
+l1-p2024	l1-p2024	SLC8A2	native_site	20	35	no_propeptide				0	0
+l1-p2025	l1-p2025	SLC8A3	native_site	32	48	no_propeptide				0	0
+l1-p1326	l1-p1326	NRP1	native_site	21	23	no_propeptide				0	0
+l1-p1625	l1-p1625	PCDHGB4	native_site	30	31	no_propeptide				0	0
+l1-p1626	l1-p1626	PCDHGB5	native_site	30	31	no_propeptide				0	0
+l1-p1803	l1-p1803	SEZ6L2	native_site	27	34	no_propeptide				0	0
+l1-p0888	l1-p0888	ICAM5	native_site	30	32	no_propeptide				0	0
+l1-p0809	l1-p0809	GPRC6A	native_site	18	20	no_propeptide				0	0
+l1-p1327	l1-p1327	NRP2	native_site	22	24	no_propeptide				0	0
+l1-p1622	l1-p1622	PCDHGB1	native_site	28	29	no_propeptide				0	0
+l1-p1624	l1-p1624	PCDHGB3	native_site	30	31	no_propeptide				0	0
+l1-p1628	l1-p1628	PCDHGB7	igk_swap	30	31	no_propeptide				0	0
+l1-p1627	l1-p1627	PCDHGB6	igk_swap	30	31	no_propeptide				0	0
+l1-p1793	l1-p1793	SEMA6C	native_site	24	25	no_propeptide				0	0
+l1-p1611	l1-p1611	PCDHGA1	native_site	28	29	no_propeptide				0	0
+l1-p1617	l1-p1617	PCDHGA5	native_site	29	30	no_propeptide				0	0
+l1-p1623	l1-p1623	PCDHGB2	native_site	30	31	no_propeptide				0	0
+l1-p2313	l1-p2313	UNC5C	igk_swap	40	44	no_propeptide				0	0
+l1-p1614	l1-p1614	PCDHGA12	native_site	28	29	no_propeptide				0	0
+l1-p1615	l1-p1615	PCDHGA2	native_site	28	29	no_propeptide				0	0
+l1-p1618	l1-p1618	PCDHGA6	native_site	29	30	no_propeptide				0	0
+l1-p1619	l1-p1619	PCDHGA7	igk_swap	28	30	no_propeptide				0	0
+l1-p1620	l1-p1620	PCDHGA8	native_site	29	30	no_propeptide				0	0
+l1-p1621	l1-p1621	PCDHGA9	native_site	28	29	no_propeptide				0	0
+l1-p2256	l1-p2256	TPO	native_site	18	21	no_propeptide				0	0
+l1-p1629	l1-p1629	PCDHGC3	igk_swap	31	33	no_propeptide				0	0
+l1-p1613	l1-p1613	PCDHGA11	native_site	29	30	no_propeptide				0	0
+l1-p1590	l1-p1590	PCDHA5	native_site	28	29	no_propeptide				0	0
+l1-p1612	l1-p1612	PCDHGA10	native_site	32	33	no_propeptide				0	0
+l1-p2356	l1-p2356	ZNRF3	igk_swap	55	56	no_propeptide				0	0
+l1-p1592	l1-p1592	PCDHA7	native_site	29	30	no_propeptide				0	0
+l1-p1746	l1-p1746	ROR1	native_site	29	36	no_propeptide				0	0
+l1-p1630	l1-p1630	PCDHGC4	igk_swap	29	31	no_propeptide				0	0
+l1-p0672	l1-p0672	GABBR2	native_site	41	42	no_propeptide				0	0
+l1-p1586	l1-p1586	PCDHA12	native_site	29	30	no_propeptide				0	0
+l1-p0385	l1-p0385	CLCA2	native_site	32	34	no_propeptide				0	0
+l1-p1747	l1-p1747	ROR2	native_site	33	48	no_propeptide				0	0
+l1-p1631	l1-p1631	PCDHGC5	native_site	29	30	no_propeptide				0	0
+l1-p2312	l1-p2312	UNC5B	native_site	26	31	no_propeptide				0	0
+l1-p1136	l1-p1136	LRRC37B	native_site	27	30	no_propeptide				0	0
+l1-p1584	l1-p1584	PCDHA10	native_site	28	29	no_propeptide				0	0
+l1-p1588	l1-p1588	PCDHA2	native_site	29	30	no_propeptide				0	0
+l1-p0816	l1-p0816	GRIK1	igk_swap	34	39	no_propeptide				0	0
+l1-p1585	l1-p1585	PCDHA11	native_site	29	30	no_propeptide				0	0
+l1-p1583	l1-p1583	PCDHA1	native_site	29	30	no_propeptide				0	0
+l1-p1587	l1-p1587	PCDHA13	native_site	29	30	no_propeptide				0	0
+l1-p1589	l1-p1589	PCDHA3	native_site	29	30	no_propeptide				0	0
+l1-p1591	l1-p1591	PCDHA6	native_site	29	30	no_propeptide				0	0
+l1-p1593	l1-p1593	PCDHA9	native_site	29	30	no_propeptide				0	0
+l1-p0237	l1-p0237	CATSPERE	native_site	19	21	no_propeptide				0	0
+l1-p0444	l1-p0444	CNNM1	igk_swap	38	39	no_propeptide				0	0
+l1-p1084	l1-p1084	LGR4	native_site	24	26	no_propeptide				0	0
+l1-p2314	l1-p2314	UNC5D	native_site	33	36	no_propeptide				0	0
+l1-p2627	l1-p2627	UNC5D	native_site	32	42	no_propeptide				0	0
+l1-p0436	l1-p0436	CLSTN2	native_site	22	23	no_propeptide			31	0	1
+l1-p1203	l1-p1203	MDGA1	native_site	18	20	no_propeptide				0	0
+l1-p0437	l1-p0437	CLSTN3	native_site	19	20	no_propeptide				0	0
+l1-p0819	l1-p0819	GRIK4	native_site	20	22	no_propeptide				0	0
+l1-p2051	l1-p2051	SLITRK5	native_site	38	40	no_propeptide				0	0
+l1-p1616	l1-p1616	PCDHGA4	igk_swap	59	61	no_propeptide				0	0
+l1-p1129	l1-p1129	LRP8	native_site	34	37	no_propeptide				0	0
+l1-p1594	l1-p1594	PCDHAC1	native_site	20	21	no_propeptide				0	0
+l1-p0036	l1-p0036	ADAM22	native_site	25	222	propeptide	26-222:mapped	constitutive		0	0
+l1-p1086	l1-p1086	LGR6	native_site	24	30	no_propeptide				0	0
+l1-p2514	l1-p2514	SLC8A1	native_site	35	48	no_propeptide				0	0
+l1-p2425	l1-p2425	CSF1R	native_site	19	22	no_propeptide				0	0
+l1-p1725	l1-p1725	RECK	native_site	26	31	no_propeptide				0	0
+l1-p0480	l1-p0480	CSF1R	native_site	19	21	no_propeptide				0	0
+l1-p2460	l1-p2460	KIT	native_site	25	29	no_propeptide				0	0
+l1-p1566	l1-p1566	PAM	native_site	20	33	propeptide	21-30:identical	constitutive		0	0
+l1-p2023	l1-p2023	SLC8A1	native_site	35	48	no_propeptide				0	0
+l1-p2480	l1-p2480	PCDH8	native_site	29	30	no_propeptide				0	0
+l1-p0572	l1-p0572	EPHA1	native_site	25	26	no_propeptide				0	0
+l1-p0574	l1-p0574	EPHA2	native_site	24	25	no_propeptide				0	0
+l1-p1065	l1-p1065	KIT	native_site	25	29	no_propeptide				0	0
+l1-p0630	l1-p0630	FCRL5	native_site	15	19	no_propeptide				0	0
+l1-p2049	l1-p2049	SLITRK3	native_site	28	39	no_propeptide				0	0
+l1-p3077	l1-p3077	EPHA2	native_site	21	22	no_propeptide				0	0
+l1-p1541	l1-p1541	OSMR	igk_swap	27	28	no_propeptide				0	0
+l1-p0435	l1-p0435	CLSTN1	native_site	28	29	no_propeptide				0	0
+l1-p0061	l1-p0061	ADGRD2	native_site	18	33	no_propeptide				0	0
+l1-p0575	l1-p0575	EPHA3	native_site	20	24	no_propeptide				0	0
+l1-p0581	l1-p0581	EPHB1	native_site	17	18	no_propeptide				0	0
+l1-p0576	l1-p0576	EPHA4	native_site	19	20	no_propeptide				0	0
+l1-p0582	l1-p0582	EPHB2	native_site	19	21	no_propeptide				0	0
+l1-p0584	l1-p0584	EPHB4	native_site	15	17	no_propeptide				0	0
+l1-p2989	l1-p2989	EPHB2	native_site	19	21	no_propeptide				0	0
+l1-p0646	l1-p0646	FLT3	igk_swap	27	30	no_propeptide				0	0
+l1-p1801	l1-p1801	SEZ6	native_site	19	24	no_propeptide				0	0
+l1-p2200	l1-p2200	TMEM67	native_site	36	38	no_propeptide				0	0
+l1-p2391	l1-p2391	ADGRF3	native_site	25	35	no_propeptide				0	0
+l1-p0579	l1-p0579	EPHA7	native_site	27	28	no_propeptide				0	0
+l1-p0583	l1-p0583	EPHB3	native_site	37	39	no_propeptide				0	0
+l1-p0535	l1-p0535	DSG3	native_site	23	49	propeptide	24-49:identical	constitutive	49	0	0
+l1-p1210	l1-p1210	MERTK	native_site	25	41	no_propeptide				0	0
+l1-p2392	l1-p2392	ADGRG2	native_site	37	51	no_propeptide				0	0
+l1-p0580	l1-p0580	EPHA8	native_site	27	28	no_propeptide				0	0
+l1-p0815	l1-p0815	GRID2	igk_swap	23	24	no_propeptide				0	0
+l1-p1595	l1-p1595	PCDHAC2	native_site	42	43	no_propeptide				0	0
+l1-p1745	l1-p1745	ROBO4	native_site	27	29	no_propeptide				0	0
+l1-p3115	l1-p3115	CNTN1	native_site	20	26	no_propeptide				0	0
+l1-p0573	l1-p0573	EPHA10	native_site	33	35	no_propeptide				0	0
+l1-p0814	l1-p0814	GRID1	native_site	20	21	no_propeptide				0	0
+l1-p2993	l1-p2993	GRID1	native_site	20	21	no_propeptide				0	0
+l1-p1067	l1-p1067	KL	native_site	33	34	no_propeptide				0	0
+l1-p0577	l1-p0577	EPHA5	igk_swap	55	57	no_propeptide				0	0
+l1-p0070	l1-p0070	ADGRG2	native_site	37	51	no_propeptide				0	0
+l1-p0451	l1-p0451	CNTN1	native_site	20	29	no_propeptide				0	0
+l1-p0254	l1-p0254	CD101	native_site	20	21	no_propeptide				0	0
+l1-p0585	l1-p0585	EPHB6	native_site	31	33	no_propeptide				0	0
+l1-p2167	l1-p2167	TMEM132A	native_site	36	37	no_propeptide				0	0
+l1-p1802	l1-p1802	SEZ6L	native_site	28	48	no_propeptide				0	0
+l1-p1204	l1-p1204	MDGA2	no_nterm_arm			no_propeptide			16;17	0	0
+l1-p0454	l1-p0454	CNTN4	native_site	18	21	no_propeptide				0	0
+l1-p3072	l1-p3072	CNTN4	native_site	18	20	no_propeptide				0	0
+l1-p1767	l1-p1767	SCART1	native_site	24	25	no_propeptide				0	0
+l1-p0453	l1-p0453	CNTN3	native_site	19	21	no_propeptide				0	0
+l1-p0456	l1-p0456	CNTN6	native_site	19	22	no_propeptide				0	0
+l1-p1791	l1-p1791	SEMA6A	native_site	18	19	no_propeptide				0	0
+l1-p0962	l1-p0962	ITGA4	native_site	33	35	no_propeptide				0	0
+l1-p0967	l1-p0967	ITGA9	native_site	29	31	no_propeptide				0	0
+l1-p0476	l1-p0476	CRIM1	native_site	34	35	no_propeptide				0	0
+l1-p0578	l1-p0578	EPHA6	igk_swap	22	29	no_propeptide				0	0
+l1-p1637	l1-p1637	PEAR1	native_site	20	22	no_propeptide				0	0
+l1-p0182	l1-p0182	BMPR2	native_site	26	30	no_propeptide				0	0
+l1-p0452	l1-p0452	CNTN2	native_site	30	33	no_propeptide				0	0
+l1-p1575	l1-p1575	PCDH10	native_site	18	19	no_propeptide				0	0
+l1-p1310	l1-p1310	NPR2	native_site	16	20	no_propeptide				0	0
+l1-p0968	l1-p0968	ITGAV	native_site	30	31	no_propeptide				0	0
+l1-p0533	l1-p0533	DSG1	native_site	23	49	propeptide	24-49:identical	constitutive	49	0	0
+l1-p0963	l1-p0963	ITGA5	igk_swap	41	43	no_propeptide				0	0
+l1-p0961	l1-p0961	ITGA3	native_site	32	33	no_propeptide				0	0
+l1-p3086	l1-p3086	ITGA3	native_site	32	34	no_propeptide				0	0
+l1-p2436	l1-p2436	EPHB2	native_site	19	21	no_propeptide				0	0
+l1-p2453	l1-p2453	ITGA6	native_site	23	27	no_propeptide				0	0
+l1-p1309	l1-p1309	NPR1	native_site	32	33	no_propeptide				0	0
+l1-p0966	l1-p0966	ITGA8	native_site	38	39	no_propeptide				0	0
+l1-p1119	l1-p1119	LRIG2	native_site	40	41	no_propeptide				0	0
+l1-p1581	l1-p1581	PCDH8	native_site	29	30	no_propeptide				0	0
+l1-p1707	l1-p1707	PTK7	igk_swap	30	32	no_propeptide				0	0
+l1-p1049	l1-p1049	KIAA0319	native_site	20	25	no_propeptide				0	0
+l1-p0831	l1-p0831	GUCY2C	igk_swap	23	25	no_propeptide				0	0
+l1-p0964	l1-p0964	ITGA6	igk_swap	23	25	no_propeptide				0	0
+l1-p1794	l1-p1794	SEMA6D	native_site	20	21	no_propeptide				0	0
+l1-p1790	l1-p1790	SEMA5A	native_site	22	29	no_propeptide				0	0
+l1-p2170	l1-p2170	TMEM132E	native_site	25	35	no_propeptide				0	0
+l1-p3110	l1-p3110	TMEM132E	native_site	25	31	no_propeptide				0	0
+l1-p0236	l1-p0236	CASR	native_site	19	22	no_propeptide				0	0
+l1-p0067	l1-p0067	ADGRF3	native_site	25	38	no_propeptide				0	0
+l1-p2168	l1-p2168	TMEM132B	native_site	26	29	no_propeptide				0	0
+l1-p2405	l1-p2405	CACNA2D3	native_site	33	37	no_propeptide				0	0
+l1-p1634	l1-p1634	PDGFRA	igk_swap	24	25	no_propeptide				0	0
+l1-p0216	l1-p0216	CACNA2D1	native_site	24	26	no_propeptide				0	0
+l1-p0217	l1-p0217	CACNA2D3	native_site	33	34	no_propeptide				0	0
+l1-p2980	l1-p2980	CACNA2D1	native_site	24	26	no_propeptide				0	0
+l1-p3068	l1-p3068	CACNA2D3	native_site	33	34	no_propeptide				0	0
+l1-p0470	l1-p0470	CR2	native_site	20	21	no_propeptide				0	0
+l1-p1118	l1-p1118	LRIG1	native_site	33	37	no_propeptide				0	0
+l1-p1089	l1-p1089	LIFR	native_site	44	46	no_propeptide				0	0
+l1-p2169	l1-p2169	TMEM132D	native_site	30	32	no_propeptide				0	0
+l1-p0455	l1-p0455	CNTN5	igk_swap	23	24	no_propeptide				0	0
+l1-p0832	l1-p0832	GUCY2D	native_site	51	52	no_propeptide				0	0
+l1-p2404	l1-p2404	CACNA2D1	native_site	24	26	no_propeptide				0	0
+l1-p1635	l1-p1635	PDGFRB	native_site	32	33	no_propeptide				0	0
+l1-p0833	l1-p0833	GUCY2F	igk_swap	50	51	no_propeptide				0	0
+l1-p1729	l1-p1729	RET	native_site	28	29	no_propeptide				0	0
+l1-p0183	l1-p0183	BOC	native_site	30	32	no_propeptide				0	0
+l1-p1711	l1-p1711	PTPRH	native_site	25	28	no_propeptide				0	0
+l1-p0534	l1-p0534	DSG2	native_site	23	49	propeptide	24-49:identical	constitutive	49	0	0
+l1-p1120	l1-p1120	LRIG3	native_site	27	45	no_propeptide				0	0
+l1-p2409	l1-p2409	CD163	igk_swap	45	47	no_propeptide				0	0
+l1-p0259	l1-p0259	CD163	igk_swap	45	47	no_propeptide				0	0
+l1-p2125	l1-p2125	TEK	native_site	22	23	no_propeptide				0	0
+l1-p3131	l1-p3131	ITGA6	igk_swap	23	25	no_propeptide				0	0
+l1-p1578	l1-p1578	PCDH18	native_site	27	28	no_propeptide				0	0
+l1-p0218	l1-p0218	CACNA2D4	igk_swap	19	64	no_propeptide				0	0
+l1-p0965	l1-p0965	ITGA7	igk_swap	33	35	no_propeptide				0	0
+l1-p3002	l1-p3002	MEGF10	native_site	25	27	no_propeptide				0	0
+l1-p2141	l1-p2141	TIE1	native_site	21	22	no_propeptide				0	0
+l1-p1542	l1-p1542	OTOA	native_site	22	29	no_propeptide				0	0
+l1-p1205	l1-p1205	MEGF10	native_site	25	27	no_propeptide				0	0
+l1-p1206	l1-p1206	MEGF11	native_site	19	21	no_propeptide				0	0
+l1-p1579	l1-p1579	PCDH19	native_site	21	22	no_propeptide				0	0
+l1-p1690	l1-p1690	PRTG	native_site	35	36	no_propeptide				0	0
+l1-p0854	l1-p0854	HEPH	native_site	23	24	no_propeptide				0	0
+l1-p0238	l1-p0238	CATSPERG	igk_swap	37	38	no_propeptide				0	0
+l1-p0855	l1-p0855	HEPHL1	native_site	27	28	no_propeptide				0	0
+l1-p1577	l1-p1577	PCDH17	native_site	17	19	no_propeptide				0	0
+l1-p2059	l1-p2059	SORCS2	native_site	50	68	no_propeptide				0	0
+l1-p1083	l1-p1083	LEPR	igk_swap	21	25	no_propeptide				0	0
+l1-p0958	l1-p0958	ITGA10	igk_swap	22	24	no_propeptide				0	0
+l1-p2058	l1-p2058	SORCS1	native_site	33	49	no_propeptide				0	0
+l1-p1289	l1-p1289	NFASC	native_site	24	28	no_propeptide				0	0
+l1-p2418	l1-p2418	CHL1	native_site	24	28	no_propeptide				0	0
+l1-p0908	l1-p0908	IGSF9	native_site	20	23	no_propeptide				0	0
+l1-p0957	l1-p0957	ITGA1	native_site	28	29	no_propeptide				0	0
+l1-p0960	l1-p0960	ITGA2	native_site	29	30	no_propeptide				0	0
+l1-p1576	l1-p1576	PCDH12	igk_swap	24	26	no_propeptide				0	0
+l1-p0959	l1-p0959	ITGA11	native_site	22	24	no_propeptide				0	0
+l1-p3099	l1-p3099	PRTG	native_site	29	31	no_propeptide				0	0
+l1-p0820	l1-p0820	GRM1	igk_swap	18	35	no_propeptide				0	0
+l1-p0905	l1-p0905	IGSF3	native_site	19	20	no_propeptide				0	0
+l1-p1582	l1-p1582	PCDH9	native_site	23	24	no_propeptide				0	0
+l1-p3011	l1-p3011	PCDH9	native_site	23	29	no_propeptide				0	0
+l1-p0551	l1-p0551	EGFR	native_site	24	26	no_propeptide				0	0
+l1-p0824	l1-p0824	GRM5	igk_swap	18	23	no_propeptide				0	0
+l1-p0762	l1-p0762	GPR158	native_site	24	32	no_propeptide				0	0
+l1-p1715	l1-p1715	PTPRO	native_site	29	30	no_propeptide				0	0
+l1-p0980	l1-p0980	JAG1	native_site	31	33	no_propeptide				0	0
+l1-p2978	l1-p2978	ADGRG6	native_site	37	42	no_propeptide				0	0
+l1-p0073	l1-p0073	ADGRG6	native_site	37	38	no_propeptide				0	0
+l1-p2060	l1-p2060	SORCS3	igk_swap	33	133	propeptide	34-133:identical	constitutive		0	0
+l1-p0372	l1-p0372	CHL1	native_site	24	28	no_propeptide				0	0
+l1-p1574	l1-p1574	PCDH1	native_site	57	58	no_propeptide				0	0
+l1-p2481	l1-p2481	PCDH9	native_site	23	24	no_propeptide				0	0
+l1-p0981	l1-p0981	JAG2	native_site	26	27	no_propeptide				0	0
+l1-p0951	l1-p0951	IMPG2	native_site	29	49	no_propeptide			81	0	1
+l1-p1308	l1-p1308	NPHS1	native_site	22	27	no_propeptide				0	0
+l1-p3132	l1-p3132	L1CAM	igk_swap	19	27	no_propeptide				0	0
+l1-p0897	l1-p0897	IGDCC4	native_site	24	29	no_propeptide				0	0
+l1-p0587	l1-p0587	ERBB2	native_site	22	23	no_propeptide				0	0
+l1-p1580	l1-p1580	PCDH7	native_site	30	31	no_propeptide				0	0
+l1-p3097	l1-p3097	PCDH7	native_site	30	33	no_propeptide				0	0
+l1-p1075	l1-p1075	L1CAM	igk_swap	19	31	no_propeptide				0	0
+l1-p0358	l1-p0358	CDON	native_site	25	26	no_propeptide				0	0
+l1-p3067	l1-p3067	CACHD1	igk_swap	49	54	no_propeptide				0	0
+l1-p0215	l1-p0215	CACHD1	igk_swap	37	39	no_propeptide				0	0
+l1-p0472	l1-p0472	CRB2	native_site	31	35	no_propeptide				0	0
+l1-p0458	l1-p0458	CNTNAP3	igk_swap	25	27	no_propeptide				0	0
+l1-p0459	l1-p0459	CNTNAP3B	igk_swap	25	27	no_propeptide				0	0
+l1-p0147	l1-p0147	ASTN1	native_site	21	22	no_propeptide				0	0
+l1-p2979	l1-p2979	ASTN1	native_site	21	22	no_propeptide				0	0
+l1-p0953	l1-p0953	INSRR	igk_swap	23	26	no_propeptide				0	0
+l1-p1319	l1-p1319	NRCAM	native_site	29	40	no_propeptide				0	0
+l1-p0015	l1-p0015	ACE	native_site	29	34	no_propeptide				0	0
+l1-p1709	l1-p1709	PTPRC	native_site	25	45	no_propeptide				0	0
+l1-p0461	l1-p0461	CNTNAP5	native_site	24	29	no_propeptide				0	0
+l1-p0460	l1-p0460	CNTNAP4	native_site	25	28	no_propeptide				0	0
+l1-p0589	l1-p0589	ERBB4	native_site	25	26	no_propeptide				0	0
+l1-p2990	l1-p2990	ERBB4	native_site	25	28	no_propeptide				0	0
+l1-p3073	l1-p3073	CNTNAP4	native_site	27	33	no_propeptide				0	0
+l1-p0355	l1-p0355	CDHR2	native_site	20	21	no_propeptide				0	0
+l1-p0056	l1-p0056	ADGRA3	native_site	38	54	no_propeptide				0	0
+l1-p3084	l1-p3084	IGSF1	native_site	23	25	no_propeptide				0	0
+l1-p0457	l1-p0457	CNTNAP2	native_site	27	31	no_propeptide				0	0
+l1-p1304	l1-p1304	NPC1L1	native_site	21	23	no_propeptide				0	0
+l1-p0901	l1-p0901	IGSF1	native_site	28	31	no_propeptide				0	0
+l1-p1712	l1-p1712	PTPRJ	native_site	38	57	no_propeptide				0	0
+l1-p0055	l1-p0055	ADGRA2	native_site	33	35	no_propeptide				0	0
+l1-p0645	l1-p0645	FLT1	native_site	26	29	no_propeptide				0	0
+l1-p0588	l1-p0588	ERBB3	igk_swap	19	24	no_propeptide				0	0
+l1-p0068	l1-p0068	ADGRF5	native_site	21	26	no_propeptide			51	0	1
+l1-p1047	l1-p1047	KDR	native_site	19	22	no_propeptide				0	0
+l1-p0648	l1-p0648	FLT4	native_site	24	26	no_propeptide				0	0
+l1-p0898	l1-p0898	IGF1R	native_site	30	31	no_propeptide				0	0
+l1-p2407	l1-p2407	CD109	native_site	21	24	no_propeptide				0	0
+l1-p3075	l1-p3075	CPD	native_site	37	41	no_propeptide				0	0
+l1-p1743	l1-p1743	ROBO2	native_site	21	22	no_propeptide				0	0
+l1-p0164	l1-p0164	ATRNL1	igk_swap	60	61	no_propeptide				0	0
+l1-p0468	l1-p0468	CPD	native_site	31	36	no_propeptide				0	0
+l1-p0851	l1-p0851	HEG1	native_site	28	31	no_propeptide			73	0	1
+l1-p0952	l1-p0952	INSR	native_site	27	28	no_propeptide				0	0
+l1-p1744	l1-p1744	ROBO3	native_site	20	38	no_propeptide				0	0
+l1-p1211	l1-p1211	MET	native_site	24	25	no_propeptide				0	0
+l1-p1261	l1-p1261	MST1R	native_site	24	26	no_propeptide				0	0
+l1-p0075	l1-p0075	ADGRL2	native_site	25	27	no_propeptide				0	0
+l1-p0471	l1-p0471	CRB1	native_site	27	45	no_propeptide				0	0
+l1-p2408	l1-p2408	CD109	native_site	21	22	no_propeptide				0	0
+l1-p1717	l1-p1717	PTPRU	igk_swap	24	25	no_propeptide				0	0
+l1-p0909	l1-p0909	IGSF9B	native_site	20	25	no_propeptide				0	0
+l1-p3004	l1-p3004	MRC2	native_site	30	36	no_propeptide				0	0
+l1-p1713	l1-p1713	PTPRK	native_site	27	30	no_propeptide				0	0
+l1-p1716	l1-p1716	PTPRT	native_site	25	26	no_propeptide				0	0
+l1-p2934	l1-p2934	CD109	native_site	19	21	no_propeptide				0	0
+l1-p0255	l1-p0255	CD109	native_site	21	22	no_propeptide				0	0
+l1-p1710	l1-p1710	PTPRG	igk_swap	19	27	no_propeptide				0	0
+l1-p0505	l1-p0505	DCC	native_site	31	34	no_propeptide				0	0
+l1-p0260	l1-p0260	CD163L1	igk_swap	40	43	no_propeptide				0	0
+l1-p1240	l1-p1240	MRC1	igk_swap	19	20	no_propeptide				0	0
+l1-p1650	l1-p1650	PLB1	native_site	21	22	no_propeptide				0	0
+l1-p2493	l1-p2493	PTPRK	native_site	27	33	no_propeptide				0	0
+l1-p3120	l1-p3120	ADGRL2	native_site	25	27	no_propeptide				0	0
+l1-p1285	l1-p1285	NEO1	native_site	33	41	no_propeptide				0	0
+l1-p2494	l1-p2494	PTPRK	native_site	27	30	no_propeptide				0	0
+l1-p1648	l1-p1648	PLA2R1	native_site	20	25	no_propeptide				0	0
+l1-p1714	l1-p1714	PTPRM	native_site	20	21	no_propeptide				0	0
+l1-p0074	l1-p0074	ADGRL1	native_site	28	29	no_propeptide				0	0
+l1-p0076	l1-p0076	ADGRL3	native_site	19	20	no_propeptide				0	0
+l1-p1241	l1-p1241	MRC2	native_site	30	38	no_propeptide				0	0
+l1-p1329	l1-p1329	NRXN1	native_site	30	32	no_propeptide				0	0
+l1-p3094	l1-p3094	NRXN1	native_site	30	34	no_propeptide				0	0
+l1-p2474	l1-p2474	NRXN2	native_site	28	31	no_propeptide				0	0
+l1-p0059	l1-p0059	ADGRB3	native_site	25	27	no_propeptide				0	0
+l1-p2933	l1-p2933	ADGRL3	native_site	19	21	no_propeptide				0	0
+l1-p0058	l1-p0058	ADGRB2	native_site	20	26	no_propeptide				0	0
+l1-p1665	l1-p1665	PLXNC1	native_site	34	36	no_propeptide				0	0
+l1-p1331	l1-p1331	NRXN3	native_site	27	29	no_propeptide				0	0
+l1-p3066	l1-p3066	ADGRB1	native_site	30	46	no_propeptide				0	0
+l1-p0057	l1-p0057	ADGRB1	native_site	30	38	no_propeptide				0	0
+l1-p1128	l1-p1128	LRP6	igk_swap	19	21	no_propeptide				0	0
+l1-p1127	l1-p1127	LRP5	native_site	31	32	no_propeptide				0	0
+l1-p0099	l1-p0099	ALK	native_site	22	42	no_propeptide				0	0
+l1-p1135	l1-p1135	LRRC37A3	native_site	39	55	no_propeptide				0	0
+l1-p1742	l1-p1742	ROBO1	native_site	25	39	no_propeptide				0	0
+l1-p2139	l1-p2139	THSD7A	igk_swap	49	52	no_propeptide				0	0
+l1-p1330	l1-p1330	NRXN2	native_site	28	31	no_propeptide				0	0

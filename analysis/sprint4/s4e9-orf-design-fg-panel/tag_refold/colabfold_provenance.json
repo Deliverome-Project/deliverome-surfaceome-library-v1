@@ -1,0 +1,33 @@
+{
+ "image": "ghcr.io/sokrypton/colabfold@sha256:22f1243a8feca427b6942889d4dc3b549a3b75b23df9cf85c5f512a85e4f7f77",
+ "image_digest_note": "ghcr.io manifest digest the 1.6.2-cuda12 tag resolved to on 2026-11-13; Modal built the image from the tag (cached since 2026-10-14), so this pins the tag's current content, not a digest Modal recorded",
+ "image_registry_digest": "sha256:22f1243a8feca427b6942889d4dc3b549a3b75b23df9cf85c5f512a85e4f7f77",
+ "msa": "api.colabfold.com mmseqs2_uniref_env (use_env=True, use_filter=True), one per native protein, cached by native SHA-256; a tagged construct's MSA is the native one re-indexed by scripts/fold_tagged_modal.py::retarget",
+ "recorded": "2026-11-13, Claude Code session l1-tag-refold",
+ "settings": "alphafold2_ptm model_1, num_recycle=3, no relax, no templates, recompile padding default",
+ "versions": {
+  "alphafold-colabfold": "2.3.18",
+  "colabfold": "1.6.2",
+  "dm-haiku": "0.0.16",
+  "jax": "0.10.2",
+  "jaxlib": "0.10.2",
+  "numpy": "2.5.1"
+ },
+ "weights_sha256": {
+  "params/LICENSE": "e66c269d4819aaab34b49ef5220c4ddab6756f21bb5180761a4eb8561f2b7bbd",
+  "params/download_finished.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "params/params_model_1.npz": "f95e453e6a290ddf317ba1c9698d53fa110cf007ea979b0eae43e6ad38b4e364",
+  "params/params_model_1_ptm.npz": "5e564f79af5bcd54ccef6e2a6bb0ff01015d01650ebc41d4575e35f0de9ecc84",
+  "params/params_model_2.npz": "4da37ed3b71f08d935f913dfab0133977cd0d76ad37cd9333ff294d7fae43f87",
+  "params/params_model_2_ptm.npz": "23645d9a82c4af2ed54cd48a7b3c1c2575dc6aa9fe931adb4d7203ca5f0dc398",
+  "params/params_model_3.npz": "3cc4584dc0b0d1bdd1f7af14bd0692d00df3aa0e738d0d1b314821ad7eee4ffe",
+  "params/params_model_3_ptm.npz": "b53a724294cdd46a45d530b306bced8e429ffee74a4f9a2a897551b30966c415",
+  "params/params_model_4.npz": "b0a78b7e18661abc6097a905f48505004e6e3993c5dc41fb6820acf56e9c1d12",
+  "params/params_model_4_ptm.npz": "07d0e285ad1406ce3d91a2f6633a8ce9ee99155a53d24ee7783f8fd1e89f5d3a",
+  "params/params_model_5.npz": "5d261ec6e18ba87784541f5ce113570018b3338df61ae577661b6232358d47e7",
+  "params/params_model_5_ptm.npz": "2f8d0bd193e7d6e837958ba92acdc3f02b23b61bf841fa043fc076ee0e1996a5"
+ },
+ "image_used_through_2026_11_14": "ghcr.io/sokrypton/colabfold:1.6.2-cuda12",
+ "image_pin_check": "2026-11-14: fold_tagged_modal.py now pins the image by registry digest. The digest-pinned image was rebuilt on Modal and reports the same ColabFold, AlphaFold and JAX versions and the same SHA-256 for all 12 weight files as recorded here from the tag-built image.",
+ "weights_version": "AlphaFold2 monomer parameters, models 1-5 plain and _ptm (no multimer files): the set ColabFold 1.6.2 downloads for alphafold2_ptm, which its download code names alphafold_params_2021-07-14. The 12 SHA-256s in weights_sha256 are the identification of record; the release name is not read from the bytes."
+}

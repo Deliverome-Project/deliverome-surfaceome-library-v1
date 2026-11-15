@@ -1,160 +1,160 @@
-gene_symbol	gpi_anchored	basis	netgpi_anchored_forms	netgpi_total_forms	anchored_in_reference_form	anchored_only_in_alternative_form	best_anchored_likelihood	omega_site	omega_aa	reference_negative_likelihood	strongest_alt_negative_likelihood	in_curated_set
-ACHE	1	netgpi_anchored	1	12	0	1	0.402	589	E	0.993	0.993	1
-ALPG	1	netgpi_anchored	1	1	1	0	0.768	503	D			1
-ALPI	1	netgpi_anchored	1	2	1	0	0.774	503	D		0.985	0
-ALPL	1	netgpi_anchored	5	5	1	0	0.512	501	S			1
-ALPP	1	netgpi_anchored	1	1	1	0	0.774	506	D			1
-ART1	1	netgpi_anchored	1	1	1	0	0.676	294	N			1
-ART3	1	netgpi_anchored	25	30	1	0	0.487	277	S		0.996	1
-ART4	1	curated_netgpi_negative_low_confidence	0	4	0	0				0.534	0.991	1
-BCAN	1	netgpi_anchored	1	11	0	1	0.488	649	N	0.994	0.996	0
-BST1	1	netgpi_anchored	4	8	1	0	0.270	266	A		0.996	1
-BST2	1	netgpi_anchored	5	6	1	0	0.404	161	S		0.976	1
-CA4	1	netgpi_anchored	8	11	1	0	0.629	284	S		0.996	1
-CACNA2D1	1	netgpi_anchored	11	12	1	0	0.274	1072	G		0.993	1
-CACNA2D3	1	netgpi_anchored	5	9	1	0	0.563	1068	G		0.994	0
-CACNA2D4	1	netgpi_anchored	7	14	1	0	0.775	949	S		0.996	1
-CD109	1	netgpi_anchored	3	4	1	0	0.297	1421	S		0.994	1
-CD14	1	curated_netgpi_negative_low_confidence	0	2	0	0				0.388	0.388	1
-CD160	1	netgpi_anchored	4	7	1	0	0.755	159	S		0.993	1
-CD177	1	netgpi_anchored	6	9	0	1	0.470	408	G		0.994	1
-CD24	1	netgpi_anchored	4	5	1	0	0.362	107	A		0.986	1
-CD48	1	netgpi_anchored	3	5	1	0	0.477	131	S		0.995	1
-CD52	1	netgpi_anchored	1	1	1	0	0.501	36	S			1
-CD55	1	netgpi_anchored	17	26	0	1	0.607	290	S		0.996	1
-CD58	1	netgpi_anchored	2	6	0	1	0.480	208	S	0.954	0.993	1
-CD59	1	netgpi_anchored	7	13	1	0	0.643	102	N		0.992	1
-CDH13	1	netgpi_anchored	3	10	1	0	0.572	651	N		0.996	1
-CEACAM5	1	netgpi_anchored	29	31	1	0	0.331	496	S		0.994	1
-CEACAM6	1	netgpi_anchored	3	4	1	0	0.462	287	G		0.964	1
-CEACAM7	1	netgpi_anchored	7	7	1	0	0.479	239	S			0
-CEACAM8	1	netgpi_anchored	3	3	1	0	0.526	28	S			1
-CFC1	1	conflict_curated_vs_confident_netgpi_negative	0	3	0	0				0.931	0.982	1
-CFC1B	1	curated_netgpi_negative_low_confidence	0	0	0	0						1
-CLCA4	1	netgpi_anchored	13	14	1	0	0.664	876	N		0.957	0
-CNTFR	1	netgpi_anchored	6	7	1	0	0.476	322	S		0.994	1
-CNTN1	1	netgpi_anchored	3	9	1	0	0.765	1003	S		0.995	1
-CNTN2	1	netgpi_anchored	3	10	1	0	0.442	1029	N		0.995	1
-CNTN3	1	netgpi_anchored	4	4	1	0	0.331	838	S			1
-CNTN4	1	netgpi_anchored	5	10	1	0	0.578	256	S		0.994	1
-CNTN5	1	netgpi_anchored	3	4	1	0	0.626	998	S		0.994	1
-CNTN6	1	netgpi_anchored	3	4	1	0	0.600	6	S		0.994	1
-CPM	1	netgpi_anchored	7	12	1	0	0.767	15	S		0.996	1
-CPQ	1	curated_netgpi_negative_low_confidence	0	0	0	0						1
-CRIPTO	1	conflict_curated_vs_confident_netgpi_negative	0	10	0	0				0.745	0.749	1
-CRISP1	1	curated_netgpi_negative_low_confidence	0	0	0	0						1
-DHH	1	curated_netgpi_negative_low_confidence	0	0	0	0						1
-DPEP1	1	netgpi_anchored	4	6	1	0	0.437	383	S		0.995	1
-DPEP2	1	netgpi_anchored	6	11	1	0	0.403	456	S		0.995	1
-DPEP3	1	netgpi_anchored	3	3	1	0	0.417	489	S			1
-EFNA1	1	netgpi_anchored	3	3	1	0	0.769	160	S			1
-EFNA2	1	netgpi_anchored	1	1	1	0	0.278	189	N			1
-EFNA3	1	netgpi_anchored	3	3	1	0	0.621	212	S			1
-EFNA4	1	netgpi_anchored	1	3	1	0	0.290	173	S		0.996	1
-EFNA5	1	netgpi_anchored	2	2	1	0	0.825	176	N			1
-ENPP6	1	netgpi_anchored	2	3	1	0	0.545	359	S		0.995	1
-EPGN	0	netgpi_not_anchored	0	9	0	0				0.988	0.995	0
-EPPIN	0	netgpi_not_anchored	0	5	0	0				0.996	0.996	0
-FCGR3B	1	curated_netgpi_negative_low_confidence	0	5	0	0				0.445	0.994	1
-FOLR1	1	netgpi_anchored	1	1	1	0	0.594	234	S			1
-FOLR2	1	netgpi_anchored	5	11	1	0	0.787	189	N		0.996	1
-GAS1	1	netgpi_anchored	1	1	1	0	0.315	319	G			1
-GFRA1	1	netgpi_anchored	3	5	1	0	0.509	430	S		0.993	1
-GFRA2	1	netgpi_anchored	3	6	1	0	0.501	335	N		0.995	1
-GFRA3	1	netgpi_anchored	4	5	1	0	0.695	380	N		0.993	1
-GFRA4	1	netgpi_anchored	3	4	1	0	0.411	159	S		0.993	1
-GFRAL	1	curated_netgpi_negative_low_confidence	0	0	0	0						1
-GLIPR1L1	1	netgpi_anchored	2	2	1	0	0.570	212	G			0
-GML	1	conflict_curated_vs_confident_netgpi_negative	0	2	0	0				0.752	0.992	1
-GP2	1	netgpi_anchored	4	9	1	0	0.416	369	S		0.997	1
-GPC1	1	netgpi_anchored	6	11	1	0	0.716	582	S		0.995	1
-GPC2	1	netgpi_anchored	3	4	1	0	0.415	505	G		0.987	1
-GPC3	1	netgpi_anchored	9	10	1	0	0.328	503	N		0.994	1
-GPC4	1	netgpi_anchored	8	8	1	0	0.457	525	D			1
-GPC5	1	netgpi_anchored	2	2	1	0	0.322	27	G			1
-GPC6	1	netgpi_anchored	1	1	1	0	0.600	529	S			1
-GPIHBP1	1	netgpi_anchored	3	3	1	0	0.542	140	G			1
-HJV	1	netgpi_anchored	3	5	1	0	0.493	287	D		0.956	0
-HYAL2	1	netgpi_anchored	3	8	1	0	0.391	417	G		0.996	1
-HYAL4	1	curated_netgpi_negative_low_confidence	0	0	0	0						1
-IGLON5	1	netgpi_anchored	1	1	1	0	0.700	314	N			1
-IGSF21	1	netgpi_anchored	4	4	1	0	0.482	365	N			0
-ISLR	1	netgpi_anchored	1	3	1	0	0.220	403	G		0.993	0
-IZUMO1R	1	netgpi_anchored	2	2	1	0	0.662	228	S			0
-LMLN	1	netgpi_anchored	9	10	0	1	0.461	656	S		0.992	1
-LSAMP	1	netgpi_anchored	2	3	1	0	0.372	316	G		0.995	1
-LY6D	1	netgpi_anchored	1	1	1	0	0.805	98	N			1
-LY6E	1	netgpi_anchored	4	9	1	0	0.469	97	S		0.994	1
-LY6G5B	1	curated_netgpi_negative_low_confidence	0	0	0	0						1
-LY6G5C	1	curated_netgpi_negative_low_confidence	0	0	0	0						1
-LY6G6C	1	netgpi_anchored	2	2	1	0	0.543	98	N			1
-LY6G6D	1	netgpi_anchored	4	6	1	0	0.545	352	N		0.993	1
-LY6H	1	netgpi_anchored	2	2	1	0	0.346	112	G			1
-LY6K	1	netgpi_anchored	1	4	1	0	0.374	138	G		0.995	1
-LY6L	1	netgpi_anchored	2	2	1	0	0.264	117	G			1
-LY6S	1	netgpi_anchored	1	2	1	0	0.303	112	S		0.978	1
-LYNX1	1	netgpi_anchored	1	4	1	0	0.700	92	N		0.994	1
-LYPD1	1	netgpi_anchored	5	6	1	0	0.438	71	S		0.995	1
-LYPD2	1	netgpi_anchored	1	1	1	0	0.576	102	D			1
-LYPD3	1	netgpi_anchored	1	1	1	0	0.239	316	G			1
-LYPD4	1	curated_netgpi_negative_low_confidence	0	0	0	0						1
-LYPD5	1	netgpi_anchored	2	4	1	0	0.456	181	S		0.994	1
-LYPD6	1	netgpi_anchored	2	4	1	0	0.748	117	N		0.996	1
-LYPD6B	1	netgpi_anchored	3	6	1	0	0.407	164	S		0.994	1
-LYPD8	1	netgpi_anchored	2	2	1	0	0.526	215	S			1
-MDGA1	1	netgpi_anchored	2	11	1	0	0.675	938	S		0.996	1
-MDGA2	1	netgpi_anchored	3	7	1	0	0.466	931	D		0.995	1
-MELTF	1	netgpi_anchored	5	8	1	0	0.442	710	G		0.995	1
-MMP17	1	netgpi_anchored	5	8	1	0	0.327	481	S		0.982	1
-MMP25	1	netgpi_anchored	3	4	1	0	0.426	534	A		0.991	1
-MPPED1	1	curated_netgpi_negative_low_confidence	0	0	0	0						1
-MSLN	1	netgpi_anchored	34	42	1	0	0.736	549	S		0.995	1
-NCAM1	1	netgpi_anchored	4	17	0	1	0.631	705	N	0.992	0.995	0
-NEGR1	1	netgpi_anchored	2	2	1	0	0.529	324	G			1
-NRN1	1	netgpi_anchored	2	2	1	0	0.389	115	N			1
-NRN1L	1	netgpi_anchored	1	3	1	0	0.303	138	T		0.985	1
-NT5E	1	netgpi_anchored	7	10	1	0	0.386	549	S		0.994	1
-NTM	1	netgpi_anchored	7	11	1	0	0.586	321	N		0.996	1
-NTNG1	1	netgpi_anchored	7	8	1	0	0.294	511	D		0.993	1
-NTNG2	1	netgpi_anchored	4	5	1	0	0.580	507	G		0.992	1
-NYX	1	curated_netgpi_negative_low_confidence	0	1	0	0				0.549		1
-OMG	1	netgpi_anchored	1	1	1	0	0.343	417	S			1
-OPCML	1	netgpi_anchored	4	4	1	0	0.516	322	N			1
-OTOA	1	netgpi_anchored	5	6	1	0	0.228	1116	A		0.988	0
-PINLYP	1	curated_netgpi_negative_low_confidence	0	0	0	0						1
-PLAUR	1	netgpi_anchored	11	20	1	0	0.475	304	S		0.997	1
-PLET1	1	netgpi_anchored	1	1	1	0	0.519	187	S			0
-PRND	1	netgpi_anchored	1	1	1	0	0.790	152	G			0
-PRNP	1	netgpi_anchored	1	2	1	0	0.561	230	S		0.991	1
-PRSS21	1	netgpi_anchored	6	9	1	0	0.708	274	S		0.993	0
-PRSS41	1	netgpi_anchored	2	2	0	1	0.515	313	S			0
-PRSS55	1	netgpi_anchored	1	3	1	0	0.359	325	S		0.992	0
-PRSS8	1	netgpi_anchored	3	5	1	0	0.546	313	S		0.994	1
-PSCA	1	netgpi_anchored	2	3	1	0	0.398	86	S		0.994	1
-RAET1G	1	conflict_curated_vs_confident_netgpi_negative	0	5	0	0				0.984	0.992	1
-RAET1L	1	netgpi_anchored	1	1	1	0	0.505	216	S			1
-RECK	1	netgpi_anchored	8	8	1	0	0.668	942	S			1
-RGMA	1	netgpi_anchored	4	8	1	0	0.514	424	A		0.995	1
-RGMB	1	netgpi_anchored	1	1	0	1	0.233	411	S			1
-RTN4R	1	netgpi_anchored	3	3	1	0	0.516	447	S			1
-RTN4RL1	1	netgpi_anchored	1	1	1	0	0.488	420	S			1
-RTN4RL2	1	netgpi_anchored	1	3	1	0	0.300	395	D		0.993	1
-SEMA7A	1	netgpi_anchored	3	3	1	0	0.279	645	C			1
-SMPDL3B	1	netgpi_anchored	6	9	1	0	0.575	432	S		0.994	1
-SPACA4	1	netgpi_anchored	1	1	1	0	0.429	97	N			0
-SPAM1	1	netgpi_anchored	1	3	1	0	0.578	483	N		0.989	0
-SPRN	1	netgpi_anchored	1	1	1	0	0.616	125	S			1
-TEX101	1	netgpi_anchored	2	2	1	0	0.711	222	N			0
-TFPI	1	netgpi_anchored	1	17	0	1	0.726	221	N	0.995	0.996	0
-THY1	1	netgpi_anchored	5	8	1	0	0.232	132	G		0.994	1
-TNFRSF10C	1	netgpi_anchored	1	2	1	0	0.423	236	A		0.996	0
-TRABD2A	1	netgpi_anchored	7	8	1	0	0.656	480	S		0.988	0
-TRABD2B	1	netgpi_anchored	5	5	1	0	0.437	490	S			0
-TREH	1	netgpi_anchored	3	4	1	0	0.776	556	S		0.996	1
-ULBP1	1	netgpi_anchored	2	2	1	0	0.324	222	A			0
-ULBP2	1	netgpi_anchored	1	1	1	0	0.504	216	S			1
-ULBP3	1	netgpi_anchored	2	2	1	0	0.248	217	G			0
-UMOD	1	netgpi_anchored	11	19	1	0	0.368	589	S		0.992	0
-VNN1	1	netgpi_anchored	1	1	1	0	0.343	487	N			1
-VNN2	1	netgpi_anchored	3	15	1	0	0.289	497	N		0.996	1
-XPNPEP2	1	netgpi_anchored	6	6	1	0	0.443	649	A			1
+gene_symbol	gpi_anchored	basis	netgpi_anchored_forms	netgpi_total_forms	anchored_in_reference_form	anchored_only_in_alternative_form	best_anchored_likelihood	omega_site	omega_aa	omega_form	omega_form_length	propeptide_aa	omega_site_reference	reference_negative_likelihood	strongest_alt_negative_likelihood	in_curated_set
+ACHE	1	netgpi_anchored	1	12	0	1	0.402	589	E	alt_P22303-2	617	28		0.993	0.993	1
+ALPG	1	netgpi_anchored	1	1	1	0	0.768	503	D	ref_P10696	532	29	503			1
+ALPI	1	netgpi_anchored	1	2	1	0	0.774	503	D	ref_P09923	528	25	503		0.985	0
+ALPL	1	netgpi_anchored	5	5	1	0	0.512	501	S	ref_P05186	524	23	501			1
+ALPP	1	netgpi_anchored	1	1	1	0	0.774	506	D	ref_P05187	535	29	506			1
+ART1	1	netgpi_anchored	1	1	1	0	0.676	294	N	ref_P52961	327	33	294			1
+ART3	1	netgpi_anchored	25	30	1	0	0.487	277	S	alt_ENST00000960247	304	27	362		0.996	1
+ART4	1	curated_netgpi_negative_low_confidence	0	4	0	0								0.534	0.991	1
+BCAN	1	netgpi_anchored	1	11	0	1	0.488	649	N	alt_Q96GW7-2	671	22		0.994	0.996	0
+BST1	1	netgpi_anchored	4	8	1	0	0.270	266	A	alt_ENST00000897441	298	32	285		0.996	1
+BST2	1	netgpi_anchored	5	6	1	0	0.404	161	S	ref_Q10589	180	19	161		0.976	1
+CA4	1	netgpi_anchored	8	11	1	0	0.629	284	S	ref_P22748	312	28	284		0.996	1
+CACNA2D1	1	netgpi_anchored	11	12	1	0	0.274	1072	G	alt_P54289	1103	31	1060		0.993	1
+CACNA2D3	1	netgpi_anchored	5	9	1	0	0.563	1068	G	ref_Q8IZS8	1091	23	1068		0.994	0
+CACNA2D4	1	netgpi_anchored	7	14	1	0	0.775	949	S	alt_Q7Z3S7-2	974	25	1110		0.996	1
+CD109	1	netgpi_anchored	3	4	1	0	0.297	1421	S	ref_Q6YHK3	1445	24	1421		0.994	1
+CD14	1	curated_netgpi_negative_low_confidence	0	2	0	0								0.388	0.388	1
+CD160	1	netgpi_anchored	4	7	1	0	0.755	159	S	ref_O95971	181	22	159		0.993	1
+CD177	1	netgpi_anchored	6	9	0	1	0.470	408	G	alt_Q8N6Q3	437	29			0.994	1
+CD24	1	netgpi_anchored	4	5	1	0	0.362	107	A	alt_P25063-2	129	22	58		0.986	1
+CD48	1	netgpi_anchored	3	5	1	0	0.477	131	S	alt_ENST00000902593	154	23	220		0.995	1
+CD52	1	netgpi_anchored	1	1	1	0	0.501	36	S	ref_P31358	61	25	36			1
+CD55	1	netgpi_anchored	17	26	0	1	0.607	290	S	alt_ENST00000695823	318	28			0.996	1
+CD58	1	netgpi_anchored	2	6	0	1	0.480	208	S	alt_P19256-2	237	29		0.954	0.993	1
+CD59	1	netgpi_anchored	7	13	1	0	0.643	102	N	alt_ENST00000528700	120	18	102		0.992	1
+CDH13	1	netgpi_anchored	3	10	1	0	0.572	651	N	alt_P55290-5	674	23	690		0.996	1
+CEACAM5	1	netgpi_anchored	29	31	1	0	0.331	496	S	alt_ENST00000888529	523	27	675		0.994	1
+CEACAM6	1	netgpi_anchored	3	4	1	0	0.462	287	G	alt_ENST00000943164	311	24	320		0.964	1
+CEACAM7	1	netgpi_anchored	7	7	1	0	0.479	239	S	alt_ENST00000869058	262	23	242			0
+CEACAM8	1	netgpi_anchored	3	3	1	0	0.526	28	S	alt_ENST00000599005	51	23	326			1
+CFC1	1	conflict_curated_vs_confident_netgpi_negative	0	3	0	0								0.931	0.982	1
+CFC1B	1	curated_netgpi_negative_low_confidence	0	0	0	0										1
+CLCA4	1	netgpi_anchored	13	14	1	0	0.664	876	N	alt_ENST00000967246	903	27	892		0.957	0
+CNTFR	1	netgpi_anchored	6	7	1	0	0.476	322	S	alt_ENST00000950025	352	30	342		0.994	1
+CNTN1	1	netgpi_anchored	3	9	1	0	0.765	1003	S	alt_ENST00000901032	1028	25	993		0.995	1
+CNTN2	1	netgpi_anchored	3	10	1	0	0.442	1029	N	alt_ENST00000853779	1057	28	1012		0.995	1
+CNTN3	1	netgpi_anchored	4	4	1	0	0.331	838	S	alt_ENST00000906976	864	26	1002			1
+CNTN4	1	netgpi_anchored	5	10	1	0	0.578	256	S	alt_Q8IWV2-2	282	26	1000		0.994	1
+CNTN5	1	netgpi_anchored	3	4	1	0	0.626	998	S	alt_O94779-2	1026	28	1072		0.994	1
+CNTN6	1	netgpi_anchored	3	4	1	0	0.600	6	S	alt_ENST00000394261	41	35	998		0.994	1
+CPM	1	netgpi_anchored	7	12	1	0	0.767	15	S	alt_ENST00000546556	35	20	423		0.996	1
+CPQ	1	curated_netgpi_negative_low_confidence	0	0	0	0										1
+CRIPTO	1	conflict_curated_vs_confident_netgpi_negative	0	10	0	0								0.745	0.749	1
+CRISP1	1	curated_netgpi_negative_low_confidence	0	0	0	0										1
+DHH	1	curated_netgpi_negative_low_confidence	0	0	0	0										1
+DPEP1	1	netgpi_anchored	4	6	1	0	0.437	383	S	alt_ENST00000936230	409	26	385		0.995	1
+DPEP2	1	netgpi_anchored	6	11	1	0	0.403	456	S	alt_ENST00000970169	477	21	465		0.995	1
+DPEP3	1	netgpi_anchored	3	3	1	0	0.417	489	S	alt_ENST00000672962	513	24	464			1
+EFNA1	1	netgpi_anchored	3	3	1	0	0.769	160	S	alt_P20827-2	183	23	182			1
+EFNA2	1	netgpi_anchored	1	1	1	0	0.278	189	N	ref_O43921	213	24	189			1
+EFNA3	1	netgpi_anchored	3	3	1	0	0.621	212	S	alt_ENST00000922316	237	25	213			1
+EFNA4	1	netgpi_anchored	1	3	1	0	0.290	173	S	ref_P52798	201	28	173		0.996	1
+EFNA5	1	netgpi_anchored	2	2	1	0	0.825	176	N	alt_ENST00000509503	201	25	203			1
+ENPP6	1	netgpi_anchored	2	3	1	0	0.545	359	S	alt_ENST00000952351	380	21	419		0.995	1
+EPGN	0	netgpi_not_anchored	0	9	0	0								0.988	0.995	0
+EPPIN	0	netgpi_not_anchored	0	5	0	0								0.996	0.996	0
+FCGR3B	1	curated_netgpi_negative_low_confidence	0	5	0	0								0.445	0.994	1
+FOLR1	1	netgpi_anchored	1	1	1	0	0.594	234	S	ref_P15328	257	23	234			1
+FOLR2	1	netgpi_anchored	5	11	1	0	0.787	189	N	alt_ENST00000454954	214	25	230		0.996	1
+GAS1	1	netgpi_anchored	1	1	1	0	0.315	319	G	ref_P54826	345	26	319			1
+GFRA1	1	netgpi_anchored	3	5	1	0	0.509	430	S	alt_P56159-2	460	30	435		0.993	1
+GFRA2	1	netgpi_anchored	3	6	1	0	0.501	335	N	alt_O00451-3	359	24	440		0.995	1
+GFRA3	1	netgpi_anchored	4	5	1	0	0.695	380	N	alt_ENST00000962296	406	26	374		0.993	1
+GFRA4	1	netgpi_anchored	3	4	1	0	0.411	159	S	alt_ENST00000850978	183	24	245		0.993	1
+GFRAL	1	curated_netgpi_negative_low_confidence	0	0	0	0										1
+GLIPR1L1	1	netgpi_anchored	2	2	1	0	0.570	212	G	alt_Q6UWM5-2	233	21	221			0
+GML	1	conflict_curated_vs_confident_netgpi_negative	0	2	0	0								0.752	0.992	1
+GP2	1	netgpi_anchored	4	9	1	0	0.416	369	S	alt_P55259-2	390	21	513		0.997	1
+GPC1	1	netgpi_anchored	6	11	1	0	0.716	582	S	alt_ENST00000943307	610	28	530		0.995	1
+GPC2	1	netgpi_anchored	3	4	1	0	0.415	505	G	alt_ENST00000919185	530	25	554		0.987	1
+GPC3	1	netgpi_anchored	9	10	1	0	0.328	503	N	alt_P51654-2	526	23	557		0.994	1
+GPC4	1	netgpi_anchored	8	8	1	0	0.457	525	D	alt_ENST00000931830	553	28	528			1
+GPC5	1	netgpi_anchored	2	2	1	0	0.322	27	G	alt_ENST00000618283	51	24	547			1
+GPC6	1	netgpi_anchored	1	1	1	0	0.600	529	S	ref_Q9Y625	555	26	529			1
+GPIHBP1	1	netgpi_anchored	3	3	1	0	0.542	140	G	alt_ENST00000852008	171	31	153			1
+HJV	1	netgpi_anchored	3	5	1	0	0.493	287	D	alt_Q6ZVN8-2	313	26	400		0.956	0
+HYAL2	1	netgpi_anchored	3	8	1	0	0.391	417	G	alt_ENST00000945866	443	26	447		0.996	1
+HYAL4	1	curated_netgpi_negative_low_confidence	0	0	0	0										1
+IGLON5	1	netgpi_anchored	1	1	1	0	0.700	314	N	ref_A6NGN9	336	22	314			1
+IGSF21	1	netgpi_anchored	4	4	1	0	0.482	365	N	alt_ENST00000873158	388	23	444			0
+ISLR	1	netgpi_anchored	1	3	1	0	0.220	403	G	ref_O14498	428	25	403		0.993	0
+IZUMO1R	1	netgpi_anchored	2	2	1	0	0.662	228	S	alt_A6ND01	250	22	221			0
+LMLN	1	netgpi_anchored	9	10	0	1	0.461	656	S	alt_ENST00000954518	683	27			0.992	1
+LSAMP	1	netgpi_anchored	2	3	1	0	0.372	316	G	alt_ENST00000333617	345	29	315		0.995	1
+LY6D	1	netgpi_anchored	1	1	1	0	0.805	98	N	ref_Q14210	128	30	98			1
+LY6E	1	netgpi_anchored	4	9	1	0	0.469	97	S	alt_ENST00000891149	127	30	101		0.994	1
+LY6G5B	1	curated_netgpi_negative_low_confidence	0	0	0	0										1
+LY6G5C	1	curated_netgpi_negative_low_confidence	0	0	0	0										1
+LY6G6C	1	netgpi_anchored	2	2	1	0	0.543	98	N	ref_O95867	125	27	98			1
+LY6G6D	1	netgpi_anchored	4	6	1	0	0.545	352	N	alt_ENST00000400084	382	30	103		0.993	1
+LY6H	1	netgpi_anchored	2	2	1	0	0.346	112	G	alt_O94772	140	28	133			1
+LY6K	1	netgpi_anchored	1	4	1	0	0.374	138	G	ref_Q17RY6	165	27	138		0.995	1
+LY6L	1	netgpi_anchored	2	2	1	0	0.264	117	G	ref_H3BQJ8	138	21	117			1
+LY6S	1	netgpi_anchored	1	2	1	0	0.303	112	S	ref_P0DTL4	134	22	112		0.978	1
+LYNX1	1	netgpi_anchored	1	4	1	0	0.700	92	N	ref_P0DP58	116	24	92		0.994	1
+LYPD1	1	netgpi_anchored	5	6	1	0	0.438	71	S	alt_ENST00000892683	95	24	117		0.995	1
+LYPD2	1	netgpi_anchored	1	1	1	0	0.576	102	D	ref_Q6UXB3	125	23	102			1
+LYPD3	1	netgpi_anchored	1	1	1	0	0.239	316	G	ref_O95274	346	30	316			1
+LYPD4	1	curated_netgpi_negative_low_confidence	0	0	0	0										1
+LYPD5	1	netgpi_anchored	2	4	1	0	0.456	181	S	alt_Q6UWN5-2	208	27	224		0.994	1
+LYPD6	1	netgpi_anchored	2	4	1	0	0.748	117	N	alt_ENST00000880626	138	21	150		0.996	1
+LYPD6B	1	netgpi_anchored	3	6	1	0	0.407	164	S	alt_Q8NI32	183	19	188		0.994	1
+LYPD8	1	netgpi_anchored	2	2	1	0	0.526	215	S	alt_ENST00000961489	244	29	208			1
+MDGA1	1	netgpi_anchored	2	11	1	0	0.675	938	S	alt_ENST00000955606	961	23	932		0.996	1
+MDGA2	1	netgpi_anchored	3	7	1	0	0.466	931	D	alt_Q7Z553	956	25	1000		0.995	1
+MELTF	1	netgpi_anchored	5	8	1	0	0.442	710	G	alt_ENST00000937763	737	27	711		0.995	1
+MMP17	1	netgpi_anchored	5	8	1	0	0.327	481	S	alt_Q9ULZ9-2	519	38	565		0.982	1
+MMP25	1	netgpi_anchored	3	4	1	0	0.426	534	A	alt_ENST00000928201	557	23	539		0.991	1
+MPPED1	1	curated_netgpi_negative_low_confidence	0	0	0	0										1
+MSLN	1	netgpi_anchored	34	42	1	0	0.736	549	S	alt_ENST00000908607	573	24	598		0.995	1
+NCAM1	1	netgpi_anchored	4	17	0	1	0.631	705	N	alt_ENST00000401611	725	20		0.992	0.995	0
+NEGR1	1	netgpi_anchored	2	2	1	0	0.529	324	G	ref_Q7Z3B1	354	30	324			1
+NRN1	1	netgpi_anchored	2	2	1	0	0.389	115	N	ref_Q9NPD7	142	27	115			1
+NRN1L	1	netgpi_anchored	1	3	1	0	0.303	138	T	ref_Q496H8	165	27	138		0.985	1
+NT5E	1	netgpi_anchored	7	10	1	0	0.386	549	S	ref_P21589	574	25	549		0.994	1
+NTM	1	netgpi_anchored	7	11	1	0	0.586	321	N	ref_Q9P121	344	23	321		0.996	1
+NTNG1	1	netgpi_anchored	7	8	1	0	0.294	511	D	ref_Q9Y2I2	539	28	511		0.993	1
+NTNG2	1	netgpi_anchored	4	5	1	0	0.580	507	G	ref_Q96CW9	530	23	507		0.992	1
+NYX	1	curated_netgpi_negative_low_confidence	0	1	0	0								0.549		1
+OMG	1	netgpi_anchored	1	1	1	0	0.343	417	S	ref_P23515	440	23	417			1
+OPCML	1	netgpi_anchored	4	4	1	0	0.516	322	N	ref_Q14982	345	23	322			1
+OTOA	1	netgpi_anchored	5	6	1	0	0.228	1116	A	ref_Q7RTW8-5	1139	23	1116		0.988	0
+PINLYP	1	curated_netgpi_negative_low_confidence	0	0	0	0										1
+PLAUR	1	netgpi_anchored	11	20	1	0	0.475	304	S	ref_Q03405	335	31	304		0.997	1
+PLET1	1	netgpi_anchored	1	1	1	0	0.519	187	S	ref_Q6UQ28	207	20	187			0
+PRND	1	netgpi_anchored	1	1	1	0	0.790	152	G	ref_Q9UKY0	176	24	152			0
+PRNP	1	netgpi_anchored	1	2	1	0	0.561	230	S	ref_P04156	253	23	230		0.991	1
+PRSS21	1	netgpi_anchored	6	9	1	0	0.708	274	S	alt_Q9Y6M0-3	300	26	288		0.993	0
+PRSS41	1	netgpi_anchored	2	2	0	1	0.515	313	S	alt_ENST00000674256	334	21				0
+PRSS55	1	netgpi_anchored	1	3	1	0	0.359	325	S	ref_Q6UWB4	352	27	325		0.992	0
+PRSS8	1	netgpi_anchored	3	5	1	0	0.546	313	S	ref_Q16651	343	30	313		0.994	1
+PSCA	1	netgpi_anchored	2	3	1	0	0.398	86	S	ref_O43653	114	28	86		0.994	1
+RAET1G	1	conflict_curated_vs_confident_netgpi_negative	0	5	0	0								0.984	0.992	1
+RAET1L	1	netgpi_anchored	1	1	1	0	0.505	216	S	ref_Q5VY80	246	30	216			1
+RECK	1	netgpi_anchored	8	8	1	0	0.668	942	S	ref_O95980	971	29	942			1
+RGMA	1	netgpi_anchored	4	8	1	0	0.514	424	A	ref_Q96B86	450	26	424		0.995	1
+RGMB	1	netgpi_anchored	1	1	0	1	0.233	411	S	alt_Q6NW40	437	26				1
+RTN4R	1	netgpi_anchored	3	3	1	0	0.516	447	S	ref_Q9BZR6	473	26	447			1
+RTN4RL1	1	netgpi_anchored	1	1	1	0	0.488	420	S	ref_Q86UN2	441	21	420			1
+RTN4RL2	1	netgpi_anchored	1	3	1	0	0.300	395	D	ref_Q86UN3	420	25	395		0.993	1
+SEMA7A	1	netgpi_anchored	3	3	1	0	0.279	645	C	ref_O75326	666	21	645			1
+SMPDL3B	1	netgpi_anchored	6	9	1	0	0.575	432	S	ref_Q92485	455	23	432		0.994	1
+SPACA4	1	netgpi_anchored	1	1	1	0	0.429	97	N	ref_Q8TDM5	124	27	97			0
+SPAM1	1	netgpi_anchored	1	3	1	0	0.578	483	N	ref_P38567	509	26	483		0.989	0
+SPRN	1	netgpi_anchored	1	1	1	0	0.616	125	S	ref_Q5BIV9	151	26	125			1
+TEX101	1	netgpi_anchored	2	2	1	0	0.711	222	N	ref_Q9BY14	249	27	222			0
+TFPI	1	netgpi_anchored	1	17	0	1	0.726	221	N	alt_P10646-2	251	30		0.995	0.996	0
+THY1	1	netgpi_anchored	5	8	1	0	0.232	132	G	ref_P04216	161	29	132		0.994	1
+TNFRSF10C	1	netgpi_anchored	1	2	1	0	0.423	236	A	ref_O14798	259	23	236		0.996	0
+TRABD2A	1	netgpi_anchored	7	8	1	0	0.656	480	S	ref_Q86V40	505	25	480		0.988	0
+TRABD2B	1	netgpi_anchored	5	5	1	0	0.437	490	S	ref_A6NFA1	517	27	490			0
+TREH	1	netgpi_anchored	3	4	1	0	0.776	556	S	ref_O43280	583	27	556		0.996	1
+ULBP1	1	netgpi_anchored	2	2	1	0	0.324	222	A	ref_Q9BZM6	244	22	222			0
+ULBP2	1	netgpi_anchored	1	1	1	0	0.504	216	S	ref_Q9BZM5	246	30	216			1
+ULBP3	1	netgpi_anchored	2	2	1	0	0.248	217	G	ref_Q9BZM4	244	27	217			0
+UMOD	1	netgpi_anchored	11	19	1	0	0.368	589	S	alt_P07911-3	611	22	618		0.992	0
+VNN1	1	netgpi_anchored	1	1	1	0	0.343	487	N	ref_O95497	513	26	487			1
+VNN2	1	netgpi_anchored	3	15	1	0	0.289	497	N	ref_O95498	520	23	497		0.996	1
+XPNPEP2	1	netgpi_anchored	6	6	1	0	0.443	649	A	ref_O43895	674	25	649			1

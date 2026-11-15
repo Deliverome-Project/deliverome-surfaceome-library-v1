@@ -1,0 +1,21 @@
+species	band	topology_class	quota	sampleable	pass	review	fail	fail_fraction	start_site_eligible_transcript	quota_met_by_pass
+cyno	diverged	GPI	7	59	43	1	15	0.2542	0	True
+cyno	diverged	multipass	18	412	340	7	65	0.1578	0	True
+cyno	diverged	type I	15	329	248	15	66	0.2006	0	True
+cyno	diverged	type II	7	58	56	2	0	0.0	0	True
+cyno	diverged	type III	3	23	17	6	0	0.0	0	True
+cyno	near	GPI	7	46	46	0	0	0.0	0	True
+cyno	near	multipass	22	486	481	3	2	0.0041	0	True
+cyno	near	type I	12	274	265	4	5	0.0182	0	True
+cyno	near	type II	7	46	45	1	0	0.0	0	True
+cyno	near	type III	2	4	4	0	0	0.0	0	True
+mouse	diverged	GPI	7	56	51	2	3	0.0536	0	True
+mouse	diverged	multipass	18	430	409	9	12	0.0279	0	True
+mouse	diverged	type I	15	361	317	27	17	0.0471	0	True
+mouse	diverged	type II	8	70	65	3	2	0.0286	0	True
+mouse	diverged	type III	2	16	14	2	0	0.0	0	True
+mouse	near	GPI	7	46	43	1	2	0.0435	0	True
+mouse	near	multipass	23	548	533	10	5	0.0091	0	True
+mouse	near	type I	12	291	277	14	0	0.0	0	True
+mouse	near	type II	6	32	29	2	1	0.0312	0	True
+mouse	near	type III	2	10	9	1	0	0.0	0	True

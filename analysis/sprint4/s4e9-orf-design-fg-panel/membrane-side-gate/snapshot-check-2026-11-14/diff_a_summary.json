@@ -1,0 +1,56 @@
+{
+ "base": "<scratch>/snapcheck/r0 (a temporary rerun folder; see the README)",
+ "new": "<scratch>/snapcheck/ra (a temporary rerun folder; see the README)",
+ "base_pins": {
+  "panel_commit": "6bf341f231e0841ffea13e589c4119a909fde93f",
+  "cds_key": "sprint4/s4e9-orf-design-fg-panel/library-candidates/2026-11-12-ortholog-start-trims/candidate_cds.json",
+  "topology_snapshot_key": "accessible-surfaceome/topology/2026-11-06-ortholog-cds-policy/topology.parquet"
+ },
+ "new_pins": {
+  "panel_commit": "6bf341f231e0841ffea13e589c4119a909fde93f",
+  "cds_key": "sprint4/s4e9-orf-design-fg-panel/library-candidates/2026-11-12-ortholog-start-trims/candidate_cds.json",
+  "topology_snapshot_key": "accessible-surfaceome/topology/2026-11-12-cyno-restarts/topology.parquet"
+ },
+ "members_base": 583,
+ "members_new": 583,
+ "members_in_both": 583,
+ "members_with_any_change": 0,
+ "member_changes_by_field": {
+  "placement": 0,
+  "status": 0,
+  "topology_version": 0,
+  "topology_cohort": 0,
+  "topology_tool": 0,
+  "orientation_supported": 0,
+  "usable": 0,
+  "sequence_sha256": 0,
+  "mask": 0,
+  "junction_mask": 0,
+  "only_in_base": 0,
+  "only_in_new": 0
+ },
+ "sites_compared": 3250,
+ "site_verdict_changes": 0,
+ "shipped_site_verdict_changes": 0,
+ "sites_only_in_one_run": 0,
+ "base_shipped_by_verdict": {
+  "pass": 967,
+  "review_interface": 36,
+  "fail_membrane": 30,
+  "fail_cytoplasmic": 13,
+  "unscorable": 11,
+  "review_orientation": 6,
+  "fail_partner_interface": 5,
+  "hold_low_plddt": 2
+ },
+ "new_shipped_by_verdict": {
+  "pass": 967,
+  "review_interface": 36,
+  "fail_membrane": 30,
+  "fail_cytoplasmic": 13,
+  "unscorable": 11,
+  "review_orientation": 6,
+  "fail_partner_interface": 5,
+  "hold_low_plddt": 2
+ }
+}

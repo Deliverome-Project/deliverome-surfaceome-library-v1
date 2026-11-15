@@ -17,6 +17,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import sys
 from collections import Counter
 from pathlib import Path
 
@@ -49,7 +50,13 @@ def _tsv(path: Path) -> list[dict]:
 def reference_selection() -> list[dict]:
     from deliverome_analysis.s3 import processed
 
-    return _tsv(processed.download(PREFIX + "library-design/reference_selection.tsv"))
+    # The current record, read through the pipeline's own constant so the two cannot diverge.
+    # (Until 2026-11-13 this named the round-1 record, "2026-11-12-reference-fixes/", and so
+    # missed round 2; found by l1-proteoform-audit, PR #305.)
+    sys.path.insert(0, str(S4E9))
+    import library_pipeline as lp
+
+    return _tsv(processed.download(PREFIX + lp.REFERENCE_RECORD + "reference_selection.tsv"))
 
 
 def measure() -> dict:
@@ -126,7 +133,10 @@ def measure() -> dict:
             sorted(int(r["vector_bp"]) for r in active)[len(active) // 2],
             max(int(r["vector_bp"]) for r in active),
         ],
-        "igk_leader_members": sum(r["has_igk_leader"] == "True" for r in active),
+        # The manifest's has_igk_leader describes the untagged draft (only the retired rescue
+        # arms had one there); the Igk leader of the ordered N-terminal and multipass arms is
+        # counted from the order of record under "refold" ("ordered_igk_leader_inserts").
+        "untagged_draft_igk_leader_members": sum(r["has_igk_leader"] == "True" for r in active),
     }
     # The pool the panels were drawn from (check_universe_coverage.py, verify stage 5b).
     pool = json.loads((S4E9 / "universe_coverage_summary.json").read_text())
@@ -143,9 +153,20 @@ def measure() -> dict:
         "isoform_genes_outside_april_set": pool["isoform"]["of_which_outside_april_set"],
         "recorded_pairs_checked": pool["recorded_pairs_checked"],
     }
-    for name in ("isoform", "ortholog"):
-        s = json.loads((S4E9 / f"{name}_panel_summary.json").read_text())
-        n["tranches"][f"{name}_panel"] = s
+    n["tranches"]["isoform_panel"] = json.loads((S4E9 / "isoform_panel_summary.json").read_text())
+    # The ortholog panel L1 orders is the adopted CDS-policy draw, not the retired Compara 115
+    # panel that ortholog_panel_summary.json describes (fixed 2026-11-14, l1-reviewer-package).
+    final = json.loads((S4E9 / "ortholog_cds_final_panel_summary.json").read_text())
+    adopted = _tsv(S4E9 / "ortholog_panel_adopted.tsv")
+    n["tranches"]["ortholog_panel"] = {
+        "source": "ortholog_cds_final_panel_summary.json + ortholog_panel_adopted.tsv",
+        "seed": final["policy"]["seed"],
+        "cutoffs": final["policy"]["cutoffs"],
+        "selected": len(adopted),
+        "by_species": dict(Counter(r["species"] for r in adopted).most_common()),
+        "by_topology_class": dict(Counter(r["topology_class"] for r in adopted).most_common()),
+        "replaced_by_review": sum(bool(r["replaces"]) for r in adopted),
+    }
 
     # --- tag paths (L1 active members with a designed CDS; DeepTMHMM v1) ----------------
     tp = _tsv(S4E9 / "l1_tag_paths.tsv")
@@ -207,6 +228,40 @@ def measure() -> dict:
             r["verdict"] == "different" and r["orf_aa"] == r["model_aa"] for r in pma
         ),
     }
+
+    # --- refold verdicts of the ordered inserts (section 12) -----------------------------
+    # One verdict per insert in the order of record: fold_order_check.tsv names the fold of the
+    # exact ordered protein, tag_refold_structures.tsv carries its verdict. The C-terminal
+    # build file holds C-terminal, snorkel and stalk arms, split by their recorded placement.
+    folds = _tsv(S4E9 / "fold_order_check.tsv")
+    verdict = {r["fold_id"]: r["verdict"] for r in _tsv(S4E9 / "tag_refold_structures.tsv")}
+    cterm_place = {r["design_id"]: r["placement"] for r in _tsv(S4E9 / "constructs_l1_cterm.tsv")}
+    by: dict[str, Counter] = {}
+    for r in folds:
+        group = r["rung"]
+        if group == "cterm":
+            group = f"cterm: {cterm_place.get(r['design_id'], '?')}"
+        by.setdefault(group, Counter())[verdict.get(r["fold_id"], "no verdict")] += 1
+    total = Counter()
+    for c in by.values():
+        total.update(c)
+    n["refold"] = {
+        "inserts": len(folds),
+        "fold_check_ok": sum(r["status"] == "ok" for r in folds),
+        "ordered_igk_leader_inserts": sum(
+            r["n_terminal_peptide_not_folded"] == "METDTLLLWVLLLWVPGSTG" for r in folds
+        ),
+        "by_group": {g: dict(c) for g, c in sorted(by.items())},
+        "pass": total["pass"],
+        "fail": total["fail"],
+        "pass_pct": round(100 * total["pass"] / len(folds), 1) if folds else None,
+    }
+
+    # --- per-rung rationale (section 5): rule classes, Igκ use, ranker, snorkel, C-terminal
+    sys.path.insert(0, str(HERE))
+    import rung_numbers
+
+    n["rungs"] = rung_numbers.measure()
 
     # --- the ordering plan (order_plan.py)
     n["order_plan"] = json.loads((HERE / "l1_order_plan_summary.json").read_text())

@@ -26,6 +26,7 @@ l1-p0114	l1	library_reference	human	ANO6	Q4KMQ2	human_canonical	topo_2026_05_16	
 l1-p0115	l1	library_reference	human	ANO7	l1-p0115	library_designed_orf	topo_2026_10_14_l1_designed	e376c74df1746838df8129e80360883794be09d3d5b8a5bf14659897ffd13a40	879	8	102	102	555	inter_tm	internal	0	
 l1-p0126	l1	library_reference	human	AQP1	P29972	human_canonical	topo_2026_05_16	8aaa3dd189e99d4f3e31d0cd954bbab120f3c76b37754400d84903bf93690fcf	269	6	24	24	187	inter_tm	internal	0	
 l1-p0127	l1	library_reference	human	AQP10	Q96PS8	human_canonical	topo_2026_05_16	aca70c19c4f76083d6224ca6bab2bad0f5a62ddfbceed2c5907fc42628554851	301	6	34	34	122	inter_tm	internal	0	
+l1-p0128	l1	library_reference	human	AQP12B	A6NM10-2	human_isoforms	topo_2026_05_25	5eb3314cf45eb6ab8198649bf731f63cf80107dd546364fa000f336819a06a91	307	7	26	26	133	inter_tm	internal	0	
 l1-p0129	l1	library_reference	human	AQP2	P41181	human_canonical	topo_2026_05_16	535639acadce0785b941429005b673967e0ff00bb178d6213bc0fcb24a6e800b	271	6	26	26	177	inter_tm	internal	0	
 l1-p0130	l1	library_reference	human	AQP3	Q92482	human_canonical	topo_2026_05_16	1bdc4706b984ba879cb735ad2b976e5059a6905a8b66875098c44e24cce71b76	292	6	35	35	123	inter_tm	internal	0	
 l1-p0131	l1	library_reference	human	AQP4	P55087	human_canonical	topo_2026_05_16	9cdb63d923278cc84ef9658dea6de877e00626a3e1ede5c9a63ec8eed52f06ea	323	6	26	26	206	inter_tm	internal	0	
@@ -114,14 +115,13 @@ l1-p0506	l1	library_reference	human	DCST1	Q5T197	human_canonical	topo_2026_05_16
 l1-p0507	l1	library_reference	human	DCST2	Q5T1A1	human_canonical	topo_2026_05_16	e4217cc16f7937c70a4a3e27ba32f6d8f5e4f2b766e2bc3ccf95d6e7fabe5aa8	773	6	212	212	114	inter_tm	internal	0	
 l1-p0508	l1	library_reference	human	DCSTAMP	Q9H295	human_canonical	topo_2026_05_16	9cdfa806116022d9e17f125a76c5e3baffeb09c46cd41014b96f2fe13f837e9f	470	6	98	98	116	inter_tm	internal	0	
 l1-p0512	l1	library_reference	human	DISP1	Q96F81	human_canonical	topo_2026_05_16	d7d7bb21e8fcc683116faf7c49097a4ab7a30dca8c5f9ceeb31e49f2f31493a7	1524	12	289	289	211	inter_tm	internal	0	
-l1-p0513	l1	library_reference	human	DISP2	l1-p0513	library_designed_orf	topo_2026_10_14_l1_designed	89fb3e57bba5f320c049ae355552f9e707b6cd871ec092c0a57543c8a22f6e9e	1184	10	239	239	507	inter_tm	internal	0	
+l1-p0513	l1	library_reference	human	DISP2	A7MBM2	human_canonical	topo_2026_05_16	97aefcb2b6b086b18b922841ab397f0cb6c25b5ff19b8f899cd8a7f059c2f22c	1401	12	294	294	191	inter_tm	internal	0	
 l1-p0556	l1	library_reference	human	EMP1	P54849	human_canonical	topo_2026_05_16	50962bd23ccdc0eedca77ae01506fb496d5769e84f71221f4648b096d64642f6	157	4	41	41	25	inter_tm	internal	0	
 l1-p0557	l1	library_reference	human	EMP2	P54851	human_canonical	topo_2026_05_16	02faa084e1e4a51f3086bbb6c18886c3a08ac45cf8b26198596957fa6c9d36cd	167	4	40	40	26	inter_tm	internal	0	
 l1-p0558	l1	library_reference	human	EMP3	P54852	human_canonical	topo_2026_05_16	394d0a86f301de92024300b50cf321111ba7a34b81ebd022d6a4000ba9e649fa	163	4	40	40	25	inter_tm	internal	0	
 l1-p0566	l1	library_reference	human	ENTPD1	P49961	human_canonical	topo_2026_05_16	adb29ded2d895f7484cdd8537164d3dac86b553ca66b082eff33785181e79126	510	2	440	440	38	inter_tm	internal	0	moderate
 l1-p0568	l1	library_reference	human	ENTPD3	O75355	human_canonical	topo_2026_05_16	bce692cd15f4091a46c58bc79caa71f0d1c54a01da3ade89fb154b30a91431f9	529	2	446	446	44	inter_tm	internal	0	moderate
 l1-p0569	l1	library_reference	human	ENTPD8	Q5MY95	human_canonical	topo_2026_05_16	3f20c11685a86dff6e99cdf752c94239d954c7e3d9aa9d2ec2498a84e2740fdd	495	2	438	438	31	inter_tm	internal	0	
-l1-p0578	l1	library_reference	human	EPHA6	l1-p0578	library_designed_orf	topo_2026_10_14_l1_designed	af9efa6731cd5ef022101749cbb754f68dada47ee2716cf582d169ec2e8c5b36	1130	2	532	532	112	inter_tm	internal	0	
 l1-p0649	l1	library_reference	human	FLVCR1	Q9Y5Y0	human_canonical	topo_2026_05_16	b8be972d0eb4f065c6634316eee1558ee43fd8793d921ecdb326d3f3a97f6798	555	12	17	17	259	inter_tm	internal	0	
 l1-p0650	l1	library_reference	human	FLVCR2	Q9UPI3	human_canonical	topo_2026_05_16	ab26eb4772405a41571e4e954cd6914ecbbabc07446d3c5fba1f23f288706cd4	526	12	18	18	107	inter_tm	internal	0	
 l1-p0651	l1	library_reference	human	FMR1NB	Q8N0W7	human_canonical	topo_2026_05_16	c878597244b16abad747e601c90f64ac9fecc66ddcd569b9413066754a54914e	255	2	93	93	91	inter_tm	internal	0	
@@ -221,6 +221,7 @@ l1-p1144	l1	library_reference	human	LRRC8C	Q8TDW0	human_canonical	topo_2026_05_1
 l1-p1145	l1	library_reference	human	LRRC8D	Q7L1W4	human_canonical	topo_2026_05_16	926c10826d8c85034bd18864e38d79b4afc5ada3c9282b60d5606d4f9a8d1438	858	4	115	115	49	inter_tm	internal	0	
 l1-p1146	l1	library_reference	human	LRRC8E	Q6NSJ5	human_canonical	topo_2026_05_16	638e527edb1280f6b5dec48fd7bd160e4e60fc05249d9fe7976fcf1b37fa4d01	796	4	68	68	49	inter_tm	internal	0	
 l1-p1192	l1	library_reference	human	MARVELD3	Q96A59	human_canonical	topo_2026_05_16	164574095b8bc7f616fb726718e7ec73e57305dc3666982582c4c2c30c00866f	401	4	51	51	221	inter_tm	internal	0	
+l1-p1213	l1	library_reference	human	MFSD2A	Q8NA29-2	human_isoforms	topo_2026_05_25	4cdc6154bcfaee23e78afdae9b380473afdf7b707afd7c4678ee246a70b58ca8	530	12	33	46	1	n_terminal	internal	0	
 l1-p1214	l1	library_reference	human	MFSD2B	A6NFX1	human_canonical	topo_2026_05_16	b8ebd264dc345458c5ca6c20a9739eff5179c300b2c77bba63a5f88c42438890	504	12	28	28	204	inter_tm	internal	0	
 l1-p1215	l1	library_reference	human	MFSD6	Q6ZSS7	human_canonical	topo_2026_05_16	7ba155b16e0575d29f49d06fa77420f6158d5dfa385922404f9be46d2a9900e8	791	12	134	134	153	inter_tm	internal	0	
 l1-p1219	l1	library_reference	human	MIP	P30301	human_canonical	topo_2026_05_16	ac3902340d201c154d446a8f136d7463cce6581deca2a90f92acb4233af59b93	263	6	24	24	179	inter_tm	internal	0	
@@ -278,7 +279,6 @@ l1-p1667	l1	library_reference	human	PMP22	Q01453	human_canonical	topo_2026_05_16
 l1-p1693	l1	library_reference	human	PTCH1	Q13635	human_canonical	topo_2026_05_16	7b3896c5c6b822332a122f75197dfb011c70c1f80d7e377991f86170f19b2b46	1447	12	315	315	122	inter_tm	internal	0	moderate
 l1-p1694	l1	library_reference	human	PTCH2	Q9Y6C5	human_canonical	topo_2026_05_16	e453ea7f7660501e3f661811662b706b9b5f14825b4d711e9ea5b8874326f9dc	1203	12	314	314	79	inter_tm	internal	0	
 l1-p1695	l1	library_reference	human	PTCHD1	Q96NR3	human_canonical	topo_2026_05_16	4db7509e0fa77695b92fb803e70cf2463779f74bbca84905fa1fbdd475085660	888	12	226	226	45	inter_tm	internal	0	
-l1-p1731	l1	library_reference	human	RGMB	l1-p1731	library_designed_orf	topo_2026_10_14_l1_designed	cb8df0c5995d507ae517ddad2b11444b02db82a72b14772bdff88f9158140ca5	478	1	0	394	85	c_terminal	internal	1	moderate
 l1-p1732	l1	library_reference	human	RHAG	Q02094	human_canonical	topo_2026_05_16	224cc9bcadcfea0adc8de7ad74228a02a117fac58acbc536cb635f84e42a84fa	409	12	27	27	25	inter_tm	internal	0	
 l1-p1735	l1	library_reference	human	RHBG	Q9H310	human_canonical	topo_2026_05_16	e7a61ed65a8a9cd97c737f3c8400923757bebe4bbee1bec80903ad4bcbbcbfa5	458	12	30	30	365	inter_tm	internal	0	
 l1-p1736	l1	library_reference	human	RHCG	Q9UBD6	human_canonical	topo_2026_05_16	0e198f8fae9e3b67fdb3230bba8037286bda0fdda48fc4d859051a5e4dcd1486	479	12	33	33	363	inter_tm	internal	0	
@@ -334,7 +334,7 @@ l1-p1878	l1	library_reference	human	SLC22A12	Q96S37	human_canonical	topo_2026_05
 l1-p1879	l1	library_reference	human	SLC22A13	Q9Y226	human_canonical	topo_2026_05_16	ce1d82b8aeb9f7bbe930b126e17010ecaadc1099a731a1ba3d9b2f8b6830c2c6	551	12	100	100	42	inter_tm	internal	0	
 l1-p1880	l1	library_reference	human	SLC22A15	Q8IZD6	human_canonical	topo_2026_05_16	c33e1fe3c312d03d45673350ed312f7d7ef098c204ee9d7c46b3e7ce5c9a71dd	547	12	73	73	40	inter_tm	internal	0	
 l1-p1881	l1	library_reference	human	SLC22A16	Q86VW1	human_canonical	topo_2026_05_16	acd531523d9a2aac44c2945acf554b17914786d0cf8a28ba812bfcaf421f4b48	577	12	112	112	43	inter_tm	internal	0	
-l1-p1882	l1	library_reference	human	SLC22A17	l1-p1882	library_designed_orf	topo_2026_10_14_l1_designed	62f663f57cfdfb977e0c33c2defe29ea8444e367593e13e2f950f1e8b9e92450	631	12	101	101	115	inter_tm	internal	0	
+l1-p1882	l1	library_reference	human	SLC22A17	Q8WUG5-2	human_isoforms	topo_2026_05_25	922f0138c0d923868b76bb6af5aaccfb2966c4f3dc14960a231bed0fc8958164	631	12	102	102	114	inter_tm	internal	0	
 l1-p1883	l1	library_reference	human	SLC22A2	O15244	human_canonical	topo_2026_05_16	e2efa8bc89be4b078ddd97f84f704c1c414a6f416fe2597f57560ed9e141e7b5	555	12	107	107	44	inter_tm	internal	0	
 l1-p1884	l1	library_reference	human	SLC22A24	Q8N4F4	human_canonical	topo_2026_05_16	42c35460aa8dbbff362858844af114f63aed69a9564be8a43c2018469cc64b1c	552	12	110	110	37	inter_tm	internal	0	
 l1-p1885	l1	library_reference	human	SLC22A25	Q6T423	human_canonical	topo_2026_05_16	3225437bc9f0d0021ed3dd04398aba467fc01bb0066b89d31f9e33c03e7c4af4	547	12	113	113	34	inter_tm	internal	0	
@@ -484,8 +484,9 @@ l1-p2277	l1	library_reference	human	TRPV1	Q8NER1	human_canonical	topo_2026_05_16
 l1-p2278	l1	library_reference	human	TRPV3	Q8NET8	human_canonical	topo_2026_05_16	2c47822e35494bbc97f05ada9d1074089854b56ef0cd1f0f106fcc6b6b5b07fa	790	6	43	43	610	inter_tm	internal	0	
 l1-p2279	l1	library_reference	human	TRPV4	Q9HBA0	human_canonical	topo_2026_05_16	001c5d2b571d4e8910b9409e8aaffc73b1ebe78a6b944bc951a7b21717ea1499	871	6	57	57	637	inter_tm	internal	0	
 l1-p2280	l1	library_reference	human	TRPV5	Q9NQA5	human_canonical	topo_2026_05_16	e74a05fd80ce082245ff044d19f47271d9c39a00f8329ee4e87880c357905189	729	6	44	44	513	inter_tm	internal	0	
-l1-p2281	l1	library_reference	human	TRPV6	l1-p2281	library_designed_orf	topo_2026_10_14_l1_designed	5d9bf4fa1398c3294df1793ddf74d9a85ded94b87b4344996d9e945817bd0907	765	6	44	44	553	inter_tm	internal	0	
+l1-p2281	l1	library_reference	human	TRPV6	Q9H1D0	human_canonical	topo_2026_05_16	de54b9165094fbbc9ce6aea67a4d5a27fd2bb142520dfc52151e11ec44f23c69	765	6	44	44	553	inter_tm	internal	0	
 l1-p2283	l1	library_reference	human	TSPAN1	O60635	human_canonical	topo_2026_05_16	78f1e00fd53a3274ac915932586e83355c8b9afe62e555052bc73f627da31296	241	4	102	102	110	inter_tm	internal	0	
+l1-p2284	l1	library_reference	human	TSPAN10	Q9H1Z9	human_canonical	topo_2026_05_16	1aa1ca8b737d98fb26dc8eeeaafe3e3bd88304071499261776fac75305aef6bd	355	4	116	116	175	inter_tm	internal	0	
 l1-p2285	l1	library_reference	human	TSPAN11	A1L157	human_canonical	topo_2026_05_16	6462ef406dbc7ab875ce1df7080d45af4d5f8fb3e4e0ec121ea3beacb1a3f168	253	4	106	106	114	inter_tm	internal	0	
 l1-p2286	l1	library_reference	human	TSPAN12	O95859	human_canonical	topo_2026_05_16	d22469f3b1ad581c4a91b86ab571dc231b264940cfa45be4b0c40bab275bb27b	305	4	106	106	116	inter_tm	internal	0	
 l1-p2287	l1	library_reference	human	TSPAN13	O95857	human_canonical	topo_2026_05_16	7a69b97147951326b112172f54cbe11181b2337502f5fc582807a3589db8a775	204	4	67	67	98	inter_tm	internal	0	
@@ -526,6 +527,7 @@ l1-p2443	l1	isoform	human	GPM6A	P51674-3	human_isoforms	topo_2026_05_25	376c86e4
 l1-p2457	l1	isoform	human	KCNK4	Q9NYG8-2	human_isoforms	topo_2026_05_25	c5e4bb8fe0648a035ee49cf33fa7dc5ace714c215c1a0292c817ae2212dbbb1e	419	4	90	90	54	inter_tm	internal	0	
 l1-p2459	l1	isoform	human	KCNQ4	P56696-2	human_isoforms	topo_2026_05_25	e6c8bb6da313e99d12d9b60055a8ca6439e67418653cace288958a2ca9f74a1b	641	6	39	39	259	inter_tm	internal	0	
 l1-p2461	l1	isoform	human	LIM2	P55344-2	human_isoforms	topo_2026_05_25	34aa518c744a56ecfb338c00ea1a252d7c96b89ab136ddff4dcd44d3cbc0a999	215	4	82	82	26	inter_tm	internal	0	
+l1-p2466	l1	isoform	human	MFSD2A	Q8NA29	human_canonical	topo_2026_05_16	7f76352f6f9216e3382355eeb79ba905a011dfb948f9aa8ba76091e3baa5c5d4	543	12	33	46	1	n_terminal	internal	0	
 l1-p2478	l1	isoform	human	PACC1	Q9H813-2	human_isoforms	topo_2026_05_25	4409f77f20b24722f50cb4103acbffdfdc9afc78452420f9f6cf73352d89b095	411	2	216	216	147	inter_tm	internal	0	
 l1-p2485	l1	isoform	human	PLPP1	l1-p2485	library_designed_orf	topo_2026_10_14_l1_designed	eb759fa18352f310f860e6a31ac76293b4e81fdffafcf2d50abc262fe6ba950c	283	6	48	48	122	inter_tm	internal	0	
 l1-p2497	l1	isoform	human	SCNN1A	P37088-2	human_isoforms	topo_2026_05_25	4de4e8e131d45601891be8c54d17e0f1da7263c6f7accda67b20c2641e52fe2b	728	2	448	448	166	inter_tm	internal	0	low
@@ -539,29 +541,42 @@ l1-p2512	l1	isoform	human	SLC6A6	l1-p2512	library_designed_orf	topo_2026_10_14_l
 l1-p2513	l1	isoform	human	SLC7A2	l1-p2513	library_designed_orf	topo_2026_10_14_l1_designed	0da4e401c3aeebd4ff8f4fb594635129dc07463866627490074ac8f4094e827a	657	14	45	45	212	inter_tm	internal	0	
 l1-p2517	l1	isoform	human	SLCO3A1	Q9UIG8-2	human_isoforms	topo_2026_05_25	4fcb1ce2f67491335d8620912043beb6f356a4da3927119b5b18e17e057aba96	692	12	93	93	442	inter_tm	internal	0	
 l1-p2522	l1	isoform	human	TMEM219	l1-p2522	library_designed_orf	topo_2026_10_14_l1_designed	0f962fa23c07f0307e6f5bd86e12c803605279bdf5073f3415b5c628d2692620	239	2	160	160	44	inter_tm	internal	0	
-l1-p2530	l1	ortholog	cyno	ABCB11	A0A2K5U2H2	cyno_ortholog	topo_2026_05_16	7e41ad198887d3f4eba06ab34f016522e2e5cebdb049d93271a9638704313fa1	1323	12	62	62	83	inter_tm	internal	0	
-l1-p2536	l1	ortholog	cyno	AQP10	A0A2K5UBW2	cyno_ortholog	topo_2026_05_16	cc7bb887c6fa83314aa1d9a2c8c4855034905e90e7bd8967ec945f9a26ee74ae	301	6	37	37	122	inter_tm	internal	0	
-l1-p2537	l1	ortholog	cyno	AQP2	A0A7N9CSL2	cyno_ortholog	topo_2026_05_16	230a0366088d9ef530502405fec29bc2a7bde365266a6112de2c111d133dfd6e	271	6	26	26	177	inter_tm	internal	0	
 l1-p2540	l1	ortholog	cyno	CACNG5	A0A2K5TXN9	cyno_ortholog	topo_2026_05_16	97dcb63e3ff5796cd78829120e7d55b813845556b531eb5721c56dbf0db3dc60	275	4	71	71	30	inter_tm	internal	0	
-l1-p2550	l1	ortholog	cyno	CLDN8	A0A7N9CNG4	cyno_ortholog	topo_2026_05_16	e8bc04a6eee04a68992d9af6f823581e717f1c884ec6d5e545e034e4d0e2c556	228	4	54	54	28	inter_tm	internal	0	moderate
 l1-p2551	l1	ortholog	cyno	CLDND1	Q4R4Z3	cyno_ortholog_repick	topo_2026_10_09_ortholog_repick	e228cf1ff8ea53858cf53cf2eafcad7f199dfdeacbb049221d8cb011b4f6fe1c	253	4	109	109	30	inter_tm	internal	0	
-l1-p2575	l1	ortholog	cyno	KCNA3	A0A2K5UDR0	cyno_ortholog	topo_2026_05_16	a7fe0ddf0e4b49e46f8ad860023e4de6a365eafacf8a5839ae17a616b347c7c4	475	6	41	41	154	inter_tm	internal	0	
-l1-p2577	l1	ortholog	cyno	LIM2	G7PYH7	cyno_ortholog	topo_2026_05_16	fb64adbc787f6251bf82df1602ac1ddd3a00e2d0fc5dfee486d93dfc2051fc5d	215	4	82	82	26	inter_tm	internal	0	
-l1-p2588	l1	ortholog	cyno	NFASC	A0A2K5VEB7	cyno_ortholog	topo_2026_05_16	d8a3229d904af7241a015cb272ed2a676eb29d4260da490a4e389c393bfc0fa5	1331	2	1123	1123	78	inter_tm	internal	0	
-l1-p2595	l1	ortholog	cyno	P2RX6	A0A2K5W0L3	cyno_ortholog	topo_2026_05_16	88005951d17639de1f8e76f7abaf74d342a5d7539b5c78c0b2ad3bd6bcb096db	438	2	285	285	60	inter_tm	internal	0	
-l1-p2604	l1	ortholog	cyno	SLC16A12	A0A2K5WEE5	cyno_ortholog	topo_2026_05_16	1155f4c75c92ac43ea393b15cdc33f2a911ab074a7b46f7bd1f1da74d90b67c2	516	12	22	22	66	inter_tm	internal	0	
-l1-p2605	l1	ortholog	cyno	SLC22A11	A0A7N9CPF0	cyno_ortholog	topo_2026_05_16	c7c87d7a461da427f1bd593d209f4e9c3340f3a7909bb1d99365d9185a7aaa81	550	12	106	106	38	inter_tm	internal	0	
-l1-p2607	l1	ortholog	cyno	SLC22A3	A0A2K5W6I5	cyno_ortholog	topo_2026_05_16	378e6688f2db46261e09576f3caa26ea08ade14dcc6d58a53891f853b1c057c9	553	12	112	112	42	inter_tm	internal	0	
-l1-p2608	l1	ortholog	cyno	SLC26A6	A0A2K5WID5	cyno_ortholog	topo_2026_05_16	d159e4d7bccae3dc4ad63a5a71f6c068ce70038ef7788d736ff5cb344a22529f	759	12	32	32	232	inter_tm	internal	0	
-l1-p2609	l1	ortholog	cyno	SLC4A1	l1-p2609	library_designed_orf	topo_2026_10_14_l1_designed	3d849fea8eb2cc808f2330396658e37b90fb29453880f9fc3e502e087c6ab26e	914	14	36	36	628	inter_tm	internal	0	
-l1-p2620	l1	ortholog	cyno	TMEM219	A0A2K5X699	cyno_ortholog	topo_2026_05_16	25a6aa4028d3c4fa63ffbd1190cb6a46e9aaf415a3fd35da5b106dddee70e70b	239	2	160	160	44	inter_tm	internal	0	
-l1-p2629	l1	ortholog	mouse	ABCC4	E9Q236	mouse_ortholog	topo_2026_05_16	fd9716d8a4c11d5dcdac26f599325667e4677ef2bf966ace39b7405dcd2fd2ed	1325	12	41	41	732	inter_tm	internal	0	
-l1-p2635	l1	ortholog	mouse	ANO3	A2AHL1	mouse_ortholog	topo_2026_05_16	6c4ca32b6983490863bb87ca26d5a27025f4d245eee41c2cab4135373552b216	981	8	99	99	659	inter_tm	internal	0	
-l1-p2636	l1	ortholog	mouse	ANO6	Q6P9J9	mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	35c511e78507cf0dd9b877c81ea5bac723aafdc3520c02daf5c70760ba5dd223	911	8	97	97	574	inter_tm	internal	0	
-l1-p2647	l1	ortholog	mouse	CD53	Q61451	mouse_ortholog	topo_2026_05_16	dae303f0a2f7f26b5d12b5794ff02215dc7ad8cd2eb5be58a9c0506d6c76a5cd	219	4	76	76	106	inter_tm	internal	0	
-l1-p2698	l1	ortholog	mouse	PANX1	Q9JIP4	mouse_ortholog	topo_2026_05_16	95013d52c2d18fae9d04883f2df2cd6f8077cf5ed791f32307e7b70ad52f2386	426	4	45	45	62	inter_tm	internal	0	
-l1-p2705	l1	ortholog	mouse	PLPP3	Q99JY8	mouse_ortholog	topo_2026_05_16	885df6db549f896a87597596fed4bea75f7b26ab659599d32d8fc1ead74073e9	312	6	48	48	151	inter_tm	internal	0	
-l1-p2720	l1	ortholog	mouse	TRPV5	P69744	mouse_ortholog	topo_2026_05_16	7e62c87d4ce0f462501c166b05cb9fc5f37968e6bfb18df9f565dd04a652e19d	723	6	44	44	506	inter_tm	internal	0	
-l1-p2721	l1	ortholog	mouse	TSPAN11	Q9D1D1	mouse_ortholog	topo_2026_05_16	4be883a241d199fa008dc435d42c2208d9ca5455bcb580177e05748b9ca71fa4	253	4	106	106	114	inter_tm	internal	0	
-l1-p2722	l1	ortholog	mouse	TSPAN1	Q99J59	mouse_ortholog	topo_2026_05_16	ebe4b508a411a63090b922e8bfd51863423671c759e48dc37e190f43c59ca987	240	4	100	100	111	inter_tm	internal	0	
 l1-p2723	l1	ortholog	mouse	TSPAN4	Q9DCK3	mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	6249eb94b2479394f8fc876b3199e2cec0724ac573d66449a1ae9a209512bc8b	238	4	95	95	107	inter_tm	internal	0	
+l1-p2739	l1	library_reference	human	SLC67A1	Q96BI1	human_canonical	topo_2026_05_16	42e60206bc50fc6304e4f5d4cb2b1bbf21fd04ca8fa4e288b69f92df7d5215c1	424	12	16	16	262	inter_tm	internal	0	
+l1-p2939	l1	ortholog	cyno	CNGA3	A0A2K5W8Z7	cyno_ortholog	topo_2026_05_16	449c994632695c662f28b3fab57f572c925ff0c9477b91f6d72a4c41eb3467c8	694	4	54	54	325	inter_tm	internal	0	
+l1-p2953	l1	ortholog	cyno	KCNK17	A0A2K5WSC0	cyno_ortholog	topo_2026_05_16	c46a82bfb316176234dcd6286964b39996317a9b7e50ad05e884053c1c2d3a5f	332	4	87	87	44	inter_tm	internal	0	
+l1-p2971	l1	ortholog	cyno	SLC9B1	A0A7N9DA29	cyno_ortholog	topo_2026_05_16	e17f6ef68f5a1f21fd3b34ab0b4406105201a91e30b330ed8f20f2a69bfda34e	515	14	18	18	452	inter_tm	internal	0	
+l1-p2975	l1	ortholog	cyno	TRPM2	A0A2K5TWC8	cyno_ortholog	topo_2026_05_16	f7846460cfb36571b291bf5fd6ed32ec97fc1f9ed509cfe3ed363b9bd5fe890f	1500	8	72	72	949	inter_tm	internal	0	
+l1-p2977	l1	ortholog	cyno	ADCY3	A0A2K5WMG5	cyno_ortholog	topo_2026_05_16	dd6189e0fd8a8cf51ea26dda3a1f9a7f9922d27fad9afb1ff06937f84b6fec7f	1145	12	46	46	795	inter_tm	internal	0	
+l1-p2981	l1	ortholog	cyno	CLDN14	G7P110	cyno_ortholog	topo_2026_05_16	780078fbf374d3ebc5a1be25a1559374599c3971af10e33b2e80a6da7fb6c912	239	4	53	53	29	inter_tm	internal	0	
+l1-p2999	l1	ortholog	cyno	KIAA2013	A0A2K5TSV0	cyno_ortholog	topo_2026_05_16	4cca910dcc8f73d0fec008653f9aa13a2c7e3d6f51b5099e0d1c908af2801e31	632	2	553	553	37	inter_tm	internal	0	
+l1-p3012	l1	ortholog	cyno	SLC16A9	G7PDF0	cyno_ortholog	topo_2026_05_16	a52d9852828a4b41e819b09dbae20ebdadec5e4b18919188d09d98154b199aa9	509	12	18	18	35	inter_tm	internal	0	
+l1-p3013	l1	ortholog	cyno	SLC22A8	A0A2K5UQ18	cyno_ortholog	topo_2026_05_16	47bc581d9472570bbf6b6f017252f88f8799780dabf1a3f93a33512f7b0cf2ff	542	12	83	83	41	inter_tm	internal	0	
+l1-p3014	l1	ortholog	cyno	SLC2A1	A0A2K5UYW9	cyno_ortholog	topo_2026_05_16	3a34faf8a3f5c4b06edfd1f619fa5021f557a03b455391e024558247ec734109	492	12	30	30	36	inter_tm	internal	0	
+l1-p3015	l1	ortholog	cyno	SLC4A11	A0A2K5VKP6	cyno_ortholog	topo_2026_05_16	5b8a3749558b75b9e851680dbfb1ec6b7b169b448775ba0a9c64999622defe02	883	14	69	69	497	inter_tm	internal	0	
+l1-p3040	l1	ortholog	mouse	MS4A7	ENSMUSP00000064534	mouse_ortholog_repick	topo_2026_11_05_l1_compara116	8d6b12aab2b1cd618ee771af8a734f5d63053aa563e0674a5ceb3298298af9f9	234	4	39	39	138	inter_tm	internal	0	
+l1-p3045	l1	ortholog	mouse	PLPP1	Q61469	mouse_ortholog	topo_2026_05_16	e596c0269c70577003ca33a314072d8e42f1628e090b0a53506ab07bd29c622e	283	6	52	52	122	inter_tm	internal	0	
+l1-p3050	l1	ortholog	mouse	SLC14A2	ENSMUSP00000025434	mouse_ortholog_cds_policy	topo_2026_11_05_ortholog_cds_policy	6fa7ff1ee8f17f0fb1b1ceed41a8970a34a9b1efb973597e8815e58cb5eaa72e	930	20	49	49	260	inter_tm	internal	0	
+l1-p3051	l1	ortholog	mouse	SLC34A2	Q9DBP0	mouse_ortholog	topo_2026_05_16	2bc7243b6ce3297515d3793f5e4718bd460089ac0844ed1dbb1929ce241f9877	697	10	131	131	232	inter_tm	internal	0	
+l1-p3053	l1	ortholog	mouse	SLC43A1	Q8BSM7	mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	cb7dd2983c9dc7cd1cf6cf3392ea13137b44c4ce10cdb29ced6efa09f1c87860	564	12	44	44	34	inter_tm	internal	0	
+l1-p3054	l1	ortholog	mouse	SLC44A4	Q91VA1	mouse_ortholog	topo_2026_05_16	408430a844022c41846ae7b0bc24fdfd0c6eee73d0bb57256ea8a44c61d1e63e	707	10	172	172	56	inter_tm	internal	0	
+l1-p3055	l1	ortholog	mouse	SLC46A2	Q8CA03	mouse_ortholog	topo_2026_05_16	229093b855a8b88c0a93d0bec8ade8e988eb333cf115f0ebc9fbb11abd5e0dc2	479	12	39	39	42	inter_tm	internal	0	
+l1-p3060	l1	ortholog	mouse	TMEM139	E9PX92	mouse_ortholog	topo_2026_05_16	abb9aa7f6a8b080d8af5fad8c82a3c1b745eb06844e6b8f3949e84cc1ab16375	214	2	6	6	32	inter_tm	internal	0	
+l1-p3062	l1	ortholog	mouse	TMEM86B	Q497J1	mouse_ortholog	topo_2026_05_16	d50753b501ea914e54ab31459880de95f34bd6237cc15943f31a307040705fc7	226	8	7	7	141	inter_tm	internal	0	
+l1-p3088	l1	ortholog	mouse	LHFPL6	Q8BM86	mouse_ortholog	topo_2026_05_16	cf0d3b9dc190284a16993961851ef23ccfb3b021aad137d31d76de0760bd9e5d	200	4	55	55	29	inter_tm	internal	0	
+l1-p3093	l1	ortholog	mouse	NRG3	ENSMUSP00000129783	mouse_ortholog_repick	topo_2026_11_05_l1_compara116	2f3468cfc89813f14bd8b900dc4a128df1886801c411c7169d378fdc2bb16a8b	697	2	276	276	87	inter_tm	internal	0	moderate
+l1-p3100	l1	ortholog	mouse	PTCH1	Q61115	mouse_ortholog	topo_2026_05_16	8a782d3db08c855444bc0152b529fc9d7c78ba4d09c6c3cfc9c6f8d45f217ee2	1434	12	315	315	108	inter_tm	internal	0	moderate
+l1-p3103	l1	ortholog	mouse	SLC26A9	A0A0R4J0F7	mouse_ortholog	topo_2026_05_16	22f2aad74a699fe815dd708c44a554026f4892c8755df8fe6062ef096210f802	790	14	35	35	137	inter_tm	internal	0	
+l1-p3106	l1	ortholog	mouse	SLC6A11	P31650	mouse_ortholog	topo_2026_05_16	a50617064cd400623e2154f4fd646a9a0374d4cc077d404837024840e3224489	627	12	65	65	154	inter_tm	internal	0	
+l1-p3107	l1	ortholog	mouse	SLC6A13	P31649	mouse_ortholog_repick	topo_2026_10_09_ortholog_repick	8d2a72b7e046b521e2fc716c0e501deca3f61e9b53615ae7a0d60e64e6a8c0f3	602	12	62	62	142	inter_tm	internal	0	
+l1-p3111	l1	ortholog	mouse	TMEM229B	Q8BFQ2	mouse_ortholog	topo_2026_05_16	969cd57ee0882504935a31126d3178b858a799614de31518c2b6f1efad3579c9	167	4	19	19	96	inter_tm	internal	0	
+l1-p3124	l1	isoform	human	SLC12A2	P55011-3	human_isoforms	topo_2026_05_25	32be31a369ba7dea8872ba49a3c036f69a5afca071aaf4c47d0ef89b41024d52	1196	12	60	60	542	inter_tm	internal	0	
+l1-p3125	l1	isoform	human	SLC43A3	Q8NBI5-2	human_isoforms	topo_2026_05_25	5f7ff0fc630a8a4fb783f58962e0a37d6b07831d6796a592cf3b3d6463847e37	504	12	52	52	31	inter_tm	internal	0	
+l1-p3126	l1	isoform	human	SLC7A2	P52569-2	human_isoforms	topo_2026_05_25	ac845ccea6666b813ccdb7caa15378af174331df106475f4334eacfc31838d55	697	14	45	45	252	inter_tm	internal	0	
+l1-p3127	l1	isoform	human	SLCO1B3-SLCO1B7	F5H094	human_canonical	topo_2026_05_16	07fb76a2d504bee95bc29a3f0903665a83b40665f2f59a61346bc02071fbceab	687	12	108	108	428	inter_tm	internal	0	
+l1-p3146	l1	isoform	human	SLC44A2	Q8IWA5-2	human_isoforms	topo_2026_05_25	08d3d3a4ced91c5000ac43d2818e4fc4f46585ec9d3d5671fa9ef7b5a490555b	711	10	177	177	56	inter_tm	internal	0	
+l1-p3147	l1	isoform	human	TSPAN16	Q9UKR8	human_canonical	topo_2026_05_16	dbf75fcc00611d02d444b68ec96f1593f14b2f9499544e8f94def712ad5ddb43	245	4	107	107	111	inter_tm	internal	0	
+l1-p3149	l1	isoform	human	SLC22A24	Q8N4F4-3	human_isoforms	topo_2026_05_25	a573d2ad691efea13e112fb7630fc6b6a5168ab4d044b5ce4b8a6241b0b47751	551	12	110	110	37	inter_tm	internal	0	
+l1-p3150	l1	isoform	human	SLC6A9	P48067-3	human_isoforms	topo_2026_05_25	6755682463fa5d078fd4fa1e6326023a3927a4b438901a336c55b5e64816fb21	652	12	77	77	155	inter_tm	internal	0	

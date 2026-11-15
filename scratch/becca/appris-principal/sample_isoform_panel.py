@@ -31,8 +31,15 @@ cohort table could not know once a GPI override moved the reference -- is replac
 continuing the same seeded draw within its tier and class. Replacements are logged in
 ``isoform_panel_replacements.tsv``.
 
+**The cohort gate** (Becca, 2026-11-12, "Gate cohort, redraw"; s4e9
+``gate_isoform_cohort.py``): with ``--gate isoform_gate.tsv`` every form the gate fails is
+invalid, so a failing original pick is replaced and a failing form is never drawn as a
+replacement. Under ``--snapshot`` the table must match the hash pinned in
+``panel_inputs.json`` (``isoform_gate``); ``--original`` ignores it.
+
     uv run --locked python sample_isoform_panel.py --snapshot
-    uv run --locked python sample_isoform_panel.py --snapshot --reject panel_rejections.tsv
+    uv run --locked python sample_isoform_panel.py --snapshot --reject panel_rejections.tsv \
+        --gate isoform_gate.tsv
 """
 
 from __future__ import annotations
@@ -222,6 +229,8 @@ def main() -> None:
     ap.add_argument("--snapshot", action="store_true",
                     help="read only the pinned inputs in panel_inputs.json, staged from S3")
     ap.add_argument("--reject", default=None, help="panel_rejections.tsv")
+    ap.add_argument("--gate", default=None,
+                    help="isoform_gate.tsv (gate_isoform_cohort.py): failing forms are invalid")
     ap.add_argument("--original", action="store_true",
                     help="the draw as first published: no rejections, no replacement")
     args = ap.parse_args()
@@ -310,9 +319,30 @@ def main() -> None:
         selected = {r["symbol"]: (r.get("selected_uniprot_equivalent") or "").strip()
                     for r in csv.DictReader(fh, delimiter="\t")}
 
+    gate: dict[str, str] = {}
+    if args.gate and not args.original:
+        import hashlib
+
+        if args.snapshot:
+            pin = json.loads((Path(__file__).with_name("panel_inputs.json")).read_text())
+            got = hashlib.sha256(Path(args.gate).read_bytes()).hexdigest()
+            if got != pin["isoform_gate"]["sha256"]:
+                raise SystemExit("--gate table does not match panel_inputs.json isoform_gate")
+        with open(args.gate) as fh:
+            gate = {g["form_id"]: g["reason"] for g in csv.DictReader(fh, delimiter="\t")
+                    if g["verdict"] == "fail"}
+            fh.seek(0)
+            known = {g["form_id"] for g in csv.DictReader(fh, delimiter="\t")}
+        absent = [form_id(r) for r in rows if form_id(r) not in known]
+        if absent:
+            raise SystemExit(f"{len(absent)} cohort forms have no gate verdict: {absent[:3]}")
+
     def invalid(r: dict) -> str:
         sel = selected.get(r["gene"], "")
-        return "is the gene's selected reference form" if sel and r["uniprot"] == sel else ""
+        if sel and r["uniprot"] == sel:
+            return "is the gene's selected reference form"
+        why = gate.get(form_id(r))
+        return f"fails the cohort gate: {why}" if why else ""
 
     rejected = {} if args.original else load_rejections(args.reject, "isoform")
     if args.original:

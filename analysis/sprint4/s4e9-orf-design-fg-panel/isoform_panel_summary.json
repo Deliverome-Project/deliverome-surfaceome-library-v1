@@ -1,7 +1,7 @@
 {
   "seed": 20261009,
   "inputs": "panel_inputs.json snapshot",
-  "replaced": 8,
+  "replaced": 32,
   "panel_size": 150,
   "floors": {
     "type III": 2,
@@ -31,6 +31,6 @@
     "GPI": 16,
     "type III": 5
   },
-  "genes": 137,
-  "already_in_cohort": 62
+  "genes": 133,
+  "already_in_cohort": 65
 }

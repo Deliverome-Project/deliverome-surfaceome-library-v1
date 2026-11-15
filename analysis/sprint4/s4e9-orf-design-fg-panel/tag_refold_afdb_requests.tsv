@@ -1,0 +1,21 @@
+model_url	design_id	gene_symbol	species	requested_by	reader
+https://alphafold.ebi.ac.uk/files/AF-A0A2K5WT09-F1-model_v6.pdb	l1-p2943	GGT7	cyno	l1-cterm-build via coordinator, 2026-11-14	review_l1_cterm_members.py
+https://alphafold.ebi.ac.uk/files/AF-A0A2K5WAP9-F1-model_v6.pdb	l1-p2954	KLRG1	cyno	l1-cterm-build via coordinator, 2026-11-14	review_l1_cterm_members.py
+https://alphafold.ebi.ac.uk/files/AF-A0A2K5VYD5-F1-model_v6.pdb	l1-p2986	EDA	cyno	l1-cterm-build via coordinator, 2026-11-14	review_l1_cterm_members.py
+https://alphafold.ebi.ac.uk/files/AF-G7NZK8-F1-model_v6.pdb	l1-p3003	MME	cyno	l1-cterm-build via coordinator, 2026-11-14	review_l1_cterm_members.py
+https://alphafold.ebi.ac.uk/files/AF-A0A7N9DBU4-F1-model_v6.pdb	l1-p3017	TNFSF11	cyno	l1-cterm-build via coordinator, 2026-11-14	review_l1_cterm_members.py
+https://alphafold.ebi.ac.uk/files/AF-P97449-F1-model_v6.pdb	l1-p3019	ANPEP	mouse	l1-cterm-build via coordinator, 2026-11-14	review_l1_cterm_members.py
+https://alphafold.ebi.ac.uk/files/AF-P34927-F1-model_v6.pdb	l1-p3021	ASGR1	mouse	l1-cterm-build via coordinator, 2026-11-14	review_l1_cterm_members.py
+https://alphafold.ebi.ac.uk/files/AF-Q9JL99-F1-model_v6.pdb	l1-p3025	CLEC1B	mouse	l1-cterm-build via coordinator, 2026-11-14	review_l1_cterm_members.py
+https://alphafold.ebi.ac.uk/files/AF-Q9R0Q8-F1-model_v6.pdb	l1-p3026	CLEC4E	mouse	l1-cterm-build via coordinator, 2026-11-14	review_l1_cterm_members.py
+https://alphafold.ebi.ac.uk/files/AF-Q9Z319-2-F1-model_v6.pdb	l1-p3027	CORIN	mouse	l1-cterm-build via coordinator, 2026-11-14	review_l1_cterm_members.py
+https://alphafold.ebi.ac.uk/files/AF-Q9JHI4-F1-model_v6.pdb	l1-p3049	SLC13A1	mouse	l1-cterm-build via coordinator, 2026-11-14	review_l1_cterm_members.py
+https://alphafold.ebi.ac.uk/files/AF-P10852-F1-model_v6.pdb	l1-p3052	SLC3A2	mouse	l1-cterm-build via coordinator, 2026-11-14	review_l1_cterm_members.py
+https://alphafold.ebi.ac.uk/files/AF-Q9JIQ8-F1-model_v6.pdb	l1-p3064	TMPRSS2	mouse	l1-cterm-build via coordinator, 2026-11-14	review_l1_cterm_members.py
+https://alphafold.ebi.ac.uk/files/AF-P0C7M9-F1-model_v6.pdb	l1-p3069	CLEC2L	mouse	l1-cterm-build via coordinator, 2026-11-14	review_l1_cterm_members.py
+https://alphafold.ebi.ac.uk/files/AF-Q8K4G2-F1-model_v6.pdb	l1-p3074	COL23A1	mouse	l1-cterm-build via coordinator, 2026-11-14	review_l1_cterm_members.py
+https://alphafold.ebi.ac.uk/files/AF-A2AV25-F1-model_v6.pdb	l1-p3078	FIBCD1	mouse	l1-cterm-build via coordinator, 2026-11-14	review_l1_cterm_members.py
+https://alphafold.ebi.ac.uk/files/AF-Q8BHM9-F1-model_v6.pdb	l1-p3112	TMPRSS11F	mouse	l1-cterm-build via coordinator, 2026-11-14	review_l1_cterm_members.py
+https://alphafold.ebi.ac.uk/files/AF-Q8BIK6-F1-model_v6.pdb	l1-p3113	TMPRSS7	mouse	l1-cterm-build via coordinator, 2026-11-14	review_l1_cterm_members.py
+https://alphafold.ebi.ac.uk/files/AF-P42892-F1-model_v6.pdb	l1-p3137	ECE1	human	l1-cterm-build via coordinator, 2026-11-14	review_l1_cterm_members.py
+https://alphafold.ebi.ac.uk/files/AF-P42892-4-F1-model_v6.pdb	l1-p3148	ECE1	human	l1-cterm-build via coordinator, 2026-11-14	review_l1_cterm_members.py

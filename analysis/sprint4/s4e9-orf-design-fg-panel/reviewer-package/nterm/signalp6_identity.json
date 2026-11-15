@@ -1,0 +1,53 @@
+{
+ "checkpoints_cpu_match_tarball": true,
+ "checkpoints_cpu_sha256": {
+  "averaged_viterbi.pt": "3660c94741a1a248bff9ec44be5a503e202294f1ea5d804092935057956aa0f3",
+  "test_0_val_1.pt": "e3110031ba3e4b39e1e7bc166f4d016c14cb63c65e8964574d51ac6095002cce",
+  "test_0_val_2.pt": "501deb929ce9d5d4272bc0fd65d82fe7730751bee57c6f9cda0e92c4eb58f09b",
+  "test_1_val_0.pt": "88868afbc67f10791b7f890b55a1fa86818eda3d39017734e1c87505705fc0b2",
+  "test_1_val_2.pt": "1c62b35aa8553a96fe490bc421658b2853d62caa0ef3b641cc5db05edf81723d",
+  "test_2_val_0.pt": "c67ee31a4466914e96f81222503e7f64e5768126a312b76453fa4b496812f8ef",
+  "test_2_val_1.pt": "b740dabe997c6b63fd33032218a86557aaf5780501a71d9d271d69de2315a8d5"
+ },
+ "checkpoints_gpu_sha256": {
+  "averaged_viterbi.pt": "3660c94741a1a248bff9ec44be5a503e202294f1ea5d804092935057956aa0f3",
+  "test_0_val_1.pt": "e3110031ba3e4b39e1e7bc166f4d016c14cb63c65e8964574d51ac6095002cce",
+  "test_0_val_2.pt": "501deb929ce9d5d4272bc0fd65d82fe7730751bee57c6f9cda0e92c4eb58f09b",
+  "test_1_val_0.pt": "88868afbc67f10791b7f890b55a1fa86818eda3d39017734e1c87505705fc0b2",
+  "test_1_val_2.pt": "1c62b35aa8553a96fe490bc421658b2853d62caa0ef3b641cc5db05edf81723d",
+  "test_2_val_0.pt": "c67ee31a4466914e96f81222503e7f64e5768126a312b76453fa4b496812f8ef",
+  "test_2_val_1.pt": "b740dabe997c6b63fd33032218a86557aaf5780501a71d9d271d69de2315a8d5"
+ },
+ "package_files_match_tarball": true,
+ "package_files_sha256": {
+  "README.md": "db5659a7b26585f483d6c5abb5ebedfed20eb23169fbb0cb82092bf2013f2663",
+  "models/README.md": "602170ac3c19954be78389d047601ec808f8aabc7884b620d2e75df4624e498c",
+  "pyproject.toml": "c83da5db515857a120ce4f6afd13c08644ebee0ea5128ad7dc2109236a973075",
+  "requirements.txt": "61316119934d1c6779991e4c052c1d5ca14d3122f58fa329304081f17b4fc5fd",
+  "setup.py": "05b5402f7ee97d75504aaff98f4cdc988a485bf89c658df7dd98e14957708da5",
+  "signalp/__init__.py": "a66f24e9d1d6f6871c3674ba212cb210a0997c40a3735361fdaa2af685375f0e",
+  "signalp/__main__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "signalp/conversion_utils/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "signalp/conversion_utils/move_checkpoint_to_device.py": "2f029b9b68fcbdb0345bd93173612596d1c81cbe6e7156ce3dd1f065369e1707",
+  "signalp/conversion_utils/signalp6_convert_models": "95e8773f7c4a05ddde953116e49f32e193b7383b4f551d71b9570574f146abd9",
+  "signalp/make_output_files.py": "52e066b60b4136d7200768f67d7a19024f8bb8a255adeb0338f5fee052f7a71a",
+  "signalp/make_sequence_plot.py": "ce7dbd481c035b5419531d8c79932072d6a52dc9757c0a3840f3da625ecfe613",
+  "signalp/model_weights/README.md": "81016d79b21995c5336fc782836499fc30a19caedfcf56c3cfc1cd3f30b1d4dd",
+  "signalp/predict.py": "6b4d6523ab5c07d080b4c0f6d491d596a0671482252eff6b7b416878737eb3ca",
+  "signalp/sequential_model.py": "dcc1bcce9c40d6c581f63e2c948578704795541cf9c0fc8ef1aeac0b3cd554bb",
+  "signalp/utils.py": "ff62ce75902c4a4a7bb2fef16ffd41150f03c9adc00f091b4c9b4e546214b523"
+ },
+ "package_version": "6.0+h",
+ "tarball": {
+  "package_version": "6.0+h",
+  "source": "DTU Health Tech licensed download, Becca OneDrive Internalization/Software",
+  "tarball": "signalp-6.0i.slow_sequential.tar.gz",
+  "tarball_bytes": 9070585509,
+  "tarball_sha256": "3193855d628c78337c9df28a0db76d977588b6087e6d118d267bd461564ba024"
+ },
+ "tool": "SignalP 6.0",
+ "volumes": {
+  "models": "signalp6-models",
+  "package": "signalp6-package"
+ }
+}

@@ -1,0 +1,42 @@
+{
+ "run_id": "nterm_sp6_2026_11_10",
+ "calls_key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/signalp6-runs/nterm_sp6_2026_11_10/calls.json",
+ "new_member": {
+  "members": 5,
+  "parent_calls": {
+   "SP": 5
+  },
+  "parent_cleavage_sites": {
+   "20": 1,
+   "21": 1,
+   "28": 2,
+   "32": 1
+  },
+  "tagged_designs": 26,
+  "tagged_verdicts": {
+   "cleavage_moved": 1,
+   "preserved": 14,
+   "signal_peptide_lost": 11
+  },
+  "members_with_a_preserved_site": 3,
+  "members_with_none_preserved": [
+   "l1-m0310 CD58",
+   "l1-m2169 PCDHGA7"
+  ]
+ },
+ "igk_swap": {
+  "members": 109,
+  "parent_calls": {
+   "SP": 109
+  },
+  "parent_cleavage_sites": {
+   "20": 109
+  },
+  "tagged_designs": 346,
+  "tagged_verdicts": {
+   "preserved": 346
+  },
+  "members_with_a_preserved_site": 109,
+  "members_with_none_preserved": []
+ }
+}

@@ -1,0 +1,25 @@
+{
+ "note": "Where the licensed predictor bytes behind the s4e9 topology and signal-peptide calls live, and their SHA-256. Recorded 2026-11-14 by Claude Code session l1-tag-refold for the reproducibility audit. Nothing was copied: hashes were computed in place on Modal (scripts/hash_predictor_volume.py). Whether to keep a second, licence-compliant copy anywhere else is an open question for Becca.",
+ "deeptmhmm_v1": {
+  "tool": "DeepTMHMM v1 (academic licence)",
+  "version_label": "the package reports '1.0 Academic'; records label it deeptmhmm-1.0.24 or deeptmhmm-1.0-academic. The 1.0.24 label has not been verified from the bytes (AGENT_HANDOFF.md).",
+  "where": "Modal volume deeptmhmm-v1, folder DeepTMHMM-Academic-License-v1.0/ (52 files)",
+  "per_file_sha256": "tag_refold/deeptmhmm_v1_volume_sha256.json",
+  "weights_sha256": {
+   "deeptmhmm_cv_0.model": "5efa57f9bca96742f6a29a4663bb3e2ba0d362e5eecafebfb8af1ab4efe48533",
+   "deeptmhmm_cv_1.model": "ab6c743cf8d969d40da058ddd6c909b721d23d34cc6776e3d46bce3e27711093",
+   "deeptmhmm_cv_2.model": "efa4b50b5ca089ed27ea57116710138da4207728f2e3dca113e811013abc6c2e",
+   "deeptmhmm_cv_3.model": "a2d011962f7efcb1e3bdba92eefdfc211e93bec9a62cb60bf0bd2cb732d1f58f",
+   "deeptmhmm_cv_4.model": "9114bced9cf5f51905e4ac7e04db922801d383db4fca75523f6e144694f11725"
+  },
+  "cross_check": "all 22 file hashes recorded in library_pipeline_inputs_saved.json and topology_runs/2026-11-12_cyno_restarts.3line.runtime.json match the volume today",
+  "original_download": "not recorded in the repo; ask Becca"
+ },
+ "signalp6": {
+  "tool": "SignalP 6.0 (package 6.0+h, slow_sequential)",
+  "where": "Modal volumes signalp6-package (package + TARBALL.json + tar_member_sha256.json) and signalp6-models (cpu/, gpu/ checkpoints)",
+  "tarball": "signalp-6.0i.slow_sequential.tar.gz, 9,070,585,509 bytes, sha256 3193855d628c78337c9df28a0db76d977588b6087e6d118d267bd461564ba024; DTU Health Tech licensed download, held in Becca's OneDrive (Internalization/Software)",
+  "per_file_sha256": "reviewer-package/nterm/signalp6_identity.json (package files and cpu/gpu checkpoints, each matched against the tarball)",
+  "volume_check": "2026-11-14: signalp6-package (18 files) and signalp6-models (14 files) re-hashed in place on Modal; every package file and every cpu/gpu checkpoint SHA-256 in signalp6_identity.json matches."
+ }
+}

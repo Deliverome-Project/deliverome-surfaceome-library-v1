@@ -1,0 +1,18 @@
+{
+ "shard": "s0000",
+ "n": 1024,
+ "calls_differ": [],
+ "max_abs_sp_probability_difference": 0.0,
+ "max_abs_cleavage_probability_difference": 0.0,
+ "environment": {
+  "python": "3.10.17",
+  "torch": "1.13.1+cu117",
+  "cuda": "11.7",
+  "cudnn": 8500,
+  "gpu": "Tesla T4, 610.57.04"
+ },
+ "runner_git_commit": "517b0c35aea411038c6d8c1cc95191435d267686",
+ "runner_dirty_note": "uncommitted change was str() around torch/CUDA version fields only",
+ "modal_run": "ap-zCyNx4H8A5BG9uAoqlgmSQ",
+ "date": "2026-11-10"
+}

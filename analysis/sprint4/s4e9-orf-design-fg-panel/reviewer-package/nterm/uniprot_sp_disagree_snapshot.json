@@ -1,0 +1,10 @@
+{
+ "release": "2026_04",
+ "key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/uniprot-sp-disagree/2026_04/uniprot_features.tsv",
+ "sha256": "516f0b62c5659d5e85268da28381256bb633d598124558cfa13809e2862369c1",
+ "genes": 63,
+ "entries": 155,
+ "fields": "accession,gene_primary,sequence,ft_signal,ft_transmem,ft_topo_dom",
+ "query": "gene_exact AND organism_id:9606 AND reviewed:true, isoforms included",
+ "fetched_utc": "2026-11-14T19:13:03Z"
+}

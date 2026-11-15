@@ -16,10 +16,14 @@ import csv
 import hashlib
 import json
 import re
+import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
 from deliverome_analysis import seqtools
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from member_id_allocations import to_design_space
 
 HERE = Path(__file__).parent
 ID = re.compile(r"^(l[12])-p([0-9]+)$")
@@ -261,7 +265,8 @@ def main() -> None:
     parser.add_argument("--plan-only", action="store_true")
     parser.add_argument("--out", type=Path, required=True)
     args = parser.parse_args()
-    manifest = read(args.manifest)
+    # Allocation and retirement work on design ids (see member_id_allocations).
+    manifest = to_design_space(read(args.manifest))
     reservations = {r["candidate_id"] for path in args.reserved_ids for r in read(path)}
     ledger = read(args.allocation_ledger) if args.allocation_ledger.exists() else []
     mapping, summary = plan(

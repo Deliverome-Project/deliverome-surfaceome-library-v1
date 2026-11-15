@@ -37,6 +37,7 @@ from __future__ import annotations
 
 import csv
 import json
+import re
 from collections.abc import Mapping
 from pathlib import Path
 
@@ -57,17 +58,26 @@ LIBRARIES: tuple[str, ...] = (LIBRARY_L1, LIBRARY_L2)
 #: entries under a new dated key, with every earlier entry unchanged, and this constant
 #: moves to it. 2026-11-10: the ortholog CDS-policy panel (s4e9
 #: ``adopt_ortholog_cds_policy.py``) appended 56 ortholog forms to the
-#: :data:`BASE_CDS_KEY` record.
+#: :data:`BASE_CDS_KEY` record. 2026-11-12: the approved reference fixes (s4e9
+#: ``apply_reference_fixes.py``; ledger ``reference_changes.tsv``) replaced seven ``lib:``
+#: entries -- five named reference forms and two ATG start replacements -- and changed no
+#: other entry; the 2026-11-10 record stays at its own key. 2026-11-12, second round
+#: (``reference-fixes-2``): three more named references (LMLN, DISP2, TSPAN10), the OR8G3
+#: ATG start and EPHA6's in-frame trim to Q9UF33; the first round's record stays at its key.
+#: Then (``ortholog-start-trims``) cyno CCR5 restarted at the native Met aligned to human Met1
+#: (s4e9 ``apply_ortholog_start_trims.py``); every other entry unchanged. Then
+#: (``ortholog-start-trims-2``) cyno CHRM3, NIPAL4 and OR3A2 restarted the same way, once
+#: their DeepTMHMM v1 rows were published; the CCR5-only record stays at its key.
 CDS_KEY = (
     "sprint4/s4e9-orf-design-fg-panel/library-candidates/"
-    "2026-11-10-ortholog-cds-policy/candidate_cds.json"
+    "2026-11-12-ortholog-start-trims-2/candidate_cds.json"
 )
 
 #: Domesticated ORF per candidate (``construct``, edit counts), keyed like :data:`CDS_KEY`
 #: and versioned with it.
 CONSTRUCTS_KEY = (
     "sprint4/s4e9-orf-design-fg-panel/library-candidates/"
-    "2026-11-10-ortholog-cds-policy/candidate_constructs.json"
+    "2026-11-12-ortholog-start-trims-2/candidate_constructs.json"
 )
 
 #: The records :data:`CDS_KEY` and :data:`CONSTRUCTS_KEY` extend. They stay the published
@@ -128,15 +138,88 @@ def _check_library(library: str) -> str:
     return library
 
 
-#: Manifest column naming why a member was retired. A retired member keeps its
-#: ``candidate_id`` -- ids are never reused or renumbered -- but is no longer built, so
-#: every reader here skips it. See s4e9 ``dedupe_l1_members.py``.
+#: Manifest column naming why a member was retired. A retired member keeps its design id
+#: as its ``candidate_id`` and gets no member id, and is no longer built, so every reader
+#: here skips it. See s4e9 ``dedupe_library_members.py``.
 RETIRED_COLUMN = "retired_reason"
+
+#: Manifest column holding a row's **design id** (``l1-pNNNN`` / ``l2-pNNNN``): the id the
+#: row was designed under, permanent and never reused. Design-stage records (panel changes,
+#: retirements, adoption ledgers, fold and topology runs) are keyed on it.
+DESIGN_ID_COLUMN = "design_id"
+
+#: An active L1 member's ``candidate_id`` is its **member id**, ``l1-mNNNN``, numbered in
+#: order of synthesized-insert length (= plate order, 96 per plate, column-major) by s4e9
+#: ``renumber_library_members.py``. It is a different spelling from the design id on
+#: purpose, so an old ``l1-p`` id can never be read as a member id or vice versa. Member
+#: ids are reassigned whenever membership changes, until the order freeze.
+MEMBER_ID_RE = re.compile(r"l1-m[0-9]{4}")
+DESIGN_ID_RE = re.compile(r"l[12]-p[0-9]{4}")
+
+#: From the first per-insert cut (agreed 2026-11-14/15 by the coordinator, l1-integration,
+#: ranker-pu-segment and l1-reviewer-package, after Becca's rule that an internal member may
+#: carry 2 or 3 arms) an L1 member can be ordered as several inserts, so three ids replace the
+#: member id:
+#:
+#: * the design id (``l1-pNNNN``) names the member (the protein design); it is also the
+#:   member's ``candidate_id``, so a member id no longer moves at a cut;
+#: * the **arm id** (``l1-pNNNN-aK``) names one tagged insert design of it, permanently: K is
+#:   assigned in creation order and never reused or re-ranked (role and rank are columns);
+#: * the **insert id** (``l1-iNNNN``) is the plate position of one ordered insert, numbered
+#:   by ordered insert length then arm id at each cut (96 per plate, column-major).
+#:
+#: ``l1-m`` ids then survive only in dated records.
+ARM_ID_RE = re.compile(r"(l[12]-p[0-9]{4})-a([1-9][0-9]*)")
+INSERT_ID_RE = re.compile(r"l1-i[0-9]{4}")
+
+
+def arm_id(design: str, k: int = 1) -> str:
+    """The arm id of a design's K-th arm (``l1-p0325``, 2 -> ``l1-p0325-a2``)."""
+    if not DESIGN_ID_RE.fullmatch(design) or k < 1:
+        raise ValueError(f"not a design id and arm number: {design!r}, {k!r}")
+    return f"{design}-a{k}"
+
+
+def design_of_arm(arm: str) -> str:
+    """The design id an arm id belongs to."""
+    m = ARM_ID_RE.fullmatch(arm)
+    if not m:
+        raise ValueError(f"not an arm id: {arm!r}")
+    return m.group(1)
+
+
+def insert_id(n: int) -> str:
+    """The insert id at plate position ``n`` (1-based)."""
+    if not 1 <= n <= 9999:
+        raise ValueError(f"insert position out of range: {n}")
+    return f"l1-i{n:04d}"
+
+
+def design_id(row: Mapping[str, str]) -> str:
+    """A manifest row's design id, which design-stage code must key on.
+
+    Falls back to ``candidate_id`` for a manifest written before the renumbering (whose
+    ids were all design ids), and refuses a member id with no design id beside it.
+    """
+    did = (row.get(DESIGN_ID_COLUMN) or "").strip() or row["candidate_id"]
+    if not DESIGN_ID_RE.fullmatch(did):
+        raise ValueError(f"row has no design id: {row.get('candidate_id')!r} / {did!r}")
+    return did
 
 
 def is_active(row: Mapping[str, str]) -> bool:
     """False for a manifest row that has been retired from its tranche."""
     return not (row.get(RETIRED_COLUMN) or "").strip()
+
+
+def design_ids(manifest: str | Path) -> dict[str, str]:
+    """``{candidate_id: design_id}`` for every manifest row (identity for unnumbered rows).
+
+    Use it wherever a member-keyed record must reach a design-keyed artefact: fold inputs
+    and their structure files, topology supplement rows, panel and retirement ledgers.
+    """
+    with open(manifest) as fh:
+        return {r["candidate_id"]: design_id(r) for r in csv.DictReader(fh, delimiter="\t")}
 
 
 def load_designed_cds() -> dict[str, dict]:

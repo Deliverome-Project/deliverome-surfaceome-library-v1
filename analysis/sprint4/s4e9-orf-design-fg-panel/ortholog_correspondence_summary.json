@@ -1,6 +1,6 @@
 {
   "rule_version": "ortholog-correspondence-review-v1",
-  "source_commit": "e696b394825bf28d181ce093eeb4154072fb41f2",
+  "source_commit": "2e2b140fbd51e95b63a9c9c3609582561a9d98da",
   "panel": "analysis/sprint4/s4e9-orf-design-fg-panel/ortholog_panel_cds_eligible.tsv",
   "panel_sha256": "bd44a58eb2f002cec1384a798ad12b945d004157ef4788f6d98e57154761dd30",
   "inputs": {

@@ -10,6 +10,12 @@ database. Each run already leaves its files there:
   ``notes``) and is picked up on the next build.
 * **Flow** -- every run published by :func:`deliverome_analysis.flow.publish_run` has a
   ``publication.json`` listing its ``gates.yaml``, ``run.json`` and ``summary.csv``.
+* **Search** -- every DIA search run by deliverome-internal's ``workflows/alphadia_qc``
+  runner leaves a ``benchmark.json`` (inputs and checksums, the computer it ran on, runtime,
+  CPU time, peak and mean memory, software versions) and alphaDIA's ``alphadia/stat.tsv``
+  (identifications), uploaded by ``scripts/publish_alphadia_runs.py``. One row per search, so
+  runtime and resource use can be compared across machines, libraries and file sizes. Scans
+  ``scratch/`` as well as the experiment folders, since QC batches often have no experiment.
 
 ``build`` writes one SQLite file per database to ``processed://db/<name>.sqlite``:
 
@@ -33,6 +39,8 @@ Read with the shared helpers (each returns a DataFrame from the current snapshot
     qcdb.flow_runs(experiment="s3e2-test-titer-flow")
     qcdb.flow_populations(experiment="s3e2-test-titer-flow", gate="singlets")  # + metadata
     qcdb.flow_stats(gate="singlets", stat="median", wide=True)
+    qcdb.search_runs(host="DESKTOP-6IHF2SA")          # runtime, CPU, memory per search
+    qcdb.search_with_qc(["precursors"], library=...)  # each search + its QC page's metrics
     qcdb.read("flow", "select ...", params)           # anything else, read-only
     con = qcdb.connect("dia_qc")                      # or a raw read-only sqlite3 connection
 
@@ -60,13 +68,25 @@ from pathlib import Path
 
 import pandas as pd
 
-SCHEMA_VERSION = 3  # of the SQLite files; a different value forces a full rebuild
+SCHEMA_VERSION = 6  # of the SQLite files; a different value forces a full rebuild
 RECORD_SCHEMA_VERSION = 1  # of <page>.qcrecord.json, written by dia_qc_dashboard.qc_record
-DATABASES = ("dia_qc", "flow")
+DATABASES = ("dia_qc", "flow", "search")
 QC_RECORD_SUFFIX = ".qcrecord.json"
 DIAGNOSIS_SUFFIX = ".run_diagnostics.tsv"
 FLOW_MANIFEST = "publication.json"
 SCAN_PREFIX = "sprint"  # experiment folders: sprint{N}/s{N}e{M}-slug/...
+SCRATCH_PREFIX = "scratch/"
+# Where each database looks. DIA QC pages and searches also live in scratch/ (QC batches with
+# no experiment folder yet); for the QC history an experiment-folder record of an acquisition
+# always outranks a scratch one (see latest_runs). Flow stays limited to experiment folders.
+SCAN_PREFIXES = {
+    "dia_qc": (SCAN_PREFIX, SCRATCH_PREFIX),
+    "flow": (SCAN_PREFIX,),
+    "search": (SCAN_PREFIX, SCRATCH_PREFIX),
+}
+SEARCH_RECORD = "benchmark.json"
+SEARCH_STATS = "alphadia/stat.tsv"
+SEARCH_CONFIG = "config.yaml"
 UPLOAD_ATTEMPTS = 3
 
 # The agentflow output format this module reads. agentflow's tests/test_output_contract.py pins
@@ -114,23 +134,28 @@ create table records (
   record_id text primary key, record_key text, folder text, created text, source text,
   title text, layout text, layout_sha256 text, layout_yaml text, git_commit text,
   git_dirty text, uv_lock_sha256 text, renv_lock_sha256 text, limpa_engine text,
-  limpa_version text, versions_json text, schema_version integer);
+  limpa_version text, versions_json text, schema_version integer,
+  scope text);  -- 'experiment' (sprint*/ folder) or 'scratch'
+
 -- run_uid identifies an acquisition across datasets: instrument serial + acquisition time from
 -- the raw-file header, or the run name alone when the record has no raw-file metadata.
 create table runs (
   record_id text, run text, run_uid text, label text, condition text, acquired text,
   instrument_model text, instrument_name text, instrument_serial text, file_bytes integer,
+  search_library text, search_library_sha256 text,
   primary key (record_id, run));
 create table run_metrics (record_id text, run text, metric text, value real);
 create table diagnoses (
   record_id text, run text, flags text, hints text, confirmed_cause text, notes text);
 create index run_metrics_metric on run_metrics(metric);
 create index runs_uid on runs(run_uid);
--- The newest record per acquisition: the views to use for history plots and queries.
+-- The newest record per acquisition, experiment folders before scratch: the views to use for
+-- history plots and queries.
 create view latest_runs as
   select * from (
-    select r.*, rec.created,
-           row_number() over (partition by r.run_uid order by rec.created desc) as rank
+    select r.*, rec.created, rec.scope,
+           row_number() over (partition by r.run_uid
+                              order by rec.scope = 'experiment' desc, rec.created desc) as rank
     from runs r join records rec using (record_id))
   where rank = 1;
 create view latest_run_metrics as
@@ -186,22 +211,23 @@ def _qc_ingest(con: sqlite3.Connection, bucket, key: str, listing: dict[str, str
     rid = rec["record_id"]
     v, prov, lim = rec.get("versions", {}), rec.get("provenance", {}), rec.get("limpa") or {}
     con.execute(
-        "insert into records values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        "insert into records values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
         (
             rid, key, key.rsplit("/", 1)[0], rec.get("created"), rec.get("source"),
             rec.get("title"), rec.get("layout"), rec.get("layout_sha256"), rec.get("layout_yaml"),
             prov.get("git-commit"), prov.get("git-dirty"), prov.get("uv-lock-sha256"),
             prov.get("renv-lock-sha256"), lim.get("engine"), lim.get("limpa_version"),
             json.dumps(v), rec.get("schema_version"),
+            "scratch" if key.startswith(SCRATCH_PREFIX) else "experiment",
         ),
     )  # fmt: skip
     for r in rec.get("runs", []):
         con.execute(
-            "insert into runs values (?,?,?,?,?,?,?,?,?,?)",
+            "insert into runs values (?,?,?,?,?,?,?,?,?,?,?,?)",
             (
                 rid, r["run"], run_uid(r), r.get("label"), r.get("condition"), r.get("acquired"),
                 r.get("instrument_model"), r.get("instrument_name"), r.get("instrument_serial"),
-                r.get("file_bytes"),
+                r.get("file_bytes"), r.get("search_library"), r.get("search_library_sha256"),
             ),
         )  # fmt: skip
     metrics = rec.get("metrics", [])
@@ -375,11 +401,148 @@ def _flow_ingest(con: sqlite3.Connection, bucket, key: str, listing: dict[str, s
 # build / connect
 # ----------------------------------------------------------------------------------------------
 
+# ----------------------------------------------------------------------------------------------
+# search runs (alphaDIA runtime and resources)
+# ----------------------------------------------------------------------------------------------
+
+_SEARCH_SCHEMA = """
+create table search_runs (
+  run_key text primary key, folder text, run text, run_uid text, acquired text,
+  instrument_serial text, instrument_model text, status text, started_utc text,
+  engine text, engine_version text, raw_file text, raw_bytes integer, raw_sha256 text,
+  raw_storage text, n_raw integer, library text, library_sha256 text, fasta_sha256 text,
+  config text, config_sha256 text, threads integer,
+  host text, cpu_model text, physical_cpus integer, logical_cpus integer, ram_gib real,
+  os text, wsl integer,
+  wall_seconds real, cpu_user_seconds real, cpu_system_seconds real, mean_cores_busy real,
+  peak_pss_gib real, mean_pss_gib real, peak_system_used_gib real, mean_system_used_gib real,
+  max_process_rss_gib real, stage_seconds real,
+  precursors integer, protein_groups integer, gradient_seconds real,
+  repo_commit text, repo_dirty integer, uv_lock_sha256 text, versions_json text,
+  method_file text, scans integer, run_minutes real, cycle_time_s real,
+  faims_attached integer, faims_cvs text,
+  ms1_analyzer text, ms1_resolution real, ms1_mz_low real, ms1_mz_high real, ms1_max_it_ms real,
+  ms2_analyzer text, dia_windows integer, dia_mz_low real, dia_mz_high real,
+  dia_width_min real, dia_width_median real, dia_width_max real, dia_scheme_sha256 text,
+  ms2_nce text, ms2_max_it_ms text, spray_voltage_v real, method_json text);
+create index search_runs_host on search_runs(host);
+create index search_runs_uid on search_runs(run_uid);
+create view acquisitions as  -- one row per acquisition with its method (any search of it)
+select run_uid, min(run) as run, acquired, instrument_serial, instrument_model, method_file,
+       scans, run_minutes, cycle_time_s, faims_attached, faims_cvs, ms1_analyzer,
+       ms1_resolution, ms1_mz_low, ms1_mz_high, ms1_max_it_ms, ms2_analyzer, dia_windows,
+       dia_mz_low, dia_mz_high, dia_width_min, dia_width_median, dia_width_max,
+       dia_scheme_sha256, ms2_nce, ms2_max_it_ms, spray_voltage_v, method_json
+from search_runs where method_json is not null and run_uid is not null group by run_uid;
+"""
+_SEARCH_COLUMNS = 69
+
+
+def _method_columns(m: dict | None) -> tuple:
+    """search_runs method columns from a benchmark input's ``method`` (raw_method.py)."""
+    if not m or "ms2" not in m:
+        return (
+            (m or {}).get("sample", {}).get("method_file"),
+            *([None] * 21),
+            (json.dumps(m) if m else None),
+        )
+    ms1 = (m.get("ms1") or [{}])[0]
+    ms2, faims = m["ms2"], m.get("faims") or {}
+    iso = ms2.get("isolation_mz") or [None, None]
+    rng = ms1.get("range") or [None, None]
+    method_file = (m.get("sample") or {}).get("method_file")
+    join = lambda xs: ";".join(f"{x:g}" for x in xs) if xs else None  # noqa: E731
+    return (
+        method_file.replace("\\", "/").split("/")[-1] if method_file else None,
+        m.get("scans"), m.get("rt_end_min"), m.get("cycle_time_s"),
+        None if faims.get("attached") is None else int(faims["attached"]),
+        join(faims.get("cvs")),
+        ms1.get("analyzer"), ms1.get("resolution"), rng[0], rng[1], ms1.get("max_it_ms"),
+        ";".join(ms2.get("analyzers") or []) or None, ms2.get("windows"), iso[0], iso[1],
+        ms2.get("width_min"), ms2.get("width_median"), ms2.get("width_max"),
+        ms2.get("scheme_sha256"), join(ms2.get("nce")), join(ms2.get("max_it_ms")),
+        (m.get("status_mid_run") or {}).get("spray_voltage_v"), json.dumps(m),
+    )  # fmt: skip
+
+
+def _search_units(listing: dict[str, str]) -> dict[str, str]:
+    """unit key (the benchmark.json) -> fingerprint (its ETag + stat.tsv and config.yaml ETags)."""
+    out = {}
+    for k, etag in listing.items():
+        if k.endswith("/" + SEARCH_RECORD):
+            folder = k[: -len(SEARCH_RECORD)]
+            out[k] = (
+                f"{etag}|{listing.get(folder + SEARCH_STATS, '')}"
+                f"|{listing.get(folder + SEARCH_CONFIG, '')}"
+            )
+    return out
+
+
+def _search_delete(con: sqlite3.Connection, unit: str) -> None:
+    con.execute("delete from search_runs where run_key = ?", [unit])
+
+
+def _search_ingest(con: sqlite3.Connection, bucket, key: str, listing: dict[str, str]) -> bool:
+    rec = json.loads(_read_text(bucket, key))
+    if "timing" not in rec or "inputs" not in rec:
+        raise ValueError("not a search benchmark record (no timing/inputs)")
+    folder = key[: -len(SEARCH_RECORD)]
+    stats = {}
+    if folder + SEARCH_STATS in listing:
+        row = next(
+            csv.DictReader(io.StringIO(_read_text(bucket, folder + SEARCH_STATS)), delimiter="\t")
+        )
+        stats = {
+            "precursors": int(float(row["search.precursors"])),
+            "protein_groups": int(float(row["search.proteins"])),
+            "gradient_seconds": float(row["raw.gradient_length"]),
+        }
+    config_sha = None
+    if folder + SEARCH_CONFIG in listing:  # the exact config the search ran with
+        config_sha = hashlib.sha256(
+            Path(bucket.download(folder + SEARCH_CONFIG)).read_bytes()
+        ).hexdigest()
+    dirty = rec.get("software", {}).get("repo_dirty")
+    dirty = None if dirty is None else int(bool(dirty))
+    t, h, sw = rec["timing"], rec.get("host", {}), rec.get("software", {})
+    pk = sw.get("packages", {})
+    inp = rec["inputs"]
+    lib, fasta = rec.get("library") or {}, rec.get("fasta") or {}
+    acq = inp[0].get("acquisition") or {}
+    con.execute(
+        f"insert into search_runs values ({','.join('?' * _SEARCH_COLUMNS)})",
+        (
+            key, folder.rstrip("/"), rec.get("run_id"),
+            inp[0].get("run_uid") or run_uid({"run": rec.get("run_id"), **acq}),
+            acq.get("acquired"), acq.get("instrument_serial"), acq.get("instrument_model"),
+            rec.get("status"), rec.get("started_utc"),
+            "alphadia" if "alphadia" in pk else None, pk.get("alphadia"),
+            Path(inp[0]["path"]).name, sum(i.get("bytes") or 0 for i in inp),
+            inp[0].get("sha256"), rec.get("raw_storage"), len(inp),
+            Path(lib["path"]).name if lib.get("path") else "predicted", lib.get("sha256"),
+            fasta.get("sha256"), Path(rec.get("config_source") or "").name or None,
+            config_sha, rec.get("threads"),
+            h.get("hostname"), h.get("cpu_model"), h.get("physical_cpus"), h.get("logical_cpus"),
+            h.get("ram_gib"), h.get("os"), int(bool(h.get("wsl"))),
+            t.get("wall_seconds"), t.get("cpu_user_seconds"), t.get("cpu_system_seconds"),
+            t.get("mean_cores_busy"), t.get("peak_pss_gib"), t.get("mean_pss_gib"),
+            t.get("peak_system_used_gib"), t.get("mean_system_used_gib"),
+            t.get("max_single_process_rss_gib"), t.get("stage_seconds"),
+            stats.get("precursors"), stats.get("protein_groups"), stats.get("gradient_seconds"),
+            sw.get("repo_commit"), dirty, sw.get("uv_lock_sha256"),
+            json.dumps(pk),
+            *_method_columns(inp[0].get("method")),
+        ),
+    )  # fmt: skip
+    return True
+
+
 _SPECS = {
     "dia_qc": (_QC_SCHEMA, _qc_units, _qc_ingest, _qc_delete),
     "flow": (_FLOW_SCHEMA, _flow_units, _flow_ingest, _flow_delete),
+    "search": (_SEARCH_SCHEMA, _search_units, _search_ingest, _search_delete),
 }
-_MAIN_TABLE = {"dia_qc": "records", "flow": "flow_runs"}
+_MAIN_TABLE = {"dia_qc": "records", "flow": "flow_runs", "search": "search_runs"}
 _BOOKKEEPING = """
 create table if not exists sources (unit_key text primary key, fingerprint text, ingested text);
 create table if not exists build_errors (unit_key text, error text, at text);
@@ -452,7 +615,7 @@ def _update(con: sqlite3.Connection, name: str, bucket, listing: dict[str, str])
             ("schema_version", str(SCHEMA_VERSION)),
             ("built", _now()),
             ("records", str(n)),
-            ("scanned_prefix", SCAN_PREFIX),
+            ("scanned_prefix", ",".join(SCAN_PREFIXES[name])),
             *((f"last_build_{k}", str(v)) for k, v in stats.items()),
         ],
     )
@@ -483,7 +646,9 @@ def build(
     workdir = Path(tempfile.mkdtemp(prefix="qcdb-"))
     for attempt in range(1, UPLOAD_ATTEMPTS + 1):
         etag = bucket.etag(db_key(name))
-        listing = bucket.list_etags(prefix=SCAN_PREFIX)
+        listing = {}
+        for prefix in SCAN_PREFIXES[name]:
+            listing |= bucket.list_etags(prefix=prefix)
         path = workdir / f"{name}.sqlite"
         con = _start(name, path, bucket, etag, full)
         try:
@@ -592,6 +757,73 @@ def flow_runs(*, experiment: str | None = None, **kw) -> pd.DataFrame:
         "input_count, signal_space, events_key"
     )
     return read("flow", f"select {cols} from flow_runs{where} order by run_id", params, **kw)
+
+
+def search_runs(*, host: str | None = None, status: str | None = "ok", **kw) -> pd.DataFrame:
+    """One row per DIA search: input, library, computer, runtime, CPU, peak/mean memory, IDs."""
+    where, params = _where({"host = ?": host, "status = ?": status})
+    return read("search", f"select * from search_runs{where} order by started_utc", params, **kw)
+
+
+def search_with_qc(
+    metrics: list[str] | None = None,
+    *,
+    host: str | None = None,
+    library: str | None = None,
+    wide: bool = True,
+    bucket=None,
+    search_path=None,
+    qc_path=None,
+) -> pd.DataFrame:
+    """Each search next to the QC metrics of the same acquisition and the same library.
+
+    Joins ``search.sqlite`` (runtime, CPU, memory, computer, IDs) with ``dia_qc.sqlite`` on
+    ``run_uid`` (instrument serial | acquisition time from the raw header). A QC run that
+    names its search library only matches searches with that library (by SHA-256), so a raw
+    file searched with two libraries pairs each search with its own QC page; QC runs without
+    a library (Spectronaut pages) match every search of the acquisition. When several QC
+    records match, the experiment-folder one wins, then the newest. ``wide``: one row per
+    search with a ``qc:<metric>`` column per metric; otherwise long (metric, value).
+    """
+    if search_path is None:
+        search_path = (bucket or _bucket()).download(db_key("search"))
+    if qc_path is None:
+        qc_path = (bucket or _bucket()).download(db_key("dia_qc"))
+    con = sqlite3.connect(f"file:{search_path}?mode=ro", uri=True)
+    try:
+        con.execute("attach database ? as qc", [f"file:{qc_path}?mode=ro"])
+        where, params = _where({"s.host = ?": host, "s.library = ?": library})
+        if metrics:
+            where += (" and " if where else " where ") + (
+                f"m.metric in ({','.join('?' * len(metrics))})"
+            )
+            params += list(metrics)
+        sql = f"""
+            with matched as (
+              select s.run_key, r.record_id, r.run,
+                     row_number() over (
+                       partition by s.run_key
+                       order by rec.scope = 'experiment' desc, rec.created desc) as rank
+              from search_runs s
+              join qc.runs r on r.run_uid = s.run_uid
+              join qc.records rec using (record_id)
+              where r.search_library_sha256 is null
+                 or r.search_library_sha256 = s.library_sha256)
+            select s.*, rec.folder as qc_folder, m.metric, m.value
+            from search_runs s
+            join matched x on x.run_key = s.run_key and x.rank = 1
+            join qc.records rec on rec.record_id = x.record_id
+            join qc.run_metrics m on m.record_id = x.record_id and m.run = x.run
+            {where} order by s.started_utc"""
+        df = pd.read_sql(sql, con, params=params)
+    finally:
+        con.close()
+    if not wide or df.empty:
+        return df
+    base = [c for c in df.columns if c not in ("metric", "value")]
+    qc_wide = df.pivot_table(index="run_key", columns="metric", values="value", aggfunc="first")
+    qc_wide.columns = [f"qc:{c}" for c in qc_wide.columns]
+    return df[base].drop_duplicates("run_key").merge(qc_wide.reset_index(), on="run_key")
 
 
 def _with_metadata(df: pd.DataFrame, metadata: bool, kw: dict) -> pd.DataFrame:

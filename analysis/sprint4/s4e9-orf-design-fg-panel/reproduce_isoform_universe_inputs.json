@@ -78,7 +78,7 @@
    "origin": "the accession lists of each replay stage, in query order"
   },
   "uniprot_human_gpi.tsv": {
-   "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/panel-inputs/2026-11-01/uniprot_human_gpi.tsv",
+   "source": "external:uniprot/2026_03/rest-2026-11-01/uniprot_human_gpi.tsv",
    "sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
    "origin": "UniProt REST release 2026_03: keyword:KW-0336 AND organism_id:9606 AND reviewed:true",
    "cache_as": "uniprot_human_gpi.tsv"

@@ -1,0 +1,48 @@
+{
+  "named_references": {
+    "CD200R1L": "Q6Q8B3",
+    "LRRC37B": "Q96QE4",
+    "CACHD1": "Q5VU97",
+    "ADGRF3": "Q8IZF5",
+    "RGMB": "Q6NW40",
+    "LMLN": "Q96KR4",
+    "DISP2": "A7MBM2",
+    "TSPAN10": "Q9H1Z9"
+  },
+  "not_applied": {},
+  "start_codon_replacements": [
+    "lib:OR8G3",
+    "lib:SLC22A17",
+    "lib:TRPV6"
+  ],
+  "n_terminal_trims": {
+    "lib:EPHA6": "Q9UF33"
+  },
+  "changed_entries": [
+    "lib:ADGRF3",
+    "lib:CACHD1",
+    "lib:CD200R1L",
+    "lib:DISP2",
+    "lib:EPHA6",
+    "lib:LMLN",
+    "lib:LRRC37B",
+    "lib:OR8G3",
+    "lib:RGMB",
+    "lib:SLC22A17",
+    "lib:TRPV6",
+    "lib:TSPAN10"
+  ],
+  "v1_missing": [],
+  "records": {
+    "candidate_cds": "processed://sprint4/s4e9-orf-design-fg-panel/library-candidates/2026-11-12-reference-fixes-2/candidate_cds.json",
+    "candidate_constructs": "processed://sprint4/s4e9-orf-design-fg-panel/library-candidates/2026-11-12-reference-fixes-2/candidate_constructs.json",
+    "changed_vectors": "processed://sprint4/s4e9-orf-design-fg-panel/library-candidates/2026-11-12-reference-fixes-2/changed_vectors.fasta",
+    "reference_selection": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/reference-selection/2026-11-12-reference-fixes-2/reference_selection.tsv"
+  },
+  "record_sha256": {
+    "candidate_cds.json": "d7ed19ebc5cc8708b3715cc749813d8fd80df833544ecb576b220f21518b216e",
+    "candidate_constructs.json": "2581bb4e5c1ee6b01c43c67495fa8b352721640842b926a20f940847c74da0fd",
+    "changed_vectors.fasta": "04d6f9afa5cb95e92b51e31c833d93635fdddf17ab748f77066ee75bd1868350",
+    "reference_selection.tsv": "afb1f28c1696b7200e7d48270cbe92132cd7bfb343d084c0bed85ea1af806c7b"
+  }
+}

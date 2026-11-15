@@ -1,0 +1,13 @@
+{
+ "topology_version": "topo_2026_11_12_cyno_restarts",
+ "snapshot": "2026-11-12-cyno-restarts",
+ "base_snapshot": "accessible-surfaceome/topology/2026-11-06-ortholog-cds-policy/topology.parquet",
+ "tool": "DeepTMHMM v1 (deeptmhmm-1.0-academic, Modal volume deeptmhmm-v1); runtime identity in 2026-11-12_cyno_restarts.3line.runtime.json",
+ "tool_version": "deeptmhmm-1.0-academic",
+ "command": "modal run scratch/becca/appris-principal/modal/deeptmhmm_v1_app.py::sweep --fasta topology_runs/2026-11-12_cyno_restarts.fasta --out topology_runs/2026-11-12_cyno_restarts.3line",
+ "modal_app_run": "ap-NnvcTAMElPaeZktAnai4X9",
+ "run_completed": "2026-11-12T13:01:02+00:00",
+ "members": ["l1-p2938", "l1-p2962", "l1-p2963"],
+ "why": "decided 5' restarts of cyno CHRM3, NIPAL4 and OR3A2 (ortholog_start_trims.tsv, held_pending_v1); the restarted proteins had no v1 row. Spend from the coordinator's reserve line, Becca's 2026-11-12 $300 overnight Modal authorization",
+ "implemented_by": "Claude Code session l1-reviewer-package, PR #283"
+}

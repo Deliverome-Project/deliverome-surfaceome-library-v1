@@ -1,0 +1,89 @@
+design_id	gene_symbol	decision	outcome	flags_now	flag_class_now	translation_check_now
+l1-p0017	ACHE	keep	kept	pfam_domain_lost;structure_not_ours;reference_not_mane_appris_canonical	proposed	exact
+l1-p0034	ADAM19	keep	kept	c_terminal_truncation;structure_not_ours	proposed	exact
+l1-p0058	ADGRB2	keep	kept	sp_lost_vs_canonical;structure_not_ours	proposed	exact
+l1-p0115	ANO7	keep	kept	n_terminal_truncation;structure_not_ours	proposed	exact
+l1-p0128	AQP12B	keep	kept	tm_count_change;orientation_change;structure_not_ours	proposed	exact
+l1-p0162	ATP2B4	keep	kept	pfam_domain_lost;structure_not_ours	proposed	exact
+l1-p0173	BCAN	keep	kept	c_terminal_truncation;reference_short;pfam_domain_lost;structure_not_ours;reference_not_mane_appris_canonical	proposed	exact
+l1-p0184	BRICD5	keep	kept	reference_short;structure_not_ours	proposed	exact
+l1-p0227	CADM2	keep	kept	sp_lost_vs_canonical;structure_not_ours	proposed	exact
+l1-p0245	CCR2	keep	kept	c_terminal_truncation;structure_not_ours	proposed	exact
+l1-p0259	CD163	keep	kept	c_terminal_truncation;structure_not_ours	proposed	exact
+l1-p0329	CD99L2	keep	kept	reference_short;structure_not_ours	proposed	exact
+l1-p0347	CDH3	keep	kept	sp_lost_vs_canonical;structure_not_ours	proposed	exact
+l1-p0513	DISP2	swap	applied		clean	exact
+l1-p0516	DLL3	keep	kept	c_terminal_truncation;structure_not_ours	proposed	exact
+l1-p0524	DPP6	keep	kept	n_terminal_truncation;structure_not_ours	proposed	exact
+l1-p0578	EPHA6	repair	applied		clean	exact_after_declared_trim_94
+l1-p0582	EPHB2	keep	kept	c_terminal_truncation;structure_not_ours	proposed	exact
+l1-p0688	GDPD4	keep	kept	c_terminal_truncation;reference_short;structure_not_ours	proposed	exact
+l1-p0752	GPR142	keep	kept	n_terminal_truncation;reference_short;structure_not_ours	proposed	exact
+l1-p0766	GPR17	keep	kept	n_terminal_truncation;structure_not_ours	proposed	exact
+l1-p0882	HTR7	keep	kept	c_terminal_truncation;structure_not_ours	proposed	exact
+l1-p0964	ITGA6	keep	kept	c_terminal_truncation;structure_not_ours	proposed	exact
+l1-p1003	KCNE4	keep	kept	n_terminal_truncation;reference_short;structure_not_ours	proposed	exact
+l1-p1093	LILRA6	keep	kept	sp_lost_vs_canonical;structure_not_ours	proposed	exact
+l1-p1096	LILRB3	keep	kept	sp_lost_vs_canonical;structure_not_ours	proposed	exact
+l1-p1100	LINGO1	keep	kept	sp_lost_vs_canonical;structure_not_ours	proposed	exact
+l1-p1106	LMLN	swap	applied		clean	exact
+l1-p1160	LSR	keep	kept	n_terminal_truncation;reference_short;tm_count_change;orientation_change;structure_not_ours	proposed	exact
+l1-p1182	LYPD6B	keep	kept	sp_lost_vs_canonical;structure_not_ours	proposed	exact
+l1-p1264	MUC1	keep	kept	fragment;n_terminal_truncation;reference_short;structure_not_ours	proposed	exact
+l1-p1275	NCAM1	keep	kept	c_terminal_truncation;reference_short;tm_count_change;structure_not_ours;reference_not_mane_appris_canonical	proposed	exact
+l1-p1289	NFASC	keep	kept	reference_short;pfam_domain_lost;structure_not_ours	proposed	exact
+l1-p1307	NPFFR2	keep	kept	n_terminal_truncation;reference_short;structure_not_ours	proposed	exact
+l1-p1382	OR11H7	keep	kept	ladder_source_unrecorded	proposed	exact
+l1-p1386	OR13D1	keep	kept	n_terminal_truncation;structure_not_ours	proposed	exact
+l1-p1495	OR5AU1	keep	kept	n_terminal_truncation;reference_short;structure_not_ours	proposed	exact
+l1-p1525	OR8G3	repair	applied		clean	1_substitutions_declared
+l1-p1526	OR8G5	keep	kept	n_terminal_truncation;reference_short;structure_not_ours	proposed	exact
+l1-p1529	OR8S1	keep	kept	c_terminal_truncation;reference_short;structure_not_ours	proposed	exact
+l1-p1532	OR8U8	keep	kept	structure_not_ours;reference_not_mane_appris_canonical;ladder_source_unrecorded	proposed	exact
+l1-p1537	OR9G9	keep	kept	structure_not_ours;reference_not_mane_appris_canonical;ladder_source_unrecorded	proposed	exact
+l1-p1545	OTOP3	keep	kept	n_terminal_truncation;structure_not_ours	proposed	exact
+l1-p1660	PLPPR4	keep	kept	n_terminal_truncation;structure_not_ours	proposed	exact
+l1-p1720	PVRIG	keep	kept	n_terminal_truncation;structure_not_ours	proposed	exact
+l1-p1764	SCARB1	keep	kept	c_terminal_truncation;structure_not_ours	proposed	exact
+l1-p1799	SERINC5	keep	kept	tm_count_change;structure_not_ours	proposed	exact
+l1-p1835	SLC12A5	keep	kept	n_terminal_truncation;structure_not_ours	proposed	exact
+l1-p1861	SLC17A2	keep	kept	tm_count_change;structure_not_ours	proposed	exact
+l1-p1862	SLC17A3	keep	kept	tm_count_change;structure_not_ours	proposed	exact
+l1-p1918	SLC2A14	keep	kept	n_terminal_truncation;structure_not_ours	proposed	exact
+l1-p1976	SLC4A7	keep	kept	reference_short;pfam_domain_lost;structure_not_ours	proposed	exact
+l1-p2011	SLC6A9	keep	kept	n_terminal_truncation;reference_short;structure_not_ours	proposed	exact
+l1-p2038	SLCO1B3-SLCO1B7	keep	kept	tm_count_change;structure_not_ours	proposed	exact
+l1-p2115	TAS2R45	keep	kept	structure_not_ours;reference_not_mane_appris_canonical;ladder_source_unrecorded	proposed	exact
+l1-p2129	TFPI	keep	kept	c_terminal_truncation;reference_short;pfam_domain_lost;structure_not_ours;reference_not_mane_appris_canonical	proposed	exact
+l1-p2214	TMPRSS13	keep	kept	c_terminal_truncation;structure_not_ours	proposed	exact
+l1-p2284	TSPAN10	swap	applied	structure_not_ours	info	exact
+l1-p2344	XG	keep	kept	pfam_domain_lost;structure_not_ours	proposed	exact
+l1-p2363	CCR2	keep	kept	c_terminal_truncation;no_v1_topology;structure_not_ours	proposed	exact_after_igk_leader+recoded
+l1-p2367	GPR142	keep	kept	n_terminal_truncation;reference_short;no_v1_topology;structure_not_ours	proposed	exact_after_igk_leader
+l1-p2420	CLEC7A	redraw	dropped by redraw			
+l1-p2445	GRIA1	keep	kept	sp_lost_vs_canonical	proposed	exact
+l1-p2448	HLA-G	keep	kept	fragment	proposed	exact
+l1-p2470	NECTIN2	redraw	dropped by redraw			
+l1-p2477	OPN3	redraw	dropped by redraw			
+l1-p2496	SCARA3	keep	kept	pfam_all_lost	proposed	exact
+l1-p2511	SLC6A11	redraw	dropped by redraw			
+l1-p2938	CHRM3	repair	applied	structure_not_ours	info	exact_after_declared_trim_31
+l1-p2942	FOLR2	keep	kept	ortholog_n_extension	proposed	exact
+l1-p2945	GPNMB	keep	kept	pfam_domain_lost	proposed	exact
+l1-p2951	IL9R	keep	kept	ortholog_n_extension	proposed	exact
+l1-p2956	LYPD2	keep	kept	ortholog_n_extension	proposed	exact
+l1-p2957	MARCO	keep	kept	pfam_domain_lost;structure_not_ours	proposed	exact
+l1-p2959	CCR5	repair	applied	structure_not_ours	info	exact_after_declared_trim_27
+l1-p2962	NIPAL4	repair	applied	structure_not_ours	info	exact_after_declared_trim_214
+l1-p2963	OR3A2	repair	applied	structure_not_ours	info	exact_after_declared_trim_32
+l1-p3022	IL15RA	keep	kept	ortholog_divergent	proposed	exact
+l1-p3036	ICAM1	keep	kept	pfam_domain_lost;ortholog_divergent;structure_not_ours	proposed	exact
+l1-p3039	IZUMO2	keep	kept	ortholog_divergent	proposed	exact
+l1-p3040	MS4A7	keep	kept	ortholog_divergent;structure_not_ours	proposed	exact
+l1-p3043	OR10G6	keep	kept	ortholog_sp_missing;structure_not_ours	proposed	exact
+l1-p3060	TMEM139	keep	kept	ortholog_divergent;structure_not_ours	proposed	exact
+l1-p3063	TMIGD1	keep	kept	pfam_domain_lost	proposed	exact
+l1-p3068	CACNA2D3	keep	kept	pfam_domain_lost	proposed	exact
+l1-p3084	IGSF1	keep	kept	pfam_domain_lost;structure_not_ours	proposed	exact
+l1-p3113	TMPRSS7	keep	kept	pfam_domain_lost	proposed	exact
+l1-p3119	ABCC3	redraw	dropped by redraw			

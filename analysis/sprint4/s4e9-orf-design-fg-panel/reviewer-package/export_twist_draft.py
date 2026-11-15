@@ -59,21 +59,26 @@ def main(argv=None) -> int:
         plan = list(csv.DictReader(fh, delimiter="\t"))
 
     rows, fasta = [], []
+    # The draft is untagged, so a member ordered as several tagged arms is one draft plasmid:
+    # keep each member's first insert in plate order and name it by its design id.
+    first = {}
     for p in plan:
+        first.setdefault(p["design_id"], p)
+    for p in first.values():
         key = p["key"]
         vec, row, clean = assemble_candidates.assemble_one(
-            bb, bb_sites, p["candidate_id"], key, con[key]
+            bb, bb_sites, p["design_id"], key, con[key]
         )
         assert clean, f"{key}: unexpected Type IIS sites"
-        assert len(vec) == int(manifest[key]["vector_bp"]) == int(p["vector_bp"]), key
-        name = f"{p['order_id']}_{gene_of(key)}"
+        assert len(vec) == int(manifest[key]["vector_bp"]), key
+        name = f"{p['design_id']}_{gene_of(key)}"
         fasta.append(f">{name}\n" + "\n".join(vec[i : i + 80] for i in range(0, len(vec), 80)))
         rows.append(
             {
                 "name": name,
                 "plate": p["plate"],
                 "well": p["well"],
-                "design_id": p["candidate_id"],
+                "design_id": p["design_id"],
                 "key": key,
                 "set": row["set"],
                 "insert_nt": row["insert_nt"],

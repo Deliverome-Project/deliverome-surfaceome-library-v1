@@ -18,32 +18,32 @@
    "origin": "immutable external key"
   },
   "Ribo-seq_ORFs.all.bed": {
-   "source": "snapshot",
+   "source": "external:gencode-riboseq-orfs/fetched-2026-11-01/Ribo-seq_ORFs.all.bed",
    "sha256": "3ebf5fcf7efc6d853c14eafc8578e660dab175e2bdae7b0459ed9df4a23075a0",
    "origin": "GENCODE Ribo-seq ORFs, https://ftp.ebi.ac.uk/pub/databases/gencode/riboseq_orfs/ (phase1 all; phase2 primary, comprehensive), fetched 2026-11-01"
   },
   "Ribo-seq_ORFs.all.faa": {
-   "source": "snapshot",
+   "source": "external:gencode-riboseq-orfs/fetched-2026-11-01/Ribo-seq_ORFs.all.faa",
    "sha256": "0c03979a27cfb48716a5dc4d544c5a4034dd40aa51af03e848b0039324563625",
    "origin": "GENCODE Ribo-seq ORFs, https://ftp.ebi.ac.uk/pub/databases/gencode/riboseq_orfs/ (phase1 all; phase2 primary, comprehensive), fetched 2026-11-01"
   },
   "Ribo-seq_ORFs.comprehensive.bed": {
-   "source": "snapshot",
+   "source": "external:gencode-riboseq-orfs/fetched-2026-11-01/Ribo-seq_ORFs.comprehensive.bed",
    "sha256": "0e2c9be4303c1ea7c32a0d1af958d8d02c7765891cf54fed23b2a3199d8d60c3",
    "origin": "GENCODE Ribo-seq ORFs, https://ftp.ebi.ac.uk/pub/databases/gencode/riboseq_orfs/ (phase1 all; phase2 primary, comprehensive), fetched 2026-11-01"
   },
   "Ribo-seq_ORFs.comprehensive.faa": {
-   "source": "snapshot",
+   "source": "external:gencode-riboseq-orfs/fetched-2026-11-01/Ribo-seq_ORFs.comprehensive.faa",
    "sha256": "ae1de6476fffa56feb33b1c4cc120e7dc3d586f16a8b8fd1d0d925fe8453f163",
    "origin": "GENCODE Ribo-seq ORFs, https://ftp.ebi.ac.uk/pub/databases/gencode/riboseq_orfs/ (phase1 all; phase2 primary, comprehensive), fetched 2026-11-01"
   },
   "Ribo-seq_ORFs.primary.bed": {
-   "source": "snapshot",
+   "source": "external:gencode-riboseq-orfs/fetched-2026-11-01/Ribo-seq_ORFs.primary.bed",
    "sha256": "e05acb0ab51094f0ca96f35ff37864f6c2addfac22e004f09712e93af8634f6f",
    "origin": "GENCODE Ribo-seq ORFs, https://ftp.ebi.ac.uk/pub/databases/gencode/riboseq_orfs/ (phase1 all; phase2 primary, comprehensive), fetched 2026-11-01"
   },
   "Ribo-seq_ORFs.primary.faa": {
-   "source": "snapshot",
+   "source": "external:gencode-riboseq-orfs/fetched-2026-11-01/Ribo-seq_ORFs.primary.faa",
    "sha256": "521d95a14c49fd625b33c704452430d6fdd89dca2a97a8c66a57897ee3dadbe9",
    "origin": "GENCODE Ribo-seq ORFs, https://ftp.ebi.ac.uk/pub/databases/gencode/riboseq_orfs/ (phase1 all; phase2 primary, comprehensive), fetched 2026-11-01"
   },
@@ -58,12 +58,12 @@
    "origin": "accessible-surfaceome f9c73691 data/processed/deeptmhmm/ (LFS)"
   },
   "ensg_to_uniprot.tsv": {
-   "source": "snapshot",
+   "source": "external:accessible-surfaceome/f9c73691/data/external/uniprot_ensembl_xrefs/ensg_to_uniprot.tsv",
    "sha256": "f75b5af0b76ba3962da9ab147a5d73d1213af7188dd7651d354465ffbde87cbc",
    "origin": "accessible-surfaceome f9c73691 data/external/uniprot_ensembl_xrefs/ (LFS)"
   },
   "human_canonical_non_hla.fasta": {
-   "source": "snapshot",
+   "source": "external:accessible-surfaceome/f9c73691/data/external/deeptmhmm_surfaceome_inputs/human_canonical_non_hla.fasta",
    "sha256": "31219b860ad6f78a3328eb4b0c2dc2dd1d72f217314bd63473f0b4477e13ec8f",
    "origin": "accessible-surfaceome f9c73691 data/external/deeptmhmm_surfaceome_inputs/ (LFS)"
   },
@@ -78,14 +78,14 @@
    "origin": "scratch/becca/appris-principal/ (committed)"
   },
   "peptideatlas_build607_pools.json": {
-   "source": "snapshot",
+   "source": "external:peptideatlas/build-607/queries-2026-11-01/peptideatlas_build607_pools.json",
    "sha256": "3491e3cc2e7377e0e996aa5163561da7a782a7654d7d3aee995b739a8e7b20b1",
    "origin": "PeptideAtlas GetPeptides CGI, atlas_build_id 607 (Human 2026-01), queried 2026-11-01 by select_reference.py"
   },
   "reference_overrides.tsv": {
-   "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/pipeline-inputs/2026-11-04/reference_overrides.tsv",
-   "sha256": "31d9fce670a3c1158562f6b57e5780ecb520c5e9080207a5930c6d8cfab0da63",
-   "origin": "scratch/becca/appris-principal/reference_overrides.tsv as of 2026-11-04: the seven of 2026-11-01 plus KIR2DS4, OR12D1 and OR5AL1 (reference_allele_lof)"
+   "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/pipeline-inputs/2026-11-12-round2b/reference_overrides.tsv",
+   "sha256": "3537db7ad39fa1f0eb2a502d5d3e6363db60fdaea0e04dc22f53232e14f46d68",
+   "origin": "scratch/becca/appris-principal/reference_overrides.tsv as of 2026-11-12 round two: the fifteen of the first round plus LMLN (signal_peptide), DISP2 and TSPAN10 (truncated_model), decided by session l1-proteoform-audit under Becca's 2026-11-12 delegation (LMLN reconciled by l1-reviewer-package) and applied by l1-reviewer-package, PR #283; adds an alternative column. Supersedes the unused 2026-11-12-round2 key, whose attribution was replaced before use"
   },
   "topology_shortlist.3line": {
    "source": "snapshot",
@@ -128,12 +128,12 @@
    "origin": "HPA rna_celline per gene, S1E3 re-derivation 2026-08-04"
   },
   "mygene_response.json": {
-   "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/pipeline-inputs/2026-11-02/s1e3/mygene_response.json",
+   "source": "external:mygene/2026-11-02/s1e3/mygene_response.json",
    "sha256": "31f979fef43afb5f9def96cafd2e71e4bfb834b1864acd7744557d68e6c534b1",
    "origin": "MyGene.info symbol resolution for the plain expression join, queried 2026-11-02"
   },
   "mygene_response_full.json": {
-   "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/pipeline-inputs/2026-11-02/s1e3/mygene_response_full.json",
+   "source": "external:mygene/2026-11-02/s1e3/mygene_response_full.json",
    "sha256": "ae8923e4f252c90b513e04439546ce7c2133650ef963331348a337888a1be8c1",
    "origin": "MyGene.info symbol resolution for the --full expression join, queried 2026-11-02"
   },

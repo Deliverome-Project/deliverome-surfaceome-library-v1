@@ -1,0 +1,77 @@
+{
+  "rule_version": "ortholog-architecture-gate-proposal-v1",
+  "review_rule_version": "ortholog-correspondence-review-v1",
+  "sampleable_representatives": 3643,
+  "gate": {
+    "fail": 195,
+    "pass": 3338,
+    "review": 110
+  },
+  "gate_by_species_band": {
+    "mouse|near": {
+      "fail": 8,
+      "pass": 895,
+      "review": 28
+    },
+    "mouse|diverged": {
+      "fail": 34,
+      "pass": 856,
+      "review": 43
+    },
+    "cyno|near": {
+      "fail": 7,
+      "pass": 883,
+      "review": 8
+    },
+    "cyno|diverged": {
+      "fail": 146,
+      "pass": 704,
+      "review": 31
+    }
+  },
+  "fail_by_flag": {
+    "signal_peptide_lost": 80,
+    "signal_peptide_gained": 4,
+    "tm_helix_lost": 71,
+    "tm_helix_gained": 37,
+    "topology_label_changed": 84,
+    "n_terminal_orientation_changed": 30,
+    "gpi_anchor_lost": 0,
+    "pfam_domain_lost": 70
+  },
+  "fail_by_end": {
+    "C": 1,
+    "C+internal": 18,
+    "N": 30,
+    "N+C": 4,
+    "N+C+internal": 16,
+    "N+internal": 69,
+    "internal": 53,
+    "none": 4,
+    "not_failed": 3448
+  },
+  "start_site": {
+    "exception_candidate": 15,
+    "n_extension_eligible_transcript": 4,
+    "n_extension_exception_candidate": 174,
+    "n_extension_no_aligned_methionine": 76,
+    "no_aligned_methionine": 16,
+    "not_applicable": 3358
+  },
+  "start_site_predicted": 16,
+  "restart_decisions": 4,
+  "restart_decisions_awaiting_prediction": [
+    "cyno:CHRM3:A0A7N9CAJ4",
+    "cyno:NIPAL4:A0A2K5UNA7",
+    "cyno:OR3A2:A0A7N9D5M3"
+  ],
+  "start_site_gate": {
+    "pass": 16
+  },
+  "failed_with_other_eligible_proteins": 107,
+  "other_eligible_proteins_of_failed_forms": 279,
+  "of_which_with_v1_row": 58,
+  "strata_where_pass_meets_quota": 20,
+  "strata": 20,
+  "drawn_forms_match_committed_review": true
+}

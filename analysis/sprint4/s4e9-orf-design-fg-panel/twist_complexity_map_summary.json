@@ -1,0 +1,17 @@
+{
+  "twist_key": "external://twist/l1-complexity/2026-11-12/l1_insert_complexity_analysis.csv",
+  "twist_sha256": "b95071e0b255cddd8bd643fe007bc4bcb55e14e5576fc1495e85efa744b4d46b",
+  "rows": 2735,
+  "by_score_and_status": {
+    "High|in_l1_same_cds": 101,
+    "High|retired": 3,
+    "Low|in_l1_cds_changed": 8,
+    "Low|in_l1_same_cds": 2091,
+    "Low|retired": 191,
+    "Medium|in_l1_cds_changed": 4,
+    "Medium|in_l1_same_cds": 293,
+    "Medium|retired": 19,
+    "Not Accepted|in_l1_same_cds": 24,
+    "Not Accepted|retired": 1
+  }
+}

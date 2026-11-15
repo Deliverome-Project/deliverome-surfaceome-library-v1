@@ -1,0 +1,278 @@
+{
+ "members": 2735,
+ "by_set": {
+  "library_reference": 2360,
+  "expression_rescue": 25,
+  "isoform": 150,
+  "ortholog": 200
+ },
+ "by_flag_class": {
+  "clean": 2378,
+  "info": 283,
+  "proposed": 74
+ },
+ "by_flag": {
+  "non_atg_start": 0,
+  "internal_stop": 0,
+  "cds_frame": 0,
+  "translation_mismatch": 0,
+  "duplicate_protein_l1": 0,
+  "cohort_gate_fail": 0,
+  "fragment": 2,
+  "sp_lost_vs_canonical": 8,
+  "n_terminal_truncation": 18,
+  "c_terminal_truncation": 15,
+  "reference_short": 18,
+  "tm_count_change": 7,
+  "orientation_change": 2,
+  "tm_all_lost": 0,
+  "pfam_domain_lost": 14,
+  "pfam_all_lost": 1,
+  "ortholog_divergent": 5,
+  "ortholog_n_extension": 3,
+  "ortholog_sp_missing": 1,
+  "ladder_source_unrecorded": 4,
+  "no_v1_topology": 25,
+  "structure_not_ours": 344,
+  "duplicate_protein_l2": 0,
+  "reference_not_mane_appris_canonical": 8
+ },
+ "flag_definitions": {
+  "non_atg_start": {
+   "class": "apply",
+   "sets": "all",
+   "meaning": "CDS does not start with ATG"
+  },
+  "internal_stop": {
+   "class": "apply",
+   "sets": "all",
+   "meaning": "stop codon inside the CDS"
+  },
+  "cds_frame": {
+   "class": "apply",
+   "sets": "all",
+   "meaning": "CDS length is not a multiple of 3"
+  },
+  "translation_mismatch": {
+   "class": "apply",
+   "sets": "all",
+   "meaning": "translated CDS differs from the stated protein beyond declared edits"
+  },
+  "duplicate_protein_l1": {
+   "class": "apply",
+   "sets": "all",
+   "meaning": "identical protein to another active L1 member"
+  },
+  "cohort_gate_fail": {
+   "class": "apply",
+   "sets": [
+    "isoform"
+   ],
+   "meaning": "isoform fails the 2026-11-12 cohort gate"
+  },
+  "fragment": {
+   "class": "proposed",
+   "sets": "all",
+   "meaning": "member is a fragment of its comparator"
+  },
+  "sp_lost_vs_canonical": {
+   "class": "proposed",
+   "sets": [
+    "library_reference",
+    "expression_rescue",
+    "isoform"
+   ],
+   "meaning": "UniProt canonical has a signal peptide the member lacks"
+  },
+  "n_terminal_truncation": {
+   "class": "proposed",
+   "sets": [
+    "library_reference",
+    "expression_rescue"
+   ],
+   "meaning": "comparator N-terminal residues missing"
+  },
+  "c_terminal_truncation": {
+   "class": "proposed",
+   "sets": [
+    "library_reference",
+    "expression_rescue"
+   ],
+   "meaning": "comparator C-terminal residues missing"
+  },
+  "reference_short": {
+   "class": "proposed",
+   "sets": [
+    "library_reference",
+    "expression_rescue"
+   ],
+   "meaning": "library reference keeps < 90% of its canonical"
+  },
+  "tm_count_change": {
+   "class": "proposed",
+   "sets": [
+    "library_reference",
+    "expression_rescue",
+    "ortholog"
+   ],
+   "meaning": "v1 TM count differs from comparator"
+  },
+  "orientation_change": {
+   "class": "proposed",
+   "sets": "all",
+   "meaning": "v1 N-terminal orientation differs from comparator"
+  },
+  "tm_all_lost": {
+   "class": "proposed",
+   "sets": [
+    "isoform"
+   ],
+   "meaning": "comparator has TM helices, the isoform none"
+  },
+  "pfam_domain_lost": {
+   "class": "proposed",
+   "sets": [
+    "library_reference",
+    "expression_rescue",
+    "ortholog"
+   ],
+   "meaning": "a Pfam family on the comparator is absent"
+  },
+  "pfam_all_lost": {
+   "class": "proposed",
+   "sets": [
+    "isoform"
+   ],
+   "meaning": "no comparator Pfam family left on the isoform"
+  },
+  "ortholog_divergent": {
+   "class": "proposed",
+   "sets": [
+    "ortholog"
+   ],
+   "meaning": "low identity or coverage to human"
+  },
+  "ortholog_n_extension": {
+   "class": "proposed",
+   "sets": [
+    "ortholog"
+   ],
+   "meaning": "N-terminus extends beyond human Met1"
+  },
+  "ortholog_sp_missing": {
+   "class": "proposed",
+   "sets": [
+    "ortholog"
+   ],
+   "meaning": "human reference has a v1 signal peptide, the ortholog none"
+  },
+  "ladder_source_unrecorded": {
+   "class": "proposed",
+   "sets": [
+    "library_reference"
+   ],
+   "meaning": "built protein is not the ladder's selected source and no override or fix records why"
+  },
+  "no_v1_topology": {
+   "class": "info",
+   "sets": "all",
+   "meaning": "no DeepTMHMM v1 row for this exact sequence"
+  },
+  "structure_not_ours": {
+   "class": "info",
+   "sets": "all",
+   "meaning": "no model of this exact protein"
+  },
+  "duplicate_protein_l2": {
+   "class": "info",
+   "sets": "all",
+   "meaning": "identical protein to an active L2 member"
+  },
+  "reference_not_mane_appris_canonical": {
+   "class": "info",
+   "sets": [
+    "library_reference"
+   ],
+   "meaning": "member equals none of MANE, APPRIS principal, UniProt canonical"
+  }
+ },
+ "by_flag_and_set": {
+  "non_atg_start": {},
+  "internal_stop": {},
+  "cds_frame": {},
+  "translation_mismatch": {},
+  "duplicate_protein_l1": {},
+  "cohort_gate_fail": {},
+  "fragment": {
+   "library_reference": 1,
+   "isoform": 1
+  },
+  "sp_lost_vs_canonical": {
+   "library_reference": 7,
+   "isoform": 1
+  },
+  "n_terminal_truncation": {
+   "library_reference": 17,
+   "expression_rescue": 1
+  },
+  "c_terminal_truncation": {
+   "library_reference": 14,
+   "expression_rescue": 1
+  },
+  "reference_short": {
+   "library_reference": 17,
+   "expression_rescue": 1
+  },
+  "tm_count_change": {
+   "library_reference": 7
+  },
+  "orientation_change": {
+   "library_reference": 2
+  },
+  "tm_all_lost": {},
+  "pfam_domain_lost": {
+   "library_reference": 7,
+   "ortholog": 7
+  },
+  "pfam_all_lost": {
+   "isoform": 1
+  },
+  "ortholog_divergent": {
+   "ortholog": 5
+  },
+  "ortholog_n_extension": {
+   "ortholog": 3
+  },
+  "ortholog_sp_missing": {
+   "ortholog": 1
+  },
+  "ladder_source_unrecorded": {
+   "library_reference": 4
+  },
+  "no_v1_topology": {
+   "expression_rescue": 25
+  },
+  "structure_not_ours": {
+   "library_reference": 208,
+   "expression_rescue": 25,
+   "isoform": 35,
+   "ortholog": 76
+  },
+  "duplicate_protein_l2": {},
+  "reference_not_mane_appris_canonical": {
+   "library_reference": 8
+  }
+ },
+ "thresholds": {
+  "fragment_fraction": 0.5,
+  "fragment_min_aa": 100,
+  "truncation_aa": 20,
+  "reference_retained": 0.9,
+  "ortholog_identity": 0.6,
+  "ortholog_coverage": 0.8,
+  "ortholog_n_extension": 10
+ },
+ "topology_tool": "deeptmhmm_v1",
+ "topology_snapshot": "accessible-surfaceome/topology/2026-11-12-cyno-restarts/topology.parquet",
+ "cds_key": "sprint4/s4e9-orf-design-fg-panel/library-candidates/2026-11-12-ortholog-start-trims-2/candidate_cds.json"
+}

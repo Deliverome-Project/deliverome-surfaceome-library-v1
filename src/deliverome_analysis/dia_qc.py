@@ -1152,7 +1152,10 @@ def dia_qc_report(
     save("intensity_distributions", plot_intensity_distributions(prec))
     save("completeness", plot_completeness(compl, n_runs))
     det = conditional_detection(prec)
-    save("detection_reproducibility", plot_detection_reproducibility(det))
+    if det.empty:
+        skipped["detection_reproducibility"] = "needs >= 2 runs"
+    else:
+        save("detection_reproducibility", plot_detection_reproducibility(det))
     if cv.empty:
         skipped["precursor_cv"] = "no replicate group with >= 2 runs"
     else:

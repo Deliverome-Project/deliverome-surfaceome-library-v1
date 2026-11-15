@@ -9,7 +9,11 @@ The policy, in order:
 2. **Only one of the two exists** -> take that one, and say which.
 3. **They disagree** -> do not pick on annotation alone. Work out the residues that actually
    distinguish the two candidates, and ask whether anything was ever *observed* there:
-   peptides in PeptideAtlas, translated ORFs in the GENCODE Ribo-seq catalogue.
+   peptides in PeptideAtlas, translated ORFs in the GENCODE Ribo-seq catalogue. Only the
+   peptides decide: a gene with strong peptide evidence for one side and none for the other
+   takes that side (``resolved_mane`` / ``resolved_appris``), including off MANE; weak,
+   two-sided or absent evidence leaves it on MANE. Ribo-seq ORFs overlapping either side are
+   counted and reported but never decide.
 
 Agreement is tested on the **protein sequence**, not the transcript ID: a gene commonly has
 several transcripts encoding one protein, and calling that a disagreement would be wrong.
@@ -33,6 +37,7 @@ import argparse
 import csv
 import difflib
 import gzip
+import hashlib
 import json
 import re
 import time
@@ -74,11 +79,13 @@ MIN_REGION = 3
 # peptides call MANE and OpenProt is tied.
 BOTH_LANES = {"CD44", "ATP2B2"}
 
-# Source precedence for the reference, strongest first. MANE is a RefSeq/Ensembl agreement
-# and transcript-backed by construction; APPRIS is structural and conservation inference;
-# observed evidence (PeptideAtlas peptides, OpenProt translation) decides only where neither
-# annotation offers a usable answer; the UniProt canonical is the last resort, since its
-# selection rule permits a pure length tiebreak with no transcript support.
+# Default source precedence for the reference, strongest first. MANE is a RefSeq/Ensembl
+# agreement and transcript-backed by construction; APPRIS is structural and conservation
+# inference; the UniProt canonical is the last resort, since its selection rule permits a
+# pure length tiebreak with no transcript support. The one exception is a MANE/APPRIS
+# disagreement that PeptideAtlas peptides resolve strongly for APPRIS: there the evidence
+# rung goes first (precedence_options). OpenProt enters only through BOTH_LANES, and
+# GENCODE Ribo-seq ORFs only annotate.
 PRECEDENCE = ("mane", "appris", "evidence", "uniprot_canonical")
 
 # A reference must not be a soluble form of a surface protein. PILRA and LMLN were both
@@ -106,6 +113,62 @@ MIN_SAMPLES = 10
 
 RIBOSEQ_SETS = ("Ribo-seq_ORFs.all.bed", "Ribo-seq_ORFs.primary.bed",
                 "Ribo-seq_ORFs.comprehensive.bed")
+
+
+def precedence_options(
+    decision: str, mane: str | None, appris: str | None, current: str | None
+) -> list[tuple[str, str | None]]:
+    """The rungs to try for one gene, strongest first, given its final decision.
+
+    The default order is :data:`PRECEDENCE`: MANE, APPRIS, the evidence pick, the UniProt
+    canonical. Where MANE and APPRIS disagree, the policy is that observed evidence decides,
+    so a gene resolved for APPRIS (``resolved_appris``: at least :data:`STRONG_EVIDENCE`
+    proteotypic PeptideAtlas peptides on APPRIS's discriminating residues, the best seen in
+    at least :data:`MIN_SAMPLES` samples, and none on MANE's) puts the evidence rung first.
+    A gene resolved for MANE needs no reordering: MANE already leads. Weak, two-sided or
+    absent evidence leaves MANE first, which is the stated default for disagreements.
+
+    Ribo-seq plays no part here. GENCODE Ribo-seq ORFs overlapping either side's
+    discriminating residues are counted (``riboseq_supports_mane`` / ``_appris``) and
+    reported, but they never set a decision: only PeptideAtlas peptides do. Making
+    translation evidence decide is a policy change for Becca, not a code fix.
+    """
+    evidence = {
+        "resolved_appris": appris,
+        "resolved_mane": mane,
+        "weak_evidence_mane": mane,
+    }.get(decision)
+    options = [
+        ("mane", mane),
+        ("appris", appris),
+        ("evidence", evidence),
+        ("uniprot_canonical", current),
+    ]
+    if decision == "resolved_appris":
+        options.insert(0, options.pop(2))
+    return options
+
+
+def choose_rung(
+    options: list[tuple[str, str | None]], surface_ok
+) -> tuple[str, str | None, list[str], bool]:
+    """(rung, sequence, rungs skipped as non-surface, every candidate non-surface).
+
+    Takes the first available rung whose form is not explicitly soluble. If every available
+    form is, keeps the strongest one and says so rather than leaving the gene empty.
+    """
+    skipped = []
+    for rung, seq in options:
+        if seq is None:
+            continue
+        if surface_ok(seq) is False:
+            skipped.append(rung)
+            continue
+        return rung, seq, skipped, False
+    for rung, seq in options:
+        if seq is not None:
+            return rung, seq, skipped, True
+    return "", None, skipped, False
 
 
 def translations_by_gene(path: Path) -> dict[str, set[str]]:
@@ -489,43 +552,8 @@ def main() -> None:
             return None
         return lab in SURFACE_LABELS or gene in gpi_genes
 
-    # ---- apply the precedence ---------------------------------------------------
-    for r in records:
-        cands = r.pop("_candidates")
-        gene = r["symbol"]
-        evidence_seq = None
-        if r.get("decision") == "resolved_appris":
-            evidence_seq = cands["appris"]
-        elif r.get("decision") in ("resolved_mane", "weak_evidence_mane"):
-            evidence_seq = cands["mane"]
-        options = [
-            ("mane", cands["mane"]),
-            ("appris", cands["appris"]),
-            ("evidence", evidence_seq),
-            ("uniprot_canonical", r["_current_seq"]),
-        ]
-        chosen_rung, chosen_seq, skipped = None, None, []
-        for rung, seq in options:
-            if seq is None:
-                continue
-            if surface_ok(seq, gene) is False:
-                skipped.append(rung)
-                continue
-            chosen_rung, chosen_seq = rung, seq
-            break
-        if chosen_seq is None:
-            # Everything available is non-surface: keep the strongest rung and say so.
-            for rung, seq in options:
-                if seq is not None:
-                    chosen_rung, chosen_seq = rung, seq
-                    break
-            r["all_candidates_non_surface"] = True
-        r["reference_rung"] = chosen_rung or ""
-        r["soluble_guard_skipped"] = ";".join(skipped)
-        r["_picked_seq"] = chosen_seq
-
     tally = Counter(r["decision"] for r in records)
-    print("\npass 1:", dict(tally.most_common()))
+    print("\npass 1 (annotation only):", dict(tally.most_common()))
 
     # ---- pass 2: evidence for the disagreements --------------------------------
     disagree = [r for r in records if r["decision"] == "disagree"]
@@ -588,6 +616,23 @@ def main() -> None:
             # agreement and so transcript-backed by construction, whereas most of these
             # disagreements are APPRIS PRINCIPAL:4, its own low-confidence tier.
             r["decision"] = "unresolved_default_mane"
+
+    # ---- apply the precedence ---------------------------------------------------
+    # After pass 2, so that an evidence decision can move a gene. Run before it (as it was
+    # until 2026-11-14), every gene was picked on its pass-1 decision, ``resolved_appris``
+    # did not exist yet, and observed evidence could never take a gene off MANE.
+    for r in records:
+        cands = r.pop("_candidates")
+        options = precedence_options(r["decision"], cands["mane"], cands["appris"],
+                                     r["_current_seq"])
+        rung, seq, skipped, all_non_surface = choose_rung(
+            options, lambda s, g=r["symbol"]: surface_ok(s, g)
+        )
+        if all_non_surface:
+            r["all_candidates_non_surface"] = True
+        r["reference_rung"] = rung
+        r["soluble_guard_skipped"] = ";".join(skipped)
+        r["_picked_seq"] = seq
 
     # ---- named references ------------------------------------------------------
     override: dict[str, str] = {}
@@ -684,6 +729,24 @@ def main() -> None:
         w.writeheader()
         w.writerows(sorted(disagree, key=lambda r: r["symbol"]))
     print(f"wrote reference_disagreements.tsv ({len(disagree)} genes)")
+
+    # The chosen protein itself, by hash. reference_selection.tsv carries the source and the
+    # length but not the sequence, so without this a change of protein at the same source
+    # and length would pass a byte-for-byte check of that table unnoticed.
+    with (out_dir / "reference_selection_sequences.tsv").open("w", newline="") as fh:
+        w = csv.writer(fh, delimiter="\t", lineterminator="\n")
+        w.writerow(["symbol", "selected_source", "selected_length", "selected_sequence_sha256"])
+        for r in records:
+            pick = r.get("_picked_seq")
+            w.writerow(
+                [
+                    r["symbol"],
+                    r["selected_source"],
+                    r["selected_length"],
+                    hashlib.sha256(pick.encode()).hexdigest() if pick else "",
+                ]
+            )
+    print("wrote reference_selection_sequences.tsv")
 
     changed = [r for r in records if r.get("changes_current_reference") == "True"]
     summary = {

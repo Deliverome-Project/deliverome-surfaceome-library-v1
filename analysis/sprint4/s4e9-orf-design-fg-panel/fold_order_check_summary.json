@@ -1,0 +1,35 @@
+{
+  "order_of_record": "processed://sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-15-final-e/l1_order_inserts_recoded.fasta",
+  "order_of_record_sha256": "20e8f2758d9f61d3817db1c98e76c863330f24f5dfbd90c47c3ea4423bfa9c28",
+  "refold_table": "analysis/sprint4/s4e9-orf-design-fg-panel/tag_refold_structures.tsv at 541c6c18 (PR #301)",
+  "inserts": 3255,
+  "status": {
+    "ok": 3255
+  },
+  "folded_form": {
+    "precursor": 2683,
+    "mature chain": 572
+  },
+  "n_terminal_peptides_not_folded": {
+    "METDTLLLWVLLLWVPGSTG": 572
+  },
+  "by_rung": {
+    "nterm": {
+      "ok": 1272
+    },
+    "type3": {
+      "ok": 44
+    },
+    "multipass": {
+      "ok": 565
+    },
+    "cterm": {
+      "ok": 313
+    },
+    "internal": {
+      "ok": 1061
+    }
+  },
+  "decided_by": "coordinator under Becca's 2026-11-12 overnight delegation",
+  "implemented_by": "Claude Code session l1-reviewer-package, 2026-11-13"
+}

@@ -43,6 +43,7 @@ STAGE_PREFIX = "sprint4/s4e9-orf-design-fg-panel/reviewer-package/"
 SNAP = r"sprint4/s4e9-orf-design-fg-panel/library-design/(pipeline|panel|universe)-inputs/[^/]+/"
 REPO = S4E9.parents[2]
 E = "sprint4/s4e9-orf-design-fg-panel/"
+ASSET_LIMIT = 2 * 1024**3  # GitHub release assets
 
 #: Every pinned release the L1 design rests on, bundled whole:
 #: (bucket, key prefix, release, version, source URL).
@@ -250,6 +251,11 @@ SOURCES: list[tuple[str, str, str]] = [
         "DeepTMHMM 1.0.24 predictions run by Deliverome (topology snapshot)",
     ),
     (
+        r"external/accessible-surfaceome/d1/",
+        "deliverome_curation",
+        "surfaceome D1 tables saved whole by S5E13 d1_snapshot.py (dated, append-only)",
+    ),
+    (
         r"external/expression-tpm/",
         "deliverome_curation",
         "expression TPM tables (GTEx v10 / HPA / TCGA, Deliverome-compiled)",
@@ -285,6 +291,49 @@ SOURCES: list[tuple[str, str, str]] = [
         r"processed/sprint5/s5e13-tag-site-benchmarking/corpus_audit_corpus\.tsv",
         "deliverome_curation",
         "S5E13 training corpus with the audit's corrections (PR 232)",
+    ),
+    # Objects the 2026-11-14 inputs added (AFDB archive, saved UniProt snapshots, rung builds).
+    (
+        r"external/alphafold-db/v6/",
+        "public_release",
+        "AlphaFold DB model_v6 files, archived write-once",
+    ),
+    (
+        r"external/gencode-riboseq-orfs/",
+        "public_release",
+        "GENCODE Ribo-seq ORFs, fetched 2026-11-01",
+    ),
+    (r"external/mygene/", "public_derived", "MyGene.info responses, 2026-11-02"),
+    (
+        r"external/uniprot/rest-2026-11-1[0-9]/",
+        "public_derived",
+        "UniProt REST snapshots, C-terminal review",
+    ),
+    (
+        r"processed/sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/uniprot-",
+        "public_derived",
+        "UniProt 2026_04 feature queries (N-terminal review)",
+    ),
+    (
+        r"processed/sprint4/s4e9-orf-design-fg-panel/pinned-inputs/afdb-v6/",
+        "public_derived",
+        "AlphaFold DB model_v6 files, tarred by Deliverome",
+    ),
+    (
+        r"processed/sprint4/s4e9-orf-design-fg-panel/pinned-inputs/rung-builds/",
+        "deliverome_record",
+        "rung arm tables at each cut's pinned commit",
+    ),
+    (
+        r"processed/sprint4/s4e9-orf-design-fg-panel/(predicted-structures|membrane-side-gate|"
+        r"reprediction|reviewer-package/nterm|triage)/",
+        "deliverome_curation",
+        "Deliverome predictions and gate inputs (ColabFold, SignalP re-prediction, gate bundle)",
+    ),
+    (
+        r"processed/sprint5/s5e13-tag-site-benchmarking/(l1_snorkel_designs|v5/)",
+        "deliverome_curation",
+        "S5E13 snorkel designs and v5 training table",
     ),
 ]
 
@@ -530,11 +579,18 @@ def pack(bundle: Path, out: Path, exclude: list[str], part: str = "all") -> int:
             for r in csv.DictReader(fh, delimiter="\t")
             if r["class"] not in exclude and r.get("read_by_replay", "yes") in keep
         ]
-    with tarfile.open(out, "w") as tar:
+    # ``.tar.gz`` compresses: the replay part holds ~2,700 AlphaFold DB PDB text files, which
+    # left it at 2.76 GB uncompressed on 2026-11-14, over the asset limit. ``tar -xf`` reads both.
+    mode = "w:gz" if out.name.endswith(".tar.gz") else "w"
+    with tarfile.open(out, mode) as tar:
         tar.add(MANIFEST, arcname="bundle_manifest.tsv")
         for r in rows:
             tar.add(bundle / "s3" / r["bucket"] / r["key"], arcname=f"s3/{r['bucket']}/{r['key']}")
-    print(f"wrote {out}: {len(rows)} files" + (f" (excluded {exclude})" if exclude else ""))
+    size = out.stat().st_size
+    print(f"wrote {out}: {len(rows)} files, {size / 1e9:.2f} GB"
+          + (f" (excluded {exclude})" if exclude else ""))  # fmt: skip
+    if size >= ASSET_LIMIT:
+        raise SystemExit(f"{out.name} is over GitHub's 2 GiB release-asset limit; write .tar.gz")
     return 0
 
 

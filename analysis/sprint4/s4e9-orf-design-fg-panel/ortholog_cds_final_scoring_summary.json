@@ -138,7 +138,7 @@
     "../ortholog-cds-policy-complete/eligibility/eligible_proteins.json": "1cabf363947d346cda1bae8b8863477bd0c9f5197cbe3efe6a1ea7f93d7fa76d",
     "../ortholog-116/topology_snapshot.parquet": "604521dcbc920f520ea566aee3da638dad6540772c0f38d1792a631ca301e048",
     "../ortholog-116/replay-final/ortholog_provisional_picks.tsv": "3b0bc6554041e5ba0e27ba430c9ada3b35a6e3362fea020da00c862300bc4f30",
-    "/Users/rcarlson/Documents/Codex/2026-11-05/i-want-to-continue-s/work/isoform-coverage-repo/analysis/sprint4/s4e9-orf-design-fg-panel/ortholog_rebuild_inputs.json": "16a5e9b35615c8694c44c097e7f136b6edf20baf7d4b3f890cd66be05300f2e3",
+    "analysis/sprint4/s4e9-orf-design-fg-panel/ortholog_rebuild_inputs.json": "16a5e9b35615c8694c44c097e7f136b6edf20baf7d4b3f890cd66be05300f2e3",
     "../ortholog-cds-predictions/topology-round1/predictions.3line": "cb06de94960a88f766a9f265a8989c5293c5dbb9eec72ccb6c6c8ae636dc7ee5",
     "../ortholog-cds-predictions/topology-round2/predictions.3line": "2eb5c29a21a169d2be3b8f99586d0bc723b12b0b4375c1b362ce61d6e4b68ebe",
     "../ortholog-cds-predictions/topology-round1/run.json": "34971772c4b20ff68077fc9c5c4aeb902bf3a2f1870d69ecff37270556f50457",

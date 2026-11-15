@@ -461,7 +461,41 @@ def check_genbank(path: Path, spec: Spec) -> list[Finding]:
     from Bio import SeqIO
 
     record = SeqIO.read(str(path), "genbank")
-    return check_plasmid(str(record.seq), spec) + check_annotations(record, spec)
+    return (
+        check_plasmid(str(record.seq), spec)
+        + check_annotations(record, spec)
+        + [check_rbp_motifs(record)]
+    )
+
+
+def check_rbp_motifs(record) -> Finding:
+    """No RNA-binding-protein motif flagged in designed transcript sequence.
+
+    Pumilio PREs, ARE nonamers, CPEs, cryptic poly(A) signals, near-consensus splice sites,
+    TGTA/ATTTA clusters and any motif tiled in identical copies, in a UTR, barcode, handle,
+    spacer, tiled element or scar of an expression transcript (see
+    :mod:`deliverome_analysis.rbp_motifs`). The miR-L no-target arms reached the bench with
+    four PREs tiled in their 3'UTR because nothing looked. Hits inside natural elements
+    (CDS, IRES, WPRE, LTR) are not this check's business.
+    """
+    from . import rbp_motifs
+
+    units = rbp_motifs.screen_record(record)
+    if not units:
+        return Finding("rbp_motifs", True, "no expression transcript found to screen", "warning")
+    bad = [
+        f"{h.motif} {h.match} at {u.unit.to_map(h.start)} in {h.region_kind} '{h.region}' "
+        f"({h.reason})"
+        for u in units
+        for h in u.hits
+        if h.blocking
+    ]
+    if bad:
+        return Finding("rbp_motifs", False, "; ".join(bad))
+    n = sum(len(u.hits) for u in units)
+    return Finding(
+        "rbp_motifs", True, f"{len(units)} transcript(s), {n} motif hits, none in designed sequence"
+    )
 
 
 CHECKS = (

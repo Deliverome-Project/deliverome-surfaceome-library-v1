@@ -60,6 +60,24 @@ decisions are open; see Open questions on the Notion page. The tag-placement cho
 
 ## Scripts
 
+**[`REBUILD.md`](REBUILD.md) is the procedure for rebuilding the L1 order from zero, and
+[`CODE_MAP.md`](CODE_MAP.md) is the map of this folder.** It lists every pipeline stage with
+the script it runs and the tables it writes, then every script with what it does and a
+status: `stage`, `called` (another script runs it), `documented`, `test`, or `one-off` (ran
+once; its output is the record and nothing reruns it). One-off scripts are kept, not
+deleted, because each is the only record of how a committed or published output was made.
+[`code_map.py`](code_map.py) regenerates the map, and `tests/test_code_map.py` fails when a
+script is added or removed without it. The reviewer brief is rendered to PDF and Word by
+[`reviewer-package/render_brief.py`](reviewer-package/render_brief.py).
+
+Every external source a script reads (UniProt, Ensembl, MyGene, AlphaFold DB, TmAlphaFold,
+NetGPI, D1, the licensed predictors and the Modal images) is listed in
+[`external_inputs.tsv`](external_inputs.tsv) with its version, its saved copy and that copy's
+SHA-256 ([`external_inputs.py`](external_inputs.py)). `tests/test_external_inputs.py` fails if a
+script makes a network call that is not listed there.
+
+**Tables of record for L1** are the `constructs_l1_<rung>.tsv` / `.fasta` arm tables and the order of record named in `synthesis_compliance.py`; `constructs_nterm.tsv`, `constructs_cterm.tsv` and `constructs_loop.tsv` are the nine-ORF FG panel's, and `reviewer-package/review-repo/` is an export copy for the private review repository, not a source. The table below covers the original nine-ORF FG panel scripts:
+
 | | |
 |---|---|
 | `design_orfs.py` | symbol → `gene_resolver` → Ensembl canonical CDS → UniProt sequence check → Golden Gate domestication. No codon optimization. |
@@ -267,7 +285,8 @@ there was nothing to check against.
 `terminal_c`, exactly **two are L1 members — BST2 (`l1-p0188`) and RGMB (`l1-p1731`)** — and
 both are already flagged `gpi_rerouted` in `l1_internal_members.tsv`, rerouted because the
 omega site removes the C-terminus. That column having only two entries was correct rather
-than thin.
+than thin. (Since 2026-11-12 RGMB's named reference, Q6NW40, sits on N after SP, so the reroute
+touches BST2 only.)
 
 Nothing in this batch depends on it: FOLR1 is this panel's only GPI member and it is
 N-terminal by design, for exactly this reason.
@@ -402,7 +421,7 @@ Library constructs are named `l1-pNNNN`. Two panels extend the canonical set, bo
 class-balanced across type I, type II, type III, GPI and multipass rather than uniformly at
 random, so a rare architecture is not lost to sampling.
 
-The ortholog panel is 200 and the isoform panel 150 — 192 and 137 genes respectively.
+The ortholog panel is 200 and the isoform panel 150 (134 genes).
 
 | Panel | Members | Composition | Key |
 |---|---|---|---|
@@ -450,6 +469,9 @@ records are saved. A [correspondence review](ORTHOLOG_CORRESPONDENCE_REVIEW.md) 
 every panel form with its human library protein (signal peptide, TM helices, topology, GPI,
 Pfam domains): 183 forms keep the human architecture, 11 lack a human feature and 6 need a
 decision. The reviewed panel is the L1 ortholog panel (next section).
+A [proposed draw update](ORTHOLOG_DRAW_POLICY_UPDATE.md) applies the same rule to all 3,643
+sampleable forms before the draw (195 fail, mostly cyno diverged) and adds a start-site rule;
+it is not adopted.
 
 ### The L1 ortholog panel
 
@@ -507,7 +529,7 @@ it, and batch 3 is drawn around them.
 
 | After adoption | Value |
 |---|---:|
-| Active L1 members (reference 2,360, isoform 150, ortholog 100 mouse + 100 cyno, rescue 25) | 2,735 |
+| Active L1 members (reference 2,360, isoform 150, ortholog 100 mouse + 100 cyno; the 25 rescue members retired 2026-11-13, one design per gene) | 2,710 |
 | … with a designed CDS | 2,710 |
 | Active L2 members (ortholog 2,451, isoform 1,678, giant truncation 24) | 4,153 |
 | C-terminal members | 215 |
@@ -515,11 +537,22 @@ it, and batch 3 is drawn around them.
 | Members over the 100-nt swap bar | 255 |
 | New members with an identical AlphaFold model | 116 of 182 |
 | New members whose AlphaFold model is a different protein | 5 (same length, 1–few residues) |
-| New members without any model | 61, not yet folded |
+| New members without an AlphaFold DB model | 61, folded with ColabFold 1.6.2 (2026-11-10) |
 
-The 61 new members without a model block `tests/test_library_structure_coverage.py` until
-they are folded with ColabFold (`scripts/fold_missing_structures_modal.py`, about 4 GPU-hours
-at the L1 rate), which needs a spending decision.
+The 61 new members without an AlphaFold DB model were folded with ColabFold 1.6.2 on Modal
+(`scripts/fold_missing_structures_modal.py`; Becca approved the spend on 2026-11-10; 61/61
+succeeded, 5.7 GPU-hours), each from its member's own designed protein, translated from its
+CDS. The models are at
+`processed://sprint4/s4e9-orf-design-fg-panel/predicted-structures/colabfold/2026-11-10-l1-orthologs/`
+and their rows are in `predicted_structures/fold_summary.tsv`.
+
+The 5 adopted orthologs whose AlphaFold DB model is a different protein (cyno SLC47A1
+`l1-p2969`, MC4R `l1-p3001`, SLC22A8 `l1-p3013`; mouse ICAM1 `l1-p3036`, TM7SF3 `l1-p3059`)
+were folded the same way from their designed proteins, named by design id because the
+accession's model is the wrong protein (Becca approved, 2026-11-10; implemented by the Claude
+Code session l1-reviewer-package, PR #283). 5/5 succeeded, mean pLDDT 75.7–86.6; models at
+`processed://sprint4/s4e9-orf-design-fg-panel/predicted-structures/colabfold/2026-11-10-l1-ortholog-mismatched/`,
+summary `predicted_structures/fold_summary_mismatched.tsv`.
 
 The replacement gene-level pool uses the union of the human, mouse and cynomolgus
 Compara 116 protein homology dumps, read in both orientations. Ensembl documents each
@@ -765,6 +798,340 @@ on the SpyTag003 or ALFA nucleotides, will not read these constructs uniformly, 
 will not share tag DNA with L1. `cassette_encodings.tsv` pins all 23 issued encodings as
 built and labels them `whole_cassette` in a new `scheme` column.
 
+### C-terminal members carry their cassette: 211 at the C-terminus, ITM2B before its furin site
+
+The C-terminal rung is the 212 L1 members whose N-terminus is cytoplasmic and whose
+C-terminus is extracellular by DeepTMHMM v1 (`l1_tag_paths.tsv`). For these members the
+cassette goes straight onto the end of the protein: the native stop is removed, then the
+member's issued cassette encoding follows, then TAA. Nothing about the cassette is chosen
+at this step. The peptide (the 51-aa SpyTag003/P-ALFA-P tandem), the tag codons (p003's),
+the per-member linker encodings (`l1_cassette_encodings.tsv`) and the layout (p003's,
+`build_constructs.py`) are all fixed earlier in the record. `build_l1_cterm_arms.py`
+assembles them into one synthesis insert per member, inside the same Esp3I wrapper that
+`assemble_candidates.py` puts around every L1 ORF:
+
+    CGTCTCA | Kozak | ORF, native stop removed | cassette | TAA | CC | 5' handle | barcode | RT site | 10x CS1 | AGA GAGACG
+
+**Member ids.** Rows are keyed by `candidate_id` (`l1-mNNNN`, plate order) and also carry `design_id` (`l1-pNNNN`), which never changes. The UniProt snapshot and the ColabFold model files are keyed by `design_id`, so a renumbering does not orphan them.
+
+**Member set.** These counts are for the member set of PR #283 at 13f3c1b8 (second pass plus the cyno start-site restarts): the Compara 116 ortholog adoption, the gated isoform redraw, and two rounds of reference fixes and isoform rejections. That gives 212 C-terminal members: 163 library references, 19 isoforms and 30 orthologs. Since the first build of 218, #283's decisions have removed 33 members, including the four partial-form isoforms, and TSPAN10 moved to the internal rung after its reference fix. 27 joined, two of them ECE1 isoforms. Members present in every build keep byte-identical inserts. Both scripts read their members from `l1_tag_paths.tsv` and `candidate_manifest_tranches.tsv` and hold no list of their own. The rerun after a membership change is: issue cassette encodings for any new C-terminal member (`l1_swap_risk.py`), rerun the review with `--fetch` to a new dated UniProt key, then rebuild.
+
+**The barcode is a 20-N placeholder.** Barcodes are not reserved yet, and the boundary
+screens in `reserve_barcodes.py` run when they are. Everything upstream of the barcode,
+including the whole coding sequence and the stretch that sets swap risk, is final.
+
+**A C-terminal topology call does not by itself show that a C-terminal tag survives.**
+`review_l1_cterm_members.py` checks each member before the build and writes the result to
+`l1_cterm_review.tsv`, one row per member. Each check uses the member's own designed
+protein: the sequence for v1 and v2 topology, the last 15 residues for UniProt features, and
+the member's own structure model. Only a member whose C-terminal tag would be cut off the
+protein is marked `cterm_tag = removed`. Such a member gets no C-terminal tag, and it is built
+only at a decided internal site; the one case here (human ITM2B) has one. Every other risk is recorded
+as a flag and the member is built at the C-terminus.
+
+| Check | Rule | Members | Outcome |
+|---|---|---:|---|
+| C-terminal peptide removed | A UniProt Peptide/Propeptide feature covers the last residue | 1: ITM2B human (`l1-m0355`); the mouse ortholog left with #283 | **Not tagged at the C-terminus.** Furin cuts at 243/244 and releases the 23-aa Bri23 peptide, so a C-terminal tag is secreted with it, which is the same mechanism as a GPI omega site. The cassette goes after residue 235 instead (below) |
+| GPI | Gene in `gpi_set.tsv` | 0 | `l1_tag_paths.py` already moved BST2 (and, until its reference changed on 2026-11-12, RGMB) to the internal rung |
+| Ectodomain released | UniProt records shedding, furin processing or a soluble or secreted form | 24 (74 with `shed_risk` included) | Built. On a type II protein the C-terminus sits on the released domain, so the tag goes with it. Any extracellular tag on these members has the same exposure, and no other rung exists for them |
+| Two-chain enzyme | UniProt records more than one chain, named heavy/light or (non-)catalytic | 14 (GGT1/5/6/7, HPN, TMPRSS2/4/11D/11E/15) | Built. An activation cleavage puts the tag on the C-terminal chain, which stays on the cell only while it stays associated with the anchored chain (by a disulfide in the serine proteases); on a gel the two can run apart |
+| Terminus inside a fold | Last-residue pLDDT ≥ 85 in the member's own model | 37 (198 of 212 have a model; 14 new or rebuilt members have none on S3) | Built. Two families account for most of these. The TNF-family ligands (TNF, FASLG, CD40LG, CD70, TNFSF11/12/13B/14/15) end on the last strand of the TNF-homology domain. The M13 metalloproteases (MME, MMEL1, ECE1, PHEX, KEL) end on a conserved …C(R/E/Q)(V/L)W motif. Whether a 51-aa extension is tolerated there is not established here |
+| Partial form | Member under half its gene's UniProt length | 0. #283's isoform gate rejected SLC43A2, TFRC, CLEC7A and SLC6A11 | — |
+| Short extracellular tail | v1 C-terminal extracellular run under 5 residues | 9 (SLC29A1/2, SLC47A1 ×2, SLC47A2, SLC38A8, RHBDL2, STEAP1B, TRPV1) | Built, except the TRPV1 isoform (held; see "C-out calls" below). The cassette starts at the membrane, behind its own GGGGS linker |
+| v2 disagrees | DeepTMHMM v2 on the same sequence puts the C-terminus in the cytoplasm, or calls no TM | 2 cytoplasmic (TRPV1 isoform `l1-p2528`, which also has a 1-residue v1 tail, and SLC68A1, which is C-terminal by a lane override); 3 no TM (BRICD5, TCTA, TNFSF13B); 3 with no v2 row (orthologs CLEC2L, CORIN, SLC47A1) | Built on v1, the topology of record, unless an independent source contradicts the call. The TRPV1 isoform is held (see "C-out calls" below) |
+
+**ITM2B gets its cassette after residue 235, before the furin site** (Becca, 2026-11-10).
+Furin processing of BRI2 is constitutive ([Kim et al., 1999](https://doi.org/10.1038/14783)).
+UniProt places the cut between R243 and E244, and a tag placed directly after R243 would leave
+the whole cut motif (…IQKR243) in front of it. Residue 235 meets four constraints:
+
+| Constraint | At residue 235 |
+|---|---|
+| Past the BRICHOS domain | the domain is residues 137–231, and its 164–223 disulfide is untouched |
+| Past the confidently predicted fold | pLDDT is 97 at 230 and 86 at 234 in the member's own model |
+| In the linker | pLDDT is 76 at 236 and 62 at 240 |
+| Leaves the furin site's context intact | the eight residues before the cut (236–243: TIKGIQKR) stay contiguous, and the build asserts them |
+
+After furin, the tag is on the membrane form. ADAM10 later sheds the BRICHOS-containing
+ectodomain ([Martin et al., 2007](https://doi.org/10.1074/jbc.M706661200)), so ITM2B is in the
+same ectodomain-released class as TNF or FASLG.
+
+**Unknown:** whether a 51-aa insert eight residues before the motif changes how efficiently
+furin cuts. That would show as uncut, Bri23-bearing protein on a blot. It cannot affect
+whether the tag stays on the cell, because the cassette is upstream of either cut.
+
+Each insert is checked as it is built, and `library_pipeline.py verify --stage cterm_arms`
+rebuilds all 232 inserts byte for byte. 229 end ORF, cassette, stop (201 at the true C-terminus,
+including SLC68A1, and 28 snorkels). In 3 the cassette is internal and native sequence follows it:
+HPN and KLRF1 at their stalk sites, and ITM2B before its furin site. The `cassette_ends_orf`
+column of `constructs_l1_cterm.tsv` records which is which, and every table is joined on design_id:
+
+| Check | Result |
+|---|---|
+| Protein | exactly the designed protein followed by the 51-aa cassette (for ITM2B, the cassette after residue 235); one stop, at the end |
+| Tag DNA | SpyTag003 and P-ALFA-P on p003's codons in every insert |
+| Type IIS | 2 Esp3I (the wrapper) and no BbsI or BsaI in every insert; in the p0039 backbone, the backbone's 4 sites plus those 2 |
+| Junction | none in the built arms. The rule (`l1_swap_risk.domesticate_junction`) recodes an ORF's last codon synonymously when it and the cassette's first Gly codon complete a Type IIS site; its one case, SLC41A2 (GAC→GAT), is held (see "C-out calls" below) |
+| Swap risk, on the built DNA of all 2,710 active L1 members | all 232 arms: 36 nt median and 36 nt maximum; none over 80 nt |
+| Vendor complexity features touching the cassette or its junctions | 46 inserts (12 C-terminal, 34 snorkel), each with one 50-nt window at 76–80% GC that spans the cassette or the ORF–cassette junction (band 25–75%); no repeats, homopolymers or hairpins |
+
+Inserts are 596–4,778 nt (`constructs_l1_cterm.fasta`), and per-member build facts are in
+`constructs_l1_cterm.tsv`. `candidate_manifest_tranches.tsv` still records
+`tag_cassette = deferred` for every member. That manifest is the stage-10 record of the
+untagged vectors, and this table supersedes it for the C-terminal rung.
+
+**Calls made on the evidence** (Becca delegated protein-level calls on 2026-11-12: "use your
+best judgment"). One row per member and decision is in `l1_cterm_decisions.tsv`, written by
+`l1_cterm_decisions.py` from the review table. Each row names the rejected alternative, so
+it can be reversed.
+
+| Question | Call | Main evidence | What would change it |
+|---|---|---|---|
+| Furin-processed members (COL23A1 ×2, COL25A1 ×2, EDA ×3, TNFSF12, TNFSF13B): mutate the site or move the tag? | Neither. The cassette stays at the native C-terminus | The cut releases the whole functional ectodomain and leaves a short stalk stub on the membrane. A tag before the site would report the stub, and a mutated site would make a non-native, surface-retained protein. At the C-terminus the tag reports the native, uncut surface fraction. ITM2B differs because furin removes only a 23-aa peptide there and the folded domain stays | Evidence that the surface fraction is undetectable |
+| The 36 C-terminally tagged members whose terminus ends inside a fold | The cassette stays at the C-terminus until each refold is read | The N-terminus is cytoplasmic, so the only alternative is a stalk site (`stalk_site_after` in the review). The most buried termini (MME, ECE1, KEL; 16–20 neighboring Cα within 10 Å) have no stalk of 8+ residues | A refold that disrupts the native fold. The member then moves to its stalk site, or is held where it has none |
+| Stop context TAAC (pad `CC`) or TAAG (`GC`) | Keep TAAC | TAA is the strongest stop codon either way. CC is the pad of every construct designed and ordered since 2026-10-01, and the pad is shared by every insert on every rung | A readthrough measurement on a tagged construct |
+
+**Still open on this rung:**
+
+| Question | What would resolve it |
+|---|---|
+| ITM2B: does the cassette at residue 235 change furin processing? | A blot for uncut, Bri23-bearing ITM2B in the tagged line |
+| Refold verdicts for the tagged proteins (sent to the refold session on 2026-11-11 and 2026-11-12) | Its verdicts. A failed fold triggers the stalk move or hold above, applied without further sign-off |
+| The 46 inserts with a 76–80% GC window | The vendor scan (issue #13); if it flags them, the linker encodings would need re-issuing |
+
+**Tagged refolds, and what changed because of them.** l1-tag-refold folded each C-terminal-rung
+member with its cassette and compared it with the member's own native model (snapshot of its
+verdicts: `l1_cterm_refold_verdicts.tsv`, joined on design_id, with the SHA-256 of each tagged
+protein checked). Of the 212, 200 pass and 12 fail. GGT5, ECE1 (`l1-p0537`) and CEMIP2 had no verdict in the first
+snapshot; their rows are refreshed from #301's final `tag_refold_verdicts.tsv` (same tagged-protein
+SHA-256), and all three pass. Each structured-terminus row in `l1_cterm_decisions.tsv` now states
+what its refold decided. One rule decides every failing member, and it is a function
+(`refold_disposition` in `build_l1_cterm_arms.py`), not a list of members. The stalk site is the
+midpoint of the stretch between the last TM helix and the folded domain, where that stretch is at
+least 8 residues (`stalk_site_after` in the review).
+
+| The C-terminally tagged protein | Stalk site | Outcome |
+|---|---|---|
+| Passes its refold | any | Cassette at the C-terminus |
+| Fails (fold disturbed, epitope buried or packed on the native domain past the verdict's limit of 5 residues, or a helix inside the cassette) | The stalk-site design passes its own refold | Cassette moves to the stalk site |
+| Fails | The stalk-site design fails too | Held |
+| Fails on the fold (native-region lDDT under 0.85, or lDDT within 15 residues of the site under 0.7) | None usable | Held |
+| Fails with the fold intact (epitope packing or a cassette helix alone) | None usable | Cassette stays at the C-terminus, flagged |
+| Fails, and the ectodomain is natively released | any | Cassette stays at the C-terminus: a stalk site lies before the cut and would tag the membrane stub |
+
+Where a stalk site exists, the trigger is the verdict, whatever its reason. KLRF1 moved on
+epitope packing alone (fold intact, native-region lDDT 0.99) and stays at its stalk site, because
+that arm passes its refold with no epitope residue packed. TNFSF18 has the same packing and stays
+at the C-terminus because its stalk is 6 residues, under the 8 a site needs. The PLVAP isoform is
+held: its failure is in the fold at the site (lDDT 0.39), and it has no native model from which a
+stalk site could be designed. No member departs from the rule.
+
+| Outcome | Members | Evidence |
+|---|---|---|
+| Moved to the stalk site, which passes | HPN (43), KLRF1 (84) | At the C-terminus: site lDDT 0.47 with 5 epitope residues packed (HPN); 6 packed (KLRF1). At the stalk site: native-region lDDT 0.915 and 0.992, no epitope packed |
+| Held: the stalk site fails too | CD70 (46), CD209 (67), SCARA5 (86), BRICD5 (63) | Native-region lDDT at the C-terminus / at the stalk site: CD70 0.79 / 0.81, CD209 0.77 / 0.82, SCARA5 0.82 / 0.83, BRICD5 0.78 / 0.77 (site lDDT 0.32 / 0.33). Each is the gene's only L1 member, so the gene leaves L1 |
+| Held: the fold fails and there is no usable stalk site | PLVAP isoform `l1-p2487` | Site lDDT 0.39; no native model, so no stalk site. The PLVAP reference and ortholog pass |
+| Kept, flagged | EDA ×2, TNFSF18, MCEMP1, ITM2B | Fold intact (native-region lDDT ≥ 0.94); 3–6 epitope residues pack on the domain (MCEMP1: an 11-residue helix forms inside the cassette linker instead). EDA's stalk site lies before its furin cut, so it would tag the stub. TNFSF18 and MCEMP1 have no stalk. ITM2B keeps Becca's site |
+
+l1-tag-refold then folded the six stalk-site designs (PR #301, 8af3b01d; snapshot
+`l1_cterm_stalk_refold_verdicts.tsv`, joined on design_id with each built protein's SHA-256
+checked). The rule recorded before either verdict existed holds a member whose stalk site also
+fails, so CD70, CD209, SCARA5 and BRICD5 are held. The rejected alternative is to build the
+stalk-site arm with a refold flag. That would keep the four genes in L1, and a weak arm would
+show up as low display in the screen. Three of the four are oligomers in their native state (the CD70 TNF trimer, the
+CD209 coiled-coil neck, the SCARA5 collagenous trimer), and BRICD5's reference is a ColabFold
+model of a mismatched sequence. Each one's monomer prediction drops by a similar amount at both
+sites. So the failures may reflect the reference as much as the tag. A passing site from the
+ranker would reverse the hold. #301's verdicts for the other C-terminal-rung failures
+(EDA ×2, TNFSF18, MCEMP1, ITM2B) are for the same tagged proteins with the same metrics, so
+their calls stand. Its 22 snorkel failures are still under test by the ranker, and every snorkel
+arm stays built until it decides. One row per decision, with the rejected alternative, is in
+`l1_cterm_decisions.tsv`.
+
+**C-out calls.** DeepTMHMM v1 is the topology of record, so a C-out call is kept unless an
+independent source contradicts it. The review records three things from UniProt for each
+member's own sequence: the side of its C-terminus with the evidence code (`uniprot_cterm_topology`;
+ECO:0000269 is experimental, ECO:0000255 a sequence-model prediction), a cleaved signal peptide
+(`uniprot_signal_peptide`) and the number of TM helices (`uniprot_tm_helices`). It also marks a
+call weak when v1's extracellular tail is under 5 residues, or when DeepTMHMM v2 puts the
+C-terminus in the cytoplasm, calls no TM helix or has no row. One rule (`cout_disposition` in
+`build_l1_cterm_arms.py`) then decides:
+
+| Evidence against C-out | Outcome |
+|---|---|
+| UniProt annotates the C-terminus cytoplasmic on experimental evidence | Held |
+| UniProt describes a type I protein: a cleaved signal peptide, one TM helix, a cytoplasmic C-terminus. v1's C-out call then rests on reading the signal peptide as the only TM helix | Held |
+| The call is weak, and UniProt annotates the C-terminus cytoplasmic on any evidence | Held |
+| v2 puts the C-terminus in the cytoplasm, and neither a UniProt extracellular annotation at that C-terminus nor a lane override places it outside | Held |
+| An ortholog with no UniProt entry whose human member is held under the first two rows | Held |
+| UniProt's cytoplasmic annotation is a prediction, v1 and v2 agree, and the protein is not type I | Kept, flagged |
+| The call is weak and nothing contradicts it | Kept |
+
+Four members are held and five are kept with a flag. Each of these, and each of the 15 weak
+calls, has one row in `l1_cterm_decisions.tsv`.
+
+| Outcome | Members | Evidence |
+|---|---|---|
+| Held: cytoplasmic by experiment | SLC41A2 `l1-p1957` | The member is identical to UniProt Q96JW4, whose topological domains run from extracellular 1–162 to cytoplasmic 565–573, the last feature, all citing one study. Its abstract reports that heterologously expressed SLC41A2 has an N-terminus-outside, C-terminus-inside, 11-TM topology ([Sahni et al., 2007](https://pubmed.ncbi.nlm.nih.gov/16984228/)). v1 and v2 both call 11 helices in the reverse orientation. It is a candidate for the N at residue 1 rung |
+| Held: type I by UniProt | VTCN1 `l1-p2342` and its cyno ortholog `l1-p2628` | UniProt Q7Z7D3 (identical to the human member): signal peptide 1–24, TM 260–280, cytoplasmic 281–282, all predictions. v1 and v2 call residues 7–29 the only TM helix and no helix at 260–280. The cyno ortholog has no UniProt entry, is 98.6% identical and has the same C-terminal segment. VTCN1 is not in `gpi_set.tsv`. Both are candidates for the N after SP rung |
+| Held: v2 cytoplasmic, nothing places it outside | TRPV1 isoform `l1-p2528` | The 521-aa isoform is canonical TRPV1 (UniProt Q8NER1) residues 1–515 plus six residues of its own. It ends five residues into canonical helix S3 (511–532), which follows the cytoplasmic S2–S3 loop (498–510), and it lacks S4–S6 and the pore. v1's C-out call rests on a 10-residue third helix and one extracellular residue; v2 calls two helices and a cytoplasmic C-terminus. Canonical TRPV1's own C-terminus (684–839) is cytoplasmic. It is a candidate for the internal rung |
+| Kept, flagged for Becca: predicted cytoplasmic, v1 and v2 agree C-out | LYSMD3, LYSMD4, SLC24A1, TMEM222 | LYSMD3 and LYSMD4: one TM helix (218–238), no signal peptide in UniProt, so UniProt's N-out and DeepTMHMM's N-in readings differ only in orientation, and neither is experimental. SLC24A1: v1 calls 13 helices, UniProt predicts 11, and UniProt's signal peptide is annotated as not cleaved. TMEM222: v1's call rests on an 11-residue helix (191–201) and a 7-residue tail; UniProt predicts three helices and a single cytoplasmic residue at 208. None is in `gpi_set.tsv` |
+| Kept, weak: UniProt annotates the member's C-terminus extracellular | SLC29A1 and SLC68A1 (experimental); SLC47A1, SLC47A2, TCTA, TNFSF13B, CORIN mouse (prediction) | `uniprot_cterm_topology` in the review. SLC68A1 is C-terminal by a lane override |
+| Kept, weak: v2 agrees with v1, and UniProt has no topology feature at the C-terminus | RHBDL2, SLC29A2, SLC38A8, STEAP1B | v2 C-terminus non-cytoplasmic |
+| Kept, weak, on v1 alone | SLC47A1 cyno, CLEC2L mouse | No v2 row and no UniProt topology feature; nothing contradicts v1 |
+| C-out call stands; held for its refolds | BRICD5 | v2 calls no TM helix |
+
+**Unknown:** for SLC41A2 only the abstract was read, not the experiments behind the topology. For
+VTCN1, LYSMD3, LYSMD4, SLC24A1 and TMEM222 no experimental topology is on record here, and an
+experiment on any of them would settle its row.
+
+**Snorkel arms for 28 internal-rung members.** These members have both termini cytoplasmic. The
+ranker's list (`l1_snorkel_designs/2026-11-14b/l1_snorkel_designs.tsv`, PR #331, pinned
+by SHA-256 in `l1_snorkel.py`) assigns them a snorkel: an extra TM helix after the native
+C-terminus, so the cassette sits outside. Most are members whose every designed internal loop
+site failed its refold (MS4A, TM4SF, KCNK, connexin, CD9 and others). NRG2 is a snorkel because
+its loop site lies on the shed ectodomain. P2RX5's internal sites all lie within 2 residues of the
+ATP-pocket ligand contact. P2RX2's one contact-free internal site fails its refold. GJA8, OTOP1 and SLC23A2 (added
+2026-11-14) have every internal site vetoed by a verified literature ligand contact. The snorkel
+arms of these four have not been refolded yet. The list in `constructs_l1_cterm.tsv` (placement
+`snorkel`) is read from the pinned table, never typed here.
+
+The first list had 45 members. When the snorkel arms themselves were refolded (PR #301), 21 of
+them failed, and so did MS4A7's new arm (`l1-p3040`). A 30-residue spacer rescued none of the 5
+the ranker tested. Those 22 members are held with no arm: CLRN3 (`l1-p0434`), EMP1–3, MS4A1, 2,
+6A, 7 (both members), 10 and 13, PANX1, PLLP, PMP22, SLC1A4, SLC35G2, TM4SF1, TM4SF5, TMEM169,
+TMEM174, TMEM204 and TSPAN12. SLC22A24 `l1-p1884` left on 2026-11-14, when its proteoform-fix
+redesign gave it an internal site after residue 59; the other SLC22A24 member (`l1-p3149`) stays a
+snorkel. The batch-6 encodings of all 22 stay issued and reserved
+(`l1_snorkel.reserved_designs`): later batches are drawn around them, and batch 6 still replays
+on their snorkel flanks.
+
+| Step | What is done |
+|---|---|
+| Design | Read from `processed://sprint5/s5e13-tag-site-benchmarking/l1_snorkel_designs.tsv`, pinned by SHA-256 in `l1_snorkel.py`. The built protein must equal its `snorkel_protein` exactly |
+| Module DNA | The 55 residues before the cassette are encoded once (`l1_snorkel.PREFIX_DNA`: DNA Chisel, human codon usage, no BbsI/Esp3I/BsaI, seed 20261112) and pinned |
+| Cassette | Each member gets its own linkers-only encoding from `l1_swap_risk.py`, which treats snorkel members as cassette-before-barcode: batch 6 for the first list, batch 7 for P2RX5 and P2RX2, batch 8 for SLC68A1 (C-terminal), batch 9 for GJA8, OTOP1 and SLC23A2. All 296 encodings replay from scratch in 9 batches, and none equals any encoding issued before, the retired rescue arms' included |
+| Checks | All 28 pass the Type IIS check, alone and in p0039. The worst-partner tract is at most 36 nt. Each insert has one 76% GC window at the cassette's end, the same class as the 12 C-terminal ones above |
+
+**Decisions on this rung.** Attribution follows the convention of 2026-11-10: every manual fix
+names who decided it and who implemented it. "This session" is the Claude Code session on
+branch `claude/l1-cterm-build-16eeeb`, which opened PR #284.
+
+| Date | Decision | Decided by / implemented by | Why |
+|---|---|---|---|
+| 2026-11-10 | C-terminal-rung members carry the cassette at their true C-terminus | Becca (the brief for this build) / this session | The cassette and its encodings were already fixed, so only the junction remained |
+| 2026-11-10 | Risks other than tag removal are flagged, not rerouted | Existing rule in TAG_PATHS ("Shedding is recorded and does not change the rung") / this session | No other rung exists for these members |
+| 2026-11-10 | ITM2B (`l1-m0355`; the mouse ortholog has since left with #283): cassette after residue 235, before the furin site | Becca, choosing this over mutating the furin site / this session, which proposed residue 235 | A C-terminal tag leaves with Bri23. Directly after R243, the cut motif would sit in front of the tag |
+| 2026-10-29 / 2026-11-10 | SLC41A2 (`l1-m1697`): last codon GAC→GAT | Rule `l1_swap_risk.domesticate_junction` (commit e545db2e, 2026-10-29) / reapplied to the domesticated ORF by this session | GAC followed by the cassette's first Gly codon completes an Esp3I site; the change is synonymous |
+| 2026-11-10 | The four partial-form isoforms stay built and flagged | The L1 main session ("L1 library: stop recoding Spy/ALFA, fix dup bugs"), with the reject-or-length-floor choice put to Becca / no change made | The isoform panel belongs to `redraw_panels.py`, on the reviewer branch |
+| 2026-11-12 | Furin-processed members keep the C-terminal tag (9 members); members ending inside a fold keep it pending the refold (36); stop context stays TAAC | l1-cterm-build (delegated by Becca 2026-11-12, "use your best judgment") / this session | See "Calls made on the evidence"; one row per member in `l1_cterm_decisions.tsv`, each with its rejected alternative |
+| 2026-11-12 | Refold failures: 6 members moved to their stalk site, the PLVAP isoform held, 5 kept with a flag | l1-cterm-build (delegated by Becca 2026-11-12, "use your best judgment") / this session | The rule recorded before the verdicts; see "Tagged refolds" and `l1_cterm_decisions.tsv` |
+| 2026-11-13 | Stalk-site refolds (PR #301): HPN and KLRF1 stay at their stalk sites; CD70, CD209, SCARA5 and BRICD5 held, so these four genes leave L1 | l1-cterm-build (delegated by Becca 2026-11-12, "use your best judgment") / l1-cterm-build on `claude/l1-cterm-stalk-refold-holds` | The same rule, recorded before the verdicts. Rejected: building the stalk-site arm with a flag |
+| 2026-11-13 | Snorkel list moved to the ranker's 2026-11-13b list: 22 snorkel arms dropped (held with no arm, encodings reserved), P2RX5 and P2RX2 added as cassette batch 7 | ranker-pu-segment under the coordinator's hold rule (delegated by Becca 2026-11-12), PR #245 bf831be8 / l1-cterm-build on `claude/l1-cterm-stalk-refold-holds` | Each dropped snorkel arm fails its own refold, and the spacer test rescued none. An issued encoding is never redrawn or handed on |
+| 2026-11-14 | Snorkel list moved to the ranker's 2026-11-14 list (29): GJA8, OTOP1 and SLC23A2 added as cassette batch 9; no removals | ranker-pu-segment (delegated by Becca 2026-11-12), PR #245 322a2bc0 / l1-cterm-build on `claude/l1-cterm-stalk-refold-holds` | Every internal site of the three is vetoed by a verified literature ligand contact |
+| 2026-11-14 | Snorkel list moved to the ranker's 2026-11-14b list (28): SLC22A24 `l1-p1884` removed, its encoding reserved | ranker-pu-segment (delegated by Becca 2026-11-12), PR #331 / l1-cterm-build on `claude/l1-cterm-stalk-refold-holds` | The proteoform-fix redesign gives it an internal site after residue 59 |
+| 2026-11-13 | SLC68A1 (`l1-p1995`) built as a C-terminal arm (cassette batch 8); the review takes its topology from the lane override, and its UniProt snapshot `2026-11-13-slc68a1` adds only Q14CX5 to the second-pass entries | l1-reviewer-package (lane override, delegated by Becca 2026-11-12, on ranker-pu-segment's proposal) / l1-cterm-build on `claude/l1-cterm-stalk-refold-holds` | Experimental topology (Q14CX5, ECO:0000269) puts both termini outside, the reverse of v1. Its terminus is a free tail (pLDDT 33) |
+| 2026-11-14 | The C-terminal build joins its inputs on design_id, and the encoding ledger carries design_id | l1-cterm-build, on independent-audit finding 8 / l1-cterm-build | Member ids are regenerated by each renumbering; a stale one now fails the build instead of mis-joining |
+| 2026-11-14 | One rule decides stalk moves and holds (`refold_disposition`), replacing the per-member lists; KLRF1 (`l1-p1070`) stays at its stalk site | coordinator under Becca's 2026-11-12 delegation and her 2026-11-14 instruction to manage the C-terminal rung / coordinator subagent, branch `claude/l1-cterm-audit-followups-2` | KLRF1's stalk arm passes its refold and its C-terminal form packs 6 epitope residues on the domain. Rejected: returning it to the C-terminus. An independent audit found the rule stated three ways. Would change it: evidence that the C-terminal epitopes are accessible |
+| 2026-11-14 | The PLVAP isoform (`l1-p2487`) stays held, by a clause of the rule: a failed fold with no usable stalk site is held, and packing alone with no stalk site keeps the C-terminal tag, flagged | coordinator under Becca's 2026-11-12 delegation and her 2026-11-14 instruction to manage the C-terminal rung / coordinator subagent, branch `claude/l1-cterm-audit-followups-2` | A tag on a disturbed fold is not a usable arm, and a packed epitope on an intact fold may still be detected. Rejected: recording PLVAP as an exception to a rule that keeps every member with no stalk site. Would change it: a native model and a passing site |
+| 2026-11-14 | TRPV1 isoform (`l1-p2528`) held: its arm is removed. Every other weak C-out call is kept, each with a decision row | coordinator under Becca's 2026-11-12 delegation and her 2026-11-14 instruction to manage the C-terminal rung / coordinator subagent, branch `claude/l1-cterm-audit-followups-2` | C-terminal orientation unconfirmed; canonical TRPV1 C-terminus is cytoplasmic; candidate for the internal rung. Rejected: building on the v1 call alone. Would change it: experimental evidence that this form's C-terminus is outside, or a passing internal site |
+| 2026-11-14 | SLC41A2 (`l1-p1957`) held: its arm is removed | coordinator under Becca's 2026-11-12 delegation and her 2026-11-14 instruction to manage the C-terminal rung / coordinator subagent, branch `claude/l1-cterm-audit-followups-2` | UniProt's experimental topology puts the C-terminus in the cytoplasm, and the cited study's abstract says so ([Sahni et al., 2007](https://pubmed.ncbi.nlm.nih.gov/16984228/)). Rejected: building on the agreement of v1 and v2. Would change it: experimental evidence that the C-terminus is outside; a site on the N at residue 1 rung would move it there |
+| 2026-11-14 | VTCN1 (`l1-p2342`) and its cyno ortholog (`l1-p2628`) held: their arms are removed | coordinator under Becca's 2026-11-12 delegation and her 2026-11-14 instruction to manage the C-terminal rung / coordinator subagent, branch `claude/l1-cterm-audit-followups-2` | The cyno ortholog has no UniProt entry and is held with its human member. UniProt describes a type I protein with a cleaved signal peptide and a two-residue cytoplasmic tail, so a C-terminal cassette would sit in the cytoplasm. Rejected: building on v1 and v2, which read the signal peptide as the only TM helix. Would change it: experimental topology; a site on the N after SP rung would move them there |
+| 2026-11-14 | LYSMD3, LYSMD4, SLC24A1 and TMEM222 kept at the C-terminus, flagged for Becca | coordinator under Becca's 2026-11-12 delegation and her 2026-11-14 instruction to manage the C-terminal rung / coordinator subagent, branch `claude/l1-cterm-audit-followups-2` | v1 and v2 agree on C-out, UniProt's cytoplasmic annotation is a prediction, and none is type I by UniProt. Rejected: holding on a predicted annotation. Would change it: experimental topology; Becca's review |
+| 2026-11-14 | EDA cyno (`l1-p2986`) left at the C-terminus | coordinator under Becca's 2026-11-12 delegation and her 2026-11-14 instruction to manage the C-terminal rung / coordinator subagent, branch `claude/l1-cterm-audit-followups-2` | The release call is transferred from the human gene, as the ortholog has no UniProt entry; its stalk site (126) was never refolded. Rejected: moving it to an unrefolded stalk site. Would change it: its own processing record, or a refold of the stalk site |
+| 2026-11-14 | The review reads UniProt from the append-only copy `external://uniprot/rest-2026-11-13/cterm-review-slc68a1/uniprot_entries.json.gz`, pinned by SHA-256, and AlphaFold models only from the archive `external://alphafold-db/v6/`; an ortholog with no UniProt entry is flagged `uniprot_not_checked`; the released-ectodomain genes are derived from the review, not listed | l1-cterm-build, on the independent audit / l1-cterm-build on `claude/l1-cterm-audit-followups`, finished by the coordinator subagent on `claude/l1-cterm-audit-followups-2` | The external copy is byte-identical to the processed snapshot it replaces (same SHA-256). A model missing from the archive is recorded as "native model not archived" and the review continues; all 182 AlphaFold models this rung reads are archived |
+| 2026-11-12 | Shared S3 keys `l1_cassette_encodings.tsv`, `l1_swap_risk.tsv` and `l1_swap_risk_summary.json` overwritten with #284's versions (#283's rows at 13f3c1b8 plus the 45 snorkel encodings, batch 6). Prior VersionIds: h5Yw20v3XM3yHFQv_rwLe4IJfTgBpFvo, LIVyOwv5z.TC0CosWaIAl8gNC3_J9xji, Nv5pne83aTM4ycfMhn73vqqzVN9tk4Lb (all from 13f3c1b8) | Becca, 2026-11-12 ("Yes, overwrite and push", in the l1-cterm-build session) / this session | The push hook requires the experiment-root copies; the bucket is versioned, so the prior versions can be restored |
+| 2026-11-12 | Snorkel arms built for the 45 members of the ranker's final table at bb9cd99d (cassette batch 6, drawn once on the final list) | ranker-pu-segment (delegated by Becca 2026-11-12), PR #245, for the design / this session for the DNA, encodings and checks | Both termini are cytoplasmic; the snorkel's extra TM helix puts the cassette outside |
+| 2026-11-12 | Member set rebuilt on PR #283 at 9928f4b1: 30 members out, 26 in | Becca, through #283's ortholog adoption, isoform gate and redraw / this session rebuilt from the tables, with no member chosen by hand | The arms follow the membership; this rung decides nothing about it |
+| 2026-11-10 | Flag thresholds: pLDDT ≥ 85, tail < 5 aa, under half the reference length | No decision taken / this session | The thresholds set flags only, and nothing built depends on them |
+| 2026-11-10 | `candidate_manifest_tranches.tsv` keeps `tag_cassette = deferred` | No decision taken / this session | The stage-10 verifier compares that column; `constructs_l1_cterm.tsv` carries the built inserts |
+
+In `constructs_l1_cterm.tsv`, the `decided_by`, `implemented_by` and `reason` columns are filled
+on the rows an adjustment touched: the ITM2B row (SLC41A2's junction edit left with its arm,
+now held). They are
+blank on rows built unchanged.
+
+### Domestication and barcodes, audited on the final inserts
+
+`audit_domestication_barcodes.py` recomputes, from the inserts themselves, whether domestication
+and the barcode rules hold for everything L1 will order. It checks two sets: the 3,255 tagged
+inserts (the five rung builds at 541c6c18, from which the per-insert cut `final-e` was made),
+and the Twist-compliant recoded set made from that same build (`synthesis_compliance.py`; key
+`synthesis/2026-11-15-final-e/`, sha 20e8f275). Inserts are keyed by their permanent arm id.
+The recoded set is the order of record, and the audit pins it by SHA-256. Its inserts are named by
+current member ids, which renumber, so the audit matches each recoded insert to its build by the
+permanent design id.
+
+The 3,255 inserts are every built arm of the 2,673 built members; 37 of the 2,710 active members
+are held with no insert ordered (13 on the N-after-SP rung, 20 internal, 4 C-terminal; brief
+section 12).
+The 25 expression-rescue
+members (`l1-p2361`–`l1-p2385`) are retired, one arm per gene (Becca, 2026-11-13), so
+`constructs_l1_rescue` is not read. Per-insert results are
+in `l1_insert_audit.tsv`, every domestication edit is in `l1_domestication_edits.tsv`, and the
+summary is in `l1_domestication_barcode_audit.json`. The tests in
+`tests/test_domestication_barcode_audit.py` keep each result true.
+
+**Domestication.** Every check holds on all 3,255 inserts, before and after recoding:
+
+| Check | Result |
+|---|---|
+| Type IIS sites | exactly the two wrapper Esp3I sites; no BbsI, BsaI or other Esp3I site on either strand |
+| Kozak and start | the designed Esp3I + p003 Kozak block + ATG in every insert |
+| Protein | the coding sequence translates to the protein its arm table records, with one stop at the end |
+| Edits | 8,201 edited codons in 2,389 members. Every one is synonymous, and each member's recorded `edits` count equals its logged nucleotide changes. The 25 retired rescue members are skipped |
+| Unlogged changes | none. With the cassette cut out, every insert's coding sequence is the domesticated ORF. The Igκ-swap arms are the leader followed by the domesticated ORF from the first kept residue. SLC41A2, whose last codon (GAC→GAT) was the one logged exception, is held, so no ordered insert carries one |
+| Barcode slot | exactly one 20-N slot per insert |
+
+**Barcodes.** No member has a barcode yet. The audit re-derives the 3,200-barcode block reserved
+for L1:
+
+| Check | Result | Stated rule |
+|---|---|---|
+| Uniqueness | 3,200 distinct, and each appears exactly once in the shared registry | — |
+| Composition | length 20, GC 40–60%, longest homopolymer 2, no ATG | the s1e2 pool's filters |
+| Distance, full length | minimum Hamming 5, minimum edit distance 4 | pool: Levenshtein ≥ 3 and Hamming ≥ 4 |
+| Distance, in situ prefix | minimum Hamming 3 over the first 10 nt | brief and code: 3 over 10 |
+| Screens, both 3′ flanks | none fail (Type IIS, splice donor, junction miRNA seed, RBP motifs) | brief: the same screens, and the code's motif list matches the brief's |
+| Inserts and backbone | no barcode occurs, on either strand, in any insert or in p0039 | not previously checked |
+| Determinism | the draw takes the pool in index order, with no random number generator; replayed against the registry as it stood before the block, it returns the same 3,200 in the same order | — |
+
+**Barcode reservation extended (2026-11-15).** With 2 or 3 arms per internal member, L1 grew to
+about 3,265 inserts, more than the 3,200-barcode block. Becca approved extending the reservation
+on 2026-11-15 ("Yes, extend it"). The extension is a second block appended to the registry, not a
+regeneration: every pool barcode after the block's last index (20,892) that passes the same
+screens under both 3′ flanks, with the in situ prefix screen run against the whole registry,
+the 3,200 block included. That gives 444 barcodes (pool indices 20,910–29,909), named
+`L1-res-3201`–`L1-res-3644` and recorded in `l1_barcode_block_extension_2026-11-15.tsv`
+(`reserve_l1_block.py --extension`), for 3,644 reserved in all. They are every barcode left in
+the pool that passes the screens (5,603 more fail only the prefix screen), so a library above
+about 3,640 inserts would need a relaxed prefix rule or a second pool. The audit and the
+synthesis check treat the block and the extension as one set, and the extension replays against
+the registry rows that precede it. Decided by Becca Carlson; drawn and appended by the Claude
+Code session l1-reviewer-package.
+
+**Swap tract on the final DNA.** Across all 3,255 inserts, up to the barcode slot, against the
+nearest insert of a different member: median 30 nt, maximum 3,852 nt, 288 inserts over 100 nt
+(each insert's partner is in `l1_insert_audit.tsv`). Two inserts of the same member are measured
+apart (`swap_tract_same_member`): 791 pairs on 373 members, shared tract median 366 nt, modelled
+swap median 16.1% (brief section 1).
+
+**Recoding.** The 4,502 codon changes across 727 inserts are all synonymous, and each insert's
+count equals `synthesis_recodes.tsv`. No protein, cassette, readout block, barcode slot or wrapper
+changes, and no BbsI, Esp3I or BsaI site or consensus splice donor (`GT[AG]AGT`) is added.
+
+**Calls made on these results** (Becca delegated design calls on 2026-11-12: "use your best
+judgment"):
+
+| Finding | Call | Rejected alternative | Decided by / implemented by |
+|---|---|---|---|
+| 1,213 inserts carry an AarI/PaqCI site (`CACCTGC`), and BtgZI is in 1,092. Recodes add one of these sites to 9 inserts | No change. No cloning step uses AarI, PaqCI or BtgZI. The README names AarI/PaqCI as the likely enzyme for guide cloning; if it is adopted for a vector that carries these inserts, the ORFs must be domesticated against it then | Domesticate them all now, which would change those ORFs after their refolds and the Twist recode | l1-cterm-build (delegated by Becca 2026-11-12) / Claude Code session l1-cterm-build, this PR |
+| Every insert carries a SapI site (`GAAGAGC`) inside p003's ALFA codons | No change. SapI is unused, and the tag codons are fixed to p003's | Recode the ALFA tag | same |
+| Domestication edits create 471 new ATG trinucleotides (any frame), 51 `GT[AG]AG` and 2 poly(A) signals (KLRB1 codon 91, SLC46A1 codon 233) | No change. No stage claims these checks for ORFs. 808 of the 2,691 inserts already carry a native AATAAA/ATTAAA, and no recode adds the 7-mer donor the recode stage screens | Re-pick those codons, cascading into the constructs record and the recode | same |
+| Each rescue arm shared 1.1–2.9 kb up to the barcode with its own library reference, a predicted 34–35% barcode swap within exactly the pairs that measured the Igκ leader | Superseded 2026-11-13: the 25 rescue members are retired, one arm per gene (Becca: "make a single choice for each L1"; PR #312), so no gene has two members and the finding no longer applies. Their 25 linker-only encodings are withdrawn | Recode each rescue arm's 3′ codons (PR #312's first fix), or pool each pair apart | finding: l1-cterm-build (delegated by Becca 2026-11-12); retirement: Becca, implemented by l1-nterm-res1-multipass (PR #312) |
+| The first 2026-11-13 order of record (sha d1257f0a) held the 25 retired rescue inserts and 25 superseded multipass designs; the next (b426e433) was built from the draft integration branch, not `main` | Resolved: the order is regenerated from the rung builds (now `synthesis/2026-11-15-final-e/`, sha 20e8f275, 3,255 inserts, cut at 541c6c18) and re-pinned here; every insert matches its build | Filter the old order by hand | finding: l1-cterm-build / regeneration: l1-reviewer-package (PR #313) |
+| Barcodes are screened under both candidate 3′ flanks | Unchanged. The choice of 3′ flank (today's RT site or the Feldman T9A padlock draft) remains Becca's | — | Becca (open) |
+
 ### Members whose protein duplicates another's are retired
 
 A member's protein is its designed CDS translated. Comparing those proteins across the
@@ -773,8 +1140,8 @@ protein, and each pair had a different gene symbol, accession or transcript.
 `dedupe_library_members.py` keeps one member per protein, by precedence: library reference
 before expression-rescue, isoform, ortholog or giant truncation; L1 before L2; then fewer
 residues off the source record. It marks the others `retired_reason` in
-`candidate_manifest_tranches.tsv`. A retired member keeps its `candidate_id`, since ids are
-never renumbered, and `library_design` readers skip it. The full list with rationales is
+`candidate_manifest_tranches.tsv`. A retired member keeps its design id and gets no member id
+(see "Member ids follow plate order"), and `library_design` readers skip it. The full list with rationales is
 in `library_duplicate_members.tsv`.
 
 | Retired | Kept | Category | Root cause |
@@ -837,8 +1204,11 @@ class). A form is rejected when:
 | no transcript encodes it, so it has no designed CDS | 10 (6 isoforms, 4 orthologs) | `redraw_panels.py`: no manifest key |
 
 The last two are only knowable after the draw. `redraw_panels.py` writes them to
-`panel_rejections.tsv` and reruns both samplers until a pass adds no rejection; two passes
-reached that point. The ten no-CDS picks were never L1 members, which is why the panels
+`panel_rejections.tsv` and reruns the isoform sampler until a pass adds no rejection. It no
+longer reruns the ortholog sampler: the L1 ortholog panel is the Compara 116 adoption (next
+section), and the original ortholog panel's rejections are kept as recorded. The table below
+is the first redraw, of 2026-11-01; the gated redraw of 2026-11-12 is described in "Isoform
+forms are gated before the draw". The ten no-CDS picks were never L1 members, which is why the panels
 held 144 and 196 members instead of their designed 150 and 200. They fall under the same
 rule, so the panels are now 150 and 200. The replacements, each in its rejected pick's
 stratum, are logged in `isoform_panel_replacements.tsv` and
@@ -861,8 +1231,9 @@ stratum, are logged in `isoform_panel_replacements.tsv` and
 | l1-p2738 mouse CADM2 Q8BLQ9-2 | mouse INSR M4TKR7 | mouse near, type I |
 
 Each new member was already an L2 candidate with a resolved CDS. It takes the next free L1
-id, and its L2 row is retired `moved_to:<id>`; no id is renumbered. Rerunning
-`split_library_tranches.py` would renumber the library, so it must not be used for this.
+design id, and its L2 row is retired `moved_to:<design id>`; no existing design id changes.
+Rerunning `split_library_tranches.py` would reassign every design id, so it must not be used
+for this.
 The paralog retirements are not refilled, because their protein is still in the library.
 
 Three new members had no DeepTMHMM v1 topology. `publish_topology_supplement.py` closes
@@ -888,6 +1259,218 @@ folded from its designed CDS with ColabFold 1.6.2, as the other 71 were (754 aa,
 model identical to the designed protein.
 SLC43A2's drawn form is a 62-residue fragment; the cohort table admitted it, and the rule
 does not second-guess the cohort.
+
+### Isoform forms are gated before the draw
+
+Every form in the isoform cohort (1,894) is tested before the panel draw by
+`gate_isoform_cohort.py`, and the isoform sampler treats a failing form as unusable: a failing
+pick is replaced within its stratum by the same seeded rule, and a failing form is never drawn
+as a replacement. A form passes only if both criteria hold.
+
+| Criterion | Test |
+|---|---|
+| Native start | its protein starts with M, and an Ensembl 115 transcript whose CDS starts ATG encodes exactly that protein (exact peptide match, no allele tolerance) |
+| Reference N-terminus kept | by DeepTMHMM v1, against the gene's L1 reference protein: the form keeps the reference's signal peptide, its N-terminal orientation after any signal peptide, and, for a non-GPI reference, the reference's first TM helix sequence called membrane over at least half its residues |
+
+Both proteins are matched to the pinned topology snapshot by sequence. A form with no v1 row
+fails as unverifiable rather than being predicted here. The gate exists because a panel form
+that starts at a non-native residue, or that loses the signal peptide or first helix the
+reference uses for placement, tests a different architecture from the gene it stands for.
+
+| Tier | Forms | Pass | Fail | Of the fails, unverifiable only |
+|---|---:|---:|---:|---:|
+| observed | 795 | 511 | 284 | |
+| prediction-only | 1,099 | 291 | 808 | |
+| all | 1,894 | 802 | 1,092 | 931 |
+
+Most prediction-only forms have no v1 row in the snapshot. Many of them were run through
+DeepTMHMM v1 for the isoform universe (`topology_shortlist.3line`), but those strings are not
+in the topology snapshot, so the gate cannot read them. Publishing them to the snapshot would
+make those forms drawable; until then the prediction-only tier draws from 291 forms.
+
+The gate tests only the N-terminal architecture, so a form can pass it and still lack the
+domains that make the protein what it is. Five such forms are rejected by name in
+`panel_rejections.tsv`, which carries `decided_by`, `implemented_by`, `alternative` and `sources`
+per row; the sampler replaces them in their stratum by the same seeded rule. Each decision comes
+from the per-member proteoform audit (`proteoform_decisions_applied.tsv`, copied verbatim from
+`l1_proteoform_decisions.tsv`).
+
+| Form | Protein | Why it is not a surface isoform of its gene |
+|---|---|---|
+| ABCC3 O15438-5 | 572 of 1,527 aa | canonical 1–546 plus a 26-aa novel tail: TM helices 1–10 only, and neither nucleotide-binding domain nor the second transmembrane domain (UniProt O15438 features) |
+| OPN3 ENST00000469376 | 189 of 402 aa | canonical 1–181 plus 8 divergent residues: TM1–4 only, without TM5–7 or the retinal-binding Lys299 |
+| CLEC7A Q9BXN2-9 | 77 aa | cytoplasmic tail, TM and a stalk fragment; no C-type lectin domain |
+| SLC6A11 P48066-2 | 208 aa | 3 of the transporter's 12 TM helices (33% of the reference) |
+| NECTIN2 ENST00000917943 | 537 aa | one residue deleted inside the signal peptide, so the mature protein is the reference's |
+
+No length floor is applied: a 50% floor would remove HLA-G's form (46% of its reference), which
+is kept on evidence. SLC9D1's and KCNN2's short forms (19% and 29%) were considered too, and are
+out of the panel on their own defects, not on length: the SLC9D1 form is a 126-aa internal
+fragment with a non-ATG start and no TM helix, and the KCNN2 form lacks S1–S5 (l1-proteoform-audit,
+PR #305).
+
+Gating and these rejections have each been followed by one redraw (`panel_changes.tsv`, with
+`decided_by` / `implemented_by` / `reason` per row). A form that passes the gate can still leave
+the panel, because the replacement draw continues one seeded sequence in draw order: a new
+rejection early in the order changes which forms later replacements land on. The current panel's
+150 forms all pass the gate; every form drawn in the second redraw (`l1-p3141`–`l1-p3152`) is
+at least 95% of its reference's length.
+
+### Reference-form fixes
+
+The reference ladder names a gene's form outright through `reference_overrides.tsv`; each row
+carries `decided_by` and `implemented_by`. `apply_reference_fixes.py` reruns the ladder and the
+CDS resolver from pinned inputs and writes the ledger `reference_changes.tsv`.
+
+| Gene | Was | Now | Tag lane after |
+|---|---|---|---|
+| CD200R1L | ENST00000488794, 250 aa, no signal peptide | Q6Q8B3-1, ENST00000398214, 271 aa | N after SP (was N at residue 1, type III) |
+| LRRC37B | ENST00000543378, 865 aa, no signal peptide | Q96QE4-1, ENST00000341671, 947 aa | N after SP (was type III) |
+| CACHD1 | ENST00000650260, 1,140 aa, no signal peptide | Q5VU97-1, ENST00000651257, 1,274 aa | N after SP (was type III) |
+| ADGRF3 | ENST00000651242, 1,004 aa, no signal peptide | Q8IZF5-1, ENST00000311519, 1,079 aa | N after SP (was N at residue 1) |
+| RGMB | ENST00000308234, 478 aa, 41 residues upstream of the signal peptide | Q6NW40, ENST00000513185, 437 aa | N after SP (was internal, GPI-rerouted) |
+| SLC22A17 | CTG start | the same CDS with ATG; no residue added | internal (unchanged) |
+| TRPV6 | ACG start | the same CDS with ATG; no residue added | internal (unchanged) |
+| OR8G3 | GTG start (both Ensembl 115 transcripts) | the same CDS with ATG; protein = P0DMU2, 310 aa | N at residue 1, multipass (unchanged) |
+| EPHA6 | ENST00000389672, 1,130 aa: 94 residues upstream of the signal peptide, which v1 then reads as a TM helix | the same CDS from the codon of Met95; protein = Q9UF33, 1,036 aa | N after SP, 24 aa (was internal) |
+| LMLN | ENST00000482695, 452 aa, starts at canonical residue 233 without the signal peptide | Q96KR4, ENST00000330198, 647 aa | N after SP, 43 aa (was type III) |
+| DISP2 | ENST00000949524, 1,184 aa, 10 of 12 TM helices | A7MBM2, ENST00000267889, 1,401 aa | internal (unchanged) |
+| TSPAN10 | ENST00000696047, 235 aa, 3 of 4 TM helices | Q9H1Z9, ENST00000611590, 355 aa | internal (was C-terminal) |
+
+No Ensembl 115 transcript encodes Q9UF33, so EPHA6 is an in-frame 5′ trim of its MANE
+transcript, with no sequence added. LMLN's canonical is preferred over Q96KR4-3 (already built,
+684 aa): both keep the same 43-aa signal peptide and both are GPI-anchored by NetGPI, and
+isoform 3 differs only by a 37-aa insertion after residue 403 of unknown function. The L2 forms
+that the new CD200R1L, LRRC37B, CACHD1, DISP2 and TSPAN10 references duplicate are retired
+`duplicate_of:` their reference. TSPAN10's linker encoding, issued in batch 1 while it was C-terminal, is unused (TSPAN10
+is now an internal-loop arm) but stays reserved (`l1_swap_risk.RELEASED`), like the 21 snorkel
+members held on 2026-11-13. It is reserved rather than released for two reasons. An issued
+encoding is never handed to another member, so no two inserts in L1's history ever share one.
+And batch 1 replays only with TSPAN10's flank in the draw. Later batches are drawn around it. The designed-CDS and construct records are versioned
+under `library-candidates/2026-11-12-reference-fixes-2/`, and the reference record under
+`library-design/reference-selection/2026-11-12-reference-fixes-2/`.
+
+#### Cyno orthologs restarted at the human Met1
+
+Four cyno Ensembl 116 models start upstream of the residue aligned to human Met1, at an
+in-frame native ATG; the extension has no human counterpart, no signal peptide and would carry
+the N-terminal tag. Each gene has only that one model, so the restart is a recorded exception to
+the ortholog CDS policy's ban on start repairs (`ortholog_start_trims.tsv`;
+`apply_ortholog_start_trims.py`). The restart drops the upstream codons and edits none. Each
+restart's CDS and protein hash match the ones the ortholog review computed independently.
+
+| Member | Restart | Protein | Status |
+|---|---|---|---|
+| cyno CCR5 `l1-p2959` | Met28 | 352 aa | applied |
+| cyno CHRM3 `l1-p2938` | Met32 | 590 aa | applied 2026-11-12, after its v1 row was published (`topo_2026_11_12_cyno_restarts`) |
+| cyno OR3A2 `l1-p2963` | Met33 | 315 aa | applied 2026-11-12, after its v1 row was published (`topo_2026_11_12_cyno_restarts`) |
+| cyno NIPAL4 `l1-p2962` | Met215 | 404 aa | applied 2026-11-12, after its v1 row was published (`topo_2026_11_12_cyno_restarts`) |
+
+A restart is applied only when its protein has a DeepTMHMM v1 row in the pinned topology
+snapshot, because every active member needs one for its tag path. The other 196 active L1
+orthologs are unchanged.
+
+### Lane overrides
+
+DeepTMHMM v1 is the topology of record, but for four members structures or homology contradict
+its N-terminal call. `lane_overrides.tsv` (keyed on design id, bound to the protein's SHA-256)
+sets their placement after classification in `l1_tag_paths.py`; `rung_before_gpi` keeps the v1
+call and `lane_override` carries the reason.
+
+| Member | v1 lane | Placement | Evidence |
+|---|---|---|---|
+| MFSD2A reference `l1-p1213` and isoform `l1-p2466` | N at residue 1 | internal | cryo-EM of mouse ([Wood et al., 2021](https://pubmed.ncbi.nlm.nih.gov/34349262/)) and chicken ([Cater et al., 2021](https://pubmed.ncbi.nlm.nih.gov/34135507/)) MFSD2A put the N-terminus in the cytoplasm and the TM5–TM6 loop outside; DeepTMHMM v2, the model and the K/R bias agree |
+| AQP12B `l1-p0128` | N at residue 1 | internal | the aquaporin fold puts both termini in the cytoplasm; UniProt A6NM10 annotates 1–22 cytoplasmic; v1's extra helix at 8–21 is weak. AQP12 is intracellular, so surface display is doubtful on any lane |
+| GLP2R `l1-p0724` | N at residue 1 | N after SP, 66 aa | mouse Glp2r's signal peptide aligns to human ~43–66 and v2 calls SP 1–66; an HA tag after Met1 gives ~0.12× the median surface signal in HEK293T ([Tedman et al., 2026](https://pubmed.ncbi.nlm.nih.gov/42736269/)), consistent with a cleaved N-terminus |
+
+GLP2R is also an expression-rescue gene, so the contrast with its Igκ-leader arm
+(`rescue:GLP2R`) is now between two constructs tagged after a leader. SLC61A1 (`l1-p1994`),
+TSPO2 (`l1-p2302`), SLC44A1 (`l1-p1961`) and TMC2 (`l1-p2158`) keep their v1 lanes; the decision
+log says why.
+
+### Member ids follow plate order
+
+Every L1 member has two ids:
+
+| Id | Format (manifest column) | Assigned by | Changes when | Records keyed on it |
+|---|---|---|---|---|
+| Design id | `l1-pNNNN`, `l2-pNNNN` (`design_id`) | the design stage that created the row: `split_library_tranches.py`, `redraw_panels.py`, `add_library_genes.py`, panel adoption | never; a retired id is not reused | design-stage records: panel changes, rejections and replacements, retirements (`duplicate_of:`, `moved_to:`), adoption ledgers, completeness and CDS audits, fold inputs and their structure files, topology supplement rows |
+| Member id | `l1-mNNNN` (`candidate_id`) | `renumber_library_members.py` | any membership change, until the order freeze | the current-library records listed below, and the plate order |
+
+Member ids run in order of the *ordered* insert's length (`ordered_insert_nt`: tagged and
+synthesis-recoded, as Twist makes it, from `synthesis_compliance.tsv`), shortest first, with
+ties broken by design id (decided 2026-11-14 by the coordinator under Becca's delegation; until
+then the untagged `insert_nt`, which is 59–359 nt shorter). That is the order the library is
+ordered in: purified plasmid in 96-well plates, so each plate holds members of similar length
+(reviewer brief, section 8). From the per-insert cut (`2026-11-15-final-e`) the plate position
+belongs to the insert: insert N (`l1-iNNNN`, `l1_insert_numbering.tsv`) sits on plate ⌈N/96⌉,
+wells column-major (A01, B01, …, H01, A02), sorted by ordered insert length then arm id. The
+3,255 inserts fill 33 plates and 87 wells of a 34th; `l1-i0001` is CD24 (`l1-p0277-a1`, 527-nt
+ordered insert) and `l1-i3255` is NRXN2 (`l1-p1330-a1`, 5,423 nt). Held members have no insert
+and no plate. Members are named by their design id; the `l1-mNNNN` member id is retired and
+survives only in dated records. The two formats differ on purpose, so an old id cannot be read
+as a member id: `l1-m0026` and `l1-p0026` are different members, and a member id has no `p`
+to be mistaken for a P-series construct number. Retired L1 rows and every L2 row have no
+member id; their `candidate_id` is their design id.
+
+`l1_member_renumbering.tsv` is the mapping: design id, member id, plate, well, `insert_nt`,
+manifest key, and the SHA-256 of the member's designed CDS (for the 25 expression-rescue arms,
+the IgK-leader + receptor construct in `rescue_constructs.tsv`, since their CDS is not in
+`candidate_cds.json`). These records describe the current library and are keyed on member ids:
+
+| Record | Id columns re-keyed |
+|---|---|
+| `candidate_manifest_tranches.tsv` | `candidate_id` (`design_id` added beside it) |
+| `l1_tag_paths.tsv`, `l1_cassette_encodings.tsv` | `candidate_id` |
+| `l1_swap_risk.tsv`, `l1_swap_risk_summary.json` | `candidate_id` and the three `partner_*` columns; the summary's member ids |
+| `l1_structure_gap.tsv`, `proteoform_match.tsv`, `residue_offsets.tsv`, `structure_coverage_baseline.json` | `candidate_id`; the baseline's member lists |
+| `library_topology_index.tsv`, `library_manifest_l1.tsv`, `library_structure_payload.tsv`, `l1_internal_members.tsv`, `l1_deeptmhmm_v1_topology_gap.tsv` | `candidate_id` |
+
+Only whole id cells change. `topology_acc` is left alone: for a supplement row it is the
+design id under which that protein sits in the topology snapshot, a pointer into another
+record rather than a member id. Row counts are asserted equal, and every row that carries a
+`sequence_sha256` is joined back to the designed protein of the member it now names. Designed
+CDS and constructs on S3 (`candidate_cds.json`, `candidate_constructs.json`) are keyed on the
+manifest `key`, not on an id, so they did not change. The re-keyed records are published
+under `library-design/member-renumbering/2026-11-07/`; the older copies at the experiment
+root on S3 carry design ids and are not overwritten.
+
+**Membership is not frozen.** Five genes lack an intact Ensembl copy, and the order freeze
+has not been set. Design stages therefore work only on design ids: they read the
+manifest with `candidate_id` set to the design id and write it back unnumbered.
+`renumber_library_members.py --write` then renumbers from the manifest and re-keys every
+record above, including records still carrying member ids from the previous numbering, which
+it maps back through the committed mapping. Until it runs, `library_pipeline.py verify`
+fails at stage 15. The numbering that ships is the one taken at the order freeze: setting
+`ORDER_FREEZE` in the script records that date, after which `--write` refuses to move any
+assigned member id.
+
+```bash
+uv run --locked python renumber_library_members.py --check   # committed state is current
+uv run --locked python renumber_library_members.py --write   # after any membership change
+```
+
+**Join on design id, never on member id** (decided 2026-11-13 by the coordinator under Becca's
+2026-11-12 delegation). A member id is the plate position: it is authoritative only in
+`l1_member_renumbering.tsv`, the order plan and the records in the table above. Those are the
+only tables re-keyed when membership changes, along with the rung arm tables, which their
+builders rebuild. The dated audit and screen tables below keep the member id current when
+each was written, and are not re-keyed. Rewriting them would change checksums that verify
+stages pin, for no change in content, and member ids keep moving until the order freeze. At
+the freeze, one final re-key of everything is reasonable. Rejected: re-keying them all now;
+freezing ids early with gaps. After the ordered-length renumber of 2026-11-14, 36 dated
+tables carry member ids from an earlier numbering. They are listed by name in
+`tests/test_member_id_policy.py` (`DATED`), every one carries `design_id`, and the test fails if
+any other table names a member by an id that is not current.
+
+Three tables carry a member id with no design id: `constructs_l1_type3_proteins.tsv` (join on
+`precursor_sha256`), `membrane-side-gate/calibration_tmdet.tsv` (a calibration set, not a join input) and
+`l1_rbp_motif_cassettes.tsv`, which has no stable key and must be regenerated keyed on design id
+before it is joined. `tests/test_member_id_policy.py` fails if any other table carries member
+ids without a design id, or names a design id that does not exist.
+
+No L1 barcode is reserved yet (`barcode_reservations.tsv` holds only panel rows), so the
+renumbering needed no barcode registry change.
 
 ### The library pipeline: gene list to ordered proteoforms
 
@@ -917,16 +1500,22 @@ uv run --locked python library_pipeline.py verify --stage gene_list  # one stage
 | 4 | isoform universe → cohorts | every alternate form, its evidence, and its cohort tier | every intermediate summary exactly; `isoform_cohorts.tsv` row for row (see below) |
 | 5 | ortholog repick | each gene's mouse and cyno proteoform in the April pool (source of L2 orthologs) | byte for byte |
 | 5b | universe coverage | which library genes the isoform and ortholog universes could draw from | every recorded ortholog pair is 1:1 high-confidence in Compara 115; coverage table byte for byte (see below) |
-| 6 | panels | the 150-isoform draw and the original 200-ortholog draw (retired from L1) | byte for byte (original draw and rule-based redraw) |
+| 5c | isoform gate | which cohort forms the isoform draw may use | `isoform_gate.tsv` byte for byte, and equal to its pinned key |
+| 6 | panels | the 150-isoform draw (through the gate) and the original 200-ortholog draw (retired from L1) | byte for byte (original draw and rule-based redraw) |
 | 6b | ortholog adoption | the L1 ortholog panel: CDS-eligible draw, review swaps, member map | final-v2 draw replays to the panel; adopted panel, member map, manifest and appended CDS/construct records byte for byte |
 | 7 | rescue arms | 25 expression-rescue arms, their CDS and constructs | byte for byte |
 | 8 | giants | truncations of oversized genes and their ORFs | byte for byte |
-| 9 | candidate CDS | each candidate's designed CDS | all 7,020 resolver-recorded CDS; current record = those + 56 appended |
+| 9 | candidate CDS | each candidate's designed CDS | all 7,020 resolver-recorded CDS except the 5 named references, which equal the current record; 2 approved ATG starts; 56 appended |
+| 9b | reference fixes | the named references, ATG start replacements and EPHA6's in-frame trim | ledger, CDS/construct and reference records byte for byte; the first round's record differs only in the second round's entries |
+| 9c | ortholog start trims | cyno orthologs restarted at the native Met aligned to human Met1 | every restart's hashes; applied only with a v1 row; the other orthologs unchanged; records byte for byte |
 | 10 | constructs | domesticated ORFs and p0039 vectors | all 7,076 ORFs and 7,125 vectors (about 30 s) |
 | 11 | tranches | L1/L2 membership; duplicate proteins retired | no two active members share a protein |
 | 12 | topology | DeepTMHMM v1 per designed protein | every active member has one |
-| 13 | tag paths | each member's placement rung | byte for byte |
+| 13 | tag paths | each member's placement rung, with `lane_overrides.tsv` applied | byte for byte |
 | 14 | cassettes | each C-terminal member's recoded linkers | every issued batch replays to the recorded encodings |
+| 15 | member ids | each active L1 member's `l1-mNNNN`, in plate order | recomputed from the manifest; mapping and every re-keyed record current |
+| 16 | C-terminal review | which C-terminal members keep a C-terminal tag on the cell (`cterm_tag = removed` when a C-terminal peptide is cut off) | `l1_cterm_review.tsv` byte for byte from the UniProt snapshot of 2026-11-12 |
+| 17 | C-terminal arms | each C-terminal-rung member's insert: ORF, cassette, TAA, in the p003 layout (ITM2B: cassette after residue 235), plus the snorkel arms | all 256 inserts byte for byte; protein = native[:n] + cassette + native[n:]; no new Type IIS site |
 
 Each step runs from these pinned sources:
 
@@ -970,8 +1559,11 @@ others. Any new run of these steps should set `PYTHONHASHSEED`.
    least 10 samples, and GENCODE Ribo-seq ORF translations.
 4. Without strong evidence, default to MANE.
 
-Named overrides in `reference_overrides.tsv` take precedence; seven genes have one (six GPI
-forms and MICA).
+Named overrides in `reference_overrides.tsv` take precedence. Eighteen genes have one in the
+current reference record (2026-11-12-reference-fixes-2): six GPI forms, MICA, three
+reference-allele loss-of-function genes, five signal-peptide forms (CD200R1L, LRRC37B, CACHD1,
+ADGRF3, RGMB) and the UniProt canonical for DISP2, TSPAN10 and LMLN. The brief's section 3
+tabulates them with their reasons and dates.
 
 **GPI.** NetGPI 1.1 per form, unioned with curation under the 0.55 confidence rule
 (`gpi_set.tsv`), is the GPI set of every stage (Becca, 2026-11-01). Before that, the
@@ -993,12 +1585,13 @@ What freezing the pipeline turned up:
 | MICA's designed CDS had been patched in place on S3 (`repoint_mica_reference.py`) | The override now reaches it through the pipeline: a fresh reference selection names Q29983, and CDS resolution produces the patched CDS unaided. The rerun also yields `iso:MICA:Q29983`, which is now MICA's reference and therefore a duplicate. |
 | `gpi.gpi_genes()` returned an empty set without error when its files were missing | It now raises. |
 
-**Adding a gene.** Members are appended, never renumbered, so a gene admitted later
-cannot shift any existing member. List the gene in `gene_list_additions.tsv` with the
+**Adding a gene.** Members are appended under new design ids, so a gene admitted later
+cannot shift any existing member's design id. It does shift member ids, so the renumber
+stage reruns afterwards (see "Member ids follow plate order"). List the gene in `gene_list_additions.tsv` with the
 decision, the date and the surfaceome release that admitted it, then run
 `add_library_genes.py`. It runs the reference, CDS and construct steps (3, 9 and 10) over
 the list from the same pinned inputs. It fails unless every recorded reference row and CDS comes back unchanged.
-The new member gets the next free L1 id, and its designed protein must not repeat an active
+The new member gets the next free L1 design id, and its designed protein must not repeat an active
 member's. Its designed protein also needs a v1 topology row; without one, the script stops
 and names `publish_topology_supplement.py`. An added gene is a library reference only:
 the isoform and ortholog panels draw from the pinned universe, which predates it. The
@@ -1011,6 +1604,7 @@ uv run --locked python add_library_genes.py              # dry run
 uv run --locked python add_library_genes.py --write      # append locally; then commit
 uv run --locked python add_library_genes.py --publish    # upload the S3 records
 uv run --locked python l1_tag_paths.py && uv run --locked python l1_swap_risk.py
+uv run --locked python export_internal_members.py   # internal members follow the tag paths
 ```
 
 SLC67A1 (formerly SLC22A18; UniProt Q96BI1) is the first addition (Becca, 2026-11-02). Surfaceome
@@ -1059,6 +1653,73 @@ paralog, which is over the 100-nt swap bar for the pair. The other five (FCGR2C 
 with a premature stop; OR10AC1, OR52P1 and OR4Q2, frameshifted) have no intact Ensembl 115
 transcript and remain without a member.
 
+### Synthesis compliance: Twist's report and the recodes that clear it
+
+Twist scored the first L1 draft (untagged ORFs in their Esp3I wrapper, no cassette, no
+barcode): 2,290 Low, 316 Medium, 104 High and 25 Not Accepted. Its report is stored as vendor
+output at `external://twist/l1-complexity/2026-11-12/l1_insert_complexity_analysis.csv`
+(SHA-256 `b95071e0…`). [`twist_complexity_map.py`](twist_complexity_map.py) joins every row to
+the current manifest on its design id → `twist_complexity_map.tsv`. Of the 25 refused, 24 are
+still in L1 with the CDS Twist scored, and 1 is retired. Of the 104 High, 101 are unchanged and 3 are retired.
+
+[`synthesis_compliance.py`](synthesis_compliance.py) (pipeline stage `synthesis_compliance`)
+checks the inserts we will order: each rung's tagged arm as built (the five tag-placement
+rungs at integration commit `355b524d`, and the 25 expression-rescue arms at `92a1dfa4`), in the
+vendor's wrapper, with the barcode as `N`. Its rules are a local approximation of Twist's, calibrated on
+Twist's calls for the rebuilt draft (`--calibrate`). They agree on all 25 refusals and err
+strict elsewhere:
+
+| Rule | Local check | Calibration |
+|---|---|---|
+| Tn5 mosaic end | edit distance ≤ 3 to the 19-nt ME, either strand | Twist's 13 "impermissible" hits are all at 3; every accepted insert is at ≥ 4 |
+| 100-bp GC | refused above 90% | Twist refused windows of 91–98% |
+| 50-bp GC | flagged above 80% | all 568 of Twist's flags, plus 134 it did not flag |
+| Direct repeat | refused at ≥ 200 nt of ≥ 90% identity, tandem copies included | CLEC4M is the only refusal; Twist's rule is not reproducible from sequence (CD209 and MUC21 carry longer repeats and scored High) |
+
+For each insert that misses a target it makes the fewest synonymous codon changes. The targets are:
+
+- every 50-bp window at or below 80% GC, and 75% for windows that span the cassette's last base;
+- ME distance ≥ 4;
+- no exact repeat ≥ 40 nt and no ≥ 90% repeat ≥ 100 nt.
+
+Only codons with human usage ≥ 10% are used. It never changes Met1, the cassette, one codon either side of it, an Igκ leader, or the signal peptide plus 3 codons. It rejects any edit that adds a BbsI, Esp3I or BsaI site, a consensus splice donor or an ME match. Protein, cassette DNA, wrapper and readout block are asserted unchanged.
+
+| Inserts (3,255 rung arms at 541c6c18) | Before | After |
+|---|---:|---:|
+| Not Accepted (local) | 46 | 0 |
+| High (local) | 172 | 23 |
+| Medium (local) | 1,203 | 938 |
+| Low (local) | 1,834 | 2,294 |
+| Cassette-end 50-bp window over 75% GC | 172 | 0 |
+
+790 inserts change, by 5,312 codons in all: 4,639 for 50-bp GC, 480 for the cassette-end margin, 179 for repeats and 14 for ME matches. All but 23 of the 3,255 inserts pass every target after recoding; those 23, all native N-after-SP arms, keep a 50-bp window of 90–98% GC inside the protected signal-peptide codons and score High. No provisional L1 barcode occurs as a 20-mer in any of them. The 681 still Medium carry exact repeats of 18–38 nt, below the 40-nt length behind Twist's High repeat scores, and are not targeted.
+
+Every changed codon is in `synthesis_recodes.tsv`, one row per codon with its reason, `decided_by` and `implemented_by`. Per-insert metrics before and after are in `synthesis_compliance.tsv`. **The recoded inserts are the order of record** (decided 2026-11-13 by l1-reviewer-package under Becca's delegation): `processed://sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-15-final-e/l1_order_inserts_recoded.fasta` (SHA-256 20e8f275…, in `synthesis_compliance_summary.json` along with the recode log's), with each insert named by its arm id, plate position and design id. It supersedes seven earlier files, kept unchanged: `synthesis/2026-11-14-final-d/` (1ee73f40…, the interim one-insert-per-member cut, 2,621 inserts), `synthesis/2026-11-14-final-c/` (8c5fdc3a…, cut from `main` at 903f9135 before the C-terminal follow-up held SLC41A2, TRPV1 l1-p2528 and VTCN1 human and cyno; 2,625 inserts), `synthesis/2026-11-14-final-b/` (dd65ff76…, cut from `main` at d6ab5093 before mouse IL17RC was built), `synthesis/2026-11-14-final/` (b6ce7bc9…, cut from `main` at cdb78068 before the last rung changes), `synthesis/2026-11-13/` (d1257f0a…, 2,716 inserts including the 25 expression-rescue arms retired that day), `synthesis/2026-11-13-one-arm/` (1f29936b…, named by pre-renumber member ids) and `synthesis/2026-11-13-one-arm-renamed/` (b426e433…, 2,678 inserts built from the draft integration branch, not `main`). The recoder is deterministic, and `--check` reproduces every table byte for byte. The rung builds themselves are unchanged: the recode is a layer applied at export, so each rung's `--check` still holds. The barcodes, assigned later, are outside the recoded sequence. The swap-risk tract measure covers only the cassette encodings, which do not change.
+
+### RNA-binding-protein motifs: the shared elements are clean
+
+Every active L1 member (2,735 at the scan, including the 25 expression-rescue members retired since) is assembled in silico into p0039 with the order-time insert
+(Esp3I | Kozak | designed CDS + stop | pad | 5' handle | barcode | gap + RT | 10x CS1 | Esp3I)
+and its EFS transcript, from the EFS end to the 3' LTR R end, is scanned for the motifs that
+RNA-binding proteins read to lower expression: Pumilio PRE `TGTA[ACT]ATA`, CFIm `TGTA`
+clusters, AREs, CPEs, cryptic poly(A) signals and splice sites. The motif panel, its flag
+rules and the reason for the screen (four tiled PREs in the miR-L no-target arms) are in
+[the construct screen](../../../scratch/becca/rbp-motif-screen/README.md). Natural CDSs carry
+some of these motifs, so hits are split by where they sit:
+
+| Where | Result | Table |
+|---|---|---|
+| Shared: 5' leader, insert tail, p0039 backbone transcript | 11 hits, identical in every member, none flagged in designed sequence: 7 `TGTA` (3 IRES2, 2 WPRE, 1 3'UTR, 1 LTR), 2 `GT[AG]AG` (IRES2), 1 acceptor-heuristic hit (WPRE), and the LTR's own AATAAA. No PRE, ARE or CPE | `l1_rbp_motif_shared.tsv` |
+| Junction: across the ORF boundary | 54 members, all one acceptor-heuristic hit: a pyrimidine-rich ORF end, the pad `CC` and the handle's leading `AG` read as tract + `CAG` (51 placed at the pad, 3 inside the ORF end) | `l1_rbp_motif_members.tsv`, `junction_hits` |
+| ORF-intrinsic | 86 PREs in 85 members (SLC12A2 has 2), 49 ARE nonamers, 1,395 CPEs, 1,480 `AATAAA`/`ATTAAA`; 10 members carry a motif in identical repeats (e.g. CD209 and CLEC4M neck repeats, 6 copies of a donor) | `l1_rbp_motif_members.tsv`, `orf_*` |
+| Issued tag cassettes (218) | no hit of any motif | `l1_rbp_motif_cassettes.tsv` |
+| Barcode pool (s1e2, 28,506), in handle/RT context | no PRE, ARE, CPE or poly(A) signal; 1,409 carry `TGTA` (19 of them twice); 874 trip the acceptor heuristic, 755 of them with a tract that starts in the handle's pyrimidine-rich 3' end | `l1_rbp_motif_summary.json` |
+
+The ORF-intrinsic hits are reported, not acted on: they are part of each protein's native
+coding sequence, and the screen has no evidence that any of them lowers expression of these
+constructs. Members are not yet assigned barcodes, so the barcode slot is masked in the member
+scan and the pool is screened on its own. Regenerate with `rbp_motif_screen.py`.
+
 ### Open questions
 
 | Question | Why it matters | What would resolve it |
@@ -1083,37 +1744,54 @@ transcript and remain without a member.
 6. Measure L2's structural coverage exactly, then decide whether to fold its gap (~85 GPU-hours at the L1 rate).
 7. Publish the predicted structures to R2 with a D1 index row, so the viewer can reach them as it reaches the Schweke models.
 8. Fold the 199 L1 members whose AlphaFold model is a different proteoform, from their designed CDS rather than their canonical accession.
+9. Refold TSPAN10 (`l1-p2284`) and SLC22A17 (`l1-p1882`), whose ColabFold models are of earlier designed proteins (`stale_fold` in `library_structure_payload.tsv`).
+10. Publish DeepTMHMM v1 rows for the restarted cyno CHRM3, OR3A2 and NIPAL4 proteins, then set their `ortholog_start_trims.tsv` status to `applied` and rerun `apply_ortholog_start_trims.py`.
 
 ### Decision log
 
-| Date | Was | Now | Why |
-|---|---|---|---|
-| 2026-10-09 | Isoform panel drawn uniformly at random | 100 observed + 50 prediction-only, balanced across type I, type II, GPI and multipass | A uniform draw loses the rare architectures, which are the ones whose placement is least certain |
-| 2026-10-11 | Library constructs unnamed | `l1-pNNNN` | Readability against the `p00NN` panel series |
-| 2026-10-11 | GPI called per gene from UniProt keyword | NetGPI per form, cross-checked against UniProt with documented blind spots | The anchored species is not always the reference form — ACHE's canonical is non-anchored at 0.993 while P22303-2 is anchored |
-| 2026-10-12 | Internal-rung set reported as 377, from `internal_site_only.tsv` | 515, from both termini cytoplasmic in v1 topology | The 377 held back 176 members as topology-undetermined; all 176 have determined orientations in v1, 116 of them both-cytoplasmic, so nothing was waiting on DeepTMHMM2 |
-| 2026-10-15 | Tag rung assigned per canonical gene (2,367) | Per L1 **member** (2,700), on each member's own ordered-proteoform v1 topology | We order members, not genes, and a member's topology is not its gene's — SLC9D1's ordered isoform has 3 TM against the canonical's 13. Internal-site worklist 515 genes → 566 members; restricting to `library_reference` reproduces the per-gene numbers |
-| 2026-10-15 | `internal_site_only.tsv` / `internal_site_undetermined.tsv` / `INTERNAL_SITE_ONLY.md` and their generator | Deleted; `TAG_PATHS.md` + `l1_tag_paths.tsv` replace them | Their 377/176 split reads UniProt's missing topological-domain annotations as unknown orientation, so it misleads on sight. Record kept in git history at `8eab499` |
-| 2026-10-14 | Structural coverage measured as "does a model exist" | Measured residue-exact against the designed CDS | Length agreement is necessary and not sufficient: 23 of 200 mismatched members are the same length as their model with a different sequence |
-| 2026-10-14 | Members without an AlphaFold DB model treated as a reporting gap | Folded with ColabFold and published as our own predictions | A member with no model cannot be scored by any structural lane, so the gap blocks the library rather than annotating it |
-| 2026-11-01 | Library steps run from local caches and hand-uploaded tables | One pipeline (`library_pipeline.py`): 7 stages verified from a checksummed S3 snapshot, 5 pinned with the reason | Reproducibility (Becca); freeze-then-verify, so the library that exists is the one reproduced |
-| 2026-11-01 | Selection stages read the curated GPI union; tag placement read NetGPI | NetGPI per form (`gpi_set.tsv`) for every stage | One definition (Becca). Within the library it adds GFRAL and RAET1G, on curation rather than NetGPI, and changes no selection or panel |
-| 2026-11-01 | `reference_selection.tsv` published with no PeptideAtlas evidence | Republished with build 607 evidence from the pinned cache | `--offline` had discarded the evidence; no selection changes, 20 genes flagged for review |
-| 2026-10-29 | Every codon of the tag cassette recoded per member, ends unique in their last 9 nt | Only the GGGGS linkers recoded; SpyTag003 and P-ALFA-P on p003's codons; the terminal 15-nt GGGGS unique per member | Tags stay on the validated encoding (Becca); recoding them gives no swap benefit (36 nt either way), and the 9-nt end rule runs out at 60 of 216 C-terminal members. The 25-construct order is not changed |
-| 2026-11-01 | Panel picks the library could not use left out (panels at 144 and 196) | Panels redrawn from a pinned S3 input snapshot; each rejected pick replaced by continuing the same seeded draw in its stratum; panels at 150 and 200 | Reproducibility (Becca): a hand-picked or separately seeded replacement cannot be regenerated by the panel code. The snapshot reproduces the original panels byte for byte |
-| 2026-10-29 | L1 members accepted whenever gene, accession or transcript differed | One active member per translated designed protein; duplicates retired with ids kept | 7 L1 and 48 L2 members duplicated another member's protein (ACHE, CD177, MMP16, OPN1MW2/3, OR2A42, UPK3BL2 in L1) |
-| 2026-11-02 | Gene list frozen at 2,368 | Frozen root plus dated additions (`gene_list_additions.tsv`), appended by `add_library_genes.py`; SLC67A1 added as `l1-p2739` | Becca: adopt the one gene surfaceome 1.3.0 adds. Appending, not re-deriving, leaves every existing member in place, and the script asserts it |
-| 2026-11-02 | Constructs stage pinned (full rerun is hours) | Every construct and vector re-verified (about 30 s) | A full rerun takes 30 s. It found the S3 constructs record still held MICA's pre-repoint ORF, now republished |
-| 2026-11-02 | Gene list, isoform universe, ortholog repick, rescue arms and giants pinned as unreproducible records | All rerun offline from named releases on external:// (surfaceome 1.3.0, Ensembl 115, UniProt 2026_03, APPRIS 2026_06.v50, OpenProt 2.2, PeptideAtlas build 607); the universe and repick at their producing commits | Reproducibility years out (Becca). OpenProt 2.2 and the APPRIS full scores were still downloadable, so not lost. EPPIN's removal is now a recorded exclusion, not a hand edit |
-| 2026-11-02 | Linker encodings pinned as issued | Each encoding records its issue batch; verify replays the batches from scratch | Shows the 218 encodings follow from the seed and the issue order alone |
-| 2026-11-02 | Cyno ECE1 (l1-p2734) listed as needing no fold | Folded from its designed CDS with ColabFold | The coverage baseline had counted its accession as resolved, so the fold-completeness test passed with the gap open |
-| 2026-11-04 | KIR2DS4, OR12D1, OR5AL1 without a member (GRCh38 carries a loss-of-function copy) | Built as l1-p2740..2742 from their intact alternative-haplotype transcripts via `reference_allele_lof` overrides | Becca: the intact protein is in Ensembl 115; CDS resolution had searched only by the broken copy's length |
-| 2026-11-03 | Snorkel cited to PMID 24391846; GFRAL and RAET1G described as NetGPI additions | Snorkel cited to Brown et al. 2013, PMID 24023844; both described as curated calls NetGPI does not support | The old PMID is an unrelated docking paper (Hsin et al. 2013); NetGPI finds no anchored form for either gene. Found by the reviewer-package review, with re-measured counts (191 GPI members, 199 different models) |
-| 2026-11-04 | 13 designed CDSs ended on a sense codon: the Ensembl 115 record has no stop (l1-p1054..1056 KIR2DL5A, KIR2DS2, KIR2DS5; L2 l2-p0846 KIR2DS2 isoform and nine cyno orthologs) | `resolve_candidate_cds.py` appends TAA when the record ends without a stop and marks the entry `stop_added`; orf_nt, vector_bp and insert_nt grow by 3 for those rows. Proteins and domestication edits are unchanged | Becca. Without a stop the ORF reads through into the vector. TAA is the stop the C-terminal constructs already use; the native codon cannot be read from the pinned inputs (four KIR records sit on alternate-haplotype scaffolds the primary GTF omits). Previous S3 versions: candidate_cds.json `ftYKdsVZYDD8M49CEt4rDJMn.x.QmKkn`, candidate_constructs.json `Nkbr70dq6lfjWkb.ASYGWZpU8yRocj_Y`. Found by the N-terminal reviewer package's frame check |
-| 2026-11-05 | Ortholog panel described as drawn from library genes with an ortholog | Recorded as drawn from the April 2026 `surfaceome_expressed` query set (1,775 of 2,369 library genes); coverage measured against Compara 115 by `check_universe_coverage.py` | Becca: record the gap and keep the panels. The 418 mouse / 416 cyno eligible genes were never queried because later Compara pulls went to D1, not to the f9c73691 files the universes read; every recorded pair is one-to-one high-confidence in Compara 115 |
-| 2026-11-05 | Keep the current ortholog panel while documenting its restricted pool | Rebuild ortholog eligibility over all 2,369 current library genes using Compara 116, then redraw with the existing seed and strata after proteoform/topology checks | Becca clarifies that keeping the panel is temporary, and requests the latest Compara release even when newer than 115. The old panel is not the final choice. |
-| 2026-11-10 | L1 ortholog panel drawn from the April Compara 115 pool; CDS-eligible Compara 116 panel held for review | CDS-eligible panel adopted into L1 with the 11 correspondence replacements; 6 asks kept as drawn; 18 members kept, 126 moved from L2, 56 new (`l1-p2932`–`l1-p3113`), 182 retired; CDS/construct records and topology snapshot versioned | Becca: adopt the reviewed panel. A replaced form lacks a human feature the assay depends on; an ask shows no lost feature |
-| 2026-10-13 | Walton ≤100 bp tract bar applied library-wide | Bar applies to the pool and the shared cassette, not to isoforms and orthologs | Median canonical-isoform overlap is 1,071 nt with zero of 2,150 pairs under the bar; applying it would remove the panels entirely |
+| Date | Was | Now | Why | Decided by / implemented by |
+|---|---|---|---|---|
+| 2026-11-12 | Inserts synthesized as built; Twist refused 25 of the first draft | A synthesis-compliance layer recodes 751 tagged inserts synonymously, with every codon recorded, and all 2,691 meet the local targets | Twist's complexity report on the first draft (refusals for Tn5 mosaic-end matches, 100-bp GC and one repeat) | l1-reviewer-package (delegated by Becca 2026-11-12, "use your best judgment") / Claude Code session l1-reviewer-package, PR #283 |
+| 2026-11-10 | Every L1 member's cassette deferred | Every C-terminal-rung member is checked one by one and carries its issued cassette in a built insert: at the C-terminus, except the ITM2B members, which get it after residue 235 | The cassette was fixed already, so only the junction remained. Other risks are flagged, not rerouted, because no other rung exists for these members | Becca (the brief for this build) / Claude Code session claude/l1-cterm-build-16eeeb, PR #284 |
+| 2026-11-10 | ITM2B held from the C-terminal rung | Cassette after residue 235, before the furin site | Furin releases the C-terminal Bri23 peptide, so a C-terminal tag is lost. Directly after R243 the cut motif would sit in front of the tag. Residue 235 is past the BRICHOS fold and leaves the 8 residues before the cut contiguous | Becca, 2026-11-10 / Claude Code session claude/l1-cterm-build-16eeeb, PR #284 |
+| 2026-10-09 | Isoform panel drawn uniformly at random | 100 observed + 50 prediction-only, balanced across type I, type II, GPI and multipass | A uniform draw loses the rare architectures, which are the ones whose placement is least certain | not recorded / implementer not recorded (before the 2026-11-10 attribution convention) |
+| 2026-10-11 | Library constructs unnamed | `l1-pNNNN` | Readability against the `p00NN` panel series | not recorded / implementer not recorded (before the 2026-11-10 attribution convention) |
+| 2026-10-11 | GPI called per gene from UniProt keyword | NetGPI per form, cross-checked against UniProt with documented blind spots | The anchored species is not always the reference form — ACHE's canonical is non-anchored at 0.993 while P22303-2 is anchored | not recorded / implementer not recorded (before the 2026-11-10 attribution convention) |
+| 2026-10-12 | Internal-rung set reported as 377, from `internal_site_only.tsv` | 515, from both termini cytoplasmic in v1 topology | The 377 held back 176 members as topology-undetermined; all 176 have determined orientations in v1, 116 of them both-cytoplasmic, so nothing was waiting on DeepTMHMM2 | not recorded / implementer not recorded (before the 2026-11-10 attribution convention) |
+| 2026-10-15 | Tag rung assigned per canonical gene (2,367) | Per L1 **member** (2,700), on each member's own ordered-proteoform v1 topology | We order members, not genes, and a member's topology is not its gene's — SLC9D1's ordered isoform has 3 TM against the canonical's 13. Internal-site worklist 515 genes → 566 members; restricting to `library_reference` reproduces the per-gene numbers | not recorded / implementer not recorded (before the 2026-11-10 attribution convention) |
+| 2026-10-15 | `internal_site_only.tsv` / `internal_site_undetermined.tsv` / `INTERNAL_SITE_ONLY.md` and their generator | Deleted; `TAG_PATHS.md` + `l1_tag_paths.tsv` replace them | Their 377/176 split reads UniProt's missing topological-domain annotations as unknown orientation, so it misleads on sight. Record kept in git history at `8eab499` | not recorded / implementer not recorded (before the 2026-11-10 attribution convention) |
+| 2026-10-14 | Structural coverage measured as "does a model exist" | Measured residue-exact against the designed CDS | Length agreement is necessary and not sufficient: 23 of 200 mismatched members are the same length as their model with a different sequence | not recorded / implementer not recorded (before the 2026-11-10 attribution convention) |
+| 2026-10-14 | Members without an AlphaFold DB model treated as a reporting gap | Folded with ColabFold and published as our own predictions | A member with no model cannot be scored by any structural lane, so the gap blocks the library rather than annotating it | not recorded / implementer not recorded (before the 2026-11-10 attribution convention) |
+| 2026-11-01 | Library steps run from local caches and hand-uploaded tables | One pipeline (`library_pipeline.py`): 7 stages verified from a checksummed S3 snapshot, 5 pinned with the reason | Reproducibility (Becca); freeze-then-verify, so the library that exists is the one reproduced | Becca / implementer not recorded (before the 2026-11-10 attribution convention) |
+| 2026-11-01 | Selection stages read the curated GPI union; tag placement read NetGPI | NetGPI per form (`gpi_set.tsv`) for every stage | One definition (Becca). Within the library it adds GFRAL and RAET1G, on curation rather than NetGPI, and changes no selection or panel | Becca / implementer not recorded (before the 2026-11-10 attribution convention) |
+| 2026-11-01 | `reference_selection.tsv` published with no PeptideAtlas evidence | Republished with build 607 evidence from the pinned cache | `--offline` had discarded the evidence; no selection changes, 20 genes flagged for review | not recorded / implementer not recorded (before the 2026-11-10 attribution convention) |
+| 2026-10-29 | Every codon of the tag cassette recoded per member, ends unique in their last 9 nt | Only the GGGGS linkers recoded; SpyTag003 and P-ALFA-P on p003's codons; the terminal 15-nt GGGGS unique per member | Tags stay on the validated encoding (Becca); recoding them gives no swap benefit (36 nt either way), and the 9-nt end rule runs out at 60 of 216 C-terminal members. The 25-construct order is not changed | Becca / implementer not recorded (before the 2026-11-10 attribution convention) |
+| 2026-11-01 | Panel picks the library could not use left out (panels at 144 and 196) | Panels redrawn from a pinned S3 input snapshot; each rejected pick replaced by continuing the same seeded draw in its stratum; panels at 150 and 200 | Reproducibility (Becca): a hand-picked or separately seeded replacement cannot be regenerated by the panel code. The snapshot reproduces the original panels byte for byte | Becca / implementer not recorded (before the 2026-11-10 attribution convention) |
+| 2026-10-29 | L1 members accepted whenever gene, accession or transcript differed | One active member per translated designed protein; duplicates retired with ids kept | 7 L1 and 48 L2 members duplicated another member's protein (ACHE, CD177, MMP16, OPN1MW2/3, OR2A42, UPK3BL2 in L1) | not recorded / implementer not recorded (before the 2026-11-10 attribution convention) |
+| 2026-11-02 | Gene list frozen at 2,368 | Frozen root plus dated additions (`gene_list_additions.tsv`), appended by `add_library_genes.py`; SLC67A1 added as `l1-p2739` | Becca: adopt the one gene surfaceome 1.3.0 adds. Appending, not re-deriving, leaves every existing member in place, and the script asserts it | Becca / implementer not recorded (before the 2026-11-10 attribution convention) |
+| 2026-11-02 | Constructs stage pinned (full rerun is hours) | Every construct and vector re-verified (about 30 s) | A full rerun takes 30 s. It found the S3 constructs record still held MICA's pre-repoint ORF, now republished | not recorded / implementer not recorded (before the 2026-11-10 attribution convention) |
+| 2026-11-02 | Gene list, isoform universe, ortholog repick, rescue arms and giants pinned as unreproducible records | All rerun offline from named releases on external:// (surfaceome 1.3.0, Ensembl 115, UniProt 2026_03, APPRIS 2026_06.v50, OpenProt 2.2, PeptideAtlas build 607); the universe and repick at their producing commits | Reproducibility years out (Becca). OpenProt 2.2 and the APPRIS full scores were still downloadable, so not lost. EPPIN's removal is now a recorded exclusion, not a hand edit | Becca / implementer not recorded (before the 2026-11-10 attribution convention) |
+| 2026-11-02 | Linker encodings pinned as issued | Each encoding records its issue batch; verify replays the batches from scratch | Shows the 218 encodings follow from the seed and the issue order alone | not recorded / implementer not recorded (before the 2026-11-10 attribution convention) |
+| 2026-11-02 | Cyno ECE1 (l1-p2734) listed as needing no fold | Folded from its designed CDS with ColabFold | The coverage baseline had counted its accession as resolved, so the fold-completeness test passed with the gap open | not recorded / implementer not recorded (before the 2026-11-10 attribution convention) |
+| 2026-11-04 | KIR2DS4, OR12D1, OR5AL1 without a member (GRCh38 carries a loss-of-function copy) | Built as l1-p2740..2742 from their intact alternative-haplotype transcripts via `reference_allele_lof` overrides | Becca: the intact protein is in Ensembl 115; CDS resolution had searched only by the broken copy's length | Becca / implementer not recorded (before the 2026-11-10 attribution convention) |
+| 2026-11-03 | Snorkel cited to PMID 24391846; GFRAL and RAET1G described as NetGPI additions | Snorkel cited to Brown et al. 2013, PMID 24023844; both described as curated calls NetGPI does not support | The old PMID is an unrelated docking paper (Hsin et al. 2013); NetGPI finds no anchored form for either gene. Found by the reviewer-package review, with re-measured counts (191 GPI members, 199 different models) | not recorded / implementer not recorded (before the 2026-11-10 attribution convention) |
+| 2026-11-04 | 13 designed CDSs ended on a sense codon: the Ensembl 115 record has no stop (l1-p1054..1056 KIR2DL5A, KIR2DS2, KIR2DS5; L2 l2-p0846 KIR2DS2 isoform and nine cyno orthologs) | `resolve_candidate_cds.py` appends TAA when the record ends without a stop and marks the entry `stop_added`; orf_nt, vector_bp and insert_nt grow by 3 for those rows. Proteins and domestication edits are unchanged | Becca. Without a stop the ORF reads through into the vector. TAA is the stop the C-terminal constructs already use; the native codon cannot be read from the pinned inputs (four KIR records sit on alternate-haplotype scaffolds the primary GTF omits). Previous S3 versions: candidate_cds.json `ftYKdsVZYDD8M49CEt4rDJMn.x.QmKkn`, candidate_constructs.json `Nkbr70dq6lfjWkb.ASYGWZpU8yRocj_Y`. Found by the N-terminal reviewer package's frame check | Becca (2026-11-04) / Claude Code session nterm-reviewer-package, PR #234 bb393b72; per member in `stop_codon_fix.tsv` |
+| 2026-11-05 | Ortholog panel described as drawn from library genes with an ortholog | Recorded as drawn from the April 2026 `surfaceome_expressed` query set (1,775 of 2,369 library genes); coverage measured against Compara 115 by `check_universe_coverage.py` | Becca: record the gap and keep the panels. The 418 mouse / 416 cyno eligible genes were never queried because later Compara pulls went to D1, not to the f9c73691 files the universes read; every recorded pair is one-to-one high-confidence in Compara 115 | Becca / implementer not recorded (before the 2026-11-10 attribution convention) |
+| 2026-11-05 | Keep the current ortholog panel while documenting its restricted pool | Rebuild ortholog eligibility over all 2,369 current library genes using Compara 116, then redraw with the existing seed and strata after proteoform/topology checks | Becca clarifies that keeping the panel is temporary, and requests the latest Compara release even when newer than 115. The old panel is not the final choice. | Becca / implementer not recorded (before the 2026-11-10 attribution convention) |
+| 2026-11-10 | No RNA-binding-protein motif screen | Every member's transcript scanned (`rbp_motif_screen.py`); shared elements reported once, ORF-intrinsic hits per member | Becca: the miR-L no-target arms carry four tiled PREs and underexpress in S6E5; the shared tail and backbone are clean of PRE, ARE and CPE. Decided by Becca (request of 2026-11-08); the cutoffs and the junction class by the Claude Code rbp-motif-screen session, recorded in `l1_rbp_motif_summary.json` `decisions`. Implemented by that session, PR #277 | Becca, 2026-11-08 / Claude Code session rbp-motif-screen, PRs #277 and #290 |
+| 2026-11-07 | Member ids (`l1-pNNNN`) are never renumbered; the order would carry separate order numbers (`L1-O0001` …) | Active L1 members are renumbered `l1-mNNNN` in plate order (insert length, then design id); the old id is kept as `design_id` and still keys every design-stage record | Becca: one id per member that matches the plate it sits on. Nothing had been ordered and no L1 barcode was reserved, so no external record named the old ids as members. A new format, not reuse of `l1-pNNNN`, so an old id is never silently read as a different member | Becca, 2026-11-07 / Claude Code session l1-renumber, PR #272 |
+| 2026-11-10 | L1 ortholog panel drawn from the April Compara 115 pool; CDS-eligible Compara 116 panel held for review | CDS-eligible panel adopted into L1 with the 11 correspondence replacements; 6 asks kept as drawn; 18 members kept, 126 moved from L2, 56 new (`l1-p2932`–`l1-p3113`), 182 retired; CDS/construct records and topology snapshot versioned | Becca: adopt the reviewed panel. A replaced form lacks a human feature the assay depends on; an ask shows no lost feature | Becca, 2026-11-10 / Claude Code session l1-reviewer-package (subagent), PR #283; correspondence review by l1-ortholog-corresp, PR #273 |
+| 2026-10-13 | Walton ≤100 bp tract bar applied library-wide | Bar applies to the pool and the shared cassette, not to isoforms and orthologs | Median canonical-isoform overlap is 1,071 nt with zero of 2,150 pairs under the bar; applying it would remove the panels entirely | not recorded / implementer not recorded (before the 2026-11-10 attribution convention) |
+| 2026-11-10 | 61 adopted orthologs with no AlphaFold DB model, unfolded | Folded with ColabFold 1.6.2 from each member's designed protein (61/61, 5.7 GPU-hours); member ids renumbered over the adopted panel by `renumber_library_members.py --write` | A member without a model cannot be scored by any structural lane; the renumber stage runs after every membership change | Becca, 2026-11-10 (approved the GPU spend) / Claude Code session l1-reviewer-package, PR #283 |
+| 2026-11-11 | CD200R1L, LRRC37B and CACHD1 references lack the UniProt canonical's signal peptide (type III lane) | References are the signal-peptide forms already built in L2; the L2 rows retired as duplicates | The type III lane rests on an N-terminus the canonical protein does not have | Becca, 2026-11-11 ("Apply all"; "tIII only for now"; review by session type3-risk-review, recorded in PR #282 by session l1-nterm-type3) / Claude Code session l1-reviewer-package (subagent), PR #283 |
+| 2026-11-11 | BST1 Q10588-2, CDH13 P55290-4, OPCML Q14982-3 and LYPD5 Q6UWN5-2 in the isoform panel without their gene's signal peptide | Redrawn; all four fail the cohort gate's signal-peptide test, so no explicit rejection was needed | A GPI isoform without the signal peptide cannot reach the surface the way its canonical does | Becca, 2026-11-11 ("Redraw them too"; recorded in PR #282 by session l1-nterm-type3) / Claude Code session l1-reviewer-package (subagent), PR #283 |
+| 2026-11-12 | Isoform panel drawn from every cohort form | Cohort gated (native ATG start; reference signal peptide, orientation and first TM helix by DeepTMHMM v1), then redrawn once: 27 out, 27 in | Forms that start at a non-native residue or lose the reference's N-terminal architecture test a different protein from the gene | Becca, 2026-11-12 ("Gate cohort, redraw") / Claude Code session l1-reviewer-package (subagent), PR #283 |
+| 2026-11-12 | ADGRF3 lacks its signal peptide; RGMB carries 41 residues upstream of it; SLC22A17 and TRPV6 start on CTG and ACG | ADGRF3 Q8IZF5-1 and RGMB Q6NW40 named; SLC22A17 and TRPV6 start on ATG with no residue added; EPHA6 unchanged (no exact Ensembl 115 encoding of Q9UF33) | Reference-form screen (PR #280, `REFERENCE_FORM_SCREEN.md`) | Becca, 2026-11-12 ("Send all fixes") / Claude Code session l1-reviewer-package (subagent), PR #283 |
+| 2026-11-12 | ABCC3 O15438-5, OPN3 ENST00000469376, CLEC7A Q9BXN2-9, SLC6A11 P48066-2 and NECTIN2 ENST00000917943 in the isoform panel | Rejected by name and redrawn once: 12 out, 12 in (`l1-p3141`–`l1-p3152`, each ≥95% of its reference's length). Alternative: keep each form. A ≥50%-of-reference gate rule was considered and withdrawn | Fragments without their gene's defining domains, and one form whose mature protein is the reference's; a length floor would also drop isoforms kept on evidence (SLC9D1, KCNN2, HLA-G) | l1-proteoform-audit (delegated by Becca 2026-11-12, "use your best judgment"), PR #300 / Claude Code session l1-reviewer-package (subagent), PR #283 |
+| 2026-11-12 | LMLN, DISP2 and TSPAN10 references are truncated APPRIS-only models; OR8G3 starts GTG; EPHA6 carries 94 residues upstream of its signal peptide | Q96KR4, A7MBM2, Q9H1Z9 named; OR8G3 GTG→ATG (= P0DMU2); EPHA6 trimmed in frame to Met95 (= Q9UF33). Alternatives: keep each model; LMLN Q96KR4-3 | `l1_proteoform_decisions.tsv` per-member audit; LMLN canonical over isoform 3 because isoform 3 adds only an uncharacterized 37-aa insertion | l1-proteoform-audit (delegated by Becca 2026-11-12, "use your best judgment"), PR #300 (LMLN reconciled by l1-reviewer-package with l1-nterm-type3); OR8G3 recorded there as an objective-defect rule / Claude Code session l1-reviewer-package (subagent), PR #283 |
+| 2026-11-12 | Cyno CCR5, CHRM3, OR3A2 and NIPAL4 start upstream of the residue aligned to human Met1 | Restarted at the native in-frame Met (Met28, Met32, Met33, Met215), a recorded exception to the ortholog CDS policy; CCR5 applied, the other three held until their v1 rows are published. Alternative: redraw from the Compara 116 pool | The extension has no human counterpart and would carry the N-terminal tag; each gene has one Ensembl 116 model | l1-proteoform-audit and ortholog-correspondence-review (each delegated by Becca 2026-11-12), PRs #300 and 297 / Claude Code session l1-reviewer-package (subagent), PR #283 |
+| 2026-11-12 | MFSD2A (reference and isoform), AQP12B and GLP2R on the N-at-residue-1 lane by DeepTMHMM v1 | `lane_overrides.tsv`: MFSD2A ×2 and AQP12B internal; GLP2R N after SP (66 aa). Alternative: the v1 lane | Structures, homology and the Tedman surface signal contradict v1's N-terminal call (lane check, PR #296) | l1-reviewer-package (delegated by Becca 2026-11-12, "use your best judgment") / Claude Code session l1-reviewer-package (subagent), PR #283 |
+| 2026-11-12 | SLC61A1, TSPO2, SLC44A1 and TMC2 lanes questioned | No override: SLC61A1 stays N at residue 1 (v1, v2, SignalP 6 and the model agree; another session's case for internal, a 13-residue first helix too short to span the bilayer and UniProt's 12-TM annotation, is recorded here for Becca); TSPO2 stays N at residue 1 (v1 and v2 disagree, no experimental topology; fallback C-terminal if N-in); SLC44A1 and TMC2 stay internal (v1 and v2 both N-in/C-in; UniProt agrees for TMC2, and its C-out call for SLC44A1 has no experimental support) | The topology of record stands where the evidence does not overturn it | l1-reviewer-package (delegated by Becca 2026-11-12, "use your best judgment") / Claude Code session l1-reviewer-package (subagent), PR #283 |
 
 ## Provenance
 

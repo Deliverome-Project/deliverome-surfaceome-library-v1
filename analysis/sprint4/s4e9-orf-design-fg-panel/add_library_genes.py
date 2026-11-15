@@ -49,7 +49,11 @@ from pathlib import Path
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 import library_pipeline as lp  # noqa: E402
-from member_id_allocations import next_l1_member_number  # noqa: E402
+from member_id_allocations import (  # noqa: E402
+    RENUMBER_HINT,
+    next_l1_member_number,
+    to_design_space,
+)
 
 sys.path.insert(0, str(lp.AP))
 import assemble_candidates  # noqa: E402
@@ -90,12 +94,12 @@ def reproduce(work: Path) -> dict:
     additions += [g for g in rebuilt if g not in additions]
     with MANIFEST.open() as fh:
         reader = csv.DictReader(fh, delimiter="\t")
-        cols, rows = list(reader.fieldnames or []), list(reader)
+        cols, rows = list(reader.fieldnames or []), to_design_space(list(reader))
     pending = [g for g in additions if not any(r["key"] == f"lib:{g}" for r in rows)]
 
     # 1. reference
     out = lp.run_reference(work / "ref")
-    rec = unix(lp.record(DESIGN + "reference_selection.tsv", work / "rec_ref.tsv"))
+    rec = unix(lp.record(lp.REFERENCE_RECORD + "reference_selection.tsv", work / "rec_ref.tsv"))
     new = unix(out / "reference_selection.tsv")
     assert new[0] == rec[0], "reference_selection.tsv header changed"
     # A rebuilt gene's row is replaced by its override; no other recorded row may move.
@@ -104,7 +108,7 @@ def reproduce(work: Path) -> dict:
     added_rows = {line.split("\t")[0] for line in set(new) - set(rec)}
     assert added_rows <= set(additions), f"reference rows for unlisted genes: {added_rows}"
     assert set(pending) <= added_rows, f"pending {pending} not new to the reference record"
-    dis = lp.record(DESIGN + "reference_disagreements.tsv", work / "rec_dis.tsv")
+    dis = lp.record(lp.REFERENCE_RECORD + "reference_disagreements.tsv", work / "rec_dis.tsv")
     assert lp.same_bytes(out / "reference_disagreements.tsv", dis), "disagreements changed"
 
     # 2. designed CDS
@@ -204,6 +208,7 @@ def main(argv=None) -> int:
             w = csv.DictWriter(fh, fieldnames=r["cols"], delimiter="\t", lineterminator="\n")
             w.writeheader()
             w.writerows(r["rows"] + r["added"])
+        print(RENUMBER_HINT)
         # Replace a rebuilt gene's "unresolved" line rather than adding a second one.
         lines = [ln for ln in unix(COVERAGE) if ln.split("\t")[0] not in r["coverage"]]
         COVERAGE.write_text("\n".join(lines + list(r["coverage"].values())) + "\n")
@@ -213,6 +218,13 @@ def main(argv=None) -> int:
     if args.publish:
         if r["added"]:
             raise SystemExit("run --write and commit before --publish")
+        # Since 2026-11-12 the reference and CDS records are versioned under dated keys
+        # (library_pipeline.REFERENCE_RECORD, library_design.CDS_KEY); this publish still
+        # writes the pre-versioning keys, so it refuses until it is ported.
+        raise SystemExit(
+            "publish a new dated reference/CDS record (as apply_reference_fixes.py does) and "
+            "move library_pipeline.REFERENCE_RECORD and library_design.CDS_KEY to it"
+        )
         from deliverome_analysis.s3 import processed
 
         for name in ("reference_selection.tsv", "reference_selection_summary.json"):

@@ -5,6 +5,14 @@ panel becomes the Compara 116 CDS-gated redraw (``ortholog_panel_cds_eligible.ts
 with the 11 forms the correspondence review recommends replacing swapped for their proposed
 next-in-draw replacement (PR 273), and the 6 forms it asks about kept as drawn.
 
+Attribution (Becca's convention of 2026-11-10): the 17 replace/keep decisions were made by Becca
+Carlson on 2026-11-10 ("Keep all 6"; accept the 11 replacements) and implemented by the Claude
+Code session l1-reviewer-package (a subagent of it), PR 283. Each decision row in
+``ortholog_panel_adoption_judgements.tsv`` carries ``decided_by``, ``implemented_by`` and
+``reason``, and every adopted panel row that a decision touched repeats them
+(``decided_by`` / ``implemented_by`` / ``decision_reason``); forms taken as drawn say so.
+Everything here regenerates from code and pinned inputs.
+
 Every form's CDS is the exact pinned one: the archived final-v2 ``selected_cds.json.gz`` for a
 drawn form, and the final-v2 eligibility ledger (``eligible_proteins.json.gz``, the chosen
 encoding of the replacement's protein in its ortholog gene) for a replacement. Each must
@@ -60,7 +68,8 @@ PREFIX = "sprint4/s4e9-orf-design-fg-panel/"
 FINAL = PREFIX + "library-design/ortholog-cds-eligibility/2026-11-05/final-v2/"
 REBUILD = PREFIX + "library-design/ortholog-rebuild-inputs/2026-11-05/"
 #: Where this adoption's records go. New keys only; nothing under them existed before.
-RECORDS = ld.CDS_KEY.rsplit("/", 1)[0] + "/"
+#: Pinned: ``library_design.CDS_KEY`` has since moved on (2026-11-12 reference fixes).
+RECORDS = PREFIX + "library-candidates/2026-11-10-ortholog-cds-policy/"
 POLICY = "ortholog_cds_policy"
 RETIRED_REASON = f"dropped_from_panel:{POLICY}"
 
@@ -139,7 +148,16 @@ PANEL_COLUMNS = [
     "selected_cds_sha256",
     "cds_source",
     "replaces",
+    "decided_by",
+    "implemented_by",
+    "decision_reason",
 ]
+#: Panel rows no manual decision touched: the seeded draw chose them.
+DRAWN = {
+    "decided_by": "no decision taken (seeded draw)",
+    "implemented_by": "",
+    "decision_reason": "",
+}
 MAP_COLUMNS = [
     "form_id",
     "species",
@@ -308,6 +326,15 @@ def adopted_panel(
                 "cds_source": "final-v2 selected_cds",
                 "replaces": "",
             }
+        row.update(
+            {
+                "decided_by": f"{j['decided_by']}, {j['date']}",
+                "implemented_by": j["implemented_by"],
+                "decision_reason": j["reason"],
+            }
+            if j
+            else DRAWN
+        )
         if sha256(enc["cds"].encode()) != row["selected_cds_sha256"]:
             raise SystemExit(f"{row['form_id']}: CDS bytes differ from the recorded CDS hash")
         if enc["species"] != row["species"]:
@@ -584,8 +611,8 @@ def reproduce(work: Path, manifest_path: Path | None = None) -> dict:
             p.name: sha256(p.read_bytes()) for p in (PANEL, REVIEW, ALTERNATES, JUDGEMENTS)
         },
         "records": {
-            "candidate_cds": f"processed://{ld.CDS_KEY}",
-            "candidate_constructs": f"processed://{ld.CONSTRUCTS_KEY}",
+            "candidate_cds": f"processed://{RECORDS}candidate_cds.json",
+            "candidate_constructs": f"processed://{RECORDS}candidate_constructs.json",
             "added_vectors": f"processed://{RECORDS}added_vectors.fasta",
         },
     }
@@ -635,13 +662,74 @@ def outputs(r: dict) -> dict[Path, str]:
     }
 
 
+def unnumbered(text: str) -> str:
+    """The manifest as this stage wrote it: design ids as ``candidate_id``, no ``design_id``.
+
+    ``renumber_library_members.py`` runs after every membership change and re-keys active L1
+    rows to member ids (``l1-mNNNN``), keeping the design id beside them; it verifies that
+    numbering itself. Undoing it here compares the adoption with what adoption decided.
+    """
+    import csv
+    import io
+
+    from deliverome_analysis import library_design as ld
+
+    rows = list(csv.DictReader(io.StringIO(text), delimiter="\t"))
+    if not rows or ld.DESIGN_ID_COLUMN not in rows[0]:
+        return text
+    cols = [c for c in rows[0] if c != ld.DESIGN_ID_COLUMN]
+    return tsv_text([{**r, "candidate_id": ld.design_id(r)} for r in rows], cols)
+
+
+def ortholog_rows(text: str) -> str:
+    """The manifest's header and ortholog rows: the rows this adoption decides.
+
+    Later stages change other rows (2026-11-12: reference fixes, the gated isoform redraw and
+    the duplicates they retire), so the adoption is checked on its own rows, which must stay
+    byte-identical.
+    """
+    lines = text.splitlines(keepends=True)
+    col = lines[0].rstrip("\n").split("\t").index("set")
+    return lines[0] + "".join(x for x in lines[1:] if x.split("\t")[col] == "ortholog")
+
+
+def masked_trims(text: str) -> str:
+    """The manifest text with the design columns of the applied cyno restarts blanked.
+
+    ``ortholog_start_trims.tsv`` (decided 2026-11-12 by l1-proteoform-audit and
+    ortholog-correspondence-review, each delegated by Becca; an explicit, recorded exception to
+    the policy's ban on start repairs) restarts some adopted cyno forms at the native Met
+    aligned to human Met1. ``apply_ortholog_start_trims.py`` owns and verifies those columns;
+    every other column of those rows, and every other ortholog row, must still reproduce here.
+    """
+    import apply_ortholog_start_trims as trims
+
+    keys = trims.applied_keys()
+    lines = text.splitlines(keepends=True)
+    hdr = lines[0].rstrip("\n").split("\t")
+    kcol, blank = hdr.index("key"), {hdr.index(c) for c in trims.DESIGN_COLS if c in hdr}
+    out = [lines[0]]
+    for line in lines[1:]:
+        f = line.rstrip("\n").split("\t")
+        if f[kcol] in keys:
+            f = ["" if i in blank else x for i, x in enumerate(f)]
+            line = "\t".join(f) + "\n"
+        out.append(line)
+    return "".join(out)
+
+
 def verify(work: Path) -> str:
     """Rerun the adoption from pinned inputs; every committed output and record must match."""
     from deliverome_analysis.s3 import processed
 
     r = reproduce(work)
     for path, text in outputs(r).items():
-        if path.read_text() != text:
+        if path == MANIFEST:
+            committed = masked_trims(ortholog_rows(unnumbered(path.read_text())))
+            text = masked_trims(ortholog_rows(text))
+        else:
+            committed = path.read_text()
+        if committed != text:
             raise AssertionError(f"{path.name} does not reproduce")
     for name, data in (
         ("candidate_cds.json", record_bytes(r["cds_record"])),

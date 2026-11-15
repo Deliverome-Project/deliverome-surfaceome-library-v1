@@ -38,6 +38,10 @@ ADDITIONS = HERE / "gene_list_additions.tsv"
 EXCLUSIONS = HERE / "gene_list_exclusions.tsv"
 S1E3 = REPO / "analysis/sprint1/s1e3-surface-library-filters"
 PREFIX = "sprint4/s4e9-orf-design-fg-panel/"
+#: The reference ladder's current record (under PREFIX). 2026-11-12: the five named
+#: references of apply_reference_fixes.py; the earlier record stays at library-design/.
+#: Second round (LMLN, DISP2, TSPAN10 named) at its own key; the first round's is kept.
+REFERENCE_RECORD = "library-design/reference-selection/2026-11-12-reference-fixes-2/"
 
 
 def sha256(path: Path) -> str:
@@ -274,25 +278,58 @@ def run_reference(work: Path) -> Path:
 def verify_reference(work: Path) -> str:
     out = run_reference(work)
     for name in ("reference_selection.tsv", "reference_disagreements.tsv"):
-        assert same_bytes(out / name, record(f"library-design/{name}", work / f"rec_{name}")), (
+        assert same_bytes(out / name, record(REFERENCE_RECORD + name, work / f"rec_{name}")), (
             f"{name} does not reproduce its record"
         )
-    return "reference_selection.tsv and reference_disagreements.tsv reproduce byte for byte"
+    # The chosen protein per gene, by hash: the selection table carries source and length but
+    # not the sequence. Pinned in the repo beside select_reference.py (2026-11-14).
+    assert same_bytes(
+        out / "reference_selection_sequences.tsv", AP / "reference_selection_sequences.tsv"
+    ), "a gene's chosen reference protein changed (reference_selection_sequences.tsv)"
+    return (
+        "reference_selection.tsv and reference_disagreements.tsv reproduce byte for byte; "
+        "every gene's chosen protein matches reference_selection_sequences.tsv"
+    )
+
+
+def verify_isoform_gate(work: Path) -> str:
+    run([str(HERE / "gate_isoform_cohort.py"), "--check"], HERE)
+    spec = json.loads((AP / "panel_inputs.json").read_text())["isoform_gate"]
+    assert sha256(HERE / "isoform_gate.tsv") == spec["sha256"], "gate table differs from its pin"
+    from deliverome_analysis.s3 import processed
+
+    pinned = Path(processed.download(spec["key"], work / "isoform_gate.tsv"))
+    assert sha256(pinned) == spec["sha256"], "pinned gate key differs from panel_inputs.json"
+    s = json.loads((HERE / "isoform_gate_summary.json").read_text())
+    return (
+        f"isoform_gate.tsv reproduces from pinned inputs and matches its pinned key: "
+        f"{s['pass']} of {s['forms']} forms pass, {s['fail']} fail "
+        f"({s['unverifiable_only']} only for want of a DeepTMHMM v1 row)"
+    )
 
 
 def verify_panels(work: Path) -> str:
     rej = HERE / "panel_rejections.tsv"
+    spec = json.loads((AP / "panel_inputs.json").read_text())
+    # The isoform redraw runs through the cohort gate (2026-11-12); the original ortholog
+    # panel keeps its recorded redraw (retired from L1, kept as the record).
+    extra = {"isoform": ["--gate", str(HERE / "isoform_gate.tsv")], "ortholog": []}
     for kind in ("isoform", "ortholog"):
         run([str(AP / f"sample_{kind}_panel.py"), "--snapshot", "--original"], work)
-        spec = json.loads((AP / "panel_inputs.json").read_text())
         assert sha256(work / f"{kind}_panel.tsv") == spec["reproduces"][f"{kind}_panel.tsv"], (
             f"{kind}: original draw does not reproduce"
         )
-        run([str(AP / f"sample_{kind}_panel.py"), "--snapshot", "--reject", str(rej)], work)
+        run(
+            [str(AP / f"sample_{kind}_panel.py"), "--snapshot", "--reject", str(rej), *extra[kind]],
+            work,
+        )
         assert same_bytes(work / f"{kind}_panel.tsv", HERE / f"{kind}_panel.tsv"), (
             f"{kind}: redraw does not reproduce the committed panel"
         )
-    return "both panels: original draw and rule-based redraw reproduce byte for byte"
+    return (
+        "both panels: original draw and rule-based redraw reproduce byte for byte (isoform "
+        "redraw through the cohort gate)"
+    )
 
 
 def run_candidate_cds(work: Path, reference: Path | None = None) -> dict:
@@ -304,7 +341,7 @@ def run_candidate_cds(work: Path, reference: Path | None = None) -> dict:
     for name in ("isoform_cohorts.tsv", "ortholog_repick_mouse.tsv", "ortholog_repick_cyno.tsv"):
         processed.download(snap["prefix"] + name, work / name)
     if reference is None:
-        record("library-design/reference_selection.tsv", work / "reference_selection.tsv")
+        record(REFERENCE_RECORD + "reference_selection.tsv", work / "reference_selection.tsv")
     else:
         shutil.copy(reference, work / "reference_selection.tsv")
     run([str(AP / "resolve_candidate_cds.py")], work)
@@ -312,17 +349,43 @@ def run_candidate_cds(work: Path, reference: Path | None = None) -> dict:
 
 
 def verify_candidate_cds(work: Path) -> str:
+    import apply_reference_fixes as fixes
+
     from deliverome_analysis import library_design as ld
     from deliverome_analysis.s3 import processed
 
+    # Rerun against the current reference record (named references of 2026-11-12).
     new = run_candidate_cds(work)
     # The resolver's own record is the pre-adoption one; the current record extends it.
     rec = json.loads(Path(processed.download(ld.BASE_CDS_KEY, work / "rec.json")).read_text())
+    named = {f"lib:{g}" for g in fixes.NAMED}
     differ = sorted(k for k in rec if k not in new or new[k]["cds"] != rec[k]["cds"])
-    assert not differ, f"designed CDS does not reproduce for {len(differ)}: {differ[:5]}"
+    assert set(differ) == named, (
+        f"designed CDS does not reproduce for {sorted(set(differ) ^ named)}"
+    )
     cur = json.loads(Path(processed.download(ld.CDS_KEY, work / "cur.json")).read_text())
+    starts = {k: d for k, d in fixes.approved_starts().items() if k in cur and k.startswith("lib:")}
+    trims = {k: s for k, s in fixes.TRIMS.items() if k in cur}
+    # Cyno 5' restarts (apply_ortholog_start_trims.py) of orthologs already in the base record;
+    # that stage checks each against its recorded CDS and protein hash.
+    import apply_ortholog_start_trims as ortho_trims
+
+    restarts = {
+        r["key"]: r for r in ortho_trims.ledger() if r["status"] == "applied" and r["key"] in rec
+    }
+    assert all(
+        ortho_trims.sha(cur[k]["cds"]) == r["restarted_cds_sha256"] for k, r in restarts.items()
+    ), "an ortholog restart is not the recorded one"
     moved = sorted(k for k in rec if cur.get(k) != rec[k])
-    assert not moved, f"{len(moved)} entries changed in the current CDS record: {moved[:5]}"
+    allowed = named | set(starts) | set(trims) | set(restarts)
+    assert set(moved) == allowed, f"unexpected changed entries {sorted(set(moved) ^ allowed)}"
+    assert all(cur[k] == new[k] for k in named), "a named reference's CDS is not the rerun's"
+    assert all(cur[k] == fixes.start_replaced(rec[k], d) for k, d in starts.items()), (
+        "an ATG start replacement is not the approved one"
+    )
+    assert all(cur[k] == fixes.trimmed(rec[k], s) for k, s in trims.items()), (
+        "an N-terminal trim is not the approved one"
+    )
     appended = sorted(set(cur) - set(rec))
     # An ORF without a stop reads through into the vector; Ensembl omits it from some
     # records, which the resolver now repairs (stop_added). None may slip through.
@@ -331,12 +394,26 @@ def verify_candidate_cds(work: Path) -> str:
     assert all(k.startswith("ort:") for k in appended), "only ortholog forms were appended"
     extra = sorted(set(new) - set(rec))
     return (
-        f"all {len(rec)} resolver-recorded designed CDS reproduce; the current record adds "
-        f"{len(appended)} ortholog-policy forms (verified in ortholog_adoption) and every "
-        f"entry ends in a stop codon ({sum('stop_added' in v for v in cur.values())} appended "
-        f"stops); extra in rerun: {extra or 'none'}"
-        " (iso:MICA:Q29983 is MICA's selected reference, so the dedupe stage retires it)"
+        f"all {len(rec)} resolver-recorded designed CDS reproduce except the {len(named)} named "
+        f"references, which equal the current record; {len(starts)} approved ATG start "
+        f"replacements; {len(trims)} in-frame N-terminal trim; the current record adds {len(appended)} ortholog-policy forms "
+        f"(verified in ortholog_adoption) and every entry ends in a stop codon "
+        f"({sum('stop_added' in v for v in cur.values())} appended stops); extra in rerun: "
+        f"{extra or 'none'} (iso:MICA:Q29983 is MICA's selected reference, so the dedupe stage "
+        "retires it)"
     )
+
+
+def verify_reference_fixes(work: Path) -> str:
+    import apply_reference_fixes as fixes
+
+    return fixes.verify(work)
+
+
+def verify_ortholog_start_trims(work: Path) -> str:
+    import apply_ortholog_start_trims as trims
+
+    return trims.verify(work)
 
 
 def verify_constructs(work: Path) -> str:
@@ -383,6 +460,92 @@ def verify_constructs(work: Path) -> str:
 def verify_cassettes(work: Path) -> str:
     run([str(HERE / "l1_swap_risk.py"), "--verify"], HERE)
     return "every issued linker-only cassette encoding replays from scratch, batch by batch"
+
+
+def verify_cterm_review(work: Path) -> str:
+    out = work / "l1_cterm_review.tsv"
+    run([str(HERE / "review_l1_cterm_members.py"), "--out", str(out)], HERE)
+    assert same_bytes(out, HERE / "l1_cterm_review.tsv"), "l1_cterm_review.tsv differs"
+    run([str(HERE / "l1_cterm_decisions.py")], work)  # writes next to the script
+    proc = subprocess.run(["git", "diff", "--quiet", "--", "l1_cterm_decisions.tsv"], cwd=HERE)
+    assert proc.returncode == 0, "l1_cterm_decisions.tsv does not reproduce from the review"
+    return "l1_cterm_review.tsv reproduces byte for byte from the pinned UniProt snapshot"
+
+
+def verify_cterm_arms(work: Path) -> str:
+    run([str(HERE / "build_l1_cterm_arms.py"), "--check"], HERE)
+    return (
+        "every C-terminal-rung arm rebuilds byte for byte: protein = native[:n] + cassette + "
+        "native[n:] (n = the last residue, or the decided site for ITM2B), one stop, "
+        "no BbsI/Esp3I/BsaI beyond the wrapper (also in p0039), swap tract re-measured"
+    )
+
+
+#: The four tag-rung builders whose arm tables the synthesis stage reads (the C-terminal one is
+#: its own stage above). Each rebuilds its table from its decision table and checks it.
+RUNG_BUILDERS = (
+    "build_l1_nterm_arms.py",
+    "build_l1_multipass_arms.py",
+    "build_l1_type3_arms.py",
+    "build_l1_internal_arms.py",
+)
+
+
+def verify_rung_arms(work: Path) -> str:
+    for script in RUNG_BUILDERS:
+        run([str(HERE / script), "--check"], HERE)
+    return (
+        "the N-after-SP, multipass, type III and internal arm tables rebuild from their decision "
+        "tables and match the committed records"
+    )
+
+
+def verify_consistency(work: Path) -> str:
+    run([str(HERE / "l1_consistency.py"), "--check"], HERE)
+    run([str(HERE / "l1_completeness.py"), "--check"], HERE)
+    return (
+        "every built arm matches its protein, layout and fold; every failing refold has a "
+        "recorded disposition; every active member is placed on its current ids"
+    )
+
+
+def verify_saved_inputs(work: Path) -> str:
+    import pipeline_input_manifest
+
+    return pipeline_input_manifest.check()
+
+
+def verify_pinned_refs(work: Path) -> str:
+    import pinned_refs
+
+    return pinned_refs.check()
+
+
+def verify_structure_models(work: Path) -> str:
+    import pin_structure_models
+
+    return pin_structure_models.check()
+
+
+def verify_rung_builds(work: Path) -> str:
+    import save_rung_builds
+
+    return save_rung_builds.check()
+
+
+def verify_external_inputs(work: Path) -> str:
+    import external_inputs
+
+    return external_inputs.check()
+
+
+def verify_synthesis_compliance(work: Path) -> str:
+    run([str(HERE / "synthesis_compliance.py"), "--check"], HERE)
+    return (
+        "every tagged insert at synthesis_compliance.INPUT_REF re-checks and recodes to the "
+        "committed tables: synonymous codons only, protein, cassette DNA, wrapper and readout "
+        "block unchanged, no new Type IIS site, splice donor or Tn5-ME match"
+    )
 
 
 def verify_giants(work: Path) -> str:
@@ -522,6 +685,16 @@ def verify_tag_paths(work: Path) -> str:
     return "l1_tag_paths.tsv and l2_tag_paths.tsv reproduce byte for byte"
 
 
+def verify_renumber(work: Path) -> str:
+    run([str(HERE / "renumber_library_members.py"), "--check"], HERE)
+    summary = json.loads((HERE / "l1_member_renumbering_summary.json").read_text())
+    return (
+        f"{summary['inserts']} inserts of {summary['members_built']} built L1 members number "
+        f"to the committed l1-i ids on {summary['plates']} plates; members are keyed by design "
+        "id and every re-keyed record is current"
+    )
+
+
 # --------------------------------------------------------------------------- the stages
 
 
@@ -602,12 +775,24 @@ STAGES = [
         verify=verify_universe_coverage,
     ),
     Stage(
+        "isoform_gate",
+        "which isoform-cohort forms may be drawn: native ATG start supported by an Ensembl "
+        "115 CDS, and the reference's signal peptide, N-terminal orientation and first TM "
+        "helix kept (DeepTMHMM v1); Becca, 2026-11-12",
+        "gate_isoform_cohort.py",
+        "panel snapshot cohort, Ensembl 115 pep/cds, UniProt 2026-10-11, L1 reference "
+        "designed proteins, pinned topology snapshot",
+        "verified",
+        verify=verify_isoform_gate,
+    ),
+    Stage(
         "panels",
-        "the 150-isoform panel (L1) and the original 200-ortholog panel (retired from L1 on "
-        "2026-11-10, kept as the record): seeded stratified draws, rejected picks replaced by "
-        "continuing the draw",
+        "the 150-isoform panel (L1; redrawn through the cohort gate on 2026-11-12) and the "
+        "original 200-ortholog panel (retired from L1 on 2026-11-10, kept as the record): "
+        "seeded stratified draws, rejected picks replaced by continuing the draw",
         "sample_isoform_panel.py / sample_ortholog_panel.py --snapshot; redraw_panels.py",
-        "panel_inputs.json snapshot (13 files) + panel_rejections.tsv",
+        "panel_inputs.json snapshot (13 files) + panel_rejections.tsv + isoform_gate.tsv "
+        "(pinned key)",
         "verified",
         verify=verify_panels,
     ),
@@ -625,7 +810,8 @@ STAGES = [
     ),
     Stage(
         "rescue_arms",
-        "25 expression-rescue arms (Igk leader / recoded), their CDS and constructs",
+        "25 expression-rescue arms, their CDS and constructs (retired 2026-11-13, one design per gene; "
+        "kept and verified as the record)",
         "select_expression_rescue_arms.py, fetch_rescue_cds.py --offline, "
         "build_rescue_constructs.py (seed 20261011)",
         "Tedman 2025 screen (S3), Ensembl 115 GTF canonical tag + cds FASTA, topology tables",
@@ -650,6 +836,29 @@ STAGES = [
         verify=verify_candidate_cds,
     ),
     Stage(
+        "reference_fixes",
+        "the approved reference-form fixes: eight named references (CD200R1L, LRRC37B, "
+        "CACHD1, ADGRF3, RGMB; LMLN, DISP2, TSPAN10), three ATG start replacements "
+        "(SLC22A17, TRPV6, OR8G3) and EPHA6's in-frame trim to Q9UF33",
+        "apply_reference_fixes.py (ledger reference_changes.tsv)",
+        "reference_overrides.tsv (pipeline-inputs/2026-11-12-round2b), "
+        "proteoform_decisions_applied.tsv, "
+        "library_cds_boundary_decisions.tsv, the 2026-11-10 CDS/construct records",
+        "verified",
+        verify=verify_reference_fixes,
+    ),
+    Stage(
+        "ortholog_start_trims",
+        "cyno L1 orthologs restarted at the native Met aligned to human Met1 (5' trim, no codon "
+        "edited; a recorded exception to the ortholog CDS policy), applied once the restarted "
+        "protein has a DeepTMHMM v1 row: all four applied (CHRM3, NIPAL4, OR3A2 after their "
+        "v1 rows were published on 2026-11-12)",
+        "apply_ortholog_start_trims.py (ledger ortholog_start_trims.tsv)",
+        "the reference-fixes-2 CDS/construct records, the pinned topology snapshot",
+        "verified",
+        verify=verify_ortholog_start_trims,
+    ),
+    Stage(
         "constructs",
         "domesticated ORFs (BbsI/Esp3I/BsaI) and p0039 vectors",
         "domesticate_candidates.py, assemble_candidates.py (seed 20261011)",
@@ -670,7 +879,7 @@ STAGES = [
         "topology",
         "DeepTMHMM v1 topology for every active member's designed protein",
         "publish_topology_supplement.py + modal deeptmhmm_v1_app.py",
-        "external://accessible-surfaceome/topology/2026-11-06-ortholog-cds-policy/"
+        "external://accessible-surfaceome/topology/2026-11-12-cyno-restarts/"
         "topology.parquet (topology.SNAPSHOT_KEY, SHA-256 pinned)",
         "verified",
         verify=verify_topology,
@@ -692,6 +901,108 @@ STAGES = [
         "member CDS, tag paths, p003 cassette codons",
         "verified",
         verify=verify_cassettes,
+    ),
+    Stage(
+        "renumber",
+        "each active L1 member's id (l1-mNNNN) in plate order, by (insert_nt, design id), 96 "
+        "per plate column-major; the design id (l1-pNNNN) is kept; current L1 records re-keyed",
+        "renumber_library_members.py; l1_member_renumbering.tsv records the mapping",
+        "candidate_manifest_tranches.tsv, designed CDS (candidate_cds.json, rescue constructs)",
+        "verified",
+        verify=verify_renumber,
+    ),
+    Stage(
+        "cterm_review",
+        "which C-terminal members keep a C-terminal tag on the cell: held when a C-terminal "
+        "peptide is cut off (UniProt) or the gene is GPI; every other risk recorded as a flag",
+        "review_l1_cterm_members.py",
+        "tag paths, v1/v2 topology snapshot, UniProt entries (snapshot of 2026-11-10 on S3), "
+        "member structure models (AlphaFold DB v6 / ColabFold on S3), gpi_set.tsv",
+        "verified",
+        verify=verify_cterm_review,
+    ),
+    Stage(
+        "cterm_arms",
+        "each C-terminal member's insert: domesticated ORF + its issued cassette + TAA, in "
+        "the p003 layout and Esp3I wrapper (barcode slot a placeholder until issue #1)",
+        "build_l1_cterm_arms.py",
+        "candidate_constructs.json, l1_cassette_encodings.tsv, l1_cterm_review.tsv, p0039",
+        "verified",
+        verify=verify_cterm_arms,
+    ),
+    Stage(
+        "rung_arms",
+        "the tag cassette in every N-after-SP, residue-1 multipass, type III and internal arm, "
+        "at the decided site (the decisions are the rung sessions' tables)",
+        ", ".join(RUNG_BUILDERS),
+        "reviewer-package/nterm/nterm_decisions.tsv, nterm_res1_multipass.tsv, "
+        "type3_nterm_calls.tsv, S5E13 l1_internal_decisions.tsv; candidate_constructs.json",
+        "verified",
+        verify=verify_rung_arms,
+    ),
+    Stage(
+        "consistency",
+        "the built arms are internally consistent and complete: protein, cassette and layout per "
+        "arm, the fold of the exact protein, a disposition for every refold failure",
+        "l1_consistency.py, l1_completeness.py",
+        "the five constructs_l1_*.tsv/.fasta, tag_refold_structures.tsv, l1_member_renumbering.tsv",
+        "verified",
+        verify=verify_consistency,
+    ),
+    Stage(
+        "synthesis_compliance",
+        "vendor synthesis check on every tagged insert (rules calibrated on Twist's report of "
+        "the first draft; an approximation) and the minimal synonymous recodes that clear it",
+        "synthesis_compliance.py",
+        "each rung's constructs_l1_<rung>.fasta/.tsv at INPUT_REF; l1_tag_paths.tsv",
+        "verified",
+        verify=verify_synthesis_compliance,
+    ),
+    Stage(
+        "saved_inputs",
+        "every S3 object the stages read is still saved, unchanged: the 99 objects a clean-clone "
+        "verify with an empty cache downloaded, each with its SHA-256",
+        "pipeline_input_manifest.py",
+        "library_pipeline_inputs_saved.tsv (+ .json: tool versions, lockfiles, git refs)",
+        "verified",
+        verify=verify_saved_inputs,
+    ),
+    Stage(
+        "pinned_refs",
+        "every git commit a stage replays at (synthesis INPUT_REF, the fold check's refold "
+        "table, ...) is an ancestor of HEAD, so main alone rebuilds the order",
+        "pinned_refs.py",
+        "the *_REF / *_COMMIT constants in the s4e9 scripts",
+        "verified",
+        verify=verify_pinned_refs,
+    ),
+    Stage(
+        "structure_models",
+        "every AlphaFold DB model the design read (structure payload, refold natives) is in the "
+        "write-once external://alphafold-db/v6/ archive with its SHA-256",
+        "pin_structure_models.py",
+        "tag_refold_afdb_archive.tsv (l1-tag-refold's archive_afdb_models.py)",
+        "verified",
+        verify=verify_structure_models,
+    ),
+    Stage(
+        "rung_builds",
+        "the five rung builds every order of record was made from are saved on S3, so no order "
+        "depends on a git branch; the final order's inputs are the saved ones",
+        "save_rung_builds.py",
+        "rung_builds_saved.json",
+        "verified",
+        verify=verify_rung_builds,
+    ),
+    Stage(
+        "external_inputs",
+        "every external source a script reads (UniProt, Ensembl, MyGene, AlphaFold DB, "
+        "TmAlphaFold, NetGPI, D1, licensed predictors, Modal images) has a saved copy or a "
+        "recorded tool identity, and every saved copy is unchanged",
+        "external_inputs.py",
+        "external_inputs.tsv",
+        "verified",
+        verify=verify_external_inputs,
     ),
 ]
 

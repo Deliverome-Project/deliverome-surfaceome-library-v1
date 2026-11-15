@@ -1,0 +1,584 @@
+candidate_id	design_id	gene_symbol	candidate_set	species	placement	topology_tool	topology_version	topology_cohort	status	model_source	model_match	placement_source	tmdet_rmsd	topology_votes_for	topology_votes_against	kr_flank_extracellular	kr_flank_cytoplasmic	orientation_supported	uniprot_experimental_inverted
+l1-m2731	l1-p0001	ABCA8	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.76	1022.0	0.0	1.0	19.0	True	False
+l1-m2633	l1-p0002	ABCB1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.12	885.0	0.0	5.0	21.0	True	False
+l1-m2649	l1-p0003	ABCB11	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.28	902.0	0.0	6.0	11.0	True	False
+l1-m2632	l1-p0004	ABCB4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		856.0	0.0	8.0	13.0	True	False
+l1-m2671	l1-p0007	ABCC11	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	2.21	879.0	0.0	4.0	16.0	True	False
+l1-m2651	l1-p0010	ABCC4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.23	914.0	0.0	3.0	18.0	True	False
+l1-m2685	l1-p0011	ABCC5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.42	892.0	0.0	2.0	10.0	True	False
+l1-m1887	l1-p0013	ABCG2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.09	435.0	0.0	5.0	8.0	True	False
+l1-m1865	l1-p0014	ABCG4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.09	425.0	0.0	4.0	4.0	True	False
+l1-m2541	l1-p0045	ADCY1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.34	588.0	0.0	4.0	11.0	True	False
+l1-m2515	l1-p0046	ADCY2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.38	587.0	0.0	3.0	11.0	True	False
+l1-m2561	l1-p0047	ADCY3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.83	621.0	0.0	6.0	15.0	True	False
+l1-m2628	l1-p0048	ADCY5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.57	647.0	0.0	7.0	8.0	True	False
+l1-m2576	l1-p0049	ADCY6	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.67	649.0	0.0	5.0	7.0	True	False
+l1-m2506	l1-p0050	ADCY7	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.77	552.0	0.0	3.0	10.0	True	False
+l1-m2622	l1-p0051	ADCY8	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.79	541.0	0.0	3.0	11.0	True	False
+l1-m2661	l1-p0052	ADCY9	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.56	608.0	0.0	1.0	8.0	True	False
+l1-m0230	l1-p0093	ADTRP	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.47	83.0	0.0	4.0	10.0	True	False
+l1-m1450	l1-p0109	ANKH	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	3.01	201.0	0.0	7.0	17.0	True	False
+l1-m2417	l1-p0110	ANO1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.11	513.0	40.0	9.0	14.0	True	False
+l1-m2429	l1-p0111	ANO2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	colabfold	identical	helix_axis		466.0	25.0	6.0	16.0	True	False
+l1-m2412	l1-p0112	ANO3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.19	519.0	47.0	6.0	6.0	True	False
+l1-m2315	l1-p0113	ANO4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		531.0	43.0	4.0	15.0	True	False
+l1-m2302	l1-p0114	ANO6	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.18	562.0	48.0	7.0	6.0	True	False
+l1-m2269	l1-p0115	ANO7	library_reference	human	internal	deeptmhmm_v1	topo_2026_10_14_l1_designed	library_designed_orf	placed	alphafold_db	contained	tmdet	0.61	512.0	46.0	6.0	11.0	True	False
+l1-m0362	l1-p0126	AQP1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.06	111.0	0.0	1.0	9.0	True	False
+l1-m0467	l1-p0127	AQP10	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.12	122.0	0.0	2.0	6.0	True	False
+l1-m0496	l1-p0128	AQP12B	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		117.0	0.0	2.0	7.0	True	False
+l1-m0369	l1-p0129	AQP2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.2	109.0	0.0	2.0	5.0	True	False
+l1-m0428	l1-p0130	AQP3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.37	133.0	0.0	2.0	6.0	True	False
+l1-m0710	l1-p0131	AQP4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.08	105.0	0.0	1.0	6.0	True	False
+l1-m0349	l1-p0132	AQP5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.05	110.0	0.0	3.0	4.0	True	False
+l1-m0848	l1-p0133	AQP7	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.08	127.0	0.0	4.0	8.0	True	False
+l1-m0441	l1-p0134	AQP9	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.09	127.0	0.0	4.0	7.0	True	False
+l1-m1583	l1-p0143	ASIC1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.09	392.0	1.0	3.0	0.0	True	False
+l1-m1684	l1-p0144	ASIC2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		385.0	0.0	1.0	3.0	True	False
+l1-m1593	l1-p0145	ASIC3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.11	377.0	0.0	2.0	0.0	True	False
+l1-m1498	l1-p0146	ASIC5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.26	378.0	0.0	2.0	0.0	True	False
+l1-m2680	l1-p0148	ATP10D	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.56	781.0	0.0	0.0	12.0	True	False
+l1-m2551	l1-p0149	ATP11A	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.9	769.0	0.0	2.0	13.0	True	False
+l1-m2548	l1-p0150	ATP11C	library_reference	human	internal	deeptmhmm_v1	topo_2026_10_14_l1_designed	library_designed_orf	placed	colabfold	identical	helix_axis		735.0	0.0	3.0	12.0	True	False
+l1-m2472	l1-p0151	ATP12A	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.1	746.0	0.0	3.0	15.0	True	False
+l1-m2453	l1-p0152	ATP1A1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.13	758.0	0.0	4.0	17.0	True	False
+l1-m2450	l1-p0153	ATP1A2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.46	753.0	0.0	4.0	15.0	True	False
+l1-m2457	l1-p0154	ATP1A3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		721.0	0.0	4.0	13.0	True	False
+l1-m2463	l1-p0155	ATP1A4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.1	752.0	0.0	4.0	12.0	True	False
+l1-m2606	l1-p0159	ATP2B1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.74	676.0	0.0	3.0	4.0	True	False
+l1-m2619	l1-p0160	ATP2B2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.68	689.0	1.0	4.0	12.0	True	False
+l1-m2607	l1-p0161	ATP2B3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.72	694.0	10.0	4.0	9.0	True	False
+l1-m2597	l1-p0162	ATP2B4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		660.0	0.0	3.0	11.0	True	False
+l1-m2682	l1-p0163	ATRN	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	fewer_than_two_confident_helices	alphafold_db	identical		5.14						
+l1-m1015	l1-p0167	AVPR2	library_reference	human	N at residue 1, multipass	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.1	107.0	0.0	7.0	5.0	True	False
+l1-m1748	l1-p0176	BEST1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.3	292.0	0.0	4.0	3.0	True	False
+l1-m1513	l1-p0177	BEST2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.33	292.0	0.0	5.0	3.0	True	False
+l1-m1915	l1-p0178	BEST3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.15	279.0	0.0	5.0	5.0	True	False
+l1-m1396	l1-p0179	BEST4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.22	270.0	0.0	2.0	3.0	True	False
+l1-m0092	l1-p0188	BST2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.24	115.0	0.0	0.0	3.0	True	False
+l1-m0199	l1-p0219	CACNG1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.07	65.0	0.0	1.0	8.0	True	False
+l1-m0711	l1-p0220	CACNG2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.11	68.0	0.0	1.0	4.0	True	False
+l1-m0634	l1-p0221	CACNG3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.05	66.0	0.0	1.0	3.0	True	False
+l1-m0739	l1-p0222	CACNG4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.06	61.0	0.0	0.0	5.0	True	False
+l1-m0382	l1-p0223	CACNG5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.09	82.0	0.0	2.0	6.0	True	False
+l1-m0332	l1-p0224	CACNG6	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.49	95.0	0.0	1.0	4.0	True	False
+l1-m0383	l1-p0225	CACNG7	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.37	68.0	0.0	1.0	5.0	True	False
+l1-m0873	l1-p0231	CALHM1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.41	183.0	0.0	3.0	2.0	True	False
+l1-m0712	l1-p0232	CALHM2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.13	188.0	0.0	5.0	2.0	True	False
+l1-m0860	l1-p0233	CALHM3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	2.59	192.0	0.0	3.0	5.0	True	False
+l1-m0614	l1-p0234	CALHM4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.45	152.0	0.0	2.0	3.0	True	False
+l1-m0507	l1-p0235	CALHM5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.06	213.0	0.0	2.0	3.0	True	False
+l1-m0243	l1-p0240	CATSPERQ	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.22	144.0	0.0	1.0	3.0	True	False
+l1-m0904	l1-p0248	CCR5	library_reference	human	N at residue 1, multipass	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.05	139.0	0.0	6.0	7.0	True	False
+l1-m0314	l1-p0257	CD151	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.33	138.0	0.0	1.0	7.0	True	False
+l1-m1392	l1-p0295	CD36	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.15	416.0	0.0	1.0	2.0	True	False
+l1-m0395	l1-p0296	CD37	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.59	131.0	0.0	3.0	4.0	True	False
+l1-m0186	l1-p0307	CD53	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.04	125.0	0.0	1.0	4.0	True	False
+l1-m0249	l1-p0318	CD81	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.08	116.0	0.0	3.0	2.0	True	False
+l1-m0356	l1-p0319	CD82	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.55	150.0	0.0	4.0	4.0	True	False
+l1-m0221	l1-p0325	CD9	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.06	116.0	0.0	4.0	2.0	True	False
+l1-m0963	l1-p0330	CDC50A	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.13	285.0	0.0	2.0	0.0	True	False
+l1-m2707	l1-p0371	CFTR	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.3	845.0	0.0	6.0	9.0	True	False
+l1-m2422	l1-p0387	CLCN1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.1	379.0	7.0	5.0	10.0	True	False
+l1-m2289	l1-p0388	CLCN2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.5	361.0	25.0	7.0	15.0	True	False
+l1-m0161	l1-p0389	CLDN1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.2	87.0	0.0	3.0	4.0	True	False
+l1-m0222	l1-p0390	CLDN10	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.1	85.0	0.0	3.0	5.0	True	False
+l1-m0150	l1-p0391	CLDN11	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.09	91.0	0.0	1.0	4.0	True	False
+l1-m0285	l1-p0392	CLDN12	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.13	93.0	0.0	3.0	0.0	True	False
+l1-m0262	l1-p0393	CLDN14	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.09	89.0	0.0	3.0	4.0	True	False
+l1-m0223	l1-p0394	CLDN15	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.05	76.0	0.0	4.0	4.0	True	False
+l1-m0245	l1-p0395	CLDN16	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.19	84.0	0.0	3.0	3.0	True	False
+l1-m0207	l1-p0396	CLDN17	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.26	69.0	0.0	3.0	2.0	True	False
+l1-m0336	l1-p0397	CLDN18	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.08	70.0	0.0	1.0	3.0	True	False
+l1-m0162	l1-p0398	CLDN19	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		80.0	0.0	3.0	4.0	True	False
+l1-m0232	l1-p0399	CLDN2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.15	83.0	0.0	1.0	4.0	True	False
+l1-m0187	l1-p0400	CLDN20	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.07	88.0	0.0	3.0	4.0	True	False
+l1-m0190	l1-p0401	CLDN22	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.3	108.0	0.0	4.0	6.0	True	False
+l1-m0429	l1-p0402	CLDN23	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.15	106.0	0.0	2.0	2.0	True	False
+l1-m0191	l1-p0403	CLDN24	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.22	100.0	0.0	2.0	6.0	True	False
+l1-m0226	l1-p0404	CLDN25	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.09	97.0	0.0	3.0	7.0	True	False
+l1-m0192	l1-p0405	CLDN3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.08	87.0	0.0	4.0	2.0	True	False
+l1-m0157	l1-p0406	CLDN4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.05	92.0	0.0	3.0	3.0	True	False
+l1-m0183	l1-p0407	CLDN5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.06	93.0	0.0	2.0	2.0	True	False
+l1-m0193	l1-p0408	CLDN6	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.07	82.0	0.0	3.0	4.0	True	False
+l1-m0163	l1-p0409	CLDN7	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.25	86.0	0.0	1.0	6.0	True	False
+l1-m0208	l1-p0410	CLDN8	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.06	81.0	0.0	3.0	5.0	True	False
+l1-m0180	l1-p0411	CLDN9	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.06	87.0	0.0	3.0	2.0	True	False
+l1-m0315	l1-p0412	CLDND1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.12	138.0	0.0	1.0	4.0	True	False
+l1-m0236	l1-p0433	CLRN1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.76	119.0	0.0	3.0	3.0	True	False
+l1-m0212	l1-p0434	CLRN3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.17	116.0	0.0	1.0	3.0	True	False
+l1-m1935	l1-p0441	CNGA1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.96	386.0	14.0	6.0	8.0	True	False
+l1-m1907	l1-p0442	CNGA2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	3.88	398.0	16.0	4.0	6.0	True	False
+l1-m1948	l1-p0443	CNGA3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	3.28	395.0	16.0	6.0	8.0	True	False
+l1-m1708	l1-p0497	CYBB	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.45	414.0	0.0	6.0	8.0	True	False
+l1-m0412	l1-p0498	CYBRD1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.06	75.0	0.0	2.0	10.0	True	False
+l1-m2476	l1-p0502	DAGLA	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	2.79	433.0	0.0	2.0	2.0	True	False
+l1-m1968	l1-p0506	DCST1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	6.35	465.0	0.0	3.0	11.0	True	False
+l1-m2075	l1-p0507	DCST2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	5.57	388.0	0.0	2.0	4.0	True	False
+l1-m1386	l1-p0508	DCSTAMP	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.33	288.0	0.0	1.0	5.0	True	False
+l1-m2717	l1-p0512	DISP1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.24	604.0	0.0	4.0	6.0	True	False
+l1-m2677	l1-p0513	DISP2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.16	594.0	0.0	6.0	3.0	True	False
+l1-m0054	l1-p0556	EMP1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.45	67.0	0.0	1.0	5.0	True	False
+l1-m0069	l1-p0557	EMP2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.2	79.0	0.0	2.0	7.0	True	False
+l1-m0065	l1-p0558	EMP3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.23	69.0	0.0	2.0	5.0	True	False
+l1-m1519	l1-p0566	ENTPD1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.45	426.0	0.0	1.0	1.0	True	False
+l1-m1584	l1-p0568	ENTPD3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.19	447.0	0.0	1.0	2.0	True	False
+l1-m1462	l1-p0569	ENTPD8	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.24	447.0	0.0	1.0	2.0	True	False
+l1-m1665	l1-p0649	FLVCR1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.14	142.0	0.0	4.0	12.0	True	False
+l1-m1577	l1-p0650	FLVCR2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.28	158.0	0.0	4.0	15.0	True	False
+l1-m0323	l1-p0651	FMR1NB	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	3.89	55.0	0.0	0.0	1.0	True	False
+l1-m1867	l1-p0662	FZD1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.83	304.0	0.0	7.0	6.0	True	False
+l1-m1616	l1-p0687	GDPD2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.19	371.0	0.0	2.0	10.0	True	False
+l1-m1551	l1-p0688	GDPD4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		377.0	1.0	4.0	6.0	True	False
+l1-m1786	l1-p0689	GDPD5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.61	371.0	0.0	2.0	1.0	True	False
+l1-m1074	l1-p0703	GJA1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.24	141.0	0.0	5.0	1.0	True	False
+l1-m1632	l1-p0704	GJA10	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.12	127.0	0.0	2.0	3.0	True	False
+l1-m1259	l1-p0705	GJA3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	2.09	116.0	4.0	4.0	3.0	True	False
+l1-m0787	l1-p0706	GJA4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.71	127.0	0.0	3.0	1.0	True	False
+l1-m0942	l1-p0707	GJA5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.64	118.0	0.0	2.0	0.0	True	False
+l1-m1255	l1-p0708	GJA8	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.79	117.0	1.0	4.0	2.0	True	False
+l1-m1534	l1-p0709	GJA9	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.31	144.0	0.0	3.0	3.0	True	False
+l1-m0402	l1-p0710	GJB1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	2.4	130.0	0.0	4.0	2.0	True	False
+l1-m0214	l1-p0711	GJB2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.07	113.0	0.0	5.0	1.0	True	False
+l1-m0366	l1-p0712	GJB3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.11	110.0	0.0	6.0	2.0	True	False
+l1-m0353	l1-p0713	GJB4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.09	112.0	0.0	6.0	4.0	True	False
+l1-m0338	l1-p0714	GJB6	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.17	127.0	0.0	2.0	1.0	True	False
+l1-m0203	l1-p0715	GJB7	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.08	99.0	0.0	4.0	0.0	True	False
+l1-m1270	l1-p0716	GJC2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.55	121.0	0.0	3.0	2.0	True	False
+l1-m0393	l1-p0717	GJC3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.09	94.0	0.0	2.0	0.0	True	False
+l1-m0437	l1-p0718	GJD3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.82	120.0	0.0	4.0	5.0	True	False
+l1-m1007	l1-p0719	GJD4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.19	111.0	0.0	4.0	4.0	True	False
+l1-m0146	l1-p0720	GJE1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.04	94.0	0.0	3.0	0.0	True	False
+l1-m0390	l1-p0742	GPM6A	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.16	140.0	0.0	1.0	1.0	True	False
+l1-m0747	l1-p0743	GPM6B	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		121.0	0.0	0.0	1.0	True	False
+l1-m0770	l1-p0829	GSG1L	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.08	112.0	0.0	1.0	5.0	True	False
+l1-m0434	l1-p0830	GSG1L2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.1	107.0	0.0	0.0	5.0	True	False
+l1-m1659	l1-p0838	HAS3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.16	365.0	0.0	3.0	9.0	True	False
+l1-m2281	l1-p0845	HCN1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.11	420.0	0.0	6.0	6.0	True	False
+l1-m2279	l1-p0846	HCN2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.2	399.0	3.0	6.0	10.0	True	False
+l1-m2077	l1-p0847	HCN3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.2	378.0	0.0	5.0	7.0	True	False
+l1-m2593	l1-p0848	HCN4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.55	415.0	0.0	7.0	7.0	True	False
+l1-m1463	l1-p0985	KCNA1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.13	229.0	0.0	2.0	7.0	True	False
+l1-m1522	l1-p0986	KCNA10	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.24	226.0	0.0	2.0	8.0	True	False
+l1-m1475	l1-p0987	KCNA2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.16	219.0	0.0	1.0	6.0	True	False
+l1-m1727	l1-p0988	KCNA3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.12	234.0	0.0	4.0	8.0	True	False
+l1-m1882	l1-p0989	KCNA4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	2.14	244.0	0.0	4.0	9.0	True	False
+l1-m1802	l1-p0990	KCNA5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.15	213.0	0.0	2.0	7.0	True	False
+l1-m1586	l1-p0991	KCNA6	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.16	227.0	0.0	2.0	8.0	True	False
+l1-m1335	l1-p0992	KCNA7	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.29	218.0	0.0	4.0	7.0	True	False
+l1-m2241	l1-p0993	KCNB1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.58	294.0	0.0	5.0	8.0	True	False
+l1-m2303	l1-p0994	KCNB2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.91	288.0	0.0	6.0	10.0	True	False
+l1-m1750	l1-p0995	KCNC1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		290.0	0.0	7.0	8.0	True	False
+l1-m1850	l1-p0996	KCNC2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.71	243.0	0.0	5.0	7.0	True	False
+l1-m2065	l1-p0997	KCNC3	library_reference	human	internal	deeptmhmm_v1	topo_2026_10_14_l1_designed	library_designed_orf	placed	colabfold	identical	helix_axis		278.0	0.0	6.0	7.0	True	False
+l1-m1823	l1-p0998	KCNC4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		265.0	0.0	9.0	7.0	True	False
+l1-m1868	l1-p0999	KCND1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	2.88	255.0	0.0	3.0	8.0	True	False
+l1-m1888	l1-p1000	KCND3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	2.8	266.0	0.0	3.0	8.0	True	False
+l1-m2386	l1-p1005	KCNH1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		488.0	0.0	2.0	6.0	True	False
+l1-m2570	l1-p1006	KCNH2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	5.56	465.0	6.0	1.0	8.0	True	False
+l1-m2508	l1-p1007	KCNH3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.98	446.0	0.0	1.0	6.0	True	False
+l1-m2447	l1-p1008	KCNH4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.28	433.0	18.0	4.0	3.0	True	False
+l1-m2423	l1-p1009	KCNH5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.04	516.0	28.0	4.0	5.0	True	False
+l1-m2383	l1-p1010	KCNH6	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	5.0	468.0	3.0	2.0	9.0	True	False
+l1-m2591	l1-p1011	KCNH7	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	colabfold	identical	helix_axis		436.0	3.0	3.0	9.0	True	False
+l1-m2534	l1-p1012	KCNH8	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	4.07	443.0	16.0	4.0	5.0	True	False
+l1-m1021	l1-p1013	KCNJ1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	alphafold_db	contained	tmdet	0.57	253.0	0.0	1.0	3.0	True	False
+l1-m1064	l1-p1014	KCNJ10	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	2.16	254.0	0.0	1.0	3.0	True	False
+l1-m1256	l1-p1015	KCNJ12	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.13	274.0	0.0	1.0	4.0	True	False
+l1-m0959	l1-p1016	KCNJ13	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.23	250.0	0.0	1.0	3.0	True	False
+l1-m1262	l1-p1017	KCNJ14	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.26	259.0	10.0	0.0	0.0	True	False
+l1-m1046	l1-p1018	KCNJ15	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	7.22	271.0	0.0	2.0	4.0	True	False
+l1-m1242	l1-p1019	KCNJ2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.12	289.0	0.0	1.0	5.0	True	False
+l1-m1297	l1-p1020	KCNJ4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.11	251.0	7.0	1.0	0.0	True	False
+l1-m1215	l1-p1021	KCNJ5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.06	267.0	0.0	2.0	3.0	True	False
+l1-m1228	l1-p1022	KCNJ6	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.42	276.0	0.0	3.0	3.0	True	False
+l1-m1122	l1-p1023	KCNJ9	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.07	281.0	0.0	2.0	2.0	True	False
+l1-m1633	l1-p1024	KCNK10	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		191.0	0.0	4.0	2.0	True	False
+l1-m1172	l1-p1025	KCNK13	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.3	168.0	0.0	5.0	3.0	True	False
+l1-m0777	l1-p1026	KCNK17	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.12	144.0	0.0	5.0	4.0	True	False
+l1-m1085	l1-p1027	KCNK18	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	15.81	131.0	0.0	2.0	3.0	True	False
+l1-m1182	l1-p1028	KCNK2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		191.0	0.0	4.0	2.0	True	False
+l1-m1128	l1-p1029	KCNK3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.06	177.0	0.0	3.0	6.0	True	False
+l1-m1123	l1-p1030	KCNK4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.25	179.0	0.0	3.0	2.0	True	False
+l1-m1476	l1-p1031	KCNK5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	11.88	184.0	8.0	5.0	8.0	True	False
+l1-m1036	l1-p1032	KCNK9	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.13	170.0	0.0	5.0	3.0	True	False
+l1-m0114	l1-p1034	KCNMB1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.53	130.0	0.0	1.0	3.0	True	False
+l1-m0247	l1-p1035	KCNMB2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.26	172.0	0.0	1.0	3.0	True	False
+l1-m1634	l1-p1036	KCNN1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.06	278.0	0.0	5.0	10.0	True	False
+l1-m2109	l1-p1037	KCNN2	library_reference	human	internal	deeptmhmm_v1	topo_2026_10_14_l1_designed	library_designed_orf	placed	colabfold	identical	helix_axis		286.0	0.0	4.0	11.0	True	False
+l1-m2014	l1-p1038	KCNN3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.16	285.0	1.0	4.0	8.0	True	False
+l1-m1243	l1-p1039	KCNN4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.98	242.0	0.0	2.0	11.0	True	False
+l1-m1927	l1-p1040	KCNQ1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.17	268.0	1.0	3.0	10.0	True	False
+l1-m2238	l1-p1041	KCNQ2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		210.0	31.0	6.0	11.0	True	False
+l1-m1952	l1-p1042	KCNQ4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	2.2	257.0	0.0	2.0	10.0	True	False
+l1-m2340	l1-p1043	KCNQ5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.14	240.0	2.0	4.0	10.0	True	False
+l1-m2612	l1-p1044	KCNT1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		670.0	0.0	6.0	5.0	True	False
+l1-m2552	l1-p1045	KCNT2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.62	743.0	0.0	7.0	5.0	True	False
+l1-m1839	l1-p1050	KIAA2013	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	3.07	505.0	0.0	0.0	1.0	True	False
+l1-m0128	l1-p1088	LHFPL6	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.07	107.0	0.0	1.0	2.0	True	False
+l1-m0080	l1-p1099	LIM2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.05	81.0	0.0	2.0	2.0	True	False
+l1-m2159	l1-p1142	LRRC8A	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.29	615.0	0.0	5.0	6.0	True	False
+l1-m2153	l1-p1143	LRRC8B	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.24	580.0	0.0	4.0	4.0	True	False
+l1-m2154	l1-p1144	LRRC8C	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.4	599.0	0.0	5.0	4.0	True	False
+l1-m2242	l1-p1145	LRRC8D	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.23	600.0	0.0	4.0	5.0	True	False
+l1-m2124	l1-p1146	LRRC8E	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.2	592.0	0.0	5.0	5.0	True	False
+l1-m1158	l1-p1192	MARVELD3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	3.19	81.0	19.0	6.0	5.0	True	False
+l1-m1590	l1-p1213	MFSD2A	library_reference	human	internal	deeptmhmm_v1_inverted_by_override	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		170.0	0.0	4.0	13.0	True	False
+l1-m1493	l1-p1214	MFSD2B	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	4.07	176.0	0.0	3.0	11.0	True	False
+l1-m2110	l1-p1215	MFSD6	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.49	173.0	0.0	4.0	13.0	True	False
+l1-m0342	l1-p1219	MIP	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.24	107.0	0.0	2.0	5.0	True	False
+l1-m0070	l1-p1230	MOSMO	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.07	70.0	0.0	0.0	5.0	True	False
+l1-m0449	l1-p1249	MS4A1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.07	81.0	0.0	1.0	5.0	True	False
+l1-m0358	l1-p1250	MS4A10	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.87	70.0	0.0	3.0	8.0	True	False
+l1-m0359	l1-p1251	MS4A12	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.11	64.0	0.0	1.0	5.0	True	False
+l1-m0048	l1-p1252	MS4A13	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.13	65.0	0.0	4.0	3.0	True	False
+l1-m0287	l1-p1253	MS4A2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.17	93.0	0.0	3.0	2.0	True	False
+l1-m0170	l1-p1254	MS4A3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.25	49.0	0.0	1.0	0.0	True	False
+l1-m0264	l1-p1255	MS4A4A	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.93	63.0	0.0	0.0	1.0	True	False
+l1-m0129	l1-p1256	MS4A5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.19	39.0	0.0	1.0	3.0	True	False
+l1-m0302	l1-p1257	MS4A6A	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.07	83.0	0.0	2.0	6.0	True	False
+l1-m0269	l1-p1258	MS4A7	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.1	89.0	0.0	1.0	0.0	True	False
+l1-m0705	l1-p1270	MYADM	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.1	114.0	0.0	5.0	4.0	True	False
+l1-m1688	l1-p1300	NOX1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.21	412.0	0.0	4.0	9.0	True	False
+l1-m1701	l1-p1301	NOX3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.42	407.0	0.0	5.0	9.0	True	False
+l1-m2233	l1-p1321	NRG2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	fewer_than_two_confident_helices	alphafold_db	identical		17.89						
+l1-m1955	l1-p1322	NRG3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		69.0	17.0	3.0	3.0	True	False
+l1-m1561	l1-p1342	OCLN	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	10.93	161.0	0.0	2.0	7.0	True	False
+l1-m1695	l1-p1343	OCSTAMP	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.25	272.0	0.0	4.0	4.0	True	False
+l1-m0469	l1-p1538	ORAI1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.28	110.0	0.0	1.0	5.0	True	False
+l1-m0321	l1-p1539	ORAI2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.33	123.0	0.0	2.0	3.0	True	False
+l1-m0443	l1-p1540	ORAI3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.35	105.0	0.0	1.0	4.0	True	False
+l1-m1800	l1-p1543	OTOP1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.21	165.0	0.0	6.0	17.0	True	False
+l1-m1683	l1-p1544	OTOP2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.09	155.0	0.0	5.0	14.0	True	False
+l1-m1732	l1-p1545	OTOP3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		132.0	0.0	5.0	13.0	True	False
+l1-m1150	l1-p1549	P2RX1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.18	319.0	0.0	3.0	3.0	True	False
+l1-m1390	l1-p1550	P2RX2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.21	311.0	0.0	2.0	4.0	True	False
+l1-m1138	l1-p1551	P2RX3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.28	313.0	0.0	2.0	1.0	True	False
+l1-m1293	l1-p1552	P2RX5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	12.38	301.0	1.0	2.0	6.0	True	False
+l1-m1281	l1-p1553	P2RX6	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.51	316.0	0.0	2.0	1.0	True	False
+l1-m1767	l1-p1554	P2RX7	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.24	491.0	0.0	4.0	1.0	True	False
+l1-m0900	l1-p1565	PACC1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.44	241.0	0.0	1.0	5.0	True	False
+l1-m1239	l1-p1567	PANX1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.04	200.0	5.0	2.0	5.0	True	False
+l1-m1120	l1-p1568	PANX3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.16	247.0	0.0	1.0	4.0	True	False
+l1-m0768	l1-p1569	PAQR5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.19	146.0	0.0	3.0	9.0	True	False
+l1-m0865	l1-p1570	PAQR6	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.11	154.0	0.0	2.0	7.0	True	False
+l1-m0880	l1-p1571	PAQR7	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.1	157.0	0.0	3.0	6.0	True	False
+l1-m0921	l1-p1572	PAQR8	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.05	162.0	0.0	4.0	9.0	True	False
+l1-m1054	l1-p1573	PAQR9	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.16	162.0	0.0	4.0	8.0	True	False
+l1-m0117	l1-p1639	PERP	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.37	63.0	0.0	3.0	2.0	True	False
+l1-m2157	l1-p1647	PKD2L1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	5.47	458.0	0.0	5.0	8.0	True	False
+l1-m0096	l1-p1652	PLLP	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.11	36.0	0.0	1.0	3.0	True	False
+l1-m0408	l1-p1653	PLPP1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.09	123.0	0.0	9.0	6.0	True	False
+l1-m0418	l1-p1654	PLPP2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.41	125.0	0.0	7.0	7.0	True	False
+l1-m0563	l1-p1655	PLPP3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.09	129.0	0.0	10.0	8.0	True	False
+l1-m0372	l1-p1656	PLPP4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.35	132.0	0.0	9.0	9.0	True	False
+l1-m0732	l1-p1657	PLPPR1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.19	120.0	0.0	6.0	7.0	True	False
+l1-m1319	l1-p1658	PLPPR2	library_reference	human	internal	deeptmhmm_v1	topo_2026_10_14_l1_designed	library_designed_orf	placed	colabfold	identical	helix_axis		107.0	0.0	7.0	5.0	True	False
+l1-m1995	l1-p1659	PLPPR3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	2.45	133.0	0.0	4.0	5.0	True	False
+l1-m1990	l1-p1660	PLPPR4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	alphafold_db	contained	helix_axis	4.58	124.0	0.0	5.0	5.0	True	False
+l1-m0698	l1-p1661	PLPPR5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.08	122.0	0.0	6.0	7.0	True	False
+l1-m0059	l1-p1667	PMP22	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.35	62.0	0.0	1.0	5.0	True	False
+l1-m2694	l1-p1693	PTCH1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	2.22	756.0	0.0	9.0	8.0	True	False
+l1-m2595	l1-p1694	PTCH2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.2	699.0	0.0	6.0	5.0	True	False
+l1-m2277	l1-p1695	PTCHD1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.56	546.0	0.0	7.0	5.0	True	False
+l1-m1173	l1-p1732	RHAG	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.51	147.0	0.0	4.0	12.0	True	False
+l1-m1346	l1-p1735	RHBG	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.04	174.0	0.0	6.0	11.0	True	False
+l1-m1420	l1-p1736	RHCG	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.17	185.0	0.0	8.0	12.0	True	False
+l1-m1294	l1-p1741	RNFT2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.21	131.0	0.0	2.0	12.0	True	False
+l1-m1514	l1-p1764	SCARB1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		412.0	0.0	2.0	2.0	True	False
+l1-m1919	l1-p1772	SCNN1A	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.66	396.0	5.0	2.0	0.0	True	False
+l1-m2150	l1-p1773	SCNN1D	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.24	406.0	0.0	2.0	1.0	True	False
+l1-m1324	l1-p1796	SERINC1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.34	118.0	0.0	4.0	8.0	True	False
+l1-m1330	l1-p1797	SERINC2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.37	114.0	0.0	4.0	6.0	True	False
+l1-m1399	l1-p1798	SERINC3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.2	122.0	0.0	8.0	7.0	True	False
+l1-m1356	l1-p1799	SERINC5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		119.0	0.0	5.0	9.0	True	False
+l1-m0993	l1-p1804	SGMS2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.1	135.0	0.0	6.0	8.0	True	False
+l1-m2600	l1-p1832	SLC12A2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.35	586.0	0.0	4.0	11.0	True	False
+l1-m2464	l1-p1833	SLC12A3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		566.0	0.0	3.0	11.0	True	False
+l1-m2511	l1-p1834	SLC12A4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.2	609.0	0.0	2.0	7.0	True	False
+l1-m2539	l1-p1835	SLC12A5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		503.0	0.0	2.0	12.0	True	False
+l1-m2566	l1-p1836	SLC12A6	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.28	612.0	0.0	4.0	8.0	True	False
+l1-m2509	l1-p1837	SLC12A7	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.04	596.0	0.0	3.0	12.0	True	False
+l1-m1988	l1-p1838	SLC12A8	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.29	174.0	0.0	2.0	2.0	True	False
+l1-m1107	l1-p1844	SLC14A1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.06	161.0	0.0	2.0	5.0	True	False
+l1-m2316	l1-p1845	SLC14A2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.44	380.0	0.0	3.0	9.0	True	False
+l1-m1977	l1-p1846	SLC15A1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.54	409.0	0.0	5.0	13.0	True	False
+l1-m2010	l1-p1847	SLC15A2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.3	381.0	0.0	6.0	13.0	True	False
+l1-m1481	l1-p1848	SLC16A1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.27	147.0	0.0	6.0	11.0	True	False
+l1-m1537	l1-p1849	SLC16A10	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.13	166.0	0.0	9.0	12.0	True	False
+l1-m1542	l1-p1850	SLC16A12	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.6	140.0	0.0	3.0	13.0	True	False
+l1-m1521	l1-p1851	SLC16A14	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.5	171.0	0.0	4.0	8.0	True	False
+l1-m1618	l1-p1852	SLC16A2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.39	159.0	0.0	8.0	10.0	True	False
+l1-m1369	l1-p1853	SLC16A3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.23	134.0	0.0	7.0	12.0	True	False
+l1-m1434	l1-p1854	SLC16A4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.53	140.0	0.0	3.0	12.0	True	False
+l1-m1499	l1-p1855	SLC16A5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.32	156.0	0.0	2.0	13.0	True	False
+l1-m1564	l1-p1856	SLC16A6	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.23	139.0	0.0	7.0	14.0	True	False
+l1-m1414	l1-p1857	SLC16A7	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.12	155.0	0.0	5.0	14.0	True	False
+l1-m1494	l1-p1858	SLC16A8	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.26	133.0	0.0	10.0	10.0	True	False
+l1-m1515	l1-p1859	SLC16A9	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.46	130.0	0.0	6.0	9.0	True	False
+l1-m1380	l1-p1860	SLC17A1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.19	164.0	0.0	3.0	11.0	True	False
+l1-m1415	l1-p1861	SLC17A2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		158.0	0.0	2.0	11.0	True	False
+l1-m1473	l1-p1862	SLC17A3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		193.0	0.0	2.0	14.0	True	False
+l1-m1470	l1-p1863	SLC17A4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.18	153.0	0.0	3.0	12.0	True	False
+l1-m1758	l1-p1864	SLC19A1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.38	145.0	0.0	7.0	14.0	True	False
+l1-m1471	l1-p1865	SLC19A2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.08	138.0	0.0	3.0	10.0	True	False
+l1-m1466	l1-p1866	SLC19A3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.14	148.0	0.0	3.0	11.0	True	False
+l1-m1569	l1-p1867	SLC1A1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.21	197.0	0.0	10.0	13.0	True	False
+l1-m1723	l1-p1868	SLC1A2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.22	211.0	1.0	8.0	11.0	True	False
+l1-m1629	l1-p1869	SLC1A3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.32	222.0	4.0	8.0	13.0	True	False
+l1-m1598	l1-p1870	SLC1A4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.15	229.0	4.0	9.0	12.0	True	False
+l1-m1628	l1-p1871	SLC1A5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.15	199.0	3.0	7.0	11.0	True	False
+l1-m1689	l1-p1872	SLC1A6	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.23	217.0	5.0	7.0	13.0	True	False
+l1-m1680	l1-p1873	SLC1A7	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.27	199.0	2.0	7.0	13.0	True	False
+l1-m1664	l1-p1876	SLC22A1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.25	246.0	0.0	4.0	15.0	True	False
+l1-m1650	l1-p1877	SLC22A11	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.16	251.0	0.0	6.0	12.0	True	False
+l1-m1661	l1-p1878	SLC22A12	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.16	271.0	0.0	4.0	12.0	True	False
+l1-m1654	l1-p1879	SLC22A13	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.35	243.0	0.0	5.0	12.0	True	False
+l1-m1640	l1-p1880	SLC22A15	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.24	218.0	0.0	5.0	11.0	True	False
+l1-m1730	l1-p1881	SLC22A16	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.56	259.0	0.0	4.0	14.0	True	False
+l1-m1835	l1-p1882	SLC22A17	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	alphafold_db_not_in_payload	identical	helix_axis		155.0	0.0	3.0	13.0	True	False
+l1-m1667	l1-p1883	SLC22A2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.51	242.0	0.0	3.0	16.0	True	False
+l1-m1657	l1-p1884	SLC22A24	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.12	274.0	0.0	1.0	15.0	True	False
+l1-m1641	l1-p1885	SLC22A25	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.12	261.0	0.0	4.0	14.0	True	False
+l1-m1672	l1-p1886	SLC22A3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.16	243.0	0.0	3.0	16.0	True	False
+l1-m1655	l1-p1887	SLC22A4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.15	232.0	0.0	4.0	10.0	True	False
+l1-m1674	l1-p1888	SLC22A5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.29	254.0	0.0	5.0	10.0	True	False
+l1-m1651	l1-p1889	SLC22A6	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		249.0	0.0	4.0	11.0	True	False
+l1-m1643	l1-p1890	SLC22A7	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.36	244.0	0.0	7.0	14.0	True	False
+l1-m1630	l1-p1891	SLC22A8	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.1	231.0	0.0	5.0	10.0	True	False
+l1-m1662	l1-p1892	SLC22A9	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.09	247.0	0.0	2.0	14.0	True	False
+l1-m1775	l1-p1893	SLC23A1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.34	249.0	0.0	6.0	9.0	True	False
+l1-m1873	l1-p1894	SLC23A2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.34	248.0	0.0	8.0	11.0	True	False
+l1-m1965	l1-p1899	SLC26A1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.55	343.0	8.0	7.0	18.0	True	False
+l1-m1790	l1-p1900	SLC26A11	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.15	308.0	7.0	3.0	15.0	True	False
+l1-m2023	l1-p1901	SLC26A2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.24	370.0	6.0	5.0	13.0	True	False
+l1-m2059	l1-p1902	SLC26A3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.58	435.0	0.0	10.0	16.0	True	False
+l1-m2086	l1-p1903	SLC26A4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.39	393.0	0.0	7.0	13.0	True	False
+l1-m2030	l1-p1904	SLC26A5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.39	343.0	29.0	4.0	12.0	True	False
+l1-m2050	l1-p1905	SLC26A6	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.78	399.0	6.0	6.0	10.0	True	False
+l1-m1891	l1-p1906	SLC26A7	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.42	278.0	7.0	5.0	9.0	True	False
+l1-m2395	l1-p1907	SLC26A8	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.28	333.0	8.0	6.0	9.0	True	False
+l1-m2111	l1-p1908	SLC26A9	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.17	359.0	33.0	6.0	13.0	True	False
+l1-m1451	l1-p1915	SLC2A1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.16	189.0	0.0	5.0	11.0	True	False
+l1-m1467	l1-p1916	SLC2A11	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.14	187.0	0.0	4.0	13.0	True	False
+l1-m1808	l1-p1917	SLC2A12	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.22	180.0	0.0	4.0	11.0	True	False
+l1-m1472	l1-p1918	SLC2A14	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		192.0	0.0	4.0	13.0	True	False
+l1-m1570	l1-p1919	SLC2A2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.82	190.0	0.0	3.0	10.0	True	False
+l1-m1468	l1-p1920	SLC2A3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.84	202.0	0.0	6.0	12.0	True	False
+l1-m1516	l1-p1921	SLC2A4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.22	185.0	0.0	2.0	12.0	True	False
+l1-m1483	l1-p1922	SLC2A5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.12	198.0	0.0	2.0	12.0	True	False
+l1-m1525	l1-p1923	SLC2A7	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.17	199.0	0.0	4.0	13.0	True	False
+l1-m1622	l1-p1924	SLC2A9	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.22	197.0	0.0	5.0	11.0	True	False
+l1-m1505	l1-p1925	SLC30A1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.18	146.0	0.0	2.0	4.0	True	False
+l1-m1430	l1-p1926	SLC30A10	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.14	161.0	0.0	2.0	3.0	True	False
+l1-m1188	l1-p1928	SLC33A2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.5	147.0	0.0	4.0	7.0	True	False
+l1-m1852	l1-p1929	SLC34A1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.59	230.0	20.0	4.0	9.0	True	False
+l1-m1942	l1-p1930	SLC34A2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.45	278.0	22.0	6.0	13.0	True	False
+l1-m1777	l1-p1931	SLC34A3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.18	212.0	20.0	5.0	12.0	True	False
+l1-m1040	l1-p1932	SLC35F2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.08	91.0	0.0	6.0	12.0	True	False
+l1-m1189	l1-p1933	SLC35G2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.5	118.0	0.0	4.0	11.0	True	False
+l1-m1713	l1-p1955	SLC40A1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.05	172.0	0.0	1.0	14.0	True	False
+l1-m1677	l1-p1958	SLC43A1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.09	183.0	0.0	5.0	9.0	True	False
+l1-m1706	l1-p1959	SLC43A2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	3.81	182.0	0.0	5.0	12.0	True	False
+l1-m1449	l1-p1960	SLC43A3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.2	159.0	0.0	8.0	12.0	True	False
+l1-m1894	l1-p1961	SLC44A1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.29	196.0	133.0	4.0	12.0	False	False
+l1-m1970	l1-p1962	SLC44A2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.1	396.0	25.0	10.0	10.0	True	False
+l1-m1884	l1-p1963	SLC44A3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	4.84	341.0	11.0	3.0	8.0	True	False
+l1-m1979	l1-p1964	SLC44A4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.25	354.0	32.0	10.0	11.0	True	False
+l1-m1993	l1-p1965	SLC44A5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		369.0	25.0	3.0	11.0	True	False
+l1-m1349	l1-p1966	SLC46A1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	2.47	140.0	0.0	4.0	13.0	True	False
+l1-m1404	l1-p1967	SLC46A2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.08	110.0	0.0	7.0	14.0	True	False
+l1-m2304	l1-p1970	SLC4A1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	14.14	497.0	0.0	6.0	18.0	True	False
+l1-m2533	l1-p1971	SLC4A10	library_reference	human	internal	deeptmhmm_v1	topo_2026_10_14_l1_designed	library_designed_orf	placed	colabfold	identical	helix_axis		528.0	22.0	7.0	17.0	True	False
+l1-m2267	l1-p1972	SLC4A11	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	2.04	386.0	0.0	6.0	16.0	True	False
+l1-m2618	l1-p1973	SLC4A2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	4.41	462.0	0.0	6.0	17.0	True	False
+l1-m2611	l1-p1974	SLC4A3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.82	483.0	0.0	8.0	18.0	True	False
+l1-m2505	l1-p1975	SLC4A4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.54	365.0	92.0	7.0	20.0	True	False
+l1-m2550	l1-p1976	SLC4A7	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		517.0	22.0	7.0	17.0	True	False
+l1-m2522	l1-p1977	SLC4A8	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.1	510.0	25.0	7.0	22.0	True	False
+l1-m2385	l1-p1978	SLC4A9	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		388.0	68.0	5.0	16.0	True	False
+l1-m1548	l1-p1993	SLC60A2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.09	136.0	0.0	7.0	4.0	True	False
+l1-m1545	l1-p1995	SLC68A1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.21	179.0	0.0	5.0	10.0	False	True
+l1-m1778	l1-p1996	SLC6A1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.18	262.0	0.0	9.0	12.0	True	False
+l1-m1836	l1-p1997	SLC6A11	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.16	281.0	0.0	7.0	10.0	True	False
+l1-m1804	l1-p1998	SLC6A12	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.36	271.0	0.0	8.0	14.0	True	False
+l1-m1782	l1-p1999	SLC6A13	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.24	280.0	0.0	8.0	12.0	True	False
+l1-m1859	l1-p2000	SLC6A14	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.42	322.0	0.0	5.0	12.0	True	False
+l1-m2012	l1-p2001	SLC6A15	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.03	329.0	0.0	7.0	14.0	True	False
+l1-m2018	l1-p2002	SLC6A16	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.25	311.0	0.0	6.0	12.0	True	False
+l1-m1809	l1-p2003	SLC6A2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.17	281.0	0.0	5.0	14.0	True	False
+l1-m1761	l1-p2004	SLC6A20	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.1	315.0	0.0	5.0	7.0	True	False
+l1-m1816	l1-p2005	SLC6A3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.22	275.0	0.0	6.0	13.0	True	False
+l1-m1832	l1-p2006	SLC6A4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.11	277.0	0.0	6.0	11.0	True	False
+l1-m2130	l1-p2007	SLC6A5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.67	271.0	0.0	6.0	10.0	True	False
+l1-m1817	l1-p2008	SLC6A6	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.83	253.0	0.0	7.0	15.0	True	False
+l1-m1847	l1-p2009	SLC6A7	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.11	275.0	0.0	4.0	10.0	True	False
+l1-m1843	l1-p2010	SLC6A8	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.3	259.0	0.0	5.0	14.0	True	False
+l1-m1838	l1-p2011	SLC6A9	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		272.0	0.0	4.0	9.0	True	False
+l1-m1504	l1-p2012	SLC71A2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.13	137.0	0.0	3.0	9.0	True	False
+l1-m1831	l1-p2013	SLC7A1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.45	223.0	0.0	7.0	11.0	True	False
+l1-m1565	l1-p2014	SLC7A10	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.13	180.0	0.0	2.0	8.0	True	False
+l1-m1484	l1-p2015	SLC7A11	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.12	176.0	0.0	3.0	10.0	True	False
+l1-m1898	l1-p2016	SLC7A2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.86	239.0	0.0	6.0	11.0	True	False
+l1-m1813	l1-p2017	SLC7A3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.14	232.0	0.0	6.0	8.0	True	False
+l1-m1844	l1-p2018	SLC7A4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.13	241.0	0.0	4.0	12.0	True	False
+l1-m1506	l1-p2019	SLC7A5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.32	191.0	0.0	6.0	11.0	True	False
+l1-m1538	l1-p2020	SLC7A6	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.14	177.0	0.0	3.0	8.0	True	False
+l1-m1523	l1-p2021	SLC7A7	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.21	175.0	0.0	3.0	6.0	True	False
+l1-m1607	l1-p2022	SLC7A8	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	2.69	188.0	0.0	1.0	12.0	True	False
+l1-m2168	l1-p2026	SLC9A1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.76	204.0	31.0	4.0	11.0	True	False
+l1-m1539	l1-p2031	SLC9B1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.89	176.0	0.0	5.0	13.0	True	False
+l1-m1920	l1-p2035	SLCO1A2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.36	270.0	0.0	4.0	8.0	True	False
+l1-m1945	l1-p2036	SLCO1B1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.21	276.0	0.0	13.0	9.0	True	False
+l1-m1967	l1-p2037	SLCO1B3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.13	276.0	0.0	12.0	15.0	True	False
+l1-m2034	l1-p2038	SLCO1B3-SLCO1B7	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		224.0	0.0	7.0	14.0	True	False
+l1-m1982	l1-p2039	SLCO1C1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.2	286.0	0.0	8.0	11.0	True	False
+l1-m1861	l1-p2040	SLCO2A1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.52	260.0	0.0	8.0	10.0	True	False
+l1-m1978	l1-p2041	SLCO2B1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.36	266.0	0.0	8.0	10.0	True	False
+l1-m1980	l1-p2042	SLCO3A1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.2	230.0	0.0	4.0	6.0	True	False
+l1-m2003	l1-p2043	SLCO4A1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.45	275.0	0.0	9.0	10.0	True	False
+l1-m2005	l1-p2044	SLCO4C1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.13	278.0	0.0	9.0	14.0	True	False
+l1-m2231	l1-p2045	SLCO5A1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.09	256.0	0.0	9.0	8.0	True	False
+l1-m1998	l1-p2046	SLCO6A1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.15	265.0	0.0	10.0	7.0	True	False
+l1-m1646	l1-p2069	SPNS2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.23	169.0	0.0	7.0	8.0	True	False
+l1-m0840	l1-p2078	STEAP1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.1	150.0	0.0	7.0	8.0	True	False
+l1-m1446	l1-p2080	STEAP2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.21	314.0	0.0	9.0	5.0	True	False
+l1-m1440	l1-p2081	STEAP3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.59	310.0	0.0	10.0	5.0	True	False
+l1-m1350	l1-p2082	STEAP4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	2.92	312.0	0.0	7.0	7.0	True	False
+l1-m0139	l1-p2152	TM4SF1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.06	74.0	0.0	1.0	2.0	True	False
+l1-m0136	l1-p2153	TM4SF18	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.05	72.0	0.0	0.0	2.0	True	False
+l1-m0140	l1-p2154	TM4SF4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.09	68.0	0.0	0.0	1.0	True	False
+l1-m0122	l1-p2155	TM4SF5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.09	89.0	0.0	1.0	6.0	True	False
+l1-m2297	l1-p2158	TMC2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.64	351.0	39.0	8.0	5.0	True	False
+l1-m1971	l1-p2159	TMC4	library_reference	human	internal	deeptmhmm_v1	topo_2026_10_14_l1_designed	library_designed_orf	placed	colabfold	identical	helix_axis		302.0	12.0	3.0	10.0	True	False
+l1-m0204	l1-p2164	TMEM114	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.28	76.0	0.0	0.0	1.0	True	False
+l1-m0104	l1-p2171	TMEM134	library_reference	human	internal	deeptmhmm_v1	topo_2026_10_14_l1_designed	library_designed_orf	placed	colabfold	identical	helix_axis		8.0	0.0	0.0	1.0	True	False
+l1-m0178	l1-p2172	TMEM139	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	3.75	33.0	0.0	1.0	3.0	True	False
+l1-m0375	l1-p2174	TMEM150A	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.14	106.0	0.0	1.0	2.0	True	False
+l1-m0305	l1-p2175	TMEM150C	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.19	90.0	0.0	1.0	10.0	True	False
+l1-m0450	l1-p2178	TMEM169	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.99	16.0	12.0	1.0	0.0	False	False
+l1-m0283	l1-p2180	TMEM174	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	5.64	12.0	9.0	2.0	0.0	False	False
+l1-m1405	l1-p2181	TMEM181	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.27	190.0	0.0	5.0	10.0	True	False
+l1-m0228	l1-p2182	TMEM182	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.35	113.0	0.0	1.0	2.0	True	False
+l1-m0216	l1-p2186	TMEM204	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.18	54.0	0.0	1.0	2.0	True	False
+l1-m0270	l1-p2189	TMEM219	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	2.94	72.0	0.0	1.0	0.0	True	False
+l1-m0210	l1-p2191	TMEM225	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.39	69.0	0.0	5.0	4.0	True	False
+l1-m0071	l1-p2192	TMEM229B	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.34	70.0	0.0	2.0	8.0	True	False
+l1-m0085	l1-p2193	TMEM238	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.31	27.0	0.0	1.0	1.0	True	False
+l1-m1002	l1-p2194	TMEM26	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.13	117.0	0.0	6.0	5.0	True	False
+l1-m1566	l1-p2195	TMEM266	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.42	91.0	0.0	0.0	2.0	True	False
+l1-m0853	l1-p2196	TMEM268	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.47	162.0	0.0	0.0	2.0	True	False
+l1-m0094	l1-p2198	TMEM47	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.19	62.0	0.0	1.0	4.0	True	False
+l1-m0271	l1-p2202	TMEM86A	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.06	60.0	0.0	1.0	6.0	True	False
+l1-m0217	l1-p2203	TMEM86B	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.13	52.0	0.0	0.0	3.0	True	False
+l1-m2543	l1-p2266	TRPA1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	5.75	829.0	0.0	3.0	7.0	True	False
+l1-m2115	l1-p2267	TRPC1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.33	467.0	1.0	2.0	7.0	True	False
+l1-m2320	l1-p2268	TRPC3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.91	571.0	1.0	6.0	6.0	True	False
+l1-m2409	l1-p2269	TRPC4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.11	526.0	1.0	5.0	4.0	True	False
+l1-m2402	l1-p2270	TRPC5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.1	516.0	1.0	3.0	4.0	True	False
+l1-m2338	l1-p2271	TRPC6	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.85	561.0	1.0	10.0	6.0	True	False
+l1-m2250	l1-p2272	TRPC7	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.95	568.0	1.0	8.0	6.0	True	False
+l1-m2712	l1-p2273	TRPM2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.32	1029.0	11.0	3.0	6.0	True	False
+l1-m2601	l1-p2274	TRPM4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.8	816.0	0.0	5.0	8.0	True	False
+l1-m2574	l1-p2275	TRPM5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	2.14	780.0	0.0	6.0	6.0	True	False
+l1-m2531	l1-p2276	TRPM8	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	4.82	821.0	0.0	6.0	5.0	True	False
+l1-m2217	l1-p2277	TRPV1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.21	435.0	0.0	4.0	8.0	True	False
+l1-m2106	l1-p2278	TRPV3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.09	432.0	0.0	4.0	5.0	True	False
+l1-m2261	l1-p2279	TRPV4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.73	436.0	0.0	1.0	5.0	True	False
+l1-m2011	l1-p2280	TRPV5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.27	471.0	0.0	4.0	5.0	True	False
+l1-m2061	l1-p2281	TRPV6	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.17	467.0	0.0	6.0	5.0	True	False
+l1-m0277	l1-p2283	TSPAN1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.14	116.0	0.0	1.0	3.0	True	False
+l1-m0930	l1-p2284	TSPAN10	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	colabfold_fold_not_in_payload	identical	helix_axis		145.0	0.0	3.0	3.0	True	False
+l1-m0317	l1-p2285	TSPAN11	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.28	137.0	0.0	1.0	4.0	True	False
+l1-m0491	l1-p2286	TSPAN12	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis	5.17	162.0	0.0	4.0	4.0	True	False
+l1-m0141	l1-p2287	TSPAN13	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.18	101.0	0.0	2.0	4.0	True	False
+l1-m0368	l1-p2288	TSPAN14	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.35	147.0	0.0	3.0	3.0	True	False
+l1-m0440	l1-p2289	TSPAN15	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.31	168.0	0.0	2.0	3.0	True	False
+l1-m0289	l1-p2290	TSPAN16	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		129.0	0.0	1.0	5.0	True	False
+l1-m0761	l1-p2291	TSPAN17	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	colabfold	identical	helix_axis		158.0	0.0	3.0	3.0	True	False
+l1-m0303	l1-p2292	TSPAN18	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.48	145.0	0.0	1.0	4.0	True	False
+l1-m0197	l1-p2293	TSPAN2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.35	102.0	0.0	3.0	3.0	True	False
+l1-m0160	l1-p2294	TSPAN31	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.14	101.0	0.0	5.0	3.0	True	False
+l1-m0405	l1-p2295	TSPAN33	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.19	163.0	0.0	6.0	2.0	True	False
+l1-m0259	l1-p2296	TSPAN4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.65	131.0	0.0	1.0	3.0	True	False
+l1-m0361	l1-p2297	TSPAN5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.15	156.0	0.0	2.0	3.0	True	False
+l1-m0292	l1-p2298	TSPAN6	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.69	121.0	0.0	2.0	4.0	True	False
+l1-m0299	l1-p2299	TSPAN7	library_reference	human	internal	deeptmhmm_v1	topo_2026_10_14_l1_designed	library_designed_orf	placed	colabfold	identical	helix_axis		127.0	0.0	1.0	4.0	True	False
+l1-m0255	l1-p2300	TSPAN8	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	1.54	125.0	0.0	4.0	3.0	True	False
+l1-m0265	l1-p2301	TSPAN9	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.18	131.0	0.0	2.0	3.0	True	False
+l1-m1340	l1-p2315	UNC93A	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.26	144.0	0.0	3.0	11.0	True	False
+l1-m0334	l1-p2316	UPK1B	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.61	145.0	0.0	1.0	5.0	True	False
+l1-m1571	l1-p2320	VANGL1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.4	258.0	0.0	4.0	3.0	True	False
+l1-m1557	l1-p2321	VANGL2	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.45	234.0	0.0	4.0	2.0	True	False
+l1-m1295	l1-p2345	XK	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.36	150.0	10.0	4.0	11.0	True	False
+l1-m1351	l1-p2346	XKR3	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.41	127.0	2.0	7.0	11.0	True	False
+l1-m1874	l1-p2347	XKR4	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.13	159.0	4.0	3.0	8.0	True	False
+l1-m1937	l1-p2348	XKR5	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.12	74.0	11.0	2.0	9.0	True	False
+l1-m1857	l1-p2349	XKR6	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.17	125.0	9.0	4.0	9.0	True	False
+l1-m1735	l1-p2350	XKR7	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.39	110.0	9.0	3.0	10.0	True	False
+l1-m1132	l1-p2351	XKR8	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.13	128.0	19.0	2.0	9.0	True	False
+l1-m1031	l1-p2352	XKR9	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.33	133.0	15.0	2.0	12.0	True	False
+l1-m1957	l1-p2354	XPR1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.64	391.0	0.0	5.0	7.0	True	False
+l1-m2485	l1-p2393	ANO1	isoform	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	alphafold_db	identical	helix_axis		501.0	38.0	7.0	23.0	True	False
+l1-m2348	l1-p2394	ANO7	isoform	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.61	512.0	46.0	6.0	11.0	True	False
+l1-m1635	l1-p2398	ASIC3	isoform	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	alphafold_db	identical	helix_axis		388.0	0.0	3.0	5.0	True	False
+l1-m2579	l1-p2399	ATP2B1	isoform	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	alphafold_db	identical	helix_axis		673.0	11.0	4.0	10.0	True	False
+l1-m0310	l1-p2416	CD9	isoform	human	internal	deeptmhmm_v1	topo_2026_10_14_l1_designed	library_designed_orf	placed	alphafold_db	identical	helix_axis		86.0	0.0	4.0	2.0	True	False
+l1-m0211	l1-p2421	CLRN3	isoform	human	internal	deeptmhmm_v1	topo_2026_10_14_l1_designed	library_designed_orf	placed	colabfold	identical	helix_axis		113.0	0.0	1.0	4.0	True	False
+l1-m0360	l1-p2443	GPM6A	isoform	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	alphafold_db	identical	helix_axis		134.0	0.0	1.0	1.0	True	False
+l1-m1217	l1-p2457	KCNK4	isoform	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	alphafold_db	identical	helix_axis		189.0	0.0	4.0	4.0	True	False
+l1-m1858	l1-p2459	KCNQ4	isoform	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	alphafold_db	identical	helix_axis		244.0	0.0	2.0	10.0	True	False
+l1-m0177	l1-p2461	LIM2	isoform	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	alphafold_db	identical	helix_axis		74.0	0.0	2.0	2.0	True	False
+l1-m1637	l1-p2466	MFSD2A	isoform	human	internal	deeptmhmm_v1_inverted_by_override	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.11	186.0	0.0	5.0	11.0	True	False
+l1-m1183	l1-p2478	PACC1	isoform	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	alphafold_db	identical	helix_axis		250.0	0.0	3.0	3.0	True	False
+l1-m0406	l1-p2485	PLPP1	isoform	human	internal	deeptmhmm_v1	topo_2026_10_14_l1_designed	library_designed_orf	placed	colabfold	identical	helix_axis		113.0	0.0	7.0	5.0	True	False
+l1-m2009	l1-p2497	SCNN1A	isoform	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	alphafold_db	identical	helix_axis		427.0	0.0	0.0	3.0	True	False
+l1-m1327	l1-p2501	SERINC2	isoform	human	internal	deeptmhmm_v1	topo_2026_10_14_l1_designed	library_designed_orf	placed	colabfold	identical	helix_axis		88.0	0.0	5.0	5.0	True	False
+l1-m2507	l1-p2503	SLC12A4	isoform	human	internal	deeptmhmm_v1	topo_2026_10_14_l1_designed	library_designed_orf	placed	colabfold	identical	helix_axis		498.0	0.0	2.0	10.0	True	False
+l1-m2006	l1-p2504	SLC15A2	isoform	human	internal	deeptmhmm_v1	topo_2026_10_14_l1_designed	library_designed_orf	placed	colabfold	identical	helix_axis		357.0	0.0	5.0	12.0	True	False
+l1-m2513	l1-p2507	SLC4A10	isoform	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	alphafold_db	identical	helix_axis		492.0	22.0	7.0	18.0	True	False
+l1-m2527	l1-p2508	SLC4A10	isoform	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	alphafold_db	identical	helix_axis		503.0	22.0	7.0	18.0	True	False
+l1-m2627	l1-p2509	SLC4A7	isoform	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	alphafold_db	identical	helix_axis		434.0	70.0	7.0	17.0	True	False
+l1-m2001	l1-p2512	SLC6A6	isoform	human	internal	deeptmhmm_v1	topo_2026_10_14_l1_designed	library_designed_orf	placed	alphafold_db	identical	helix_axis		257.0	0.0	7.0	10.0	True	False
+l1-m1895	l1-p2513	SLC7A2	isoform	human	internal	deeptmhmm_v1	topo_2026_10_14_l1_designed	library_designed_orf	placed	alphafold_db	identical	helix_axis		228.0	0.0	6.0	12.0	True	False
+l1-m1947	l1-p2517	SLCO3A1	isoform	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	alphafold_db	identical	helix_axis		227.0	0.0	3.0	14.0	True	False
+l1-m0266	l1-p2522	TMEM219	isoform	human	internal	deeptmhmm_v1	topo_2026_10_14_l1_designed	library_designed_orf	placed	colabfold	identical	helix_axis		52.0	0.0	1.0	0.0	True	False
+l1-m0385	l1-p2540	CACNG5	ortholog	cyno	internal	deeptmhmm_v1	topo_2026_05_16	cyno_ortholog	placed	alphafold_db	identical	helix_axis		53.0	0.0	1.0	6.0	True	False
+l1-m0318	l1-p2551	CLDND1	ortholog	cyno	internal	deeptmhmm_v1	topo_2026_10_09_ortholog_repick	cyno_ortholog_repick	placed	alphafold_db	identical	tmdet	0.26	137.0	0.0	1.0	4.0	True	False
+l1-m0261	l1-p2723	TSPAN4	ortholog	mouse	internal	deeptmhmm_v1	topo_2026_10_09_ortholog_repick	mouse_ortholog_repick	placed	alphafold_db	identical	tmdet	0.11	127.0	0.0	1.0	3.0	True	False
+l1-m1233	l1-p2739	SLC67A1	library_reference	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.1	122.0	0.0	3.0	12.0	True	False
+l1-m1950	l1-p2939	CNGA3	ortholog	cyno	internal	deeptmhmm_v1	topo_2026_05_16	cyno_ortholog	placed	colabfold_fold_not_in_payload	identical	helix_axis		393.0	16.0	6.0	7.0	True	False
+l1-m0782	l1-p2953	KCNK17	ortholog	cyno	internal	deeptmhmm_v1	topo_2026_05_16	cyno_ortholog	placed	colabfold_fold_not_in_payload	identical	helix_axis		137.0	0.0	3.0	1.0	True	False
+l1-m1540	l1-p2971	SLC9B1	ortholog	cyno	internal	deeptmhmm_v1	topo_2026_05_16	cyno_ortholog	placed	colabfold_fold_not_in_payload	identical	helix_axis		163.0	0.0	5.0	17.0	True	False
+l1-m2710	l1-p2975	TRPM2	ortholog	cyno	internal	deeptmhmm_v1	topo_2026_05_16	cyno_ortholog	placed	colabfold_fold_not_in_payload	identical	helix_axis		1027.0	1.0	4.0	6.0	True	False
+l1-m2562	l1-p2977	ADCY3	ortholog	cyno	internal	deeptmhmm_v1	topo_2026_05_16	cyno_ortholog	placed	alphafold_db	identical	helix_axis		605.0	0.0	5.0	16.0	True	False
+l1-m0267	l1-p2981	CLDN14	ortholog	cyno	internal	deeptmhmm_v1	topo_2026_05_16	cyno_ortholog	placed	colabfold_fold_not_in_payload	identical	helix_axis		80.0	0.0	4.0	2.0	True	False
+l1-m1837	l1-p2999	KIAA2013	ortholog	cyno	internal	deeptmhmm_v1	topo_2026_05_16	cyno_ortholog	placed	colabfold_fold_not_in_payload	identical	helix_axis		495.0	0.0	0.0	1.0	True	False
+l1-m1518	l1-p3012	SLC16A9	ortholog	cyno	internal	deeptmhmm_v1	topo_2026_05_16	cyno_ortholog	placed	colabfold_fold_not_in_payload	identical	helix_axis		113.0	0.0	6.0	8.0	True	False
+l1-m1631	l1-p3013	SLC22A8	ortholog	cyno	internal	deeptmhmm_v1	topo_2026_05_16	cyno_ortholog	placed	colabfold	identical	helix_axis		229.0	0.0	5.0	11.0	True	False
+l1-m1453	l1-p3014	SLC2A1	ortholog	cyno	internal	deeptmhmm_v1	topo_2026_05_16	cyno_ortholog	placed	alphafold_db	identical	helix_axis		180.0	0.0	4.0	14.0	True	False
+l1-m2274	l1-p3015	SLC4A11	ortholog	cyno	internal	deeptmhmm_v1	topo_2026_05_16	cyno_ortholog	placed	colabfold_fold_not_in_payload	identical	helix_axis		398.0	0.0	8.0	16.0	True	False
+l1-m0242	l1-p3040	MS4A7	ortholog	mouse	internal	deeptmhmm_v1	topo_2026_11_05_l1_compara116	mouse_ortholog_repick	placed	colabfold_fold_not_in_payload	identical	helix_axis		45.0	0.0	0.0	2.0	True	False
+l1-m0407	l1-p3045	PLPP1	ortholog	mouse	internal	deeptmhmm_v1	topo_2026_05_16	mouse_ortholog	placed	alphafold_db	identical	tmdet	0.14	124.0	0.0	6.0	8.0	True	False
+l1-m2334	l1-p3050	SLC14A2	ortholog	mouse	internal	deeptmhmm_v1	topo_2026_11_05_ortholog_cds_policy	mouse_ortholog_cds_policy	placed	colabfold_fold_not_in_payload	identical	helix_axis		344.0	0.0	2.0	10.0	True	False
+l1-m1959	l1-p3051	SLC34A2	ortholog	mouse	internal	deeptmhmm_v1	topo_2026_05_16	mouse_ortholog	placed	alphafold_db	identical	tmdet	0.36	290.0	22.0	6.0	11.0	True	False
+l1-m1690	l1-p3053	SLC43A1	ortholog	mouse	internal	deeptmhmm_v1	topo_2026_10_09_ortholog_repick	mouse_ortholog_repick	placed	alphafold_db	identical	tmdet	0.16	183.0	0.0	7.0	15.0	True	False
+l1-m1974	l1-p3054	SLC44A4	ortholog	mouse	internal	deeptmhmm_v1	topo_2026_05_16	mouse_ortholog	placed	alphafold_db	identical	tmdet	0.69	371.0	27.0	9.0	11.0	True	False
+l1-m1421	l1-p3055	SLC46A2	ortholog	mouse	internal	deeptmhmm_v1	topo_2026_05_16	mouse_ortholog	placed	alphafold_db	identical	tmdet	0.53	128.0	0.0	8.0	14.0	True	False
+l1-m0172	l1-p3060	TMEM139	ortholog	mouse	internal	deeptmhmm_v1	topo_2026_05_16	mouse_ortholog	placed	colabfold_fold_not_in_payload	identical	helix_axis		28.0	0.0	0.0	3.0	True	False
+l1-m0218	l1-p3062	TMEM86B	ortholog	mouse	internal	deeptmhmm_v1	topo_2026_05_16	mouse_ortholog	placed	alphafold_db	identical	tmdet	0.06	56.0	0.0	0.0	4.0	True	False
+l1-m0131	l1-p3088	LHFPL6	ortholog	mouse	internal	deeptmhmm_v1	topo_2026_05_16	mouse_ortholog	placed	alphafold_db	identical	tmdet	0.11	104.0	0.0	1.0	3.0	True	False
+l1-m1960	l1-p3093	NRG3	ortholog	mouse	internal	deeptmhmm_v1	topo_2026_11_05_l1_compara116	mouse_ortholog_repick	placed	colabfold_fold_not_in_payload	identical	helix_axis		67.0	16.0	3.0	3.0	True	False
+l1-m2683	l1-p3100	PTCH1	ortholog	mouse	internal	deeptmhmm_v1	topo_2026_05_16	mouse_ortholog	placed	alphafold_db	identical	tmdet	1.7	755.0	0.0	8.0	8.0	True	False
+l1-m2107	l1-p3103	SLC26A9	ortholog	mouse	internal	deeptmhmm_v1	topo_2026_05_16	mouse_ortholog	placed	colabfold_fold_not_in_payload	identical	helix_axis		320.0	34.0	7.0	7.0	True	False
+l1-m1827	l1-p3106	SLC6A11	ortholog	mouse	internal	deeptmhmm_v1	topo_2026_05_16	mouse_ortholog	placed	alphafold_db	identical	tmdet	0.21	282.0	0.0	8.0	17.0	True	False
+l1-m1783	l1-p3107	SLC6A13	ortholog	mouse	internal	deeptmhmm_v1	topo_2026_10_09_ortholog_repick	mouse_ortholog_repick	placed	alphafold_db	identical	tmdet	0.3	278.0	0.0	7.0	15.0	True	False
+l1-m0072	l1-p3111	TMEM229B	ortholog	mouse	internal	deeptmhmm_v1	topo_2026_05_16	mouse_ortholog	placed	colabfold_fold_not_in_payload	identical	helix_axis		63.0	0.0	2.0	8.0	True	False
+l1-m2592	l1-p3124	SLC12A2	isoform	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	alphafold_db	identical	helix_axis		589.0	0.0	4.0	12.0	True	False
+l1-m1496	l1-p3125	SLC43A3	isoform	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	alphafold_db	identical	helix_axis		163.0	0.0	7.0	12.0	True	False
+l1-m1961	l1-p3126	SLC7A2	isoform	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	alphafold_db	identical	helix_axis		225.0	0.0	6.0	12.0	True	False
+l1-m1939	l1-p3127	SLCO1B3-SLCO1B7	isoform	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	helix_axis		270.0	0.0	9.0	13.0	True	False
+l1-m1981	l1-p3146	SLC44A2	isoform	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	alphafold_db	identical	helix_axis		367.0	22.0	12.0	11.0	True	False
+l1-m0293	l1-p3147	TSPAN16	isoform	human	internal	deeptmhmm_v1	topo_2026_05_16	human_canonical	placed	alphafold_db	identical	tmdet	0.35	138.0	0.0	3.0	5.0	True	False
+l1-m1656	l1-p3149	SLC22A24	isoform	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	alphafold_db	identical	helix_axis		275.0	0.0	2.0	15.0	True	False
+l1-m1881	l1-p3150	SLC6A9	isoform	human	internal	deeptmhmm_v1	topo_2026_05_25	human_isoforms	placed	alphafold_db	identical	helix_axis		280.0	0.0	4.0	9.0	True	False

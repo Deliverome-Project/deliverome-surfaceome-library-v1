@@ -42,6 +42,10 @@ VARIANT_TOLERANCE = 3
 #: the library's C-terminal constructs already use. The native codon cannot be read from
 #: the pinned inputs (the primary-assembly GTF does not cover those scaffolds, and no
 #: genome sequence is pinned). Entries that get one carry ``stop_added``.
+#: Decided by Becca, 2026-11-04 ("let's add stop codons then"), after the N-terminal reviewer
+#: package's frame check found the missing stops. Implemented by the Claude Code session
+#: nterm-reviewer-package on PR #234 (bb393b72); per-entry attribution is in s4e9
+#: ``stop_codon_fix.tsv`` (``stop_codon_fix.py``), so the pinned CDS record keeps its bytes.
 ADDED_STOP = "TAA"
 STOPS = {"TAA", "TAG", "TGA"}
 CODONS = {

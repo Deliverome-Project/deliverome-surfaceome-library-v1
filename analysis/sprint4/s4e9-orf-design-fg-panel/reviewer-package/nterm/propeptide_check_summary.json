@@ -1,0 +1,63 @@
+{
+ "uniprot_snapshot": {
+  "release": "2026_04",
+  "key": "external://uniprot/2026_04/nterm-propeptides/uniprot_features.tsv",
+  "sha256": "b2f9f5e7f0e04c9b7113e039ec761546a9b7c87dd8514cba38e58639bf918b23",
+  "entries": 1158,
+  "genes_queried": 1131,
+  "query": "gene_exact AND organism_id:9606 AND reviewed:true",
+  "fields": "accession,gene_primary,sequence,ft_signal,ft_propep,ft_chain",
+  "fetched_utc": "2026-11-13T01:07:39Z",
+  "processed_key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/uniprot-propeptides/2026_04/uniprot_features.tsv",
+  "note": "Read from the append-only external copy (published by l1-reviewer-package, verified byte-identical 2026-11-14); processed_key is the original upload."
+ },
+ "members": 1308,
+ "uniprot_status": {
+  "propeptide": 75,
+  "no_propeptide": 1231,
+  "no_entry": 2
+ },
+ "built_arms": 1272,
+ "cassette_inside_constitutive_propeptide": [],
+ "cassette_inside_activation_only_propeptide": [
+  "PRSS41",
+  "PRSS21",
+  "F2RL2",
+  "F2RL3",
+  "F2R",
+  "MEP1B"
+ ],
+ "cassette_upstream_of_furin_motif_without_annotation": [
+  "CRB3",
+  "CD160",
+  "CD160",
+  "RAET1L",
+  "GFRA4",
+  "PIANP",
+  "TPSG1",
+  "NPDC1",
+  "SELL",
+  "MICB",
+  "NPTN",
+  "NPTN",
+  "AJAP1",
+  "TNFRSF1A",
+  "GIPR",
+  "GABRR1",
+  "GPR37L1",
+  "PLXDC2",
+  "APLP1",
+  "ADAM9",
+  "ADAM8",
+  "CDH22",
+  "CDH26",
+  "ADAM9",
+  "CLSTN2",
+  "IMPG2",
+  "ADGRF5",
+  "HEG1"
+ ],
+ "unmapped_propeptides": [
+  "PRSS8"
+ ]
+}

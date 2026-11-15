@@ -7,7 +7,10 @@ needs to be reproducible from that repo alone, so the columns it joins on travel
 
 ``topology_acc`` comes from the pointer index rather than the tag-path table, because the
 whole point of that index is that a member's topology is NOT reachable from its gene's
-canonical accession.
+canonical accession. A member added after the index release (SLC67A1, 2026-11-02) has
+no pointer row; it is resolved here the same way the index is built -- by exact designed
+sequence against v1 topology -- and the result must agree with the tag-path row's hash,
+cohort and version, or the export stops. Rebuilding the index itself is a new release.
 
 Two columns carry caveats that change how a row should be read, and both are data here
 rather than a gene-name special case:
@@ -40,6 +43,7 @@ from pathlib import Path
 HERE = Path(__file__).parent
 TAG_PATHS = HERE / "l1_tag_paths.tsv"
 POINTER_INDEX = HERE / "library_topology_index.tsv"
+MANIFEST = HERE / "candidate_manifest_tranches.tsv"
 
 COLUMNS = (
     "candidate_id",
@@ -61,6 +65,38 @@ COLUMNS = (
     "gpi_rerouted",
     "shed_risk",
 )
+
+
+def resolve_unindexed(rows: list[dict]) -> list[str]:
+    """Fill ``topology_acc`` for rows the pointer index lacks, by exact designed sequence.
+
+    Returns the candidate ids resolved this way. Each must match the tag-path row's
+    ``sequence_sha256``, ``topology_cohort`` and ``topology_version``.
+    """
+    todo = {r["candidate_id"]: r for r in rows if not r["topology_acc"]}
+    if not todo:
+        return []
+    from deliverome_analysis import library_design as ld
+    from deliverome_analysis import topology
+
+    libraries = {r["library"] for r in todo.values()}
+    members: dict[str, dict[str, str]] = {}
+    for library in sorted(libraries):
+        designed = ld.designed_proteins(MANIFEST, library=library)
+        members.update({cid: designed[cid] for cid in todo if cid in designed})
+    if not members:
+        return []
+    report = ld.topology_report(members, tool=topology.TOOL_V1)
+    for rec in report.to_dict("records"):
+        row = todo[rec["candidate_id"]]
+        if not rec["found"]:
+            continue
+        got = (rec["sequence_sha256"], rec["cohort"], rec["topology_version"])
+        want = (row["sequence_sha256"], row["topology_cohort"], row["topology_version"])
+        if got != want:
+            raise SystemExit(f"{row['candidate_id']}: sequence resolve {got} != tag path {want}")
+        row["topology_acc"] = rec["uniprot_acc_full"]
+    return sorted(cid for cid, r in todo.items() if r["topology_acc"])
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -99,9 +135,27 @@ def main(argv: list[str] | None = None) -> int:
                 }
             )
 
+    resolved = resolve_unindexed(rows)
+    for cid in resolved:
+        r = next(x for x in rows if x["candidate_id"] == cid)
+        print(
+            f"not in {POINTER_INDEX.name}; resolved by sequence: {cid} {r['gene_symbol']} "
+            f"-> {r['topology_acc']}"
+        )
+
     missing = [r["candidate_id"] for r in rows if not r["topology_acc"]]
     if missing:
         raise SystemExit(f"no topology_acc for {len(missing)}: {missing[:5]}")
+
+    with TAG_PATHS.open() as fh:
+        internal = {
+            r["sequence_sha256"]
+            for r in csv.DictReader(fh, delimiter="\t")
+            if r["placement"] == "internal"
+        }
+    exported = {r["sequence_sha256"] for r in rows}
+    if exported != internal:
+        raise SystemExit(f"internal sha256 not exported: {sorted(internal - exported)[:5]}")
 
     with args.out.open("w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=COLUMNS, delimiter="\t", lineterminator="\n")

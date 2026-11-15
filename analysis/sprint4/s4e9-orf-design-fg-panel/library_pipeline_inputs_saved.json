@@ -1,0 +1,71 @@
+{
+  "measured": "2026-11-14, clean clone at f5222462 (main with the final-c order of record, #340), empty S3 and structure-model caches, full verify: 30 of 30 stages reproduced and the order plan tables byte for byte",
+  "objects": 3104,
+  "bytes": 2577520354,
+  "by_bucket": {
+    "external": 2736,
+    "processed": 368
+  },
+  "python_version": "3.14.10",
+  "lockfiles": {
+    "uv.lock": "8de6587a6bf3944b7232e946f8480e36de58626d013e1095ab2b38c0fdf809dc",
+    "renv.lock": "28c620b48696c5a6b7c137bfb1f8a19ec6e808323cf40381b9e5d9942d7e1e2e"
+  },
+  "git_refs_replayed": {
+    "synthesis_compliance": {
+      "nterm": "903f913595d5ad34d8673dadf5e88d26740d5768",
+      "multipass": "903f913595d5ad34d8673dadf5e88d26740d5768",
+      "type3": "903f913595d5ad34d8673dadf5e88d26740d5768",
+      "internal": "903f913595d5ad34d8673dadf5e88d26740d5768",
+      "cterm": "903f913595d5ad34d8673dadf5e88d26740d5768"
+    },
+    "note": "isoform_universe and ortholog_repick rerun at the producing commits named in library_pipeline.py; a clone needs the full history, not a shallow one"
+  },
+  "tools": {
+    "deeptmhmm_v1": {
+      "version": "DeepTMHMM 1.0 academic (deeptmhmm-1.0-academic / 1.0.24)",
+      "where": "Modal volume deeptmhmm-v1 (license-gated, not redistributable)",
+      "identity": {
+        "deeptmhmm_cv_0.model": "5efa57f9bca96742f6a29a4663bb3e2ba0d362e5eecafebfb8af1ab4efe48533",
+        "deeptmhmm_cv_1.model": "ab6c743cf8d969d40da058ddd6c909b721d23d34cc6776e3d46bce3e27711093",
+        "deeptmhmm_cv_2.model": "efa4b50b5ca089ed27ea57116710138da4207728f2e3dca113e811013abc6c2e",
+        "deeptmhmm_cv_3.model": "a2d011962f7efcb1e3bdba92eefdfc211e93bec9a62cb60bf0bd2cb732d1f58f",
+        "deeptmhmm_cv_4.model": "9114bced9cf5f51905e4ac7e04db922801d383db4fca75523f6e144694f11725",
+        "esm_model_alphabet.pt": "8690264992d8f94df23594a210e96b7ed8aa6fda51de5b1791e28f98e5ff01f1",
+        "esm_model_args.pt": "bbfcf5a164c54960ba12fdd537f5edbf5b02197c119a95575c3768540f1aa59b",
+        "esm_model_state_dict.pt": "22ceed0957e7f46b6cd7ed0394294163702a23c13edf322129e7e445578da86a",
+        "experiments/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "experiments/tmhmm3/__init__.py": "e687ab73ccaef105e38db6942af1db8adbd990e5e4f04918f9284559e56581b9",
+        "experiments/tmhmm3/tm_models.py": "eda1ff634e56ddaebdb19a575d71cfc04ef557e3bdddeff78f284a50776853c7",
+        "experiments/tmhmm3/tm_util.py": "57e3cc95e93352c20191f72af88c677d6b41d35f55def6ebb4ed4215bd0fbcfc",
+        "openprotein.py": "ce678987c3d13a39db80837c024937eb9271ae378beffb8d0254716caf8c2fab",
+        "predict.py": "e2f4a8d4ecf37cfd7380a661011601709df1cb91ce3343ced68c5881a64ba18d",
+        "predict_thread_patched_t1.py": "2a9442c32d8c7bd316838ccd7d9a874945f72169f5b8bebcb740bcf2bfd20a2e",
+        "predict_thread_patched_t2.py": "0dd62013878d17ce8bd46552582803d1500f0db222e2b863b8122224fedd10c0",
+        "pytorchcrf/docs/conf.py": "ea329d91caae91e21319a797223a3abc5073c92cebcbd7a8d2a35180287f47fd",
+        "pytorchcrf/setup.py": "20dde702845aaac8febcb980217c0da56f315857a012bd9e2a786eb592357e8d",
+        "pytorchcrf/tests/test_crf.py": "a99fcbb65afe83f06f85e6ed8e3ba9dda252dcae43e373cdb41728843b9d94c7",
+        "pytorchcrf/torchcrf/__init__.py": "dd0ffbe44a46c8cf68e21faca228b81933ea60c85c20419c25198765dfc8a030",
+        "util.py": "735e645782c87dad52eedbd1ef3c319005dfcb6d102e93b74288282b4042f25c",
+        "utils.py": "75b1e31c27b381ffa720a74b96edf6ec8cbeafad619614b7b1bcf9df9c55beae"
+      }
+    },
+    "signalp6": {
+      "version": "SignalP 6.0, package 6.0+h (slow_sequential models)",
+      "install_source": "DTU Health Tech academic download signalp-6.0i.slow_sequential.tar.gz (licensed, not redistributable); held on Modal volumes signalp6-package and signalp6-models",
+      "identity": "reviewer-package/nterm/signalp6_identity.json: SHA-256 of every package and checkpoint file; tarball SHA-256 3193855d\u2026 in signalp6_modal.py"
+    },
+    "netgpi": {
+      "version": "NetGPI 1.1",
+      "install_source": "the DTU Health Tech web service (services.healthtech.dtu.dk); no local install. Each run's raw HTTP exchange and tool_version are kept with its outputs (run_ortholog_netgpi.py, run_engineered_netgpi.py)"
+    },
+    "colabfold": "l1-tag-refold's run records (PR #301); folds are outputs, not pipeline inputs",
+    "python_packages": "uv.lock (SHA-256 above)",
+    "r_packages": "renv.lock (SHA-256 above)"
+  },
+  "cannot_be_saved": [
+    "the live services behind saved responses: MyGene.info, the UniProt REST API, the PeptideAtlas query endpoint; their responses as used are listed objects",
+    "the licensed DeepTMHMM 1.0 package itself, which may not be redistributed; its file hashes are recorded above so a licensed copy can be checked",
+    "vendor-side synthesis rules (Twist); only their report is saved"
+  ]
+}

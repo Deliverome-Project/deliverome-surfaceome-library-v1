@@ -1,9 +1,33 @@
 panel_tier	topology_class	rejected	reason	replacement	candidates
-observed	type I	LRRC37B:ENST00000582117	no designed CDS (no transcript encodes the drawn form)	PCDHGA7:Q9Y5G6-2	339
-observed	multipass	SLC29A1:Q99808-2	no designed CDS (no transcript encodes the drawn form)	ADGRE1:Q14246-4	269
-observed	multipass	SLC12A6:Q9UHW9-6	no designed CDS (no transcript encodes the drawn form)	SLC43A2:ENST00000572801;ENST00000633994	268
-observed	multipass	SCNN1A:P37088-5	no designed CDS (no transcript encodes the drawn form)	GPR161:Q8N6U8-4	267
-observed	GPI	LYPD1:Q8N2G4-3	no designed CDS (no transcript encodes the drawn form)	PRSS8:Q16651-2	33
-observed	GPI	CD177:Q8N6Q3	designed protein duplicates l1-p0263	LYPD5:Q6UWN5-2	32
-observed	GPI	ACHE:P22303-2	is the gene's selected reference form	CD58:P19256-3	31
-prediction_only	type III	NRG4:ENST00000563910	no designed CDS (no transcript encodes the drawn form)	SUSD3:ENST00000617293	10
+observed	type I	PCDHA1:Q9Y5I3-2	fails the cohort gate: reference's first TM helix sequence absent	SEMA4C:Q9C0C4	216
+observed	type I	PDPN:ENST00000509009	fails the cohort gate: loses the reference's signal peptide	L1CAM:P32004-3	215
+observed	type I	SIGLEC15:Q6ZMC9-2	fails the cohort gate: loses the reference's signal peptide	SLAMF1:Q13291-4	214
+observed	type I	CD46:ENST00000695777	fails the cohort gate: reference's first TM helix sequence absent	CDH3:P22223	213
+observed	type I	BTN3A3:O00478-2	fails the cohort gate: loses the reference's signal peptide	NTRK1:P04629-2	212
+observed	type I	IL9R:Q01113-3	fails the cohort gate: loses the reference's signal peptide	ADAM15:Q13444-3	211
+observed	type I	LRRC37B:ENST00000582117	no designed CDS (no transcript encodes the drawn form)	PECAM1:P16284-3	210
+observed	type I	ZP3:P21754-3	fails the cohort gate: loses the reference's signal peptide	BTN2A1:Q7KYR7-4	209
+observed	type I	CPD:O75976-2	fails the cohort gate: loses the reference's signal peptide	ITGA6:P23229	208
+observed	type II	CLEC7A:Q9BXN2-9	explicit rejection: UniProt Q9BXN2-9 is 77 aa: the cytoplasmic tail, TM and a stalk fragment, with no C-type lectin domain (Pfam PF00059 absent). Becca named CLEC7A as a fragment isoform on 2026-11-11. It passes the cohort gate because the gate tests only the N-terminus and first TM.	ECE1:P42892	25
+observed	type II	TFRC:ENST00000421258	fails the cohort gate: reference's first TM helix sequence absent	ECE1:P42892-4	24
+observed	multipass	PTCH1:Q13635-4	fails the cohort gate: N-terminus O after any signal peptide, reference I; reference's first TM helix sequence absent	SLCO1B3-SLCO1B7:F5H094	161
+observed	multipass	SLC29A1:Q99808-2	no designed CDS (no transcript encodes the drawn form)	ABCC1:P33527-9	160
+observed	multipass	OPN3:ENST00000469376	explicit rejection: ENST00000469376 is a 189-aa OPN3 fragment with no UniProt isoform: it keeps 4 of the reference's 7 TM helices (DeepTMHMM v1) and stops 207 residues early. A half GPCR is not a surface isoform worth a library slot.	SLC7A2:P52569-2	159
+observed	multipass	SLC6A11:P48066-2	explicit rejection: UniProt P48066-2 is 208 aa, 3 of the transporter's 12 TM helices (DeepTMHMM v1), 33% of the reference. Becca named SLC6A11 as a fragment isoform on 2026-11-11.	HTR7:P34969-2	158
+observed	multipass	SLC9D1:ENST00000622371	fails the cohort gate: protein does not start with M; Ensembl 115 CDS starts ATA, not ATG; loses the reference's signal peptide	SLC43A3:Q8NBI5-2	157
+observed	multipass	TMEM67:ENST00000520680	fails the cohort gate: reference's first TM helix sequence absent	SLC12A2:P55011-3	156
+observed	multipass	KCNN2:Q9H2S1-2	fails the cohort gate: N-terminus O after any signal peptide, reference I; reference's first TM helix sequence absent	ADGRL2:O95490	155
+observed	multipass	GPM6B:ENST00000398361	fails the cohort gate: N-terminus O after any signal peptide, reference I; reference's first TM helix sequence absent	GPR161:Q8N6U8-6	154
+observed	multipass	BEST1:O76090-3	fails the cohort gate: N-terminus O after any signal peptide, reference I; reference's first TM helix sequence absent	SLC44A2:Q8IWA5-2	153
+observed	multipass	SLC12A6:Q9UHW9-6	no designed CDS (no transcript encodes the drawn form)	GPRC5B:Q9NZH0-2	152
+observed	multipass	SCNN1A:P37088-5	no designed CDS (no transcript encodes the drawn form)	TSPAN16:Q9UKR8	151
+observed	GPI	CDH13:P55290-4	fails the cohort gate: loses the reference's signal peptide	CNTN1:Q12860-2	18
+observed	GPI	LYPD1:Q8N2G4-3	no designed CDS (no transcript encodes the drawn form)	EFNA3:P52797-2	17
+observed	GPI	CD177:Q8N6Q3	designed protein duplicates l1-p0263	NCAM1:P13591-1	16
+observed	GPI	ACHE:P22303-2	is the gene's selected reference form	GPC3:P51654-3	15
+observed	GPI	BST1:Q10588-2	fails the cohort gate: loses the reference's signal peptide	LMLN:Q96KR4-3	14
+prediction_only	multipass	PLPP2:O43688-3	fails the cohort gate: N-terminus O after any signal peptide, reference I; reference's first TM helix sequence absent	SLC6A9:P48067-3	113
+prediction_only	multipass	SLC39A12:Q504Y0-5	fails the cohort gate: loses the reference's signal peptide	SLC22A24:Q8N4F4-3	112
+prediction_only	type I	NECTIN2:ENST00000917943	explicit rejection: ENST00000917943 (537 aa, no UniProt isoform) differs from the L1 reference by one residue deleted inside the signal peptide (DeepTMHMM v1 SP 30 vs 31). The mature protein is therefore identical to the reference's, so the slot adds no isoform information.	PECAM1:P16284-4	111
+prediction_only	GPI	OPCML:Q14982-3	fails the cohort gate: loses the reference's signal peptide	OPCML:Q14982-4	10
+prediction_only	type III	NRG4:ENST00000563910	no designed CDS (no transcript encodes the drawn form)	SUSD3:Q96L08-2	3

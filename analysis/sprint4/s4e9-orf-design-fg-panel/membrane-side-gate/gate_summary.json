@@ -1,0 +1,295 @@
+{
+ "library": "l1",
+ "topology_tool": "deeptmhmm_v1",
+ "panel_commit": "6bf341f231e0841ffea13e589c4119a909fde93f",
+ "s5e13_commit": "c7be01a419af8b4cfa3d1570e7a6c9c2b3500346",
+ "topology_snapshot": "accessible-surfaceome/topology/2026-11-06-ortholog-cds-policy/topology.parquet",
+ "thresholds": {
+  "outside": 14.0,
+  "margin": 2.3,
+  "core": 13.0,
+  "min_plddt": 50.0,
+  "min_topology_ratio": 3.9,
+  "max_kr_excess_outside": 4
+ },
+ "internal_members": 581,
+ "internal_members_by_status": {
+  "placed": 579,
+  "fewer_than_two_confident_helices": 2
+ },
+ "internal_members_by_placement_source": {
+  "tmdet": 440,
+  "helix_axis": 139,
+  "none": 2
+ },
+ "internal_members_by_set": {
+  "library_reference": 519,
+  "isoform": 32,
+  "ortholog": 30
+ },
+ "internal_members_unscorable": [
+  "l1-m2682",
+  "l1-m2233"
+ ],
+ "internal_members_with_v4_pick": 541,
+ "orientation_unsupported": [
+  "l1-m1894",
+  "l1-m1545",
+  "l1-m0450",
+  "l1-m0283"
+ ],
+ "picks_by_source_verdict": {
+  "api_disorder|fail_cytoplasmic": 17,
+  "api_disorder|fail_membrane": 26,
+  "api_disorder|hold_low_plddt": 13,
+  "api_disorder|pass": 977,
+  "api_disorder|review_interface": 14,
+  "api_disorder|review_orientation": 6,
+  "api_disorder|unscorable": 46,
+  "api_surface_loop|fail_cytoplasmic": 11,
+  "api_surface_loop|fail_membrane": 54,
+  "api_surface_loop|fail_partner_interface": 3,
+  "api_surface_loop|pass": 943,
+  "api_surface_loop|review_interface": 37,
+  "api_surface_loop|review_orientation": 3,
+  "api_surface_loop|unscorable": 30,
+  "built_loop_arm|pass": 6,
+  "s5e13_v4|fail_cytoplasmic": 13,
+  "s5e13_v4|fail_membrane": 30,
+  "s5e13_v4|fail_partner_interface": 5,
+  "s5e13_v4|hold_low_plddt": 2,
+  "s5e13_v4|pass": 961,
+  "s5e13_v4|review_interface": 36,
+  "s5e13_v4|review_orientation": 6,
+  "s5e13_v4|unscorable": 11
+ },
+ "shipped_picks": 1070,
+ "shipped_by_verdict": {
+  "pass": 967,
+  "review_interface": 36,
+  "fail_membrane": 30,
+  "fail_cytoplasmic": 13,
+  "unscorable": 11,
+  "review_orientation": 6,
+  "fail_partner_interface": 5,
+  "hold_low_plddt": 2
+ },
+ "shipped_rank1_not_pass": [
+  {
+   "candidate_id": "l1-m0283",
+   "gene_symbol": "TMEM174",
+   "insert_after_residue": 66.0,
+   "height_A": -22.7,
+   "verdict": "review_orientation"
+  },
+  {
+   "candidate_id": "l1-m0441",
+   "gene_symbol": "AQP9",
+   "insert_after_residue": 213.0,
+   "height_A": 9.7,
+   "verdict": "fail_membrane"
+  },
+  {
+   "candidate_id": "l1-m0450",
+   "gene_symbol": "TMEM169",
+   "insert_after_residue": 175.0,
+   "height_A": -6.3,
+   "verdict": "review_orientation"
+  },
+  {
+   "candidate_id": "l1-m1483",
+   "gene_symbol": "SLC2A5",
+   "insert_after_residue": 299.0,
+   "height_A": 13.6,
+   "verdict": "review_interface"
+  },
+  {
+   "candidate_id": "l1-m1545",
+   "gene_symbol": "SLC68A1",
+   "insert_after_residue": 451.0,
+   "height_A": 28.2,
+   "verdict": "review_orientation"
+  },
+  {
+   "candidate_id": "l1-m1564",
+   "gene_symbol": "SLC16A6",
+   "insert_after_residue": 45.0,
+   "height_A": 10.3,
+   "verdict": "fail_membrane"
+  },
+  {
+   "candidate_id": "l1-m1735",
+   "gene_symbol": "XKR7",
+   "insert_after_residue": 350.0,
+   "height_A": -18.3,
+   "verdict": "fail_cytoplasmic"
+  },
+  {
+   "candidate_id": "l1-m1790",
+   "gene_symbol": "SLC26A11",
+   "insert_after_residue": 275.0,
+   "height_A": 13.7,
+   "verdict": "review_interface"
+  },
+  {
+   "candidate_id": "l1-m1835",
+   "gene_symbol": "SLC22A17",
+   "insert_after_residue": NaN,
+   "height_A": NaN,
+   "verdict": "unscorable"
+  },
+  {
+   "candidate_id": "l1-m1857",
+   "gene_symbol": "XKR6",
+   "insert_after_residue": 408.0,
+   "height_A": -24.1,
+   "verdict": "fail_cytoplasmic"
+  },
+  {
+   "candidate_id": "l1-m1894",
+   "gene_symbol": "SLC44A1",
+   "insert_after_residue": 273.0,
+   "height_A": 26.8,
+   "verdict": "review_orientation"
+  },
+  {
+   "candidate_id": "l1-m1907",
+   "gene_symbol": "CNGA2",
+   "insert_after_residue": 340.0,
+   "height_A": 13.9,
+   "verdict": "review_interface"
+  },
+  {
+   "candidate_id": "l1-m1935",
+   "gene_symbol": "CNGA1",
+   "insert_after_residue": 362.0,
+   "height_A": 9.7,
+   "verdict": "fail_membrane"
+  },
+  {
+   "candidate_id": "l1-m1937",
+   "gene_symbol": "XKR5",
+   "insert_after_residue": 62.0,
+   "height_A": -22.7,
+   "verdict": "fail_cytoplasmic"
+  },
+  {
+   "candidate_id": "l1-m1952",
+   "gene_symbol": "KCNQ4",
+   "insert_after_residue": 127.0,
+   "height_A": 12.2,
+   "verdict": "review_interface"
+  },
+  {
+   "candidate_id": "l1-m2061",
+   "gene_symbol": "TRPV6",
+   "insert_after_residue": NaN,
+   "height_A": NaN,
+   "verdict": "unscorable"
+  },
+  {
+   "candidate_id": "l1-m2233",
+   "gene_symbol": "NRG2",
+   "insert_after_residue": 153.0,
+   "height_A": NaN,
+   "verdict": "unscorable"
+  },
+  {
+   "candidate_id": "l1-m2238",
+   "gene_symbol": "KCNQ2",
+   "insert_after_residue": 121.0,
+   "height_A": 13.3,
+   "verdict": "review_interface"
+  },
+  {
+   "candidate_id": "l1-m2242",
+   "gene_symbol": "LRRC8D",
+   "insert_after_residue": 84.0,
+   "height_A": 7.0,
+   "verdict": "hold_low_plddt"
+  },
+  {
+   "candidate_id": "l1-m2315",
+   "gene_symbol": "ANO4",
+   "insert_after_residue": 651.0,
+   "height_A": -22.1,
+   "verdict": "fail_cytoplasmic"
+  },
+  {
+   "candidate_id": "l1-m2340",
+   "gene_symbol": "KCNQ5",
+   "insert_after_residue": 158.0,
+   "height_A": 8.5,
+   "verdict": "fail_membrane"
+  },
+  {
+   "candidate_id": "l1-m2348",
+   "gene_symbol": "ANO7",
+   "insert_after_residue": 678.0,
+   "height_A": -39.7,
+   "verdict": "fail_cytoplasmic"
+  },
+  {
+   "candidate_id": "l1-m2412",
+   "gene_symbol": "ANO3",
+   "insert_after_residue": 729.0,
+   "height_A": -33.6,
+   "verdict": "fail_cytoplasmic"
+  },
+  {
+   "candidate_id": "l1-m2417",
+   "gene_symbol": "ANO1",
+   "insert_after_residue": 698.0,
+   "height_A": -30.6,
+   "verdict": "fail_cytoplasmic"
+  },
+  {
+   "candidate_id": "l1-m2429",
+   "gene_symbol": "ANO2",
+   "insert_after_residue": 702.0,
+   "height_A": -14.5,
+   "verdict": "fail_cytoplasmic"
+  },
+  {
+   "candidate_id": "l1-m2485",
+   "gene_symbol": "ANO1",
+   "insert_after_residue": 761.0,
+   "height_A": -23.6,
+   "verdict": "fail_cytoplasmic"
+  },
+  {
+   "candidate_id": "l1-m2677",
+   "gene_symbol": "DISP2",
+   "insert_after_residue": NaN,
+   "height_A": NaN,
+   "verdict": "unscorable"
+  },
+  {
+   "candidate_id": "l1-m2682",
+   "gene_symbol": "ATRN",
+   "insert_after_residue": 1038.0,
+   "height_A": NaN,
+   "verdict": "unscorable"
+  },
+  {
+   "candidate_id": "l1-m2712",
+   "gene_symbol": "TRPM2",
+   "insert_after_residue": 1014.0,
+   "height_A": 8.9,
+   "verdict": "fail_membrane"
+  }
+ ],
+ "changes_by_action": {
+  "review": 42,
+  "drop;": 33,
+  "replace": 13,
+  "hold:": 11,
+  "re-rank": 2,
+  "hold": 2
+ },
+ "notes": {
+  "v4_rows": 1115,
+  "v4_rows_member_no_longer_internal": 51,
+  "api_fetched": "2026-11-10"
+ }
+}

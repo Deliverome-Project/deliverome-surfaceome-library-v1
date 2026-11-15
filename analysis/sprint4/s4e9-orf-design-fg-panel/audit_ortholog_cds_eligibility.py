@@ -38,6 +38,7 @@ RULES = {
     "ORTHCDS005": "Non-protein_coding biotypes and unresolved evidence require review; no biological inactivity inferred.",
     "ORTHCDS006": "Equivalent encodings rank by version-matched GTF APPRIS or protein-validated external APPRIS, Ensembl canonical, TSL, then stable transcript ID.",
     "ORTHCDS007": "Documented exceptions bind species/gene/transcript version/CDS+protein hashes and explicit review waivers.",
+    "ORTHCDS008": "A documented restart exception re-starts a native CDS at an in-frame ATG, bound to both the native and the restarted CDS+protein hashes; nothing else in the CDS changes.",
 }
 
 
@@ -193,6 +194,15 @@ def validate_registry(value: dict) -> list[dict]:
             raise ValueError(
                 "Identity/integrity or unsupported review waiver in exception registry"
             )
+        if "restart_codon" in record:
+            codon = record["restart_codon"]
+            if not isinstance(codon, int) or isinstance(codon, bool) or codon < 2:
+                raise ValueError("Restart exception requires an integer codon position >= 2")
+            if any(
+                not re.fullmatch(r"[0-9a-f]{64}", str(record.get(k, "")))
+                for k in ("restarted_cds_sha256", "restarted_protein_sha256")
+            ):
+                raise ValueError("Restart exception requires restarted CDS and protein SHA256")
         seen.add(identity)
     return records
 
@@ -208,6 +218,7 @@ def evaluate(
     legacy_source: dict | None = None,
 ) -> tuple[dict, dict | None]:
     reasons, integrity = [], []
+    restart: dict = {}
     if len(cds_models) != 1:
         reasons.append("missing_CDS_model" if not cds_models else "ambiguous_CDS_models")
     if len(peptide_models) != 1:
@@ -302,8 +313,25 @@ def evaluate(
         if exception["cds_sha256"] != digest(dna) or exception["protein_sha256"] != digest(peptide):
             raise ValueError(f"Exception checksum no longer matches {species}/{transcript}")
         applied = exception["exception_id"]
-        waived = sorted(set(exception["waive_review_reasons"]) & set(reasons))
+        waived = sorted(set(exception.get("waive_review_reasons", [])) & set(reasons))
         reasons = [r for r in reasons if r not in waived]
+        if "restart_codon" in exception:
+            start = 3 * (exception["restart_codon"] - 1)
+            restarted_dna = dna[start:]
+            restarted_peptide = peptide[exception["restart_codon"] - 1 :]
+            if (
+                restarted_dna[:3] != "ATG"
+                or digest(restarted_dna) != exception["restarted_cds_sha256"]
+                or digest(restarted_peptide) != exception["restarted_protein_sha256"]
+            ):
+                raise ValueError(f"Restart exception does not reproduce {species}/{transcript}")
+            restart = {
+                "exception_action": "restart_at_in_frame_ATG",
+                "restart_codon": exception["restart_codon"],
+                "native_cds_sha256": digest(dna),
+                "native_protein_sha256": digest(peptide),
+            }
+            dna, peptide = restarted_dna, restarted_peptide
     integrity = sorted(set(integrity))
     reasons = sorted(set(reasons))
     eligible = not integrity and not reasons and cds_model is not None and peptide_model is not None
@@ -338,6 +366,7 @@ def evaluate(
         "annotation": annotation,
         "comparison_evidence": comparison,
         "chosen_encoding": False,
+        **restart,
     }
     ledger = {
         k: v

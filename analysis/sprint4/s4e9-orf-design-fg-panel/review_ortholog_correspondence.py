@@ -21,6 +21,16 @@ recommended for replacement, the archived seeded draw is replayed exactly and th
 unused candidates in shuffle order are reviewed with the same evidence, so the proposed
 replacement is the first architecture-conserving candidate after the drawn ones.
 
+Manual overrides (attribution per Becca Carlson's convention of 2026-11-10: "for any
+manual fixes please note the agent who made the fix / adjustment and reasoning"): the one
+reviewer departure from the rule, mouse OR10G6 replace -> ask, was an agent judgement made
+on 2026-11-07 and implemented by the Claude Code session ortholog-correspondence-review
+(started by l1-reviewer-package), PR 273. Becca kept all 6 asks as drawn on 2026-11-10
+(PR 283). Its reason is in ``ortholog_correspondence_judgements.tsv``. Every output row
+carries ``decided_by`` / ``implemented_by`` / ``recommendation_basis``; rows decided by the
+mechanical rule say so. The override is applied by code from that table, so all outputs
+regenerate.
+
 Review only: no manifest, construct table, pipeline, D1 record or existing S3 key changes.
 
     uv run --locked --group modal --group domains python \
@@ -139,8 +149,22 @@ INPUTS = {
 }
 PANEL = HERE / "ortholog_panel_cds_eligible.tsv"
 #: Reviewer departures from the mechanical rule: form_id, rule_recommendation,
-#: recommendation, reason. Each row must name the rule result it overrides.
+#: recommendation, decided_by, implemented_by, reason. Each row must name the rule result it
+#: overrides and who decided and implemented it (Becca's attribution convention, 2026-11-10).
 JUDGEMENTS = HERE / "ortholog_correspondence_judgements.tsv"
+JUDGEMENT_COLUMNS = (
+    "form_id",
+    "rule_recommendation",
+    "recommendation",
+    "decided_by",
+    "implemented_by",
+    "reason",
+)
+RULE_DECIDED_BY = "no decision taken (mechanical rule)"
+RULE_IMPLEMENTED_BY = (
+    "review_ortholog_correspondence.py recommend(), Claude Code session "
+    "ortholog-correspondence-review, PR 273"
+)
 OLD_PANEL = HERE / "ortholog_panel_compara116.tsv"
 OLD_SUMMARY = HERE / "ortholog_panel_compara116_summary.json"
 NAMED_CASES = {("cyno", "SLC8A1"), ("cyno", "IL31RA"), ("cyno", "MS4A10")}
@@ -696,6 +720,9 @@ def run(args) -> dict:
     aligner = make_aligner()
     clans = load_clans(fetch("pfam_clans", cache))
     judgements = {r["form_id"]: r for r in read_tsv(JUDGEMENTS)} if JUDGEMENTS.exists() else {}
+    for form_id, judged in judgements.items():
+        if tuple(judged) != JUDGEMENT_COLUMNS or not all(judged.values()):
+            raise ValueError(f"Judgement for {form_id} must fill {JUDGEMENT_COLUMNS}")
     unknown = set(judgements) - {m["form_id"] for m in members}
     if unknown:
         raise ValueError(f"Judgements for forms outside the panel: {sorted(unknown)}")
@@ -743,6 +770,8 @@ def run(args) -> dict:
                     "rule_basis": why,
                     "recommendation": judged["recommendation"] if judged else rule,
                     "recommendation_basis": judged["reason"] if judged else why,
+                    "decided_by": judged["decided_by"] if judged else RULE_DECIDED_BY,
+                    "implemented_by": (judged["implemented_by"] if judged else RULE_IMPLEMENTED_BY),
                     "pfam_hits": pfam,
                 }
             )
@@ -875,6 +904,8 @@ def run(args) -> dict:
         "rule_basis",
         "recommendation",
         "recommendation_basis",
+        "decided_by",
+        "implemented_by",
         "proposed_replacement",
         "named_case",
         "human_topology_version",

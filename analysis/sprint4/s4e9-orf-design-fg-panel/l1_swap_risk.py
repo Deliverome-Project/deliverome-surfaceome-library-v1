@@ -47,6 +47,7 @@ import time
 from collections import Counter
 from pathlib import Path
 
+import l1_snorkel
 import numpy as np
 from build_constructs import CASSETTE, CASSETTE_AA, ENZYMES, FWD_PRIMER, SPACER, STOP
 from diversify_cassettes import (
@@ -123,6 +124,30 @@ def domesticate_junction(body: str) -> tuple[str, str]:
     raise SystemExit(f"no synonymous last codon clears the cassette junction for ...{body[-9:]}")
 
 
+#: Active members that hold an issued encoding but are no longer C-terminal, keyed by design
+#: id, with the designed-CDS record their encoding was drawn against. Their encoding stays
+#: issued (it is never redrawn or handed on), so later batches are drawn around it and a
+#: replay of its batch needs the flank it was issued with. TSPAN10 (l1-p2284): issued in
+#: batch 1 on the 235-aa APPRIS model; the 2026-11-12 reference swap to Q9H1Z9 (decided by
+#: l1-proteoform-audit under Becca's delegation, applied by l1-reviewer-package, PR #283)
+#: made it internal. SLC41A2 (l1-p1957): issued in batch 1, then moved to the residue-1
+#: multipass rung on 2026-11-14 because experimental topology puts its C-terminus inside
+#: (lane_overrides.tsv; l1-nterm-res1-multipass under Becca's delegation). Its CDS is unchanged
+#: since batch 1, so the base record is the flank it was drawn on.
+RELEASED = {
+    "l1-p2284": "sprint4/s4e9-orf-design-fg-panel/library-candidates/"
+    "2026-11-12-reference-fixes/candidate_cds.json",
+    "l1-p1957": "sprint4/s4e9-orf-design-fg-panel/library-candidates/candidate_cds.json",
+    # Rescue round, 2026-11-15 (coordinator under Becca's delegation; lane_overrides.tsv): held
+    # C-terminal members moved to the internal rung with loop arms. Each keeps its batch-1
+    # encoding as a holder, drawn on the base record's CDS (--verify replays batch 1 on it).
+    "l1-p2342": "sprint4/s4e9-orf-design-fg-panel/library-candidates/candidate_cds.json",  # VTCN1
+    "l1-p2628": "sprint4/s4e9-orf-design-fg-panel/library-candidates/candidate_cds.json",  # VTCN1
+    "l1-p2487": "sprint4/s4e9-orf-design-fg-panel/library-candidates/candidate_cds.json",  # PLVAP
+    "l1-p2528": "sprint4/s4e9-orf-design-fg-panel/library-candidates/candidate_cds.json",  # TRPV1
+}
+
+
 def load_members(with_retired_holders: bool = False) -> tuple[list[dict], list[str]]:
     """Members with a placement, and the ids of active members that have none yet.
 
@@ -140,8 +165,33 @@ def load_members(with_retired_holders: bool = False) -> tuple[list[dict], list[s
     cds = ld.designed_cds(MANIFEST, library=ld.LIBRARY_L1)
     paths = {r["candidate_id"]: r for r in csv.DictReader(TAG_PATHS.open(), delimiter="\t")}
     holders: dict[str, str] = {}
+    released: set[str] = set()
+    issued = issued_batches()
+    for r in csv.DictReader(MANIFEST.open(), delimiter="\t"):
+        did = ld.design_id(r)
+        if r["library"] == ld.LIBRARY_L1 and ld.is_active(r) and did in RELEASED:
+            assert r["candidate_id"] in issued, f"{did}: released but holds no encoding"
+            assert paths[r["candidate_id"]]["placement"] != "C-terminal", f"{did} is C-terminal"
+            released.add(r["candidate_id"])
+            if with_retired_holders:
+                from deliverome_analysis.s3 import processed
+
+                with open(processed.download(RELEASED[did])) as fh:
+                    holders[r["candidate_id"]] = json.load(fh)[r["key"]]["cds"]
+    # Snorkel members dropped from the built list (l1_snorkel.reserved_designs) keep their
+    # issued encoding; it was drawn on the snorkel flank, so it is replayed on that flank.
+    reserved_snorkels: set[str] = set()
     if with_retired_holders:
-        issued = issued_batches()
+        design_to_cid = {
+            r["design_id"]: r["candidate_id"]
+            for r in csv.DictReader((HERE / "l1_member_renumbering.tsv").open(), delimiter="\t")
+        }
+        for did in l1_snorkel.reserved_designs():
+            cid = design_to_cid[did]
+            assert cid in issued, f"{did}: reserved snorkel holds no encoding"
+            holders[cid] = cds[cid]
+            reserved_snorkels.add(cid)
+    if with_retired_holders:
         record = ld.load_designed_cds()
         for r in csv.DictReader(MANIFEST.open(), delimiter="\t"):
             if (
@@ -155,9 +205,20 @@ def load_members(with_retired_holders: bool = False) -> tuple[list[dict], list[s
         for r in csv.DictReader(MANIFEST.open(), delimiter="\t")
         if r["library"] == ld.LIBRARY_L1
     ]
+    # Snorkel members (l1_snorkel.py) end on the snorkel module and then the cassette, so like
+    # the C-terminal rung their cassette sits right before the barcode and needs an issued,
+    # unique encoding. Keyed by design_id in the design table, mapped to candidate_id here.
+    design_of = {
+        r["candidate_id"]: r["design_id"]
+        for r in csv.DictReader((HERE / "l1_member_renumbering.tsv").open(), delimiter="\t")
+    }
+    snorkels = set(l1_snorkel.built_designs())
     out = []
     for cid in order:
-        if cid in holders:
+        if cid in reserved_snorkels:
+            r = paths[cid]
+            seq, gene, cset, placement = holders[cid], r["gene_symbol"], "reserved", "snorkel"
+        elif cid in holders:
             seq, gene, cset, placement = holders[cid], "", "retired", "C-terminal"
         elif cid in keys and cid in paths:
             r = paths[cid]
@@ -171,6 +232,11 @@ def load_members(with_retired_holders: bool = False) -> tuple[list[dict], list[s
             continue
         body = seq[:-3] if seqtools.translate(seq[-3:]) == "*" else seq
         edit = ""
+        snorkel = (design_of.get(cid) in snorkels and cid not in holders) or (
+            cid in reserved_snorkels
+        )
+        if snorkel:
+            body = body + l1_snorkel.PREFIX_DNA
         if placement == "C-terminal":
             body, edit = domesticate_junction(body)
         out.append(
@@ -179,7 +245,8 @@ def load_members(with_retired_holders: bool = False) -> tuple[list[dict], list[s
                 "gene": gene,
                 "set": cset,
                 "placement": placement,
-                "cterm": placement == "C-terminal",
+                # True when the cassette is the last coding sequence before the barcode.
+                "cterm": placement == "C-terminal" or snorkel,
                 "body": body,
                 "junction_edit": edit,
                 "retired": cid in holders,
@@ -310,8 +377,10 @@ def main(argv=None) -> int:
         print(verify_issuance())
         return 0
 
-    everyone, unplaced = load_members(with_retired_holders=True)
-    members = [m for m in everyone if not m["retired"]]
+    everyone, _ = load_members(with_retired_holders=True)
+    # Measured: every active member at its current placement (a released holder, such as
+    # TSPAN10, is measured as the internal member it now is, not by its old flank).
+    members, unplaced = load_members()
     if unplaced:
         print(f"{len(unplaced)} active member(s) have no tag path and are not measured: {unplaced}")
     tag_fixed = seqtools.pin_codons(CASSETTE, CASSETTE_AA, TAG_SEGMENTS)
@@ -383,14 +452,35 @@ def main(argv=None) -> int:
             w.writerow(row)
     with ENCODINGS.open("w", newline="") as fh:
         w = csv.writer(fh, delimiter="\t", lineterminator="\n")
-        w.writerow(["candidate_id", "scheme", "cassette_aa", "cassette_nt", "gc", "issued_batch"])
+        # design_id is the permanent key (member ids are regenerated by renumbering); every
+        # reader joins on it, and candidate_id is kept as the plate-order label.
+        did_of = ld.design_ids(MANIFEST)
+        w.writerow(
+            [
+                "candidate_id",
+                "design_id",
+                "scheme",
+                "cassette_aa",
+                "cassette_nt",
+                "gc",
+                "issued_batch",
+            ]
+        )
         for cid in sorted(issued_all):
             dna = issued_all[cid]
             assert seqtools.translate(dna) == CASSETTE_AA
             assert all(dna[3 * i : 3 * i + 3] == c for i, c in tag_fixed.items())
             batch = batches[cid][1] if cid in batches else new_batch
             w.writerow(
-                [cid, "linkers_only", CASSETTE_AA, dna, f"{seqtools.gc_content(dna):.3f}", batch]
+                [
+                    cid,
+                    did_of[cid],
+                    "linkers_only",
+                    CASSETTE_AA,
+                    dna,
+                    f"{seqtools.gc_content(dna):.3f}",
+                    batch,
+                ]
             )
     OUT_JSON.write_text(json.dumps(report, indent=2, default=str) + "\n")
     print(f"\nwrote {OUT_TSV.name}, {ENCODINGS.name}, {OUT_JSON.name}")

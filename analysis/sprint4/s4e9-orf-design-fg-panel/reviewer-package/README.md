@@ -4,6 +4,9 @@ A self-contained way to rerun the L1 ORF library's design decisions without Deli
 credentials. Read [`BRIEF.md`](BRIEF.md) first: it is the design argument, and every number in it is
 checked by this package.
 
+N-terminal tag placement behind a signal peptide has its own companion package and brief,
+in [`nterm/`](nterm/README.md).
+
 ## What you need
 
 | Item | Notes |
@@ -29,7 +32,7 @@ uv run --locked python run_review.py --bundle /path/to/l1-reviewer-bundle
 ```
 
 It first checks every bundle file against [`bundle_manifest.tsv`](bundle_manifest.tsv) (SHA-256), then
-reruns each of the 15 pipeline stages and prints what each decides and whether it reproduces
+reruns each of the 23 pipeline stages and prints what each decides and whether it reproduces
 its published record, then recomputes the brief's numbers and compares them with
 [`brief_numbers.json`](brief_numbers.json). A summary is written to `review_report.json`. One stage:
 
@@ -133,6 +136,13 @@ as two tarballs: `l1-reviewer-bundle-2026-11-10.tar` (what the replay reads, 1.1
 `l1-pinned-releases-2026-11-10.tar` (the rest of every pinned release, 1.40 GB, SHA-256
 `60a659ff9c1e7d13212ddf0b10cf75abb2a4938fe3f28e913d3ed4a094774d0b`). The same files are staged
 at `processed://sprint4/s4e9-orf-design-fg-panel/reviewer-package/2026-11-10/`.
+A bundle rebuilt at the `final-d` cut is staged, not yet released, at
+`processed://sprint4/s4e9-orf-design-fg-panel/reviewer-package/2026-11-14/`:
+`l1-reviewer-bundle-2026-11-14.tar.gz` (3,117 files the replay reads, 1.36 GB, SHA-256
+`1644336877b8093c96499ac1ba897ffa5ddc3b796e3e3ce78a5314ae3a283fb5`; gzipped, since the
+uncompressed tar is 2.76 GB, over GitHub's 2 GiB asset limit) and
+`l1-pinned-releases-2026-11-14.tar` (238 files, 1.40 GB, SHA-256
+`99adec0f20522a5140fd167a8391fccde5b15ec5d584c513fa35b69a0e346c7b`). `tar -xf` reads both.
 A rebuilt bundle goes on a new release with a new date, never over an existing one; earlier
 releases are `bundle-2026-11-02` (before l1-p2740..2742), `bundle-2026-11-05` (before the
 audited tag-site positives were added), `bundle-2026-11-05-r2` (before the stop-codon fix of 13

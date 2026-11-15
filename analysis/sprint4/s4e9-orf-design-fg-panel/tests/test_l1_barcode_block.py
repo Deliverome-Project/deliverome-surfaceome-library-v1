@@ -61,3 +61,36 @@ def test_rbp_screen_catches_planted_motifs():
     for motif in ("TGTAAATA", "ATTTA", "TTTTAT", "AATAAA"):
         planted = motif + clean[len(motif) :]
         assert rbp_hits(planted, "")[:1], motif
+
+
+# ------------------------------------------------- extension (Becca, 2026-11-15)
+
+
+def _extension() -> list[dict[str, str]]:
+    from reserve_l1_block import EXT_OUT
+
+    return list(csv.DictReader(EXT_OUT.open(), delimiter="\t"))
+
+
+def test_extension_continues_the_block():
+    block, ext = _block(), _extension()
+    assert len(ext) == 444
+    assert [r["construct"] for r in ext] == [f"L1-res-{i:04d}" for i in range(3201, 3645)]
+    last = max(int(r["pool_index"]) for r in block)
+    assert min(int(r["pool_index"]) for r in ext) > last
+    both = block + ext
+    assert len({r["barcode"] for r in both}) == len(both)
+    assert len({r["pool_index"] for r in both}) == len(both)
+    assert all(r["status"] == "provisional" for r in ext)
+
+
+def test_extension_passes_l1_and_rbp_screens():
+    for r in _extension():
+        assert l1_screens_pass(r["barcode"])[0], r
+        assert rbp_pass(r["barcode"])[0], r
+
+
+def test_extension_is_prefix_distinct_from_the_block_and_itself():
+    screen = PrefixScreen(existing={r["barcode"] for r in _block()})
+    for r in _extension():
+        assert screen.try_accept(r["barcode"]), r

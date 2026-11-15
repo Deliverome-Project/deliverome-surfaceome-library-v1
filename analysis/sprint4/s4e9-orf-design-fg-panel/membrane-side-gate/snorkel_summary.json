@@ -1,0 +1,63 @@
+{
+ "smallest_published_passing_run": 4,
+ "published_multipass_sites": 88,
+ "published_passing_run_percentiles": {
+  "0": 4.0,
+  "5": 6.3500000000000005,
+  "10": 8.0,
+  "25": 14.0,
+  "50": 30.5
+ },
+ "published_smallest": [
+  {
+   "gene": "GLP1R",
+   "insert_after_residue": 375,
+   "passing_run_at_site": 4,
+   "v1_O_run_at_site": 4
+  },
+  {
+   "gene": "GLP1R",
+   "insert_after_residue": 376,
+   "passing_run_at_site": 4,
+   "v1_O_run_at_site": 4
+  },
+  {
+   "gene": "GLP1R",
+   "insert_after_residue": 377,
+   "passing_run_at_site": 4,
+   "v1_O_run_at_site": 4
+  },
+  {
+   "gene": "ABCC1",
+   "insert_after_residue": 1222,
+   "passing_run_at_site": 5,
+   "v1_O_run_at_site": 5
+  },
+  {
+   "gene": "ATP1A1",
+   "insert_after_residue": 318,
+   "passing_run_at_site": 6,
+   "v1_O_run_at_site": 7
+  }
+ ],
+ "placed_internal_members": 579,
+ "members_below_smallest_published_loop": 2,
+ "of_which_c_terminus_cytoplasmic": 0,
+ "of_which_without_passing_shipped_site": 2,
+ "members": [
+  {
+   "design_id": "l1-p2178",
+   "gene_symbol": "TMEM169",
+   "longest_passing_run": 0,
+   "c_terminal_flank_height_A": 4.9,
+   "has_passing_shipped_site": 0
+  },
+  {
+   "design_id": "l1-p2180",
+   "gene_symbol": "TMEM174",
+   "longest_passing_run": 0,
+   "c_terminal_flank_height_A": 17.1,
+   "has_passing_shipped_site": 0
+  }
+ ]
+}

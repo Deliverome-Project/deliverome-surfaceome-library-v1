@@ -1,0 +1,11 @@
+{
+ "source_commit": "c7be01a419af8b4cfa3d1570e7a6c9c2b3500346",
+ "source_dir": "analysis/sprint5/s5e13-tag-site-benchmarking",
+ "source_branch": "claude/protein-tag-location-cv-83085b (PR #180, closed unmerged)",
+ "why": "c7be01a4 is not on main and main's tag_sites_v4_members.tsv is the older 5ac64d0e version without the proteoform-numbering fix; vendored 2026-11-14 by the l1-membrane-side-gate session so the gate's inputs survive the branch",
+ "sha256": {
+  "l1_internal_members.tsv": "ce44a8a99c3e4bda80fb7169d79ec1262c8570d2119d14b32e2be80311933019",
+  "l1_member_targets.tsv": "0ad8aeb128300414f9926d3f251899cbbc6826c25768af252d270d94fb3b9f5c",
+  "tag_sites_v4_members.tsv": "245b06e07f7a77641884d3a1724e3961579621030908accd5d8b097f017b2bb2"
+ }
+}

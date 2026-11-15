@@ -1,0 +1,12 @@
+side_of_orf	offset	motif	match	region	region_kind	designed	expected_pas	members_with_hit	members_flagged	reasons
+3'	219	splice_donor	GTGAG	IRES2_v1	ires	False	False	2735	0	
+3'	359	CFIm_TGTA	TGTA	IRES2_v1	ires	False	False	2735	0	
+3'	428	CFIm_TGTA	TGTA	IRES2_v1	ires	False	False	2735	0	
+3'	474	splice_donor	GTGAG	IRES2_v1	ires	False	False	2735	0	
+3'	561	CFIm_TGTA	TGTA	IRES2_v1	ires	False	False	2735	0	
+3'	1436	CFIm_TGTA	TGTA	WPRE	wpre	False	False	2735	2735	cluster of 2 within 50 nt
+3'	1481	CFIm_TGTA	TGTA	WPRE	wpre	False	False	2735	2735	cluster of 2 within 50 nt
+3'	1876	splice_acceptor	CCTCGCCTTCGCCCTCAG	WPRE	wpre	False	False	2735	2735	splice_acceptor
+3'	1961	CFIm_TGTA	TGTA	3'UTR (unannotated)	3'UTR	True	False	2735	0	
+3'	2046	CFIm_TGTA	TGTA	3' LTR (Delta-U3)	ltr	False	False	2735	0	
+3'	2125	PAS_AATAAA	AATAAA	3' LTR (Delta-U3)	ltr	False	True	2735	0	

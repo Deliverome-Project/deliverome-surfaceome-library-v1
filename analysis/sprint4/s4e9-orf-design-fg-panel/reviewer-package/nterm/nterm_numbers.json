@@ -1,0 +1,630 @@
+{
+ "alphafold_disorder_used": 1152,
+ "alphafold_track_length_differs": [],
+ "candidates": {
+  "members_with_candidates": 1126,
+  "per_member": {
+   "2": 416,
+   "3": 94,
+   "4": 83,
+   "5": 76,
+   "6": 67,
+   "7": 38,
+   "8": 34,
+   "9": 36,
+   "10": 18,
+   "11": 19,
+   "12": 14,
+   "13": 12,
+   "14": 7,
+   "15": 8,
+   "16": 4,
+   "17": 18,
+   "18": 12,
+   "19": 3,
+   "20": 167
+  },
+  "positions": 8004
+ },
+ "cds_without_stop": [],
+ "census": {
+  "agree_all_fields": 1195,
+  "census_design_ids_not_in_lane_now": [
+   "l1-p2318",
+   "l1-p2387",
+   "l1-p2411",
+   "l1-p2412",
+   "l1-p2470",
+   "l1-p2482",
+   "l1-p2523",
+   "l1-p2533",
+   "l1-p2535",
+   "l1-p2539",
+   "l1-p2541",
+   "l1-p2543",
+   "l1-p2544",
+   "l1-p2545",
+   "l1-p2546",
+   "l1-p2547",
+   "l1-p2553",
+   "l1-p2554",
+   "l1-p2555",
+   "l1-p2556",
+   "l1-p2557",
+   "l1-p2559",
+   "l1-p2563",
+   "l1-p2564",
+   "l1-p2565",
+   "l1-p2566",
+   "l1-p2567",
+   "l1-p2569",
+   "l1-p2570",
+   "l1-p2573",
+   "l1-p2574",
+   "l1-p2578",
+   "l1-p2579",
+   "l1-p2580",
+   "l1-p2582",
+   "l1-p2585",
+   "l1-p2586",
+   "l1-p2589",
+   "l1-p2596",
+   "l1-p2598",
+   "l1-p2599",
+   "l1-p2600",
+   "l1-p2601",
+   "l1-p2602",
+   "l1-p2613",
+   "l1-p2614",
+   "l1-p2615",
+   "l1-p2625",
+   "l1-p2626",
+   "l1-p2630",
+   "l1-p2631",
+   "l1-p2632",
+   "l1-p2634",
+   "l1-p2640",
+   "l1-p2643",
+   "l1-p2645",
+   "l1-p2646",
+   "l1-p2649",
+   "l1-p2650",
+   "l1-p2651",
+   "l1-p2653",
+   "l1-p2654",
+   "l1-p2655",
+   "l1-p2656",
+   "l1-p2663",
+   "l1-p2667",
+   "l1-p2669",
+   "l1-p2670",
+   "l1-p2671",
+   "l1-p2674",
+   "l1-p2675",
+   "l1-p2676",
+   "l1-p2677",
+   "l1-p2678",
+   "l1-p2679",
+   "l1-p2680",
+   "l1-p2681",
+   "l1-p2682",
+   "l1-p2683",
+   "l1-p2684",
+   "l1-p2685",
+   "l1-p2686",
+   "l1-p2687",
+   "l1-p2688",
+   "l1-p2690",
+   "l1-p2692",
+   "l1-p2699",
+   "l1-p2700",
+   "l1-p2701",
+   "l1-p2702",
+   "l1-p2703",
+   "l1-p2706",
+   "l1-p2708",
+   "l1-p2713",
+   "l1-p2714",
+   "l1-p2715",
+   "l1-p2716",
+   "l1-p2718",
+   "l1-p2724",
+   "l1-p2725"
+  ],
+  "disagreeing_members": [],
+  "field_mismatches": {
+   "candidates": 0,
+   "class": 0,
+   "interval": 0,
+   "lo": 0,
+   "onsets": 0,
+   "sha": 0
+  },
+  "lane_members_not_in_census": [
+   "l1-m0014 (l1-p3029)",
+   "l1-m0034 (l1-p2955)",
+   "l1-m0037 (l1-p2956)",
+   "l1-m0040 (l1-p3006)",
+   "l1-m0042 (l1-p2973)",
+   "l1-m0043 (l1-p3061)",
+   "l1-m0053 (l1-p2988)",
+   "l1-m0064 (l1-p3042)",
+   "l1-m0095 (l1-p2935)",
+   "l1-m0137 (l1-p2960)",
+   "l1-m0165 (l1-p3117)",
+   "l1-m0194 (l1-p3039)",
+   "l1-m0273 (l1-p2944)",
+   "l1-m0279 (l1-p3047)",
+   "l1-m0300 (l1-p3058)",
+   "l1-m0339 (l1-p3063)",
+   "l1-m0346 (l1-p3022)",
+   "l1-m0370 (l1-p0272)",
+   "l1-m0377 (l1-p2942)",
+   "l1-m0484 (l1-p2740)",
+   "l1-m0503 (l1-p2961)",
+   "l1-m0725 (l1-p2949)",
+   "l1-m0756 (l1-p3065)",
+   "l1-m0794 (l1-p3129)",
+   "l1-m0805 (l1-p2967)",
+   "l1-m0809 (l1-p3076)",
+   "l1-m0810 (l1-p3083)",
+   "l1-m0847 (l1-p3034)",
+   "l1-m0907 (l1-p3138)",
+   "l1-m0925 (l1-p3136)",
+   "l1-m1119 (l1-p3035)",
+   "l1-m1148 (l1-p3145)",
+   "l1-m1155 (l1-p2968)",
+   "l1-m1165 (l1-p2976)",
+   "l1-m1226 (l1-p3091)",
+   "l1-m1245 (l1-p1731)",
+   "l1-m1270 (l1-p2985)",
+   "l1-m1271 (l1-p3028)",
+   "l1-m1281 (l1-p2952)",
+   "l1-m1342 (l1-p2996)",
+   "l1-m1346 (l1-p3033)",
+   "l1-m1382 (l1-p3102)",
+   "l1-m1397 (l1-p3030)",
+   "l1-m1417 (l1-p3020)",
+   "l1-m1439 (l1-p3024)",
+   "l1-m1445 (l1-p2987)",
+   "l1-m1470 (l1-p2950)",
+   "l1-m1487 (l1-p3057)",
+   "l1-m1512 (l1-p2951)",
+   "l1-m1590 (l1-p3036)",
+   "l1-m1599 (l1-p3095)",
+   "l1-m1638 (l1-p0724)",
+   "l1-m1648 (l1-p3079)",
+   "l1-m1672 (l1-p3059)",
+   "l1-m1698 (l1-p2945)",
+   "l1-m1699 (l1-p2948)",
+   "l1-m1704 (l1-p3007)",
+   "l1-m1764 (l1-p3141)",
+   "l1-m1777 (l1-p3085)",
+   "l1-m1846 (l1-p1106)",
+   "l1-m1857 (l1-p3032)",
+   "l1-m1883 (l1-p2947)",
+   "l1-m1889 (l1-p2991)",
+   "l1-m1910 (l1-p3142)",
+   "l1-m1964 (l1-p3070)",
+   "l1-m1968 (l1-p3038)",
+   "l1-m1971 (l1-p3134)",
+   "l1-m1976 (l1-p3151)",
+   "l1-m1984 (l1-p3090)",
+   "l1-m2032 (l1-p3005)",
+   "l1-m2059 (l1-p2966)",
+   "l1-m2069 (l1-p3023)",
+   "l1-m2085 (l1-p3133)",
+   "l1-m2090 (l1-p3108)",
+   "l1-m2095 (l1-p3044)",
+   "l1-m2117 (l1-p2998)",
+   "l1-m2169 (l1-p3130)",
+   "l1-m2178 (l1-p3104)",
+   "l1-m2179 (l1-p3135)",
+   "l1-m2203 (l1-p3092)",
+   "l1-m2208 (l1-p3143)",
+   "l1-m2223 (l1-p3016)",
+   "l1-m2227 (l1-p3128)",
+   "l1-m2229 (l1-p3037)",
+   "l1-m2269 (l1-p2941)",
+   "l1-m2339 (l1-p1136)",
+   "l1-m2386 (l1-p3077)",
+   "l1-m2397 (l1-p2989)",
+   "l1-m2415 (l1-p3115)",
+   "l1-m2418 (l1-p2993)",
+   "l1-m2434 (l1-p3072)",
+   "l1-m2444 (l1-p0578)",
+   "l1-m2462 (l1-p3086)",
+   "l1-m2477 (l1-p3110)",
+   "l1-m2479 (l1-p0067)",
+   "l1-m2493 (l1-p2980)",
+   "l1-m2494 (l1-p3068)",
+   "l1-m2524 (l1-p3131)",
+   "l1-m2531 (l1-p3002)",
+   "l1-m2563 (l1-p3099)",
+   "l1-m2571 (l1-p3011)",
+   "l1-m2580 (l1-p2978)",
+   "l1-m2595 (l1-p3132)",
+   "l1-m2600 (l1-p3097)",
+   "l1-m2605 (l1-p3067)",
+   "l1-m2606 (l1-p0215)",
+   "l1-m2613 (l1-p2979)",
+   "l1-m2621 (l1-p2990)",
+   "l1-m2622 (l1-p3073)",
+   "l1-m2627 (l1-p3084)",
+   "l1-m2641 (l1-p3075)",
+   "l1-m2662 (l1-p3004)",
+   "l1-m2665 (l1-p2934)",
+   "l1-m2674 (l1-p3120)",
+   "l1-m2689 (l1-p3094)",
+   "l1-m2694 (l1-p2933)",
+   "l1-m2701 (l1-p3066)"
+  ],
+  "members_in_census": 1195
+ },
+ "classes": {
+  "degenerate": 416,
+  "placeable": 710,
+  "refused_no_signalp_row": 128,
+  "refused_sp_disagree_deeptmhmm_v1_only": 58
+ },
+ "disorder_pick": {
+  "is_a_candidate": 1083,
+  "members": 1126
+ },
+ "frame": {
+  "members_failing": [],
+  "positions_checked": 8004,
+  "positions_failing": 0
+ },
+ "input_lengths_differ": [],
+ "lo_source": {
+  "both": 925,
+  "deeptmhmm_v1": 35,
+  "signalp6": 166
+ },
+ "nafter_sp_members": 1312,
+ "panel": [
+  {
+   "canary_native_is_panel_orf": true,
+   "gene": "AXL",
+   "insert_after_residue": 33,
+   "junction": "E33|E",
+   "l1_members_with_this_protein": [
+    "l1-m2259"
+   ],
+   "native_cleavage": 32,
+   "native_cleavage_probability": 0.9782,
+   "tagged_cleavage": 32,
+   "tagged_cleavage_probability": 0.8156,
+   "tagged_found_by_sha": true,
+   "tagged_prediction": "SP",
+   "tagged_run": "canary_rp_1792371023"
+  },
+  {
+   "canary_native_is_panel_orf": true,
+   "gene": "ERBB2",
+   "insert_after_residue": 23,
+   "junction": "T23|Q",
+   "l1_members_with_this_protein": [
+    "l1-m2598"
+   ],
+   "native_cleavage": 22,
+   "native_cleavage_probability": 0.9645,
+   "tagged_cleavage": 22,
+   "tagged_cleavage_probability": 0.9046,
+   "tagged_found_by_sha": true,
+   "tagged_prediction": "SP",
+   "tagged_run": "canary_rp_1792371023"
+  },
+  {
+   "canary_native_is_panel_orf": true,
+   "gene": "FOLR1",
+   "insert_after_residue": 27,
+   "junction": "A27|W",
+   "l1_members_with_this_protein": [
+    "l1-m0329"
+   ],
+   "native_cleavage": 22,
+   "native_cleavage_probability": 0.9821,
+   "tagged_cleavage": 22,
+   "tagged_cleavage_probability": 0.9806,
+   "tagged_found_by_sha": true,
+   "tagged_prediction": "SP",
+   "tagged_run": "canary_rp_1792371023"
+  },
+  {
+   "canary_native_is_panel_orf": true,
+   "gene": "HEG1",
+   "insert_after_residue": 32,
+   "junction": "D32|P",
+   "l1_members_with_this_protein": [
+    "l1-m2645"
+   ],
+   "native_cleavage": 28,
+   "native_cleavage_probability": 0.9723,
+   "tagged_cleavage": 29,
+   "tagged_cleavage_probability": 0.8399,
+   "tagged_found_by_sha": true,
+   "tagged_prediction": "SP",
+   "tagged_run": "canary_rp_1792371023"
+  },
+  {
+   "canary_native_is_panel_orf": true,
+   "gene": "NECTIN4",
+   "insert_after_residue": 32,
+   "junction": "G32|E",
+   "l1_members_with_this_protein": [
+    "l1-m1500"
+   ],
+   "native_cleavage": 31,
+   "native_cleavage_probability": 0.9802,
+   "tagged_cleavage": 31,
+   "tagged_cleavage_probability": 0.9728,
+   "tagged_found_by_sha": true,
+   "tagged_prediction": "SP",
+   "tagged_run": "canary_rp_1792371023"
+  },
+  {
+   "canary_native_is_panel_orf": true,
+   "gene": "PTPRC",
+   "insert_after_residue": 41,
+   "junction": "P41|S",
+   "l1_members_with_this_protein": [
+    "l1-m2617"
+   ],
+   "native_cleavage": 25,
+   "native_cleavage_probability": 0.9807,
+   "tagged_cleavage": 25,
+   "tagged_cleavage_probability": 0.9787,
+   "tagged_found_by_sha": true,
+   "tagged_prediction": "SP",
+   "tagged_run": "canary_rp_1792371023"
+  },
+  {
+   "canary_native_is_panel_orf": true,
+   "gene": "SLC9A3",
+   "insert_after_residue": 34,
+   "junction": "G34|A",
+   "l1_members_with_this_protein": [
+    "l1-m2181"
+   ],
+   "native_cleavage": 25,
+   "native_cleavage_probability": 0.9666,
+   "tagged_cleavage": 25,
+   "tagged_cleavage_probability": 0.973,
+   "tagged_found_by_sha": true,
+   "tagged_prediction": "SP",
+   "tagged_run": "canary_rp_1792374944"
+  },
+  {
+   "canary_native_is_panel_orf": true,
+   "gene": "VSIG10",
+   "insert_after_residue": 31,
+   "junction": "V31|V",
+   "l1_members_with_this_protein": [
+    "l1-m1604"
+   ],
+   "native_cleavage": 30,
+   "native_cleavage_probability": 0.3477,
+   "tagged_cleavage": null,
+   "tagged_cleavage_probability": null,
+   "tagged_found_by_sha": true,
+   "tagged_prediction": "OTHER",
+   "tagged_run": "canary_rp_1792371023"
+  }
+ ],
+ "prefix_routes_first_difference": [
+  [
+   "l1-m2300",
+   831
+  ],
+  [
+   "l1-m2342",
+   870
+  ],
+  [
+   "l1-m2366",
+   805
+  ],
+  [
+   "l1-m2420",
+   563
+  ],
+  [
+   "l1-m2535",
+   904
+  ],
+  [
+   "l1-m2599",
+   1059
+  ],
+  [
+   "l1-m2629",
+   1046
+  ]
+ ],
+ "reprediction": {
+  "by_offset": {
+   "1": {
+    "cleavage_crosses_junction": 107,
+    "cleavage_moved": 57,
+    "preserved": 757,
+    "signal_peptide_lost": 180
+   },
+   "10": {
+    "cleavage_moved": 30,
+    "preserved": 232,
+    "signal_peptide_lost": 12
+   },
+   "11": {
+    "cleavage_moved": 31,
+    "preserved": 215,
+    "signal_peptide_lost": 11
+   },
+   "12": {
+    "cleavage_moved": 27,
+    "preserved": 200,
+    "signal_peptide_lost": 11
+   },
+   "13": {
+    "cleavage_moved": 25,
+    "preserved": 192,
+    "signal_peptide_lost": 7
+   },
+   "14": {
+    "cleavage_moved": 27,
+    "preserved": 181,
+    "signal_peptide_lost": 7
+   },
+   "15": {
+    "cleavage_moved": 26,
+    "preserved": 177,
+    "signal_peptide_lost": 5
+   },
+   "16": {
+    "cleavage_moved": 29,
+    "preserved": 167,
+    "signal_peptide_lost": 4
+   },
+   "17": {
+    "cleavage_moved": 33,
+    "preserved": 158,
+    "signal_peptide_lost": 5
+   },
+   "18": {
+    "cleavage_moved": 30,
+    "preserved": 146,
+    "signal_peptide_lost": 3
+   },
+   "19": {
+    "cleavage_moved": 26,
+    "preserved": 139,
+    "signal_peptide_lost": 2
+   },
+   "2": {
+    "cleavage_crosses_junction": 65,
+    "cleavage_moved": 66,
+    "preserved": 826,
+    "signal_peptide_lost": 144
+   },
+   "20": {
+    "cleavage_moved": 25,
+    "preserved": 136,
+    "signal_peptide_lost": 3
+   },
+   "3": {
+    "cleavage_crosses_junction": 17,
+    "cleavage_moved": 64,
+    "preserved": 529,
+    "signal_peptide_lost": 80
+   },
+   "4": {
+    "cleavage_crosses_junction": 9,
+    "cleavage_moved": 77,
+    "preserved": 442,
+    "signal_peptide_lost": 68
+   },
+   "5": {
+    "cleavage_crosses_junction": 6,
+    "cleavage_moved": 68,
+    "preserved": 393,
+    "signal_peptide_lost": 50
+   },
+   "6": {
+    "cleavage_crosses_junction": 2,
+    "cleavage_moved": 59,
+    "preserved": 343,
+    "signal_peptide_lost": 37
+   },
+   "7": {
+    "cleavage_crosses_junction": 2,
+    "cleavage_moved": 50,
+    "preserved": 294,
+    "signal_peptide_lost": 29
+   },
+   "8": {
+    "cleavage_moved": 48,
+    "preserved": 264,
+    "signal_peptide_lost": 27
+   },
+   "9": {
+    "cleavage_moved": 35,
+    "preserved": 250,
+    "signal_peptide_lost": 23
+   }
+  },
+  "members_fully_covered": 1101,
+  "members_losing_every_position": 86,
+  "members_not_covered": 25,
+  "members_not_covered_ids": [
+   "l1-m0165",
+   "l1-m0370",
+   "l1-m0484",
+   "l1-m0794",
+   "l1-m0907",
+   "l1-m0925",
+   "l1-m1148",
+   "l1-m1245",
+   "l1-m1764",
+   "l1-m1846",
+   "l1-m1910",
+   "l1-m1971",
+   "l1-m1976",
+   "l1-m2085",
+   "l1-m2169",
+   "l1-m2208",
+   "l1-m2227",
+   "l1-m2339",
+   "l1-m2415",
+   "l1-m2444",
+   "l1-m2479",
+   "l1-m2524",
+   "l1-m2595",
+   "l1-m2606",
+   "l1-m2674"
+  ],
+  "members_partly_covered": 0,
+  "members_with_a_surviving_position": 1015,
+  "positions_not_repredicted": 214,
+  "positions_repredicted": 7790,
+  "sweep_native_not_designed": [],
+  "sweep_positions_differ": [],
+  "verdict_agrees_with_sweep": 7790,
+  "verdicts": {
+   "cleavage_crosses_junction": 208,
+   "cleavage_moved": 833,
+   "preserved": 6041,
+   "signal_peptide_lost": 708
+  }
+ },
+ "routes": {
+  "exact_accession": 1149,
+  "exact_designed": 32,
+  "none": 124,
+  "prefix_accession": 7
+ },
+ "rungs_l1": {
+  "C-terminal": 212,
+  "N after SP": 1312,
+  "N at residue 1, multipass": 561,
+  "N at residue 1, single-pass (type III)": 44,
+  "internal": 581
+ },
+ "snapshot_rows": 7374,
+ "swept_under_duplicate": [
+  [
+   "l1-m0345",
+   "l1-p2318"
+  ],
+  [
+   "l1-m1244",
+   "l1-p2411"
+  ],
+  [
+   "l1-m1785",
+   "l1-p2387"
+  ]
+ ],
+ "topology_tool": "deeptmhmm_v1",
+ "tranche": "l1"
+}

@@ -1,0 +1,162 @@
+set	uniprot_acc	gene	insert_after_residue	surface_shown	status	v1_state	z	plddt	placement_source	v1_tm_helices	topo_for	topo_against	kr_out	kr_in
+gold_standard	P08183	ABCB1	105	yes	placed	O	32.79	60.1	tmdet	12.0	885.0	0.0	5.0	21.0
+gold_standard	P08183	ABCB1	324	yes	placed	O	27.37	84.9	tmdet	12.0	885.0	0.0	5.0	21.0
+gold_standard	P08183	ABCB1	740	yes	placed	O	29.04	71.7	tmdet	12.0	885.0	0.0	5.0	21.0
+gold_standard	P08183	ABCB1	745	not_reported	placed	O	30.8	77.1	tmdet	12.0	885.0	0.0	5.0	21.0
+gold_standard	P08183	ABCB1	965	yes	placed	O	29.58	79.5	tmdet	12.0	885.0	0.0	5.0	21.0
+gold_standard	P21439	ABCB4	99	yes	placed	O	46.15	42.7	tmdet	12.0	893.0	0.0	8.0	18.0
+gold_standard	P33527	ABCC1	4	yes	placed	O	16.81	55.4	tmdet	17.0	988.0	0.0	12.0	16.0
+gold_standard	P33527	ABCC1	163	yes	placed	O	25.79	59.7	tmdet	17.0	988.0	0.0	12.0	16.0
+gold_standard	P33527	ABCC1	574	yes	placed	O	22.6	81.0	tmdet	17.0	988.0	0.0	12.0	16.0
+gold_standard	P33527	ABCC1	1001	yes	placed	O	22.51	86.8	tmdet	17.0	988.0	0.0	12.0	16.0
+gold_standard	P33527	ABCC1	1222	yes	placed	O	21.63	84.5	tmdet	17.0	988.0	0.0	12.0	16.0
+gold_standard	Q9UNQ0	ABCG2	423	yes	placed	O	22.91	89.1	tmdet	6.0	435.0	0.0	5.0	8.0
+gold_standard	Q9UNQ0	ABCG2	499	yes	placed	O	21.63	93.4	tmdet	6.0	435.0	0.0	5.0	8.0
+gold_standard	O94910	ADGRL1	919	yes	placed	O	21.78	84.4	helix_axis	7.0	704.0	19.0	7.0	8.0
+gold_standard	O95490	ADGRL2	824	yes	placed	O	58.87	87.4	helix_axis	7.0	757.0	0.0	11.0	10.0
+gold_standard	Q9UKB5	AJAP1	114	not_reported	fewer_than_two_confident_helices									
+gold_standard	Q9UKB5	AJAP1	170	not_reported	fewer_than_two_confident_helices									
+gold_standard	Q5XXA6	ANO1	850	yes	placed	O	31.89	81.3	tmdet	8.0	513.0	40.0	9.0	14.0
+gold_standard	P05067	APP	683	yes	fewer_than_two_confident_helices									
+gold_standard	P29972	AQP1	43	yes	placed	O	26.75	59.8	tmdet	6.0	111.0	0.0	1.0	9.0
+gold_standard	P55064	AQP5	116	yes	placed	O	14.63	97.4	tmdet	6.0	110.0	0.0	3.0	4.0
+gold_standard	P78348	ASIC1	147	yes	placed	O	80.39	91.6	tmdet	2.0	392.0	1.0	3.0	0.0
+gold_standard	P78348	ASIC1	298	yes	placed	O	35.62	75.4	tmdet	2.0	392.0	1.0	3.0	0.0
+gold_standard	P05023	ATP1A1	119	yes	placed	O	17.04	87.4	tmdet	10.0	758.0	0.0	4.0	17.0
+gold_standard	P05023	ATP1A1	318	yes	placed	O	14.79	82.3	tmdet	10.0	758.0	0.0	4.0	17.0
+gold_standard	P30518	AVPR2	30	yes	placed	O	26.95	44.9	tmdet	7.0	107.0	0.0	7.0	5.0
+gold_standard	Q10589	BST2	154	yes	placed	O	148.99	56.2	tmdet	1.0	115.0	0.0	0.0	3.0
+gold_standard	Q5VU97	CACHD1	38	yes	fewer_than_two_confident_helices									
+gold_standard	P54289	CACNA2D1	568	yes	placed	O	64.26	91.2	tmdet	1.0	943.0	2.0	0.0	0.0
+gold_standard	Q8IZS8	CACNA2D3	36	yes	placed	O	89.23	67.8	tmdet	0.0	937.0	5.0	1.0	0.0
+gold_standard	P41180	CASR	371	yes	placed	O	127.72	32.0	tmdet	7.0	629.0	0.0	2.0	9.0
+gold_standard	P31358	CD52	29	yes	placed	O	-23.98	52.0	tmdet	0.0	9.0	0.0	2.0	0.0
+gold_standard	P60033	CD81	179	yes	placed	O	32.27	75.4	tmdet	4.0	116.0	0.0	3.0	2.0
+gold_standard	P13569	CFTR	891	yes	placed	O	35.79	38.3	tmdet	12.0	845.0	0.0	6.0	9.0
+gold_standard	P13569	CFTR	901	yes	placed	O	27.3	50.2	tmdet	12.0	845.0	0.0	6.0	9.0
+gold_standard	P35523	CLCN1	438	yes	placed	O	29.83	63.8	tmdet	10.0	379.0	7.0	5.0	10.0
+gold_standard	P21554	CNR1	179	yes	placed	O	14.03	95.5	tmdet	7.0	117.0	1.0	7.0	2.0
+gold_standard	Q5IJ48	CRB2	1096	yes	fewer_than_two_confident_helices									
+gold_standard	Q14118	DAG1	489	yes	fewer_than_two_confident_helices									
+gold_standard	Q14118	DAG1	724	yes	fewer_than_two_confident_helices									
+gold_standard	P43146	DCC	1090	yes	fewer_than_two_confident_helices									
+gold_standard	Q08345	DDR1	378	yes	fewer_than_two_confident_helices									
+gold_standard	Q08345	DDR1	397	not_reported	fewer_than_two_confident_helices									
+gold_standard	Q9UQF0	ERVW-1	51	not_reported	fewer_than_two_confident_helices									
+gold_standard	Q9UQF0	ERVW-1	139	not_reported	fewer_than_two_confident_helices									
+gold_standard	Q9UQF0	ERVW-1	156	not_reported	fewer_than_two_confident_helices									
+gold_standard	P14867	GABRA1	31	not_reported	placed	O	80.1	59.3	tmdet	4.0	257.0	0.0	4.0	5.0
+gold_standard	P48169	GABRA4	39	yes	placed	O	80.69	45.0	tmdet	4.0	247.0	0.0	4.0	4.0
+gold_standard	P31644	GABRA5	35	yes	placed	O	89.2	47.1	tmdet	4.0	271.0	0.0	3.0	5.0
+gold_standard	Q16445	GABRA6	23	yes	placed	O	80.07	67.7	tmdet	4.0	255.0	0.0	3.0	3.0
+gold_standard	Q8N1C3	GABRG1	39	yes	placed	O	45.94	32.1	tmdet	4.0	250.0	0.0	4.0	3.0
+gold_standard	P18507	GABRG2	43	yes	placed	O	42.36	26.6	tmdet	4.0	235.0	0.0	5.0	3.0
+gold_standard	Q99928	GABRG3	21	yes	placed	O	38.36	27.6	tmdet	4.0	233.0	0.0	5.0	4.0
+gold_standard	Q8WTR4	GDPD5	423	yes	placed	O	44.5	90.6	tmdet	6.0	371.0	0.0	2.0	1.0
+gold_standard	P43220	GLP1R	375	yes	placed	O	17.12	57.6	tmdet	7.0	219.0	0.0	6.0	7.0
+gold_standard	P43220	GLP1R	376	yes	placed	O	18.96	65.8	tmdet	7.0	219.0	0.0	6.0	7.0
+gold_standard	P43220	GLP1R	377	yes	placed	O	17.53	71.5	tmdet	7.0	219.0	0.0	6.0	7.0
+gold_standard	Q8IV16	GPIHBP1	34	yes	fewer_than_two_confident_helices									
+gold_standard	P42261	GRIA1	280	yes	placed	O	112.69	55.7	tmdet	3.0	663.0	0.0	0.0	3.0
+gold_standard	Q13255	GRM1	384	yes	placed	O	130.09	81.4	tmdet	7.0	610.0	0.0	3.0	10.0
+gold_standard	Q14416	GRM2	547	yes	placed	O	47.73	88.9	helix_axis	7.0	611.0	0.0	6.0	11.0
+gold_standard	Q14416	GRM2	715	yes	placed	O	35.42	78.9	helix_axis	7.0	611.0	0.0	6.0	11.0
+gold_standard	Q9UL51	HCN2	311	not_reported	placed	O	19.51	78.1	tmdet	6.0	399.0	3.0	6.0	10.0
+gold_standard	Q9UPX0	IGSF9B	28	yes	fewer_than_two_confident_helices									
+gold_standard	P05556	ITGB1	101	yes	placed	O	12.87	56.4	tmdet	1.0	349.0	247.0	11.0	6.0
+gold_standard	P26010	ITGB7	42	yes	fewer_than_two_confident_helices									
+gold_standard	P26010	ITGB7	48	yes	fewer_than_two_confident_helices									
+gold_standard	P26010	ITGB7	446	yes	fewer_than_two_confident_helices									
+gold_standard	P26010	ITGB7	450	yes	fewer_than_two_confident_helices									
+gold_standard	P22460	KCNA5	307	yes	placed	O	31.52	49.1	tmdet	6.0	213.0	0.0	2.0	7.0
+gold_standard	Q14721	KCNB1	221	yes	placed	O	26.51	68.9	tmdet	6.0	294.0	0.0	5.0	8.0
+gold_standard	P48547	KCNC1	231	yes	placed	O	31.76	80.9	tmdet	6.0	284.0	0.0	5.0	8.0
+gold_standard	Q9UK17	KCND3	212	not_reported	placed	O	29.48	67.9	helix_axis	6.0	266.0	0.0	3.0	8.0
+gold_standard	Q9UK17	KCND3	216	yes	placed	O	18.08	80.3	helix_axis	6.0	266.0	0.0	3.0	8.0
+gold_standard	O95259	KCNH1	317	yes	placed	O	17.99	48.9	tmdet	6.0	532.0	0.0	2.0	6.0
+gold_standard	Q12809	KCNH2	436	yes	placed	O	23.85	49.6	helix_axis	6.0	465.0	6.0	1.0	8.0
+gold_standard	Q12809	KCNH2	443	yes	placed	O	20.85	38.9	helix_axis	6.0	465.0	6.0	1.0	8.0
+gold_standard	Q9NS40	KCNH7	441	yes	no_model_or_v1									
+gold_standard	O60928	KCNJ13	90	not_reported	placed	O	29.18	90.4	tmdet	2.0	250.0	0.0	1.0	3.0
+gold_standard	Q99712	KCNJ15	97	yes	placed	O	24.39	69.4	helix_axis	2.0	271.0	0.0	2.0	4.0
+gold_standard	P63252	KCNJ2	116	yes	placed	O	32.96	72.8	tmdet	2.0	289.0	0.0	1.0	5.0
+gold_standard	Q96T54	KCNK17	234	yes	placed	O	25.56	76.1	tmdet	4.0	144.0	0.0	5.0	4.0
+gold_standard	O95069	KCNK2	134	yes	placed	O	33.14	65.1	tmdet	4.0	207.0	0.0	2.0	3.0
+gold_standard	O14649	KCNK3	50	yes	placed	O	45.12	95.8	tmdet	4.0	177.0	0.0	3.0	6.0
+gold_standard	O14649	KCNK3	214	yes	placed	O	19.62	89.8	tmdet	4.0	177.0	0.0	3.0	6.0
+gold_standard	Q9NPC2	KCNK9	40	yes	placed	O	29.04	96.2	tmdet	4.0	170.0	0.0	5.0	3.0
+gold_standard	Q16558	KCNMB1	130	yes	placed	O	30.6	87.6	tmdet	2.0	130.0	0.0	1.0	3.0
+gold_standard	Q9Y691	KCNMB2	137	yes	placed	O	32.38	86.4	tmdet	2.0	172.0	0.0	1.0	3.0
+gold_standard	P51787	KCNQ1	146	yes	placed	O	18.92	92.1	tmdet	6.0	268.0	1.0	3.0	10.0
+gold_standard	P51787	KCNQ1	148	yes	placed	O	15.24	92.6	tmdet	6.0	268.0	1.0	3.0	10.0
+gold_standard	Q8IWT6	LRRC8A	76	no	placed	O	50.21	42.2	tmdet	4.0	615.0	0.0	5.0	6.0
+gold_standard	Q6NSJ5	LRRC8E	59	yes	placed	O	41.77	58.6	tmdet	4.0	592.0	0.0	5.0	5.0
+gold_standard	P50281	MMP14	111	yes	fewer_than_two_confident_helices									
+gold_standard	Q9BRK3	MXRA8	99	yes	placed	O	35.75	96.6	tmdet	1.0	256.0	1.0	2.0	3.0
+gold_standard	O94856	NFASC	518	yes	fewer_than_two_confident_helices									
+gold_standard	O94856	NFASC	603	yes	fewer_than_two_confident_helices									
+gold_standard	O94856	NFASC	679	yes	fewer_than_two_confident_helices									
+gold_standard	O94856	NFASC	808	yes	fewer_than_two_confident_helices									
+gold_standard	Q9UHC9	NPC1L1	986	yes	placed	O	80.59	81.0	tmdet	13.0	902.0	0.0	4.0	6.0
+gold_standard	Q02297	NRG1	178	not_reported	fewer_than_two_confident_helices									
+gold_standard	P56975	NRG3	275	not_reported	placed	O	69.09	33.9	helix_axis	2.0	57.0	13.0	2.0	3.0
+gold_standard	P56975	NRG3	333	not_reported	placed	O	45.8	62.2	helix_axis	2.0	57.0	13.0	2.0	3.0
+gold_standard	P56975	NRG3	337	not_reported	placed	O	41.82	43.9	helix_axis	2.0	57.0	13.0	2.0	3.0
+gold_standard	P56975	NRG3	342	not_reported	placed	O	37.97	47.5	helix_axis	2.0	57.0	13.0	2.0	3.0
+gold_standard	P58400	NRXN1	340	not_reported	fewer_than_two_confident_helices									
+gold_standard	P58400	NRXN1	371	yes	fewer_than_two_confident_helices									
+gold_standard	Q7RTM1	OTOP1	227	not_reported	placed	O	21.54	82.9	tmdet	12.0	165.0	0.0	6.0	17.0
+gold_standard	Q7RTM1	OTOP1	565	not_reported	placed	O	12.76	88.6	tmdet	12.0	165.0	0.0	6.0	17.0
+gold_standard	Q99572	P2RX7	125	not_reported	placed	O	53.55	84.4	tmdet	2.0	491.0	0.0	4.0	1.0
+gold_standard	Q9H813	PACC1	277	yes	placed	O	92.7	84.2	tmdet	2.0	241.0	0.0	1.0	5.0
+gold_standard	Q9P2E7	PCDH10	696	yes	placed	O	-49.44	38.6	tmdet	1.0	484.0	136.0	4.0	2.0
+gold_standard	Q01453	PMP22	125	yes	placed	O	30.26	63.3	tmdet	4.0	62.0	0.0	1.0	5.0
+gold_standard	Q03431	PTH1R	93	no	placed	O	55.79	32.7	tmdet	7.0	190.0	0.0	8.0	8.0
+gold_standard	O95980	RECK	942	not_reported	fewer_than_two_confident_helices									
+gold_standard	P37088	SCNN1A	168	yes	placed	O	71.94	51.0	tmdet	2.0	396.0	5.0	2.0	0.0
+gold_standard	P31431	SDC4	27	yes	fewer_than_two_confident_helices									
+gold_standard	O75326	SEMA7A	353	not_reported	fewer_than_two_confident_helices									
+gold_standard	Q13530	SERINC3	311	not_reported	placed	O	30.12	33.3	tmdet	10.0	122.0	0.0	8.0	7.0
+gold_standard	Q86VE9	SERINC5	290	yes	placed	O	37.55	80.1	tmdet	9.0	126.0	0.0	6.0	7.0
+gold_standard	B4DS77	SHISA9	29	no	fewer_than_two_confident_helices									
+gold_standard	P55011	SLC12A2	397	yes	placed	O	22.62	84.8	tmdet	12.0	586.0	0.0	4.0	11.0
+gold_standard	P55017	SLC12A3	414	yes	placed	O	42.02	62.4	tmdet	12.0	584.0	0.0	4.0	9.0
+gold_standard	Q9H2X9	SLC12A5	248	not_reported	placed	O	19.92	87.2	tmdet	12.0	602.0	0.0	3.0	13.0
+gold_standard	Q9H2X9	SLC12A5	406	yes	placed	O	41.13	61.9	tmdet	12.0	602.0	0.0	3.0	13.0
+gold_standard	P41440	SLC19A1	297	yes	placed	O	25.16	83.8	tmdet	12.0	145.0	0.0	7.0	14.0
+gold_standard	P41440	SLC19A1	427	yes	placed	O	18.25	94.8	tmdet	12.0	145.0	0.0	7.0	14.0
+gold_standard	P43004	SLC1A2	199	yes	placed	O	43.48	55.4	tmdet	8.0	211.0	1.0	8.0	11.0
+gold_standard	P43004	SLC1A2	221	yes	placed	O	53.66	35.6	tmdet	8.0	211.0	1.0	8.0	11.0
+gold_standard	Q9UI40	SLC24A2	83	not_reported	placed	O	28.72	29.7	tmdet	11.0	178.0	0.0	5.0	12.0
+gold_standard	Q9UI40	SLC24A2	88	yes	placed	O	25.2	39.8	tmdet	11.0	178.0	0.0	5.0	12.0
+gold_standard	Q9H2B4	SLC26A1	155	yes	placed	O	33.39	30.5	tmdet	12.0	343.0	8.0	7.0	18.0
+gold_standard	P02730	SLC4A1	556	yes	placed	O	30.14	77.6	helix_axis	14.0	497.0	0.0	6.0	18.0
+gold_standard	Q8NBS3	SLC4A11	544	yes	placed	O	36.08	36.3	helix_axis	14.0	386.0	0.0	6.0	16.0
+gold_standard	P04920	SLC4A2	862	not_reported	placed	O	37.83	34.7	helix_axis	14.0	462.0	0.0	6.0	17.0
+gold_standard	P04920	SLC4A2	870	yes	placed	O	50.83	28.7	helix_axis	14.0	462.0	0.0	6.0	17.0
+gold_standard	Q9Y289	SLC5A6	483	not_reported	placed	O	29.51	26.7	tmdet	13.0	241.0	0.0	3.0	14.0
+gold_standard	Q01959	SLC6A3	194	yes	placed	O	39.55	43.4	tmdet	12.0	275.0	0.0	6.0	13.0
+gold_standard	Q01959	SLC6A3	219	not_reported	placed	O	23.54	95.3	tmdet	12.0	275.0	0.0	6.0	13.0
+gold_standard	Q92581	SLC9A6	53	yes	placed	O	29.35	68.6	helix_axis	13.0	175.0	0.0	6.0	10.0
+gold_standard	Q99835	SMO	149	no	placed	O	47.69	93.8	tmdet	7.0	317.0	0.0	7.0	6.0
+gold_standard	Q8WY21	SORCS1	144	not_reported	placed	O	83.05	26.9	tmdet	1.0	881.0	0.0	0.0	0.0
+gold_standard	Q99523	SORT1	77	not_reported	placed	O	80.4	28.6	tmdet	1.0	651.0	0.0	0.0	0.0
+gold_standard	Q99523	SORT1	80	yes	placed	O	88.62	30.8	tmdet	1.0	651.0	0.0	0.0	0.0
+gold_standard	P02786	TFRC	111	yes	fewer_than_two_confident_helices									
+gold_standard	Q96CP7	TLCD1	73	yes	placed	O	16.94	93.2	tmdet	7.0	85.0	0.0	2.0	13.0
+gold_standard	Q8N131	TMEM123	33	yes	placed	O	19.71	51.6	tmdet	1.0	11.0	0.0	1.0	1.0
+gold_standard	Q6UXZ0	TMIGD1	211	not_reported	placed	O	38.62	96.7	tmdet	1.0	205.0	0.0	0.0	5.0
+gold_standard	Q9UL62	TRPC5	460	yes	placed	O	18.43	84.6	tmdet	8.0	516.0	1.0	3.0	4.0
+gold_standard	Q8TD43	TRPM4	1015	yes	placed	O	25.31	74.4	tmdet	6.0	816.0	0.0	5.0	8.0
+gold_standard	Q8NER1	TRPV1	468	yes	placed	O	16.25	73.2	tmdet	6.0	435.0	0.0	4.0	8.0
+gold_standard	Q8NER1	TRPV1	606	yes	placed	O	37.72	35.9	tmdet	6.0	435.0	0.0	4.0	8.0
+gold_standard	Q8NET8	TRPV3	613	yes	placed	O	30.34	67.9	tmdet	6.0	432.0	0.0	4.0	5.0
+gold_standard	O60636	TSPAN2	154	yes	placed	O	39.85	92.2	tmdet	4.0	102.0	0.0	3.0	3.0
+gold_standard	P07911	UMOD	59	not_reported	fewer_than_two_confident_helices									
+gold_standard	P98155	VLDLR	437	yes	fewer_than_two_confident_helices									
+gold_standard	Q9UBH6	XPR1	428	yes	placed	O	14.2	69.3	tmdet	10.0	391.0	0.0	5.0	7.0
+failed_site	O94856	NFASC	533	construct_failed	fewer_than_two_confident_helices									
+failed_site	O94856	NFASC	570	construct_failed	fewer_than_two_confident_helices									
+failed_site	Q01959	SLC6A3	288	construct_failed	placed	O	27.28	95.6	tmdet	12.0	275.0	0.0	6.0	13.0
+failed_site	Q01959	SLC6A3	387	construct_failed	placed	O	16.36	83.6	tmdet	12.0	275.0	0.0	6.0	13.0
+failed_site	Q8NER1	TRPV1	464	construct_failed	placed	O	17.4	72.8	tmdet	6.0	435.0	0.0	4.0	8.0

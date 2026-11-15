@@ -58,5 +58,10 @@
    "sha256": "dbb1db6e68bc3e1bdb3e69fee365e963a5a36f90434f88dd9e8d42a0df6f1b20",
    "origin": "deliverome-analysis analysis/sprint4/s4e9-orf-design-fg-panel/gpi_set.tsv (build_gpi_set.py; NetGPI per form, the GPI set of record from 2026-11-01)"
   }
+ },
+ "isoform_gate": {
+  "key": "sprint4/s4e9-orf-design-fg-panel/library-design/panel-inputs/2026-11-12-isoform-gate-2/isoform_gate.tsv",
+  "sha256": "f00ad9f22cf379e31e7cc1c4acde3e717252ec8814340d9758495ebf44c444b1",
+  "origin": "analysis/sprint4/s4e9-orf-design-fg-panel/isoform_gate.tsv (gate_isoform_cohort.py; Becca Carlson, 2026-11-12, 'Gate cohort, redraw'; implemented by Claude Code session l1-reviewer-package (subagent), PR #283). Read by sample_isoform_panel.py --gate; not part of --original. Regenerated (-2) after the second-round reference fixes of 2026-11-12 (l1-proteoform-audit decisions applied by l1-reviewer-package, PR #283): reference lengths of DISP2, TSPAN10, LMLN and EPHA6 change, no verdict changes. The first table stays at 2026-11-12-isoform-gate/."
  }
 }

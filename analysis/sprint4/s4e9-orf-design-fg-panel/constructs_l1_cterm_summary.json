@@ -1,0 +1,58 @@
+{
+  "cterm_members": 208,
+  "snorkel_members": 109,
+  "built": 313,
+  "held": [
+    {
+      "candidate_id": "l1-p0184",
+      "design_id": "l1-p0184",
+      "gene_symbol": "BRICD5",
+      "flags": "refold_fail: BRICD5: C-terminal and stalk-site (residue 63) refolds both fail (native-region lDDT 0.783 < 0.85; lDDT within 15 of the site 0.323 < 0.7 | native-region lDDT 0.774 < 0.85; lDDT within 15 of the site 0.327 < 0.7)"
+    },
+    {
+      "candidate_id": "l1-p0274",
+      "design_id": "l1-p0274",
+      "gene_symbol": "CD209",
+      "flags": "refold_fail: CD209: C-terminal and stalk-site (residue 67) refolds both fail (native-region lDDT 0.765 < 0.85 | native-region lDDT 0.816 < 0.85; lDDT within 15 of the site 0.505 < 0.7)"
+    },
+    {
+      "candidate_id": "l1-p0314",
+      "design_id": "l1-p0314",
+      "gene_symbol": "CD70",
+      "flags": "refold_fail: CD70: C-terminal and stalk-site (residue 46) refolds both fail (native-region lDDT 0.789 < 0.85 | native-region lDDT 0.811 < 0.85)"
+    },
+    {
+      "candidate_id": "l1-p1763",
+      "design_id": "l1-p1763",
+      "gene_symbol": "SCARA5",
+      "flags": "refold_fail: SCARA5: C-terminal and stalk-site (residue 86) refolds both fail (native-region lDDT 0.819 < 0.85 | native-region lDDT 0.827 < 0.85)"
+    }
+  ],
+  "relocated": {
+    "l1-p0976": "ITM2B: cassette after residue 235 (before the furin site)"
+  },
+  "refold_moves": {
+    "l1-p0864": "HPN: cassette after stalk residue 43",
+    "l1-p1070": "KLRF1: cassette after stalk residue 84"
+  },
+  "by_set": {
+    "library_reference": 248,
+    "isoform": 28,
+    "ortholog": 37
+  },
+  "junction_edits": {},
+  "type_iis": "every insert: 2 Esp3I (wrapper), 0 BbsI, 0 BsaI; in p0039: backbone's 4 + 2",
+  "inserts_with_cassette_features": 86,
+  "insert_nt_range": [
+    596,
+    4961
+  ],
+  "barcode": "20-N placeholder; barcodes not reserved (issue #1)",
+  "swap": {
+    "members_measured": 2710,
+    "cterm_median_nt": 36,
+    "cterm_max_nt": 36,
+    "cterm_over_preferred_80": 0,
+    "cterm_over_gate_100": 0
+  }
+}

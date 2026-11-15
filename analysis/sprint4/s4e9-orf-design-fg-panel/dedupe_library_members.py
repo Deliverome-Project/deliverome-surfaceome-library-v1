@@ -30,12 +30,16 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
 from deliverome_analysis import library_design as ld
 from deliverome_analysis import seqtools
 from deliverome_analysis.s3 import processed
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from member_id_allocations import RENUMBER_HINT, to_design_space
 
 HERE = Path(__file__).parent
 #: On a kept member: the other gene symbols whose retired member encoded the same protein,
@@ -139,7 +143,8 @@ def main(argv: list[str] | None = None) -> int:
     with MANIFEST.open() as fh:
         reader = csv.DictReader(fh, delimiter="\t")
         cols = list(reader.fieldnames or [])
-        rows = list(reader)
+        # Retirements are design-stage decisions, keyed on design ids.
+        rows = to_design_space(list(reader))
     for col in (ld.RETIRED_COLUMN, ALIAS_COLUMN):
         if col not in cols:
             cols.append(col)
@@ -258,6 +263,7 @@ def main(argv: list[str] | None = None) -> int:
         w.writerows(table)
     SUMMARY.write_text(json.dumps(summary, indent=1) + "\n")
     print(f"\nwrote {MANIFEST.name} ({len(retire)} retired), {OUT.name}, {SUMMARY.name}")
+    print(RENUMBER_HINT)
     return 0
 
 

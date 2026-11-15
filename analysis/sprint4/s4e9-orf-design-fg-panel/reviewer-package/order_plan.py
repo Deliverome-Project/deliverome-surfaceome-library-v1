@@ -1,11 +1,17 @@
 """How the L1 library is ordered: plate layout, volumes, and length-weighted pooling amounts.
 
-Every active L1 member is ordered as purified plasmid in 96-well V-bottom plates, in order of
-synthesized-insert length (shortest first), so a plate holds members of similar length. The
-order number (``L1-O0001`` ...) follows that order; the member's ``candidate_id`` is kept, since
-every library record is keyed on it.
+Every built L1 insert is ordered as purified plasmid in 96-well V-bottom plates, in order of
+ordered (tagged, synthesis-recoded) insert length (shortest first), so a plate holds inserts of
+similar length; held members have no insert and are not ordered. A member may be ordered as
+several inserts (an internal member's 2 or 3 arms; Becca, 2026-11-14/15), so the plate
+position belongs to the insert: its insert id (``l1-i0001`` ...) is assigned by
+``renumber_library_members.py`` (``l1_insert_numbering.tsv``) with the same sort, and this plan
+asserts the two agree. Each row carries the insert's permanent arm id (``l1-pNNNN-aK``) and the
+member's design id (``l1-pNNNN``). Amounts below are per insert (per well).
 
-Amounts (Becca, 2026-11-10): 4 ug ordered per member, 3 ug assumed delivered, normalized to
+Amounts (decided by Becca Carlson, 2026-11-07, plate sets changed 2026-11-10: "5ul x 2
+plates + 20ul. assumed at 100ng/ul but could be lower"; implemented by the Claude Code
+session l1-reviewer-package, PRs 243 and 283): 4 ug ordered per member, 3 ug assumed delivered, normalized to
 100 ng/uL, so 30 uL per member, split into three plate sets with the same layout:
 
 | Plate set | Volume per well | DNA at 100 ng/uL |
@@ -65,14 +71,40 @@ MIN_HAND_UL = 0.5  # smallest volume worth pipetting by hand
 PER_WELL_PLATES = 2
 
 
-def members() -> list[dict]:
+def inserts() -> list[dict]:
+    """Ordered L1 inserts, in plate order, with their ordered insert and vector lengths.
+
+    Plates and pooling weights use the ordered insert: tagged and synthesis-recoded, as in the
+    order of record (``synthesis_compliance.tsv``), not the untagged draft length in the
+    manifest (decided 2026-11-14 by the coordinator under Becca's delegation). The vector grows
+    by the same number of bases. Held members have no insert and are not ordered.
+    """
+    with (S4E9 / "l1_insert_numbering.tsv").open() as fh:
+        numbered = list(csv.DictReader(fh, delimiter="\t"))
     with MANIFEST.open() as fh:
-        rows = [
-            r
+        member = {
+            r["design_id"]: r
             for r in csv.DictReader(fh, delimiter="\t")
             if r["library"] == "l1" and not r["retired_reason"]
-        ]
-    return sorted(rows, key=lambda r: (int(float(r["insert_nt"])), r["candidate_id"]))
+        }
+    rows = []
+    for n in numbered:
+        m = member[n["design_id"]]
+        ordered = int(n["ordered_insert_nt"])
+        rows.append(
+            {
+                **n,
+                "set": m["set"],
+                "insert_nt": ordered,
+                "vector_bp": int(float(m["vector_bp"])) + ordered - int(float(m["insert_nt"])),
+            }
+        )
+    order = sorted(rows, key=lambda r: (r["insert_nt"], r["arm_id"]))
+    # The insert id is the plate position; a mismatch means the renumber stage is stale.
+    assert [r["insert_id"] for r in order] == [f"l1-i{i:04d}" for i in range(1, len(rows) + 1)], (
+        "insert ids are not in plate order; rerun renumber_library_members.py --write"
+    )
+    return order
 
 
 def pool_ng(insert_nt: int, vector_bp: int, factor: float, ref: tuple[int, int]) -> float:
@@ -100,11 +132,14 @@ def plan(rows: list[dict]) -> tuple[list[dict], dict]:
     out = []
     for i, r in enumerate(rows):
         ins, vec = int(float(r["insert_nt"])), int(float(r["vector_bp"]))
+        assert (int(r["plate"]), r["well"]) == (i // 96 + 1, WELLS[i % 96]), r["insert_id"]
         row = {
-            "order_id": f"L1-O{i + 1:04d}",
             "plate": i // 96 + 1,
             "well": WELLS[i % 96],
-            "candidate_id": r["candidate_id"],
+            "insert_id": r["insert_id"],
+            "arm_id": r["arm_id"],
+            "design_id": r["design_id"],
+            "rung": r["rung"],
             "key": r["key"],
             "set": r["set"],
             "insert_nt": ins,
@@ -125,13 +160,13 @@ def plan(rows: list[dict]) -> tuple[list[dict], dict]:
         extra = [r for r in out if r[f"extra_ug_assumed_x{f}"] > 0]
         longest, shortest = out[-1], out[0]
         return {
-            "members_needing_extra": len(extra),
+            "inserts_needing_extra": len(extra),
             "extra_ug_assumed_total": round(sum(r[f"extra_ug_assumed_x{f}"] for r in extra), 1),
             "order_ug_max": max(r[f"order_ug_x{f}"] for r in out),
             "pool_ul_shortest": shortest[f"pool_ul_per_pool_x{f}"],
             "pool_ul_median": sorted(ul)[len(ul) // 2],
             "pool_ul_longest": longest[f"pool_ul_per_pool_x{f}"],
-            "members_below_hand_pipetting": sum(v < MIN_HAND_UL for v in ul),
+            "inserts_below_hand_pipetting": sum(v < MIN_HAND_UL for v in ul),
             "pool_ug_total_per_pool": round(
                 sum(r[f"pool_ng_per_pool_x{f}"] for r in out) / 1000, 1
             ),
@@ -144,7 +179,8 @@ def plan(rows: list[dict]) -> tuple[list[dict], dict]:
         }
 
     summary = {
-        "members": len(out),
+        "inserts": len(out),
+        "members": len({r["design_id"] for r in out}),
         "plates_per_set": math.ceil(len(out) / 96),
         "plate_sets": {
             "stock_ul": STOCK_UL,
@@ -172,8 +208,8 @@ def plan(rows: list[dict]) -> tuple[list[dict], dict]:
             out[-1]["insert_nt"],
         ],
         "vector_bp_min_max": [min(r["vector_bp"] for r in out), max(r["vector_bp"] for r in out)],
-        "members_insert_over_threshold": sum(r["insert_nt"] > EXTRA_THRESHOLD_NT for r in out),
-        "reference_member": {"insert_nt": ref[0], "vector_bp": ref[1]},
+        "inserts_over_threshold": sum(r["insert_nt"] > EXTRA_THRESHOLD_NT for r in out),
+        "reference_insert": {"insert_nt": ref[0], "vector_bp": ref[1]},
         "weighting": {f"x{f}": stats(f) for f in SENSITIVITY},
     }
     return out, summary
@@ -193,7 +229,7 @@ def pooling_plates(rows: list[dict]) -> list[dict]:
         pr = [r for r in rows if r["plate"] == p]
         row = {
             "plate": p,
-            "members": len(pr),
+            "inserts": len(pr),
             "insert_nt_min": pr[0]["insert_nt"],
             "insert_nt_max": pr[-1]["insert_nt"],
             "mode": "per_well" if p > n_plates - PER_WELL_PLATES else "plate_dilution",
@@ -244,7 +280,7 @@ def figure(rows: list[dict]) -> None:
 
 
 def main() -> int:
-    rows, summary = plan(members())
+    rows, summary = plan(inserts())
     with OUT.open("w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=list(rows[0]), delimiter="\t", lineterminator="\n")
         w.writeheader()
@@ -264,7 +300,7 @@ def main() -> int:
             ],
             "max_error_fold_plate_dilution": max(p[f"max_error_fold_x{f}"] for p in dil),
             "max_error_fold_excluding_plate_1": max(p[f"max_error_fold_x{f}"] for p in dil[1:]),
-            "per_well_members": sum(p["members"] for p in plates if p["mode"] == "per_well"),
+            "per_well_inserts": sum(p["inserts"] for p in plates if p["mode"] == "per_well"),
         }
         for f in SENSITIVITY
     }

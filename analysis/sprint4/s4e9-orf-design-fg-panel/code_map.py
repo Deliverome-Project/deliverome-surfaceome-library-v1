@@ -1,0 +1,199 @@
+"""Write ``CODE_MAP.md``: which script makes which table, and which scripts nothing runs any more.
+
+The map has two parts, both generated so they cannot drift from the code:
+
+1. **Pipeline stages.** One row per ``library_pipeline.py`` stage: what it decides, the
+   script(s) it runs, what it reads, and the tables those scripts write (their ``OUT*``,
+   ``SUMMARY`` and ``DECISIONS`` constants).
+2. **Every script** in this folder, with its first docstring line and a status:
+
+   ===============  ============================================================================
+   ``stage``        named by a pipeline stage
+   ``test``         a pytest module kept beside the script it tests
+   ``called``       imported or run by another committed script
+   ``documented``   named only in documentation (a README or note says how and when it ran)
+   ``one-off``      named by no other committed file: it ran once, its output is committed
+                    or published, and nothing reruns it. Kept as the record of how that output
+                    was made; do not extend it
+   ===============  ============================================================================
+
+``tests/test_code_map.py`` fails when a script is added, deleted or renamed without
+regenerating ``CODE_MAP.md``. Statuses are not compared there, because they depend on files
+anywhere in the repository; regenerate the map when a script's role changes.
+
+Requested by the coordinator (2026-11-14: "one README map from pipeline stage to script to
+output table, and delete or clearly mark dead scripts"); implemented by the Claude Code
+session l1-reviewer-package. One-off scripts are marked rather than deleted: each is the only
+record of how a committed or published output was produced.
+
+    uv run --locked python code_map.py           # write CODE_MAP.md
+    uv run --locked python code_map.py --check   # compare
+"""
+
+from __future__ import annotations
+
+import argparse
+import ast
+import re
+import subprocess
+import sys
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+REPO = HERE.parents[2]
+OUT = HERE / "CODE_MAP.md"
+SKIP = ("tests/", "review-repo/")
+OUTPUT_NAME = re.compile(r"^(?:OUT\w*|SUMMARY\w*|DECISIONS\w*)$")
+OUTPUT_FILE = re.compile(r"[\"']([\w./-]+\.(?:tsv|json|fasta|fa|gb|md|txt|parquet))[\"']")
+TEXT = (".py", ".md", ".json", ".yml", ".yaml", ".sh", ".toml", ".R")
+
+
+def scripts() -> list[Path]:
+    out = []
+    for p in sorted(HERE.rglob("*.py")):
+        rel = p.relative_to(HERE).as_posix()
+        if rel.startswith(SKIP) or "/review-repo/" in rel or "/." in f"/{rel}":
+            continue
+        out.append(p)
+    return out
+
+
+def summary_line(path: Path) -> str:
+    try:
+        doc = ast.get_docstring(ast.parse(path.read_text())) or ""
+    except SyntaxError:
+        return ""
+    line = doc.strip().splitlines()[0] if doc.strip() else ""
+    return line.replace("|", "\\|")
+
+
+def outputs(path: Path) -> list[str]:
+    """Files named by the script's OUT* / SUMMARY* / DECISIONS* constants."""
+    try:
+        tree = ast.parse(path.read_text())
+    except SyntaxError:
+        return []
+    found = []
+    for node in tree.body:
+        if isinstance(node, ast.Assign | ast.AnnAssign):
+            targets = node.targets if isinstance(node, ast.Assign) else [node.target]
+            names = [t.id for t in targets if isinstance(t, ast.Name)]
+            if any(OUTPUT_NAME.match(n) for n in names) and node.value is not None:
+                found += OUTPUT_FILE.findall(ast.unparse(node.value))
+    return sorted(dict.fromkeys(found))
+
+
+def corpus() -> dict[str, str]:
+    files = subprocess.run(
+        ["git", "ls-files"], cwd=REPO, capture_output=True, text=True, check=True
+    ).stdout.split()
+    out = {}
+    for f in files:
+        if f.endswith(TEXT) and not f.endswith("CODE_MAP.md"):
+            try:
+                out[f] = (REPO / f).read_text(errors="ignore")
+            except OSError:
+                continue
+    return out
+
+
+def status(path: Path, texts: dict[str, str], stage_scripts: set[str]) -> str:
+    rel = path.relative_to(REPO).as_posix()
+    if path.name in stage_scripts:
+        return "stage"
+    if path.name.startswith("test_"):
+        return "test"
+    pattern = re.compile(r"\b" + re.escape(path.stem) + r"\b")
+    named_by = [f for f, t in texts.items() if f != rel and pattern.search(t)]
+    if any(f.endswith(".py") for f in named_by):
+        return "called"
+    if named_by:
+        return "documented"
+    return "one-off"
+
+
+def stages() -> list:
+    sys.path.insert(0, str(HERE))
+    import library_pipeline
+
+    return library_pipeline.STAGES
+
+
+def stage_script_names(stage) -> list[str]:
+    return re.findall(r"[\w./-]+\.py", stage.script)
+
+
+def render() -> str:
+    texts = corpus()
+    all_stages = stages()
+    stage_scripts = {Path(s).name for st in all_stages for s in stage_script_names(st)}
+    lines = [
+        "# Code map: stages, scripts and the tables they write",
+        "",
+        "Generated by [`code_map.py`](code_map.py); do not edit by hand. "
+        "`tests/test_code_map.py` fails when a script is missing from it.",
+        "",
+        "## Pipeline stages (`library_pipeline.py verify`)",
+        "",
+        "| # | Stage | Decides | Script | Reads | Writes |",
+        "|---:|---|---|---|---|---|",
+    ]
+    for n, st in enumerate(all_stages, 1):
+        writes = []
+        for name in stage_script_names(st):
+            path = next((p for p in (HERE / name, REPO / name) if p.exists()), None)
+            if path is not None:
+                writes += outputs(path)
+        lines.append(
+            f"| {n} | `{st.id}` | {st.decides} | {st.script} | {st.inputs} | "
+            f"{', '.join(f'`{w}`' for w in writes) or '—'} |"
+        )
+    lines += [
+        "",
+        "## Every script",
+        "",
+        "Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (another committed script runs or "
+        "imports it), `documented` (a README or note says how it ran), `one-off` (no committed "
+        "file names it: it ran once, its output is the record, nothing reruns it; kept as the "
+        "record of how that output was made, not to be extended).",
+        "",
+        "| Script | Status | What it does | Writes |",
+        "|---|---|---|---|",
+    ]
+    counts: dict[str, int] = {}
+    for path in scripts():
+        st = status(path, texts, stage_scripts)
+        counts[st] = counts.get(st, 0) + 1
+        writes = ", ".join(f"`{w}`" for w in outputs(path)) or "—"
+        rel = path.relative_to(HERE).as_posix()
+        lines.append(f"| [`{rel}`]({rel}) | {st} | {summary_line(path)} | {writes} |")
+    lines += ["", "Totals: " + ", ".join(f"{k} {v}" for k, v in sorted(counts.items())), ""]
+    return "\n".join(lines)
+
+
+def check_listed() -> tuple[list[str], list[str]]:
+    """(scripts not in CODE_MAP.md, CODE_MAP.md rows whose script is gone)."""
+    listed = set(re.findall(r"^\| \[`([^`]+)`\]", OUT.read_text(), re.M)) if OUT.exists() else set()
+    present = {p.relative_to(HERE).as_posix() for p in scripts()}
+    return sorted(present - listed), sorted(listed - present)
+
+
+def main(argv=None) -> int:
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--check", action="store_true")
+    args = ap.parse_args(argv)
+    text = render()
+    if args.check:
+        missing, extra = check_listed()
+        if missing or extra:
+            print(f"CODE_MAP.md: not listed {missing}; listed but gone {extra}")
+            return 1
+        print("CODE_MAP.md lists every script")
+        return 0
+    OUT.write_text(text)
+    print(f"wrote {OUT.name}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

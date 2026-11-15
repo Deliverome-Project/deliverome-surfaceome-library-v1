@@ -141,7 +141,32 @@ def test_every_c_terminal_member_has_exactly_one_issued_encoding(encodings):
     retired = {
         r["candidate_id"] for r in _tsv("candidate_manifest_tranches.tsv") if r["retired_reason"]
     }
-    stray = set(issued) - cterm - retired
+    # A member that is no longer C-terminal after a reference fix keeps its encoding too
+    # (l1_swap_risk.RELEASED, keyed by design id; TSPAN10 since 2026-11-12).
+    import l1_swap_risk
+
+    released = {
+        r["candidate_id"]
+        for r in _tsv("candidate_manifest_tranches.tsv")
+        if (r.get("design_id") or r["candidate_id"]) in l1_swap_risk.RELEASED
+    }
+    # Snorkel members (l1_snorkel.py, internal rung) also end on the cassette before the barcode.
+    snorkels = {
+        r["candidate_id"]
+        for r in _tsv("constructs_l1_cterm.tsv")
+        if r["placement"].startswith("snorkel")
+    }
+    # Snorkel members dropped from the built list keep their batch-6 encoding, reserved
+    # (21 whose snorkel arm failed its refold, plus SLC22A24 l1-p1884), derived from the committed
+    # copies of the two pinned lists; test_snorkel_lists_match_s3 checks those against S3.
+    import l1_snorkel
+
+    reserved = {
+        r["candidate_id"]
+        for r in _tsv("l1_member_renumbering.tsv")
+        if r["design_id"] in l1_snorkel.reserved_designs()
+    }
+    stray = set(issued) - cterm - retired - released - snorkels - reserved
     assert not stray, f"encodings held by members that are neither C-terminal nor retired: {stray}"
 
 
@@ -212,6 +237,38 @@ def _credentials() -> bool:
     return s3.credentials_available()
 
 
+def test_snorkel_lists_are_committed_at_their_pinned_hashes():
+    import hashlib
+
+    import l1_snorkel
+
+    for key, sha in (
+        (l1_snorkel.DESIGNS_KEY, l1_snorkel.DESIGNS_SHA256),
+        (l1_snorkel.ISSUED_KEY, l1_snorkel.ISSUED_SHA256),
+    ):
+        path = l1_snorkel.committed_copy(key)
+        assert path.exists(), f"{key}: no committed copy"
+        assert hashlib.sha256(path.read_bytes()).hexdigest() == sha, f"{key}: copy differs from pin"
+    # Every member that was ever a built snorkel (the issued and pinned lists) holds an encoding;
+    # those not built now are reserved: 23 with the final per-arm decisions (2026-11-15).
+    assert len(l1_snorkel.reserved_designs()) == 23
+
+
+@pytest.mark.skipif(not _credentials(), reason="needs S3 for the pinned snorkel lists")
+def test_snorkel_lists_match_s3():
+    import hashlib
+
+    import l1_snorkel
+
+    from deliverome_analysis.s3 import processed
+
+    for key, sha in (
+        (l1_snorkel.DESIGNS_KEY, l1_snorkel.DESIGNS_SHA256),
+        (l1_snorkel.ISSUED_KEY, l1_snorkel.ISSUED_SHA256),
+    ):
+        assert hashlib.sha256(Path(processed.download(key)).read_bytes()).hexdigest() == sha
+
+
 @pytest.mark.skipif(not _credentials(), reason="needs S3 for the designed CDS")
 def test_shared_tracts_recomputed_from_designed_cds_match_the_record(swap):
     import l1_swap_risk as sr
@@ -236,3 +293,94 @@ def test_the_cassette_constant_is_p003s_own_dna(tmp_path):
     path = processed.download("constructs/ordered/p003.gb", tmp_path / "p003.gb")
     p003 = str(SeqIO.read(path, "genbank").seq).upper()
     assert CASSETTE in p003, "the cassette's DNA is not in the p003 map"
+
+
+# ------------------------------------------------- built C-terminal arms (offline, from git)
+
+
+def _arms() -> dict[str, str]:
+    """Inserts keyed by member id. Snorkel records lead with their arm_id (one per member)."""
+    member_of = {
+        r["arm_id"]: r["candidate_id"] for r in _tsv("constructs_l1_cterm.tsv") if r.get("arm_id")
+    }
+    out, name = {}, None
+    for line in (S4E9 / "constructs_l1_cterm.fasta").read_text().splitlines():
+        if line.startswith(">"):
+            name = line[1:].split("|")[0]
+            name = member_of.get(name, name)
+            out[name] = ""
+        else:
+            out[name] += line.strip()
+    return out
+
+
+def test_every_c_terminal_member_has_one_arm_and_relocations_are_the_held_ones():
+    review = {r["candidate_id"]: r for r in _tsv("l1_cterm_review.tsv")}
+    cterm = {r["candidate_id"] for r in _tsv("l1_tag_paths.tsv") if r["placement"] == "C-terminal"}
+    assert set(review) == cterm
+    arms = _arms()
+    table = {r["candidate_id"]: r for r in _tsv("constructs_l1_cterm.tsv")}
+    assert set(table) == set(arms)
+    # Every member the review builds is a C-terminal arm; a held member is built only at a
+    # decided internal position (build_l1_cterm_arms.RELOCATED), never at its C-terminus.
+    built = {c for c, r in review.items() if r["cterm_tag"] == "kept"}
+    assert {c for c, r in table.items() if r["placement"] == "C-terminal"} <= built
+    relocated = {c for c, r in table.items() if r["placement"] == "internal, before furin site"}
+    assert relocated <= {c for c, r in review.items() if r["cterm_tag"] == "removed"}
+    # A refold move (build_l1_cterm_arms.REFOLD_MOVES) puts the cassette at the member's stalk
+    # site; every one carries its attribution.
+    for c, r in table.items():
+        if r["placement"] == "internal, stalk (refold)":
+            assert r["cassette_after_residue"] == review[c]["stalk_site_after"], c
+            assert r["decided_by"] and r["implemented_by"] and r["reason"], c
+    # Snorkel arms (l1_snorkel.py) are internal-rung members, never C-terminal-rung ones.
+    snorkels = {c for c, r in table.items() if r["placement"].startswith("snorkel")}
+    internal = {r["candidate_id"] for r in _tsv("l1_tag_paths.tsv") if r["placement"] == "internal"}
+    assert snorkels <= internal
+    # Every C-terminal member is built, except members the rules hold
+    # (build_l1_cterm_arms.dispositions; tests/test_l1_cterm_dispositions.py checks each one).
+    import build_l1_cterm_arms
+
+    dispositions = build_l1_cterm_arms.dispositions()
+    held = {
+        c
+        for c, r in review.items()
+        if dispositions[r["design_id"]].action == build_l1_cterm_arms.HOLD
+    }
+    assert set(table) == (cterm - held) | snorkels
+
+
+def test_every_arm_carries_the_issued_cassette_once_and_one_stop():
+    from build_constructs import KOZAK
+
+    enc = {r["candidate_id"]: r["cassette_nt"] for r in _tsv("l1_cassette_encodings.tsv")}
+    table = {r["candidate_id"]: r for r in _tsv("constructs_l1_cterm.tsv")}
+    bad = []
+    for cid, insert in _arms().items():
+        orf_start = insert.index(KOZAK) + len(KOZAK)
+        stop = insert.index(TAIL, orf_start)
+        coding = insert[orf_start : stop + 3]
+        protein = seqtools.translate(coding)
+        after = int(table[cid]["cassette_after_residue"])
+        ok = (
+            protein.startswith("M")
+            and protein.count("*") == 1
+            and protein.endswith("*")
+            and protein[after : after + len(CASSETTE_AA)] == CASSETTE_AA
+            and coding[3 * after : 3 * after + len(enc[cid])] == enc[cid]
+            and len(protein) - 1 == int(table[cid]["protein_aa"])
+        )
+        if table[cid]["placement"] == "C-terminal":
+            ok = ok and protein.endswith(CASSETTE_AA + "*")
+        if not ok:
+            bad.append(cid)
+    assert not bad, f"arms whose protein is not native[:n] + cassette + native[n:]: {bad[:5]}"
+
+
+def test_no_arm_carries_a_type_iis_site_beyond_its_two_wrapper_esp3i():
+    bad = {}
+    for cid, insert in _arms().items():
+        sites = seqtools.find_sites(insert, ["BbsI", "Esp3I", "BsaI"])
+        if len(sites) != 2 or any(s[0] != "Esp3I" for s in sites):
+            bad[cid] = sites
+    assert not bad, f"unexpected Type IIS sites: {list(bad.items())[:3]}"

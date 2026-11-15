@@ -34,6 +34,7 @@ COLS = [
     "candidate_set",
     "source",
     "r2_key",
+    "s3_key",
     "model_url",
     "proteoform_match",
     "residue_offset",
@@ -45,6 +46,45 @@ COLS = [
 ]
 
 
+S3_FOLDS = "sprint4/s4e9-orf-design-fg-panel/predicted-structures/colabfold/"
+#: ColabFold runs mirrored to the viewer's R2 bucket under ``library-colabfold/<run>/``. Later
+#: runs are on S3 only until they are mirrored, so they get no ``r2_key``.
+R2_RUNS = frozenset({"2026-10-14", "2026-10-14-mismatched"})
+
+
+def fold_locations() -> dict[str, list[str]]:
+    """Every published fold: ``{name: [run, ...]}``, newest run first.
+
+    ``name`` is the accession (missing-model folds) or the design id (mismatched-model folds).
+    Read from S3 so the payload names the run that actually holds the file, rather than
+    assuming the first release's folder (Becca's attribution rule: l1-reviewer-package fixed
+    this on 2026-11-12, PR #283, after the membrane-side gate found five keys that did not
+    exist).
+    """
+    from deliverome_analysis.s3 import processed
+
+    out: dict[str, list[str]] = {}
+    for key in processed.list_keys(prefix=S3_FOLDS):
+        if key.endswith(".pdb"):
+            run, name = key[len(S3_FOLDS) :].split("/", 1)
+            out.setdefault(name[: -len(".pdb")], []).append(run)
+    for runs in out.values():
+        runs.sort(reverse=True)
+    return out
+
+
+def fold_keys(locations: dict[str, list[str]], name: str, *, stale: bool = False) -> dict:
+    """``r2_key`` and ``s3_key`` for a fold: the newest run, or for a stale fold the oldest."""
+    runs = locations.get(name, [])
+    if not runs:
+        return {"r2_key": "", "s3_key": ""}
+    run = runs[-1] if stale else runs[0]
+    return {
+        "r2_key": f"{R2_PREFIX}/{run}/{name}.pdb" if run in R2_RUNS else "",
+        "s3_key": f"processed://{S3_FOLDS}{run}/{name}.pdb",
+    }
+
+
 def rows(name: str) -> list[dict]:
     with (HERE / name).open() as fh:
         return list(csv.DictReader(fh, delimiter="\t"))
@@ -52,8 +92,11 @@ def rows(name: str) -> list[dict]:
 
 def plddt_map() -> dict[str, float]:
     out: dict[str, float] = {}
+    # The committed fold summaries (every run, merged), not a local cache: a fold run on
+    # another machine or session is otherwise invisible here.
     for path in (
-        Path.home() / ".cache/deliverome-analysis/predicted_structures/fold_summary.tsv",
+        HERE / "predicted_structures/fold_summary.tsv",
+        HERE / "predicted_structures/fold_summary_mismatched.tsv",
         Path.home() / ".cache/deliverome-analysis/predicted_structures_mismatched/fold_summary.tsv",
     ):
         if not path.exists():
@@ -63,6 +106,24 @@ def plddt_map() -> dict[str, float]:
                 if r.get("mean_plddt"):
                     out[r["name"]] = float(r["mean_plddt"])
     return out
+
+
+def folded_sequences() -> dict[str, str]:
+    """The protein each mismatched-model fold was run on, keyed by design id."""
+    out: dict[str, str] = {}
+    name = None
+    for line in (HERE / "fold_inputs_mismatched.fasta").read_text().splitlines():
+        if line.startswith(">"):
+            name = line[1:].split("|")[0]
+            out[name] = ""
+        elif name:
+            out[name] += line.strip()
+    return out
+
+
+def ordered_proteins() -> dict[str, str]:
+    prot = ld.designed_proteins(HERE / "candidate_manifest_tranches.tsv", library=ld.LIBRARY_L1)
+    return {cid: m["sequence"] for cid, m in prot.items()}
 
 
 def ordered_lengths() -> dict[str, int]:
@@ -85,13 +146,37 @@ def ordered_lengths() -> dict[str, int]:
 
 
 def main() -> int:
-    gap = {r["candidate_id"]: r for r in rows("l1_structure_gap.tsv")}
+    # Active members only: the measurement caches keep rows for retired members (dropped
+    # from a panel, or duplicates), which the viewer must not offer as library members.
+    active = {
+        r["candidate_id"]
+        for r in rows("candidate_manifest_tranches.tsv")
+        if r["library"] == ld.LIBRARY_L1 and ld.is_active(r)
+    }
+    gap = {
+        r["candidate_id"]: r for r in rows("l1_structure_gap.tsv") if r["candidate_id"] in active
+    }
     match = {r["candidate_id"]: r for r in rows("proteoform_match.tsv")}
-    folded_no_model = {r["accession"] for r in rows("fold_inputs.tsv")}
+    # Every successful missing-model fold, from the committed summary: the 2026-11-10 run
+    # (61 adopted orthologs) was folded from its own FASTA and is not in fold_inputs.tsv.
+    folded_no_model = {r["accession"] for r in rows("fold_inputs.tsv")} | {
+        r["name"]
+        for r in rows("predicted_structures/fold_summary.tsv")
+        if r["ok"] in ("True", "true", "1")
+    }
     folded_mismatch = {r["name"] for r in rows("fold_inputs_mismatched.tsv")}
+    # A fold is "ours by construction" only while the member still orders the protein it was
+    # folded from; a later reference fix (SLC22A17's ATG, TSPAN10's swap, 2026-11-12) leaves
+    # the fold describing the old protein, so it is offered but not chosen.
+    folded_seq = folded_sequences()
+    ordered = ordered_proteins()
     plddt = plddt_map()
     length = ordered_lengths()
     offsets = {r["candidate_id"]: r for r in rows("residue_offsets.tsv")}
+    # Fold inputs, their structure files and their pLDDT are keyed on the design id (the
+    # fold ran before the member ids were assigned, and member ids move until the freeze).
+    design = ld.design_ids(HERE / "candidate_manifest_tranches.tsv")
+    locations = fold_locations()
 
     out: list[dict] = []
     for cid, g in gap.items():
@@ -115,7 +200,7 @@ def main() -> int:
                 {
                     **base,
                     "source": "colabfold",
-                    "r2_key": f"{R2_PREFIX}/2026-10-14/{g['accession']}.pdb",
+                    **fold_keys(locations, g["accession"]),
                     "model_url": "",
                     "proteoform_match": "ours_by_construction",
                     "model_length_aa": base["ordered_length_aa"],
@@ -126,17 +211,52 @@ def main() -> int:
             )
             continue
 
-        if verdict == "different" and cid in folded_mismatch:
+        did = design.get(cid, cid)
+        if (
+            verdict == "different"
+            and did in folded_mismatch
+            and folded_seq.get(did) != ordered.get(cid)
+        ):
             out.append(
                 {
                     **base,
                     "source": "colabfold",
-                    "r2_key": f"{R2_PREFIX}/2026-10-14-mismatched/{cid}.pdb",
+                    **fold_keys(locations, did, stale=True),
+                    "model_url": "",
+                    "proteoform_match": "stale_fold",
+                    "model_length_aa": len(folded_seq.get(did, "")),
+                    "is_chosen": 0,
+                    "mean_plddt": plddt.get(did, ""),
+                    "note": "folded from an earlier designed protein; refold the current one",
+                }
+            )
+            out.append(
+                {
+                    **base,
+                    "source": "alphafold_db",
+                    "r2_key": "",
+                    "s3_key": "",
+                    "model_url": AFDB.format(acc=g["accession"]),
+                    "proteoform_match": "different",
+                    "model_length_aa": model_len,
+                    "is_chosen": 0,
+                    "mean_plddt": "",
+                    "note": f"AlphaFold DB models a different proteoform "
+                    f"({model_len} aa vs {base['ordered_length_aa']} aa ordered)",
+                }
+            )
+            continue
+        if verdict == "different" and did in folded_mismatch:
+            out.append(
+                {
+                    **base,
+                    "source": "colabfold",
+                    **fold_keys(locations, did),
                     "model_url": "",
                     "proteoform_match": "ours_by_construction",
                     "model_length_aa": base["ordered_length_aa"],
                     "is_chosen": 1,
-                    "mean_plddt": plddt.get(cid, ""),
+                    "mean_plddt": plddt.get(did, ""),
                     "note": "folded from the designed CDS",
                 }
             )
@@ -145,6 +265,7 @@ def main() -> int:
                     **base,
                     "source": "alphafold_db",
                     "r2_key": "",
+                    "s3_key": "",
                     "model_url": AFDB.format(acc=g["accession"]),
                     "proteoform_match": "different",
                     "model_length_aa": model_len,
@@ -170,6 +291,7 @@ def main() -> int:
                         **base,
                         "source": "alphafold_db",
                         "r2_key": "",
+                        "s3_key": "",
                         "model_url": AFDB.format(acc=g["accession"]),
                         "proteoform_match": "contained",
                         "model_length_aa": model_len,
@@ -186,6 +308,7 @@ def main() -> int:
                     **base,
                     "source": "alphafold_db",
                     "r2_key": "",
+                    "s3_key": "",
                     "model_url": AFDB.format(acc=g["accession"]),
                     "proteoform_match": "contained",
                     "residue_offset": offset,
@@ -212,6 +335,7 @@ def main() -> int:
                 **base,
                 "source": "alphafold_db",
                 "r2_key": "",
+                "s3_key": "",
                 "model_url": AFDB.format(acc=g["accession"]),
                 "proteoform_match": verdict,
                 "model_length_aa": model_len,

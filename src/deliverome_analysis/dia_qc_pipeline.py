@@ -2,8 +2,9 @@
 
 Chains the reusable steps so a new dataset needs no glue code:
 
-1. **trim** a Spectronaut Normal Report to the small tables QC and limpa read
-   (:func:`deliverome_analysis.spectronaut_trim.trim_spectronaut_report`, with the contaminant
+1. **trim** a Spectronaut Normal Report, or an alphaDIA output folder, to the small tables QC
+   and limpa read (:func:`deliverome_analysis.spectronaut_trim.trim_spectronaut_report` /
+   :func:`deliverome_analysis.alphadia_trim.trim_alphadia_output`, with the contaminant
    watchlist when S3 is reachable). Skipped when given an already-trimmed directory.
 2. **limpa** protein quantification (limpa-rs by default; :mod:`deliverome_analysis.limpa`).
 3. **chromatography** from the Thermo .raw files on Modal (TIC, spray, LC pressure;
@@ -63,6 +64,7 @@ def trim_step(source: str | os.PathLike, out_dir: Path) -> Path:
     dest = out_dir / "trimmed"
     if _is_trimmed(dest):
         return dest
+    from deliverome_analysis.alphadia_trim import is_alphadia_output, trim_alphadia_output
     from deliverome_analysis.spectronaut_trim import trim_spectronaut_report
 
     watchlist = None
@@ -72,7 +74,10 @@ def trim_step(source: str | os.PathLike, out_dir: Path) -> Path:
         watchlist = load_watchlist()
     except Exception as exc:  # no S3: trim without flagging watchlist proteins
         print(f"contaminant watchlist unavailable ({type(exc).__name__}); trimming without it")
-    trim_spectronaut_report(src, dest, watchlist=watchlist)
+    if is_alphadia_output(src):  # an alphaDIA output folder instead of a Spectronaut report
+        trim_alphadia_output(src, dest, watchlist=watchlist)
+    else:
+        trim_spectronaut_report(src, dest, watchlist=watchlist)
     return dest
 
 

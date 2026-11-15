@@ -1,0 +1,158 @@
+{
+  "tranche": "l1",
+  "rung": "internal",
+  "members_on_rung": 608,
+  "members_with_an_arm": 588,
+  "arms": 1061,
+  "arm_decisions": "l1_internal_arm_decisions.tsv",
+  "members_by_arm_count": {
+    "1": 250,
+    "2": 203,
+    "3": 135
+  },
+  "arms_by_decision": {
+    "hold_no_passing_arm": 5,
+    "internal_loop": 1026,
+    "internal_loop_orientation_unconfirmed": 1,
+    "snorkel": 29
+  },
+  "arms_by_confidence": {
+    "": 1061
+  },
+  "arms_by_refold_verdict": {
+    "fail": 25,
+    "pass": 1036
+  },
+  "decided_no_arm_here": [
+    {
+      "design_id": "l1-p0434",
+      "gene_symbol": "CLRN3",
+      "decision": "hold_no_passing_arm",
+      "reason": "the snorkel arm fails refold (native-region lDDT 0.846 < 0.85), and no internal site is left: every designed internal site fails refold (after 68: native-region lDDT 0.689 < 0.85; lDDT within 15 of the site 0.579 < 0.7; alternatives: none designed), so a snorkel (Brown et al. 2013, PMID 24023844) displays the tag without opening a loop; v1 C-terminus 'I', 6 K/R after the last TM, face confirmed by the membrane-side gate (r8 usable). Held with no arm"
+    },
+    {
+      "design_id": "l1-p0556",
+      "gene_symbol": "EMP1",
+      "decision": "hold_no_passing_arm",
+      "reason": "the snorkel arm fails refold (native-region lDDT 0.801 < 0.85; lDDT within 15 of the site 0.504 < 0.7), and no internal site is left: every designed internal site fails refold (after 124: native-region lDDT 0.717 < 0.85; alternatives: 52, 27), so a snorkel (Brown et al. 2013, PMID 24023844) displays the tag without opening a loop; v1 C-terminus 'I', 3 K/R after the last TM, face confirmed by the membrane-side gate (r8 usable). Held with no arm"
+    },
+    {
+      "design_id": "l1-p0557",
+      "gene_symbol": "EMP2",
+      "decision": "hold_no_passing_arm",
+      "reason": "the snorkel arm fails refold (lDDT within 15 of the site 0.551 < 0.7), and no internal site is left: every designed internal site fails refold (after 130: native-region lDDT 0.678 < 0.85; lDDT within 15 of the site 0.621 < 0.7; alternatives: 55, 30), so a snorkel (Brown et al. 2013, PMID 24023844) displays the tag without opening a loop; v1 C-terminus 'I', 4 K/R after the last TM, face confirmed by the membrane-side gate (r8 usable). Held with no arm"
+    },
+    {
+      "design_id": "l1-p0558",
+      "gene_symbol": "EMP3",
+      "decision": "hold_no_passing_arm",
+      "reason": "the snorkel arm fails refold (native-region lDDT 0.833 < 0.85; lDDT within 15 of the site 0.628 < 0.7), and no internal site is left: every designed internal site fails refold (after 130: native-region lDDT 0.762 < 0.85; lDDT within 15 of the site 0.694 < 0.7; alternatives: 44), so a snorkel (Brown et al. 2013, PMID 24023844) displays the tag without opening a loop; v1 C-terminus 'I', 3 K/R after the last TM, face confirmed by the membrane-side gate (r8 usable). Held with no arm"
+    },
+    {
+      "design_id": "l1-p1250",
+      "gene_symbol": "MS4A10",
+      "decision": "hold_no_passing_arm",
+      "reason": "the snorkel arm fails refold (native-region lDDT 0.613 < 0.85; lDDT within 15 of the site 0.39 < 0.7), and no internal site is left: every designed internal site fails refold (after 155: native-region lDDT 0.549 < 0.85; lDDT within 15 of the site 0.566 < 0.7; alternatives: none designed), so a snorkel (Brown et al. 2013, PMID 24023844) displays the tag without opening a loop; v1 C-terminus 'I', 2 K/R after the last TM, face confirmed by the membrane-side gate (r8 usable). Held with no arm"
+    },
+    {
+      "design_id": "l1-p1252",
+      "gene_symbol": "MS4A13",
+      "decision": "hold_no_passing_arm",
+      "reason": "the snorkel arm fails refold (native-region lDDT 0.813 < 0.85), and no internal site is left: every designed internal site fails refold (after 94: native-region lDDT 0.625 < 0.85; lDDT within 15 of the site 0.547 < 0.7; alternatives: 26), so a snorkel (Brown et al. 2013, PMID 24023844) displays the tag without opening a loop; v1 C-terminus 'I', 2 K/R after the last TM, face confirmed by the membrane-side gate (r8 usable). Held with no arm"
+    },
+    {
+      "design_id": "l1-p1253",
+      "gene_symbol": "MS4A2",
+      "decision": "hold_no_passing_arm",
+      "reason": "the snorkel arm fails refold (native-region lDDT 0.825 < 0.85), and no internal site is left: every designed internal site fails refold (after 167: native-region lDDT 0.681 < 0.85; alternatives: 91), so a snorkel (Brown et al. 2013, PMID 24023844) displays the tag without opening a loop; v1 C-terminus 'I', 2 K/R after the last TM, face confirmed by the membrane-side gate (r8 usable). Held with no arm"
+    },
+    {
+      "design_id": "l1-p1257",
+      "gene_symbol": "MS4A6A",
+      "decision": "hold_no_passing_arm",
+      "reason": "the snorkel arm fails refold (native-region lDDT 0.839 < 0.85), and no internal site is left: every designed internal site fails refold (after 160: native-region lDDT 0.782 < 0.85; lDDT within 15 of the site 0.63 < 0.7; alternatives: none designed), so a snorkel (Brown et al. 2013, PMID 24023844) displays the tag without opening a loop; v1 C-terminus 'I', 2 K/R after the last TM, face confirmed by the membrane-side gate (r8 usable). Held with no arm"
+    },
+    {
+      "design_id": "l1-p1258",
+      "gene_symbol": "MS4A7",
+      "decision": "hold_no_passing_arm",
+      "reason": "the snorkel arm fails refold (native-region lDDT 0.74 < 0.85), and no internal site is left: every designed internal site fails refold (after 157: native-region lDDT 0.639 < 0.85; alternatives: none designed), so a snorkel (Brown et al. 2013, PMID 24023844) displays the tag without opening a loop; v1 C-terminus 'I', 1 K/R after the last TM, face confirmed by the membrane-side gate (r8 usable). Held with no arm"
+    },
+    {
+      "design_id": "l1-p1321",
+      "gene_symbol": "NRG2",
+      "decision": "snorkel",
+      "reason": "SignalP 6 calls no signal peptide on any native or Igk form (#254), so there is no N-after-SP arm; the membrane-side gate finds fewer than two confident helices, so the ranker refuses an internal site. The C-terminus is cytoplasmic on two independent signals: DeepTMHMM v1 (deeptmhmm-1.0.24) ends it 'I', and the 15 residues after the last TM carry 5 K/R (positive-inside). A snorkel (Brown et al. 2013, PMID 24023844) needs only that; the ectodomain is shed (shed_risk high, strong evidence; UniProt O14511 chain 112-404 is the released Neuregulin-2), and v5's best ectodomain site (153, pLDDT 33) lies in that chain, so its tag would leave with the shed ectodomain; the snorkel keeps the tag membrane-anchored"
+    },
+    {
+      "design_id": "l1-p1567",
+      "gene_symbol": "PANX1",
+      "decision": "hold_no_passing_arm",
+      "reason": "the snorkel arm fails refold (native-region lDDT 0.843 < 0.85), and no internal site is left: every designed internal site fails refold (after 92: native-region lDDT 0.835 < 0.85; lDDT within 15 of the site 0.656 < 0.7; 8 epitope residues confidently packed on the native domain; alternatives: 241, 62), so a snorkel (Brown et al. 2013, PMID 24023844) displays the tag without opening a loop; v1 C-terminus 'I', 2 K/R after the last TM, face confirmed by the membrane-side gate (r8 usable). Held with no arm"
+    },
+    {
+      "design_id": "l1-p1652",
+      "gene_symbol": "PLLP",
+      "decision": "hold_no_passing_arm",
+      "reason": "the snorkel arm fails refold (native-region lDDT 0.536 < 0.85; lDDT within 15 of the site 0.5 < 0.7), and no internal site is left: every designed internal site fails refold (after 131: native-region lDDT 0.56 < 0.85; lDDT within 15 of the site 0.496 < 0.7; alternatives: none designed), so a snorkel (Brown et al. 2013, PMID 24023844) displays the tag without opening a loop; v1 C-terminus 'I', 1 K/R after the last TM, face confirmed by the membrane-side gate (r8 usable). Held with no arm"
+    },
+    {
+      "design_id": "l1-p1667",
+      "gene_symbol": "PMP22",
+      "decision": "hold_no_passing_arm",
+      "reason": "the snorkel arm fails refold (lDDT within 15 of the site 0.654 < 0.7), and no internal site is left: every designed internal site fails refold (after 47: native-region lDDT 0.693 < 0.85; lDDT within 15 of the site 0.589 < 0.7; alternatives: 125), so a snorkel (Brown et al. 2013, PMID 24023844) displays the tag without opening a loop; v1 C-terminus 'I', 3 K/R after the last TM, face confirmed by the membrane-side gate (r8 usable). Held with no arm"
+    },
+    {
+      "design_id": "l1-p1870",
+      "gene_symbol": "SLC1A4",
+      "decision": "hold_no_passing_arm",
+      "reason": "the snorkel arm fails refold (native-region lDDT 0.847 < 0.85), and no internal site is left: every designed internal site fails refold (after 151: native-region lDDT 0.845 < 0.85; alternatives: none designed), so a snorkel (Brown et al. 2013, PMID 24023844) displays the tag without opening a loop; v1 C-terminus 'I', 3 K/R after the last TM, face confirmed by the membrane-side gate (r8 usable). Held with no arm"
+    },
+    {
+      "design_id": "l1-p2152",
+      "gene_symbol": "TM4SF1",
+      "decision": "hold_no_passing_arm",
+      "reason": "the snorkel arm fails refold (native-region lDDT 0.828 < 0.85), and no internal site is left: every designed internal site fails refold (after 39: native-region lDDT 0.795 < 0.85; lDDT within 15 of the site 0.448 < 0.7; alternatives: 135, 161), so a snorkel (Brown et al. 2013, PMID 24023844) displays the tag without opening a loop; v1 C-terminus 'I', 0 K/R after the last TM, face confirmed by the membrane-side gate (r8 usable). Held with no arm"
+    },
+    {
+      "design_id": "l1-p2155",
+      "gene_symbol": "TM4SF5",
+      "decision": "hold_no_passing_arm",
+      "reason": "the snorkel arm fails refold (native-region lDDT 0.836 < 0.85; lDDT within 15 of the site 0.681 < 0.7), and no internal site is left: every designed internal site fails refold (after 38: native-region lDDT 0.788 < 0.85; lDDT within 15 of the site 0.526 < 0.7; alternatives: 131), so a snorkel (Brown et al. 2013, PMID 24023844) displays the tag without opening a loop; v1 C-terminus 'I', 3 K/R after the last TM, face confirmed by the membrane-side gate (r8 usable). Held with no arm"
+    },
+    {
+      "design_id": "l1-p2178",
+      "gene_symbol": "TMEM169",
+      "decision": "hold_no_passing_arm",
+      "reason": "the snorkel arm fails refold (native-region lDDT 0.828 < 0.85), and no internal site is left: v1 extracellular exposure 2 residues and the gate rejects all of it; a snorkel tag (TM + tag on the cytoplasmic C-terminus, Brown et al. 2013, PMID 24023844) is built for multipass proteins with small loops. Held with no arm"
+    },
+    {
+      "design_id": "l1-p2180",
+      "gene_symbol": "TMEM174",
+      "decision": "hold_no_passing_arm",
+      "reason": "the snorkel arm fails refold (lDDT within 15 of the site 0.685 < 0.7), and no internal site is left: v1 extracellular exposure 12 residues and the gate rejects all of it; a snorkel tag (TM + tag on the cytoplasmic C-terminus, Brown et al. 2013, PMID 24023844) is built for multipass proteins with small loops. Held with no arm"
+    },
+    {
+      "design_id": "l1-p2286",
+      "gene_symbol": "TSPAN12",
+      "decision": "hold_no_passing_arm",
+      "reason": "the snorkel arm fails refold (native-region lDDT 0.814 < 0.85), and no internal site is left: every designed internal site fails refold (after 218: native-region lDDT 0.814 < 0.85; lDDT within 15 of the site 0.639 < 0.7; alternatives: 52, 121), so a snorkel (Brown et al. 2013, PMID 24023844) displays the tag without opening a loop; v1 C-terminus 'I', 2 K/R after the last TM, face confirmed by the membrane-side gate (r8 usable). Held with no arm"
+    },
+    {
+      "design_id": "l1-p3040",
+      "gene_symbol": "MS4A7",
+      "decision": "hold_no_passing_arm",
+      "reason": "the snorkel arm fails refold (native-region lDDT 0.748 < 0.85), and no internal site is left: every designed internal site fails refold (after 154: native-region lDDT 0.725 < 0.85; alternatives: none designed), so a snorkel (Brown et al. 2013, PMID 24023844) displays the tag without opening a loop; v1 C-terminus 'I', 2 K/R after the last TM, face confirmed by the membrane-side gate (r8 usable). Held with no arm"
+    }
+  ],
+  "held_at_build": [],
+  "no_site": [],
+  "type_iis": "every insert: 2 Esp3I (wrapper), 0 BbsI, 0 BsaI; in p0039: backbone's 4 + 2",
+  "insert_nt_range": [
+    788,
+    5150
+  ],
+  "cassette": "p003 tandem, one shared encoding (build_constructs.CASSETTE)",
+  "constructs_key": "sprint4/s4e9-orf-design-fg-panel/library-candidates/2026-11-12-ortholog-start-trims-2/candidate_constructs.json",
+  "barcode": "20-N placeholder; barcodes not reserved (issue #1)"
+}

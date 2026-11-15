@@ -13,12 +13,12 @@
     "weak_evidence_appris": 7
   },
   "selected_source": {
-    "mane": 2277,
-    "appris": 71,
-    "uniprot_canonical": 11,
-    "named": 10
+    "mane": 2274,
+    "appris": 66,
+    "named": 18,
+    "uniprot_canonical": 11
   },
-  "changes_current_reference": 214,
+  "changes_current_reference": 206,
   "needs_review": 20,
   "both_lanes": [
     "ATP2B2",

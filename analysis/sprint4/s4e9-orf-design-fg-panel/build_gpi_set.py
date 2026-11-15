@@ -26,10 +26,16 @@ They disagree in both directions, and the disagreements are informative rather t
 So the rule, taken from ``netgpi_verdicts.py``'s calibration rather than invented here:
 
     anchored = NetGPI says anchored in ANY form
-               OR curation says anchored and NetGPI's negative is below CONFIDENT (0.55)
+               OR curation says anchored (whatever NetGPI's negative)
 
-A NetGPI negative is only acted on **above** CONFIDENT. Below it the prediction is treated
-as uninformative and curation stands.
+Below CONFIDENT (0.55) a NetGPI negative is treated as uninformative and curation stands
+(``curated_netgpi_negative_low_confidence``). At or above it, curation still stands, but the
+gene is flagged ``conflict_curated_vs_confident_netgpi_negative`` for a human to look at rather
+than silently resolved. Four genes carry that flag: CFC1, CRIPTO, GML and RAET1G, all kept
+GPI-anchored by curation (the ``gpi_anchored`` triage reason in ``triage_run_public``, committed
+to ``gpi_anchored_genes.tsv`` by Becca Carlson on 2026-10-15). None changes a rung: all four
+are N after SP. (Docstring corrected 2026-11-14 by l1-reviewer-package; it previously said a
+confident negative overrode curation, which the code never did.)
 
 Emits every gene with its evidence and score, so a later reader can see which source
 carried it and at what confidence rather than having to re-derive this.
@@ -75,6 +81,7 @@ def read_netgpi(path: Path) -> list[dict]:
                 "form": m.group(1),
                 "gene": m.group(2),
                 "ident": m.group(3),
+                "length": int(f[1]),
                 "anchored": f[2].strip().startswith("GPI"),
                 "omega": f[3].strip(),
                 "likelihood": float(f[4]),
@@ -135,6 +142,7 @@ def main(argv: list[str] | None = None) -> int:
             call, basis = False, "netgpi_not_anchored"
 
         best_anch = max(anchored, key=lambda f: f["likelihood"], default=None)
+        ref_anch = next((f for f in anchored if f["form"] == "ref"), None)
         rows.append(
             {
                 "gene_symbol": gene,
@@ -147,8 +155,17 @@ def main(argv: list[str] | None = None) -> int:
                     bool(anchored) and not any(f["form"] == "ref" for f in anchored)
                 ),
                 "best_anchored_likelihood": f"{best_anch['likelihood']:.3f}" if best_anch else "",
+                # omega_site is in the coordinates of omega_form, the best-scoring anchored
+                # form, which can be a fragment (CPM 15 on a 35-aa form, GPC5 27 on 51 aa).
                 "omega_site": best_anch["omega"] if best_anch else "",
                 "omega_aa": best_anch["omega_aa"] if best_anch else "",
+                "omega_form": f"{best_anch['form']}_{best_anch['ident']}" if best_anch else "",
+                "omega_form_length": best_anch["length"] if best_anch else "",
+                # Residues cleaved with the propeptide: the form's length minus omega. The GPI
+                # signal is C-terminal, so this carries to any form sharing the C-terminus.
+                "propeptide_aa": best_anch["length"] - int(best_anch["omega"]) if best_anch else "",
+                # Omega in the full-length reference form, where the reference is anchored.
+                "omega_site_reference": ref_anch["omega"] if ref_anch else "",
                 # The reference form's negative -- the one CONFIDENT is calibrated on.
                 "reference_negative_likelihood": f"{ref_neg:.3f}" if ref_neg is not None else "",
                 # Informational only: never decides the call, for the reason above.

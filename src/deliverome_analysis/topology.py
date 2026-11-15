@@ -50,15 +50,27 @@ from functools import lru_cache
 import pandas as pd
 
 # --- pinned topology snapshot. Bump THIS to adopt a newer export. ---------------------
+# 2026-11-12: plus 3 topo_2026_11_12_cyno_restarts rows (library_designed_orf,
+# deeptmhmm-1.0-academic) for the decided 5' restarts of cyno CHRM3, NIPAL4 and OR3A2
+# (s4e9 ortholog_start_trims.tsv; publish_topology_supplement.py, run files under
+# processed://sprint4/s4e9-orf-design-fg-panel/topology-runs/2026-11-12_cyno_restarts.*).
+# 71,700 rows; every 2026-11-06 row is preserved. Bumped by l1-reviewer-package, PR #283.
+SNAPSHOT_KEY = "accessible-surfaceome/topology/2026-11-12-cyno-restarts/topology.parquet"
+#: SHA-256 of the object at :data:`SNAPSHOT_KEY`.
+SNAPSHOT_SHA256 = "c8fb5874437acd0677da76e2864aa76089ac7fa072f3defd2338f15f3890292e"
+
 # 2026-11-10: the ortholog CDS-policy snapshot, adopted with that panel (s4e9
 # adopt_ortholog_cds_policy.py). It is the 2026-11-01 export (topology_public with the
 # library_designed_orf cohort, plus three topo_2026_11_01_l1_designed rows) plus the 323
 # topo_2026_11_05_l1_compara116 rows and the 58 topo_2026_11_05_ortholog_cds_policy rows
 # (deeptmhmm-1.0-academic), 71,697 rows; every 2026-11-01 row is preserved. Adopting it
 # changed no existing L1 member's matched row; 166 L2 orthologs gained a v1 match.
-SNAPSHOT_KEY = "accessible-surfaceome/topology/2026-11-06-ortholog-cds-policy/topology.parquet"
-#: SHA-256 of the object at :data:`SNAPSHOT_KEY`.
-SNAPSHOT_SHA256 = "7683d75a3e04228d95fcfb8fe9b7e9b46b38c0ea254ca42550a666f5d8bbf216"
+ORTHOLOG_CDS_POLICY_SNAPSHOT_KEY = (
+    "accessible-surfaceome/topology/2026-11-06-ortholog-cds-policy/topology.parquet"
+)
+ORTHOLOG_CDS_POLICY_SNAPSHOT_SHA256 = (
+    "7683d75a3e04228d95fcfb8fe9b7e9b46b38c0ea254ca42550a666f5d8bbf216"
+)
 
 #: The snapshot before 2026-11-10, kept so an analysis run against it can be replayed.
 PREVIOUS_SNAPSHOT_KEY = "accessible-surfaceome/topology/2026-11-01/topology.parquet"

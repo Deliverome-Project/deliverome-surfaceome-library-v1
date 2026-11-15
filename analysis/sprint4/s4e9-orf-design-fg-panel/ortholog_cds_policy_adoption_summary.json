@@ -260,9 +260,9 @@
   },
   "committed_inputs": {
     "ortholog_panel_cds_eligible.tsv": "bd44a58eb2f002cec1384a798ad12b945d004157ef4788f6d98e57154761dd30",
-    "ortholog_correspondence_review.tsv": "c5325cd876c92737f6153ae19cb90a366981479dee79d010a28ef6406c967048",
-    "ortholog_correspondence_alternates.tsv": "5638fd42badab9484b001bd9c37ce8d97478d5ac26ba41c22390b0f55d9776d1",
-    "ortholog_panel_adoption_judgements.tsv": "b18f89beea31a2c120cea124578bff401580ded27046aa068f5149ef943ce4a3"
+    "ortholog_correspondence_review.tsv": "a754b47a4a0fc918d51efe25cbc228e67040d36803413030b3431df81e7bd756",
+    "ortholog_correspondence_alternates.tsv": "b2d137b683ae43369f72005228c32f4f92e545dfd69506729648a383d68ebf22",
+    "ortholog_panel_adoption_judgements.tsv": "8694a28a83a67aec64c8b10350c7ef8c64ed4d428eeb43c76c83725b76429516"
   },
   "records": {
     "candidate_cds": "processed://sprint4/s4e9-orf-design-fg-panel/library-candidates/2026-11-10-ortholog-cds-policy/candidate_cds.json",

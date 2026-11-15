@@ -14,6 +14,7 @@ from collections import Counter
 from pathlib import Path
 
 import audit_compara116_non_atg as features
+import proteoform_decisions as _audit
 import resolve_compara116_cds as resolver
 from Bio.Seq import Seq
 
@@ -22,6 +23,42 @@ TRPV6_SUPPORT = {
     "pmid": "23612980",
     "url": "https://pubmed.ncbi.nlm.nih.gov/23612980/",
     "claim": "Experiments establish ACG initiation with methionine for human and mouse TRPV6; ordinary codon-table translation of the first ACG as threonine is not the initiation event.",
+}
+
+#: Rows approved for canonical activation, with who decided and who implemented. The audit
+#: proposes; only a row named here is written approved, so rerunning the audit keeps it.
+#: apply_reference_fixes.py applies them to the designed-CDS record.
+APPROVED = {
+    key: {
+        "decided_by": "Becca Carlson, 2026-11-12 ('Send all fixes'); evidence PR #280 "
+        "REFERENCE_FORM_SCREEN.md",
+        "implemented_by": "Claude Code session l1-reviewer-package (subagent), PR #283",
+        "decision_reason": "Activate the canonical-initiation variant: replace the annotated "
+        "non-ATG start codon with ATG; no residue added (apply_reference_fixes.py)",
+    }
+    for key in ("lib:SLC22A17", "lib:TRPV6")
+}
+for _key in APPROVED:
+    APPROVED[_key]["alternative"] = "not recorded (before the 2026-11-12 alternative column)"
+#: OR8G3 (decided by session l1-proteoform-audit, PR #300; proteoform_decisions_applied.tsv):
+#: neither Ensembl 115 transcript starts ATG and the GTF does not annotate a start, so
+#: the audit proposes an M-plus variant. Under Becca's 2026-11-12 delegation the start codon
+#: is replaced instead, the SLC22A17 / TRPV6 remedy: GTG -> ATG gives UniProt P0DMU2 exactly.
+APPROVED["lib:OR8G3"] = {
+    k: v for k, v in _audit.attribution("lib:OR8G3").items() if k != "sources"
+} | {
+    "decision_reason": _audit.attribution("lib:OR8G3")["reason"]
+    + " Sources: "
+    + _audit.attribution("lib:OR8G3")["sources"]
+}
+APPROVED["lib:OR8G3"].pop("reason")
+#: Approved rows whose action differs from the one the audit derives.
+ACTION_OVERRIDE = {
+    "lib:OR8G3": (
+        "replace_start_with_ATG",
+        "Explicit canonical-initiation variant for OR8G3: replace the annotated initiating "
+        "GTG with ATG; do not insert an extra amino acid. The result equals UniProt P0DMU2.",
+    )
 }
 
 
@@ -313,6 +350,8 @@ def boundary_decisions(
             "experimental_support": record.get("experimental_support"),
             "additional_release116_transcript": record.get("additional_compara116_evidence"),
         }
+        if key in ACTION_OVERRIDE:
+            action, reason = ACTION_OVERRIDE[key]
         decisions.append(
             {
                 "key": key,
@@ -326,7 +365,16 @@ def boundary_decisions(
                 else "annotation_supported_pending_review"
                 if substitute
                 else "curation_required",
-                "approved_for_canonical_activation": False,
+                "approved_for_canonical_activation": key in APPROVED,
+                **APPROVED.get(
+                    key,
+                    {
+                        "decided_by": "",
+                        "implemented_by": "",
+                        "decision_reason": "",
+                        "alternative": "",
+                    },
+                ),
             }
         )
     return decisions
@@ -417,6 +465,10 @@ def main():
                 "evidence",
                 "review_status",
                 "approved_for_canonical_activation",
+                "decided_by",
+                "implemented_by",
+                "decision_reason",
+                "alternative",
             ],
             delimiter="\t",
             lineterminator="\n",

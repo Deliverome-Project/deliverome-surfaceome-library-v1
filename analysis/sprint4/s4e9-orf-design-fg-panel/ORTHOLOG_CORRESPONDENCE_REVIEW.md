@@ -54,8 +54,12 @@ Short indels inside a feature that is still present are reported in the table bu
 change the call: signal peptides vary in length between species and are cleaved. 61 of the 200
 forms have at least one unaligned human residue inside some annotated feature.
 
-One form departs from the rule, with its reason recorded in
-[ortholog_correspondence_judgements.tsv](ortholog_correspondence_judgements.tsv).
+One form departs from the rule: mouse OR10G6, which the rule would replace, is an ask. That
+call is a Claude Code agent judgement of 2026-11-07, made for Becca Carlson to review. Its
+reason, who decided it and who implemented it are recorded in
+[ortholog_correspondence_judgements.tsv](ortholog_correspondence_judgements.tsv). Every row
+of the review table carries `decided_by` and `implemented_by`. Rows decided by the rule say
+"no decision taken (mechanical rule)".
 
 ## Results
 
@@ -136,7 +140,7 @@ whose indels are short.
 | Pfam hits | [ortholog_correspondence_pfam_hits.tsv](ortholog_correspondence_pfam_hits.tsv): every resolved hit with tier (GA or NC), clan and coordinates |
 | Run record | [ortholog_correspondence_summary.json](ortholog_correspondence_summary.json): input URIs and SHA-256, counts, method strings |
 | Reviewer departures | [ortholog_correspondence_judgements.tsv](ortholog_correspondence_judgements.tsv) |
-| Durable copy of outputs | `processed://sprint4/s4e9-orf-design-fg-panel/ortholog-correspondence-review/2026-11-07/` (table, alternates, Pfam hits, run record, judgements, figure), generated from commit `e696b394` with a clean worktree |
+| Durable copy of outputs | `processed://sprint4/s4e9-orf-design-fg-panel/ortholog-correspondence-review/2026-11-10/` (table, alternates, Pfam hits, run record, judgements, figure), generated from commit `2e2b140f` with a clean worktree. It adds the `decided_by` / `implemented_by` columns; every other value is identical to the 2026-11-07 copy, which is kept unchanged. |
 | Selected ortholog CDSs | `processed://…/ortholog-cds-eligibility/2026-11-05/final-v2/results/panel/selected_cds.json.gz` |
 | Topology | `external://accessible-surfaceome/topology/2026-11-06-ortholog-cds-policy/topology.parquet` (SHA-256 `7683d75a…`) |
 | Pfam 39.0 | `external://pfam/39.0/Pfam-A.hmm.gz` and `Pfam-A.clans.tsv.gz`, copied from the EBI release directory `releases/Pfam39.0` and verified against its published MD5 checksums |
@@ -144,8 +148,10 @@ whose indels are short.
 
 ## Decision log
 
-| Date | Was | Now | Why |
-|---|---|---|---|
-| 2026-11-07 | Correspondence judged by the matching-block score and length only | Per-feature presence/absence review (SP, TM helices, label, orientation, GPI, Pfam domains) of all 200 forms | CDS completeness and the correspondence score do not establish that domains and topology are kept |
-| 2026-11-07 | Pfam domains matched by exact family at GA | Same family or same clan, ortholog counterpart down to NC, same-clan overlaps resolved | 9 of 20 apparent losses under exact-family matching were a related family or a sub-GA hit on the same span |
-| 2026-11-07 | Every undetected Pfam domain counts as lost | Lost only when its span carries an indel; otherwise ask | HMM non-detection on a diverged but gap-free span is not evidence of a missing fold |
+| Date | Was | Now | Why | Decided by / implemented by |
+|---|---|---|---|---|
+| 2026-11-07 | Correspondence judged by the matching-block score and length only | Per-feature presence/absence review (SP, TM helices, label, orientation, GPI, Pfam domains) of all 200 forms | CDS completeness and the correspondence score do not establish that domains and topology are kept | Method choice; no decision taken on the panel / Claude Code session ortholog-correspondence-review, PR 273 |
+| 2026-11-07 | Pfam domains matched by exact family at GA | Same family or same clan, ortholog counterpart down to NC, same-clan overlaps resolved | 9 of 20 apparent losses under exact-family matching were a related family or a sub-GA hit on the same span | Method choice; no decision taken on the panel / Claude Code session ortholog-correspondence-review, PR 273 |
+| 2026-11-07 | Every undetected Pfam domain counts as lost | Lost only when its span carries an indel; otherwise ask | HMM non-detection on a diverged but gap-free span is not evidence of a missing fold | Method choice; no decision taken on the panel / Claude Code session ortholog-correspondence-review, PR 273 |
+| 2026-11-07 | Mouse OR10G6: replace (rule: human signal peptide lost) | Ask | Only human residues 1–21, which DeepTMHMM v1 calls a signal peptide, are missing; all 7 helices and the 7tm domain align one-to-one, and a cleaved signal peptide would be atypical for an olfactory receptor | Claude Code agent judgement, proposed for Becca Carlson's review / Claude Code session ortholog-correspondence-review, PR 273; applied by code from `ortholog_correspondence_judgements.tsv` |
+| 2026-11-10 | Override rows carried form, recommendation and reason only | Every override and output row also carries `decided_by` and `implemented_by` | Becca's convention of 2026-11-10: note the agent who made each manual fix and the reasoning | Becca Carlson / Claude Code session ortholog-correspondence-review, PR 273 |

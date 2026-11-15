@@ -1,5 +1,7 @@
 # Tag placement for the L1 library
 
+> **2026-11-12:** RGMB's reference changed to the named form Q6NW40 (README, "Reference-form fixes"), whose DeepTMHMM v1 topology puts it on N after SP, so the GPI reroute below now touches BST2 only. The tables in this note are as measured before that change; current counts are in the reviewer brief, section 5.
+
 > **2026-10-29 / 2026-11-01:** 7 L1 members whose protein duplicated another member's were retired, and the isoform and ortholog panels were redrawn by rule to their designed 150 and 200 (13 members added; see the README, "Panels are redrawn by rule, reproducibly"). `l1_tag_paths.tsv` places all 2,706 active members with a designed CDS; the three without a v1 topology (SLC43A2, SUSD3, cyno ECE1) were run on 2026-11-01 (`publish_topology_supplement.py`). C-terminal members are now 218 (SLC43A2 and cyno ECE1 added). **2026-11-02:** SLC67A1 was added as `l1-p2739` (internal rung), so 2,707 members are placed and internal-site members are 567. The per-rung totals below predate these changes.
 
 Where the tag cassette goes for each of the 2,700 L1 members, decided from the topology of
@@ -34,7 +36,7 @@ without changing the rule is what makes the two comparable.
 | internal loop or snorkel | **566** | 21.0% | per-member topology |
 | N-term at residue 1, multipass | 563 | 20.9% | Tedman GPCR screen |
 | C-terminal | 216 | 8.0% | topology only |
-| N-term at residue 1, single-pass (type III) | 60 | 2.2% | topogenesis, untested |
+| N-term at residue 1, single-pass (type III) | 60 | 2.2% | topogenesis, untested; per-subgroup design in [TYPE3_NTERM.md](TYPE3_NTERM.md) |
 
 By candidate set:
 
@@ -50,6 +52,15 @@ By candidate set:
 523 / 164 / 35 here against 1,129 / 515 / 525 / 166 / 32 there. The residual differences
 are members whose ordered proteoform is not the canonical one, which is the entire point of
 redoing it per member. That agreement is the check that the ladder was not altered.
+
+## N-terminal tag at residue 1 on multipass members
+
+The 563 members on "N at residue 1, multipass" are 495 GPCRs (489 in Tedman's screen) and 68
+non-GPCRs. Whether they take an Igκ leader in front of the cassette, and which members need
+different handling whatever is chosen, is worked through in
+[NTERM_RES1_MULTIPASS.md](NTERM_RES1_MULTIPASS.md), with the per-member table in
+`nterm_res1_multipass.tsv`. GPCRs take the Igκ leader by default (Becca, 2026-11-10); a
+literature review recommends Igκ for 63 of the 68 non-GPCRs, pending her confirmation.
 
 ## Internal-site worklist
 
@@ -136,6 +147,24 @@ no reroute.
 
 The GPI set itself is built by `build_gpi_set.py` → `gpi_set.tsv` and is **157 genes**, not
 the 130 a curated-annotation-only pull returns. See below.
+
+## The C-terminal rung is checked member by member before it is built
+
+A C-terminal rung call says the C-terminus is extracellular. It does not say the C-terminus
+is still there at the cell surface. `review_l1_cterm_members.py` checks each of the 212
+members (`l1_cterm_review.tsv`, member set of PR #283 at 13f3c1b8). It marks a member only when
+the tag would be cut off, and records every other risk as a flag. One member, human ITM2B
+(`l1-m0355`), loses a C-terminal tag (`cterm_tag = removed`): furin releases the C-terminal
+Bri23 peptide (residues 244–266), which is the GPI rule above applied to a propeptide.
+`build_l1_cterm_arms.py` builds the other 211 at the C-terminus, and builds ITM2B with the
+cassette after residue 235, before the furin site (Becca, 2026-11-10). All 212 are
+built.
+The README section "C-terminal members carry their cassette" gives the flag counts, the
+checks on each insert and the questions still open. The most relevant flags here are the
+v1/v2 topology checks. Only one member's C-terminus is cytoplasmic by v2: the TRPV1 isoform
+`l1-m1559`, which also has a 1-residue v1 extracellular tail. v2 calls no TM helix for three
+members (BRICD5, TCTA, TNFSF13B) and has no row for three more (the new orthologs CLEC2L,
+CORIN and SLC47A1).
 
 ## Every L1 member is anchored
 
@@ -327,6 +356,11 @@ Inputs not in this folder: the published topology snapshot
 NetGPI's raw output in `scratch/becca/appris-principal/netgpi_gpi_human_predictions.txt`.
 
 ## Decision log
+
+**2026-11-10** — "N at residue 1, multipass" characterized per member in
+`NTERM_RES1_MULTIPASS.md`: 495 GPCRs and 68 non-GPCRs, sorted into five subgroups by what the
+Igκ-leader decision turns on. Two MFSD2A members are probably mis-placed (structure puts the
+C-terminus, and so the N-terminus, inside). Placements in `l1_tag_paths.tsv` are unchanged.
 
 **2026-10-15** — Redone per member rather than per canonical gene, on each member's own
 ordered-proteoform v1 topology. Internal-site worklist is 566 members (517 of them library

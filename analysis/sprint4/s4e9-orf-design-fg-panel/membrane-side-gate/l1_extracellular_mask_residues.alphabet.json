@@ -1,0 +1,10 @@
+{
+ "E": "eligible: DeepTMHMM v1 O, and the model puts it at or above `outside`",
+ "r": "v1 O in the review band (outside - margin <= z < outside)",
+ "m": "v1 O inside the membrane core (-core <= z < outside - margin)",
+ "c": "v1 O on the cytoplasmic side (z < -core)",
+ "u": "v1 O with no model coordinate (residue not in the model)",
+ "i": "v1 I or M, but the model puts it at or above `outside` at pLDDT >= 70 (review, not eligible)",
+ ".": "not v1 O, and not outside on the model",
+ "x": "v1 O, excluded by a manual partner-interface exclusion (manual_exclusions.tsv)"
+}

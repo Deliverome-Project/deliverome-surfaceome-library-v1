@@ -1,0 +1,154 @@
+{
+ "inputs": {
+  "designed CDS": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/library-candidates/2026-11-12-ortholog-start-trims-2/candidate_cds.json",
+   "sha256": "bf9efbe62ff11392282cfe72ee9c695b40ba320877b5460517f8be95ea16b6a4"
+  },
+  "domesticated ORFs": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/library-candidates/2026-11-12-ortholog-start-trims-2/candidate_constructs.json",
+   "sha256": "5b66e884e9855cf1f2a11b91c4b1c9588866832dfad1abf4bb80171f15104a25"
+  },
+  "D1 predictor rows (SignalP, disorder, input sequences)": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/2026-11-12b/predictor_rows.jsonl.gz",
+   "sha256": "b0033b11dfe9f427dea42bd92e1ee0eadda62313b211d5cfde128d6eb92e7b8c"
+  },
+  "interval census": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/triage/l1_interval_census.tsv",
+   "sha256": "002e2fa8981e8e920720953614c50b39c2b139cb77ee3bdab876b35a275c9fe3"
+  },
+  "re-prediction sweep submission": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/reprediction/sweep_rp_1792381414/submission.json",
+   "sha256": "7f7180591b5ef52caf20669457a1ecfad198c4abf7958dab80e7e6d736ec9346"
+  },
+  "re-prediction sweep calls": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/reprediction/sweep_rp_1792381414/reprediction.json",
+   "sha256": "3c120c02bb35439700fb91ebae8c49e9a7ef11de79fecaf6de99fa4eb6320459"
+  },
+  "ortholog predictor rows": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/2026-11-12/ortholog_rows_2026-11-12c.jsonl.gz",
+   "sha256": "7c77ca8791124d88640ee90d37e2aa7c354dc92875fc6a23519e29f206e01729"
+  },
+  "UniProt pro-peptide snapshot": {
+   "key": "external://uniprot/2026_04/nterm-propeptides/uniprot_features.tsv",
+   "sha256": "b2f9f5e7f0e04c9b7113e039ec761546a9b7c87dd8514cba38e58639bf918b23"
+  },
+  "UniProt second-source snapshot (signal peptide, TM, topology)": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/uniprot-sp-disagree/2026_04/uniprot_features.tsv",
+   "sha256": "516f0b62c5659d5e85268da28381256bb633d598124558cfa13809e2862369c1"
+  },
+  "SignalP run nterm_sp6_2026_11_10 calls": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/signalp6-runs/nterm_sp6_2026_11_10/calls.json",
+   "sha256": "f9064f5f5310f4bbf557456ec6470afeb6ee9fcab6b987672c07be82dc9a2fd5"
+  },
+  "SignalP run nterm_sp6_2026_11_10 provenance": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/signalp6-runs/nterm_sp6_2026_11_10/provenance.json",
+   "sha256": "8745043c89b5ed824f8a062088db6a9135bc4e850fdb388428d3a56808b5f4ca"
+  },
+  "SignalP run nterm_sp6_2026_11_12 calls": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/signalp6-runs/nterm_sp6_2026_11_12/calls.json",
+   "sha256": "6cce8d31e2daa5f092c38dc65787e20a3b93d95dd8fc345a865439cbe42d91c5"
+  },
+  "SignalP run nterm_sp6_2026_11_12 provenance": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/signalp6-runs/nterm_sp6_2026_11_12/provenance.json",
+   "sha256": "158d5ba3cfec7b3d6f770881f9d7d53f2b35379bf831e5d5398466ebca17bc62"
+  },
+  "SignalP run nterm_sp6_2026_11_12b calls": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/signalp6-runs/nterm_sp6_2026_11_12b/calls.json",
+   "sha256": "c0c355e840b8abdf11bd33f6ba23d88524451502a4f11454cdb5e26471e2a7b9"
+  },
+  "SignalP run nterm_sp6_2026_11_12b provenance": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/signalp6-runs/nterm_sp6_2026_11_12b/provenance.json",
+   "sha256": "c7531c452f3b2d46c00dda4f5b913a655749ad93f56751d110b8059126729039"
+  },
+  "SignalP run nterm_sp6_2026_11_12c calls": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/signalp6-runs/nterm_sp6_2026_11_12c/calls.json",
+   "sha256": "6dcae2f2c265d254b3310cd3f61006f57d2fc90f637b7f11235383944a2865bd"
+  },
+  "SignalP run nterm_sp6_2026_11_12c provenance": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/signalp6-runs/nterm_sp6_2026_11_12c/provenance.json",
+   "sha256": "5f5a722a8fa0b0fea5f7d0724e094024f9cc017fa69c7c6563cb61f37a8b5e47"
+  },
+  "SignalP run nterm_sp6_2026_11_12d calls": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/signalp6-runs/nterm_sp6_2026_11_12d/calls.json",
+   "sha256": "5545bcad0c1e1f2d99573371f73af25f768a04a03b009fec9ff5d4ba43a7087d"
+  },
+  "SignalP run nterm_sp6_2026_11_12d provenance": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/signalp6-runs/nterm_sp6_2026_11_12d/provenance.json",
+   "sha256": "26cf7055d56d44021c7a4dad131a2770a59fcfbeeb9d6a440f91eeced3b8bae0"
+  },
+  "SignalP run nterm_sp6_2026_11_12e calls": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/signalp6-runs/nterm_sp6_2026_11_12e/calls.json",
+   "sha256": "5686907463aa7c8e7d92266de0c042030d74811f6ad2fc123f9220614221dc9b"
+  },
+  "SignalP run nterm_sp6_2026_11_12e provenance": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/signalp6-runs/nterm_sp6_2026_11_12e/provenance.json",
+   "sha256": "ca14d8ab0cd9571206727c38e6c9216d5256708b608dcc2d1d8ee29b7f9456e1"
+  },
+  "SignalP run nterm_sp6_2026_11_12f calls": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/signalp6-runs/nterm_sp6_2026_11_12f/calls.json",
+   "sha256": "32f5b81b3b0e3d4db77f25df92326051f3deba5eb335d870be15fb335ed6d9d4"
+  },
+  "SignalP run nterm_sp6_2026_11_12f provenance": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/signalp6-runs/nterm_sp6_2026_11_12f/provenance.json",
+   "sha256": "efbd80dc470a0460263a5820d910d8bb9f8e77a4027babece4fa92f8a35bfb09"
+  },
+  "SignalP run nterm_sp6_2026_11_14g calls": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/signalp6-runs/nterm_sp6_2026_11_14g/calls.json",
+   "sha256": "79a105e5283de93db7acb3b145e3be04d7facf8f88826499c6831c243b2a4371"
+  },
+  "SignalP run nterm_sp6_2026_11_14g provenance": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/signalp6-runs/nterm_sp6_2026_11_14g/provenance.json",
+   "sha256": "79a1f389fa86fc1690cb6b85c3264b32b0687d0766251fff4b00d2fb884519c3"
+  },
+  "SignalP run nterm_sp6_2026_11_14h calls": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/signalp6-runs/nterm_sp6_2026_11_14h/calls.json",
+   "sha256": "c9e0a43e9b1c1d60d0ada78b3445176929458ea94612c1a852b574bd138ea39c"
+  },
+  "SignalP run nterm_sp6_2026_11_14h provenance": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/signalp6-runs/nterm_sp6_2026_11_14h/provenance.json",
+   "sha256": "6d6abab63dd914712a36f5e03c8f06c63c9a8e52c9b4e1dd15ebc2c5d951d5ed"
+  },
+  "SignalP run nterm_sp6_2026_11_14i calls": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/signalp6-runs/nterm_sp6_2026_11_14i/calls.json",
+   "sha256": "851319c82bcbf44123b6001207fa7ccd514644d54c97a72ad4406bd0290afc3a"
+  },
+  "SignalP run nterm_sp6_2026_11_14i provenance": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/signalp6-runs/nterm_sp6_2026_11_14i/provenance.json",
+   "sha256": "b7bad5181636e7dda0f37d4f303a235a1fe186871226391c767b340713d80c22"
+  },
+  "SignalP run nterm_sp6_2026_11_14j calls": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/signalp6-runs/nterm_sp6_2026_11_14j/calls.json",
+   "sha256": "5124e19547e6e535767297f91636bd57aebd223964c7a13266bbddcc8cb7f43a"
+  },
+  "SignalP run nterm_sp6_2026_11_14j provenance": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/signalp6-runs/nterm_sp6_2026_11_14j/provenance.json",
+   "sha256": "c095c3bd040ab07f16e7ee40eac85f988c62fcb971dbce9b2f9ed19d26234326"
+  },
+  "SignalP run nterm_sp6_2026_11_15a calls": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/signalp6-runs/nterm_sp6_2026_11_15a/calls.json",
+   "sha256": "34c1f6030cf5b38827cdd4a91e1672cf64167a1518fafa30d5a05d93de992234"
+  },
+  "SignalP run nterm_sp6_2026_11_15a provenance": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/signalp6-runs/nterm_sp6_2026_11_15a/provenance.json",
+   "sha256": "19f6995b24a72a19051cb243bce6bd53cf3921c84437808357fb7835b64e5aab"
+  },
+  "refold verdicts (frozen copy of l1-tag-refold's verdicts_nterm.tsv)": {
+   "key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/refold-verdicts/verdicts_nterm.d858ff4b3c2a.tsv",
+   "sha256": "d858ff4b3c2aab0634d9d2659856df4f2ab4a4f9ac6286e08576a328d04202fd",
+   "source": "sprint4/s4e9-orf-design-fg-panel/predicted-structures/tagged/2026-11-12/verdicts_nterm.tsv"
+  }
+ },
+ "uniprot_release": "2026_04",
+ "signalp_identity": "signalp6_identity.json",
+ "lddt_borderline_margin": 0.01,
+ "activation_only_propeptides": [
+  "F2R",
+  "F2RL1",
+  "F2RL2",
+  "F2RL3",
+  "MEP1B",
+  "PRSS21",
+  "PRSS41",
+  "PRSS8"
+ ]
+}

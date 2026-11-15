@@ -47,7 +47,9 @@ def main() -> int:
         seq = seqtools.translate(entry["cds"]).rstrip("*")
         rows.append(
             {
-                "name": r["candidate_id"],
+                # The fold job (and its structure file) is named by the design id, which
+                # does not move when members are renumbered.
+                "name": meta.get("design_id") or r["candidate_id"],
                 "symbol": r["symbol"],
                 "species": meta.get("species", ""),
                 "set": r["set"],

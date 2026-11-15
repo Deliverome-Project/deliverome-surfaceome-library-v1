@@ -30,6 +30,14 @@ Two corrections on top of it, both of which the prior analyses name as known gap
   a usable inter-TM loop -- so there is no internal fallback to route them to. Flagging it
   is the honest action; rerouting would invent an option that does not exist.
 
+**Lane overrides** (``lane_overrides.tsv``, keyed on design id) are a documented layer on
+top, like the GPI reroute: DeepTMHMM v1 stays the topology of record and ``rung_before_gpi``
+stays its call, but where structures or homology contradict v1 (MFSD2A, AQP12B, GLP2R; decided
+2026-11-12 by l1-reviewer-package under Becca's delegation, evidence from the PR #296 lane
+check) the override sets ``placement`` (and ``signal_peptide_aa`` where given), and
+``lane_override`` carries its reason. Each override names the protein it was decided on
+(``sequence_sha256``); a member whose designed protein has changed stops the run.
+
     uv run --locked python l1_tag_paths.py
 """
 
@@ -51,6 +59,7 @@ MANIFEST = HERE / "candidate_manifest_tranches.tsv"
 #: anchored only in a non-canonical form (NCAM1, BCAN, TFPI, CACNA2D3, ...).
 GPI_FILE = HERE / "gpi_set.tsv"
 SHED_FILE = HERE / "shed_form_risk.tsv"
+LANE_OVERRIDES = HERE / "lane_overrides.tsv"
 
 #: Extracellular state in the DeepTMHMM v1 alphabet. "I" is cytoplasmic, "M" a TM helix,
 #: "S" the signal peptide, "B" a beta strand.
@@ -153,6 +162,11 @@ def _load_gpi(path: Path) -> set[str]:
         }
 
 
+def _load_lane_overrides(path: Path) -> dict[str, dict[str, str]]:
+    with path.open() as fh:
+        return {r["design_id"]: r for r in csv.DictReader(fh, delimiter="\t")}
+
+
 def _load_shed(path: Path) -> dict[str, dict[str, str]]:
     if not path.exists():
         return {}
@@ -175,6 +189,9 @@ def main(argv: list[str] | None = None) -> int:
     print(f"{args.library}: {len(members)} members; GPI genes {len(gpi)}; shed genes {len(shed)}")
 
     by_cid = {r["candidate_id"]: r for r in report.to_dict("records")}
+    overrides = _load_lane_overrides(LANE_OVERRIDES)
+    design_id = ld.design_ids(args.manifest)
+    applied: list[str] = []
     rows: list[dict] = []
     no_topology: list[str] = []
     for cid, m in members.items():
@@ -207,6 +224,16 @@ def main(argv: list[str] | None = None) -> int:
             placement = "internal"
             gpi_rerouted = True
 
+        lane_override = ""
+        ov = overrides.get(design_id[cid])
+        if ov is not None:
+            if ov["sequence_sha256"] != r["sequence_sha256"]:
+                raise SystemExit(f"{design_id[cid]}: lane override was decided on another protein")
+            placement, lane_override = ov["placement"], ov["reason"]
+            if ov["signal_peptide_aa"]:
+                sp = int(ov["signal_peptide_aa"])
+            applied.append(design_id[cid])
+
         s = shed.get(gene, {})
         rows.append(
             {
@@ -218,6 +245,7 @@ def main(argv: list[str] | None = None) -> int:
                 "placement": placement,
                 "rung_before_gpi": rung,
                 "gpi_rerouted": int(gpi_rerouted),
+                "lane_override": lane_override,
                 "n_tm": n_tm,
                 "signal_peptide_aa": sp,
                 "length_aa": len(topo),
@@ -236,6 +264,10 @@ def main(argv: list[str] | None = None) -> int:
             }
         )
 
+    if args.library == ld.LIBRARY_L1:
+        missing = sorted(set(overrides) - set(applied))
+        if missing:
+            raise SystemExit(f"lane overrides name no active L1 member: {missing}")
     with out.open("w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=list(rows[0]), delimiter="\t", lineterminator="\n")
         w.writeheader()

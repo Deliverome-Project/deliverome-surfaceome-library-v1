@@ -2378,8 +2378,14 @@ def qc_record(
     layout: str | os.PathLike,
     output: Path,
     limpa_result=None,
+    run_info: dict[str, dict] | None = None,
 ) -> dict:
-    """Everything the shared QC index needs about this page: runs, metrics, YAML, versions."""
+    """Everything the shared QC index needs about this page: runs, metrics, YAML, versions.
+
+    A run's acquisition fields come from the raw-file chromatography when it was read, else
+    from ``run_info`` (an alphaDIA trim's manifest, i.e. the search record's raw header), which
+    also names the search library the page's identifications came from.
+    """
     import hashlib
     import importlib.metadata as md
     import time
@@ -2396,10 +2402,13 @@ def qc_record(
         "instrument_name",
         "instrument_serial",
         "file_bytes",
+        "search_library",
+        "search_library_sha256",
     )
     runs = []
     for r in ctx.order:
-        info = (found.get(r) or {}).get("info") or {}
+        searched = (run_info or {}).get(r) or {}
+        info = searched | ((found.get(r) or {}).get("info") or {})
         runs.append(
             {"run": r, "label": ctx.labels[r], "condition": str(ctx.cond[r]),
              **{k: info.get(k) for k in info_keys}}
@@ -2536,11 +2545,14 @@ def dia_qc_dashboard(
     """
     if (report is None) == (matrix_dir is None):
         raise ValueError("Give exactly one of matrix_dir= or report=")
+    run_info: dict[str, dict] = {}  # per run, from an alphaDIA trim's manifest (search record)
     if matrix_dir is not None:
         prec, source = qc.load_trimmed_precursors(matrix_dir), str(matrix_dir)
         man = Path(matrix_dir) / "manifest.json"
         if man.exists():
-            source = _report_name(json.loads(man.read_text())["source_report"])
+            manifest = json.loads(man.read_text())
+            source = _report_name(manifest["source_report"])
+            run_info = manifest.get("run_info") or {}
     else:
         prec = qc.load_spectronaut_precursors(report, q_cutoff=q_cutoff)
         source = _report_name(report)
@@ -2597,7 +2609,13 @@ def dia_qc_dashboard(
             )
     # The record the shared QC index (deliverome_analysis.qcdb) is built from.
     record = qc_record(
-        ctx, source=source, title=title, layout=layout, output=out, limpa_result=limpa_result
+        ctx,
+        source=source,
+        title=title,
+        layout=layout,
+        output=out,
+        limpa_result=limpa_result,
+        run_info=run_info,
     )
     out.with_suffix(".qcrecord.json").write_text(json.dumps(record, indent=1, default=str) + "\n")
     rec = run_record(

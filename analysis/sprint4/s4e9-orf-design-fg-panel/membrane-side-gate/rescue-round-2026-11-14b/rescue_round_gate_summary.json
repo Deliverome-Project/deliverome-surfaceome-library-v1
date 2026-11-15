@@ -1,0 +1,425 @@
+{
+ "inputs": {
+  "sprint5/s5e13-tag-site-benchmarking/rescue_round/2026-11-14b/rescue_round_sites.tsv": "d936516cf70d9540d15ec89060e8bf8d616847d61410cf158b168c04cad50181",
+  "sprint5/s5e13-tag-site-benchmarking/rescue_round/2026-11-14b/l1_rescue_member_features.tsv": "0173e963e27c31bc4ca92e14768c0421b7571b15acf4b1e2f9c2aa0019d6f65f",
+  "sprint5/s5e13-tag-site-benchmarking/rescue_round/2026-11-14b/l1_rescue_member_extracellular.tsv": "a00c616de61c508a04e529a95ddfa46543edff2c2185d9eb79ca25594368440c"
+ },
+ "thresholds": {
+  "outside": 14.0,
+  "margin": 2.3,
+  "core": 13.0,
+  "min_plddt": 50.0,
+  "min_topology_ratio": 3.9,
+  "max_kr_excess_outside": 4
+ },
+ "sites": 74,
+ "members": 39,
+ "by_basis_and_verdict": {
+  "multipass|pass": 9,
+  "not_placeable|not_placeable": 47,
+  "single_pass_tmdet|pass": 15,
+  "single_pass_tmdet|review_single_pass_geometry": 3
+ },
+ "not_passing": [
+  {
+   "design_id": "l1-p0184",
+   "gene": "BRICD5",
+   "insert_after_residue": 151,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p0184",
+   "gene": "BRICD5",
+   "insert_after_residue": 121,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p0274",
+   "gene": "CD209",
+   "insert_after_residue": 278,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p0274",
+   "gene": "CD209",
+   "insert_after_residue": 342,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p0347",
+   "gene": "CDH3",
+   "insert_after_residue": 607,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p0347",
+   "gene": "CDH3",
+   "insert_after_residue": 92,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p0349",
+   "gene": "CDH5",
+   "insert_after_residue": 75,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p0349",
+   "gene": "CDH5",
+   "insert_after_residue": 586,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p0543",
+   "gene": "EFNA1",
+   "insert_after_residue": 166,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p0543",
+   "gene": "EFNA1",
+   "insert_after_residue": 137,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p0552",
+   "gene": "ELFN1",
+   "insert_after_residue": 263,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p0552",
+   "gene": "ELFN1",
+   "insert_after_residue": 293,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p0593",
+   "gene": "ERVV-2",
+   "insert_after_residue": 147,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p0593",
+   "gene": "ERVV-2",
+   "insert_after_residue": 103,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p0615",
+   "gene": "FCAMR",
+   "insert_after_residue": 296,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p0615",
+   "gene": "FCAMR",
+   "insert_after_residue": 265,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p0913",
+   "gene": "IL12RB1",
+   "insert_after_residue": 36,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p0913",
+   "gene": "IL12RB1",
+   "insert_after_residue": 541,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p0971",
+   "gene": "ITGB3",
+   "insert_after_residue": 509,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p0971",
+   "gene": "ITGB3",
+   "insert_after_residue": 100,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p1074",
+   "gene": "KREMEN2",
+   "insert_after_residue": 362,
+   "verdict": "review_single_pass_geometry",
+   "height_A": -11.4,
+   "basis": "single_pass_tmdet"
+  },
+  {
+   "design_id": "l1-p1114",
+   "gene": "LRFN2",
+   "insert_after_residue": 398,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p1114",
+   "gene": "LRFN2",
+   "insert_after_residue": 423,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p1115",
+   "gene": "LRFN3",
+   "insert_after_residue": 398,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p1115",
+   "gene": "LRFN3",
+   "insert_after_residue": 424,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p1181",
+   "gene": "LYPD6",
+   "insert_after_residue": 33,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p1181",
+   "gene": "LYPD6",
+   "insert_after_residue": 146,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p1204",
+   "gene": "MDGA2",
+   "insert_after_residue": 993,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p1204",
+   "gene": "MDGA2",
+   "insert_after_residue": 151,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p1267",
+   "gene": "MUC21",
+   "insert_after_residue": 465,
+   "verdict": "review_single_pass_geometry",
+   "height_A": -42.7,
+   "basis": "single_pass_tmdet"
+  },
+  {
+   "design_id": "l1-p1267",
+   "gene": "MUC21",
+   "insert_after_residue": 440,
+   "verdict": "review_single_pass_geometry",
+   "height_A": -24.7,
+   "basis": "single_pass_tmdet"
+  },
+  {
+   "design_id": "l1-p1324",
+   "gene": "NRN1",
+   "insert_after_residue": 113,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p1324",
+   "gene": "NRN1",
+   "insert_after_residue": 84,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p1632",
+   "gene": "PDCD1",
+   "insert_after_residue": 154,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p1632",
+   "gene": "PDCD1",
+   "insert_after_residue": 35,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p1675",
+   "gene": "PRND",
+   "insert_after_residue": 36,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p1675",
+   "gene": "PRND",
+   "insert_after_residue": 150,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p1763",
+   "gene": "SCARA5",
+   "insert_after_residue": 445,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p1763",
+   "gene": "SCARA5",
+   "insert_after_residue": 393,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p2342",
+   "gene": "VTCN1",
+   "insert_after_residue": 187,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p2342",
+   "gene": "VTCN1",
+   "insert_after_residue": 40,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p2487",
+   "gene": "PLVAP",
+   "insert_after_residue": 392,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p2487",
+   "gene": "PLVAP",
+   "insert_after_residue": 58,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p2628",
+   "gene": "VTCN1",
+   "insert_after_residue": 187,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p2628",
+   "gene": "VTCN1",
+   "insert_after_residue": 40,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p2966",
+   "gene": "PCDHB16",
+   "insert_after_residue": 677,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p2966",
+   "gene": "PCDHB16",
+   "insert_after_residue": 39,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p3006",
+   "gene": "NRN1",
+   "insert_after_residue": 104,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p3006",
+   "gene": "NRN1",
+   "insert_after_residue": 57,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  },
+  {
+   "design_id": "l1-p3061",
+   "gene": "TMEM210",
+   "insert_after_residue": 46,
+   "verdict": "not_placeable",
+   "height_A": NaN,
+   "basis": "not_placeable"
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+  "applied": [
+    "ort:cyno:CCR5:A0A2K5W5W1",
+    "ort:cyno:CHRM3:A0A7N9CAJ4",
+    "ort:cyno:NIPAL4:A0A2K5UNA7",
+    "ort:cyno:OR3A2:A0A7N9D5M3"
+  ],
+  "held_pending_v1": [],
+  "v1": {
+    "ort:cyno:CHRM3:A0A7N9CAJ4": "topo_2026_11_12_cyno_restarts",
+    "ort:cyno:CCR5:A0A2K5W5W1": "topo_2026_10_09_ortholog_repick",
+    "ort:cyno:NIPAL4:A0A2K5UNA7": "topo_2026_11_12_cyno_restarts",
+    "ort:cyno:OR3A2:A0A7N9D5M3": "topo_2026_11_12_cyno_restarts"
+  },
+  "other_active_orthologs_unchanged": 196,
+  "records": {
+    "candidate_cds.json": "processed://sprint4/s4e9-orf-design-fg-panel/library-candidates/2026-11-12-ortholog-start-trims-2/candidate_cds.json",
+    "candidate_constructs.json": "processed://sprint4/s4e9-orf-design-fg-panel/library-candidates/2026-11-12-ortholog-start-trims-2/candidate_constructs.json",
+    "changed_vectors.fasta": "processed://sprint4/s4e9-orf-design-fg-panel/library-candidates/2026-11-12-ortholog-start-trims-2/changed_vectors.fasta"
+  },
+  "record_sha256": {
+    "candidate_cds.json": "bf9efbe62ff11392282cfe72ee9c695b40ba320877b5460517f8be95ea16b6a4",
+    "candidate_constructs.json": "5b66e884e9855cf1f2a11b91c4b1c9588866832dfad1abf4bb80171f15104a25",
+    "changed_vectors.fasta": "2a3b14e9598e7b9442e656b290fd26d9ac7bef45ea7e3b0c273e47f582109b3f"
+  }
+}

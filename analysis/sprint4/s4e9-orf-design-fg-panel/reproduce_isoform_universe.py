@@ -266,16 +266,27 @@ def verify_isoform_universe(work: Path) -> str:
     from select_reference import translations_by_gene
 
     by_gene = translations_by_gene(cache / "Homo_sapiens.GRCh38.pep.all.fa.gz")
-    sibling = 0
-    for tag, (_, seq) in rec_by.items():
+    # Forms whose recorded sequence has a same-length sibling (another translation of the same
+    # Ensembl gene), i.e. the only forms a hash-ordered tie can change. Counted from the record
+    # and the release in sorted order, so the number reported does not depend on this run's
+    # hash seed.
+    tied = sorted(
+        tag
+        for tag, (_, seq) in rec_by.items()
+        if any(
+            seq in t and any(len(o) == len(seq) and o != seq for o in t) for t in by_gene.values()
+        )
+    )
+    for tag in sorted(rec_by):
+        _, seq = rec_by[tag]
         if ours_by[tag] == seq:
             continue
-        # Only an Ensembl-only form whose same-length sibling (another translation of
-        # the same Ensembl gene) won the hash-ordered tie.
-        assert len(seq) == len(ours_by[tag]) and any(
-            seq in t and ours_by[tag] in t for t in by_gene.values()
+        # Only an Ensembl-only form whose same-length sibling won the hash-ordered tie.
+        assert (
+            tag in tied
+            and len(seq) == len(ours_by[tag])
+            and any(seq in t and ours_by[tag] in t for t in by_gene.values())
         ), f"{tag}: unexplained shortlist difference"
-        sibling += 1
     # The DeepTMHMM run is keyed by the committed ids, so the manifest follows them.
     with (out / "topology_shortlist.tsv").open() as fh:
         reader = csv.DictReader(fh, delimiter="\t")
@@ -330,11 +341,20 @@ def verify_isoform_universe(work: Path) -> str:
     )
     moved = [n for n, r in zip(new_rows, rec_rows, strict=True) if n != r]
     assert all(r.split("\t")[5] == "ensembl_only" for r in moved), "a non-hash-ordered row moved"
+    # The rows a hash-ordered tie can permute: Ensembl-only rows of genes with more than one,
+    # counted from the record so the report is the same on every run.
+    per_gene: dict[str, int] = {}
+    for r in rec_rows[1:]:
+        f = r.split("\t")
+        if f[5] == "ensembl_only":
+            per_gene[f[0]] = per_gene.get(f[0], 0) + 1
+    permutable = sum(n for n in per_gene.values() if n > 1)
     return (
         f"isoform universe chain reruns at its producing commits: summaries byte for byte; "
-        f"all {len(rec_rows) - 1} cohort rows and the gene order reproduce, {len(moved)} "
-        f"Ensembl-only rows in hash-seed order; {sibling} shortlist sequences are the "
-        "same-length sibling the original hash order picked"
+        f"all {len(rec_rows) - 1} cohort rows and the gene order reproduce; only the "
+        f"{permutable} Ensembl-only rows of genes with several may change order within their gene, "
+        f"and only the {len(tied)} shortlist forms with a same-length sibling translation may "
+        "change sequence (both hash-seed ties, checked row by row)"
     )
 
 
