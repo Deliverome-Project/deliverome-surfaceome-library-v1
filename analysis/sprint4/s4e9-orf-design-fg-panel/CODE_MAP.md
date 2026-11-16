@@ -196,7 +196,7 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`reviewer-package/nterm/bundle_nterm.py`](reviewer-package/nterm/bundle_nterm.py) | documented | Build the frozen input bundle that ``run_nterm_review.py`` replays. Lab-side: needs S3. | — |
 | [`reviewer-package/nterm/decision_inputs.py`](reviewer-package/nterm/decision_inputs.py) | called | Every S3 input the N-after-SP decisions and arms are built from, pinned by SHA-256. | `decision_inputs.json` |
 | [`reviewer-package/nterm/export_refold_batch.py`](reviewer-package/nterm/export_refold_batch.py) | one-off | Tagged N-after-SP sequences for l1-tag-refold to fold, one FASTA and one table per batch. | — |
-| [`reviewer-package/nterm/hold_review.py`](reviewer-package/nterm/hold_review.py) | documented | Why each held N-after-SP member is held, its best candidate, and what the rule still allows. | `hold_review.tsv` |
+| [`reviewer-package/nterm/hold_review.py`](reviewer-package/nterm/hold_review.py) | called | Why each held N-after-SP member is held, its best candidate, and what the rule still allows. | `hold_review.tsv` |
 | [`reviewer-package/nterm/nterm_build_options.py`](reviewer-package/nterm/nterm_build_options.py) | called | Where the N-terminal cassette would go for each L1 "N after SP" member, under three rules. | — |
 | [`reviewer-package/nterm/nterm_decide.py`](reviewer-package/nterm/nterm_decide.py) | called | Decide every L1 N-after-SP member's N-terminal arm, on the evidence, under Becca's delegation. | `nterm_decisions.tsv`, `nterm_decisions_summary.json` |
 | [`reviewer-package/nterm/nterm_overnight.py`](reviewer-package/nterm/nterm_overnight.py) | called | Overnight 2026-11-12: re-prediction inputs for the held and refused N-after-SP groups. | — |
@@ -219,6 +219,7 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`run_compara116_adoption.py`](run_compara116_adoption.py) | called | Replay the pinned Compara116 pre-tag candidate adoption into a fresh directory. | — |
 | [`run_engineered_netgpi.py`](run_engineered_netgpi.py) | called | Prepare, or explicitly execute an approved, sequence-pinned NetGPI 1.1 batch. | — |
 | [`run_ortholog_netgpi.py`](run_ortholog_netgpi.py) | called | Prepare or explicitly execute an approved native-ortholog NetGPI1.1 review batch. | — |
+| [`s3e8_gap_gate_reasons.py`](s3e8_gap_gate_reasons.py) | documented | Which library gate each S3E8 surface-proteomics gap candidate fails. | `s3e8_gap_gate_reasons.tsv` |
 | [`save_rung_builds.py`](save_rung_builds.py) | stage | Save the five rung builds at every commit an order of record was made from, so no order | — |
 | [`score_eligible_ortholog_pool.py`](score_eligible_ortholog_pool.py) | called | Score the frozen ortholog pool only after exact gene/protein CDS eligibility. | — |
 | [`score_ortholog_pool.py`](score_ortholog_pool.py) | called | Score all release-specific ortholog proteoforms against the actual human designs. | — |
@@ -256,4 +257,4 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`verify_ortholog_prediction_import.py`](verify_ortholog_prediction_import.py) | one-off | SELECT-only before/after verification of the ortholog prediction D1 append. | — |
 | [`write_structure_baseline.py`](write_structure_baseline.py) | documented | Regenerate the structure-coverage baseline the repo tests assert against. | `structure_coverage_baseline.json` |
 
-Totals: called 121, documented 32, one-off 24, stage 29, test 6
+Totals: called 122, documented 32, one-off 24, stage 29, test 6

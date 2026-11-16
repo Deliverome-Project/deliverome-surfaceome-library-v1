@@ -1,0 +1,43 @@
+uniprot_accession	gene	surface_tier	length_aa	orf_nt	gate_failed	detail
+O95477	ABCA1	canonical	2261	6786	ORF size	ORF 6786 nt over the 5,000 nt cap; routed to L2 truncation
+Q8IZY2	ABCA7	canonical	2146	6441	ORF size	ORF 6441 nt over the 5,000 nt cap; routed to L2 truncation
+O00468	AGRN	canonical	2068	6207	ORF size; anchored	ORF 6207 nt over the 5,000 nt cap; routed to L2 truncation; tm_helix_count=0, not GPI-anchored
+Q96HA4	C1orf159	low	380	1143	surface evidence; specificity; expression	deep_dive_tier=low; surface_specificity=mostly_intracellular; low endogenous expression
+Q9NYQ6	CELSR1	canonical	3014	9045	ORF size	ORF 9045 nt over the 5,000 nt cap; routed to L2 truncation
+Q9HCU4	CELSR2	canonical	2923	8772	ORF size	ORF 8772 nt over the 5,000 nt cap; routed to L2 truncation
+P09603	CSF1	low	554	1665	surface evidence; specificity	deep_dive_tier=low; surface_specificity=mostly_intracellular
+Q9H0X4	FAM234A	low	552	1659	surface evidence; specificity; expression	deep_dive_tier=low; surface_specificity=mostly_intracellular; low endogenous expression
+A2RU67	FAM234B	none			surface evidence	no deep-dive record; triage verdict=no; triage reason=endomembrane_resident; 0 DB votes, 0 literature sources
+Q14517	FAT1	canonical	4588	13767	ORF size	ORF 13767 nt over the 5,000 nt cap; routed to L2 truncation
+Q6V0I7	FAT4	canonical	4981	14946	ORF size	ORF 14946 nt over the 5,000 nt cap; routed to L2 truncation
+Q86XX4	FRAS1	low	4008	12027	ORF size; surface evidence; specificity; expression	ORF 12027 nt over the 5,000 nt cap; routed to L2 truncation; deep_dive_tier=low; surface_specificity=mostly_intracellular; low endogenous expression
+P11717	IGF2R	likely	2491	7476	ORF size; specificity	ORF 7476 nt over the 5,000 nt cap; routed to L2 truncation; surface_specificity=mostly_intracellular
+P20701	ITGAL	canonical	1170	3513	co-receptor	obligate partner required
+Q9HCM3	KIAA1549	none			surface evidence	no deep-dive record; triage verdict=no; triage reason=cytoplasmic; 0 DB votes, 0 literature sources
+Q9UIQ6	LNPEP	likely	1025	3078	specificity	surface_specificity=mostly_intracellular
+O75096	LRP4	canonical	1905	5718	ORF size; expression	ORF 5718 nt over the 5,000 nt cap; routed to L2 truncation; low endogenous expression
+Q14766	LTBP1	no	1721	5166	ORF size; surface evidence; specificity; localization; anchored	ORF 5166 nt over the 5,000 nt cap; routed to L2 truncation; deep_dive_tier=no; surface_specificity=mostly_intracellular; surface_call_reason=secreted_only; tm_helix_count=0, not GPI-anchored
+P55082	MFAP3	no	362	1089	surface evidence; specificity; localization; expression	deep_dive_tier=no; surface_specificity=mostly_intracellular; surface_call_reason=secreted_only; low endogenous expression
+Q6NSJ0	MYORG	none			surface evidence	no deep-dive record; triage verdict=no; triage reason=endomembrane_resident; 0 DB votes, 0 literature sources
+Q92508	PIEZO1	canonical	2521	7566	ORF size	ORF 7566 nt over the 5,000 nt cap; routed to L2 truncation
+P55058	PLTP	none			surface evidence	no deep-dive record; triage verdict=no; triage reason=secreted_only; 8 DB votes, 1 literature sources
+P23467	PTPRB	likely	1997	5994	ORF size	ORF 5994 nt over the 5,000 nt cap; routed to L2 truncation
+P23468	PTPRD	canonical	1912	5739	ORF size	ORF 5739 nt over the 5,000 nt cap; routed to L2 truncation
+P10586	PTPRF	canonical	1907	5724	ORF size	ORF 5724 nt over the 5,000 nt cap; routed to L2 truncation
+Q13332	PTPRS	canonical	1948	5847	ORF size	ORF 5847 nt over the 5,000 nt cap; routed to L2 truncation
+Q8NC42	RNF149	no	400	1203	surface evidence; specificity; localization; expression	deep_dive_tier=no; surface_specificity=mostly_intracellular; surface_call_reason=endomembrane_resident; low endogenous expression
+Q7Z5N4	SDK1	canonical	2213	6642	ORF size; expression	ORF 6642 nt over the 5,000 nt cap; routed to L2 truncation; low endogenous expression
+Q58EX2	SDK2	likely	2172	6519	ORF size	ORF 6519 nt over the 5,000 nt cap; routed to L2 truncation
+O00241	SIRPB1	likely	398	1197	co-receptor	obligate partner required
+Q5BKX6	SLC45A4	low	768	2307	surface evidence	deep_dive_tier=low
+O94813	SLIT2	no	1529	4590	surface evidence; specificity; localization; anchored	deep_dive_tier=no; surface_specificity=mostly_intracellular; surface_call_reason=secreted_only; tm_helix_count=0, not GPI-anchored
+O60279	SUSD5	low	629	1890	surface evidence; expression	deep_dive_tier=low; low endogenous expression
+Q7L0J3	SV2A	low	742	2229	surface evidence; specificity; expression	deep_dive_tier=low; surface_specificity=mostly_intracellular; low endogenous expression
+Q9P273	TENM3	likely	2699	8100	ORF size; co-receptor	ORF 8100 nt over the 5,000 nt cap; routed to L2 truncation; obligate partner required
+Q6N022	TENM4	canonical	2769	8310	ORF size	ORF 8310 nt over the 5,000 nt cap; routed to L2 truncation
+P07996	THBS1	canonical	1170	3513	anchored	tm_helix_count=0, not GPI-anchored
+Q9BX74	TM2D1	low	207	624	surface evidence; expression	deep_dive_tier=low; low endogenous expression
+Q9NWD8	TMEM248	uncertain	314	945	surface evidence; expression	deep_dive_tier=uncertain; low endogenous expression
+Q12767	TMEM94	none			surface evidence	no deep-dive record; triage verdict=no; triage reason=endomembrane_resident; 0 DB votes, 0 literature sources
+P04004	VTN	no	478	1437	surface evidence; specificity; localization; anchored	deep_dive_tier=no; surface_specificity=mostly_intracellular; surface_call_reason=secreted_only; tm_helix_count=0, not GPI-anchored
+P41221	WNT5A	no	380	1143	surface evidence; specificity; localization; anchored	deep_dive_tier=no; surface_specificity=mostly_intracellular; surface_call_reason=secreted_only; tm_helix_count=0, not GPI-anchored

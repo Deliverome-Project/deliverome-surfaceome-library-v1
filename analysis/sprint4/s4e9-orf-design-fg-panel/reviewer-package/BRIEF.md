@@ -6,9 +6,9 @@ with an epitope-tag cassette placed where it should be displayed outside the cel
 into a common lentiviral vector and identified by a DNA barcode. Nothing in L1 has been
 ordered. This brief sets out how each member was chosen and built, what is pinned so the
 design can be rerun, and the decisions we would like reviewers to weigh in on. It describes
-the design as of **2026-11-13**; issues still being worked on before the order are listed
-separately in the [cover note](COVER_NOTE.md). The order of record is the cut `2026-11-15-final-e`
-(section 7); the items still open before the order is placed are in the cover note.
+the design as of **2026-11-16**, which is the cut `2026-11-15-final-e` (section 7) as it
+stands after that date's corrections; issues still being worked on before the order are
+listed separately in the [cover note](COVER_NOTE.md).
 
 *Figures and links:* this Markdown file refers to figures and code by their paths in the
 repository, so outside it (for example on Google Drive) the figures do not display and the
@@ -151,6 +151,48 @@ tiers). Two recorded, dated changes then apply, and they cancel:
   it now passes the anchored and ectodomain gates.
 
 The library is **2,369 genes**: 2,368 frozen root genes plus the one addition.
+
+**The gates have been tested against an independent challenge set.** S3E8's cross-method
+surfaceome sweep selects proteins by proteomics recurrence rather than by this filter, so its
+output is a check on these gates from outside them. Under the log-odds rule adopted on 2026-11-16
+(at least 20 admitted intact-cell surface-labeling publications, and log-odds of surface versus
+membrane-fractionation detection above 0.5), 347 proteins qualify and **42 are in neither L1 nor
+L2**. **Every one of the 42 fails at least one gate above**, with none left unexplained. Gene by
+gene in [`s3e8_gap_gate_reasons.tsv`](../s3e8_gap_gate_reasons.tsv), regenerated from committed
+inputs by [`s3e8_gap_gate_reasons.py`](../s3e8_gap_gate_reasons.py).
+
+The challenge set itself is S3E8's, not this experiment's: the 42 are
+`scratch/becca/s3e8-library-gap/v16/rule_B_not_in_library.tsv` at commit `3fb584ea`
+(SHA-256 `ab6a1c9b…`, 42 rows, verified here), built from the sweep-v16 snapshot.
+That file is **not on `main`**: it sits on `claude/s3e8-v12-drive-workbook`, whose pull request
+targets another feature branch, so the commit hash is the durable reference until that chain
+merges. Candidates are joined on `uniprot_accession`, not on the symbol: the sweep output carries
+UniProt entry-name mnemonics for three rows — `TMM94`, `F234B` and `K1549`, which truncate the gene
+name to five characters — so a symbol join silently drops TMEM94, FAM234B and KIAA1549.
+
+Each gene is counted once below, under the **first** gate it fails; most fail several, and the
+per-gene table gives the full set.
+
+| Gate the protein fails first | Genes | Type case |
+|---|---:|---|
+| ORF over 5,000 nt — **routed to L2 truncation, not excluded** | 20 | FAT4, 4,981 aa |
+| Surface evidence: not in the canonical or likely tier | 18 | FAM234A, `deep_dive_tier=low`, mostly intracellular |
+| Co-receptor: an obligate partner the host line must also express | 2 | ITGAL, which needs ITGB2 |
+| Specificity: mostly intracellular at steady state | 1 | LNPEP |
+| Anchored: no transmembrane helix and no GPI | 1 | THBS1, secreted |
+
+Of the 18 that fail on surface evidence, 5 have no deep-dive record at all — FAM234B, KIAA1549,
+MYORG, PLTP and TMEM94 never passed triage into the deep-dive set, each carrying a `no` triage
+verdict (`endomembrane_resident`, except KIAA1549 `cytoplasmic` and PLTP `secreted_only`) and, for
+four of the five, zero supporting database votes.
+
+**Absence from the library is a recorded consequence of these gates, not an oversight.** Two
+readings are worth separating. The 20 over the ORF cap are *deferred to L2*, not rejected, so their
+absence from L2 as well is a coverage question for that tranche rather than a judgement about the
+protein. The 18 that fail on surface evidence are a disagreement about the catalog, not about this
+design: a gene like FAM234A enters the library if and when the catalog places it in a surface tier,
+which is a change upstream of s4e9 rather than an exception inside it. **No gene from this list has
+been added to the library**, and no member was added or removed on the strength of it.
 
 ### Well-known surface proteins the gates exclude, and why
 
@@ -1542,6 +1584,7 @@ at the end.
 
 | Date | Was | Now | Why | Decided by / implemented by |
 |---|---|---|---|---|
+| 2026-11-16 | The S3E8 challenge set cited sweep-v15 (44 candidates, commit `1209a865`), of which 9 carried no surfaceome record and were published as "not evaluated". The per-gene table was assembled by hand, and its gate counts had drifted from the file it described (the brief said 4 genes fail the anchored gate where the file said 1). | Sweep-v16 (42 candidates, commit `3fb584ea`, SHA-256 `ab6a1c9b…`, verified), with **a stated failing gate for every one of the 42** and none unevaluated. The table is now generated by [`s3e8_gap_gate_reasons.py`](../s3e8_gap_gate_reasons.py) from two committed inputs, and the counts come from that file. Candidates join on `uniprot_accession`: the sweep output carries UniProt entry-name mnemonics for `TMM94`, `F234B` and `K1549`, so a symbol join drops TMEM94, FAM234B and KIAA1549. | The 9 unevaluated rows were an artifact of `api.deliverome.org` being unreachable, not of missing data; the records were read instead from the `workers.dev` origin while the zone was blocked. F2 and PLAU left the candidate set in v16 and were both among the 9, so **no gate conclusion changed**: all 35 rows published at v15 re-derive byte-identically from the rebuilt script. | Becca (adopt v16) / l1-order-merge-handoff |
 | 2026-11-15 | Sections 5, 8, 11 and 13 still described the pre-arm library (one insert per member, `l1-mNNNN` numbering), while section 12's census described `2026-11-15-final-e`, with nothing telling the reviewer which was live. Section 13 also ended in a "Corrections to this brief" table whose own corrected values had gone stale again | The rung sections, the pooling prose and the open questions are regenerated against `final-e`: 20 internal members held and not 22 (MS4A1, SLC35G2 and TMEM204 are ordered), 109 snorkel arms and not 28, 310 inserts ending in the cassette and not 229, 208 C-terminal members (168 single-pass, 40 multipass) and not 213, core 2,133 and filter total 2,369 with the SLC67A1 addition stated, and the three internal-rung counts (608 placed, 588 built, 583 decided) each given its denominator. The corrections table is removed; its content is the body's present tense | a document whose authoritative table and whose explanatory sections describe two different libraries misleads a reviewer about what is in the order, and a corrections table decays faster than the body it corrects | audit by the brief-audit session (`BRIEF_AUDIT-2026-11-15.md`) / coordinator |
 | 2026-11-15 | Section 2 stated the co-receptor gate's rule but named no protein it excludes, so a reviewer meeting the absence of CD3, CD79 or B2M had no way to tell a deliberate exclusion from an oversight | Section 2 carries the worked example: the TCR–CD3 chains, CD79A and CD79B, and B2M, each with its obligate partners and the reason its own ORF is not displayable; B2M additionally fails the anchored gate | absence from the library is not a claim about surface localization, and the co-receptor gate is where the two most often come apart; the gate turns on the host cell lacking the partner, not on the protein | Becca (the exclusion reason must be citable from the brief) / coordinator |
 | 2026-11-15 | Interim cut `2026-11-14-final-d` (SHA-256 1ee73f40…; 2,621 inserts, one per member, numbered by member id), now superseded | Order of record `2026-11-15-final-e` (SHA-256 20e8f275…) cut at 541c6c18 (main 8d447a91 merged): 3,255 inserts of 2,673 built members (2,300 with one insert, 164 with two, 209 with three) and 37 held (N after SP 13, C-terminal 4, internal 20); 790 inserts recoded by 5,312 codons; fold check 3,255 of 3,255; refold 3,119 pass and 136 fail, every failure with a recorded disposition; 34 plates, the last holding 87; plate positions per insert (`l1-iNNNN`), permanent arm ids (`l1-pNNNN-aK`), members named by design id; barcodes 3,644 reserved | an internal member may carry 2 or 3 arms and a snorkel never alone; orthologs only beside a built human member; the weak-signal-peptide Igκ rule; the rescue round | Becca (rules) and the coordinator / ranker-pu-segment, l1-integration, nterm-reviewer-package (arms), l1-reviewer-package (cut) |
