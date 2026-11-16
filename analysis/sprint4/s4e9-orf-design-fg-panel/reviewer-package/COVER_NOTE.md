@@ -94,6 +94,58 @@ The six issues above map to #11–#12 (structure models), #4 (cargo), #5–#6 (l
 |---|---|---|---|
 | [#33](https://github.com/Deliverome-Project/l1-library-review/issues/33) L2: fold the 1,155 members without a structure model (~85 GPU-hours) | Becca | measured, not folded (not rechecked since 2026-11-05) | yes |
 
+
+## Open before the order, moved here from the brief
+
+The brief describes the design; everything still open before L1 is ordered lives here, which
+is the contract the brief states. These three tables were in the brief's section 12 until
+2026-11-16 and are unchanged apart from renumbered cross-references.
+
+### Still with Becca
+
+| Item | Why only she can do it |
+|---|---|
+| **The plate map changed.** Plates and wells now belong to inserts: 3,255 ordered inserts of 2,673 built members on 34 plates, numbered `l1-i0001`–`l1-i3255` by ordered insert length with a permanent arm id each; members are named by design id and the `l1-m` member id is retired. Against `2026-11-14-final-d` every plate position changes | it changes what the vendor and the bench receive |
+| Whether to keep the Igκ swaps that rest on weaker second sources: 18 whose only confirmation of a cleaved signal peptide is DeepTMHMM v2 (library references ATRNL1, C5orf15, CDH22, CNNM1, CNTN5, GLP2R, GRIK1, LYPD6B, MMP16, SUSD4 and VSIG10L; orthologs of GABRR3, IL9R, LYPD2, LYPD6B and PVR; two SEMA4C isoforms), and 7 re-anchored on a UniProt SIGNAL feature that is itself a sequence-analysis prediction (ECO:0000255: CACHD1, CACNA2D4, CDH24, DCBLD2, GRM1, TNFRSF10A, UNC5C; companion brief section 11) | each replaces native sequence on the strength of a prediction |
+| Confirm 4 C-terminal members kept against UniProt: LYSMD3, LYSMD4, SLC24A1 and TMEM222, where UniProt predicts a cytoplasmic C-terminus and DeepTMHMM v1 and v2 both call it extracellular (`l1_cterm_decisions.tsv`). Each is ordered as built until she decides | the call rests on predictors that disagree; no experimental topology exists |
+| Sign off the thresholds set by design sessions that decide what is built: the refold bars (native-region lDDT 0.85, site lDDT 0.70, epitope relative accessibility 0.25, 5 packed epitope residues, a 10-residue cassette helix, type III TM1 15 residues; `tag_refold/score_tagged_folds.py`), the N-after-SP cleavage softening tolerance 0.07 and the 0.01 borderline margin (`nterm_decide.py`), the membrane-side gate's 14.0 Å pass line and 2.3 Å review band (`membrane-side-gate/calibration.json`), the ±2 ligand-contact veto (`contact_veto.py`), and the stalk sites chosen for failed C-terminal folds (KLRF1, HPN; `build_l1_cterm_arms.py`) | each was set by a design session under the delegation and changes which arm, or whether any arm, is ordered |
+| May the licensed DeepTMHMM 1.0.24 and SignalP 6.0 packages (and the NetGPI 1.1 install record) be kept in a private S3 prefix, so the predictors themselves are saved and not only their hashes? | a licence question |
+| Let CI check out full history (`fetch-depth: 0` in the test workflow) so the `pinned_refs` test runs there; on today's one-commit checkout it skips and says so | a CI configuration change |
+| Ask the vendor to re-quote the recoded inserts (section 7) | external send; the local rules approximate the vendor's |
+| Promoter, EFS or EF1a (question 7); the barcode 3′ flank (question 6) | construct design, not a protein call |
+| Deploy the structure viewer with tag sites and folds; publish the staged 2026-11-14 bundle as a release of the review repository | production and shared records |
+| Whether to run DeepTMHMM v1 on the 931 isoform forms the gate cannot verify | a compute call |
+| Whether the 0.85 native-region lDDT bar suits small 4-TM folds. It was calibrated on 17 untagged controls refolded with the same settings (0.897–1.000; `LDDT_PASS`, `tag_refold/score_tagged_folds.py`); on the internal rung 22 members are held with no arm passing refold (`l1_internal_decisions.tsv`, `hold_no_passing_arm`) | a scoring threshold that decides whether members ship |
+| Whether to keep counting a verdict just under a bar as a pass. The N-after-SP rung counts six arms as "borderline, counted as pass": FOLR1, SLITRK2 and SMO at site lDDT 0.691–0.698 against 0.7; SNORC, LYVE1 and CIST1 at native-region lDDT 0.842–0.847 against 0.85 (rule `lddt_borderline_counted_as_pass`, `reviewer-package/nterm/nterm_decisions.tsv`) | a scoring rule, applied on one rung only |
+| Whether to accept buried SpyTag003 on multipass arms: 53 of the 72 multipass refold failures list a buried SpyTag003 among their reasons and are kept as built (`multipass_refold_dispositions.tsv`) | SpyCatcher capture depends on the epitope being exposed; kept-as-built is a judgment on the model, not a measurement |
+| `l1_rbp_motif_cassettes.tsv` carries member ids with no design id or other stable key, so it cannot be joined after a renumber (`tests/test_member_id_policy.py` names it) | whether to regenerate it before the order |
+| The literature pass on ligand contacts covers 437 of the 583 internal members; the other 146 were finalized on deposited and transferred ligands only (`l1_internal_no_literature_pass.tsv`) | whether to finish it before the order or accept the ranker's calls |
+
+### Still running
+
+| Item | Expected |
+|---|---|
+| Four built loop arms are flagged because each is the member's only loop arm: DISP1, GJB2 and KCNK4 (two members) | an agent and literature review before the order |
+| 7 internal arms split a predicted N-glycosylation sequon | review before the order |
+| 14 arms kept on a soft literature contact (flagged under the contact veto) | the literature search, finished |
+| TMEM81, MXRA8 and IL1RAPL2 keep their native weak signal peptides, flagged because the two cleavage calls differ by more than 5 residues | Becca's call on the cut site |
+| 23 N-after-SP inserts stay High by the local synthesis rules: a 50-bp window of 90–98% GC inside protected signal-peptide codons | the vendor's quote decides whether they are made as is |
+| The agent review of every built site and the literature search for ligand contacts are unfinished | before the order |
+| Membrane-side gate r9 | L2 |
+| Native folds of the restarted cyno CHRM3, NIPAL4 and OR3A2; until they land, these three have no chosen structure model | next refold refresh |
+| 73 AlphaFold DB models the design read are not yet in the `external://alphafold-db/v6/` archive (`tag_refold_afdb_unarchived.tsv`); the `structure_models` stage names them | l1-tag-refold |
+
+### Known risks
+
+| Risk | Consequence or check |
+|---|---|
+| The synthesis rules are a local approximation of the vendor's | a vendor re-quote of the recoded inserts is the real test |
+| Tag-site model v5 was trained with features misnumbered for 4 of 127 proteins (858 of 35,650 rows) | retraining deferred to L2; the 11 L1 members hit by the same gap are redesigned on corrected features |
+| A 10-residue spacer between the cassette and native residue 2 rescued none of the 12 multipass arms first classed fold-disturbed (`verdicts_multipass_spacer.tsv`) | they are kept as built and flagged (`multipass_refold_dispositions.tsv`) |
+| 9 of 21 multipass taste receptors fail the refold, with the cassette next to TM1 on a 6–8-residue N-terminal tail | kept as built and flagged; a useful bench check |
+| 14 class A peptide and chemokine GPCRs have the epitope packed against the receptor in the model | kept, with ALFA as the display control |
+| AarI/PaqCI (1,459 of 3,255 ordered inserts), BtgZI (1,387) and SapI (all, inside ALFA's codons) sites remain (`l1_domestication_barcode_audit.json`) | no cloning step uses them; domesticate if one is adopted |
+
 ## Keeping this note current
 
 When an issue closes, change its status to the date and the decision, and keep the row:
