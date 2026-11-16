@@ -122,7 +122,7 @@ filter ([`final_library.py`](../../../sprint1/s1e3-surface-library-filters/final
 | ORF size | ≤ 5,000 nt | synthesis and packaging limit; larger genes go to truncation (L2) |
 | Ectodomain | ≥ 30 extracellular residues (GPI proteins exempt) | below that there is no domain to display |
 
-Genes that pass every gate above make up the core: **2,134** genes. Three further groups enter
+Genes that pass every gate above make up the core: **2,133** genes. Three further groups enter
 as named tiers, each with its own rule, because each has direct evidence of surface expression
 that the gates miss:
 
@@ -132,11 +132,19 @@ that the gates miss:
 | Screen-validated GPCRs | GPCRs that the gates exclude but whose anti-HA surface immunostaining is ≥ 1,000 a.u. in a pooled HEK293T screen of the human GPCRome ([Tedman et al., 2026](https://pubmed.ncbi.nlm.nih.gov/42736269/)) | 85 |
 | Overexpression surface | proteins the catalog calls mostly intracellular but that have a functional plasma-membrane pool when overexpressed, judged from the catalog's recorded evidence (the DLL3, GLUT4 and FcRn pattern); only the specificity gate excludes them | 12 |
 
-Over release 1.3.0 the filter therefore passes **2,370** genes. One is removed by a recorded
-exclusion ([`gene_list_exclusions.tsv`](../gene_list_exclusions.tsv)): EPPIN, which every
-source except one curated catalog attribute calls not GPI-anchored, and which reaches the
-sperm surface only through a complex with other proteins, so it carries no anchor of its own.
-The library is the remaining **2,369 genes**.
+Over release 1.3.0 the filter therefore passes **2,369** genes (core 2,133 plus the three
+tiers). Two recorded, dated changes then apply, and they cancel:
+
+- One gene is **removed** ([`gene_list_exclusions.tsv`](../gene_list_exclusions.tsv)): EPPIN,
+  which every source except one curated catalog attribute calls not GPI-anchored, and which
+  reaches the sperm surface only through a complex with other proteins, so it carries no anchor
+  of its own.
+- One gene is **added** ([`gene_list_additions.tsv`](../gene_list_additions.tsv)): SLC67A1
+  (formerly SLC22A18), the only gene the 1.3.0 rerun adds to the frozen list. Release 1.3.0's
+  DeepTMHMM v1 call gives it 12 transmembrane helices where the September cohort had none, so
+  it now passes the anchored and ectodomain gates.
+
+The library is **2,369 genes**: 2,368 frozen root genes plus the one addition.
 
 ### Well-known surface proteins the gates exclude, and why
 
@@ -627,7 +635,7 @@ replacement for re-prediction, because native confidence alone misses most failu
 
 | Rung | Igκ | Without | Criterion (code) |
 |---|---:|---:|---|
-| N after SP | 182 | 1,068 native | `nterm_decide.py` rule 4: SignalP 6 calls the native signal peptide lost at every candidate site with the tag in place, while the Igκ-tagged form keeps the leader's cleavage (105, and 19 more by the round-2 run and a refold fallback); or only DeepTMHMM v1 calls a signal peptide and a second source confirms a cleaved one (47) or re-anchors it (11). The Igκ swap replaces the native residues `1..c` |
+| N after SP | 232 | 1,040 native | `nterm_decide.py` rule 4: SignalP 6 calls the native signal peptide lost at every candidate site with the tag in place, while the Igκ-tagged form keeps the leader's cleavage (105, and 19 more by the round-2 run and a refold fallback); or only DeepTMHMM v1 calls a signal peptide and a second source confirms a cleaved one (47) or re-anchors it (11). The Igκ swap replaces the native residues `1..c` |
 | residue 1, multipass | 562 | 1 | `build_l1_multipass_arms.design_for`: 501 of the 502 GPCRs by default (Becca, 2026-11-10, on Aashish Manglik's suggestion), 23 of them the references of the retired expression-rescue members; non-GPCRs by a literature verdict per family (53), as their reviewed family (5), or after a lane check (SLC61A1 ×2, TSPO2). The one exception is CRHR2, whose N-terminal pseudo signal peptide cannot target the ER on its own and would become an untested internal hydrophobic segment |
 | residue 1, type III | 8 | 36 tag alone | `build_l1_type3_arms.design_for`: the ordered form lacks its gene's signal peptide (IGSF5, 1); a native N-tail of ≤ 20 residues, which the 51-aa cassette would push past the point where signal-anchor insertion changes (2); a flank-charge difference ≤ 1, i.e. weak positive-inside drive for N-out (3); KLB's internal signal-like segment (2). Every other type III member is a genuine type III with no identified risk and carries the tag alone |
 
@@ -637,7 +645,7 @@ tagged N-terminus its own ER-targeting signal and removes that dependence. For N
 leader is used only where the native signal is predicted to fail or is weak, because it changes the
 mature N-terminus by one residue (the Asp) and replaces sequence that is native.
 
-**Rejected.** Igκ for every member (changes the native start of 1,068 members whose own signal
+**Rejected.** Igκ for every member (changes the native start of 1,040 members whose own signal
 peptide is predicted to work); tag alone for all residue-1 members (rests on unassisted
 translocation of the cassette); keeping the 25 rescue members beside their references as a
 within-gene leader test (rejected by Becca on 2026-11-13: in one pool each pair would swap barcodes).
@@ -647,10 +655,18 @@ against no leader, so the leader's effect on display is assumed, not measured, f
 multipass members; the cited GPCR literature never tested a 51-aa cassette behind a leader.
 For N after SP, an Igκ swap rests on SignalP's response to an engineered junction (the
 cassette directly after the cleavage site) that SignalP was not trained on. The type III rules rest on topogenesis arguments with no tagged type III
-member yet measured. 570 ordered inserts were folded as the mature chain after the leader,
+member yet measured. 572 ordered inserts were folded as the mature chain after the leader,
 not as the precursor, on the assumption that the leader is cleaved.
 
-#### Internal loops (583 members decided; 582 on the rung)
+#### Internal loops (608 members on the rung; 588 built, 20 held)
+
+Three counts for this rung appear in this brief and they measure different things. **608** is
+the members topology places on the internal rung (`l1_tag_paths.tsv`). **588** of those carry
+at least one ordered arm, between them 1,061 loop arms, and **20** are held because no arm of
+any kind passes. **583** is the row count of the ranker's decision table
+(`l1_internal_decisions.tsv`), which was written in the decision round before the arm rule and
+covers 582 of the 608; the remaining 26 reached the rung afterwards. Where a number below has
+583 as its denominator, it is the decision round's, not the order's.
 
 **Rule.** A member whose neither terminus is extracellular is tagged inside an extracellular
 loop. The site is the top-ranked junction of tag-site model v5 that (1) the membrane-side gate
@@ -810,28 +826,28 @@ displayed outside on a helix of its own and does not touch the protein's loops.
 or too buried to take 51 aa without disturbing the fold; the snorkel was designed for exactly
 these.
 
-**Holds.** A snorkel arm is itself refolded: of 50 snorkel arms, 22 (44%) fail, and all 28
-ordered snorkel arms pass. The 22 are held because their snorkel arm also
-fails refold, so no arm is left. A pre-registered test asked whether a longer first linker
-rescues them: lengthening it from 11 to 30 residues rescued 0 of 5 failing arms and turned both
-passing controls into failures (criterion: at least 3 of 5 rescued with both controls passing;
-`snorkel_spacer_test.json`). The 22 (CLRN3, EMP1–3, MS4A1, MS4A2, MS4A6A, MS4A7 ×2, MS4A10,
-MS4A13, PANX1, PLLP, PMP22, SLC1A4, SLC35G2, TM4SF1, TM4SF5, TMEM169, TMEM174, TMEM204, TSPAN12)
-are not ordered.
+**Holds.** A snorkel arm is itself refolded. The order carries 109 snorkel arms, 108 of which
+pass; in the earlier snorkel-only decision round, 22 of the 50 arms refolded then failed. A
+member is held only when no arm of any kind is left: 20 internal members are held, on 19 genes
+(CLRN3, EMP1–3, MS4A2, MS4A6A, MS4A7 ×2, MS4A10, MS4A13, NRG2, PANX1, PLLP, PMP22, SLC1A4,
+TM4SF1, TM4SF5, TMEM169, TMEM174, TSPAN12). A pre-registered test asked whether a longer first
+linker rescues such arms: lengthening it from 11 to 30 residues rescued 0 of 5 failing arms and
+turned both passing controls into failures (criterion: at least 3 of 5 rescued with both
+controls passing; `snorkel_spacer_test.json`).
 
 **Rejected.** Ordering a loop site that fails refold; the snorkel for every internal member
 (adds a helix the protein does not have, which a loop site avoids); the 30-residue linker.
 
-**Weak spots.** 19 of the 22 held snorkels fail on native-region lDDT below 0.85, which the
+**Weak spots.** Most held internal members fail on native-region lDDT below 0.85, which the
 spacer test attributes to the module packing against a small four-helix bundle, so the 0.85
 bar decides most of them. A
 snorkel reports surface delivery of the protein but sits apart from it, so it says nothing
 about the loop's own accessibility.
 
-#### C-terminal (213 members)
+#### C-terminal (208 members)
 
 **Rule.** A member whose C-terminus is extracellular and N-terminus cytoplasmic (DeepTMHMM v1
-on the ordered protein; 171 single-pass type II, 42 multipass) gets the cassette after its last
+on the ordered protein; 168 single-pass type II, 40 multipass) gets the cassette after its last
 residue, before the native stop. Its insert therefore ends in the cassette, so its linker
 codons are diversified per member (section 6). Edge cases, each a recorded rule in
 `l1_cterm_decisions.tsv`:
@@ -841,14 +857,15 @@ codons are diversified per member (section 6). Edge cases, each a recorded rule 
 | GPI-anchored with an extracellular C-terminus | the ω-site cleavage removes the C-terminus, so the member moves to internal | 1 (BST2) |
 | The terminus ends inside a confidently predicted fold | kept: the cassette's own `GGGGS` spaces the tag, and the most buried termini have no stalk long enough to take the cassette | 36 |
 | UniProt records processing that cuts or releases the ectodomain (5 of them by furin) | kept at the C-terminus with the native sequence, so the tag reports the uncut, surface-resident fraction; ITM2B, where furin removes only a 23-aa peptide, is tagged before its furin site instead | 29 |
-| UniProt puts the C-terminus in the cytoplasm against DeepTMHMM v1 and v2 | kept where UniProt's annotation is itself a prediction and both DeepTMHMM versions call it extracellular (LYSMD3, LYSMD4, SLC24A1, TMEM222; flagged for Becca, section 12); held where it rests on experiment (SLC41A2: N-terminus out, C-terminus in, 11 TM spans by [Sahni et al., 2007](https://pubmed.ncbi.nlm.nih.gov/16984228/)) or on UniProt's type I topology (VTCN1, held with its cynomolgus member) | 4 kept, 3 held |
-| Weak C-out call: an extracellular tail under 5 residues, or DeepTMHMM v2 calls no TM helix, puts the C-terminus in the cytoplasm or has no row | kept on DeepTMHMM v1, the topology of record, unless another source places the C-terminus inside; TRPV1 (l1-p2528) is held, as DeepTMHMM v2 and the canonical channel both put it in the cytoplasm | 13 kept, 1 held (BRICD5 is held for its refold) |
+| UniProt puts the C-terminus in the cytoplasm against DeepTMHMM v1 and v2 | kept where UniProt's annotation is itself a prediction and both DeepTMHMM versions call it extracellular (LYSMD3, LYSMD4, SLC24A1, TMEM222; flagged for Becca, section 12); moved off this rung where the cytoplasmic call rests on experiment (SLC41A2: N-terminus out, C-terminus in, 11 TM spans by [Sahni et al., 2007](https://pubmed.ncbi.nlm.nih.gov/16984228/), now tagged at residue 1 of the multipass rung) or on UniProt's type I topology (VTCN1 and its cynomolgus member, now on internal loops) | 4 kept, 3 moved |
+| Weak C-out call: an extracellular tail under 5 residues, or DeepTMHMM v2 calls no TM helix, puts the C-terminus in the cytoplasm or has no row | kept on DeepTMHMM v1, the topology of record, unless another source places the C-terminus inside; TRPV1 (`l1-p2528`) is tagged on an internal loop instead, as DeepTMHMM v2 and the canonical channel both put its C-terminus in the cytoplasm | 13 kept, 1 moved (BRICD5 is held for its refold) |
 | Tagged refold fails | a stalk site in the type II stalk if one passes refold (KLRF1, HPN), held if not (CD70, BRICD5, CD209, SCARA5, and the PLVAP isoform, which has no stalk) | 12 decided |
 | Experimental topology contradicts the internal call | SLC68A1 moves here from internal (UniProt Q14CX5, both termini extracellular) | 1 |
 | Stop context | TAA kept with the library's shared `CC` pad | all |
 
-Snorkel arms are also C-terminal appends, so 229 inserts end in the cassette: 201 C-terminal
-and 28 snorkel arms.
+Snorkel arms are also C-terminal appends, so 310 inserts end in the cassette: 201 C-terminal,
+109 snorkel. (The swap-risk measure in section 6 counts 317 *members* whose cassette ends the
+ORF, which is a different denominator: 208 C-terminal members plus the 109 snorkel arms.)
 
 **Why.** For these proteins the C-terminus is the one free, extracellular end, and a terminal
 tag disturbs no loop.
@@ -859,17 +876,18 @@ building a failed C-terminal fold anyway.
 
 **Weak spots.** The C-terminal call rests on topology alone, with no published tag for most of
 these proteins. 36 termini end inside a predicted fold and are kept on the linker argument;
-their refolds pass but display is untested. 9 members are held: 5 whose C-terminal and stalk
-refolds fail, and 4 whose C-terminus may be cytoplasmic. Each of the 4 has a candidate rung to
-be redesigned on: VTCN1 (human l1-p2342 and cyno l1-p2628) N after the signal peptide, SLC41A2
-(l1-p1957) residue 1 of a multipass protein, and TRPV1 (l1-p2528) an internal loop.
+their refolds pass but display is untested. Four members are held on this rung, all because
+their C-terminal or stalk refold fails: BRICD5, CD209, CD70 and SCARA5. The members whose
+C-terminus may be cytoplasmic were redesigned onto another rung rather than held, and are in
+the order: VTCN1 (human `l1-p2342`, cyno `l1-p2628`) and TRPV1 (`l1-p2528`) on internal loops,
+SLC41A2 (`l1-p1957`) at residue 1 of a multipass protein.
 
 ## 6. Domestication and the cassette's linker encoding
 
 **Domestication.** Every ORF is cleared of BbsI (the Fragmid assembly enzyme), Esp3I (the
 shuttle enzyme) and BsaI (not cleared from the backbone) by synonymous edits only, with no
 codon optimization, so the protein is kept and native codon usage changes only at those
-sites. Across L1, 8,201 codons change in 2,389 members (median 2 codons, maximum 19); 321
+sites. Across L1, 8,201 codons change in 2,389 members (median 3 codons, maximum 20); 321
 need none (`l1_domestication_edits.tsv`). The edits create 471 new ATG trinucleotides, 51
 `GT[AG]AG` splice-donor motifs and 2 poly(A) signals; no stage claims these motifs, and they
 are left in place (`l1_domestication_barcode_audit.json`). Every vector
@@ -896,7 +914,10 @@ tagged inserts ordered (37 members are held, section 12) change, by 5,312 codons
 afterwards 2,294 score Low, 938 Medium and 23 High by the local rules, none refused, and no
 provisional barcode occurs inside any insert. The 23 High inserts are native N-after-SP arms
 with a 50-bp window of 90–98% GC inside the protected signal-peptide codons, which the recoder
-may not change (an open item, section 12). **The recoded inserts are the order of record**:
+may not change (an open item, section 12). Recoding also leaves one residual of its own:
+**14 inserts carry a new Type IIS site the recoder does not screen for** (AarI, PaqCI, BtgZI or
+SapI). Only Esp3I and BsaI are screened, because they are the enzymes the assembly uses; the
+four above are recorded library-wide as a known risk in section 12 rather than designed around. **The recoded inserts are the order of record**:
 `processed://sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-15-final-e/l1_order_inserts_recoded.fasta`
 (SHA-256 `20e8f275…`), built from every rung's arm table at `541c6c18`,
 with every changed codon in `synthesis_recodes.tsv`
@@ -925,14 +946,14 @@ predicted swapping on the fit we use), preferring 80.
 SpyTag003 and P-ALFA-P keep p003's codons, which are the ones shown to display; only the four
 `GGGGS` blocks are recoded. Recoding the tags too buys nothing (36 nt either way). The
 terminal 15-nt block must be unique per member because short end rules run out of distinct
-ends well before 241 members. Encodings are issued in seeded batches and pinned (nine batches,
-296 encodings, 32 of them held by members no longer active), so adding a member cannot redraw
+ends well before 241 members. Encodings are issued in seeded batches and pinned (ten batches,
+378 encodings, some held by members no longer active), so adding a member cannot redraw
 an issued one.
 
-All 251 members still over the bar are explained by their ORFs, not the cassette: 199 are
-same-gene isoform/ortholog pairs sharing a C-terminus, and 52 are different genes with shared
-3' coding sequence (clustered protocadherins, close paralogs such as olfactory receptors and
-KIR2DS2/KIR2DS4). Each different-gene family is accepted by name, and a library test fails on
+All 232 members still over the bar are explained by their ORFs, not the cassette: most are
+same-gene isoform/ortholog pairs sharing a C-terminus, and the rest are different genes with
+shared 3' coding sequence (clustered protocadherins, close paralogs such as olfactory receptors
+and KIR2DS2/KIR2DS4). Each different-gene family is accepted by name, and a library test fails on
 any new one. Shared protein-coding sequence is never recoded to shorten a tract (Becca,
 2026-11-13); the diversified linker is the only swap protection. That cannot help a pair whose
 cassette is N-terminal, because the shared stretch then runs from after the cassette to the
@@ -1085,7 +1106,7 @@ The 2,673 built members fill 34 plates per set with their 3,255 inserts (the las
 
 | Plate set | Plates | Volume per well | DNA per member at 100 ng/µL |
 |---|---:|---:|---:|
-| Pooling A, B | 2 × 28 | 5 µL each | 0.5 µg each |
+| Pooling A, B | 2 × 34 | 5 µL each | 0.5 µg each |
 | Stock | 28 | 20 µL | 2.0 µg |
 
 100 ng/µL is an assumption, and the vendor may deliver less. The volumes are fixed, so a lower
@@ -1094,8 +1115,8 @@ concentration lowers the DNA in every well in proportion:
 | Delivered concentration | DNA per pooling well | DNA per stock well | One pool, all members (3.5-fold per kb weighting) |
 |---:|---:|---:|---:|
 | 100 ng/µL | 0.5 µg | 2.0 µg | 211.9 µg |
-| 75 ng/µL | 0.375 µg | 1.5 µg | 136.9 µg |
-| 50 ng/µL | 0.25 µg | 1.0 µg | 91.3 µg |
+| 75 ng/µL | 0.375 µg | 1.5 µg | 158.9 µg |
+| 50 ng/µL | 0.25 µg | 1.0 µg | 105.9 µg |
 
 The pooling weights are relative, so which members need extra DNA does not change with
 concentration; only the size of each pool does.
@@ -1109,20 +1130,20 @@ offset it in a pooled lentiviral library by pooling 0.2 × 3.5<sup>L/1000</sup> 
 plasmid, L the effector length ([Moon et al., 2026](https://pubmed.ncbi.nlm.nih.gov/42031729/));
 their dropout fell from 48.7% to 4.2%, though the same library also changed its barcoding, so
 the gain cannot be credited to pooling alone. Our backbone is constant, so differences in
-insert length (527–5,423 nt, median 1,721) are differences in packaged
+insert length (527–5,423 nt, median 1,751) are differences in packaged
 length. At 3.5-fold per kb, the model predicts the longest member transduces
-103× less efficiently than the median one and 461× less than the shortest.
+about 100× less efficiently than the median one and 461× less than the shortest.
 
 **How the weighting is applied.** Each member's pooled amount follows the factor in pmol,
 converted to mass with its own vector length, and is scaled so a member with a 4.3-kb insert
 fills exactly one pooling well (500 ng at 100 ng/µL) per pool:
 
-- The 79 members whose weighted amount exceeds one well (those with inserts over about 4.3 kb)
-  are ordered with extra DNA (63.2 µg extra in total at 3.5-fold per kb, up to 8.6 µg ordered
+- The 86 inserts whose weighted amount exceeds one well (those over about 4.3 kb)
+  are ordered with extra DNA (68.4 µg extra in total at 3.5-fold per kb, up to 8.6 µg ordered
   for the longest).
 - Every other member needs less than a well, down to 30 nL for the shortest at
   3.5-fold per kb, which cannot be pipetted by hand. Because the plates are length-ordered, each
-  of pooling plates 1–26 is diluted to one concentration and a fixed 5 µL is pooled from every
+  of pooling plates 1–32 is diluted to one concentration and a fixed 5 µL is pooled from every
   well; that lands each member within the error in the table below of its own target. The plate
   concentrations are in [`l1_order_pooling_plates.tsv`](l1_order_pooling_plates.tsv).
 - The last two plates (183 inserts, the long tail) are pooled well by well at each member's
@@ -1143,7 +1164,7 @@ worth pipetting by hand. Data: `l1_order_plan.tsv`. Regenerated by
 [`order_plan.py`](order_plan.py).*
 
 **The factor is not measured for our vectors, and it matters.** Between 2- and 3.5-fold per kb
-the correction for the longest member against the median ranges from 13× to 108×, so an
+the correction for the longest member against the median ranges from 13× to 100×, so an
 overcorrection would make the long members the overrepresented ones. Our packaged genomes
 (tag cassette included) span 4,434–9,387 nt, median 5,646. Over that range Sweeney and Vink's
 reported fold changes imply about 1.9–2.7-fold per kb, below Moon et al.'s 3.5, and no
@@ -1396,11 +1417,11 @@ can stay a description of the design.
 | 2 | **N-terminal tagging at residue 1 for type III single-pass proteins** (44 members). | Rests on a topogenesis argument only: the single helix carries the whole orientation decision, and a 51-aa cassette changes the charge balance it reads. | A small panel testing N-terminal versus loop placement on type III proteins. |
 | 3 | **Five library genes with no intact copy in Ensembl 115** (FCGR2C, OR8J2, OR10AC1, OR52P1, OR4Q2; section 3). | They pass the gene filter but are absent from L1, so any per-gene coverage figure is 5 short. FCGR2C has a known intact (ORF) allele carried by a minority of people ([Breunis et al., 2007](https://pubmed.ncbi.nlm.nih.gov/17827395/)). | Build the intact UniProt allele by correcting the stop codons (FCGR2C, OR8J2) or the frameshifts, or record each as an exclusion. |
 | 4 | **Isoform panel drawn from a 1,775-gene April pool** (section 4). | The isoforms of 92 library genes could never be drawn, so the panel says nothing about those genes' forms. | Reviewer view on keeping the panel as drawn (the current decision) versus rebuilding the isoform universe over the 2,369 library genes and redrawing with the same seed and strata, which would change many members. |
-| 5 | **How strongly to weight the pool by length** (section 8). | The ordering plan is computed at Moon et al.'s 3.5-fold lower titer per kb (up to 108× more of the longest member than the median); Sweeney and Vink's data imply about 2-fold per kb over our 4.4–9.4-kb packaged range, and an overcorrection inverts the bias. | Whether the four-plasmid titer test planned before pooling (section 8) is enough to set the factor. |
+| 5 | **How strongly to weight the pool by length** (section 8). | The ordering plan is computed at Moon et al.'s 3.5-fold lower titer per kb (up to about 100× more of the longest insert than the median); Sweeney and Vink's data imply about 2-fold per kb over our 4.4–9.4-kb packaged range, and an overcorrection inverts the bias. | Whether the four-plasmid titer test planned before pooling (section 8) is enough to set the factor. |
 | 6 | **Whether the barcode region should change before it is ordered** (section 9). | The fragment supports 10x Feature Barcoding as designed. For optical pooled screening we propose replacing the 10-nt gap and RT site with Feldman's 17-nt padlock arm and his RT site with A at position 9 (no splice donor, no hairpin, a matched RT primer), which keeps room for all 2,710 barcodes under the prefix screen; T7 in situ transcription needs a promoter, cleanly placed only in sense. Each is cheap now and impossible after synthesis. | Whether to adopt the proposed 3′ flank, which of these assays to keep possible, and whether any change costs something we have not counted. |
 | 7 | **EFS or EF1a as the library promoter** (section 10). | Selection runs through the IRES, so a weakly transcribed member is also weakly selected; EF1a gave 1.7–4.0-fold more IRES-reporter signal than EFS but adds 967 bp, about a 2-fold titer cost, to every member. | Surface-tag readout after selection for a few members, EFS versus EF1a; or reviewer experience with either promoter for pooled ORF libraries. |
-| 8 | **Snorkels for internal members without a usable loop** (section 5). | A snorkel ([Brown et al., 2013](https://pubmed.ncbi.nlm.nih.gov/24023844/)) appends a reversed transmembrane helix (mouse PDGFRB) and the tag to a cytoplasmic C-terminus, so the tag is displayed without entering any loop: a 106-aa append ending in the 51-aa cassette. It is the fallback when no designed loop site is left, never a response to a low ranker score: in the current, interim cut 28 internal members carry one as their only arm, which Becca's rule now forbids (section 12; 24 whose every loop site failed refold, 3 whose every site sat on a ligand contact, and NRG2). 22 of the 50 snorkel arms (44%) themselves fail refold, those 22 members are held, and a longer first linker rescued 0 of 5. The module has never been built or tested here, and it lengthens the variable region ahead of the barcode. | Reviewer view on the rule, or a paired test: a snorkel arm beside the best loop arm for a few members. |
-| 9 | **The Igκ leader on 751 members** (section 5, "Signal peptides and the Igκ leader"). | 562 of 563 residue-1 multipass members (every GPCR but CRHR2) and 8 type III members carry the murine Igκ leader ahead of the cassette; 182 N-after-SP members have their own signal peptide replaced by it because SignalP 6 predicts the tagged native peptide is no longer cleaved. The GPCR default rests on a mechanism argument; the screen whose GPCRs displayed their tag used leaderless HA after Met1, and the panel arms that test the leader (CCR5, OR51E2, CNR1, each with and without) have no data yet. | Whether the leader should be the default for multipass members before the panel arms read out, and whether a SignalP prediction on an engineered junction is enough to replace a native signal peptide. |
+| 8 | **Snorkels for internal members without a usable loop** (section 5). | A snorkel ([Brown et al., 2013](https://pubmed.ncbi.nlm.nih.gov/24023844/)) appends a reversed transmembrane helix (mouse PDGFRB) and the tag to a cytoplasmic C-terminus, so the tag is displayed without entering any loop: a 106-aa append ending in the 51-aa cassette. It is the fallback when no designed loop site is left, never a response to a low ranker score. The order carries 109 snorkel arms, every one of them beside a loop arm of the same member: no member's only arm is a snorkel. 108 of the 109 pass refold; in the earlier snorkel-only decision round 22 of 50 arms failed, and a longer first linker rescued 0 of 5. The open question is therefore not whether a snorkel may stand alone — it may not — but whether the second insert earns its place: the module has never been built or tested here, and it lengthens the variable region ahead of the barcode. | Whether a snorkel arm beside a loop arm is worth the extra insert, or should be dropped from L1 and tested separately. |
+| 9 | **The Igκ leader on 804 members** (section 5, "Signal peptides and the Igκ leader"). | 564 of 565 residue-1 multipass members (every GPCR but CRHR2) and 8 type III members carry the murine Igκ leader ahead of the cassette; 232 N-after-SP members have their own signal peptide replaced by it because SignalP 6 predicts the tagged native peptide is no longer cleaved. The GPCR default rests on a mechanism argument; the screen whose GPCRs displayed their tag used leaderless HA after Met1, and the panel arms that test the leader (CCR5, OR51E2, CNR1, each with and without) have no data yet. | Whether the leader should be the default for multipass members before the panel arms read out, and whether a SignalP prediction on an engineered junction is enough to replace a native signal peptide. |
 
 ## 12. Protein-level choices made on Becca's behalf (reversible)
 
@@ -1551,32 +1572,6 @@ decided and what it corrected. Each decision is recorded where it was made, with
 | Domestication | sites for enzymes no cloning step uses (AarI/PaqCI, BtgZI, SapI) and motifs created by edits are left in place | l1-cterm-build |
 | Records | pinned decision tables are published under dated keys and never updated in place, after an in-place update broke a pinned input overnight | l1-cterm-build, ranker-pu-segment |
 
-### Corrections to this brief
-
-On 2026-11-13 every number, rule and threshold in sections 1–12 was checked against the code and
-its outputs. Where they disagreed the brief was wrong or stale, except in two places where the
-code was:
-
-| Section | The brief said | The code and outputs show | Resolution |
-|---|---|---|---|
-| 1 | L2 has 4,153 active members; isoforms cover 137 genes; median CDS 1,386 nt, vector 8,953 bp | 4,109; 133; 1,398; 8,965 | corrected |
-| 3 | sources MANE 2,277 / APPRIS 71 / UniProt 11 / named 10; all 111 disagreements stay on MANE; 214 non-canonical | 2,274 / 66 / 11 / 18; 108 MANE and 3 named; 206 | corrected, with an override table and dates |
-| 3 (code) | — | `brief_numbers.py` read the round-1 reference record, not the current one | fixed: it reads the pipeline's own constant |
-| 4 | seven isoform picks replaced; no ortholog start repaired | 32 replaced after the isoform gate (not described); four cyno restarts | gate described; restarts recorded as exceptions |
-| 5 | rungs 1,294 / 571 / 59 / 215 / 571 | 1,312 / 561 / 44 / 212 / 581 | corrected; question 2 likewise (44) |
-| 5 | GPI reroute touches BST2 and RGMB; GPI members 184 / 5 / 2 | BST2 only; 190 / 0 / 1 | corrected |
-| 5 | seven internal members without a loop, five genuine | eight, seven genuine (five genes) | corrected |
-| 5 | topology cohorts 2,155 / 207 / 188 / 160; structure verdicts 2,382 / 26 / 196 | 2,173 / 210 / 197 / 130; 2,391 / 27 / 189 | corrected |
-| 5 | membrane gate: 1,074 sites, 972 pass, 45 fail (commit 28018c6f) | 1,070, 967 pass, 48 fail (current run) | updated to the current run |
-| 6 | native codon usage kept; 330 members need no edit | 745 inserts recoded for synthesis (not described); 321 | synthesis compliance described; 321 |
-| 6 | swap risk over 215 C-terminal members, 243 encodings in 3 batches, 255 over the gate | 257 cassette-ending members (with snorkels), 290 encodings in 6 batches, 251 over | corrected |
-| 7 | 16 stages; DeepTMHMM of record 2026-11-06 | 24 stages; of record 2026-11-12 | corrected; clean rebuild and saved inputs added |
-| 8 | 55 members need extra DNA, 31.0 µg; longest vs median 110×; pools 138 / 104 / 69 µg | 57, 32.0 µg; 108×; 140.2 / 105.1 / 70.1 µg | regenerated from the order plan |
-| 8 (code) | — | the order plan still had the pre-restart insert lengths of three cyno orthologs | order plan regenerated |
-| 10 | PGK 0.29–0.65× EFS | 0.29–0.64× | corrected |
-| 11 | snorkels posed as an open question | 45 built | restated as a decision to challenge |
-| 12 | one missing member (ECE1); SLC61A1 listed both as decided and as Becca's | ECE1 built; no member missing; SLC61A1 decided | corrected |
-
 ## Materials and provenance
 
 | Element | Location | Status |
@@ -1598,6 +1593,7 @@ code was:
 
 | Date | Was | Now | Why | Decided by / implemented by |
 |---|---|---|---|---|
+| 2026-11-15 | Sections 5, 8, 11 and 13 still described the pre-arm library (one insert per member, `l1-mNNNN` numbering), while section 12's census described `2026-11-15-final-e`, with nothing telling the reviewer which was live. Section 13 also ended in a "Corrections to this brief" table whose own corrected values had gone stale again | The rung sections, the pooling prose and the open questions are regenerated against `final-e`: 20 internal members held and not 22 (MS4A1, SLC35G2 and TMEM204 are ordered), 109 snorkel arms and not 28, 310 inserts ending in the cassette and not 229, 208 C-terminal members (168 single-pass, 40 multipass) and not 213, core 2,133 and filter total 2,369 with the SLC67A1 addition stated, and the three internal-rung counts (608 placed, 588 built, 583 decided) each given its denominator. The corrections table is removed; its content is the body's present tense | a document whose authoritative table and whose explanatory sections describe two different libraries misleads a reviewer about what is in the order, and a corrections table decays faster than the body it corrects | audit by the brief-audit session (`BRIEF_AUDIT-2026-11-15.md`) / coordinator |
 | 2026-11-15 | Section 2 stated the co-receptor gate's rule but named no protein it excludes, so a reviewer meeting the absence of CD3, CD79 or B2M had no way to tell a deliberate exclusion from an oversight | Section 2 carries the worked example: the TCR–CD3 chains, CD79A and CD79B, and B2M, each with its obligate partners and the reason its own ORF is not displayable; B2M additionally fails the anchored gate | absence from the library is not a claim about surface localization, and the co-receptor gate is where the two most often come apart; the gate turns on the host cell lacking the partner, not on the protein | Becca (the exclusion reason must be citable from the brief) / coordinator |
 | 2026-11-15 | Interim cut `2026-11-14-final-d` (SHA-256 1ee73f40…; 2,621 inserts, one per member, numbered by member id), now superseded | Order of record `2026-11-15-final-e` (SHA-256 20e8f275…) cut at 541c6c18 (main 8d447a91 merged): 3,255 inserts of 2,673 built members (2,300 with one insert, 164 with two, 209 with three) and 37 held (N after SP 13, C-terminal 4, internal 20); 790 inserts recoded by 5,312 codons; fold check 3,255 of 3,255; refold 3,119 pass and 136 fail, every failure with a recorded disposition; 34 plates, the last holding 87; plate positions per insert (`l1-iNNNN`), permanent arm ids (`l1-pNNNN-aK`), members named by design id; barcodes 3,644 reserved | an internal member may carry 2 or 3 arms and a snorkel never alone; orthologs only beside a built human member; the weak-signal-peptide Igκ rule; the rescue round | Becca (rules) and the coordinator / ranker-pu-segment, l1-integration, nterm-reviewer-package (arms), l1-reviewer-package (cut) |
 | 2026-11-14 | Order of record `2026-11-14-final-c` (SHA-256 8c5fdc3a…, from `main` at 903f9135; 2,625 inserts, 85 held), now superseded | Interim cut `2026-11-14-final-d` (SHA-256 1ee73f40…; not the order to place: multi-arm internal members, the ortholog rule and a rescue round land after it) cut at 4532a4d6 in the pull request that carries the C-terminal follow-up: 2,621 inserts, 727 recoded by 4,502 synonymous codons (1,940 Low and 681 Medium afterwards); fold check 2,621 of 2,621; refold 2,534 pass and 87 fail, every failure with a recorded disposition; 2,621 built and 89 held (N after SP 1,250 / 58; multipass 563 / 0; type III 44 / 0; C-terminal 204 / 9; internal 560 / 22); 28 plates, the last holding 29. The follow-up holds SLC41A2 (experimental C-in topology), TRPV1 l1-p2528 (DeepTMHMM v2 and the canonical channel put the C-terminus inside) and VTCN1 human and cyno (UniProt's type I topology), and flags LYSMD3, LYSMD4, SLC24A1 and TMEM222 | a C-out call contradicted by experiment or by an independent source is not built on the C-terminal rung; the cut lands with the arm change in one merge | coordinator / l1-cterm-build (follow-up), l1-reviewer-package (cut) |

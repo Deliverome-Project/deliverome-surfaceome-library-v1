@@ -71,8 +71,17 @@ CLAIMS = [
     ),
     ("and on only {} of the 28 snorkels", ["rungs.snorkel.snorkels_flagged_snorkel_candidate"]),
     (
-        "of {} snorkel arms, {} (44%) fail",
-        ["rungs.snorkel.snorkel_arms_refolded", "rungs.snorkel.snorkel_arms_failing"],
+        # The decision round's denominator, which is not the order's: the order carries
+        # rungs.snorkel.built_arms snorkel arms, pinned by the claim below.
+        "{} of the {} arms refolded then failed",
+        ["rungs.snorkel.snorkel_arms_failing", "rungs.snorkel.snorkel_arms_refolded"],
+    ),
+    (
+        "The order carries {} snorkel arms, {} of which\npass",
+        [
+            "rungs.snorkel.built_arms",
+            "refold.by_group.cterm: snorkel (TM module, then cassette).pass",
+        ],
     ),
     (
         "Against v4, of the {} sites\ndesigned, {} are identical",
