@@ -4,8 +4,10 @@ The [design brief](BRIEF.md) describes the L1 library as it stands. This note tr
 still being worked on before L1 is ordered, separately from the brief, so the brief can be read
 as the design and this note updated as items close. The first table explains the six design
 issues reviewers are most likely to ask about; the tracker below it lists every open item as an
-issue, with its owner. Status is as of **2026-11-14**, the final regeneration of the order of
-record; rows closed since 2026-11-05 keep their row with the date and the decision. Comments on any of them are welcome; they
+issue, with its owner. Status is as of **2026-11-14**; the counts in it were rechecked against
+the order of record `2026-11-15-final-e` on **2026-11-16**, which corrected one figure left
+behind by a superseded cut. Rows closed since 2026-11-05 keep their row with the date and the
+decision. Comments on any of them are welcome; they
 are not the questions we are asking reviewers to settle.
 
 Terms follow the brief: a *member* is one construct, a *rung* its tag position, and counts
@@ -14,7 +16,7 @@ refer to tranche L1, active members, DeepTMHMM v1 topology. Every count is measu
 
 | # | Issue | Why it matters | What resolves it | Status |
 |---:|---|---|---|---|
-| 1 | **Structure models of a different protein.** 198 members have an AlphaFold model of another proteoform, and 26 a model of a longer one that contains theirs. | Tag-site coordinates would be numbered against a sequence the construct does not contain, and nothing downstream flags it. | Fold each "different" member from its designed CDS; verify and apply the offset for the 26 "contained" ones. | closed 2026-11-14: every ordered insert is refolded from its own tagged protein, and an independent check matches all 2,629 folds to the order of record residue for residue (brief section 12) |
+| 1 | **Structure models of a different protein.** 198 members have an AlphaFold model of another proteoform, and 26 a model of a longer one that contains theirs. | Tag-site coordinates would be numbered against a sequence the construct does not contain, and nothing downstream flags it. | Fold each "different" member from its designed CDS; verify and apply the offset for the 26 "contained" ones. | closed 2026-11-14: every ordered insert is refolded from its own tagged protein, and an independent check matches all 3,255 folds to the order of record residue for residue (brief section 12; count rechecked against `2026-11-15-final-e` on 2026-11-16, where the 2,629 recorded here was the superseded `final-c` cut) |
 | 2 | **Internal-rung cargo**: ALFA alone (19 aa) or the 51-aa SpyTag003/ALFA tandem. | At 19 aa the cassette fits 16-residue loops (e.g. the SLC16A9/12/14 block); the tandem does not, so this decides whether whole paralog groups have a site. | Decide whether internal members need SpyTag003, then calibrate the loop-length floor at that cargo size. | closed: the full 51-aa cassette is used at every rung, internal included; each internal site is kept only if the tagged protein passes refold (brief section 5) |
 | 3 | **Loop gates** `MIN_LOOP_LEN = 8` (minimum contiguous coil/turn run) and `LOOP_SS` (coil, turn, bend or 3₁₀ only). | They change the top-ranked site for 56% and 72% of internal members respectively. In a published-junction benchmark, 28% of large-cargo insertions sit in loops shorter than 8 (n = 18). | Wet data from a ladder of coil-run lengths; the benchmark corpus is 78% small epitope tags and cannot settle it. | superseded 2026-11-12: internal sites come from tag-site model v5, the membrane-side gate and refold, not from these gates (brief section 5) |
 | 4 | **GPI single-pass members and the internal worklist.** The member-level ladder reroutes BST2 and RGMB to the internal rung, but the per-gene internal-site worklist and its site generator are topology-only and do not hold them. | A GPI single-pass protein needs an ectodomain site, not a terminal or inter-TM one; until the site lanes cover it, these members have a rung but no junction. | Build the GPI internal set from the anchored genes and add the GPI branch to the per-gene rung derivation. | closed 2026-11-12: BST2 is tagged in its ectodomain on the internal rung; RGMB, with no two-sided loop, is routed to N after SP |
