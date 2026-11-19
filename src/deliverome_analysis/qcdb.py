@@ -57,6 +57,7 @@ import csv
 import hashlib
 import io
 import json
+import math
 import os
 import re
 import shutil
@@ -68,7 +69,7 @@ from pathlib import Path
 
 import pandas as pd
 
-SCHEMA_VERSION = 6  # of the SQLite files; a different value forces a full rebuild
+SCHEMA_VERSION = 7  # of the SQLite files; a different value forces a full rebuild
 RECORD_SCHEMA_VERSION = 1  # of <page>.qcrecord.json, written by dia_qc_dashboard.qc_record
 DATABASES = ("dia_qc", "flow", "search")
 QC_RECORD_SUFFIX = ".qcrecord.json"
@@ -418,6 +419,8 @@ create table search_runs (
   peak_pss_gib real, mean_pss_gib real, peak_system_used_gib real, mean_system_used_gib real,
   max_process_rss_gib real, stage_seconds real,
   precursors integer, protein_groups integer, gradient_seconds real,
+  ms2_mass_bias_ppm real, ms2_mass_variance real, ms1_mass_bias_ppm real, ms1_mass_variance real,
+  ms2_tolerance_ppm real, ms1_tolerance_ppm real,
   repo_commit text, repo_dirty integer, uv_lock_sha256 text, versions_json text,
   method_file text, scans integer, run_minutes real, cycle_time_s real,
   faims_attached integer, faims_cvs text,
@@ -435,7 +438,7 @@ select run_uid, min(run) as run, acquired, instrument_serial, instrument_model, 
        dia_scheme_sha256, ms2_nce, ms2_max_it_ms, spray_voltage_v, method_json
 from search_runs where method_json is not null and run_uid is not null group by run_uid;
 """
-_SEARCH_COLUMNS = 69
+_SEARCH_COLUMNS = 75
 
 
 def _method_columns(m: dict | None) -> tuple:
@@ -492,11 +495,27 @@ def _search_ingest(con: sqlite3.Connection, bucket, key: str, listing: dict[str,
         row = next(
             csv.DictReader(io.StringIO(_read_text(bucket, folder + SEARCH_STATS)), delimiter="\t")
         )
+
+        def num(col):
+            v = row.get(col)
+            try:
+                f = float(v)
+            except TypeError, ValueError:
+                return None
+            return None if math.isnan(f) else f
+
         stats = {
             "precursors": int(float(row["search.precursors"])),
             "protein_groups": int(float(row["search.proteins"])),
             "gradient_seconds": float(row["raw.gradient_length"]),
-        }
+            # mass accuracy: alphaDIA's calibration bias (ppm) and variance; MS1 stays None when
+            # the search did not calibrate on MS1. Tolerances are the optimised search windows.
+            "mass": (
+                num("calibration.ms2_bias"), num("calibration.ms2_variance"),
+                num("calibration.ms1_bias"), num("calibration.ms1_variance"),
+                num("optimization.ms2_error"), num("optimization.ms1_error"),
+            ),
+        }  # fmt: skip
     config_sha = None
     if folder + SEARCH_CONFIG in listing:  # the exact config the search ran with
         config_sha = hashlib.sha256(
@@ -529,6 +548,7 @@ def _search_ingest(con: sqlite3.Connection, bucket, key: str, listing: dict[str,
             t.get("peak_system_used_gib"), t.get("mean_system_used_gib"),
             t.get("max_single_process_rss_gib"), t.get("stage_seconds"),
             stats.get("precursors"), stats.get("protein_groups"), stats.get("gradient_seconds"),
+            *stats.get("mass", (None,) * 6),
             sw.get("repo_commit"), dirty, sw.get("uv_lock_sha256"),
             json.dumps(pk),
             *_method_columns(inp[0].get("method")),

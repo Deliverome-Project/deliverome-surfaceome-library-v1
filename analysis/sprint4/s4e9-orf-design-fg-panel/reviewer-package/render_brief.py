@@ -20,6 +20,7 @@ import os
 import re
 import shutil
 import subprocess
+import sys
 import tempfile
 from datetime import UTC, datetime
 from pathlib import Path
@@ -28,7 +29,13 @@ import markdown
 
 HERE = Path(__file__).parent
 REPO = HERE.parents[3]
-GITHUB = "https://github.com/Deliverome-Project/deliverome-analysis/blob"
+#: Reviewers get the review repository, never this one, so every file link points there. Its
+#: paths match this repository's, but its commits do not, so links are pinned to its branch
+#: rather than to the commit this render came from; that commit is named in the footer instead.
+GITHUB = "https://github.com/Deliverome-Project/l1-library-review/blob"
+REVIEW_REF = "main"
+#: This repository, for the footer's provenance line only — not for any link.
+SOURCE_REPO = "deliverome-analysis"
 DOCS = {"BRIEF.md": "L1_design_brief", "COVER_NOTE.md": "L1_design_brief_cover_note"}
 CHROME_CANDIDATES = (
     "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
@@ -61,9 +68,26 @@ def git(*args: str) -> str:
     ).stdout.strip()
 
 
+def exported_paths() -> tuple[set[str], list[str]]:
+    """(traced files, whole-folder prefixes) the review repository publishes."""
+    sys.path.insert(0, str(HERE))
+    import export_review_repo as ex
+
+    return set((HERE / "review_repo_files.txt").read_text().split()), list(ex.ALWAYS)
+
+
 def body_html(md_path: Path, commit: str) -> str:
-    """The document as HTML, with repository-relative links pinned to ``commit``."""
-    body = markdown.markdown(md_path.read_text(), extensions=["tables"])
+    """The document as HTML, with repository-relative links pointed at the review repository.
+
+    A link to a file the review repository does not publish would 404 for the reader it is
+    written for, so the render refuses rather than emitting one.
+    """
+    # `fenced_code` is not optional: without it a ``` block is parsed as inline code spans and
+    # its lines are joined into one, which silently ran the rerun recipe's six shell commands
+    # together on a single line in every Word and PDF copy.
+    body = markdown.markdown(md_path.read_text(), extensions=["tables", "fenced_code"])
+    traced, always = exported_paths()
+    unpublished: list[str] = []
 
     def link(m: re.Match) -> str:
         target = m.group(1)
@@ -71,15 +95,26 @@ def body_html(md_path: Path, commit: str) -> str:
             return m.group(0)
         path, _, anchor = target.partition("#")
         rel = (md_path.parent / path).resolve().relative_to(REPO).as_posix()
-        return f'href="{GITHUB}/{commit}/{rel}' + (f"#{anchor}" if anchor else "") + '"'
+        if not (rel in traced or any(rel == a or rel.startswith(a + "/") for a in always)):
+            unpublished.append(rel)
+        return f'href="{GITHUB}/{REVIEW_REF}/{rel}' + (f"#{anchor}" if anchor else "") + '"'
 
-    return re.sub(r'href="([^"]+)"', link, body)
+    out = re.sub(r'href="([^"]+)"', link, body)
+    if unpublished:
+        listed = "\n  ".join(sorted(set(unpublished)))
+        raise SystemExit(
+            f"{md_path.name} links {len(set(unpublished))} file(s) the review repository does "
+            f"not publish, so they would 404 for a reviewer:\n  {listed}\n"
+            "Either add them to export_review_repo.py's export set, or name them in the text "
+            "without linking them."
+        )
+    return out
 
 
 def stamp_text(md_path: Path, commit: str) -> tuple[str, str]:
-    """(sentence, url) naming the commit a rendering was made from."""
-    url = f"{GITHUB}/{commit}/{md_path.relative_to(REPO).as_posix()}"
-    return f"Rendered {datetime.now(UTC):%Y-%m-%d} from deliverome-analysis {commit[:10]}.", url
+    """(sentence, url): the source commit as text, linking the review repository's own copy."""
+    url = f"{GITHUB}/{REVIEW_REF}/{md_path.relative_to(REPO).as_posix()}"
+    return f"Rendered {datetime.now(UTC):%Y-%m-%d} from {SOURCE_REPO} {commit[:10]}.", url
 
 
 def to_html(md_path: Path, commit: str) -> str:
@@ -88,11 +123,8 @@ def to_html(md_path: Path, commit: str) -> str:
         return f'src="data:image/png;base64,{png}"'
 
     body = re.sub(r'src="(figures/[^"]+\.png)"', embed, body_html(md_path, commit))
-    stamp = (
-        f'<p class="stamp">Rendered {datetime.now(UTC):%Y-%m-%d} from '
-        f'<a href="{GITHUB}/{commit}/{md_path.relative_to(REPO).as_posix()}">'
-        f"deliverome-analysis {commit[:10]}</a>.</p>"
-    )
+    sentence, url = stamp_text(md_path, commit)
+    stamp = f'<p class="stamp"><a href="{url}">{sentence}</a></p>'
     return f'<html><head><meta charset="utf-8"><style>{CSS}</style></head><body>{body}{stamp}</body></html>'
 
 

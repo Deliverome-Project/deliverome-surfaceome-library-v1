@@ -2322,6 +2322,19 @@ if(t&&window.inspect)window.inspect(['run',+t.dataset.run])}};</script></body></
 # ----------------------------------------------------------------------------------------------
 
 
+# Per-run numbers from the search itself (alphaDIA stat.tsv / benchmark.json via the trim's
+# run_info) that the QC record stores as metrics: MS2/MS1 mass calibration and cycle time.
+SEARCH_RUN_METRICS = (
+    "ms2_mass_bias_ppm",
+    "ms2_mass_variance",
+    "ms1_mass_bias_ppm",
+    "ms1_mass_variance",
+    "ms2_tolerance_ppm",
+    "ms1_tolerance_ppm",
+    "cycle_time_s",
+)
+
+
 def run_metrics(ctx: _Ctx) -> pd.DataFrame:
     """Long table (run, metric, value) of every per-run number this page knows."""
     p = ctx.prec
@@ -2349,18 +2362,33 @@ def run_metrics(ctx: _Ctx) -> pd.DataFrame:
     per_run["charge_mean"] = z.groupby(p["run"]).mean()
     if "missed_cleavages" in p:
         per_run["missed_cleavage_pct"] = 100 * (p["missed_cleavages"] > 0).groupby(p["run"]).mean()
+    if "points_per_peak" in p and p["points_per_peak"].notna().any():
+        per_run["points_per_peak_median"] = g["points_per_peak"].median()
+    if "fwhm" in p and p["fwhm"].notna().any():
+        per_run["fwhm_median_min"] = g["fwhm"].median()
     per_run["completeness_pct"] = 100 * g["precursor"].nunique() / p["precursor"].nunique()
     for metric, series in per_run.items():
         for run, v in series.items():
             add(run, metric, v)
     if ctx.ann is not None:
         surf = ctx.surface
-        for key in ("protein_groups", "peptides", "signal_ms2", "signal_ms1", "missed"):
+        for key in (
+            "protein_groups",
+            "peptides",
+            "signal_ms2",
+            "signal_ms1",
+            "missed",
+            "points_per_peak",
+            "fwhm",
+        ):
             if key in surf:
                 for t in qc.TIER_CLASSES:
                     name = f"{key}_{t.replace(' / ', '_').replace(' ', '_')}"
                     for run, v in surf[key][t].items():
                         add(run, name, v)
+    for run, rec in _peptide_metrics(ctx, z).items():
+        for k, v in rec.flat().items():
+            add(run, k, v)
     if ctx.chrom and ctx.chrom.get("scans") is not None:
         d = ctx.diagnosis
         for col in d.columns:
@@ -2368,6 +2396,34 @@ def run_metrics(ctx: _Ctx) -> pd.DataFrame:
                 for run, v in d[col].items():
                     add(run, col, v)
     return pd.DataFrame(rows, columns=["run", "metric", "value"])
+
+
+def _peptide_metrics(ctx: _Ctx, charge: pd.Series) -> dict:
+    """Per run: :class:`deliverome_analysis.peptide_metrics.RunPeptideMetrics` (peptides per
+    protein, 2-peptide proteins, gene-unique peptides, tryptic / detectable coverage, surface
+    variants). FASTA-based ones only when the page has surface annotation (needs S3 anyway)."""
+    from deliverome_analysis import peptide_metrics as pm
+
+    p = ctx.prec
+    if "peptide" not in p:
+        return {}
+    tiers = ref = None
+    if ctx.ann is not None:
+        tiers = {str(pid).split(";")[0].split("-")[0]: str(t) for pid, t in ctx.ann["tier"].items()}
+        ref = pm.default_reference()
+    df = pd.DataFrame(
+        {
+            "run": p["run"],
+            "sequence": p["peptide"].astype(str),
+            "mods": p["precursor"].astype(str),  # the precursor id already carries mods + charge
+            "charge": charge,
+            "protein_group": p["protein"].astype(str),
+        }
+    )
+    return {
+        run: pm.run_metrics(d.drop(columns="run"), run=str(run), tiers=tiers, reference=ref)
+        for run, d in df.groupby("run")
+    }
 
 
 def qc_record(
@@ -2426,6 +2482,15 @@ def qc_record(
             for k in ("engine", "limpa_version", "n_proteins", "dpc_beta0", "dpc_beta1", "n_runs")
         }
     m = run_metrics(ctx)
+    # search-side numbers an alphaDIA trim carries per run (stat.tsv calibration, cycle time)
+    searched_rows = [
+        (r, k, float(v))
+        for r in ctx.order
+        for k, v in ((run_info or {}).get(r) or {}).items()
+        if k in SEARCH_RUN_METRICS and v is not None and pd.notna(v)
+    ]
+    if searched_rows:
+        m = pd.concat([m, pd.DataFrame(searched_rows, columns=m.columns)], ignore_index=True)
     return _clean(
         {
             "schema_version": 1,  # qcdb.RECORD_SCHEMA_VERSION

@@ -35,12 +35,18 @@ alphaDIA                       trimmed contract                 note
                                                                 omitted when all zero (no MS1
                                                                 calibration in the search)
 (computed from sequence)       ``PEP.NrOfMissedCleavages``      trypsin rule, K/R not before P
+``fwhm`` + cycle time          ``points_per_peak``              MS2 points across the whole
+                                                                peak, 1.699 x FWHM / cycle time
+                                                                (Gaussian: 4 sigma = 1.699 FWHM);
+                                                                needs the run's cycle time from
+                                                                the runner's ``benchmark.json``
 =============================  ===============================  ==============================
 
 ``rt_error`` downstream is therefore alphaDIA's RT calibration residual, the analogue of
-Spectronaut's ApexRT - RTPredicted. Spectronaut-only metrics (Cscore, iRT, S/N, points per
-peak, tailing, Gaussian score) have no alphaDIA equivalent and are left out; QC reports them
-as not available.
+Spectronaut's ApexRT - RTPredicted. ``points_per_peak`` is an estimate from alphaDIA's fitted
+FWHM, comparable to Spectronaut's ``EG.DatapointsPerPeak`` (data points across the peak) but not
+counted point by point. Spectronaut-only metrics (Cscore, iRT, S/N, tailing, Gaussian score)
+have no alphaDIA equivalent and are left out; QC reports them as not available.
 
     uv run python -m deliverome_analysis.alphadia_trim <alphadia-output-dir> trimmed/
 """
@@ -58,6 +64,8 @@ import numpy as np
 import pandas as pd
 import pyarrow as pa
 import pyarrow.parquet as pq
+
+from deliverome_analysis.peptide_metrics import GAUSSIAN_BASE_PER_FWHM  # one definition
 
 COLUMNS = {
     "raw.name": "run",
@@ -88,7 +96,14 @@ REQUIRED = [
     "pg.proteins",
 ]
 SECONDS_TO_MINUTES = ("apex_rt", "rt_predicted", "fwhm")
-QC_COLUMNS = ("pg_quantity", "apex_rt", "rt_predicted", "fwhm", "ms1_mass_error_ppm")
+QC_COLUMNS = (
+    "pg_quantity",
+    "apex_rt",
+    "rt_predicted",
+    "fwhm",
+    "points_per_peak",
+    "ms1_mass_error_ppm",
+)
 
 
 @dataclass
@@ -150,10 +165,30 @@ def search_run_info(alphadia_dir: str | os.PathLike) -> dict[str, dict]:
     search_library, search_library_sha256}}`` (run = raw file stem, as in ``raw.name``), or
     ``{}`` when there is no record. Lets a QC page carry the same acquisition key
     (instrument serial | acquisition time) as the search index without reading raw files.
+    Also carries the run's cycle time (raw method) and, from ``alphadia/stat.tsv``, the MS2/MS1
+    mass calibration (bias in ppm, variance; MS1 is None when alphaDIA did not calibrate on
+    MS1) and the search tolerances.
     """
     record_path = Path(alphadia_dir).parent / "benchmark.json"
     if not record_path.exists():
         return {}
+    stats = {}
+    stat_path = Path(alphadia_dir) / "stat.tsv"
+    if stat_path.exists():  # alphaDIA's per-run search statistics: mass calibration, tolerances
+        for _, row in pd.read_csv(stat_path, sep="\t").iterrows():
+
+            def num(col, row=row):
+                v = row.get(col)
+                return float(v) if v is not None and pd.notna(v) else None
+
+            stats[str(row.get("raw.name"))] = {
+                "ms2_mass_bias_ppm": num("calibration.ms2_bias"),
+                "ms2_mass_variance": num("calibration.ms2_variance"),
+                "ms1_mass_bias_ppm": num("calibration.ms1_bias"),
+                "ms1_mass_variance": num("calibration.ms1_variance"),
+                "ms2_tolerance_ppm": num("optimization.ms2_error"),
+                "ms1_tolerance_ppm": num("optimization.ms1_error"),
+            }
     rec = json.loads(record_path.read_text())
     lib = rec.get("library") or {}
     out = {}
@@ -165,6 +200,8 @@ def search_run_info(alphadia_dir: str | os.PathLike) -> dict[str, dict]:
             "run_uid": item.get("run_uid"),
             "search_library": Path(lib["path"]).name if lib.get("path") else "predicted",
             "search_library_sha256": lib.get("sha256"),
+            "cycle_time_s": (item.get("method") or {}).get("cycle_time_s"),
+            **stats.get(Path(item["path"]).stem, {}),
         }
     return out
 
@@ -222,10 +259,24 @@ def trim_alphadia_output(
     )
     if df.duplicated(["precursor", "run"]).any():
         raise ValueError("alphaDIA output has duplicate (precursor, run) rows after filtering")
+    notes = []
+    run_info: dict[str, dict] = {}
+    for d in dirs:
+        run_info |= search_run_info(d)
+    cycle = {r: v.get("cycle_time_s") for r, v in run_info.items() if v.get("cycle_time_s")}
+    if "fwhm" in df and cycle:
+        # FWHM is still in seconds here
+        df["points_per_peak"] = (
+            GAUSSIAN_BASE_PER_FWHM * df["fwhm"] / df["run"].map(cycle).astype(np.float64)
+        )
+        missing_cycle = sorted(set(df["run"]) - set(cycle))
+        if missing_cycle:
+            notes.append(f"points_per_peak missing for runs without a cycle time: {missing_cycle}")
+    elif "fwhm" in df:
+        notes.append("points_per_peak omitted: no cycle time in the runs' benchmark.json")
     for col in SECONDS_TO_MINUTES:
         if col in df:
             df[col] = df[col] / 60.0
-    notes = []
     if {"mz_library", "mz_observed"} <= set(df.columns):
         mz = df["mz_library"].to_numpy(np.float64)
         ppm = (df["mz_observed"].to_numpy(np.float64) - mz) / mz * 1e6
@@ -307,9 +358,6 @@ def trim_alphadia_output(
         out, len(runs), int(in_matrix.sum()), n_values, int(dropped_q), round(time.time() - t0, 1)
     )
     stat = sources[0].stat()
-    run_info: dict[str, dict] = {}
-    for d in dirs:
-        run_info |= search_run_info(d)
     run_info = {r: v for r, v in run_info.items() if r in set(runs)}
     (out / "manifest.json").write_text(
         json.dumps(

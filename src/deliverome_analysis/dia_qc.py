@@ -451,7 +451,8 @@ def surface_by_tier(prec: pd.DataFrame, ann: pd.DataFrame) -> dict[str, pd.DataF
 
     Keys: ``peptides`` and ``protein_groups`` (counts), ``signal_ms2`` and, when the export
     has ``FG.MS1Quantity``, ``signal_ms1`` (% of the run's summed precursor signal),
-    ``missed`` (% of precursors with at least one missed cleavage). Rows follow
+    ``missed`` (% of precursors with at least one missed cleavage), and the medians
+    ``points_per_peak`` and ``fwhm`` (peak width, minutes) when the export has them. Rows follow
     :func:`run_order`, columns :data:`TIER_CLASSES`.
     """
     p = _with_tier(prec, ann)
@@ -471,6 +472,9 @@ def surface_by_tier(prec: pd.DataFrame, ann: pd.DataFrame) -> dict[str, pd.DataF
         p["mc_any"] = (p["missed_cleavages"] > 0).astype(float).where(p["missed_cleavages"].notna())
         out["missed"] = 100 * by("mc_any", "mean")
         out["missed_all"] = 100 * p.groupby("run")["mc_any"].mean().reindex(order)
+    for key in ("points_per_peak", "fwhm"):
+        if key in p and p[key].notna().any():
+            out[key] = by(key, "median")
     return out
 
 

@@ -15,6 +15,7 @@ and a note saying why, so an alternate stays visible and legible rather than dis
 from __future__ import annotations
 
 import csv
+import io
 from pathlib import Path
 
 from deliverome_analysis import library_design as ld
@@ -91,20 +92,40 @@ def rows(name: str) -> list[dict]:
 
 
 def plddt_map() -> dict[str, float]:
+    """Mean pLDDT per fold, keyed the way that fold was named (accession or design id).
+
+    Read from the ``fold_summary.tsv`` published beside the models in S3 -- their durable
+    home, and written by the same run that wrote the coordinates -- together with the
+    committed summaries.
+
+    The mismatched-run scores used to be read from
+    ``~/.cache/deliverome-analysis/predicted_structures_mismatched/``, which made every
+    score depend on whether the machine building this table happened to be the machine that
+    ran the fold. It usually was not: on 2026-11-15 all 182 chosen models of the
+    ``2026-10-14-mismatched`` run carried a score in S3 and an empty ``mean_plddt`` here,
+    so the public gene page offered 182 genes a chosen structure with no confidence to
+    judge it by. S3 is authoritative where a name appears in both.
+    """
+    from deliverome_analysis.s3 import processed
+
     out: dict[str, float] = {}
-    # The committed fold summaries (every run, merged), not a local cache: a fold run on
-    # another machine or session is otherwise invisible here.
+
+    def absorb(reader) -> None:
+        for r in reader:
+            if r.get("mean_plddt"):
+                out[r["name"]] = float(r["mean_plddt"])
+
     for path in (
         HERE / "predicted_structures/fold_summary.tsv",
         HERE / "predicted_structures/fold_summary_mismatched.tsv",
-        Path.home() / ".cache/deliverome-analysis/predicted_structures_mismatched/fold_summary.tsv",
     ):
-        if not path.exists():
-            continue
-        with path.open() as fh:
-            for r in csv.DictReader(fh, delimiter="\t"):
-                if r.get("mean_plddt"):
-                    out[r["name"]] = float(r["mean_plddt"])
+        if path.exists():
+            with path.open() as fh:
+                absorb(csv.DictReader(fh, delimiter="\t"))
+    for key in sorted(processed.list_keys(prefix=S3_FOLDS)):
+        if key.endswith("/fold_summary.tsv"):
+            with processed.open_raw(key) as fh:
+                absorb(csv.DictReader(io.StringIO(fh.read().decode()), delimiter="\t"))
     return out
 
 

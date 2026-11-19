@@ -254,6 +254,7 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`type3_arms_topology.py`](type3_arms_topology.py) | documented | Classify DeepTMHMM v1 re-predictions of the three type III arms, and the subgroups. | `type3_nterm_calls.tsv` |
 | [`type3_nterm.py`](type3_nterm.py) | called | Topogenic features of the L1 members on the "N at residue 1, single-pass (type III)" rung. | `type3_nterm_features.tsv` |
 | [`validated_v1_supplements.py`](validated_v1_supplements.py) | called | Validate explicit DeepTMHMMv1 run provenance without altering a snapshot. | — |
+| [`verify_colabfold_models.py`](verify_colabfold_models.py) | documented | Verify the published ColabFold models are the protein their payload row claims. | — |
 | [`verify_ortholog_prediction_import.py`](verify_ortholog_prediction_import.py) | one-off | SELECT-only before/after verification of the ortholog prediction D1 append. | — |
 | [`write_structure_baseline.py`](write_structure_baseline.py) | documented | Regenerate the structure-coverage baseline the repo tests assert against. | `structure_coverage_baseline.json` |
 
