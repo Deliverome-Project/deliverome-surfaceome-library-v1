@@ -228,6 +228,42 @@ def passes(r):
     )
 
 
+#: Every membership gate, in the order ``passes`` applies them, which is also the order the
+#: L1 design brief lists them in. ``passes`` remains the sole authority on membership; this
+#: exists so that a gene's exclusion can be *named* for a reviewer, and
+#: ``tests/test_gene_gate_outcomes.py`` asserts the two agree on every cohort gene.
+GATES = (
+    (
+        "surface evidence",
+        lambda r: B.passes_canonical(r["filters"]) or B.passes_likely(r["filters"]),
+    ),
+    ("accessibility", lambda r: r["filters"].get("surface_accessibility") != "no"),
+    (
+        "surface fraction",
+        lambda r: r["filters"].get("surface_specificity") in ("surface_dominant", "mixed"),
+    ),
+    ("anchored", anchored),
+    ("co-receptor", lambda r: coreceptor_ok(r["gene"], r["filters"])),
+    ("expression", lambda r: expr_ok(r["gene"], r["filters"])),
+    ("localization", localization_ok),
+    ("ORF size", orf_ok),
+    ("ectodomain", ecd_ok),
+)
+
+
+def first_failing_gate(r):
+    """The first gate this gene fails, or ``None`` when it passes every one.
+
+    Short-circuits exactly as ``passes`` does, so a gene is never evaluated against a gate
+    that ``passes`` would not have reached: several gates read fields an earlier gate has
+    already vouched for, and evaluating them out of order would raise rather than reject.
+    """
+    for name, ok in GATES:
+        if not ok(r):
+            return name
+    return None
+
+
 def tier(r):
     f = r["filters"]
     arch = B.arch_risk(

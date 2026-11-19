@@ -33,8 +33,15 @@ NOT_OUTPUT_SUFFIXES = frozenset(
         ".yaml", ".yml", ".toml", ".cfg", ".ini",  # configuration and gate recipes
     }
 )  # fmt: skip
-# Folders holding inputs or caches rather than outputs.
-SKIP_PARTS = frozenset({".venv", "__pycache__", ".ipynb_checkpoints", "data"})
+# Folders holding inputs, caches or local previews rather than outputs.
+#
+# ``runs/`` is Agentflow's local preview of a run. Its durable copy is the published bundle
+# at ``agentflow/<run-id>/``, which ``flow publish`` writes with the same files under
+# ``provenance/`` and ``gatingml/``. Treating the preview as an output had the uploader
+# mirror a whole run a second time under ``runs/run-00N/`` (~290 objects per run), and left
+# the gate blocking on ``report.html`` — the one file publish rewrites, because it relinks
+# to those subfolders. Same report, different hrefs.
+SKIP_PARTS = frozenset({".venv", "__pycache__", ".ipynb_checkpoints", "data", "runs"})
 
 # boto3's defaults (TransferConfig.multipart_threshold and multipart_chunksize), which
 # ``deliverome_analysis.s3`` uploads with.

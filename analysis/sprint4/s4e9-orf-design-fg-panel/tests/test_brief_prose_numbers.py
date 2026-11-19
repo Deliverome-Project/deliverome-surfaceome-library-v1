@@ -35,7 +35,7 @@ CLAIMS = [
     ),
     ("needs a loop or ectodomain site | {} |", ["tag_paths.placement.internal"]),
     (
-        "{} are built ({} native, {} Igκ) and {} have no N-terminal arm",
+        "{} are built ({} native, {} Igκ) and {} have no N-terminal construct",
         [
             "rungs.n_after_sp.built",
             "rungs.n_after_sp.arm.native_site",
@@ -43,9 +43,9 @@ CLAIMS = [
             "rungs.n_after_sp.arm.no_nterm_arm",
         ],
     ),
-    ("otherwise. {} members carry it.", ["rungs.igk.members_with_igk_leader"]),
+    ("otherwise. {} CDSs carry it.", ["rungs.igk.members_with_igk_leader"]),
     (
-        "Over the {} re-predicted members, {} have no",
+        "Over the {} re-predicted CDSs, {} have no",
         [
             "rungs.igk.rule_comparison.repredicted_members",
             "rungs.igk.native_confidence.no_candidate_preserved",
@@ -56,7 +56,7 @@ CLAIMS = [
         ["rungs.igk.native_confidence.no_candidate_preserved_native_ge_0_9"],
     ),
     (
-        "keeps cleavage for {} members, the most\ndisordered residue in the first 20 for {}, and the re-prediction-gated choice for {}.",
+        "keeps cleavage for {} CDSs, the most\ndisordered residue in the first 20 for {}, and the re-prediction-gated choice for {}.",
         [
             "rungs.igk.rule_comparison.preserved_cleavage_plus_1",
             "rungs.igk.rule_comparison.preserved_disorder_anchored",
@@ -64,20 +64,20 @@ CLAIMS = [
         ],
     ),
     # internal and snorkel
-    ("**Counts.** {} members are tagged in a loop", ["rungs.internal.decision.internal_loop"]),
+    ("**Counts.** {} CDSs are tagged in a loop", ["rungs.internal.decision.internal_loop"]),
     (
-        "It is set on {} of the {} loop members",
+        "It is set on {} of the {} loop CDSs",
         ["rungs.snorkel.loops_flagged_snorkel_candidate", "rungs.internal.decision.internal_loop"],
     ),
     ("and on only {} of the 28 snorkels", ["rungs.snorkel.snorkels_flagged_snorkel_candidate"]),
     (
         # The decision round's denominator, which is not the order's: the order carries
-        # rungs.snorkel.built_arms snorkel arms, pinned by the claim below.
-        "{} of the {} arms refolded then failed",
+        # rungs.snorkel.built_arms snorkel constructs, pinned by the claim below.
+        "{} of the {} constructs refolded then failed",
         ["rungs.snorkel.snorkel_arms_failing", "rungs.snorkel.snorkel_arms_refolded"],
     ),
     (
-        "The order carries {} snorkel arms, {} of which\npass",
+        "The order carries {} snorkel constructs, {} of which\npass",
         [
             "rungs.snorkel.built_arms",
             "refold.by_group.cterm: snorkel (TM module, then cassette).pass",
@@ -105,13 +105,13 @@ CLAIMS = [
     # section 12 and the order
     ("| **All with a tag path** | **2,710** | **{}** |", ["order_plan.members"]),
     ("**{} pass, {} fail (", ["refold.pass", "refold.fail"]),
-    ("it translates each of the {} inserts", ["refold.inserts"]),
+    ("it translates each of the {} constructs", ["refold.inserts"]),
     (
         "All {} match residue for residue, {} of them as the mature chain",
         ["refold.fold_check_ok", "refold.ordered_igk_leader_inserts"],
     ),
     (
-        "The {} built members fill {} plates per set",
+        "The {} built CDSs fill {} plates per set",
         ["order_plan.members", "order_plan.plates_per_set"],
     ),
     # swap risk
@@ -122,7 +122,7 @@ CLAIMS = [
             "swap_risk.schemes.shared.members_over_gate_100",
         ],
     ),
-    ("For the {} members whose\ncassette ends the ORF", ["swap_risk.schemes.shared.cterm_members"]),
+    ("For the {} CDSs whose\ncassette ends the ORF", ["swap_risk.schemes.shared.cterm_members"]),
     # structure models and GPI
     (
         "| identical | {} | the model is of exactly this protein |",

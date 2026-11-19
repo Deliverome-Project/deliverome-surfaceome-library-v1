@@ -150,7 +150,7 @@ is a different attribute from the one this gate reads.
 **"Membrane-anchored" in the low-literature tier is this same test, unchanged** — one helix or
 more, or the architecture annotation. That tier also applies only the five conditions in its
 row: the ectodomain, co-receptor, localization, accessibility and surface-fraction gates are
-not evaluated for it, so a tier member can carry an ectodomain below the 30-residue minimum the
+not evaluated for it, so a gene admitted by that tier can carry an ectodomain below the minimum the
 core filter imposes.
 
 **The obligate-partner relationships are catalog attributes, not curation of ours.** Both the
@@ -167,6 +167,13 @@ standard cell line".
 [`GATE_METHODS.md`](../GATE_METHODS.md) gives each gate's full derivation: the deciding field or
 predictor, its version, the sequence it ran on, the threshold, where the output lives, and
 whether that provenance is durable today.
+
+A count cannot say why one particular gene is absent, so the outcome is also recorded per gene.
+[`gene_gate_outcomes.py`](../gene_gate_outcomes.py) writes `gene_gate_outcomes.tsv`: one row for
+every gene in the cohort, giving either the tier it entered the library by or the first gate
+that excluded it. It reads the filter's own gate list rather than restating it, and a test
+asserts that the gate named for a gene agrees with that gene's membership, so the table cannot
+drift from the decision it documents.
 
 The filter passes **2,369** genes (core 2,133 plus the three tiers). Two recorded changes
 then apply. They are separate events three weeks apart, not a matched pair, and they happen to

@@ -148,12 +148,18 @@ and dependency flags are in the pinned 1.3.0 deposit; the reviewed rules are com
 `coreceptor_calls.tsv` and the saved rationales are pinned with SHA-256 on
 `processed://sprint4/s4e9-orf-design-fg-panel/library-design/pipeline-inputs/2026-11-02/s1e3/`,
 copied from `processed://sprint1/s1e3-surface-library-filters/partner-audit-2026-09-10/inputs/`.
-The gap is the HPA release: the download URL is unversioned and the re-derivation records only
-the fetch date, so the exact HPA release behind these medians is identified by
-`2026-08-04` and the derived file's SHA-256, not by an HPA version number. The values are
-pinned and reproducible; the upstream release they came from is not named. Recovering it means
-reading the `download_traceability.json` the build script writes alongside the table, which is
-not committed in this repository.
+The gap is the HPA release, and it is not recoverable. The download URL is unversioned and the
+re-derivation records only the fetch date, so the exact HPA release behind these medians is
+identified by `2026-08-04` and the derived file's SHA-256, not by a version number. The
+`download_traceability.json` that `build_expression_reference.py` writes alongside the table —
+which holds the per-source URL, SHA-256, byte count and timestamp that would name the release —
+is not committed, is not on the `external://expression-tpm/` prefix (which holds only the three
+derived tables), and is not on local disk. Re-running the download would fetch whatever HPA
+serves today, not the release used. So the medians are pinned and reproducible as values, and
+the release they were computed from can now be established only by matching them against HPA's
+own release archive. The practical consequence is bounded: this is one threshold on a partner's
+breadth of expression, not a per-gene measurement, and the three other gates that use expression
+read the separately pinned genome-wide table.
 
 ## 3. "Membrane-anchored" in the low-literature UniProt tier
 
@@ -191,10 +197,14 @@ states.
 
 ## 4. Why EPPIN is removed
 
-EPPIN passed the anchoring gate on the GPI term, and on nothing else. Its canonical sequence is
-133 residues with a signal peptide and **zero** transmembrane helices by DeepTMHMM, so the
-helix term of `anchored()` is false and `filters.subcategory == "GPI_anchored"` is the only
-reason it entered the library. That is what Becca's reading of the exclusion record describes,
+EPPIN passed the anchoring gate on the GPI term, and on nothing else. Read directly out of the
+pinned deposit, its record carries `filters.subcategory = GPI_anchored`,
+`executive_summary.subcategory = GPI_anchored` (the field the former is copied from) and
+`canonical_topology.tm_helix_count = 0`. Its canonical sequence is 133 residues with a signal
+peptide and **zero** transmembrane helices, so the helix term of `anchored()` is false and the
+architecture annotation is the only reason it entered the library. It clears every other gate on
+its own — `co_receptor_dependency` is `none` and `surface_specificity` is `surface_dominant` —
+so no other gate would have caught it. That is what the exclusion record describes,
 and it is correct: the architecture annotation, as section 1 establishes, is a
 language-model-emitted field of the catalog record, carried into `filters.subcategory` for
 indexing. It is the gate's sole authority on GPI anchoring, and here it is the sole source that
@@ -224,17 +234,17 @@ protein to carry its own anchor; a member with none would read as a non-expresso
 that has nothing to do with the tag. It is therefore removed outright rather than flagged, recorded with
 its date and evidence in [`gene_list_exclusions.tsv`](gene_list_exclusions.tsv).
 
-**Provenance: the predictions are durable; one claim in the record is not reproducible from this
-repository.** The NetGPI output for all five EPPIN forms is committed and checkable line by
-line, and the DeepTMHMM topology is in the pinned 1.3.0 deposit and in this repository's
-committed canonical-topology table. Two gaps remain. The architecture annotation that EPPIN was
-admitted on cannot be read from any committed file here — establishing it means reading EPPIN's
-`filters.subcategory` out of the pinned `deep_dives_1.3.0.tar.gz`. And on the catalog side, the
-append-only `netgpi_prediction` and `gpi_curation_record` tables that would hold these
+**Provenance: durable, and verified end to end.** The NetGPI output for all five EPPIN forms is
+committed and checkable line by line; the DeepTMHMM topology is both in the pinned deposit and
+in this repository's committed canonical-topology table; and the architecture annotation EPPIN
+was admitted on was read out of `deep_dives_1.3.0.tar.gz` whose SHA-256 matches the value
+recorded in `library_pipeline_inputs.json`, so every step of this removal can be reproduced from
+pinned artifacts. One item is unestablished, and it does not affect the removal: on the catalog
+side, the append-only `netgpi_prediction` and `gpi_curation_record` tables that would hold these
 predictions with their `tool_version`, source URI and source checksum exist in the schema but
-are not part of the schema pinned to the live public database, so whether they are populated
-is not established from this repository; a row count against both databases would settle it.
-The NetGPI 1.1 install record is covered by the same open licence question as section 1.
+are not part of the schema pinned to the live public database, so whether they are populated is
+not established here; a row count against both databases would settle it. The NetGPI 1.1 install
+record is covered by the same open licence question as section 1.
 
 ## What a reviewer should take from this
 
@@ -243,5 +253,5 @@ The NetGPI 1.1 install record is covered by the same open licence question as se
 | transmembrane helix | DeepTMHMM 1.0.24 on the canonical sequence, via the catalog | yes — topology is published per gene in the deposit |
 | GPI anchor (gene gate) | the catalog's architecture annotation; no predictor, no threshold | only indirectly, by comparing against the committed NetGPI set and the curated triage export |
 | obligate partner | the catalog's partner list and dependency flag, with six hand-reviewed overrides | partially — partner lists are published; the free-text entries resolve to nothing |
-| partner ubiquity | median HPA cell-line TPM `>= 5`, re-derived 2026-08-04 | yes for the values, by SHA-256; the HPA release is not named |
+| partner ubiquity | median HPA cell-line TPM `>= 5`, re-derived 2026-08-04 | yes for the values, by SHA-256; the HPA release they came from is not recoverable |
 | membrane-anchored (low-literature tier) | the same two-term rule as the anchoring gate | yes |

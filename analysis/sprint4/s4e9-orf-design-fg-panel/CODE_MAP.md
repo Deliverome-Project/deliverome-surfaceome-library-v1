@@ -116,6 +116,7 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`fix_target_array_annotation.py`](fix_target_array_annotation.py) | called | Trim the flanking cloning sites out of the miR-L target-array feature. | — |
 | [`floor_control_screen.py`](floor_control_screen.py) | one-off | Mechanistic screen for a low-internalization ("floor") control that is easy to tag. | — |
 | [`gate_isoform_cohort.py`](gate_isoform_cohort.py) | stage | Gate every isoform-cohort form before the panel draw: native start, and the canonical's | `isoform_gate.tsv`, `isoform_gate_summary.json` |
+| [`gene_gate_outcomes.py`](gene_gate_outcomes.py) | documented | Every cohort gene's outcome at the L1 gene-list gates, as a table a reviewer can read. | `gene_gate_outcomes.tsv` |
 | [`iffl_reaction_order.py`](iffl_reaction_order.py) | called | Why a fully complementary site represses hard but does not dosage-compensate. | — |
 | [`l1_arm_ids.py`](l1_arm_ids.py) | called | Which arm of which member each built insert is: the arm id (``l1-pNNNN-aK``). | — |
 | [`l1_completeness.py`](l1_completeness.py) | stage | Is every active L1 member placed and armed? One row per member, across all five rungs. | `l1_completeness.tsv`, `l1_completeness_summary.json` |
@@ -192,7 +193,7 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`reviewer-package/fold_order_check.py`](reviewer-package/fold_order_check.py) | called | Independent check that every L1 fold is the protein in the order of record. | `fold_order_check.tsv`, `fold_order_check_summary.json` |
 | [`reviewer-package/nterm/admissible_interval.py`](reviewer-package/nterm/admissible_interval.py) | called | Tedman's admissible interval for a tag behind a signal peptide, reimplemented here. | — |
 | [`reviewer-package/nterm/analyse_signalp_run.py`](reviewer-package/nterm/analyse_signalp_run.py) | documented | Verdicts from the 2026-11-10 SignalP 6.0 run: the five new members and the Igκ swaps. | — |
-| [`reviewer-package/nterm/build_signalp_inputs.py`](reviewer-package/nterm/build_signalp_inputs.py) | documented | The sequences the 2026-11-10 SignalP 6.0 run predicts, one FASTA record per distinct protein. | — |
+| [`reviewer-package/nterm/build_signalp_inputs.py`](reviewer-package/nterm/build_signalp_inputs.py) | called | The sequences the 2026-11-10 SignalP 6.0 run predicts, one FASTA record per distinct protein. | — |
 | [`reviewer-package/nterm/bundle_nterm.py`](reviewer-package/nterm/bundle_nterm.py) | documented | Build the frozen input bundle that ``run_nterm_review.py`` replays. Lab-side: needs S3. | — |
 | [`reviewer-package/nterm/decision_inputs.py`](reviewer-package/nterm/decision_inputs.py) | called | Every S3 input the N-after-SP decisions and arms are built from, pinned by SHA-256. | `decision_inputs.json` |
 | [`reviewer-package/nterm/export_refold_batch.py`](reviewer-package/nterm/export_refold_batch.py) | one-off | Tagged N-after-SP sequences for l1-tag-refold to fold, one FASTA and one table per batch. | — |
@@ -258,4 +259,4 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`verify_ortholog_prediction_import.py`](verify_ortholog_prediction_import.py) | one-off | SELECT-only before/after verification of the ortholog prediction D1 append. | — |
 | [`write_structure_baseline.py`](write_structure_baseline.py) | documented | Regenerate the structure-coverage baseline the repo tests assert against. | `structure_coverage_baseline.json` |
 
-Totals: called 122, documented 32, one-off 24, stage 29, test 6
+Totals: called 123, documented 33, one-off 24, stage 29, test 6

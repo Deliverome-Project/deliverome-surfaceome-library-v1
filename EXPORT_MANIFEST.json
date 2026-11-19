@@ -1,6 +1,6 @@
 {
  "source_repository": "Deliverome-Project/deliverome-analysis",
- "source_commit": "aa2591ada0840db832c7ed44a5ac8843838fafae",
+ "source_commit": "5daf25d995b0f8deb25ca8c7c784590036fd09c0",
  "source_ref": "HEAD",
  "files": {
   ".gitignore": "9e560f31483d07e05b0bc261db55f6d4814378150f3a28dfff6e6703db694c37",
@@ -31,7 +31,7 @@
   "analysis/sprint1/s1e3-surface-library-filters/figures/surface_library_funnel.png": "c2d8eace1bf3a3811ac7d04b87c0c2fac509ffb08ef8c4e4b77304f9afac91dc",
   "analysis/sprint1/s1e3-surface-library-filters/figures/tier_gene_isoform_ortholog.png": "21ede95b8adb950941974bcdd6e538a46611dadb2786b1960b3d89eb4b50aa69",
   "analysis/sprint1/s1e3-surface-library-filters/figures/tier_variant_coverage.png": "b0bb1189f6dae8ff751ccb1a617409cbd0b9bd48f1857d6134b89937de06a2b6",
-  "analysis/sprint1/s1e3-surface-library-filters/final_library.py": "c682cc70a8ac2fdcdc615b15607c94ba42108e71d1d430793e025619466071ad",
+  "analysis/sprint1/s1e3-surface-library-filters/final_library.py": "9f96fdc8e5383820054215537773806cad5c80bdd7ec230dd1fd7d67afb37c47",
   "analysis/sprint1/s1e3-surface-library-filters/isoform_expression_scoping.md": "24328223504df0049b234e22857086b843a642c000a0329d3c70e7282bcc70d1",
   "analysis/sprint1/s1e3-surface-library-filters/list_comparison_surfy_tpm.md": "6ad8919b052924e2021fe0237c4da111d15cb85628d40864346d9c35f47029bc",
   "analysis/sprint1/s1e3-surface-library-filters/oversized_truncation_precedents.md": "e759104c86e0df6d2f185a1b269fc2234184d9c3b4cca745ea4507a0e92fc279",
@@ -51,8 +51,8 @@
   "analysis/sprint4/s4e9-orf-design-fg-panel/.gitignore": "7db4f1cfe55656b4ede6f5aa64c5e2d5378fdcb7175368e0fe9d0c58dcddce0b",
   "analysis/sprint4/s4e9-orf-design-fg-panel/AGENT_HANDOFF.md": "36f04b973d01fc80ba8627368b1b5650bd0f63ef23d73c76ec07f6ff86ab1f78",
   "analysis/sprint4/s4e9-orf-design-fg-panel/CDS_AUDIT.md": "324e88ff4eba5fd374f30c2fef549a5b92b1455db1cb4f18074390c9fa51b7df",
-  "analysis/sprint4/s4e9-orf-design-fg-panel/CODE_MAP.md": "7c20c6c727fa5a9a08cb5e2445507fc859641a0236c75f0852d9bd25161b64ba",
-  "analysis/sprint4/s4e9-orf-design-fg-panel/GATE_METHODS.md": "8cf519eb7fbc64302fffd4912da9f849b892c55ef4f6ff2651fb528e1545c069",
+  "analysis/sprint4/s4e9-orf-design-fg-panel/CODE_MAP.md": "4764a90ba8d534d9ec3acc1748ddf9dccf35063cb0e2ceb799e6546793478c5f",
+  "analysis/sprint4/s4e9-orf-design-fg-panel/GATE_METHODS.md": "4f499403905a970b276cbb52c82c0d1f0c1946b397fd65591b57e4bf298d03e5",
   "analysis/sprint4/s4e9-orf-design-fg-panel/ISOFORM_COVERAGE.md": "2c1a3247e1c74d058c8df1578c012d9b6adec36207c9e1eb8c78163b35859c04",
   "analysis/sprint4/s4e9-orf-design-fg-panel/NOTES.md": "29887ec72988be52b1201ca8fa27733a6e618ba8f4119a8ca887d382c3a5b59f",
   "analysis/sprint4/s4e9-orf-design-fg-panel/NTERM_RES1_LANE_CHECK.md": "7f9206e3e07b25c3ca393d348d801c2260b4acee636be58146c395795b98bbcf",
@@ -222,6 +222,7 @@
   "analysis/sprint4/s4e9-orf-design-fg-panel/fold_order_check.tsv": "196ad4e96a69e6a95fefa753ca293584ed7196e19756645df07afebf0ef27aae",
   "analysis/sprint4/s4e9-orf-design-fg-panel/fold_order_check_summary.json": "774d63cc1ba1210d92fd7afe290c80b4210888912719f7aebb2f7687d9335dd1",
   "analysis/sprint4/s4e9-orf-design-fg-panel/gate_isoform_cohort.py": "3a02b2a73213412ad80f7bd82998a4e1ded6910fdd9efb9432bd68856e4925b1",
+  "analysis/sprint4/s4e9-orf-design-fg-panel/gene_gate_outcomes.py": "25ab58bbe140fb0c5fe741ee602dd75b13a2f6be3f7ee72d0525ebf0ca5b5d64",
   "analysis/sprint4/s4e9-orf-design-fg-panel/gene_list_additions.tsv": "99d421e20f21fc2c95262c7ef7b04e61ac205abb33dc849c3306c6e8688a0c42",
   "analysis/sprint4/s4e9-orf-design-fg-panel/gene_list_exclusions.tsv": "afed4ca7ec751a628ba36a70355405dc3dac5d9985af567dadecd01e34390c73",
   "analysis/sprint4/s4e9-orf-design-fg-panel/genes.tsv": "b794b03d12f4d4facf879f8cc9927d27d473c74d054310879f1c0ba89a47b5a5",
@@ -503,7 +504,7 @@
   "analysis/sprint4/s4e9-orf-design-fg-panel/review_l1_cterm_members.py": "c661c5ced49a20893f548f0e0d098888357fffe4263f3f544f2c2728aa3b3587",
   "analysis/sprint4/s4e9-orf-design-fg-panel/review_ortholog_correspondence.py": "c6942193bc6b8eeb1b9a330f951fb75672aaa458ac689c4ba53a9f11f26390ac",
   "analysis/sprint4/s4e9-orf-design-fg-panel/review_priority_cds_forms.py": "efdcef917047a62f0b866b7dce6b2885ebeacaef4d29117c708f79f25ff5415a",
-  "analysis/sprint4/s4e9-orf-design-fg-panel/reviewer-package/BRIEF.md": "dd02e471f419880bd45ee3645dcf2ebf4ca7c8c740d794db4c786c3d33edce62",
+  "analysis/sprint4/s4e9-orf-design-fg-panel/reviewer-package/BRIEF.md": "97a8f3c37e1cf2a0ee213f46b18a26a3e9f6bb6767f4e7a6e9c47265ee23f455",
   "analysis/sprint4/s4e9-orf-design-fg-panel/reviewer-package/COVER_NOTE.md": "510f2ff4e1eee213cd4b5749a884e35854298d5c77fffaf511cd12207c4b3db6",
   "analysis/sprint4/s4e9-orf-design-fg-panel/reviewer-package/README.md": "73e678ae5bb4da240e1c929362a3eea9e70ee7a6439cf3acfe07d97c2bbca5d2",
   "analysis/sprint4/s4e9-orf-design-fg-panel/reviewer-package/brief_numbers.json": "6398df9c5fbee690ce72450ba0818a62a4bbbefd27efd6237a13b84b3be2836a",
@@ -671,7 +672,7 @@
   "analysis/sprint4/s4e9-orf-design-fg-panel/test_score_eligible_ortholog_pool.py": "0b38f3661f41daa5ebef31d03cf4d758158be95bb928c37a0ee19ba1d4707a38",
   "analysis/sprint4/s4e9-orf-design-fg-panel/test_validated_v1_supplements.py": "c4677aa3e28a5aa1c66313093504c59261aaec75937736a7405d189c561c96b1",
   "analysis/sprint4/s4e9-orf-design-fg-panel/tests/test_barcode_prefix_screen.py": "3e65407ee756d56704367073603c983fe66590ca430d7130719dc142028c2316",
-  "analysis/sprint4/s4e9-orf-design-fg-panel/tests/test_brief_prose_numbers.py": "fb39406f4cec4cfc5342ef10c109afd8f50bafdfeaf63976eef63e6dfacdd195",
+  "analysis/sprint4/s4e9-orf-design-fg-panel/tests/test_brief_prose_numbers.py": "8b787580258e59f0be17b8ddded6679f7e0bcd9731d577934a42d0ad4f8a3a77",
   "analysis/sprint4/s4e9-orf-design-fg-panel/tests/test_code_map.py": "065b45ffe1eb3a8cc67ada6dcf41e4fc060050f51e8dcfe1d8184c1dedd37dd3",
   "analysis/sprint4/s4e9-orf-design-fg-panel/tests/test_domestication_barcode_audit.py": "9d75c08a76df6ad3df94c83bc8c3fd07f7d1dad66bad2da7783c689c5a1cc7b5",
   "analysis/sprint4/s4e9-orf-design-fg-panel/tests/test_external_inputs.py": "ebb29c711591390e4619758fb010afda846c87059066c1606b5892aa2dfac8ee",
@@ -877,7 +878,7 @@
   "src/deliverome_analysis/dia_qc_layouts/sample.yaml": "e2f0a2556eec5dbf4ae50d98ed75ea8cd7d9bcaa5c2b67fa1fcdbd1edb5cd9f0",
   "src/deliverome_analysis/dia_qc_pipeline.py": "3c1fbab174c72d82509a593a9067fcecd25abb6a6d90e81c902664b47c3c8661",
   "src/deliverome_analysis/env.py": "918a3f941db85bdef2af1a17c6cf0af6aef29c11c2f0944e9e9a2a88951d6b67",
-  "src/deliverome_analysis/experiment_outputs.py": "818255acea7b30810a232ec17f28793d22b60f248ee032459745831e09a8237e",
+  "src/deliverome_analysis/experiment_outputs.py": "14c95649e4509677f8a8af05be28ef024c2679b769024f5668939c4c7090433a",
   "src/deliverome_analysis/flow.py": "0e367ed3642364b1af95360fc85b3ffa3f76ce94d036c2648a34852a27c6aef3",
   "src/deliverome_analysis/flow_import.py": "c2d8068eed4ec39a33d844d24a74707d79f5ad07c56da730de1ec90723de864b",
   "src/deliverome_analysis/flow_records.py": "69ce232b8dc68c1b9cc9968c21e6269c756fd84b2e87539db992e77bee456564",
@@ -912,6 +913,6 @@
   "src/deliverome_analysis/topology.py": "020d94ca36df0050b45dd41be506608ee3b3552c6da567e4d04eec4c49f678a9",
   "src/deliverome_analysis/trust_store.py": "5575b6f53ddf8d6d739fb1afd9732b2c844b3d0b1e29e6cc049dee81dac5c663",
   "tests/test_s3_offline_mirror.py": "9cc02ed98ca59a390ac02ebe307a8237692aaa250240dee61cba8ad07d0e87a6",
-  "uv.lock": "b42194b394d3dee089ef228647b12c11812f0bbad6a7b52879fc7ba922f96f1f"
+  "uv.lock": "efe96927e61633614aa0edb756592f5eca749a3f6a0ff9719fc176c40d7a7b85"
  }
 }
