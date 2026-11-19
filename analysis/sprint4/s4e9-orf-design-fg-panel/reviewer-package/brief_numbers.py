@@ -461,6 +461,31 @@ def figures(n: dict) -> None:
     ax.legend(loc="upper right", frameon=False)
     save_figure(fig, "l1_swap_tracts", output_dir=FIGURES)
 
+    # Figure 4: what L1 is made of, one stacked bar. The counts ride in the legend rather
+    # than on the segments: at 150 and 200 against 2,360 the small ones have no room for a
+    # label, and a leader line into a 5-pixel segment is less readable than the legend.
+    by_set = n["tranches"]["l1_active_by_set"]
+    fig, ax = create_figure(figsize=(12, 1.9))
+    left = 0.0
+    for s in SETS:
+        v = float(by_set[s])
+        ax.barh(
+            [0],
+            [v],
+            left=[left],
+            height=0.45,
+            color=set_colors[s],
+            label=f"{s.replace('_', ' ')} ({int(v):,})",
+        )
+        left += v
+    ax.text(left * 1.01, 0, f"{int(left):,}", va="center")
+    ax.set_yticks([])
+    ax.set_ylim(-0.4, 0.4)
+    ax.set_xlim(0, left * 1.12)
+    ax.set_xlabel("L1 CDSs")
+    ax.legend(loc="lower center", bbox_to_anchor=(0.5, -1.25), ncol=3, frameon=False)
+    save_figure(fig, "l1_candidate_sets", output_dir=FIGURES)
+
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)

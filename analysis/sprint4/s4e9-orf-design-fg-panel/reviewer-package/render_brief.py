@@ -50,7 +50,7 @@ CSS = """
 body { font-family: 'Manrope', -apple-system, Helvetica, Arial, sans-serif; font-size: 10.5pt;
        line-height: 1.4; max-width: 7.2in; margin: 0 auto; color: #1f1718; }
 h1 { font-size: 17pt; } h2 { font-size: 13.5pt; margin-top: 1.4em; } h3 { font-size: 11.5pt; }
-table { border-collapse: collapse; margin: 0.6em 0; font-size: 9.5pt; }
+table { border-collapse: collapse; margin: 0.6em 0; font-size: 8.5pt; }
 th, td { border: 1px solid #cfc4bf; padding: 3px 6px; vertical-align: top; }
 th { background: #f3ece5; }
 code { font-size: 9pt; }
