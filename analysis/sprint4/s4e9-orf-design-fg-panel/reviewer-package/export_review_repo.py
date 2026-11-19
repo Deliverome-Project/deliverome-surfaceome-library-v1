@@ -46,6 +46,9 @@ MANIFEST = "EXPORT_MANIFEST.json"
 ALWAYS = [
     "analysis/sprint4/s4e9-orf-design-fg-panel",
     "analysis/sprint1/s1e3-surface-library-filters",
+    # The vector and the barcode set the brief describes in sections 8 and 9 were designed
+    # here, and a reviewer cannot check the barcode filter stack without it.
+    "analysis/sprint1/s1e2-fragmid-vector-design",
     "scratch/becca/appris-principal",
     "scratch/becca/tag-site-architecture",
     "src/deliverome_analysis",

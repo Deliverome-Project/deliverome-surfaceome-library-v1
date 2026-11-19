@@ -1,0 +1,94 @@
+# EMCV genomes used for the natural-variation controls in
+# ires_domestication_analysis.py
+#
+# Source:    NCBI Nucleotide (nuccore), via Bio.Entrez
+# Query:     "Encephalomyocarditis virus"[Organism] AND 7000:8500[SLEN]
+# retmax:    80
+# Retrieved: 2026-08-11
+# Returned:  80 records
+#
+# NCBI results drift as records are added. This list pins exactly which
+# accessions produced the numbers in the committed TSV and figure; re-run
+# with the live query to refresh, and update this file if counts change.
+#
+# accession	length	description
+AB114136.1	8024	Hepatitis C virus replicon pSGR-JFH1 gene for neomysin resistance gene
+AB690456.1	8029	Hepatitis C virus replicon pSGR-JFH2.1 DNA, complete sequence
+AB690457.1	8029	Hepatitis C virus replicon pSGR-JFH2.2 DNA, complete sequence
+AB691597.1	7994	Hepatitis C virus replicon pSGR-S310/A DNA, complete sequence
+AB691598.1	7994	Hepatitis C virus replicon pSGR-S310/B DNA, complete sequence
+AF356822.1	7730	Encephalomyocarditis virus strain BEL-2887A/91, complete genome
+AY296731.1	7678	Encephalomyocarditis virus EMCV-30 polyprotein gene, complete cds
+DQ288856.1	7722	Encephalomyocarditis virus strain pEC9, complete genome
+DQ294633.1	7765	Mengo virus isolate Rz-pMwt, complete genome
+DQ464062.1	7746	Encephalomyocarditis virus strain BJC3, complete genome
+DQ464063.1	7735	Encephalomyocarditis virus strain HB1, complete genome
+DQ517424.1	7713	Porcine encephalomyocarditis virus strain EMCV-CBNU polyprotein gene,
+DQ835185.2	7340	Encephalomyocarditis virus strain 1086C polyprotein gene, partial cds
+EU780148.1	7731	Encephalomyocarditis virus isolate K3, complete genome
+EU780149.1	7744	Encephalomyocarditis virus isolate K11, complete genome
+HM641897.1	7724	Porcine encephalomyocarditis virus strain NJ08 polyprotein gene, compl
+KC310737.1	7630	Encephalomyocarditis virus isolate Sing-M100-02, partial genome
+KC310738.1	7634	Encephalomyocarditis virus isolate Sing-M105-02, partial genome
+KF293299.1	7739	Encephalomyocarditis virus strain FJ13, complete genome
+KF709977.1	7741	Encephalomyocarditis virus strain BD2, complete genome
+KF771002.1	7725	Encephalomyocarditis virus isolate HN13, complete genome
+KF836386.1	7735	Encephalomyocarditis virus isolate HNJZ1201, complete genome
+KF836387.1	7735	Encephalomyocarditis virus isolate JZ1202, complete genome
+KF836388.1	7725	Encephalomyocarditis virus isolate JZ1203, complete genome
+KF836389.1	7729	Encephalomyocarditis virus isolate YM13, complete genome
+KF836390.1	7724	Encephalomyocarditis virus isolate YY13, complete genome
+KJ524643.1	7717	Encephalomyocarditis virus strain GS01, complete genome
+KM269482.1	7875	Encephalomyocarditis virus strain ATCC VR-129B, complete genome
+KP892662.1	7773	Encephalomyocarditis virus strain MM polyprotein gene, complete cds
+KU955338.1	7548	Mengo virus strain AnrB-3741, complete genome
+KX231802.1	7714	Mengo virus strain 3761IMP, complete genome
+L22089.1	7761	Mengo virus isolate M, complete genome
+LC508268.1	7263	Encephalomyocarditis virus NIID-NU1 genomic RNA, complete genome
+LC585221.1	7650	Encephalomyocarditis virus ZM12/14 gene for polyprotein, complete cds
+M22457.1	7825	Encephalomyocarditis (EMC) virus EMC-B variant, RNA, complete genome
+M22458.1	7829	Encephalomyocarditis (EMC) virus EMC-D variant, RNA, complete genome
+M37588.1	7842	Encephalomyocarditis virus, diabetogenic variant (D variant, ifp- phen
+MH191297.1	7734	Encephalomyocarditis virus isolate HLJ, complete genome
+MN547968.1	7706	Encephalomyocarditis virus isolate SG-G15150-19, complete genome
+MT250508.1	7875	Encephalomyocarditis virus isolate FRA/SIG/1/2013, complete genome
+MT250509.1	7870	Encephalomyocarditis virus isolate FRA/SIG/1/2014, complete genome
+MT250510.1	7875	Encephalomyocarditis virus isolate FRA/SIG/2/2014, complete genome
+MT250511.1	7874	Encephalomyocarditis virus isolate FRA/SIG/3/2014, complete genome
+MT499387.1	7629	Encephalomyocarditis virus isolate SG-NParks-M100-02, complete genome
+NC_001479.1	7835	Encephalomyocarditis virus, complete genome
+OF449081.1	7715	KR 1020220044493-A/2: COMPOSITIONS AND METHODS FOR THE TREATMENT OF SA
+OP381184.1	7608	Encephalomyocarditis virus isolate UK2016 polyprotein gene, complete c
+OQ858575.1	7447	Encephalomyocarditis virus isolate AR3595/61 polyprotein gene, complet
+OQ858576.1	7443	Encephalomyocarditis virus isolate AN7405/61 polyprotein gene, complet
+OQ858577.1	7439	Encephalomyocarditis virus isolate AN7402/61 polyprotein gene, complet
+OR924200.1	7398	Encephalomyocarditis virus isolate EMCV_KNP19/94 polyprotein gene, par
+OR924201.1	7398	Encephalomyocarditis virus isolate EMCV_KNP_17/94 polyprotein gene, pa
+PG053646.1	7835	JP 2022551792-A/2: COMPOSITIONS AND METHODS FOR THE TREATMENT OF SANFI
+PP841942.1	7495	Encephalomyocarditis virus isolate BCCO_50_0517, complete genome
+PQ298982.1	7740	Encephalomyocarditis virus isolate XX1-19, complete genome
+PV702024.1	7775	Encephalomyocarditis virus isolate N-037-19, complete genome
+PV702025.1	7724	Encephalomyocarditis virus isolate N-039-19, complete genome
+PV702026.1	7736	Encephalomyocarditis virus isolate N-041-19, complete genome
+PV702027.1	7732	Encephalomyocarditis virus isolate N-073-19, complete genome
+PV702028.1	7738	Encephalomyocarditis virus isolate N-074-19, complete genome
+PV702029.1	7729	Encephalomyocarditis virus isolate N-083-19, complete genome
+PV702030.1	7723	Encephalomyocarditis virus isolate R-023-19, complete genome
+PV702031.1	7724	Encephalomyocarditis virus isolate R-046-19, complete genome
+PV702032.1	7723	Encephalomyocarditis virus isolate R-070-19, complete genome
+PV702033.1	7726	Encephalomyocarditis virus isolate R-072-19, complete genome
+PV702034.1	7729	Encephalomyocarditis virus isolate R-189-19, complete genome
+PV702035.1	7723	Encephalomyocarditis virus isolate R-206-19, complete genome
+PV702036.1	7726	Encephalomyocarditis virus isolate R-224-19, complete genome
+PV702037.1	7723	Encephalomyocarditis virus isolate R-259-19, complete genome
+PV702038.1	7731	Encephalomyocarditis virus isolate R-325-19, complete genome
+PV702039.1	7726	Encephalomyocarditis virus isolate R-872-19, complete genome
+PV702040.1	7735	Encephalomyocarditis virus isolate R-275-20, complete genome
+PV702041.1	7738	Encephalomyocarditis virus isolate R-291-20, complete genome
+PV702042.1	7738	Encephalomyocarditis virus isolate R-296-20, complete genome
+PV702043.1	7726	Encephalomyocarditis virus isolate R-392-20, complete genome
+PV702044.1	7738	Encephalomyocarditis virus isolate R-409-21, complete genome
+PV702045.1	7727	Encephalomyocarditis virus isolate N-19-013, complete genome
+PV702046.1	7725	Encephalomyocarditis virus isolate N-20-413, complete genome
+PX693696.1	7533	Encephalomyocarditis virus strain VANTARA polyprotein gene, complete c
+PX906848.1	7521	Encephalomyocarditis virus strain EMCV/SPVUFRGS/Brazil-MT/Swine, compl

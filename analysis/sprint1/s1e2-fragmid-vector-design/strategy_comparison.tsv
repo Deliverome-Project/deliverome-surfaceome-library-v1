@@ -1,0 +1,13 @@
+scenario	cost	pct_usable	pct_severe	dollars_per_usable_orf
+D  baseline (no clonal)	224478	79.3	13.3	126
+F3 clonal >2.27 kb	276416	89.0	7.0	138
+F4 clonal >1.8 kb	285072	90.9	5.8	140
+E  stitch @ $44/piece	222896	94.7	3.2	105
+E  stitch @ $100/piece	448576	94.7	3.2	211
+S1 Synplexity all <=3 kb + clonal tail	255529	100.0	0.0	114
+S2 Synplexity all <=3 kb + fragments tail	219823	93.7	4.2	105
+S3 Synplexity 714 bp-3 kb + clonal tail	245775	99.9	0.1	110
+S4 Synplexity 1.8-3 kb + clonal tail	199277	90.9	5.8	98
+S7 AbstractBio <=1.2 kb + Synplexity 1.2-3 kb + clonal tail	221446	99.1	0.5	100
+S5 Synplexity all <=3 kb + Elegen tail	344796	99.1	0.5	155
+S6 Synplexity all <=3 kb + stitched tail @$44	185039	98.0	1.2	84

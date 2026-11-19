@@ -1,0 +1,4 @@
+position	parental	domesticated	enzyme_removed	natural_isolates_with_domesticated_allele	total_isolates	conservation	entropy_parental	entropy_domesticated
+137	T	G	BbsI	0	79	0.9873	0.1300	1.6853
+236	A	C	BbsI	3	79	0.9494	0.6874	0.0057
+480	G	A	ApaLI	20	79	0.7468	0.4050	0.6089

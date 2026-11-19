@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 300" width="620" height="300" font-family="Manrope, Inter, system-ui, sans-serif">
+  <text x="0" y="14" font-size="13" fill="#1F1718" font-weight="600">Do natural EMCV isolates carry the domesticated allele?</text>
+  <g font-size="12">
+    <text x="0" y="46" fill="#1F1718">137 T&#8594;G</text>
+    <text x="76" y="46" fill="#6F5D5A">EMCV 396 &#183; BbsI</text>
+    <rect x="196" y="36" width="260" height="12" rx="3" fill="#E6DAD4"/>
+    <text x="466" y="46" fill="#BC3C4C" font-weight="600">0 / 79</text>
+    <text x="524" y="46" fill="#BC3C4C">watch</text>
+    <text x="0" y="76" fill="#1F1718">236 A&#8594;C</text>
+    <text x="76" y="76" fill="#6F5D5A">EMCV 495 &#183; BbsI</text>
+    <rect x="196" y="66" width="260" height="12" rx="3" fill="#E6DAD4"/>
+    <rect x="196" y="66" width="9.9" height="12" rx="3" fill="#3D6B60"/>
+    <text x="466" y="76" fill="#3D6B60" font-weight="600">3 / 79</text>
+    <text x="0" y="106" fill="#1F1718">480 G&#8594;A</text>
+    <text x="76" y="106" fill="#6F5D5A">EMCV 739 &#183; ApaLI</text>
+    <rect x="196" y="96" width="260" height="12" rx="3" fill="#E6DAD4"/>
+    <rect x="196" y="96" width="65.8" height="12" rx="3" fill="#3D6B60"/>
+    <text x="466" y="106" fill="#3D6B60" font-weight="600">20 / 79</text>
+  </g>
+  <line x1="0" y1="140" x2="620" y2="140" stroke="#E6DAD4" stroke-width="1"/>
+  <text x="0" y="168" font-size="13" fill="#1F1718" font-weight="600">Structural divergence from the parental fold</text>
+  <text x="0" y="188" font-size="12" fill="#6F5D5A">base-pair difference; natural isolates set the scale</text>
+  <g>
+    <line x1="60" y1="238" x2="540" y2="238" stroke="#B9A9A4" stroke-width="1"/>
+    <g font-size="11" fill="#6F5D5A" text-anchor="middle">
+      <line x1="60" y1="238" x2="60" y2="243" stroke="#B9A9A4"/><text x="60" y="258">0</text>
+      <line x1="220" y1="238" x2="220" y2="243" stroke="#B9A9A4"/><text x="220" y="258">50</text>
+      <line x1="380" y1="238" x2="380" y2="243" stroke="#B9A9A4"/><text x="380" y="258">100</text>
+      <line x1="540" y1="238" x2="540" y2="243" stroke="#B9A9A4"/><text x="540" y="258">150</text>
+    </g>
+    <rect x="60" y="212" width="467" height="14" rx="4" fill="#3D6B60" opacity="0.32"/>
+    <line x1="242" y1="208" x2="242" y2="230" stroke="#3D6B60" stroke-width="2.5"/>
+    <text x="250" y="206" font-size="11" fill="#3D6B60">natural isolates, median 57 (range 0&#8211;146)</text>
+    <line x1="111" y1="206" x2="111" y2="232" stroke="#BC3C4C" stroke-width="2.5"/>
+    <text x="111" y="284" font-size="11" fill="#BC3C4C" text-anchor="middle" font-weight="600">domesticated, 16</text>
+  </g>
+</svg>

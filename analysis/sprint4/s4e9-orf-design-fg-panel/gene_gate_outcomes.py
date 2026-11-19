@@ -19,6 +19,7 @@ endpoint is per-gene and fetching it in bulk has taken the public API down befor
 
 from __future__ import annotations
 
+import argparse
 import csv
 import sys
 from pathlib import Path
@@ -28,21 +29,46 @@ S1E3 = HERE.parents[1] / "sprint1/s1e3-surface-library-filters"
 OUT = HERE / "gene_gate_outcomes.tsv"
 
 
-def main() -> int:
-    if not (S1E3 / "cohort.jsonl").exists():
+def main(argv=None) -> int:
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument(
+        "--s1e3",
+        type=Path,
+        default=S1E3,
+        help="the S1E3 folder with the filter's inputs staged. Defaults to the one in this "
+        "repository; `library_pipeline.py verify --stage gene_list` stages a populated copy "
+        "in its work directory, which is where this usually runs.",
+    )
+    a = ap.parse_args(argv)
+    s1e3 = a.s1e3.resolve()
+    if not (s1e3 / "cohort.jsonl").exists():
         raise SystemExit(
-            f"{S1E3 / 'cohort.jsonl'} is missing. It is fetched, not committed: run this inside a "
-            "reviewer replay (reviewer-package/run_review.py), which supplies the filter's "
-            "inputs from the offline bundle."
+            f"{s1e3 / 'cohort.jsonl'} is missing. The filter's inputs are built, not committed. "
+            "Run `library_pipeline.py verify --stage gene_list`, which builds them offline from "
+            "the pinned release deposit, and pass its work directory's s1e3 folder as --s1e3."
         )
-    sys.path.insert(0, str(S1E3))
+    sys.path.insert(0, str(s1e3))
     import final_library as F  # importing runs the filter, which is how it is meant to run
 
     tiers = {r["gene"]: F.tier(r) for r in F.recs if F.passes(r)}
+    gate_names = [name for name, _pred in F.GATES]
     rows = []
     for r in F.recs:
         gene = r["gene"]
         gate = F.first_failing_gate(r)
+        # One column per gate, so "the genes passing this filter" is a single-column filter.
+        # The gates are applied in order and stop at the first failure, so a gene that failed
+        # an earlier gate was never judged by the later ones: that is `not_reached`, which is
+        # not the same claim as `fail`.
+        per_gate, reached = {}, True
+        for name in gate_names:
+            if not reached:
+                per_gate[name] = "not_reached"
+            elif name == gate:
+                per_gate[name] = "fail"
+                reached = False
+            else:
+                per_gate[name] = "pass"
         rows.append(
             {
                 "gene": gene,
@@ -50,12 +76,15 @@ def main() -> int:
                 "outcome": "excluded" if gate else "in_library",
                 "tier": tiers.get(gene, ""),
                 "gate_failed": gate or "",
+                **per_gate,
             }
         )
     rows.sort(key=lambda d: (d["outcome"], d["gate_failed"], d["gene"]))
 
     with open(OUT, "w", newline="") as fh:
-        w = csv.DictWriter(fh, fieldnames=list(rows[0]), delimiter="\t")
+        # Explicit LF: csv defaults to \r\n, which git stores as \n, so the file would differ
+        # from what this script writes and never reproduce byte for byte.
+        w = csv.DictWriter(fh, fieldnames=list(rows[0]), delimiter="\t", lineterminator="\n")
         w.writeheader()
         w.writerows(rows)
 

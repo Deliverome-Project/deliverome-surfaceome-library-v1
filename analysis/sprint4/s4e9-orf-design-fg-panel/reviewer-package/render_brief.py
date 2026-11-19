@@ -42,8 +42,12 @@ CHROME_CANDIDATES = (
     "google-chrome",
     "chromium",
 )
+#: Manrope is the house typeface. Chrome fetches it for the PDF; the .docx names it directly,
+#: so a reader with Manrope installed sees it and anyone else falls back to their sans-serif.
+FONT = "Manrope"
 CSS = """
-body { font-family: -apple-system, Helvetica, Arial, sans-serif; font-size: 10.5pt;
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap');
+body { font-family: 'Manrope', -apple-system, Helvetica, Arial, sans-serif; font-size: 10.5pt;
        line-height: 1.4; max-width: 7.2in; margin: 0 auto; color: #1f1718; }
 h1 { font-size: 17pt; } h2 { font-size: 13.5pt; margin-top: 1.4em; } h3 { font-size: 11.5pt; }
 table { border-collapse: collapse; margin: 0.6em 0; font-size: 9.5pt; }
@@ -85,7 +89,9 @@ def body_html(md_path: Path, commit: str) -> str:
     # `fenced_code` is not optional: without it a ``` block is parsed as inline code spans and
     # its lines are joined into one, which silently ran the rerun recipe's six shell commands
     # together on a single line in every Word and PDF copy.
-    body = markdown.markdown(md_path.read_text(), extensions=["tables", "fenced_code"])
+    # `toc` is here only for the ids it puts on headings, which is what makes an in-document
+    # link to the appendix resolve in the HTML and the PDF.
+    body = markdown.markdown(md_path.read_text(), extensions=["tables", "fenced_code", "toc"])
     traced, always = exported_paths()
     unpublished: list[str] = []
 
@@ -174,7 +180,14 @@ def _inline(paragraph, el, base: Path, style: dict | None = None) -> None:
         paragraph.add_run().add_picture(str(base / el.get("src")), width=Inches(6.3))
         return
     if tag == "a" and el.get("href"):
-        _hyperlink(paragraph, el.get("href"), " ".join(el.text_content().split("\n")), style)
+        href = el.get("href")
+        text = " ".join(el.text_content().split("\n"))
+        if href.startswith("#"):
+            # An in-document anchor resolves in the HTML and the PDF. Word would turn it into
+            # an external link to a URL that does not exist, so it reads as plain text here.
+            _run(paragraph, text, style, Pt)
+        else:
+            _hyperlink(paragraph, href, text, style)
         return
     if tag == "br":
         paragraph.add_run().add_break()
@@ -206,7 +219,7 @@ def to_docx(md_path: Path, commit: str, out: Path) -> None:
     from docx.shared import Pt
 
     doc = Document()
-    doc.styles["Normal"].font.name = "Arial"
+    doc.styles["Normal"].font.name = FONT
     doc.styles["Normal"].font.size = Pt(10.5)
     root = lxml.html.fragment_fromstring(body_html(md_path, commit), create_parent="div")
     base = md_path.parent

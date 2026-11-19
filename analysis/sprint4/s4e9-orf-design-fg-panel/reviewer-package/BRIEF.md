@@ -10,34 +10,22 @@ the design as of **2026-11-16**, which is the cut `2026-11-15-final-e` (section 
 stands after that date's corrections; issues still being worked on before the order are
 listed separately in the [cover note](COVER_NOTE.md).
 
+**If you read only one section, read the seven questions we would most like answered**
+([section 12](#12-decisions-we-would-like-reviewers-to-weigh-in-on)). They are the places where
+the design rests on an argument rather than on data, and where a reviewer changes what we order.
+
+Every gene below can be examined one at a time in the
+[surfaceome viewer](https://dev.surfaceome.deliverome.org/), which shows the evidence behind
+each surface call, the proteoform that was built, and the tag sites on it
+([L1 review](https://dev.surfaceome.deliverome.org/l1-review/)). Reading a few genes there
+alongside this brief is the quickest way to judge whether the rules below do what they claim.
+
 Unless a count says otherwise, every number below describes **L1, active CDSs** —
-the designs not retired as duplicates — with topology called by **DeepTMHMM v1**. Every count
+the designs not retired as duplicates — with topology called by **DeepTMHMM v1**
+([Hallgren et al., 2022](https://doi.org/10.1101/2022.04.08.487609), a preprint; version
+1.0.24 throughout). Every count
 is measured from the library's own tables, and the reviewer package reruns that measurement
 from the committed inputs (section 11).
-
-## Terms used throughout
-
-| Term | Meaning here |
-|---|---|
-| Candidate set | Why a CDS exists: `library_reference` (the gene's reference proteoform), `isoform`, or `ortholog` (mouse or cyno). A fourth set, `expression_rescue` (a second, Igκ-led CDS for 25 poorly displayed GPCRs), was retired on 2026-11-13 so that every gene is ordered as one design (section 1). |
-| Proteoform | The exact protein sequence a CDS encodes. It is the designed CDS translated, which is not always the gene's UniProt canonical sequence. |
-| Fragmid | A modular Golden Gate (BbsI) part system for lentiviral vectors ([McGee et al., 2024](https://pubmed.ncbi.nlm.nih.gov/38484704/)). Our vector is assembled from Fragmid-style parts, which is why BbsI must not cut inside an ORF. |
-| p003 | Our first built and expressed construct: TfR1 (TFRC) carrying the tag cassette on its extracellular C-terminus, upstream of an IRES-driven selection marker. Its tag codons and junction grammar are the template every CDS reuses. |
-| Tag cassette | 51 aa: `GGGGS`–SpyTag003–`GGGGSGGGGS`–P-ALFA-P–`GGGGS`. SpyTag003 is captured covalently by SpyCatcher; ALFA (here flanked by prolines, "P-ALFA v1.5-P") is bound by the anti-ALFA nanobody. Both were detected on the cell surface with p003. |
-| Rung | The position a CDS's tag cassette goes, assigned from topology alone: N-terminal after the signal peptide, N-terminal at residue 1, C-terminal, or internal (a loop between transmembrane helices). |
-| Snorkel | A fallback construct for a CDS with no usable extracellular loop: a reversed transmembrane helix (mouse PDGFRB) plus the cassette appended to a cytoplasmic C-terminus, so the tag is displayed outside on a helix of its own without entering any loop ([Brown et al., 2013](https://pubmed.ncbi.nlm.nih.gov/24023844/)). A 106-aa append ending in the 51-aa cassette. It is never a CDS's only construct. |
-| Igκ leader | The murine immunoglobulin κ-chain V-J2-C signal peptide, placed ahead of the cassette so the construct is targeted to the ER when the CDS's own N-terminus cannot do it. Used for every GPCR on the residue-1 multipass rung, for type III CDSs at risk, and in place of a native signal peptide that the tagged form would lose. |
-| Built, held | A *built* CDS has a construct in the order of record; a *held* CDS is decided but has no construct that passes refold, so it is not ordered (section 6). |
-| Refold | Folding the tagged protein with ColabFold and comparing it with the untagged model; its pass/fail checks are listed in section 7. |
-| Rank 1, rank 2 | The ranker's first and second choice of internal site for a CDS; a site that fails refold is replaced by the next rank that passes. |
-| Hard negative, PU | A *hard negative* is a residue where a tag is known or expected to do harm, used as a weighted negative in training; *PU* (positive-unlabeled) learning treats unlabeled residues as negatives drawn at random. |
-| Snorkel candidate | The ranker's advisory flag for a CDS whose best loop scores below the 25th percentile of published loops; it does not trigger a snorkel (section 5). |
-| Membrane mask (r4, r8) | The membrane-side gate's per-residue call of which residues are extracellular, from the CDS's model placed in a membrane; r4 and r8 are successive versions. |
-| D1 | The Cloudflare database behind the accessible-surfaceome service, which holds the per-residue features and predictions the ranker reads; the rows used are saved (section 11). |
-| Barcode | A 20-nt sequence downstream of the ORF, read by sequencing to identify which CDS a cell carries. |
-| Swap tract | The longest stretch of sequence a CDS shares with any other CDS, measured up to its barcode. During reverse transcription a template switch inside a shared stretch can attach one CDS's barcode to another's ORF. |
-| Domestication | Removing BbsI, Esp3I and BsaI recognition sites from an ORF by synonymous substitutions only. |
-| TRIFID | APPRIS's machine-learning score, from 0 to 1, of how likely a splice isoform is to be functionally important. It was trained on isoforms detected in large-scale proteomics ([Pozo et al., 2021](https://pubmed.ncbi.nlm.nih.gov/34046593/)) and APPRIS assigns it to every transcript ([Rodriguez et al., 2022](https://pubmed.ncbi.nlm.nih.gov/34755885/)). It is a prediction, not an observation: isoforms admitted on TRIFID alone are the isoform panel's "prediction-only" CDSs. Scores come from APPRIS 2026_06.v50 for Ensembl 115 (`external://appris/2026_06.v50/e115v50/homo_sapiens/appris_data.appris.txt`, pinned by SHA-256). |
 
 ## 1. The question the library answers
 
@@ -45,7 +33,7 @@ Which human cell-surface proteins, expressed one at a time from a common vector,
 plasma membrane and display an extracellular tag, and how does that depend on the proteoform,
 the species and the tag position? Answering it pooled needs three properties from every
 CDS: it is a real surface-anchored protein in the form that is expressed, its tag sits on
-the extracellular side, and its barcode cannot be confused with another CDS's.
+the extracellular side, and its barcode identifies it unambiguously.
 
 | Candidate set | L1 active CDSs | What it adds |
 |---|---:|---|
@@ -54,10 +42,10 @@ the extracellular side, and its barcode cannot be confused with another CDS's.
 | ortholog | 200 | 100 mouse + 100 cyno proteoforms |
 | **total** | **2,710** | 253 of the 2,963 L1 rows are retired and reconcile as: 221 panel draws replaced while the isoform and ortholog panels were being drawn (section 4), 25 expression-rescue CDSs retired as second designs of a gene (below), and 7 duplicate proteins |
 
-**One pool; one design per CDS on the N-terminal rungs.** L1 is pooled whole. On the
+**One pool; one design per CDS on the N-terminal [rungs](#appendix-terms).** L1 is pooled whole. On the
 N-terminal rungs (N after SP, residue 1) and the C-terminal rung each CDS is ordered as one
 construct. An internal CDS may be ordered as 2 or 3 constructs, its *constructs* (section 5, "How many
-constructs an internal CDS gets"). Every construct is kept in the one pool (2026-11-15): "swap rate
+constructs an internal CDS gets"). Every construct is kept in the one pool: "swap rate
 is low at the level of thousands of CDSs". The measured cost: two constructs of one CDS share
 the native sequence from the later site up to the barcode, so a template switch between them
 moves the barcode to the same protein tagged at the CDS's other site. It misattributes the
@@ -67,8 +55,9 @@ shared tract up to the barcode is median 366 nt (range 21–2,886), and 608 of t
 exceed the 100-nt gate the library applies between CDSs (section 7). The modelled swap rate
 ([`seqtools.barcode_swap_rate`](../../../../src/deliverome_analysis/seqtools.py), the Walton
 model) is median 16.1%, maximum 47.7%, against 5.0% at the gate
-(`l1_domestication_barcode_audit.json`, `swap_tract_same_member`). Until 2026-11-13, L1 also
-held 25 expression-rescue CDSs. They were drawn from GPCRs that
+(`l1_domestication_barcode_audit.json`, `swap_tract_same_member`). **L1 carries no
+expression-rescue CDSs**, and the reason is this same swap arithmetic. Twenty-five were
+designed, drawn from GPCRs that
 [Tedman et al. (2026)](https://pubmed.ncbi.nlm.nih.gov/42736269/) barely detect at the surface
 in HEK293T (below the screen's 1,025 a.u. "expressed" bar), as evenly as possible across GPCR
 classes ([`select_expression_rescue_arms.py`](../../../../scratch/becca/appris-principal/select_expression_rescue_arms.py)).
@@ -76,7 +65,7 @@ Each was the receptor's own CDS behind the murine Igκ signal peptide, beside th
 tagged without a leader, to measure whether a leader alone restores display, as it does for CB1
 ([Andersson et al., 2003](https://pubmed.ncbi.nlm.nih.gov/12920192/)). In one pool, each pair
 shares 1.1–2.9 kb of coding sequence up to the barcode, which predicts 34–48% barcode swapping
-inside the pair, so the leader test is ruled out for the pool (2026-11-13): there the
+inside the pair, so the leader test is ruled out for the pool: there the
 two designs were meant to be compared, so a swap between them would have corrupted the
 comparison itself. Each of the 25 genes keeps
 its library reference, built with its rung's default design, and the rescue CDS is retired:
@@ -87,7 +76,7 @@ its library reference, built with its rung's default design, and the rescue CDS 
 | ADGRD2 | tag after its native signal peptide | nothing shows its own signal peptide underperforms; the Igκ swap is not needed |
 | GLP2R | Igκ swap of its predicted signal peptide (residues 1–66) | the retired rescue construct put the tag in front of a predicted cleaved signal peptide |
 
-The per-gene table, with refold verdicts and rejected alternatives, is
+The per-gene table, with [refold](#appendix-terms) verdicts and rejected alternatives, is
 [`rescue_one_arm.tsv`](../rescue_one_arm.tsv). The leader comparison itself is no longer
 measured inside L1.
 
@@ -105,17 +94,17 @@ records per gene the evidence that it reaches the cell surface, its membrane arc
 its DeepTMHMM v1 topology. A gene enters the library if it passes every gate of the cohort
 filter ([`final_library.py`](../../../sprint1/s1e3-surface-library-filters/final_library.py)):
 
-| Gate | Rule | Why |
-|---|---|---|
-| Surface evidence | in the catalog's `canonical` or `likely` surface tier | the catalog's own curated surface call |
-| Accessibility | `surface_accessibility` is not `no` | the protein must be reachable from outside |
-| Surface fraction | `surface_dominant` or `mixed` | — |
-| Anchored | at least one transmembrane helix, or GPI-anchored | — |
-| Co-receptor | no obligate partner, or every obligate partner **whose expression can be measured** has a median TPM ≥ 5 across the 1,206 Human Protein Atlas (HPA) cell lines. A partner the catalog names only as free text, or one absent from the HPA matrix, is dropped from the test rather than failing the gene, so a gene passes when at least one partner resolves and every resolving partner clears 5 | an obligate partner that the host cell lacks would fail the CDS for reasons unrelated to it |
-| Expression | the catalog does not flag the gene as having low endogenous expression, or its highest expression is ≥ 5 TPM in at least one of GTEx v10 tissue medians, HPA tissue consensus (nTPM), HPA cell lines or TCGA tumors | a gene expressed in no normal tissue, tumor or cell line gives no cell a binder could be used on |
-| Localization | the catalog's reason for its surface call is not one of: secreted only, inner-leaflet anchored, cytoplasmic, nuclear, nuclear envelope, mitochondrial interior, endomembrane resident (ER, Golgi, endolysosome), presented only as an MHC peptide, or surface only as a partner in a complex. A complex partner is kept if it has its own transmembrane helix and its reviewed partners pass the co-receptor rule | each of these reasons means the protein's own sequence is not displayed on the outer surface, so a tag on it would not be either |
-| ORF size | ≤ 5,000 nt | synthesis and packaging limit; larger genes go to truncation (L2) |
-| Ectodomain | ≥ 30 extracellular residues | below that there is no domain to display |
+| Gate | Rule | Why | Excluded here |
+|---|---|---|---:|
+| Surface evidence | in the catalog's `canonical` or `likely` surface tier | the catalog's own curated surface call | 2,297 |
+| Accessibility | `surface_accessibility` is not `no` | the protein must be reachable from outside | 0 |
+| Surface fraction | `surface_dominant` or `mixed` | — | 362 |
+| Anchored | at least one transmembrane helix, or GPI-anchored | — | 141 |
+| Co-receptor | no obligate partner, or every obligate partner **whose expression can be measured** has a median TPM ≥ 5 across the 1,206 Human Protein Atlas (HPA) cell lines. A partner the catalog names only as free text, or one absent from the HPA matrix, is dropped from the test rather than failing the gene, so a gene passes when at least one partner resolves and every resolving partner clears 5 | an obligate partner that the host cell lacks would fail the CDS for reasons unrelated to it | 160 |
+| Expression | the catalog does not flag the gene as having low endogenous expression, or its highest expression is ≥ 5 TPM in at least one of GTEx v10 tissue medians, HPA tissue consensus (nTPM), HPA cell lines or TCGA tumors | a gene expressed in no normal tissue, tumor or cell line gives no cell a binder could be used on | 81 |
+| Localization | the catalog's reason for its surface call is not one of: secreted only, inner-leaflet anchored, cytoplasmic, nuclear, nuclear envelope, mitochondrial interior, endomembrane resident (ER, Golgi, endolysosome), presented only as an MHC peptide, or surface only as a partner in a complex. A complex partner is kept if it has its own transmembrane helix and its reviewed partners pass the co-receptor rule | each of these reasons means the protein's own sequence is not displayed on the outer surface, so a tag on it would not be either | 7 |
+| ORF size | ≤ 5,000 nt | synthesis and packaging limit; larger genes go to truncation (L2) | 100 |
+| Ectodomain | ≥ 30 extracellular residues | below that there is no domain to display | 50 |
 
 Genes that pass every gate above make up the core: **2,133** genes. Three further groups enter
 as named tiers, each with its own rule, because each has direct evidence of surface expression
@@ -168,18 +157,24 @@ standard cell line".
 predictor, its version, the sequence it ran on, the threshold, where the output lives, and
 whether that provenance is durable today.
 
-A count cannot say why one particular gene is absent, so the outcome is also recorded per gene.
-[`gene_gate_outcomes.py`](../gene_gate_outcomes.py) writes `gene_gate_outcomes.tsv`: one row for
-every gene in the cohort, giving either the tier it entered the library by or the first gate
-that excluded it. It reads the filter's own gate list rather than restating it, and a test
-asserts that the gate named for a gene agrees with that gene's membership, so the table cannot
-drift from the decision it documents.
+A count cannot say why one particular gene is absent, so the outcome is recorded per gene in
+[`gene_gate_outcomes.tsv`](../gene_gate_outcomes.tsv): one row for each of the 5,332 cohort
+genes, with the tier it entered the library by or the gate that excluded it, and a column per
+gate holding `pass`, `fail` or `not_reached`. Filtering one column gives the genes that cleared
+that gate, which is the list behind each count above. `not_reached` is a distinct value on
+purpose: the gates apply in order and stop at the first failure, so a gene rejected early was
+never judged by the later ones, and recording that as a failure would assert something the
+filter never tested.
+
+[`gene_gate_outcomes.py`](../gene_gate_outcomes.py) writes it from the filter's own gate list
+rather than restating it, and a test asserts that the gate named for a gene agrees with that
+gene's membership, so the table cannot drift from the decision it documents.
 
 The filter passes **2,369** genes (core 2,133 plus the three tiers). Two recorded changes
-then apply. They are separate events three weeks apart, not a matched pair, and they happen to
-net to zero:
+then apply. They are separate events three weeks apart rather than a matched pair, and their effects on
+the total cancel:
 
-- One gene is **removed** on 2026-10-11 ([`gene_list_exclusions.tsv`](../gene_list_exclusions.tsv)):
+- One gene is **removed** ([`gene_list_exclusions.tsv`](../gene_list_exclusions.tsv)):
   EPPIN. It entered on the GPI term of the anchoring gate and on nothing else — its canonical
   sequence is 133 residues with a signal peptide and no transmembrane helix — and the
   architecture annotation is the only source that calls it anchored. UniProt carries no GPI
@@ -193,9 +188,10 @@ net to zero:
   none. Release 1.3.0's DeepTMHMM v1 call gives it 12 transmembrane helices where the September
   cohort had none, so it now passes the anchored and ectodomain gates.
 
-**The gates have been tested against an independent challenge set.** S3E8's cross-method
-surfaceome sweep selects proteins by proteomics recurrence rather than by this filter, so its
-output is a check on these gates from outside them. Under the log-odds rule adopted on 2026-11-16
+**The gates have been tested against an independent challenge set.** A cross-method survey of
+published surface proteomics selects proteins by how often they recur across studies rather
+than by this filter, so its output checks these gates from outside them. It is browsable per
+protein in the [surface-proteomics viewer](https://dev.surfaceome.deliverome.org/surface-proteomics/). Under the log-odds rule
 (at least 20 admitted intact-cell surface-labeling publications, and log-odds of surface versus
 membrane-fractionation detection above 0.5), 347 proteins qualify and **42 are in neither L1 nor
 L2**. **Every one of the 42 fails at least one gate above**, with none left unexplained. Gene by
@@ -324,9 +320,9 @@ Regenerated by [`brief_numbers.py`](brief_numbers.py).*
 The 2,360 references cover 2,369 library genes. Of the 9 genes without a reference CDS,
 4 are paralogs whose identical protein is built under another symbol (OPN1MW2, OPN1MW3,
 OR2A42, UPK3BL2; section 4), and 5 have no CDS because the human reference genome
-(GRCh38) carries a broken copy and Ensembl 115 has no intact one. Ensembl 115 annotates their
+(GRCh38) carries a disrupted copy and Ensembl 115 has no intact one. Ensembl 115 annotates their
 primary-assembly transcripts as `protein_coding_LoF`, so none has a MANE Select transcript, the
-ladder took the APPRIS principal (that broken transcript), and CDS resolution refuses any
+ladder took the APPRIS principal, that disrupted transcript, and CDS resolution refuses any
 transcript that does not translate to an intact protein. Each is compared with its reviewed
 UniProt entry, which describes the intact protein, by
 [`unbuildable_genes.py`](unbuildable_genes.py):
@@ -362,14 +358,13 @@ In both panels a drawn form the library cannot use is replaced by continuing the
 draw within its own stratum, so every valid pick keeps its place and the panel regenerates from
 code.
 
-**An ortholog is built only beside a built human CDS of its gene** (2026-11-14:
-"Never substitute a mouse or cyno ortholog for a human and don't build orthologs for genes with
-no good human proteoform"). An ortholog asks whether the human design transfers across species,
+**An ortholog is built only beside a built human CDS of its gene**, and never in place of one.
+An ortholog asks whether the human design transfers across species,
 which has no answer without the human CDS; where the human CDS is held, its orthologs are
 held with it. `l1_completeness.py` fails if a mouse or cyno CDS is built while no human
 CDS of its gene is.
 
-**Isoform forms pass a gate before the draw** (2026-11-12;
+**Isoform forms pass a gate before the draw** (
 [`gate_isoform_cohort.py`](../gate_isoform_cohort.py) → `isoform_gate.tsv`). A form is drawable
 only if it starts at a native ATG supported by an exact Ensembl 115 CDS, and keeps its gene
 reference's signal peptide, N-terminal orientation and first transmembrane helix, all judged by
@@ -494,7 +489,7 @@ between two helices, only **7 CDSs of five genes** have nothing of 8 residues: T
 TMEM169, TMEM268, TMEM86A and TMEM86B ×2. The second is the one that decides whether a loop
 site can exist at all, which is why those seven are the CDSs the rung has to solve: five are
 tagged in a shorter loop that passes the membrane-side gate and refold, one TMEM139 CDS is a
-snorkel, and TMEM169 is held (section 5, "Snorkels"). The 33 are a looser class — a CDS can
+[snorkel](#appendix-terms), and TMEM169 is held (section 5, "Snorkels"). The 33 are a looser class — a CDS can
 have no inter-TM run and still carry a usable terminal-adjacent ectodomain loop. BST2 reports 0
 on the inter-TM measure as an artifact: it is a single-pass GPI protein with a 137-residue
 ectodomain.
@@ -635,7 +630,7 @@ five ordered residues after the cleavage site. Candidate sites run from the resi
 cleavage to the median onset plus 2, and never more than 20 residues past cleavage. Each
 candidate is then re-predicted with SignalP 6 *on the tagged protein*, because the tag is the
 one thing that can break cleavage; only sites where the tagged protein is still cleaved
-upstream of the cassette survive (2026-11-11). The rules run in this order
+upstream of the cassette survive. The rules run in this order
 (`nterm_decide.py`), and each CDS's row in `nterm/nterm_decisions.tsv` names the one that
 applied:
 
@@ -710,7 +705,7 @@ keep cleavage at some candidate, so a threshold would replace signal peptides th
 compared three site rules: the first mature residue keeps cleavage for 757 CDSs, the most
 disordered residue in the first 20 for 758, and the re-prediction-gated choice for 941.
 
-**Weak signal peptides (2026-11-14).** A second trigger sits beside the
+**Weak signal peptides.** A second trigger sits beside the
 re-prediction: "we are relying more on igk now for either weak predicted SP like VSIG10 or all
 GPCRs". VSIG10 (`l1-p2333`) is the example: SignalP 6 is sure it has a signal peptide
 (probability 0.9998) but unsure where it is cleaved (cleavage-site probability 0.35), and it is
@@ -735,8 +730,8 @@ replacement for re-prediction, because native confidence alone misses most failu
 
 | Rung | Igκ | Without | Criterion (code) |
 |---|---:|---:|---|
-| N after SP | 232 | 1,040 native | `nterm_decide.py` rule 4: SignalP 6 calls the native signal peptide lost at every candidate site with the tag in place, while the Igκ-tagged form keeps the leader's cleavage (105, with 18 more from the round-2 run and 1 as a refold fallback); a weak predicted cleavage site, probability below 0.5 (49, 2026-11-14); or only DeepTMHMM v1 calls a signal peptide and a second source confirms a cleaved one (48) or re-anchors it (11). Those six rules are the 232. The Igκ swap replaces the native residues `1..c` |
-| residue 1, multipass | 564 | 1 | `build_l1_multipass_arms.design_for`: 502 of the 503 GPCRs by default (2026-11-10, on Aashish Manglik's suggestion), 23 of them the references of the retired expression-rescue CDSs; non-GPCRs by a literature verdict per family (54), as their reviewed family (5), or after a lane check (SLC61A1 ×2, TSPO2). The one exception is CRHR2, whose N-terminal pseudo signal peptide cannot target the ER on its own and would become an untested internal hydrophobic segment |
+| N after SP | 232 | 1,040 native | `nterm_decide.py` rule 4: SignalP 6 calls the native signal peptide lost at every candidate site with the tag in place, while the Igκ-tagged form keeps the leader's cleavage (105, with 18 more from the round-2 run and 1 as a refold fallback); a weak predicted cleavage site, probability below 0.5 (49); or only DeepTMHMM v1 calls a signal peptide and a second source confirms a cleaved one (48) or re-anchors it (11). Those six rules are the 232. The Igκ swap replaces the native residues `1..c` |
+| residue 1, multipass | 564 | 1 | `build_l1_multipass_arms.design_for`: 502 of the 503 GPCRs by default (on Aashish Manglik's suggestion), 23 of them the references of the retired expression-rescue CDSs; non-GPCRs by a literature verdict per family (54), as their reviewed family (5), or after a lane check (SLC61A1 ×2, TSPO2). The one exception is CRHR2, whose N-terminal pseudo signal peptide cannot target the ER on its own and would become an untested internal hydrophobic segment |
 | residue 1, type III | 8 | 36 tag alone | `build_l1_type3_arms.design_for`: the ordered form lacks its gene's signal peptide (IGSF5, 1); a native N-tail of ≤ 20 residues, which the 51-aa cassette would push past the point where signal-anchor insertion changes (2); a flank-charge difference ≤ 1, i.e. weak positive-inside drive for N-out (3); KLB's internal signal-like segment (2). Every other type III CDS is a genuine type III with no identified risk and carries the tag alone |
 
 **Why.** At residue 1 nothing but Met precedes the cassette, so the protein's first
@@ -748,7 +743,7 @@ mature N-terminus by one residue (the Asp) and replaces sequence that is native.
 **Rejected.** Igκ for every CDS (changes the native start of 1,040 CDSs whose own signal
 peptide is predicted to work); tag alone for all residue-1 CDSs (rests on unassisted
 translocation of the cassette); keeping the 25 rescue CDSs beside their references as a
-within-gene leader test (rejected 2026-11-13: in one pool each pair would swap barcodes).
+within-gene leader test, rejected because in one pool each pair would swap barcodes.
 
 **Weak spots.** With the rescue CDSs retired, L1 holds no within-gene contrast of leader
 against no leader, so the leader's effect on display is assumed, not measured, for the 564
@@ -830,7 +825,7 @@ fail it).
 
 #### How many constructs an internal CDS gets
 
-**Rule (2026-11-14/15).** An internal CDS is ordered as one to three *constructs*. An construct is
+**Rule.** An internal CDS is ordered as one to three *constructs*. An construct is
 one tagged construct: a *loop construct* puts the cassette after one residue of an extracellular loop; a
 *snorkel construct* appends a transmembrane module and the cassette to the cytoplasmic C-terminus
 (next part). The number of constructs follows the *order rule*, which compares the CDS's best
@@ -844,7 +839,7 @@ fold: median 0.695, 25th percentile 0.557.
 | clears the median, no other region within 10% of it | 1 | one clear choice |
 | clears the median, the runner-up region within 10% | 2 | two regions the model cannot separate |
 | below the median | 3 | nothing clears the bar, so hedge |
-| below the 25th percentile ("all bad") | 2 loop constructs + 1 snorkel construct | "if they are all bad perhaps a tag and snorkel" |
+| every candidate loop below the 25th percentile of published loops | 2 loop constructs + 1 snorkel construct | no loop scores well enough to rely on alone, so a snorkel is built beside the two best loops |
 
 Every construct passes the same three checks as a single site (gate, ±2 ligand-contact veto, refold).
 A second or third loop construct lies in another region or at least 25 residues from the others, so
@@ -857,7 +852,7 @@ bar would change the 1/2/3 split, not which constructs pass. Each construct keep
 `l1_internal_arm_decisions.tsv`
 (`l1_internal_arms.py` (S5E13)).
 
-**Which hard negatives the ranker trains on.** A 2026-11-15 decision called for ligand, co-receptor
+**Which hard negatives the ranker trains on.** The rule calls for ligand, co-receptor
 and homomer sites to count as places a tag should not go. Model v6 adds them to v5's training
 frame as hard negatives (literature ligands with structure evidence, protein-partner and
 homomer interfaces), the added classes at weight 2.5 and the D1-derived classes at 5, with the
@@ -876,7 +871,7 @@ folds, 95% intervals of every difference include zero):
 v6 is trained and pinned
 (`tag_site_model_v6.py` (S5E13)),
 and the sites are kept from v5. The two score the same, yet v6 moves the rank-1 site of 198 of
-575 CDSs, so which residue within a good region these features pick is weakly determined;
+575 CDSs, so which residue within a permissive region these features pick is weakly determined;
 moving 198 sites, each needing a new refold, on no measured gain is a cost without evidence.
 Where v6 prefers a different *region* from v5, the two models disagree about where a tag is
 tolerated rather than about a residue, so that region's site is added as a further construct.
@@ -903,7 +898,7 @@ and evidence.
 
 #### Snorkels: when no loop site works
 
-**A snorkel is never a CDS's only construct** (2026-11-14). Each of the 109 snorkel constructs in
+**A snorkel is never a CDS's only construct.** Each of the 109 snorkel constructs in
 the order sits beside at least one loop construct of the same CDS (section 5, "How many constructs an
 internal CDS gets"). The rule below is how a CDS comes to need a snorkel at all.
 
@@ -1045,7 +1040,7 @@ to another backbone in one reaction.
 changes only to remove an enzyme site (domestication, above) or to make a construct synthesizable
 (below); both keep the protein. A coding sequence is never recoded to differ from another
 CDS's: two CDSs may share any length of protein-coding sequence, and the barcode-swap risk
-between them is handled by the cassette's diversified linkers alone (2026-11-13).
+between them is handled by the cassette's diversified linkers alone.
 
 **Synthesis compliance.** The synthesis vendor (Twist) scored the first, untagged L1 draft:
 2,290 Low, 316 Medium, 104 High and 25 refused (13 near-matches to the Tn5 transposon end
@@ -1101,7 +1096,7 @@ All 232 CDSs still over the bar are explained by their ORFs, not the cassette: m
 same-gene isoform/ortholog pairs sharing a C-terminus, and the rest are different genes with
 shared 3' coding sequence (clustered protocadherins, close paralogs such as olfactory receptors
 and KIR2DS2/KIR2DS4). Each different-gene family is accepted by name, and a library test fails on
-any new one. Shared protein-coding sequence is never recoded to shorten a tract (2026-11-13); the diversified linker is the only swap protection. That cannot help a pair whose
+any new one. Shared protein-coding sequence is never recoded to shorten a tract; the diversified linker is the only swap protection. That cannot help a pair whose
 cassette is N-terminal, because the shared stretch then runs from after the cassette to the
 barcode and never includes the linker. This is why the 25 expression-rescue CDSs, each
 sharing 1.1–2.9 kb with its own reference, were retired rather than recoded: L1 is one pool,
@@ -1187,6 +1182,45 @@ IRES:
 | RT site | `CCTTTGGGCAAGCACACGTC` | lentiGuide-BC 3′ site (Feldman et al. 2019), one base changed |
 | 10x Capture Sequence 1 | `GCTTTAAGGCCGGTCCTAGCAA` | 10x Feature Barcoding |
 
+### How the barcodes were designed
+
+The barcode is transcribed. It sits between the ORF stop and the IRES, an intercistronic region
+that behaves like a 3′ UTR for the first cistron, so a barcode that presents a
+microRNA target site can have its own transcript repressed. That failure mode is the reason the
+sequence is designed rather than drawn at random: it produces a barcode-specific expression
+penalty on one CDS, which at the bench is almost indistinguishable from that protein being a
+weak surface expressor.
+
+The pool is 30,000 barcodes of 20 nt, generated deterministically from a fixed seed by
+[`generate_barcodes.py`](../../../sprint1/s1e2-fragmid-vector-design/generate_barcodes.py) into
+[`barcodes_20nt_30k.tsv`](../../../sprint1/s1e2-fragmid-vector-design/barcodes_20nt_30k.tsv), so
+the file reproduces from the script alone. Seven rules are applied, each recorded with its
+source and whether we checked that source ourselves in
+[`barcode_filter_stack.py`](../../../sprint1/s1e2-fragmid-vector-design/barcode_filter_stack.py):
+
+| Rule | Why | Source |
+|---|---|---|
+| GC 40–60% | amplification and sequencing behavior | Hawkins/FREE, Shiroguchi |
+| no homopolymer run above 2 | miscalls and indels in homopolymers | Hawkins/FREE |
+| no `ATG` anywhere | a spurious start codon in the readout region | ours |
+| no `AATAAA`, and none of its 18 single-base point mutants | a polyadenylation signal would truncate the transcript | [Vainberg Slutskin et al., 2018](https://pubmed.ncbi.nlm.nih.gov/29410437/) |
+| no 3-bp non-overlapping self-complementarity | hairpins | Hawkins/FREE |
+| no conserved microRNA 6-mer seed target site (207 sites) | the repression described above | TargetScanHuman 8.0 |
+| no `GT[AG]AG` splice-donor core | a cryptic donor here would splice out the IRES and the selection marker | ours |
+
+Two of these are worth a reviewer's attention. The microRNA rule rejects 6-mer seed matches
+rather than the 7mer-m8 sites a target-prediction tool reports, and since every 7mer-m8 site
+contains its 6-mer core, the 6-mer rule rejects a strict superset — deliberately stricter than
+the precedent it comes from. The splice-donor rule is ours and has no published precedent; it
+exists because the barcode sits upstream of an IRES in the same transcript.
+
+**The pool has no minimum edit distance.** The generator applies the rules above and accepts
+any sequence that passes, so two barcodes may differ by a single base and a sequencing read
+carrying one error cannot be assigned unambiguously by distance.
+[`barcode_design.py`](../../../sprint1/s1e2-fragmid-vector-design/barcode_design.py) builds sets
+with a guaranteed minimum Levenshtein distance and reports the capacity that costs; adopting one
+would replace the pool, and L1 is ordered from the pool as it stands.
+
 Three assays could read it. Each is checked here against the sequences in `build_constructs.py`,
 because what the fragment carries when it is ordered decides which of them stay possible.
 
@@ -1202,12 +1236,15 @@ differ from ours:
   site, a padlock construct on that side would have to run into the RT site and pair with
   primer-made cDNA. Feldman's construct sits directly after the barcode and ends where his RT primer
   begins, with no overlap.
-- *Proposed 3′ flank (draft, not yet adopted).* Feldman's padlock constructs match neither of our
-  flanks, and his RT site cannot be copied verbatim. The proposal replaces our 30-nt gap plus
-  RT site (`GGATCTGGACCCTTTGGGCAAGCACACGTC`) with his RT-side padlock construct, verbatim, followed by
-  his RT site with one base changed:
+- *The adopted 3′ flank.* Feldman's padlock constructs match neither of our earlier flanks, and
+  his RT site cannot be copied verbatim. The flank we adopt replaces the 30-nt gap plus
+  RT site (`GGATCTGGACCCTTTGGGCAAGCACACGTC`) with his RT-side padlock construct, verbatim,
+  followed by his RT site with one base changed. **The order of record predates this choice**
+  and carries the earlier flank, so the constructs are regenerated against the adopted flank
+  before they are ordered; it lengthens the readout region by 7 bp and changes no coding
+  sequence.
 
-| Element (transcript sense) | Today | Proposed |
+| Element (transcript sense) | Earlier flank | Adopted |
 |---|---|---|
 | After the barcode | 10-nt gap `GGATCTGGAC` | Feldman's 17-nt padlock construct `ACTGGCTATTCATTCGC` (Addgene #127168) |
 | RT site | `CCTTTGGGCAAGCACACGTC` (C at 9) | `CCTTTGGGAAAGCACACGTC` (A at 9) |
@@ -1247,11 +1284,11 @@ differ from ours:
 
 | Flank | Barcodes passing (of 28,506) | Failing: seed across a junction / Type IIS / splice donor | Drawable at prefix distance 3 over 10 nt |
 |---|---:|---|---:|
-| Today | 23,807 | 4,339 / 88 / 272 | 3,856 |
-| Proposed | 21,394 | 6,911 / 201 / 0 | 3,741 |
-| Both (L1 draw rule until the flank is chosen) | 19,950 | 8,196 / 88 / 272 | 3,665 |
+| Earlier flank | 23,807 | 4,339 / 88 / 272 | 3,856 |
+| Adopted | 21,394 | 6,911 / 201 / 0 | 3,741 |
+| Both, the rule L1's block was drawn under | 19,950 | 8,196 / 88 / 272 | 3,665 |
 
-  The proposal loses 3,857 barcodes that pass today and gains 1,444 that fail today, and still
+  The adopted flank loses 3,857 barcodes that pass under the earlier one and gains 1,444 that fail it, and still
   leaves room for all 2,710 CDSs under the prefix screen. The junction seed screen is
   part of `reserve_barcodes.py`, which takes the 3′ flank as
   `--three-prime {current,t9a-draft}` and reports these counts with `--pool-stats`. The
@@ -1259,7 +1296,7 @@ differ from ours:
   failing two screens is counted once.
 - *Two barcodes already assigned would fail the junction seed screen:* CNR1
   (`GAGAGTAGTCAAGCACCAAG`, completing `AAGGGAT`) and TFRC (`TGTCTCTCTCAGCTTCTCTC`, completing
-  `GTTCCTG`). Both are kept as assigned (2026-11-08); every new L1 barcode must pass the
+  `GTTCCTG`). Both are kept as assigned; every new L1 barcode must pass the
   screen.
 - *Until the 3′ flank is chosen, L1 barcodes must pass under both flanks*, so none has to be
   redrawn whichever flank is adopted (`l1_screens_pass` in `reserve_barcodes.py`;
@@ -1281,7 +1318,7 @@ differ from ours:
   |---|---|---|
   | Screens every L1 barcode must pass: Type IIS, splice donor and miRNA seeds across both junctions under both 3′ flanks; prefix distance 3 over 10 nt; the RNA-binding-protein motifs above | exists, tested | `reserve_barcodes.py`, `barcode_prefix_screen.py`, `reserve_l1_block.py`, `rbp_motif_screen.py` |
   | A provisional block of 3,200 barcodes passing every screen | exists; every row `provisional`, none assigned | `l1_barcode_block_provisional.tsv` |
-  | Assignment of one barcode to each CDS | **does not exist**: no code yet maps a barcode to a CDS; every ordered construct carries a 20-N placeholder | deferred to the order freeze, and blocked on the choice of 3′ flank (question 6) |
+  | Assignment of one barcode to each CDS | **does not exist**: no code yet maps a barcode to a CDS; every ordered construct carries a 20-N placeholder | deferred to the order freeze. The 3′ flank it waited on is now chosen, and L1's reserved block was drawn under the stricter rule that satisfies both flanks, so it stands unchanged |
 - *In situ sequencing reads only the first 9–12 bases.* Over the s1e2 pool, barcodes are unique
   over 20 nt but not over short prefixes, and drawing L1's barcodes at random would leave
   identical prefixes:
@@ -1526,11 +1563,21 @@ full table, with sizes and sources, is [`pinned_releases.md`](pinned_releases.md
 | accessible-surfaceome | release 1.3.0 (Zenodo) | 2026-11-02 | `accessible-surfaceome/release-1.3.0/` | yes |
 | accessible-surfaceome | commit f9c73691: FASTAs, DeepTMHMM tables, ortholog cohorts | 2026-11-02 | `accessible-surfaceome/f9c73691/` | repository files, shared in the bundle |
 | DeepTMHMM | 1.0.24 / 1.0 academic; six topology snapshots, of record `2026-11-12-cyno-restarts` | 2026-10-15 | `accessible-surfaceome/topology/` | predictions run by us |
-| NetGPI | 1.1 predictions | 2026-11-06 | ortholog predictions (`s3/processed/…`) and committed tables | predictions run by us |
+| NetGPI | 1.1, run through the DTU Health Tech web service in `short` output format | 2026-11-06 | the raw output is committed at `scratch/becca/appris-principal/netgpi_gpi_human_predictions.txt`; the set it feeds is `gpi_set.tsv` | 918 predictions over 148 genes: one reference form per gene, plus 770 alternative forms (UniProt isoforms and Ensembl transcripts) across 126 of them. A positive call is taken as it comes; a cutoff of 0.55 applies only to a reference form's negative, below which curation stands |
 | Expression | Deliverome-compiled TPM (GTEx v10, HPA, TCGA) | 2026-11-02 | `expression-tpm/` | internal compilation |
 | GPCR surface screen | Tedman et al. 2026, supplementary table | 2026-08-14 | `tedman-gpcr-surface-screen/` | published |
-| MyGene.info | responses of 2026-11-02 | 2026-11-02 | pipeline-input snapshot (`s3/processed/…`) | public data, our queries |
+| MyGene.info | the responses of 2026-11-02, replayed | 2026-11-02 | pipeline-input snapshot (`s3/processed/…`) | resolves gene symbols to Ensembl ids for the expression join, so a symbol that has been renamed still finds its TPM row. The gene-list stage replays these responses and fails if the resolver reaches the network, so the symbol mapping is fixed rather than whatever MyGene returns today |
 | Twist complexity report | the vendor's scoring of the first L1 draft | 2026-11-12 | `twist/l1-complexity/2026-11-12/` | vendor output |
+
+**All of these are pinned in one archive.** Every release above is held whole, not only the
+objects the replay reads, in
+`processed://sprint4/s4e9-orf-design-fg-panel/reviewer-package/2026-11-14/l1-pinned-releases-2026-11-14.tar`
+(SHA-256 `99adec0f…`), assembled and hash-checked by [`bundle.py`](bundle.py). It is not
+committed: the pinned releases come to 2.4 GB, against the 5 MB this repository allows for a
+review copy, and raw inputs are kept in S3 by design. [`pinned_releases.md`](pinned_releases.md)
+is the committed manifest of what the archive contains, with each release's file count, size
+and source, and [`bundle_manifest.tsv`](bundle_manifest.tsv) carries a SHA-256 per file, so the
+archive can be checked against this repository without being stored in it.
 
 The bundle was re-collected at the `final-d` cut (3,355 files, every pinned input included) and
 staged at `processed://sprint4/s4e9-orf-design-fg-panel/reviewer-package/2026-11-14/` as two
@@ -1561,14 +1608,12 @@ can stay a description of the design.
 | # | Question | Why it matters | What would resolve it |
 |---:|---|---|---|
 | 1 | **MANE by default for the 111 disagreements.** | 82 have no distinguishing evidence either way; a different default would change their proteoform. | Reviewer view on the default, or targeted evidence for the 20 flagged genes. |
-| 2 | **N-terminal tagging at residue 1 for type III single-pass proteins** (44 CDSs). | Rests on a topogenesis argument only: the single helix carries the whole orientation decision, and a 51-aa cassette changes the charge balance it reads. | A small panel testing N-terminal versus loop placement on type III proteins. |
+| 2 | **N-terminal tagging at residue 1 for type III single-pass proteins** (44 CDSs: 36 carry the cassette alone, 8 also carry the Igκ leader). | A type III protein's single helix carries the whole orientation decision, and a 51-aa cassette changes the charge balance it reads, so the placement rests on a topogenesis argument rather than on data. The Igκ leader is added only where a specific risk is identified: the ordered form lacks the gene's own signal peptide (1 CDS), a native N-terminal tail of 20 residues or fewer (2), a flank-charge difference of 1 or less, meaning weak positive-inside drive (3), and KLB's internal signal-like segment (2). The other 36 have no identified risk and are tagged at residue 1 with no leader. | A small panel testing N-terminal against loop placement on type III proteins, and whether the 36 without a leader should have one. |
 | 3 | **Five library genes with no intact copy in Ensembl 115** (FCGR2C, OR8J2, OR10AC1, OR52P1, OR4Q2; section 3). | They pass the gene filter but are absent from L1, so any per-gene coverage figure is 5 short. FCGR2C has a known intact (ORF) allele carried by a minority of people ([Breunis et al., 2007](https://pubmed.ncbi.nlm.nih.gov/17827395/)). | Build the intact UniProt allele by correcting the stop codons (FCGR2C, OR8J2) or the frameshifts, or record each as an exclusion. |
 | 4 | **Isoform panel drawn from a 1,775-gene April pool** (section 4). | 594 of the 2,369 library genes were outside the query set, so no isoform of theirs could ever be drawn and the panel says nothing about those genes' forms. | Reviewer view on keeping the panel as drawn (the current decision) versus rebuilding the isoform universe over the 2,369 library genes and redrawing with the same seed and strata, which would change many CDSs. |
 | 5 | **How strongly to weight the pool by length** (section 10). | The ordering plan is computed at Moon et al.'s 3.5-fold lower titer per kb (up to about 100× more of the longest construct than the median); Sweeney and Vink's data imply about 2-fold per kb over our 4.4–9.4-kb packaged range, and an overcorrection inverts the bias. | Whether the four-plasmid titer test planned before pooling (section 10) is enough to set the factor. |
-| 6 | **Whether the barcode region should change before it is ordered** (section 9). | The fragment supports 10x Feature Barcoding as designed. For optical pooled screening we propose replacing the 10-nt gap and RT site with Feldman's 17-nt padlock construct and his RT site with A at position 9 (no splice donor, no hairpin, a matched RT primer), which keeps room for all 2,710 barcodes under the prefix screen; T7 in situ transcription needs a promoter, cleanly placed only in sense. Each is cheap now and impossible after synthesis. | Whether to adopt the proposed 3′ flank, which of these assays to keep possible, and whether any change costs something we have not counted. |
-| 7 | **EFS or EF1a as the library promoter** (section 8). | Selection runs through the IRES, so a weakly transcribed CDS is also weakly selected; EF1a gave 1.7–4.0-fold more IRES-reporter signal than EFS but adds 967 bp, about a 2-fold titer cost, to every CDS. | Surface-tag readout after selection for a few CDSs, EFS versus EF1a; or reviewer experience with either promoter for pooled ORF libraries. |
-| 8 | **Snorkels for internal CDSs without a usable loop** (section 5). | A snorkel ([Brown et al., 2013](https://pubmed.ncbi.nlm.nih.gov/24023844/)) appends a reversed transmembrane helix (mouse PDGFRB) and the tag to a cytoplasmic C-terminus, so the tag is displayed without entering any loop: a 106-aa append ending in the 51-aa cassette. It is the fallback when no designed loop site is left, never a response to a low ranker score. The order carries 109 snorkel constructs, every one of them beside a loop construct of the same CDS: no CDS's only construct is a snorkel. 108 of the 109 pass refold; in the earlier snorkel-only decision round 22 of 50 constructs failed, and a longer first linker rescued 0 of 5. The open question is therefore not whether a snorkel may stand alone — it may not — but whether the second construct earns its place: the module has never been built or tested here, and it lengthens the variable region ahead of the barcode. | Whether a snorkel construct beside a loop construct is worth the extra construct, or should be dropped from L1 and tested separately. |
-| 9 | **The Igκ leader on 804 CDSs** (section 5, "Signal peptides and the Igκ leader"). | 564 of 565 residue-1 multipass CDSs (every GPCR but CRHR2) and 8 type III CDSs carry the murine Igκ leader ahead of the cassette; 232 N-after-SP CDSs have their own signal peptide replaced by it because SignalP 6 predicts the tagged native peptide is no longer cleaved. The GPCR default rests on a mechanism argument; the screen whose GPCRs displayed their tag used leaderless HA after Met1, and the panel constructs that test the leader (CCR5, OR51E2, CNR1, each with and without) have no data yet. | Whether the leader should be the default for multipass CDSs before the panel constructs read out, and whether a SignalP prediction on an engineered junction is enough to replace a native signal peptide. |
+| 6 | **EFS or EF1a as the library promoter** (section 8). | Selection runs through the IRES, so a weakly transcribed CDS is also weakly selected; EF1a gave 1.7–4.0-fold more IRES-reporter signal than EFS but adds 967 bp, about a 2-fold titer cost, to every CDS. | Surface-tag readout after selection for a few CDSs, EFS versus EF1a; or reviewer experience with either promoter for pooled ORF libraries. |
+| 7 | **The Igκ leader on 804 CDSs** (section 5, "Signal peptides and the Igκ leader"). | 564 of 565 residue-1 multipass CDSs (every GPCR but CRHR2) and 8 type III CDSs carry the murine Igκ leader ahead of the cassette; 232 N-after-SP CDSs have their own signal peptide replaced by it because SignalP 6 predicts the tagged native peptide is no longer cleaved. The GPCR default rests on a mechanism argument; the screen whose GPCRs displayed their tag used leaderless HA after Met1, and the panel constructs that test the leader (CCR5, OR51E2, CNR1, each with and without) have no data yet. | Whether the leader should be the default for multipass CDSs before the panel constructs read out, and whether a SignalP prediction on an engineered junction is enough to replace a native signal peptide. |
 
 ## 13. Protein-level choices made under delegation (reversible)
 
@@ -1623,6 +1668,7 @@ at the end.
 
 | Date | Was | Now | Why | Decided by / implemented by |
 |---|---|---|---|---|
+| 2026-11-19 | The 3′ flank was a draft proposal, and L1 drew barcodes under the stricter rule that satisfies both the earlier flank and the proposed one, so the choice could be deferred | The proposed flank is adopted: Feldman's 17-nt RT-side padlock construct verbatim, then his RT site with A at position 9, with the matched RT primer ordered. The order of record carries the earlier flank, so the constructs are regenerated against the adopted one before they are ordered — 7 bp longer in the readout region, no coding sequence changed. The reserved block of 3,200 was drawn under the both-flanks rule and stands unchanged | A at position 9 avoids both the splice-donor motif that Feldman's own T creates in the packaged transcript and the hairpin our C creates with the construct, at an unchanged RT-site melting temperature; adopting it makes optical pooled screening possible without a second change, which synthesis would have made impossible | Becca / l1-brief-narrative |
 | 2026-11-16 | The S3E8 challenge set cited sweep-v15 (44 candidates, commit `1209a865`), of which 9 carried no surfaceome record and were published as "not evaluated". The per-gene table was assembled by hand, and its gate counts had drifted from the file it described (the brief said 4 genes fail the anchored gate where the file said 1). | Sweep-v16 (42 candidates, commit `3fb584ea`, SHA-256 `ab6a1c9b…`, verified), with **a stated failing gate for every one of the 42** and none unevaluated. The table is now generated by [`s3e8_gap_gate_reasons.py`](../s3e8_gap_gate_reasons.py) from two committed inputs, and the counts come from that file. Candidates join on `uniprot_accession`: the sweep output carries UniProt entry-name mnemonics for `TMM94`, `F234B` and `K1549`, so a symbol join drops TMEM94, FAM234B and KIAA1549. | The 9 unevaluated rows were an artifact of `api.deliverome.org` being unreachable, not of missing data; the records were read instead from the `workers.dev` origin while the zone was blocked. F2 and PLAU left the candidate set in v16 and were both among the 9, so **no gate conclusion changed**: all 35 rows published at v15 re-derive byte-identically from the rebuilt script. | Becca (adopt v16) / l1-order-merge-handoff |
 | 2026-11-15 | Sections 5, 8, 11 and 13 still described the pre-construct library (one construct per CDS, `l1-mNNNN` numbering), while section 12's census described `2026-11-15-final-e`, with nothing telling the reviewer which was live. Section 13 also ended in a "Corrections to this brief" table whose own corrected values had gone stale again | The rung sections, the pooling prose and the open questions are regenerated against `final-e`: 20 internal CDSs held and not 22 (MS4A1, SLC35G2 and TMEM204 are ordered), 109 snorkel constructs and not 28, 310 constructs ending in the cassette and not 229, 208 C-terminal CDSs (168 single-pass, 40 multipass) and not 213, core 2,133 and filter total 2,369 with the SLC67A1 addition stated, and the three internal-rung counts (608 placed, 588 built, 583 decided) each given its denominator. The corrections table is removed; its content is the body's present tense | a document whose authoritative table and whose explanatory sections describe two different libraries misleads a reviewer about what is in the order, and a corrections table decays faster than the body it corrects | audit by the brief-audit session (`BRIEF_AUDIT-2026-11-15.md`) / coordinator |
 | 2026-11-15 | Section 2 stated the co-receptor gate's rule but named no protein it excludes, so a reviewer meeting the absence of CD3, CD79 or B2M had no way to tell a deliberate exclusion from an oversight | Section 2 carries the worked example: the TCR–CD3 chains, CD79A and CD79B, and B2M, each with its obligate partners and the reason its own ORF is not displayable; B2M additionally fails the anchored gate | absence from the library is not a claim about surface localization, and the co-receptor gate is where the two most often come apart; the gate turns on the host cell lacking the partner, not on the protein | Becca (the exclusion reason must be citable from the brief) / coordinator |
@@ -1644,9 +1690,9 @@ at the end.
 | 2026-11-04 | Order-blocking issues listed among the review questions | Moved to a separate cover note; the brief keeps three design questions | The brief describes the design; the cover note tracks work in progress and changes as issues close (Becca) | Becca / l1-reviewer-package (PR 243) |
 | 2026-11-10 | Ortholog panel drawn from the April 2026 pool with Compara 115 (seed 20261011 for both species); a CDS-gated Compara 116 redraw held for review; five plate sets (Addgene 15 µL, three 3-µL pools, backup) | The Compara 116 CDS-gated draw over all library genes adopted, with the 11 correspondence replacements and the 6 ambiguous forms kept as drawn (18 CDSs kept, 126 moved from L2, 56 new, 182 retired); three plate sets (two 5-µL pools and a 20-µL stock), with DNA shown at 75 and 50 ng/µL as well; broken-genome genes moved to section 3; TRIFID defined | Becca: adopt the reviewed panel; plate volumes; the brief must read in order for a first-time reviewer | Becca / correspondence review by l1-ortholog-corresp ([PR 273](https://github.com/Deliverome-Project/deliverome-analysis/pull/273)); adoption and plate sets by l1-reviewer-package ([PR 283](https://github.com/Deliverome-Project/deliverome-analysis/pull/283)) |
 | 2026-11-11 | Leading `GGGGS` of the cassette proposed for removal at residue 1, where only Met1 precedes SpyTag003 | Full 51-aa cassette kept at every rung | Without the spacer DeepTMHMM v1 calls a signal peptide cleaved inside SpyTag003 on 12 of 62 type III tag-alone CDSs; the full cassette draws none | Becca, 2026-11-11 ("keep full") / spacer test by l1-nterm-type3 ([PR 282](https://github.com/Deliverome-Project/deliverome-analysis/pull/282)); brief by l1-reviewer-package (PR 283) |
-| 2026-11-11 | Internal sites taken from DeepTMHMM v1 outside residues alone | Each site gated on the CDS's model placed in a membrane (TMDET, or a helix-axis fit), with cut-offs from published sites and TMDET; the ranker requires the gate's mask; a snorkel offered for tiny-loop CDSs as question 8 | Becca: no shipped site on the cytoplasmic side or in the membrane core | Becca / l1-membrane-side-gate ([PR 291](https://github.com/Deliverome-Project/deliverome-analysis/pull/291)); ranker change by ranker-pu-segment ([PR 245](https://github.com/Deliverome-Project/deliverome-analysis/pull/245)); brief by l1-reviewer-package (PR 283) |
+| 2026-11-11 | Internal sites taken from DeepTMHMM v1 outside residues alone | Each site gated on the CDS's model placed in a membrane (TMDET, or a helix-axis fit), with cut-offs from published sites and TMDET; the ranker requires the gate's mask; a snorkel offered for tiny-loop CDSs, posed as a reviewer question at the time | Becca: no shipped site on the cytoplasmic side or in the membrane core | Becca / l1-membrane-side-gate ([PR 291](https://github.com/Deliverome-Project/deliverome-analysis/pull/291)); ranker change by ranker-pu-segment ([PR 245](https://github.com/Deliverome-Project/deliverome-analysis/pull/245)); brief by l1-reviewer-package (PR 283) |
 | 2026-11-10 | Gene gates and added tiers stated in summary; expression-rescue CDSs named but not defined | Every gate states its exact rule; the three tiers carry their rules and gene counts (core 2,134, low-literature 139, screen-validated GPCR 85, overexpression surface 12); expression-rescue CDSs defined in section 1; 3,200 L1 barcodes reserved provisionally | Becca: the brief must stand alone for a first-time reviewer | Becca / l1-reviewer-package (PR 283) |
-| 2026-11-10 | Vector layout and promoter not described | Section 10 records the IRES-coupled selection and the EFS-versus-EF1a comparison from S5E11; EFS kept for now, posed as reviewer question 7 | P-0008 (separate SV40-puro) gave low TfR1 expression; EF1a is brighter but longer (Becca) | Becca / l1-reviewer-package (PR 283) |
+| 2026-11-10 | Vector layout and promoter not described | Section 10 records the IRES-coupled selection and the EFS-versus-EF1a comparison from S5E11; EFS kept for now, posed as the promoter question for reviewers | P-0008 (separate SV40-puro) gave low TfR1 expression; EF1a is brighter but longer (Becca) | Becca / l1-reviewer-package (PR 283) |
 | 2026-11-08 | Barcode 3′ flank: 10-nt gap + RT site with C at position 9; reservation screened enzymes and splice donors only | Proposed (draft): Feldman's 17-nt padlock construct + his RT site with A at position 9; reservation also rejects miRNA seeds across either barcode junction, and L1 barcodes must pass under both candidate flanks until one is chosen; CNR1 and TFRC keep their barcodes | Feldman's construct and primer then transfer unchanged, A avoids both the splice donor (T) and the construct hairpin (C); junction seeds are the one place a barcode screened alone can gain a site | Becca (proposal; flank not yet chosen) / l1-reviewer-package (PR 243 brief, PR 283 code) |
 | 2026-11-07 | Barcode region described only for amplicon sequencing | Checked for optical pooled screening, 10x Feature Barcoding and T7 in situ transcription; prefix-distance screen (distance 3 over 10 bases) added to barcode reservation | Keep optical pooled screening, 10x capture and in situ transcription possible before synthesis fixes the fragment | Becca / l1-reviewer-package (PR 243) |
 | 2026-11-07 | Isoform gap described as 359 unexamined genes; one ortholog panel | All 451 isoform absences explained by the cohort rules; a CDS-gated Compara 116 ortholog redraw exists for review, not adopted | Audits merged on main (#257, #262) | Becca / audit sessions ([PR 257](https://github.com/Deliverome-Project/deliverome-analysis/pull/257), [PR 262](https://github.com/Deliverome-Project/deliverome-analysis/pull/262)); brief by l1-reviewer-package (PR 243) |
@@ -1675,6 +1721,32 @@ live figures.
 | Synthesis | 790 of 3,255 constructs recoded for synthesis (5,312 codons); the recoded constructs are the order of record (section 7) | l1-reviewer-package |
 | Domestication | sites for enzymes no cloning step uses (AarI/PaqCI, BtgZI, SapI) and motifs created by edits are left in place | l1-cterm-build |
 | Records | pinned decision tables are published under dated keys and never updated in place, after an in-place update broke a pinned input overnight | l1-cterm-build, ranker-pu-segment |
+
+## Appendix: terms
+
+Defined where the argument needs them above; collected here for reference.
+
+| Term | Meaning here |
+|---|---|
+| Candidate set | Why a CDS exists: `library_reference` (the gene's reference proteoform), `isoform`, or `ortholog` (mouse or cyno). A fourth set, `expression_rescue` (a second, Igκ-led CDS for 25 poorly displayed GPCRs), is retired, so that every gene is ordered as one design (section 1). |
+| Proteoform | The exact protein sequence a CDS encodes. It is the designed CDS translated, which is not always the gene's UniProt canonical sequence. |
+| Fragmid | A modular Golden Gate (BbsI) part system for lentiviral vectors ([McGee et al., 2024](https://pubmed.ncbi.nlm.nih.gov/38484704/)). Our vector is assembled from Fragmid-style parts, which is why BbsI must not cut inside an ORF. |
+| p003 | Our first built and expressed construct: TfR1 (TFRC) carrying the tag cassette on its extracellular C-terminus, upstream of an IRES-driven selection marker. Its tag codons and junction grammar are the template every CDS reuses. |
+| Tag cassette | 51 aa: `GGGGS`–SpyTag003–`GGGGSGGGGS`–P-ALFA-P–`GGGGS`. SpyTag003 is captured covalently by SpyCatcher; ALFA (here flanked by prolines, "P-ALFA v1.5-P") is bound by the anti-ALFA nanobody. Both were detected on the cell surface with p003. |
+| Rung | The position a CDS's tag cassette goes, assigned from topology alone: N-terminal after the signal peptide, N-terminal at residue 1, C-terminal, or internal (a loop between transmembrane helices). |
+| Snorkel | A fallback construct for a CDS with no usable extracellular loop: a reversed transmembrane helix (mouse PDGFRB) plus the cassette appended to a cytoplasmic C-terminus, so the tag is displayed outside on a helix of its own without entering any loop ([Brown et al., 2013](https://pubmed.ncbi.nlm.nih.gov/24023844/)). A 106-aa append ending in the 51-aa cassette. It is never a CDS's only construct. |
+| Igκ leader | The murine immunoglobulin κ-chain V-J2-C signal peptide, placed ahead of the cassette so the construct is targeted to the ER when the CDS's own N-terminus cannot do it. Used for every GPCR on the residue-1 multipass rung, for type III CDSs at risk, and in place of a native signal peptide that the tagged form would lose. |
+| Built, held | A *built* CDS has a construct in the order of record; a *held* CDS is decided but has no construct that passes refold, so it is not ordered (section 6). |
+| Refold | Folding the tagged protein with ColabFold and comparing it with the untagged model; its pass/fail checks are listed in section 7. |
+| Rank 1, rank 2 | The ranker's first and second choice of internal site for a CDS; a site that fails refold is replaced by the next rank that passes. |
+| Hard negative, PU | A *hard negative* is a residue where a tag is known or expected to do harm, used as a weighted negative in training; *PU* (positive-unlabeled) learning treats unlabeled residues as negatives drawn at random. |
+| Snorkel candidate | The ranker's advisory flag for a CDS whose best loop scores below the 25th percentile of published loops; it does not trigger a snorkel (section 5). |
+| Membrane mask (r4, r8) | The membrane-side gate's per-residue call of which residues are extracellular, from the CDS's model placed in a membrane; r4 and r8 are successive versions. |
+| D1 | The Cloudflare database behind the accessible-surfaceome service, which holds the per-residue features and predictions the ranker reads; the rows used are saved (section 11). |
+| Barcode | A 20-nt sequence downstream of the ORF, read by sequencing to identify which CDS a cell carries. |
+| Swap tract | The longest stretch of sequence a CDS shares with any other CDS, measured up to its barcode. During reverse transcription a template switch inside a shared stretch can attach one CDS's barcode to another's ORF. |
+| Domestication | Removing BbsI, Esp3I and BsaI recognition sites from an ORF by synonymous substitutions only. |
+| TRIFID | APPRIS's machine-learning score, from 0 to 1, of how likely a splice isoform is to be functionally important. It was trained on isoforms detected in large-scale proteomics ([Pozo et al., 2021](https://pubmed.ncbi.nlm.nih.gov/34046593/)) and APPRIS assigns it to every transcript ([Rodriguez et al., 2022](https://pubmed.ncbi.nlm.nih.gov/34755885/)). It is a prediction, not an observation: isoforms admitted on TRIFID alone are the isoform panel's "prediction-only" CDSs. Scores come from APPRIS 2026_06.v50 for Ensembl 115 (`external://appris/2026_06.v50/e115v50/homo_sapiens/appris_data.appris.txt`, pinned by SHA-256). |
 
 ## References
 

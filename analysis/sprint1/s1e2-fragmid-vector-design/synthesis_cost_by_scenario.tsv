@@ -1,0 +1,5 @@
+scenario	cost_orf_only	cost_with_cassette	cost_2x_variants	pct_no_protein_altering	usable_orfs	pct_with_severe_error
+A  all fragments	319032	362209	638063	81.3	1824	11.8
+B  Twist pools ≤1.8k    + fragments	221966	269345	443932	72.4	1624	17.6
+C  AbstractBio ≤1.2k    + fragments	276335	338153	552669	83.8	1879	10.3
+D  AbstractBio ≤1.2k    + pools 1.2-1.8k    + fragments	224478	270760	448956	79.3	1778	13.3
