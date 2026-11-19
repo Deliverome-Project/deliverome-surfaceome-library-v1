@@ -136,13 +136,16 @@ row: the ectodomain, co-receptor, localization, accessibility and surface-fracti
 not evaluated for it, so a gene admitted by that tier can carry an ectodomain below the minimum the
 core filter imposes.
 
-**The obligate-partner relationships are catalog attributes, not curation of ours.** Both the
-dependency flag and the partner list are fields of the same per-gene record. Some partners are
+**The obligate-partner relationships come from the catalog; the overrides on them are ours.**
+Which genes are partner-dependent, and who the partner is, are fields of the same per-gene
+record. Some partners are
 given as free text rather than symbols (`"ATP4B-like beta subunit (ATP1B1/FXYD family)"`),
 which no identifier join resolves — which is why an unresolvable partner is dropped from the
-expression test rather than counted against the gene. Hand curation enters only as six
-accessions reviewed against the literature and an allowlist of subunits shown to reach the
-surface alone. The TPM is a per-gene median over the HPA RNA cell-line consensus (20,151 genes
+expression test rather than counted against the gene. Hand curation sits on top of that: six accessions reviewed against the
+literature (ATP1B3, CDC50A, P2RX6, HFE, ATP8B1, CDC50B), four of them also carrying a reviewed
+exception to the complex-partner localization veto, and an allowlist of subunits shown to reach
+the surface without a heterologous partner. Both are pinned on S3 and in the reviewer bundle as
+`coreceptor_calls.tsv` and `coreceptor_rationales.json`. The TPM is a per-gene median over the HPA RNA cell-line consensus (20,151 genes
 × 1,206 lines), re-derived here on 2026-08-04 because the published per-gene summary carries
 only a maximum, and a maximum answers "detected in at least one line" rather than "present in a
 standard cell line".
@@ -164,9 +167,8 @@ filter never tested.
 rather than restating it, and a test asserts that the gate named for a gene agrees with that
 gene's membership, so the table cannot drift from the decision it documents.
 
-The filter passes **2,369** genes (core 2,133 plus the three tiers). Two recorded changes
-then apply. They are separate events three weeks apart rather than a matched pair, and their effects on
-the total cancel:
+The filter passes **2,369** genes (core 2,133 plus the three tiers), after one recorded
+removal:
 
 - One gene is **removed** ([`gene_list_exclusions.tsv`](../gene_list_exclusions.tsv)):
   EPPIN. It entered on the GPI term of the anchoring gate and on nothing else — its canonical
@@ -176,11 +178,6 @@ the total cancel:
   helix, and the catalog's own GPI curation does not list it. EPPIN does reach the sperm
   surface, but through the eppin protein complex, so the membrane attachment belongs to its
   partners.
-- One gene is **added** ([`gene_list_additions.tsv`](../gene_list_additions.tsv)): SLC67A1
-  (formerly SLC22A18). The frozen gene list was built from the September cohort; re-running the
-  filter over release 1.3.0 (cut 2026-10-18) on 2026-11-01 added this one gene and removed
-  none. Release 1.3.0's DeepTMHMM v1 call gives it 12 transmembrane helices where the September
-  cohort had none, so it now passes the anchored and ectodomain gates.
 
 **The gates have been tested against an independent challenge set.** A cross-method survey of
 published surface proteomics selects proteins by how often they recur across studies rather
