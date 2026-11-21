@@ -44,10 +44,10 @@ REPO = EXP.parents[2]
 EXP_REL = "analysis/sprint4/s4e9-orf-design-fg-panel"
 
 #: The order of record (synthesis_compliance.FASTA_KEY), pinned by SHA-256.
-FASTA_KEY = "sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-21-arm-linkers/l1_order_inserts_recoded.fasta"
-FASTA_SHA256 = "8b1c4ed3"  # prefix; superseded: 2026-11-13/ (d1257f0a), -one-arm/ (1f29936b), -one-arm-renamed/ (b426e433)
+FASTA_KEY = "sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-21-snorkel-modules/l1_order_inserts_recoded.fasta"
+FASTA_SHA256 = "66332be4"  # prefix; superseded: 2026-11-13/ (d1257f0a), -one-arm/ (1f29936b), -one-arm-renamed/ (b426e433)
 #: l1-tag-refold's structure table (PR #301) at the commit checked.
-REFOLD_COMMIT = "cde93c8c"  # main at the final regeneration (2026-11-14); was 3a7dfbd9 (#301)
+REFOLD_COMMIT = "8432c010"  # main at the final regeneration (2026-11-14); was 3a7dfbd9 (#301)
 STRUCTURES = f"{EXP_REL}/tag_refold_structures.tsv"
 #: A mature chain may drop at most this many N-terminal residues (leader + SP); longer
 #: differences are reported as unmatched, never silently accepted.

@@ -50,6 +50,20 @@ ASSET_LIMIT = 2 * 1024**3  # GitHub release assets
 PINNED: list[tuple[str, str, str, str, str]] = [
     (
         "external",
+        "archs4/v2.5/cell-line-panel-consensus/2026-09-04/",
+        "ARCHS4 (cell-line panel consensus)",
+        "2.5",
+        "https://archs4.org/",
+    ),
+    (
+        "external",
+        "human-protein-atlas/2023-05/",
+        "Human Protein Atlas",
+        "23.0",
+        "https://v23.proteinatlas.org/about/download",
+    ),
+    (
+        "external",
         "hpa/v23/",
         "Human Protein Atlas",
         "23.0",
@@ -212,6 +226,16 @@ SOURCES: list[tuple[str, str, str]] = [
     (r"external/ensembl/release-11[56]/", "public_release", "Ensembl FTP"),
     (r"external/pfam/39\.0/", "public_release", "Pfam 39.0 (EBI release copy)"),
     (r"external/uniprot/2026_04/", "public_derived", "UniProt 2026_04 REST query"),
+    (
+        r"external/archs4/v2\.5/",
+        "public_derived",
+        "ARCHS4 v2.5 consensus over the S2E18 panel lines",
+    ),
+    (
+        r"external/human-protein-atlas/2023-05/",
+        "public_release",
+        "HPA v23 (same bytes as hpa/v23/)",
+    ),
     (
         r"external/topdb/v3\.3/",
         "public_release",
@@ -504,8 +528,14 @@ def add_pinned(out: Path) -> int:
     from deliverome_analysis import s3
 
     mirror = out / "s3"
-    replay = sorted(p.relative_to(mirror).as_posix() for p in mirror.rglob("*") if p.is_file())
-    (out / "replay_keys.txt").write_text("\n".join(replay) + "\n")
+    # What the replay read is recorded once, right after collect's replay; a later add-pinned
+    # (to add a newly pinned release) must not count the pinned files as read by the replay.
+    keys = out / "replay_keys.txt"
+    if keys.exists():
+        replay = keys.read_text().split()
+    else:
+        replay = sorted(p.relative_to(mirror).as_posix() for p in mirror.rglob("*") if p.is_file())
+        keys.write_text("\n".join(replay) + "\n")
     wanted: dict[tuple[str, str], str] = {}
     for b, prefix, *_ in PINNED:
         for key in getattr(s3, b).list_keys(prefix=prefix):

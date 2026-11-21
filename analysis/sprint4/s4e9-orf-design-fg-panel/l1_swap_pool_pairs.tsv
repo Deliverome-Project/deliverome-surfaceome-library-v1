@@ -405,7 +405,6 @@ l1-p0129-a1	l1-p0129-a2	same CDS	library_reference	library_reference	498	474	0.2
 l1-p0498-a1	l1-p0498-a2	same CDS	library_reference	library_reference	318	294	0.1431	4e-09	6.08e-06	5.2e-10
 l1-p2349-a1	l1-p2349-a3	same CDS	library_reference	library_reference	546	522	0.2197	5.2e-08	3.5459e-05	1.145e-08
 l1-p2522-a1	l1-p2522-a2	same CDS	isoform	isoform	348	324	0.1542	3e-09	5.497e-06	3.9e-10
-l1-p1629-a1	l1-p1618-a1	different CDS	library_reference	library_reference	399	375	0.1724	4.5e-07	8.0613e-05	7.767e-08
 l1-p2348-a2	l1-p2348-a3	same CDS	library_reference	library_reference	1680	1656	0.4157	7.3e-08	7.9458e-05	3.037e-08
 l1-p1628-a1	l1-p1615-a1	different CDS	library_reference	library_reference	399	375	0.1724	4.44e-07	7.9415e-05	7.652e-08
 l1-p1626-a1	l1-p1613-a1	different CDS	library_reference	library_reference	397	373	0.1717	4.54e-07	7.9988e-05	7.794e-08
@@ -745,6 +744,7 @@ l1-p2277-a1	l1-p2277-a3	same CDS	library_reference	library_reference	690	666	0.2
 l1-p0403-a2	l1-p0403-a3	same CDS	library_reference	library_reference	474	450	0.1975	2e-09	6.548e-06	4.3e-10
 l1-p3014-a2	l1-p3014-a3	same CDS	ortholog	ortholog	22	0	0.0115	2.1e-08	1.062e-06	2.4e-10
 l1-p0005-a1	l1-p3144-a1	different CDS	library_reference	isoform	1974	1950	0.4383	5.0929e-05	0.002170627	2.232254e-05
+l1-p1629-a1	l1-p1618-a1	different CDS	library_reference	library_reference	399	375	0.1724	4.5e-07	8.0613e-05	7.767e-08
 l1-p1616-a1	l1-p1617-a1	different CDS	library_reference	library_reference	401	377	0.1731	4.49e-07	8.0937e-05	7.77e-08
 l1-p0133-a1	l1-p0133-a3	same CDS	library_reference	library_reference	25	1	0.0131	7e-09	6.86e-07	9e-11
 l1-p0109-a1	l1-p0109-a3	same CDS	library_reference	library_reference	24	0	0.0126	2.1e-08	1.157e-06	2.6e-10
@@ -1172,8 +1172,8 @@ l1-p0409-a1	l1-p0409-a3	same CDS	library_reference	library_reference	438	414	0.1
 l1-p1625-a1	l1-p1622-a1	different CDS	library_reference	library_reference	396	372	0.1714	4.4e-07	7.9826e-05	7.549e-08
 l1-p2008-a1	l1-p2512-a1	different CDS	library_reference	isoform	811	787	0.2883	6.5e-08	4.3002e-05	1.875e-08
 l1-p1619-a1	l1-p1618-a1	different CDS	library_reference	library_reference	401	377	0.1731	4.52e-07	8.1248e-05	7.829e-08
-l1-p0128-a1	l1-p0128-a2	same CDS	library_reference	library_reference	477	453	0.1984	4e-09	9.133e-06	8.4e-10
 l1-p0708-a1	l1-p0708-a2	same CDS	library_reference	library_reference	22	0	0.0115	1.3e-08	8.51e-07	1.5e-10
+l1-p0128-a1	l1-p0128-a2	same CDS	library_reference	library_reference	477	453	0.1984	4e-09	9.133e-06	8.4e-10
 l1-p1572-a1	l1-p1572-a3	same CDS	library_reference	library_reference	22	0	0.0115	7e-09	6.32e-07	9e-11
 l1-p1617-a1	l1-p1621-a1	different CDS	library_reference	library_reference	397	373	0.1717	4.62e-07	8.2434e-05	7.943e-08
 l1-p2175-a1	l1-p2175-a3	same CDS	library_reference	library_reference	390	366	0.1693	3e-09	6.261e-06	4.6e-10

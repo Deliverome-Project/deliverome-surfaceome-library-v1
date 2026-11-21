@@ -56,6 +56,7 @@ from pathlib import Path
 
 from build_constructs import CASSETTE, CASSETTE_AA, CS1, FWD_PRIMER, KOZAK, REV_PRIMER, SPACER, STOP
 from diversify_cassettes import TAG_SEGMENTS
+from diversify_snorkel_modules import module_dna
 from l1_swap_risk import GATE, PREFERRED, domesticate_junction, worst_partner
 from synthesis_risk_scan import (
     GC_WINDOW,
@@ -525,7 +526,8 @@ def build_one(
     """Cassette after residue ``after`` (default: the last residue), then TAA.
 
     ``module`` is DNA appended to the native C-terminus before the cassette (the snorkel's
-    linker and TM helix, ``l1_snorkel.PREFIX_DNA``); only with the default ``after``.
+    linker and TM helix, issued per arm in ``l1_snorkel_module_encodings.tsv``); only with the
+    default ``after``.
     """
     cid = member["candidate_id"]
     assert not (module and after is not None), f"{cid}: a module goes only at the C-terminus"
@@ -627,7 +629,7 @@ def build_snorkels(
             proteins[cid]["sequence"],
             encodings[cid]["cassette_nt"],
             tag_fixed,
-            module=l1_snorkel.PREFIX_DNA,
+            module=module_dna(cid),
         )
         if "snorkel_protein" in d:
             assert row["protein"] == d["snorkel_protein"], f"{cid}: protein differs from the design"
@@ -638,7 +640,8 @@ def build_snorkels(
             {
                 "arm_id": d.get("arm_id", ""),
                 "decided_by": d["decided_by"],
-                "implemented_by": IMPLEMENTED_BY + " (DNA: l1_snorkel.PREFIX_DNA)",
+                "implemented_by": IMPLEMENTED_BY
+                + " (module DNA: l1_snorkel_module_encodings.tsv, issued per arm 2026-11-21)",
                 "reason": "snorkel: " + d["reason"],
                 "review_flags": "",
             }

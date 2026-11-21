@@ -103,10 +103,10 @@ in, and neither tests it:
 
 - The co-receptor gate asks whether an obligate partner is expressed across all 1,206 HPA cell
   lines, not in the lines L1 will be screened in, and it requires every listed partner even where
-  the list names alternatives. A screening-line rule (every partner ≥ 10 TPM in at least 2 of the
-  42 shortlist lines, or in K562) keeps all 48 current genes and adds 28; over only the lines in
-  house or on order it adds 9, plus RHCE and RHD. The TCR–CD3 chains stay excluded (their
-  partners are only in Jurkat); CD79B enters, with partners in NALM-6 and GM12878.
+  the list names alternatives. It was replaced on 2026-11-21 (Becca) by a screening-line rule:
+  every partner ≥ 10 TPM in at least 2 of the 42 shortlist lines. That keeps all 48 current genes
+  and admits 26 more, none displayable in K562; they are not yet built, because adding them
+  rebuilds the library through the order.
 - No gate asks whether the host carries the chaperones some families need. Odorant receptors
   need RTP1 or RTP2 to reach the surface of heterologous cells
   ([Saito et al., 2004](https://pubmed.ncbi.nlm.nih.gov/15550249/)), bitter-taste receptors are
@@ -197,7 +197,7 @@ sites are not yet in it (section 5).
 ### 4.4 How each construct is built
 
 **Decision.** ORFs keep their native codons except where a synonymous change removes an
-assembly enzyme site or makes a sequence synthesizable (806 of 3,255 constructs change, 5,320
+assembly enzyme site or makes a sequence synthesizable (806 of 3,255 constructs change, 5,319
 codons in all, no protein change). The tags' codons are those shown to display in our first
 construct, p003 (TfR1 with the cassette, detected at the surface with both reagents); the four
 `GGGGS` linkers around them are encoded differently in every construct, so no two constructs
@@ -231,8 +231,8 @@ but SpyTag003 and ALFA stay on p003's codons in all 3,255, and a template switch
 would join one protein's N-terminal part to another's tag and C-terminal part. The model puts
 that at up to 3.0% of integrants (4.1% while 2,942 constructs shared one cassette encoding), an
 upper bound that assumes every particle is mixed; recoding the tags too was estimated at about
-1.8%. The Igκ leader (one encoding in 804 constructs) and the snorkel module (109 constructs)
-are also shared sequence. A fusion that borrows a working signal peptide could make a failing protein
+1.8%. The snorkel module is encoded per construct as well; the Igκ leader (one encoding in 804
+constructs) is the other sequence still shared. A fusion that borrows a working signal peptide could make a failing protein
 look displayed. The length weighting (2- to 3.5-fold per kilobase) is not measured for this
 vector, and across that range the longest construct is pooled at 13 to 100 times the median
 construct's amount.

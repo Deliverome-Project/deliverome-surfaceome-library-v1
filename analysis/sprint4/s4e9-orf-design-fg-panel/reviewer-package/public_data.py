@@ -65,6 +65,10 @@ PUBLIC_SOURCES: list[tuple[str, str]] = [
     ),
     (r"^external/hpa/", "CC BY 4.0 (Human Protein Atlas; cite the HPA and proteinatlas.org)"),
     (
+        r"^external/human-protein-atlas/",
+        "CC BY 4.0 (Human Protein Atlas; cite the HPA and proteinatlas.org)",
+    ),
+    (
         r"^external/ensembl/",
         "EMBL-EBI terms: no additional restrictions on redistribution (Ensembl)",
     ),

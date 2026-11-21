@@ -1,5 +1,22 @@
 {
   "bundles": {
+    "8432c0104c8fdaa57e78173d18fc5bb7064d91bd": {
+      "made": "order of record 2026-11-21-snorkel-modules (cut in its PR)",
+      "key": "processed://sprint4/s4e9-orf-design-fg-panel/pinned-inputs/rung-builds/8432c010/rung_builds.tar",
+      "sha256": "643383ab853127c0b70514b1566036a695ea7677e203dec755abf009bd33e9fb",
+      "files": {
+        "constructs_l1_cterm.fasta": "efdadb4a76a035b08fee8be68129323d8636b025e276732f6eb1f567063a5ebd",
+        "constructs_l1_cterm.tsv": "3b7ead774beab8286e176805bb8e76b1d20deb1f3c8a983a57e6c459c5642112",
+        "constructs_l1_internal.fasta": "aaa392d9704c4870138b5419c7d989144b584b3eaf5e55776c0888f737c327df",
+        "constructs_l1_internal.tsv": "38c7f3af4dada1e18ad32e3ba2e84ecfbbd900d37a2b75bf9d4acc64e87a6a32",
+        "constructs_l1_multipass.fasta": "9124162778747360d3c1ebc06ad97ec58ecad352914b81fdcd152e6fddde0bac",
+        "constructs_l1_multipass.tsv": "37a1d59bd01fc25c0d775ab9fd448eed7401b3dfd5b6b53a144ffe549b1ef573",
+        "constructs_l1_nterm.fasta": "faa9be3b86ce5211e73bfc5d0b42c41fca67dc6b727ba6257ab2dcab9e274bb7",
+        "constructs_l1_nterm.tsv": "07317c0df5f23c19d6c9a366ce9bd146277ae5853291b5c5059e8ef7beb03f7e",
+        "constructs_l1_type3.fasta": "c6ab259e08186a1f5a6258c8aaa0b0d545df52d7a2d959728bfcb4a00ef5d02a",
+        "constructs_l1_type3.tsv": "0eb7755095e57fc2a0f5d1b9472d1e69deb7a4a4412c45c767ce0f329f2b38ef"
+      }
+    },
     "cde93c8cc8be6549578ecc1278f3b74b83c6ad5b": {
       "made": "order of record 2026-11-21-arm-linkers (cut in its PR)",
       "key": "processed://sprint4/s4e9-orf-design-fg-panel/pinned-inputs/rung-builds/cde93c8c/rung_builds.tar",

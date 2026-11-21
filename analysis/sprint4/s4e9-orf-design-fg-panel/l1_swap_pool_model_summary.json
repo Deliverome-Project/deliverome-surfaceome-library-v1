@@ -6,7 +6,7 @@
   "pool_share_1_over": 11012,
   "min_block_nt": 20,
   "background_partners_sampled_per_barcode": 96,
-  "specific_pairs": 111952,
+  "specific_pairs": 110837,
   "same_cds_pairs": {
     "pairs": 791,
     "suffix_tract_median_nt": 366.0,
@@ -22,25 +22,25 @@
     "over_gate": 459
   },
   "library_fraction_wrong_protein": {
-    "specific_mislabel": 0.0005977365606702021,
-    "specific_chimera": 0.0017395628716727716,
-    "background_mislabel": 0.011701665588991371,
-    "background_chimera": 0.029640099848487613,
-    "total": 0.043679064869821954,
-    "not_counted_leader_swap": 0.02181835673115117
+    "specific_mislabel": 0.0005864449291631337,
+    "specific_chimera": 0.0017396927123001973,
+    "background_mislabel": 0.01169040679402543,
+    "background_chimera": 0.02962918264091656,
+    "total": 0.04364572707640532,
+    "not_counted_leader_swap": 0.02181591600694036
   },
   "per_barcode_impurity": {
-    "median": 0.0325282922026119,
+    "median": 0.032525903683641715,
     "max": 0.08036450350967214,
-    "specific_part_median": 0.0008915819469609745,
+    "specific_part_median": 0.000889121589525977,
     "specific_part_max": 0.017954519290363288,
     "by_rung_median": {
       "nterm": {
         "inserts": 1272,
-        "impurity": 0.030592172238218817,
+        "impurity": 0.030593743660067008,
         "mislabel": 0.01190520713497404,
-        "chimera": 0.018737460274806866,
-        "leader_swap": 0.034064888146236344
+        "chimera": 0.018730832232607367,
+        "leader_swap": 0.034062198268568766
       },
       "type3": {
         "inserts": 44,
@@ -51,42 +51,42 @@
       },
       "multipass": {
         "inserts": 565,
-        "impurity": 0.030309949169131052,
+        "impurity": 0.030301466822213494,
         "mislabel": 0.01187809245045819,
-        "chimera": 0.01844276563117711,
+        "chimera": 0.018430720368972763,
         "leader_swap": 0.029985478542405738
       },
       "cterm": {
         "inserts": 313,
-        "impurity": 0.06477235599838208,
-        "mislabel": 0.01528298344469738,
-        "chimera": 0.04973856355869129,
+        "impurity": 0.06455070565146345,
+        "mislabel": 0.014792173324179357,
+        "chimera": 0.049720615884268377,
         "leader_swap": 0.0
       },
       "internal": {
         "inserts": 1061,
-        "impurity": 0.06454382462844584,
-        "mislabel": 0.011933891709112335,
-        "chimera": 0.05269909196721724,
+        "impurity": 0.06454303968625413,
+        "mislabel": 0.01193379380452004,
+        "chimera": 0.05269869056624579,
         "leader_swap": 0.0
       }
     }
   },
   "wrong_protein_by_block_region": {
-    "background|chimera|native CDS": 3.627115253173253e-05,
-    "background|chimera|tag cassette": 0.02960382869595585,
+    "background|chimera|native CDS": 3.623370583253507e-05,
+    "background|chimera|tag cassette": 0.029592948935083997,
     "background|leader swap|native CDS": 7.387051535141266e-06,
-    "background|leader swap|tag cassette": 0.021253327408186418,
-    "background|mislabel|3' tail": 0.011513677255222506,
-    "background|mislabel|native CDS": 3.076935731150653e-05,
-    "background|mislabel|tag cassette": 0.00015721897645736108,
-    "specific|chimera|native CDS": 0.001039739711915495,
-    "specific|chimera|tag cassette": 0.0006998231597572814,
+    "background|leader swap|tag cassette": 0.02125088668397561,
+    "background|mislabel|3' tail": 0.011514825414195951,
+    "background|mislabel|native CDS": 2.656302121789404e-06,
+    "background|mislabel|tag cassette": 0.0001729250777076909,
+    "specific|chimera|native CDS": 0.001039754402945277,
+    "specific|chimera|tag cassette": 0.0006999383093549255,
     "specific|leader swap|native CDS": 4.019118261121341e-06,
     "specific|leader swap|tag cassette": 0.000553623153168484,
-    "specific|mislabel|3' tail": 0.0002737905769431425,
-    "specific|mislabel|native CDS": 0.00031006258913679447,
-    "specific|mislabel|tag cassette": 1.388339459026306e-05
+    "specific|mislabel|3' tail": 0.0002730258320457859,
+    "specific|mislabel|native CDS": 0.00030273768999256186,
+    "specific|mislabel|tag cassette": 1.0681407124784845e-05
   },
   "rate_at_gate": 0.05028767596203798,
   "rate_at_cassette_153": 0.07485593055013168

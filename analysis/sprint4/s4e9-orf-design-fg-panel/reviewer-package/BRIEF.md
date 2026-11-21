@@ -120,7 +120,7 @@ the order below. Each gate's genes, with the value it tested, are listed in
 | Accessibility | not called inaccessible from outside the cell | the tag must be reachable by an antibody | [0](gate_lists/02_accessibility.tsv) |
 | Surface fraction | mostly at the surface, or mixed | a protein mostly held inside the cell gives little surface signal | [362](gate_lists/03_surface_fraction.tsv) |
 | Anchored | at least one transmembrane helix, or GPI-anchored | an unanchored protein is secreted, not displayed | [141](gate_lists/04_anchored.tsv) |
-| Co-receptor | no obligate partner, or every obligate partner has a median ≥ 5 TPM across the 1,206 Human Protein Atlas (HPA) v23 cell lines ([Jin et al., 2023](https://pubmed.ncbi.nlm.nih.gov/37669926/)) | a protein that needs a partner the host cell lacks would fail for reasons unrelated to itself | [160](gate_lists/05_coreceptor.tsv) |
+| Co-receptor | no obligate partner, or every obligate partner has a median ≥ 5 TPM across the 1,206 Human Protein Atlas (HPA) v23 cell lines ([Jin et al., 2023](https://pubmed.ncbi.nlm.nih.gov/37669926/)); the rule the current library was built with, replaced on 2026-11-21 by a screening-line rule whose 26 additions are not yet built ("Well-known surface proteins the gates exclude", below) | a protein that needs a partner the host cell lacks would fail for reasons unrelated to itself | [160](gate_lists/05_coreceptor.tsv) |
 | Expression | not flagged as low-expressed, or ≥ 5 TPM somewhere in GTEx v10 tissues ([GTEx Consortium, 2020](https://pubmed.ncbi.nlm.nih.gov/32913098/)), HPA v23 tissues ([Uhlén et al., 2015](https://pubmed.ncbi.nlm.nih.gov/25613900/)) or cell lines, or TCGA tumors ([Vivian et al., 2017](https://pubmed.ncbi.nlm.nih.gov/28398314/)) | a protein expressed in no tissue, tumor or cell line has no cell a binder could be used on | [81](gate_lists/06_expression.tsv) |
 | Localization | the catalog's surface call does not rest on the protein being secreted, intracellular, inner-leaflet anchored, presented only as an MHC peptide, or displayed only as part of a complex (a complex member with its own transmembrane helix whose partners pass the co-receptor rule is kept) | in each of these cases the protein's own sequence is not displayed on the outer surface | [7](gate_lists/07_localization.tsv) |
 | ORF size | canonical ORF ≤ 5,000 nt | lentiviral packaging (below); genes over it are excluded from L1 | [100](gate_lists/08_orf_size.tsv) |
@@ -321,7 +321,8 @@ How the rule's threshold and host line change membership:
 | median ≥ 1 | ITGA2B, ITGAD, ITGAL, ITGAM, ITGAX | — |
 | every partner ≥ 5 TPM in K562, instead of the median | RHCE, RHD | SLC16A1, SLC16A8, ST14 |
 | the median rule, or every partner ≥ 5 TPM in K562 | GRIN1, KCND2, RHCE, RHD | — |
-| every partner ≥ 10 TPM in at least 2 of the 42 lines of the screening shortlist, or in K562 (alternative partners counted once; ARCHS4 for the 13 lines HPA lacks) | 28 genes, among them CD79B (list in the options table) | — |
+| **every partner ≥ 10 TPM in at least 2 of the 42 lines of the screening shortlist (alternative partners counted once; ARCHS4 for the 13 lines HPA lacks): adopted 2026-11-21** | 26 genes, among them CD79B | — |
+| the same, or ≥ 10 TPM in K562 | 28: the 26 plus RHCE and RHD | — |
 | the same at 5 TPM | 34 genes: the 28 and 6 near the threshold | — |
 | the same, over only the lines in house or on order | CNTNAP1, GABRB1, GRIN1, ITGAD, ITGAL, ITGAM, ITGAX, KLRK1, UPK3A, plus RHCE and RHD through K562 | — |
 
@@ -334,8 +335,14 @@ the gate requires every listed partner. Seven genes are known to need this eithe
 free-text partner names that resolved to the wrong gene (CLR, IgM, mIg, CD16, TCRα) are now mapped
 to the intended gene in the filter; none changes an outcome.
 
-The recommendation is to replace the median with the screening-line rule above at 10 TPM: it
-keeps all 48 current genes and adds 28 that pass every other gate, as dated additions. HPA v23
+**Becca adopted the screening-line rule on 2026-11-21**, without a K562 clause: a gene that needs
+obligate partners passes when every required partner, one per group of alternatives, is ≥ 10 TPM
+in at least 2 of the 42 shortlist lines. It keeps all 48 current genes, drops none and admits 26
+that pass every other gate: ITGA2B, UPK3A, ITGAD, ITGAL, ITGAM, ITGAX, HLA-DPB1, CHRNB4, CNTNAP1, GRIN1, HLA-DRA, KLRK1, SLC51A, CD300LB, CD79B, GABBR1, HLA-DQA1, HLA-DQB1, ITGAE, LILRA4, NCR2, SCNN1B, SIGLEC16, SIRPB1, TREM1 and TREM2. RHD and RHCE stay out, because their
+partner RHAG is present only in K562. **None of the 26 can be displayed in K562**, and three
+(SLC51A, GABBR1, SCNN1B) have no qualifying line in house or on order. The 26 are not yet in the
+library or the order: they enter as dated additions, which rebuilds every step from the
+reference choice to the order of record, and that rebuild has not been run. HPA v23
 has 29 of the 42 shortlist lines; the other 13 are read from the cell-line panel experiment's
 ARCHS4 consensus, with 15 CPM taken as the equivalent of 10 TPM (the cut that best reproduces HPA's
 calls on the 29 shared lines, Cohen's κ 0.76). The TCR–CD3 chains stay out, because their partners
@@ -1607,7 +1614,7 @@ model file's SHA-256 and compares the residues present in the model with the ord
 ([`fold_order_check.py`](fold_order_check.py), [`fold_order_check.tsv`](../fold_order_check.tsv)).
 All 3,255 match residue for residue, 572 of them as the mature chain after the 20-residue Igκ
 leader, and every model file matches its recorded SHA-256. The fold list is the refold table at
-`cde93c8c` ([`tag_refold_structures.tsv`](../tag_refold_structures.tsv)), unchanged since `541c6c18`.
+`8432c010` ([`tag_refold_structures.tsv`](../tag_refold_structures.tsv)), unchanged since `541c6c18`.
 
 **Type III, final.** All 44 type III constructs are folded: 40 pass, IGSF5's Igκ construct among
 them. The other 4 are flagged because SpyTag003 forms a confident helix in the model. Their
@@ -1743,7 +1750,7 @@ every 50-bp window at or below 80% GC (75% where it spans the cassette's end), n
 the Tn5 end, and no exact repeat of 40 nt or near-repeat of 100 nt within the construct (a
 synthesis limit on the construct itself, not a comparison with other CDSs). Met1, the cassette and its
 flanking codons, an Igκ leader and the signal peptide are never changed. 806 of the 3,255
-tagged constructs ordered (37 CDSs are held, [section 6](#6-where-every-cds-stands)) change, by 5,320 codons;
+tagged constructs ordered (37 CDSs are held, [section 6](#6-where-every-cds-stands)) change, by 5,319 codons;
 afterwards 2,976 score Low, 255 Medium and 24 High by the local rules, none refused, and no
 provisional barcode occurs inside any construct. The 24 High constructs are native N-after-SP constructs
 with a 50-bp window of 90–98% GC inside the protected signal-peptide codons, which the recoder
@@ -1751,9 +1758,9 @@ may not change (an open item, in the cover note). Recoding also leaves one resid
 **13 constructs carry a new Type IIS site the recoder does not screen for** (AarI, PaqCI, BtgZI or
 SapI). Only Esp3I and BsaI are screened, because they are the enzymes the assembly uses; the
 four above are recorded library-wide as a known risk in the cover note rather than designed around. **The recoded constructs are the order of record**:
-`l1_order_inserts_recoded.fasta` (SHA-256 `8b1c4ed3…`; on S3 at
-`processed://sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-21-arm-linkers/`), built from every
-placement's construct table at commit `cde93c8c`, with every changed codon in
+`l1_order_inserts_recoded.fasta` (SHA-256 `66332be4…`; on S3 at
+`processed://sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-21-snorkel-modules/`), built from every
+placement's construct table at commit `8432c010`, with every changed codon in
 `synthesis_recodes.tsv` ([`synthesis_compliance.py`](../synthesis_compliance.py)). A vendor
 re-quote of that file is the real test.
 
@@ -1775,10 +1782,12 @@ the sequence before their cassette also differ in its first 15 nt. That matters 
 constructs whose cassette follows the same 60 nt or more (the Igκ leader and Met1 in 572); only
 540 first-linker encodings avoid a run of 5 identical bases, so these 574 allow a run of 5
 (`GGGGG`), which the synthesis rules accept. Pool QC ([`l1_pool_qc.py`](../l1_pool_qc.py)) checks
-every construct for this in CI. Two shared stretches remain that the linkers cannot reach: the
-Igκ leader itself, one encoding in the 804 constructs that carry it (with the shared start of the
-insert, up to 115 nt), and the snorkel module, shared by up to 176 nt between the 109 snorkel
-constructs, which includes `GGGGS` linkers of its own.
+every construct for this in CI. The 55-aa module of the 109 snorkel constructs (linkers, a
+PDGFRB juxtamembrane segment and TM helix) is also encoded per construct, every codon of it
+([`diversify_snorkel_modules.py`](../diversify_snorkel_modules.py)); its earlier single encoding
+was a solver output no construct had displayed, and two modules now share at most 29 nt. One
+shared stretch remains that no linker reaches: the Igκ leader, one encoding in the 804 constructs
+that carry it (with the shared start of the insert, up to 115 nt).
 
 **Why the linkers are recoded.** For an N-terminal or internal CDS the cassette lies
 upstream of the ORF's own C-terminus, so it never enters the swap tract; two such CDSs
@@ -2289,13 +2298,13 @@ full table, with sizes and sources, is [`pinned_releases.md`](pinned_releases.md
 | Twist complexity report | the vendor's scoring of the first L1 draft | 2026-11-12 | `twist/l1-complexity/2026-11-12/` | vendor output |
 
 **The bundle.** Every release above is held whole, not only the objects the replay reads, together
-with every S3 file this brief cites: 3,371 files, each with its release, version, source URL and
+with every S3 file this brief cites: 3,376 files, each with its release, version, source URL and
 SHA-256 in [`bundle_manifest.tsv`](bundle_manifest.tsv) ([`pinned_releases.md`](pinned_releases.md)
 summarizes them by release). It is published as release
-[`bundle-2026-11-21`](https://github.com/Deliverome-Project/l1-library-review/releases/tag/bundle-2026-11-21)
-of the review repository in two parts: `l1-reviewer-bundle-2026-11-21.tar.gz`, the 3,123 files the
-replay reads (1.38 GB, SHA-256 `9b4356cd…`), and `l1-pinned-releases-2026-11-21.tar`, the rest of
-every pinned release (248 files, 1.65 GB, SHA-256 `c1d36285…`). It is not committed here: raw and
+[`bundle-2026-11-21b`](https://github.com/Deliverome-Project/l1-library-review/releases/tag/bundle-2026-11-21b)
+of the review repository in two parts: `l1-reviewer-bundle-2026-11-21b.tar.gz`, the 3,125 files the
+replay reads (1.38 GB, SHA-256 `f34eb18f…`), and `l1-pinned-releases-2026-11-21b.tar`, the rest of
+every pinned release (251 files, 1.85 GB, SHA-256 `88757386…`). It is not committed here: raw and
 reference inputs live in S3 by design, and the files exceed what this repository holds.
 
 **Public copies.** The public releases whose terms allow redistribution (Ensembl 115/116 and
@@ -2338,7 +2347,7 @@ are open. Work still in progress before L1 is ordered is tracked in the accompan
 | 6 | **EFS or EF1a as the library promoter, and selection through the IRES** ([section 8](#8-the-vector-promoter-and-selection-marker)). | Two coupled choices. Puromycin resistance is translated from the CDS's own transcript, so a cell survives only if it transcribes the ORF; the alternative, a separate SV40 promoter on PuroR, was built as P-0008 and gave puromycin-resistant cells with low TfR1 expression, which in a pool would read as CDSs that fail to reach the surface. The cost of the coupling is the mirror image: a weakly transcribed CDS is weakly selected and goes missing after puromycin rather than appearing dark. On the promoter itself, EF1a gave 1.7–4.0-fold more IRES-reporter signal than EFS but adds 967 bp, about a 2-fold titer cost, to every CDS. The promoter data does not measure what the library measures: mScarlet3 sits after the IRES and reports bicistronic transcript rather than surface display, it was read 72 h after transduction and before selection, the puromycin-survival row is one image per condition, K562 had no EFS well and is left out of the ratio, and each cell type's gate is set on its own untransduced well, so the ratios compare only within a cell type. | Surface-tag readout after selection for a few CDSs, EFS against EF1a; or reviewer experience with either promoter, and with IRES-coupled against separately driven selection, for pooled ORF libraries. |
 | 7 | **The Igκ leader on 804 CDSs** ([section 5](#5-tag-placement), "Signal peptides and the Igκ leader"). | 564 of 565 residue-1 multipass CDSs (every GPCR but CRHR2) and 8 type III CDSs carry the murine Igκ leader ahead of the cassette; 232 N-after-SP CDSs have their own signal peptide replaced by it because SignalP 6 predicts the tagged native peptide is no longer cleaved. The GPCR default rests on a mechanism argument; the screen whose GPCRs displayed their tag used leaderless HA after Met1, and the panel constructs that test the leader (CCR5, OR51E2, CNR1, each with and without) have no data yet. The CDSs that do not carry it give the decision its shape: 1,040 N-after-SP CDSs keep their own signal peptide, 36 type III CDSs have no identified topogenesis risk, and 1 multipass CDS is tagged without a leader, while the C-terminal and internal placements never involve one because the tag is not at the N-terminus. So the leader is added where a CDS's own N-terminus cannot do the job, and withheld wherever it can. | Whether the leader should be the default for multipass CDSs before the panel constructs read out, and whether a SignalP prediction on an engineered junction is enough to replace a native signal peptide. |
 | 8 | **SpyTag003 and P-ALFA-P on p003's codons in every construct** ([section 1](#1-what-l1-is-for), [section 7](#7-domestication-linker-encoding-and-synthesis-compliance)). | The linkers are recoded per construct, so no two constructs share the cassette, but the two tags (48 and 45 nt) are identical in all 3,255. A template switch inside a tag makes a fusion protein that the barcode does not report; the Walton et al. fit puts that at about 3.0% of integrants, the largest modeled swap term, as an upper bound: it assumes every particle carries two different constructs and that a short block recombines at the per-base rate measured over constant vector. Recoding every codon was estimated at about 1.8%, but only p003's tag codons have been shown to display. | Whether to recode the tags as well, or keep p003's codons and measure fusions by long-read sequencing of ORF and barcode from transduced cells. |
-| 9 | **The co-receptor gate tests partner expression across all cell lines, not in the screening lines** ([section 2](#2-genes-from-the-surfaceome-universe-to-2369)). | A partner that is ubiquitous may still be absent from K562, and one restricted to a lineage may be present in it. A screening-line rule (every partner ≥ 10 TPM in at least 2 of the 42 shortlist lines, or in K562, alternatives counted once) keeps all 48 current genes and adds 28, CD79B among them; over only the lines in house or on order it adds 9, plus RHCE and RHD. | Whether to adopt the screening-line rule, over which lines, and how to encode alternative partners. |
+| 9 | **26 co-receptor genes that K562 cannot display** ([section 2](#2-genes-from-the-surfaceome-universe-to-2369)). | The adopted screening-line rule (every partner ≥ 10 TPM in at least 2 of the 42 shortlist lines, alternatives counted once) admits 26 genes, among them the β2 integrins, MHC class II chains, CD79B and TREM1/2. None has its partners in K562, the first screening line, so in K562 they are expected negatives; three have no qualifying line in house or on order. | Whether these belong in the first pooled library or in a sub-pool screened in a line that carries their partners (U937 and GM12878 together cover the most), and whether the alternatives list is right before it becomes a gate. |
 
 ## 13. Protein-level choices (reversible)
 
@@ -2379,7 +2388,7 @@ The thresholds that decide what is built are listed for sign-off in the [cover n
 | Tag paths | `../l1_tag_paths.tsv`, [`../TAG_PATHS.md`](../TAG_PATHS.md) | committed |
 | Cassette encodings and swap risk | `../l1_cassette_encodings.tsv`, `../l1_swap_risk.tsv`, `../l1_swap_risk_summary.json` | committed |
 | Model-vs-protein check | `../proteoform_match.tsv` | committed |
-| Reviewer bundle | [`bundle_manifest.tsv`](bundle_manifest.tsv) (3,371 files, SHA-256 and release each; [`pinned_releases.md`](pinned_releases.md)) | shared in full as a dated release asset of the review repository (`bundle-2026-11-21`, two tarballs: the files the replay reads, and the rest of every pinned release and cited file) |
+| Reviewer bundle | [`bundle_manifest.tsv`](bundle_manifest.tsv) (3,376 files, SHA-256 and release each; [`pinned_releases.md`](pinned_releases.md)) | shared in full as a dated release asset of the review repository (`bundle-2026-11-21b`, two tarballs: the files the replay reads, and the rest of every pinned release and cited file) |
 | Audited tag-site positives (S5E13 ranker) | `audit.tsv`, `gold_standard.tsv`, `failed_sites.tsv`, `added_sites.tsv`, `region_labels.tsv`, `corpus_audit_corpus.tsv` (paths in [section 5](#5-tag-placement)) | in the reviewer bundle; audit is [PR 236](https://github.com/Deliverome-Project/deliverome-analysis/pull/236) |
 | Order plan: plate map, volumes, pooling weights | [`order_plan.py`](order_plan.py) → [`l1_order_plan.tsv`](l1_order_plan.tsv), [`l1_order_pooling_plates.tsv`](l1_order_pooling_plates.tsv), `l1_order_plan_summary.json` | committed; not yet sent to a vendor |
 | Promoter comparison (EFS, EF1a, PGK) | `s5e11-promoter-series`: `gmfi_fold_change.tsv`, `dose_response_fits.tsv`, `puro_survival.tsv` | committed; day-7 readout pending |
@@ -2389,7 +2398,8 @@ The thresholds that decide what is built are listed for sign-off in the [cover n
 
 | Date | Was | Now | Why | Decided by / implemented by |
 |---|---|---|---|---|
-| 2026-11-21 | 2,942 N-terminal and internal constructs shared p003's one cassette encoding (order `2026-11-15-final-e`, SHA-256 `20e8f275…`) | Every construct has its own linker encoding, tags on p003's codons; order `2026-11-21-arm-linkers` (SHA-256 `8b1c4ed3…`), same constructs and proteins; modeled tag fusions 4.1% → 3.0% | Becca: "we still don't want shared linkers in the middle" | Becca / brief review (`diversify_arm_cassettes.py`, `l1_pool_qc.py`) |
+| 2026-11-21 | Co-receptor gate: every partner's median ≥ 5 TPM across 1,206 HPA lines | Every partner ≥ 10 TPM in ≥ 2 of the 42 shortlist lines (HPA 29, ARCHS4 13), no K562 clause; 48 kept, 26 to add, not yet built | the gate asked about cell lines L1 will not be screened in | Becca / co-receptor host-line analysis (`coreceptor_host_line.py`) |
+| 2026-11-21 | 2,942 N-terminal and internal constructs shared p003's one cassette encoding (order `2026-11-15-final-e`, SHA-256 `20e8f275…`) | Every construct has its own linker encoding, tags on p003's codons; order `2026-11-21-arm-linkers` (SHA-256 `8b1c4ed3…`), same constructs and proteins; modeled tag fusions 4.1% → 3.0%. Then each snorkel module too: order `2026-11-21-snorkel-modules` (SHA-256 `66332be4…`) | Becca: "we still don't want shared linkers in the middle"; "Yes, recode them" for the snorkel modules | Becca / brief review (`diversify_arm_cassettes.py`, `l1_pool_qc.py`) |
 | 2026-11-21 | The refold check was presented as a build check calibrated on 17 untagged proteins | It is reported as tested against published insertions and found not to discriminate (AUROC 0.51–0.53); holding CDSs on it is an open decision | an independent review of the design asked whether the check had been validated | brief review (`refold_check_validation.py`) |
 | 2026-11-21 | Topology and host requirements were stated without measurement | DeepTMHMM placements checked against experimental topology (0.7% of 1,083 discordant); 213 CDSs found to need a host factor K562 lacks | the same review | brief review (`topology_vs_experiment.py`, `accessory_factor_dependence.py`) |
 | 2026-11-20 | The brief used internal terms (rung, ladder, cut, retired) and narrated sessions, dates and pull requests in the body | Plain placement and step names; history only in this log | Becca's review comments ("don't use terms like rungs", "LLM-ey fluff") | Becca / brief review |
@@ -2450,7 +2460,7 @@ live figures.
 | N-terminal sites | 62 constructs moved out of N-terminal pro-peptides to the mature N-terminus; 191 Igκ swaps where the native signal peptide fails | nterm-reviewer-package |
 | Internal sites | 47 snorkels for internal CDSs without a passing loop site, including MS4A7 and P2RX5 | ranker-pu-segment; built by l1-cterm-build |
 | Multipass | Igκ + tag for the GPCRs (Becca, 2026-11-10) and 58 non-GPCRs; 70 refold failures kept as built and flagged | l1-nterm-res1-multipass |
-| Synthesis | 806 of 3,255 constructs recoded for synthesis (5,320 codons, order of 2026-11-21); the recoded constructs are the order of record ([section 7](#7-domestication-linker-encoding-and-synthesis-compliance)) | l1-reviewer-package |
+| Synthesis | 806 of 3,255 constructs recoded for synthesis (5,319 codons, order of 2026-11-21); the recoded constructs are the order of record ([section 7](#7-domestication-linker-encoding-and-synthesis-compliance)) | l1-reviewer-package |
 | Domestication | sites for enzymes no cloning step uses (AarI/PaqCI, BtgZI, SapI) and motifs created by edits are left in place | l1-cterm-build |
 | Records | pinned decision tables are published under dated keys and never updated in place, after an in-place update broke a pinned input overnight | l1-cterm-build, ranker-pu-segment |
 

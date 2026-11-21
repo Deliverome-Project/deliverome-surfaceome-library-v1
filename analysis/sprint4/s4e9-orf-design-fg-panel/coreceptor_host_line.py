@@ -105,10 +105,16 @@ HPA_ALIASES = {
 IN_HAND = ["K562", "HEK293T", "HeLa", "U937", "NALM6", "SH-SY5Y", "A549", "HuH-7", "hTERT-RPE1",
            "U2OS", "HK-2", "GM12878"]  # fmt: skip
 SHORTLIST_MIN_LINES = 2
+# The rule Becca adopted on 2026-11-21: every required partner (one per group of alternatives)
+# >= 10 TPM in >= 2 of the 42 shortlist lines (HPA where it has the line, ARCHS4 at the calibrated
+# CPM cut otherwise). No K562 clause. Implemented by the co-receptor host-line agent session.
+ADOPTED_TPM = 10
+ADOPTED = "ADOPTED: >= 10 TPM (or CPM equivalent) in >= 2 of 42 lines"
 # ARCHS4 v2.5 per-line consensus built by the cell-line panel experiment (log2(CPM + 1), gene
 # symbols x panel lines): covers all 42 shortlist lines, including the 13 HPA lacks. CPM is not
 # TPM, so the CPM cut matching each TPM cut is calibrated on the 29 lines both sources share.
-ARCHS4_KEY = "scratch/becca/cell-line-selection/rnaseq_consensus_archs4.parquet"
+# Pinned append-only copy (PROVENANCE.md beside it) of processed://scratch/becca/cell-line-selection/.
+ARCHS4_KEY = "archs4/v2.5/cell-line-panel-consensus/2026-09-04/rnaseq_consensus_archs4.parquet"
 ARCHS4_SHA256 = "a3a789acdd51c440d536c52e61ec440ddd5d3b5e8f24f3a185d7703b78e56ee1"
 CPM_GRID = [
     1,
@@ -208,11 +214,9 @@ def shortlist(lines: list[str], names: list[str] | None = None) -> tuple[list[st
 
 
 def archs4_cpm() -> pd.DataFrame:
-    from deliverome_analysis.s3 import processed
-
     path = CACHE / f"archs4_consensus_{ARCHS4_SHA256[:12]}.parquet"
     if not path.exists() or sha256(path) != ARCHS4_SHA256:
-        processed.download(ARCHS4_KEY, path)
+        external.download(ARCHS4_KEY, path)
     assert sha256(path) == ARCHS4_SHA256, "ARCHS4 consensus differs from the pinned file"
     return 2 ** pd.read_parquet(path) - 1
 
@@ -364,6 +368,8 @@ def main() -> int:
     assert set(hand) <= set(short) and len(hand) == 10, (hand, hand_missing)
 
     prow, grow = [], []
+    line_pass: dict[int, dict[str, pd.Series]] = {5: {}, 10: {}}  # per gene, over all 42 lines
+    panel_of_hpa = dict(pairs)
     for r in decided:
         g, f = r["gene"], r["filters"]
         listed = fl.part.get(g, {}).get("partners", [])
@@ -516,6 +522,8 @@ def main() -> int:
                 else pd.Series(False, index=[h for h, _ in pairs])
             )
             out[f"combined_lines_ge{thr}"] = int(h29.sum()) + (0 if a13 is None else int(a13.sum()))
+            s13 = a13 if a13 is not None else pd.Series(False, index=archs4_only)
+            line_pass[thr][g] = pd.concat([h29.rename(index=panel_of_hpa), s13])[list(hpa_of)]
             if thr == 5:
                 out["archs4_only_lines_ge5_names"] = (
                     "" if a13 is None else ", ".join(a13[a13].index)
@@ -577,6 +585,8 @@ def main() -> int:
             genes["combined_lines_ge5"] >= SHORTLIST_MIN_LINES
         )
         | rule("curated_k562", 5),
+        ADOPTED: genes["self_only"]
+        | (genes[f"combined_lines_ge{ADOPTED_TPM}"] >= SHORTLIST_MIN_LINES),
         "HPA 29 + ARCHS4 13, >= 10 TPM (or CPM equivalent) in >= 2 of 42 lines OR in K562": (
             genes["combined_lines_ge10"] >= SHORTLIST_MIN_LINES
         )
@@ -629,10 +639,66 @@ def main() -> int:
         HERE / "coreceptor_host_line_partners.tsv", sep="\t", index=False, float_format="%.1f"
     )
     opts.to_csv(HERE / "coreceptor_host_line_options.tsv", sep="\t", index=False)
+    # Which K562 + 2-line set covers the most genes: a gene is covered when every partner it needs
+    # is present (>= thr TPM, or the CPM equivalent) in at least one of the three lines. Genes
+    # that pass every other gate and have a partner other than themselves.
+    cand_genes = set(genes.loc[genes["passes_other_gates"] & ~genes["self_only"], "gene"])
+    mats = {thr: pd.DataFrame(v).T.loc[sorted(cand_genes & set(v))] for thr, v in line_pass.items()}
+    long = pd.concat(
+        [m.astype(int).assign(threshold_tpm=thr).rename_axis("gene").reset_index()
+         for thr, m in mats.items()]
+    )  # fmt: skip
+    long.to_csv(HERE / "coreceptor_host_line_line_pass.tsv", sep="\t", index=False)
+    trows = []
+    others = [x for x in hpa_of if x != "K562"]
+    for i, l2 in enumerate(others):
+        for l3 in others[i + 1 :]:
+            row = {
+                "line2": l2,
+                "line3": l3,
+                "both_in_house_or_ordered": l2 in IN_HAND and l3 in IN_HAND,
+            }
+            for thr, m in mats.items():
+                k = m["K562"]
+                cov = k | m[l2] | m[l3]
+                row[f"covered_ge{thr}"] = int(cov.sum())
+                row[f"beyond_k562_ge{thr}"] = int((cov & ~k).sum())
+                row[f"added_genes_ge{thr}"] = ", ".join(m.index[cov & ~k])
+            trows.append(row)
+    trios = pd.DataFrame(trows).sort_values(
+        ["covered_ge10", "covered_ge5", "line2", "line3"], ascending=[False, False, True, True]
+    )
+    trios.insert(0, "genes_scored", len(mats[10]))
+    trios.insert(1, "k562_alone_ge10", int(mats[10]["K562"].sum()))
+    trios.to_csv(HERE / "coreceptor_host_line_trios.tsv", sep="\t", index=False)
+
+    # Genes the adopted rule adds to the library, in the gene_list_additions.tsv shape plus the
+    # evidence columns. Proposed only: the gene list changes when these rows are appended there.
+    m10 = mats[ADOPTED_TPM]
+    adds = genes[
+        genes["passes_other_gates"] & genes[f"ok: {ADOPTED}"] & ~genes["coreceptor_ok_now"]
+    ]
+    arows = []
+    for _, r in adds.iterrows():
+        lines = list(m10.columns[m10.loc[r["gene"]]])
+        arows.append({
+            "gene": r["gene"], "uniprot": r["uniprot"], "added": "", "decided_by": "Becca Carlson",
+            "source": "co-receptor gate restated 2026-11-21 (coreceptor_host_line.py; HPA v23 + "
+                      "ARCHS4 v2.5 panel consensus)",
+            "evidence": f"passes every other S1E3 gate; partners {r['partners_resolved']} are >= "
+                        f"{ADOPTED_TPM} TPM (or CPM equivalent) in {len(lines)} of 42 shortlist "
+                        f"lines: {', '.join(lines)}; median-rule limiting partner "
+                        f"{r['curated_median']:.1f} TPM",
+            "n_lines": len(lines), "in_house_or_ordered": ", ".join(x for x in lines if x in IN_HAND),
+            "displayable_in_k562": "K562" in lines,
+        })  # fmt: skip
+    pd.DataFrame(arows).sort_values(["n_lines", "gene"], ascending=[False, True]).to_csv(
+        HERE / "coreceptor_rule_additions_proposed.tsv", sep="\t", index=False
+    )
     calib.to_csv(HERE / "coreceptor_host_line_archs4_calibration.tsv", sep="\t", index=False,
                  float_format="%.3f")  # fmt: skip
     meta = {
-        "archs4": f"processed://{ARCHS4_KEY}",
+        "archs4": f"external://{ARCHS4_KEY}",
         "archs4_sha256": ARCHS4_SHA256,
         "archs4_cpm_cut_for_tpm": cpm_cut,
         "archs4_only_lines": archs4_only,

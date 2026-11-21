@@ -36,6 +36,7 @@ BUNDLE_PREFIX = "sprint4/s4e9-orf-design-fg-panel/pinned-inputs/rung-builds/"
 RUNGS = ("nterm", "multipass", "type3", "internal", "cterm")
 #: commit -> what was made from it
 COMMITS = {
+    "8432c0104c8fdaa57e78173d18fc5bb7064d91bd": "order of record 2026-11-21-snorkel-modules (cut in its PR)",
     "cde93c8cc8be6549578ecc1278f3b74b83c6ad5b": "order of record 2026-11-21-arm-linkers (cut in its PR)",
     "541c6c18d50c4da2c77a16122ba63aa22e9abf45": "order of record 2026-11-15-final-e (cut in its PR)",
     "4532a4d6374c1af156fa0ad7e69af208cb48bd7c": "order of record 2026-11-14-final-d (cut in its PR)",

@@ -1,10 +1,10 @@
 {
   "input_refs": {
-    "nterm": "cde93c8cc8be6549578ecc1278f3b74b83c6ad5b",
-    "multipass": "cde93c8cc8be6549578ecc1278f3b74b83c6ad5b",
-    "type3": "cde93c8cc8be6549578ecc1278f3b74b83c6ad5b",
-    "internal": "cde93c8cc8be6549578ecc1278f3b74b83c6ad5b",
-    "cterm": "cde93c8cc8be6549578ecc1278f3b74b83c6ad5b"
+    "nterm": "8432c0104c8fdaa57e78173d18fc5bb7064d91bd",
+    "multipass": "8432c0104c8fdaa57e78173d18fc5bb7064d91bd",
+    "type3": "8432c0104c8fdaa57e78173d18fc5bb7064d91bd",
+    "internal": "8432c0104c8fdaa57e78173d18fc5bb7064d91bd",
+    "cterm": "8432c0104c8fdaa57e78173d18fc5bb7064d91bd"
   },
   "input_sha256": {
     "constructs_l1_nterm.fasta": "faa9be3b86ce5211e73bfc5d0b42c41fca67dc6b727ba6257ab2dcab9e274bb7",
@@ -15,8 +15,8 @@
     "constructs_l1_type3.tsv": "0eb7755095e57fc2a0f5d1b9472d1e69deb7a4a4412c45c767ce0f329f2b38ef",
     "constructs_l1_internal.fasta": "aaa392d9704c4870138b5419c7d989144b584b3eaf5e55776c0888f737c327df",
     "constructs_l1_internal.tsv": "38c7f3af4dada1e18ad32e3ba2e84ecfbbd900d37a2b75bf9d4acc64e87a6a32",
-    "constructs_l1_cterm.fasta": "907c52b703f1b2c8a2c0379a022166a2763d42b8c8e3eff989d13b392df3f9a5",
-    "constructs_l1_cterm.tsv": "665d09ee6f594d2db3c7406ec64a37f4c8ce4a9aa6fcbb7cf469d3ac12aea8cb"
+    "constructs_l1_cterm.fasta": "efdadb4a76a035b08fee8be68129323d8636b025e276732f6eb1f567063a5ebd",
+    "constructs_l1_cterm.tsv": "3b7ead774beab8286e176805bb8e76b1d20deb1f3c8a983a57e6c459c5642112"
   },
   "inserts": 3255,
   "rules": {
@@ -49,19 +49,19 @@
     "before": 204,
     "after": 2
   },
-  "codons_recoded": 5320,
+  "codons_recoded": 5319,
   "inserts_recoded": 806,
   "members_recoded": 673,
   "members": 2673,
   "recodes_by_reason": {
     "gc50_cassette_end": 458,
-    "gc50": 4669,
+    "gc50": 4668,
     "direct_repeat": 179,
     "tn5_me": 14
   },
   "provisional_barcodes_checked": 3644,
   "provisional_barcodes_inside_an_insert": 0,
-  "recode_log_sha256": "27d59c4202fa06f160f4bb15b79caf451120a7bc5c8a187c8c2a855647427636",
-  "recoded_fasta": "processed://sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-21-arm-linkers/l1_order_inserts_recoded.fasta",
-  "recoded_fasta_sha256": "8b1c4ed327393214da27921f2de3a482f8b0cdac6e8808d1eefd44ae91ab8dd8"
+  "recode_log_sha256": "811140fbb5aec9ed6e253f5936d54853d72007c005a9487ea20548490a80b6e5",
+  "recoded_fasta": "processed://sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-21-snorkel-modules/l1_order_inserts_recoded.fasta",
+  "recoded_fasta_sha256": "66332be47f53968fadf1eb3953bae584d49393028d6d1c9c64eb0baa6e3623d5"
 }

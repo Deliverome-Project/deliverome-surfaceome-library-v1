@@ -1,7 +1,7 @@
 {
-  "order_of_record": "processed://sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-21-arm-linkers/l1_order_inserts_recoded.fasta",
-  "order_of_record_sha256": "8b1c4ed327393214da27921f2de3a482f8b0cdac6e8808d1eefd44ae91ab8dd8",
-  "refold_table": "analysis/sprint4/s4e9-orf-design-fg-panel/tag_refold_structures.tsv at cde93c8c (PR #301)",
+  "order_of_record": "processed://sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-21-snorkel-modules/l1_order_inserts_recoded.fasta",
+  "order_of_record_sha256": "66332be47f53968fadf1eb3953bae584d49393028d6d1c9c64eb0baa6e3623d5",
+  "refold_table": "analysis/sprint4/s4e9-orf-design-fg-panel/tag_refold_structures.tsv at 8432c010 (PR #301)",
   "inserts": 3255,
   "status": {
     "ok": 3255

@@ -1,7 +1,7 @@
 {
   "inserts": 3255,
   "inserts_source": "committed constructs_l1_*.fasta",
-  "inserts_sha256": "71794675539de33d0bf2c9be924f6bfb5963dd4fe917b35cf358e0dbd75504fe",
+  "inserts_sha256": "9b84aa8d491f59136ce1d16fa0746e2df4f27238b6e7941436edb5d9644da732",
   "cassette_encodings": "l1_arm_cassette_encodings.tsv",
   "checks": {
     "backbone": {
@@ -71,8 +71,8 @@
       "pass": 3255
     },
     "cassette_region_tract": {
-      "pass": 2525,
-      "warn": 730
+      "pass": 2634,
+      "warn": 621
     }
   },
   "pool_checks": {
@@ -86,10 +86,10 @@
   "largest_shared_cassette_group": 1,
   "cassette_region_tract_nt": {
     "median": 74.0,
-    "p90": 144.0,
-    "max": 164,
-    "max_insert": "l1-p0115-a3",
-    "over_swap_gate_other_gene": 730,
+    "p90": 111.79999999999973,
+    "max": 161,
+    "max_insert": "l1-p0698-a1",
+    "over_swap_gate_other_gene": 621,
     "window": "cassette \u00b1 150 nt, cut at the barcode slot"
   },
   "backbone_features_checked": [
@@ -109,8 +109,8 @@
     "ori"
   ],
   "runtime_s": {
-    "total": 19.8,
-    "tract": 11.4
+    "total": 20.0,
+    "tract": 11.7
   },
   "decided_by": "Becca, 2026-11-21 (\"we want the plasmid qc to run on the pool\")",
   "implemented_by": "Claude Code session l1-review-export-scope (pool QC fork)"

@@ -17,8 +17,10 @@ barcode stays unique per member.
 
 :data:`PREFIX_DNA` was encoded once on 2026-11-12 with ``seqtools.dnachisel_optimize``
 (human codon usage, no BbsI/Esp3I/BsaI, GC window, homopolymer limit, seed 20261112) and is
-pinned here, so a solver change cannot alter it. Every snorkel member shares it: their inserts
-differ upstream (the ORF) and downstream (the cassette's terminal block). Attribution: encoded
+pinned here, so a solver change cannot alter it. It is the encoding the cassette batches were
+issued against. Built arms no longer carry it: since 2026-11-21 each snorkel arm has its own
+module encoding (``diversify_snorkel_modules.py``, ``l1_snorkel_module_encodings.tsv``; Becca,
+2026-11-21: no shared linkers in the middle). Attribution: encoded
 by the Claude Code session l1-cterm-build (claude/l1-cterm-build-16eeeb, PR #284). Becca
 delegated the call on 2026-11-12, and no person decided this encoding.
 """

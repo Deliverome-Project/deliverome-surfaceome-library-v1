@@ -17,6 +17,9 @@ root and in `processed://sprint4/s4e9-orf-design-fg-panel/`:
 | `coreceptor_host_line_genes.tsv` | one row per gene the partner rule decides: partners; limiting-partner TPM (median, K562, best T, B and myeloid line); the number and names of shortlist lines where every partner clears 5 TPM; outcome under each rule |
 | `coreceptor_host_line_partners.tsv` | one row per listed partner string: resolution status, any symbol fix, Ensembl ID, TPM in each context, lines ≥ 5 TPM |
 | `coreceptor_host_line_options.tsv` | each candidate rule: genes kept, and the genes it adds or drops relative to the current gate |
+| `coreceptor_host_line_line_pass.tsv` | per gene and threshold (5, 10 TPM), pass (1) or fail (0) in each of the 42 shortlist lines: HPA for its 29, ARCHS4 at the calibrated CPM cut for the other 13 |
+| `coreceptor_rule_additions_proposed.tsv` | the 26 genes the adopted rule adds, in the `gene_list_additions.tsv` shape plus evidence: partners, the lines where they are present, which of those are in house or ordered |
+| `coreceptor_host_line_trios.tsv` | every K562 + two-line set, with the genes covered and the genes added beyond K562 at each threshold |
 | `figures/coreceptor_host_line.png` | the figure below |
 
 ## Inputs
@@ -25,7 +28,7 @@ root and in `processed://sprint4/s4e9-orf-design-fg-panel/`:
 |---|---|
 | Cell-line TPM | HPA 23.0 (released 2023-06-19, Ensembl 109) `rna_celline.tsv.zip`, pinned at `external://human-protein-atlas/2023-05/rna_celline.tsv.zip` (SHA-256 `e5b11779…`; the same bytes are also at `external://hpa/v23/`). The file in the v23 archive is byte-identical to the one HPA serves today under release 26.0. Its per-gene medians equal the gate's own table (`hpa_celline_per_gene.csv`, `ba9735fa…`) for every gene, so the gate was built from HPA v23. |
 | Screening shortlist | the 42 candidate lines of the cell-line panel experiment ([`panel.py`](../../sprint2/s2e18-cell-line-panel-selection/panel.py), `candidates()`). HPA v23 has 29 of them. Four are matched under another HPA name for the same Cellosaurus line: HEK293 for HEK293T (the parental line, as the panel experiment also reads it), BJ1-hTERT for BJ-5ta, Hep 3B2.1-7 for HEP3B and SUM159PT for SUM159. HPA lacks the other 13: GM12878, IMR-90, HUVEC, BEAS-2B, HK-2, AB8-13, hCMEC-D3, HMEC-1, EA.hy926, TeloHAEC, iPSC-astrocyte, HMEC and Ker-CT. |
-| Expression for the 13 lines HPA lacks | the panel experiment's ARCHS4 v2.5 consensus, `processed://scratch/becca/cell-line-selection/rnaseq_consensus_archs4.parquet` (SHA-256 `a3a789ac…`; log2(CPM + 1), gene symbols × 52 lines, all 42 shortlist lines included). Partners are reached through their Ensembl ID and HPA v23's name for it, so a renamed gene (CDC50A, which ARCHS4 calls TMEM30A) still joins; every partner of the 168 genes is measured. CPM is not TPM, so `coreceptor_host_line_archs4_calibration.tsv` compares HPA TPM ≥ t with ARCHS4 CPM ≥ c over the 29 shared lines and 20,067 genes; the cut with the highest Cohen's κ is used: 5 TPM ↔ 7 CPM (κ 0.83, 91% agreement) and 10 TPM ↔ 15 CPM (κ 0.76, 89%). Log-scale correlation between the two sources is 0.92. |
+| Expression for the 13 lines HPA lacks | the panel experiment's ARCHS4 v2.5 consensus, pinned append-only at `external://archs4/v2.5/cell-line-panel-consensus/2026-09-04/rnaseq_consensus_archs4.parquet` with its retained-sample list and a PROVENANCE.md (SHA-256 `a3a789ac…`; copied unchanged from `processed://scratch/becca/cell-line-selection/`; log2(CPM + 1), gene symbols × 52 lines, all 42 shortlist lines included). Partners are reached through their Ensembl ID and HPA v23's name for it, so a renamed gene (CDC50A, which ARCHS4 calls TMEM30A) still joins; every partner of the 168 genes is measured. CPM is not TPM, so `coreceptor_host_line_archs4_calibration.tsv` compares HPA TPM ≥ t with ARCHS4 CPM ≥ c over the 29 shared lines and 20,067 genes; the cut with the highest Cohen's κ is used: 5 TPM ↔ 7 CPM (κ 0.83, 91% agreement) and 10 TPM ↔ 15 CPM (κ 0.76, 89%). Log-scale correlation between the two sources is 0.92. |
 | Lines in house or on order | the 12 the panel experiment's README lists (K562, HEK293T and HeLa in house; U937, NALM6, SH-SY5Y, A549, HuH-7, hTERT-RPE1, U2OS, HK-2 and GM12878 ordered). HPA has 10 of them; HK-2 and GM12878 are missing. |
 | Lineage of each line | HPA v23 `rna_celline_description.tsv.zip`, pinned at `external://hpa/v23/rna_celline_description.tsv.zip`, using its disease subtype: T lymphoid (29 lines), B lymphoid (82, excluding myeloma) and myeloid leukemia (42: acute myeloid lines plus HMC-1). Lines HPA leaves without a subtype are assigned from Cellosaurus. K562 is kept out of all three groups. |
 | Genes and partners | the gene filter rerun offline over surfaceome release 1.3.0 (`library_pipeline.run_gene_filter`, which reproduces the 2,370-gene filter output) |
@@ -129,6 +132,30 @@ The genes the "≥ 2 shortlist lines or K562" rule adds, and where their partner
 - **The six DAP12-paired receptors sit at the K562 threshold.** TYROBP is 4.8 TPM in K562, so their
   K562 status turns on a single measurement just below 5.
 
+## Which two lines to add to K562
+
+A gene counts as covered by a set of lines when every partner it needs is present (≥ 10 TPM, or
+the ARCHS4 equivalent) in at least one line of the set. The table scores every K562 + two-line set
+from the 42 shortlist lines against the 163 genes that pass every other gate and have a partner
+other than themselves. K562 alone covers 43.
+
+| K562 + | Covered (≥ 10) | Beyond K562 | Covered (≥ 5) | Both lines in house or ordered |
+|---|---:|---:|---:|---|
+| **U937 + GM12878** | **68** | **25** | **70** | yes |
+| THP-1 + GM12878 | 68 | 25 | 70 | no |
+| Jurkat + GM12878 | 66 | 23 | 69 | no |
+| SH-SY5Y + GM12878 | 63 | 20 | 67 | yes |
+| A549 + GM12878, HEK293T + GM12878 | 62 | 19 | 65, 64 | yes |
+
+The best set uses two lines already on order. U937 adds the six DAP12-paired receptors, LILRA4,
+KLRK1 and ST14. GM12878 adds CD79B, the MHC class II chains, ITGAE, ITGA2B and GRIN1. Both add the
+β2 integrins. THP-1 adds the same genes as U937. Three caveats apply:
+
+- GM12878 is scored from ARCHS4 rather than HPA.
+- Four of its additions are the HLA-DRB loci, including DRB3, DRB4 and DRB5. These genes exist
+  only on some haplotypes, and read mapping blurs them, so they count for less than the rest.
+- The ranking counts partner presence only, not how easily each line transduces or screens.
+
 ## Partner lists mix three kinds of entry
 
 The gate requires **every** measurable partner to pass. A gene's partner list, however, can contain
@@ -168,6 +195,30 @@ MyGene's, and the gate now maps them to the intended gene (`final_library.PARTNE
 No gate outcome changes: each intended partner is itself below the threshold (CALCRL median 0.1,
 IGHM 0.3, TRAC 0.1 TPM). The pipeline's gene-list check (`library_pipeline.py verify --stage
 gene_list`) still yields the 2,369 library genes.
+
+## Decision
+
+Becca adopted this rule on 2026-11-21: a gene that needs obligate partners passes when every
+required partner, counting one per group of alternatives, is ≥ 10 TPM in at least 2 of the 42
+shortlist lines. HPA scores its 29 lines and ARCHS4 the other 13, at 15 CPM. There is no separate
+K562 clause.
+
+| | Genes |
+|---|---:|
+| current members kept | 48 of 48 |
+| added | 26 |
+| dropped | 0 |
+
+The 26 additions are ITGA2B, UPK3A, ITGAD, ITGAL, ITGAM, ITGAX, HLA-DPB1, CHRNB4, CNTNAP1, GRIN1,
+HLA-DRA, KLRK1, SLC51A, CD300LB, CD79B, GABBR1, HLA-DQA1, HLA-DQB1, ITGAE, LILRA4, NCR2, SCNN1B,
+SIGLEC16, SIRPB1, TREM1 and TREM2. RHD and RHCE are not added, because their partner RHAG is
+present only in K562. **None of the 26 is displayable in K562** at 10 TPM; GRIN1's best K562
+partner is 7.9 TPM. Three (SLC51A, GABBR1, SCNN1B) have no qualifying line in house or on order.
+The 26 enter the gene list only when they are appended to `gene_list_additions.tsv`, which
+starts the downstream library rebuild (reference ladder, CDS design, tag sites, barcodes). That
+step is coordinated with the library order; it has not been taken here.
+
+The earlier recommendations below led to this decision.
 
 ## Recommendation
 

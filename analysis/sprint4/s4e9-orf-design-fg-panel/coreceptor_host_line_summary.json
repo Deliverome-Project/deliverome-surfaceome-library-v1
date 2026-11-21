@@ -1,5 +1,5 @@
 {
-  "archs4": "processed://scratch/becca/cell-line-selection/rnaseq_consensus_archs4.parquet",
+  "archs4": "external://archs4/v2.5/cell-line-panel-consensus/2026-09-04/rnaseq_consensus_archs4.parquet",
   "archs4_sha256": "a3a789acdd51c440d536c52e61ec440ddd5d3b5e8f24f3a185d7703b78e56ee1",
   "archs4_cpm_cut_for_tpm": {
     "5": 7.0,

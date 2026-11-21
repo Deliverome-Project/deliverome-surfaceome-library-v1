@@ -473,6 +473,7 @@ def verify_cterm_review(work: Path) -> str:
 
 
 def verify_cterm_arms(work: Path) -> str:
+    run([str(HERE / "diversify_snorkel_modules.py"), "--check"], HERE)
     run([str(HERE / "build_l1_cterm_arms.py"), "--check"], HERE)
     return (
         "every C-terminal-rung arm rebuilds byte for byte: protein = native[:n] + cassette + "
@@ -928,7 +929,9 @@ STAGES = [
         "each C-terminal member's insert: domesticated ORF + its issued cassette + TAA, in "
         "the p003 layout and Esp3I wrapper (barcode slot a placeholder until issue #1)",
         "build_l1_cterm_arms.py",
-        "candidate_constructs.json, l1_cassette_encodings.tsv, l1_cterm_review.tsv, p0039",
+        "candidate_constructs.json, l1_cassette_encodings.tsv, l1_snorkel_module_encodings.tsv "
+        "(each snorkel arm's own module DNA, diversify_snorkel_modules.py), l1_cterm_review.tsv, "
+        "p0039",
         "verified",
         verify=verify_cterm_arms,
     ),

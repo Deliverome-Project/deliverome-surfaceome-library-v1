@@ -236,6 +236,9 @@ def load_members(with_retired_holders: bool = False) -> tuple[list[dict], list[s
             cid in reserved_snorkels
         )
         if snorkel:
+            # The flank its cassette batches were issued against. Built snorkel arms carry a
+            # per-arm module since 2026-11-21 (l1_snorkel_module_encodings.tsv); the cassette sits
+            # after it either way, and replaying the batches needs the issuance-time flank.
             body = body + l1_snorkel.PREFIX_DNA
         if placement == "C-terminal":
             body, edit = domesticate_junction(body)

@@ -1,7 +1,7 @@
 {
-  "main": "cde93c8cc8be6549578ecc1278f3b74b83c6ad5b",
-  "tag": "2026-11-21-arm-linkers",
-  "fasta_key": "sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-21-arm-linkers/l1_order_inserts_recoded.fasta",
-  "fasta_sha256": "8b1c4ed327393214da27921f2de3a482f8b0cdac6e8808d1eefd44ae91ab8dd8",
-  "published_from": "aafdc7e0d7f558025caac8a83e71856c521109bc"
+  "main": "8432c0104c8fdaa57e78173d18fc5bb7064d91bd",
+  "tag": "2026-11-21-snorkel-modules",
+  "fasta_key": "sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-21-snorkel-modules/l1_order_inserts_recoded.fasta",
+  "fasta_sha256": "66332be47f53968fadf1eb3953bae584d49393028d6d1c9c64eb0baa6e3623d5",
+  "published_from": "3b00f73ea842a69150738bdabd9c7cdbd79b9436"
 }

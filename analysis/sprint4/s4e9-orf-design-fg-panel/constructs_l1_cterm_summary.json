@@ -42,7 +42,7 @@
   },
   "junction_edits": {},
   "type_iis": "every insert: 2 Esp3I (wrapper), 0 BbsI, 0 BsaI; in p0039: backbone's 4 + 2",
-  "inserts_with_cassette_features": 86,
+  "inserts_with_cassette_features": 42,
   "insert_nt_range": [
     596,
     4961

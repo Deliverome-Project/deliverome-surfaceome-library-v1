@@ -10,11 +10,11 @@ still being worked on before the order are tracked in the
 
 You need [uv](https://docs.astral.sh/uv/) and the frozen input bundle, attached to this
 repository's release
-[`bundle-2026-11-21`](https://github.com/Deliverome-Project/l1-library-review/releases/tag/bundle-2026-11-21)
-as two tarballs. `l1-reviewer-bundle-2026-11-21.tar.gz` holds the 3,123 files the rerun reads
-(1.38 GB, SHA-256 `9b4356cdd6bab64a22e6dc4ae22c1451894ea0d10baafc44bb01bc84c32d1695`).
-`l1-pinned-releases-2026-11-21.tar` holds the rest of every pinned release, for inspection only
-(248 files, 1.65 GB, SHA-256 `c1d36285f157e24a8a1f3a7fe0825184adf9cf97f600372e317fde256133a37e`).
+[`bundle-2026-11-21b`](https://github.com/Deliverome-Project/l1-library-review/releases/tag/bundle-2026-11-21b)
+as two tarballs. `l1-reviewer-bundle-2026-11-21b.tar.gz` holds the 3,125 files the rerun reads
+(1.38 GB, SHA-256 `f34eb18f6d99beafc6607798b3bb12ffdafa54eb94e406566de453b4d43924ac`).
+`l1-pinned-releases-2026-11-21b.tar` holds the rest of every pinned release, for inspection only
+(251 files, 1.85 GB, SHA-256 `88757386561c991e30591c703447fc6b328f64831927797db629a9cacee0c645`).
 After the download, no credentials or network access are used.
 
 **Where the data lives.** Every bundle file has one listed home in
@@ -31,17 +31,17 @@ The release tarballs alone are enough to rerun everything; the public bucket and
 for reading or citing individual files without them.
 
 ```bash
-gh release download bundle-2026-11-21 --repo Deliverome-Project/l1-library-review --dir ..
+gh release download bundle-2026-11-21b --repo Deliverome-Project/l1-library-review --dir ..
 ```
 
 ```bash
-mkdir ../l1-reviewer-bundle && tar -xf ../l1-reviewer-bundle-2026-11-21.tar.gz -C ../l1-reviewer-bundle
+mkdir ../l1-reviewer-bundle && tar -xf ../l1-reviewer-bundle-2026-11-21b.tar.gz -C ../l1-reviewer-bundle
 ```
 
 To inspect the full releases as well, unpack the second tarball into the same folder:
 
 ```bash
-tar -xf ../l1-pinned-releases-2026-11-21.tar -C ../l1-reviewer-bundle
+tar -xf ../l1-pinned-releases-2026-11-21b.tar -C ../l1-reviewer-bundle
 ```
 
 ```bash
