@@ -59,6 +59,7 @@ import os
 import time
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Any
 
 import numpy as np
 import pandas as pd
@@ -66,6 +67,9 @@ import pyarrow as pa
 import pyarrow.parquet as pq
 
 from deliverome_analysis.peptide_metrics import GAUSSIAN_BASE_PER_FWHM  # one definition
+
+StrPath = str | os.PathLike[str]
+RunInfo = dict[str, dict[str, Any]]  # run -> fields from the search record (search_run_info)
 
 COLUMNS = {
     "raw.name": "run",
@@ -118,7 +122,7 @@ class AlphaDIATrimResult:
     seconds: float
 
 
-def find_precursor_table(alphadia_dir: str | os.PathLike) -> Path:
+def find_precursor_table(alphadia_dir: StrPath) -> Path:
     """alphaDIA's precursor table in ``alphadia_dir`` (parquet preferred over tsv)."""
     d = Path(alphadia_dir)
     for name in ("precursors.parquet", "precursors.tsv"):
@@ -127,7 +131,7 @@ def find_precursor_table(alphadia_dir: str | os.PathLike) -> Path:
     raise FileNotFoundError(f"No precursors.parquet or precursors.tsv in {d}")
 
 
-def is_alphadia_output(path: str | os.PathLike) -> bool:
+def is_alphadia_output(path: StrPath) -> bool:
     """True when ``path`` is a folder holding an alphaDIA 2.x precursor table."""
     try:
         table = find_precursor_table(path)
@@ -138,7 +142,7 @@ def is_alphadia_output(path: str | os.PathLike) -> bool:
 
 def _columns(path: Path) -> list[str]:
     if path.suffix == ".parquet":
-        return pq.read_schema(path).names
+        return list(pq.read_schema(path).names)
     return list(pd.read_csv(path, sep="\t", nrows=0).columns)
 
 
@@ -157,12 +161,13 @@ def precursor_ids(
     return seq + tag + "." + charge.astype(int).astype(str)
 
 
-def search_run_info(alphadia_dir: str | os.PathLike) -> dict[str, dict]:
+def search_run_info(alphadia_dir: StrPath) -> RunInfo:
     """Per run: acquisition (raw header) and search library, from the runner's benchmark.json.
 
     deliverome-internal's ``run_benchmark.py`` writes ``benchmark.json`` next to the alphaDIA
-    output folder. Returns ``{run: {acquired, instrument_*, file_bytes, run_uid,
-    search_library, search_library_sha256}}`` (run = raw file stem, as in ``raw.name``), or
+    output folder. Returns ``{run: {acquired, instrument_*, file_bytes, search_raw_sha256,
+    search_raw_bytes, run_uid, search_library, search_library_sha256}}`` (run = raw file
+    stem, as in ``raw.name``; ``search_raw_*`` = the raw file the search read), or
     ``{}`` when there is no record. Lets a QC page carry the same acquisition key
     (instrument serial | acquisition time) as the search index without reading raw files.
     Also carries the run's cycle time (raw method) and, from ``alphadia/stat.tsv``, the MS2/MS1
@@ -172,12 +177,12 @@ def search_run_info(alphadia_dir: str | os.PathLike) -> dict[str, dict]:
     record_path = Path(alphadia_dir).parent / "benchmark.json"
     if not record_path.exists():
         return {}
-    stats = {}
+    stats: dict[str, dict[str, float | None]] = {}
     stat_path = Path(alphadia_dir) / "stat.tsv"
     if stat_path.exists():  # alphaDIA's per-run search statistics: mass calibration, tolerances
         for _, row in pd.read_csv(stat_path, sep="\t").iterrows():
 
-            def num(col, row=row):
+            def num(col: str, row: Any = row) -> float | None:
                 v = row.get(col)
                 return float(v) if v is not None and pd.notna(v) else None
 
@@ -191,12 +196,15 @@ def search_run_info(alphadia_dir: str | os.PathLike) -> dict[str, dict]:
             }
     rec = json.loads(record_path.read_text())
     lib = rec.get("library") or {}
-    out = {}
+    out: RunInfo = {}
     for item in rec.get("inputs", []):
         acq = item.get("acquisition") or {}
         out[Path(item["path"]).stem] = {
             **acq,
             "file_bytes": item.get("bytes"),
+            # the file the search actually read, checked against raw:// by the QC index
+            "search_raw_sha256": item.get("sha256"),
+            "search_raw_bytes": item.get("bytes"),
             "run_uid": item.get("run_uid"),
             "search_library": Path(lib["path"]).name if lib.get("path") else "predicted",
             "search_library_sha256": lib.get("sha256"),
@@ -207,8 +215,8 @@ def search_run_info(alphadia_dir: str | os.PathLike) -> dict[str, dict]:
 
 
 def trim_alphadia_output(
-    alphadia_dir: str | os.PathLike | list[str | os.PathLike],
-    out_dir: str | os.PathLike,
+    alphadia_dir: StrPath | list[StrPath] | tuple[StrPath, ...],
+    out_dir: StrPath,
     q_cutoff: float = 0.01,
     *,
     conditions: dict[str, str] | None = None,
@@ -259,8 +267,8 @@ def trim_alphadia_output(
     )
     if df.duplicated(["precursor", "run"]).any():
         raise ValueError("alphaDIA output has duplicate (precursor, run) rows after filtering")
-    notes = []
-    run_info: dict[str, dict] = {}
+    notes: list[str] = []
+    run_info: RunInfo = {}
     for d in dirs:
         run_info |= search_run_info(d)
     cycle = {r: v.get("cycle_time_s") for r, v in run_info.items() if v.get("cycle_time_s")}

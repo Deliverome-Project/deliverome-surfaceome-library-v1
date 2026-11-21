@@ -100,7 +100,7 @@ filter ([`final_library.py`](../../../sprint1/s1e3-surface-library-filters/final
 
 Two qualifications on the gates above, which the rows are too narrow to carry. A partner the catalog names only as free text, or one absent from the HPA matrix, is dropped from the co-receptor test rather than failing the gene, so a gene passes when at least one partner resolves and every resolving partner clears 5. And the expression gate reads four pinned tables, all of them in the reviewer bundle: the Deliverome compilation of GTEx v10, HPA and TCGA at `external://expression-tpm/deliverome-internal-5a1416ea/genomewide_expression_tpm.csv` (SHA-256 `9d098e07…`), its re-derivation at `external://expression-tpm/rederived-2026-08-04/genomewide_expression_tpm_rederived.csv` (`6f2d04e6…`), and the per-gene HPA cell-line median the co-receptor gate reads at `external://expression-tpm/rederived-2026-08-04/hpa_celline_per_gene.csv` (`ba9735fa…`). Each file is listed with its hash in [`bundle_manifest.tsv`](bundle_manifest.tsv). Which HPA release those tables were built from is not recorded, and we could not recover it.
 
-Genes that pass every gate above make up the core: **2,133** genes. Three further groups enter
+Genes that pass every gate above make up the core: **2,134** genes. Three further groups enter
 as named tiers, each with its own rule, because each has direct evidence of surface expression
 that the gates miss:
 
@@ -167,8 +167,8 @@ filter never tested.
 rather than restating it, and a test asserts that the gate named for a gene agrees with that
 gene's membership, so the table cannot drift from the decision it documents.
 
-The filter passes **2,369** genes (core 2,133 plus the three tiers), after one recorded
-removal:
+The filter passes **2,370** genes (core 2,134 plus the three tiers). One gene is then
+removed, leaving the **2,369** genes of the library:
 
 - One gene is **removed** ([`gene_list_exclusions.tsv`](../gene_list_exclusions.tsv)):
   EPPIN. It entered on the GPI term of the anchoring gate and on nothing else — its canonical

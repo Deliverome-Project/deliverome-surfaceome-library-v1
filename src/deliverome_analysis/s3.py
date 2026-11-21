@@ -460,6 +460,23 @@ class _ReadBucket:
                 return None
             raise
 
+    def head(self, key: str) -> dict[str, Any] | None:
+        """The object's S3 HEAD response (``ContentLength``, ``ETag``, ``Metadata``...), or None.
+
+        None means the object does not exist (404). Any other failure (no permission,
+        network) raises, so a caller can tell "absent" from "could not check". Not available
+        in an offline mirror, which has no S3 metadata.
+        """
+        if self._mirror_path(key) is not None:
+            raise RuntimeError("head is not available in an offline mirror")
+        try:
+            return self._head(key)
+        except Exception as exc:
+            code = str(getattr(exc, "response", {}).get("Error", {}).get("Code", ""))
+            if code in {"404", "NoSuchKey", "NotFound"}:
+                return None
+            raise
+
     def _head(self, key: str) -> dict[str, Any]:
         return self._client_factory().head_object(Bucket=self._name, Key=key)
 
@@ -558,6 +575,31 @@ class _WritableBucket(_ReadBucket):
         with local.open("rb") as body:
             client().put_object(Bucket=self._name, Key=key, Body=body, **extra)
         return key
+
+    def _check_key(self, key: str, verb: str) -> None:
+        if not (
+            key.startswith(_PROCESSED_KEY_EXEMPT_PREFIXES) or _PROCESSED_KEY_PATTERN.match(key)
+        ):
+            raise ValueError(f"refusing to {verb} processed://{key!r}: not an allowed key")
+        _refuse_write_in_mirror(key)
+
+    def copy(self, src_key: str, dst_key: str) -> str:
+        """Server-side copy of ``src_key`` to ``dst_key`` in this bucket (any size; metadata,
+        including the provenance stamp, is kept). Returns ``dst_key``."""
+        self._check_key(dst_key, "copy to")
+        client().copy(
+            {"Bucket": self._name, "Key": src_key},
+            self._name,
+            dst_key,
+            ExtraArgs={"MetadataDirective": "COPY"},
+        )
+        return dst_key
+
+    def delete(self, key: str) -> None:
+        """Delete ``key``. processed:// is versioned, so the previous version stays
+        recoverable; prefer moving (copy, then delete) over deleting results outright."""
+        self._check_key(key, "delete")
+        client().delete_object(Bucket=self._name, Key=key)
 
     def __repr__(self) -> str:
         return f"<S3 read+write bucket {self._name!r}>"

@@ -546,6 +546,8 @@ class _Ctx:
         self.history = history  # qcdb latest_run_metrics (earlier runs), or None
         self._surface = None
         self._diag = None
+        self._peptide_metrics: dict | None = None  # per run, computed once (_peptide_metrics)
+        self.peptide_metric_names: frozenset[str] = frozenset()  # set by run_metrics
         self.order = qc.run_order(prec)
         self.cond = prec.groupby("run")["condition"].first()
         self.labels = qc.run_labels(self.order, self.cond)
@@ -1152,12 +1154,35 @@ def _history_frame(ctx: _Ctx) -> pd.DataFrame:
         mine = {run_uid({"run": r, **((found.get(r) or {}).get("info") or {})}) for r in ctx.order}
         key = h["run_uid"] if "run_uid" in h else "name:" + h["run"]
         h = h[~key.isin(mine)].assign(current=False)
+        h = h[_same_definitions(h, run_metrics_names(ctx))]
         frames.append(
             h.rename(columns={"acquired": "when"})[["run", "metric", "value", "when", "current"]]
         )
     out = pd.concat(frames, ignore_index=True).dropna(subset=["when"])
     out["when"] = pd.to_datetime(out["when"], errors="coerce", utc=True, format="ISO8601")
     return out.dropna(subset=["when"])
+
+
+def run_metrics_names(ctx: _Ctx) -> frozenset[str]:
+    """Metric names this page takes from peptide_metrics (computes run_metrics if needed)."""
+    if ctx._peptide_metrics is None:
+        run_metrics(ctx)
+    return ctx.peptide_metric_names
+
+
+def _same_definitions(h: pd.DataFrame, versioned: frozenset[str]) -> pd.Series:
+    """Rows of the index that may share a plot with this page's values.
+
+    A metric this page takes from peptide_metrics (``versioned``) is shown only for earlier
+    runs computed under the same ``DEFINITIONS_VERSION``; records from before versioning
+    (NULL) are left out because their definitions are unknown. Other metrics always show.
+    """
+    from deliverome_analysis import peptide_metrics as pm
+
+    if "definitions_version" not in h:
+        return ~h["metric"].isin(versioned)
+    v = h["definitions_version"]
+    return ~h["metric"].isin(versioned) | (v == pm.DEFINITIONS_VERSION) | (v == "")
 
 
 def _fig_history(ctx: _Ctx, m: Metric) -> dict | None:
@@ -1965,6 +1990,7 @@ font-size:22px;cursor:pointer;color:var(--muted)}
 #inspector dt{color:var(--muted)}#inspector dd{margin:0;font-variant-numeric:tabular-nums}
 .mono{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;word-break:break-all}
 .hint-bar{font-size:12.5px;color:var(--muted);margin:10px 0 0}
+.raw-warning{background:var(--amber-tint);color:var(--warn);padding:10px 14px;border-radius:var(--radius-sm)}
 .info{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;
 border:1px solid var(--muted-soft);color:var(--muted);font:600 10.5px var(--sans);cursor:help;position:relative;
 vertical-align:1px;margin-left:4px}
@@ -2132,11 +2158,14 @@ def build_dashboard_html(
     ann: pd.DataFrame | None = None,
     chrom: dict | None = None,
     history: pd.DataFrame | None = None,
+    raw_provenance: dict[str, str] | None = None,
 ) -> tuple[str, pd.DataFrame]:
     """HTML for one layout plus the coverage table (section, panel, status, reason).
 
     ``names`` optionally maps protein id -> display name for the explorer (display only;
-    nothing joins on it).
+    nothing joins on it). ``raw_provenance`` maps run -> status from
+    :mod:`deliverome_analysis.raw_provenance` (was the searched raw file the archived one?):
+    shown as a "raw file" column, with a warning above the run table for any problem status.
     """
     spec = layout if isinstance(layout, dict) else load_layout(layout)
     ctx = _Ctx(prec, groups, limpa_result, ann=ann, chrom=chrom, history=history)
@@ -2251,6 +2280,21 @@ def build_dashboard_html(
     n_shown = int((coverage["status"] == "shown").sum())
 
     summary = ctx.summary.copy()
+    raw_warning = ""
+    if raw_provenance:
+        from deliverome_analysis.raw_provenance import PROBLEM_STATUSES
+
+        summary["raw file"] = [raw_provenance.get(r, "unknown") for r in summary.index]
+        bad = [r for r in summary.index if raw_provenance.get(r) in PROBLEM_STATUSES]
+        if bad:
+            raw_warning = (
+                "<p class='raw-warning'><strong>Raw file check failed for "
+                f"{len(bad)} run(s):</strong> "
+                + ", ".join(f"{html.escape(ctx.labels[r])} ({raw_provenance[r]})" for r in bad)
+                + ". Their search read a file that differs from the copy on raw:// (or there"
+                " is none), so these numbers may not describe the archived acquisition."
+                " Re-search them from the archived file.</p>"
+            )
     summary.index = [ctx.labels[r] for r in summary.index]
     summary = summary.drop(columns=[c for c in ("condition",) if summary[c].nunique() < 2])
     cov_tbl = coverage.assign(
@@ -2298,7 +2342,7 @@ def build_dashboard_html(
 precursors · {n_shown} of {len(coverage)} panels shown{engine}</div>
 <p class="hint-bar">Click any point, bar or table row to open its details on the right.</p></header>
 <nav class="toc"><a href="#runs">Runs</a>{nav}</nav><main>
-<section id="runs"><h2>Runs</h2><div class='scroll'><table id='run-tbl'><tr>{run_head}</tr>{run_rows}</table></div>
+<section id="runs"><h2>Runs</h2>{raw_warning}<div class='scroll'><table id='run-tbl'><tr>{run_head}</tr>{run_rows}</table></div>
 <details><summary>Coverage: what this export can and cannot show</summary>
 <div class="scroll"><table><tr><th>Section</th><th>Panel</th><th>Status</th><th>Needs</th></tr>
 {cov_rows}</table></div></details></section>
@@ -2386,9 +2430,12 @@ def run_metrics(ctx: _Ctx) -> pd.DataFrame:
                     name = f"{key}_{t.replace(' / ', '_').replace(' ', '_')}"
                     for run, v in surf[key][t].items():
                         add(run, name, v)
+    before = len(rows)
     for run, rec in _peptide_metrics(ctx, z).items():
         for k, v in rec.flat().items():
             add(run, k, v)
+    # the names whose values on this page come from peptide_metrics (first source wins above)
+    ctx.peptide_metric_names = frozenset(m for _, m, _ in rows[before:])
     if ctx.chrom and ctx.chrom.get("scans") is not None:
         d = ctx.diagnosis
         for col in d.columns:
@@ -2404,8 +2451,11 @@ def _peptide_metrics(ctx: _Ctx, charge: pd.Series) -> dict:
     variants). FASTA-based ones only when the page has surface annotation (needs S3 anyway)."""
     from deliverome_analysis import peptide_metrics as pm
 
+    if ctx._peptide_metrics is not None:
+        return ctx._peptide_metrics
     p = ctx.prec
     if "peptide" not in p:
+        ctx._peptide_metrics = {}
         return {}
     tiers = ref = None
     if ctx.ann is not None:
@@ -2420,10 +2470,34 @@ def _peptide_metrics(ctx: _Ctx, charge: pd.Series) -> dict:
             "protein_group": p["protein"].astype(str),
         }
     )
-    return {
+    ctx._peptide_metrics = {
         run: pm.run_metrics(d.drop(columns="run"), run=str(run), tiers=tiers, reference=ref)
         for run, d in df.groupby("run")
     }
+    return ctx._peptide_metrics
+
+
+def _metric_definitions(ctx: _Ctx) -> dict:
+    """The peptide-metric definitions version and digest rules this page's numbers used, and
+    which metric names came from :mod:`deliverome_analysis.peptide_metrics` (call after
+    :func:`run_metrics`).
+
+    Every run of a page is computed under one set (one reference, one code version); a page
+    without peptide sequences still records the code's version and default rules.
+    """
+    from deliverome_analysis import peptide_metrics as pm
+
+    z = pd.to_numeric(ctx.prec["precursor"].str.rsplit(".", n=1).str[-1], errors="coerce")
+    seen = {json.dumps(r.definitions(), sort_keys=True) for r in _peptide_metrics(ctx, z).values()}
+    if len(seen) > 1:
+        raise ValueError(f"runs of one page computed under different definitions: {seen}")
+    names = {"metrics": sorted(ctx.peptide_metric_names)}
+    if seen:
+        return json.loads(seen.pop()) | names
+    return pm.RunPeptideMetrics(
+        run="", protein_groups=0, precursors=0, peptides=0, proteins_2plus_peptides=0,
+        missed_cleavage_pct=0,
+    ).definitions() | names  # fmt: skip
 
 
 def qc_record(
@@ -2460,6 +2534,8 @@ def qc_record(
         "file_bytes",
         "search_library",
         "search_library_sha256",
+        "search_raw_sha256",
+        "search_raw_bytes",
     )
     runs = []
     for r in ctx.order:
@@ -2510,6 +2586,9 @@ def qc_record(
                 pkg: md.version(pkg) for pkg in ("deliverome-analysis", "pandas", "numpy", "duckdb")
             },
             "limpa": lim,
+            # under which peptide-metric definitions the numbers were computed (qcdb keeps
+            # records of different versions apart; see peptide_metrics.DEFINITIONS_VERSION)
+            "peptide_metrics": _metric_definitions(ctx),
             "runs": runs,
             "metrics": [list(t) for t in m.itertuples(index=False)],
             "diagnosis": diagnosis,
@@ -2593,6 +2672,7 @@ def dia_qc_dashboard(
     chromatography_dir: str | os.PathLike | None = None,
     surface: bool | pd.DataFrame = True,
     history: bool | pd.DataFrame = True,
+    raw_provenance: bool | dict[str, str] = True,
 ) -> tuple[Path, pd.DataFrame]:
     """Write the dashboard for one layout and (by default) open it in the browser.
 
@@ -2606,6 +2686,8 @@ def dia_qc_dashboard(
     a ready :func:`deliverome_analysis.dia_qc.surface_annotation` table, or False.
     ``history``: earlier runs for the "Runs over time" panel, from the shared QC index
     (:mod:`deliverome_analysis.qcdb`, needs S3), or a ``latest_run_metrics`` frame, or False.
+    ``raw_provenance``: for an alphaDIA trim, check each run's searched raw file against the
+    copy on raw:// via the search index (needs S3), or pass ``{run: status}``, or False.
     Also writes ``<page>.qcrecord.json``, the record the index is built from.
     """
     if (report is None) == (matrix_dir is None):
@@ -2641,6 +2723,14 @@ def dia_qc_dashboard(
             con.close()
         except Exception as exc:  # no index yet, or offline: the panel shows this page only
             print(f"QC history unavailable ({type(exc).__name__}); showing this page's runs only")
+    provenance = raw_provenance if isinstance(raw_provenance, dict) else None
+    if raw_provenance is True and any(v.get("search_raw_sha256") for v in run_info.values()):
+        try:
+            from deliverome_analysis import qcdb
+
+            provenance = qcdb.raw_provenance_of_runs(run_info)
+        except Exception as exc:  # no index yet, or offline: the column is left out
+            print(f"raw file check unavailable ({type(exc).__name__}); no raw file column")
     chrom = None
     if chromatography_dir is not None:
         from deliverome_analysis import raw_chromatography as rc
@@ -2659,6 +2749,7 @@ def dia_qc_dashboard(
         ann=ann,
         chrom=chrom,
         history=hist,
+        raw_provenance=provenance,
     )
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(page)

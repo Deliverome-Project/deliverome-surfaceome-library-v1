@@ -31,6 +31,30 @@ Definitions
   one gene count as one gene), using the search's own digest rules (missed cleavages included).
 - **Surface**: accessible-surfaceome tier canonical or likely (the repo default), by the lead
   accession's base (isoform suffix stripped).
+
+Versioning
+----------
+:data:`DEFINITIONS_VERSION` names the definitions above as implemented here. Every
+:class:`RunPeptideMetrics` carries it together with the :class:`DigestRules` it was computed
+under, and so does every QC record (and ``dia_qc.sqlite``), so numbers computed under
+different definitions are never compared silently. Bump it in the same commit as the change:
+
+- **MAJOR** whenever the same input can give a different number for an existing metric: a new
+  or changed rule (a residue mass, the cleavage rule, what counts as detectable, how coverage
+  is aggregated), or a changed default (of :class:`DigestRules` or of :func:`run_metrics`).
+- **MINOR** when a metric is added and no existing value changes.
+- **PATCH** for changes with no numeric effect (documentation, typing, speed).
+
+Then regenerate the golden expected metrics deliberately, in the same commit
+(``uv run --locked python tests/fixtures/golden_metrics/regenerate.py expected``; see
+``tests/test_golden_metrics.py``), and review that every changed number is explained.
+
+Changelog (all on 2026-11-18, before versioning existed; records from that day carry no
+version and cannot be told apart, so treat unversioned records as unknown definitions):
+
+- 1.0.0 (01055b2f) first shared definitions.
+- 2.0.0 (ab1c8eb5) detectable peptides exclude N-glycosylation sequons by default.
+- 3.0.0 (62c606d6) sequon exclusion is opt-in again (``exclude_glyco_sequons=False``).
 """
 
 from __future__ import annotations
@@ -40,11 +64,19 @@ import re
 from collections import defaultdict
 from collections.abc import Iterable, Mapping
 from dataclasses import dataclass, field
+from typing import Final
 
 import numpy as np
 import pandas as pd
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
+DEFINITIONS_VERSION: Final = "3.0.0"
+"""Semantic version of the metric definitions in this module (see "Versioning" above).
+
+Bump MAJOR for any change in how an existing metric is computed (the 2026-11-18 flip of the
+sequon-exclusion default was one), MINOR for an added metric, PATCH for no numeric effect.
+"""
+SEMVER_PATTERN: Final = r"^\d+\.\d+\.\d+$"
 GAUSSIAN_BASE_PER_FWHM = 1.699  # 4 sigma / (2 sqrt(2 ln 2) sigma)
 PROTON = 1.007276
 WATER = 18.010565
@@ -91,11 +123,17 @@ class DigestRules(BaseModel):
 
 
 class RunPeptideMetrics(BaseModel):
-    """One run's identification metrics (see the module docstring for every definition)."""
+    """One run's identification metrics (see the module docstring for every definition).
+
+    ``definitions_version`` and ``digest_rules`` say under which definitions and rules the
+    numbers were computed; :meth:`flat` leaves them out, :meth:`definitions` returns them.
+    """
 
     model_config = ConfigDict(frozen=True, extra="forbid")
 
     run: str
+    definitions_version: str = Field(DEFINITIONS_VERSION, pattern=SEMVER_PATTERN)
+    digest_rules: DigestRules = Field(default_factory=DigestRules)
     protein_groups: int = Field(ge=0)
     precursors: int = Field(ge=0)
     peptides: int = Field(ge=0)
@@ -129,12 +167,30 @@ class RunPeptideMetrics(BaseModel):
     def flat(self) -> dict[str, float]:
         """Numeric metrics as ``{name: value}`` for a QC record (None values left out)."""
         out: dict[str, float] = {}
-        for k, v in self.model_dump(exclude={"run", "points_per_peak_by_tier"}).items():
+        for k, v in self.model_dump(exclude=set(_NOT_NUMERIC)).items():
             if v is not None:
                 out[k] = float(v)
         for t, v in self.points_per_peak_by_tier.items():
             out[f"points_per_peak_{tier_key(t)}"] = float(v)
         return out
+
+    def definitions(self) -> dict[str, object]:
+        """``{"definitions_version": ..., "digest_rules": {...}}`` (JSON-ready) for a record."""
+        return {
+            "definitions_version": self.definitions_version,
+            "digest_rules": self.digest_rules.model_dump(mode="json"),
+        }
+
+
+_NOT_NUMERIC: Final = frozenset(
+    {"run", "definitions_version", "digest_rules", "points_per_peak_by_tier"}
+)
+
+
+def metric_names() -> frozenset[str]:
+    """Every name :meth:`RunPeptideMetrics.flat` can produce (the metrics this module defines)."""
+    fields = set(RunPeptideMetrics.model_fields) - _NOT_NUMERIC
+    return frozenset(fields | {f"points_per_peak_{tier_key(t)}" for t in TIERS})
 
 
 def tier_key(tier: str) -> str:
@@ -266,17 +322,23 @@ def run_metrics(
     tiers: Mapping[str, str] | None = None,
     cycle_time_s: float | None = None,
     reference: ProteinReference | None = None,
+    rules: DigestRules | None = None,
 ) -> RunPeptideMetrics:
     """Metrics of one run's identified target precursors (already FDR-filtered).
 
     ``prec`` columns: ``sequence`` (stripped), ``mods``, ``charge``, ``protein_group`` (lead
     accession first, ``;``-joined), optionally ``fwhm_s``. ``tiers`` maps base accession ->
     surfaceome tier; without it the surface metrics are None. ``reference`` adds gene-unique
-    peptides and coverage; ``cycle_time_s`` adds points per peak.
+    peptides and coverage; ``cycle_time_s`` adds points per peak. The digest rules recorded
+    with the result are ``reference.rules``, else ``rules``, else the defaults; giving both
+    ``reference`` and different ``rules`` is an error.
     """
     missing = [c for c in PRECURSOR_COLUMNS if c not in prec]
     if missing:
         raise ValueError(f"missing columns {missing}")
+    if reference is not None and rules is not None and rules != reference.rules:
+        raise ValueError("rules differ from the reference's rules")
+    used = reference.rules if reference is not None else (rules or DigestRules())
     p = prec.copy()
     p["lead"] = p["protein_group"].astype(str).str.split(";").str[0]
     p["tier"] = (
@@ -297,6 +359,8 @@ def run_metrics(
 
     values: dict[str, object] = {
         "run": run,
+        "definitions_version": DEFINITIONS_VERSION,
+        "digest_rules": used,
         "protein_groups": len(groups),
         "precursors": len(p.drop_duplicates(["sequence", "mods", "charge"])),
         "peptides": len(peps),

@@ -16,6 +16,9 @@ database. Each run already leaves its files there:
   (identifications), uploaded by ``scripts/publish_alphadia_runs.py``. One row per search, so
   runtime and resource use can be compared across machines, libraries and file sizes. Scans
   ``scratch/`` as well as the experiment folders, since QC batches often have no experiment.
+  Each search is also checked against the archived raw file (``raw_provenance``: was the file
+  the search read the same size and SHA-256 as the copy on ``raw://``? see
+  :mod:`deliverome_analysis.raw_provenance`); the DIA QC index carries the same status per run.
 
 ``build`` writes one SQLite file per database to ``processed://db/<name>.sqlite``:
 
@@ -69,9 +72,11 @@ from pathlib import Path
 
 import pandas as pd
 
-SCHEMA_VERSION = 7  # of the SQLite files; a different value forces a full rebuild
+SCHEMA_VERSION = 9  # of the SQLite files; a different value forces a full rebuild
 RECORD_SCHEMA_VERSION = 1  # of <page>.qcrecord.json, written by dia_qc_dashboard.qc_record
 DATABASES = ("dia_qc", "flow", "search")
+# ``build all`` order: search first, so the DIA QC index reads this build's raw provenance.
+BUILD_ORDER = ("search", "flow", "dia_qc")
 QC_RECORD_SUFFIX = ".qcrecord.json"
 DIAGNOSIS_SUFFIX = ".run_diagnostics.tsv"
 FLOW_MANIFEST = "publication.json"
@@ -89,6 +94,9 @@ SEARCH_RECORD = "benchmark.json"
 SEARCH_STATS = "alphadia/stat.tsv"
 SEARCH_CONFIG = "config.yaml"
 UPLOAD_ATTEMPTS = 3
+# Replaced searches moved aside by scripts/publish_alphadia_runs.py
+# (<method>/_superseded/<run>/<old start>/): kept for the record, never indexed.
+SUPERSEDED_DIR = "_superseded"
 
 # The agentflow output format this module reads. agentflow's tests/test_output_contract.py pins
 # the same shape on the producing side; change both together.
@@ -114,6 +122,12 @@ def _bucket():
     return processed
 
 
+def _raw_bucket():
+    from deliverome_analysis.s3 import raw
+
+    return raw
+
+
 def _read_text(bucket, key: str) -> str:
     return Path(bucket.download(key)).read_text()
 
@@ -136,7 +150,10 @@ create table records (
   title text, layout text, layout_sha256 text, layout_yaml text, git_commit text,
   git_dirty text, uv_lock_sha256 text, renv_lock_sha256 text, limpa_engine text,
   limpa_version text, versions_json text, schema_version integer,
-  scope text);  -- 'experiment' (sprint*/ folder) or 'scratch'
+  scope text,  -- 'experiment' (sprint*/ folder) or 'scratch'
+  -- peptide_metrics.DEFINITIONS_VERSION and DigestRules the record's numbers were computed
+  -- under (NULL: a record from before versioning, definitions unknown)
+  definitions_version text, digest_rules_json text);
 
 -- run_uid identifies an acquisition across datasets: instrument serial + acquisition time from
 -- the raw-file header, or the run name alone when the record has no raw-file metadata.
@@ -144,8 +161,16 @@ create table runs (
   record_id text, run text, run_uid text, label text, condition text, acquired text,
   instrument_model text, instrument_name text, instrument_serial text, file_bytes integer,
   search_library text, search_library_sha256 text,
+  -- the raw file the run's search read (alphaDIA trims), and how it compares with the copy
+  -- on raw:// (deliverome_analysis.raw_provenance). The raw_* columns are re-derived from
+  -- search.sqlite on every build, so they follow the search index.
+  search_raw_sha256 text, search_raw_bytes integer,
+  raw_provenance text, raw_s3_key text, raw_s3_bytes integer, raw_s3_sha256 text,
   primary key (record_id, run));
-create table run_metrics (record_id text, run text, metric text, value real);
+-- definitions_version: the peptide_metrics version for metrics computed by that module, ''
+-- for a metric it does not define, NULL when the record predates versioning (unknown).
+create table run_metrics (
+  record_id text, run text, metric text, value real, definitions_version text);
 create table diagnoses (
   record_id text, run text, flags text, hints text, confirmed_cause text, notes text);
 create index run_metrics_metric on run_metrics(metric);
@@ -154,13 +179,14 @@ create index runs_uid on runs(run_uid);
 -- history plots and queries.
 create view latest_runs as
   select * from (
-    select r.*, rec.created, rec.scope,
+    select r.*, rec.created, rec.scope, rec.definitions_version,
            row_number() over (partition by r.run_uid
                               order by rec.scope = 'experiment' desc, rec.created desc) as rank
     from runs r join records rec using (record_id))
   where rank = 1;
 create view latest_run_metrics as
-  select m.*, lr.run_uid, lr.acquired, lr.instrument_serial, lr.condition
+  select m.*, lr.run_uid, lr.acquired, lr.instrument_serial, lr.condition,
+         lr.definitions_version as record_definitions_version
   from run_metrics m join latest_runs lr using (record_id, run);
 """
 
@@ -211,8 +237,9 @@ def _qc_ingest(con: sqlite3.Connection, bucket, key: str, listing: dict[str, str
         raise ValueError(f"record schema {rec['schema_version']} is newer than this reader")
     rid = rec["record_id"]
     v, prov, lim = rec.get("versions", {}), rec.get("provenance", {}), rec.get("limpa") or {}
+    defs = rec.get("peptide_metrics")  # absent in records from before versioning
     con.execute(
-        "insert into records values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        "insert into records values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
         (
             rid, key, key.rsplit("/", 1)[0], rec.get("created"), rec.get("source"),
             rec.get("title"), rec.get("layout"), rec.get("layout_sha256"), rec.get("layout_yaml"),
@@ -220,22 +247,33 @@ def _qc_ingest(con: sqlite3.Connection, bucket, key: str, listing: dict[str, str
             prov.get("renv-lock-sha256"), lim.get("engine"), lim.get("limpa_version"),
             json.dumps(v), rec.get("schema_version"),
             "scratch" if key.startswith(SCRATCH_PREFIX) else "experiment",
+            defs["definitions_version"] if defs else None,
+            json.dumps(defs["digest_rules"], sort_keys=True) if defs else None,
         ),
     )  # fmt: skip
     for r in rec.get("runs", []):
         con.execute(
-            "insert into runs values (?,?,?,?,?,?,?,?,?,?,?,?)",
+            "insert into runs values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
             (
                 rid, r["run"], run_uid(r), r.get("label"), r.get("condition"), r.get("acquired"),
                 r.get("instrument_model"), r.get("instrument_name"), r.get("instrument_serial"),
                 r.get("file_bytes"), r.get("search_library"), r.get("search_library_sha256"),
+                r.get("search_raw_sha256"), r.get("search_raw_bytes"), None, None, None, None,
             ),
         )  # fmt: skip
     metrics = rec.get("metrics", [])
     if any(len(m) != 3 or not isinstance(m[2], int | float) for m in metrics):
         raise ValueError("metrics must be [run, metric, number] triples")
+    versioned = set(defs.get("metrics", [])) if defs else set()
+
+    def version_of(metric: str) -> str | None:
+        if not defs:
+            return None
+        return defs["definitions_version"] if metric in versioned else ""
+
     con.executemany(
-        "insert into run_metrics values (?,?,?,?)", [(rid, r, m, v) for r, m, v in metrics]
+        "insert into run_metrics values (?,?,?,?,?)",
+        [(rid, r, m, v, version_of(m)) for r, m, v in metrics],
     )
     verdicts = _diagnosis_overrides(bucket, key, listing)
     for d in rec.get("diagnosis", []):
@@ -246,6 +284,89 @@ def _qc_ingest(con: sqlite3.Connection, bucket, key: str, listing: dict[str, str
              o.get("notes", "")),
         )  # fmt: skip
     return True
+
+
+def _search_raw_index(bucket) -> list:
+    """Raw-file facts of every indexed search (from the current search.sqlite), or []."""
+    from deliverome_analysis.raw_provenance import SearchRaw
+
+    if not bucket.etag(db_key("search")):
+        return []
+    con = sqlite3.connect(f"file:{bucket.download(db_key('search'))}?mode=ro", uri=True)
+    try:
+        cols = {r[1] for r in con.execute("pragma table_info(search_runs)")}
+        if "raw_provenance" not in cols:  # a snapshot from before raw provenance existed
+            return []
+        rows = con.execute(
+            "select run_uid, raw_sha256, raw_s3_key, raw_s3_bytes, raw_s3_sha256, raw_provenance "
+            "from search_runs"
+        ).fetchall()
+    finally:
+        con.close()
+    return [SearchRaw(*r) for r in rows]
+
+
+def qc_raw_provenance(searched_sha256, searched_bytes, uid, searches) -> tuple:
+    """(status, raw key, raw bytes, raw SHA-256) of one QC run against its archived raw file.
+
+    ``searched_sha256`` / ``searched_bytes`` describe the file the run's search read (an
+    alphaDIA trim's ``run_info``); the archived copy comes from the search index entries of
+    the same file or acquisition (``searches``, see :func:`_search_raw_index`). Without the
+    search's own checksum and size the status is ``unknown`` (unless the raw file is
+    missing): a Spectronaut page or an older QC record cannot say which file it saw.
+    """
+    from deliverome_analysis.raw_provenance import archived_object, classify
+
+    obj = archived_object(searched_sha256, uid, searches)
+    status = classify(searched_sha256, searched_bytes, obj)
+    if obj is None:
+        return status, None, None, None
+    return status, obj.key, obj.size, obj.sha256
+
+
+def raw_provenance_of_runs(runs: dict[str, dict], *, bucket=None) -> dict[str, str]:
+    """{run: raw_provenance status} for a QC page's runs, from the current search index.
+
+    ``runs`` maps run -> an alphaDIA trim's ``run_info`` entry (``search_raw_sha256``,
+    ``search_raw_bytes``, ``run_uid``). Used by the dashboard to flag a run whose search read
+    a different file than the one archived on raw://. Needs S3 (reads search.sqlite).
+    """
+    searches = _search_raw_index(bucket or _bucket())
+    return {
+        run: qc_raw_provenance(
+            info.get("search_raw_sha256"), info.get("search_raw_bytes"), info.get("run_uid"),
+            searches,
+        )[0]
+        for run, info in runs.items()
+    }  # fmt: skip
+
+
+def _qc_finalize(con: sqlite3.Connection, bucket, raw_bucket) -> dict:
+    """Re-derive every QC run's raw provenance from the current search index (cheap, local)."""
+    searches = _search_raw_index(bucket)
+    rows = con.execute(
+        "select record_id, run, run_uid, search_raw_sha256, search_raw_bytes from runs"
+    ).fetchall()
+    updates = [
+        (*qc_raw_provenance(sha, size, uid, searches), rid, run)
+        for rid, run, uid, sha, size in rows
+    ]
+    con.execute("begin")
+    con.executemany(
+        "update runs set raw_provenance = ?, raw_s3_key = ?, raw_s3_bytes = ?, raw_s3_sha256 = ? "
+        "where record_id = ? and run = ?",
+        updates,
+    )
+    con.execute("commit")
+    return _provenance_counts(con, "runs")
+
+
+def _provenance_counts(con: sqlite3.Connection, table: str) -> dict:
+    return dict(
+        con.execute(
+            f"select coalesce(raw_provenance, 'unknown'), count(*) from {table} group by 1"
+        ).fetchall()
+    )
 
 
 # ----------------------------------------------------------------------------------------------
@@ -427,7 +548,13 @@ create table search_runs (
   ms1_analyzer text, ms1_resolution real, ms1_mz_low real, ms1_mz_high real, ms1_max_it_ms real,
   ms2_analyzer text, dia_windows integer, dia_mz_low real, dia_mz_high real,
   dia_width_min real, dia_width_median real, dia_width_max real, dia_scheme_sha256 text,
-  ms2_nce text, ms2_max_it_ms text, spray_voltage_v real, method_json text);
+  ms2_nce text, ms2_max_it_ms text, spray_voltage_v real, method_json text,
+  -- the archived copy of the searched raw file on raw:// and how it compares
+  -- (deliverome_analysis.raw_provenance); filled after ingest, see _search_finalize
+  raw_s3_key text, raw_s3_bytes integer, raw_s3_sha256 text, raw_provenance text);
+-- raw:// objects already looked up; immutable, so a known object is never HEADed again
+create table raw_objects (
+  raw_key text primary key, bytes integer, sha256 text, etag text, checked text);
 create index search_runs_host on search_runs(host);
 create index search_runs_uid on search_runs(run_uid);
 create view acquisitions as  -- one row per acquisition with its method (any search of it)
@@ -438,7 +565,7 @@ select run_uid, min(run) as run, acquired, instrument_serial, instrument_model, 
        dia_scheme_sha256, ms2_nce, ms2_max_it_ms, spray_voltage_v, method_json
 from search_runs where method_json is not null and run_uid is not null group by run_uid;
 """
-_SEARCH_COLUMNS = 75
+_SEARCH_COLUMNS = 79
 
 
 def _method_columns(m: dict | None) -> tuple:
@@ -483,6 +610,47 @@ def _search_units(listing: dict[str, str]) -> dict[str, str]:
 
 def _search_delete(con: sqlite3.Connection, unit: str) -> None:
     con.execute("delete from search_runs where run_key = ?", [unit])
+
+
+def _search_finalize(con: sqlite3.Connection, bucket, raw_bucket) -> dict:
+    """Check each search's raw input against raw:// (new and still-undecided rows only).
+
+    A row whose status is final (match / unverified / mismatch / size_mismatch) is never
+    looked up again, and a raw object seen before comes from ``raw_objects``, so a rebuild
+    only HEADs raw files of new searches. ``unknown`` and ``raw_missing`` rows are retried
+    each build (a late raw upload, a credential that gained access).
+    """
+    from deliverome_analysis.raw_provenance import FINAL_STATUSES, RawLookup, RawObject, classify
+
+    cache = [
+        RawObject(key=k, exists=True, size=b, sha256=s, etag=e)
+        for k, b, s, e in con.execute("select raw_key, bytes, sha256, etag from raw_objects")
+    ]
+    lookup = RawLookup(raw_bucket, cache)
+    final = ",".join(f"'{s}'" for s in sorted(FINAL_STATUSES))
+    todo = con.execute(
+        "select run_key, folder, raw_file, raw_sha256, raw_bytes, n_raw from search_runs "
+        f"where raw_provenance is null or raw_provenance not in ({final}) order by run_key"
+    ).fetchall()
+    con.execute("begin")
+    for run_key, folder, raw_file, sha, size, n_raw in todo:
+        key, obj = lookup.lookup(folder, raw_file) if raw_file else (None, None)
+        # raw_bytes sums all inputs: it describes this raw file only for one-file searches
+        status = classify(sha, size if n_raw == 1 else None, obj)
+        con.execute(
+            "update search_runs set raw_s3_key = ?, raw_s3_bytes = ?, raw_s3_sha256 = ?, "
+            "raw_provenance = ? where run_key = ?",
+            (key, obj.size if obj else None, obj.sha256 if obj else None, status, run_key),
+        )
+    now = _now()
+    con.executemany(
+        "insert or ignore into raw_objects values (?,?,?,?,?)",
+        [(o.key, o.size, o.sha256, o.etag, now) for o in lookup.objects.values()],
+    )
+    con.execute("commit")
+    if lookup.denied:
+        print(f"search: raw:// not readable, provenance left unknown ({lookup.denied})")
+    return _provenance_counts(con, "search_runs") | {"raw_lookups": lookup.calls}
 
 
 def _search_ingest(con: sqlite3.Connection, bucket, key: str, listing: dict[str, str]) -> bool:
@@ -552,16 +720,25 @@ def _search_ingest(con: sqlite3.Connection, bucket, key: str, listing: dict[str,
             sw.get("repo_commit"), dirty, sw.get("uv_lock_sha256"),
             json.dumps(pk),
             *_method_columns(inp[0].get("method")),
+            None, None, None, None,  # raw provenance: _search_finalize
         ),
     )  # fmt: skip
     return True
 
 
+def _no_finalize(con: sqlite3.Connection, bucket, raw_bucket) -> dict:
+    return {}
+
+
+# name -> (schema, units, ingest, delete, finalize). ``finalize`` runs after every build on the
+# whole database (kept units included) and returns counts for the build statistics.
 _SPECS = {
-    "dia_qc": (_QC_SCHEMA, _qc_units, _qc_ingest, _qc_delete),
-    "flow": (_FLOW_SCHEMA, _flow_units, _flow_ingest, _flow_delete),
-    "search": (_SEARCH_SCHEMA, _search_units, _search_ingest, _search_delete),
+    "dia_qc": (_QC_SCHEMA, _qc_units, _qc_ingest, _qc_delete, _qc_finalize),
+    "flow": (_FLOW_SCHEMA, _flow_units, _flow_ingest, _flow_delete, _no_finalize),
+    "search": (_SEARCH_SCHEMA, _search_units, _search_ingest, _search_delete, _search_finalize),
 }
+# Lookup caches carried over when a snapshot is rebuilt from scratch (schema change, --full).
+_CARRIED_CACHES = {"search": ("raw_objects",)}
 _MAIN_TABLE = {"dia_qc": "records", "flow": "flow_runs", "search": "search_runs"}
 _BOOKKEEPING = """
 create table if not exists sources (unit_key text primary key, fingerprint text, ingested text);
@@ -579,9 +756,17 @@ def _schema_version(con: sqlite3.Connection) -> int:
 
 
 def _start(name: str, path: Path, bucket, etag: str | None, full: bool) -> sqlite3.Connection:
-    """The previous snapshot to update, or a fresh database when there is none / it is stale."""
-    if etag and not full:
-        shutil.copy(bucket.download(db_key(name)), path)
+    """The previous snapshot to update, or a fresh database when there is none / it is stale.
+
+    A fresh database keeps the previous snapshot's lookup caches (``_CARRIED_CACHES``), so a
+    schema change does not mean looking every raw file up again.
+    """
+    previous = None
+    if etag:
+        previous = path.with_suffix(".previous")
+        shutil.copy(bucket.download(db_key(name)), previous)
+    if previous and not full:
+        shutil.copy(previous, path)
         con = sqlite3.connect(path)
         if _schema_version(con) == SCHEMA_VERSION:
             return con
@@ -589,11 +774,35 @@ def _start(name: str, path: Path, bucket, etag: str | None, full: bool) -> sqlit
     path.unlink(missing_ok=True)
     con = sqlite3.connect(path)
     con.executescript(_SPECS[name][0])
+    if previous:
+        _carry_caches(con, name, previous)
     return con
 
 
-def _update(con: sqlite3.Connection, name: str, bucket, listing: dict[str, str]) -> dict:
-    _, units_of, ingest, delete = _SPECS[name]
+def _carry_caches(con: sqlite3.Connection, name: str, previous: Path) -> None:
+    if not _CARRIED_CACHES.get(name):
+        return
+    con.execute("attach database ? as old", [str(previous)])  # a local copy, never uploaded
+    try:
+        for table in _CARRIED_CACHES.get(name, ()):
+            old = {
+                r[0] for r in con.execute("select name from pragma_table_info(?, 'old')", [table])
+            }
+            new = [r[1] for r in con.execute(f"pragma table_info({table})")]
+            if old and set(new) <= old:
+                cols = ",".join(new)
+                con.execute(
+                    f"insert or ignore into {table} ({cols}) select {cols} from old.{table}"
+                )
+        con.commit()
+    finally:
+        con.execute("detach database old")
+
+
+def _update(
+    con: sqlite3.Connection, name: str, bucket, listing: dict[str, str], raw_bucket=None
+) -> dict:
+    _, units_of, ingest, delete, finalize = _SPECS[name]
     con.isolation_level = None  # explicit transactions: one savepoint per unit
     con.executescript(_BOOKKEEPING)
     con.execute("delete from build_errors")
@@ -627,6 +836,7 @@ def _update(con: sqlite3.Connection, name: str, bucket, listing: dict[str, str])
             )
             stats["failed"] += 1
         con.commit()
+    provenance = finalize(con, bucket, raw_bucket)
     n = con.execute(f"select count(*) from {_MAIN_TABLE[name]}").fetchone()[0]
     con.executemany(
         "insert or replace into meta values (?,?)",
@@ -637,10 +847,11 @@ def _update(con: sqlite3.Connection, name: str, bucket, listing: dict[str, str])
             ("records", str(n)),
             ("scanned_prefix", ",".join(SCAN_PREFIXES[name])),
             *((f"last_build_{k}", str(v)) for k, v in stats.items()),
+            *((f"raw_provenance_{k}", str(v)) for k, v in provenance.items()),
         ],
     )
     con.commit()
-    return stats | {"records": n}
+    return stats | {"records": n, "raw_provenance": provenance}
 
 
 def _is_conflict(exc: Exception) -> bool:
@@ -655,24 +866,31 @@ def build(
     out: str | os.PathLike | None = None,
     upload: bool = True,
     full: bool = False,
+    raw_bucket=None,
 ) -> dict:
     """Update one database from the experiment folders (see the module docstring).
 
-    Returns build statistics (kept / ingested / removed / failed units, records, path). With
-    ``upload`` the snapshot is replaced only if nobody else replaced it meanwhile; on a
-    conflict the build restarts from the newer snapshot, up to ``UPLOAD_ATTEMPTS`` times.
+    Returns build statistics (kept / ingested / removed / failed units, records, path, and
+    ``raw_provenance`` counts by status). With ``upload`` the snapshot is replaced only if
+    nobody else replaced it meanwhile; on a conflict the build restarts from the newer
+    snapshot, up to ``UPLOAD_ATTEMPTS`` times. ``raw_bucket`` is where searched raw files are
+    archived (default ``deliverome_analysis.s3.raw``; only the search index uses it).
     """
-    bucket = bucket or _bucket()
+    if bucket is None:
+        bucket = _bucket()
+        if raw_bucket is None:
+            raw_bucket = _raw_bucket()
     workdir = Path(tempfile.mkdtemp(prefix="qcdb-"))
     for attempt in range(1, UPLOAD_ATTEMPTS + 1):
         etag = bucket.etag(db_key(name))
         listing = {}
         for prefix in SCAN_PREFIXES[name]:
             listing |= bucket.list_etags(prefix=prefix)
+        listing = {k: v for k, v in listing.items() if not _superseded(k)}
         path = workdir / f"{name}.sqlite"
         con = _start(name, path, bucket, etag, full)
         try:
-            stats = _update(con, name, bucket, listing)
+            stats = _update(con, name, bucket, listing, raw_bucket)
         finally:
             con.close()
         if out:
@@ -696,7 +914,24 @@ def build(
         f"{stats['removed']} removed, {stats['failed']} failed)"
         + (f" -> {stats['uploaded']}" if "uploaded" in stats else "")
     )
+    _warn_provenance(name, stats.get("raw_provenance") or {})
     return stats
+
+
+def _warn_provenance(name: str, counts: dict) -> None:
+    """Say loudly when indexed numbers come from a raw file that is not the archived one."""
+    from deliverome_analysis.raw_provenance import PROBLEM_STATUSES
+
+    bad = {k: v for k, v in counts.items() if k in PROBLEM_STATUSES and v}
+    if bad:
+        print(
+            f"::warning::{name}: runs whose searched raw file differs from raw:// or is "
+            f"missing there: {bad}; see the raw_provenance column"
+        )
+
+
+def _superseded(key: str) -> bool:
+    return f"/{SUPERSEDED_DIR}/" in f"/{key}"
 
 
 def connect(name: str, *, bucket=None, path: str | os.PathLike | None = None) -> sqlite3.Connection:
@@ -733,24 +968,60 @@ def qc_runs(*, instrument: str | None = None, since: str | None = None, **kw) ->
     return read("dia_qc", f"select * from latest_runs{where} order by acquired", params, **kw)
 
 
+UNVERSIONED = "unversioned"  # how qc_metrics names records from before definitions versioning
+
+
 def qc_metrics(
     metrics: list[str] | None = None,
     *,
     instrument: str | None = None,
     since: str | None = None,
     wide: bool = False,
+    definitions_version: str | None = None,
+    allow_mixed_definitions: bool = False,
     **kw,
 ) -> pd.DataFrame:
-    """Per-acquisition QC metrics (long: run, metric, value, acquired, ...; ``wide``: one row
-    per acquisition, one column per metric). ``metrics`` limits to those names."""
+    """Per-acquisition QC metrics (long: run, metric, value, acquired, definitions_version,
+    ...; ``wide``: one row per acquisition, one column per metric). ``metrics`` limits to
+    those names.
+
+    Metrics defined by :mod:`deliverome_analysis.peptide_metrics` carry the
+    ``DEFINITIONS_VERSION`` they were computed under (``''`` for other metrics, NULL for
+    records from before versioning). ``definitions_version`` keeps only numbers known to be
+    computed under that version (plus metrics the module does not define). A ``wide`` table
+    puts one metric's values side by side, so it refuses (ValueError) to mix definition
+    versions of a metric unless ``allow_mixed_definitions``; it has a ``definitions_version``
+    column per acquisition either way.
+    """
+    from deliverome_analysis.peptide_metrics import metric_names
+
     where, params = _where({"instrument_serial = ?": instrument, "acquired >= ?": since})
     if metrics:
         where += (" and " if where else " where ") + f"metric in ({','.join('?' * len(metrics))})"
         params += list(metrics)
     df = read("dia_qc", f"select * from latest_run_metrics{where} order by acquired", params, **kw)
+    if definitions_version is not None and not df.empty:
+        v = df["definitions_version"]
+        df = df[
+            (v == definitions_version) | (v == "") | (v.isna() & ~df["metric"].isin(metric_names()))
+        ].reset_index(drop=True)
     if not wide or df.empty:
         return df
-    index = ["run_uid", "run", "acquired", "instrument_serial", "condition"]
+    versioned = df[df["definitions_version"] != ""]  # NULL counts as its own version
+    mixed = (
+        versioned.assign(v=versioned["definitions_version"].fillna(UNVERSIONED))
+        .groupby("metric")["v"]
+        .unique()
+    )
+    mixed = mixed[mixed.map(len) > 1]
+    if len(mixed) and not allow_mixed_definitions:
+        raise ValueError(
+            "metrics computed under different peptide_metrics definitions would share a "
+            f"column: {dict(mixed.map(sorted))}. Pass definitions_version=... to keep one, "
+            "or allow_mixed_definitions=True (the definitions_version column then says which)."
+        )
+    df["definitions_version"] = df["record_definitions_version"].fillna(UNVERSIONED)
+    index = ["run_uid", "run", "acquired", "instrument_serial", "condition", "definitions_version"]
     df[index] = df[index].fillna("")  # pivot_table silently drops rows with an empty key
     return df.pivot_table(
         index=index, columns="metric", values="value", aggfunc="first"
@@ -829,7 +1100,8 @@ def search_with_qc(
               join qc.records rec using (record_id)
               where r.search_library_sha256 is null
                  or r.search_library_sha256 = s.library_sha256)
-            select s.*, rec.folder as qc_folder, m.metric, m.value
+            select s.*, rec.folder as qc_folder,
+                   rec.definitions_version as qc_definitions_version, m.metric, m.value
             from search_runs s
             join matched x on x.run_key = s.run_key and x.rank = 1
             join qc.records rec on rec.record_id = x.record_id
@@ -939,7 +1211,7 @@ def main(argv: list[str] | None = None) -> int:
         con.close()
         return 0
     failed = 0
-    for name in DATABASES if a.name == "all" else (a.name,):
+    for name in BUILD_ORDER if a.name == "all" else (a.name,):
         out = Path(a.out) / f"{name}.sqlite" if a.out else None
         stats = build(name, out=out, upload=not a.no_upload, full=a.full)
         if stats["failed"]:
