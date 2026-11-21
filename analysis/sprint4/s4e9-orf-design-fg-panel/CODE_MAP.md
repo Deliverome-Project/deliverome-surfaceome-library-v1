@@ -226,6 +226,7 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`reviewer-package/nterm/sp_disagree_review.py`](reviewer-package/nterm/sp_disagree_review.py) | called | Second-source review of members whose signal peptide only DeepTMHMM v1 calls. | `sp_disagree_review.tsv` |
 | [`reviewer-package/nterm/weak_sp.py`](reviewer-package/nterm/weak_sp.py) | called | Native arms with a weak predicted signal peptide, and the Igκ form that would replace each. | `weak_sp.tsv` |
 | [`reviewer-package/order_plan.py`](reviewer-package/order_plan.py) | called | How the L1 library is ordered: plate layout, volumes, and length-weighted pooling amounts. | `l1_order_plan.tsv`, `l1_order_plan_summary.json` |
+| [`reviewer-package/public_data.py`](reviewer-package/public_data.py) | called | Where every file of the reviewer bundle lives for a reviewer, and the public copies. | — |
 | [`reviewer-package/render_brief.py`](reviewer-package/render_brief.py) | called | Render the brief and the cover note to self-contained PDF and Word files, and copy them out. | — |
 | [`reviewer-package/run_review.py`](reviewer-package/run_review.py) | called | Rerun the L1 library's decision steps from the frozen bundle and check them against the record. | — |
 | [`reviewer-package/run_stage.py`](reviewer-package/run_stage.py) | called | Run one ``library_pipeline.py verify`` stage, in this repo or in an exported review repo. | — |
@@ -246,8 +247,9 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`stage_genscript_order.py`](stage_genscript_order.py) | one-off | Stage the plasmids we want GenScript to build into one folder, with a manifest. | — |
 | [`stop_codon_fix.py`](stop_codon_fix.py) | called | Attribution table for the 13 designed CDSs whose stop codon was appended by hand-made rule. | `stop_codon_fix.tsv` |
 | [`structure_coverage.py`](structure_coverage.py) | one-off | Does every library proteoform actually have a structure to score tag sites from? | — |
-| [`surface_proteomics_gap_candidates.py`](surface_proteomics_gap_candidates.py) | documented | Which surface-proteomics gap genes could be added to L1 under Becca's 2026-11-20 criteria. | `surface_proteomics_gap_candidates.tsv` |
+| [`surface_proteomics_gap_candidates.py`](surface_proteomics_gap_candidates.py) | called | Which surface-proteomics gap genes could be added to L1 under Becca's 2026-11-20 criteria. | `surface_proteomics_gap_candidates.tsv` |
 | [`surface_proteomics_logodds_compare.py`](surface_proteomics_logodds_compare.py) | called | Does the surface-proteomics challenge set change if rule B uses the global log-odds? | `surface_proteomics_logodds_compare.tsv`, `surface_proteomics_logodds_summary.tsv` |
+| [`surface_proteomics_snapshot.py`](surface_proteomics_snapshot.py) | called | Per-protein publication counts for the surface-proteomics challenge set, from pinned inputs. | — |
 | [`swap_ef1a_output_promoter.py`](swap_ef1a_output_promoter.py) | one-off | Put PGK on the ORF transcript in p0018/p0019, breaking the EF1a/EFS palindrome. | — |
 | [`synthesis_compliance.py`](synthesis_compliance.py) | stage | Synthesis compliance for the final tagged L1 inserts: a local check and minimal synonymous recodes. | `synthesis_compliance.tsv`, `synthesis_compliance_summary.json` |
 | [`synthesis_risk_scan.py`](synthesis_risk_scan.py) | called | Manufacturability scan over the constructs staged for the vendor. | — |
@@ -278,4 +280,4 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`verify_ortholog_prediction_import.py`](verify_ortholog_prediction_import.py) | one-off | SELECT-only before/after verification of the ortholog prediction D1 append. | — |
 | [`write_structure_baseline.py`](write_structure_baseline.py) | documented | Regenerate the structure-coverage baseline the repo tests assert against. | `structure_coverage_baseline.json` |
 
-Totals: called 133, documented 41, one-off 25, stage 29, test 6
+Totals: called 136, documented 40, one-off 25, stage 29, test 6

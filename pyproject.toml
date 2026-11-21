@@ -209,9 +209,13 @@ markers = [
 # listed in a `strict = true` override below. Add modules as they are typed.
 # test_strict_modules_ty_check also runs ty (dev group, pinned) on the same modules; ty has no
 # strict mode, so mypy strict remains the check that every function is annotated.
+# Third-party packages without stubs or a py.typed marker are listed under
+# `ignore_missing_imports` below (they type as Any); Biopython ships a py.typed marker but most
+# of its functions are unannotated, so its calls are exempt from disallow_untyped_calls instead.
 python_version = "3.14"
 plugins = ["pydantic.mypy"]
 follow_imports = "silent"
+untyped_calls_exclude = ["Bio"]
 
 [[tool.mypy.overrides]]
 module = ["deliverome_analysis.peptide_metrics", "deliverome_analysis.alphadia_trim"]
@@ -221,6 +225,46 @@ strict = true
 module = "deliverome_analysis.raw_provenance"
 strict = true
 
+# The shared modules the L1 library review repository exports.
 [[tool.mypy.overrides]]
-module = ["pandas", "pandas.*", "pyarrow", "pyarrow.*"]
+module = [
+    "deliverome_analysis.constructs",
+    "deliverome_analysis.env",
+    "deliverome_analysis.gene_resolver",
+    "deliverome_analysis.genscript",
+    "deliverome_analysis.library_design",
+    "deliverome_analysis.membrane_side",
+    "deliverome_analysis.plasmid_qc",
+    "deliverome_analysis.plotting",
+    "deliverome_analysis.primers",
+    "deliverome_analysis.provenance",
+    "deliverome_analysis.rbp_motifs",
+    "deliverome_analysis.s3",
+    "deliverome_analysis.seqtools",
+    "deliverome_analysis.surfaceome",
+    "deliverome_analysis.tag_placement",
+    "deliverome_analysis.topology",
+    "deliverome_analysis.trust_store",
+]
+strict = true
+
+[[tool.mypy.overrides]]
+module = [
+    "pandas",
+    "pandas.*",
+    "pyarrow",
+    "pyarrow.*",
+    "boto3",
+    "boto3.*",
+    "botocore",
+    "botocore.*",
+    "dnachisel",
+    "dnachisel.*",
+    "mygene",
+    "primer3",
+    "primer3.*",
+    "python_codon_tables",
+    "seaborn",
+    "seaborn.*",
+]
 ignore_missing_imports = true

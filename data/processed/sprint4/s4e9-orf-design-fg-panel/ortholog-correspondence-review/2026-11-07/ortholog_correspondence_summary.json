@@ -1,0 +1,89 @@
+{
+  "rule_version": "ortholog-correspondence-review-v1",
+  "source_commit": "e696b394825bf28d181ce093eeb4154072fb41f2",
+  "panel": "analysis/sprint4/s4e9-orf-design-fg-panel/ortholog_panel_cds_eligible.tsv",
+  "panel_sha256": "bd44a58eb2f002cec1384a798ad12b945d004157ef4788f6d98e57154761dd30",
+  "inputs": {
+    "selected_cds": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-cds-eligibility/2026-11-05/final-v2/results/panel/selected_cds.json.gz",
+      "sha256": "4f83238205b7f4fa1156d0129d40050300a794cfb9881ace35e1102a2162b222"
+    },
+    "human_cds": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-candidates/candidate_cds.json",
+      "sha256": "03c3413d70e15612868133d15839e092dba20fb05f3e8318d17f48928c91c662"
+    },
+    "topology_review": {
+      "source": "external://accessible-surfaceome/topology/2026-11-06-ortholog-cds-policy/topology.parquet",
+      "sha256": "7683d75a3e04228d95fcfb8fe9b7e9b46b38c0ea254ca42550a666f5d8bbf216"
+    },
+    "pfam": {
+      "source": "external://pfam/39.0/Pfam-A.hmm.gz",
+      "sha256": "277356d1ceeba7ed3fc554bfe0ad58fdd87e52c26c1cf490cc90610dbc098f0e"
+    },
+    "pfam_clans": {
+      "source": "external://pfam/39.0/Pfam-A.clans.tsv.gz",
+      "sha256": "69b2cfad70b4b0e201826b32d97a27bffa6f1cdf7b33d951a9e3a98fd020be20"
+    },
+    "draw_constructs": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-cds-eligibility/2026-11-05/final-v2/inputs/candidate_constructs.json.gz",
+      "sha256": "11d645d255037f0cb2ab855fc438df16178f04c5d90cee6fd56e22cc176e1358"
+    },
+    "draw_manifest": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild-inputs/2026-11-05/candidate_manifest_tranches.tsv",
+      "sha256": "7ad0538b831b521a10526f290f3b40eb9ec1f2333f0d674f88a831092c13cdf4"
+    },
+    "draw_gpi": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild-inputs/2026-11-05/gpi_set.tsv",
+      "sha256": "dbb1db6e68bc3e1bdb3e69fee365e963a5a36f90434f88dd9e8d42a0df6f1b20"
+    },
+    "draw_topology": {
+      "source": "external://accessible-surfaceome/topology/2026-11-05-l1-compara116/topology.parquet",
+      "sha256": "604521dcbc920f520ea566aee3da638dad6540772c0f38d1792a631ca301e048"
+    },
+    "draw_eligible": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-cds-eligibility/2026-11-05/final-v2/results/eligibility/eligible_proteins.json.gz",
+      "sha256": "2c301da225cd910aa74ae1a2aefe42815e4978cea98ca3d60da7c489461ee0d9"
+    },
+    "draw_picks": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-cds-eligibility/2026-11-05/final-v2/results/scored/ortholog_provisional_picks.tsv.gz",
+      "sha256": "760b3a7d3acd4525df05d88c64849502747a03e5d8ca7538cdab79a484717671"
+    },
+    "draw_score_summary": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-cds-eligibility/2026-11-05/final-v2/results/scored/ortholog_scoring_summary.json",
+      "sha256": "4803d67379fd992a185a9b2bde2fae0ce223ceb6df58798520c4980b97c2a8b5"
+    },
+    "draw_proteins": {
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-cds-eligibility/2026-11-05/final-v2/results/scored/ortholog_picks.fasta",
+      "sha256": "4e524e85b8be39ed170dbf5c20d32de148ff722639392d83c297d64a03f971ce"
+    }
+  },
+  "pfam_release": "Pfam 39.0 (EBI FTP releases/Pfam39.0); human domains at GA, ortholog counterparts same family or clan at >= NC; clan overlaps resolved as pfam_scan.pl",
+  "topology_tool": "deeptmhmm_v1",
+  "alignment": "Bio.Align.PairwiseAligner global, BLOSUM62, open -11, extend -1, end gaps free",
+  "members": 200,
+  "by_species": {
+    "mouse": 100,
+    "cyno": 100
+  },
+  "architecture_conserved": 183,
+  "flag_counts": {
+    "signal_peptide_lost": 5,
+    "signal_peptide_gained": 1,
+    "tm_helix_lost": 3,
+    "tm_helix_gained": 2,
+    "topology_label_changed": 6,
+    "n_terminal_orientation_changed": 2,
+    "gpi_anchor_lost": 0,
+    "pfam_domain_lost": 11
+  },
+  "unmatched_segment_in_human_feature": 61,
+  "recommendations": {
+    "ask": 6,
+    "keep": 183,
+    "replace": 11
+  },
+  "replacements_proposed": 17,
+  "replacements_without_conserving_alternate": [],
+  "alternates_reviewed": 62,
+  "draw_replay_reproduces_panel": true
+}

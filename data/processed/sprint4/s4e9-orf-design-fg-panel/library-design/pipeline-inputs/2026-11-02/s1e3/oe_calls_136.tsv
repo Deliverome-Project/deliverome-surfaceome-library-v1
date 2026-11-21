@@ -1,0 +1,137 @@
+gene	call	ec_sites	other_gate_fails	reason
+ABCA2	LEAVE	3	orf	Endolysosomal across all well-characterized cell types; surface signal is weak, single-source, and restricted to KRas-transformed cells, plus an orf gate fail.
+ABCA4	BORDERLINE	4	orf	Dominantly intracellular disc-rim/ER but a genuine minor apical-surface pool is detected in polarized RPE by cell-surface-capture MS; also fails the orf gate.
+ABCG1	BORDERLINE	0		Predominantly TGN/recycling-endosome but surface biotinylation confirms a real, small, dynamically maintained PM pool (no ec epitope, so a delivery not display candidate).
+ADAMTS10	LEAVE	0	anchored	Secreted/ECM-deposited protein whose only surface signal is pericellular fibrillin-microfibril association, not a genuine membrane pool; also fails the anchored gate.
+AGR2	LEAVE	0	anchored	Genuine ER-resident PDI-family protein whose surface/extracellular form is a minor cancer-state secreted fraction, not a membrane pool; also fails the anchored gate.
+ANXA13	LEAVE	0	anchored,ecd	Cytosolic inner-leaflet annexin with outer-surface exposure only upon apoptosis and no ectodomain; also fails anchored and ecd gates.
+APMAP	BORDERLINE	0		ER-resident in most cells but a real state-induced PM pool appears in adipocytes, ER-stressed cancer cells, and activated monocytes.
+AQP11	LEAVE	0		Genuine ER-resident aquaporin confirmed across kidney, Purkinje, HeLa, and CHO overexpression, with only a minor cell-type-restricted PM pool.
+AQP2	RESCUE	0		Classic vasopressin-regulated exocytosis mobilizes a genuine apical-PM pool from storage vesicles (GLUT4-type mechanism), supported by five method observations.
+AQP8	BORDERLINE	0		Dominant pool is mitochondrial/vesicular but a real minority PM pool is documented by surface biotinylation and functional water/ammonia assays.
+BACE1	RESCUE	2		Real recycling PM pool subject to dileucine-driven internalization, four method observations, two ec epitopes, and validated beta-secretase surface activity.
+C1QTNF5	LEAVE	0	anchored	Dominantly secreted/extracellular; surface is non-stable association and the endogenous membrane-anchored fraction is unquantified; also fails the anchored gate.
+CALHM6	BORDERLINE	0		Golgi-resident in resting cells with a genuine surface pool that emerges only upon immune activation.
+CALY	BORDERLINE	0		Resting pool is vesicular/endosomal but a regulated PM pool is documented by surface biotinylation, requiring activation for substantial surface accumulation.
+CAMKV	LEAVE	0	anchored,ecd	Palmitoylation-anchored peripheral pseudokinase with no TM helix and zero ectodomain; inner-leaflet/cytoplasmic, also failing anchored and ecd gates.
+CEMIP	LEAVE	0	anchored	Secreted/ECM-associated with intracellular pools and no direct plasma-membrane-dominant localization assay; also fails the anchored gate.
+CFP	LEAVE	0	anchored	Soluble plasma properdin whose surface association is non-covalent, state-conditional, or engineered, with no endogenous PM expression documented; also fails the anchored gate.
+CHGB	LEAVE	0	anchored	Intragranular/secreted chromogranin with only transient post-exocytotic surface puncta rather than stable PM residence; also fails the anchored gate.
+CLCA1	LEAVE	0	anchored	Secreted self-cleaving protein with no documented stable PM anchoring and surface FACS only under LPS; also fails the anchored gate.
+CLCN7	BORDERLINE	0	coreceptor	Lysosomal at steady state but a genuine surface pool reaches the osteoclast ruffled border via regulated lysosomal exocytosis; also fails the coreceptor gate.
+CLEC4D	BORDERLINE	0	anchored,coreceptor	Constitutively surface on circulating neutrophils/monocytes though macrophage surface needs Mincle/FcRgamma; also fails anchored and coreceptor gates.
+CLIC1	LEAVE	0	anchored,ecd	Cytosolic metamorphic chloride channel with only transient state-dependent inner-leaflet insertion and no ectodomain; also fails anchored and ecd gates.
+CLIC3	LEAVE	0	anchored,ecd	Nuclear/cytoplasmic at rest with PM insertion only in specific cancer/senescence states and no ectodomain; also fails anchored and ecd gates.
+CLIC4	LEAVE	0	anchored,ecd	Cytoplasmic/nuclear with transient stimulus-dependent PM insertion and no ectodomain; also fails anchored and ecd gates.
+CYBA	LEAVE	0	coreceptor,ecd	p22phox reaches the PM only as an obligate NADPH-oxidase complex and is ER-resident alone; also fails coreceptor and ecd gates.
+DLL3	RESCUE	5		Reference case: dominantly Golgi/cytoplasmic but a minor, therapeutically targetable surface fraction in neuroendocrine tumor cells (basis of tarlatamab), five ec epitopes.
+DUOXA2	LEAVE	0	coreceptor,reason	ER-resident maturation factor that reaches the apical PM only as the obligate DUOX2/DUOXA2 complex, not alone; also fails coreceptor and reason gates.
+DYSF	BORDERLINE	0	orf,ecd	Genuine minority sarcolemmal/PM pool for membrane repair but only a 14-residue ectodomain; also fails orf and ecd gates.
+EDAR	BORDERLINE	0		Validated TNFR-family surface receptor with a quantified ~7.7% basal PM pool that increases on EDA-driven translocation, though ~92% stays intracellular.
+EQTN	BORDERLINE	2		Acrosomal-membrane resident with PM exposure strictly state-gated to acrosome-reacted sperm, but two genuine ec epitopes.
+FCGRT	RESCUE	2		FcRn recycling/transcytosis surface pool (named RESCUE-type mechanism), a validated therapeutic target, with two ec epitopes despite intracellular-dominant steady state.
+GJC1	BORDERLINE	0		Connexin-45 reaches appositional PM to form gap junctions across five method observations but is predominantly cytoplasmic and requires cell-cell contact.
+GLG1	BORDERLINE	0		Golgi-dominant but a documented minority PM pool functions as the E-selectin ligand ESL-1 in specific lineages.
+GPR143	LEAVE	0		Melanosomal/lysosomal GPCR whose PM pool is minor, transient, and documented only in overexpression systems (secretory-pathway leak).
+GPR37	LEAVE	0		ER-retained with <1% wild-type surface; only the N-terminally truncated (processed) form reaches the PM, so genuine surface is absent for the intact protein.
+GSDMA	LEAVE	0	anchored,ecd	Cytosolic autoinhibited pore-former with only transient activation-induced inner-leaflet PM insertion and no ectodomain; also fails anchored and ecd gates.
+GSDMB	LEAVE	0	anchored,ecd	Cytoplasmic at baseline with strictly activation-induced transient PM localization and no ectodomain; also fails anchored and ecd gates.
+GSDMC	LEAVE	0	anchored,ecd	Constitutively cytoplasmic with PM exposure only after caspase-8 cleavage and no ectodomain; also fails anchored and ecd gates.
+HLA-DMB	LEAVE	1	coreceptor	MIIC-resident peptide-loading chaperone with explicit PM absence at steady state and surface only under overexpression/cytokine; obligate DM heterodimer coreceptor gate.
+HLA-DOB	LEAVE	1	coreceptor	Late-endosomal/lysosomal; reaches only a minor PM pool as the obligate DOA/DM-escorted complex, not alone; also fails the coreceptor gate.
+HLA-E	RESCUE	2		Validated cell-surface MHC-Ib and NK-checkpoint (NKG2A) ligand with a real universal surface pool and two ec epitopes despite ER-retained majority.
+HLA-F	BORDERLINE	2		MHC-Ib whose surface open conformers are genuine but activation-induced/state-gated, with two ec epitopes.
+HPSE	LEAVE	0	anchored	Secreted/lysosomal heparanase with only state-conditional surface association and no constitutive membrane pool; also fails the anchored gate.
+HSPA1A	BORDERLINE	0	anchored	Cytosolic at baseline but membrane Hsp70 is genuinely detected on heat-shocked/tumor cells; also fails the anchored gate (no true TM anchor).
+HSPA5	BORDERLINE	0	anchored	ER-luminal GRP78 whose cancer/stress-induced cell-surface form is real and validated as a tumor marker; also fails the anchored gate.
+IFITM2	BORDERLINE	0	ecd	Endolysosomal-dominant with a documented minor PM pool actively YXXphi-sorted back to endosomes; no ectodomain, also failing the ecd gate.
+IFITM3	BORDERLINE	0	ecd	Endolysosomal at steady state but a minor PM pool is detected by live-cell flow before Yxxphi-driven internalization; no ectodomain, also failing the ecd gate.
+ITM2A	BORDERLINE	0		Vesicular/Golgi-dominant with a minor baseline surface fraction that increases on activation and is confirmed accessible in overexpression.
+IYD	LEAVE	0	anchored,ecd	Apical-lumenal endomembrane enzyme reaching PM only in overexpression and facing the follicle lumen with a tiny ectodomain; also fails anchored and ecd gates.
+IZUMO1	BORDERLINE	0		Outer-acrosomal-membrane resident that only transiently reaches the equatorial PM after the acrosome reaction, a genuine state-gated surface event.
+KCNG3	LEAVE	0	coreceptor	Silent Kv6.3 subunit that is ER-retained alone and reaches the PM only via obligate Kv2 co-assembly; also fails the coreceptor gate.
+KCNH5	RESCUE	0		Kv10.2 shows constitutive genuine surface expression in overexpression systems (four observations); native surface is cell-cycle-gated, matching the OE-rescue pattern.
+KCNJ18	LEAVE	0		Kir2.6 is predominantly ER-retained when expressed alone, with only a minor PM fraction as heterotetramers with Kir2.1/2.2.
+KCNK1	BORDERLINE	0		TWIK-1 has a genuine regulated PM pool (~5% of channel) via recycling endosomes, quantitatively minor under basal conditions.
+KCNK12	BORDERLINE	0		THIK-2 is ER-retained at baseline but a real surface pool is produced by phosphorylation/heterodimerization/disease triggers.
+KCNK16	BORDERLINE	0		TALK-1 is ER-dominant but a minority PM pool is functionally confirmed by electrophysiology in beta-cells.
+KCNK6	BORDERLINE	0	coreceptor	TWIK-2 is endolysosomal/ER by default with a genuine surface pool gated on ATP/P2X7 activation; also fails the coreceptor gate.
+KCNMB4	BORDERLINE	0		BK beta4 has an ER-retention signal but surface biotinylation confirms a real, limited PM pool.
+KCNS1	LEAVE	1	coreceptor,reason	Silent Kv9.1 subunit ER-retained alone, surfacing only as an obligate Kv2 heteromer; also fails coreceptor and reason gates.
+KCNS2	LEAVE	0	coreceptor	Silent Kv9.2 subunit retained intracellularly without Kv2 and surfacing only as a heteromer; also fails the coreceptor gate.
+KCNV1	LEAVE	0	coreceptor,reason	Silent Kv8.1 subunit whose surface is strictly contingent on obligate Kv2 co-assembly; also fails coreceptor and reason gates.
+KIAA0319L	BORDERLINE	0		AAVR is TGN/endomembrane-dominant with a minority constitutive surface fraction, and is the validated cell-surface AAV entry receptor.
+LAMP2	BORDERLINE	1		Lysosomal at steady state but a genuine state-conditional surface pool appears via lysosomal exocytosis under activation/disease, with one ec epitope.
+LAPTM4B	LEAVE	0		Lysosomal/endosomal resident; only the cancer-upregulated LAPTM4B-35 isoform gains a PM fraction, and even then the endosomal pool predominates.
+LGALS9	LEAVE	0	anchored,ecd	Cytosolic galectin surfacing via unconventional secretion and glycan-lattice tethering rather than a membrane-integral pool; also fails anchored and ecd gates.
+LRRFIP1	LEAVE	0	anchored,ecd	Cytoplasmic/nuclear protein with no TM and only a state-conditional minority surface presence on resting T cells; also fails anchored and ecd gates.
+M6PR	RESCUE	1		Cation-dependent mannose-6-phosphate receptor is a canonical recycling receptor cycling through the PM (~2.3% quantified) with one ec epitope, four observations.
+MCOLN2	BORDERLINE	0		TRPML2 is lysosomal/endosomal-dominant but a minority PM pool is documented by electrophysiology via Arf6 recycling.
+MCOLN3	BORDERLINE	0		TRPML3 is dominantly ER/endosomal/lysosomal but multiple OE studies detect a real, dynamic, state-regulated minor PM pool, so surface is genuine but weak.
+MMP28	LEAVE	0	anchored	Secreted protease with no TM (anchored fail); its surface signal is transient HSPG-mediated adherence after secretion, not a genuine membrane pool.
+MR1	RESCUE	2		Classic ligand-inducible ER-to-surface trafficking confirmed by live-cell flow across many cell types (11 OE observations) with ec_sites=2, making it a validated targetable surface pool on expression.
+MUCL1	LEAVE	0	anchored	Only one weak observation with topology ambiguous between secreted and tethered (anchored fail); membrane display is non-universal and dominant fate is secretion/cytoplasm.
+MYO18A	LEAVE	0	anchored,ecd	Cytoskeletal myosin that is dominantly trans-Golgi/ER; surface is restricted to a macrophage-specific SP-R210L isoform and it also fails anchored and ecd gates.
+NLGN4Y	BORDERLINE	1		Neuroligin adhesion molecule with a genuine but minor synaptic surface fraction, though NLGN4Y has severe surface-trafficking deficits vs NLGN4X and is predominantly cytoplasmic.
+NOX5	BORDERLINE	0		NADPH oxidase that is dominantly ER/Golgi/perinuclear but has a real minority PM pool gated by EF-hand integrity and PtdIns(4,5)P2 (ec_sites=0, delivery not display).
+OR10A2	LEAVE	0		Olfactory receptor that is ER-retained in heterologous cells; surface requires transcriptional enhancement or native OSN trafficking context, so baseline surface is not real.
+OR10S1	LEAVE	0	expr	Olfactory receptor predominantly ER-retained in non-olfactory cells; surface requires native OSN context or engineered trafficking variants, and it also fails the expr gate.
+OR1A1	LEAVE	0		Olfactory receptor retained in ER or degraded in the vast majority of cell types despite 9 OE observations; robust surface is confined to native mature OSN cilia.
+OR1G1	LEAVE	0	expr	Olfactory receptor intracellular in ectopic cell lines; surface only in Sf9 overexpression with G-alpha co-expression, and native ciliary surface is inaccessible (expr gate fail).
+OR52B2	LEAVE	0	expr	Olfactory receptor ER-retained in heterologous systems without chaperones; native surface form exists only in OSNs (expr gate fail).
+OR52N5	LEAVE	0	expr	Olfactory receptor retained intracellularly outside OSNs; surface confirmed only in the specialized ciliary membrane of native olfactory neurons (expr gate fail).
+P2RX4	BORDERLINE	2		P2X4 is a functional PM ATP-gated channel (ec_sites=2) but dominantly lysosomal at rest, with the surface pool expanding only upon stimulation/disease via regulated recycling.
+PCDH11X	LEAVE	8		Protocadherin with a large ectodomain (ec_sites=8) but four antibodies show predominantly cytoplasmic staining and the PM pool is only inferred from topology, not detected.
+PGRMC1	BORDERLINE	0		Dominantly ER-resident heme-binding protein with a real but minor PM fraction documented in overexpression and cancer-state contexts (ec_sites=0).
+PHB1	BORDERLINE	0	anchored	Prohibitin is dominantly mitochondrial-inner-membrane but has a documented minor PTM-gated PM pool in specific cancer states; also fails the anchored gate so the pool has topology issues.
+PKD2	BORDERLINE	2		Polycystin-2 is dominantly ER-resident but reaches cilia and a minor PM fraction (ec_sites=2) conditionally on partner co-expression (PKD1/GSK3b/TRPC5), so surface is real but conditional.
+PLP1	LEAVE	0		Myelin proteolipid with extracellular loops physically occluded; live flow cytometry confirms it is not surface-labelable except in MS disease, so surface is undetectable at baseline.
+PPT1	LEAVE	0	anchored	Soluble lysosomal thioesterase (anchored fail); surface glycoprotein detection is restricted to a chemotherapy-stress disease state, not a genuine constitutive membrane pool.
+PTPRR	BORDERLINE	0		Dominantly late-endosomal/Golgi receptor phosphatase; only the PTPBR7 isoform reaches the PM and only in developing neurons, so surface is genuine but isoform- and context-restricted.
+PTTG1IP	BORDERLINE	0		PBF genuinely traffics through the PM (surface biotinylation-detected) but is rapidly internalized via YXXphi clathrin endocytosis, giving a minor steady-state pool that grows in tumors (ec_sites=0).
+RGMB	RESCUE	3		GPI-anchored surface co-receptor whose minority PM pool is confirmed by two independent direct methods (live-cell flow cytometry and functional surface assays) with a real ectodomain (ec_sites=3).
+RNF128	BORDERLINE	0		GRAIL is dominantly ER/endomembrane but has a real state-conditional surface fraction documented on anergic T cells and via therapeutic engagement assays (ec_sites=0).
+RNF167	BORDERLINE	2		Dominantly endolysosomal E3 ligase with a genuine minor subpopulation reaching the PM in neurons and cell lines (ec_sites=2), so surface is real but context-dependent.
+RO60	LEAVE	0	anchored,ecd	Cytoplasmic RNA-binding autoantigen (anchored+ecd fails); surface display is strictly apoptosis-induced bleb translocation, not a genuine membrane pool.
+RPSA	LEAVE	0	anchored,ecd	Cytosolic/ribosomal laminin-receptor moonlighter (anchored+ecd fails) whose surface form is state-induced by infection/transformation with no proper membrane topology.
+RPSA2	LEAVE	0	anchored,ecd	Dominantly the intracellular 37LRP ribosomal precursor (anchored+ecd fails); only a minority matures to the surface 67LR form, so surface is a minor moonlighting fraction.
+RTP3	LEAVE	0	anchored,ecd	NCBI-annotated cytoplasmic chaperone whose own surface residence is only inferred from its cargo-receptor function and never directly demonstrated (anchored+ecd fails).
+S100A16	LEAVE	0	anchored,ecd	Cytosolic S100 protein with no TM (anchored+ecd fails); membrane IHC is all permeabilized FFPE with no live-cell non-permeabilized confirmation of extracellular exposure.
+SCARB2	LEAVE	0		LIMP-2 is dominantly endolysosomal and live-cell flow consistently fails to detect surface in resting pDCs, RD and Jurkat cells, so the surface pool is undetectable by direct methods at rest.
+SIDT1	BORDERLINE	0		Dominantly ER but PM presence is confirmed in gastric epithelium and NSCLC, representing a genuine cell-type-restricted minority surface pool (ec_sites=0).
+SLC11A2	BORDERLINE	0		DMT1 is a genuine functional apical PM iron transporter in polarized intestinal/glandular epithelia but endolysosomal in non-epithelial cells, so surface is real but polarization/tissue-gated (ec_sites=0).
+SLC16A13	BORDERLINE	0		MCT13 is intracellular without CD147 and reaches only partial/basolateral PM with the CD147 chaperone, so the surface pool is genuine but co-expression-conditional (ec_sites=0).
+SLC17A5	BORDERLINE	0		Sialin is dominantly lysosomal but surface biotinylation detects it at endothelial surfaces and it reaches the PM under mechanical force, a real but minor/state-conditional pool (ec_sites=0).
+SLC27A1	BORDERLINE	0	ecd	FATP1 is dominantly ER but undergoes insulin-regulated translocation to the PM in adipocytes/muscle, a genuine state-gated minority pool; also fails the ecd gate.
+SLC2A10	BORDERLINE	0		GLUT10 is dominantly ER/mitochondrial across all cell types with only a transient, stress-induced minority PM pool, so surface is real but transient (ec_sites=0).
+SLC2A12	RESCUE	0		GLUT12 is a GLUT4-type insulin/AMPK/PKC-regulated transporter with a documented ~17% constitutive resting PM pool that expands on stimulation, a genuine regulated surface pool (ec_sites=0, delivery not display).
+SLC2A4	RESCUE	0		GLUT4 is the archetypal regulated-exocytosis transporter that reaches the PM as a functional pool expanding dramatically upon insulin/contraction (4 OE observations; ec_sites=0, delivery not display).
+SLC2A8	BORDERLINE	0		GLUT8 is dominantly lysosomal/endosomal (dileucine-retained) with a genuine but minor stimulus-gated PM pool, so surface is real but state-gated (ec_sites=0).
+SLC38A7	BORDERLINE	0		SNAT7 is dominantly lysosomal but reaches the PM in polarized RPE and via exocytosis, a genuine but restricted minority surface pool (ec_sites=0).
+SLC39A9	BORDERLINE	0		ZIP9 is dominantly endomembrane/Golgi but a real minority PM pool is documented by functional T-BSA-FITC surface assays, so surface is genuine but state-conditional (ec_sites=0).
+SLC49A4	LEAVE	0		DIRC2 resides on lysosomal membranes in all cell types; PM localization is observed only with an engineered dileucine-motif-disrupted mutant, so wild-type surface is not real.
+SLC5A7	BORDERLINE	0		CHT1 functions at the PM via a small constitutively cycling pool with activity-dependent surface recruitment, but is dominantly on synaptic vesicles/endosomes at baseline (ec_sites=0).
+SLC9A5	BORDERLINE	0		NHE5 shows little-to-no surface by biotinylation at rest (dominantly Rab11 recycling endosomes) but a genuine regulated PM pool appears upon stimulation, so surface is real but strongly state-gated.
+SLC9B2	BORDERLINE	0		NHA2 is dominantly intracellular (inner mitochondrial membrane in kidney DCT) but has a documented PM pool in polarized epithelia and osteoclasts, real but cell-type-restricted (ec_sites=0).
+SNAP23	LEAVE	0	anchored,ecd	Cytoplasmic-face SNARE (anchored+ecd fails) whose outer-leaflet surface exposure is documented only on platelets and palmitoylation-dependent, so no general extracellular pool exists.
+STX3	LEAVE	0	ecd	Syntaxin-3 SNARE with its entire functional apparatus on the cytoplasmic face (ecd fail); apical PM residence is real but non-extracellular, so it is not a targetable surface pool.
+STX4	LEAVE	0	ecd	Syntaxin-4 SNARE is canonically cytoplasmic-face (ecd fail); the outer-leaflet ExSTX4 form is a rare state-gated topological exception, not a genuine general surface pool.
+SYT8	BORDERLINE	0		Synaptotagmin-8 on secretory-vesicle membranes exposes its lumenal domain transiently during exocytosis, documented at the sperm acrosomal membrane, a real but transient/restricted surface (ec_sites=0).
+TAPBPL	BORDERLINE	0		TAPBPR is dominantly an ER/ERGIC chaperone but surface biotinylation confirms a genuine minor OE-facilitated PM fraction, real but state-conditional (ec_sites=0).
+TAS2R30	BORDERLINE	0		Bitter-taste GPCR dominantly ER-retained but with genuine PM documented in several contexts (HNSCC, apical hepatocytes, ciliary airway), so surface is real but context-restricted (ec_sites=0).
+TCTN1	LEAVE	0	anchored	Tectonic-1 localizes to the ciliary transition-zone membrane subdomain, not the general PM, with no general surface pool documented and biosynthetic-membrane retention on OE (anchored fail).
+TECTA	LEAVE	10	orf	Alpha-tectorin is dominantly secreted/ECM-incorporated; the GPI-anchored surface form is a transient biosynthetic intermediate rapidly shed by TMPRSS2/GPI cleavage (orf gate fail).
+TECTB	LEAVE	2		Beta-tectorin is dominantly secreted into the tectorial-membrane ECM; the GPI-anchored surface precursor is transient before proteolytic release, not a stable membrane pool.
+TGOLN2	BORDERLINE	0		TGN46 is dominantly trans-Golgi but constitutively cycles to the PM, giving a genuine transient surface pool during TGN-to-PM trafficking (ec_sites=0).
+THBS3	LEAVE	0	anchored	Thrombospondin-3 is a secreted/exosomal matricellular protein dominantly ER-resident (anchored fail); surface exposure is only inferred from functional viral co-receptor assays.
+TMC1	LEAVE	0		TMC1 is ER-retained in all heterologous and non-hair-cell contexts; surface is strictly confined to inner-ear hair-cell stereocilia tips, so it is not surface-accessible systemically.
+TMEM106B	BORDERLINE	1		Type-II lysosomal protein (ec_sites=1) with a genuine minor PM pool accessed via lysosomal exocytosis, so surface is real but state-conditional.
+TMEM163	BORDERLINE	0	ecd	Dominantly vesicular/lysosomal zinc transporter with a constitutive minor PM pool confirmed by surface biotinylation, real but small; also fails the ecd gate.
+TMEM25	BORDERLINE	1		Ig-domain protein (ec_sites=1) dominantly late-endosomal in neurons but reaching the PM in polarized epithelial tight junctions and cancer lines, so surface is genuine but context-restricted.
+TMEM63A	BORDERLINE	0		Mechanosensitive channel dominantly lysosomal but with a real PM fraction in oligodendrocytes/PBMCs and under stretch, so surface is genuine but cell-type/state-restricted (ec_sites=0).
+TMEM87A	BORDERLINE	2		Dominantly Golgi across astrocytes/neurons/HEK293 but a genuine PM-resident fraction is documented in melanoma and ovarian cancer functional assays (ec_sites=2).
+TNFSF11	RESCUE	2		RANKL is the archetypal regulated-secretion ligand stored in secretory lysosomes and displayed at the surface upon mechanical/inflammatory activation; validated target (denosumab) with ec_sites=2.
+TPCN2	LEAVE	0		TPC2 surface biotinylation of endogenous protein detects only internal-membrane signal; PM exposure requires targeting-motif mutation or transient lysosomal exocytosis, so surface is undetectable at steady state.
+TRPV2	BORDERLINE	0		TRPV2 is dominantly ER/endosomal at rest but a genuine PM pool is detected by live-cell flow and functional assays upon stimulated translocation, so surface is real but state-induced (ec_sites=0).
+VAMP7	LEAVE	0	ecd	TI-VAMP is a lysosomal SNARE (ecd fail) whose PM exposure is transient and stimulus-gated via lysosomal exocytosis, with essentially no extracellular domain to target.
+ZDHHC2	LEAVE	0	ecd	Palmitoyltransferase with a cytoplasmic-face active site and no ectodomain (ecd fail), dominantly endomembrane with only a minor cycling PM fraction in neurons, so no genuine targetable surface pool.

@@ -1,0 +1,147 @@
+gene	call	traffics_alone	key_partner	rationale_basis
+ABCC8	NEEDS_PARTNER	no	KCNJ11 (Kir6.2)	SUR1 RKR ER-retention masked only by Kir6.2 co-assembly; unassembled SUR1 ER-retained
+ABCC9	NEEDS_PARTNER	no	Kir6.1/Kir6.2	SUR2 needs obligate hetero-octameric assembly with Kir6.x; no monomer surface trafficking
+ABCG5	NEEDS_PARTNER	no	ABCG8	Obligate half-transporter; must heterodimerize with ABCG8; no independent surface trafficking
+ABCG8	NEEDS_PARTNER	no	ABCG5	ABCG8 homodimers ER-retained; only ABCG5/G8 heterodimer traffics to surface
+ACHE	INCLUDE_ALONE	yes	none	GPI-anchored H isoform reaches surface independently; live-cell flow shows surface dominance in cancer lines
+ADAM2	NEEDS_PARTNER	no	ADAM1 (fertilin-alpha)	Requires calmegin chaperone and ADAM1 heterodimerization; absent from sperm surface without them
+AMIGO2	INCLUDE_ALONE	yes	none	Surface biotinylation MS confirms PM in cancer cells; Kv2 dependency only neuronal
+AMN	INCLUDE_ALONE	yes	none	AMN expressed alone reaches the surface; cubilin needed only for functional cubam complex
+ATP12A	INCLUDE_ALONE	yes(reassessed)	ATP1B1 (55.85)	ER retention alone is relieved by any beta-subunit including ubiquitous Na,K-ATPase beta1 (ATP1B1, 55.85 TPM), so an endogenous partner is available.
+ATP1A1	INCLUDE_ALONE	yes(reassessed)	ATP1B1 (55.85) / ATP1B3 (113.9)	Its obligate beta partners ATP1B1 (55.85) and ATP1B3 (113.9) are ubiquitously co-expressed, so the pump reaches the surface without co-delivery.
+ATP1A2	INCLUDE_ALONE	yes(reassessed)	ATP1B1 (55.85) / ATP1B3 (113.9)	Beta partners ATP1B1 (55.85) and ATP1B3 (113.9) are ubiquitous, supplying the obligate subunit endogenously.
+ATP1A3	INCLUDE_ALONE	yes(reassessed)	ATP1B1 (55.85) / ATP1B3 (113.9)	Ubiquitous beta subunits ATP1B1 (55.85) and ATP1B3 (113.9) provide the required partner for surface trafficking.
+ATP1B1	INCLUDE_ALONE	yes(reassessed)	ATP1A1 (216.3)	Its obligate alpha partner ATP1A1 is ubiquitously and highly expressed (216.3 TPM), so the beta subunit reaches the surface without co-delivery.
+ATP1B2	INCLUDE_ALONE	yes(reassessed)	ATP1A1 (216.3)	ER export of assembled alpha-beta is satisfied by ubiquitous ATP1A1 (216.3 TPM) as the endogenous alpha partner.
+ATP4B	NEEDS_PARTNER	no	ATP4A	Must co-assemble with ATP4A alpha subunit for surface delivery
+BTNL8	NEEDS_PARTNER	no	BTNL3	Requires BTNL3 co-expression to form surface heterodimers; alone not TCR-accessible
+CALCRL	NEEDS_PARTNER	no	RAMP1/2/3	CLR needs a RAMP to reach PM; alone no surface or function
+CALHM3	NEEDS_PARTNER	no	CALHM1	Obligate heteromeric channel with CALHM1; no independent surface evidence
+CATSPER1	LEAVE	no	CatSper complex	Pore subunit of ~10-subunit sperm flagellar CatSpermasome; not reconstitutable from one cDNA
+CATSPER2	LEAVE	no	CatSper complex	Pore subunit of obligate heterotetrameric sperm CatSper channel; needs full complex
+CATSPER3	LEAVE	no	CatSper complex	One of four pore subunits of sperm CatSper holo-complex; no independent trafficking
+CATSPER4	LEAVE	no	CatSper complex	Pore subunit needing CatSper-theta scaffold and full complex for flagellar surface
+CATSPERB	LEAVE	no	CatSper complex	Auxiliary canopy subunit of sperm CatSper holo-complex; requires complex for membrane integration
+CATSPERD	LEAVE	no	CatSper complex	TM subunit interdependent with all CatSper subunits; null loses whole channel
+CATSPERE	LEAVE	no	CatSper complex	Auxiliary subunit absent from sperm without pore-forming CatSper partners
+CATSPERG	LEAVE	no	CatSper complex	Lost from flagellar membrane in CATSPER1-null sperm; complex-dependent
+CATSPERH	LEAVE	no	CatSper complex	Interdependent with full CatSper complex; knockout removes entire channel
+CATSPERQ	LEAVE	no	CatSper complex	Requires co-assembly with CatSper complex to reach flagellar surface
+CD180	NEEDS_PARTNER	no	MD1 (LY86)	Requires MD-1 for stable surface expression; ER-retained when MD-1 absent
+CD200R1L	INCLUDE_ALONE	yes	none	Reaches HEK293T surface with or without DAP12; only mouse orthologs need DAP12
+CD300LB	NEEDS_PARTNER	no	DAP12	DAP12 mandatory; fails to reach surface without adaptor (charged TM lysine)
+CD3D	LEAVE	no	TCR/CD3 complex	No monomer surface; obligate multi-chain TCR/CD3 complex assembly required
+CD3E	LEAVE	no	TCR/CD3 complex	Traffics only within obligate multi-subunit TCR-CD3 complex; not standalone
+CD74	INCLUDE_ALONE	yes	none	Traffics to surface on its own as type II TM MIF receptor; also escorts MHC-II
+CD79A	NEEDS_PARTNER	no	CD79B	Cannot reach surface without CD79B heterodimer and mIg; CRISPR-KO ER-retains BCR
+CD79B	NEEDS_PARTNER	no	CD79A	Obligate disulfide heterodimer with CD79A; reconstitution needs CD79A co-expression
+CHRNA1	NEEDS_PARTNER	no	CHRNB1/CHRND/CHRNE	Muscle AChR pentamer subunit; ~30% assemble, majority ER-retained without partner subunits
+CHRNA10	NEEDS_PARTNER	no	CHRNA9	Alpha10 needs alpha9 heteromeric partner (and cholinergic priming) for surface assembly
+CHRNA2	NEEDS_PARTNER	no	CHRNB2/CHRNB4	Obligate heteromeric nAChR; needs beta subunit; no monomeric surface species
+CHRNA3	NEEDS_PARTNER	no	CHRNB4	Alpha3 assembles with beta4 pentamer in ER before surface; no monomer trafficking
+CHRNB1	NEEDS_PARTNER	no	CHRNA1/CHRND/CHRNE	Muscle AChR beta subunit; isolated loop Golgi-retained; needs full pentamer assembly
+CHRNB2	NEEDS_PARTNER	no	CHRNA4	Reaches PM only as assembled alpha4beta2 pentamer; no monomer surface
+CHRNB4	NEEDS_PARTNER	no	CHRNA3	Beta4 traffics only in assembled alpha3beta4 pentamer; no standalone surface
+CHRND	NEEDS_PARTNER	no	CHRNA1/CHRNB1/CHRNE	Delta subunit needs full muscle AChR pentamer; fragments alone not surface-expressed
+CHRNE	NEEDS_PARTNER	no	CHRNA1/CHRNB1/CHRND	Epsilon reaches surface only in assembled muscle AChR pentamer
+CHRNG	NEEDS_PARTNER	no	CHRNA1/CHRNB1/CHRND	Fetal gamma needs full AChR pentamer assembly before membrane insertion
+CLCNKA	NEEDS_PARTNER	no	BSND (barttin)	Only small fraction reaches PM without barttin; barttin enhances surface insertion
+CLCNKB	NEEDS_PARTNER	no	BSND (barttin)	Needs barttin for membrane targeting/stability; alone unstable, proteasomally degraded
+CNGA1	INCLUDE_ALONE	yes(reassessed)	CNGB1 (self-homomerizes)	The rod CNG alpha subunit forms functional homomeric surface channels in heterologous cells; CNGB1 dependence is a rod-outer-segment persistence issue, not an ER-exit block.
+CNGA4	NEEDS_PARTNER	no	CNGA2/CNGB1b	Reaches PM only in 2:1:1 CNGA2/A4/B1b heterotetramer; alone no self-assembly
+CNGB1	NEEDS_PARTNER	no	CNGA1	Requires CNGA1 pre-assembly for outer-segment targeting; alone no functional channel
+CNGB3	NEEDS_PARTNER	no	CNGA3	Obligate heteromeric cone-channel subunit; CNGA3 required for surface delivery
+CNTNAP1	NEEDS_PARTNER	no	CNTN1	Obligate cis-complex with contactin-1 for surface; mutants soma-retained without it
+CYBA	NEEDS_PARTNER	no	NOX2 (CYBB)	p22phox needs NOX2 heterodimer; without it ERAD-degraded via Derlin-1
+DUOX1	NEEDS_PARTNER	no	DUOXA1	ER-to-PM transport requires DUOXA1; without it DUOX1 ER-retained
+DUOX2	NEEDS_PARTNER	no	DUOXA2	Needs DUOXA2 for apical surface targeting; mutations disrupting complex abolish delivery
+FAP	INCLUDE_ALONE	yes	self/homodimer	WT FAP traffics as homodimer; no heterologous partner; live-cell flow surface-dominant
+GABBR1	NEEDS_PARTNER	no	GABBR2	C-terminal RSR ER-retention motif; GABBR2 masking required; Halo-GB1 alone minimal surface
+GABBR2	INCLUDE_ALONE	yes	self/homodimer	Masks GABBR1 ER retention; 49.6% at PM at rest; homodimers reach surface independently
+GABRA3	NEEDS_PARTNER	no	GABRB2/3 + GABRG2	WT alpha3 alone not surface; needs beta+gamma heteropentamer assembly
+GABRA5	NEEDS_PARTNER	no	GABRB + GABRG2	Obligate heteropentamer subunit; needs beta and gamma for ER exit/surface
+GABRB1	NEEDS_PARTNER	no	GABRA + GABRG	No homomeric surface; needs alpha+gamma heteropentamer; ECD residues block homomers
+GABRB2	NEEDS_PARTNER	no	GABRA1 + GABRG2	No monomer surface; obligate heteropentamer; gamma rescues beta2 surface delivery
+GABRB3	NEEDS_PARTNER	no	GABRA + GABRG2	Obligate subunit; native surface needs alpha/gamma co-assembly; monomer not physiological
+GABRD	NEEDS_PARTNER	no	GABRA1 + GABRB2	Reaches membrane only with alpha1 and beta2; alone or single-partner intracellular
+GABRG1	NEEDS_PARTNER	no	GABRA + GABRB	Gamma not surface as monomer; needs alpha+beta pentameric co-assembly
+GABRG2	NEEDS_PARTNER	no	GABRA + GABRB	Cannot reach surface as monomer; alpha/beta assembly required for ER exit
+GABRG3	NEEDS_PARTNER	no	GABRA + GABRB	Obligate heteropentamer subunit; co-purifies only with alpha/beta; no homomeric surface
+GABRQ	NEEDS_PARTNER	no	GABRA3/GABRB3	Theta ICD lacks anterograde signals; homomer not surface; needs alpha3/beta3 heteromer
+GLRB	NEEDS_PARTNER	no	GLRA1/2/3	GlyR-beta alone not surface; obligate co-expression with a GlyR-alpha subunit
+GP1BA	NEEDS_PARTNER	no	GP1BB + GP9	Assembles only within obligate GPIb-IX-V complex; BSS mutants lack surface complex
+GP9	NEEDS_PARTNER	no	GP1BA/GP1BB	GP9-KO abolishes surface GPIX and GPIbalpha; obligate GPIb-V-IX assembly
+GRIN1	NEEDS_PARTNER	no	GRIN2 (GluN2)	GluN1 alone no surface NMDAR; obligate GluN2 co-assembly for ER exit
+HLA-DPB1	NEEDS_PARTNER	no	HLA-DPA1	Obligate alpha/beta MHC-II heterodimer; neither chain surface as monomer
+HLA-DQA1	NEEDS_PARTNER	no	HLA-DQB1	Obligate DQalpha/DQbeta heterodimer with invariant chain; alpha alone not surface
+HLA-DQA2	NEEDS_PARTNER	no	HLA-DQB1/DQB2	Alpha chain not surface alone; obligate alpha-beta heterodimer is surface entity
+HLA-DQB1	NEEDS_PARTNER	no	HLA-DQA1	Obligate heterodimer with DQA1; neither chain reaches surface as monomer
+HLA-DQB2	NEEDS_PARTNER	no	HLA-DQA2 + CD74	Needs DQalpha2 heterodimer plus invariant chain for ER exit/surface
+HLA-DRA	NEEDS_PARTNER	no	HLA-DRB1	Obligate DR alpha chain; DRA-KO abolishes surface DR; needs DRB1 partner
+HLA-DRB1	NEEDS_PARTNER	no	HLA-DRA	Obligate alpha/beta heterodimer; neither chain reaches PM as monomer
+HLA-DRB3	NEEDS_PARTNER	no	HLA-DRA	Obligate heterodimer with DRA; CRISPR-KO abolishes surface DR
+HLA-DRB4	NEEDS_PARTNER	no	HLA-DRA + CD74	Obligate DRA heterodimer; invariant chain required for ER exit
+HLA-DRB5	NEEDS_PARTNER	no	HLA-DRA	Beta chain must heterodimerize with DRA; not surface independently
+HTR3C	NEEDS_PARTNER	no	HTR3A	Cannot form surface receptors alone; requires HTR3A heteromeric co-assembly
+HTR3D	NEEDS_PARTNER	no	HTR3A	ER-retained without HTR3A; heteromeric assembly required for surface
+HTR3E	NEEDS_PARTNER	no	HTR3A	No surface alone; requires HTR3A for functional heteromeric pentamers
+ITGA2B	NEEDS_PARTNER	no	ITGB3	Obligate alphaIIb/beta3 heterodimer; KO abolishes GPIIb surface; neither traffics alone
+ITGA4	INCLUDE_ALONE	yes(reassessed)	ITGB1	Obligate alpha subunit but its beta1 partner ITGB1 is ubiquitous at median 260.5, so VLA-4 assembles and reaches the surface without co-delivery.
+ITGAD	NEEDS_PARTNER	no	ITGB2 (CD18)	CD11d TGN-retained without CD18; co-expression relieves retention
+ITGAE	NEEDS_PARTNER	no	ITGB7	AlphaE obligately heterodimerizes with beta7 for surface CD103 expression
+ITGAL	NEEDS_PARTNER	no	ITGB2 (CD18)	CD11a alone no membrane; needs CD18 co-transfection; LOF abolishes surface LFA-1
+ITGAM	NEEDS_PARTNER	no	ITGB2 (CD18)	Canonical Mac-1 surface expression requires CD18 co-assembly; obligate heterodimer
+ITGAV	INCLUDE_ALONE	yes(reassessed)	ITGB1	Obligate heterodimer but its beta1 and beta5 partners are abundant (ITGB1 260.5, ITGB5 64.85), so alphaVbeta1/alphaVbeta5 form and traffic without a co-delivered partner.
+ITGAX	NEEDS_PARTNER	no	ITGB2 (CD18)	CD11c/CD18 obligate heterodimer; alpha/beta pairing required for ER exit/surface
+ITGB1	INCLUDE_ALONE	yes(selective)	ITGA* (promiscuous)	promiscuous β1 — pairs with some α in every cell, so effectively always surface-competent (manual selective inclusion)
+ITGB3	INCLUDE_ALONE	yes(reassessed)	ITGAV	Needs an alpha partner but ITGAV is co-expressed at median 29.7, forming alphaVbeta3 that reaches the surface without co-delivering alphaIIb.
+KCND2	NEEDS_PARTNER	no	KCNIP1/2 (KChIP)	Golgi-retained without KChIP; KChIP co-expression drives PM redistribution
+KCNG2	NEEDS_PARTNER	no	KCNB1 (Kv2.1)	Silent subunit; ER-retained without Kv2; surface only as Kv2 heterotetramer
+KCNG4	NEEDS_PARTNER	no	KCNB1/B2 (Kv2)	Silent subunit; cannot homotetramerize; ER-retained without Kv2 co-assembly
+KCNJ11	NEEDS_PARTNER	no	SUR1/2 (ABCC8/9)	Kir6.2 RKR ER-retention; needs SUR co-assembly to reach membrane
+KCNJ3	NEEDS_PARTNER	no	KCNJ5 (GIRK4)	GIRK1 needs GIRK4 for surface; alone core-glycosylated and intracellular
+KCNJ8	NEEDS_PARTNER	no	SUR2B/2A/1 (ABCC9/8)	Kir6.1 RKR ER-retention masked only by SUR co-assembly
+KCNV2	NEEDS_PARTNER	no	KCNB1 (Kv2.1)	Silent subunit; protein absent without Kv2.1; obligate Kv2 dependence for surface
+KLRC1	NEEDS_PARTNER	no	KLRD1 (CD94)	NKG2A obligately heterodimerizes with CD94; no CD94-independent surface expression
+KLRC2	NEEDS_PARTNER	no	KLRD1 (CD94)	NKG2C forms obligate disulfide heterodimer with CD94 for surface
+KLRD1	NEEDS_PARTNER	no	KLRC1/KLRC2 (NKG2)	CD94 obligately heterodimerizes with an NKG2; no independent surface trafficking
+KLRK1	NEEDS_PARTNER	no	DAP10 (HCST)	NKG2D homodimer gains stable surface only via DAP10 adaptor assembly
+LHFPL5	NEEDS_PARTNER	no	PCDH15	ECL1 ER-retention signal masked by PCDH15; without it ER-retained
+LILRA4	NEEDS_PARTNER	no	FCER1G (FcepsilonRIgamma)	ILT7 surface expression requires FcepsilonRIgamma adaptor; without it not surface
+LRRC52	NEEDS_PARTNER	no	SLO3 (KCNU1)/KCNMA1	Auxiliary gamma-subunit absent without Slo3/BKalpha pore-forming channel partner
+MC2R	NEEDS_PARTNER	no	MRAP	MRAP1 obligately required for ER-to-PM trafficking; without it ER-retained
+MRAP	INCLUDE_ALONE	yes	self/homodimer	Essential chaperone/escort that transits secretory pathway to PM; escorts MC2R
+NCR2	NEEDS_PARTNER	no	DAP12	NKp44 surface expression requires DAP12 association via TM lysine-183
+PCDHA8	NEEDS_PARTNER	no	PCDHB/PCDHG	Requires Pcdh-beta/gamma carrier cis-dimer to reach PM; alone intracellular
+PTCRA	LEAVE	no	pre-TCR/CD3 complex	Developmental pre-TCRalpha; dominant pool intracellular; needs TCRbeta+CD3 pre-TCR complex
+PTPRCAP	NEEDS_PARTNER	no	CD45 (PTPRC)	Rapidly degraded without CD45; >70% bound to CD45; needs CD45 for stability
+RHAG	INCLUDE_ALONE	yes	self/scaffold	Obligate Rh scaffold; constitutive erythrocyte membrane resident; RhD/CE depend on RHAG
+RHCE	NEEDS_PARTNER	no	RHAG	RHAG-KO abolishes surface Rh antigens; RHAG obligate chaperone for RhCE
+RHD	NEEDS_PARTNER	no	RHAG	Needs RhAG as obligate complex partner for stable membrane integration
+SCNN1B	NEEDS_PARTNER	no	SCNN1A + SCNN1G	ENaC obligate alpha-beta-gamma heterotrimer; beta never surface without alpha and gamma
+SCNN1G	NEEDS_PARTNER	no	SCNN1A + SCNN1B	GammaENaC needs alpha and beta co-assembly for Golgi/apical trafficking
+SGCA	NEEDS_PARTNER	no	SGCB/SGCG/SGCD	Traffics to sarcolemma only within tetrameric sarcoglycan complex
+SGCB	NEEDS_PARTNER	no	SGCA/SGCD/SGCG	Minimal surface alone; needs alpha/gamma/delta co-expression; beta/delta required for ER export
+SGCD	NEEDS_PARTNER	no	SGCA/SGCB/SGCG	Requires full sarcoglycan complex co-assembly for robust surface delivery
+SGCG	NEEDS_PARTNER	no	SGCA/SGCB/SGCD	Surface obligately complex-dependent; loss of any subunit prevents sarcolemmal trafficking
+SIGLEC16	NEEDS_PARTNER	no	DAP12	Reaches surface only with DAP12; charged TM associates with ITAM adaptor
+SIRPB1	NEEDS_PARTNER	no	DAP12 (TYROBP)	DAP12 required for efficient surface expression; charged TM mediates obligate interaction
+SLC3A1	NEEDS_PARTNER	no	SLC7A9/SLC7A13	rBAT needs light-chain partner; unassembled rBAT ERAD-degraded, no surface
+SLC51A	NEEDS_PARTNER	no	SLC51B (OSTbeta)	Neither OSTalpha nor OSTbeta surface alone; co-expression required for PM
+SLC6A18	NEEDS_PARTNER	no	TMEM27/ACE2	Collectrin (or ACE2) required for functional surface expression; alone ER-retained
+SLC6A19	NEEDS_PARTNER	no	ACE2/TMEM27	B0AT1 needs ACE2 (gut) or collectrin (kidney) for brush-border surface
+SLC7A13	NEEDS_PARTNER	no	SLC3A1 (rBAT)	Needs rBAT heavy-chain fusion; without it no PM trafficking or activity
+TLR6	INCLUDE_ALONE	yes	none	gp96 (endogenous) is trafficking chaperone; TLR2 not shown required for surface trafficking
+TMEM47	INCLUDE_ALONE	yes(reassessed)	CDH1	E-cadherin dependence is explicitly context-specific (only in non-epithelial cells); in epithelial cells with endogenous CDH1 it traffics to junctions normally.
+TMIE	LEAVE	no	MET complex (TMC1/2)	Hair-cell mechanotransduction; needs TMC1/2/LHFPL5/CIB2 machinery; not reconstitutable heterologously
+TRA	LEAVE	no	CD3 complex	TCRalpha needs CD3 chains for ER exit; part of obligate TCR/CD3 complex
+TRB	LEAVE	no	TCRalpha + CD3 complex	TCRbeta needs TCRalpha and CD3 subunits; part of multi-subunit TCR complex
+TREM1	NEEDS_PARTNER	no	DAP12 (TYROBP)	DAP12 obligate for surface stabilization; KO mice show low surface TREM1
+TREM2	NEEDS_PARTNER	no	DAP12	Needs DAP12 TM assembly for ER exit; unassembled complex ER/ERGIC-retained
+TRPC1	INCLUDE_ALONE	yes(reassessed)	ORAI1	ER-retained as a homotetramer alone, but Orai1alpha (essential for TRPC1 PM localization) is broadly co-expressed at median 12.1, enabling surface delivery.
+UPK1A	NEEDS_PARTNER	no	UPK2	Cannot exit ER alone; reaches PM only as UPK1A/UPK2 heterodimer
+UPK2	NEEDS_PARTNER	no	UPK1A	Cannot exit ER alone; surface delivery strictly requires UPIa co-expression
+UPK3A	NEEDS_PARTNER	no	UPK1B	ER-retained alone; exits to PM only as heterodimer with UPIb
+LTB	INCLUDE_ALONE	yes(reassessed)	none (LTA)	Type II TM protein with its own membrane anchor and no obligate trafficking partner or co-receptor rationale recorded, so it reaches the surface without co-delivery.
+TAS1R1	INCLUDE_ALONE	yes(reassessed)	none (TAS1R3)	Canonical class C GPCR classed surface-dominant with no obligate partner or co-receptor rationale recorded, so the co-receptor gate is unsubstantiated.
+TAS1R3	INCLUDE_ALONE	yes(reassessed)	none (TAS1R1/TAS1R2)	Promiscuous shared taste-receptor subunit, surface-dominant with no obligate single partner or rationale recorded; pairs with either T1R1 or T1R2 where present.

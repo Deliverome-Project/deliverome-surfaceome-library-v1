@@ -17,6 +17,19 @@ as two tarballs. `l1-reviewer-bundle-2026-11-20.tar.gz` holds the 3,120 files th
 (246 files, 1.65 GB, SHA-256 `56bd5618245f7ef0ae7e7ab85ee2445c31f39ec501af771ae6287c68adb73d13`).
 After the download, no credentials or network access are used.
 
+**Where the data lives.** Every bundle file has one listed home in
+[`data_locations.tsv`](analysis/sprint4/s4e9-orf-design-fg-panel/reviewer-package/data_locations.tsv),
+and a test fails if any file of the bundle is missing from it:
+
+| Home | What | How to get it |
+|---|---|---|
+| public bucket | the public releases whose terms allow redistribution: Ensembl 115/116 and Compara, the AlphaFold DB models, UniProt, Pfam, HPA v23 and the accessible-surfaceome release (2,775 files, 3.2 GB; each row names its license) | anyone, no account: <https://pub-e53f37f6fe6b4745829c2066350fe26f.r2.dev/> + the `location` column (Pfam-A, 658 MB, at EBI's identical copy instead), or `uv run --locked python public_data.py fetch --out ../l1-reviewer-bundle` (checks every SHA-256) |
+| this repository | small tables (≤ 5 MB), 188 files | already here, under `data/<bucket>/<key>` |
+| release | everything else: our own predictions and records, and public sources whose redistribution terms are unclear or non-commercial (PeptideAtlas, OpenProt, APPRIS, GENCODE Ribo-seq ORFs, the Tedman et al. tables) | the release tarballs above, which also hold the complete bundle |
+
+The release tarballs alone are enough to rerun everything; the public bucket and `data/` are
+for reading or citing individual files without them.
+
 ```bash
 gh release download bundle-2026-11-20 --repo Deliverome-Project/l1-library-review --dir ..
 ```

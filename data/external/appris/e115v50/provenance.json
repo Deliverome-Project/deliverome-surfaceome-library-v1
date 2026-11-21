@@ -1,0 +1,53 @@
+{
+  "generated_at_utc": "2026-10-08T23:54:41.599142+00:00",
+  "appris_release": "e115v50",
+  "appris_snapshot": "2026_06.v50",
+  "ensembl_release": "115",
+  "species_without_appris": {
+    "macaca_fascicularis": 9541
+  },
+  "records": [
+    {
+      "source_url": "https://apprisws.bioinfo.cnio.es/pub/releases/2026_06.v50/datafiles/homo_sapiens/e115v50/appris_data.principal.txt",
+      "source_last_modified": "Mon, 31 Aug 2026 09:41:12 GMT",
+      "local_path": "/Users/rebeccacarlson/.cache/deliverome/appris/appris_homo_sapiens_e115v50.txt",
+      "size_bytes": 6162702,
+      "sha256": "17213ba9ed55ea9f1ceb93b70eff04341701338cacfe7e4c2eb9c20fe451d302",
+      "dataset": "appris",
+      "species": "homo_sapiens",
+      "release": "e115v50",
+      "snapshot": "2026_06.v50"
+    },
+    {
+      "source_url": "https://apprisws.bioinfo.cnio.es/pub/releases/2026_06.v50/datafiles/mus_musculus/e115v50/appris_data.principal.txt",
+      "source_last_modified": "Sat, 29 Aug 2026 00:26:07 GMT",
+      "local_path": "/Users/rebeccacarlson/.cache/deliverome/appris/appris_mus_musculus_e115v50.txt",
+      "size_bytes": 2291340,
+      "sha256": "ae526662d2364ffba96b1bc040c41fc37d1504a7900d8b96c03a5500733df597",
+      "dataset": "appris",
+      "species": "mus_musculus",
+      "release": "e115v50",
+      "snapshot": "2026_06.v50"
+    },
+    {
+      "source_url": "https://ftp.ensembl.org/pub/release-115/fasta/homo_sapiens/pep/Homo_sapiens.GRCh38.pep.all.fa.gz",
+      "source_last_modified": "Wed, 09 Jul 2025 12:31:13 GMT",
+      "local_path": "/Users/rebeccacarlson/.cache/deliverome/appris/Homo_sapiens.GRCh38.pep.all.fa.gz",
+      "size_bytes": 19621018,
+      "sha256": "7991ab37d09986eefdb5c77032b15370ab0e99918b78f235f3230c0302851c96",
+      "dataset": "ensembl_pep",
+      "species": "homo_sapiens",
+      "release": "115"
+    },
+    {
+      "source_url": "https://ftp.ensembl.org/pub/release-115/fasta/mus_musculus/pep/Mus_musculus.GRCm39.pep.all.fa.gz",
+      "source_last_modified": "Thu, 10 Jul 2025 16:41:00 GMT",
+      "local_path": "/Users/rebeccacarlson/.cache/deliverome/appris/Mus_musculus.GRCm39.pep.all.fa.gz",
+      "size_bytes": 11248666,
+      "sha256": "560dddca2516fbc6649df6bc95c28a8d1f9e5019d5ae0cf6071a0360f482aeb0",
+      "dataset": "ensembl_pep",
+      "species": "mus_musculus",
+      "release": "115"
+    }
+  ]
+}

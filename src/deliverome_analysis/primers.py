@@ -86,6 +86,7 @@ import urllib.parse
 import urllib.request
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
+from typing import Any
 
 import primer3
 
@@ -294,7 +295,7 @@ class Structure:
         return self.found and self.dg <= -6.0
 
 
-def _structure(result, want_ascii: bool = False) -> Structure:
+def _structure(result: Any, want_ascii: bool = False) -> Structure:
     if not result.structure_found:
         return Structure(0.0, float("nan"), False, "")
     return Structure(
@@ -305,38 +306,38 @@ def _structure(result, want_ascii: bool = False) -> Structure:
     )
 
 
-def hairpin(seq: str, **kwargs) -> Structure:
+def hairpin(seq: str, **kwargs: Any) -> Structure:
     """Most stable hairpin, via primer3's thermodynamic alignment."""
-    opts = PRIMER3_CONDITIONS | kwargs
+    opts: dict[str, Any] = PRIMER3_CONDITIONS | kwargs
     return _structure(primer3.calc_hairpin(_clean(seq), output_structure=True, **opts), True)
 
 
-def self_dimer(seq: str, **kwargs) -> Structure:
+def self_dimer(seq: str, **kwargs: Any) -> Structure:
     """Most stable homodimer."""
-    opts = PRIMER3_CONDITIONS | kwargs
+    opts: dict[str, Any] = PRIMER3_CONDITIONS | kwargs
     return _structure(primer3.calc_homodimer(_clean(seq), output_structure=True, **opts), True)
 
 
-def cross_dimer(a: str, b: str, **kwargs) -> Structure:
+def cross_dimer(a: str, b: str, **kwargs: Any) -> Structure:
     """Most stable heterodimer between two primers."""
-    opts = PRIMER3_CONDITIONS | kwargs
+    opts: dict[str, Any] = PRIMER3_CONDITIONS | kwargs
     return _structure(
         primer3.calc_heterodimer(_clean(a), _clean(b), output_structure=True, **opts), True
     )
 
 
-def end_stability(a: str, b: str, **kwargs) -> Structure:
+def end_stability(a: str, b: str, **kwargs: Any) -> Structure:
     """Stability of ``a``'s 3' end against ``b``.
 
     This is the configuration that matters: a duplex involving the 3' terminus
     can be extended into primer-dimer product, where an equally stable internal
     duplex only sequesters primer.
     """
-    opts = PRIMER3_CONDITIONS | kwargs
+    opts: dict[str, Any] = PRIMER3_CONDITIONS | kwargs
     return _structure(primer3.calc_end_stability(_clean(a), _clean(b), **opts))
 
 
-def primer3_tm(seq: str, **kwargs) -> float:
+def primer3_tm(seq: str, **kwargs: Any) -> float:
     """primer3's own Tm, as an independent cross-check on :func:`neb_tm`.
 
     It will not equal ``neb_tm``: primer3 applies a different salt correction
@@ -344,8 +345,9 @@ def primer3_tm(seq: str, **kwargs) -> float:
     for anything that has to agree with the calculator the lab quotes, and this
     to notice if the two ever diverge badly.
     """
-    opts = {k: v for k, v in (PRIMER3_CONDITIONS | kwargs).items()}
-    return primer3.calc_tm(_clean(seq), **opts)
+    opts: dict[str, Any] = {k: v for k, v in (PRIMER3_CONDITIONS | kwargs).items()}
+    tm: float = primer3.calc_tm(_clean(seq), **opts)  # primer3 is untyped for mypy
+    return tm
 
 
 def longest_palindrome(seq: str) -> tuple[int, str, int]:
@@ -678,7 +680,7 @@ class PairReport:
             )
         return out
 
-    def to_dict(self) -> dict:
+    def to_dict(self) -> dict[str, Any]:
         return asdict(self)
 
 
@@ -832,13 +834,13 @@ def blast_primers(
         return rid, fh.read().decode("utf-8", "replace")
 
 
-def parse_blast_text(report: str) -> dict[str, list[dict]]:
+def parse_blast_text(report: str) -> dict[str, list[dict[str, Any]]]:
     """Parse a BLAST text report into per-query alignment records.
 
     Kept separate from ``blast_primers`` so it can be tested on a fixture
     without a network round trip.
     """
-    out: dict[str, list[dict]] = {}
+    out: dict[str, list[dict[str, Any]]] = {}
     current: str | None = None
     subject = ""
     ident = ""
@@ -883,7 +885,7 @@ def parse_blast_text(report: str) -> dict[str, list[dict]]:
     return out
 
 
-def three_prime_run(record: dict, query_length: int) -> int:
+def three_prime_run(record: dict[str, Any], query_length: int) -> int:
     """Perfectly matched bases counting back from the primer's 3' end.
 
     Zero when the alignment stops short of the 3' terminus -- such a hit cannot

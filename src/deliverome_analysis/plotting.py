@@ -9,11 +9,15 @@ Copied (and lightly adapted) from accessible-surfaceome's
 identity.
 """
 
+from collections.abc import Iterable
 from pathlib import Path
+from typing import Any, cast
 
 import matplotlib.font_manager as fm
 import matplotlib.pyplot as plt
 import seaborn as sns
+from matplotlib.axes import Axes
+from matplotlib.figure import Figure
 
 # Bundled brand fonts (committed under ./assets/fonts/). Registered with
 # matplotlib's font manager on first call to setup_plotting_style so the
@@ -94,7 +98,9 @@ DIVERGING_PALETTE = sns.blend_palette(
 ROUND_BARS_DEFAULT = False
 
 
-def setup_plotting_style(style="default", context="notebook", font_scale=2.0):
+def setup_plotting_style(
+    style: str = "default", context: str = "notebook", font_scale: float = 2.0
+) -> None:
     """Set up modern plotting style for all figures.
 
     Parameters
@@ -183,8 +189,8 @@ def setup_plotting_style(style="default", context="notebook", font_scale=2.0):
 # Originals stashed once at module import time so this is idempotent —
 # repeated setup_plotting_style() calls don't re-wrap an already-wrapped
 # function.
-_ORIGINAL_AXES_SET_TITLE = plt.Axes.set_title
-_ORIGINAL_FIGURE_SUPTITLE = plt.Figure.suptitle
+_ORIGINAL_AXES_SET_TITLE = Axes.set_title
+_ORIGINAL_FIGURE_SUPTITLE = Figure.suptitle
 
 
 def _disable_titles_globally() -> None:
@@ -195,22 +201,23 @@ def _disable_titles_globally() -> None:
     rcParam ``axes.titlesize`` to a positive value and re-import.
     """
 
-    def _no_title(self, *_args, **_kwargs):
+    def _no_title(self: object, *_args: Any, **_kwargs: Any) -> None:
         return None
 
-    plt.Axes.set_title = _no_title
-    plt.Figure.suptitle = _no_title
+    # Deliberate monkey-patch of the matplotlib classes (house style: titles go in captions).
+    Axes.set_title = _no_title  # type: ignore[method-assign,assignment]  # ty: ignore[invalid-assignment]
+    Figure.suptitle = _no_title  # type: ignore[method-assign,assignment]  # ty: ignore[invalid-assignment]
 
 
 def save_figure(
-    fig,
-    filename,
-    output_dir="figures",
-    formats=("png",),
-    gist_url=None,
-    dpi=300,
-    transparent=False,
-):
+    fig: Figure,
+    filename: str,
+    output_dir: str | Path = "figures",
+    formats: Iterable[str] = ("png",),
+    gist_url: str | None = None,
+    dpi: float = 300,
+    transparent: bool = False,
+) -> None:
     """Save figure in multiple formats.
 
     Defaults to one white-background PNG so a single run creates one reviewable
@@ -257,7 +264,12 @@ def save_figure(
         # bbox_inches="tight" crops to the artists (so long axis labels / outside
         # annotations are never clipped), and pad_inches keeps them off the very
         # edge so text doesn't sit flush against the image border.
-        save_kwargs = {"format": fmt, "dpi": dpi, "bbox_inches": "tight", "pad_inches": 0.15}
+        save_kwargs: dict[str, Any] = {
+            "format": fmt,
+            "dpi": dpi,
+            "bbox_inches": "tight",
+            "pad_inches": 0.15,
+        }
         if fmt == "png":
             if transparent:
                 save_kwargs.update(facecolor="none", transparent=True)
@@ -276,7 +288,9 @@ def save_figure(
     warn_if_dirty(stamp, filename)
 
 
-def create_figure(nrows=1, ncols=1, figsize=None, **kwargs):
+def create_figure(
+    nrows: int = 1, ncols: int = 1, figsize: tuple[float, float] | None = None, **kwargs: Any
+) -> tuple[Figure, Any]:
     """Create a figure with modern styling.
 
     If ``figsize`` is None, auto-sizes to (5*ncols, 4*nrows).
@@ -288,9 +302,17 @@ def create_figure(nrows=1, ncols=1, figsize=None, **kwargs):
     return plt.subplots(nrows=nrows, ncols=ncols, figsize=figsize, **kwargs)
 
 
-def add_significance_bar(ax, x1, x2, y, height=0.05, text="***", **kwargs):
+def add_significance_bar(
+    ax: Axes,
+    x1: float,
+    x2: float,
+    y: float,
+    height: float = 0.05,
+    text: str = "***",
+    **kwargs: Any,
+) -> None:
     """Add a significance bar between two points."""
-    bar_kwargs = {"color": COLORS["dark"], "linewidth": 1.5}
+    bar_kwargs: dict[str, Any] = {"color": COLORS["dark"], "linewidth": 1.5}
     bar_kwargs.update(kwargs)
     ax.plot([x1, x1, x2, x2], [y, y + height, y + height, y], **bar_kwargs)
     ax.text(
@@ -305,7 +327,7 @@ def add_significance_bar(ax, x1, x2, y, height=0.05, text="***", **kwargs):
     )
 
 
-def format_percentage_axis(ax, axis="y"):
+def format_percentage_axis(ax: Axes, axis: str = "y") -> None:
     """Format an axis to show percentages."""
     from matplotlib.ticker import PercentFormatter
 
@@ -315,12 +337,12 @@ def format_percentage_axis(ax, axis="y"):
         ax.xaxis.set_major_formatter(PercentFormatter(1.0))
 
 
-def get_color(name):
+def get_color(name: str) -> str:
     """Get a color from the palette by name."""
     return COLORS.get(name, COLORS["primary"])
 
 
-def get_categorical_colors(n=None):
+def get_categorical_colors(n: int | None = None) -> list[Any]:
     """Get categorical color palette."""
     if n is None:
         return CATEGORICAL_PALETTE
@@ -329,12 +351,12 @@ def get_categorical_colors(n=None):
     )
 
 
-def get_diverging_palette(n=11):
+def get_diverging_palette(n: int = 11) -> list[Any]:
     """Get diverging color palette."""
-    return sns.blend_palette(["#8878C8", "#FFFFFF", "#BC3C4C"], n_colors=n)
+    return cast(list[Any], sns.blend_palette(["#8878C8", "#FFFFFF", "#BC3C4C"], n_colors=n))
 
 
-def get_sequential_palette(family="maroon", n=6):
+def get_sequential_palette(family: str = "maroon", n: int = 6) -> list[Any]:
     """Get a sequential palette by family.
 
     Parameters
@@ -349,4 +371,4 @@ def get_sequential_palette(family="maroon", n=6):
     palette = SEQUENTIAL_PALETTES[family]
     if n <= len(palette):
         return palette[:n]
-    return sns.blend_palette(palette, n_colors=n)
+    return cast(list[Any], sns.blend_palette(palette, n_colors=n))

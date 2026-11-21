@@ -30,6 +30,7 @@ import shutil
 import subprocess
 import sys
 from pathlib import Path
+from typing import Any
 
 COMPROMISED_ROOTS = {
     "86a1ecba089c4a8d3bbe2734c612ba341d813e043cf9e8a862cd5c57a36bbe6b": "emSign ECC Root CA - G3",
@@ -138,10 +139,10 @@ def distrust_os_store(hits: dict[Path, set[str]]) -> None:
             for der in ders:
                 if _sha256(der) in COMPROMISED_ROOTS:
                     pem = base64.encodebytes(der).replace(b"\n", b"")
-                    lines = [pem[i : i + 64] for i in range(0, len(pem), 64)]
+                    pem_lines = [pem[i : i + 64] for i in range(0, len(pem), 64)]
                     (RHEL_BLOCKLIST / f"emudhra-{_sha256(der)[:16]}.pem").write_bytes(
                         b"-----BEGIN CERTIFICATE-----\n"
-                        + b"\n".join(lines)
+                        + b"\n".join(pem_lines)
                         + b"\n-----END CERTIFICATE-----\n"
                     )
         subprocess.run(["update-ca-trust", "extract"], check=True)
@@ -168,7 +169,7 @@ def remaining(root: str | Path) -> dict[Path, set[str]]:
     return {p: f for p, f in scan(root).items() if _confers_trust(p)}
 
 
-def harden(image):
+def harden(image: Any) -> Any:  # a modal.Image; modal is not a dependency of this module
     """Append a layer to a ``modal.Image`` that removes the compromised roots, or fails the build.
 
     Call it after the image's last ``apt_install``/``pip_install``/``run_commands`` and before

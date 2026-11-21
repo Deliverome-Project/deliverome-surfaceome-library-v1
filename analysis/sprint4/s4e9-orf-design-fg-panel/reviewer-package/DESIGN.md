@@ -54,7 +54,7 @@ therefore not yet evidence that a protein does not reach the surface.
 | CDSs with a construct in the order | 2,673 |
 | CDSs held (no construct passes the build checks) | 37 |
 | constructs ordered (an internally tagged CDS can have two or three) | 3,255 |
-| CDS length, median (range) | 1,401 nt (186–5,139) |
+| CDS length, median (range) | 1,401 nt (186–5,139; the shortest, CD52, is held) |
 | full insert with tag and barcode, median (range) | 1,751 nt (527–5,423) |
 
 The vector is `EFS – insert – IRES2 – PuroR – WPRE` between the LTRs. Each insert is Kozak, the
@@ -102,9 +102,11 @@ all but 51 are in L1 or L2, and every one of the 51 fails a stated gate or has n
 in, and neither tests it:
 
 - The co-receptor gate asks whether an obligate partner is expressed across all 1,206 HPA cell
-  lines, not in K562. Testing K562 directly would add GRIN1, KCND2, RHCE and RHD and drop none,
-  and seven genes list alternative partners that the gate wrongly requires together. The T- and
-  B-cell receptor chains are excluded correctly: their partners are absent from K562.
+  lines, not in the lines L1 will be screened in, and it requires every listed partner even where
+  the list names alternatives. A screening-line rule (every partner ≥ 5 TPM in at least 2 lines of
+  the screening shortlist, or in K562) keeps all 48 current genes and adds 29; over only the lines
+  in house or on order it adds 9, plus RHCE and RHD. The T- and B-cell receptor chains stay
+  excluded either way: their partners are present in only one shortlist line each.
 - No gate asks whether the host carries the chaperones some families need. Odorant receptors
   need RTP1 or RTP2 to reach the surface of heterologous cells
   ([Saito et al., 2004](https://pubmed.ncbi.nlm.nih.gov/15550249/)), bitter-taste receptors are
@@ -221,8 +223,10 @@ a particle with a specific other construct rarely (median 1 in 11,000), so seque
 specific pair adds little: a median 0.001% of the cells carrying one construct's barcode carry
 its sibling ([brief section 1](BRIEF.md#1-what-l1-is-for)).
 
-**Where it is weakest.** Sequence shared by every construct matters more. The tag cassette is
-encoded identically in the 2,942 N-terminally and internally tagged constructs, and a template
+**Where it is weakest.** Sequence shared by every construct matters more. Only the 310 C-terminal
+and snorkel constructs have recoded linkers (SpyTag003 and ALFA stay on p003's codons in all
+constructs). In the 2,942 N-terminally and internally tagged constructs the whole cassette,
+linkers included, is on p003's codons, so it is identical in all of them, and a template
 switch inside it would join one protein's N-terminal half to another's tag and C-terminal half.
 The model puts that at up to 4.1% of integrants, an upper bound that assumes every particle is
 mixed; recoding the cassette's linkers per construct would leave about 3.6%, and recoding every

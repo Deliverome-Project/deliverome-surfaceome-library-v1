@@ -29,8 +29,10 @@ import hashlib
 import json
 import subprocess
 import sys
+from collections.abc import Mapping
 from datetime import UTC, datetime
 from pathlib import Path
+from typing import Any, cast
 
 PNG_KEY = "Deliverome-Provenance"
 _PKG_DIR = Path(__file__).resolve().parent
@@ -94,14 +96,16 @@ def read(target: str | Path) -> dict[str, str]:
     path = Path(t)
     if path.suffix.lower() == ".png":
         from PIL import Image
+        from PIL.PngImagePlugin import PngImageFile
 
         with Image.open(path) as im:
-            raw = im.text.get(PNG_KEY)
+            raw = cast(PngImageFile, im).text.get(PNG_KEY)
         return json.loads(raw) if raw else {}
     if path.suffix.lower() == ".pdf":
         from pypdf import PdfReader
 
-        raw = (PdfReader(path).metadata or {}).get("/Keywords", "")
+        info: Mapping[str, Any] = PdfReader(path).metadata or {}
+        raw = info.get("/Keywords", "")
         return json.loads(raw) if raw.startswith("{") else {}
     raise ValueError(f"no provenance reader for {path.suffix or t}")
 

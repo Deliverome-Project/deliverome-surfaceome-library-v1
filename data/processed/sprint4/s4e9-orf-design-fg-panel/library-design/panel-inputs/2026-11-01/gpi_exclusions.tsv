@@ -1,0 +1,4 @@
+gene	basis	pmid	note
+EPGN	annotation	
+	epigen; D1 calls it GPI_anchored and nothing else does. UniProt carries no KW-0336 and NetGPI calls all 9 human forms plus both orthologs non-anchored at 0.961-0.995. DeepTMHMM gives it SP+TM, so it stays in the library on its transmembrane helix, not on an anchor
+RAET1G	literature	19223974	RAET1G1 encodes transmembrane and cytoplasmic domains "unique amongst NKG2D ligands" and RAET1G2 is secreted (Eagle 2009); neither is anchored. UniProt does carry KW-0336 here, so the GPI claim is contested rather than absent - but DeepTMHMM gives SP+TM and the library keeps it on that helix

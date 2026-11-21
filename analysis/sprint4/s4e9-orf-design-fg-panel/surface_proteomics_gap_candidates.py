@@ -30,13 +30,15 @@ The surface-evidence, accessibility, surface-fraction, expression and localizati
 **not** applied (Becca's criteria waive them; the survey is the surface evidence), but each
 gene's outcome at them is reported so the waiver is visible.
 
-Inputs: the rule-B not-in-library lists for sweep-v16, sweep-v20 and sweep-v20 with
-abundance-v4 roles (``scratch/becca/s3e8-library-gap/{v16,v20,v20ab}/``), the S1E3 filter run
+Inputs: the challenge set is the rule-B not-in-library list of the snapshot that
+``surface_proteomics_inputs.json`` names as ``current``, computed from
+``surface_proteomics_counts.tsv`` (written from the pinned S3 keys by
+``surface_proteomics_snapshot.py``; the ``snapshots`` column says which other pinned snapshots
+also list the gene); the S1E3 filter run
 offline over surfaceome release 1.3.0 (``library_pipeline.run_gene_filter``, which checks every
 input's SHA-256 and reproduces the 2,370 filter passes), and UniProt canonical sequences from
-the published search snapshot ``external://search-fasta/human-sp-iso_cont-universal-and-cell-
-culture_irt/2026_03/human.fasta`` (UniProt 2026_03 reviewed human, SHA-256 checked against its
-manifest). Where the catalog carries a canonical topology, its length is compared with the
+the key pinned as ``canonical_sequences`` in ``surface_proteomics_inputs.json``
+(UniProt 2026_03 reviewed human, SHA-256 checked). Where the catalog carries a canonical topology, its length is compared with the
 sequence's and a mismatch is reported in ``canonical_length_check``. Needs S3 read access.
 
     uv run --locked python analysis/sprint4/s4e9-orf-design-fg-panel/surface_proteomics_gap_candidates.py
@@ -51,8 +53,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[2]
-GAP = REPO / "scratch/becca/s3e8-library-gap"
-SNAPSHOTS = {"sweep-v16": "v16", "sweep-v20": "v20", "sweep-v20+abundance-v4": "v20ab"}
+INPUTS = HERE / "surface_proteomics_inputs.json"
 OUT = HERE / "surface_proteomics_gap_candidates.tsv"
 
 sys.path.insert(0, str(HERE))
@@ -62,20 +63,24 @@ from deliverome_analysis import topology  # noqa: E402
 
 
 def gap_accessions() -> dict[str, dict]:
+    """Rule-B gap of the current snapshot, with the other pinned snapshots that list each gene."""
+    import json
+
+    import pandas as pd
+    from surface_proteomics_logodds_compare import COUNTS, score
+
+    current = json.loads(INPUTS.read_text())["current"]
+    df = score(pd.read_csv(COUNTS, sep="	", keep_default_na=False))
+    gap = df[df.pass_membrane & ~df.in_library]
     out: dict[str, dict] = {}
-    for label, folder in SNAPSHOTS.items():
-        with (GAP / folder / "rule_B_not_in_library.tsv").open() as fh:
-            for r in csv.DictReader(fh, delimiter="\t"):
-                row = out.setdefault(
-                    r["uniprot_accession"], {"sweep_symbol": r["gene_symbol"], "snapshots": []}
-                )
-                row["snapshots"].append(label)
-                row["n_surface_pubs"] = r["n_surface_pubs"]
-                row["lod_membrane"] = r["lod_membrane"]
+    for r in gap[gap.snapshot.eq(current)].itertuples():
+        out[r.uniprot_accession] = {
+            "sweep_symbol": r.gene_symbol,
+            "snapshots": list(gap.snapshot[gap.uniprot_accession.eq(r.uniprot_accession)]),
+            "n_surface_pubs": r.n_surface_pubs,
+            "lod_membrane": r.lod_membrane,
+        }
     return out
-
-
-SEARCH_FASTA = "search-fasta/human-sp-iso_cont-universal-and-cell-culture_irt/2026_03/"
 
 
 def canonical_sequences(dest: Path) -> dict[str, str]:
@@ -85,11 +90,10 @@ def canonical_sequences(dest: Path) -> dict[str, str]:
 
     from deliverome_analysis import s3
 
-    s3.external.download(SEARCH_FASTA + "manifest.json", dest / "manifest.json")
-    s3.external.download(SEARCH_FASTA + "human.fasta", dest / "human.fasta")
-    want = json.loads((dest / "manifest.json").read_text())["human"].get("sha256")
+    pin = json.loads(INPUTS.read_text())["canonical_sequences"]
+    s3.external.download(pin["key"].split("://", 1)[1], dest / "human.fasta")
     got = hashlib.sha256((dest / "human.fasta").read_bytes()).hexdigest()
-    assert want is None or want == got, "human.fasta: SHA-256 does not match its manifest"
+    assert got == pin["sha256"], f"{pin['key']}: SHA-256 is not the pinned one"
     seqs, acc = {}, None
     for line in (dest / "human.fasta").read_text().splitlines():
         if line.startswith(">"):
@@ -167,8 +171,8 @@ def main() -> None:
                 "verdict": verdict,
                 "fails": "; ".join(failed),
                 "snapshots": ", ".join(g["snapshots"]),
-                "n_surface_pubs_latest": g["n_surface_pubs"],
-                "lod_membrane_latest": g["lod_membrane"],
+                "n_surface_pubs_current": g["n_surface_pubs"],
+                "lod_membrane_current": g["lod_membrane"],
                 "length_aa": len(seq) if seq else "",
                 "canonical_length_check": length_check,
                 "orf_nt": orf or "",

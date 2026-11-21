@@ -107,7 +107,22 @@ for r in csv.DictReader(
     med_sym[r["gene_name"]] = m
 
 
+# Free-text partner names whose symbol lookup lands on the wrong gene (MyGene alias hits), mapped
+# to the intended HGNC symbol. Decided by Becca in the 2026-11-21 L1 brief review (co-receptor
+# comments 14/16); found and implemented by the co-receptor host-line agent session, which
+# documents each case in analysis/sprint4/s4e9-orf-design-fg-panel/CORECEPTOR_HOST_LINE.md.
+# None of the five changes a gate outcome: each intended partner is itself below the threshold.
+PARTNER_SYMBOL_FIXES = {
+    "CLR": "CALCRL",  # was DCLK3; calcitonin receptor-like receptor (RAMP1-3)
+    "IgM": "IGHM",  # was CD40LG; the BCR heavy chain (CD79B)
+    "mIg": "IGHM",  # was CXCL9 (alias MIG); membrane Ig taken as IgM heavy chain (CD79A)
+    "CD16": "FCGR3A",  # was FCGR3B (GPI, neutrophil); the DAP12/FcRg-paired CD16 (TYROBP)
+    "TCR\u03b1": "TRAC",  # TCR alpha: no hit; TCR alpha constant region (CD3D)
+}
+
+
 def partner_median(p):
+    p = PARTNER_SYMBOL_FIXES.get(p, p)
     for e in (expr.get(p) or {}).get("ensembl", []):
         if e.split(".")[0] in med_ens:
             return med_ens[e.split(".")[0]]

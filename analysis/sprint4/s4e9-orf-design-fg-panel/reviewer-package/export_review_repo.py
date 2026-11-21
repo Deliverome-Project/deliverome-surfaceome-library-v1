@@ -198,9 +198,33 @@ def collect(ref: str) -> dict[str, bytes]:
     return out
 
 
-def export(dest: Path, ref: str, overwrite_edited: bool) -> int:
+def bundle_tables(bundle: Path, commit: str) -> dict[str, bytes]:
+    """The small tables ``data_locations.tsv`` (at ``commit``) assigns to the review repository.
+
+    They come from the frozen bundle, not from git: they are data, kept out of this
+    repository's history, and each is checked against its recorded SHA-256 before it is copied.
+    """
+    import csv
+    import io as _io
+
+    rel = (HERE / "data_locations.tsv").relative_to(REPO).as_posix()
+    rows = csv.DictReader(_io.StringIO(git("show", f"{commit}:{rel}").decode()), delimiter="\t")
+    out: dict[str, bytes] = {}
+    for r in rows:
+        if r["home"] != "review_repo":
+            continue
+        data = (bundle / "s3" / r["bucket"] / r["key"]).read_bytes()
+        if sha256(data) != r["sha256"]:
+            raise SystemExit(f"{r['bucket']}/{r['key']}: SHA-256 differs from data_locations.tsv")
+        out[r["location"]] = data
+    return out
+
+
+def export(dest: Path, ref: str, overwrite_edited: bool, bundle: Path | None = None) -> int:
     commit = git("rev-parse", ref).decode().strip()
     files = collect(commit)
+    if bundle is not None:
+        files.update(bundle_tables(bundle, commit))
     old = {}
     if (dest / MANIFEST).exists():
         old = json.loads((dest / MANIFEST).read_text())["files"]
@@ -258,6 +282,11 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawTextHelpFormatter)
     ap.add_argument("--dest", type=Path)
     ap.add_argument("--ref", default="HEAD", help="commit or branch to export (default HEAD)")
+    ap.add_argument(
+        "--bundle",
+        type=Path,
+        help="the collected bundle folder; its small tables are copied to data/ (public_data.py)",
+    )
     ap.add_argument("--overwrite-edited", action="store_true")
     ap.add_argument("--trace", type=Path, help="rebuild review_repo_files.txt from a trace log")
     a = ap.parse_args(argv)
@@ -265,7 +294,8 @@ def main(argv=None) -> int:
         return trace_to_list(a.trace)
     if not a.dest:
         ap.error("--dest is required")
-    return export(a.dest.expanduser(), a.ref, a.overwrite_edited)
+    bundle = a.bundle.expanduser() if a.bundle else None
+    return export(a.dest.expanduser(), a.ref, a.overwrite_edited, bundle)
 
 
 if __name__ == "__main__":

@@ -86,7 +86,7 @@ import urllib.parse
 import urllib.request
 from collections.abc import Iterable, Mapping
 from dataclasses import asdict, dataclass, field
-from typing import NamedTuple
+from typing import Any, NamedTuple, cast
 
 import dnachisel as dc
 import numpy as np
@@ -258,9 +258,9 @@ def longest_shared_tract(a: str, b: str) -> tuple[int, int, int]:
             seen.setdefault(a[i : i + mid], i)
         hit = None
         for j in range(len(b) - mid + 1):
-            i = seen.get(b[j : j + mid])
-            if i is not None:
-                hit = (mid, i, j)
+            at = seen.get(b[j : j + mid])
+            if at is not None:
+                hit = (mid, at, j)
                 break
         if hit:
             best, lo = hit, mid
@@ -488,7 +488,7 @@ def domesticate(
     if unknown:
         raise ValueError(f"Unknown enzyme(s): {sorted(unknown)}. Known: {sorted(ENZYME_SITES)}")
 
-    constraints = [dc.AvoidPattern(dc.EnzymeSitePattern(name)) for name in enzymes]
+    constraints: list[Any] = [dc.AvoidPattern(dc.EnzymeSitePattern(name)) for name in enzymes]
     if preserve_translation:
         constraints.insert(0, dc.EnforceTranslation())
 
@@ -603,7 +603,7 @@ class BarcodeResult:
     label: str | None = None
     attempts: int = 0
 
-    def to_dict(self) -> dict:
+    def to_dict(self) -> dict[str, Any]:
         return asdict(self)
 
     def fasta(self) -> str:
@@ -806,7 +806,7 @@ def codon_usage(species: str = CODON_TABLE_SPECIES) -> dict[str, dict[str, float
     """Relative synonymous codon usage, as ``{amino_acid: {codon: fraction}}``."""
     import python_codon_tables
 
-    return python_codon_tables.get_codons_table(species)
+    return cast(dict[str, dict[str, float]], python_codon_tables.get_codons_table(species))
 
 
 def synonymous_codons(
@@ -1039,7 +1039,7 @@ class LinkerVariant:
     label: str | None = None
     attempts: int = 0
 
-    def to_dict(self) -> dict:
+    def to_dict(self) -> dict[str, Any]:
         return asdict(self)
 
 
@@ -1194,8 +1194,10 @@ def diversify_linker(
     # Gly-rich boundary are reached essentially never by chance.
     free5: list[str] = []
     free3: list[str] = []
-    map5, idx5 = ({}, [])
-    map3, idx3 = ({}, [])
+    map5: dict[str, list[tuple[str, ...]]] = {}
+    idx5: list[int] = []
+    map3: dict[str, list[tuple[str, ...]]] = {}
+    idx3: list[int] = []
     if avoid_prefixes:
         map5, idx5 = _end_codon_map(choices, edge, True)
         if map5:
@@ -1374,7 +1376,7 @@ class JunctionHomology:
         """Sort key, descending: spanning tract first, then worst single side."""
         return (self.spanning_match, max(self.flank5_match, self.flank3_match))
 
-    def to_dict(self) -> dict:
+    def to_dict(self) -> dict[str, Any]:
         return asdict(self)
 
 
@@ -1508,7 +1510,7 @@ class LibraryLinkerPlan:
             "max_internal_repeat": max(v.max_internal_repeat for v in self.variants.values()),
         }
 
-    def to_rows(self) -> list[dict]:
+    def to_rows(self) -> list[dict[str, Any]]:
         """One flat record per member, for writing to TSV."""
         rows = []
         for name in self.order:
@@ -1541,7 +1543,7 @@ def diversify_library_linkers(
     rng: random.Random | None = None,
     existing: dict[str, str] | None = None,
     fixed_codons: Mapping[int, str] | None = None,
-    **linker_kwargs,
+    **linker_kwargs: Any,
 ) -> LibraryLinkerPlan:
     """Issue one distinct cassette encoding per library member.
 
@@ -1684,7 +1686,7 @@ def _ensembl_request(path: str, params: dict[str, str], accept: str) -> str:
         req = urllib.request.Request(url, headers={"Accept": accept, "User-Agent": USER_AGENT})
         try:
             with urllib.request.urlopen(req, timeout=30) as resp:
-                return resp.read().decode("utf-8")
+                return cast(bytes, resp.read()).decode("utf-8")
         except urllib.error.HTTPError as err:
             last_err = err
             if err.code in retryable:
@@ -1786,7 +1788,7 @@ class RecodeResult:
         """True when the protein is preserved and no forbidden sites remain."""
         return not self.sites_after and not self.warnings
 
-    def to_dict(self) -> dict:
+    def to_dict(self) -> dict[str, Any]:
         d = asdict(self)
         d["gene"] = asdict(self.gene)
         d["ok"] = self.ok

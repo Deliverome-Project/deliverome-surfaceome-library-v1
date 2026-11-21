@@ -37,6 +37,7 @@ import re
 from dataclasses import asdict, dataclass
 from enum import StrEnum
 from pathlib import Path
+from typing import Any
 
 from Bio import SeqIO
 
@@ -99,7 +100,7 @@ class MapMatch:
     def exact(self) -> bool:
         return not self.diffs
 
-    def to_dict(self) -> dict:
+    def to_dict(self) -> dict[str, Any]:
         return asdict(self) | {"exact": self.exact, "n_diffs": len(self.diffs)}
 
 
@@ -208,7 +209,9 @@ def match_to_maps(
     return hits
 
 
-def audit(found: list[VendorSequence], maps: dict[str, str], *, max_diffs: int = 0) -> list[dict]:
+def audit(
+    found: list[VendorSequence], maps: dict[str, str], *, max_diffs: int = 0
+) -> list[dict[str, Any]]:
     """One flat record per vendor sequence: what it matched, and how much it proves."""
     rows = []
     for vendor in found:

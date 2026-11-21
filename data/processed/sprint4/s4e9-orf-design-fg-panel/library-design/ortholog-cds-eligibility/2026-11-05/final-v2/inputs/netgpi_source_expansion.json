@@ -1,0 +1,2705 @@
+{
+ "predictions": [],
+ "curation": [
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 1,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "IZUMO1R",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"A6ND01\", \"Gene Names (primary)\": \"IZUMO1R\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 2,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "TRABD2B",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"A6NFA1\", \"Gene Names (primary)\": \"TRABD2B\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 3,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "GFRA2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"O00451\", \"Gene Names (primary)\": \"GFRA2\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 4,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "TNFRSF10C",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"O14798\", \"Gene Names (primary)\": \"TNFRSF10C\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 5,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "TREH",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"O43280\", \"Gene Names (primary)\": \"TREH\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 6,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "PSCA",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"O43653\", \"Gene Names (primary)\": \"PSCA\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 7,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "XPNPEP2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"O43895\", \"Gene Names (primary)\": \"XPNPEP2\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 8,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "EFNA2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"O43921\", \"Gene Names (primary)\": \"EFNA2\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 9,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "GFRA3",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"O60609\", \"Gene Names (primary)\": \"GFRA3\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 10,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "FCGR3B",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"O75015\", \"Gene Names (primary)\": \"FCGR3B\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 11,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "SEMA7A",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"O75326\", \"Gene Names (primary)\": \"SEMA7A\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 12,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "TECTA",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"O75443\", \"Gene Names (primary)\": \"TECTA\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 13,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "GPC4",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"O75487\", \"Gene Names (primary)\": \"GPC4\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 14,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "CNTN5",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"O94779\", \"Gene Names (primary)\": \"CNTN5\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 15,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "LYPD3",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"O95274\", \"Gene Names (primary)\": \"LYPD3\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 16,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "VNN1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"O95497\", \"Gene Names (primary)\": \"VNN1\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 17,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "VNN2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"O95498\", \"Gene Names (primary)\": \"VNN2\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 18,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "LY6G6C",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"O95867\", \"Gene Names (primary)\": \"LY6G6C\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 19,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "LY6G6D",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"O95868\", \"Gene Names (primary)\": \"LY6G6D\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 20,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "CD160",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"O95971\", \"Gene Names (primary)\": \"CD160\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 21,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "RECK",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"O95980\", \"Gene Names (primary)\": \"RECK\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 22,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "PRNP",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P04156\", \"Gene Names (primary)\": \"PRNP\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 23,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "THY1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P04216\", \"Gene Names (primary)\": \"THY1\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 24,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "ALPL",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P05186\", \"Gene Names (primary)\": \"ALPL\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 25,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "ALPP",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P05187\", \"Gene Names (primary)\": \"ALPP\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 26,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "CEACAM5",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P06731\", \"Gene Names (primary)\": \"CEACAM5\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 27,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "UMOD",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P07911\", \"Gene Names (primary)\": \"UMOD\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 28,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "CD55",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P08174\", \"Gene Names (primary)\": \"CD55\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 29,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "CD14",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P08571\", \"Gene Names (primary)\": \"CD14\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 30,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "MELTF",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P08582\", \"Gene Names (primary)\": \"MELTF\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 31,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "CD48",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P09326\", \"Gene Names (primary)\": \"CD48\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 32,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "ALPI",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P09923\", \"Gene Names (primary)\": \"ALPI\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 33,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "CFC1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P0CG37\", \"Gene Names (primary)\": \"CFC1\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 34,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "LYNX1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P0DP58\", \"Gene Names (primary)\": \"LYNX1\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 35,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "TFPI",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P10646\", \"Gene Names (primary)\": \"TFPI\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 36,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "ALPG",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P10696\", \"Gene Names (primary)\": \"ALPG\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 37,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "CRIPTO",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P13385\", \"Gene Names (primary)\": \"CRIPTO\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 38,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "NCAM1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P13591\", \"Gene Names (primary)\": \"NCAM1\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 39,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "CD59",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P13987\", \"Gene Names (primary)\": \"CD59\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 40,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "FOLR2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P14207\", \"Gene Names (primary)\": \"FOLR2\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 41,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "CPM",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P14384\", \"Gene Names (primary)\": \"CPM\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 42,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "FOLR1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P15328\", \"Gene Names (primary)\": \"FOLR1\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 43,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "DPEP1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P16444\", \"Gene Names (primary)\": \"DPEP1\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 44,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "EFNA1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P20827\", \"Gene Names (primary)\": \"EFNA1\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 45,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "NT5E",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P21589\", \"Gene Names (primary)\": \"NT5E\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 46,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "ACHE",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P22303\", \"Gene Names (primary)\": \"ACHE\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 47,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "CA4",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P22748\", \"Gene Names (primary)\": \"CA4\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 48,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "OMG",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P23515\", \"Gene Names (primary)\": \"OMG\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 49,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "CD24",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P25063\", \"Gene Names (primary)\": \"CD24\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 50,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "CNTFR",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P26992\", \"Gene Names (primary)\": \"CNTFR\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 51,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "CD52",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P31358\", \"Gene Names (primary)\": \"CD52\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 52,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "CEACAM8",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P31997\", \"Gene Names (primary)\": \"CEACAM8\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 53,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "GPC1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P35052\", \"Gene Names (primary)\": \"GPC1\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 54,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "SPAM1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P38567\", \"Gene Names (primary)\": \"SPAM1\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 55,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "CEACAM6",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P40199\", \"Gene Names (primary)\": \"CEACAM6\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 56,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "GPC3",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P51654\", \"Gene Names (primary)\": \"GPC3\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 57,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "EFNA3",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P52797\", \"Gene Names (primary)\": \"EFNA3\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 58,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "EFNA4",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P52798\", \"Gene Names (primary)\": \"EFNA4\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 59,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "EFNA5",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P52803\", \"Gene Names (primary)\": \"EFNA5\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 60,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "ART1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P52961\", \"Gene Names (primary)\": \"ART1\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 61,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "GAS1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P54826\", \"Gene Names (primary)\": \"GAS1\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 62,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "GP2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P55259\", \"Gene Names (primary)\": \"GP2\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 63,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "CDH13",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P55290\", \"Gene Names (primary)\": \"CDH13\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 64,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "GFRA1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P56159\", \"Gene Names (primary)\": \"GFRA1\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 65,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "GPC5",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P78333\", \"Gene Names (primary)\": \"GPC5\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 66,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "CNTN2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q02246\", \"Gene Names (primary)\": \"CNTN2\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 67,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "PLAUR",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q03405\", \"Gene Names (primary)\": \"PLAUR\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 68,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "BST1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q10588\", \"Gene Names (primary)\": \"BST1\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 69,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "BST2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q10589\", \"Gene Names (primary)\": \"BST2\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 70,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "CNTN1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q12860\", \"Gene Names (primary)\": \"CNTN1\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 71,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "HYAL2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q12891\", \"Gene Names (primary)\": \"HYAL2\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 72,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "MSLN",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q13421\", \"Gene Names (primary)\": \"MSLN\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 73,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "LSAMP",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q13449\", \"Gene Names (primary)\": \"LSAMP\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 74,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "ART3",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q13508\", \"Gene Names (primary)\": \"ART3\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 75,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "CEACAM7",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q14002\", \"Gene Names (primary)\": \"CEACAM7\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 76,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "LY6D",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q14210\", \"Gene Names (primary)\": \"LY6D\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 77,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "OPCML",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q14982\", \"Gene Names (primary)\": \"OPCML\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 78,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "LY6E",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q16553\", \"Gene Names (primary)\": \"LY6E\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 79,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "RAET1L",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q5VY80\", \"Gene Names (primary)\": \"RAET1L\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 80,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "RAET1G",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q6H3X3\", \"Gene Names (primary)\": \"RAET1G\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 81,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "RGMB",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q6NW40\", \"Gene Names (primary)\": \"RGMB\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 82,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "PRSS55",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q6UWB4\", \"Gene Names (primary)\": \"PRSS55\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 83,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "LYPD5",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q6UWN5\", \"Gene Names (primary)\": \"LYPD5\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 84,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "ENPP6",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q6UWR7\", \"Gene Names (primary)\": \"ENPP6\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 85,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "CD109",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q6YHK3\", \"Gene Names (primary)\": \"CD109\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 86,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "HJV",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q6ZVN8\", \"Gene Names (primary)\": \"HJV\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 87,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "OTOA",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q7RTW8\", \"Gene Names (primary)\": \"OTOA\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 88,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "NEGR1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q7Z3B1\", \"Gene Names (primary)\": \"NEGR1\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 89,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "RTN4RL1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q86UN2\", \"Gene Names (primary)\": \"RTN4RL1\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 90,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "RTN4RL2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q86UN3\", \"Gene Names (primary)\": \"RTN4RL2\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 91,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "TRABD2A",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q86V40\", \"Gene Names (primary)\": \"TRABD2A\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 92,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "LYPD6",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q86Y78\", \"Gene Names (primary)\": \"LYPD6\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 93,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "GPIHBP1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q8IV16\", \"Gene Names (primary)\": \"GPIHBP1\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 94,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "CPO",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q8IVL8\", \"Gene Names (primary)\": \"CPO\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 95,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "CNTN4",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q8IWV2\", \"Gene Names (primary)\": \"CNTN4\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 96,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "GPC2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q8N158\", \"Gene Names (primary)\": \"GPC2\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 97,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "LYPD1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q8N2G4\", \"Gene Names (primary)\": \"LYPD1\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 98,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "CD177",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q8N6Q3\", \"Gene Names (primary)\": \"CD177\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 99,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "MDGA1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q8NFP4\", \"Gene Names (primary)\": \"MDGA1\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 100,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "SPACA4",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q8TDM5\", \"Gene Names (primary)\": \"SPACA4\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 101,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "ITLN1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q8WWA0\", \"Gene Names (primary)\": \"ITLN1\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 102,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "SMPDL3B",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q92485\", \"Gene Names (primary)\": \"SMPDL3B\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 103,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "ART4",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q93070\", \"Gene Names (primary)\": \"ART4\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 104,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "RGMA",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q96B86\", \"Gene Names (primary)\": \"RGMA\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 105,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "NTNG2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q96CW9\", \"Gene Names (primary)\": \"NTNG2\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 106,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "BCAN",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q96GW7\", \"Gene Names (primary)\": \"BCAN\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 107,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "GBP5",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q96PP8\", \"Gene Names (primary)\": \"GBP5\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 108,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "TEX101",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q9BY14\", \"Gene Names (primary)\": \"TEX101\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 109,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "ULBP3",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q9BZM4\", \"Gene Names (primary)\": \"ULBP3\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 110,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "ULBP2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q9BZM5\", \"Gene Names (primary)\": \"ULBP2\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 111,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "ULBP1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q9BZM6\", \"Gene Names (primary)\": \"ULBP1\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 112,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "RTN4R",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q9BZR6\", \"Gene Names (primary)\": \"RTN4R\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 113,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "GFRA4",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q9GZZ7\", \"Gene Names (primary)\": \"GFRA4\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 114,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "DPEP2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q9H4A9\", \"Gene Names (primary)\": \"DPEP2\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 115,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "MMP25",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q9NPA2\", \"Gene Names (primary)\": \"MMP25\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 116,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "NTM",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q9P121\", \"Gene Names (primary)\": \"NTM\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 117,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "CNTN3",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q9P232\", \"Gene Names (primary)\": \"CNTN3\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 118,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "PRND",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q9UKY0\", \"Gene Names (primary)\": \"PRND\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 119,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "MMP17",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q9ULZ9\", \"Gene Names (primary)\": \"MMP17\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 120,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "CNTN6",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q9UQ52\", \"Gene Names (primary)\": \"CNTN6\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 121,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "PALM2AKAP2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q9Y2D5\", \"Gene Names (primary)\": \"PALM2AKAP2\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 122,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "NTNG1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q9Y2I2\", \"Gene Names (primary)\": \"NTNG1\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 123,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "GPC6",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q9Y625\", \"Gene Names (primary)\": \"GPC6\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 124,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "PRSS21",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q9Y6M0\", \"Gene Names (primary)\": \"PRSS21\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 125,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "LY6H",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"O94772\", \"Gene Names (primary)\": \"LY6H\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 126,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "LY6K",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q17RY6\", \"Gene Names (primary)\": \"LY6K\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 127,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "SPRN",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q5BIV9\", \"Gene Names (primary)\": \"SPRN\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 128,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "GLIPR1L1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q6UWM5\", \"Gene Names (primary)\": \"GLIPR1L1\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 129,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "PRSS41",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q7RTY9\", \"Gene Names (primary)\": \"PRSS41\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 130,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "MDGA2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q7Z553\", \"Gene Names (primary)\": \"MDGA2\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 131,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "LYPD6B",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q8NI32\", \"Gene Names (primary)\": \"LYPD6B\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 132,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "IGSF21",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q96ID5\", \"Gene Names (primary)\": \"IGSF21\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 133,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "TECTB",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q96PL2\", \"Gene Names (primary)\": \"TECTB\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 134,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "DPEP3",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q9H4B8\", \"Gene Names (primary)\": \"DPEP3\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 135,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "NRN1L",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q496H8\", \"Gene Names (primary)\": \"NRN1L\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 136,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "PLET1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q6UQ28\", \"Gene Names (primary)\": \"PLET1\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 137,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "LYPD4",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q6UWN0\", \"Gene Names (primary)\": \"LYPD4\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 138,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "LYPD8",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q6UX82\", \"Gene Names (primary)\": \"LYPD8\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 139,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "LYPD2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q6UXB3\", \"Gene Names (primary)\": \"LYPD2\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 140,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "PRSS42P",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q7Z5A4\", \"Gene Names (primary)\": \"PRSS42P\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 141,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "GML",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q99445\", \"Gene Names (primary)\": \"GML\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 142,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "NRN1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"Q9NPD7\", \"Gene Names (primary)\": \"NRN1\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 143,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "LY6L",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"H3BQJ8\", \"Gene Names (primary)\": \"LY6L\"}"
+  },
+  {
+   "source_sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "record_number": 144,
+   "source_kind": "uniprot_gpi_keyword_KW0336_2026_03",
+   "gene_symbol": "LY6S",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/uniprot_human_gpi.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"Entry\": \"P0DTL4\", \"Gene Names (primary)\": \"LY6S\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 50,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "ACHE",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"ACHE\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"P22303\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 203,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "ALPG",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"ALPG\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"cell_state_induced\", \"uniprot_acc\": \"P10696\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 204,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "ALPI",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"ALPI\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"P09923\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 206,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "ALPL",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"ALPL\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P05186\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 207,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "ALPP",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"ALPP\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P05187\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 328,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "ARSH",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"ARSH\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"other\", \"uniprot_acc\": \"Q5FYA8\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 330,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "ART1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"ART1\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P52961\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 331,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "ART3",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"ART3\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"Q13508\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 332,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "ART4",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"ART4\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q93070\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 419,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "BCAN",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"BCAN\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"cell_state_induced\", \"uniprot_acc\": \"Q96GW7\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 456,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "BST1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"BST1\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q10588\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 543,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CA4",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CA4\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P22748\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 559,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CACNA2D1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CACNA2D1\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P54289\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 561,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CACNA2D3",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CACNA2D3\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q8IZS8\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 562,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CACNA2D4",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CACNA2D4\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"Q7Z3S7\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 668,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CD109",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CD109\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q6YHK3\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 669,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CD14",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CD14\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P08571\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 671,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CD160",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CD160\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"O95971\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 676,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CD177",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CD177\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q8N6Q3\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 692,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CD24",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CD24\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P25063\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 724,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CD48",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CD48\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P09326\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 726,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CD52",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CD52\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P31358\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 728,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CD55",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CD55\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P08174\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 729,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CD58",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CD58\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P19256\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 730,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CD59",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CD59\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P13987\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 766,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CDH13",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CDH13\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P55290\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 805,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CEACAM5",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CEACAM5\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P06731\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 806,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CEACAM6",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CEACAM6\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P40199\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 807,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CEACAM7",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CEACAM7\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"Q14002\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 808,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CEACAM8",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CEACAM8\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"P31997\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 823,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CFC1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CFC1\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"dual_localization\", \"uniprot_acc\": \"P0CG37\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 824,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CFC1B",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CFC1B\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"other\", \"uniprot_acc\": \"P0CG36\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 884,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CLCA4",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CLCA4\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q14CN2\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1002,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CNTFR",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CNTFR\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P26992\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1003,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CNTN1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CNTN1\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q12860\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1004,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CNTN2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CNTN2\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"Q02246\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1005,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CNTN3",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CNTN3\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q9P232\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1006,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CNTN4",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CNTN4\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"Q8IWV2\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1007,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CNTN5",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CNTN5\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"O94779\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1008,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CNTN6",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CNTN6\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q9UQ52\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1038,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CPM",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CPM\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P14384\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1042,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CPO",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CPO\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"Q8IVL8\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1064,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CRIPTO",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CRIPTO\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"cell_state_induced\", \"uniprot_acc\": \"P13385\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1065,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "CRIPTO3",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"CRIPTO3\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"cell_state_induced\", \"uniprot_acc\": \"P51864\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1250,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "DPEP1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"DPEP1\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P16444\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1251,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "DPEP2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"DPEP2\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q9H4A9\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1252,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "DPEP3",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"DPEP3\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"Q9H4B8\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1305,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "EFNA1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"EFNA1\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P20827\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1306,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "EFNA2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"EFNA2\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"O43921\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1307,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "EFNA3",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"EFNA3\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P52797\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1308,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "EFNA4",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"EFNA4\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P52798\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1309,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "EFNA5",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"EFNA5\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P52803\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1355,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "ENPP6",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"ENPP6\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"Q6UWR7\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1369,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "EPGN",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"EPGN\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"dual_localization\", \"uniprot_acc\": \"Q6UW88\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1388,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "EPPIN",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"EPPIN\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"O95925\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1492,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "FCGR3B",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"FCGR3B\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"O75015\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1559,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "FOLR1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"FOLR1\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P15328\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1560,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "FOLR2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"FOLR2\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P14207\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1561,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "FOLR3",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"FOLR3\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"cell_state_induced\", \"uniprot_acc\": \"P41439\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1634,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "GAS1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"GAS1\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P54826\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1647,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "GFRA1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"GFRA1\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P56159\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1648,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "GFRA2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"GFRA2\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"O00451\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1649,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "GFRA3",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"GFRA3\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"O60609\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1650,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "GFRA4",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"GFRA4\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"Q9GZZ7\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1690,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "GLIPR1L1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"GLIPR1L1\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"Q6UWM5\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1701,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "GML",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"GML\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q99445\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1717,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "GP2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"GP2\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P55259\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1723,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "GPC1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"GPC1\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P35052\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1724,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "GPC2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"GPC2\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"cell_state_induced\", \"uniprot_acc\": \"Q8N158\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1725,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "GPC3",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"GPC3\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"cell_state_induced\", \"uniprot_acc\": \"P51654\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1726,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "GPC4",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"GPC4\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"O75487\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1727,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "GPC5",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"GPC5\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P78333\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1728,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "GPC6",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"GPC6\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q9Y625\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1732,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "GPIHBP1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"GPIHBP1\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"Q8IV16\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1915,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "HJV",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"HJV\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"dual_localization\", \"uniprot_acc\": \"Q6ZVN8\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1992,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "HYAL2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"HYAL2\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q12891\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 1994,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "HYAL4",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"HYAL4\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"dual_localization\", \"uniprot_acc\": \"Q2M3T9\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2035,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "IGLON5",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"IGLON5\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"A6NGN9\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2039,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "IGSF21",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"IGSF21\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q96ID5\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2117,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "ISLR",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"ISLR\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"O14498\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2159,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "IZUMO1R",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"IZUMO1R\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"A6ND01\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2427,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "LMLN",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"LMLN\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q96KR4\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2517,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "LSAMP",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"LSAMP\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"Q13449\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2533,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "LY6D",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"LY6D\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q14210\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2534,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "LY6E",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"LY6E\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q16553\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2537,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "LY6G6C",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"LY6G6C\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"O95867\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2538,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "LY6G6D",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"LY6G6D\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"cell_state_induced\", \"uniprot_acc\": \"O95868\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2540,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "LY6H",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"LY6H\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"O94772\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2541,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "LY6K",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"LY6K\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"cell_state_induced\", \"uniprot_acc\": \"Q17RY6\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2542,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "LY6L",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"LY6L\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"H3BQJ8\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2543,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "LY6S",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"LY6S\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"cell_state_induced\", \"uniprot_acc\": \"P0DTL4\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2550,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "LYNX1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"LYNX1\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P0DP58\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2551,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "LYPD1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"LYPD1\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"cell_state_induced\", \"uniprot_acc\": \"Q8N2G4\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2552,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "LYPD2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"LYPD2\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q6UXB3\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2553,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "LYPD3",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"LYPD3\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"O95274\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2554,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "LYPD4",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"LYPD4\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"Q6UWN0\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2555,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "LYPD5",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"LYPD5\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"Q6UWN5\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2556,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "LYPD6",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"LYPD6\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q86Y78\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2557,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "LYPD6B",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"LYPD6B\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q8NI32\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2558,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "LYPD8",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"LYPD8\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"Q6UX82\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2619,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "MDGA1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"MDGA1\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q8NFP4\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2620,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "MDGA2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"MDGA2\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q7Z553\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2626,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "MELTF",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"MELTF\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P08582\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2671,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "MMP17",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"MMP17\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q9ULZ9\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2675,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "MMP25",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"MMP25\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"cell_state_induced\", \"uniprot_acc\": \"Q9NPA2\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2731,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "MSLN",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"MSLN\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"cell_state_induced\", \"uniprot_acc\": \"Q13421\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2807,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "NEGR1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"NEGR1\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q7Z3B1\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2904,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "NRN1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"NRN1\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q9NPD7\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2905,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "NRN1L",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"NRN1L\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"Q496H8\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2917,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "NT5E",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"NT5E\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P21589\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2918,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "NTM",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"NTM\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q9P121\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2922,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "NTNG1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"NTNG1\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q9Y2I2\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2923,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "NTNG2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"NTNG2\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q96CW9\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2946,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "NYX",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"NYX\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"Q9GZU5\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2964,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "OMG",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"OMG\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"P23515\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 2971,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "OPCML",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"OPCML\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q14982\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 3399,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "OTOA",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"OTOA\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"Q7RTW8\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 3643,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "PLAUR",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"PLAUR\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q03405\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 3659,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "PLET1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"PLET1\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"Q6UQ28\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 3742,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "PRND",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"PRND\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"Q9UKY0\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 3743,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "PRNP",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"PRNP\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P04156\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 3766,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "PRSS21",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"PRSS21\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"Q9Y6M0\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 3772,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "PRSS38",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"PRSS38\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"A1L453\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 3773,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "PRSS41",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"PRSS41\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"Q7RTY9\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 3778,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "PRSS55",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"PRSS55\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"Q6UWB4\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 3780,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "PRSS8",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"PRSS8\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q16651\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 3784,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "PSCA",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"PSCA\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"O43653\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 3868,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "RAET1G",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"RAET1G\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"cell_state_induced\", \"uniprot_acc\": \"Q6H3X3\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 3869,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "RAET1L",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"RAET1L\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"cell_state_induced\", \"uniprot_acc\": \"Q5VY80\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 3885,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "RECK",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"RECK\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"O95980\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 3897,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "RGMA",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"RGMA\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q96B86\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 3898,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "RGMB",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"RGMB\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"dual_localization\", \"uniprot_acc\": \"Q6NW40\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 3925,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "RNASE2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"RNASE2\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"P10153\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 3983,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "RTN4R",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"RTN4R\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q9BZR6\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 3984,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "RTN4RL1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"RTN4RL1\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q86UN2\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 3985,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "RTN4RL2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"RTN4RL2\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"Q86UN3\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 4101,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "SEMA7A",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"SEMA7A\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"O75326\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 4541,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "SMPDL3B",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"SMPDL3B\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q92485\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 4565,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "SPACA4",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"SPACA4\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"Q8TDM5\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 4577,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "SPAM1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"SPAM1\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"P38567\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 4615,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "SPRN",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"SPRN\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"Q5BIV9\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 4764,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "TECTA",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"TECTA\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"O75443\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 4765,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "TECTB",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"TECTB\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"Q96PL2\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 4772,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "TEX101",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"TEX101\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"Q9BY14\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 4781,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "TFPI",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"TFPI\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"dual_localization\", \"uniprot_acc\": \"P10646\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 4805,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "THY1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"THY1\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"P04216\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 5096,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "TRABD2A",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"TRABD2A\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q86V40\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 5097,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "TRABD2B",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"TRABD2B\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"A6NFA1\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 5103,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "TREH",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"TREH\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"O43280\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 5183,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "ULBP1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"ULBP1\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"cell_state_induced\", \"uniprot_acc\": \"Q9BZM6\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 5184,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "ULBP2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"ULBP2\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"Q9BZM5\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 5185,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "ULBP3",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"ULBP3\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"cell_state_induced\", \"uniprot_acc\": \"Q9BZM4\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 5186,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "UMOD",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"UMOD\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"tissue_restricted_surface\", \"uniprot_acc\": \"P07911\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 5238,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "VNN1",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"VNN1\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"O95497\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 5239,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "VNN2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"VNN2\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"O95498\"}"
+  },
+  {
+   "source_sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "record_number": 5298,
+   "source_kind": "curated_architecture_gpi_attribute",
+   "gene_symbol": "XPNPEP2",
+   "source_uri": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/legacy-gpi/surface_subcategory.tsv",
+   "import_code_sha": "1efd2670889f25f98c41b9a1751d0f50a5b19262",
+   "record_json": "{\"gene_symbol\": \"XPNPEP2\", \"subcategory\": \"GPI_anchored\", \"surface_call_reason\": \"gpi_anchored\", \"uniprot_acc\": \"O43895\"}"
+  }
+ ]
+}

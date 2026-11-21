@@ -36,7 +36,9 @@ from the library's tables. How isoforms and orthologs were chosen is in
 [section 4](#4-isoforms-and-orthologs).*
 
 **Size.** The 2,360 reference CDSs cover 2,369 genes; [section 3](#3-proteoforms-one-reference-protein-per-gene)
-explains the 9 genes without one. CDSs are a median 1,401 nt long (range 186–5,139). With the
+explains the 9 genes without one. CDSs are a median 1,401 nt long (range 186–5,139). The shortest
+is CD52, a 61-residue GPI-anchored protein (186 nt with its stop codon); it is held, so the
+shortest CDS in the order is SMIM7 (228 nt). With the
 153-nt tag cassette, and the Igκ leader where one is used, the coding sequence as ordered is a
 median 1,620 nt (396–5,292), and the full insert, which adds a constant 131 nt of cloning
 sites, Kozak, barcode and readout sequence, a median 1,751 nt (527–5,423), over the 3,255
@@ -224,7 +226,10 @@ A protein enters the challenge set when it passes two tests:
    cell surface. TFRC, detected by 81 of 84 surface and 67 of 77 fractionation publications, has
    lod 1.29; calnexin, detected by 60 and 71, has lod −1.49.
 
-394 proteins pass both tests, and **51 are in neither L1 nor L2**. Using the whole-lysate
+394 proteins pass both tests, and **51 are in neither L1 nor L2**. These counts use the latest survey snapshot, the
+2026-11-18 sweep (v20) with its abundance roles (v5), pinned by S3 key and SHA-256 in
+[`surface_proteomics_inputs.json`](../surface_proteomics_inputs.json); a later sweep changes them
+only through a new pinned snapshot. Using the whole-lysate
 publications as the background instead would give 1,150 and 843, and it fails in both directions:
 the 18 glycoproteomes detect few proteins of any kind, so intracellular proteins such as ACTB and
 calnexin pass, while surface glycoproteins they detect well, such as KIT and DPP4, fail.
@@ -312,14 +317,23 @@ How the rule's threshold and host line change membership:
 | median ≥ 1 | ITGA2B, ITGAD, ITGAL, ITGAM, ITGAX | — |
 | every partner ≥ 5 TPM in K562, instead of the median | RHCE, RHD | SLC16A1, SLC16A8, ST14 |
 | the median rule, or every partner ≥ 5 TPM in K562 | GRIN1, KCND2, RHCE, RHD | — |
+| every partner ≥ 5 TPM in at least 2 lines of the screening shortlist, or in K562 (alternative partners counted once) | 29 genes (list in the options table) | — |
+| the same, over only the lines in house or on order | CNTNAP1, GABRB1, GRIN1, ITGAD, ITGAL, ITGAM, ITGAX, KLRK1, UPK3A, plus RHCE and RHD through K562 | — |
 
 Lowering the median admits only integrin α chains whose β partner is restricted to blood cells:
 ITGB2 is at least 5 TPM in 409 of the 1,206 lines (142 of the 203 blood-cancer lines) but 1.2 TPM
 in K562. Testing K562 directly admits RHD and RHCE, whose partner RHAG is erythroid (327 TPM in
 K562), and GRIN1 and KCND2. Two features of the partner lists limit any such rule. Some lists name
 alternatives rather than requirements: SLC16A1 needs BSG or EMB, and K562 has BSG at 498 TPM, but
-the gate requires every listed partner. Seven genes are known to need this either/or reading. And
-3 of the 620 free-text partner names resolve to the wrong gene, though none changes an outcome.
+the gate requires every listed partner. Seven genes are known to need this either/or reading. Five
+free-text partner names that resolved to the wrong gene (CLR, IgM, mIg, CD16, TCRα) are now mapped
+to the intended gene in the filter; none changes an outcome.
+
+The recommendation is to replace the median with the screening-line rule above: it keeps all 48
+current genes and adds 29 that pass every other gate, as dated additions. The T- and B-cell
+receptor chains stay out under it, because their partners are present in only one shortlist line
+each. Each gene's displaying lines would be carried into the screen analysis, so a gene with no
+partner in the screened line is read as an expected negative ([`CORECEPTOR_HOST_LINE.md`](../CORECEPTOR_HOST_LINE.md)).
 Per-gene values and each rule's outcome are in
 [`coreceptor_host_line_genes.tsv`](../coreceptor_host_line_genes.tsv) and
 [`coreceptor_host_line_options.tsv`](../coreceptor_host_line_options.tsv).
@@ -1735,7 +1749,19 @@ placement's construct table at commit `541c6c18`, with every changed codon in
 `synthesis_recodes.tsv` ([`synthesis_compliance.py`](../synthesis_compliance.py)). A vendor
 re-quote of that file is the real test.
 
-**Why the linkers are recoded.** For an N-terminal or internal CDS the cassette lies
+**What is recoded, and what is not.** Only constructs whose cassette ends the ORF have
+recoded linkers. In the others the whole cassette, linkers included, is on p003's codons:
+
+| Constructs | Constructs in the order | GGGGS linkers | SpyTag003 and P-ALFA-P |
+|---|---:|---|---|
+| C-terminal tag, and snorkels (cassette ends the ORF) | 310 | recoded per construct (one of 378 issued encodings, last 15 nt unique) | p003 codons |
+| N-terminal tag (after the signal peptide, or at residue 1) | 1,881 | **p003 codons, not recoded** | p003 codons |
+| internal loop | 1,061 | **p003 codons, not recoded** | p003 codons |
+
+The other 3 constructs are C-terminal-placement CDSs tagged before the end of the ORF (stalk sites in KLRF1 and HPN, and ITM2B before its furin site). So 2,942 constructs share one 153-nt cassette sequence. Recoding their linkers too, as on the
+C-terminal constructs, is an open decision (question 8); it would leave a 75-nt shared core.
+
+**Why the C-terminal linkers are recoded.** For an N-terminal or internal CDS the cassette lies
 upstream of the ORF's own C-terminus, so it never enters the swap tract; two such CDSs
 share only the 21–24-nt tail before the barcode (a 2-nt pad and a 19-nt primer handle, after
 each ORF's native stop codon, which is TGA, TAA or TAG) plus whatever C-terminal codons their ORFs share. For the 317 CDSs whose
@@ -2252,6 +2278,18 @@ replay reads (1.36 GB, SHA-256 `8bdb0006…`), and `l1-pinned-releases-2026-11-2
 every pinned release (246 files, 1.65 GB, SHA-256 `56bd5618…`). It is not committed here: raw and
 reference inputs live in S3 by design, and the files exceed what this repository holds.
 
+**Public copies.** The public releases whose terms allow redistribution (Ensembl 115/116 and
+Compara, the AlphaFold DB models, UniProt, Pfam, HPA v23 and the accessible-surfaceome release;
+2,775 files, 3.2 GB) are also in a public bucket that anyone can read without an account, at
+`https://pub-e53f37f6fe6b4745829c2066350fe26f.r2.dev/<bucket>/<key>` (Pfam-A, 658 MB, is served
+from EBI's identical copy, checked byte for byte), and the 188 small tables
+(≤ 5 MB) are committed to the review repository under `data/`. [`data_locations.tsv`](data_locations.tsv)
+gives every bundle file its one home and license, written by [`public_data.py`](public_data.py)
+(which also fetches the public files and checks each SHA-256), and a test fails if any file of
+the bundle has no home. The rest, our own predictions and records and public sources whose
+redistribution terms are unclear or non-commercial (PeptideAtlas, OpenProt, APPRIS, GENCODE
+Ribo-seq ORFs, the Tedman et al. tables), is only in the release.
+
 **The permanent limit.** The isoform-universe step built Python sets whose iteration order
 follows the interpreter's string-hash seed, and the original run did not record its seed.
 The rerun reproduces every row of the 1,894-row cohort table and its gene order. What it
@@ -2280,7 +2318,7 @@ are open. Work still in progress before L1 is ordered is tracked in the accompan
 | 6 | **EFS or EF1a as the library promoter, and selection through the IRES** ([section 8](#8-the-vector-promoter-and-selection-marker)). | Two coupled choices. Puromycin resistance is translated from the CDS's own transcript, so a cell survives only if it transcribes the ORF; the alternative, a separate SV40 promoter on PuroR, was built as P-0008 and gave puromycin-resistant cells with low TfR1 expression, which in a pool would read as CDSs that fail to reach the surface. The cost of the coupling is the mirror image: a weakly transcribed CDS is weakly selected and goes missing after puromycin rather than appearing dark. On the promoter itself, EF1a gave 1.7–4.0-fold more IRES-reporter signal than EFS but adds 967 bp, about a 2-fold titer cost, to every CDS. The promoter data does not measure what the library measures: mScarlet3 sits after the IRES and reports bicistronic transcript rather than surface display, it was read 72 h after transduction and before selection, the puromycin-survival row is one image per condition, K562 had no EFS well and is left out of the ratio, and each cell type's gate is set on its own untransduced well, so the ratios compare only within a cell type. | Surface-tag readout after selection for a few CDSs, EFS against EF1a; or reviewer experience with either promoter, and with IRES-coupled against separately driven selection, for pooled ORF libraries. |
 | 7 | **The Igκ leader on 804 CDSs** ([section 5](#5-tag-placement), "Signal peptides and the Igκ leader"). | 564 of 565 residue-1 multipass CDSs (every GPCR but CRHR2) and 8 type III CDSs carry the murine Igκ leader ahead of the cassette; 232 N-after-SP CDSs have their own signal peptide replaced by it because SignalP 6 predicts the tagged native peptide is no longer cleaved. The GPCR default rests on a mechanism argument; the screen whose GPCRs displayed their tag used leaderless HA after Met1, and the panel constructs that test the leader (CCR5, OR51E2, CNR1, each with and without) have no data yet. The CDSs that do not carry it give the decision its shape: 1,040 N-after-SP CDSs keep their own signal peptide, 36 type III CDSs have no identified topogenesis risk, and 1 multipass CDS is tagged without a leader, while the C-terminal and internal placements never involve one because the tag is not at the N-terminus. So the leader is added where a CDS's own N-terminus cannot do the job, and withheld wherever it can. | Whether the leader should be the default for multipass CDSs before the panel constructs read out, and whether a SignalP prediction on an engineered junction is enough to replace a native signal peptide. |
 | 8 | **One encoding of the tag cassette in 2,942 N-terminal and internal constructs** ([section 1](#1-what-l1-is-for), [section 7](#7-domestication-linker-encoding-and-synthesis-compliance)). | Any two of these constructs share a 153-nt identical block with different sequence on both sides, so a template switch inside it makes a fusion protein that the barcode does not report. The Walton et al. fit puts that at about 4.1% of integrants, the largest modeled swap term, as an upper bound: it assumes every particle carries two different constructs and that a short block recombines at the per-base rate measured over constant vector. Recoding the four `GGGGS` linkers per construct, as on the C-terminal placement, would leave a 75-nt shared core (about 3.6%); recoding every codon, about 1.8%. | Whether to recode the cassette before ordering, or accept the risk and measure it by long-read sequencing of ORF and barcode from transduced cells. |
-| 9 | **The co-receptor gate tests partner expression across all cell lines, not in the screening line** ([section 2](#2-genes-from-the-surfaceome-universe-to-2369)). | A partner that is ubiquitous may still be absent from K562, and one restricted to a lineage may be present in it. Adding "or every partner at least 5 TPM in K562" to the current rule would admit GRIN1, KCND2, RHCE and RHD and drop nothing; seven genes list alternative partners that the rule wrongly requires together. | Whether to restate the gate against the screening line(s), and how to encode alternative partners. |
+| 9 | **The co-receptor gate tests partner expression across all cell lines, not in the screening lines** ([section 2](#2-genes-from-the-surfaceome-universe-to-2369)). | A partner that is ubiquitous may still be absent from K562, and one restricted to a lineage may be present in it. A screening-line rule (every partner ≥ 5 TPM in at least 2 shortlist lines, or in K562, alternatives counted once) keeps all 48 current genes and adds 29; over only the lines in house or on order it adds 9, plus RHCE and RHD. | Whether to adopt the screening-line rule, over which lines, and how to encode alternative partners. |
 
 ## 13. Protein-level choices (reversible)
 

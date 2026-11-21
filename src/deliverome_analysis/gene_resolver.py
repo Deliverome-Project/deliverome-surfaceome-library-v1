@@ -22,8 +22,10 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+from collections.abc import Iterable
 from datetime import UTC, datetime
 from pathlib import Path
+from typing import Any, cast
 
 # Mirror accessible_surfaceome.merge.gene_symbols (keep in sync if they change).
 _SCOPES = ["symbol", "alias", "prev_symbol"]
@@ -37,19 +39,21 @@ def _default_cache_dir() -> Path:
     return base / "mygene_symbol_resolution"
 
 
-def resolve(symbols, cache_dir: str | os.PathLike | None = None) -> dict[str, dict]:
+def resolve(
+    symbols: Iterable[str], cache_dir: str | os.PathLike[str] | None = None
+) -> dict[str, dict[str, Any]]:
     """Resolve gene symbols/aliases to canonical symbol + Ensembl gene ids.
 
     Returns ``{query_symbol: {"symbol": approved|None, "ensembl": [ids],
     "ambiguous": bool, "notfound": bool}}``. Deterministic in the symbol set;
     the MyGene response is cached on disk keyed by the input hash.
     """
-    symbols = sorted({s for s in symbols if s})
-    cache_dir = Path(cache_dir) if cache_dir else _default_cache_dir()
-    cache_path = cache_dir / "mygene_response.json"
-    input_hash = hashlib.sha256(json.dumps(symbols, separators=(",", ":")).encode()).hexdigest()
+    query = sorted({s for s in symbols if s})
+    cache_root = Path(cache_dir) if cache_dir else _default_cache_dir()
+    cache_path = cache_root / "mygene_response.json"
+    input_hash = hashlib.sha256(json.dumps(query, separators=(",", ":")).encode()).hexdigest()
 
-    hits = None
+    hits: list[dict[str, Any]] | None = None
     if cache_path.exists():
         try:
             cached = json.loads(cache_path.read_text())
@@ -61,9 +65,9 @@ def resolve(symbols, cache_dir: str | os.PathLike | None = None) -> dict[str, di
         import mygene  # imported lazily so the dep is only needed when resolving
 
         hits = mygene.MyGeneInfo().querymany(
-            symbols, scopes=_SCOPES, fields=_FIELDS, species=_SPECIES
+            query, scopes=_SCOPES, fields=_FIELDS, species=_SPECIES
         )
-        cache_dir.mkdir(parents=True, exist_ok=True)
+        cache_root.mkdir(parents=True, exist_ok=True)
         cache_path.write_text(
             json.dumps(
                 {
@@ -77,11 +81,11 @@ def resolve(symbols, cache_dir: str | os.PathLike | None = None) -> dict[str, di
 
     # Group every hit by its query before choosing, because the choice depends
     # on the whole candidate set — see _select_hits.
-    grouped: dict[str, list[dict]] = {}
+    grouped: dict[str, list[dict[str, Any]]] = {}
     for hit in hits:
-        grouped.setdefault(hit.get("query"), []).append(hit)
+        grouped.setdefault(cast(str, hit.get("query")), []).append(hit)
 
-    out: dict[str, dict] = {}
+    out: dict[str, dict[str, Any]] = {}
     for q, q_hits in grouped.items():
         found = [h for h in q_hits if not h.get("notfound")]
         if not found:
@@ -89,19 +93,20 @@ def resolve(symbols, cache_dir: str | os.PathLike | None = None) -> dict[str, di
             continue
 
         chosen, ambiguous = _select_hits(q, found)
-        symbols = [h.get("symbol") for h in chosen if h.get("symbol")]
+        approved = [h.get("symbol") for h in chosen if h.get("symbol")]
         ensembl: set[str] = set()
         for hit in chosen:
             ens = hit.get("ensembl")
             if isinstance(ens, dict):
-                ensembl.add(ens.get("gene"))
+                if ens.get("gene"):
+                    ensembl.add(ens["gene"])
             elif isinstance(ens, list):
                 for e in ens:
-                    if isinstance(e, dict):
-                        ensembl.add(e.get("gene"))
+                    if isinstance(e, dict) and e.get("gene"):
+                        ensembl.add(e["gene"])
 
         out[q] = {
-            "symbol": symbols[0] if symbols else None,
+            "symbol": approved[0] if approved else None,
             "ensembl": sorted(x for x in ensembl if x),
             "ambiguous": ambiguous,
             "notfound": False,
@@ -109,17 +114,17 @@ def resolve(symbols, cache_dir: str | os.PathLike | None = None) -> dict[str, di
     return out
 
 
-def _ensembl_ids(hit: dict) -> set[str]:
+def _ensembl_ids(hit: dict[str, Any]) -> set[str]:
     """Ensembl gene ids on one hit. MyGene returns a dict or a list of dicts."""
     ens = hit.get("ensembl")
     if isinstance(ens, dict):
-        return {ens.get("gene")} - {None}
+        return {ens["gene"]} if ens.get("gene") is not None else set()
     if isinstance(ens, list):
-        return {e.get("gene") for e in ens if isinstance(e, dict)} - {None}
+        return {e["gene"] for e in ens if isinstance(e, dict) and e.get("gene") is not None}
     return set()
 
 
-def _select_hits(query: str, found: list[dict]) -> tuple[list[dict], bool]:
+def _select_hits(query: str, found: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], bool]:
     """Pick which MyGene hits define a query's record.
 
     **An exact match on the approved symbol wins outright.** MyGene ranks
@@ -174,11 +179,15 @@ def _select_hits(query: str, found: list[dict]) -> tuple[list[dict], bool]:
     return found, len({h.get("symbol") for h in found if h.get("symbol")}) > 1
 
 
-def to_ensembl(symbols, cache_dir=None) -> dict[str, list[str]]:
+def to_ensembl(
+    symbols: Iterable[str], cache_dir: str | os.PathLike[str] | None = None
+) -> dict[str, list[str]]:
     """Convenience: ``{symbol: [ensembl_gene_ids]}``."""
     return {q: r["ensembl"] for q, r in resolve(symbols, cache_dir).items()}
 
 
-def to_canonical(symbols, cache_dir=None) -> dict[str, str | None]:
+def to_canonical(
+    symbols: Iterable[str], cache_dir: str | os.PathLike[str] | None = None
+) -> dict[str, str | None]:
     """Convenience: ``{symbol: approved_symbol_or_None}``."""
     return {q: r["symbol"] for q, r in resolve(symbols, cache_dir).items()}

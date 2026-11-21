@@ -19,8 +19,10 @@ a checker that only looks at the file can only find syntax errors.
 from __future__ import annotations
 
 import json
+from collections.abc import Callable
 from dataclasses import dataclass, field
 from pathlib import Path
+from typing import Any
 
 from . import seqtools
 
@@ -405,7 +407,7 @@ def check_single_orf(seq: str, spec: Spec) -> Finding:
     return Finding("single_orf", False, "no in-frame stop codon found")
 
 
-def check_annotations(record, spec: Spec) -> list[Finding]:
+def check_annotations(record: Any, spec: Spec) -> list[Finding]:  # a Bio SeqRecord
     """The GenBank features exist AND describe what is actually at those coordinates.
 
     Presence alone is weak: coordinates copied from an earlier build still carry the right
@@ -468,7 +470,7 @@ def check_genbank(path: Path, spec: Spec) -> list[Finding]:
     )
 
 
-def check_rbp_motifs(record) -> Finding:
+def check_rbp_motifs(record: Any) -> Finding:  # a Bio SeqRecord
     """No RNA-binding-protein motif flagged in designed transcript sequence.
 
     Pumilio PREs, ARE nonamers, CPEs, cryptic poly(A) signals, near-consensus splice sites,
@@ -498,7 +500,9 @@ def check_rbp_motifs(record) -> Finding:
     )
 
 
-CHECKS = (
+# Callable[..., Finding]: check_shuttle_sites takes (seq) and the rest (seq, spec);
+# check_plasmid dispatches on identity.
+CHECKS: tuple[Callable[..., Finding], ...] = (
     check_backbone,
     check_shuttle_sites,
     check_domestication,
@@ -519,7 +523,9 @@ def check_plasmid(seq: str, spec: Spec) -> list[Finding]:
         try:
             out.append(fn(seq) if fn is check_shuttle_sites else fn(seq, spec))
         except Exception as exc:  # a check that crashes is a failure, not a pass
-            out.append(Finding(fn.__name__, False, f"check raised {type(exc).__name__}: {exc}"))
+            # every entry of CHECKS is a def; Callable[..., Finding] just cannot say so
+            name = fn.__name__  # ty: ignore[missing-attribute]
+            out.append(Finding(name, False, f"check raised {type(exc).__name__}: {exc}"))
     return out
 
 

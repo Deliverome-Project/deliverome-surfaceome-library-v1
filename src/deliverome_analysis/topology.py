@@ -46,6 +46,7 @@ from __future__ import annotations
 import hashlib
 from collections.abc import Mapping
 from functools import lru_cache
+from typing import Any, cast
 
 import pandas as pd
 
@@ -291,7 +292,7 @@ def for_sequence(
     tool: str | None = PREFERRED_TOOL,
     cohorts: tuple[str, ...] | None = None,
     all_rows: bool = False,
-) -> dict | pd.DataFrame | None:
+) -> dict[str, Any] | pd.DataFrame | None:
     """Topology for exactly this sequence from ``tool``, or ``None`` if there is none.
 
     ``None`` means no run of that tool has ever been done on this sequence. It does not
@@ -370,7 +371,7 @@ def missing(
     needs a v1 run" unless you say otherwise.
     """
     report = resolve(sequences, tool=tool, cohorts=cohorts)
-    return report.loc[~report["found"], "key"].tolist()
+    return cast(list[str], report.loc[~report["found"], "key"].tolist())
 
 
 def same_gene_alternatives(aa: str, gene_symbol: str) -> pd.DataFrame:

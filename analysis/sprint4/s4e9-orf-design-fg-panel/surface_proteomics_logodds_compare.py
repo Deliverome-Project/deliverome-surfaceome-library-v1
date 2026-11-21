@@ -29,11 +29,12 @@ pooled     log-odds against membrane + global publications pooled > 0.5
 non-surface publication rather than a separate rate per kind.
 
 Input, committed so the comparison regenerates offline: ``surface_proteomics_counts.tsv``,
-the per-protein publication counts of each snapshot reduced to proteins with at least 20
-surface publications (no protein below that can pass any variant), plus ``N`` per kind.
-``--refresh <snapshot>=<surface_counts_all_proteins.tsv>`` rebuilds it from the full tables
-``surface_specific.py`` writes. Library membership is that table's ``library`` column, which
-joins on Ensembl gene via ``gene_resolver`` against ``candidate_manifest_tranches.tsv``.
+written by ``surface_proteomics_snapshot.py`` from the S3 keys pinned in
+``surface_proteomics_inputs.json`` (per-protein publication counts of each pinned snapshot, for
+proteins with at least 20 surface publications, plus ``N`` per kind). The figure shows the
+snapshot the record names as ``current``. Library membership is that table's ``library``
+column, which joins on Ensembl gene via ``gene_resolver`` against
+``candidate_manifest_tranches.tsv``.
 
 Run from the repo root:
 
@@ -42,7 +43,7 @@ Run from the repo root:
 
 from __future__ import annotations
 
-import argparse
+import json
 import math
 from pathlib import Path
 
@@ -57,13 +58,7 @@ OUT = HERE / "surface_proteomics_logodds_compare.tsv"
 SUMMARY = HERE / "surface_proteomics_logodds_summary.tsv"
 FIGURE = HERE / "figures" / "surface_proteomics_logodds_compare"
 
-#: Publications per kind in each snapshot, as rule_variants.py counts them.
-N_PUBS = {
-    "sweep-v16": {"surface": 71, "membrane": 77, "global": 18},
-    "sweep-v20": {"surface": 73, "membrane": 77, "global": 18},
-    "abundance-v4": {"surface": 84, "membrane": 77, "global": 18},
-}
-SNAPSHOTS = list(N_PUBS)
+INPUTS = HERE / "surface_proteomics_inputs.json"
 MIN_SURFACE = 20
 LOD_MIN = 0.5
 VARIANTS = ("membrane", "global", "both", "pooled")
@@ -77,35 +72,10 @@ def lod(k_s: int, n_s: int, k_x: int, n_x: int) -> float:
     return logit((k_s + 0.5) / (n_s + 1)) - logit((k_x + 0.5) / (n_x + 1))
 
 
-def refresh(pairs: list[str]) -> None:
-    frames = []
-    for pair in pairs:
-        snap, path = pair.split("=", 1)
-        df = pd.read_csv(path, sep="\t", keep_default_na=False)
-        df = df[df.n_surface_pubs >= MIN_SURFACE]
-        df.insert(0, "snapshot", snap)
-        frames.append(
-            df[
-                [
-                    "snapshot",
-                    "uniprot_accession",
-                    "gene_symbol",
-                    "catalog_tier",
-                    "n_surface_pubs",
-                    "n_membrane_pubs",
-                    "n_global_pubs",
-                    "library",
-                ]
-            ]
-        )
-    pd.concat(frames).to_csv(COUNTS, sep="\t", index=False)
-    print(f"wrote {COUNTS.name}")
-
-
 def score(df: pd.DataFrame) -> pd.DataFrame:
     out = []
-    for snap, sub in df.groupby("snapshot", sort=False):
-        n = N_PUBS[snap]
+    for _, sub in df.groupby("snapshot", sort=False):
+        n = {k: int(sub[f"N_{k}"].iloc[0]) for k in ("surface", "membrane", "global")}
         sub = sub.copy()
         sub["lod_membrane"] = [
             lod(s, n["surface"], m, n["membrane"])
@@ -133,9 +103,9 @@ def score(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def figure(df: pd.DataFrame) -> None:
+def figure(df: pd.DataFrame, current: str) -> None:
     setup_plotting_style()
-    sub = df[df.snapshot.eq("abundance-v4")]
+    sub = df[df.snapshot.eq(current)]
     fig, ax = plt.subplots(figsize=(8, 7))
     groups = [
         ("in L1 or L2", sub.in_library, get_color("neutral"), 6, 0.35),
@@ -166,15 +136,11 @@ def figure(df: pd.DataFrame) -> None:
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--refresh", nargs="+", metavar="SNAPSHOT=PATH")
-    args = ap.parse_args()
-    if args.refresh:
-        refresh(args.refresh)
+    current = json.loads(INPUTS.read_text())["current"]
     df = score(pd.read_csv(COUNTS, sep="\t", keep_default_na=False))
 
     summary = []
-    for snap in SNAPSHOTS:
+    for snap in df.snapshot.unique():
         sub = df[df.snapshot.eq(snap)]
         base = set(sub.uniprot_accession[sub.pass_membrane & ~sub.in_library])
         for v in VARIANTS:
@@ -215,7 +181,7 @@ def main() -> None:
     df[keep][cols].sort_values(["snapshot", "gene_symbol"]).to_csv(OUT, sep="\t", index=False)
     pd.set_option("display.width", 250, "display.max_colwidth", 120)
     print(summary.to_string(index=False))
-    figure(df)
+    figure(df, current)
 
 
 if __name__ == "__main__":

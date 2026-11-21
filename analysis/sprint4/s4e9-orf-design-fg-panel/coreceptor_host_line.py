@@ -14,6 +14,9 @@ K562 and best T-, B- and myeloid-lineage TPM. Partners are resolved through
 aliases of one gene (``CLR`` / ``CALCRL``) collapse to one partner, and free-text partners
 that do not resolve are flagged rather than guessed.
 
+Partners are also scored line by line over the S2E18 screening shortlist (its 42 candidate lines,
+29 of them in HPA v23) and the 10 of those in house or on order.
+
 Outputs (experiment root, mirrored to processed://sprint4/s4e9-orf-design-fg-panel/):
 
 - ``coreceptor_host_line_genes.tsv``: one row per rule-decided gene.
@@ -85,21 +88,21 @@ BLANK_SUBTYPE = {
     "UKE-1": "myeloid",
 }
 
-# Partner tokens MyGene maps to the wrong gene, reviewed by hand. The target symbol is
-# itself resolved by gene_resolver, so its Ensembl ID still comes from the resolver.
-OVERRIDES = {
-    "CLR": (
-        "CALCRL",
-        "MyGene alias hit is DCLK3; CLR here is the calcitonin receptor-like receptor",
-    ),
-    "IgM": ("IGHM", "MyGene alias hit is CD40LG; the BCR partner is the IgM heavy chain"),
-    "mIg": ("IGHM", "MyGene alias hit is CXCL9 (MIG); membrane Ig, taken as the IgM heavy chain"),
-    "CD16": (
-        "FCGR3A",
-        "MyGene picks FCGR3B (GPI, neutrophil); the DAP12/FcRg-paired CD16 is FCGR3A",
-    ),
-    "TCR\u03b1": ("TRAC", "TCR alpha constant region; MyGene finds no hit"),
+# Screening shortlist: the candidate lines of the cell-line panel experiment (S2E18,
+# panel.candidates()). HPA names are matched after normalization; these four are the same
+# Cellosaurus line under another HPA name (HEK293T is read from parental HEK293, as S2E18 does).
+PANEL_DIR = HERE.parents[1] / "sprint2/s2e18-cell-line-panel-selection"
+HPA_ALIASES = {
+    "HEK293T": "HEK293",  # parental line; HPA has no HEK293T
+    "BJ-5ta": "BJ1-hTERT",  # CVCL_6573
+    "HEP3B": "Hep 3B2.1-7",  # CVCL_0326
+    "SUM159": "SUM159PT",  # CVCL_5423
 }
+# Lines in house or on order, per the S2E18 README "Result" (2026-09-08): 3 in house plus the
+# 9-line order. HK-2 and GM12878 are not in HPA v23.
+IN_HAND = ["K562", "HEK293T", "HeLa", "U937", "NALM6", "SH-SY5Y", "A549", "HuH-7", "hTERT-RPE1",
+           "U2OS", "HK-2", "GM12878"]  # fmt: skip
+SHORTLIST_MIN_LINES = 2  # "even 2 of the shortlist lines" (Becca, 2026-11-21)
 
 # Genes whose listed partners are alternatives, not all required: the gene needs one partner
 # from each group. Proposed from the partner biology for the genes where "all" and "any"
@@ -169,6 +172,27 @@ def lineages(lines: list[str]) -> dict[str, list[str]]:
     return out
 
 
+def shortlist(lines: list[str], names: list[str] | None = None) -> tuple[list[str], list[str]]:
+    """Panel lines present in HPA v23 (as HPA names), and the panel lines it lacks."""
+    sys.path.insert(0, str(PANEL_DIR))
+    import panel
+
+    norm = {re.sub(r"[^a-z0-9]", "", x.lower()): x for x in lines}
+    have, missing = [], []
+    for name in names or panel.candidates():
+        hit = HPA_ALIASES.get(name) or norm.get(re.sub(r"[^a-z0-9]", "", name.lower()))
+        (have if hit in lines else missing).append(hit if hit in lines else name)
+    return have, missing
+
+
+def lines_ok(tpm: pd.DataFrame, reqs: list[list[str]], lines: list[str], thr: float) -> pd.Series:
+    """Per line: every requirement group has at least one partner at >= thr TPM."""
+    ok = pd.Series(True, index=lines)
+    for grp in reqs:
+        ok &= (tpm.loc[grp, lines] >= thr).any(axis=0)
+    return ok
+
+
 def rerun_gene_filter():
     """The S1E3 filter, offline; returns the imported final_library module."""
     import library_pipeline
@@ -232,11 +256,17 @@ def main() -> int:
             for p in fl.part.get(r["gene"], {}).get("partners", [])
         }
     )
-    targets = {t for t, _ in OVERRIDES.values()}
-    res = gene_resolver.resolve(set(tokens) | targets, cache_dir=MYGENE_CACHE)
-    for tok, (target, _) in OVERRIDES.items():
+    # The gate's own map of misresolved free-text partners (final_library.PARTNER_SYMBOL_FIXES);
+    # each target is resolved here too, so its Ensembl ID still comes from the resolver.
+    fixes = fl.PARTNER_SYMBOL_FIXES
+    res = gene_resolver.resolve(set(tokens) | set(fixes.values()), cache_dir=MYGENE_CACHE)
+    for tok, target in fixes.items():
         assert res[target]["symbol"] == target, f"{target} does not resolve to itself"
         res[tok] = {**res[target], "override": target}
+    short, short_missing = shortlist(list(tpm.columns))
+    assert SCREEN_LINE in short and len(short) == 29, (len(short), short_missing)
+    hand, hand_missing = shortlist(list(tpm.columns), IN_HAND)
+    assert set(hand) <= set(short) and len(hand) == 10, (hand, hand_missing)
 
     prow, grow = [], []
     for r in decided:
@@ -267,11 +297,14 @@ def main() -> int:
                 "resolved_symbol": hit.get("symbol"),
                 "ensembl": e,
                 "status": status,
-                "override_reason": OVERRIDES.get(tok, (None, None))[1],
+                "symbol_fixed_to": fixes.get(tok),
                 "gate_median_tpm": fl.partner_median(p),  # what the gate itself saw
                 "median_tpm": None if e is None else round(float(med[e]), 1),
                 "k562_tpm": None if e is None else float(tpm.loc[e, SCREEN_LINE]),
                 "lines_ge5_tpm": None if e is None else int((tpm.loc[e] >= GATE_TPM).sum()),
+                "shortlist_lines_ge5_tpm": None
+                if e is None
+                else int((tpm.loc[e, short] >= GATE_TPM).sum()),
             }
             for k, cols in lin.items():
                 if e is not None:
@@ -331,6 +364,39 @@ def main() -> int:
                 out[f"curated_{name}"] = float(min(v[grp].max() for grp in groups))
             else:
                 out[f"curated_{name}"] = out[f"all_{name}"]
+        # Line-by-line view over the shortlist: the gene passes in a line when each requirement
+        # (a partner, or one member of a curated alternatives group) clears the threshold there.
+        ens_of = (
+            dict(zip(dist["resolved_symbol"], dist["ensembl"], strict=True)) if len(dist) else {}
+        )
+        reqs_all = [[e] for e in ens_of.values()]
+        reqs_cur = (
+            [[ens_of[x] for x in grp if x in ens_of] for grp in ALTERNATIVES[g]]
+            if g in ALTERNATIVES
+            else reqs_all
+        )
+        for tag, reqs in (("all", reqs_all), ("curated", reqs_cur)):
+            for thr in (GATE_TPM, 10.0):
+                n = (
+                    len(short)
+                    if self_only
+                    else int(lines_ok(tpm, reqs, short, thr).sum())
+                    if reqs
+                    else 0
+                )
+                out[f"{tag}_shortlist_lines_ge{int(thr)}"] = n
+        out["curated_in_hand_lines_ge5"] = (
+            len(hand)
+            if self_only
+            else int(lines_ok(tpm, reqs_cur, hand, GATE_TPM).sum())
+            if reqs_cur
+            else 0
+        )
+        out["curated_shortlist_lines_ge5_names"] = (
+            ", ".join(lines_ok(tpm, reqs_cur, short, GATE_TPM).pipe(lambda x: x[x].index))
+            if reqs_cur and not self_only
+            else ""
+        )
         if len(dist):
             limiting = dist.loc[dist["k562_tpm"].idxmin()]
             out["k562_limiting_partner"] = limiting["resolved_symbol"]
@@ -357,6 +423,32 @@ def main() -> int:
         "curated alternatives, K562 >= 5": rule("curated_k562", 5),
         "curated alternatives, median >= 5 OR K562 >= 5": rule("curated_median", 5)
         | rule("curated_k562", 5),
+        "all partners, >= 5 TPM in >= 2 shortlist lines": genes["all_shortlist_lines_ge5"]
+        >= SHORTLIST_MIN_LINES,
+        "curated alternatives, >= 5 TPM in >= 1 shortlist line": genes[
+            "curated_shortlist_lines_ge5"
+        ]
+        >= 1,
+        "curated alternatives, >= 5 TPM in >= 2 shortlist lines": genes[
+            "curated_shortlist_lines_ge5"
+        ]
+        >= SHORTLIST_MIN_LINES,
+        "curated alternatives, >= 10 TPM in >= 2 shortlist lines": genes[
+            "curated_shortlist_lines_ge10"
+        ]
+        >= SHORTLIST_MIN_LINES,
+        "curated alternatives, >= 5 TPM in >= 2 shortlist lines OR in K562": (
+            genes["curated_shortlist_lines_ge5"] >= SHORTLIST_MIN_LINES
+        )
+        | rule("curated_k562", 5),
+        "curated alternatives, >= 5 TPM in >= 2 in-house/ordered lines": genes[
+            "curated_in_hand_lines_ge5"
+        ]
+        >= SHORTLIST_MIN_LINES,
+        "curated alternatives, median >= 5 OR >= 5 TPM in >= 2 shortlist lines": rule(
+            "curated_median", 5
+        )
+        | (genes["curated_shortlist_lines_ge5"] >= SHORTLIST_MIN_LINES),
         "any partner, median >= 5": rule("any_median", 5),
         "any partner, K562 >= 5": rule("any_k562", 5),
         "any partner, median >= 5 OR K562 >= 5": rule("any_median", 5) | rule("any_k562", 5),
@@ -392,6 +484,10 @@ def main() -> int:
         "hpa_sha256": HPA_SHA256,
         "cell_lines": int(tpm.shape[1]),
         "lineage_lines": {k: len(v) for k, v in lin.items()},
+        "shortlist_lines_in_hpa": short,
+        "shortlist_lines_not_in_hpa": short_missing,
+        "in_hand_lines_in_hpa": hand,
+        "in_hand_lines_not_in_hpa": hand_missing,
         "rule_decided_genes": len(genes),
         "rule_decided_passing_other_gates": int(cand.sum()),
         "of_those_in_library_now": int((cand & now).sum()),
@@ -401,29 +497,33 @@ def main() -> int:
     (HERE / "coreceptor_host_line_summary.json").write_text(json.dumps(meta, indent=2) + "\n")
     print(json.dumps(meta, indent=2))
     print(opts[["rule", "genes_kept", "added", "dropped"]].to_string(index=False))
-    plot(genes, partners, lin)
+    plot(genes, partners, lin, len(short))
     return 0
 
 
-def plot(genes: pd.DataFrame, partners: pd.DataFrame, lin: dict) -> None:
+def plot(genes: pd.DataFrame, partners: pd.DataFrame, lin: dict, n_short: int) -> None:
     def lg(v):
         return np.log10(np.asarray(v, dtype=float) + 0.1)
 
     fig, (a, b) = create_figure(1, 2, figsize=(22, 12), gridspec_kw={"width_ratios": [1.15, 1]})
-    c = genes[genes["passes_other_gates"] & ~genes["self_only"]].dropna(
-        subset=["all_median", "all_k562"]
-    )
-    med_ok, k_ok = c["all_median"] >= GATE_TPM, c["all_k562"] >= GATE_TPM
+    c = genes[genes["passes_other_gates"] & ~genes["self_only"]].dropna(subset=["curated_median"])
+    med_ok = c["curated_median"] >= GATE_TPM
+    sh_ok = c["curated_shortlist_lines_ge5"] >= SHORTLIST_MIN_LINES
     groups = [
-        (med_ok & k_ok, "partners >= 5 TPM on both", get_color("secondary")),
-        (med_ok & ~k_ok, "median only (a K562 rule drops)", get_color("primary")),
-        (~med_ok & k_ok, "K562 only (a K562 rule adds)", get_color("accent")),
-        (~med_ok & ~k_ok, "below 5 TPM on both", get_color("neutral")),
+        (med_ok & sh_ok, "passes both", get_color("secondary")),
+        (med_ok & ~sh_ok, "median only (a shortlist rule drops)", get_color("primary")),
+        (~med_ok & sh_ok, "shortlist only (a shortlist rule adds)", get_color("accent")),
+        (~med_ok & ~sh_ok, "passes neither", get_color("neutral")),
     ]
+    # Integer counts overlap; a fixed small vertical jitter separates the points.
+    jit = np.random.default_rng(0).uniform(-0.3, 0.3, len(c))
+    y = c["curated_shortlist_lines_ge5"].to_numpy() + jit
+    x = lg(c["curated_median"])
     for m, lab, col in groups:
+        m = m.to_numpy()
         a.scatter(
-            lg(c.loc[m, "all_median"]),
-            lg(c.loc[m, "all_k562"]),
+            x[m],
+            y[m],
             s=70,
             color=col,
             alpha=0.85,
@@ -431,30 +531,45 @@ def plot(genes: pd.DataFrame, partners: pd.DataFrame, lin: dict) -> None:
             linewidth=0.6,
             label=f"{lab} (n = {int(m.sum())})",
         )
+    k = (c["curated_k562"] >= GATE_TPM).to_numpy()
+    a.scatter(
+        x[k],
+        y[k],
+        s=170,
+        facecolor="none",
+        edgecolor=get_color("dark"),
+        linewidth=1.2,
+        label=f"limiting partner >= 5 TPM in K562 (n = {int(k.sum())})",
+    )
     t = lg(GATE_TPM)
     a.axvline(t, color=get_color("dark"), lw=1.2)
-    a.axhline(t, color=get_color("dark"), lw=1.2, ls="--")
-    a.axvline(lg(1), color=get_color("dark"), lw=0.8, ls=":")
-    a.text(t + 0.03, lg(900), "current gate:\nmedian 5 TPM", fontsize=13, va="top")
-    a.text(lg(1) + 0.03, lg(900), "median\n1 TPM", fontsize=13, va="top")
-    a.text(lg(0) + 0.02, t + 0.05, "K562 5 TPM", fontsize=13)
-    label = (med_ok ^ k_ok) | c["gene"].isin(NAMED) | ((~med_ok) & (c["all_median"] >= 1))
-    # Genes sharing one limiting partner sit on one point; label each point once.
-    pts = c[label].groupby([c["all_median"].round(2), c["all_k562"].round(2)])["gene"]
-    for (xm, yk), names in pts:
-        a.annotate(
-            ", ".join(sorted(names)),
-            (lg(xm), lg(yk)),
-            fontsize=11,
-            xytext=(5, 4),
-            textcoords="offset points",
-        )
+    a.axhline(SHORTLIST_MIN_LINES - 0.5, color=get_color("dark"), lw=1.2, ls="--")
+    a.text(t - 0.03, 24, "current gate:\nmedian 5 TPM", fontsize=13, va="center", ha="right")
+    a.text(
+        lg(200), SHORTLIST_MIN_LINES - 0.4, f">= {SHORTLIST_MIN_LINES} shortlist lines", fontsize=13
+    )
+    # Genes below the median cut that clear at least one shortlist line, listed by line count
+    # (the points overlap too much to label individually).
+    low = c[~med_ok & (c["curated_shortlist_lines_ge5"] >= 1)]
+    rows_txt = []
+    for n, grp in low.groupby("curated_shortlist_lines_ge5"):
+        names = sorted(grp["gene"])
+        txt = ", ".join(names) if len(names) <= 9 else ", ".join(names[:9]) + f" +{len(names) - 9}"
+        rows_txt.append(f"{int(n)}: {txt}")
+    a.text(
+        lg(6),
+        17.5,
+        "below the median cut, by shortlist lines\n" + "\n".join(rows_txt[::-1]),
+        fontsize=11.5,
+        va="top",
+        linespacing=1.5,
+    )
     ticks = [0, 1, 5, 10, 100, 1000]
-    for set_t, set_l in ((a.set_xticks, a.set_xticklabels), (a.set_yticks, a.set_yticklabels)):
-        set_t(lg(ticks))
-        set_l([str(x) for x in ticks])
+    a.set_xticks(lg(ticks))
+    a.set_xticklabels([str(v) for v in ticks])
+    a.set_ylim(-0.8, n_short + 0.8)
     a.set_xlabel("limiting partner, median TPM over 1,206 lines")
-    a.set_ylabel("limiting partner, TPM in K562")
+    a.set_ylabel(f"shortlist lines (of {n_short}) where every partner is >= 5 TPM")
     a.legend(loc="upper center", bbox_to_anchor=(0.5, -0.12), ncol=2, fontsize=12, frameon=False)
     a.text(-0.08, 1.02, "a", transform=a.transAxes, fontsize=24, fontweight="bold")
 
@@ -488,7 +603,12 @@ def plot(genes: pd.DataFrame, partners: pd.DataFrame, lin: dict) -> None:
     b.axvline(t, color=get_color("dark"), lw=1.2)
     b.set_yticks(y)
     b.set_yticklabels(
-        [f"{g}  ({rows.loc[g, 'k562_limiting_partner']})" for g in rows.index], fontsize=14
+        [
+            f"{g}  ({rows.loc[g, 'k562_limiting_partner']}; "
+            f"{int(rows.loc[g, 'curated_shortlist_lines_ge5'])}/{n_short})"
+            for g in rows.index
+        ],
+        fontsize=14,
     )
     b.set_xticks(lg(ticks))
     b.set_xticklabels([str(x) for x in ticks])

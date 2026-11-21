@@ -97,11 +97,15 @@ import io
 import os
 import re
 import shutil
+from collections.abc import Callable
 from functools import lru_cache
 from pathlib import Path
-from typing import Any, BinaryIO
+from typing import TYPE_CHECKING, Any, BinaryIO, cast
 
 from .env import load_env
+
+if TYPE_CHECKING:
+    import pandas as pd
 
 # Bucket helpers are constructed at module import time, so load the repository
 # configuration before resolving their names. Without this, direct imports such
@@ -197,7 +201,7 @@ def _endpoint_url() -> str | None:
     return os.environ.get("S3_ENDPOINT_URL") or None
 
 
-def _build_client(access_key: str | None = None, secret_key: str | None = None):
+def _build_client(access_key: str | None = None, secret_key: str | None = None) -> Any:
     """Build an S3 client.
 
     With explicit keys, use them. Without, omit the credential kwargs entirely so
@@ -248,7 +252,7 @@ def credentials_available() -> bool:
 
 
 @lru_cache(maxsize=1)
-def client():
+def client() -> Any:
     """Boto3 S3 client, preferring ``S3_ACCESS_KEY_ID`` / ``S3_SECRET_ACCESS_KEY``.
 
     One credential per scientist, least-privilege per bucket: read-only on ``raw``,
@@ -307,7 +311,9 @@ class _ReadBucket:
     one identity now.
     """
 
-    def __init__(self, name: str, client_factory, logical: str | None = None) -> None:
+    def __init__(
+        self, name: str, client_factory: Callable[[], Any], logical: str | None = None
+    ) -> None:
         self._name = name
         self._client_factory = client_factory
         # The conceptual name (raw / processed / external): the mirror's folder name,
@@ -411,7 +417,7 @@ class _ReadBucket:
         """
         return self.download(key).open("rb")
 
-    def read_tsv(self, key: str, **kwargs):
+    def read_tsv(self, key: str, **kwargs: Any) -> pd.DataFrame:
         """Read a tab-separated table into a pandas DataFrame.
 
         kwargs are forwarded to ``pandas.read_csv``.
@@ -421,12 +427,12 @@ class _ReadBucket:
         kwargs.setdefault("sep", "\t")
         return pd.read_csv(io.BytesIO(self._read_bytes(key)), **kwargs)
 
-    def read_csv(self, key: str, **kwargs):
+    def read_csv(self, key: str, **kwargs: Any) -> pd.DataFrame:
         import pandas as pd
 
         return pd.read_csv(io.BytesIO(self._read_bytes(key)), **kwargs)
 
-    def read_parquet(self, key: str, **kwargs):
+    def read_parquet(self, key: str, **kwargs: Any) -> pd.DataFrame:
         import pandas as pd
 
         return pd.read_parquet(io.BytesIO(self._read_bytes(key)), **kwargs)
@@ -453,7 +459,7 @@ class _ReadBucket:
         if self._mirror_path(key) is not None:
             raise RuntimeError("etag is not available in an offline mirror")
         try:
-            return self._head(key)["ETag"].strip('"')
+            return cast(str, self._head(key)["ETag"]).strip('"')
         except Exception as exc:
             code = str(getattr(exc, "response", {}).get("Error", {}).get("Code", ""))
             if code in {"404", "NoSuchKey", "NotFound"}:
@@ -478,7 +484,7 @@ class _ReadBucket:
             raise
 
     def _head(self, key: str) -> dict[str, Any]:
-        return self._client_factory().head_object(Bucket=self._name, Key=key)
+        return cast(dict[str, Any], self._client_factory().head_object(Bucket=self._name, Key=key))
 
     def _read_bytes(self, key: str) -> bytes:
         return self.download(key).read_bytes()

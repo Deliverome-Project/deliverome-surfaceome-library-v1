@@ -1,0 +1,65 @@
+[
+  {
+    "number": 1,
+    "argv": [
+      "curl",
+      "-sS",
+      "-D",
+      "-",
+      "-o",
+      "../ortholog-cds-predictions/netgpi-round1/http/0001.body.bin",
+      "-X",
+      "POST",
+      "https://services.healthtech.dtu.dk/cgi-bin/webface2.cgi",
+      "-F",
+      "configfile=/var/www/services/services/NetGPI-1.1/webface.cf",
+      "-F",
+      "uploadfile=@../ortholog-cds-predictions/netgpi-round1/submitted.fasta;type=text/plain",
+      "-F",
+      "format=short"
+    ],
+    "returncode": 0
+  },
+  {
+    "number": 2,
+    "argv": [
+      "curl",
+      "-sS",
+      "-w",
+      "%{http_code}",
+      "https://services.healthtech.dtu.dk/services/NetGPI-1.1/tmp/6AED3BD30003C19C5A3B159A/output_protein_type.txt",
+      "-D",
+      "../ortholog-cds-predictions/netgpi-round1/http/0002.headers.bin"
+    ],
+    "returncode": 0,
+    "http_status_text": "404"
+  },
+  {
+    "number": 3,
+    "argv": [
+      "curl",
+      "-sS",
+      "-w",
+      "%{http_code}",
+      "https://services.healthtech.dtu.dk/services/NetGPI-1.1/tmp/6AED3BD30003C19C5A3B159A/output_protein_type.txt",
+      "-D",
+      "../ortholog-cds-predictions/netgpi-round1/http/0003.headers.bin"
+    ],
+    "returncode": 0,
+    "http_status_text": "404"
+  },
+  {
+    "number": 4,
+    "argv": [
+      "curl",
+      "-sS",
+      "-w",
+      "%{http_code}",
+      "https://services.healthtech.dtu.dk/services/NetGPI-1.1/tmp/6AED3BD30003C19C5A3B159A/output_protein_type.txt",
+      "-D",
+      "../ortholog-cds-predictions/netgpi-round1/http/0004.headers.bin"
+    ],
+    "returncode": 0,
+    "http_status_text": "200"
+  }
+]

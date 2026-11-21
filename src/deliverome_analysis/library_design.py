@@ -40,6 +40,7 @@ import json
 import re
 from collections.abc import Mapping
 from pathlib import Path
+from typing import Any, cast
 
 import pandas as pd
 
@@ -222,7 +223,7 @@ def design_ids(manifest: str | Path) -> dict[str, str]:
         return {r["candidate_id"]: design_id(r) for r in csv.DictReader(fh, delimiter="\t")}
 
 
-def load_designed_cds() -> dict[str, dict]:
+def load_designed_cds() -> dict[str, dict[str, Any]]:
     """The whole designed-CDS record at :data:`CDS_KEY`, keyed by manifest ``key``.
 
     Includes retired members' entries; the record is append-only, so a retired member's
@@ -231,7 +232,7 @@ def load_designed_cds() -> dict[str, dict]:
     from deliverome_analysis.s3 import processed
 
     with open(processed.download(CDS_KEY)) as fh:
-        return json.load(fh)
+        return cast(dict[str, dict[str, Any]], json.load(fh))
 
 
 def designed_cds(manifest: str | Path, *, library: str) -> dict[str, str]:

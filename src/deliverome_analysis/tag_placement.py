@@ -129,7 +129,8 @@ def post_sp_junction(
         return JunctionChoice(lo, sp_end, 0.0, (), (lo, hi))
 
     pct = [within_protein_percentile(t) for t in usable]
-    best, best_score, best_each = lo, -1.0, ()
+    best, best_score = lo, -1.0
+    best_each: tuple[float, ...] = ()
     for res in range(lo, hi + 1):
         each = tuple(p[res - 1] for p in pct)
         score = sum(each) / len(each)

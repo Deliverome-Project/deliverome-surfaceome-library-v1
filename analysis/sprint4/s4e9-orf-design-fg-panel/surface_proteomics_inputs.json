@@ -1,0 +1,116 @@
+{
+  "_doc": "Pinned inputs of the surface-proteomics challenge set (surface_proteomics_snapshot.py). Every S3 file the counting reads, with its SHA-256; a snapshot whose bytes change stops the run. 'current' is the snapshot the reviewer brief cites. Earlier snapshots are kept so the brief's history of counts stays reproducible.",
+  "current": "sweep-v20+abundance-v5",
+  "library_manifest": {
+    "path": "analysis/sprint4/s4e9-orf-design-fg-panel/candidate_manifest_tranches.tsv",
+    "sha256": "33beb8798dfba7f8269c45111dfb1b84aa3a1940a54aa64c1c144a8d580677a1"
+  },
+  "counting_code": "scratch/becca/s3e8-library-gap/{surface_specific.py,abundance_roles.py}; rule B as in rule_variants.py",
+  "snapshots": {
+    "sweep-v16": {
+      "sweep": {
+        "detections_long.tsv": {
+          "key": "processed://sprint3/s3e8-cross-method-surfaceome/2026-11-16-sweep-v16/detections_long.tsv",
+          "sha256": "c5ff0eb4806ee1def95357266e9b4e43b525d2efcda6fa5c827e801713f75140"
+        },
+        "protein_method_matrix.tsv": {
+          "key": "processed://sprint3/s3e8-cross-method-surfaceome/2026-11-16-sweep-v16/protein_method_matrix.tsv",
+          "sha256": "eef6451d994a2ec84f9a1c30d94ecede31d8f6fc6e252c49dae0c1a3b7bcbb9e"
+        },
+        "novel_candidates.tsv": {
+          "key": "processed://sprint3/s3e8-cross-method-surfaceome/2026-11-16-sweep-v16/novel_candidates.tsv",
+          "sha256": "d5fe503a75900f3d59edab643f64fdad9c2d38c6f56b72c21f6bf9687871b7a4"
+        },
+        "clustering__candidate_review.tsv": {
+          "key": "processed://sprint3/s3e8-cross-method-surfaceome/2026-11-16-sweep-v16/clustering__candidate_review.tsv",
+          "sha256": "ba5fe03259c33fbf1be8c9a2156ffd44bf07e74ca0b94eb5918e65d906633a8f"
+        }
+      }
+    },
+    "sweep-v20": {
+      "sweep": {
+        "detections_long.tsv": {
+          "key": "processed://sprint3/s3e8-cross-method-surfaceome/2026-11-18-sweep-v20/detections_long.tsv",
+          "sha256": "70897d4c3f5f202570e619af46d507a69f6d9111b3762b00ea23e740cd5f3915"
+        },
+        "protein_method_matrix.tsv": {
+          "key": "processed://sprint3/s3e8-cross-method-surfaceome/2026-11-18-sweep-v20/protein_method_matrix.tsv",
+          "sha256": "24c39c29bad59f5f450bec6cbc423cc8def516baa292ae861d86f33ee170b9e4"
+        },
+        "novel_candidates.tsv": {
+          "key": "processed://sprint3/s3e8-cross-method-surfaceome/2026-11-18-sweep-v20/novel_candidates.tsv",
+          "sha256": "523459aea2ef90b0aa438971e0b6ca1beabce75f4c6398be77e5cc77b8a46703"
+        },
+        "clustering__candidate_review.tsv": {
+          "key": "processed://sprint3/s3e8-cross-method-surfaceome/2026-11-18-sweep-v20/clustering__candidate_review.tsv",
+          "sha256": "ef0a483076a89ba5e9fe12f6a986b4cc7581b3f2cbbe5c54118fde2eeb724fa7"
+        }
+      }
+    },
+    "sweep-v20+abundance-v4": {
+      "sweep": {
+        "detections_long.tsv": {
+          "key": "processed://sprint3/s3e8-cross-method-surfaceome/2026-11-18-sweep-v20/detections_long.tsv",
+          "sha256": "70897d4c3f5f202570e619af46d507a69f6d9111b3762b00ea23e740cd5f3915"
+        },
+        "protein_method_matrix.tsv": {
+          "key": "processed://sprint3/s3e8-cross-method-surfaceome/2026-11-18-sweep-v20/protein_method_matrix.tsv",
+          "sha256": "24c39c29bad59f5f450bec6cbc423cc8def516baa292ae861d86f33ee170b9e4"
+        },
+        "novel_candidates.tsv": {
+          "key": "processed://sprint3/s3e8-cross-method-surfaceome/2026-11-18-sweep-v20/novel_candidates.tsv",
+          "sha256": "523459aea2ef90b0aa438971e0b6ca1beabce75f4c6398be77e5cc77b8a46703"
+        },
+        "clustering__candidate_review.tsv": {
+          "key": "processed://sprint3/s3e8-cross-method-surfaceome/2026-11-18-sweep-v20/clustering__candidate_review.tsv",
+          "sha256": "ef0a483076a89ba5e9fe12f6a986b4cc7581b3f2cbbe5c54118fde2eeb724fa7"
+        }
+      },
+      "abundance": {
+        "detections_long.tsv": {
+          "key": "processed://sprint3/s3e8-cross-method-surfaceome/2026-11-18-abundance-v4/detections_long.tsv",
+          "sha256": "70897d4c3f5f202570e619af46d507a69f6d9111b3762b00ea23e740cd5f3915"
+        },
+        "manifest.json": {
+          "key": "processed://sprint3/s3e8-cross-method-surfaceome/2026-11-18-abundance-v4/manifest.json",
+          "sha256": "77821ec612d0441f2f5701d292884c5744b4d13c3ca9fd48476e4c9a205fc9a6"
+        }
+      }
+    },
+    "sweep-v20+abundance-v5": {
+      "sweep": {
+        "detections_long.tsv": {
+          "key": "processed://sprint3/s3e8-cross-method-surfaceome/2026-11-18-sweep-v20/detections_long.tsv",
+          "sha256": "70897d4c3f5f202570e619af46d507a69f6d9111b3762b00ea23e740cd5f3915"
+        },
+        "protein_method_matrix.tsv": {
+          "key": "processed://sprint3/s3e8-cross-method-surfaceome/2026-11-18-sweep-v20/protein_method_matrix.tsv",
+          "sha256": "24c39c29bad59f5f450bec6cbc423cc8def516baa292ae861d86f33ee170b9e4"
+        },
+        "novel_candidates.tsv": {
+          "key": "processed://sprint3/s3e8-cross-method-surfaceome/2026-11-18-sweep-v20/novel_candidates.tsv",
+          "sha256": "523459aea2ef90b0aa438971e0b6ca1beabce75f4c6398be77e5cc77b8a46703"
+        },
+        "clustering__candidate_review.tsv": {
+          "key": "processed://sprint3/s3e8-cross-method-surfaceome/2026-11-18-sweep-v20/clustering__candidate_review.tsv",
+          "sha256": "ef0a483076a89ba5e9fe12f6a986b4cc7581b3f2cbbe5c54118fde2eeb724fa7"
+        }
+      },
+      "abundance": {
+        "detections_long.tsv": {
+          "key": "processed://sprint3/s3e8-cross-method-surfaceome/2026-11-18-abundance-v5/detections_long.tsv",
+          "sha256": "70897d4c3f5f202570e619af46d507a69f6d9111b3762b00ea23e740cd5f3915"
+        },
+        "manifest.json": {
+          "key": "processed://sprint3/s3e8-cross-method-surfaceome/2026-11-18-abundance-v5/manifest.json",
+          "sha256": "1d692d7a432be47daf5fa203c71da2c189f1aedf20f1328cf9d1743bffb7d8ee"
+        }
+      }
+    }
+  },
+  "canonical_sequences": {
+    "key": "external://search-fasta/human-sp-iso_cont-universal-and-cell-culture_irt/2026_03/human.fasta",
+    "release": "UniProt 2026_03 reviewed human, with isoforms",
+    "sha256": "205f1626241074c9a3d1561f80990c008161190ecebfcd98269e7e2eff390609"
+  }
+}

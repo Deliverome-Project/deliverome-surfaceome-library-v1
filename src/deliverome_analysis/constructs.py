@@ -23,6 +23,10 @@ from __future__ import annotations
 
 import sys
 from pathlib import Path
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from deliverome_analysis.s3 import _ReadBucket
 
 PREFIX = "constructs/"
 EXTENSIONS = (".gb", ".gbk", ".genbank")
@@ -55,7 +59,7 @@ def find_key(name: str, keys: list[str]) -> str:
     raise ConstructNotFound(f"{name!r} is ambiguous under processed://{PREFIX}: {matches}")
 
 
-def key_for(name: str, *, bucket=None) -> str:
+def key_for(name: str, *, bucket: _ReadBucket | None = None) -> str:
     """The ``processed://`` key of the map called ``name``."""
     if bucket is None:
         from deliverome_analysis import s3
@@ -64,7 +68,7 @@ def key_for(name: str, *, bucket=None) -> str:
     return find_key(name, bucket.list_keys(prefix=PREFIX))
 
 
-def map_key(name: str, *, new_status: str = "designed", bucket=None) -> str:
+def map_key(name: str, *, new_status: str = "designed", bucket: _ReadBucket | None = None) -> str:
     """The key to read or write the map called ``name``, wherever it is filed now.
 
     An existing map is found in its current status folder, so a script that edits a map
@@ -85,7 +89,7 @@ def map_key(name: str, *, new_status: str = "designed", bucket=None) -> str:
         return f"{PREFIX}{new_status}/{name.strip('/')}.gb"
 
 
-def fetch(name: str, *, fallback: Path | None = None, bucket=None) -> Path:
+def fetch(name: str, *, fallback: Path | None = None, bucket: _ReadBucket | None = None) -> Path:
     """Download the map called ``name`` and return its local path.
 
     ``fallback`` is a committed review copy to use when S3 is unreachable (no

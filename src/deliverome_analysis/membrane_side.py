@@ -44,6 +44,7 @@ import re
 from collections.abc import Sequence
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Any
 
 import numpy as np
 
@@ -95,12 +96,17 @@ def read_model(path: str | Path, chain: str | None = None) -> Model:
     pLDDT is read from the C-alpha B-factor, which is where AlphaFold DB and ColabFold
     write it. Residues without a C-alpha are skipped.
     """
-    from Bio.PDB import MMCIFParser, PDBParser
+    from Bio.PDB.MMCIFParser import MMCIFParser
+    from Bio.PDB.PDBParser import PDBParser
 
     path = Path(path)
     cif = path.suffix in (".cif", ".mmcif")
-    parser = MMCIFParser(QUIET=True) if cif else PDBParser(QUIET=True)
-    structure = parser.get_structure("m", str(path))
+    # One call per parser class: mypy cannot attribute a method of the union to Biopython,
+    # so the `untyped_calls_exclude = ["Bio"]` exemption would not apply to it.
+    if cif:
+        structure = MMCIFParser(QUIET=True).get_structure("m", str(path))
+    else:
+        structure = PDBParser(QUIET=True).get_structure("m", str(path))
     chains = list(structure[0])
     ch = next(c for c in chains if c.id == chain) if chain else chains[0]
     res = [r for r in ch if r.id[0] == " " and "CA" in r]
@@ -303,7 +309,7 @@ def orient(
     return placement
 
 
-def place(model: Model, topology_on_model: Sequence[str | None], **kw) -> Placement | None:
+def place(model: Model, topology_on_model: Sequence[str | None], **kw: Any) -> Placement | None:
     """:func:`fit_helix_axis` then :func:`orient`."""
     p = fit_helix_axis(model, topology_on_model, **kw)
     return None if p is None else orient(model, p, topology_on_model)

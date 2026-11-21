@@ -49,6 +49,12 @@ from __future__ import annotations
 import re
 from collections.abc import Callable, Iterable, Sequence
 from dataclasses import asdict, dataclass, field
+from pathlib import Path
+from typing import Any, cast
+
+# Biopython SeqRecord / SeqFeature arguments below are typed Any: Bio annotates
+# SeqFeature.location as Optional, but every feature parsed from a GenBank map has one, and
+# narrowing it at each use would add checks this code has never needed.
 
 # -- who chose what ----------------------------------------------------------------------
 #
@@ -255,7 +261,7 @@ class Hit:
     def blocking(self) -> bool:
         return self.flagged and self.designed
 
-    def as_row(self) -> dict:
+    def as_row(self) -> dict[str, Any]:
         row = asdict(self)
         row["blocking"] = self.blocking
         return row
@@ -454,19 +460,21 @@ class TranscriptionUnit:
         return self.start + tx_pos + 1 if self.strand == 1 else self.end - tx_pos
 
 
-def _label(feature) -> str:
+def _label(feature: Any) -> str:
     q = feature.qualifiers
-    return (q.get("label") or q.get("note") or q.get("gene") or q.get("product") or [""])[0]
+    return cast(
+        str, (q.get("label") or q.get("note") or q.get("gene") or q.get("product") or [""])[0]
+    )
 
 
-def _is_expression_promoter(feature) -> bool:
+def _is_expression_promoter(feature: Any) -> bool:
     if feature.type != "promoter":
         return False
     lab = _label(feature).lower()
     return not any(k in lab for k in NON_EXPRESSION_PROMOTERS)
 
 
-def transcription_units(record) -> list[TranscriptionUnit]:
+def transcription_units(record: Any) -> list[TranscriptionUnit]:
     """Pol II expression transcripts in a plasmid map.
 
     Forward: from the end of the first expression promoter inside the lentiviral cassette
@@ -532,7 +540,16 @@ def transcription_units(record) -> list[TranscriptionUnit]:
     return units
 
 
-def _unit(record, seq, feats, name, strand, start, end, expected) -> TranscriptionUnit:
+def _unit(
+    record: Any,
+    seq: str,
+    feats: list[Any],
+    name: str,
+    strand: int,
+    start: int,
+    end: int,
+    expected: list[int],
+) -> TranscriptionUnit:
     from deliverome_analysis.seqtools import reverse_complement
 
     sub = seq[start:end] if strand == 1 else reverse_complement(seq[start:end])
@@ -573,7 +590,7 @@ class UnitHits:
     hits: list[Hit]
 
 
-def screen_record(record, **kwargs) -> list[UnitHits]:
+def screen_record(record: Any, **kwargs: Any) -> list[UnitHits]:
     """:func:`scan` every expression transcript in a Biopython GenBank record."""
     out = []
     for tu in transcription_units(record):
@@ -581,7 +598,7 @@ def screen_record(record, **kwargs) -> list[UnitHits]:
     return out
 
 
-def screen_genbank(path) -> list[UnitHits]:
+def screen_genbank(path: str | Path) -> list[UnitHits]:
     from Bio import SeqIO
 
     return screen_record(SeqIO.read(str(path), "genbank"))
