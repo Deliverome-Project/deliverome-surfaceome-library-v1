@@ -64,6 +64,38 @@ REQUIRED_FEATURES = (
 P003_CASSETTE_PEPTIDE = "GGGGSRGVPHIVMVDAYKRYKGGGGSGGGGSPSRLEEELRRRLTEPGGGGS"
 LOOP_CASSETTE_PEPTIDE = "GSPSRLEEELRRRLTEPGS"
 
+#: p003's own DNA for that cassette: the encoding validated in cells, and the one every L1
+#: arm started from (``build_constructs.CASSETTE`` in s4e9; its test pins the two equal and
+#: checks this DNA is in the p003 map). Two uses: its SpyTag003 and P-ALFA-P codons are the
+#: ones an L1 arm must keep, and its GGGGS linker codons are the ones it must NOT keep, since
+#: one encoding shared across a pool is an identical 153-nt stretch in every member.
+P003_CASSETTE_NT = (
+    "GGAGGAGGAGGCAGC"
+    "AGAGGCGTGCCACACATCGTGATGGTGGATGCCTACAAGAGATACAAG"
+    "GGAGGAGGCGGCTCTGGAGGAGGAGGCAGC"
+    "CCC"
+    "AGTCGCCTCGAAGAAGAGCTCAGGCGGAGACTGACAGAG"
+    "CCT"
+    "GGAGGAGGAGGCAGC"
+)
+#: The two tags inside the cassette. Their DNA is what the readout binds and what was shown to
+#: display, so it is held on p003's codons; everything else in the cassette is linker.
+TAG_PEPTIDES: dict[str, str] = {"SpyTag003": "RGVPHIVMVDAYKRYK", "P-ALFA-P": "PSRLEEELRRRLTEP"}
+#: Type IIS enzymes the assembly does not use but a downstream cloning step might. Reported as
+#: warnings, never gated (recognition sites, top strand).
+EXTRA_TYPE_IIS: dict[str, str] = {
+    "AarI/PaqCI": "CACCTGC",  # isoschizomers: one site, reported once
+    "BtgZI": "GCGATG",
+    "SapI": "GCTCTTC",
+}
+#: Synthesis sanity limits, reported as warnings by :func:`check_synthesis_windows`. The GC
+#: ceiling is the one the L1 order was made compliant with (s4e9 ``synthesis_compliance.GC50_MAX``,
+#: Twist's 50-nt rule); the floor and the homopolymer limit are Twist's published ones.
+SYNTHESIS_GC_WINDOW = 50
+SYNTHESIS_GC_MIN = 0.25
+SYNTHESIS_GC_MAX = 0.80
+SYNTHESIS_MAX_HOMOPOLYMER = 7
+
 
 @dataclass
 class Finding:
@@ -100,6 +132,20 @@ class Spec:
     #: True when the gene is GPI-anchored, so a protein with no TM helix is still held in
     #: the membrane. None means "unknown", which is reported rather than assumed either way.
     gpi_anchored: bool | None = None
+    #: Native residue the cassette follows (``native[:n] + cassette + native[n:]``), i.e. the
+    #: cassette's 0-based start in the encoded protein. None means "not checked".
+    cassette_after_residue: int | None = None
+    #: The whole tagged protein the ORF must encode, when known. None means "not checked".
+    tagged_protein: str | None = None
+    #: True only for p003 itself and its own arms: they are allowed to carry p003's shared
+    #: cassette DNA. Every other plasmid fails ``linkers_not_shared`` if it does.
+    reference_cassette_ok: bool = False
+    #: Require SpyTag003 and P-ALFA-P to be on p003's codons (every L1 arm; Becca,
+    #: 2026-10-29). Off by default because the 2026-10-07 panel recoded the tags too.
+    require_p003_tag_codons: bool = False
+    #: ``{label: sequence}`` of backbone features that must each occur exactly once in the
+    #: finished plasmid (from the backbone's GenBank). Empty means "not checked".
+    backbone_features: dict[str, str] = field(default_factory=dict)
 
     @classmethod
     def from_json(cls, path: Path) -> Spec:
@@ -120,9 +166,64 @@ def _circular_find(haystack: str, needle: str) -> int:
     return doubled.find(needle)
 
 
+def _common_prefix(a: str, b: str) -> int:
+    """Length of the common prefix of two strings (binary search on C-level slice compares)."""
+    lo, hi = 0, min(len(a), len(b))
+    while lo < hi:
+        mid = (lo + hi + 1) // 2
+        if a[:mid] == b[:mid]:
+            lo = mid
+        else:
+            hi = mid - 1
+    return lo
+
+
 def _is_rotation(a: str, b: str) -> bool:
     """True when two circular sequences are the same molecule at a different start."""
     return len(a) == len(b) and b in (a + a)
+
+
+def _circular_count(haystack: str, needle: str) -> int:
+    """Occurrences of ``needle`` in a circular sequence (each start position counted once)."""
+    if not needle or len(needle) > len(haystack):
+        return 0
+    doubled = haystack + haystack[: len(needle) - 1]
+    n, at = 0, doubled.find(needle)
+    while 0 <= at < len(haystack):
+        n += 1
+        at = doubled.find(needle, at + 1)
+    return n
+
+
+def read_orf(seq: str) -> tuple[int, str] | None:
+    """``(start, coding)`` of the ORF from the Kozak ATG to its first in-frame stop.
+
+    ``coding`` includes the stop codon. None when there is no Kozak, no ATG after it, or no
+    in-frame stop within one turn of the (circular) sequence.
+    """
+    k = _circular_find(seq, KOZAK)
+    if k < 0:
+        return None
+    start = (k + len(KOZAK)) % len(seq)
+    doubled = seq + seq
+    if doubled[start : start + 3] != "ATG":
+        return None
+    for i in range(start, start + len(seq) - 2, 3):
+        if seqtools.translate(doubled[i : i + 3]) == "*":
+            return start, doubled[start : i + 3]
+    return None
+
+
+def _tandem_in_orf(seq: str) -> tuple[str, str, int] | None:
+    """``(coding, protein, cassette_aa_index)`` when the ORF carries the 51-aa tandem once."""
+    orf = read_orf(seq)
+    if orf is None:
+        return None
+    coding = orf[1]
+    protein = seqtools.translate(coding[:-3])
+    if protein.count(P003_CASSETTE_PEPTIDE) != 1:
+        return None
+    return coding, protein, protein.find(P003_CASSETTE_PEPTIDE)
 
 
 def check_backbone(seq: str, spec: Spec) -> Finding:
@@ -158,7 +259,16 @@ def check_backbone(seq: str, spec: Spec) -> Finding:
 
     doubled = seq + seq
     remainder = doubled[at + len(spec.designed_insert) : at + len(seq)]
-    n, i, j = seqtools.longest_shared_tract(remainder, spec.backbone)
+    # Fast path: the remainder starts right after the insert, so in a correct plasmid its
+    # opening bases sit in the backbone just after the cloning site. Anchoring there gives the
+    # same arc as the general search below in a single comparison, which is what makes this
+    # check affordable on a 3,000-insert pool. Any other layout falls back to the search.
+    anchor = (spec.backbone + spec.backbone).find(remainder[:50]) if len(remainder) >= 50 else -1
+    if anchor >= 0:
+        i, j = 0, anchor % len(spec.backbone)
+        n = _common_prefix(remainder, spec.backbone[j:] + spec.backbone[:j])
+    if anchor < 0 or n < 100:
+        n, i, j = seqtools.longest_shared_tract(remainder, spec.backbone)
     if n < 100:
         return Finding(
             "backbone", False, f"shares only {n} bp with the expected backbone — wrong backbone"
@@ -251,13 +361,38 @@ def check_insert_matches_design(seq: str, spec: Spec) -> Finding:
 
 
 def check_diversified_linker(seq: str, spec: Spec) -> Finding:
-    """The cassette carries this construct's OWN encoding, not the shared reference."""
+    """The cassette carries this construct's OWN encoding, not the shared reference.
+
+    Hardened 2026-11-21: an issued encoding that IS p003's shared DNA used to pass (the check
+    only asked that the spec's encoding be present), and so did an encoding found out of frame
+    or twice. It now fails all three.
+    """
     if not spec.cassette_nt:
         return Finding("diversified_linker", True, "no cassette in spec", "warning")
-    if _circular_find(seq, spec.cassette_nt) < 0:
+    if spec.cassette_nt == P003_CASSETTE_NT and not spec.reference_cassette_ok:
+        return Finding(
+            "diversified_linker",
+            False,
+            "the spec's encoding is p003's shared cassette DNA, not an issued per-construct one",
+        )
+    copies = _circular_count(seq, spec.cassette_nt)
+    if copies == 0:
         return Finding(
             "diversified_linker", False, "this construct's issued cassette encoding is not present"
         )
+    if copies > 1:
+        return Finding(
+            "diversified_linker", False, f"the issued encoding occurs {copies} times in the plasmid"
+        )
+    orf = read_orf(seq)
+    if orf is not None:
+        at = orf[1].find(spec.cassette_nt)
+        if at < 0 or at % 3:
+            return Finding(
+                "diversified_linker",
+                False,
+                "the issued encoding is not in the ORF's reading frame",
+            )
     peptide = spec.cassette_peptide or seqtools.translate(spec.cassette_nt)
     if seqtools.translate(spec.cassette_nt) != peptide:
         return Finding(
@@ -281,8 +416,15 @@ def check_barcode(seq: str, spec: Spec) -> Finding:
             "barcode", False, f"barcode is {len(spec.barcode)} nt, expected {BARCODE_LEN}"
         )
     flanked = FWD_PRIMER + spec.barcode + REV_PRIMER
-    if _circular_find(seq, flanked) >= 0:
-        return Finding("barcode", True, "reserved barcode present, correctly flanked")
+    copies = _circular_count(seq, flanked)
+    if copies > 1:
+        return Finding("barcode", False, f"barcode slot occurs {copies} times; expected once")
+    if copies == 1:
+        if _circular_count(seq, FWD_PRIMER) != 1 or _circular_count(seq, REV_PRIMER) != 1:
+            return Finding(
+                "barcode", False, "a second copy of the 5' handle or RT site is in the plasmid"
+            )
+        return Finding("barcode", True, "reserved barcode present once, correctly flanked")
     if _circular_find(seq, spec.barcode) >= 0:
         return Finding(
             "barcode", False, "barcode present but not between the 5' handle and the RT site"
@@ -402,9 +544,324 @@ def check_single_orf(seq: str, spec: Spec) -> Finding:
             stops += 1
             break
         i += 3
-    if stops == 1:
-        return Finding("single_orf", True, f"single ORF, {(i - start - len(KOZAK)) // 3} codons")
-    return Finding("single_orf", False, "no in-frame stop codon found")
+    if stops != 1:
+        return Finding("single_orf", False, "no in-frame stop codon found")
+    codons = (i - start - len(KOZAK)) // 3
+    # Hardened 2026-11-21: a premature stop or a frameshift used to pass here, because any
+    # in-frame stop counted. Every Deliverome insert ends its ORF on a stop followed by the
+    # pad and the 5' handle, so when the plasmid has a handle the ORF must end right there.
+    if _circular_find(seq, FWD_PRIMER) >= 0:
+        after = doubled[i + 3 : i + 3 + len(SPACER) + len(FWD_PRIMER)]
+        if after != SPACER + FWD_PRIMER:
+            return Finding(
+                "single_orf",
+                False,
+                f"the ORF stops after {codons} codons but not at the pad + 5' handle: "
+                "a premature stop or a frameshift",
+            )
+    if spec.designed_insert and _circular_find(seq, spec.designed_insert) >= 0:
+        ins = _circular_find(seq, spec.designed_insert)
+        end = (i + 3 - ins) % len(seq)
+        if not 0 < end <= len(spec.designed_insert):
+            return Finding("single_orf", False, "the ORF runs out of the designed insert")
+    return Finding("single_orf", True, f"single ORF, {codons} codons, ending at the handle")
+
+
+def check_cassette_placement(seq: str, spec: Spec) -> Finding:
+    """The tag peptide occurs once, at the recorded residue, in the recorded protein."""
+    peptide = spec.cassette_peptide or (
+        seqtools.translate(spec.cassette_nt) if spec.cassette_nt else None
+    )
+    if not peptide:
+        return Finding("cassette_placement", True, "no cassette in spec — not checked", "warning")
+    orf = read_orf(seq)
+    if orf is None:
+        return Finding("cassette_placement", False, "no ORF (Kozak ATG to an in-frame stop)")
+    protein = seqtools.translate(orf[1][:-3])
+    n = protein.count(peptide)
+    if n != 1:
+        return Finding("cassette_placement", False, f"the tag peptide occurs {n} times in the ORF")
+    at = protein.find(peptide)
+    if spec.cassette_after_residue is not None and at != spec.cassette_after_residue:
+        return Finding(
+            "cassette_placement",
+            False,
+            f"the tag follows residue {at}, but the design puts it after residue "
+            f"{spec.cassette_after_residue}",
+        )
+    if spec.tagged_protein is not None and protein != spec.tagged_protein:
+        n_shared = seqtools.longest_shared_tract(protein, spec.tagged_protein)[0]
+        return Finding(
+            "cassette_placement",
+            False,
+            f"the ORF encodes a {len(protein)}-aa protein, not the recorded "
+            f"{len(spec.tagged_protein)}-aa tagged protein (longest shared stretch {n_shared} aa)",
+        )
+    return Finding("cassette_placement", True, f"tag once, after residue {at}")
+
+
+def check_tag_codons(seq: str, spec: Spec) -> Finding:
+    """SpyTag003 and P-ALFA-P are on p003's codons, byte for byte (when the spec requires it)."""
+    if not spec.require_p003_tag_codons:
+        return Finding("tag_codons", True, "not required by the spec — not checked", "warning")
+    found = _tandem_in_orf(seq)
+    if found is None:
+        return Finding("tag_codons", False, "the ORF does not carry the 51-aa tandem cassette once")
+    coding, _, c = found
+    cassette = coding[3 * c : 3 * (c + len(P003_CASSETTE_PEPTIDE))]
+    bad = []
+    for name, tag in TAG_PEPTIDES.items():
+        a = P003_CASSETTE_PEPTIDE.index(tag)
+        lo, hi = 3 * a, 3 * (a + len(tag))
+        if cassette[lo:hi] != P003_CASSETTE_NT[lo:hi]:
+            diff = sum(
+                x != y for x, y in zip(cassette[lo:hi], P003_CASSETTE_NT[lo:hi], strict=True)
+            )
+            bad.append(f"{name} differs from p003 at {diff} nt")
+    if bad:
+        return Finding("tag_codons", False, "; ".join(bad))
+    return Finding("tag_codons", True, "SpyTag003 and P-ALFA-P on p003's codons")
+
+
+def _linker_blocks() -> list[tuple[int, int]]:
+    """Nucleotide spans of the cassette's linker blocks (everything that is not a tag)."""
+    spans, at = [], 0
+    for tag in TAG_PEPTIDES.values():
+        a = P003_CASSETTE_PEPTIDE.index(tag)
+        if a > at:
+            spans.append((3 * at, 3 * a))
+        at = a + len(tag)
+    if at < len(P003_CASSETTE_PEPTIDE):
+        spans.append((3 * at, 3 * len(P003_CASSETTE_PEPTIDE)))
+    return spans
+
+
+def check_linkers_not_shared(seq: str, spec: Spec) -> Finding:
+    """The cassette in the ORF is not p003's shared DNA (read from the plasmid, not the spec).
+
+    ``diversified_linker`` compares the plasmid with the spec, so a spec that itself names the
+    shared encoding passes it. This one reads the cassette out of the ORF and fails if it is
+    p003's DNA, unless the spec marks the plasmid as p003 or one of its own arms. A linker block
+    that alone equals p003's is a warning: one block in ~1,500 matches by chance.
+    """
+    found = _tandem_in_orf(seq)
+    if found is None:
+        return Finding(
+            "linkers_not_shared", True, "no 51-aa tandem in the ORF — not checked", "warning"
+        )
+    coding, _, c = found
+    cassette = coding[3 * c : 3 * (c + len(P003_CASSETTE_PEPTIDE))]
+    if cassette == P003_CASSETTE_NT:
+        if spec.reference_cassette_ok:
+            return Finding("linkers_not_shared", True, "p003's cassette DNA, allowed for p003 arms")
+        return Finding(
+            "linkers_not_shared",
+            False,
+            "the cassette is p003's shared DNA: its GGGGS linkers are identical in every "
+            "construct that carries it",
+        )
+    same = [
+        f"{lo}-{hi}" for lo, hi in _linker_blocks() if cassette[lo:hi] == P003_CASSETTE_NT[lo:hi]
+    ]
+    if same and not spec.reference_cassette_ok:
+        return Finding(
+            "linkers_not_shared",
+            False,
+            f"linker block(s) at cassette nt {', '.join(same)} still on p003's codons",
+            "warning",
+        )
+    return Finding("linkers_not_shared", True, "linkers recoded away from p003's shared DNA")
+
+
+def _sites_circular(seq: str, enzymes: list[str]) -> list[tuple[str, str, int]]:
+    """Type IIS sites on a circular sequence, each once, positions in ``seq``'s numbering."""
+    pad = max(len(seqtools.ENZYME_SITES[e]) for e in enzymes) - 1
+    return [h for h in seqtools.find_sites(seq + seq[:pad], enzymes) if h[2] < len(seq)]
+
+
+def check_type_iis_junctions(seq: str, spec: Spec) -> Finding:
+    """No BbsI/BsaI/Esp3I in the insert beyond its own wrapper, and none made at a junction.
+
+    ``golden_gate_domestication`` looks at the insert alone. A site can also be completed by
+    the bases either side of the insert-backbone seam, which no check saw; this one counts the
+    plasmid's sites against the insert's plus the backbone remainder's, so a seam site shows as
+    the difference. An insert that opens with ``CGTCTC`` and ends with ``GAGACG`` is wrapped,
+    and those two Esp3I are its only allowed sites.
+    """
+    if not spec.designed_insert:
+        return Finding("type_iis_junctions", True, "no designed insert — not checked", "warning")
+    at = _circular_find(seq, spec.designed_insert)
+    if at < 0:
+        return Finding(
+            "type_iis_junctions", True, "insert not found — see insert_matches_design", "warning"
+        )
+    enzymes = [*ASSEMBLY_ENZYMES, SHUTTLE_ENZYME]
+    insert = spec.designed_insert
+    wrapped = insert.startswith("CGTCTC") and insert.endswith("GAGACG")
+    in_insert = seqtools.find_sites(insert, enzymes)
+    allowed = 2 if wrapped else 0
+    if len(in_insert) != allowed or (wrapped and any(h[0] != SHUTTLE_ENZYME for h in in_insert)):
+        return Finding(
+            "type_iis_junctions",
+            False,
+            f"insert carries {len(in_insert)} BbsI/BsaI/Esp3I site(s), expected {allowed}: "
+            f"{in_insert[:4]}",
+        )
+    doubled = seq + seq
+    remainder = doubled[at + len(insert) : at + len(seq)]
+    expected = len(in_insert) + len(seqtools.find_sites(remainder, enzymes))
+    total = len(_sites_circular(seq, enzymes))
+    if total != expected:
+        return Finding(
+            "type_iis_junctions",
+            False,
+            f"{total - expected} BbsI/BsaI/Esp3I site(s) completed across an insert-backbone seam",
+        )
+    return Finding(
+        "type_iis_junctions",
+        True,
+        f"insert has {len(in_insert)} wrapper site(s) only; no site made at either seam",
+    )
+
+
+def _esp3i_cuts(seq: str) -> list[tuple[int, str]]:
+    """``(top-strand cut, 4-nt overhang as top-strand sequence)`` for each Esp3I site.
+
+    Esp3I is CGTCTC(1/5): a forward site at p cuts the top strand at p+7 and leaves the 4 nt
+    after it as the overhang; a reverse site (GAGACG at p) cuts the top strand at p-5, and the
+    overhang is the 4 nt before p-1.
+    """
+    out = []
+    doubled = seq + seq
+    for _, strand, p in _sites_circular(seq, [SHUTTLE_ENZYME]):
+        if strand == "+":
+            cut = (p + 7) % len(seq)
+            out.append((cut, doubled[cut : cut + 4]))
+        else:
+            cut = (p - 5) % len(seq)
+            out.append((cut, doubled[cut : cut + 4]))
+    return sorted(out)
+
+
+def check_shuttle_digest(seq: str, spec: Spec) -> Finding:
+    """An Esp3I digest releases the insert with two distinct, non-palindromic overhangs.
+
+    ``esp3i_shuttle`` counts the sites. This digests the plasmid in silico: there must be two
+    cuts, the fragment between them must hold the ORF and the barcode slot, and its two 4-nt
+    overhangs must be different, each non-palindromic, and not each other's reverse
+    complement -- otherwise the fragment can ligate to itself or flip in the next vector.
+    """
+    cuts = _esp3i_cuts(seq)
+    if len(cuts) != 2:
+        return Finding("shuttle_digest", False, f"Esp3I cuts the plasmid {len(cuts)} time(s)")
+    (c1, _), (c2, _) = cuts
+    doubled = seq + seq
+    fragments = [doubled[c1 : c2 + 4], doubled[c2 : c1 + len(seq) + 4]]
+    held = [f for f in fragments if FWD_PRIMER in f and REV_PRIMER in f]
+    if len(held) != 1:
+        return Finding(
+            "shuttle_digest", False, "the barcode handles are not on exactly one digest fragment"
+        )
+    frag = held[0]
+    if "ATG" not in frag[: frag.find(FWD_PRIMER)]:
+        return Finding("shuttle_digest", False, "the released fragment carries no ORF start")
+    left, right = frag[:4], frag[-4:]
+    rc = seqtools.reverse_complement
+    problems = []
+    if left == right:
+        problems.append("the two overhangs are identical")
+    if left == rc(right):
+        problems.append("the overhangs are each other's reverse complement")
+    problems += [f"{o} is palindromic" for o in (left, right) if o == rc(o)]
+    if problems:
+        return Finding("shuttle_digest", False, "; ".join(problems))
+    return Finding(
+        "shuttle_digest",
+        True,
+        f"Esp3I releases a {len(frag)}-nt insert fragment with overhangs {left} / {right}",
+    )
+
+
+def check_backbone_features(seq: str, spec: Spec) -> Finding:
+    """Each backbone feature (promoter, IRES, selection, WPRE...) is present exactly once."""
+    if not spec.backbone_features:
+        return Finding(
+            "backbone_features", True, "no backbone features in spec — not checked", "warning"
+        )
+    bad = []
+    for label, feat in spec.backbone_features.items():
+        n = _circular_count(seq, feat) + _circular_count(seq, seqtools.reverse_complement(feat))
+        if n != 1:
+            bad.append(f"{label} x{n}")
+    if bad:
+        return Finding("backbone_features", False, "not present exactly once: " + ", ".join(bad))
+    return Finding(
+        "backbone_features", True, f"{len(spec.backbone_features)} features, each present once"
+    )
+
+
+def check_extra_type_iis(seq: str, spec: Spec) -> Finding:
+    """AarI, PaqCI, BtgZI and SapI in the insert: reported as a warning, never gated."""
+    region = spec.designed_insert or seq
+    # p003's own P-ALFA-P DNA carries a SapI site (GAAGAGC); it is in every construct with the
+    # tag and was accepted with the tag codons, so the tags' DNA is masked before counting.
+    for tag in TAG_PEPTIDES.values():
+        a = P003_CASSETTE_PEPTIDE.index(tag)
+        tag_nt = P003_CASSETTE_NT[3 * a : 3 * (a + len(tag))]
+        region = region.replace(tag_nt, "N" * len(tag_nt))
+    hits = []
+    for name, site in EXTRA_TYPE_IIS.items():
+        rc = seqtools.reverse_complement(site)
+        n = region.count(site) + (region.count(rc) if rc != site else 0)
+        if n:
+            hits.append(f"{name} x{n}")
+    if hits:
+        return Finding(
+            "extra_type_iis", False, "in the insert outside the tags: " + ", ".join(hits), "warning"
+        )
+    return Finding(
+        "extra_type_iis", True, "no AarI, PaqCI, BtgZI or SapI site in the insert outside the tags"
+    )
+
+
+def check_synthesis_windows(
+    seq: str,
+    spec: Spec,
+    *,
+    window: int = SYNTHESIS_GC_WINDOW,
+    gc_min: float = SYNTHESIS_GC_MIN,
+    gc_max: float = SYNTHESIS_GC_MAX,
+    max_homopolymer: int = SYNTHESIS_MAX_HOMOPOLYMER,
+) -> Finding:
+    """Synthesis sanity on the insert, as a warning: homopolymers and 50-nt GC windows.
+
+    Not in :data:`CHECKS`: a vendor's own screen is the real test, and a run that reads only
+    a finished map has no reason to fail on it. ``N`` (a barcode slot) counts as half GC, as in
+    ``synthesis_compliance``, and does not form homopolymers.
+    """
+    region = spec.designed_insert or seq
+    problems = []
+    longest, run, prev = 0, 0, ""
+    for ch in region:
+        run = run + 1 if ch == prev and ch != "N" else 1
+        prev = ch
+        longest = max(longest, run if ch != "N" else 0)
+    if longest > max_homopolymer:
+        problems.append(f"homopolymer of {longest}")
+    if len(region) >= window:
+        weight = {"G": 1.0, "C": 1.0, "N": 0.5}
+        gc = sum(weight.get(ch, 0.0) for ch in region[:window])
+        lo = hi = gc / window
+        for i in range(window, len(region)):
+            gc += weight.get(region[i], 0.0) - weight.get(region[i - window], 0.0)
+            lo, hi = min(lo, gc / window), max(hi, gc / window)
+        if lo < gc_min:
+            problems.append(f"{window}-nt GC down to {lo:.2f} (< {gc_min})")
+        if hi > gc_max:
+            problems.append(f"{window}-nt GC up to {hi:.2f} (> {gc_max})")
+    if problems:
+        return Finding("synthesis_windows", False, "; ".join(problems), "warning")
+    return Finding("synthesis_windows", True, "GC windows and homopolymers within limits")
 
 
 def check_annotations(record: Any, spec: Spec) -> list[Finding]:  # a Bio SeqRecord
@@ -512,6 +969,13 @@ CHECKS: tuple[Callable[..., Finding], ...] = (
     check_proteoform,
     check_membrane_anchor,
     check_single_orf,
+    check_cassette_placement,
+    check_tag_codons,
+    check_linkers_not_shared,
+    check_type_iis_junctions,
+    check_shuttle_digest,
+    check_backbone_features,
+    check_extra_type_iis,
 )
 
 

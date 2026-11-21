@@ -19,12 +19,12 @@ subgroups in ``type3_nterm_calls.tsv`` (see TYPE3_NTERM.md):
 | Held: LMLN, the three members whose annotated signal peptide is uncalled, and cyno TNFRSF1B / TIE1 pending CDS repair | no decision taken (open questions in TYPE3_NTERM.md) | same |
 
 **Cassette.** The full L1 cassette, GGGGS | SpyTag003 | GGGGSGGGGS | P-ALFA-P | GGGGS (51 aa),
-goes after Met1, on p003's codons (``build_constructs.CASSETTE``). Dropping the leading GGGGS
+goes after Met1, with p003's SpyTag003 and P-ALFA-P codons and this arm's own GGGGS encoding
+(``l1_arm_cassette_encodings.tsv``; Becca, 2026-11-21: "we still don't want shared linkers in the
+middle"). Dropping the leading GGGGS
 was tested and rejected. With SpyTag003 directly after Met1, DeepTMHMM v1 called a cleavable
 signal peptide ending inside SpyTag003 for 12 of the 62 tag-alone arms. The calls fell with
-spacer length: S 7, G 7, GS 3, GG 2, GGS 0, GGGGS 0 (TYPE3_NTERM.md). Linker recoding is not
-applied, because an N-terminal cassette sits upstream of the member's own ORF, so the tract
-members share before the barcode is set by their ORFs.
+spacer length: S 7, G 7, GS 3, GG 2, GGS 0, GGGGS 0 (TYPE3_NTERM.md).
 
 **Option B membership** (Becca, 2026-11-11). Igk + tag where a risk was identified:
 
@@ -63,6 +63,7 @@ from pathlib import Path
 
 from build_constructs import CASSETTE, CASSETTE_AA, CS1, FWD_PRIMER, KOZAK, REV_PRIMER, SPACER
 from build_gpcr_rescue_arms import LEADER, LEADER_AA, PLUS1, PLUS1_AA
+from diversify_arm_cassettes import arm_cassette
 
 from deliverome_analysis import library_design as ld
 from deliverome_analysis import seqtools
@@ -296,7 +297,7 @@ def build() -> list[dict]:
             assert seqtools.translate(orf) == native + "*", f"{cid}: ORF does not encode protein"
             assert orf[:3] == "ATG", f"{cid}: ORF does not start with ATG"
             head = (LEADER + PLUS1) if design == "igk_tag" else ""
-            coding = head + orf[:3] + CASSETTE + orf[3:]
+            coding = head + orf[:3] + arm_cassette(cid) + orf[3:]
             mature = native[0] + CASSETTE_AA + native[1:]
             if design == "igk_tag":
                 mature = PLUS1_AA + mature
@@ -321,7 +322,7 @@ def build() -> list[dict]:
                 mature_aa=len(mature),
                 coding_nt=len(coding),
                 insert_nt=len(insert),
-                cassette="full 51 aa, p003 codons",
+                cassette="full 51 aa; p003 tag codons, own linker encoding",
                 type_iis_sites="Esp3I x2 (wrapper)",
                 cassette_decided_by=CASSETTE_DECIDED,
                 protein_sha256=hashlib.sha256(protein.encode()).hexdigest(),

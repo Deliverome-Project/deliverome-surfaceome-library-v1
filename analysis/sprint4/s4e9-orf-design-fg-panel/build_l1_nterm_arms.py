@@ -13,12 +13,13 @@ Every input is fixed in the record; nothing is chosen here:
   delegated calls for the rest (Becca, 2026-11-12, "use your best judgment").
 * **the ORF**: the member's domesticated ORF from ``candidate_constructs.json`` (stage 10),
   which must translate to the member's designed protein plus a stop.
-* **the cassette**: p003's own 51-aa tandem DNA (``build_constructs.CASSETTE``; Becca,
-  2026-11-10: "we want the tandem"). One encoding is shared by every N-terminal member. The
-  barcode-swap model (``l1_swap_risk.py``) measures the stretch a member shares with another
-  ending at the barcode, and an N-terminal cassette is upstream of the ORF's own C-terminus,
-  so it does not enter that stretch. The C-terminal rung needs per-member encodings and this
-  one does not.
+* **the cassette**: the 51-aa tandem (Becca, 2026-11-10: "we want the tandem"), on this arm's own
+  linker encoding from ``l1_arm_cassette_encodings.tsv`` (``diversify_arm_cassettes.py``):
+  SpyTag003 and P-ALFA-P on p003's codons, the four GGGGS blocks recoded per arm. Until
+  2026-11-21 every N-terminal arm carried p003's one encoding, on the reasoning that an
+  upstream cassette never enters the tract to the barcode; Becca, 2026-11-21: "we still don't
+  want shared linkers in the middle", since a template switch inside a shared cassette joins two
+  arms' ORFs.
   The full cassette, leading ``GGGGS`` included, is kept everywhere (Becca, 2026-11-11: "keep
   full"; relayed by the l1-recode-dups session). With SpyTag003 directly after Met1, DeepTMHMM v1
   called a spurious signal peptide inside the tag on 12 of 62 type III constructs and on none with
@@ -62,6 +63,7 @@ from pathlib import Path
 
 from build_constructs import CASSETTE, CASSETTE_AA, CS1, FWD_PRIMER, KOZAK, REV_PRIMER, SPACER
 from build_gpcr_rescue_arms import LEADER, LEADER_AA, PLUS1, PLUS1_AA
+from diversify_arm_cassettes import arm_cassette
 from diversify_cassettes import TAG_SEGMENTS
 
 from deliverome_analysis import library_design as ld
@@ -128,7 +130,8 @@ def build_one(d: dict, orf: str, protein: str, tag_fixed: dict) -> dict | str:
     """
     cid, n = d["candidate_id"], int(d["native_after_residue"])
     assert seqtools.translate(orf) == protein + "*", f"{cid}: ORF does not encode its protein"
-    assert all(CASSETTE[3 * i : 3 * i + 3] == c for i, c in tag_fixed.items()), "not p003's tags"
+    cas = arm_cassette(cid)
+    assert all(cas[3 * i : 3 * i + 3] == c for i, c in tag_fixed.items()), "not p003's tags"
     if d["arm"] == "igk_swap":
         c = int(d["igk_replaces_residues"].split("-")[1])
         head = LEADER + PLUS1 + orf[3 * c : 3 * n]
@@ -137,7 +140,7 @@ def build_one(d: dict, orf: str, protein: str, tag_fixed: dict) -> dict | str:
         assert after == int(d["insert_after_residue"]), f"{cid}: Igκ site does not map"
     else:
         head, expect, after = orf[: 3 * n], protein[:n] + CASSETTE_AA + protein[n:], n
-    coding = head + CASSETTE + orf[3 * n :]
+    coding = head + cas + orf[3 * n :]
     translated = seqtools.translate(coding)
     assert translated == expect + "*", f"{cid}: protein is not the decided tagged form"
     assert translated.count("*") == 1, f"{cid}: internal stop"
@@ -160,10 +163,10 @@ def build_one(d: dict, orf: str, protein: str, tag_fixed: dict) -> dict | str:
         # Objective fix: a seam created a BbsI/Esp3I/BsaI site. Try one synonymous change in the
         # native codons flanking the cassette (2 either side), protein unchanged; the cassette's
         # own codons (p003's) are never touched. Recorded in ``seam_edit``.
-        head, rest, seam_edit = seam_fix(head, orf[3 * n :])
+        head, rest, seam_edit = seam_fix(head, orf[3 * n :], cas)
         if not seam_edit:
             return f"Type IIS site at a seam: {sites}"
-        coding = head + CASSETTE + rest
+        coding = head + cas + rest
         assert seqtools.translate(coding) == expect + "*", f"{cid}: seam fix changed the protein"
         insert = (
             assemble_candidates.ESP3I_5
@@ -218,7 +221,7 @@ def build_one(d: dict, orf: str, protein: str, tag_fixed: dict) -> dict | str:
     }
 
 
-def seam_fix(head: str, rest: str) -> tuple[str, str, str]:
+def seam_fix(head: str, rest: str, cas: str) -> tuple[str, str, str]:
     """One synonymous codon change beside the cassette that clears every seam site."""
 
     def clean(h: str, r: str) -> bool:
@@ -226,7 +229,7 @@ def seam_fix(head: str, rest: str) -> tuple[str, str, str]:
             assemble_candidates.ESP3I_5
             + KOZAK
             + h
-            + CASSETTE
+            + cas
             + r
             + SPACER
             + FWD_PRIMER
@@ -305,9 +308,9 @@ def build() -> tuple[list[dict], dict]:
         "type_iis": f"every insert: 2 Esp3I (wrapper), 0 BbsI, 0 BsaI; in p0039: backbone's "
         f"{n_bb} + 2",
         "insert_nt_range": [min(r["insert_nt"] for r in rows), max(r["insert_nt"] for r in rows)],
-        "cassette": "full p003 tandem, one shared encoding (build_constructs.CASSETTE)",
+        "cassette": "full p003 tandem, this arm's own linker encoding (l1_arm_cassette_encodings.tsv)",
         "barcode": "20-N placeholder; barcodes not reserved (issue #1)",
-        "swap": "unchanged: an N-terminal cassette is upstream of the ORF's C-terminus",
+        "swap": "linkers recoded per arm (Becca, 2026-11-21: no shared linkers in the middle)",
     }
     return rows, summary
 

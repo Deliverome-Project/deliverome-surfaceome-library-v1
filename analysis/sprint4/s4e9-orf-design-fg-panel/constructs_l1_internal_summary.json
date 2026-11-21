@@ -152,7 +152,7 @@
     788,
     5150
   ],
-  "cassette": "p003 tandem, one shared encoding (build_constructs.CASSETTE)",
+  "cassette": "p003 tandem, this arm's own linker encoding (l1_arm_cassette_encodings.tsv)",
   "constructs_key": "sprint4/s4e9-orf-design-fg-panel/library-candidates/2026-11-12-ortholog-start-trims-2/candidate_constructs.json",
   "barcode": "20-N placeholder; barcodes not reserved (issue #1)"
 }

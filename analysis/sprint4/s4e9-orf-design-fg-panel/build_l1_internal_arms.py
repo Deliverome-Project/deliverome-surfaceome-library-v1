@@ -16,9 +16,11 @@ input is fixed in the record; nothing is chosen here:
 * **the ORF**: the member's domesticated ORF from ``library_design.CONSTRUCTS_KEY``. It must
   translate to the member's designed protein plus a stop, and that protein must hash to the
   tag-path ``sequence_sha256``.
-* **the cassette**: p003's own 51-aa tandem (``build_constructs.CASSETTE``), one shared encoding,
-  as on the N-after-SP rung (#254). An internal cassette sits upstream of the ORF's own
-  C-terminus, so it does not enter the stretch to the barcode that ``l1_swap_risk.py`` measures.
+* **the cassette**: the 51-aa tandem on this arm's own linker encoding
+  (``l1_arm_cassette_encodings.tsv``; SpyTag003 and P-ALFA-P on p003's codons). One shared encoding
+  was used until 2026-11-21; Becca, 2026-11-21: "we still don't want shared linkers in the
+  middle". An internal cassette shared by every arm lets a template switch inside it join the
+  front of one protein to the back and barcode of another.
   The full cassette is kept, leading GGGGS included (Becca, 2026-11-11, "keep full").
 * **the layout**: #254's (``build_l1_nterm_arms.py``), which is #284's Esp3I wrapper::
 
@@ -55,6 +57,7 @@ from pathlib import Path
 
 import build_l1_nterm_arms as nterm
 from build_constructs import CASSETTE, CASSETTE_AA, CS1, FWD_PRIMER, KOZAK, REV_PRIMER, SPACER
+from diversify_arm_cassettes import arm_cassette
 from diversify_cassettes import TAG_SEGMENTS
 
 from deliverome_analysis import library_design as ld
@@ -167,11 +170,12 @@ def build_one(member: dict, site: dict, orf: str, protein: str, tag_fixed: dict)
     """The insert for one site, or a reason it cannot be built as proposed."""
     did, n = member["design_id"], int(float(site["insert_after_residue"]))
     assert seqtools.translate(orf) == protein + "*", f"{did}: ORF does not encode its protein"
-    assert all(CASSETTE[3 * i : 3 * i + 3] == c for i, c in tag_fixed.items()), "not p003's tags"
+    cas = arm_cassette(site.get("arm_id") or f"{did}:internal{n}")
+    assert all(cas[3 * i : 3 * i + 3] == c for i, c in tag_fixed.items()), "not p003's tags"
     assert 0 < n < len(protein), f"{did}: site {n} is not internal"
     junction = f"{protein[n - 1]}{n}|{protein[n]}{n + 1}"
     head, rest = orf[: 3 * n], orf[3 * n :]
-    coding = head + CASSETTE + rest
+    coding = head + cas + rest
     expect = protein[:n] + CASSETTE_AA + protein[n:]
     translated = seqtools.translate(coding)
     assert translated == expect + "*", f"{did}: protein is not native[:n] + cassette + native[n:]"
@@ -350,7 +354,7 @@ def build() -> tuple[list[dict], dict]:
         "insert_nt_range": (
             [min(r["insert_nt"] for r in rows), max(r["insert_nt"] for r in rows)] if rows else []
         ),
-        "cassette": "p003 tandem, one shared encoding (build_constructs.CASSETTE)",
+        "cassette": "p003 tandem, this arm's own linker encoding (l1_arm_cassette_encodings.tsv)",
         "constructs_key": ld.CONSTRUCTS_KEY,
         "barcode": "20-N placeholder; barcodes not reserved (issue #1)",
     }

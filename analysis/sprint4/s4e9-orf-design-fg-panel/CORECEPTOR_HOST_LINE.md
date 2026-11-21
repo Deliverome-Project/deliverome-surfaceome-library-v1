@@ -23,8 +23,9 @@ root and in `processed://sprint4/s4e9-orf-design-fg-panel/`:
 
 | Input | Source |
 |---|---|
-| Cell-line TPM | HPA 23.0 (released 2023-06-19, Ensembl 109) `rna_celline.tsv.zip`, pinned at `external://hpa/v23/rna_celline.tsv.zip` (SHA-256 `e5b11779…`). The file in the v23 archive is byte-identical to the one HPA serves today under release 26.0. Its per-gene medians equal the gate's own table (`hpa_celline_per_gene.csv`, `ba9735fa…`) for every gene, so the gate was built from HPA v23. |
-| Screening shortlist | the 42 candidate lines of the cell-line panel experiment ([`panel.py`](../../sprint2/s2e18-cell-line-panel-selection/panel.py), `candidates()`). HPA v23 has 29 of them. Four are matched under another HPA name for the same Cellosaurus line: HEK293 for HEK293T (the parental line, as the panel experiment also reads it), BJ1-hTERT for BJ-5ta, Hep 3B2.1-7 for HEP3B and SUM159PT for SUM159. HPA lacks the other 13: GM12878, IMR-90, HUVEC, BEAS-2B, HK-2, AB8-13, hCMEC-D3, HMEC-1, EA.hy926, TeloHAEC, iPSC-astrocyte, HMEC and Ker-CT. The panel experiment's ARCHS4 consensus would cover them, but it is not on S3. |
+| Cell-line TPM | HPA 23.0 (released 2023-06-19, Ensembl 109) `rna_celline.tsv.zip`, pinned at `external://human-protein-atlas/2023-05/rna_celline.tsv.zip` (SHA-256 `e5b11779…`; the same bytes are also at `external://hpa/v23/`). The file in the v23 archive is byte-identical to the one HPA serves today under release 26.0. Its per-gene medians equal the gate's own table (`hpa_celline_per_gene.csv`, `ba9735fa…`) for every gene, so the gate was built from HPA v23. |
+| Screening shortlist | the 42 candidate lines of the cell-line panel experiment ([`panel.py`](../../sprint2/s2e18-cell-line-panel-selection/panel.py), `candidates()`). HPA v23 has 29 of them. Four are matched under another HPA name for the same Cellosaurus line: HEK293 for HEK293T (the parental line, as the panel experiment also reads it), BJ1-hTERT for BJ-5ta, Hep 3B2.1-7 for HEP3B and SUM159PT for SUM159. HPA lacks the other 13: GM12878, IMR-90, HUVEC, BEAS-2B, HK-2, AB8-13, hCMEC-D3, HMEC-1, EA.hy926, TeloHAEC, iPSC-astrocyte, HMEC and Ker-CT. |
+| Expression for the 13 lines HPA lacks | the panel experiment's ARCHS4 v2.5 consensus, `processed://scratch/becca/cell-line-selection/rnaseq_consensus_archs4.parquet` (SHA-256 `a3a789ac…`; log2(CPM + 1), gene symbols × 52 lines, all 42 shortlist lines included). Partners are reached through their Ensembl ID and HPA v23's name for it, so a renamed gene (CDC50A, which ARCHS4 calls TMEM30A) still joins; every partner of the 168 genes is measured. CPM is not TPM, so `coreceptor_host_line_archs4_calibration.tsv` compares HPA TPM ≥ t with ARCHS4 CPM ≥ c over the 29 shared lines and 20,067 genes; the cut with the highest Cohen's κ is used: 5 TPM ↔ 7 CPM (κ 0.83, 91% agreement) and 10 TPM ↔ 15 CPM (κ 0.76, 89%). Log-scale correlation between the two sources is 0.92. |
 | Lines in house or on order | the 12 the panel experiment's README lists (K562, HEK293T and HeLa in house; U937, NALM6, SH-SY5Y, A549, HuH-7, hTERT-RPE1, U2OS, HK-2 and GM12878 ordered). HPA has 10 of them; HK-2 and GM12878 are missing. |
 | Lineage of each line | HPA v23 `rna_celline_description.tsv.zip`, pinned at `external://hpa/v23/rna_celline_description.tsv.zip`, using its disease subtype: T lymphoid (29 lines), B lymphoid (82, excluding myeloma) and myeloid leukemia (42: acute myeloid lines plus HMC-1). Lines HPA leaves without a subtype are assigned from Cellosaurus. K562 is kept out of all three groups. |
 | Genes and partners | the gene filter rerun offline over surfaceome release 1.3.0 (`library_pipeline.run_gene_filter`, which reproduces the 2,370-gene filter output) |
@@ -75,6 +76,20 @@ lists below.
 | ≥ 10 TPM in ≥ 2 shortlist lines, alternatives | 67 | 19 of the 27 | — |
 | ≥ 5 TPM in ≥ 1 shortlist line, alternatives | 93 | 45, including CD3D, CD3E, PTCRA, TRB and CD79B (Jurkat or NALM-6 alone) | — |
 | ≥ 5 TPM in ≥ 2 in-house or ordered lines, alternatives | 57 | CNTNAP1, GABRB1, GRIN1, ITGAD, ITGAL, ITGAM, ITGAX, KLRK1, UPK3A | — |
+| ≥ 10 TPM in ≥ 2 of the 29 HPA lines **or** ≥ 10 in K562 | 69 | 21 | — |
+| **≥ 10 TPM in ≥ 2 of all 42 lines (HPA 29 + ARCHS4 13) or ≥ 10 in K562** | **76** | **28** | — |
+| ≥ 5 TPM in ≥ 2 of all 42 lines or in K562 | 82 | 34 | — |
+| ARCHS4 alone, 42 lines, CPM equivalent of ≥ 10 TPM in ≥ 2 | 73 | 25 | — |
+
+**What the 13 extra lines add (≥ 10 TPM rule).** Of the 28, 21 pass on the HPA lines alone. The
+other seven come from the ARCHS4 lines. GM12878, the B-lymphoblastoid line on order, brings in
+five of them: CD79B (CD79A and IGHM, 323 CPM), HLA-DQA1 and HLA-DQB1 (154 and 356 CPM), ITGAE
+(ITGB7, 407 CPM) and GRIN1 (39 CPM). GM12878 is the second line for CD79B after NALM-6, so a BCR
+subunit passes the 2-line floor here. GABBR1 comes in through TeloHAEC and IMR-90 (GABBR2, 108 and
+70 CPM), and SCNN1B through Ker-CT (16 CPM) plus MCF-10A. ARCHS4 alone, scored over all 42 lines as a
+cross-check, agrees on most adds. It disagrees on the HLA-DRB loci, GRIN2A–D, KCNJ8/11 and CATSPER,
+which ARCHS4 would admit and HPA does not; HLA quantification depends strongly on how reads map to
+the reference alleles.
 
 The genes the "≥ 2 shortlist lines or K562" rule adds, and where their partners are present:
 
@@ -157,16 +172,18 @@ gene_list`) still yields the 2,369 library genes.
 ## Recommendation
 
 1. **Replace the median with a screening-line rule:** a gene passes when, counting one partner per
-   group of alternatives, every partner is ≥ 5 TPM in at least 2 shortlist lines, or in K562. That
-   keeps all 48 current genes and adds 29, all of which pass every other gate. The gene list is
-   fixed, so these would enter as dated additions.
+   group of alternatives, every partner is ≥ 10 TPM in at least 2 of the 42 shortlist lines (HPA where
+   it has the line, ARCHS4 at 15 CPM otherwise), or ≥ 10 TPM in K562. That keeps all 48 current genes
+   (the closest, IL17RC, clears in 11 HPA lines) and adds 28, all of which pass every other gate. At
+   5 TPM the same rule adds 34; the 6 extra are near-threshold (ABCC8, CHRNA2, CHRNA3, GABRB1, KCND2,
+   SCNN1G). The gene list is fixed, so these would enter as dated additions.
 2. **If L1 will be screened only in the lines in house or on order,** use those lines instead of
    the shortlist: 9 additions (CNTNAP1, GABRB1, GRIN1, ITGAD, ITGAL, ITGAM, ITGAX, KLRK1, UPK3A),
    plus RHCE and RHD through the K562 clause.
 3. **Carry each gene's displaying lines into the screen analysis,** so that a gene with no partner
    in the screened line is read as an expected negative, not a hit failure. ST14 belongs in this
    category for K562 (its HAI partners are 3.3–3.9 TPM there).
-4. **Leave the TCR–CD3 and BCR subunits out.** Their partners are present in only one shortlist
-   line each (Jurkat; NALM-6 for CD79B), below the 2-line floor.
-5. **Confirm the alternatives list,** and fill the 13 shortlist lines HPA lacks from the panel
-   experiment's ARCHS4 consensus, before these numbers become a gate.
+4. **The TCR–CD3 subunits stay out; CD79B comes in.** CD3D, CD3E, PTCRA and TRB have their
+   partners only in Jurkat, below the 2-line floor. CD79B has them in NALM-6 and GM12878, both on
+   the order, so the 42-line rule admits it; CD79A fails other gates either way.
+5. **Confirm the alternatives list** before these numbers become a gate.

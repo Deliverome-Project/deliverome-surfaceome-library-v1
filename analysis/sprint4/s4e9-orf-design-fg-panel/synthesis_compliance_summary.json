@@ -1,22 +1,22 @@
 {
   "input_refs": {
-    "nterm": "541c6c18d50c4da2c77a16122ba63aa22e9abf45",
-    "multipass": "541c6c18d50c4da2c77a16122ba63aa22e9abf45",
-    "type3": "541c6c18d50c4da2c77a16122ba63aa22e9abf45",
-    "internal": "541c6c18d50c4da2c77a16122ba63aa22e9abf45",
-    "cterm": "541c6c18d50c4da2c77a16122ba63aa22e9abf45"
+    "nterm": "cde93c8cc8be6549578ecc1278f3b74b83c6ad5b",
+    "multipass": "cde93c8cc8be6549578ecc1278f3b74b83c6ad5b",
+    "type3": "cde93c8cc8be6549578ecc1278f3b74b83c6ad5b",
+    "internal": "cde93c8cc8be6549578ecc1278f3b74b83c6ad5b",
+    "cterm": "cde93c8cc8be6549578ecc1278f3b74b83c6ad5b"
   },
   "input_sha256": {
-    "constructs_l1_nterm.fasta": "263566d2537c67b5d297fd035b6eaaabb20604a85f7e384a7dd921a6f34887b8",
-    "constructs_l1_nterm.tsv": "18c75e8c4034ac6c32115c60c99025ed9168b553b9e075430f6f070d0f4d0e00",
-    "constructs_l1_multipass.fasta": "503ac68aa09d206c523fd67a6279b446ee4931f253da2632448275ac44d601f3",
-    "constructs_l1_multipass.tsv": "92e0a8d6b2dc215907e558699941020e851d2f747b0d420036ce927b91f764ab",
-    "constructs_l1_type3.fasta": "df46390c802c3b72c3b718c7e1af175e8456ee9308932f2f646e25b9612d7dce",
-    "constructs_l1_type3.tsv": "25f0c7868c86cf8c3b53706d47b07f2786c9907ed46783107d20c8222de6bc71",
-    "constructs_l1_internal.fasta": "89a879dbf7da125659f53b1d342f2c0d4dcc1b84f7027f28e6094b15de3c7d8f",
-    "constructs_l1_internal.tsv": "5fc77209b6ce8269c801f9dd3f142784fb94525f398874dd2dd7d402b196c186",
-    "constructs_l1_cterm.fasta": "7066240cab29654c9e0a0f9728698603eea7b8020a7f15d4c298ee307cd051d5",
-    "constructs_l1_cterm.tsv": "c089eb9811185c5bfb54529787db15454ad5fbc135adcd7fe902b8258f3c379a"
+    "constructs_l1_nterm.fasta": "faa9be3b86ce5211e73bfc5d0b42c41fca67dc6b727ba6257ab2dcab9e274bb7",
+    "constructs_l1_nterm.tsv": "07317c0df5f23c19d6c9a366ce9bd146277ae5853291b5c5059e8ef7beb03f7e",
+    "constructs_l1_multipass.fasta": "9124162778747360d3c1ebc06ad97ec58ecad352914b81fdcd152e6fddde0bac",
+    "constructs_l1_multipass.tsv": "37a1d59bd01fc25c0d775ab9fd448eed7401b3dfd5b6b53a144ffe549b1ef573",
+    "constructs_l1_type3.fasta": "c6ab259e08186a1f5a6258c8aaa0b0d545df52d7a2d959728bfcb4a00ef5d02a",
+    "constructs_l1_type3.tsv": "0eb7755095e57fc2a0f5d1b9472d1e69deb7a4a4412c45c767ce0f329f2b38ef",
+    "constructs_l1_internal.fasta": "aaa392d9704c4870138b5419c7d989144b584b3eaf5e55776c0888f737c327df",
+    "constructs_l1_internal.tsv": "38c7f3af4dada1e18ad32e3ba2e84ecfbbd900d37a2b75bf9d4acc64e87a6a32",
+    "constructs_l1_cterm.fasta": "907c52b703f1b2c8a2c0379a022166a2763d42b8c8e3eff989d13b392df3f9a5",
+    "constructs_l1_cterm.tsv": "665d09ee6f594d2db3c7406ec64a37f4c8ce4a9aa6fcbb7cf469d3ac12aea8cb"
   },
   "inserts": 3255,
   "rules": {
@@ -30,38 +30,38 @@
     "min_codon_usage": 0.1
   },
   "status": {
-    "pass": 2376,
-    "not_fully_fixable": 180,
-    "fixed": 699
+    "pass": 2354,
+    "not_fully_fixable": 191,
+    "fixed": 710
   },
   "category_before": {
-    "Low": 1834,
-    "Medium": 1203,
-    "High": 172,
+    "Low": 2359,
+    "Medium": 676,
+    "High": 174,
     "Not Accepted": 46
   },
   "category_after": {
-    "Low": 2294,
-    "Medium": 938,
-    "High": 23
+    "Low": 2976,
+    "Medium": 255,
+    "High": 24
   },
   "cassette_end_windows_over_margin": {
-    "before": 195,
-    "after": 0
+    "before": 204,
+    "after": 2
   },
-  "codons_recoded": 5312,
-  "inserts_recoded": 790,
-  "members_recoded": 656,
+  "codons_recoded": 5320,
+  "inserts_recoded": 806,
+  "members_recoded": 673,
   "members": 2673,
   "recodes_by_reason": {
-    "gc50_cassette_end": 480,
-    "gc50": 4639,
+    "gc50_cassette_end": 458,
+    "gc50": 4669,
     "direct_repeat": 179,
     "tn5_me": 14
   },
   "provisional_barcodes_checked": 3644,
   "provisional_barcodes_inside_an_insert": 0,
-  "recode_log_sha256": "33a86c968919e5ecb4aec17a09379d5dcec7a315a8b187c6330afe5e7f2c2078",
-  "recoded_fasta": "processed://sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-15-final-e/l1_order_inserts_recoded.fasta",
-  "recoded_fasta_sha256": "20e8f2758d9f61d3817db1c98e76c863330f24f5dfbd90c47c3ea4423bfa9c28"
+  "recode_log_sha256": "27d59c4202fa06f160f4bb15b79caf451120a7bc5c8a187c8c2a855647427636",
+  "recoded_fasta": "processed://sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-21-arm-linkers/l1_order_inserts_recoded.fasta",
+  "recoded_fasta_sha256": "8b1c4ed327393214da27921f2de3a482f8b0cdac6e8808d1eefd44ae91ab8dd8"
 }

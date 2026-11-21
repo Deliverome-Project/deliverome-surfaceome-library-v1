@@ -212,6 +212,11 @@ SOURCES: list[tuple[str, str, str]] = [
     (r"external/ensembl/release-11[56]/", "public_release", "Ensembl FTP"),
     (r"external/pfam/39\.0/", "public_release", "Pfam 39.0 (EBI release copy)"),
     (r"external/uniprot/2026_04/", "public_derived", "UniProt 2026_04 REST query"),
+    (
+        r"external/topdb/v3\.3/",
+        "public_release",
+        "TOPDB 3.3 full download (topology_vs_experiment.py)",
+    ),
     (r"external/uniprot/2026-10-11/", "public_release", "UniProt 2026_03 table download"),
     (r"external/uniprot/2026_03/", "public_derived", "UniProt 2026_03 REST query"),
     (r"external/appris/", "public_release", "APPRIS e115v50 / 2026_06.v50"),

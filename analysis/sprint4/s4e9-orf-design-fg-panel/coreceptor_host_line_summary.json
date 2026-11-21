@@ -1,5 +1,26 @@
 {
-  "hpa": "external://hpa/v23/rna_celline.tsv.zip",
+  "archs4": "processed://scratch/becca/cell-line-selection/rnaseq_consensus_archs4.parquet",
+  "archs4_sha256": "a3a789acdd51c440d536c52e61ec440ddd5d3b5e8f24f3a185d7703b78e56ee1",
+  "archs4_cpm_cut_for_tpm": {
+    "5": 7.0,
+    "10": 15.0
+  },
+  "archs4_only_lines": [
+    "GM12878",
+    "IMR-90",
+    "HUVEC",
+    "BEAS-2B",
+    "HK-2",
+    "AB8-13",
+    "hCMEC-D3",
+    "HMEC-1",
+    "EA.hy926",
+    "TeloHAEC",
+    "iPSC-astrocyte",
+    "HMEC",
+    "Ker-CT"
+  ],
+  "hpa": "external://human-protein-atlas/2023-05/rna_celline.tsv.zip",
   "hpa_sha256": "e5b11779308c2720cfe89d9cb19932ad4c0c3fea0fa37e8c61a14d501995852a",
   "cell_lines": 1206,
   "lineage_lines": {

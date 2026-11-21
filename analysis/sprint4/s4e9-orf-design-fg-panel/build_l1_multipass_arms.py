@@ -44,6 +44,7 @@ from pathlib import Path
 
 from build_constructs import CASSETTE, CASSETTE_AA, CS1, FWD_PRIMER, KOZAK, REV_PRIMER, SPACER
 from build_gpcr_rescue_arms import LEADER, LEADER_AA, PLUS1, PLUS1_AA
+from diversify_arm_cassettes import arm_cassette
 
 from deliverome_analysis import library_design as ld
 from deliverome_analysis import seqtools, topology
@@ -306,7 +307,7 @@ def build() -> list[dict]:
                     native = "M" + native[1:]
                 assert orf[:3] == "ATG", f"{cid}: ORF does not start with ATG"
                 head = (LEADER + PLUS1) if design == "igk_tag" else ""
-                coding = head + orf[:3] + CASSETTE + orf[3:]
+                coding = head + orf[:3] + arm_cassette(f"{p['design_id']}:{design}") + orf[3:]
                 mature = native[0] + CASSETTE_AA + native[1:]
                 if design == "igk_tag":
                     mature = PLUS1_AA + mature
@@ -331,7 +332,7 @@ def build() -> list[dict]:
                     mature_aa=len(mature),
                     coding_nt=len(coding),
                     insert_nt=len(insert),
-                    cassette="full 51 aa, p003 codons",
+                    cassette="full 51 aa; p003 tag codons, own linker encoding",
                     type_iis_sites="Esp3I x2 (wrapper)",
                     cassette_decided_by=CASSETTE_DECIDED,
                     protein_sha256=hashlib.sha256(protein.encode()).hexdigest(),

@@ -50,7 +50,9 @@ from deliverome_analysis.s3 import external
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
-HPA_KEY = "hpa/v23/rna_celline.tsv.zip"  # HPA 23.0 (2023-06-19, Ensembl 109)
+# HPA 23.0 (2023-06-19, Ensembl 109). The same bytes are also at external://hpa/v23/, pinned
+# again on 2026-11-20 before this earlier pin was noticed.
+HPA_KEY = "human-protein-atlas/2023-05/rna_celline.tsv.zip"
 HPA_SHA256 = "e5b11779308c2720cfe89d9cb19932ad4c0c3fea0fa37e8c61a14d501995852a"
 DESC_KEY = "hpa/v23/rna_celline_description.tsv.zip"
 DESC_SHA256 = "93696a4e703b8da4bf4f27699ded3ddb170787549c1b29b80a9bc543f3162389"
@@ -102,7 +104,27 @@ HPA_ALIASES = {
 # 9-line order. HK-2 and GM12878 are not in HPA v23.
 IN_HAND = ["K562", "HEK293T", "HeLa", "U937", "NALM6", "SH-SY5Y", "A549", "HuH-7", "hTERT-RPE1",
            "U2OS", "HK-2", "GM12878"]  # fmt: skip
-SHORTLIST_MIN_LINES = 2  # "even 2 of the shortlist lines" (Becca, 2026-11-21)
+SHORTLIST_MIN_LINES = 2
+# ARCHS4 v2.5 per-line consensus built by the cell-line panel experiment (log2(CPM + 1), gene
+# symbols x panel lines): covers all 42 shortlist lines, including the 13 HPA lacks. CPM is not
+# TPM, so the CPM cut matching each TPM cut is calibrated on the 29 lines both sources share.
+ARCHS4_KEY = "scratch/becca/cell-line-selection/rnaseq_consensus_archs4.parquet"
+ARCHS4_SHA256 = "a3a789acdd51c440d536c52e61ec440ddd5d3b5e8f24f3a185d7703b78e56ee1"
+CPM_GRID = [
+    1,
+    2,
+    3,
+    5,
+    7,
+    10,
+    15,
+    20,
+    30,
+    40,
+    50,
+    75,
+    100,
+]  # "even 2 of the shortlist lines" (Becca, 2026-11-21)
 
 # Genes whose listed partners are alternatives, not all required: the gene needs one partner
 # from each group. Proposed from the partner biology for the genes where "all" and "any"
@@ -185,6 +207,63 @@ def shortlist(lines: list[str], names: list[str] | None = None) -> tuple[list[st
     return have, missing
 
 
+def archs4_cpm() -> pd.DataFrame:
+    from deliverome_analysis.s3 import processed
+
+    path = CACHE / f"archs4_consensus_{ARCHS4_SHA256[:12]}.parquet"
+    if not path.exists() or sha256(path) != ARCHS4_SHA256:
+        processed.download(ARCHS4_KEY, path)
+    assert sha256(path) == ARCHS4_SHA256, "ARCHS4 consensus differs from the pinned file"
+    return 2 ** pd.read_parquet(path) - 1
+
+
+def hpa_symbols() -> pd.Series:
+    """HPA's own Ensembl -> gene name pairing (unique names only), to join symbol-keyed ARCHS4."""
+    path = CACHE / f"hpa_ensembl_symbol_{HPA_SHA256[:12]}.tsv"
+    if not path.exists():
+        z = fetch(HPA_KEY, HPA_SHA256, CACHE)
+        with zipfile.ZipFile(z) as zf, zf.open(zf.namelist()[0]) as fh:
+            chunks = pd.read_csv(
+                io.TextIOWrapper(fh), sep="\t", usecols=["Gene", "Gene name"], chunksize=2_000_000
+            )
+            pd.concat(c.drop_duplicates() for c in chunks).drop_duplicates().to_csv(
+                path, sep="\t", index=False
+            )
+    m = pd.read_csv(path, sep="\t")
+    return m[~m["Gene name"].duplicated(keep=False)].set_index("Gene")["Gene name"]
+
+
+def calibrate(tpm, cpm, sym, pairs) -> pd.DataFrame:
+    """Agreement of HPA TPM >= t with ARCHS4 CPM >= c over the shared lines, all genes."""
+    genes = [e for e in tpm.index if e in sym.index and sym[e] in cpm.index]
+    x = tpm.loc[genes, [h for h, _ in pairs]].to_numpy()
+    y = cpm.loc[[sym[e] for e in genes], [a for _, a in pairs]].to_numpy()
+    rows = []
+    for t in (GATE_TPM, 10.0):
+        hx = x >= t
+        for c in CPM_GRID:
+            hy = y >= c
+            tp, fp = (hx & hy).sum(), (~hx & hy).sum()
+            fn, tn = (hx & ~hy).sum(), (~hx & ~hy).sum()
+            po = (tp + tn) / hx.size
+            pe = ((tp + fp) * (tp + fn) + (fn + tn) * (fp + tn)) / hx.size**2
+            rows.append({"tpm_cut": t, "cpm_cut": c, "agreement": po, "kappa": (po - pe) / (1 - pe),
+                         "sensitivity": tp / (tp + fn), "specificity": tn / (tn + fp),
+                         "genes": len(genes), "lines": len(pairs)})  # fmt: skip
+    return pd.DataFrame(rows)
+
+
+def lines_ok_sym(cpm, groups: list[list[str]], lines: list[str], thr: float):
+    """lines_ok on ARCHS4 symbols; None when a requirement has no partner ARCHS4 measures."""
+    groups = [[x for x in grp if x in cpm.index] for grp in groups]
+    if not all(groups):
+        return None
+    ok = pd.Series(True, index=lines)
+    for grp in groups:
+        ok &= (cpm.loc[grp, lines] >= thr).any(axis=0)
+    return ok
+
+
 def lines_ok(tpm: pd.DataFrame, reqs: list[list[str]], lines: list[str], thr: float) -> pd.Series:
     """Per line: every requirement group has at least one partner at >= thr TPM."""
     ok = pd.Series(True, index=lines)
@@ -265,6 +344,22 @@ def main() -> int:
         res[tok] = {**res[target], "override": target}
     short, short_missing = shortlist(list(tpm.columns))
     assert SCREEN_LINE in short and len(short) == 29, (len(short), short_missing)
+    sys.path.insert(0, str(PANEL_DIR))
+    import panel
+
+    cpm = archs4_cpm()
+    assert set(panel.candidates()) <= set(cpm.columns), "ARCHS4 consensus lacks a shortlist line"
+    hpa_of = {}
+    for name in panel.candidates():
+        got, _ = shortlist(list(tpm.columns), [name])
+        hpa_of[name] = got[0] if got else None
+    pairs = [(h, a) for a, h in hpa_of.items() if h]  # (HPA name, ARCHS4 name), 29 lines
+    archs4_only = [a for a, h in hpa_of.items() if not h]  # the 13 HPA lacks
+    assert len(pairs) == 29 and len(archs4_only) == 13
+    hsym = hpa_symbols()
+    calib = calibrate(tpm, cpm, hsym, pairs)
+    best = calib.loc[calib.groupby("tpm_cut")["kappa"].idxmax()].set_index("tpm_cut")["cpm_cut"]
+    cpm_cut = {5: float(best[GATE_TPM]), 10: float(best[10.0])}
     hand, hand_missing = shortlist(list(tpm.columns), IN_HAND)
     assert set(hand) <= set(short) and len(hand) == 10, (hand, hand_missing)
 
@@ -392,6 +487,43 @@ def main() -> int:
             if reqs_cur
             else 0
         )
+
+        # HPA for its 29 lines plus ARCHS4 (calibrated CPM cut) for the 13 it lacks; and ARCHS4
+        # alone over all 42.
+        # ARCHS4 rows are symbols: reach them through the partner's Ensembl ID and HPA v23's name
+        # for it (CDC50A is TMEM30A there), falling back to the resolver's symbol.
+        def a4(x, ens_of=ens_of):
+            name = hsym.get(ens_of[x])
+            return name if name in cpm.index else x
+
+        sym_groups = (
+            [[a4(x) for x in grp if x in ens_of] for grp in ALTERNATIVES[g]]
+            if g in ALTERNATIVES
+            else [[a4(x)] for x in ens_of]
+        )
+        out["archs4_missing_partners"] = "; ".join(
+            x for grp in sym_groups for x in grp if x not in cpm.index
+        )
+        for thr in (5, 10):
+            if self_only:
+                out[f"combined_lines_ge{thr}"] = len(pairs) + len(archs4_only)
+                out[f"archs4_lines_ge{thr}"] = len(hpa_of)
+                continue
+            a13 = lines_ok_sym(cpm, sym_groups, archs4_only, cpm_cut[thr]) if sym_groups else None
+            h29 = (
+                lines_ok(tpm, reqs_cur, [h for h, _ in pairs], float(thr))
+                if reqs_cur
+                else pd.Series(False, index=[h for h, _ in pairs])
+            )
+            out[f"combined_lines_ge{thr}"] = int(h29.sum()) + (0 if a13 is None else int(a13.sum()))
+            if thr == 5:
+                out["archs4_only_lines_ge5_names"] = (
+                    "" if a13 is None else ", ".join(a13[a13].index)
+                )
+            a42 = lines_ok_sym(cpm, sym_groups, list(hpa_of), cpm_cut[thr]) if sym_groups else None
+            out[f"archs4_lines_ge{thr}"] = np.nan if a42 is None else int(a42.sum())
+            if thr == 5:
+                out["archs4_k562_ok"] = None if a42 is None else bool(a42["K562"])
         out["curated_shortlist_lines_ge5_names"] = (
             ", ".join(lines_ok(tpm, reqs_cur, short, GATE_TPM).pipe(lambda x: x[x].index))
             if reqs_cur and not self_only
@@ -441,6 +573,24 @@ def main() -> int:
             genes["curated_shortlist_lines_ge5"] >= SHORTLIST_MIN_LINES
         )
         | rule("curated_k562", 5),
+        "HPA 29 + ARCHS4 13, >= 5 TPM (or CPM equivalent) in >= 2 of 42 lines OR in K562": (
+            genes["combined_lines_ge5"] >= SHORTLIST_MIN_LINES
+        )
+        | rule("curated_k562", 5),
+        "HPA 29 + ARCHS4 13, >= 10 TPM (or CPM equivalent) in >= 2 of 42 lines OR in K562": (
+            genes["combined_lines_ge10"] >= SHORTLIST_MIN_LINES
+        )
+        | rule("curated_k562", 10),
+        "ARCHS4 alone, CPM equivalent of >= 5 TPM in >= 2 of 42 lines OR in K562": (
+            genes["archs4_lines_ge5"] >= SHORTLIST_MIN_LINES
+        )
+        | (genes["archs4_k562_ok"] == True),  # noqa: E712
+        "ARCHS4 alone, CPM equivalent of >= 10 TPM in >= 2 of 42 lines": genes["archs4_lines_ge10"]
+        >= SHORTLIST_MIN_LINES,
+        "curated alternatives, >= 10 TPM in >= 2 shortlist lines OR in K562": (
+            genes["curated_shortlist_lines_ge10"] >= SHORTLIST_MIN_LINES
+        )
+        | rule("curated_k562", 10),
         "curated alternatives, >= 5 TPM in >= 2 in-house/ordered lines": genes[
             "curated_in_hand_lines_ge5"
         ]
@@ -479,7 +629,13 @@ def main() -> int:
         HERE / "coreceptor_host_line_partners.tsv", sep="\t", index=False, float_format="%.1f"
     )
     opts.to_csv(HERE / "coreceptor_host_line_options.tsv", sep="\t", index=False)
+    calib.to_csv(HERE / "coreceptor_host_line_archs4_calibration.tsv", sep="\t", index=False,
+                 float_format="%.3f")  # fmt: skip
     meta = {
+        "archs4": f"processed://{ARCHS4_KEY}",
+        "archs4_sha256": ARCHS4_SHA256,
+        "archs4_cpm_cut_for_tpm": cpm_cut,
+        "archs4_only_lines": archs4_only,
         "hpa": f"external://{HPA_KEY}",
         "hpa_sha256": HPA_SHA256,
         "cell_lines": int(tpm.shape[1]),

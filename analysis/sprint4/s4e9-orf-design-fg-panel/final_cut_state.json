@@ -1,7 +1,7 @@
 {
-  "main": "541c6c18d50c4da2c77a16122ba63aa22e9abf45",
-  "tag": "2026-11-15-final-e",
-  "fasta_key": "sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-15-final-e/l1_order_inserts_recoded.fasta",
-  "fasta_sha256": "20e8f2758d9f61d3817db1c98e76c863330f24f5dfbd90c47c3ea4423bfa9c28",
-  "published_from": "0ff82466a2896116aa6f8fa62904e718427fadc2"
+  "main": "cde93c8cc8be6549578ecc1278f3b74b83c6ad5b",
+  "tag": "2026-11-21-arm-linkers",
+  "fasta_key": "sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-21-arm-linkers/l1_order_inserts_recoded.fasta",
+  "fasta_sha256": "8b1c4ed327393214da27921f2de3a482f8b0cdac6e8808d1eefd44ae91ab8dd8",
+  "published_from": "aafdc7e0d7f558025caac8a83e71856c521109bc"
 }

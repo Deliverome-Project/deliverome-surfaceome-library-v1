@@ -1055,9 +1055,9 @@ blank on rows built unchanged.
 
 `audit_domestication_barcodes.py` recomputes, from the inserts themselves, whether domestication
 and the barcode rules hold for everything L1 will order. It checks two sets: the 3,255 tagged
-inserts (the five rung builds at 541c6c18, from which the per-insert cut `final-e` was made),
+inserts (the five rung builds at cde93c8c, from which the cut `2026-11-21-arm-linkers` was made),
 and the Twist-compliant recoded set made from that same build (`synthesis_compliance.py`; key
-`synthesis/2026-11-15-final-e/`, sha 20e8f275). Inserts are keyed by their permanent arm id.
+`synthesis/2026-11-21-arm-linkers/`, sha 8b1c4ed3). Inserts are keyed by their permanent arm id.
 The recoded set is the order of record, and the audit pins it by SHA-256. Its inserts are named by
 current member ids, which renumber, so the audit matches each recoded insert to its build by the
 permanent design id.
@@ -1684,17 +1684,17 @@ For each insert that misses a target it makes the fewest synonymous codon change
 
 Only codons with human usage ≥ 10% are used. It never changes Met1, the cassette, one codon either side of it, an Igκ leader, or the signal peptide plus 3 codons. It rejects any edit that adds a BbsI, Esp3I or BsaI site, a consensus splice donor or an ME match. Protein, cassette DNA, wrapper and readout block are asserted unchanged.
 
-| Inserts (3,255 rung arms at 541c6c18) | Before | After |
+| Inserts (3,255 rung arms at cde93c8c) | Before | After |
 |---|---:|---:|
 | Not Accepted (local) | 46 | 0 |
-| High (local) | 172 | 23 |
-| Medium (local) | 1,203 | 938 |
-| Low (local) | 1,834 | 2,294 |
-| Cassette-end 50-bp window over 75% GC | 172 | 0 |
+| High (local) | 174 | 24 |
+| Medium (local) | 676 | 255 |
+| Low (local) | 2,359 | 2,976 |
+| Cassette-end 50-bp window over 75% GC | 204 | 2 |
 
-790 inserts change, by 5,312 codons in all: 4,639 for 50-bp GC, 480 for the cassette-end margin, 179 for repeats and 14 for ME matches. All but 23 of the 3,255 inserts pass every target after recoding; those 23, all native N-after-SP arms, keep a 50-bp window of 90–98% GC inside the protected signal-peptide codons and score High. No provisional L1 barcode occurs as a 20-mer in any of them. The 681 still Medium carry exact repeats of 18–38 nt, below the 40-nt length behind Twist's High repeat scores, and are not targeted.
+806 inserts change, by 5,320 codons in all: 4,669 for 50-bp GC, 458 for the cassette-end margin, 179 for repeats and 14 for ME matches. All but 24 of the 3,255 inserts pass every target after recoding; those 24, all native N-after-SP arms, keep a 50-bp window of 90–98% GC inside the protected signal-peptide codons and score High. Two inserts (l1-p0222-a1, l1-p1330-a1) keep a 76% window across the cassette's end, over the 75% margin and under the 80% target. No provisional L1 barcode occurs as a 20-mer in any of them. Medium is far rarer than in the previous order (255 against 938), consistent with the new linker encodings: p003's cassette repeats 17 nt of its own `GGGGS` codons, and no issued encoding repeats more than 9 (Medium is driven by exact repeats of 18–38 nt).
 
-Every changed codon is in `synthesis_recodes.tsv`, one row per codon with its reason, `decided_by` and `implemented_by`. Per-insert metrics before and after are in `synthesis_compliance.tsv`. **The recoded inserts are the order of record** (decided 2026-11-13 by l1-reviewer-package under Becca's delegation): `processed://sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-15-final-e/l1_order_inserts_recoded.fasta` (SHA-256 20e8f275…, in `synthesis_compliance_summary.json` along with the recode log's), with each insert named by its arm id, plate position and design id. It supersedes seven earlier files, kept unchanged: `synthesis/2026-11-14-final-d/` (1ee73f40…, the interim one-insert-per-member cut, 2,621 inserts), `synthesis/2026-11-14-final-c/` (8c5fdc3a…, cut from `main` at 903f9135 before the C-terminal follow-up held SLC41A2, TRPV1 l1-p2528 and VTCN1 human and cyno; 2,625 inserts), `synthesis/2026-11-14-final-b/` (dd65ff76…, cut from `main` at d6ab5093 before mouse IL17RC was built), `synthesis/2026-11-14-final/` (b6ce7bc9…, cut from `main` at cdb78068 before the last rung changes), `synthesis/2026-11-13/` (d1257f0a…, 2,716 inserts including the 25 expression-rescue arms retired that day), `synthesis/2026-11-13-one-arm/` (1f29936b…, named by pre-renumber member ids) and `synthesis/2026-11-13-one-arm-renamed/` (b426e433…, 2,678 inserts built from the draft integration branch, not `main`). The recoder is deterministic, and `--check` reproduces every table byte for byte. The rung builds themselves are unchanged: the recode is a layer applied at export, so each rung's `--check` still holds. The barcodes, assigned later, are outside the recoded sequence. The swap-risk tract measure covers only the cassette encodings, which do not change.
+Every changed codon is in `synthesis_recodes.tsv`, one row per codon with its reason, `decided_by` and `implemented_by`. Per-insert metrics before and after are in `synthesis_compliance.tsv`. **The recoded inserts are the order of record** (decided 2026-11-13 by l1-reviewer-package under Becca's delegation): `processed://sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-21-arm-linkers/l1_order_inserts_recoded.fasta` (SHA-256 8b1c4ed3…, in `synthesis_compliance_summary.json` along with the recode log's), with each insert named by its arm id, plate position and design id. It supersedes eight earlier files, kept unchanged: `synthesis/2026-11-15-final-e/` (20e8f275…, the same 3,255 inserts and proteins with the 2,942 N-terminal and internal arms on p003's one cassette encoding; Becca, 2026-11-21: "we still don't want shared linkers in the middle", so every arm now has its own linker encoding, `diversify_arm_cassettes.py`), `synthesis/2026-11-14-final-d/` (1ee73f40…, the interim one-insert-per-member cut, 2,621 inserts), `synthesis/2026-11-14-final-c/` (8c5fdc3a…, cut from `main` at 903f9135 before the C-terminal follow-up held SLC41A2, TRPV1 l1-p2528 and VTCN1 human and cyno; 2,625 inserts), `synthesis/2026-11-14-final-b/` (dd65ff76…, cut from `main` at d6ab5093 before mouse IL17RC was built), `synthesis/2026-11-14-final/` (b6ce7bc9…, cut from `main` at cdb78068 before the last rung changes), `synthesis/2026-11-13/` (d1257f0a…, 2,716 inserts including the 25 expression-rescue arms retired that day), `synthesis/2026-11-13-one-arm/` (1f29936b…, named by pre-renumber member ids) and `synthesis/2026-11-13-one-arm-renamed/` (b426e433…, 2,678 inserts built from the draft integration branch, not `main`). The recoder is deterministic, and `--check` reproduces every table byte for byte. The rung builds themselves are unchanged: the recode is a layer applied at export, so each rung's `--check` still holds. The barcodes, assigned later, are outside the recoded sequence. The swap-risk tract measure covers only the cassette encodings, which do not change. `l1_pool_qc.py` assembles every insert into p0039 and runs the plasmid checks on each (CI: `tests/test_l1_pool_qc.py`).
 
 ### RNA-binding-protein motifs: the shared elements are clean
 

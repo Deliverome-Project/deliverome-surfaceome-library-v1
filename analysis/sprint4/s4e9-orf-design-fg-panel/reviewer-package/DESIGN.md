@@ -77,7 +77,7 @@ Each design claim, and the strongest evidence for it today:
 | the internal-site ranker picks tolerated sites | 71–72% within 10 residues on held-out published sites (top three) |
 | structure checks predict display | tested and not supported: working, failed and decoy sites all pass at about 9 in 10 |
 | placement topology is right | agrees with experiment for 99.3% of the 1,083 CDSs that have experimental topology; untested for the rest |
-| the pool keeps barcode and protein together | modeled; upper bound 5.5% of integrants report another protein |
+| the pool keeps barcode and protein together | modeled; upper bound 4.4% of integrants report another protein |
 
 ## 4. The design in five decisions
 
@@ -103,10 +103,10 @@ in, and neither tests it:
 
 - The co-receptor gate asks whether an obligate partner is expressed across all 1,206 HPA cell
   lines, not in the lines L1 will be screened in, and it requires every listed partner even where
-  the list names alternatives. A screening-line rule (every partner ≥ 5 TPM in at least 2 lines of
-  the screening shortlist, or in K562) keeps all 48 current genes and adds 29; over only the lines
-  in house or on order it adds 9, plus RHCE and RHD. The T- and B-cell receptor chains stay
-  excluded either way: their partners are present in only one shortlist line each.
+  the list names alternatives. A screening-line rule (every partner ≥ 10 TPM in at least 2 of the
+  42 shortlist lines, or in K562) keeps all 48 current genes and adds 28; over only the lines in
+  house or on order it adds 9, plus RHCE and RHD. The TCR–CD3 chains stay excluded (their
+  partners are only in Jurkat); CD79B enters, with partners in NALM-6 and GM12878.
 - No gate asks whether the host carries the chaperones some families need. Odorant receptors
   need RTP1 or RTP2 to reach the surface of heterologous cells
   ([Saito et al., 2004](https://pubmed.ncbi.nlm.nih.gov/15550249/)), bitter-taste receptors are
@@ -197,13 +197,15 @@ sites are not yet in it (section 5).
 ### 4.4 How each construct is built
 
 **Decision.** ORFs keep their native codons except where a synonymous change removes an
-assembly enzyme site or makes a sequence synthesizable (790 of 3,255 constructs change, 5,312
-codons in all, no protein change). The cassette's codons are those shown to display in our first
-construct, p003 (TfR1 with the cassette, detected at the surface with both reagents). Every
+assembly enzyme site or makes a sequence synthesizable (806 of 3,255 constructs change, 5,320
+codons in all, no protein change). The tags' codons are those shown to display in our first
+construct, p003 (TfR1 with the cassette, detected at the surface with both reagents); the four
+`GGGGS` linkers around them are encoded differently in every construct, so no two constructs
+share the cassette. Every
 construct sits in one vector with the EFS promoter and IRES-coupled puromycin selection.
 
 **Evidence.** The vendor scored the first draft; local rules calibrated on its report reproduce
-all 25 of its refusals, and after recoding none is refused and 23 remain high-complexity. Coupled
+all 25 of its refusals, and after recoding none is refused and 24 remain high-complexity. Coupled
 selection removes cells that survive puromycin without transcribing the ORF, which a separate
 selection promoter allowed in an earlier construct ([brief section 8](BRIEF.md#8-the-vector-promoter-and-selection-marker)).
 
@@ -223,14 +225,14 @@ a particle with a specific other construct rarely (median 1 in 11,000), so seque
 specific pair adds little: a median 0.001% of the cells carrying one construct's barcode carry
 its sibling ([brief section 1](BRIEF.md#1-what-l1-is-for)).
 
-**Where it is weakest.** Sequence shared by every construct matters more. Only the 310 C-terminal
-and snorkel constructs have recoded linkers (SpyTag003 and ALFA stay on p003's codons in all
-constructs). In the 2,942 N-terminally and internally tagged constructs the whole cassette,
-linkers included, is on p003's codons, so it is identical in all of them, and a template
-switch inside it would join one protein's N-terminal half to another's tag and C-terminal half.
-The model puts that at up to 4.1% of integrants, an upper bound that assumes every particle is
-mixed; recoding the cassette's linkers per construct would leave about 3.6%, and recoding every
-codon about 1.8%. A fusion that borrows a working signal peptide could make a failing protein
+**Where it is weakest.** Sequence shared by every construct matters more. Every construct's
+linkers are its own encoding, so no two share the cassette (the longest shared stretch is 83 nt),
+but SpyTag003 and ALFA stay on p003's codons in all 3,255, and a template switch inside a tag
+would join one protein's N-terminal part to another's tag and C-terminal part. The model puts
+that at up to 3.0% of integrants (4.1% while 2,942 constructs shared one cassette encoding), an
+upper bound that assumes every particle is mixed; recoding the tags too was estimated at about
+1.8%. The Igκ leader (one encoding in 804 constructs) and the snorkel module (109 constructs)
+are also shared sequence. A fusion that borrows a working signal peptide could make a failing protein
 look displayed. The length weighting (2- to 3.5-fold per kilobase) is not measured for this
 vector, and across that range the longest construct is pooled at 13 to 100 times the median
 construct's amount.
@@ -244,7 +246,7 @@ Each check below changes what is ordered or how results are read.
 | Arrayed pilot in K562 (running) | whether each placement displays, and whether the Igκ leader helps | 22 constructs in the library vector, transduced and puromycin-selected, read for SpyCatcher and anti-ALFA at 4 °C and 37 °C with and without the strip on 2026-11-24/25: five tags after a native signal peptide (ERBB2, AXL, VSIG10, NECTIN4, FOLR1), six loop sites (SLC2A4 ×2, MS4A1 ×2, CCR5, AVPR2), the C-terminal TfR1 benchmark, three residue-1 GPCRs with and without the Igκ leader (CNR1, CCR5, OR51E2), two more without (ACKR3, AVPR2), and VSIG10 with the leader in place of its own signal peptide ([S8E1](https://www.notion.so/41aab86c7683800fbb3de43755efb8e5)) |
 | Extending the pilot | the classes it does not cover | type III proteins; more leader pairs, including ones whose own N-terminus is short; after-the-signal-peptide sites inside the predicted fold; constructs kept despite a failed refold; odorant receptors with and without RTP1S |
 | Controls in the pool | whether a negative can be traced to its cause | per placement, positives with published display (p003 and gold-standard sites) and matched negatives (tag on the cytoplasmic side, signal peptide deleted, untagged ORF); barcodes counted from plasmid, before selection and after selection |
-| Cassette encoding | the fusion term in 4.5 | recode the linkers (or every codon) before synthesis, or keep them and measure fusions by long-read sequencing of ORF and barcode from transduced cells |
+| Tag codons | the fusion term in 4.5 | recode the tags as well before synthesis, or keep p003's and measure fusions by long-read sequencing of ORF and barcode from transduced cells (linkers are already recoded per construct) |
 | Titer per kilobase | the length weighting | four plasmids spanning the length range, titered in K562 with an EFS condition |
 | Host chaperones | whether the 213 factor-dependent CDSs can be read at all | express RTP1S and RTP2 (and the other factors) in the K562 host, screen these CDSs as a separate sub-pool in a factor-expressing host, or analyze them apart and keep them out of the display denominator |
 | Topology | whether any placement puts the tag inside | done for the 40% with experimental evidence (0.7% discordant); review the 4 internal sites inside a helix end (ABCC4, SLC12A5, SLC12A6, XPR1) and CATSPERH before the order |

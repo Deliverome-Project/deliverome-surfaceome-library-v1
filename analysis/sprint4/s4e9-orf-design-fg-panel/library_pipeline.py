@@ -492,9 +492,11 @@ RUNG_BUILDERS = (
 
 
 def verify_rung_arms(work: Path) -> str:
+    run([str(HERE / "diversify_arm_cassettes.py"), "--check"], HERE)
     for script in RUNG_BUILDERS:
         run([str(HERE / script), "--check"], HERE)
     return (
+        "every upstream arm's linker encoding replays (distinct per arm, p003 tag codons), and "
         "the N-after-SP, multipass, type III and internal arm tables rebuild from their decision "
         "tables and match the committed records"
     )
@@ -933,8 +935,10 @@ STAGES = [
     Stage(
         "rung_arms",
         "the tag cassette in every N-after-SP, residue-1 multipass, type III and internal arm, "
-        "at the decided site (the decisions are the rung sessions' tables)",
-        ", ".join(RUNG_BUILDERS),
+        "at the decided site (the decisions are the rung sessions' tables), each on its own "
+        "linker encoding with p003's tag codons (Becca, 2026-11-21: no shared linkers)",
+        "diversify_arm_cassettes.py (seed 20261121; l1_arm_cassette_encodings.tsv), "
+        + ", ".join(RUNG_BUILDERS),
         "reviewer-package/nterm/nterm_decisions.tsv, nterm_res1_multipass.tsv, "
         "type3_nterm_calls.tsv, S5E13 l1_internal_decisions.tsv; candidate_constructs.json",
         "verified",

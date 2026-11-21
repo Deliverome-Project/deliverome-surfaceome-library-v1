@@ -62,7 +62,7 @@
     527,
     5423
   ],
-  "cassette": "full p003 tandem, one shared encoding (build_constructs.CASSETTE)",
+  "cassette": "full p003 tandem, this arm's own linker encoding (l1_arm_cassette_encodings.tsv)",
   "barcode": "20-N placeholder; barcodes not reserved (issue #1)",
-  "swap": "unchanged: an N-terminal cassette is upstream of the ORF's C-terminus"
+  "swap": "linkers recoded per arm (Becca, 2026-11-21: no shared linkers in the middle)"
 }
