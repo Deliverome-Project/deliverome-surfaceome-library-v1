@@ -1,0 +1,91 @@
+{
+  "decision": "Becca Carlson, 2026-11-20 (review comment 27: 'address this first')",
+  "implemented_by": "Claude Code session l1-isoform-universe (subagent of the brief review)",
+  "forms": 1894,
+  "pass": 1685,
+  "fail": 209,
+  "by_tier": {
+    "full_only": {
+      "pass": 1045,
+      "fail": 54
+    },
+    "observed": {
+      "pass": 640,
+      "fail": 155
+    }
+  },
+  "fail_reasons_any": {
+    "loses the reference's signal peptide": 81,
+    "reference's first TM helix sequence absent": 74,
+    "no Ensembl 115 transcript encodes exactly this protein": 43,
+    "protein does not start with M": 23,
+    "N-terminus O after any signal peptide, reference I": 16,
+    "N-terminus I after any signal peptide, reference O": 8,
+    "reference's first TM helix not called membrane": 6,
+    "Ensembl 115 CDS starts NNG, not ATG": 5,
+    "no Ensembl 115 CDS record translates exactly to the protein": 4,
+    "Ensembl 115 CDS starts NTC, not ATG": 2,
+    "Ensembl 115 CDS starts GGC, not ATG": 2,
+    "Ensembl 115 CDS starts ATA, not ATG": 2,
+    "Ensembl 115 CDS starts CAG, not ATG": 1,
+    "Ensembl 115 CDS starts NGG, not ATG": 1,
+    "Ensembl 115 CDS starts NGA, not ATG": 1,
+    "Ensembl 115 CDS starts NNA, not ATG": 1,
+    "Ensembl 115 CDS starts ACA, not ATG": 1,
+    "Ensembl 115 CDS starts NCT, not ATG": 1,
+    "Ensembl 115 CDS starts CCT, not ATG": 1,
+    "Ensembl 115 CDS starts GGA, not ATG": 1,
+    "Ensembl 115 CDS starts NCC, not ATG": 1,
+    "Ensembl 115 CDS starts GGG, not ATG": 1,
+    "Ensembl 115 CDS starts NCA, not ATG": 1,
+    "Ensembl 115 CDS starts AAG, not ATG": 1
+  },
+  "fail_reason_first": {
+    "loses the reference's signal peptide": 66,
+    "reference's first TM helix sequence absent": 52,
+    "no Ensembl 115 transcript encodes exactly this protein": 43,
+    "protein does not start with M": 23,
+    "N-terminus O after any signal peptide, reference I": 13,
+    "reference's first TM helix not called membrane": 5,
+    "no Ensembl 115 CDS record translates exactly to the protein": 4,
+    "N-terminus I after any signal peptide, reference O": 3
+  },
+  "unverifiable": 0,
+  "unverifiable_only": 0,
+  "topology_tool": "deeptmhmm_v1",
+  "topology_snapshot": {
+    "key": "accessible-surfaceome/topology/2026-11-20-isoform-cohort/topology.parquet",
+    "sha256": "3f35b555666ff175bf96d8b309251e841b901d337e8518ff8e3b411c6bf940bd"
+  },
+  "gate_of_record": {
+    "pass": 802,
+    "fail": 1092
+  },
+  "verdict_moves": {
+    "fail -> fail": 209,
+    "fail -> pass": 883,
+    "pass -> pass": 802
+  },
+  "previously_unverifiable": {
+    "forms": 955,
+    "now_pass": 883,
+    "now_fail": 72,
+    "now_fail_first_reason": {
+      "loses the reference's signal peptide": 23,
+      "protein does not start with M": 22,
+      "reference's first TM helix sequence absent": 16,
+      "reference's first TM helix not called membrane": 4,
+      "N-terminus I after any signal peptide, reference O": 3,
+      "no Ensembl 115 CDS record translates exactly to the protein": 2,
+      "N-terminus O after any signal peptide, reference I": 2
+    }
+  },
+  "pass_by_tier": {
+    "observed": 640,
+    "full_only": 1045
+  },
+  "october_shortlist_run_check": {
+    "sequences_in_both_runs": 863,
+    "identical_per_residue_string": 863
+  }
+}

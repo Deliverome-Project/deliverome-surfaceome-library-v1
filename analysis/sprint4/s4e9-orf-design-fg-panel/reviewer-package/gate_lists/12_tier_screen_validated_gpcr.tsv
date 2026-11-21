@@ -1,0 +1,86 @@
+gene	uniprot_accession	filter_tier	first_gate_failed	n_papers_found	max_tpm	tier_evidence	removed_after_filter
+ACKR2	O00590	SV	surface fraction	289	111.65	anti-HA surface immunostaining 6396.70 a.u.	
+ADRA2C	P18825	SV	surface fraction	255	208.85	anti-HA surface immunostaining 1031.20 a.u.	
+GALR3	O60755	SV	expression	177	4.43	anti-HA surface immunostaining 2684.60 a.u.	
+GPR141	Q7Z602	SV	surface evidence	120	99.76	anti-HA surface immunostaining 6451.80 a.u.	
+GPR33	Q49SQ1	SV	expression	119	2.70	anti-HA surface immunostaining 1124.60 a.u.	
+OR10C1	Q96KK4	SV	surface evidence	51	0.48	anti-HA surface immunostaining 1612.90 a.u.	
+OR10G6	Q8NH81	SV	surface evidence	14	0.34	anti-HA surface immunostaining 1029.20 a.u.	
+OR10H4	Q8NGA5	SV	surface evidence	20	0.81	anti-HA surface immunostaining 1495.90 a.u.	
+OR10J5	Q8NHC4	SV	expression	126	1.82	anti-HA surface immunostaining 1078.50 a.u.	
+OR10K1	Q8NGX5	SV	surface evidence	44	2.00	anti-HA surface immunostaining 1017.80 a.u.	
+OR10K2	Q6IF99	SV	surface evidence	51	1.46	anti-HA surface immunostaining 1672.30 a.u.	
+OR10V1	Q8NGI7	SV	surface evidence	26	1.12	anti-HA surface immunostaining 1067.50 a.u.	
+OR11H1	Q8NG94	SV	surface evidence	125	0.44	anti-HA surface immunostaining 1217.50 a.u.	
+OR11H6	Q8NGC7	SV	expression	28	0.88	anti-HA surface immunostaining 1075.00 a.u.	
+OR14A16	Q8NHC5	SV	expression	23	3.56	anti-HA surface immunostaining 1467.60 a.u.	
+OR14J1	Q9UGF5	SV	expression	48	4.40	anti-HA surface immunostaining 1016.50 a.u.	
+OR1B1	Q8NGR6	SV	surface evidence	44	1.31	anti-HA surface immunostaining 1032.30 a.u.	
+OR1C1	Q15619	SV	surface evidence	46	2.02	anti-HA surface immunostaining 1105.90 a.u.	
+OR1D5	P58170	SV	surface evidence	42	0.42	anti-HA surface immunostaining 1185.30 a.u.	
+OR1J1	Q8NGS3	SV	surface evidence	72	3.36	anti-HA surface immunostaining 1004.50 a.u.	
+OR1J2	Q8NGS2	SV	surface evidence	92	1.12	anti-HA surface immunostaining 1068.60 a.u.	
+OR1J4	Q8NGS1	SV	surface evidence	35	3.25	anti-HA surface immunostaining 1019.30 a.u.	
+OR2AJ1	Q8NGZ0	SV	surface evidence	10	0.69	anti-HA surface immunostaining 1000.70 a.u.	
+OR2AP1	Q8NGE2	SV	surface evidence	23	1.00	anti-HA surface immunostaining 1010.50 a.u.	
+OR2B2	Q9GZK3	SV	surface evidence	65	2.45	anti-HA surface immunostaining 1026.30 a.u.	
+OR2C3	Q8N628	SV	surface evidence	50	14.39	anti-HA surface immunostaining 1069.30 a.u.	
+OR2D2	Q9H210	SV	expression	140	2.70	anti-HA surface immunostaining 1075.60 a.u.	
+OR2G3	Q8NGZ4	SV	surface evidence	39	2.96	anti-HA surface immunostaining 1208.00 a.u.	
+OR2L8	Q8NGY9	SV	surface evidence	37	1.92	anti-HA surface immunostaining 1256.40 a.u.	
+OR2T33	Q8NG76	SV	surface evidence	42	6.00	anti-HA surface immunostaining 1099.40 a.u.	
+OR2V2	Q96R30	SV	surface evidence	30	3.77	anti-HA surface immunostaining 1088.20 a.u.	
+OR2W1	Q9Y3N9	SV	expression	93	0.49	anti-HA surface immunostaining 1062.80 a.u.	
+OR4A16	Q8NH70	SV	surface evidence	36	25.47	anti-HA surface immunostaining 1050.50 a.u.	
+OR4C5	Q8NGB2	SV	surface evidence	34	1.11	anti-HA surface immunostaining 1012.10 a.u.	
+OR4C6	Q8NH72	SV	surface evidence	56	19.80	anti-HA surface immunostaining 1025.40 a.u.	
+OR4D1	Q15615	SV	expression	112	1.10	anti-HA surface immunostaining 1083.50 a.u.	
+OR4D2	P58180	SV	expression	86	0.55	anti-HA surface immunostaining 1146.70 a.u.	
+OR4D5	Q8NGN0	SV	expression	28	1.19	anti-HA surface immunostaining 1104.10 a.u.	
+OR4F16	Q6IEY1	SV	surface evidence	87	0.20	anti-HA surface immunostaining 1101.10 a.u.	
+OR4F17	Q8NGA8	SV	surface evidence	31	7.43	anti-HA surface immunostaining 1083.80 a.u.	
+OR4F5	Q8NH21	SV	surface evidence	30	2.30	anti-HA surface immunostaining 1008.40 a.u.	
+OR4F6	Q8NGB9	SV	surface evidence	24	3.41	anti-HA surface immunostaining 1002.30 a.u.	
+OR4K15	Q8NH41	SV	expression	36	0.43	anti-HA surface immunostaining 1002.60 a.u.	
+OR4K2	Q8NGD2	SV	surface evidence	55	6.91	anti-HA surface immunostaining 1348.00 a.u.	
+OR4P4	Q8NGL7	SV	surface evidence	52	0.80	anti-HA surface immunostaining 1050.10 a.u.	
+OR4Q2	P0C623	SV	surface evidence	15	1.18	anti-HA surface immunostaining 1116.30 a.u.	
+OR4S1	Q8NGB4	SV	expression	35	0.35	anti-HA surface immunostaining 1014.70 a.u.	
+OR4S2	Q8NH73	SV	co-receptor	55	2.07	anti-HA surface immunostaining 1052.30 a.u.	
+OR51B2	Q9Y5P1	SV	surface evidence	62	12.80	anti-HA surface immunostaining 1095.60 a.u.	
+OR51G2	Q8NGK0	SV	surface evidence	29	2.40	anti-HA surface immunostaining 1081.20 a.u.	
+OR51T1	Q8NGJ9	SV	surface evidence	29	2.06	anti-HA surface immunostaining 1275.00 a.u.	
+OR51V1	Q9H2C8	SV	surface evidence	43	1.20	anti-HA surface immunostaining 1004.30 a.u.	
+OR52D1	Q9H346	SV	surface evidence	114	6.30	anti-HA surface immunostaining 1011.10 a.u.	
+OR52J3	Q8NH60	SV	surface evidence	32	9.30	anti-HA surface immunostaining 1053.40 a.u.	
+OR52K1	Q8NGK4	SV	surface evidence	47	3.74	anti-HA surface immunostaining 1076.50 a.u.	
+OR52L1	Q8NGH7	SV	surface evidence	45	0.62	anti-HA surface immunostaining 1018.00 a.u.	
+OR56B4	Q8NH76	SV	surface evidence	33	2.90	anti-HA surface immunostaining 1019.40 a.u.	
+OR5AL1	P0C617	SV	surface evidence	16	0.48	anti-HA surface immunostaining 1114.10 a.u.	
+OR5AR1	Q8NGP9	SV	surface evidence	32	3.30	anti-HA surface immunostaining 1044.10 a.u.	
+OR5AS1	Q8N127	SV	surface evidence	32	5.60	anti-HA surface immunostaining 1018.30 a.u.	
+OR5B21	A6NL26	SV	surface evidence	30	2.41	anti-HA surface immunostaining 1124.60 a.u.	
+OR5D16	Q8NGK9	SV	surface evidence	21	0.29	anti-HA surface immunostaining 1393.00 a.u.	
+OR5J2	Q8NH18	SV	surface evidence	21	21.60	anti-HA surface immunostaining 1019.80 a.u.	
+OR6C2	Q9NZP2	SV	surface evidence	65	4.06	anti-HA surface immunostaining 1064.10 a.u.	
+OR6C4	Q8NGE1	SV	surface evidence	44	2.40	anti-HA surface immunostaining 1136.10 a.u.	
+OR6C68	A6NDL8	SV	surface evidence	14	1.60	anti-HA surface immunostaining 1014.70 a.u.	
+OR6C74	A6NCV1	SV	surface evidence	31	4.66	anti-HA surface immunostaining 1227.70 a.u.	
+OR6F1	Q8NGZ6	SV	expression	41	3.34	anti-HA surface immunostaining 1057.40 a.u.	
+OR7A10	O76100	SV	surface evidence	36	0.52	anti-HA surface immunostaining 1171.20 a.u.	
+OR7A17	O14581	SV	expression	40	1.40	anti-HA surface immunostaining 1046.10 a.u.	
+OR7G1	Q8NGA0	SV	surface evidence	38	1.80	anti-HA surface immunostaining 1010.50 a.u.	
+OR8B8	Q15620	SV	surface evidence	124	0.70	anti-HA surface immunostaining 1120.70 a.u.	
+OR8K3	Q8NH51	SV	surface evidence	39	2.07	anti-HA surface immunostaining 1129.10 a.u.	
+OR8K5	Q8NH50	SV	surface evidence	19	277.03	anti-HA surface immunostaining 1002.20 a.u.	
+OR8U1	Q8NH10	SV	surface evidence	48	1.23	anti-HA surface immunostaining 1051.20 a.u.	
+OR8U3	Q8NH85	SV	surface evidence	36	0.25	anti-HA surface immunostaining 1093.70 a.u.	
+OR8U8	P0C7N1	SV	surface evidence	44		anti-HA surface immunostaining 1044.50 a.u.	
+OR8U9	P0C7N5	SV	surface evidence	12		anti-HA surface immunostaining 1052.00 a.u.	
+OR9A2	Q8NGT5	SV	surface evidence	29	1.27	anti-HA surface immunostaining 1019.30 a.u.	
+OR9G9	P0C7N8	SV	expression	20		anti-HA surface immunostaining 1048.80 a.u.	
+OXTR	P30559	SV	surface fraction	297	770.90	anti-HA surface immunostaining 5386.60 a.u.	
+TAAR1	Q96RJ0	SV	surface fraction	231	131.90	anti-HA surface immunostaining 1159.30 a.u.	
+TAAR2	Q9P1P5	SV	surface fraction	136	0.68	anti-HA surface immunostaining 1117.60 a.u.	
+VN1R2	Q8NFZ6	SV	surface evidence	152	1.86	anti-HA surface immunostaining 1095.20 a.u.	
+VN1R4	Q7Z5H5	SV	surface evidence	114	1.70	anti-HA surface immunostaining 1158.30 a.u.	

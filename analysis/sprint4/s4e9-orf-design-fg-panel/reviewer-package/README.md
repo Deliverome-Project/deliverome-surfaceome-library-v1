@@ -130,26 +130,21 @@ generated from this one by `export_review_repo.py`. It contains:
 - in `historical/`, the old script versions that stages 4 and 5 rerun.
 
 The input bundle is attached to that repository's release
-[`bundle-2026-11-10`](https://github.com/Deliverome-Project/l1-library-review/releases/tag/bundle-2026-11-10)
-as two tarballs: `l1-reviewer-bundle-2026-11-10.tar` (what the replay reads, 1.14 GB, SHA-256
-`6ef210e96175b0f995bcefbf42c71e1f716e0073534a40a6120b583577ffef38`) and
-`l1-pinned-releases-2026-11-10.tar` (the rest of every pinned release, 1.40 GB, SHA-256
-`60a659ff9c1e7d13212ddf0b10cf75abb2a4938fe3f28e913d3ed4a094774d0b`). The same files are staged
-at `processed://sprint4/s4e9-orf-design-fg-panel/reviewer-package/2026-11-10/`.
-A bundle rebuilt at the `final-d` cut is staged, not yet released, at
-`processed://sprint4/s4e9-orf-design-fg-panel/reviewer-package/2026-11-14/`:
-`l1-reviewer-bundle-2026-11-14.tar.gz` (3,117 files the replay reads, 1.36 GB, SHA-256
-`1644336877b8093c96499ac1ba897ffa5ddc3b796e3e3ce78a5314ae3a283fb5`; gzipped, since the
-uncompressed tar is 2.76 GB, over GitHub's 2 GiB asset limit) and
-`l1-pinned-releases-2026-11-14.tar` (238 files, 1.40 GB, SHA-256
-`99adec0f20522a5140fd167a8391fccde5b15ec5d584c513fa35b69a0e346c7b`). `tar -xf` reads both.
+[`bundle-2026-11-20`](https://github.com/Deliverome-Project/l1-library-review/releases/tag/bundle-2026-11-20)
+as two tarballs: `l1-reviewer-bundle-2026-11-20.tar.gz` (the 3,120 files the replay reads, 1.36 GB,
+SHA-256 `8bdb0006b739f28a860017aef7dd480d24e50bb2c2fa6d68120276a00a3be165`; gzipped to stay under
+GitHub's 2 GiB asset limit) and `l1-pinned-releases-2026-11-20.tar` (the rest of every pinned
+release and every S3 file the brief cites, 246 files, 1.65 GB, SHA-256
+`56bd5618245f7ef0ae7e7ab85ee2445c31f39ec501af771ae6287c68adb73d13`). The same files are staged at
+`processed://sprint4/s4e9-orf-design-fg-panel/reviewer-package/2026-11-20/`. `tar -xf` reads both.
 A rebuilt bundle goes on a new release with a new date, never over an existing one; earlier
 releases are `bundle-2026-11-02` (before l1-p2740..2742), `bundle-2026-11-05` (before the
 audited tag-site positives were added), `bundle-2026-11-05-r2` (before the stop-codon fix of 13
 designed CDS and the extended audit), `bundle-2026-11-05-r3` (before the tag-site gold
 standard), `bundle-2026-11-05-r4` (before the final audit refresh), `bundle-2026-11-05-r5`
 (before the universe-coverage stage and its Compara dumps) and `bundle-2026-11-05-r6` (before
-the Compara 116 ortholog panel was adopted and every pinned release was bundled whole).
+the Compara 116 ortholog panel was adopted and every pinned release was bundled whole), and
+`bundle-2026-11-10` (before the 2026-11-14 order of record and the files the brief cites).
 
 `EXPORT_MANIFEST.json` there records the source commit and a SHA-256 per managed file. To
 update it after changes here:

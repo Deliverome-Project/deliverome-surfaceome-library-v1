@@ -5,8 +5,12 @@ working repo: files can be added to it, and the shared utilities edited, as revi
 So the export manages a known set of files and leaves everything else alone:
 
 * **Managed files** are listed in ``review_repo_files.txt`` (every repository file the
-  offline replay opens, found by tracing it; see ``--trace``) plus the whole
-  ``deliverome_analysis`` package and the files that define the environment. They are
+  offline replay opens, found by tracing it; see ``--trace``), the folders in ``ALWAYS``,
+  the files that define the environment, and the modules of the shared
+  ``deliverome_analysis`` package that the exported code imports (directly or through
+  another package module; see ``package_modules``). The rest of the package (DIA
+  proteomics, search indexing, flow cytometry, blots) has nothing to do with L1 and stays
+  out. They are
   taken from a commit (``git archive``), never from the working tree, so an export always
   corresponds to a commit of this repository.
 * **Historical scripts**: the old script versions that two stages rerun are exported as
@@ -26,6 +30,7 @@ So the export manages a known set of files and leaves everything else alone:
 from __future__ import annotations
 
 import argparse
+import ast
 import hashlib
 import io
 import json
@@ -42,7 +47,8 @@ TEMPLATES = HERE / "review-repo"
 MANIFEST = "EXPORT_MANIFEST.json"
 
 #: Exported whole, on top of the traced list: every script and table of the library's own
-#: folders (not only those the replay runs), the shared utilities, and the environment.
+#: folders (not only those the replay runs), and the environment. The shared package is not
+#: listed: only the modules this code imports are exported (``package_modules``).
 ALWAYS = [
     "analysis/sprint4/s4e9-orf-design-fg-panel",
     "analysis/sprint1/s1e3-surface-library-filters",
@@ -51,12 +57,17 @@ ALWAYS = [
     "analysis/sprint1/s1e2-fragmid-vector-design",
     "scratch/becca/appris-principal",
     "scratch/becca/tag-site-architecture",
-    "src/deliverome_analysis",
+    # The internal-site model and its construct rule, which section 5 links.
+    "analysis/sprint5/s5e13-tag-site-benchmarking/hard_negative_benchmark.py",
+    "analysis/sprint5/s5e13-tag-site-benchmarking/l1_internal_arm_decisions.tsv",
+    "analysis/sprint5/s5e13-tag-site-benchmarking/l1_internal_arms.py",
+    "analysis/sprint5/s5e13-tag-site-benchmarking/tag_site_model_v6.py",
     "pyproject.toml",
     "uv.lock",
     ".python-version",
     "tests/test_s3_offline_mirror.py",
 ]
+PKG = "src/deliverome_analysis"
 #: Files this package writes itself, from ``review-repo/`` templates (path in dest -> template).
 GENERATED = {"README.md": "README.md", ".gitignore": "gitignore"}
 #: Never exported, even if a trace opened them.
@@ -82,8 +93,8 @@ def trace_to_list(log: Path) -> int:
             continue
         if rel in tracked and not rel.startswith(EXCLUDE_PREFIXES):
             seen.add(rel)
-    # The package itself is exported whole, so it need not be listed file by file.
-    listed = sorted(p for p in seen if not p.startswith("src/deliverome_analysis/"))
+    # Package modules follow from the imports (``package_modules``), so are not listed here.
+    listed = sorted(p for p in seen if not p.startswith(PKG + "/"))
     FILES.write_text("\n".join(listed) + "\n")
     print(f"wrote {FILES.name}: {len(listed)} traced files outside the package")
     return 0
@@ -96,15 +107,82 @@ def historical_commits() -> list[str]:
     return sorted(set(riu.COMMITS.values()))
 
 
-def collect(ref: str) -> dict[str, bytes]:
-    """Every managed path -> its bytes at ``ref``."""
-    wanted = [p for p in FILES.read_text().split() if p] + ALWAYS
-    blob = git("archive", "--format=tar", ref, "--", *sorted(set(wanted)))
+def archive(ref: str, paths: list[str]) -> dict[str, bytes]:
+    """``paths`` (files or folders) at ``ref`` -> {path: bytes}, via ``git archive``."""
+    blob = git("archive", "--format=tar", ref, "--", *sorted(set(paths)))
     out: dict[str, bytes] = {}
     with tarfile.open(fileobj=io.BytesIO(blob)) as tar:
         for m in tar.getmembers():
             if m.isfile() and not m.name.startswith(EXCLUDE_PREFIXES):
                 out[m.name] = tar.extractfile(m).read()
+    return out
+
+
+def _imported_modules(source: bytes, in_package: bool) -> set[str]:
+    """Top-level ``deliverome_analysis`` modules a Python file imports, at any depth."""
+    try:
+        tree = ast.parse(source)
+    except SyntaxError:
+        return set()
+    found: set[str] = set()
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Import):
+            for a in node.names:
+                if a.name.startswith("deliverome_analysis."):
+                    found.add(a.name.split(".")[1])
+        elif isinstance(node, ast.ImportFrom):
+            if node.level == 0 and node.module == "deliverome_analysis":
+                found |= {a.name for a in node.names}
+            elif node.level == 0 and (node.module or "").startswith("deliverome_analysis."):
+                found.add(node.module.split(".")[1])
+            elif node.level == 1 and in_package:
+                found |= (
+                    {node.module.split(".")[0]} if node.module else {a.name for a in node.names}
+                )
+    return found
+
+
+def package_modules(ref: str, files: dict[str, bytes]) -> dict[str, bytes]:
+    """The package files the exported code needs: ``__init__.py`` and every module reachable
+    by import from ``files`` (the non-package exports), followed through the package itself.
+
+    Found by parsing imports rather than listed by hand, so a new import in an L1 script
+    brings its module along and a module L1 stops using drops out. A module named by a
+    string (``importlib``) would be missed; nothing in the exported code does that.
+    """
+    pkg = archive(ref, [PKG])
+    by_name: dict[str, list[str]] = {}
+    for path in pkg:
+        name = path[len(PKG) + 1 :].split("/")[0].removesuffix(".py")
+        by_name.setdefault(name, []).append(path)
+    todo = set()
+    for path, data in files.items():
+        if path.endswith(".py"):
+            todo |= _imported_modules(data, in_package=False)
+    needed: set[str] = set()
+    while todo:
+        name = todo.pop()
+        if name in needed or name not in by_name:
+            continue
+        needed.add(name)
+        for path in by_name[name]:
+            if path.endswith(".py"):
+                todo |= _imported_modules(pkg[path], in_package=True)
+    keep = {"__init__"} | needed
+    return {p: d for name in sorted(keep) for p, d in ((p, pkg[p]) for p in by_name.get(name, []))}
+
+
+def package_paths(ref: str = "HEAD") -> set[str]:
+    """The package paths an export of ``ref`` publishes (for ``render_brief``'s link check)."""
+    wanted = [p for p in FILES.read_text().split() if p] + ALWAYS
+    return set(package_modules(ref, archive(ref, wanted)))
+
+
+def collect(ref: str) -> dict[str, bytes]:
+    """Every managed path -> its bytes at ``ref``."""
+    wanted = [p for p in FILES.read_text().split() if p] + ALWAYS
+    out = archive(ref, wanted)
+    out.update(package_modules(ref, out))
     commits = historical_commits()
     import reproduce_isoform_universe as riu
 
@@ -162,6 +240,8 @@ def export(dest: Path, ref: str, overwrite_edited: bool) -> int:
         },
     }
     (dest / MANIFEST).write_text(json.dumps(manifest, indent=1) + "\n")
+    mods = sorted(Path(r).stem for r in files if r.startswith(PKG + "/") and r.endswith(".py"))
+    print(f"package modules exported ({len(mods)}): {', '.join(mods)}")
     print(
         f"exported {len(files)} managed files from {commit[:10]} to {dest}: "
         f"{written} written, {removed} removed"

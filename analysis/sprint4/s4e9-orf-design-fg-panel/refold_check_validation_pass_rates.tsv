@@ -1,0 +1,31 @@
+reference	size_bin	class	n_sites	n_proteins	pass	pass_rate	wilson95_lo	wilson95_hi
+afdb_ref	all	positive	131	97	120	0.916	0.856	0.952
+afdb_ref	all	known_failure	9	7	8	0.889	0.565	0.98
+afdb_ref	all	function_lost	3	2	2	0.667	0.208	0.939
+afdb_ref	all	decoy_core	75	75	65	0.867	0.772	0.926
+afdb_ref	all	decoy_hardneg	48	48	42	0.875	0.753	0.941
+afdb_ref	<= 300 aa	positive	13	13	6	0.462	0.232	0.709
+afdb_ref	<= 300 aa	known_failure	0	0	0			
+afdb_ref	<= 300 aa	function_lost	0	0	0			
+afdb_ref	<= 300 aa	decoy_core	9	9	4	0.444	0.189	0.733
+afdb_ref	<= 300 aa	decoy_hardneg	6	6	2	0.333	0.097	0.7
+afdb_ref	> 300 aa	positive	118	84	114	0.966	0.916	0.987
+afdb_ref	> 300 aa	known_failure	9	7	8	0.889	0.565	0.98
+afdb_ref	> 300 aa	function_lost	3	2	2	0.667	0.208	0.939
+afdb_ref	> 300 aa	decoy_core	66	66	61	0.924	0.835	0.967
+afdb_ref	> 300 aa	decoy_hardneg	42	42	40	0.952	0.842	0.987
+own_ref	all	positive	131	97	124	0.947	0.894	0.974
+own_ref	all	known_failure	9	7	8	0.889	0.565	0.98
+own_ref	all	function_lost	3	2	3	1.0	0.438	1.0
+own_ref	all	decoy_core	75	75	67	0.893	0.803	0.945
+own_ref	all	decoy_hardneg	48	48	44	0.917	0.804	0.967
+own_ref	<= 300 aa	positive	13	13	9	0.692	0.424	0.873
+own_ref	<= 300 aa	known_failure	0	0	0			
+own_ref	<= 300 aa	function_lost	0	0	0			
+own_ref	<= 300 aa	decoy_core	9	9	5	0.556	0.267	0.811
+own_ref	<= 300 aa	decoy_hardneg	6	6	3	0.5	0.188	0.812
+own_ref	> 300 aa	positive	118	84	115	0.975	0.928	0.991
+own_ref	> 300 aa	known_failure	9	7	8	0.889	0.565	0.98
+own_ref	> 300 aa	function_lost	3	2	3	1.0	0.438	1.0
+own_ref	> 300 aa	decoy_core	66	66	62	0.939	0.854	0.976
+own_ref	> 300 aa	decoy_hardneg	42	42	41	0.976	0.877	0.996

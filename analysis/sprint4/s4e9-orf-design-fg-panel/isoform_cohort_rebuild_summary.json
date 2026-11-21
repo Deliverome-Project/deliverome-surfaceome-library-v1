@@ -1,0 +1,165 @@
+{
+  "decision": "Becca Carlson, 2026-11-20 (review comment 28: 'then we need to fix this fresh')",
+  "implemented_by": "Claude Code session l1-isoform-universe (subagent of the brief review)",
+  "status": "proposed; the library, panel tables of record, constructs and order unchanged",
+  "library_genes": 2369,
+  "topology_snapshot": {
+    "key": "accessible-surfaceome/topology/2026-11-20-isoform-cohort-rebuild/topology.parquet",
+    "sha256": "ccc4ed1831749848ddc53447b6428a7012164f35e1def04cf69add605198e7f4"
+  },
+  "topology_tool": "deeptmhmm_v1",
+  "evidence_bar_forms": {
+    "forms": 2111,
+    "genes": 1010
+  },
+  "rebuilt_cohort": {
+    "forms": 1899,
+    "genes": 946,
+    "by_tier": {
+      "observed": 796,
+      "full_only": 1103
+    }
+  },
+  "excluded": {
+    "loses surface anchoring: reference surface-labelled, form not": 184,
+    "soluble: GPI gene but the form does not keep the anchor": 27,
+    "is the gene's built reference protein (kept in the pool, rejected at the draw)": 13,
+    "unjudgeable: gene has no built L1 reference": 1
+  },
+  "cohort_of_record": {
+    "forms": 1894,
+    "genes": 945
+  },
+  "rebuilt_vs_record_forms": {
+    "in_both": 1894,
+    "only_rebuilt": 5,
+    "only_record": 0
+  },
+  "gate_rebuilt": {
+    "pass": 1690,
+    "fail": 209,
+    "unverifiable": 0
+  },
+  "genes_with_a_drawable_form": {
+    "cohort_of_record_gate_of_record": 550,
+    "cohort_of_record_full_v1_gate": 865,
+    "rebuilt": 866
+  },
+  "panel_of_record": {
+    "forms": 150,
+    "genes": 133
+  },
+  "proposed_cohort_of_record_full_v1_gate": {
+    "forms": 150,
+    "genes": 137,
+    "by_class": {
+      "type I": 61,
+      "multipass": 51,
+      "type II": 17,
+      "GPI": 16,
+      "type III": 5
+    },
+    "replaced": 32,
+    "same_forms_as_record": 120
+  },
+  "proposed_rebuilt": {
+    "forms": 150,
+    "genes": 137,
+    "by_class": {
+      "type I": 61,
+      "multipass": 51,
+      "type II": 17,
+      "GPI": 16,
+      "type III": 5
+    },
+    "allocation": {
+      "observed": {
+        "type I": 43,
+        "type II": 10,
+        "multipass": 34,
+        "GPI": 10,
+        "type III": 3
+      },
+      "prediction_only": {
+        "multipass": 17,
+        "type I": 18,
+        "GPI": 6,
+        "type II": 7,
+        "type III": 2
+      }
+    },
+    "replaced": 32,
+    "status": {
+      "dropped": 32,
+      "kept": 118,
+      "added": 32
+    },
+    "genes_added": [
+      "ADGRD1",
+      "ADTRP",
+      "ANTXR2",
+      "ATRN",
+      "BTN2A2",
+      "CD55",
+      "EDA2R",
+      "FOLR2",
+      "FRMD3",
+      "GPR132",
+      "HFE",
+      "IL11RA",
+      "KCNJ1",
+      "KCNK17",
+      "LILRB2",
+      "NRP2",
+      "NTNG1",
+      "PCDHGB4",
+      "PRSS21",
+      "PTK7",
+      "RNF130",
+      "SLC12A6",
+      "SLC26A6",
+      "SLC3A2",
+      "SLC68A1",
+      "SLC9A8",
+      "TM9SF1",
+      "UNC5A",
+      "XPNPEP2"
+    ],
+    "genes_dropped": [
+      "ABCC1",
+      "ADAM15",
+      "ADGRL2",
+      "BTN2A1",
+      "CACNA2D3",
+      "CNTN1",
+      "EFNA3",
+      "GPC3",
+      "GPR161",
+      "GPRC5B",
+      "HTR7",
+      "L1CAM",
+      "LMLN",
+      "NTRK1",
+      "OPCML",
+      "PECAM1",
+      "PRSS8",
+      "SLAMF1",
+      "SLC12A2",
+      "SLC22A24",
+      "SLC43A3",
+      "SLC44A2",
+      "SLC6A9",
+      "SLCO1B3-SLCO1B7",
+      "SUSD3"
+    ]
+  },
+  "outputs_sha256": {
+    "isoform_cohort_rebuild.tsv": "113d68b5863517f0427efddfec0e79a6798687ffb2db6360362f41df1b480905",
+    "isoform_cohort_rebuild_excluded.tsv": "62c5603de112f10b80bcf3a09b968c4630862573ca2ebc8529aa033da5576911",
+    "isoform_gate_rebuild.tsv": "f5d010bcafbd3ea6c1c187ff98f5ab6a38fbd6a0bff2833f03e783b3362aeaa7",
+    "isoform_panel_proposed.tsv": "a37377220510fb029f4f55057f3aac34a345d18c64839b294c37b4061f666138",
+    "isoform_panel_proposed_cohort_of_record.tsv": "a1b03c18e3bd06019ef4a7d36c497c04ac68d40e5dc3358ec3649cfc3a4d4680",
+    "isoform_panel_proposed_changes.tsv": "b46cd97100cc9376c36ee2471f207d86a3867d56690a5dc83ae7ba4872e30abf",
+    "isoform_cohort_rebuild_genes.tsv": "3da1ced9646a7c11782affec317562daca01944f98dbdf1abe59f5f0004fe8c3"
+  }
+}

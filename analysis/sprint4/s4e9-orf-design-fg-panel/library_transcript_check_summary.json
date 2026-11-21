@@ -1,0 +1,107 @@
+{
+ "members_checked": 2710,
+ "by_set_species": {
+  "library_reference:human": 2360,
+  "isoform:human": 150,
+  "ortholog:mouse": 100,
+  "ortholog:cyno": 100
+ },
+ "cds_integrity_failures": 0,
+ "failures": [],
+ "flagged_source_biotype": [
+  "l1-p0287 CD300H: source biotype protein_coding_LoF",
+  "l1-p0309 CD58: source biotype nonsense_mediated_decay",
+  "l1-p1525 OR8G3: source biotype protein_coding_LoF",
+  "l1-p2528 TRPV1: source biotype nonsense_mediated_decay"
+ ],
+ "ensembl_release_of_source": {
+  "115": 2704,
+  "116": 6
+ },
+ "source_transcript_biotype": {
+  "protein_coding": 2706,
+  "protein_coding_LoF": 2,
+  "nonsense_mediated_decay": 2
+ },
+ "cds_vs_source_transcript": {
+  "identical": 2699,
+  "differs by recorded edit: stop_added": 3,
+  "differs by recorded edit: start_codon_replaced": 3,
+  "differs by recorded edit: trimmed_upstream_codons": 5
+ },
+ "human_members_off_primary_assembly": [
+  "l1-p1052 KIR2DL2 HSCHR19KIR_FH13_BA2_HAP_CTG3_1",
+  "l1-p1054 KIR2DL5A HSCHR19KIR_CA01-TB04_CTG3_1",
+  "l1-p1055 KIR2DS2 HSCHR19KIR_0019-4656-B_CTG3_1",
+  "l1-p1056 KIR2DS5 HSCHR19KIR_CA01-TB04_CTG3_1",
+  "l1-p1060 KIR3DS1 HSCHR19LRC_COX2_CTG3_1",
+  "l1-p1216 MICA HSCHR6_MHC_QBL_CTG1",
+  "l1-p1382 OR11H7 HG2526_HG2573_PATCH",
+  "l1-p1532 OR8U8 HG142_HG150_NOVEL_TEST",
+  "l1-p1533 OR8U9 HG142_HG150_NOVEL_TEST",
+  "l1-p1537 OR9G9 HG151_NOVEL_TEST",
+  "l1-p2115 TAS2R45 HSCHR12_2_CTG2",
+  "l1-p2740 KIR2DS4 HSCHR19KIR_ABC08_A1_HAP_CTG3_1",
+  "l1-p2741 OR12D1 HSCHR6_MHC_DBB_CTG1",
+  "l1-p2742 OR5AL1 HG2568_PATCH"
+ ],
+ "human_members": 2510,
+ "human_members_identical_to_a_uniprot_reviewed_sequence": 2384,
+ "human_members_variant_residues_vs_uniprot": {
+  "0": 2505,
+  "1": 4,
+  "3": 1
+ },
+ "references": 2360,
+ "references_equal_gene_uniprot_canonical": 2154,
+ "library_genes": 2369,
+ "genes_with_primary_LoF_transcript": 11,
+ "genes_by_primary_status": {
+  "intact protein_coding copy": 2349,
+  "translates intact, but labeled protein_coding_LoF": 2,
+  "no intact copy": 9,
+  "absent from primary assembly": 9
+ },
+ "genes_without_intact_protein_coding_primary_copy": [
+  "CD300H: translates intact, but labeled protein_coding_LoF (members: l1-p0287)",
+  "FCGR2C: no intact copy (members: none)",
+  "KIR2DL2: absent from primary assembly (members: l1-p1052)",
+  "KIR2DL5A: absent from primary assembly (members: l1-p1054)",
+  "KIR2DS2: absent from primary assembly (members: l1-p1055)",
+  "KIR2DS4: no intact copy (members: l1-p2740)",
+  "KIR2DS5: absent from primary assembly (members: l1-p1056)",
+  "KIR3DS1: absent from primary assembly (members: l1-p1060)",
+  "OR10AC1: no intact copy (members: none)",
+  "OR11H7: no intact copy (members: l1-p1382)",
+  "OR12D1: no intact copy (members: l1-p2741)",
+  "OR4Q2: no intact copy (members: none)",
+  "OR52P1: no intact copy (members: none)",
+  "OR5AL1: no intact copy (members: l1-p2742)",
+  "OR8G3: translates intact, but labeled protein_coding_LoF (members: l1-p1525)",
+  "OR8J2: no intact copy (members: none)",
+  "OR8U8: absent from primary assembly (members: l1-p1532)",
+  "OR8U9: absent from primary assembly (members: l1-p1533)",
+  "OR9G9: absent from primary assembly (members: l1-p1537)",
+  "TAS2R45: absent from primary assembly (members: l1-p2115)"
+ ],
+ "inputs": {
+  "manifest": "library_manifest_l1.tsv",
+  "designed_cds": "processed://sprint4/s4e9-orf-design-fg-panel/library-candidates/2026-11-12-ortholog-start-trims-2/candidate_cds.json",
+  "reference_selection": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/reference-selection/2026-11-12-reference-fixes-2/reference_selection.tsv",
+  "ensembl_release": "115",
+  "uniprot_snapshot": "2026-10-11",
+  "backbone": "processed://sprint4/s4e9-orf-design-fg-panel/p0039_EFS_IRES_puro_backbone.gb",
+  "reference_vector": "processed://sprint4/s4e9-orf-design-fg-panel/p0039_AXL_vector.gb",
+  "cds_human": "external://ensembl/release-115/cds/Homo_sapiens.GRCh38.cds.all.fa.gz",
+  "pep_human": "external://ensembl/release-115/pep/Homo_sapiens.GRCh38.pep.all.fa.gz",
+  "cds_mouse": "external://ensembl/release-115/cds/Mus_musculus.GRCm39.cds.all.fa.gz",
+  "pep_mouse": "external://ensembl/release-115/pep/Mus_musculus.GRCm39.pep.all.fa.gz",
+  "cds_cyno": "external://ensembl/release-115/cds/Macaca_fascicularis.Macaca_fascicularis_6.0.cds.all.fa.gz",
+  "pep_cyno": "external://ensembl/release-115/pep/Macaca_fascicularis.Macaca_fascicularis_6.0.pep.all.fa.gz",
+  "uniprot_human": "external://uniprot/2026-10-11/uniprot_human_reviewed.tsv.gz, external://uniprot/2026-10-11/uniprot_human_reviewed_isoforms.tsv.gz",
+  "uniprot_mouse": "external://uniprot/2026-10-11/uniprot_mouse_reviewed_isoforms.tsv.gz",
+  "uniprot_cyno": "external://uniprot/2026-10-11/uniprot_cyno_all_isoforms.tsv.gz",
+  "cds_mouse_116": "external://ensembl/release-116/cds/Mus_musculus.GRCm39.cds.all.fa.gz",
+  "cds_cyno_116": "external://ensembl/release-116/cds/Macaca_fascicularis.Macaca_fascicularis_6.0.cds.all.fa.gz"
+ }
+}

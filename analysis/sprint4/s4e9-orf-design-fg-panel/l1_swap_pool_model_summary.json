@@ -1,0 +1,93 @@
+{
+  "source": "Walton, Qin & Blainey, bioRxiv 2024.03.17.585235 (PMID 38558968): k=5.3e-4/bp",
+  "inserts": 3255,
+  "pool_weighting": "x3.5",
+  "pool_share_median": 9.081131486646489e-05,
+  "pool_share_1_over": 11012,
+  "min_block_nt": 20,
+  "background_partners_sampled_per_barcode": 96,
+  "specific_pairs": 65658,
+  "same_cds_pairs": {
+    "pairs": 791,
+    "suffix_tract_median_nt": 363.0,
+    "over_gate": 608,
+    "per_pair_rate_median": 0.1597,
+    "per_pair_rate_max": 0.4765,
+    "co_packaging_probability_median": 1.9e-08,
+    "library_fraction_all_791_pairs": 0.00014237246000000002,
+    "suffix_tract_nt_in_native_cds_median_fraction": 0.9338842975206612
+  },
+  "different_cds_specific_pairs": {
+    "pairs_over_50_nt_written": 524,
+    "over_gate": 461
+  },
+  "library_fraction_wrong_protein": {
+    "specific_mislabel": 0.0005320490036348772,
+    "specific_chimera": 0.0015835506570734507,
+    "background_mislabel": 0.01175933837492482,
+    "background_chimera": 0.04087422768759322,
+    "total": 0.05474916572322636,
+    "not_counted_leader_swap": 0.03116977845170753
+  },
+  "per_barcode_impurity": {
+    "median": 0.04076970356816649,
+    "max": 0.10487297054140143,
+    "specific_part_median": 0.0006297010276573834,
+    "specific_part_max": 0.018416577065571132,
+    "by_rung_median": {
+      "nterm": {
+        "inserts": 1272,
+        "impurity": 0.037667776353766426,
+        "mislabel": 0.011898682420085994,
+        "chimera": 0.02576559673210418,
+        "leader_swap": 0.0487339326134984
+      },
+      "type3": {
+        "inserts": 44,
+        "impurity": 0.03664040319963453,
+        "mislabel": 0.011902168655959645,
+        "chimera": 0.02475075094515719,
+        "leader_swap": 0.04880600102366291
+      },
+      "multipass": {
+        "inserts": 565,
+        "impurity": 0.03771278766083416,
+        "mislabel": 0.011884843802980558,
+        "chimera": 0.02588709618695083,
+        "leader_swap": 0.04260198633089254
+      },
+      "cterm": {
+        "inserts": 313,
+        "impurity": 0.06490352407050257,
+        "mislabel": 0.015177917082752826,
+        "chimera": 0.0494290108627047,
+        "leader_swap": 0.0
+      },
+      "internal": {
+        "inserts": 1061,
+        "impurity": 0.08610163562188534,
+        "mislabel": 0.01194305207265552,
+        "chimera": 0.07425839209832326,
+        "leader_swap": 0.0
+      }
+    }
+  },
+  "wrong_protein_by_block_region": {
+    "background|chimera|native CDS": 2.9082667244371992e-05,
+    "background|chimera|tag cassette": 0.04084514502034886,
+    "background|leader swap|native CDS": 1.2270303530023379e-05,
+    "background|leader swap|tag cassette": 0.030601583499368114,
+    "background|mislabel|3' tail": 0.011605487978306954,
+    "background|mislabel|native CDS": 2.5042885897290637e-05,
+    "background|mislabel|tag cassette": 0.00012880751072058747,
+    "specific|chimera|native CDS": 0.001039195496359367,
+    "specific|chimera|tag cassette": 0.0005443551607140833,
+    "specific|leader swap|native CDS": 3.822669679287692e-06,
+    "specific|leader swap|tag cassette": 0.0005521019791301466,
+    "specific|mislabel|3' tail": 0.00018494163100519687,
+    "specific|mislabel|native CDS": 0.0003102374820862116,
+    "specific|mislabel|tag cassette": 3.6869890543469346e-05
+  },
+  "rate_at_gate": 0.05028767596203798,
+  "rate_at_cassette_153": 0.07485593055013168
+}

@@ -1,0 +1,219 @@
+{
+ "atlas_build_id": 607,
+ "fetched": "2026-11-20, PeptideAtlas build 607 live (accessions absent from the replay)",
+ "index": {
+  "Q96BI1": "0_261"
+ },
+ "pools": {
+  "0_261": {
+   "AIASLLRLPDVPR": [
+    24,
+    4
+   ],
+   "AIASLLRLPDVPRIFLVK": [
+    13,
+    2
+   ],
+   "APEERPAAL": [
+    346,
+    31
+   ],
+   "APRDQGQSPGRMSAL": [
+    7,
+    3
+   ],
+   "AQAGYLMSF": [
+    4,
+    1
+   ],
+   "AQAGYLMSFF": [
+    34,
+    2
+   ],
+   "AQAPLPGGPRASVF": [
+    9,
+    2
+   ],
+   "ASSPALPGVY": [
+    1,
+    1
+   ],
+   "ASVFDLK": [
+    151,
+    12
+   ],
+   "ASVFDLKAIASLLR": [
+    51,
+    12
+   ],
+   "ASVFDLKAIASLLRLPDVPR": [
+    3,
+    3
+   ],
+   "AVSTSDTGTMLGLCASVQPLLR": [
+    1068,
+    153
+   ],
+   "CASVQPLLR": [
+    3,
+    2
+   ],
+   "DAQAPLPGGPRASVF": [
+    1,
+    1
+   ],
+   "DLKAIASLLRLPDVPR": [
+    3,
+    2
+   ],
+   "DQGQSPGR": [
+    69,
+    8
+   ],
+   "DQGRSPGR": [
+    5,
+    1
+   ],
+   "FGVLQLLGGPVFGR": [
+    1,
+    1
+   ],
+   "GAKTDAQAPLPGGPR": [
+    56,
+    15
+   ],
+   "GALMHTLPAAQMVITDLSAPEERPAALGR": [
+    2,
+    1
+   ],
+   "GTMLGLCASVQPLLR": [
+    1,
+    1
+   ],
+   "GVLQLLGGPVFGR": [
+    7,
+    5
+   ],
+   "ITDLSAPEERPAALGR": [
+    14,
+    7
+   ],
+   "KTDAQAPLPGGPR": [
+    1,
+    1
+   ],
+   "LGLDSIAFGYLQTTFGVLQLLGGPVFGR": [
+    2,
+    1
+   ],
+   "LPAAQMVITDL": [
+    2,
+    1
+   ],
+   "LPGALMH": [
+    30,
+    3
+   ],
+   "LPGALMHTLPAAQ": [
+    3,
+    3
+   ],
+   "LPGALMHTLPAAQM": [
+    3,
+    1
+   ],
+   "LPGALMHTLPAAQMV": [
+    2,
+    1
+   ],
+   "LPGALMHTLPAAQMVITDLSAPEER": [
+    553,
+    76
+   ],
+   "LPGALMHTLPAAQMVITDLSAPEERPAALGR": [
+    283,
+    45
+   ],
+   "NVVTDSMLIK": [
+    2,
+    2
+   ],
+   "QTTFGVLQLLGGPVFGR": [
+    2,
+    1
+   ],
+   "RLPDVPRIFL": [
+    3,
+    1
+   ],
+   "RPAALGRLGL": [
+    125,
+    5
+   ],
+   "RTLGPTVGGLLY": [
+    70,
+    8
+   ],
+   "SDTGTMLGLCASVQPLLR": [
+    5,
+    3
+   ],
+   "SHFSEEVLL": [
+    3,
+    1
+   ],
+   "SIVPYLSRKLG": [
+    12,
+    1
+   ],
+   "SPALPGVYL": [
+    6,
+    1
+   ],
+   "STSDTGTMLGLCASVQPLLR": [
+    6,
+    5
+   ],
+   "TDAQAPLPGGPR": [
+    3690,
+    439
+   ],
+   "TDAQAPLPGGPRASVFDLK": [
+    210,
+    20
+   ],
+   "TLGPTVGGLLYR": [
+    3147,
+    357
+   ],
+   "TLPAAQMVITDLSAPEER": [
+    17,
+    2
+   ],
+   "TLPAAQMVITDLSAPEERPAALGR": [
+    15,
+    10
+   ],
+   "TSDTGTML": [
+    5,
+    1
+   ],
+   "VLQLLGGPVFGR": [
+    2,
+    1
+   ],
+   "VPGLVFSLCTL": [
+    3,
+    1
+   ],
+   "VPYLSRKL": [
+    1,
+    1
+   ],
+   "VVTDSMLIK": [
+    10,
+    3
+   ]
+  }
+ }
+}

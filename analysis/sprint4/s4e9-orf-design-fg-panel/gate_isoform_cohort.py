@@ -125,7 +125,19 @@ def first_helix(topo: str) -> tuple[int, int] | None:
     return start, end
 
 
-def load_inputs(work: Path) -> dict:
+def load_inputs(
+    work: Path,
+    *,
+    cohort_path: Path | None = None,
+    snapshot_key: str | None = None,
+    snapshot_sha256: str | None = None,
+) -> dict:
+    """Everything the gate reads. Defaults are the pinned inputs of the panel of record.
+
+    ``cohort_path`` replaces the pinned ``isoform_cohorts.tsv`` and ``snapshot_key`` /
+    ``snapshot_sha256`` the pinned topology snapshot; ``regate_isoform_forms.py`` uses them
+    to gate the same cohort against new DeepTMHMM v1 rows, and a rebuilt cohort.
+    """
     import candidate_inputs
     import resolve_candidate_cds as rcd
     from gpi import gpi_genes
@@ -136,7 +148,7 @@ def load_inputs(work: Path) -> dict:
     from deliverome_analysis.s3 import external
 
     snap = stage(work / "panel")
-    with (snap / "isoform_cohorts.tsv").open() as fh:
+    with (cohort_path or snap / "isoform_cohorts.tsv").open() as fh:
         cohort = list(csv.DictReader(fh, delimiter="\t"))
     pep = rcd.read_fasta(candidate_inputs.pep_fasta("human"))
     cds = rcd.read_fasta(candidate_inputs.cds_fasta("human"))
@@ -156,9 +168,11 @@ def load_inputs(work: Path) -> dict:
         for cid, m in ld.designed_proteins(MANIFEST, library=ld.LIBRARY_L1).items()
         if m["candidate_set"] == "library_reference"
     }
-    snap_path = Path(external.download(topology.SNAPSHOT_KEY, work / "topology.parquet"))
-    if sha256(snap_path) != topology.SNAPSHOT_SHA256:
-        raise SystemExit("topology snapshot differs from topology.SNAPSHOT_SHA256")
+    key = snapshot_key or topology.SNAPSHOT_KEY
+    want = snapshot_sha256 or topology.SNAPSHOT_SHA256
+    snap_path = Path(external.download(key, work / "topology.parquet"))
+    if sha256(snap_path) != want:
+        raise SystemExit(f"topology snapshot {key} differs from its pinned SHA-256")
     import pandas as pd
 
     return {
@@ -174,18 +188,24 @@ def load_inputs(work: Path) -> dict:
     }
 
 
-def gate(inp: dict) -> list[dict]:
-    from deliverome_analysis import topology
-
-    cohort, refs = inp["cohort"], inp["refs"]
+def form_proteins(inp: dict) -> dict[str, str]:
+    """form id -> the form's protein: its UniProt isoform, else its Ensembl 115 translation."""
     proteins: dict[str, str] = {}
-    for r in cohort:
+    for r in inp["cohort"]:
         acc = r["uniprot"].strip()
         txs = [t.split(".")[0] for t in r["ensembl_transcripts"].split(";") if t.strip()]
         seq = inp["uniprot"].get(acc) if acc else None
         if seq is None:
             seq = next((inp["pep_of"][t] for t in txs if t in inp["pep_of"]), "")
         proteins[form_id(r)] = seq
+    return proteins
+
+
+def gate(inp: dict) -> list[dict]:
+    from deliverome_analysis import topology
+
+    cohort, refs = inp["cohort"], inp["refs"]
+    proteins = form_proteins(inp)
     seqs = {f"form:{k}": v for k, v in proteins.items() if v}
     seqs |= {f"ref:{g}": s for g, (_, s) in refs.items()}
     topo = topology.resolve(seqs, tool=topology.TOOL_V1, snapshot=inp["snapshot"])

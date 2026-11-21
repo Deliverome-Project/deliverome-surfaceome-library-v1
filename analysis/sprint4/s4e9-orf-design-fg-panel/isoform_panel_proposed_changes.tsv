@@ -1,0 +1,183 @@
+form_id	gene	status	panel_of_record_stratum	proposed_stratum	in_cohort_of_record_draw_with_full_v1_gate	reason_if_dropped
+ABCC1:P33527-9	ABCC1	dropped	observed / multipass		False	a replacement pick of record; the seeded replacement draw now runs over the larger gate-passing pool and fills the slot with another form
+ACE2:ENST00000871930	ACE2	kept	prediction_only / type I	prediction_only / type I	True	
+ADAM15:Q13444-3	ADAM15	dropped	observed / type I		False	a replacement pick of record; the seeded replacement draw now runs over the larger gate-passing pool and fills the slot with another form
+ADAM33:ENST00000379861	ADAM33	kept	observed / type I	observed / type I	True	
+ADAM9:ENST00000677004	ADAM9	kept	observed / type I	observed / type I	True	
+ADCYAP1R1:ENST00000409489	ADCYAP1R1	kept	observed / multipass	observed / multipass	True	
+ADGRD1:Q6QNK2-4	ADGRD1	added		observed / multipass	True	
+ADGRF3:Q8IZF5-3	ADGRF3	kept	prediction_only / multipass	prediction_only / multipass	True	
+ADGRG2:Q8IZP9-3	ADGRG2	kept	observed / multipass	observed / multipass	True	
+ADGRL2:O95490	ADGRL2	dropped	observed / multipass		False	a replacement pick of record; the seeded replacement draw now runs over the larger gate-passing pool and fills the slot with another form
+ADTRP:Q96IZ2-2	ADTRP	added		observed / multipass	True	
+ANO1:Q5XXA6-5	ANO1	kept	observed / multipass	observed / multipass	True	
+ANO7:Q6IWH7	ANO7	kept	prediction_only / multipass	prediction_only / multipass	True	
+ANTXR2:ENST00000680913	ANTXR2	added		observed / type I	True	
+APLP2:Q06481-5	APLP2	kept	observed / type I	observed / type I	True	
+ART3:ENST00000960242	ART3	kept	prediction_only / GPI	prediction_only / GPI	True	
+ASGR2:ENST00000871044	ASGR2	kept	prediction_only / type II	prediction_only / type II	True	
+ASIC3:Q9UHC3-2	ASIC3	kept	prediction_only / multipass	prediction_only / multipass	True	
+ATP2B1:P20020-5	ATP2B1	kept	observed / multipass	observed / multipass	True	
+ATRN:O75882-2	ATRN	added		observed / multipass	True	
+BTN2A1:Q7KYR7-4	BTN2A1	dropped	observed / type I		False	a replacement pick of record; the seeded replacement draw now runs over the larger gate-passing pool and fills the slot with another form
+BTN2A2:Q8WVV5-4	BTN2A2	added		observed / type I	True	
+CA4:ENST00000904867	CA4	kept	prediction_only / GPI	prediction_only / GPI	True	
+CACNA2D1:P54289	CACNA2D1	kept	observed / GPI	observed / GPI	True	
+CACNA2D3:ENST00000958523	CACNA2D3	dropped	prediction_only / GPI		True	not drawn
+CCR3:P51677-2	CCR3	kept	prediction_only / multipass	prediction_only / multipass	True	
+CD109:Q6YHK3-2	CD109	kept	observed / GPI	observed / GPI	True	
+CD109:Q6YHK3-4	CD109	kept	observed / GPI	observed / GPI	True	
+CD163:ENST00000960361	CD163	kept	prediction_only / type I	prediction_only / type I	True	
+CD164:Q04900-4	CD164	kept	observed / type I	observed / type I	True	
+CD46:P15529-2	CD46	kept	observed / type I	observed / type I	True	
+CD46:P15529-7	CD46	kept	observed / type I	observed / type I	True	
+CD55:ENST00000695828	CD55	added		observed / GPI	True	
+CD7:ENST00000584284	CD7	kept	observed / type I	observed / type I	True	
+CD9:ENST00000382519	CD9	kept	observed / multipass	observed / multipass	True	
+CDH3:P22223	CDH3	kept	observed / type I	observed / type I	True	
+CHL1:ENST00000620033	CHL1	kept	observed / type I	observed / type I	True	
+CLEC10A:Q8IUN9-2	CLEC10A	kept	prediction_only / type II	prediction_only / type II	True	
+CLRN3:ENST00000856089	CLRN3	kept	prediction_only / multipass	prediction_only / multipass	True	
+CNTN1:Q12860-2	CNTN1	dropped	observed / GPI		False	a replacement pick of record; the seeded replacement draw now runs over the larger gate-passing pool and fills the slot with another form
+COL13A1:Q5TAT6-11	COL13A1	kept	observed / type II	observed / type II	True	
+COL13A1:Q5TAT6-4	COL13A1	kept	observed / type II	observed / type II	True	
+CSF1R:ENST00000960688	CSF1R	kept	prediction_only / type I	prediction_only / type I	True	
+CXCR4:ENST00000466288;ENST00000696137;ENST00000696152	CXCR4	kept	observed / multipass	observed / multipass	True	
+DGCR2:ENST00000935669	DGCR2	kept	prediction_only / type I	prediction_only / type I	True	
+DLL3:Q9NYJ7	DLL3	kept	observed / type I	observed / type I	True	
+DPP6:P42658	DPP6	kept	observed / type II	observed / type II	True	
+DSC1:Q08554-2	DSC1	kept	observed / type I	observed / type I	True	
+DSC2:Q02487-2	DSC2	kept	observed / type I	observed / type I	True	
+DSC3:Q14574-2	DSC3	kept	observed / type I	observed / type I	True	
+ECE1:P42892	ECE1	dropped	observed / type II		False	a replacement pick of record; the seeded replacement draw now runs over the larger gate-passing pool and fills the slot with another form
+ECE1:P42892-2	ECE1	kept	observed / type II	observed / type II	True	
+ECE1:P42892-4	ECE1	dropped	observed / type II		False	a replacement pick of record; the seeded replacement draw now runs over the larger gate-passing pool and fills the slot with another form
+ECSCR:ENST00000857214	ECSCR	kept	prediction_only / type I	prediction_only / type I	True	
+EDA2R:ENST00000902730;ENST00000902732;ENST00000944244	EDA2R	added		prediction_only / type III	False	
+EDA:Q92838-3	EDA	kept	observed / type II	observed / type II	True	
+EFNA3:P52797-2	EFNA3	dropped	observed / GPI		False	a replacement pick of record; the seeded replacement draw now runs over the larger gate-passing pool and fills the slot with another form
+EPHB2:P29323	EPHB2	kept	observed / type I	observed / type I	True	
+EPOR:P19235-3	EPOR	kept	observed / type I	observed / type I	True	
+F3:ENST00000949532	F3	kept	prediction_only / type I	prediction_only / type I	True	
+FGFR2:P21802-5	FGFR2	kept	observed / type I	observed / type I	True	
+FOLR2:ENST00000943225	FOLR2	added		prediction_only / GPI	False	
+FRMD3:A2A2Y4-2	FRMD3	added		observed / type II	True	
+GGT7:ENST00000885991	GGT7	kept	prediction_only / type II	prediction_only / type II	True	
+GHR:ENST00000887703	GHR	kept	prediction_only / type I	prediction_only / type I	True	
+GP2:P55259	GP2	kept	observed / GPI	observed / GPI	True	
+GPC3:P51654-3	GPC3	dropped	observed / GPI		False	a replacement pick of record; the seeded replacement draw now runs over the larger gate-passing pool and fills the slot with another form
+GPM6A:P51674-3	GPM6A	kept	observed / multipass	observed / multipass	True	
+GPR132:Q9UNW8-3	GPR132	added		observed / multipass	True	
+GPR161:Q8N6U8-6	GPR161	dropped	observed / multipass		False	a replacement pick of record; the seeded replacement draw now runs over the larger gate-passing pool and fills the slot with another form
+GPRC5B:Q9NZH0-2	GPRC5B	dropped	observed / multipass		False	a replacement pick of record; the seeded replacement draw now runs over the larger gate-passing pool and fills the slot with another form
+GRIA1:P42261-6	GRIA1	kept	observed / multipass	observed / multipass	True	
+GYPC:P04921-2	GYPC	kept	observed / type III	observed / type III	True	
+HFE:ENST00000470149	HFE	added		observed / type I	True	
+HLA-C:ENST00000383329	HLA-C	kept	observed / type I	observed / type I	True	
+HLA-G:P17693-3	HLA-G	kept	observed / type I	observed / type I	True	
+HTR3A:P46098-5	HTR3A	kept	observed / multipass	observed / multipass	True	
+HTR7:P34969-2	HTR7	dropped	observed / multipass		False	a replacement pick of record; the seeded replacement draw now runs over the larger gate-passing pool and fills the slot with another form
+IL11RA:ENST00000902560;ENST00000902569	IL11RA	added		prediction_only / type I	False	
+IL31RA:Q8NI17-3	IL31RA	kept	observed / type I	observed / type I	True	
+ILDR2:ENST00000528703	ILDR2	kept	prediction_only / type I	prediction_only / type I	True	
+ITGA6:ENST00000264107	ITGA6	kept	observed / type I	observed / type I	True	
+ITGA6:P23229	ITGA6	dropped	observed / type I		False	a replacement pick of record; the seeded replacement draw now runs over the larger gate-passing pool and fills the slot with another form
+ITGB1:ENST00000488494	ITGB1	kept	observed / type I	observed / type I	True	
+ITGB1:ENST00000966595	ITGB1	kept	prediction_only / type I	prediction_only / type I	True	
+ITGB1:P05556-5	ITGB1	kept	observed / type I	observed / type I	True	
+KCNJ1:P48048	KCNJ1	added		observed / multipass	True	
+KCNK17:ENST00000884807	KCNK17	added		prediction_only / multipass	False	
+KCNK4:Q9NYG8-2	KCNK4	kept	prediction_only / multipass	prediction_only / multipass	True	
+KCNQ4:P56696-2	KCNQ4	kept	prediction_only / multipass	prediction_only / multipass	True	
+KIT:ENST00000412167	KIT	kept	observed / type I	observed / type I	True	
+L1CAM:P32004-3	L1CAM	dropped	observed / type I		False	a replacement pick of record; the seeded replacement draw now runs over the larger gate-passing pool and fills the slot with another form
+LILRB2:Q8N423-1	LILRB2	added		observed / type I	True	
+LIM2:P55344-2	LIM2	kept	observed / multipass	observed / multipass	True	
+LMLN:Q96KR4-3	LMLN	dropped	observed / GPI		False	a replacement pick of record; the seeded replacement draw now runs over the larger gate-passing pool and fills the slot with another form
+LRRTM4:Q86VH4-2	LRRTM4	kept	observed / type I	observed / type I	True	
+LSR:ENST00000361790;ENST00000605618	LSR	kept	observed / type I	observed / type I	True	
+LSR:ENST00000602122	LSR	kept	observed / type I	observed / type I	True	
+LY9:ENST00000873850	LY9	kept	prediction_only / type I	prediction_only / type I	True	
+MFSD2A:Q8NA29	MFSD2A	kept	observed / multipass	observed / multipass	True	
+MME:ENST00000615825;ENST00000871485;ENST00000915243	MME	kept	observed / type II	observed / type II	True	
+MSLN:ENST00000908613	MSLN	kept	prediction_only / GPI	prediction_only / GPI	True	
+MUC13:Q9H3R2	MUC13	kept	observed / type I	observed / type I	True	
+NCAM1:ENST00000401611	NCAM1	added		observed / GPI	False	
+NCAM1:P13591-1	NCAM1	dropped	observed / GPI		False	a replacement pick of record; the seeded replacement draw now runs over the larger gate-passing pool and fills the slot with another form
+NCAM1:P13591-4	NCAM1	added		prediction_only / GPI	False	
+NPTN:Q9Y639-5	NPTN	kept	observed / type I	observed / type I	True	
+NRG1:Q02297-6	NRG1	kept	observed / type III	observed / type III	True	
+NRG1:Q02297-7	NRG1	kept	observed / type III	observed / type III	True	
+NRP2:O60462	NRP2	added		observed / type I	True	
+NRXN2:ENST00000688050	NRXN2	kept	prediction_only / type I	prediction_only / type I	True	
+NTM:ENST00000683400	NTM	added		observed / GPI	True	
+NTM:Q9P121-4	NTM	kept	observed / GPI	observed / GPI	True	
+NTNG1:Q9Y2I2-1	NTNG1	added		observed / GPI	True	
+NTRK1:P04629-2	NTRK1	dropped	observed / type I		False	a replacement pick of record; the seeded replacement draw now runs over the larger gate-passing pool and fills the slot with another form
+OPCML:Q14982-4	OPCML	dropped	prediction_only / GPI		False	a replacement pick of record; the seeded replacement draw now runs over the larger gate-passing pool and fills the slot with another form
+PACC1:Q9H813-2	PACC1	kept	observed / multipass	observed / multipass	True	
+PAM:ENST00000890192	PAM	kept	prediction_only / type I	prediction_only / type I	True	
+PCDH8:O95206-2	PCDH8	kept	observed / type I	observed / type I	True	
+PCDH9:Q9HC56	PCDH9	kept	observed / type I	observed / type I	True	
+PCDHGB4:Q9UN71-2	PCDHGB4	added		observed / type I	True	
+PCDHGB6:Q9Y5F9-2	PCDHGB6	kept	observed / type I	observed / type I	True	
+PECAM1:P16284-3	PECAM1	dropped	observed / type I		False	a replacement pick of record; the seeded replacement draw now runs over the larger gate-passing pool and fills the slot with another form
+PECAM1:P16284-4	PECAM1	dropped	prediction_only / type I		False	a replacement pick of record; the seeded replacement draw now runs over the larger gate-passing pool and fills the slot with another form
+PLPP1:ENST00000962875	PLPP1	kept	prediction_only / multipass	prediction_only / multipass	True	
+PLVAP:ENST00000962153	PLVAP	kept	prediction_only / type II	prediction_only / type II	True	
+PODXL:O00592-2	PODXL	kept	observed / type I	observed / type I	True	
+PRRG1:ENST00000868176;ENST00000960027	PRRG1	kept	prediction_only / type III	prediction_only / type III	True	
+PRSS21:Q9Y6M0-3	PRSS21	added		observed / GPI	True	
+PRSS8:ENST00000964168	PRSS8	dropped	prediction_only / GPI		True	not drawn
+PTGDR:Q13258-2	PTGDR	kept	observed / multipass	observed / multipass	True	
+PTK7:Q13308-4	PTK7	added		observed / type I	True	
+PTPRK:ENST00000368210;ENST00000625760	PTPRK	kept	observed / type I	observed / type I	True	
+PTPRK:Q15262-4	PTPRK	kept	observed / type I	observed / type I	True	
+PVRIG:Q6DKI7	PVRIG	kept	observed / type I	observed / type I	True	
+RNF130:ENST00000522208	RNF130	added		observed / multipass	True	
+SCARA3:Q6AZY7-2	SCARA3	kept	observed / type II	observed / type II	True	
+SCNN1A:P37088-2	SCNN1A	kept	observed / multipass	observed / multipass	True	
+SEMA4C:ENST00000897275;ENST00000914307;ENST00000914312;ENST00000914313	SEMA4C	kept	prediction_only / type I	prediction_only / type I	True	
+SEMA4C:ENST00000897276;ENST00000897279;ENST00000897282;ENST00000897288	SEMA4C	kept	prediction_only / type I	prediction_only / type I	True	
+SEMA4C:ENST00000897277;ENST00000914319	SEMA4C	kept	prediction_only / type I	prediction_only / type I	True	
+SEMA4C:Q9C0C4	SEMA4C	dropped	observed / type I		False	a replacement pick of record; the seeded replacement draw now runs over the larger gate-passing pool and fills the slot with another form
+SERINC2:ENST00000922302	SERINC2	kept	prediction_only / multipass	prediction_only / multipass	True	
+SLAMF1:Q13291-4	SLAMF1	dropped	observed / type I		False	a replacement pick of record; the seeded replacement draw now runs over the larger gate-passing pool and fills the slot with another form
+SLC12A2:P55011-3	SLC12A2	dropped	observed / multipass		False	a replacement pick of record; the seeded replacement draw now runs over the larger gate-passing pool and fills the slot with another form
+SLC12A4:ENST00000937904	SLC12A4	kept	prediction_only / multipass	prediction_only / multipass	True	
+SLC12A6:Q9UHW9-2	SLC12A6	added		observed / multipass	True	
+SLC15A2:ENST00000886964	SLC15A2	kept	prediction_only / multipass	prediction_only / multipass	True	
+SLC22A24:Q8N4F4-3	SLC22A24	dropped	prediction_only / multipass		False	a replacement pick of record; the seeded replacement draw now runs over the larger gate-passing pool and fills the slot with another form
+SLC26A6:Q9BXS9-3	SLC26A6	added		observed / multipass	True	
+SLC38A1:ENST00000922815	SLC38A1	kept	prediction_only / multipass	prediction_only / multipass	True	
+SLC3A2:ENST00000680297	SLC3A2	added		observed / type II	True	
+SLC43A3:Q8NBI5-2	SLC43A3	dropped	observed / multipass		False	a replacement pick of record; the seeded replacement draw now runs over the larger gate-passing pool and fills the slot with another form
+SLC44A2:Q8IWA5-2	SLC44A2	dropped	observed / multipass		False	a replacement pick of record; the seeded replacement draw now runs over the larger gate-passing pool and fills the slot with another form
+SLC4A10:Q6U841-2	SLC4A10	kept	prediction_only / multipass	prediction_only / multipass	True	
+SLC4A10:Q6U841-3	SLC4A10	kept	observed / multipass	observed / multipass	True	
+SLC4A7:Q9Y6M7-7	SLC4A7	kept	observed / multipass	observed / multipass	True	
+SLC5A9:Q2M3M2-2	SLC5A9	kept	observed / multipass	observed / multipass	True	
+SLC68A1:ENST00000369931	SLC68A1	added		observed / multipass	True	
+SLC6A6:ENST00000613060	SLC6A6	kept	observed / multipass	observed / multipass	True	
+SLC6A9:P48067-3	SLC6A9	dropped	prediction_only / multipass		False	a replacement pick of record; the seeded replacement draw now runs over the larger gate-passing pool and fills the slot with another form
+SLC7A2:ENST00000470360;ENST00000908539;ENST00000908540;ENST00000908541	SLC7A2	kept	observed / multipass	observed / multipass	True	
+SLC7A2:P52569-2	SLC7A2	dropped	observed / multipass		False	a replacement pick of record; the seeded replacement draw now runs over the larger gate-passing pool and fills the slot with another form
+SLC8A1:P32418-5	SLC8A1	kept	observed / multipass	observed / multipass	True	
+SLC8A3:ENST00000966026	SLC8A3	kept	prediction_only / multipass	prediction_only / multipass	True	
+SLC9A8:Q9Y2E8-2	SLC9A8	added		observed / multipass	True	
+SLCO1B3-SLCO1B7:F5H094	SLCO1B3-SLCO1B7	dropped	observed / multipass		False	a replacement pick of record; the seeded replacement draw now runs over the larger gate-passing pool and fills the slot with another form
+SLCO3A1:Q9UIG8-2	SLCO3A1	kept	observed / multipass	observed / multipass	True	
+SMIM7:ENST00000358726;ENST00000487803;ENST00000627144	SMIM7	kept	observed / multipass	observed / multipass	True	
+SUSD3:Q96L08-2	SUSD3	dropped	prediction_only / type III		False	a replacement pick of record; the seeded replacement draw now runs over the larger gate-passing pool and fills the slot with another form
+TFR2:ENST00000855235;ENST00000855255	TFR2	kept	prediction_only / type II	prediction_only / type II	True	
+TGFBR2:ENST00000941788	TGFBR2	kept	prediction_only / type I	prediction_only / type I	True	
+TM9SF1:ENST00000967640	TM9SF1	added		prediction_only / multipass	False	
+TMEM219:ENST00000933381;ENST00000933384	TMEM219	kept	prediction_only / multipass	prediction_only / multipass	True	
+TMPRSS2:O15393-2	TMPRSS2	kept	observed / type II	observed / type II	True	
+TMPRSS3:ENST00000896622;ENST00000896631	TMPRSS3	kept	prediction_only / type II	prediction_only / type II	True	
+TMPRSS4:Q9NRS4-2	TMPRSS4	kept	prediction_only / type II	prediction_only / type II	True	
+TNFRSF18:Q9Y5U5-3	TNFRSF18	kept	prediction_only / type I	prediction_only / type I	True	
+TRPV1:ENST00000650505	TRPV1	kept	observed / multipass	observed / multipass	True	
+TSPAN16:Q9UKR8	TSPAN16	kept	observed / multipass	observed / multipass	True	
+UNC5A:Q6ZN44	UNC5A	added		observed / type I	True	
+XPNPEP2:ENST00000880529	XPNPEP2	added		prediction_only / GPI	False	

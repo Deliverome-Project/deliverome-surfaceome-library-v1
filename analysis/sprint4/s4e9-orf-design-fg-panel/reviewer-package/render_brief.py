@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import argparse
 import base64
+import csv
 import os
 import re
 import shutil
@@ -36,7 +37,11 @@ GITHUB = "https://github.com/Deliverome-Project/l1-library-review/blob"
 REVIEW_REF = "main"
 #: This repository, for the footer's provenance line only — not for any link.
 SOURCE_REPO = "deliverome-analysis"
-DOCS = {"BRIEF.md": "L1_design_brief", "COVER_NOTE.md": "L1_design_brief_cover_note"}
+DOCS = {
+    "DESIGN.md": "L1_design_overview",
+    "BRIEF.md": "L1_design_brief",
+    "COVER_NOTE.md": "L1_design_brief_cover_note",
+}
 CHROME_CANDIDATES = (
     "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
     "google-chrome",
@@ -77,7 +82,29 @@ def exported_paths() -> tuple[set[str], list[str]]:
     sys.path.insert(0, str(HERE))
     import export_review_repo as ex
 
-    return set((HERE / "review_repo_files.txt").read_text().split()), list(ex.ALWAYS)
+    traced = set((HERE / "review_repo_files.txt").read_text().split())
+    return traced | ex.package_paths(), list(ex.ALWAYS)
+
+
+def unbundled_citations(text: str) -> list[str]:
+    """S3 locations ``text`` cites that the reviewer bundle does not carry.
+
+    A reviewer works offline from the bundle, where ``bucket://key`` sits at
+    ``s3/<bucket>/<key>``; a cited key outside it cannot be opened. A folder (a key ending
+    in ``/``) passes when the bundle holds anything under it. ``bundle.py collect`` bundles
+    every location cited here, so a failure means the manifest predates the citation.
+    """
+    import bundle
+
+    with (HERE / "bundle_manifest.tsv").open() as fh:
+        bundled = {f"{r['bucket']}/{r['key']}" for r in csv.DictReader(fh, delimiter="\t")}
+    missing = []
+    for bucket, key in bundle.cited_locations(text):
+        loc = f"{bucket}/{key}"
+        ok = any(b.startswith(loc) for b in bundled) if key.endswith("/") else loc in bundled
+        if not ok:
+            missing.append(f"{bucket}://{key}")
+    return sorted(missing)
 
 
 def body_html(md_path: Path, commit: str) -> str:
@@ -91,7 +118,16 @@ def body_html(md_path: Path, commit: str) -> str:
     # together on a single line in every Word and PDF copy.
     # `toc` is here only for the ids it puts on headings, which is what makes an in-document
     # link to the appendix resolve in the HTML and the PDF.
-    body = markdown.markdown(md_path.read_text(), extensions=["tables", "fenced_code", "toc"])
+    text = md_path.read_text()
+    if offline := unbundled_citations(text):
+        listed = "\n  ".join(offline)
+        raise SystemExit(
+            f"{md_path.name} cites {len(offline)} S3 location(s) the reviewer bundle does not "
+            f"carry, so a reviewer working offline cannot open them:\n  {listed}\n"
+            "Re-collect the bundle (bundle.py collect, then manifest; collect bundles every "
+            "location these documents cite), or stop citing them."
+        )
+    body = markdown.markdown(text, extensions=["tables", "fenced_code", "toc"])
     traced, always = exported_paths()
     unpublished: list[str] = []
 
@@ -216,11 +252,23 @@ def to_docx(md_path: Path, commit: str, out: Path) -> None:
     """A Word copy with the figures embedded, which Google Docs opens with them in place."""
     import lxml.html
     from docx import Document
+    from docx.oxml.ns import qn
     from docx.shared import Pt
 
     doc = Document()
     doc.styles["Normal"].font.name = FONT
     doc.styles["Normal"].font.size = Pt(10.5)
+    # Headings and the title use theme fonts (asciiTheme etc.), which override a plain font
+    # name, so Word and Google Docs showed them in Calibri. Drop the theme attributes and name
+    # Manrope for every script.
+    for name in ("Title", "Heading 1", "Heading 2", "Heading 3", "Heading 4"):
+        style = doc.styles[name]
+        style.font.name = FONT
+        rfonts = style.element.get_or_add_rPr().get_or_add_rFonts()
+        for attr in ("w:asciiTheme", "w:hAnsiTheme", "w:eastAsiaTheme", "w:cstheme"):
+            rfonts.attrib.pop(qn(attr), None)
+        for attr in ("w:ascii", "w:hAnsi", "w:eastAsia", "w:cs"):
+            rfonts.set(qn(attr), FONT)
     root = lxml.html.fragment_fromstring(body_html(md_path, commit), create_parent="div")
     base = md_path.parent
     for el in root:
@@ -245,6 +293,8 @@ def to_docx(md_path: Path, commit: str, out: Path) -> None:
                 for j, c in enumerate(r.findall("th") + r.findall("td")):
                     cell = table.cell(i, j).paragraphs[0]
                     _inline(cell, c, base, {"bold": c.tag == "th"})
+                    for run in cell.runs:  # tables are dense; body size made them hard to read
+                        run.font.size = Pt(8.5)
             doc.add_paragraph()
         elif tag == "pre":
             _run(doc.add_paragraph(), el.text_content(), {"code": True, "pre": True})

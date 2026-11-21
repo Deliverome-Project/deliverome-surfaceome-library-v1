@@ -1,0 +1,226 @@
+form_id	gene	cohort_tier	evidence	reason	form_label	form_tm_helices	reference_label	reference_tm_helices	gpi_anchor_basis
+ABCC5:ENST00000438979	ABCC5	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	TM	12	
+ABCC5:ENST00000446941	ABCC5	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	TM	12	
+ACHE:P22303-2	ACHE	observed	translation (OpenProt TE)	is the gene's built reference protein (kept in the pool, rejected at the draw)	SP	0	SP	0	
+ACHE:P22303-3	ACHE	observed	translation (OpenProt TE)	soluble: GPI gene but the form does not keep the anchor	SP	0	SP	0	NetGPI not_anchored
+ADAM12:O43184-2	ADAM12	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+ADAM17:ENST00000647622	ADAM17	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+ADAM17:ENST00000650116	ADAM17	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+ADAM8:P78325-3	ADAM8	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+ADAM9:ENST00000676617;ENST00000676765;ENST00000677137	ADAM9	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+ADAM9:ENST00000678540;ENST00000679268	ADAM9	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+ADGRG5:ENST00000615867	ADGRG5	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	7	
+ADGRG6:ENST00000508295	ADGRG6	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	SP+TM	7	
+ADGRL2:ENST00000674373;ENST00000674492	ADGRL2	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	7	
+ANTXR1:Q9H6X2-3	ANTXR1	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+ANTXR1:Q9H6X2-4	ANTXR1	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+AQP7:ENST00000624095	AQP7	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	TM	6	
+ARMH4:ENST00000555101	ARMH4	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	SP+TM	1	
+ARMH4:Q86TY3-2	ARMH4	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+ATRN:O75882-3	ATRN	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	TM	2	
+ATRNL1:Q5VV63-2	ATRNL1	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+BCAN:Q96GW7-2	BCAN	observed	protein (weak)	is the gene's built reference protein (kept in the pool, rejected at the draw)	SP	0	SP	0	
+BOC:ENST00000484034;ENST00000485230	BOC	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+BSG:ENST00000614867	BSG	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+BSG:ENST00000618112	BSG	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+BTN2A1:ENST00000377600;ENST00000709934	BTN2A1	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+BTN2A1:ENST00000480218;ENST00000709939	BTN2A1	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	SP+TM	1	
+BTN2A2:ENST00000495632	BTN2A2	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	SP+TM	1	
+C11orf24:ENST00000533310	C11orf24	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+CACHD1:Q5VU97	CACHD1	observed	translation (OpenProt TE)	is the gene's built reference protein (kept in the pool, rejected at the draw)	SP+TM	1	SP+TM	1	
+CADM1:Q9BY67-2	CADM1	observed	protein (deep peptides)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+CD200R1L:Q6Q8B3	CD200R1L	full_only	prediction (TRIFID)	is the gene's built reference protein (kept in the pool, rejected at the draw)	SP+TM	1	SP+TM	1	
+CD300LF:Q8TDQ1-3	CD300LF	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+CD40:P25942-2	CD40	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+CD44:ENST00000425428	CD44	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+CD44:ENST00000526025	CD44	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+CD44:P16070-19	CD44	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+CD55:P08174	CD55	observed	translation (OpenProt TE)	is the gene's built reference protein (kept in the pool, rejected at the draw)	SP	0	SP	0	
+CD55:P08174-2	CD55	observed	protein (weak)	soluble: GPI gene but the form does not keep the anchor	SP	0	SP	0	NetGPI not_anchored
+CD59:P13987-2	CD59	observed	protein (deep peptides)	soluble: GPI gene but the form does not keep the anchor	SP	0	SP	0	NetGPI not_anchored
+CD96:ENST00000438817	CD96	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+CDCP1:Q9H5V8-3	CDCP1	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+CDH11:ENST00000619158	CDH11	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	SP+TM	1	
+CDH5:ENST00000563425	CDH5	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+CDH8:ENST00000584337	CDH8	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+CDHR1:Q96JP9-2	CDHR1	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+CEACAM1:P13688-4	CEACAM1	observed	protein (deep peptides)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+CEACAM3:P40198-2	CEACAM3	observed	protein (deep peptides)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+CLEC2D:ENST00000466035	CLEC2D	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	TM	1	
+CLEC2D:Q9UHP7-6	CLEC2D	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	TM	1	
+CLEC5A:ENST00000551012	CLEC5A	full_only	prediction (TRIFID)	loses surface anchoring: reference surface-labelled, form not	SP	0	TM	1	
+CLEC5A:ENST00000960423	CLEC5A	full_only	prediction (TRIFID)	loses surface anchoring: reference surface-labelled, form not	SP	0	TM	1	
+CNTN1:Q12860-3	CNTN1	observed	protein (weak)	soluble: GPI gene but the form does not keep the anchor	SP	0	SP	0	NetGPI not_anchored
+CNTN4:ENST00000427741	CNTN4	observed	translation (OpenProt TE)	soluble: GPI gene but the form does not keep the anchor	SP	0	SP	0	NetGPI not_anchored
+CNTNAP3:ENST00000443583	CNTNAP3	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+COL23A1:Q86Y22-2	COL23A1	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	TM	1	
+CPM:ENST00000547134;ENST00000551728	CPM	observed	translation (OpenProt TE)	soluble: GPI gene but the form does not keep the anchor	SP	0	SP	0	NetGPI not_anchored
+CRB2:Q5IJ48-2	CRB2	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+CRIPTO:ENST00000542931	CRIPTO	full_only	prediction (TRIFID)	soluble: GPI gene but the form does not keep the anchor	SP	0	SP	0	NetGPI not_anchored
+CTLA4:P16410-5	CTLA4	full_only	prediction (TRIFID)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+CXADR:P78310-5	CXADR	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+DISP2:A7MBM2	DISP2	observed	translation (OpenProt TE)	is the gene's built reference protein (kept in the pool, rejected at the draw)	TM	12	TM	12	
+DPP10:Q8N608-4	DPP10	full_only	prediction (TRIFID)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	TM	1	
+DPP4:ENST00000678668	DPP4	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	TM	1	
+EFNA4:P52798-2	EFNA4	full_only	prediction (TRIFID)	soluble: GPI gene but the form does not keep the anchor	SP	0	SP	0	NetGPI not_anchored
+EFNA4:P52798-3	EFNA4	observed	protein (weak)	soluble: GPI gene but the form does not keep the anchor	SP	0	SP	0	NetGPI not_anchored
+EPHA10:Q5JZY3-2	EPHA10	observed	protein (deep peptides)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+EPHA3:P29320-2	EPHA3	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+EPHA8:P29322-2	EPHA8	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+ERBB2:ENST00000578199;ENST00000584014	ERBB2	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	SP+TM	1	
+ERBB3:P21860-2	ERBB3	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+F3:P13726-2	F3	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+FAM171A2:ENST00000588067;ENST00000589407	FAM171A2	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+FAM174B:ENST00000555064;ENST00000555696;ENST00000555748	FAM174B	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	SP+TM	1	
+FCGR2C:P31995-4	FCGR2C	observed	protein (weak)	unjudgeable: gene has no built L1 reference	SP	0			
+FCMR:O60667-3	FCMR	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+FCRL1:Q96LA6-3	FCRL1	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+FCRL5:Q96RD9-2	FCRL5	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+FGFR2:ENST00000683250	FGFR2	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+FGFR3:ENST00000260795	FGFR3	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+FLT1:P17948-2	FLT1	observed	protein (deep peptides)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+FLT1:P17948-3	FLT1	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+FSHR:ENST00000419927	FSHR	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	7	
+FZD6:ENST00000523933	FZD6	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	SP+TM	7	
+GGT5:ENST00000425408	GGT5	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	TM	1	
+GGT7:ENST00000470952	GGT7	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	TM	1	
+GPC1:P35052-2	GPC1	observed	protein (weak)	soluble: GPI gene but the form does not keep the anchor	GLOB	0	SP	0	NetGPI not_anchored
+GPC2:ENST00000480087	GPC2	observed	translation (OpenProt TE)	soluble: GPI gene but the form does not keep the anchor	SP	0	SP	0	NetGPI not_anchored
+GPRC5C:ENST00000342648;ENST00000709189	GPRC5C	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	SP+TM	7	
+GRIA4:ENST00000527669	GRIA4	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	3	
+GRIA4:P48058-2	GRIA4	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	3	
+HLA-B:ENST00000640094	HLA-B	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+HLA-C:ENST00000376237	HLA-C	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+HLA-C:P10321-2	HLA-C	observed	protein (deep peptides)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+ICAM4:Q14773-3	ICAM4	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+IFNAR1:ENST00000652513	IFNAR1	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+IFNAR1:ENST00000652654	IFNAR1	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+IGSF1:Q8N6C5-3	IGSF1	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	3	
+IL12RB1:P42701-3	IL12RB1	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+IL17RE:Q8NFR9-4	IL17RE	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	SP+TM	1	
+IL18R1:ENST00000677287	IL18R1	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+IL1RAP:Q9NPH3-2	IL1RAP	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+IL1RL1:Q01638-2	IL1RL1	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+IL4R:ENST00000566318	IL4R	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+IL5RA:Q01344-2	IL5RA	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+IL6R:P08887-2	IL6R	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+IL6ST:ENST00000503773	IL6ST	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+IL7R:ENST00000514217	IL7R	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+IL7R:P16871-3	IL7R	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+ITGA3:ENST00000506401	ITGA3	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+ITGA4:P13612-2	ITGA4	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+ITGA7:ENST00000556273	ITGA7	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	SP+TM	1	
+ITGB1:ENST00000678479	ITGB1	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+ITGB7:ENST00000542497	ITGB7	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+KCNQ5:ENST00000427928	KCNQ5	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	TM	6	
+KDR:P35968-2	KDR	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+KREMEN2:Q8NCW0-3	KREMEN2	full_only	prediction (TRIFID)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+KREMEN2:Q8NCW0-4	KREMEN2	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+LDLR:ENST00000557933	LDLR	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+LGR4:ENST00000480977	LGR4	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	7	
+LILRA6:ENST00000430421;ENST00000615203;ENST00000622891	LILRA6	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+LILRB3:ENST00000414379;ENST00000619617	LILRB3	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+LRFN5:ENST00000554171	LRFN5	full_only	prediction (TRIFID)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+LRIG3:ENST00000550825	LRIG3	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	SP+TM	1	
+LRP11:Q86VZ4-2	LRP11	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+LRP5:ENST00000529993	LRP5	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+LRP8:ENST00000661457	LRP8	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+LRRC37B:Q96QE4	LRRC37B	full_only	prediction (TRIFID)	is the gene's built reference protein (kept in the pool, rejected at the draw)	SP+TM	1	SP+TM	1	
+LY6E:ENST00000520531;ENST00000633934	LY6E	observed	translation (OpenProt TE)	soluble: GPI gene but the form does not keep the anchor	SP	0	SP	0	NetGPI not_anchored
+LY6K:ENST00000518841	LY6K	observed	translation (OpenProt TE)	soluble: GPI gene but the form does not keep the anchor	SP	0	SP	0	NetGPI not_anchored
+LY6K:ENST00000522591	LY6K	observed	translation (OpenProt TE)	soluble: GPI gene but the form does not keep the anchor	SP	0	SP	0	NetGPI not_anchored
+LY6K:Q17RY6-2	LY6K	observed	translation (OpenProt TE)	soluble: GPI gene but the form does not keep the anchor	SP	0	SP	0	NetGPI not_anchored
+LYNX1:P0DP58-2	LYNX1	observed	protein (deep peptides)	soluble: GPI gene but the form does not keep the anchor	SP	0	SP	0	NetGPI not_anchored
+LYSMD3:ENST00000453259	LYSMD3	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	TM	1	
+MCAM:P43121-2	MCAM	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	SP+TM	1	
+MELTF:P08582-2	MELTF	observed	protein (deep peptides)	soluble: GPI gene but the form does not keep the anchor	SP	0	SP	0	NetGPI not_anchored
+MICA:Q29983	MICA	observed	protein (weak)	is the gene's built reference protein (kept in the pool, rejected at the draw)	SP+TM	1	SP+TM	1	
+MMP16:P51512-2	MMP16	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+MMP17:ENST00000535004	MMP17	observed	translation (OpenProt TE)	soluble: GPI gene but the form does not keep the anchor	SP	0	SP	0	NetGPI not_anchored
+MMP25:ENST00000612971	MMP25	observed	translation (OpenProt TE)	soluble: GPI gene but the form does not keep the anchor	SP	0	SP	0	NetGPI not_anchored
+MPZL1:O95297-5	MPZL1	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+MUC1:ENST00000614519	MUC1	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+MUC1:P15941-13	MUC1	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+NCAM1:P13591-3	NCAM1	full_only	prediction (TRIFID)	is the gene's built reference protein (kept in the pool, rejected at the draw)	SP	0	SP	0	
+NECTIN1:Q15223-3	NECTIN1	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+NECTIN3:Q9NQS3-2	NECTIN3	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+NLGN3:ENST00000692905	NLGN3	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+NPR3:ENST00000507141	NPR3	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	SP+TM	1	
+NRG1:Q02297-8	NRG1	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	TM	1	
+NRG1:Q02297-9	NRG1	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	TM	1	
+NRP1:O14786-2	NRP1	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+NRP1:O14786-3	NRP1	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+NRP2:O60462-6	NRP2	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+NRXN3:Q9Y4C0-4	NRXN3	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+NT5E:ENST00000369646	NT5E	observed	translation (OpenProt TE)	soluble: GPI gene but the form does not keep the anchor	SP	0	SP	0	NetGPI not_anchored
+NTM:Q9P121-3	NTM	observed	translation (OpenProt TE)	soluble: GPI gene but the form does not keep the anchor	SP	0	SP	0	NetGPI not_anchored
+ORAI3:ENST00000562699	ORAI3	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	TM	4	
+OSMR:Q99650-2	OSMR	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+PAM:ENST00000510208;ENST00000957515	PAM	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+PAM:ENST00000682024	PAM	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+PAM:ENST00000890191;ENST00000890206	PAM	full_only	prediction (TRIFID)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+PAM:ENST00000957485	PAM	full_only	prediction (TRIFID)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+PAM:ENST00000957499	PAM	full_only	prediction (TRIFID)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+PAM:P19021-3	PAM	full_only	prediction (TRIFID)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+PCDH18:ENST00000611581	PCDH18	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	SP+TM	1	
+PCDHA11:ENST00000617408;ENST00000708319	PCDHA11	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+PDGFRA:P16234-2	PDGFRA	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+PEAR1:ENST00000444016	PEAR1	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+PHEX:ENST00000684356	PHEX	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	TM	1	
+PIK3IP1:Q96FE7-4	PIK3IP1	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+PILRA:Q9UKJ1	PILRA	observed	translation (OpenProt TE)	is the gene's built reference protein (kept in the pool, rejected at the draw)	SP+TM	1	SP+TM	1	
+PLAUR:Q03405-2	PLAUR	observed	protein (deep peptides)	soluble: GPI gene but the form does not keep the anchor	SP	0	SP	0	NetGPI not_anchored
+PRTG:ENST00000561292	PRTG	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+PRTG:ENST00000561465	PRTG	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	SP+TM	1	
+PTPRJ:Q12913-2	PTPRJ	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+PTPRM:ENST00000400060	PTPRM	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	SP+TM	1	
+PVR:P15151-2	PVR	observed	protein (deep peptides)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+PVR:P15151-3	PVR	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+RAET1E:Q8TD07-4	RAET1E	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+RAET1G:ENST00000479265	RAET1G	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+RAET1G:Q6H3X3-2	RAET1G	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+RNF130:ENST00000520911	RNF130	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	2	
+ROR1:Q01973-3	ROR1	observed	protein (deep peptides)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+RTN4RL2:Q86UN3-2	RTN4RL2	observed	translation (OpenProt TE)	soluble: GPI gene but the form does not keep the anchor	SP	0	SP	0	NetGPI not_anchored
+SCART1:Q4G0T1-3	SCART1	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+SEMA4D:Q92854-2	SEMA4D	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+SIGLEC10:Q96LC7-5	SIGLEC10	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+SIGLEC6:O43699-2	SIGLEC6	full_only	prediction (TRIFID)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+SLAMF7:ENST00000458104	SLAMF7	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+SLAMF7:Q9NQ25-4	SLAMF7	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+SLC12A5:ENST00000628272	SLC12A5	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	TM	12	
+SLC39A8:ENST00000682243;ENST00000683173;ENST00000683634	SLC39A8	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	6	
+SLC39A8:ENST00000684289	SLC39A8	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	6	
+SLC4A7:Q9Y6M7-10	SLC4A7	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	TM	14	
+SLC4A7:Q9Y6M7-11	SLC4A7	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	TM	14	
+SLC6A6:ENST00000610642;ENST00000649500	SLC6A6	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	TM	12	
+SMPDL3B:Q92485-2	SMPDL3B	observed	protein (weak)	soluble: GPI gene but the form does not keep the anchor	SP	0	SP	0	NetGPI not_anchored
+SPPL2B:ENST00000621568	SPPL2B	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	9	
+SUSD4:ENST00000679807	SUSD4	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+SUSD4:Q5VX71-3	SUSD4	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+SUSD6:Q92537	SUSD6	observed	protein (weak)	is the gene's built reference protein (kept in the pool, rejected at the draw)	SP+TM	1	SP+TM	1	
+TFPI:ENST00000897904;ENST00000897908	TFPI	full_only	prediction (TRIFID)	soluble: GPI gene but the form does not keep the anchor	SP	0	SP	0	NetGPI not_anchored
+TFPI:ENST00000971370	TFPI	full_only	prediction (TRIFID)	soluble: GPI gene but the form does not keep the anchor	SP	0	SP	0	NetGPI not_anchored
+TFPI:P10646-2	TFPI	observed	protein (deep peptides)	is the gene's built reference protein (kept in the pool, rejected at the draw)	SP	0	SP	0	
+THSD1:Q9NS62-3	THSD1	observed	protein (weak)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+TM7SF3:ENST00000543882	TM7SF3	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	SP+TM	7	
+TMEM134:ENST00000540133	TMEM134	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	TM	2	
+TMEM150A:ENST00000306353	TMEM150A	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	TM	6	
+TMEM222:ENST00000464720;ENST00000486082	TMEM222	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	TM	1	
+TMEM222:ENST00000466759	TMEM222	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	TM	1	
+TMEM67:ENST00000455946	TMEM67	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	7	
+TMEM67:ENST00000681998;ENST00000682577;ENST00000683336;ENST00000683919	TMEM67	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	7	
+TMEM67:ENST00000682624;ENST00000683223;ENST00000683953	TMEM67	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	7	
+TMPRSS7:Q7RTY8-2	TMPRSS7	full_only	prediction (TRIFID)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	TM	1	
+TNFRSF13B:ENST00000579315	TNFRSF13B	full_only	prediction (TRIFID)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	TM	1	
+TNFRSF14:ENST00000409119;ENST00000625695	TNFRSF14	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+TNFRSF1A:ENST00000534885	TNFRSF1A	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	SP+TM	1	
+TNFRSF25:Q93038-3	TNFRSF25	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+TNFRSF25:Q93038-5	TNFRSF25	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	SP	0	SP+TM	1	
+TNFSF15:ENST00000374044	TNFSF15	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	TM	1	
+TRABD2A:ENST00000409133	TRABD2A	observed	translation (OpenProt TE)	soluble: GPI gene but the form does not keep the anchor	SP	0	SP	0	NetGPI not_anchored
+TRPM4:ENST00000595519	TRPM4	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	TM	6	
+TRPM4:ENST00000598697	TRPM4	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	TM	6	
+TRPM4:ENST00000599628	TRPM4	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	TM	6	
+TSPAN10:Q9H1Z9	TSPAN10	observed	protein (deep peptides)	is the gene's built reference protein (kept in the pool, rejected at the draw)	TM	4	TM	4	
+XKR6:ENST00000529336	XKR6	observed	translation (OpenProt TE)	loses surface anchoring: reference surface-labelled, form not	GLOB	0	TM	10	

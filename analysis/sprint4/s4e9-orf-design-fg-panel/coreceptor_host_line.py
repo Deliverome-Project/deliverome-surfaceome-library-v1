@@ -1,0 +1,503 @@
+"""Co-receptor gate against the screening line: what a K562 (or lower-median) rule would change.
+
+The S1E3 co-receptor gate (``final_library.coreceptor_ok``) keeps a gene whose co-receptor
+dependency is ``required`` only if every listed obligate partner has a median TPM >= 5
+across the 1,206 HPA v23 cell lines. That asks whether the partner is ubiquitous. The
+question raised in review is a different one: is the partner present in the line we screen
+in first (K562)? This script answers it without changing the gate.
+
+It reruns the S1E3 filter offline (``library_pipeline.run_gene_filter``, the same rerun the
+pipeline verifies against the 2,370-gene list), reads the pinned HPA v23 cell-line TPM
+matrix, and for every gene the partner-TPM rule decides it reports each partner's median,
+K562 and best T-, B- and myeloid-lineage TPM. Partners are resolved through
+``gene_resolver`` (MyGene, the catalog's own config) and joined to HPA on Ensembl gene ID;
+aliases of one gene (``CLR`` / ``CALCRL``) collapse to one partner, and free-text partners
+that do not resolve are flagged rather than guessed.
+
+Outputs (experiment root, mirrored to processed://sprint4/s4e9-orf-design-fg-panel/):
+
+- ``coreceptor_host_line_genes.tsv``: one row per rule-decided gene.
+- ``coreceptor_host_line_partners.tsv``: one row per (gene, listed partner string).
+- ``coreceptor_host_line_options.tsv``: each candidate rule, the genes it adds and drops
+  relative to the current gate, among genes that pass every other S1E3 gate.
+- ``figures/coreceptor_host_line.png``.
+
+    uv run --locked python coreceptor_host_line.py
+"""
+
+from __future__ import annotations
+
+import hashlib
+import io
+import json
+import os
+import re
+import sys
+import tempfile
+import zipfile
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+
+from deliverome_analysis import gene_resolver
+from deliverome_analysis.plotting import create_figure, get_color, save_figure, setup_plotting_style
+from deliverome_analysis.s3 import external
+
+HERE = Path(__file__).parent
+sys.path.insert(0, str(HERE))
+
+HPA_KEY = "hpa/v23/rna_celline.tsv.zip"  # HPA 23.0 (2023-06-19, Ensembl 109)
+HPA_SHA256 = "e5b11779308c2720cfe89d9cb19932ad4c0c3fea0fa37e8c61a14d501995852a"
+DESC_KEY = "hpa/v23/rna_celline_description.tsv.zip"
+DESC_SHA256 = "93696a4e703b8da4bf4f27699ded3ddb170787549c1b29b80a9bc543f3162389"
+MYGENE_CACHE = HERE / "coreceptor_host_line_mygene"  # committed: the resolver's answer
+CACHE = HERE / "data"  # gitignored local cache of the parsed TPM matrix
+EXPECTED_GENES = 2370  # library_pipeline.verify_gene_list: the filter's output
+
+SCREEN_LINE = "K-562"
+GATE_TPM = 5.0  # final_library.coreceptor_ok: median cell-line TPM >= 5
+
+# Lineage from HPA's own "Disease subtype". Lines HPA leaves blank are assigned from
+# Cellosaurus; myeloma (plasma cell), HAP1 and K562 itself are kept out of all three.
+T_SUBTYPE = re.compile(r"T-cell|ATL")
+B_SUBTYPE = re.compile(r"B-cell|DLBCL|Burkitt")
+MYELOID_SUBTYPE = re.compile(r"Acute Myelogenous")  # CML blast-crisis lines can be lymphoid
+BLANK_SUBTYPE = {
+    "JURKAT": "T",
+    "Jurkat E6.1": "T",
+    "MOLT-4": "T",
+    "BJAB": "B",
+    "CCRF-SB": "B",
+    "Daudi": "B",
+    "REH": "B",
+    "TMD8": "B",
+    "U-2932": "B",
+    "U-698-M": "B",
+    "WSU-FSCCL": "B",
+    "HEL": "myeloid",
+    "HL-60": "myeloid",
+    "HMC-1": "myeloid",
+    "MOLM-13": "myeloid",
+    "NB4": "myeloid",
+    "THP-1": "myeloid",
+    "U-937": "myeloid",
+    "UKE-1": "myeloid",
+}
+
+# Partner tokens MyGene maps to the wrong gene, reviewed by hand. The target symbol is
+# itself resolved by gene_resolver, so its Ensembl ID still comes from the resolver.
+OVERRIDES = {
+    "CLR": (
+        "CALCRL",
+        "MyGene alias hit is DCLK3; CLR here is the calcitonin receptor-like receptor",
+    ),
+    "IgM": ("IGHM", "MyGene alias hit is CD40LG; the BCR partner is the IgM heavy chain"),
+    "mIg": ("IGHM", "MyGene alias hit is CXCL9 (MIG); membrane Ig, taken as the IgM heavy chain"),
+    "CD16": (
+        "FCGR3A",
+        "MyGene picks FCGR3B (GPI, neutrophil); the DAP12/FcRg-paired CD16 is FCGR3A",
+    ),
+    "TCR\u03b1": ("TRAC", "TCR alpha constant region; MyGene finds no hit"),
+}
+
+# Genes whose listed partners are alternatives, not all required: the gene needs one partner
+# from each group. Proposed from the partner biology for the genes where "all" and "any"
+# disagree; every other gene keeps the gate's all-partners reading. Pending review.
+ALTERNATIVES = {
+    "SLC16A1": [["BSG", "EMB"]],  # MCT1 pairs with basigin or embigin
+    "SLC16A8": [["BSG", "EMB"]],
+    "ST14": [["SPINT1", "SPINT2"]],  # matriptase with HAI-1 or HAI-2
+    "GRIN1": [["GRIN2A", "GRIN2B", "GRIN2C", "GRIN2D", "GRIN3A", "GRIN3B"]],  # any GluN2/3
+    "KCND2": [["KCNIP1", "KCNIP2", "DPP6", "DPP10"]],  # Kv4.2 with a KChIP or a DPP
+    "GABRA5": [["GABRB1", "GABRB2", "GABRB3"], ["GABRG1", "GABRG2", "GABRG3"]],
+    "GABRB1": [
+        ["GABRA1", "GABRA2", "GABRA3", "GABRA4", "GABRA5", "GABRA6"],
+        ["GABRG1", "GABRG2", "GABRG3", "GABRD"],
+    ],
+}
+
+# Genes the review asked about by name; shown in panel b whether or not they pass the
+# other gates.
+NAMED = ["CD3D", "CD3E", "CD3G", "CD247", "PTCRA", "CD79A", "CD79B", "ITGAL", "ITGAM", "ITGAX"]
+
+
+def sha256(path: Path) -> str:
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def fetch(key: str, digest: str, dest: Path) -> Path:
+    path = dest / Path(key).name
+    if not path.exists() or sha256(path) != digest:
+        external.download(key, path)
+    assert sha256(path) == digest, f"{key}: SHA-256 does not match the pinned file"
+    return path
+
+
+def read_zip_tsv(path: Path, **kw) -> pd.DataFrame:
+    with zipfile.ZipFile(path) as z:
+        (name,) = z.namelist()
+        with z.open(name) as fh:
+            return pd.read_csv(io.TextIOWrapper(fh), sep="\t", **kw)
+
+
+def hpa_tpm() -> pd.DataFrame:
+    """Gene (Ensembl, unversioned) x cell line TPM, from the pinned v23 file."""
+    CACHE.mkdir(exist_ok=True)
+    pq = CACHE / f"hpa_rna_celline_{HPA_SHA256[:12]}.parquet"
+    if not pq.exists():
+        z = fetch(HPA_KEY, HPA_SHA256, CACHE)
+        long = read_zip_tsv(z, usecols=["Gene", "Cell line", "TPM"])
+        long.pivot(index="Gene", columns="Cell line", values="TPM").to_parquet(pq)
+    return pd.read_parquet(pq)
+
+
+def lineages(lines: list[str]) -> dict[str, list[str]]:
+    desc = read_zip_tsv(fetch(DESC_KEY, DESC_SHA256, CACHE), dtype=str).fillna("")
+    assert set(desc["Cell line"]) == set(lines), "description and TPM files list different lines"
+    out = {"T": [], "B": [], "myeloid": []}
+    for _, r in desc.iterrows():
+        line, sub = r["Cell line"], r["Disease subtype"]
+        if line == SCREEN_LINE or r["Disease"] not in ("Leukemia", "Lymphoma"):
+            continue
+        lin = BLANK_SUBTYPE.get(line) if not sub else None
+        lin = lin or ("T" if T_SUBTYPE.search(sub) else None)
+        lin = lin or ("B" if B_SUBTYPE.search(sub) else None)
+        lin = lin or ("myeloid" if MYELOID_SUBTYPE.search(sub) else None)
+        if lin:
+            out[lin].append(line)
+    return out
+
+
+def rerun_gene_filter():
+    """The S1E3 filter, offline; returns the imported final_library module."""
+    import library_pipeline
+
+    work = Path(tempfile.mkdtemp(prefix="coreceptor-host-line-"))
+    passed = library_pipeline.run_gene_filter(work)
+    assert len(passed) == EXPECTED_GENES, f"filter rerun gave {len(passed)} genes"
+    os.chdir(work / "s1e3")
+    import final_library as fl
+
+    return fl, passed
+
+
+def others_pass(fl, r) -> bool:
+    """Every S1E3 gate except the co-receptor one (as in final_library's membership)."""
+    g, f = r["gene"], r["filters"]
+    return (
+        (fl.B.passes_canonical(f) or fl.B.passes_likely(f))
+        and f.get("surface_accessibility") != "no"
+        and f.get("surface_specificity") in ("surface_dominant", "mixed")
+        and fl.anchored(r)
+        and fl.expr_ok(g, f)
+        and fl.localization_ok(r)
+        and fl.orf_ok(r)
+        and fl.ecd_ok(r)
+    )
+
+
+def rule_decided(fl, r) -> bool:
+    """The gene's co-receptor outcome comes from the partner-TPM rule, not a review."""
+    g, f = r["gene"], r["filters"]
+    partners = fl.part.get(g, {}).get("partners", [])
+    reviewed = fl.reviewed_partner_ok(
+        fl.cohort_accessions.get(g), partners, fl.reviewed_partner_median
+    )
+    return (
+        reviewed is None
+        and g not in fl.CORECEPTOR_ALLOWLIST
+        and f.get("co_receptor_dependency") == "required"
+    )
+
+
+def main() -> int:
+    setup_plotting_style()
+    fl, passed = rerun_gene_filter()
+    tpm = hpa_tpm()
+    assert tpm.shape[1] == 1206, tpm.shape
+    med = tpm.median(axis=1)
+    # The gate reads a re-derived per-gene median; it must be this file's median.
+    gate_med = pd.Series(fl.med_ens)
+    shared = gate_med.index.intersection(med.index)
+    assert len(shared) == len(gate_med), "gate medians list genes the v23 file lacks"
+    assert np.allclose(gate_med[shared], med[shared].round(1), atol=0.051), "medians differ"
+    lin = lineages(list(tpm.columns))
+
+    decided = [r for r in fl.recs if rule_decided(fl, r)]
+    tokens = sorted(
+        {
+            fl._partner_sym(p)
+            for r in decided
+            for p in fl.part.get(r["gene"], {}).get("partners", [])
+        }
+    )
+    targets = {t for t, _ in OVERRIDES.values()}
+    res = gene_resolver.resolve(set(tokens) | targets, cache_dir=MYGENE_CACHE)
+    for tok, (target, _) in OVERRIDES.items():
+        assert res[target]["symbol"] == target, f"{target} does not resolve to itself"
+        res[tok] = {**res[target], "override": target}
+
+    prow, grow = [], []
+    for r in decided:
+        g, f = r["gene"], r["filters"]
+        listed = fl.part.get(g, {}).get("partners", [])
+        by_ens: dict[str, dict] = {}
+        for p in listed:
+            tok = fl._partner_sym(p)
+            hit = res.get(tok, {})
+            ens = [e for e in hit.get("ensembl", []) if e in tpm.index]
+            self_p = fl._is_self_partner(g, p)
+            status = (
+                "self"
+                if self_p
+                else "unresolved"
+                if hit.get("notfound") or not hit.get("ensembl")
+                else "ambiguous"
+                if hit.get("ambiguous") or len(ens) > 1
+                else "not_in_hpa"
+                if not ens
+                else "resolved"
+            )
+            e = ens[0] if status == "resolved" else None
+            row = {
+                "gene": g,
+                "listed_partner": p,
+                "token": tok,
+                "resolved_symbol": hit.get("symbol"),
+                "ensembl": e,
+                "status": status,
+                "override_reason": OVERRIDES.get(tok, (None, None))[1],
+                "gate_median_tpm": fl.partner_median(p),  # what the gate itself saw
+                "median_tpm": None if e is None else round(float(med[e]), 1),
+                "k562_tpm": None if e is None else float(tpm.loc[e, SCREEN_LINE]),
+                "lines_ge5_tpm": None if e is None else int((tpm.loc[e] >= GATE_TPM).sum()),
+            }
+            for k, cols in lin.items():
+                if e is not None:
+                    best = tpm.loc[e, cols]
+                    row[f"best_{k}_tpm"] = float(best.max())
+                    row[f"best_{k}_line"] = best.idxmax()
+                    row[f"{k}_lines_ge5_tpm"] = int((best >= GATE_TPM).sum())
+            gm = row["gate_median_tpm"]
+            row["gate_lookup_differs"] = (gm is not None or row["median_tpm"] is not None) and (
+                gm is None or row["median_tpm"] is None or abs(gm - row["median_tpm"]) > 0.051
+            )
+            prow.append(row)
+            if e is not None:
+                by_ens.setdefault(e, row)
+        non_self = [p for p in listed if not fl._is_self_partner(g, p)]
+        dist = pd.DataFrame(by_ens.values())
+        unresolved = sorted(
+            {
+                x["listed_partner"]
+                for x in prow
+                if x["gene"] == g and x["status"] not in ("resolved", "self")
+            }
+        )
+
+        self_only = bool(listed) and not non_self  # homo-oligomer: the gate passes it
+
+        def lim(col, how, dist=dist, self_only=self_only):
+            if self_only or not len(dist):
+                return np.nan
+            return float(getattr(dist[col], how)())
+
+        out = {
+            "gene": g,
+            "uniprot": fl.cohort_accessions.get(g),
+            "passes_other_gates": others_pass(fl, r),
+            "in_library_now": g in passed,
+            "coreceptor_ok_now": fl.coreceptor_ok(g, f),
+            "self_only": self_only,
+            "partners_listed": "; ".join(map(str, listed)),
+            "partners_resolved": "; ".join(dist["resolved_symbol"]) if len(dist) else "",
+            "partners_unresolved": "; ".join(map(str, unresolved)),
+        }
+        for col, name in [
+            ("median_tpm", "median"),
+            ("k562_tpm", "k562"),
+            ("best_T_tpm", "best_T"),
+            ("best_B_tpm", "best_B"),
+            ("best_myeloid_tpm", "best_myeloid"),
+        ]:
+            out[f"all_{name}"] = lim(col, "min")  # the limiting partner
+            out[f"any_{name}"] = lim(col, "max")  # the best partner
+        for col, name in [("median_tpm", "median"), ("k562_tpm", "k562")]:
+            if g in ALTERNATIVES and len(dist):
+                v = dist.set_index("resolved_symbol")[col]
+                groups = [[x for x in grp if x in v.index] for grp in ALTERNATIVES[g]]
+                assert all(groups), f"{g}: an alternatives group has no resolved partner"
+                out[f"curated_{name}"] = float(min(v[grp].max() for grp in groups))
+            else:
+                out[f"curated_{name}"] = out[f"all_{name}"]
+        if len(dist):
+            limiting = dist.loc[dist["k562_tpm"].idxmin()]
+            out["k562_limiting_partner"] = limiting["resolved_symbol"]
+        grow.append(out)
+
+    partners = pd.DataFrame(prow)
+    genes = pd.DataFrame(grow).sort_values("gene").reset_index(drop=True)
+
+    def rule(col, thr):
+        return genes["self_only"] | (genes[col] >= thr)
+
+    options = {
+        "current gate (all partners, median >= 5, gate's own partner lookup)": genes[
+            "coreceptor_ok_now"
+        ],
+        "all partners, median >= 5, corrected partner lookup": rule("all_median", 5),
+        "all partners, median >= 2": rule("all_median", 2),
+        "all partners, median >= 1": rule("all_median", 1),
+        "all partners, median >= 10": rule("all_median", 10),
+        "all partners, K562 >= 5": rule("all_k562", 5),
+        "all partners, K562 >= 1": rule("all_k562", 1),
+        "all partners, median >= 5 OR K562 >= 5": rule("all_median", 5) | rule("all_k562", 5),
+        "curated alternatives, median >= 5": rule("curated_median", 5),
+        "curated alternatives, K562 >= 5": rule("curated_k562", 5),
+        "curated alternatives, median >= 5 OR K562 >= 5": rule("curated_median", 5)
+        | rule("curated_k562", 5),
+        "any partner, median >= 5": rule("any_median", 5),
+        "any partner, K562 >= 5": rule("any_k562", 5),
+        "any partner, median >= 5 OR K562 >= 5": rule("any_median", 5) | rule("any_k562", 5),
+    }
+    cand = genes["passes_other_gates"].to_numpy()
+    now = genes["coreceptor_ok_now"].to_numpy()
+    names = genes["gene"].to_numpy()
+    orows = []
+    for label, ok in options.items():
+        ok = ok.to_numpy()
+        genes[f"ok: {label}"] = ok
+        orows.append(
+            {
+                "rule": label,
+                "genes_kept": int((ok & cand).sum()),
+                "added": int((ok & ~now & cand).sum()),
+                "dropped": int((~ok & now & cand).sum()),
+                "added_genes": ", ".join(names[ok & ~now & cand]),
+                "dropped_genes": ", ".join(names[~ok & now & cand]),
+            }
+        )
+    opts = pd.DataFrame(orows)
+
+    genes.to_csv(
+        HERE / "coreceptor_host_line_genes.tsv", sep="\t", index=False, float_format="%.1f"
+    )
+    partners.to_csv(
+        HERE / "coreceptor_host_line_partners.tsv", sep="\t", index=False, float_format="%.1f"
+    )
+    opts.to_csv(HERE / "coreceptor_host_line_options.tsv", sep="\t", index=False)
+    meta = {
+        "hpa": f"external://{HPA_KEY}",
+        "hpa_sha256": HPA_SHA256,
+        "cell_lines": int(tpm.shape[1]),
+        "lineage_lines": {k: len(v) for k, v in lin.items()},
+        "rule_decided_genes": len(genes),
+        "rule_decided_passing_other_gates": int(cand.sum()),
+        "of_those_in_library_now": int((cand & now).sum()),
+        "partner_strings": len(partners),
+        "partner_status": partners["status"].value_counts().to_dict(),
+    }
+    (HERE / "coreceptor_host_line_summary.json").write_text(json.dumps(meta, indent=2) + "\n")
+    print(json.dumps(meta, indent=2))
+    print(opts[["rule", "genes_kept", "added", "dropped"]].to_string(index=False))
+    plot(genes, partners, lin)
+    return 0
+
+
+def plot(genes: pd.DataFrame, partners: pd.DataFrame, lin: dict) -> None:
+    def lg(v):
+        return np.log10(np.asarray(v, dtype=float) + 0.1)
+
+    fig, (a, b) = create_figure(1, 2, figsize=(22, 12), gridspec_kw={"width_ratios": [1.15, 1]})
+    c = genes[genes["passes_other_gates"] & ~genes["self_only"]].dropna(
+        subset=["all_median", "all_k562"]
+    )
+    med_ok, k_ok = c["all_median"] >= GATE_TPM, c["all_k562"] >= GATE_TPM
+    groups = [
+        (med_ok & k_ok, "partners >= 5 TPM on both", get_color("secondary")),
+        (med_ok & ~k_ok, "median only (a K562 rule drops)", get_color("primary")),
+        (~med_ok & k_ok, "K562 only (a K562 rule adds)", get_color("accent")),
+        (~med_ok & ~k_ok, "below 5 TPM on both", get_color("neutral")),
+    ]
+    for m, lab, col in groups:
+        a.scatter(
+            lg(c.loc[m, "all_median"]),
+            lg(c.loc[m, "all_k562"]),
+            s=70,
+            color=col,
+            alpha=0.85,
+            edgecolor="white",
+            linewidth=0.6,
+            label=f"{lab} (n = {int(m.sum())})",
+        )
+    t = lg(GATE_TPM)
+    a.axvline(t, color=get_color("dark"), lw=1.2)
+    a.axhline(t, color=get_color("dark"), lw=1.2, ls="--")
+    a.axvline(lg(1), color=get_color("dark"), lw=0.8, ls=":")
+    a.text(t + 0.03, lg(900), "current gate:\nmedian 5 TPM", fontsize=13, va="top")
+    a.text(lg(1) + 0.03, lg(900), "median\n1 TPM", fontsize=13, va="top")
+    a.text(lg(0) + 0.02, t + 0.05, "K562 5 TPM", fontsize=13)
+    label = (med_ok ^ k_ok) | c["gene"].isin(NAMED) | ((~med_ok) & (c["all_median"] >= 1))
+    # Genes sharing one limiting partner sit on one point; label each point once.
+    pts = c[label].groupby([c["all_median"].round(2), c["all_k562"].round(2)])["gene"]
+    for (xm, yk), names in pts:
+        a.annotate(
+            ", ".join(sorted(names)),
+            (lg(xm), lg(yk)),
+            fontsize=11,
+            xytext=(5, 4),
+            textcoords="offset points",
+        )
+    ticks = [0, 1, 5, 10, 100, 1000]
+    for set_t, set_l in ((a.set_xticks, a.set_xticklabels), (a.set_yticks, a.set_yticklabels)):
+        set_t(lg(ticks))
+        set_l([str(x) for x in ticks])
+    a.set_xlabel("limiting partner, median TPM over 1,206 lines")
+    a.set_ylabel("limiting partner, TPM in K562")
+    a.legend(loc="upper center", bbox_to_anchor=(0.5, -0.12), ncol=2, fontsize=12, frameon=False)
+    a.text(-0.08, 1.02, "a", transform=a.transAxes, fontsize=24, fontweight="bold")
+
+    # b: the named immune complexes; one row per gene, its limiting partner by K562.
+    rows = genes.set_index("gene").reindex(NAMED).dropna(subset=["all_k562"])
+    cols = [
+        ("all_k562", "K562", get_color("primary"), "o"),
+        ("all_median", "median, 1,206 lines", get_color("dark"), "|"),
+        ("all_best_T", f"best T line (of {len(lin['T'])})", get_color("secondary"), "s"),
+        ("all_best_B", f"best B line (of {len(lin['B'])})", get_color("quaternary"), "D"),
+        (
+            "all_best_myeloid",
+            f"best myeloid line (of {len(lin['myeloid'])})",
+            get_color("accent"),
+            "^",
+        ),
+    ]
+    y = np.arange(len(rows))[::-1]
+    for col, lab, colr, mk in cols:
+        b.scatter(
+            lg(rows[col]),
+            y,
+            color=colr,
+            marker=mk,
+            s=140 if mk != "|" else 400,
+            label=lab,
+            zorder=3,
+            linewidths=2.5 if mk == "|" else 0.6,
+            edgecolor="white" if mk != "|" else None,
+        )
+    b.axvline(t, color=get_color("dark"), lw=1.2)
+    b.set_yticks(y)
+    b.set_yticklabels(
+        [f"{g}  ({rows.loc[g, 'k562_limiting_partner']})" for g in rows.index], fontsize=14
+    )
+    b.set_xticks(lg(ticks))
+    b.set_xticklabels([str(x) for x in ticks])
+    b.set_xlabel("limiting partner TPM")
+    b.legend(loc="upper center", bbox_to_anchor=(0.5, -0.12), ncol=3, fontsize=12, frameon=False)
+    b.text(-0.32, 1.02, "b", transform=b.transAxes, fontsize=24, fontweight="bold")
+    fig.tight_layout()
+    save_figure(fig, "coreceptor_host_line", output_dir=HERE / "figures")
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

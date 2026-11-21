@@ -1,0 +1,25 @@
+{
+  "topology_version": "topo_2026_11_20_isoform_cohort",
+  "snapshot": "2026-11-20-isoform-cohort",
+  "cohort": "human_isoforms",
+  "base_snapshot": "accessible-surfaceome/topology/2026-11-12-cyno-restarts/topology.parquet",
+  "tool": "DeepTMHMM v1 (deeptmhmm-1.0-academic, Modal volume deeptmhmm-v1); runtime identity in 2026-11-20_isoform_cohort.3line.runtime.json",
+  "tool_version": "deeptmhmm-1.0-academic",
+  "command": "isoform_v1_topology.py fasta --cohort pinned --out topology_runs/2026-11-20_isoform_cohort.fasta; modal run scratch/becca/appris-principal/modal/deeptmhmm_v1_app.py::sweep --fasta topology_runs/2026-11-20_isoform_cohort.fasta --out topology_runs/2026-11-20_isoform_cohort.3line",
+  "modal_app_run": "ap-ErANRBbAUtRgOMZG7JjNMR (canary ap-RsSkLcpFGU6IbxVH9tNPFl, 40 sequences)",
+  "run_completed": "2026-11-21T04:00:00+00:00",
+  "sequences": 955,
+  "why": "every isoform-cohort form (pinned isoform_cohorts.tsv, 1,894 forms) whose protein had no DeepTMHMM v1 row, so the isoform gate failed it as unverifiable; review comment 27 (Becca Carlson, 2026-11-20). Spend within the $30 Modal cap set for this review task",
+  "implemented_by": "Claude Code session l1-isoform-universe (subagent of the brief review)",
+  "snapshot_key": "accessible-surfaceome/topology/2026-11-20-isoform-cohort/topology.parquet",
+  "snapshot_sha256": "3f35b555666ff175bf96d8b309251e841b901d337e8518ff8e3b411c6bf940bd",
+  "rows_before": 71700,
+  "rows_after": 72655,
+  "rows_added": 955,
+  "labels": {
+    "SP+TM": 516,
+    "TM": 415,
+    "SP": 22,
+    "GLOB": 2
+  }
+}

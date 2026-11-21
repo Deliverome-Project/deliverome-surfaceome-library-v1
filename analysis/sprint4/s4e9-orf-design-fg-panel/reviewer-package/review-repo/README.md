@@ -10,25 +10,25 @@ still being worked on before the order are tracked in the
 
 You need [uv](https://docs.astral.sh/uv/) and the frozen input bundle, attached to this
 repository's release
-[`bundle-2026-11-10`](https://github.com/Deliverome-Project/l1-library-review/releases/tag/bundle-2026-11-10)
-as two tarballs. `l1-reviewer-bundle-2026-11-10.tar` holds the 98 files the rerun reads
-(1.14 GB, SHA-256 `6ef210e96175b0f995bcefbf42c71e1f716e0073534a40a6120b583577ffef38`).
-`l1-pinned-releases-2026-11-10.tar` holds the rest of every pinned release, for inspection only
-(238 files, 1.40 GB, SHA-256 `60a659ff9c1e7d13212ddf0b10cf75abb2a4938fe3f28e913d3ed4a094774d0b`).
+[`bundle-2026-11-20`](https://github.com/Deliverome-Project/l1-library-review/releases/tag/bundle-2026-11-20)
+as two tarballs. `l1-reviewer-bundle-2026-11-20.tar.gz` holds the 3,120 files the rerun reads
+(1.36 GB, SHA-256 `8bdb0006b739f28a860017aef7dd480d24e50bb2c2fa6d68120276a00a3be165`).
+`l1-pinned-releases-2026-11-20.tar` holds the rest of every pinned release, for inspection only
+(246 files, 1.65 GB, SHA-256 `56bd5618245f7ef0ae7e7ab85ee2445c31f39ec501af771ae6287c68adb73d13`).
 After the download, no credentials or network access are used.
 
 ```bash
-gh release download bundle-2026-11-10 --repo Deliverome-Project/l1-library-review --dir ..
+gh release download bundle-2026-11-20 --repo Deliverome-Project/l1-library-review --dir ..
 ```
 
 ```bash
-mkdir ../l1-reviewer-bundle && tar -xf ../l1-reviewer-bundle-2026-11-10.tar -C ../l1-reviewer-bundle
+mkdir ../l1-reviewer-bundle && tar -xf ../l1-reviewer-bundle-2026-11-20.tar.gz -C ../l1-reviewer-bundle
 ```
 
 To inspect the full releases as well, unpack the second tarball into the same folder:
 
 ```bash
-tar -xf ../l1-pinned-releases-2026-11-10.tar -C ../l1-reviewer-bundle
+tar -xf ../l1-pinned-releases-2026-11-20.tar -C ../l1-reviewer-bundle
 ```
 
 ```bash
@@ -83,7 +83,7 @@ the brief's links work unchanged.
 | `analysis/sprint4/s4e9-orf-design-fg-panel/` | the library pipeline, its committed tables, and `reviewer-package/` (brief, runner, bundle tools) |
 | `analysis/sprint1/s1e3-surface-library-filters/` | the gene filter |
 | `scratch/becca/appris-principal/` | proteoform selection, panels, CDS resolution and construct assembly |
-| `src/deliverome_analysis/` | the shared utilities (S3 access, sequence tools, topology, plotting), complete |
+| `src/deliverome_analysis/` | the shared utilities this code imports (S3 access and the offline mirror, sequence tools, topology, plotting); the rest of the lab's package, unrelated to L1, is not exported |
 | `historical/` | script versions two stages rerun as they were when their records were made |
 | `EXPORT_MANIFEST.json` | which analysis-repo commit each managed file came from, with its SHA-256 |
 

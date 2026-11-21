@@ -1,0 +1,25 @@
+reference	negative_class	score	n_proteins	positive_higher	tied
+afdb_ref	decoy_core	native-region lDDT	75	63	3
+afdb_ref	decoy_core	site lDDT (+/-15)	70	48	0
+afdb_ref	decoy_core	epitope exposure (min RSA)	75	40	1
+afdb_ref	decoy_core	epitope contacts (negated)	75	2	71
+afdb_ref	decoy_hardneg	native-region lDDT	48	34	4
+afdb_ref	decoy_hardneg	site lDDT (+/-15)	45	30	0
+afdb_ref	decoy_hardneg	epitope exposure (min RSA)	48	31	0
+afdb_ref	decoy_hardneg	epitope contacts (negated)	48	2	45
+afdb_ref	known_failure	native-region lDDT	3	3	0
+afdb_ref	known_failure	site lDDT (+/-15)	3	3	0
+afdb_ref	known_failure	epitope exposure (min RSA)	3	1	0
+afdb_ref	known_failure	epitope contacts (negated)	3	0	3
+own_ref	decoy_core	native-region lDDT	75	64	3
+own_ref	decoy_core	site lDDT (+/-15)	70	51	0
+own_ref	decoy_core	epitope exposure (min RSA)	75	40	1
+own_ref	decoy_core	epitope contacts (negated)	75	2	71
+own_ref	decoy_hardneg	native-region lDDT	48	35	4
+own_ref	decoy_hardneg	site lDDT (+/-15)	45	32	0
+own_ref	decoy_hardneg	epitope exposure (min RSA)	48	31	0
+own_ref	decoy_hardneg	epitope contacts (negated)	48	2	45
+own_ref	known_failure	native-region lDDT	3	3	0
+own_ref	known_failure	site lDDT (+/-15)	3	3	0
+own_ref	known_failure	epitope exposure (min RSA)	3	1	0
+own_ref	known_failure	epitope contacts (negated)	3	0	3

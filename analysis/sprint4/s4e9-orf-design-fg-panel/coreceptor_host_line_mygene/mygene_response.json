@@ -1,0 +1,3755 @@
+{
+  "input_sha256": "379d24be466a5b873fe5aad7808a3bafa3ca55a4384bcd0646fb5783500551b5",
+  "fetched_at_utc": "2026-11-21T03:34:30Z",
+  "raw_hits": [
+    {
+      "query": "4F2hc",
+      "_id": "6520",
+      "_score": 23.621077,
+      "ensembl": {
+        "gene": "ENSG00000168003"
+      },
+      "symbol": "SLC3A2"
+    },
+    {
+      "query": "ABCG5",
+      "_id": "64240",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000138075"
+      },
+      "symbol": "ABCG5"
+    },
+    {
+      "query": "ABCG8",
+      "_id": "64241",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000143921"
+      },
+      "symbol": "ABCG8"
+    },
+    {
+      "query": "ACE2",
+      "_id": "59272",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000130234"
+      },
+      "symbol": "ACE2"
+    },
+    {
+      "query": "ADAM1",
+      "_id": "8759",
+      "_score": 32.64,
+      "symbol": "ADAM1A"
+    },
+    {
+      "query": "ADAM22",
+      "_id": "53616",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000008277"
+      },
+      "symbol": "ADAM22"
+    },
+    {
+      "query": "ADAM23",
+      "_id": "8745",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000114948"
+      },
+      "symbol": "ADAM23"
+    },
+    {
+      "query": "ADIPOQ",
+      "_id": "9370",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000181092"
+      },
+      "symbol": "ADIPOQ"
+    },
+    {
+      "query": "AMN",
+      "_id": "81693",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000166126"
+      },
+      "symbol": "AMN"
+    },
+    {
+      "query": "AMN",
+      "_id": "215",
+      "_score": 21.65691,
+      "ensembl": {
+        "gene": "ENSG00000101986"
+      },
+      "symbol": "ABCD1"
+    },
+    {
+      "query": "ANXA2",
+      "_id": "302",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000182718"
+      },
+      "symbol": "ANXA2"
+    },
+    {
+      "query": "APH1",
+      "notfound": true
+    },
+    {
+      "query": "ATP1A1",
+      "_id": "476",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000163399"
+      },
+      "symbol": "ATP1A1"
+    },
+    {
+      "query": "ATP1A3",
+      "_id": "478",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000105409"
+      },
+      "symbol": "ATP1A3"
+    },
+    {
+      "query": "ATP1B1",
+      "_id": "481",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000143153"
+      },
+      "symbol": "ATP1B1"
+    },
+    {
+      "query": "ATP1B2",
+      "_id": "482",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000129244"
+      },
+      "symbol": "ATP1B2"
+    },
+    {
+      "query": "ATP4A",
+      "_id": "495",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000105675"
+      },
+      "symbol": "ATP4A"
+    },
+    {
+      "query": "ATP4B",
+      "_id": "496",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000186009"
+      },
+      "symbol": "ATP4B"
+    },
+    {
+      "query": "ATP6V0A1",
+      "_id": "535",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000033627"
+      },
+      "symbol": "ATP6V0A1"
+    },
+    {
+      "query": "ATP6V0A4",
+      "_id": "50617",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000105929"
+      },
+      "symbol": "ATP6V0A4"
+    },
+    {
+      "query": "ATP6V0C",
+      "_id": "527",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000185883"
+      },
+      "symbol": "ATP6V0C"
+    },
+    {
+      "query": "ATP6V0D1",
+      "_id": "9114",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000159720"
+      },
+      "symbol": "ATP6V0D1"
+    },
+    {
+      "query": "ATP6V1A",
+      "_id": "523",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000114573"
+      },
+      "symbol": "ATP6V1A"
+    },
+    {
+      "query": "ATP6V1B2",
+      "_id": "526",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000147416"
+      },
+      "symbol": "ATP6V1B2"
+    },
+    {
+      "query": "ATP6V1C",
+      "notfound": true
+    },
+    {
+      "query": "ATP6V1E",
+      "_id": "529",
+      "_score": 101.184,
+      "ensembl": {
+        "gene": "ENSG00000131100"
+      },
+      "symbol": "ATP6V1E1"
+    },
+    {
+      "query": "ATP6V1H",
+      "_id": "51606",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000047249"
+      },
+      "symbol": "ATP6V1H"
+    },
+    {
+      "query": "B2M",
+      "_id": "567",
+      "_score": 148.79999,
+      "ensembl": [
+        {
+          "gene": "ENSG00000166710"
+        },
+        {
+          "gene": "ENSG00000273686"
+        }
+      ],
+      "symbol": "B2M"
+    },
+    {
+      "query": "B9D1",
+      "_id": "27077",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000108641"
+      },
+      "symbol": "B9D1"
+    },
+    {
+      "query": "BDKRB1",
+      "_id": "623",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000100739"
+      },
+      "symbol": "BDKRB1"
+    },
+    {
+      "query": "BSG",
+      "_id": "682",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000172270"
+      },
+      "symbol": "BSG"
+    },
+    {
+      "query": "BSND",
+      "_id": "7809",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000162399"
+      },
+      "symbol": "BSND"
+    },
+    {
+      "query": "BTNL3",
+      "_id": "10917",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000168903"
+      },
+      "symbol": "BTNL3"
+    },
+    {
+      "query": "CALCRL",
+      "_id": "10203",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000064989"
+      },
+      "symbol": "CALCRL"
+    },
+    {
+      "query": "CALHM1",
+      "_id": "255022",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000185933"
+      },
+      "symbol": "CALHM1"
+    },
+    {
+      "query": "CALR3",
+      "_id": "125972",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000269058"
+      },
+      "symbol": "CALR3"
+    },
+    {
+      "query": "CATSPER1",
+      "_id": "117144",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000175294"
+      },
+      "symbol": "CATSPER1"
+    },
+    {
+      "query": "CATSPER2",
+      "_id": "117155",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000166762"
+      },
+      "symbol": "CATSPER2"
+    },
+    {
+      "query": "CATSPER3",
+      "_id": "347732",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000152705"
+      },
+      "symbol": "CATSPER3"
+    },
+    {
+      "query": "CATSPER4",
+      "_id": "378807",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000188782"
+      },
+      "symbol": "CATSPER4"
+    },
+    {
+      "query": "CATSPERB",
+      "_id": "79820",
+      "_score": 148.79999,
+      "ensembl": [
+        {
+          "gene": "ENSG00000133962"
+        },
+        {
+          "gene": "ENSG00000274338"
+        }
+      ],
+      "symbol": "CATSPERB"
+    },
+    {
+      "query": "CATSPERD",
+      "_id": "257062",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000174898"
+      },
+      "symbol": "CATSPERD"
+    },
+    {
+      "query": "CATSPERE",
+      "_id": "257044",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000179397"
+      },
+      "symbol": "CATSPERE"
+    },
+    {
+      "query": "CATSPERG",
+      "_id": "57828",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000099338"
+      },
+      "symbol": "CATSPERG"
+    },
+    {
+      "query": "CATSPERH",
+      "_id": "100130348",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000187066"
+      },
+      "symbol": "CATSPERH"
+    },
+    {
+      "query": "CATSPERZ",
+      "_id": "25858",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000219435"
+      },
+      "symbol": "CATSPERZ"
+    },
+    {
+      "query": "CATSPERbeta",
+      "notfound": true
+    },
+    {
+      "query": "CATSPERdelta",
+      "notfound": true
+    },
+    {
+      "query": "CATSPERepsilon",
+      "notfound": true
+    },
+    {
+      "query": "CATSPERgamma",
+      "notfound": true
+    },
+    {
+      "query": "CATSPERtheta",
+      "notfound": true
+    },
+    {
+      "query": "CATSPER\u03b2",
+      "notfound": true
+    },
+    {
+      "query": "CATSPER\u03b3",
+      "notfound": true
+    },
+    {
+      "query": "CATSPER\u03b4",
+      "notfound": true
+    },
+    {
+      "query": "CATSPER\u03b5",
+      "notfound": true
+    },
+    {
+      "query": "CATSPER\u03b8",
+      "notfound": true
+    },
+    {
+      "query": "CAV1",
+      "_id": "857",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000105974"
+      },
+      "symbol": "CAV1"
+    },
+    {
+      "query": "CAV3",
+      "_id": "859",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000182533"
+      },
+      "symbol": "CAV3"
+    },
+    {
+      "query": "CAVIN1",
+      "_id": "284119",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000177469"
+      },
+      "symbol": "CAVIN1"
+    },
+    {
+      "query": "CBLN1",
+      "_id": "869",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000102924"
+      },
+      "symbol": "CBLN1"
+    },
+    {
+      "query": "CC2D2A",
+      "_id": "57545",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000048342"
+      },
+      "symbol": "CC2D2A"
+    },
+    {
+      "query": "CCNY",
+      "_id": "219771",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000108100"
+      },
+      "symbol": "CCNY"
+    },
+    {
+      "query": "CD147",
+      "_id": "682",
+      "_score": 22.611032,
+      "ensembl": {
+        "gene": "ENSG00000172270"
+      },
+      "symbol": "BSG"
+    },
+    {
+      "query": "CD16",
+      "_id": "2215",
+      "_score": 23.037075,
+      "ensembl": {
+        "gene": "ENSG00000162747"
+      },
+      "symbol": "FCGR3B"
+    },
+    {
+      "query": "CD18",
+      "_id": "3689",
+      "_score": 101.184,
+      "ensembl": {
+        "gene": "ENSG00000160255"
+      },
+      "symbol": "ITGB2"
+    },
+    {
+      "query": "CD180",
+      "_id": "4064",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000134061"
+      },
+      "symbol": "CD180"
+    },
+    {
+      "query": "CD247",
+      "_id": "919",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000198821"
+      },
+      "symbol": "CD247"
+    },
+    {
+      "query": "CD26",
+      "_id": "1803",
+      "_score": 101.184,
+      "ensembl": {
+        "gene": "ENSG00000197635"
+      },
+      "symbol": "DPP4"
+    },
+    {
+      "query": "CD3D",
+      "_id": "915",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000167286"
+      },
+      "symbol": "CD3D"
+    },
+    {
+      "query": "CD3E",
+      "_id": "916",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000198851"
+      },
+      "symbol": "CD3E"
+    },
+    {
+      "query": "CD3G",
+      "_id": "917",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000160654"
+      },
+      "symbol": "CD3G"
+    },
+    {
+      "query": "CD3Z",
+      "_id": "919",
+      "_score": 101.184,
+      "ensembl": {
+        "gene": "ENSG00000198821"
+      },
+      "symbol": "CD247"
+    },
+    {
+      "query": "CD45",
+      "_id": "5788",
+      "_score": 101.184,
+      "ensembl": [
+        {
+          "gene": "ENSG00000081237"
+        },
+        {
+          "gene": "ENSG00000262418"
+        }
+      ],
+      "symbol": "PTPRC"
+    },
+    {
+      "query": "CD74",
+      "_id": "972",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000019582"
+      },
+      "symbol": "CD74"
+    },
+    {
+      "query": "CD79A",
+      "_id": "973",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000105369"
+      },
+      "symbol": "CD79A"
+    },
+    {
+      "query": "CD79B",
+      "_id": "974",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000007312"
+      },
+      "symbol": "CD79B"
+    },
+    {
+      "query": "CD8A",
+      "_id": "925",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000153563"
+      },
+      "symbol": "CD8A"
+    },
+    {
+      "query": "CD94",
+      "_id": "3824",
+      "_score": 101.184,
+      "ensembl": {
+        "gene": "ENSG00000134539"
+      },
+      "symbol": "KLRD1"
+    },
+    {
+      "query": "CDC50A",
+      "_id": "55754",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000112697"
+      },
+      "symbol": "CDC50A"
+    },
+    {
+      "query": "CEP290",
+      "_id": "80184",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000198707"
+      },
+      "symbol": "CEP290"
+    },
+    {
+      "query": "CHRNA1",
+      "_id": "1134",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000138435"
+      },
+      "symbol": "CHRNA1"
+    },
+    {
+      "query": "CHRNA3",
+      "_id": "1136",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000080644"
+      },
+      "symbol": "CHRNA3"
+    },
+    {
+      "query": "CHRNA4",
+      "_id": "1137",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000101204"
+      },
+      "symbol": "CHRNA4"
+    },
+    {
+      "query": "CHRNA7",
+      "_id": "1139",
+      "_score": 148.79999,
+      "ensembl": [
+        {
+          "gene": "ENSG00000274542"
+        },
+        {
+          "gene": "ENSG00000175344"
+        },
+        {
+          "gene": "ENSG00000282088"
+        }
+      ],
+      "symbol": "CHRNA7"
+    },
+    {
+      "query": "CHRNA7",
+      "_id": "89832",
+      "_score": 18.386782,
+      "ensembl": [
+        {
+          "gene": "ENSG00000275917"
+        },
+        {
+          "gene": "ENSG00000166664"
+        }
+      ],
+      "symbol": "CHRFAM7A"
+    },
+    {
+      "query": "CHRNA9",
+      "_id": "55584",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000174343"
+      },
+      "symbol": "CHRNA9"
+    },
+    {
+      "query": "CHRNB1",
+      "_id": "1140",
+      "_score": 148.79999,
+      "ensembl": [
+        {
+          "gene": "ENSG00000170175"
+        },
+        {
+          "gene": "ENSG00000283946"
+        }
+      ],
+      "symbol": "CHRNB1"
+    },
+    {
+      "query": "CHRNB2",
+      "_id": "1141",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000160716"
+      },
+      "symbol": "CHRNB2"
+    },
+    {
+      "query": "CHRNB4",
+      "_id": "1143",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000117971"
+      },
+      "symbol": "CHRNB4"
+    },
+    {
+      "query": "CHRND",
+      "_id": "1144",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000135902"
+      },
+      "symbol": "CHRND"
+    },
+    {
+      "query": "CHRNE",
+      "_id": "1145",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000108556"
+      },
+      "symbol": "CHRNE"
+    },
+    {
+      "query": "CHRNG",
+      "_id": "1146",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000196811"
+      },
+      "symbol": "CHRNG"
+    },
+    {
+      "query": "CIB2",
+      "_id": "10518",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000136425"
+      },
+      "symbol": "CIB2"
+    },
+    {
+      "query": "CLCN3",
+      "_id": "1182",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000109572"
+      },
+      "symbol": "CLCN3"
+    },
+    {
+      "query": "CLCN4",
+      "_id": "1183",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000073464"
+      },
+      "symbol": "CLCN4"
+    },
+    {
+      "query": "CLCN5",
+      "_id": "1184",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000171365"
+      },
+      "symbol": "CLCN5"
+    },
+    {
+      "query": "CLEC4D",
+      "_id": "338339",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000166527"
+      },
+      "symbol": "CLEC4D"
+    },
+    {
+      "query": "CLEC4E",
+      "_id": "26253",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000166523"
+      },
+      "symbol": "CLEC4E"
+    },
+    {
+      "query": "CLGN",
+      "_id": "1047",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000153132"
+      },
+      "symbol": "CLGN"
+    },
+    {
+      "query": "CLR",
+      "_id": "85443",
+      "_score": 23.302383,
+      "ensembl": {
+        "gene": "ENSG00000163673"
+      },
+      "symbol": "DCLK3"
+    },
+    {
+      "query": "CMTM4",
+      "_id": "146223",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000183723"
+      },
+      "symbol": "CMTM4"
+    },
+    {
+      "query": "CNGA1",
+      "_id": "1259",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000198515"
+      },
+      "symbol": "CNGA1"
+    },
+    {
+      "query": "CNGA2",
+      "_id": "1260",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000183862"
+      },
+      "symbol": "CNGA2"
+    },
+    {
+      "query": "CNGA3",
+      "_id": "1261",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000144191"
+      },
+      "symbol": "CNGA3"
+    },
+    {
+      "query": "CNGB1b",
+      "_id": "1258",
+      "_score": 23.302383,
+      "ensembl": {
+        "gene": "ENSG00000070729"
+      },
+      "symbol": "CNGB1"
+    },
+    {
+      "query": "CNTN1",
+      "_id": "1272",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000018236"
+      },
+      "symbol": "CNTN1"
+    },
+    {
+      "query": "COL6A1",
+      "_id": "1291",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000142156"
+      },
+      "symbol": "COL6A1"
+    },
+    {
+      "query": "COL6A2",
+      "_id": "1292",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000142173"
+      },
+      "symbol": "COL6A2"
+    },
+    {
+      "query": "CPT1C",
+      "_id": "126129",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000169169"
+      },
+      "symbol": "CPT1C"
+    },
+    {
+      "query": "CRFR1",
+      "_id": "1394",
+      "_score": 21.876312,
+      "ensembl": [
+        {
+          "gene": "ENSG00000278232"
+        },
+        {
+          "gene": "ENSG00000276191"
+        },
+        {
+          "gene": "ENSG00000120088"
+        }
+      ],
+      "symbol": "CRHR1"
+    },
+    {
+      "query": "CTR",
+      "_id": "799",
+      "_score": 21.762825,
+      "ensembl": {
+        "gene": "ENSG00000004948"
+      },
+      "symbol": "CALCR"
+    },
+    {
+      "query": "CTRP9A",
+      "notfound": true
+    },
+    {
+      "query": "CYBA",
+      "_id": "1535",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000051523"
+      },
+      "symbol": "CYBA"
+    },
+    {
+      "query": "DAP10",
+      "_id": "10870",
+      "_score": 22.13096,
+      "ensembl": {
+        "gene": "ENSG00000126264"
+      },
+      "symbol": "HCST"
+    },
+    {
+      "query": "DAP12",
+      "_id": "7305",
+      "_score": 22.27544,
+      "ensembl": {
+        "gene": "ENSG00000011600"
+      },
+      "symbol": "TYROBP"
+    },
+    {
+      "query": "DPP10",
+      "_id": "57628",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000175497"
+      },
+      "symbol": "DPP10"
+    },
+    {
+      "query": "DPP6",
+      "_id": "1804",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000130226"
+      },
+      "symbol": "DPP6"
+    },
+    {
+      "query": "DUOX1",
+      "_id": "53905",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000137857"
+      },
+      "symbol": "DUOX1"
+    },
+    {
+      "query": "DUOX2",
+      "_id": "50506",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000140279"
+      },
+      "symbol": "DUOX2"
+    },
+    {
+      "query": "DUOXA1",
+      "_id": "90527",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000140254"
+      },
+      "symbol": "DUOXA1"
+    },
+    {
+      "query": "DUOXA2",
+      "_id": "405753",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000140274"
+      },
+      "symbol": "DUOXA2"
+    },
+    {
+      "query": "DVL1",
+      "_id": "1855",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000107404"
+      },
+      "symbol": "DVL1"
+    },
+    {
+      "query": "EFCAB9",
+      "_id": "285588",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000214360"
+      },
+      "symbol": "EFCAB9"
+    },
+    {
+      "query": "EMB",
+      "_id": "133418",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000170571"
+      },
+      "symbol": "EMB"
+    },
+    {
+      "query": "EMB",
+      "_id": "7514",
+      "_score": 21.998539,
+      "ensembl": {
+        "gene": "ENSG00000082898"
+      },
+      "symbol": "XPO1"
+    },
+    {
+      "query": "EVC",
+      "_id": "2121",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000072840"
+      },
+      "symbol": "EVC"
+    },
+    {
+      "query": "EVC2",
+      "_id": "132884",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000173040"
+      },
+      "symbol": "EVC2"
+    },
+    {
+      "query": "FAM155A",
+      "_id": "728215",
+      "_score": 101.184,
+      "ensembl": {
+        "gene": "ENSG00000204442"
+      },
+      "symbol": "NALF1"
+    },
+    {
+      "query": "FCER1G",
+      "_id": "2207",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000158869"
+      },
+      "symbol": "FCER1G"
+    },
+    {
+      "query": "FCGR3A",
+      "_id": "2214",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000203747"
+      },
+      "symbol": "FCGR3A"
+    },
+    {
+      "query": "FRAS1",
+      "_id": "80144",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000138759"
+      },
+      "symbol": "FRAS1"
+    },
+    {
+      "query": "FREM1",
+      "_id": "158326",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000164946"
+      },
+      "symbol": "FREM1"
+    },
+    {
+      "query": "FREM2",
+      "_id": "341640",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000150893"
+      },
+      "symbol": "FREM2"
+    },
+    {
+      "query": "FcR\u03b3",
+      "notfound": true
+    },
+    {
+      "query": "GABBR2",
+      "_id": "9568",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000136928"
+      },
+      "symbol": "GABBR2"
+    },
+    {
+      "query": "GABRA1",
+      "_id": "2554",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000022355"
+      },
+      "symbol": "GABRA1"
+    },
+    {
+      "query": "GABRA2",
+      "_id": "2555",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000151834"
+      },
+      "symbol": "GABRA2"
+    },
+    {
+      "query": "GABRA3",
+      "_id": "2556",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000011677"
+      },
+      "symbol": "GABRA3"
+    },
+    {
+      "query": "GABRA4",
+      "_id": "2557",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000109158"
+      },
+      "symbol": "GABRA4"
+    },
+    {
+      "query": "GABRA5",
+      "_id": "2558",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000186297"
+      },
+      "symbol": "GABRA5"
+    },
+    {
+      "query": "GABRA6",
+      "_id": "2559",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000145863"
+      },
+      "symbol": "GABRA6"
+    },
+    {
+      "query": "GABRB1",
+      "_id": "2560",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000163288"
+      },
+      "symbol": "GABRB1"
+    },
+    {
+      "query": "GABRB2",
+      "_id": "2561",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000145864"
+      },
+      "symbol": "GABRB2"
+    },
+    {
+      "query": "GABRB3",
+      "_id": "2562",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000166206"
+      },
+      "symbol": "GABRB3"
+    },
+    {
+      "query": "GABRD",
+      "_id": "2563",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000187730"
+      },
+      "symbol": "GABRD"
+    },
+    {
+      "query": "GABRG1",
+      "_id": "2565",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000163285"
+      },
+      "symbol": "GABRG1"
+    },
+    {
+      "query": "GABRG2",
+      "_id": "2566",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000113327"
+      },
+      "symbol": "GABRG2"
+    },
+    {
+      "query": "GABRG3",
+      "_id": "2567",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000182256"
+      },
+      "symbol": "GABRG3"
+    },
+    {
+      "query": "GARP",
+      "_id": "2615",
+      "_score": 101.184,
+      "ensembl": {
+        "gene": "ENSG00000137507"
+      },
+      "symbol": "LRRC32"
+    },
+    {
+      "query": "GARP",
+      "_id": "1258",
+      "_score": 21.464169,
+      "ensembl": {
+        "gene": "ENSG00000070729"
+      },
+      "symbol": "CNGB1"
+    },
+    {
+      "query": "GCGR",
+      "_id": "2642",
+      "_score": 148.79999,
+      "ensembl": [
+        {
+          "gene": "ENSG00000215644"
+        },
+        {
+          "gene": "ENSG00000288269"
+        }
+      ],
+      "symbol": "GCGR"
+    },
+    {
+      "query": "GLRA1",
+      "_id": "2741",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000145888"
+      },
+      "symbol": "GLRA1"
+    },
+    {
+      "query": "GLRA2",
+      "_id": "2742",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000101958"
+      },
+      "symbol": "GLRA2"
+    },
+    {
+      "query": "GLRA3",
+      "_id": "8001",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000145451"
+      },
+      "symbol": "GLRA3"
+    },
+    {
+      "query": "GP1BA",
+      "_id": "2811",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000185245"
+      },
+      "symbol": "GP1BA"
+    },
+    {
+      "query": "GP1BB",
+      "_id": "2812",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000203618"
+      },
+      "symbol": "GP1BB"
+    },
+    {
+      "query": "GP5",
+      "_id": "2814",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000178732"
+      },
+      "symbol": "GP5"
+    },
+    {
+      "query": "GP9",
+      "_id": "2815",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000169704"
+      },
+      "symbol": "GP9"
+    },
+    {
+      "query": "GPIHBP1",
+      "_id": "338328",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000277494"
+      },
+      "symbol": "GPIHBP1"
+    },
+    {
+      "query": "GRIN1",
+      "_id": "2902",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000176884"
+      },
+      "symbol": "GRIN1"
+    },
+    {
+      "query": "GRIN1",
+      "_id": "114787",
+      "_score": 20.01806,
+      "ensembl": {
+        "gene": "ENSG00000169258"
+      },
+      "symbol": "GPRIN1"
+    },
+    {
+      "query": "GluA1",
+      "_id": "2890",
+      "_score": 23.037075,
+      "ensembl": {
+        "gene": "ENSG00000155511"
+      },
+      "symbol": "GRIA1"
+    },
+    {
+      "query": "GluA2",
+      "_id": "2891",
+      "_score": 22.611032,
+      "ensembl": {
+        "gene": "ENSG00000120251"
+      },
+      "symbol": "GRIA2"
+    },
+    {
+      "query": "GluA4",
+      "_id": "2893",
+      "_score": 23.302383,
+      "ensembl": {
+        "gene": "ENSG00000152578"
+      },
+      "symbol": "GRIA4"
+    },
+    {
+      "query": "GluK1",
+      "_id": "2897",
+      "_score": 23.621077,
+      "ensembl": {
+        "gene": "ENSG00000171189"
+      },
+      "symbol": "GRIK1"
+    },
+    {
+      "query": "GluK2",
+      "_id": "2898",
+      "_score": 23.037075,
+      "ensembl": {
+        "gene": "ENSG00000164418"
+      },
+      "symbol": "GRIK2"
+    },
+    {
+      "query": "GluK3",
+      "_id": "2899",
+      "_score": 23.621077,
+      "ensembl": {
+        "gene": "ENSG00000163873"
+      },
+      "symbol": "GRIK3"
+    },
+    {
+      "query": "GluN2A",
+      "_id": "2903",
+      "_score": 23.302383,
+      "ensembl": {
+        "gene": "ENSG00000183454"
+      },
+      "symbol": "GRIN2A"
+    },
+    {
+      "query": "GluN2B",
+      "_id": "2904",
+      "_score": 23.302383,
+      "ensembl": {
+        "gene": "ENSG00000273079"
+      },
+      "symbol": "GRIN2B"
+    },
+    {
+      "query": "GluN2C",
+      "_id": "2905",
+      "_score": 24.020206,
+      "ensembl": {
+        "gene": "ENSG00000161509"
+      },
+      "symbol": "GRIN2C"
+    },
+    {
+      "query": "GluN2D",
+      "_id": "2906",
+      "_score": 24.020206,
+      "ensembl": {
+        "gene": "ENSG00000105464"
+      },
+      "symbol": "GRIN2D"
+    },
+    {
+      "query": "GluN3A",
+      "_id": "116443",
+      "_score": 24.020206,
+      "ensembl": {
+        "gene": "ENSG00000198785"
+      },
+      "symbol": "GRIN3A"
+    },
+    {
+      "query": "GluN3B",
+      "_id": "116444",
+      "_score": 24.020206,
+      "ensembl": {
+        "gene": "ENSG00000116032"
+      },
+      "symbol": "GRIN3B"
+    },
+    {
+      "query": "HLA-A",
+      "_id": "3105",
+      "_score": 148.79999,
+      "ensembl": [
+        {
+          "gene": "ENSG00000235657"
+        },
+        {
+          "gene": "ENSG00000224320"
+        },
+        {
+          "gene": "ENSG00000229215"
+        },
+        {
+          "gene": "ENSG00000227715"
+        },
+        {
+          "gene": "ENSG00000223980"
+        },
+        {
+          "gene": "ENSG00000231834"
+        },
+        {
+          "gene": "ENSG00000206505"
+        },
+        {
+          "gene": "ENSG00000206503"
+        }
+      ],
+      "symbol": "HLA-A"
+    },
+    {
+      "query": "HLA-B",
+      "_id": "3106",
+      "_score": 148.79999,
+      "ensembl": [
+        {
+          "gene": "ENSG00000228964"
+        },
+        {
+          "gene": "ENSG00000232126"
+        },
+        {
+          "gene": "ENSG00000223532"
+        },
+        {
+          "gene": "ENSG00000234745"
+        },
+        {
+          "gene": "ENSG00000224608"
+        },
+        {
+          "gene": "ENSG00000206450"
+        }
+      ],
+      "symbol": "HLA-B"
+    },
+    {
+      "query": "HLA-C",
+      "_id": "3107",
+      "_score": 148.79999,
+      "ensembl": [
+        {
+          "gene": "ENSG00000206435"
+        },
+        {
+          "gene": "ENSG00000206452"
+        },
+        {
+          "gene": "ENSG00000225691"
+        },
+        {
+          "gene": "ENSG00000237022"
+        },
+        {
+          "gene": "ENSG00000228299"
+        },
+        {
+          "gene": "ENSG00000204525"
+        },
+        {
+          "gene": "ENSG00000233841"
+        }
+      ],
+      "symbol": "HLA-C"
+    },
+    {
+      "query": "HLA-DM",
+      "notfound": true
+    },
+    {
+      "query": "HLA-DMA",
+      "_id": "3108",
+      "_score": 148.79999,
+      "ensembl": [
+        {
+          "gene": "ENSG00000243189"
+        },
+        {
+          "gene": "ENSG00000242361"
+        },
+        {
+          "gene": "ENSG00000239463"
+        },
+        {
+          "gene": "ENSG00000204257"
+        },
+        {
+          "gene": "ENSG00000242685"
+        },
+        {
+          "gene": "ENSG00000243215"
+        },
+        {
+          "gene": "ENSG00000241394"
+        },
+        {
+          "gene": "ENSG00000243719"
+        }
+      ],
+      "symbol": "HLA-DMA"
+    },
+    {
+      "query": "HLA-DMB",
+      "_id": "3109",
+      "_score": 148.79999,
+      "ensembl": [
+        {
+          "gene": "ENSG00000234154"
+        },
+        {
+          "gene": "ENSG00000226264"
+        },
+        {
+          "gene": "ENSG00000242092"
+        },
+        {
+          "gene": "ENSG00000241674"
+        },
+        {
+          "gene": "ENSG00000241296"
+        },
+        {
+          "gene": "ENSG00000242574"
+        },
+        {
+          "gene": "ENSG00000242386"
+        },
+        {
+          "gene": "ENSG00000239329"
+        }
+      ],
+      "symbol": "HLA-DMB"
+    },
+    {
+      "query": "HLA-DOB",
+      "_id": "3112",
+      "_score": 148.79999,
+      "ensembl": [
+        {
+          "gene": "ENSG00000243612"
+        },
+        {
+          "gene": "ENSG00000241106"
+        },
+        {
+          "gene": "ENSG00000239457"
+        },
+        {
+          "gene": "ENSG00000243496"
+        },
+        {
+          "gene": "ENSG00000241386"
+        },
+        {
+          "gene": "ENSG00000241910"
+        }
+      ],
+      "symbol": "HLA-DOB"
+    },
+    {
+      "query": "HLA-DPA1",
+      "_id": "3113",
+      "_score": 148.79999,
+      "ensembl": [
+        {
+          "gene": "ENSG00000231389"
+        },
+        {
+          "gene": "ENSG00000228163"
+        },
+        {
+          "gene": "ENSG00000235844"
+        },
+        {
+          "gene": "ENSG00000236177"
+        },
+        {
+          "gene": "ENSG00000168384"
+        },
+        {
+          "gene": "ENSG00000229685"
+        },
+        {
+          "gene": "ENSG00000206291"
+        },
+        {
+          "gene": "ENSG00000224103"
+        }
+      ],
+      "symbol": "HLA-DPA1"
+    },
+    {
+      "query": "HLA-DPB1",
+      "_id": "3115",
+      "_score": 148.79999,
+      "ensembl": [
+        {
+          "gene": "ENSG00000229295"
+        },
+        {
+          "gene": "ENSG00000223865"
+        },
+        {
+          "gene": "ENSG00000236693"
+        },
+        {
+          "gene": "ENSG00000230763"
+        },
+        {
+          "gene": "ENSG00000226826"
+        },
+        {
+          "gene": "ENSG00000230708"
+        },
+        {
+          "gene": "ENSG00000215048"
+        },
+        {
+          "gene": "ENSG00000237710"
+        }
+      ],
+      "symbol": "HLA-DPB1"
+    },
+    {
+      "query": "HLA-DQA1",
+      "_id": "3117",
+      "_score": 148.79999,
+      "ensembl": [
+        {
+          "gene": "ENSG00000206305"
+        },
+        {
+          "gene": "ENSG00000232062"
+        },
+        {
+          "gene": "ENSG00000228284"
+        },
+        {
+          "gene": "ENSG00000236418"
+        },
+        {
+          "gene": "ENSG00000196735"
+        },
+        {
+          "gene": "ENSG00000225890"
+        }
+      ],
+      "symbol": "HLA-DQA1"
+    },
+    {
+      "query": "HLA-DQA2",
+      "_id": "3118",
+      "_score": 148.79999,
+      "ensembl": [
+        {
+          "gene": "ENSG00000231526"
+        },
+        {
+          "gene": "ENSG00000223793"
+        },
+        {
+          "gene": "ENSG00000237541"
+        },
+        {
+          "gene": "ENSG00000233192"
+        },
+        {
+          "gene": "ENSG00000257473"
+        },
+        {
+          "gene": "ENSG00000225103"
+        },
+        {
+          "gene": "ENSG00000231823"
+        },
+        {
+          "gene": "ENSG00000206301"
+        }
+      ],
+      "symbol": "HLA-DQA2"
+    },
+    {
+      "query": "HLA-DQB1",
+      "_id": "3119",
+      "_score": 148.79999,
+      "ensembl": [
+        {
+          "gene": "ENSG00000206302"
+        },
+        {
+          "gene": "ENSG00000225824"
+        },
+        {
+          "gene": "ENSG00000231286"
+        },
+        {
+          "gene": "ENSG00000179344"
+        },
+        {
+          "gene": "ENSG00000206237"
+        },
+        {
+          "gene": "ENSG00000233209"
+        },
+        {
+          "gene": "ENSG00000231939"
+        }
+      ],
+      "symbol": "HLA-DQB1"
+    },
+    {
+      "query": "HLA-DQB1",
+      "_id": "3120",
+      "_score": 23.302383,
+      "ensembl": [
+        {
+          "gene": "ENSG00000228813"
+        },
+        {
+          "gene": "ENSG00000224305"
+        },
+        {
+          "gene": "ENSG00000226165"
+        },
+        {
+          "gene": "ENSG00000232629"
+        },
+        {
+          "gene": "ENSG00000229493"
+        },
+        {
+          "gene": "ENSG00000196610"
+        },
+        {
+          "gene": "ENSG00000230675"
+        },
+        {
+          "gene": "ENSG00000228254"
+        }
+      ],
+      "symbol": "HLA-DQB2"
+    },
+    {
+      "query": "HLA-DQB2",
+      "_id": "3120",
+      "_score": 148.79999,
+      "ensembl": [
+        {
+          "gene": "ENSG00000228813"
+        },
+        {
+          "gene": "ENSG00000224305"
+        },
+        {
+          "gene": "ENSG00000226165"
+        },
+        {
+          "gene": "ENSG00000232629"
+        },
+        {
+          "gene": "ENSG00000229493"
+        },
+        {
+          "gene": "ENSG00000196610"
+        },
+        {
+          "gene": "ENSG00000230675"
+        },
+        {
+          "gene": "ENSG00000228254"
+        }
+      ],
+      "symbol": "HLA-DQB2"
+    },
+    {
+      "query": "HLA-DRA",
+      "_id": "3122",
+      "_score": 148.79999,
+      "ensembl": [
+        {
+          "gene": "ENSG00000226260"
+        },
+        {
+          "gene": "ENSG00000206308"
+        },
+        {
+          "gene": "ENSG00000277263"
+        },
+        {
+          "gene": "ENSG00000228987"
+        },
+        {
+          "gene": "ENSG00000204287"
+        },
+        {
+          "gene": "ENSG00000234794"
+        },
+        {
+          "gene": "ENSG00000230726"
+        },
+        {
+          "gene": "ENSG00000227993"
+        }
+      ],
+      "symbol": "HLA-DRA"
+    },
+    {
+      "query": "HLA-DRB1",
+      "_id": "3123",
+      "_score": 148.79999,
+      "ensembl": [
+        {
+          "gene": "ENSG00000229074"
+        },
+        {
+          "gene": "ENSG00000236884"
+        },
+        {
+          "gene": "ENSG00000228080"
+        },
+        {
+          "gene": "ENSG00000196126"
+        },
+        {
+          "gene": "ENSG00000206240"
+        },
+        {
+          "gene": "ENSG00000206306"
+        }
+      ],
+      "symbol": "HLA-DRB1"
+    },
+    {
+      "query": "HLA-E",
+      "_id": "3133",
+      "_score": 148.79999,
+      "ensembl": [
+        {
+          "gene": "ENSG00000229252"
+        },
+        {
+          "gene": "ENSG00000204592"
+        },
+        {
+          "gene": "ENSG00000225201"
+        },
+        {
+          "gene": "ENSG00000230254"
+        },
+        {
+          "gene": "ENSG00000233904"
+        },
+        {
+          "gene": "ENSG00000206493"
+        },
+        {
+          "gene": "ENSG00000236632"
+        }
+      ],
+      "symbol": "HLA-E"
+    },
+    {
+      "query": "HLA-F",
+      "_id": "3134",
+      "_score": 148.79999,
+      "ensembl": [
+        {
+          "gene": "ENSG00000137403"
+        },
+        {
+          "gene": "ENSG00000206509"
+        },
+        {
+          "gene": "ENSG00000235220"
+        },
+        {
+          "gene": "ENSG00000204642"
+        },
+        {
+          "gene": "ENSG00000234487"
+        },
+        {
+          "gene": "ENSG00000229698"
+        },
+        {
+          "gene": "ENSG00000237508"
+        }
+      ],
+      "symbol": "HLA-F"
+    },
+    {
+      "query": "HLA-G",
+      "_id": "3135",
+      "_score": 148.79999,
+      "ensembl": [
+        {
+          "gene": "ENSG00000230413"
+        },
+        {
+          "gene": "ENSG00000204632"
+        },
+        {
+          "gene": "ENSG00000206506"
+        },
+        {
+          "gene": "ENSG00000235680"
+        },
+        {
+          "gene": "ENSG00000235346"
+        },
+        {
+          "gene": "ENSG00000233095"
+        },
+        {
+          "gene": "ENSG00000237216"
+        },
+        {
+          "gene": "ENSG00000276051"
+        }
+      ],
+      "symbol": "HLA-G"
+    },
+    {
+      "query": "HTR3A",
+      "_id": "3359",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000166736"
+      },
+      "symbol": "HTR3A"
+    },
+    {
+      "query": "IGHM",
+      "_id": "3507",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000211899"
+      },
+      "symbol": "IGHM"
+    },
+    {
+      "query": "IGHM",
+      "_id": "ENSG00000282657",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000282657"
+      },
+      "symbol": "IGHM"
+    },
+    {
+      "query": "IGLL1",
+      "_id": "3543",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000128322"
+      },
+      "symbol": "IGLL1"
+    },
+    {
+      "query": "IL15RA",
+      "_id": "3601",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000134470"
+      },
+      "symbol": "IL15RA"
+    },
+    {
+      "query": "ILT1",
+      "_id": "11027",
+      "_score": 24.554575,
+      "ensembl": [
+        {
+          "gene": "ENSG00000278634"
+        },
+        {
+          "gene": "ENSG00000239998"
+        },
+        {
+          "gene": "ENSG00000274000"
+        },
+        {
+          "gene": "ENSG00000275290"
+        }
+      ],
+      "symbol": "LILRA2"
+    },
+    {
+      "query": "ITGAV",
+      "_id": "3685",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000138448"
+      },
+      "symbol": "ITGAV"
+    },
+    {
+      "query": "ITGB1",
+      "_id": "3688",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000150093"
+      },
+      "symbol": "ITGB1"
+    },
+    {
+      "query": "ITGB2",
+      "_id": "3689",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000160255"
+      },
+      "symbol": "ITGB2"
+    },
+    {
+      "query": "ITGB3",
+      "_id": "3690",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000259207"
+      },
+      "symbol": "ITGB3"
+    },
+    {
+      "query": "ITGB7",
+      "_id": "3695",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000139626"
+      },
+      "symbol": "ITGB7"
+    },
+    {
+      "query": "IgG",
+      "notfound": true
+    },
+    {
+      "query": "IgM",
+      "_id": "959",
+      "_score": 21.557617,
+      "ensembl": {
+        "gene": "ENSG00000102245"
+      },
+      "symbol": "CD40LG"
+    },
+    {
+      "query": "KCN2",
+      "notfound": true
+    },
+    {
+      "query": "KCNB1",
+      "_id": "3745",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000158445"
+      },
+      "symbol": "KCNB1"
+    },
+    {
+      "query": "KCNB2",
+      "_id": "9312",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000182674"
+      },
+      "symbol": "KCNB2"
+    },
+    {
+      "query": "KCNIP1",
+      "_id": "30820",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000182132"
+      },
+      "symbol": "KCNIP1"
+    },
+    {
+      "query": "KCNIP2",
+      "_id": "30819",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000120049"
+      },
+      "symbol": "KCNIP2"
+    },
+    {
+      "query": "KCNJ10",
+      "_id": "3766",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000177807"
+      },
+      "symbol": "KCNJ10"
+    },
+    {
+      "query": "KCNJ11",
+      "_id": "3767",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000187486"
+      },
+      "symbol": "KCNJ11"
+    },
+    {
+      "query": "KCNJ15",
+      "_id": "3772",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000157551"
+      },
+      "symbol": "KCNJ15"
+    },
+    {
+      "query": "KCNJ4",
+      "_id": "3761",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000168135"
+      },
+      "symbol": "KCNJ4"
+    },
+    {
+      "query": "KCNJ5",
+      "_id": "3762",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000120457"
+      },
+      "symbol": "KCNJ5"
+    },
+    {
+      "query": "KCNJ6",
+      "_id": "3763",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000157542"
+      },
+      "symbol": "KCNJ6"
+    },
+    {
+      "query": "KCNMA1",
+      "_id": "3778",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000156113"
+      },
+      "symbol": "KCNMA1"
+    },
+    {
+      "query": "KCNQ1",
+      "_id": "3784",
+      "_score": 148.79999,
+      "ensembl": [
+        {
+          "gene": "ENSG00000282076"
+        },
+        {
+          "gene": "ENSG00000053918"
+        }
+      ],
+      "symbol": "KCNQ1"
+    },
+    {
+      "query": "KCNQ2",
+      "_id": "3785",
+      "_score": 148.79999,
+      "ensembl": [
+        {
+          "gene": "ENSG00000281151"
+        },
+        {
+          "gene": "ENSG00000075043"
+        }
+      ],
+      "symbol": "KCNQ2"
+    },
+    {
+      "query": "KIR",
+      "_id": "3811",
+      "_score": 101.184,
+      "ensembl": [
+        {
+          "gene": "ENSG00000284426"
+        },
+        {
+          "gene": "ENSG00000278079"
+        },
+        {
+          "gene": "ENSG00000273775"
+        },
+        {
+          "gene": "ENSG00000274036"
+        },
+        {
+          "gene": "ENSG00000283729"
+        },
+        {
+          "gene": "ENSG00000284177"
+        },
+        {
+          "gene": "ENSG00000276423"
+        },
+        {
+          "gene": "ENSG00000278427"
+        },
+        {
+          "gene": "ENSG00000273518"
+        },
+        {
+          "gene": "ENSG00000275486"
+        },
+        {
+          "gene": "ENSG00000276329"
+        },
+        {
+          "gene": "ENSG00000274920"
+        },
+        {
+          "gene": "ENSG00000283731"
+        },
+        {
+          "gene": "ENSG00000275786"
+        },
+        {
+          "gene": "ENSG00000276379"
+        },
+        {
+          "gene": "ENSG00000274146"
+        },
+        {
+          "gene": "ENSG00000284093"
+        },
+        {
+          "gene": "ENSG00000275717"
+        },
+        {
+          "gene": "ENSG00000277272"
+        },
+        {
+          "gene": "ENSG00000275659"
+        },
+        {
+          "gene": "ENSG00000283827"
+        },
+        {
+          "gene": "ENSG00000277175"
+        },
+        {
+          "gene": "ENSG00000284589"
+        },
+        {
+          "gene": "ENSG00000278368"
+        },
+        {
+          "gene": "ENSG00000274948"
+        },
+        {
+          "gene": "ENSG00000167633"
+        },
+        {
+          "gene": "ENSG00000275288"
+        },
+        {
+          "gene": "ENSG00000275545"
+        },
+        {
+          "gene": "ENSG00000284342"
+        },
+        {
+          "gene": "ENSG00000278856"
+        },
+        {
+          "gene": "ENSG00000276501"
+        },
+        {
+          "gene": "ENSG00000283954"
+        }
+      ],
+      "symbol": "KIR3DL1"
+    },
+    {
+      "query": "KIR",
+      "_id": "2669",
+      "_score": 21.212885,
+      "ensembl": {
+        "gene": "ENSG00000164949"
+      },
+      "symbol": "GEM"
+    },
+    {
+      "query": "KLRC1",
+      "_id": "3821",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000134545"
+      },
+      "symbol": "KLRC1"
+    },
+    {
+      "query": "KLRC2",
+      "_id": "3822",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000205809"
+      },
+      "symbol": "KLRC2"
+    },
+    {
+      "query": "KLRD1",
+      "_id": "3824",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000134539"
+      },
+      "symbol": "KLRD1"
+    },
+    {
+      "query": "KV2.1",
+      "_id": "3745",
+      "_score": 23.037075,
+      "ensembl": {
+        "gene": "ENSG00000158445"
+      },
+      "symbol": "KCNB1"
+    },
+    {
+      "query": "KV2.2",
+      "_id": "9312",
+      "_score": 22.611032,
+      "ensembl": {
+        "gene": "ENSG00000182674"
+      },
+      "symbol": "KCNB2"
+    },
+    {
+      "query": "Kir6.1",
+      "_id": "3764",
+      "_score": 22.434387,
+      "ensembl": {
+        "gene": "ENSG00000121361"
+      },
+      "symbol": "KCNJ8"
+    },
+    {
+      "query": "Kir6.2",
+      "_id": "3767",
+      "_score": 22.27544,
+      "ensembl": {
+        "gene": "ENSG00000187486"
+      },
+      "symbol": "KCNJ11"
+    },
+    {
+      "query": "Kv2.1",
+      "_id": "3745",
+      "_score": 23.037075,
+      "ensembl": {
+        "gene": "ENSG00000158445"
+      },
+      "symbol": "KCNB1"
+    },
+    {
+      "query": "Kv2.2",
+      "_id": "9312",
+      "_score": 22.611032,
+      "ensembl": {
+        "gene": "ENSG00000182674"
+      },
+      "symbol": "KCNB2"
+    },
+    {
+      "query": "LHFPL5",
+      "_id": "222662",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000197753"
+      },
+      "symbol": "LHFPL5"
+    },
+    {
+      "query": "LRIT3",
+      "_id": "345193",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000183423"
+      },
+      "symbol": "LRIT3"
+    },
+    {
+      "query": "LRRC32",
+      "_id": "2615",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000137507"
+      },
+      "symbol": "LRRC32"
+    },
+    {
+      "query": "LRRC8A",
+      "_id": "56262",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000136802"
+      },
+      "symbol": "LRRC8A"
+    },
+    {
+      "query": "LTB",
+      "_id": "4050",
+      "_score": 148.79999,
+      "ensembl": [
+        {
+          "gene": "ENSG00000236925"
+        },
+        {
+          "gene": "ENSG00000206437"
+        },
+        {
+          "gene": "ENSG00000231314"
+        },
+        {
+          "gene": "ENSG00000236237"
+        },
+        {
+          "gene": "ENSG00000227507"
+        },
+        {
+          "gene": "ENSG00000223448"
+        },
+        {
+          "gene": "ENSG00000204487"
+        },
+        {
+          "gene": "ENSG00000238114"
+        }
+      ],
+      "symbol": "LTB"
+    },
+    {
+      "query": "MAP1A",
+      "_id": "4130",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000166963"
+      },
+      "symbol": "MAP1A"
+    },
+    {
+      "query": "MAP1A",
+      "_id": "23173",
+      "_score": 19.206789,
+      "ensembl": {
+        "gene": "ENSG00000164024"
+      },
+      "symbol": "METAP1"
+    },
+    {
+      "query": "MD1",
+      "_id": "9450",
+      "_score": 23.302383,
+      "ensembl": {
+        "gene": "ENSG00000112799"
+      },
+      "symbol": "LY86"
+    },
+    {
+      "query": "MD1",
+      "_id": "4095",
+      "_score": 23.302383,
+      "symbol": "MAFD1"
+    },
+    {
+      "query": "MEP1B",
+      "_id": "4225",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000141434"
+      },
+      "symbol": "MEP1B"
+    },
+    {
+      "query": "MFSD1",
+      "_id": "64747",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000118855"
+      },
+      "symbol": "MFSD1"
+    },
+    {
+      "query": "MKS1",
+      "_id": "54903",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000011143"
+      },
+      "symbol": "MKS1"
+    },
+    {
+      "query": "MPL",
+      "_id": "4352",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000117400"
+      },
+      "symbol": "MPL"
+    },
+    {
+      "query": "MRAP1",
+      "_id": "56246",
+      "_score": 24.554575,
+      "ensembl": {
+        "gene": "ENSG00000170262"
+      },
+      "symbol": "MRAP"
+    },
+    {
+      "query": "Mincle",
+      "_id": "26253",
+      "_score": 24.020206,
+      "ensembl": {
+        "gene": "ENSG00000166523"
+      },
+      "symbol": "CLEC4E"
+    },
+    {
+      "query": "NALCN",
+      "_id": "259232",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000102452"
+      },
+      "symbol": "NALCN"
+    },
+    {
+      "query": "NCR1",
+      "_id": "9437",
+      "_score": 148.79999,
+      "ensembl": [
+        {
+          "gene": "ENSG00000275822"
+        },
+        {
+          "gene": "ENSG00000275156"
+        },
+        {
+          "gene": "ENSG00000273916"
+        },
+        {
+          "gene": "ENSG00000277334"
+        },
+        {
+          "gene": "ENSG00000275637"
+        },
+        {
+          "gene": "ENSG00000275521"
+        },
+        {
+          "gene": "ENSG00000277629"
+        },
+        {
+          "gene": "ENSG00000273535"
+        },
+        {
+          "gene": "ENSG00000274053"
+        },
+        {
+          "gene": "ENSG00000277442"
+        },
+        {
+          "gene": "ENSG00000276450"
+        },
+        {
+          "gene": "ENSG00000273506"
+        },
+        {
+          "gene": "ENSG00000189430"
+        },
+        {
+          "gene": "ENSG00000278362"
+        },
+        {
+          "gene": "ENSG00000278025"
+        },
+        {
+          "gene": "ENSG00000277824"
+        }
+      ],
+      "symbol": "NCR1"
+    },
+    {
+      "query": "NCSTN",
+      "_id": "23385",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000162736"
+      },
+      "symbol": "NCSTN"
+    },
+    {
+      "query": "NEU1",
+      "_id": "4758",
+      "_score": 148.79999,
+      "ensembl": [
+        {
+          "gene": "ENSG00000234343"
+        },
+        {
+          "gene": "ENSG00000228691"
+        },
+        {
+          "gene": "ENSG00000223957"
+        },
+        {
+          "gene": "ENSG00000234846"
+        },
+        {
+          "gene": "ENSG00000227315"
+        },
+        {
+          "gene": "ENSG00000184494"
+        },
+        {
+          "gene": "ENSG00000227129"
+        },
+        {
+          "gene": "ENSG00000204386"
+        }
+      ],
+      "symbol": "NEU1"
+    },
+    {
+      "query": "NEU1",
+      "_id": "51162",
+      "_score": 21.464169,
+      "ensembl": {
+        "gene": "ENSG00000172889"
+      },
+      "symbol": "EGFL7"
+    },
+    {
+      "query": "NKG2C",
+      "_id": "3822",
+      "_score": 23.302383,
+      "ensembl": {
+        "gene": "ENSG00000205809"
+      },
+      "symbol": "KLRC2"
+    },
+    {
+      "query": "NKG2D",
+      "_id": "22914",
+      "_score": 22.13096,
+      "ensembl": {
+        "gene": "ENSG00000213809"
+      },
+      "symbol": "KLRK1"
+    },
+    {
+      "query": "NKp30",
+      "_id": "259197",
+      "_score": 23.037075,
+      "ensembl": [
+        {
+          "gene": "ENSG00000204475"
+        },
+        {
+          "gene": "ENSG00000237808"
+        },
+        {
+          "gene": "ENSG00000236979"
+        },
+        {
+          "gene": "ENSG00000223833"
+        },
+        {
+          "gene": "ENSG00000236315"
+        },
+        {
+          "gene": "ENSG00000237103"
+        },
+        {
+          "gene": "ENSG00000225211"
+        },
+        {
+          "gene": "ENSG00000206430"
+        }
+      ],
+      "symbol": "NCR3"
+    },
+    {
+      "query": "NKp44",
+      "_id": "9436",
+      "_score": 24.020206,
+      "ensembl": {
+        "gene": "ENSG00000096264"
+      },
+      "symbol": "NCR2"
+    },
+    {
+      "query": "NKp46",
+      "_id": "9437",
+      "_score": 22.80981,
+      "ensembl": [
+        {
+          "gene": "ENSG00000275822"
+        },
+        {
+          "gene": "ENSG00000275156"
+        },
+        {
+          "gene": "ENSG00000273916"
+        },
+        {
+          "gene": "ENSG00000277334"
+        },
+        {
+          "gene": "ENSG00000275637"
+        },
+        {
+          "gene": "ENSG00000275521"
+        },
+        {
+          "gene": "ENSG00000277629"
+        },
+        {
+          "gene": "ENSG00000273535"
+        },
+        {
+          "gene": "ENSG00000274053"
+        },
+        {
+          "gene": "ENSG00000277442"
+        },
+        {
+          "gene": "ENSG00000276450"
+        },
+        {
+          "gene": "ENSG00000273506"
+        },
+        {
+          "gene": "ENSG00000189430"
+        },
+        {
+          "gene": "ENSG00000278362"
+        },
+        {
+          "gene": "ENSG00000278025"
+        },
+        {
+          "gene": "ENSG00000277824"
+        }
+      ],
+      "symbol": "NCR1"
+    },
+    {
+      "query": "NOX2",
+      "_id": "1536",
+      "_score": 21.998539,
+      "ensembl": {
+        "gene": "ENSG00000165168"
+      },
+      "symbol": "CYBB"
+    },
+    {
+      "query": "NPTN",
+      "_id": "27020",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000156642"
+      },
+      "symbol": "NPTN"
+    },
+    {
+      "query": "NRXN1",
+      "_id": "9378",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000179915"
+      },
+      "symbol": "NRXN1"
+    },
+    {
+      "query": "NRXN1A",
+      "notfound": true
+    },
+    {
+      "query": "NRXN2",
+      "_id": "9379",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000110076"
+      },
+      "symbol": "NRXN2"
+    },
+    {
+      "query": "NRXN3",
+      "_id": "9369",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000021645"
+      },
+      "symbol": "NRXN3"
+    },
+    {
+      "query": "OSTM1",
+      "_id": "28962",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000081087"
+      },
+      "symbol": "OSTM1"
+    },
+    {
+      "query": "OSTbeta",
+      "_id": "123264",
+      "_score": 22.80981,
+      "ensembl": {
+        "gene": "ENSG00000186198"
+      },
+      "symbol": "SLC51B"
+    },
+    {
+      "query": "OTOP1",
+      "_id": "133060",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000163982"
+      },
+      "symbol": "OTOP1"
+    },
+    {
+      "query": "OTOP2",
+      "_id": "92736",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000183034"
+      },
+      "symbol": "OTOP2"
+    },
+    {
+      "query": "OTOP3",
+      "_id": "347741",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000182938"
+      },
+      "symbol": "OTOP3"
+    },
+    {
+      "query": "PCDH15",
+      "_id": "65217",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000150275"
+      },
+      "symbol": "PCDH15"
+    },
+    {
+      "query": "PCDHB",
+      "notfound": true
+    },
+    {
+      "query": "PCDHG",
+      "_id": "56115",
+      "_score": 25.365847,
+      "symbol": "PCDHG@"
+    },
+    {
+      "query": "PCDHGB7",
+      "_id": "56099",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000254122"
+      },
+      "symbol": "PCDHGB7"
+    },
+    {
+      "query": "PEN2",
+      "_id": "55851",
+      "_score": 21.464169,
+      "ensembl": {
+        "gene": "ENSG00000205155"
+      },
+      "symbol": "PSENEN"
+    },
+    {
+      "query": "PHB1",
+      "_id": "5245",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000167085"
+      },
+      "symbol": "PHB1"
+    },
+    {
+      "query": "PKD2",
+      "_id": "5311",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000118762"
+      },
+      "symbol": "PKD2"
+    },
+    {
+      "query": "PKD2",
+      "_id": "25865",
+      "_score": 21.65691,
+      "ensembl": {
+        "gene": "ENSG00000105287"
+      },
+      "symbol": "PRKD2"
+    },
+    {
+      "query": "PKD2L1",
+      "_id": "9033",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000107593"
+      },
+      "symbol": "PKD2L1"
+    },
+    {
+      "query": "PLAUR",
+      "_id": "5329",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000011422"
+      },
+      "symbol": "PLAUR"
+    },
+    {
+      "query": "PSEN1",
+      "_id": "5663",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000080815"
+      },
+      "symbol": "PSEN1"
+    },
+    {
+      "query": "PSEN2",
+      "_id": "5664",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000143801"
+      },
+      "symbol": "PSEN2"
+    },
+    {
+      "query": "PSENEN",
+      "_id": "55851",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000205155"
+      },
+      "symbol": "PSENEN"
+    },
+    {
+      "query": "PTPRC",
+      "_id": "5788",
+      "_score": 148.79999,
+      "ensembl": [
+        {
+          "gene": "ENSG00000081237"
+        },
+        {
+          "gene": "ENSG00000262418"
+        }
+      ],
+      "symbol": "PTPRC"
+    },
+    {
+      "query": "PTRF/Cavin-1",
+      "notfound": true
+    },
+    {
+      "query": "RAMP1",
+      "_id": "10267",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000132329"
+      },
+      "symbol": "RAMP1"
+    },
+    {
+      "query": "RAMP2",
+      "_id": "10266",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000131477"
+      },
+      "symbol": "RAMP2"
+    },
+    {
+      "query": "RAMP3",
+      "_id": "10268",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000122679"
+      },
+      "symbol": "RAMP3"
+    },
+    {
+      "query": "RAPSN",
+      "_id": "5913",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000165917"
+      },
+      "symbol": "RAPSN"
+    },
+    {
+      "query": "RHAG",
+      "_id": "6005",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000112077"
+      },
+      "symbol": "RHAG"
+    },
+    {
+      "query": "RTP1",
+      "_id": "132112",
+      "_score": 148.79999,
+      "ensembl": [
+        {
+          "gene": "ENSG00000175077"
+        },
+        {
+          "gene": "ENSG00000291554"
+        }
+      ],
+      "symbol": "RTP1"
+    },
+    {
+      "query": "RTP1S",
+      "notfound": true
+    },
+    {
+      "query": "RTP2",
+      "_id": "344892",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000198471"
+      },
+      "symbol": "RTP2"
+    },
+    {
+      "query": "SCARB2",
+      "_id": "950",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000138760"
+      },
+      "symbol": "SCARB2"
+    },
+    {
+      "query": "SCNN1A",
+      "_id": "6337",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000111319"
+      },
+      "symbol": "SCNN1A"
+    },
+    {
+      "query": "SCNN1B",
+      "_id": "6338",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000168447"
+      },
+      "symbol": "SCNN1B"
+    },
+    {
+      "query": "SCNN1G",
+      "_id": "6340",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000166828"
+      },
+      "symbol": "SCNN1G"
+    },
+    {
+      "query": "SDC2",
+      "_id": "6383",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000169439"
+      },
+      "symbol": "SDC2"
+    },
+    {
+      "query": "SEPTIN2",
+      "_id": "4735",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000168385"
+      },
+      "symbol": "SEPTIN2"
+    },
+    {
+      "query": "SGCA",
+      "_id": "6442",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000108823"
+      },
+      "symbol": "SGCA"
+    },
+    {
+      "query": "SGCB",
+      "_id": "6443",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000163069"
+      },
+      "symbol": "SGCB"
+    },
+    {
+      "query": "SGCD",
+      "_id": "6444",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000170624"
+      },
+      "symbol": "SGCD"
+    },
+    {
+      "query": "SGCG",
+      "_id": "6445",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000102683"
+      },
+      "symbol": "SGCG"
+    },
+    {
+      "query": "SLC3A1",
+      "_id": "6519",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000138079"
+      },
+      "symbol": "SLC3A1"
+    },
+    {
+      "query": "SLC3A2",
+      "_id": "6520",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000168003"
+      },
+      "symbol": "SLC3A2"
+    },
+    {
+      "query": "SLC51A",
+      "_id": "200931",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000163959"
+      },
+      "symbol": "SLC51A"
+    },
+    {
+      "query": "SLC51B",
+      "_id": "123264",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000186198"
+      },
+      "symbol": "SLC51B"
+    },
+    {
+      "query": "SLC7A13",
+      "_id": "157724",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000164893"
+      },
+      "symbol": "SLC7A13"
+    },
+    {
+      "query": "SLC7A9",
+      "_id": "11136",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000021488"
+      },
+      "symbol": "SLC7A9"
+    },
+    {
+      "query": "SLO3",
+      "_id": "157855",
+      "_score": 24.020206,
+      "ensembl": {
+        "gene": "ENSG00000215262"
+      },
+      "symbol": "KCNU1"
+    },
+    {
+      "query": "SPINT1",
+      "_id": "6692",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000166145"
+      },
+      "symbol": "SPINT1"
+    },
+    {
+      "query": "SPINT2",
+      "_id": "10653",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000167642"
+      },
+      "symbol": "SPINT2"
+    },
+    {
+      "query": "STT3B",
+      "_id": "201595",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000163527"
+      },
+      "symbol": "STT3B"
+    },
+    {
+      "query": "SUR1",
+      "_id": "6833",
+      "_score": 22.27544,
+      "ensembl": {
+        "gene": "ENSG00000006071"
+      },
+      "symbol": "ABCC8"
+    },
+    {
+      "query": "SUR2A",
+      "notfound": true
+    },
+    {
+      "query": "SUR2B",
+      "notfound": true
+    },
+    {
+      "query": "TAPBPR",
+      "_id": "55080",
+      "_score": 24.554575,
+      "ensembl": {
+        "gene": "ENSG00000139192"
+      },
+      "symbol": "TAPBPL"
+    },
+    {
+      "query": "TARP-\u03b38",
+      "notfound": true
+    },
+    {
+      "query": "TCRB",
+      "_id": "6957",
+      "_score": 101.184,
+      "symbol": "TRB"
+    },
+    {
+      "query": "TCRB",
+      "_id": "28571",
+      "_score": 20.634851,
+      "ensembl": {
+        "gene": "ENSG00000275243"
+      },
+      "symbol": "TRBV16"
+    },
+    {
+      "query": "TCRB",
+      "_id": "28589",
+      "_score": 20.634851,
+      "ensembl": {
+        "gene": "ENSG00000278030"
+      },
+      "symbol": "TRBV7-9"
+    },
+    {
+      "query": "TCRB",
+      "_id": "28639",
+      "_score": 20.634851,
+      "ensembl": {
+        "gene": "ENSG00000211751"
+      },
+      "symbol": "TRBC1"
+    },
+    {
+      "query": "TCR\u03b1",
+      "notfound": true
+    },
+    {
+      "query": "TCR\u03b2",
+      "notfound": true
+    },
+    {
+      "query": "TCTN1",
+      "_id": "79600",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000204852"
+      },
+      "symbol": "TCTN1"
+    },
+    {
+      "query": "TCTN2",
+      "_id": "79867",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000168778"
+      },
+      "symbol": "TCTN2"
+    },
+    {
+      "query": "TCTN3",
+      "_id": "26123",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000119977"
+      },
+      "symbol": "TCTN3"
+    },
+    {
+      "query": "TENM1",
+      "_id": "10178",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000009694"
+      },
+      "symbol": "TENM1"
+    },
+    {
+      "query": "TENM2",
+      "_id": "57451",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000145934"
+      },
+      "symbol": "TENM2"
+    },
+    {
+      "query": "TENM3",
+      "_id": "55714",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000218336"
+      },
+      "symbol": "TENM3"
+    },
+    {
+      "query": "TENM4",
+      "_id": "26011",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000149256"
+      },
+      "symbol": "TENM4"
+    },
+    {
+      "query": "TMC1",
+      "_id": "117531",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000165091"
+      },
+      "symbol": "TMC1"
+    },
+    {
+      "query": "TMC2",
+      "_id": "117532",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000149488"
+      },
+      "symbol": "TMC2"
+    },
+    {
+      "query": "TMEM145",
+      "_id": "284339",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000167619"
+      },
+      "symbol": "TMEM145"
+    },
+    {
+      "query": "TMEM17",
+      "_id": "200728",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000186889"
+      },
+      "symbol": "TMEM17"
+    },
+    {
+      "query": "TMEM27",
+      "_id": "57393",
+      "_score": 101.184,
+      "ensembl": {
+        "gene": "ENSG00000147003"
+      },
+      "symbol": "CLTRN"
+    },
+    {
+      "query": "TMEM30A",
+      "_id": "55754",
+      "_score": 101.184,
+      "ensembl": {
+        "gene": "ENSG00000112697"
+      },
+      "symbol": "CDC50A"
+    },
+    {
+      "query": "TMEM67",
+      "_id": "91147",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000164953"
+      },
+      "symbol": "TMEM67"
+    },
+    {
+      "query": "TRAC",
+      "_id": "28755",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000277734"
+      },
+      "symbol": "TRAC"
+    },
+    {
+      "query": "TRBC",
+      "notfound": true
+    },
+    {
+      "query": "TREM1",
+      "_id": "54210",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000124731"
+      },
+      "symbol": "TREM1"
+    },
+    {
+      "query": "TREM2",
+      "_id": "54209",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000095970"
+      },
+      "symbol": "TREM2"
+    },
+    {
+      "query": "TYROBP",
+      "_id": "7305",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000011600"
+      },
+      "symbol": "TYROBP"
+    },
+    {
+      "query": "UFSP2",
+      "_id": "55325",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000109775"
+      },
+      "symbol": "UFSP2"
+    },
+    {
+      "query": "UNC79",
+      "_id": "57578",
+      "_score": 148.79999,
+      "ensembl": [
+        {
+          "gene": "ENSG00000276416"
+        },
+        {
+          "gene": "ENSG00000133958"
+        }
+      ],
+      "symbol": "UNC79"
+    },
+    {
+      "query": "UNC80",
+      "_id": "285175",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000144406"
+      },
+      "symbol": "UNC80"
+    },
+    {
+      "query": "UNC93B1",
+      "_id": "81622",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000110057"
+      },
+      "symbol": "UNC93B1"
+    },
+    {
+      "query": "UPK1A",
+      "_id": "11045",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000105668"
+      },
+      "symbol": "UPK1A"
+    },
+    {
+      "query": "UPK1B",
+      "_id": "7348",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000114638"
+      },
+      "symbol": "UPK1B"
+    },
+    {
+      "query": "UPK2",
+      "_id": "7379",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000110375"
+      },
+      "symbol": "UPK2"
+    },
+    {
+      "query": "V-ATPase",
+      "notfound": true
+    },
+    {
+      "query": "VPREB1",
+      "_id": "7441",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000169575"
+      },
+      "symbol": "VPREB1"
+    },
+    {
+      "query": "WLS",
+      "_id": "79971",
+      "_score": 148.79999,
+      "ensembl": {
+        "gene": "ENSG00000116729"
+      },
+      "symbol": "WLS"
+    },
+    {
+      "query": "WNT",
+      "notfound": true
+    },
+    {
+      "query": "calmegin",
+      "notfound": true
+    },
+    {
+      "query": "mIg",
+      "_id": "4283",
+      "_score": 101.184,
+      "ensembl": {
+        "gene": "ENSG00000138755"
+      },
+      "symbol": "CXCL9"
+    },
+    {
+      "query": "peptide",
+      "notfound": true
+    },
+    {
+      "query": "rapsyn",
+      "_id": "5913",
+      "_score": 22.434387,
+      "ensembl": {
+        "gene": "ENSG00000165917"
+      },
+      "symbol": "RAPSN"
+    },
+    {
+      "query": "tapasin",
+      "notfound": true
+    },
+    {
+      "query": "tubby",
+      "notfound": true
+    },
+    {
+      "query": "unknown",
+      "notfound": true
+    }
+  ]
+}

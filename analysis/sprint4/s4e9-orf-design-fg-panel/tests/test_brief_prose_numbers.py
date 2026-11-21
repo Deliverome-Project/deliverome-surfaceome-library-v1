@@ -129,13 +129,11 @@ CLAIMS = [
         ["structure_match.verdict_active.identical"],
     ),
     (
-        "| different | {} | the model is another proteoform",
+        "| different | {} | the model is another form",
         ["structure_match.verdict_active.different"],
     ),
-    (
-        "rule: {} genes, of which {} are NetGPI-anchored",
-        ["gpi.gpi_set_genes", "gpi.basis.netgpi_anchored"],
-    ),
+    ("| NetGPI calls a form anchored | {} | yes |", ["gpi.basis.netgpi_anchored"]),
+    ("That gives {} GPI genes with {} L1 CDSs.", ["gpi.gpi_set_genes", "gpi.l1_gpi_members"]),
 ]
 
 

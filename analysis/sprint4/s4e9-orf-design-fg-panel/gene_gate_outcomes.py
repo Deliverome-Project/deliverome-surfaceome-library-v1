@@ -51,6 +51,14 @@ def main(argv=None) -> int:
     import final_library as F  # importing runs the filter, which is how it is meant to run
 
     tiers = {r["gene"]: F.tier(r) for r in F.recs if F.passes(r)}
+    # Genes outside the core enter by a named tier despite failing a gate; without this they
+    # read as excluded although they are in the library (236 genes, e.g. OR8J2).
+    entry = {
+        "LL": "little-studied UniProt tier",
+        "SV": "GPCR screen tier",
+        "OE": "overexpression tier",
+    }
+    entered_by = {g: entry.get(t, "core") for g, t in F._lib_tier.items()}
     gate_names = [name for name, _pred in F.GATES]
     rows = []
     for r in F.recs:
@@ -73,8 +81,9 @@ def main(argv=None) -> int:
             {
                 "gene": gene,
                 "uniprot_accession": r.get("uniprot") or "",
-                "outcome": "excluded" if gate else "in_library",
-                "tier": tiers.get(gene, ""),
+                "outcome": "in_library" if gene in entered_by else "excluded",
+                "entered_by": entered_by.get(gene, ""),
+                "architecture_tier": tiers.get(gene, ""),
                 "gate_failed": gate or "",
                 **per_gate,
             }

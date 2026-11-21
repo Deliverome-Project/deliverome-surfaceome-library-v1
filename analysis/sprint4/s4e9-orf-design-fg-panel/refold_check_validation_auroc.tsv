@@ -1,0 +1,41 @@
+reference	negative_class	score	n_positive	n_negative	auroc	boot95_lo	boot95_hi
+afdb_ref	known_failure	native-region lDDT	131	9	0.592	0.459	0.731
+afdb_ref	known_failure	site lDDT (+/-15)	131	9	0.604	0.445	0.726
+afdb_ref	known_failure	epitope exposure (min RSA)	131	9	0.66	0.46	0.844
+afdb_ref	known_failure	epitope contacts (negated)	131	9	0.548	0.484	0.709
+afdb_ref	known_failure	verdict (pass=1)	131	9	0.514	0.436	0.678
+afdb_ref	decoy_core	native-region lDDT	131	75	0.63	0.584	0.681
+afdb_ref	decoy_core	site lDDT (+/-15)	131	75	0.688	0.618	0.753
+afdb_ref	decoy_core	epitope exposure (min RSA)	131	75	0.607	0.541	0.67
+afdb_ref	decoy_core	epitope contacts (negated)	131	75	0.506	0.487	0.53
+afdb_ref	decoy_core	verdict (pass=1)	131	75	0.525	0.492	0.561
+afdb_ref	decoy_hardneg	native-region lDDT	131	48	0.574	0.504	0.636
+afdb_ref	decoy_hardneg	site lDDT (+/-15)	131	48	0.634	0.555	0.704
+afdb_ref	decoy_hardneg	epitope exposure (min RSA)	131	48	0.597	0.519	0.672
+afdb_ref	decoy_hardneg	epitope contacts (negated)	131	48	0.513	0.488	0.546
+afdb_ref	decoy_hardneg	verdict (pass=1)	131	48	0.521	0.477	0.568
+afdb_ref	function_lost	native-region lDDT	131	3	0.808	0.643	0.905
+afdb_ref	function_lost	site lDDT (+/-15)	131	3	0.706	0.299	0.918
+afdb_ref	function_lost	epitope exposure (min RSA)	131	3	0.693	0.392	0.858
+afdb_ref	function_lost	epitope contacts (negated)	131	3	0.492	0.48	0.5
+afdb_ref	function_lost	verdict (pass=1)	131	3	0.625	0.438	0.725
+own_ref	known_failure	native-region lDDT	131	9	0.687	0.522	0.808
+own_ref	known_failure	site lDDT (+/-15)	131	9	0.668	0.427	0.815
+own_ref	known_failure	epitope exposure (min RSA)	131	9	0.66	0.46	0.844
+own_ref	known_failure	epitope contacts (negated)	131	9	0.548	0.484	0.709
+own_ref	known_failure	verdict (pass=1)	131	9	0.529	0.455	0.691
+own_ref	decoy_core	native-region lDDT	131	75	0.779	0.73	0.831
+own_ref	decoy_core	site lDDT (+/-15)	131	75	0.759	0.692	0.825
+own_ref	decoy_core	epitope exposure (min RSA)	131	75	0.607	0.541	0.67
+own_ref	decoy_core	epitope contacts (negated)	131	75	0.506	0.487	0.53
+own_ref	decoy_core	verdict (pass=1)	131	75	0.527	0.496	0.562
+own_ref	decoy_hardneg	native-region lDDT	131	48	0.741	0.679	0.801
+own_ref	decoy_hardneg	site lDDT (+/-15)	131	48	0.714	0.639	0.781
+own_ref	decoy_hardneg	epitope exposure (min RSA)	131	48	0.597	0.519	0.672
+own_ref	decoy_hardneg	epitope contacts (negated)	131	48	0.513	0.488	0.546
+own_ref	decoy_hardneg	verdict (pass=1)	131	48	0.515	0.478	0.556
+own_ref	function_lost	native-region lDDT	131	3	0.757	0.419	0.93
+own_ref	function_lost	site lDDT (+/-15)	131	3	0.764	0.438	0.935
+own_ref	function_lost	epitope exposure (min RSA)	131	3	0.693	0.392	0.858
+own_ref	function_lost	epitope contacts (negated)	131	3	0.492	0.48	0.5
+own_ref	function_lost	verdict (pass=1)	131	3	0.473	0.447	0.493

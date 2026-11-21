@@ -1,0 +1,208 @@
+gene	uniprot	canonical_aa	canonical_orf_nt	first_failing_gate	passes_every_other_core_gate	meets_every_other_low_literature_condition	screen_validated_gpcr	in_l1_gene_list	l2_truncation_constructs
+MUC16	Q8WXI7	14507	43524	ORF size	True	False	False	False	2
+MUC3B	Q9H195	13477	40434	ORF size	True	False	False	False	0
+MACF1	Q9UPN3	7388	22167	surface evidence	False	False	False	False	0
+LRTM3	Q8NDH2	7081	21246	surface evidence	False	False	False	False	0
+SYNE2	Q8WXH0	6885	20658	surface evidence	False	False	False	False	0
+ADGRV1	Q8WXG9	6306	18921	ORF size	True	False	False	False	0
+AHNAK	Q09666	5890	17673	surface fraction	False	False	False	False	0
+AHNAK2	Q8IVF2	5795	17388	surface fraction	False	False	False	False	0
+MUC12	Q9UKN1	5478	16437	ORF size	True	False	False	False	0
+MUC4	Q99102	5412	16239	ORF size	True	False	False	False	0
+FCGBP	Q9Y6R7	5405	16218	surface evidence	False	False	False	False	0
+USH2A	O75445	5202	15609	ORF size	True	False	False	False	0
+ABCA13	Q86UQ4	5058	15177	surface evidence	False	False	False	False	0
+BLTP1	Q2LD37	5005	15018	surface evidence	False	False	False	False	0
+FAT4	Q6V0I7	4981	14946	ORF size	True	False	False	False	0
+PLEC	Q15149	4684	14055	surface fraction	False	False	False	False	0
+LRP2	P98164	4655	13968	ORF size	True	False	False	False	1
+LRP1B	Q9NZR2	4599	13800	ORF size	True	False	False	False	0
+FAT1	Q14517	4588	13767	ORF size	True	False	False	False	0
+FAT3	Q8TDW7	4557	13674	ORF size	True	False	False	False	0
+LRP1	Q07954	4544	13635	ORF size	True	False	False	False	1
+MUC17	Q685J3	4493	13482	ORF size	True	False	False	False	0
+HSPG2	P98160	4391	13176	anchored	False	False	False	False	0
+ANK3	Q12955	4377	13134	surface evidence	False	False	False	False	0
+FAT2	Q9NYQ8	4349	13050	ORF size	True	False	False	False	0
+PKD1	P98161	4303	12912	ORF size	True	False	False	False	0
+PKHD1L1	Q86WI1	4243	12732	anchored	False	False	False	False	0
+PKHD1	P08F94	4074	12225	ORF size	True	False	False	False	0
+FRAS1	Q86XX4	4008	12027	surface evidence	False	False	False	False	0
+ANK2	Q01484	3957	11874	surface evidence	False	False	False	False	0
+CSMD3	Q7Z407	3707	11124	ORF size	True	False	False	False	0
+CUBN	O60494	3623	10872	anchored	False	False	False	False	0
+SVEP1	Q4LDE5	3571	10716	surface evidence	False	False	False	False	0
+CSMD1	Q96PZ7	3564	10695	ORF size	True	False	False	False	0
+CSMD2	Q7Z408	3487	10464	ORF size	True	False	False	False	0
+UTRN	P46939	3433	10302	surface evidence	False	False	False	False	0
+DCHS2	Q6V1P9	3371	10116	localization	False	False	False	False	0
+CDH23	Q9H251	3354	10065	ORF size	True	False	False	False	0
+LAMA3	Q16787	3333	10002	anchored	False	False	False	False	0
+MUC3A	Q02505	3323	9972	ORF size	True	False	False	False	0
+CELSR3	Q9NYQ7	3312	9939	ORF size	True	False	False	False	0
+DCHS1	Q96JQ0	3298	9897	ORF size	True	False	False	False	0
+COL6A3	P12111	3177	9534	anchored	False	False	False	False	0
+FREM2	Q5SZK8	3169	9510	surface fraction	False	False	False	False	0
+CENPF	P49454	3114	9345	surface evidence	False	False	False	False	0
+ADGRG4	Q8IZF6	3080	9243	ORF size	True	False	False	False	0
+CELSR1	Q9NYQ6	3014	9045	ORF size	True	False	False	False	0
+ZZEF1	O43149	2961	8886	surface evidence	False	False	False	False	0
+COL7A1	Q02388	2944	8835	anchored	False	False	False	False	0
+CELSR2	Q9HCU4	2923	8772	ORF size	True	False	False	False	0
+DSP	P15924	2871	8616	surface evidence	False	False	False	False	0
+PKD1L1	Q8TDX9	2849	8550	co-receptor	False	False	False	False	0
+MEGF8	Q7Z7M0	2845	8538	ORF size	True	False	False	False	0
+APC	P25054	2843	8532	surface evidence	False	False	False	False	0
+PDZD2	O15018	2839	8520	surface evidence	False	False	False	False	0
+MXRA5	Q9NR99	2828	8487	anchored	False	False	False	False	0
+VWF	P04275	2813	8442	surface evidence	False	False	False	False	0
+ZAN	Q9Y493	2812	8439	surface fraction	False	False	False	False	0
+TENM2	Q9NT68	2774	8325	ORF size	True	False	False	False	0
+TENM4	Q6N022	2769	8310	ORF size	True	False	False	False	0
+MGAM	O43451	2753	8262	ORF size	True	False	False	False	0
+PIEZO2	Q9H5I5	2752	8259	ORF size	True	False	False	False	0
+SRRM2	Q9UQ35	2752	8259	surface fraction	False	False	False	False	0
+TENM1	Q9UKZ4	2725	8178	ORF size	True	False	False	False	0
+TENM3	Q9P273	2699	8100	co-receptor	False	False	False	False	0
+UNC79	Q9P2D8	2635	7908	surface evidence	False	False	False	False	0
+IGSF10	Q6WRI0	2623	7872	surface evidence	False	False	False	False	0
+COL6A5	A8TX70	2615	7848	surface evidence	False	False	False	False	0
+ABCA12	Q86UK0	2595	7788	surface evidence	False	False	False	False	0
+STAB1	Q9NY15	2570	7713	ORF size	True	False	False	False	1
+NOTCH1	P46531	2555	7668	ORF size	True	False	False	False	1
+STAB2	Q8WWQ8	2551	7656	ORF size	True	False	False	False	1
+TLN1	Q9Y490	2541	7626	surface evidence	False	False	False	False	0
+PIEZO1	Q92508	2521	7566	ORF size	True	False	False	False	0
+MGAM2	Q2M2H8	2515	7548	surface evidence	False	False	False	False	0
+FASN	P49327	2511	7536	surface evidence	False	False	False	False	0
+CACNA1A	O00555	2506	7521	ORF size	True	False	False	False	0
+IGF2R	P11717	2491	7476	surface fraction	False	False	False	False	0
+FN1	P02751	2477	7434	anchored	False	False	False	False	0
+NOTCH2	Q04721	2471	7416	ORF size	True	False	False	False	1
+MAP1B	P46821	2468	7407	surface evidence	False	False	False	False	0
+PKD1L2	Q7Z442	2459	7380	surface evidence	False	False	False	False	0
+SPG11	Q96JI7	2443	7332	surface evidence	False	False	False	False	0
+ABCA2	Q9BZC7	2435	7308	surface fraction	False	False	False	False	0
+DMBT1	Q9UGM3	2413	7242	anchored	False	False	False	False	0
+CACNA1G	O43497	2377	7134	ORF size	True	False	False	False	0
+GPR179	Q6PRD1	2367	7104	ORF size	True	False	False	False	0
+CACNA1H	O95180	2353	7062	ORF size	True	False	False	False	0
+OTOGL	Q3ZCN5	2353	7062	surface evidence	False	False	False	False	0
+FAM186A	A6NE01	2351	7056	surface evidence	False	False	False	False	0
+ROS1	P08922	2347	7044	ORF size	True	False	False	False	1
+PCNX1	Q96RV3	2341	7026	surface evidence	False	False	False	False	0
+CACNA1B	Q00975	2339	7020	ORF size	True	False	False	False	0
+PTPRQ	Q9UMZ3	2332	6999	ORF size	True	False	False	False	0
+CSPG4	Q6UVK1	2322	6969	ORF size	True	False	False	False	1
+NOTCH3	Q9UM47	2321	6966	ORF size	True	False	False	False	1
+PTPRZ1	P23471	2315	6948	ORF size	True	False	False	False	1
+PTPRZ2	P23471	2315	6948	ORF size	True	False	False	False	0
+CACNA1E	Q15878	2313	6942	ORF size	True	False	False	False	0
+ABCA4	P78363	2273	6822	surface fraction	False	False	False	False	0
+ABCA1	O95477	2261	6786	ORF size	True	False	False	False	0
+PKDREJ	Q9NTG1	2253	6762	ORF size	True	False	False	False	0
+BLTP2	Q14667	2235	6708	surface evidence	False	False	False	False	0
+CACNA1I	Q9P0X4	2223	6672	ORF size	True	False	False	False	0
+CACNA1C	Q13936	2221	6666	ORF size	True	False	False	False	0
+SORL1	Q92673	2214	6645	ORF size	True	False	False	False	1
+SVIL	O95425	2214	6645	surface evidence	False	False	False	False	0
+SDK1	Q7Z5N4	2213	6642	ORF size	True	False	False	False	0
+TNC	P24821	2201	6606	anchored	False	False	False	False	0
+SDK2	Q58EX2	2172	6519	ORF size	True	False	False	False	0
+ALPK2	Q86TB3	2170	6513	surface evidence	False	False	False	False	0
+CACNA1D	Q01668	2161	6486	ORF size	True	False	False	False	0
+SHANK1	Q9Y566	2161	6486	surface evidence	False	False	False	False	0
+MALRD1	Q5VYJ5	2156	6471	surface evidence	False	False	False	False	0
+TECTA	O75443	2155	6468	surface fraction	False	False	False	False	0
+ABCA7	Q8IZY2	2146	6441	ORF size	True	False	False	False	0
+FREM3	P0C091	2139	6420	surface evidence	False	False	False	False	0
+PCNX2	A6NKB5	2137	6414	surface evidence	False	False	False	False	0
+SNRNP200	O75643	2136	6411	surface fraction	False	False	False	False	0
+PLXNB1	O43157	2135	6408	ORF size	True	False	False	False	1
+DOCK8	Q8NF50	2099	6300	surface evidence	False	False	False	False	0
+DYSF	O75923	2080	6243	surface fraction	False	False	False	False	0
+MPDZ	O75970	2070	6213	surface evidence	False	False	False	False	0
+AGRN	O00468	2068	6207	anchored	False	False	False	False	0
+LOXHD1	Q8IVV2	2067	6204	surface evidence	False	False	False	False	0
+MYOF	Q9NZM1	2061	6186	surface fraction	False	False	False	False	0
+FER1L5	A0AVI2	2057	6174	surface evidence	False	True	False	False	0
+MYO18A	Q92614	2054	6165	surface fraction	False	False	False	False	0
+DSCAML1	Q8TD84	2053	6162	ORF size	True	False	False	False	0
+CR1	P17927	2039	6120	ORF size	True	False	False	False	0
+PCNX3	Q9H6A9	2034	6105	surface evidence	False	False	False	False	0
+CKAP5	Q14008	2032	6099	surface evidence	False	False	False	False	0
+TRPM6	Q9BX84	2022	6069	ORF size	True	False	False	False	0
+SCN5A	Q14524	2016	6051	ORF size	True	False	False	False	0
+DSCAM	O60469	2012	6039	ORF size	True	False	False	False	0
+SCN1A	P35498	2009	6030	ORF size	True	False	False	False	0
+SCN2A	Q99250	2005	6018	ORF size	True	False	False	False	0
+NOTCH4	Q99466	2003	6012	ORF size	True	False	False	False	0
+SCN3A	Q9NY46	2000	6003	ORF size	True	False	False	False	0
+PTPRB	P23467	1997	5994	ORF size	True	False	False	False	0
+SHROOM3	Q8TF72	1996	5991	surface evidence	False	False	False	False	0
+SCN9A	Q15858	1988	5967	ORF size	True	False	False	False	0
+SCN8A	Q9UQD0	1980	5943	ORF size	True	False	False	False	0
+CACNA1F	O60840	1977	5934	ORF size	True	False	False	False	0
+MYH9	P35579	1960	5883	surface fraction	False	False	False	False	0
+SCN10A	Q9Y5Y9	1956	5871	ORF size	True	False	False	False	0
+PCDH15	Q96QU1	1955	5868	ORF size	True	False	False	False	0
+PTPRS	Q13332	1948	5847	ORF size	True	False	False	False	0
+ADAMTS9	Q9P2N4	1935	5808	surface fraction	False	False	False	False	0
+LCT	P09848	1927	5784	ORF size	True	False	False	False	0
+CFAP65	Q6ZU64	1925	5778	surface evidence	False	False	False	False	0
+PLXND1	Q9Y4D7	1925	5778	ORF size	True	False	False	False	1
+MYLK	Q15746	1914	5745	surface evidence	False	False	False	False	0
+PTPRD	P23468	1912	5739	ORF size	True	False	False	False	0
+PLXNB3	Q9ULL4	1909	5730	ORF size	True	False	False	False	1
+PTPRF	P10586	1907	5724	ORF size	True	False	False	False	0
+LRP4	O75096	1905	5718	ORF size	True	False	False	False	0
+MTCL1	Q9Y4B5	1905	5718	surface evidence	False	False	False	False	0
+PLXNA1	Q9UIW2	1896	5691	ORF size	True	False	False	False	1
+FNDC1	Q4ZHG4	1894	5685	ORF size	True	False	False	False	0
+PLXNA2	O75051	1894	5685	ORF size	True	False	False	False	1
+PLXNA4	Q9HCM2	1894	5685	ORF size	True	False	False	False	1
+NUP210L	Q5VU65	1888	5667	surface evidence	False	False	False	False	0
+NUP210	Q8TEM1	1887	5664	surface evidence	False	False	False	False	0
+CPAMD8	Q8IZJ3	1885	5658	anchored	False	False	False	False	0
+CACNA1S	Q13698	1873	5622	ORF size	True	False	False	False	0
+RALGAPA2	Q2PPJ7	1873	5622	surface evidence	False	False	False	False	0
+PLXNA3	P51805	1871	5616	ORF size	True	False	False	False	1
+TRPM7	Q96QT4	1865	5598	ORF size	True	False	False	False	0
+PCSK5	Q92824	1860	5583	ORF size	True	False	False	False	0
+FER1L6	Q2WGJ9	1857	5574	surface evidence	False	False	False	False	0
+KIAA1549L	Q6ZVL6	1849	5550	surface evidence	False	False	False	False	0
+SHANK2	Q9UPX8	1849	5550	surface evidence	False	False	False	False	0
+PLXNB2	O15031	1838	5517	ORF size	True	False	False	False	1
+SCN4A	P35499	1836	5511	ORF size	True	False	False	False	0
+SI	P14410	1827	5484	ORF size	True	False	False	False	0
+LAMA4	Q16363	1823	5472	surface evidence	False	False	False	False	0
+ITGB4	P16144	1822	5469	ORF size	True	False	False	False	1
+CATSPERT	Q53TS8	1820	5463	anchored	False	False	False	False	0
+PATJ	Q8NI35	1801	5406	surface evidence	False	False	False	False	0
+PAPPA2	Q9BXP8	1791	5376	surface evidence	False	False	False	False	0
+SCN11A	Q9UI33	1791	5376	ORF size	True	False	False	False	0
+SIPA1L3	O60292	1781	5346	surface evidence	False	False	False	False	0
+STRC	Q7RTU9	1775	5328	anchored	False	False	False	False	0
+MUC22	E2RYF6	1773	5322	ORF size	True	False	False	False	0
+KIDINS220	Q9ULH0	1771	5316	ORF size	False	False	False	False	0
+COL18A1	P39060	1754	5265	surface evidence	False	False	False	False	0
+TJP1	Q07157	1748	5247	surface evidence	False	False	False	False	0
+COL5A3	P25940	1745	5238	surface evidence	False	False	False	False	0
+C4A	P0C0L4	1744	5235	surface evidence	False	False	False	False	0
+C4B_2	P0C0L5	1744	5235	surface evidence	False	False	False	False	0
+NALCN	Q8IZF0	1738	5217	co-receptor	False	False	False	False	0
+PKD1L3	Q7Z443	1732	5199	co-receptor	False	False	False	False	0
+TRPM3	Q9HCF6	1732	5199	ORF size	True	False	False	False	0
+LY75	O60449	1722	5169	ORF size	True	False	False	False	1
+LTBP1	Q14766	1721	5166	surface evidence	False	False	False	False	0
+PHLPP1	O60346	1717	5154	surface evidence	False	False	False	False	0
+ANKRD26	Q9UPS8	1710	5133	surface evidence	False	False	False	False	0
+SIGLEC1	Q9BZZ2	1709	5130	ORF size	True	False	False	False	1
+ABCA3	Q99758	1704	5115	surface evidence	False	False	False	False	0
+LRRC37A	A6NMS7	1700	5103	surface evidence	False	False	False	False	0
+LRRC37A2	A6NM11	1700	5103	surface evidence	False	False	False	False	0
+ADAMTSL3	P82987	1691	5076	surface evidence	False	False	False	False	0
+ADAMTS7	Q9UKP4	1686	5061	surface evidence	False	False	False	False	0
+LMO7	Q8WWI1	1683	5052	surface evidence	False	False	False	False	0
+SCN7A	Q01118	1682	5049	ORF size	True	False	False	False	0
+C5	P01031	1676	5031	surface evidence	False	False	False	False	0

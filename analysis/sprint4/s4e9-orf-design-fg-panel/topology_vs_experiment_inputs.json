@@ -1,0 +1,22 @@
+{
+  "uniprot": {
+    "key": "external://uniprot/2026_04/rest-2026-11-20/topology-vs-experiment/reviewed_human_mouse_topology.tsv.gz",
+    "release": "2026_04",
+    "etag": "25de0e62afdecf88fd2d26a4ad797033"
+  },
+  "topdb": {
+    "key": "external://topdb/v3.3/download-2026-11-20/topdb_all.xml.gz",
+    "version": "v3.3",
+    "etag": "943f65b45aa4e17abb74d745230c3023-2"
+  },
+  "topology_tool": "deeptmhmm_v1",
+  "experimental_eco": [
+    "ECO:0000269",
+    "ECO:0007744"
+  ],
+  "topdb_excluded_types": [
+    "Other"
+  ],
+  "min_identity_mapped": 0.6,
+  "members": 2710
+}

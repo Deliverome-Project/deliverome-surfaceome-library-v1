@@ -172,7 +172,7 @@
   "l1_tag_paths.tsv": 0,
   "l1_cassette_encodings.tsv": 0,
   "l1_swap_risk.tsv": 0,
-  "l1_swap_risk_summary.json": 2,
+  "l1_swap_risk_summary.json": 0,
   "l1_structure_gap.tsv": 0,
   "proteoform_match.tsv": 0,
   "residue_offsets.tsv": 0,

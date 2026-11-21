@@ -43,6 +43,7 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 
 | Script | Status | What it does | Writes |
 |---|---|---|---|
+| [`accessory_factor_dependence.py`](accessory_factor_dependence.py) | documented | Which L1 CDSs need a host accessory factor to reach the surface, and does K562 have it? | — |
 | [`add_library_genes.py`](add_library_genes.py) | documented | Add genes to the L1 library after its gene list was frozen, without moving anything else. | `reference_selection_summary.json` |
 | [`adopt_compara116_members.py`](adopt_compara116_members.py) | called | Plan and review Compara 116 panel adoption without overwriting a library record. | — |
 | [`adopt_ortholog_cds_policy.py`](adopt_ortholog_cds_policy.py) | stage | Adopt the CDS-eligible ortholog panel, as reviewed for correspondence, into L1. | `ortholog_cds_policy_adoption_summary.json`, `ortholog_cds_policy_id_allocations.tsv`, `ortholog_cds_policy_member_map.tsv`, `ortholog_panel_adopted.tsv`, `panel_changes_ortholog_cds_policy.tsv` |
@@ -86,13 +87,15 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`build_p0050_set.py`](build_p0050_set.py) | called | Build the P-0050-backbone copies of the order batch: P-0051 .. P-0075. | — |
 | [`build_sp_swap_arms.py`](build_sp_swap_arms.py) | called | Signal-peptide SWAP arms: the Igk leader replacing a member's own weak signal peptide. | — |
 | [`build_tacc_variants.py`](build_tacc_variants.py) | called | Build the TACC-spacer variant of the p0016 miR-L target vector. | — |
-| [`check_l1_built_orfs.py`](check_l1_built_orfs.py) | documented | Check every ordered L1 member's built ORF against the protein the manifest names. | `l1_built_orf_check.tsv` |
+| [`check_l1_built_orfs.py`](check_l1_built_orfs.py) | called | Check every ordered L1 member's built ORF against the protein the manifest names. | `l1_built_orf_check.tsv` |
+| [`check_library_transcripts.py`](check_library_transcripts.py) | called | Every L1 member's coding sequence, checked against the Ensembl transcript it was taken from. | `library_transcript_check.tsv`, `library_transcript_check_summary.json`, `library_transcript_genes.tsv` |
 | [`check_proteoform_match.py`](check_proteoform_match.py) | called | Is the AlphaFold model we would score the SAME PROTEIN as the ORF we would build? | `proteoform_match.tsv` |
 | [`check_swap_risk.py`](check_swap_risk.py) | called | Barcode/ORF swap risk for a set of constructs, checked before anything is ordered. | — |
 | [`check_universe_coverage.py`](check_universe_coverage.py) | stage | Which library genes the isoform and ortholog universes could draw from, and why not the rest. | `universe_coverage.tsv`, `universe_coverage_summary.json` |
 | [`code_map.py`](code_map.py) | called | Write ``CODE_MAP.md``: which script makes which table, and which scripts nothing runs any more. | `CODE_MAP.md` |
 | [`collect_reservations.py`](collect_reservations.py) | one-off | Rebuild ``barcode_reservations.tsv`` as the COMPLETE set still owed to the registry. | — |
 | [`compute_residue_offsets.py`](compute_residue_offsets.py) | called | Where the ordered protein sits inside the AlphaFold model, for `contained` members. | — |
+| [`coreceptor_host_line.py`](coreceptor_host_line.py) | documented | Co-receptor gate against the screening line: what a K562 (or lower-median) rule would change. | — |
 | [`dedupe_library_members.py`](dedupe_library_members.py) | stage | Retire library members whose ordered protein duplicates another member's. | `library_duplicate_members.tsv`, `library_duplicate_summary.json` |
 | [`design_orfs.py`](design_orfs.py) | called | Golden Gate domestication of the nine non-Tedman ORFs on Brenna's 15-receptor panel. | — |
 | [`design_p0050_bc_reverse.py`](design_p0050_bc_reverse.py) | one-off | Design the barcode-amplicon reverse primer for the P-0050-backbone set (P-0051..P-0075). | `p0050_bc_reverse_primer.json` |
@@ -116,15 +119,20 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`fix_target_array_annotation.py`](fix_target_array_annotation.py) | called | Trim the flanking cloning sites out of the miR-L target-array feature. | — |
 | [`floor_control_screen.py`](floor_control_screen.py) | one-off | Mechanistic screen for a low-internalization ("floor") control that is easy to tag. | — |
 | [`gate_isoform_cohort.py`](gate_isoform_cohort.py) | stage | Gate every isoform-cohort form before the panel draw: native start, and the canonical's | `isoform_gate.tsv`, `isoform_gate_summary.json` |
-| [`gene_gate_outcomes.py`](gene_gate_outcomes.py) | documented | Every cohort gene's outcome at the L1 gene-list gates, as a table a reviewer can read. | `gene_gate_outcomes.tsv` |
+| [`gene_gate_outcomes.py`](gene_gate_outcomes.py) | called | Every cohort gene's outcome at the L1 gene-list gates, as a table a reviewer can read. | `gene_gate_outcomes.tsv` |
+| [`genes_without_reference_cds.py`](genes_without_reference_cds.py) | documented | How each library gene without a buildable GRCh38 reference copy entered the gene list, and why. | `genes_without_reference_cds.tsv` |
 | [`iffl_reaction_order.py`](iffl_reaction_order.py) | called | Why a fully complementary site represses hard but does not dosage-compensate. | — |
+| [`isoform_architecture_classes.py`](isoform_architecture_classes.py) | documented | Membrane-architecture classes in the library, the isoform cohort and the isoform panel, | `isoform_architecture_classes.tsv`, `isoform_architecture_classes_genes.tsv`, `isoform_architecture_classes_summary.json` |
+| [`isoform_v1_topology.py`](isoform_v1_topology.py) | called | Give every isoform-cohort form, and its gene's reference, a DeepTMHMM v1 topology. | — |
 | [`l1_arm_ids.py`](l1_arm_ids.py) | called | Which arm of which member each built insert is: the arm id (``l1-pNNNN-aK``). | — |
 | [`l1_completeness.py`](l1_completeness.py) | stage | Is every active L1 member placed and armed? One row per member, across all five rungs. | `l1_completeness.tsv`, `l1_completeness_summary.json` |
 | [`l1_consistency.py`](l1_consistency.py) | stage | Does every built L1 arm agree with itself, with the manifest, and with what was folded? | `l1_consistency.tsv`, `l1_consistency_summary.json` |
 | [`l1_cterm_decisions.py`](l1_cterm_decisions.py) | called | The C-terminal rung's protein-level calls, one reversible row per decision. | `l1_cterm_decisions.tsv` |
+| [`l1_insert_lengths.py`](l1_insert_lengths.py) | documented | Lengths behind section 1's "median CDS length": the CDS alone, with its tag, and the insert. | `l1_insert_lengths_summary.json` |
 | [`l1_proteoform_decisions.py`](l1_proteoform_decisions.py) | called | Per-member decisions on every L1 member the proteoform audit flags (``l1_proteoform_audit.tsv``). | `l1_proteoform_decisions.tsv` |
 | [`l1_snorkel.py`](l1_snorkel.py) | called | Snorkel constructs for internal-rung L1 members whose C-terminus is cytoplasmic. | — |
 | [`l1_structure_gap.py`](l1_structure_gap.py) | called | Which Library-1 members have no AlphaFold model, i.e. which ones we would have to fold. | `l1_structure_gap.tsv` |
+| [`l1_swap_pool_model.py`](l1_swap_pool_model.py) | documented | What the per-pair barcode-swap rate means for L1 as one pooled lentiviral library. | `l1_swap_pool_model.tsv`, `l1_swap_pool_model_summary.json`, `l1_swap_pool_pairs.tsv` |
 | [`l1_swap_risk.py`](l1_swap_risk.py) | stage | Barcode-swap substrate across every L1 member, under each cassette-encoding scheme. | `l1_swap_risk.tsv`, `l1_swap_risk_summary.json` |
 | [`l1_tag_paths.py`](l1_tag_paths.py) | stage | Which tag-placement rung every L1 library MEMBER lands on. | — |
 | [`library_pipeline.py`](library_pipeline.py) | called | The surface-protein ORF library, from gene list to ordered proteoforms, as one pipeline. | — |
@@ -144,6 +152,7 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`multipass_rung_changes.py`](multipass_rung_changes.py) | documented | What #283's redraw and reference fixes changed on the "N at residue 1, multipass" rung. | `multipass_rung_changes.tsv` |
 | [`nterm_res1_lane_check.py`](nterm_res1_lane_check.py) | called | Is "N at residue 1, multipass" the right lane for each member on it? | `nterm_res1_lane_check.tsv` |
 | [`nterm_res1_multipass.py`](nterm_res1_multipass.py) | called | Who the "N at residue 1, multipass" members are, and what an N-terminal cassette does to TM1. | `nterm_res1_multipass.tsv` |
+| [`orf_size_cap.py`](orf_size_cap.py) | documented | What the 5,000-nt ORF cap removes from L1, and the packaging budget it was set against. | `orf_size_cap_genes.tsv`, `orf_size_cap_summary.json` |
 | [`ortholog_architecture_gate.py`](ortholog_architecture_gate.py) | documented | Proposed ortholog draw update: an architecture gate and a start-site rule, on the full pool. | — |
 | [`pin_structure_models.py`](pin_structure_models.py) | stage | Every AlphaFold DB model the L1 design read is in the one archive, with its SHA-256. | — |
 | [`pinned_refs.py`](pinned_refs.py) | stage | Every git commit an s4e9 script pins must be reachable from the checkout's history. | — |
@@ -168,10 +177,14 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`puro_only_backbone.py`](puro_only_backbone.py) | called | The puro-only intermediate: p003 with mScarlet3 and P2A deleted. | — |
 | [`rbp_motif_screen.py`](rbp_motif_screen.py) | documented | RBP-motif screen of the L1 library: shared elements once, ORF-intrinsic hits per member. | `l1_rbp_motif_cassettes.tsv`, `l1_rbp_motif_members.tsv`, `l1_rbp_motif_shared.tsv`, `l1_rbp_motif_summary.json` |
 | [`rebuild_disorder_anchored.py`](rebuild_disorder_anchored.py) | called | Re-place the N-terminal cassette on the disorder-anchored junction, not the cleavage site. | — |
+| [`rebuild_isoform_cohort.py`](rebuild_isoform_cohort.py) | called | Rebuild the isoform cohort fresh over every library gene, on sequence-matched DeepTMHMM v1, | `isoform_cohort_rebuild.tsv`, `isoform_cohort_rebuild_excluded.tsv`, `isoform_cohort_rebuild_genes.tsv`, `isoform_cohort_rebuild_peptides.json`, `isoform_cohort_rebuild_summary.json`, `isoform_gate_rebuild.tsv`, `isoform_panel_proposed.tsv`, `isoform_panel_proposed_changes.tsv`, `isoform_panel_proposed_cohort_of_record.tsv` |
 | [`rebuild_order_maps.py`](rebuild_order_maps.py) | called | Rebuild every p0022-p0038 GenBank map from the CURRENT design, and publish what passes. | — |
 | [`rebuild_ortholog_pool.py`](rebuild_ortholog_pool.py) | called | Rebuild gene-level ortholog eligibility over every current library gene. | — |
 | [`redraw_panels.py`](redraw_panels.py) | stage | Redraw the L1 isoform panel by rule, and bring the manifest into line. | — |
+| [`reference_vs_uniprot.py`](reference_vs_uniprot.py) | documented | How the reference ladder's picks relate to MANE, APPRIS and the UniProt canonical sequence. | `reference_vs_uniprot_summary.json` |
+| [`refold_check_validation.py`](refold_check_validation.py) | documented | Does the L1 refold check tell tag insertions that work from ones that fail? | — |
 | [`refresh_registry_positions.py`](refresh_registry_positions.py) | one-off | Re-derive the barcode registry's position and notes from the designed records. | — |
+| [`regate_isoform_forms.py`](regate_isoform_forms.py) | called | Rerun the isoform gate on the cohort of record once every form has a DeepTMHMM v1 row. | `isoform_gate_full_v1.tsv`, `isoform_gate_full_v1_summary.json` |
 | [`rekey_rung_tables.py`](rekey_rung_tables.py) | called | Re-key the rung arm tables and their decision inputs after a renumber, through design ids. | — |
 | [`renumber_library_members.py`](renumber_library_members.py) | stage | Number L1's ordered inserts in plate order, and key every current record on design ids. | `l1_member_renumbering_summary.json` |
 | [`repair_cds_boundaries.py`](repair_cds_boundaries.py) | called | Apply explicit, checksum-bound CDS boundary decisions with a reversible edit ledger. | — |
@@ -191,6 +204,7 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`reviewer-package/export_review_repo.py`](reviewer-package/export_review_repo.py) | called | Export the L1 review repository from a commit of this one. | — |
 | [`reviewer-package/export_twist_draft.py`](reviewer-package/export_twist_draft.py) | one-off | Write the L1 draft library as full p0039 plasmids, in plate order, for a vendor quote. | — |
 | [`reviewer-package/fold_order_check.py`](reviewer-package/fold_order_check.py) | called | Independent check that every L1 fold is the protein in the order of record. | `fold_order_check.tsv`, `fold_order_check_summary.json` |
+| [`reviewer-package/gate_lists.py`](reviewer-package/gate_lists.py) | called | Per-gate gene lists for reviewers: who passed and who failed each L1 gene-list gate, and why. | `gene_gate_outcomes.tsv` |
 | [`reviewer-package/nterm/admissible_interval.py`](reviewer-package/nterm/admissible_interval.py) | called | Tedman's admissible interval for a tag behind a signal peptide, reimplemented here. | — |
 | [`reviewer-package/nterm/analyse_signalp_run.py`](reviewer-package/nterm/analyse_signalp_run.py) | documented | Verdicts from the 2026-11-10 SignalP 6.0 run: the five new members and the Igκ swaps. | — |
 | [`reviewer-package/nterm/build_signalp_inputs.py`](reviewer-package/nterm/build_signalp_inputs.py) | called | The sequences the 2026-11-10 SignalP 6.0 run predicts, one FASTA record per distinct protein. | — |
@@ -212,11 +226,12 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`reviewer-package/nterm/sp_disagree_review.py`](reviewer-package/nterm/sp_disagree_review.py) | called | Second-source review of members whose signal peptide only DeepTMHMM v1 calls. | `sp_disagree_review.tsv` |
 | [`reviewer-package/nterm/weak_sp.py`](reviewer-package/nterm/weak_sp.py) | called | Native arms with a weak predicted signal peptide, and the Igκ form that would replace each. | `weak_sp.tsv` |
 | [`reviewer-package/order_plan.py`](reviewer-package/order_plan.py) | called | How the L1 library is ordered: plate layout, volumes, and length-weighted pooling amounts. | `l1_order_plan.tsv`, `l1_order_plan_summary.json` |
-| [`reviewer-package/render_brief.py`](reviewer-package/render_brief.py) | documented | Render the brief and the cover note to self-contained PDF and Word files, and copy them out. | — |
+| [`reviewer-package/render_brief.py`](reviewer-package/render_brief.py) | called | Render the brief and the cover note to self-contained PDF and Word files, and copy them out. | — |
 | [`reviewer-package/run_review.py`](reviewer-package/run_review.py) | called | Rerun the L1 library's decision steps from the frozen bundle and check them against the record. | — |
 | [`reviewer-package/run_stage.py`](reviewer-package/run_stage.py) | called | Run one ``library_pipeline.py verify`` stage, in this repo or in an exported review repo. | — |
 | [`reviewer-package/rung_numbers.py`](reviewer-package/rung_numbers.py) | called | The counts behind the brief's per-rung rationale (section 5), measured from the decision tables. | — |
-| [`reviewer-package/unbuildable_genes.py`](reviewer-package/unbuildable_genes.py) | documented | Why eight library genes have no L1 member: what Ensembl 115 offers against the protein chosen. | `unbuildable_genes.tsv` |
+| [`reviewer-package/signal_peptide_figures.py`](reviewer-package/signal_peptide_figures.py) | documented | The two figures for the brief's "Tag after the signal peptide" section. | — |
+| [`reviewer-package/unbuildable_genes.py`](reviewer-package/unbuildable_genes.py) | one-off | Why eight library genes have no L1 member: what Ensembl 115 offers against the protein chosen. | `unbuildable_genes.tsv` |
 | [`run_compara116_adoption.py`](run_compara116_adoption.py) | called | Replay the pinned Compara116 pre-tag candidate adoption into a fresh directory. | — |
 | [`run_engineered_netgpi.py`](run_engineered_netgpi.py) | called | Prepare, or explicitly execute an approved, sequence-pinned NetGPI 1.1 batch. | — |
 | [`run_ortholog_netgpi.py`](run_ortholog_netgpi.py) | called | Prepare or explicitly execute an approved native-ortholog NetGPI1.1 review batch. | — |
@@ -231,6 +246,8 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`stage_genscript_order.py`](stage_genscript_order.py) | one-off | Stage the plasmids we want GenScript to build into one folder, with a manifest. | — |
 | [`stop_codon_fix.py`](stop_codon_fix.py) | called | Attribution table for the 13 designed CDSs whose stop codon was appended by hand-made rule. | `stop_codon_fix.tsv` |
 | [`structure_coverage.py`](structure_coverage.py) | one-off | Does every library proteoform actually have a structure to score tag sites from? | — |
+| [`surface_proteomics_gap_candidates.py`](surface_proteomics_gap_candidates.py) | documented | Which surface-proteomics gap genes could be added to L1 under Becca's 2026-11-20 criteria. | `surface_proteomics_gap_candidates.tsv` |
+| [`surface_proteomics_logodds_compare.py`](surface_proteomics_logodds_compare.py) | called | Does the surface-proteomics challenge set change if rule B uses the global log-odds? | `surface_proteomics_logodds_compare.tsv`, `surface_proteomics_logodds_summary.tsv` |
 | [`swap_ef1a_output_promoter.py`](swap_ef1a_output_promoter.py) | one-off | Put PGK on the ORF transcript in p0018/p0019, breaking the EF1a/EFS palindrome. | — |
 | [`synthesis_compliance.py`](synthesis_compliance.py) | stage | Synthesis compliance for the final tagged L1 inserts: a local check and minimal synonymous recodes. | `synthesis_compliance.tsv`, `synthesis_compliance_summary.json` |
 | [`synthesis_risk_scan.py`](synthesis_risk_scan.py) | called | Manufacturability scan over the constructs staged for the vendor. | — |
@@ -245,12 +262,14 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`tag_refold/score_tagged_folds.py`](tag_refold/score_tagged_folds.py) | called | Score every tagged refold against its native model and give each a pass/flag verdict. | — |
 | [`tag_refold/structure_metrics.py`](tag_refold/structure_metrics.py) | called | Structure comparisons for tagged-vs-native models, with the residue correspondence known. | — |
 | [`tag_refold/verify_ordered_constructs.py`](tag_refold/verify_ordered_constructs.py) | called | Prove every refold is the protein that will be ordered. | — |
+| [`tag_site_model_benchmark.py`](tag_site_model_benchmark.py) | called | Internal tag-site models scored on the confirmed literature sites, held out by protein and by family. | — |
 | [`test_non_atg_evidence.py`](test_non_atg_evidence.py) | test |  | — |
 | [`test_replay_ortholog_accessions.py`](test_replay_ortholog_accessions.py) | test |  | — |
 | [`test_resolve_compara116_cds.py`](test_resolve_compara116_cds.py) | test |  | — |
 | [`test_score_eligible_ortholog_pool.py`](test_score_eligible_ortholog_pool.py) | test |  | — |
 | [`test_validated_v1_supplements.py`](test_validated_v1_supplements.py) | test |  | — |
 | [`tidy_construct_notes.py`](tidy_construct_notes.py) | one-off | Normalise the provenance comments on the p0016-p0021 records. | — |
+| [`topology_vs_experiment.py`](topology_vs_experiment.py) | documented | How often the DeepTMHMM v1 call that placed each L1 tag disagrees with experiment. | `topology_vs_experiment.tsv`, `topology_vs_experiment_inputs.json`, `topology_vs_experiment_sites.tsv`, `topology_vs_experiment_summary.tsv` |
 | [`twist_complexity_map.py`](twist_complexity_map.py) | called | Map Twist's complexity analysis of the first L1 draft onto the current library. | `twist_complexity_map.tsv`, `twist_complexity_map_summary.json` |
 | [`type3_arms_topology.py`](type3_arms_topology.py) | documented | Classify DeepTMHMM v1 re-predictions of the three type III arms, and the subgroups. | `type3_nterm_calls.tsv` |
 | [`type3_nterm.py`](type3_nterm.py) | called | Topogenic features of the L1 members on the "N at residue 1, single-pass (type III)" rung. | `type3_nterm_features.tsv` |
@@ -259,4 +278,4 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`verify_ortholog_prediction_import.py`](verify_ortholog_prediction_import.py) | one-off | SELECT-only before/after verification of the ortholog prediction D1 append. | — |
 | [`write_structure_baseline.py`](write_structure_baseline.py) | documented | Regenerate the structure-coverage baseline the repo tests assert against. | `structure_coverage_baseline.json` |
 
-Totals: called 123, documented 33, one-off 24, stage 29, test 6
+Totals: called 133, documented 41, one-off 25, stage 29, test 6

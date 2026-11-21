@@ -1,0 +1,56 @@
+{
+ "max_orf_nt": 5000,
+ "applied_to": "UniProt canonical ORF of the gene record (residues x 3 + stop)",
+ "cohort_genes_over_cap": 207,
+ "first_failing_gate_is_orf_size": 100,
+ "pass_every_other_core_gate": 99,
+ "meet_every_other_low_literature_condition_only": 1,
+ "kept_out_of_l1_by_the_cap_alone": 100,
+ "screen_validated_gpcrs_over_cap": [],
+ "over_cap_but_in_l1_gene_list": [],
+ "kept_out_with_l2_truncation_constructs": [
+  "CSPG4",
+  "ITGB4",
+  "LRP1",
+  "LRP2",
+  "LY75",
+  "MUC16",
+  "NOTCH1",
+  "NOTCH2",
+  "NOTCH3",
+  "PLXNA1",
+  "PLXNA2",
+  "PLXNA3",
+  "PLXNA4",
+  "PLXNB1",
+  "PLXNB2",
+  "PLXNB3",
+  "PLXND1",
+  "PTPRZ1",
+  "ROS1",
+  "SIGLEC1",
+  "SORL1",
+  "STAB1",
+  "STAB2"
+ ],
+ "l2_truncation_constructs": 24,
+ "kept_out_canonical_aa_range": [
+  1682,
+  14507
+ ],
+ "largest_designed_l1_orfs_nt": [
+  "l1-p0001 ABCA8 4866",
+  "l1-p1135 LRRC37A3 4905",
+  "l1-p1742 ROBO1 4956",
+  "l1-p2139 THSD7A 4974",
+  "l1-p1330 NRXN2 5139"
+ ],
+ "l1_designed_orfs_over_cap": 1,
+ "vector": {
+  "backbone": "processed://sprint4/s4e9-orf-design-fg-panel/p0039_EFS_IRES_puro_backbone.gb",
+  "ltr_to_ltr_bp_with_stuffer": 4282,
+  "stuffer_bp": 167,
+  "ltr_to_ltr_bp_without_insert": 4115
+ },
+ "cap_comment_in_filter": "Lentiviral packaging: LTR-LTR budget ~8.5 kb. Current p003 construct -> ORFs up to ~4 kb; with mScarlet removed ~4.7 kb. Provisional cap 5 kb."
+}

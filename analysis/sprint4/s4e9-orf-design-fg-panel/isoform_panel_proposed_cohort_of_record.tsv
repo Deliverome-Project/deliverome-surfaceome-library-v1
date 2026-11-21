@@ -1,0 +1,151 @@
+gene	uniprot	ensembl_transcripts	length	reference_length	source	in_current_cohort	cohort_tier	evidence	peptide_tier	openprot_te_score	trifid_score	appris_label_class	topology_class	panel_tier
+CACNA2D1	P54289	ENST00000443883	1103	1091	both	False	observed	protein (weak)	weak	0	0.9728	MINOR	GPI	observed
+CD109	Q6YHK3-2	ENST00000422508	1368	1445	both	True	observed	translation (OpenProt TE)	not_detected	1	0.2605	MINOR	GPI	observed
+CD109	Q6YHK3-4	ENST00000437994	1428	1445	both	True	observed	translation (OpenProt TE)	not_detected	4	0.4426	MINOR	GPI	observed
+CD55		ENST00000695828	381	444	ensembl_only	False	observed	translation (OpenProt TE)	undetectable	3	0.1868	MINOR	GPI	observed
+CD55		ENST00000391921	317	444	ensembl_only	False	observed	translation (OpenProt TE)	not_detected	2	0.003	MINOR	GPI	observed
+GP2	P55259	ENST00000381362	537	534	both	False	observed	protein (weak)	weak	0	0.6848	ALTERNATIVE:2	GPI	observed
+NTM		ENST00000683400	355	344	ensembl_only	False	observed	translation (OpenProt TE)	undetectable	6	0.5782	MINOR	GPI	observed
+NTM	Q9P121-4	ENST00000425719	355	344	both	True	observed	translation (OpenProt TE)	undetectable	3	0.8855	MINOR	GPI	observed
+NTNG1	Q9Y2I2-1	ENST00000370074	438	539	both	True	observed	translation (OpenProt TE)	not_detected	2	0.4553	MINOR	GPI	observed
+PRSS21	Q9Y6M0-3	ENST00000450020	300	314	both	True	observed	translation (OpenProt TE)	undetectable	1	0.1762	MINOR	GPI	observed
+ADCYAP1R1		ENST00000409489	524	468	ensembl_only	False	observed	translation (OpenProt TE)	undetectable	1	0.3195	MINOR	multipass	observed
+ADGRD1	Q6QNK2-4	ENST00000535015	906	874	both	True	observed	translation (OpenProt TE)	undetectable	4	1.0	PRINCIPAL	multipass	observed
+ADGRG2	Q8IZP9-3	ENST00000379878	1001	1017	both	True	observed	protein (weak)	weak	0	0.6424	MINOR	multipass	observed
+ADTRP	Q96IZ2-2	ENST00000229583	248	230	both	False	observed	translation (OpenProt TE)	not_detected	2	0.0777	MINOR	multipass	observed
+ANO1	Q5XXA6-5	ENST00000531349	1049	986	both	True	observed	protein (weak)	weak	2	0.3739	MINOR	multipass	observed
+ATP2B1	P20020-5	ENST00000705822	1171	1220	both	False	observed	protein (weak)	weak		0.509	MINOR	multipass	observed
+ATRN	O75882-2	ENST00000446916	1272	1429	both	True	observed	translation (OpenProt TE)	undetectable	16	0.8741	ALTERNATIVE:2	multipass	observed
+CD9		ENST00000382519	251	228	ensembl_only	False	observed	translation (OpenProt TE)	not_detected	2	0.0118	MINOR	multipass	observed
+CXCR4		ENST00000466288;ENST00000696137;ENST00000696152	337	352	ensembl_only	False	observed	translation (OpenProt TE)	undetectable	1	0.1577	MINOR	multipass	observed
+GPM6A	P51674-3	ENST00000506894	267	278	both	True	observed	protein (weak)	weak	11	0.9497	ALTERNATIVE:1	multipass	observed
+GPR132	Q9UNW8-3	ENST00000392585	371	380	both	True	observed	protein (weak)	weak	2	1.0	PRINCIPAL	multipass	observed
+GRIA1	P42261-6	ENST00000448073	916	906	both	True	observed	translation (OpenProt TE)	undetectable	1	0.1523	MINOR	multipass	observed
+HTR3A	P46098-5	ENST00000355556	516	478	both	True	observed	translation (OpenProt TE)	undetectable	1	0.0811	MINOR	multipass	observed
+KCNJ1	P48048	ENST00000392664	391	372	both	False	observed	translation (OpenProt TE)	not_detected	1	0.5488	MINOR	multipass	observed
+LIM2	P55344-2	ENST00000221973	215	173	both	True	observed	protein (weak)	weak	0	0.3375	MINOR	multipass	observed
+MFSD2A	Q8NA29	ENST00000372809	543	530	both	False	observed	translation (OpenProt TE)	not_detected	3	0.1556	MINOR	multipass	observed
+PACC1	Q9H813-2	ENST00000535273	411	350	both	False	observed	translation (OpenProt TE)	undetectable	10	0.1141	MINOR	multipass	observed
+PTGDR	Q13258-2	ENST00000553372	296	359	both	True	observed	translation (OpenProt TE)	not_detected	1	0.0651	MINOR	multipass	observed
+RNF130		ENST00000522208	419	419	ensembl_only	False	observed	translation (OpenProt TE)	not_detected	1	0.9109	ALTERNATIVE:1	multipass	observed
+SCNN1A	P37088-2	ENST00000360168	728	669	both	True	observed	translation (OpenProt TE)	not_detected	6	0.9808	ALTERNATIVE:2	multipass	observed
+SLC12A6	Q9UHW9-2	ENST00000290209	1099	1150	both	True	observed	protein (deep peptides)	expressed	7	1.0	PRINCIPAL	multipass	observed
+SLC26A6	Q9BXS9-3	ENST00000420764	758	759	both	True	observed	translation (OpenProt TE)	undetectable	10	0.9944	ALTERNATIVE:1	multipass	observed
+SLC4A10	Q6U841-3	ENST00000375514	1099	1106	both	True	observed	protein (weak)	weak	0	0.733	MINOR	multipass	observed
+SLC4A7	Q9Y6M7-7	ENST00000454389	1259	1131	both	True	observed	translation (OpenProt TE)	undetectable	9	0.7062	MINOR	multipass	observed
+SLC5A9	Q2M3M2-2	ENST00000236495	706	681	both	True	observed	translation (OpenProt TE)	undetectable	1	0.3901	MINOR	multipass	observed
+SLC68A1		ENST00000369931	153	517	ensembl_only	False	observed	translation (OpenProt TE)	not_detected	5	0.0096	MINOR	multipass	observed
+SLC6A6		ENST00000613060	721	620	ensembl_only	False	observed	translation (OpenProt TE)	undetectable	42	0.1742	MINOR	multipass	observed
+SLC7A2		ENST00000470360;ENST00000908539;ENST00000908540;ENST00000908541	657	658	ensembl_only	False	observed	translation (OpenProt TE)	undetectable	2	0.9972	PRINCIPAL	multipass	observed
+SLC8A1	P32418-5	ENST00000405901;ENST00000952076;ENST00000952078	968	973	both	True	observed	protein (deep peptides)	expressed	1	0.9956	PRINCIPAL	multipass	observed
+SLC9A8	Q9Y2E8-2	ENST00000417961	597	581	both	False	observed	protein (weak)	weak	10	0.2108	MINOR	multipass	observed
+SLCO3A1	Q9UIG8-2	ENST00000424469	692	710	both	True	observed	protein (deep peptides)	expressed	3	0.8086	MINOR	multipass	observed
+SMIM7		ENST00000358726;ENST00000487803;ENST00000627144	103	75	ensembl_only	False	observed	translation (OpenProt TE)	not_detected	3	0.1214	MINOR	multipass	observed
+TRPV1		ENST00000650505	521	839	ensembl_only	False	observed	translation (OpenProt TE)	not_detected_low_gene_coverage	1	0.0032	MINOR	multipass	observed
+TSPAN16	Q9UKR8	ENST00000316737	245	244	both	False	observed	protein (weak)	weak	0	0.2059	MINOR	multipass	observed
+ADAM33		ENST00000379861	812	813	ensembl_only	False	observed	translation (OpenProt TE)	undetectable	3	0.5906	ALTERNATIVE:2	type I	observed
+ADAM9		ENST00000677004	850	819	ensembl_only	False	observed	translation (OpenProt TE)	not_detected	14	0.0797	MINOR	type I	observed
+ANTXR2		ENST00000680913	505	488	ensembl_only	False	observed	translation (OpenProt TE)	not_detected	1	0.0558	MINOR	type I	observed
+APLP2	Q06481-5	ENST00000345598	522	751	both	True	observed	translation (OpenProt TE)	not_detected	1	0.0462	MINOR	type I	observed
+BTN2A2	Q8WVV5-4	ENST00000352867;ENST00000960898	407	523	both	True	observed	translation (OpenProt TE)	undetectable	1	0.0579	MINOR	type I	observed
+CD164	Q04900-4	ENST00000324953	178	197	both	True	observed	protein (weak)	weak		0.2502	MINOR	type I	observed
+CD46	P15529-2	ENST00000322875	399	377	both	True	observed	translation (OpenProt TE)	undetectable	4	0.783	MINOR	type I	observed
+CD46	P15529-7	ENST00000360212	355	377	both	True	observed	translation (OpenProt TE)	undetectable	2	0.1717	MINOR	type I	observed
+CD7		ENST00000584284	221	240	ensembl_only	False	observed	translation (OpenProt TE)	undetectable	1	0.2508	ALTERNATIVE:2	type I	observed
+CDH3	P22223	ENST00000264012	829	789	both	False	observed	translation (OpenProt TE)	undetectable	6	1.0	MINOR	type I	observed
+CHL1		ENST00000620033	1171	1224	ensembl_only	False	observed	translation (OpenProt TE)	undetectable	1	0.9302	ALTERNATIVE:1	type I	observed
+DLL3	Q9NYJ7	ENST00000205143	618	587	both	False	observed	protein (weak)	weak	1	0.5393	MINOR	type I	observed
+DSC1	Q08554-2	ENST00000257197	840	894	both	True	observed	protein (weak)	weak	0	0.6616	MINOR	type I	observed
+DSC2	Q02487-2	ENST00000251081	847	901	both	True	observed	translation (OpenProt TE)	undetectable	1	0.6768	MINOR	type I	observed
+DSC3	Q14574-2	ENST00000434452	839	896	both	True	observed	translation (OpenProt TE)	undetectable	6	0.4789	MINOR	type I	observed
+EPHB2	P29323	ENST00000400191	1055	986	both	False	observed	protein (weak)	weak	2	0.2901	MINOR	type I	observed
+EPOR	P19235-3	ENST00000592375	328	508	both	True	observed	translation (OpenProt TE)	not_detected	2	0.1234	MINOR	type I	observed
+FGFR2	P21802-5	ENST00000346997;ENST00000351936;ENST00000683211	819	821	both	True	observed	translation (OpenProt TE)	undetectable	1	0.74	ALTERNATIVE:2	type I	observed
+HFE		ENST00000470149	345	348	ensembl_only	False	observed	translation (OpenProt TE)	not_detected	1	0.0846	MINOR	type I	observed
+HLA-C		ENST00000383329	372	366	ensembl_only	False	observed	translation (OpenProt TE)	not_detected	2	0.4844	ALTERNATIVE:2	type I	observed
+HLA-G	P17693-3	ENST00000376815;ENST00000383622;ENST00000415687;ENST00000429890	154	338	both	False	observed	protein (weak)	weak	0	0.0013	MINOR	type I	observed
+IL31RA	Q8NI17-3	ENST00000354961	662	764	both	True	observed	translation (OpenProt TE)	undetectable	1	0.5998	ALTERNATIVE:2	type I	observed
+ITGA6		ENST00000264107	1058	1073	ensembl_only	False	observed	translation (OpenProt TE)	undetectable	4	0.2352	MINOR	type I	observed
+ITGB1		ENST00000488494	801	798	ensembl_only	False	observed	translation (OpenProt TE)	not_detected	2	0.6664	MINOR	type I	observed
+ITGB1	P05556-5	ENST00000423113	801	798	both	True	observed	translation (OpenProt TE)	undetectable	1	0.8135	ALTERNATIVE:1	type I	observed
+KIT		ENST00000412167	972	976	ensembl_only	False	observed	translation (OpenProt TE)	undetectable	1	0.8785	MINOR	type I	observed
+LILRB2	Q8N423-1	ENST00000391749;ENST00000872963	598	597	both	True	observed	translation (OpenProt TE)	undetectable	1	0.8618	ALTERNATIVE:2	type I	observed
+LRRTM4	Q86VH4-2	ENST00000409088	518	590	both	True	observed	translation (OpenProt TE)	undetectable	1	1.0	ALTERNATIVE:1	type I	observed
+LSR		ENST00000602122	581	582	ensembl_only	False	observed	translation (OpenProt TE)	undetectable	6	0.9017	ALTERNATIVE:2	type I	observed
+LSR		ENST00000361790;ENST00000605618	601	582	ensembl_only	False	observed	translation (OpenProt TE)	undetectable	15	0.8123	MINOR	type I	observed
+MUC13	Q9H3R2	ENST00000616727	512	506	both	False	observed	translation (OpenProt TE)	undetectable	3	0.7672	MINOR	type I	observed
+NPTN	Q9Y639-5	ENST00000563691	394	398	both	True	observed	translation (OpenProt TE)	undetectable	1	0.9009	ALTERNATIVE:2	type I	observed
+NRP2	O60462	ENST00000360409	931	926	both	False	observed	protein (weak)	weak	3	0.8708	ALTERNATIVE:1	type I	observed
+PCDH8	O95206-2	ENST00000338862	973	1070	both	True	observed	protein (weak)	weak	0	0.8556	ALTERNATIVE:1	type I	observed
+PCDH9	Q9HC56	ENST00000377865	1237	1203	both	False	observed	protein (deep peptides)	likely_expressed	4	0.8973	MINOR	type I	observed
+PCDHGB4	Q9UN71-2	ENST00000615384	803	923	both	True	observed	translation (OpenProt TE)	not_detected	3	0.2691	MINOR	type I	observed
+PCDHGB6	Q9Y5F9-2	ENST00000616430	820	930	both	True	observed	translation (OpenProt TE)	not_detected	1	0.2278	MINOR	type I	observed
+PODXL	O00592-2	ENST00000322985	526	558	both	True	observed	translation (OpenProt TE)	undetectable	2	1.0	PRINCIPAL	type I	observed
+PTK7	Q13308-4	ENST00000352931	1014	1070	both	True	observed	protein (weak)	weak	0	0.1381	MINOR	type I	observed
+PTPRK		ENST00000368210;ENST00000625760	1458	1440	ensembl_only	False	observed	translation (OpenProt TE)	undetectable	3	0.5957	MINOR	type I	observed
+PTPRK	Q15262-4	ENST00000532331;ENST00000619256	1462	1440	both	True	observed	translation (OpenProt TE)	undetectable	1	0.8039	MINOR	type I	observed
+PVRIG	Q6DKI7	ENST00000317271	326	306	both	False	observed	translation (OpenProt TE)	not_detected	3	0.9258	PRINCIPAL	type I	observed
+UNC5A	Q6ZN44	ENST00000329542	842	898	both	False	observed	translation (OpenProt TE)	undetectable	1	0.7161	MINOR	type I	observed
+COL13A1	Q5TAT6-11	ENST00000520133	610	728	both	False	observed	translation (OpenProt TE)	undetectable	1	0.0563	MINOR	type II	observed
+COL13A1	Q5TAT6-4	ENST00000517713	668	728	both	False	observed	translation (OpenProt TE)	undetectable	3	0.0864	MINOR	type II	observed
+DPP6	P42658	ENST00000377770	865	803	both	False	observed	translation (OpenProt TE)	undetectable	1	0.8783	MINOR	type II	observed
+ECE1	P42892-2	ENST00000357071	758	754	both	True	observed	protein (weak)	weak	0	0.6448	MINOR	type II	observed
+EDA	Q92838-3	ENST00000374553	389	391	both	True	observed	translation (OpenProt TE)	undetectable	1	1.0	PRINCIPAL	type II	observed
+FRMD3	A2A2Y4-2	ENST00000376438	556	597	both	False	observed	translation (OpenProt TE)	undetectable	1	0.3759	MINOR	type II	observed
+MME		ENST00000615825;ENST00000871485;ENST00000915243	780	750	ensembl_only	False	observed	translation (OpenProt TE)	not_detected	5	0.0848	MINOR	type II	observed
+SCARA3	Q6AZY7-2	ENST00000337221	466	606	both	False	observed	translation (OpenProt TE)	not_detected	2	0.1372	MINOR	type II	observed
+SLC3A2		ENST00000680297	415	529	ensembl_only	False	observed	translation (OpenProt TE)	not_detected	1	0.0742	MINOR	type II	observed
+TMPRSS2	O15393-2	ENST00000398585	529	492	both	False	observed	translation (OpenProt TE)	not_detected	1	0.1968	MINOR	type II	observed
+GYPC	P04921-2	ENST00000356887	107	128	both	True	observed	translation (OpenProt TE)	undetectable	1	1.0	PRINCIPAL	type III	observed
+NRG1	Q02297-6	ENST00000287842	645	640	both	True	observed	translation (OpenProt TE)	undetectable	2	0.8234	ALTERNATIVE:2	type III	observed
+NRG1	Q02297-7	ENST00000356819	637	640	both	True	observed	translation (OpenProt TE)	undetectable	3	0.9056	ALTERNATIVE:2	type III	observed
+ART3		ENST00000960242	357	389	ensembl_only	False	full_only	prediction (TRIFID)	undetectable		0.5775	ALTERNATIVE:2	GPI	prediction_only
+CA4		ENST00000904867	310	312	ensembl_only	False	full_only	prediction (TRIFID)	not_detected		0.6049	ALTERNATIVE:2	GPI	prediction_only
+CACNA2D3		ENST00000958523	1085	1091	ensembl_only	False	full_only	prediction (TRIFID)	undetectable		0.8871	ALTERNATIVE:1	GPI	prediction_only
+MSLN		ENST00000908613	619	622	ensembl_only	False	full_only	prediction (TRIFID)	not_detected		0.5476	ALTERNATIVE:2	GPI	prediction_only
+NT5E		ENST00000954716	570	574	ensembl_only	False	full_only	prediction (TRIFID)	not_detected		0.6269	ALTERNATIVE:1	GPI	prediction_only
+PRSS8		ENST00000964168	335	343	ensembl_only	False	full_only	prediction (TRIFID)	not_detected		0.513	ALTERNATIVE:2	GPI	prediction_only
+ADGRF3	Q8IZF5-3	ENST00000421160	997	1004	both	True	full_only	prediction (TRIFID)	not_detected_low_gene_coverage	0	1.0	PRINCIPAL	multipass	prediction_only
+ANO7	Q6IWH7	ENST00000274979	933	879	both	False	full_only	prediction (TRIFID)	undetectable	0	0.7094	PRINCIPAL	multipass	prediction_only
+ASIC3	Q9UHC3-2	ENST00000357922	543	531	both	False	full_only	prediction (TRIFID)	not_detected_low_gene_coverage	0	0.5063	MINOR	multipass	prediction_only
+CCR3	P51677-2	ENST00000545097	376	355	both	True	full_only	prediction (TRIFID)	not_detected	0	0.5473	MINOR	multipass	prediction_only
+CCR9	P51686-2	ENST00000395963;ENST00000706789	357	369	both	True	full_only	prediction (TRIFID)	undetectable	0	0.5249	MINOR	multipass	prediction_only
+CLRN3		ENST00000856089	225	226	ensembl_only	False	full_only	prediction (TRIFID)	not_detected		0.6858	ALTERNATIVE:1	multipass	prediction_only
+KCNK4	Q9NYG8-2	ENST00000696753	419	393	both	False	full_only	prediction (TRIFID)	undetectable	0	0.8458	ALTERNATIVE:2	multipass	prediction_only
+KCNQ4	P56696-2	ENST00000509682	641	695	both	False	full_only	prediction (TRIFID)	not_detected	0	0.6184	MINOR	multipass	prediction_only
+KCNT1		ENST00000486577	1217	1235	ensembl_only	False	full_only	prediction (TRIFID)	not_detected	0	0.7339	MINOR	multipass	prediction_only
+PLPP1		ENST00000962875	283	284	ensembl_only	False	full_only	prediction (TRIFID)	undetectable		0.7494	ALTERNATIVE:1	multipass	prediction_only
+SERINC2		ENST00000922302	453	455	ensembl_only	False	full_only	prediction (TRIFID)	not_detected		0.6534	ALTERNATIVE:1	multipass	prediction_only
+SLC12A4		ENST00000937904	1081	1085	ensembl_only	False	full_only	prediction (TRIFID)	not_detected		0.6039	MINOR	multipass	prediction_only
+SLC15A2		ENST00000886964	725	729	ensembl_only	False	full_only	prediction (TRIFID)	not_detected		0.6279	ALTERNATIVE:2	multipass	prediction_only
+SLC38A1		ENST00000922815	486	487	ensembl_only	False	full_only	prediction (TRIFID)	not_detected		0.7462	ALTERNATIVE:1	multipass	prediction_only
+SLC4A10	Q6U841-2	ENST00000415876	1088	1106	both	True	full_only	prediction (TRIFID)	undetectable	0	0.8831	MINOR	multipass	prediction_only
+SLC8A3		ENST00000966026	920	921	ensembl_only	False	full_only	prediction (TRIFID)	undetectable		0.8001	ALTERNATIVE:1	multipass	prediction_only
+TMEM219		ENST00000933381;ENST00000933384	239	240	ensembl_only	False	full_only	prediction (TRIFID)	undetectable		0.6272	ALTERNATIVE:1	multipass	prediction_only
+ACE2		ENST00000871930	804	805	ensembl_only	False	full_only	prediction (TRIFID)	not_detected		0.7181	ALTERNATIVE:1	type I	prediction_only
+ADAM22		ENST00000915160	907	964	ensembl_only	False	full_only	prediction (TRIFID)	not_detected		0.5998	ALTERNATIVE:2	type I	prediction_only
+CD163		ENST00000960361	1120	1121	ensembl_only	False	full_only	prediction (TRIFID)	not_detected		0.7134	ALTERNATIVE:2	type I	prediction_only
+CSF1R		ENST00000960688	970	972	ensembl_only	False	full_only	prediction (TRIFID)	not_detected		0.5762	ALTERNATIVE:2	type I	prediction_only
+DGCR2		ENST00000935669	543	550	ensembl_only	False	full_only	prediction (TRIFID)	undetectable		0.5933	MINOR	type I	prediction_only
+ECSCR		ENST00000857214	190	205	ensembl_only	False	full_only	prediction (TRIFID)	not_detected		0.8297	PRINCIPAL	type I	prediction_only
+F3		ENST00000949532	301	295	ensembl_only	False	full_only	prediction (TRIFID)	not_detected		0.5807	ALTERNATIVE:1	type I	prediction_only
+GHR		ENST00000887703	635	638	ensembl_only	False	full_only	prediction (TRIFID)	not_detected		0.6056	ALTERNATIVE:1	type I	prediction_only
+ILDR2		ENST00000528703	580	620	ensembl_only	False	full_only	prediction (TRIFID)	not_detected		0.5323	MINOR	type I	prediction_only
+ITGB1		ENST00000966595	791	798	ensembl_only	False	full_only	prediction (TRIFID)	not_detected		0.61	MINOR	type I	prediction_only
+LY9		ENST00000873850	656	655	ensembl_only	False	full_only	prediction (TRIFID)	undetectable		0.8894	ALTERNATIVE:2	type I	prediction_only
+NRXN2		ENST00000688050	1511	1712	ensembl_only	False	full_only	prediction (TRIFID)	undetectable	0	0.7965	MINOR	type I	prediction_only
+PAM		ENST00000890192	865	973	ensembl_only	False	full_only	prediction (TRIFID)	undetectable		0.7508	ALTERNATIVE:1	type I	prediction_only
+SEMA4C		ENST00000897275;ENST00000914307;ENST00000914312;ENST00000914313	826	828	ensembl_only	False	full_only	prediction (TRIFID)	undetectable		0.7019	MINOR	type I	prediction_only
+SEMA4C		ENST00000897277;ENST00000914319	834	828	ensembl_only	False	full_only	prediction (TRIFID)	undetectable		0.6886	MINOR	type I	prediction_only
+SEMA4C		ENST00000897276;ENST00000897279;ENST00000897282;ENST00000897288	828	828	ensembl_only	False	full_only	prediction (TRIFID)	undetectable		0.7224	MINOR	type I	prediction_only
+TGFBR2		ENST00000941788	566	567	ensembl_only	False	full_only	prediction (TRIFID)	not_detected		0.7036	ALTERNATIVE:1	type I	prediction_only
+TNFRSF18	Q9Y5U5-3	ENST00000379265	234	241	both	True	full_only	prediction (TRIFID)	not_detected	0	0.8788	PRINCIPAL	type I	prediction_only
+ASGR2		ENST00000871044	305	306	ensembl_only	False	full_only	prediction (TRIFID)	undetectable		0.6147	ALTERNATIVE:1	type II	prediction_only
+CLEC10A	Q8IUN9-2	ENST00000571664;ENST00000874073	292	289	both	False	full_only	prediction (TRIFID)	undetectable	0	1.0	PRINCIPAL	type II	prediction_only
+GGT7		ENST00000885991	666	662	ensembl_only	False	full_only	prediction (TRIFID)	not_detected		0.7923	ALTERNATIVE:1	type II	prediction_only
+PLVAP		ENST00000962153	440	442	ensembl_only	False	full_only	prediction (TRIFID)	not_detected		0.6369	ALTERNATIVE:1	type II	prediction_only
+TFR2		ENST00000855235;ENST00000855255	798	801	ensembl_only	False	full_only	prediction (TRIFID)	not_detected		0.5037	MINOR	type II	prediction_only
+TMPRSS3		ENST00000896622;ENST00000896631	455	453	ensembl_only	False	full_only	prediction (TRIFID)	undetectable		0.7009	ALTERNATIVE:1	type II	prediction_only
+TMPRSS4	Q9NRS4-2	ENST00000522824	432	437	both	False	full_only	prediction (TRIFID)	not_detected	0	0.751	MINOR	type II	prediction_only
+KCNE3		ENST00000532569	99	103	ensembl_only	False	full_only	prediction (TRIFID)	undetectable	0	0.6783	MINOR	type III	prediction_only
+PRRG1		ENST00000868176;ENST00000960027	217	218	ensembl_only	False	full_only	prediction (TRIFID)	not_detected		0.5806	MINOR	type III	prediction_only

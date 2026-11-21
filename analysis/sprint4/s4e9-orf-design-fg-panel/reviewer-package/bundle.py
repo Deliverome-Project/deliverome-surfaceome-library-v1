@@ -50,6 +50,13 @@ ASSET_LIMIT = 2 * 1024**3  # GitHub release assets
 PINNED: list[tuple[str, str, str, str, str]] = [
     (
         "external",
+        "hpa/v23/",
+        "Human Protein Atlas",
+        "23.0",
+        "https://v23.proteinatlas.org/about/download",
+    ),
+    (
+        "external",
         "ensembl/release-115/",
         "Ensembl",
         "115",
@@ -261,6 +268,11 @@ SOURCES: list[tuple[str, str, str]] = [
         "expression TPM tables (GTEx v10 / HPA / TCGA, Deliverome-compiled)",
     ),
     (
+        r"external/hpa/v23/",
+        "public_release",
+        "Human Protein Atlas 23.0 cell-line RNA (rna_celline.tsv), the source of the co-receptor medians",
+    ),
+    (
         r"processed/sprint4/s4e9-orf-design-fg-panel/p0039_",
         "deliverome_curation",
         "p0039 backbone map",
@@ -288,9 +300,24 @@ SOURCES: list[tuple[str, str, str]] = [
         "tag-site audit: failed sites, sites recovered from wrong-gene papers, region labels (PR 236)",
     ),
     (
+        r"processed/scratch/becca/tag-site-corpus-audit/",
+        "deliverome_curation",
+        "tag-site literature audit: other files in the audit folder the brief cites",
+    ),
+    (
         r"processed/sprint5/s5e13-tag-site-benchmarking/corpus_audit_corpus\.tsv",
         "deliverome_curation",
         "S5E13 training corpus with the audit's corrections (PR 232)",
+    ),
+    (
+        r"processed/sprint4/s4e9-orf-design-fg-panel/synthesis/",
+        "deliverome_record",
+        "recoded synthesis order file of record, cited by the brief",
+    ),
+    (
+        r"processed/sprint4/s4e9-orf-design-fg-panel/type3-nterm/",
+        "deliverome_curation",
+        "type III N-terminal spacer test, raw DeepTMHMM v1 calls, cited by the brief",
     ),
     # Objects the 2026-11-14 inputs added (AFDB archive, saved UniProt snapshots, rung builds).
     (
@@ -429,6 +456,33 @@ def manifest_pins() -> dict[tuple[str, str], dict]:
     return pins
 
 
+#: Documents a reviewer reads; every S3 file they cite is bundled, so it opens offline.
+CITED_DOCS = ("DESIGN.md", "BRIEF.md", "COVER_NOTE.md")
+#: An S3 location cited in prose, e.g. ``processed://sprint5/.../corpus_audit_corpus.tsv``.
+S3_CITATION = re.compile(r"\b(raw|processed|external)://([^\s`'\")<>|,]+)")
+#: The same location written as its path inside the bundle, ``s3/<bucket>/<key>``.
+BUNDLE_CITATION = re.compile(r"(?<![\w/])s3/(raw|processed|external)/([^\s`'\")<>|,]+)")
+
+
+def cited_locations(text: str) -> set[tuple[str, str]]:
+    """(bucket, key) for each S3 location ``text`` cites; a key ending in ``/`` is a folder.
+
+    Skipped: patterns and elisions (``…``, ``{``, ``<``), and this package's own staging
+    prefix, which names the bundle tarballs rather than files in them.
+    """
+    out = set()
+    for bucket, key in S3_CITATION.findall(text) + BUNDLE_CITATION.findall(text):
+        key = key.rstrip(".;:")
+        if "…" in key or "{" in key or "<" in key or key.startswith(STAGE_PREFIX):
+            continue
+        out.add((bucket, key))
+    return out
+
+
+def doc_citations() -> set[tuple[str, str]]:
+    return set().union(*(cited_locations((HERE / d).read_text()) for d in CITED_DOCS))
+
+
 def release_of(bucket: str, key: str) -> tuple[str, str, str]:
     for b, prefix, release, version, url in PINNED:
         if b == bucket and key.startswith(prefix):
@@ -453,6 +507,12 @@ def add_pinned(out: Path) -> int:
             wanted[(b, key)] = ""
     for bk, pin in manifest_pins().items():
         wanted[bk] = pin["sha256"]
+    # Files the brief and cover note cite but no stage reads (the S5E13 corpus, the order
+    # FASTA): a reviewer working offline from the bundle must still be able to open them.
+    for b, key in sorted(doc_citations()):
+        keys = getattr(s3, b).list_keys(prefix=key) if key.endswith("/") else [key]
+        for k in keys:
+            wanted.setdefault((b, k), "")
     bad = []
     for (b, key), sha in sorted(wanted.items()):
         dest = mirror / b / key
