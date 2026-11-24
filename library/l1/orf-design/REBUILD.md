@@ -79,6 +79,44 @@ uv run --locked pytest -q ../tests/test_brief_prose_numbers.py   # prose = table
 uv run --locked python render_brief.py --dest <folder>           # PDF, Word and Markdown
 ```
 
+## 5. Publish to the surfaceome viewer (R2 ColabFold mirror + D1 + dev gene list)
+
+Updating the viewer and mirroring new ColabFold structures to R2 is a routine part of every L1
+publication cut (run after committing the updated tables and order FASTA):
+
+```bash
+# 1. Mirror any new S3 ColabFold native/tagged PDBs to R2 surfaceome-structures,
+#    validate library_structure_payload.tsv, and upload the redacted L1 design load to public D1:
+uv run --locked python publish_viewer_release.py --viewer-repo ~/git/accessible-surfaceome           # dry run
+uv run --locked python publish_viewer_release.py --viewer-repo ~/git/accessible-surfaceome --execute
+
+# 2. If native models in library_structure_payload.tsv changed, also swap library_structure_public
+#    and purge record caches for affected genes in accessible-surfaceome:
+(cd ~/git/accessible-surfaceome && uv run python scripts/cloud/upload_library_structure_to_d1.py \
+    --payload "$OLDPWD/library_structure_payload.tsv")
+(cd ~/git/accessible-surfaceome && uv run python scripts/cloud/purge_gene_cache.py \
+    --surfaces record --genes <CHANGED_GENES_CSV> --execute)
+
+# 3. If library gene membership changed, update viewer/public/data/fg-library.json and
+#    viewer/tests/fg_library_export.test.mjs in accessible-surfaceome via PR to dev.
+```
+
+## 6. Export the clean-path review repository
+
+Always pass `--bundle` so the 195 small `review_repo` tables under `data/` stay populated and
+offline CI (`ruff check`, `ruff format --check`, `pytest`) passes:
+
+```bash
+uv run --locked python reviewer-package/export_review_repo.py \
+    --dest ~/git/deliverome-surfaceome-library-v1 \
+    --bundle <bundle-dir> \
+    --overwrite-edited
+(cd ~/git/deliverome-surfaceome-library-v1 && \
+    uv run --locked ruff check && \
+    uv run --locked ruff format --check && \
+    uv run --locked pytest -q tests/ library/l1/orf-design/tests/)
+```
+
 ## Last full rebuild
 
 2026-11-14, a fresh clone of `main` at `f5222462` (the final-c order of record merged) with

@@ -102,7 +102,7 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`coreceptor_host_line.py`](coreceptor_host_line.py) | called | Co-receptor gate against the screening line: what a K562 (or lower-median) rule would change. | — |
 | [`dedupe_library_members.py`](dedupe_library_members.py) | stage | Retire library members whose ordered protein duplicates another member's. | `library_duplicate_members.tsv`, `library_duplicate_summary.json` |
 | [`derive_mane_select.py`](derive_mane_select.py) | called | MANE Select per gene, read from the pinned Ensembl 115 GTF's ``tag "MANE_Select"``. | — |
-| [`design_l1_internal_v8_prodomino.py`](design_l1_internal_v8_prodomino.py) | called | Production candidate L1 internal-site designer: ProDomino + pLDDT + EB penalties + vetoes. | — |
+| [`design_l1_internal_v8_prodomino.py`](design_l1_internal_v8_prodomino.py) | documented | Production candidate L1 internal-site designer: ProDomino + pLDDT + EB penalties + vetoes. | — |
 | [`design_orfs.py`](design_orfs.py) | called | Golden Gate domestication of the nine non-Tedman ORFs on Brenna's 15-receptor panel. | — |
 | [`design_p0050_bc_reverse.py`](design_p0050_bc_reverse.py) | one-off | Design the barcode-amplicon reverse primer for the P-0050-backbone set (P-0051..P-0075). | `p0050_bc_reverse_primer.json` |
 | [`diversify_arm_cassettes.py`](diversify_arm_cassettes.py) | stage | Issue one linker encoding of the tag cassette per N-terminal, internal, multipass and type III arm. | `l1_arm_cassette_encodings.tsv` |
@@ -140,7 +140,7 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`l1_cterm_decisions.py`](l1_cterm_decisions.py) | called | The C-terminal rung's protein-level calls, one reversible row per decision. | `l1_cterm_decisions.tsv` |
 | [`l1_example_vector_maps.py`](l1_example_vector_maps.py) | called | Full GenBank maps of one L1 member, AXL, in the two vector layouts Figure 2a compares. | — |
 | [`l1_insert_lengths.py`](l1_insert_lengths.py) | documented | Lengths behind section 1's "median CDS length": the CDS alone, with its tag, and the insert. | `l1_insert_lengths_summary.json` |
-| [`l1_member_sp_uniprot.py`](l1_member_sp_uniprot.py) | one-off | Per-member signal-peptide status and UniProt differences for the L1 review viewer. | `l1_member_sp_uniprot.tsv` |
+| [`l1_member_sp_uniprot.py`](l1_member_sp_uniprot.py) | called | Per-member signal-peptide status and UniProt differences for the L1 review viewer. | `l1_member_sp_uniprot.tsv` |
 | [`l1_pool_qc.py`](l1_pool_qc.py) | called | Plasmid QC over every insert of the L1 pool, plus the checks only a pool can fail. | `l1_pool_qc.tsv`, `l1_pool_qc_summary.json` |
 | [`l1_proteoform_decisions.py`](l1_proteoform_decisions.py) | called | Per-member decisions on every L1 member the proteoform audit flags (``l1_proteoform_audit.tsv``). | `l1_proteoform_decisions.tsv` |
 | [`l1_snorkel.py`](l1_snorkel.py) | called | Snorkel constructs for internal-rung L1 members whose C-terminus is cytoplasmic. | — |
@@ -181,7 +181,7 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`plot_selection_cassettes.py`](plot_selection_cassettes.py) | called | Selection cassettes side by side, for the promoter/selection slide of the 2026-11 SAB deck. | — |
 | [`plot_slc9a3_junction_sweep.py`](plot_slc9a3_junction_sweep.py) | one-off | Where to put SLC9A3's cassette: the built junction is the worst position tested. | — |
 | [`plot_snorkel_schematic.py`](plot_snorkel_schematic.py) | documented | Schematic of a loop construct and a snorkel construct (reviewer brief, "Snorkels"). | — |
-| [`plot_swap_bottom_line.py`](plot_swap_bottom_line.py) | one-off | The bottom line of barcode swapping in L1, with and without codon diversification. | — |
+| [`plot_swap_bottom_line.py`](plot_swap_bottom_line.py) | documented | The bottom line of barcode swapping in L1, with and without codon diversification. | — |
 | [`plot_swap_risk.py`](plot_swap_risk.py) | called | Every construct pair in the order, against Walton's barcode-swap curve. | — |
 | [`plot_vector_maps.py`](plot_vector_maps.py) | called | Linear comparative map of the miR-L vector series, drawn over the integrating region. | — |
 | [`proteoform_decisions.py`](proteoform_decisions.py) | called | The proteoform decisions this experiment applies, with their attribution. | — |
@@ -192,6 +192,7 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`publish_predicted_structures.py`](publish_predicted_structures.py) | called | Publish the ColabFold predictions to S3, so the tag-site lanes have a model to read. | — |
 | [`publish_topology_supplement.py`](publish_topology_supplement.py) | stage | Give every active library member a DeepTMHMM v1 topology, reproducibly. | — |
 | [`publish_upstream_copies.py`](publish_upstream_copies.py) | called | Copy the upstream reference inputs that were saved in processed:// to external://. | `upstream_copies.tsv` |
+| [`publish_viewer_release.py`](publish_viewer_release.py) | documented | Publish an L1 cut to the surfaceome viewer: ColabFold R2 mirror, D1 loads, and cache purge. | — |
 | [`puro_only_backbone.py`](puro_only_backbone.py) | called | The puro-only intermediate: p003 with mScarlet3 and P2A deleted. | — |
 | [`rbp_motif_screen.py`](rbp_motif_screen.py) | documented | RBP-motif screen of the L1 library: shared elements once, ORF-intrinsic hits per member. | `l1_rbp_motif_cassettes.tsv`, `l1_rbp_motif_members.tsv`, `l1_rbp_motif_shared.tsv`, `l1_rbp_motif_summary.json` |
 | [`rebuild_disorder_anchored.py`](rebuild_disorder_anchored.py) | called | Re-place the N-terminal cassette on the disorder-anchored junction, not the cleavage site. | — |
@@ -318,4 +319,4 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`write_panels_of_record.py`](write_panels_of_record.py) | called | Write the L1 panel tables of record from the panels as applied on 2026-11-22. | — |
 | [`write_structure_baseline.py`](write_structure_baseline.py) | documented | Regenerate the structure-coverage baseline the repo tests assert against. | `structure_coverage_baseline.json` |
 
-Totals: called 179, documented 30, one-off 29, stage 30, test 6
+Totals: called 179, documented 33, one-off 27, stage 30, test 6

@@ -289,6 +289,7 @@ R2_MIRRORED = {
     "tagged/2026-11-12": "library-colabfold-tagged",
     "tagged/2026-11-21-coreceptor": "library-colabfold-tagged",
     "tagged/2026-11-22-natives": "library-colabfold-tagged",
+    "tagged/2026-11-23-natives": "library-colabfold-tagged",
 }
 _S3_RUN = re.compile(r"predicted-structures/((colabfold|tagged)/[^/]+)/([^/]+)$")
 
