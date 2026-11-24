@@ -34,9 +34,7 @@ from pathlib import Path
 from deliverome_analysis import library_design as ld
 
 HERE = Path(__file__).resolve().parent
-ARM_DECISIONS = (
-    HERE.parents[1] / "sprint5/s5e13-tag-site-benchmarking/l1_internal_arm_decisions.tsv"
-)
+ARM_DECISIONS = HERE.parents[1] / "l1/tag-site-benchmarking" / "l1_internal_arm_decisions.tsv"
 #: Rungs whose arm table holds exactly one arm per member.
 SINGLE_ARM_RUNGS = ("nterm", "multipass", "type3", "cterm")
 

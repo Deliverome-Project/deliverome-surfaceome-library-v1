@@ -554,9 +554,7 @@ def build(inp_all: dict[str, list[Path]]) -> list[Construct]:
 
     # --- snorkel arms (l1-cterm-build), tier 1: the design that now decides these members
     def show(rel: str) -> str:
-        return read_pinned_text(
-            SNORKEL_COMMIT, f"library/l1/orf-design/{rel}", repo=REPO
-        )
+        return read_pinned_text(SNORKEL_COMMIT, f"library/l1/orf-design/{rel}", repo=REPO)
 
     fa: dict[str, str] = {}
     name = None

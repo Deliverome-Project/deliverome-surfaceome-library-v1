@@ -25,7 +25,7 @@ from reserve_barcodes import (  # noqa: E402
     screens_pass,
 )
 
-POOL = S4E9.parents[1] / "sprint1/s1e2-fragmid-vector-design/barcodes_20nt_30k.tsv"
+POOL = S4E9.parents[1] / "l1/vector-design" / "barcodes_20nt_30k.tsv"
 FLANKS = {"current": REV_PRIMER, "t9a-draft": FELDMAN_T9A_3PRIME}
 
 

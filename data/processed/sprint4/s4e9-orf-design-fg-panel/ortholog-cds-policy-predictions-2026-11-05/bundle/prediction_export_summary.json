@@ -1,0 +1,176 @@
+{
+  "topology_version": "topo_2026_11_05_ortholog_cds_policy",
+  "topology_rows": 58,
+  "netgpi_predictions": 11,
+  "curation_records": 0,
+  "topology_tool_versions": [
+    "deeptmhmm-1.0-academic"
+  ],
+  "netgpi_tool_versions": [
+    "NetGPI-1.1"
+  ],
+  "source_files": {
+    "ortholog-cds-policy-final/scored/ortholog_provisional_picks.tsv": {
+      "sha256": "dd8e1265aa71b83e6660ccf0ef4ee237c2d58a77fa41ce78d4f2504d467537ff",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-policy-final/scored/ortholog_provisional_picks.tsv"
+    },
+    "ortholog-cds-predictions/scored-round1/ortholog_provisional_picks.tsv": {
+      "sha256": "8e8a10c0661da192359582aceb893f29add5f97c2c0aee60ed3928d412367fe1",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/scored-round1/ortholog_provisional_picks.tsv"
+    },
+    "ortholog-cds-predictions/topology-round1/run.json": {
+      "sha256": "34971772c4b20ff68077fc9c5c4aeb902bf3a2f1870d69ecff37270556f50457",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/topology-round1/run.json"
+    },
+    "ortholog-cds-predictions/topology-round1/submitted.fasta": {
+      "sha256": "2ed331ca7364a1f40ef23b3bd596315de796ca87bb1774090e311a20668be671",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/topology-round1/submitted.fasta"
+    },
+    "ortholog-cds-predictions/topology-round1/predictions.3line": {
+      "sha256": "cb06de94960a88f766a9f265a8989c5293c5dbb9eec72ccb6c6c8ae636dc7ee5",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/topology-round1/predictions.3line"
+    },
+    "ortholog-cds-predictions/topology-round1/predictions.3line.runtime.json": {
+      "sha256": "7ec44e30a88717c36397d57c3dd93ad7b9230cd23b42cf2a18ac75b6c86266bb",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/topology-round1/predictions.3line.runtime.json"
+    },
+    "ortholog-cds-predictions/topology-round2/run.json": {
+      "sha256": "10ee56f1d5ff555894805e3d12ad609d608fa50599d680a5bb0f9fdc9b590d33",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/topology-round2/run.json"
+    },
+    "ortholog-cds-predictions/topology-round2/submitted.fasta": {
+      "sha256": "3cf7eb82b7a39e2fcefe6663be735508c50eb7c33b8a88228dc4d31fc3206882",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/topology-round2/submitted.fasta"
+    },
+    "ortholog-cds-predictions/topology-round2/predictions.3line": {
+      "sha256": "2eb5c29a21a169d2be3b8f99586d0bc723b12b0b4375c1b362ce61d6e4b68ebe",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/topology-round2/predictions.3line"
+    },
+    "ortholog-cds-predictions/topology-round2/predictions.3line.runtime.json": {
+      "sha256": "01677a0a9a22fa4cab1af7f41632b7a5833750a61ee68dd3f1ceaf882e9e12b9",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/topology-round2/predictions.3line.runtime.json"
+    },
+    "ortholog-cds-predictions/netgpi-round1/execution.log": {
+      "sha256": "f2c28ed5862d19d2d1c7ea4898f82f772a5b69b5c8fefafb6c374e7bbd9222aa",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/netgpi-round1/execution.log"
+    },
+    "ortholog-cds-predictions/netgpi-round1/http/0001.body.bin": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/netgpi-round1/http/0001.body.bin"
+    },
+    "ortholog-cds-predictions/netgpi-round1/http/0001.headers.bin": {
+      "sha256": "e61a60c9e4cf02f88eb6be793e330e3133382f06594b68aad63f2f6c49952c59",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/netgpi-round1/http/0001.headers.bin"
+    },
+    "ortholog-cds-predictions/netgpi-round1/http/0001.stderr.bin": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/netgpi-round1/http/0001.stderr.bin"
+    },
+    "ortholog-cds-predictions/netgpi-round1/http/0001.stdout.bin": {
+      "sha256": "e61a60c9e4cf02f88eb6be793e330e3133382f06594b68aad63f2f6c49952c59",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/netgpi-round1/http/0001.stdout.bin"
+    },
+    "ortholog-cds-predictions/netgpi-round1/http/0002.body.bin": {
+      "sha256": "97d7b1bbb04b0f0423eec8ab6159505f5940368d1329f1f2954652b10e1439cb",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/netgpi-round1/http/0002.body.bin"
+    },
+    "ortholog-cds-predictions/netgpi-round1/http/0002.headers.bin": {
+      "sha256": "35a824b96a355524c5e08e5bf56ae13f67ff862d4ebae8e9df2c71b1c323e3fa",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/netgpi-round1/http/0002.headers.bin"
+    },
+    "ortholog-cds-predictions/netgpi-round1/http/0002.stderr.bin": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/netgpi-round1/http/0002.stderr.bin"
+    },
+    "ortholog-cds-predictions/netgpi-round1/http/0002.stdout.bin": {
+      "sha256": "37db34a56b528c3008a1573a38a321b2b38c7fa3681f87911e17626a6b29b5ba",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/netgpi-round1/http/0002.stdout.bin"
+    },
+    "ortholog-cds-predictions/netgpi-round1/http/0003.body.bin": {
+      "sha256": "97d7b1bbb04b0f0423eec8ab6159505f5940368d1329f1f2954652b10e1439cb",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/netgpi-round1/http/0003.body.bin"
+    },
+    "ortholog-cds-predictions/netgpi-round1/http/0003.headers.bin": {
+      "sha256": "2c03b274a17e582b80741d3794cb11aec5d5022555136045213b9eb3b99a89ec",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/netgpi-round1/http/0003.headers.bin"
+    },
+    "ortholog-cds-predictions/netgpi-round1/http/0003.stderr.bin": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/netgpi-round1/http/0003.stderr.bin"
+    },
+    "ortholog-cds-predictions/netgpi-round1/http/0003.stdout.bin": {
+      "sha256": "37db34a56b528c3008a1573a38a321b2b38c7fa3681f87911e17626a6b29b5ba",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/netgpi-round1/http/0003.stdout.bin"
+    },
+    "ortholog-cds-predictions/netgpi-round1/http/0004.body.bin": {
+      "sha256": "5c557adf0cc25e23da5285ef3c5df2f3e97b86e8739b26c857c8c208796bb4b0",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/netgpi-round1/http/0004.body.bin"
+    },
+    "ortholog-cds-predictions/netgpi-round1/http/0004.headers.bin": {
+      "sha256": "10b890b42900ffd029deea6e1ce1cb2fc2e3bb34897acc7ea664f9d184b8c6cf",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/netgpi-round1/http/0004.headers.bin"
+    },
+    "ortholog-cds-predictions/netgpi-round1/http/0004.stderr.bin": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/netgpi-round1/http/0004.stderr.bin"
+    },
+    "ortholog-cds-predictions/netgpi-round1/http/0004.stdout.bin": {
+      "sha256": "4001d92cf65ef1b4a509c41132837e63b496652e58872005a2902eb8d118d37b",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/netgpi-round1/http/0004.stdout.bin"
+    },
+    "ortholog-cds-predictions/netgpi-round1/http_exchanges.json": {
+      "sha256": "be139ebaf1a8260003a6ad706fa78e19eb5d7bad046300d8bef3230332697034",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/netgpi-round1/http_exchanges.json"
+    },
+    "ortholog-cds-predictions/netgpi-round1/netgpi_predictions.txt": {
+      "sha256": "aae07ab4f60dc2c397f9c6432cec9d1bb5a7d0285f2d32f536692762afbac5a2",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/netgpi-round1/netgpi_predictions.txt"
+    },
+    "ortholog-cds-predictions/netgpi-round1/predictions.json": {
+      "sha256": "ada4cb102a73a6de127557dc95cd4beeb77059ec9f6ddc792d2b234780e86435",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/netgpi-round1/predictions.json"
+    },
+    "ortholog-cds-predictions/netgpi-round1/raw_output_protein_type.txt": {
+      "sha256": "5c557adf0cc25e23da5285ef3c5df2f3e97b86e8739b26c857c8c208796bb4b0",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/netgpi-round1/raw_output_protein_type.txt"
+    },
+    "ortholog-cds-predictions/netgpi-round1/submitted.fasta": {
+      "sha256": "26632ec1768c13a908deb880bec585339df928ccbf8c30f0e945847a259d753d",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/netgpi-round1/submitted.fasta"
+    },
+    "ortholog-cds-predictions/netgpi-round1/submission.json": {
+      "sha256": "e3fba356714ffd61d23d37fdc72a72cfe9008e7549729687db819495cc68feae",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/netgpi-round1/submission.json"
+    },
+    "ortholog-cds-predictions/topology-round1/modal.log": {
+      "sha256": "f2d20abeb8bd3504f46b84af375cee07bcbc746b7548daed9c9e77440ab3b944",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/topology-round1/modal.log"
+    },
+    "ortholog-cds-predictions/topology-round1/predictions.3line.failures.json": {
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/topology-round1/predictions.3line.failures.json"
+    },
+    "ortholog-cds-policy-final/scored/ortholog_candidate_ledger.tsv.gz": {
+      "sha256": "aa24e2c3f2da8330ae9e98bba9b6dd92b57b9a11a7b0f8ffbb84b4d53290acca",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-policy-final/scored/ortholog_candidate_ledger.tsv.gz"
+    },
+    "ortholog-cds-predictions/topology-round2/modal.log": {
+      "sha256": "3e1bdda1739b7dd6d82f1872bb8f045ab48f001451d8c3398d13105498a7ffbe",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/topology-round2/modal.log"
+    },
+    "ortholog-cds-predictions/topology-round2/predictions.3line.failures.json": {
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/topology-round2/predictions.3line.failures.json"
+    },
+    "ortholog-cds-predictions/scored-round1/ortholog_candidate_ledger.tsv.gz": {
+      "sha256": "4276294721c97349d333b8ba42fc2e1fbc327ba1a9a65c0c6c97e8ba9ac3c3e5",
+      "source": "processed://sprint4/s4e9-orf-design-fg-panel/ortholog-cds-policy-predictions-2026-11-05/ortholog-cds-predictions/scored-round1/ortholog_candidate_ledger.tsv.gz"
+    }
+  },
+  "activation": false,
+  "output_sha256": {
+    "gpi_records.json": "d0114874b4223565882ef4a2e321f2c9e7ca9e71cbf658e40ffd1fb9c8224bf3",
+    "prediction_provenance_index.json": "97667ff325e860dc7e1aa3150b6c1be1292d5e307ab42bbed1a0f499315b4d79",
+    "topology_records.jsonl": "13c66a435db66e570598bec31e1309377a6344db13de8d3c18fffd42637a189d"
+  }
+}

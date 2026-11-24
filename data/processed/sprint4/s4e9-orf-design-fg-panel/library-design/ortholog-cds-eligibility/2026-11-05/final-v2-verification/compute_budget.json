@@ -1,0 +1,28 @@
+{
+  "approval": "Approve up to 75 predictions",
+  "limit": 75,
+  "reserved": 58,
+  "remaining": 17,
+  "runs": [
+    {
+      "round": 1,
+      "count": 57,
+      "residues": 39633,
+      "input_sha256": "2ed331ca7364a1f40ef23b3bd596315de796ca87bb1774090e311a20668be671",
+      "status": "completed",
+      "source_commit": "576967ac12180c4e07e6ec6819fec97d30ef412a",
+      "job_id": "ap-QzxvRgCeMZRmEuPW6dVZGn",
+      "successfully_predicted": 57
+    },
+    {
+      "round": 2,
+      "count": 1,
+      "residues": 226,
+      "input_sha256": "3cf7eb82b7a39e2fcefe6663be735508c50eb7c33b8a88228dc4d31fc3206882",
+      "status": "completed",
+      "source_commit": "55a360d1da07651e6f0d7343d24f3a938e7d15ea",
+      "job_id": "ap-BzcrE5MrejrINwZQfxAgHt",
+      "successfully_predicted": 1
+    }
+  ]
+}

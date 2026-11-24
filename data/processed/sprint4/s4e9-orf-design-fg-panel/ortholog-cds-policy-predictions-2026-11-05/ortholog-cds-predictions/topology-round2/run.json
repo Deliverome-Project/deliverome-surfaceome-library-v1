@@ -1,0 +1,29 @@
+{
+  "schema_version": "ortholog-v1-run-1",
+  "run_id": "ortholog-cds-policy-v1-round2",
+  "tool_version": "deeptmhmm-1.0-academic",
+  "job_id": "ap-BzcrE5MrejrINwZQfxAgHt",
+  "runner": {
+    "path": "scratch/becca/appris-principal/modal/deeptmhmm_v1_app.py",
+    "git_commit": "55a360d1da07651e6f0d7343d24f3a938e7d15ea",
+    "sha256": "fdb2b82fa133b05937464c47564175e52e2054ee8f4f1617f981e9ecd6a455b1"
+  },
+  "submitted_fasta": {
+    "path": "submitted.fasta",
+    "sha256": "3cf7eb82b7a39e2fcefe6663be735508c50eb7c33b8a88228dc4d31fc3206882"
+  },
+  "output": {
+    "path": "predictions.3line",
+    "sha256": "2eb5c29a21a169d2be3b8f99586d0bc723b12b0b4375c1b362ce61d6e4b68ebe"
+  },
+  "runtime_identity": {
+    "path": "predictions.3line.runtime.json",
+    "sha256": "01677a0a9a22fa4cab1af7f41632b7a5833750a61ee68dd3f1ceaf882e9e12b9"
+  },
+  "members": [
+    {
+      "sequence_sha256": "2f8ddefb09e7acc1b0fe99cde3f12fb59d096ca3c510470bc042d4e6454fc6ce",
+      "species": "cyno"
+    }
+  ]
+}

@@ -62,7 +62,7 @@ TRAILING = REV_PRIMER + CS1 + SHUTTLE_TAIL
 FELDMAN_T9A_3PRIME = "ACTGGCTATTCATTCGC" + "CCTTTGGGAAAGCACACGTC"
 #: Human miRNA seed target sites (TargetScan 8.0, from the s1e2 barcode design). Junction
 #: 7-mers are screened against the conserved and broadly conserved families.
-SEED_TSV = HERE.parents[1] / "sprint1/s1e2-fragmid-vector-design/mirna_seed_sites.tsv"
+SEED_TSV = HERE.parents[1] / "l1/vector-design" / "mirna_seed_sites.tsv"
 SEED_TIERS = frozenset({"broadly_conserved", "conserved"})
 
 # Constructs needing a barcode, in the order they get P-numbers.
@@ -457,8 +457,7 @@ def main(argv=None) -> int:
                 "position": "",
                 "assigned_by": "s1e2 pool",
                 "status": "designed",
-                "notes": f"{arm}; library/l1/orf-design; "
-                f"provisional P-number, not yet built",
+                "notes": f"{arm}; library/l1/orf-design; provisional P-number, not yet built",
             }
         )
 

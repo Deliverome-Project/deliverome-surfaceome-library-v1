@@ -81,9 +81,7 @@ SOURCES = EXP / "tag_refold_sources.tsv"
 NATIVE_INDEX = EXP / "tag_refold_native_models.tsv"
 OUT = EXP / "tag_refold_queue_coreceptor_additions.tsv"
 NTERM_REQ = EXP / "reviewer-package/nterm/refold_requests_coreceptor_additions.tsv"
-LOOP_REQ = (
-    REPO / "library/l1/tag-site-benchmarking/refold_requests_coreceptor_additions.tsv"
-)
+LOOP_REQ = REPO / "library/l1/tag-site-benchmarking/refold_requests_coreceptor_additions.tsv"
 DECIDED = 'l1-review-export-scope (subagent), under Becca\'s 2026-11-21 "Yes, rebuild now"'
 IMPLEMENTED = "Claude Code session l1-review-export-scope (subagent), 2026-11-21"
 REASON = "co-receptor addition (2026-11-21): the refold can change the call"

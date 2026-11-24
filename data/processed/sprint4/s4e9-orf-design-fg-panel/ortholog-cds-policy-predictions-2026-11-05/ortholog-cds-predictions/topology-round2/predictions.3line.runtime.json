@@ -1,0 +1,103 @@
+{
+  "esm_checkpoint_files": [
+    "esm_model_alphabet.pt",
+    "esm_model_args.pt",
+    "esm_model_state_dict.pt"
+  ],
+  "failed_shards": 0,
+  "model_files": [
+    "deeptmhmm_cv_0.model",
+    "deeptmhmm_cv_1.model",
+    "deeptmhmm_cv_2.model",
+    "deeptmhmm_cv_3.model",
+    "deeptmhmm_cv_4.model"
+  ],
+  "model_version": "1.0",
+  "output_sha256": "2eb5c29a21a169d2be3b8f99586d0bc723b12b0b4375c1b362ce61d6e4b68ebe",
+  "package_files_sha256": {
+    "deeptmhmm_cv_0.model": "5efa57f9bca96742f6a29a4663bb3e2ba0d362e5eecafebfb8af1ab4efe48533",
+    "deeptmhmm_cv_1.model": "ab6c743cf8d969d40da058ddd6c909b721d23d34cc6776e3d46bce3e27711093",
+    "deeptmhmm_cv_2.model": "efa4b50b5ca089ed27ea57116710138da4207728f2e3dca113e811013abc6c2e",
+    "deeptmhmm_cv_3.model": "a2d011962f7efcb1e3bdba92eefdfc211e93bec9a62cb60bf0bd2cb732d1f58f",
+    "deeptmhmm_cv_4.model": "9114bced9cf5f51905e4ac7e04db922801d383db4fca75523f6e144694f11725",
+    "esm_model_alphabet.pt": "8690264992d8f94df23594a210e96b7ed8aa6fda51de5b1791e28f98e5ff01f1",
+    "esm_model_args.pt": "bbfcf5a164c54960ba12fdd537f5edbf5b02197c119a95575c3768540f1aa59b",
+    "esm_model_state_dict.pt": "22ceed0957e7f46b6cd7ed0394294163702a23c13edf322129e7e445578da86a",
+    "experiments/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "experiments/tmhmm3/__init__.py": "e687ab73ccaef105e38db6942af1db8adbd990e5e4f04918f9284559e56581b9",
+    "experiments/tmhmm3/tm_models.py": "eda1ff634e56ddaebdb19a575d71cfc04ef557e3bdddeff78f284a50776853c7",
+    "experiments/tmhmm3/tm_util.py": "57e3cc95e93352c20191f72af88c677d6b41d35f55def6ebb4ed4215bd0fbcfc",
+    "openprotein.py": "ce678987c3d13a39db80837c024937eb9271ae378beffb8d0254716caf8c2fab",
+    "predict.py": "e2f4a8d4ecf37cfd7380a661011601709df1cb91ce3343ced68c5881a64ba18d",
+    "predict_thread_patched_t1.py": "2a9442c32d8c7bd316838ccd7d9a874945f72169f5b8bebcb740bcf2bfd20a2e",
+    "predict_thread_patched_t2.py": "0dd62013878d17ce8bd46552582803d1500f0db222e2b863b8122224fedd10c0",
+    "pytorchcrf/docs/conf.py": "ea329d91caae91e21319a797223a3abc5073c92cebcbd7a8d2a35180287f47fd",
+    "pytorchcrf/setup.py": "20dde702845aaac8febcb980217c0da56f315857a012bd9e2a786eb592357e8d",
+    "pytorchcrf/tests/test_crf.py": "a99fcbb65afe83f06f85e6ed8e3ba9dda252dcae43e373cdb41728843b9d94c7",
+    "pytorchcrf/torchcrf/__init__.py": "dd0ffbe44a46c8cf68e21faca228b81933ea60c85c20419c25198765dfc8a030",
+    "util.py": "735e645782c87dad52eedbd1ef3c319005dfcb6d102e93b74288282b4042f25c",
+    "utils.py": "75b1e31c27b381ffa720a74b96edf6ec8cbeafad619614b7b1bcf9df9c55beae"
+  },
+  "package_predict_sha256": "e2f4a8d4ecf37cfd7380a661011601709df1cb91ce3343ced68c5881a64ba18d",
+  "runner_sha256": "fdb2b82fa133b05937464c47564175e52e2054ee8f4f1617f981e9ecd6a455b1",
+  "schema_version": "deeptmhmm-academic-sweep-1",
+  "shards": [
+    {
+      "n": 1,
+      "ok": true,
+      "output_sha256": "2eb5c29a21a169d2be3b8f99586d0bc723b12b0b4375c1b362ce61d6e4b68ebe",
+      "runtime_identity": {
+        "esm_checkpoint_files": [
+          "esm_model_alphabet.pt",
+          "esm_model_args.pt",
+          "esm_model_state_dict.pt"
+        ],
+        "model_files": [
+          "deeptmhmm_cv_0.model",
+          "deeptmhmm_cv_1.model",
+          "deeptmhmm_cv_2.model",
+          "deeptmhmm_cv_3.model",
+          "deeptmhmm_cv_4.model"
+        ],
+        "model_version": "1.0",
+        "package_files_sha256": {
+          "deeptmhmm_cv_0.model": "5efa57f9bca96742f6a29a4663bb3e2ba0d362e5eecafebfb8af1ab4efe48533",
+          "deeptmhmm_cv_1.model": "ab6c743cf8d969d40da058ddd6c909b721d23d34cc6776e3d46bce3e27711093",
+          "deeptmhmm_cv_2.model": "efa4b50b5ca089ed27ea57116710138da4207728f2e3dca113e811013abc6c2e",
+          "deeptmhmm_cv_3.model": "a2d011962f7efcb1e3bdba92eefdfc211e93bec9a62cb60bf0bd2cb732d1f58f",
+          "deeptmhmm_cv_4.model": "9114bced9cf5f51905e4ac7e04db922801d383db4fca75523f6e144694f11725",
+          "esm_model_alphabet.pt": "8690264992d8f94df23594a210e96b7ed8aa6fda51de5b1791e28f98e5ff01f1",
+          "esm_model_args.pt": "bbfcf5a164c54960ba12fdd537f5edbf5b02197c119a95575c3768540f1aa59b",
+          "esm_model_state_dict.pt": "22ceed0957e7f46b6cd7ed0394294163702a23c13edf322129e7e445578da86a",
+          "experiments/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "experiments/tmhmm3/__init__.py": "e687ab73ccaef105e38db6942af1db8adbd990e5e4f04918f9284559e56581b9",
+          "experiments/tmhmm3/tm_models.py": "eda1ff634e56ddaebdb19a575d71cfc04ef557e3bdddeff78f284a50776853c7",
+          "experiments/tmhmm3/tm_util.py": "57e3cc95e93352c20191f72af88c677d6b41d35f55def6ebb4ed4215bd0fbcfc",
+          "openprotein.py": "ce678987c3d13a39db80837c024937eb9271ae378beffb8d0254716caf8c2fab",
+          "predict.py": "e2f4a8d4ecf37cfd7380a661011601709df1cb91ce3343ced68c5881a64ba18d",
+          "predict_thread_patched_t1.py": "2a9442c32d8c7bd316838ccd7d9a874945f72169f5b8bebcb740bcf2bfd20a2e",
+          "predict_thread_patched_t2.py": "0dd62013878d17ce8bd46552582803d1500f0db222e2b863b8122224fedd10c0",
+          "pytorchcrf/docs/conf.py": "ea329d91caae91e21319a797223a3abc5073c92cebcbd7a8d2a35180287f47fd",
+          "pytorchcrf/setup.py": "20dde702845aaac8febcb980217c0da56f315857a012bd9e2a786eb592357e8d",
+          "pytorchcrf/tests/test_crf.py": "a99fcbb65afe83f06f85e6ed8e3ba9dda252dcae43e373cdb41728843b9d94c7",
+          "pytorchcrf/torchcrf/__init__.py": "dd0ffbe44a46c8cf68e21faca228b81933ea60c85c20419c25198765dfc8a030",
+          "util.py": "735e645782c87dad52eedbd1ef3c319005dfcb6d102e93b74288282b4042f25c",
+          "utils.py": "75b1e31c27b381ffa720a74b96edf6ec8cbeafad619614b7b1bcf9df9c55beae"
+        },
+        "package_predict_sha256": "e2f4a8d4ecf37cfd7380a661011601709df1cb91ce3343ced68c5881a64ba18d",
+        "runner_sha256": "fdb2b82fa133b05937464c47564175e52e2054ee8f4f1617f981e9ecd6a455b1",
+        "tool_version": "deeptmhmm-1.0-academic",
+        "version_source": "predict.py ArgumentParser description=\"DeepTMHMM v1.0\""
+      },
+      "seconds": 22.9,
+      "sequence_sha256s": [
+        "2f8ddefb09e7acc1b0fe99cde3f12fb59d096ca3c510470bc042d4e6454fc6ce"
+      ],
+      "submitted_fasta_sha256": "3cf7eb82b7a39e2fcefe6663be735508c50eb7c33b8a88228dc4d31fc3206882",
+      "tag": "s0"
+    }
+  ],
+  "submitted_fasta_sha256": "3cf7eb82b7a39e2fcefe6663be735508c50eb7c33b8a88228dc4d31fc3206882",
+  "tool_version": "deeptmhmm-1.0-academic",
+  "version_source": "predict.py ArgumentParser description=\"DeepTMHMM v1.0\""
+}

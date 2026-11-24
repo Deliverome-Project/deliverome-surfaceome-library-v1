@@ -1,0 +1,2 @@
+form_id	rule_recommendation	recommendation	reason
+mouse:OR10G6:ENSMUSP00000057952	replace	ask	Only the first 21 residues of the human library protein (identical to UniProt canonical Q8NH81) are absent; DeepTMHMM v1 calls them a signal peptide in human, but all 7 TM helices and the 7tm Pfam domain align one-to-one and a cleaved signal peptide would be atypical for an olfactory receptor, so the loss may be a prediction call rather than an architectural difference

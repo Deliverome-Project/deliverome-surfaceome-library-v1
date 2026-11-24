@@ -59,9 +59,7 @@ def _at_main(rel: str) -> Path:
 
     out = Path(tempfile.mkdtemp()) / Path(rel).name
     out.write_text(
-        read_pinned_text(
-            MAIN_COMMIT, f"library/l1/orf-design/{rel}", repo=EXP.parents[2]
-        )
+        read_pinned_text(MAIN_COMMIT, f"library/l1/orf-design/{rel}", repo=EXP.parents[2])
     )
     return out
 

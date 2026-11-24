@@ -73,7 +73,9 @@ assert seqtools.translate(PREFIX_DNA) == PREFIX_AA
 #: root, the only place git keeps a TSV. Either source must match the pinned SHA-256.
 COMMITTED_COPIES = {
     DESIGNS_KEY: Path(__file__).resolve().parent / "l1_snorkel_designs_2026-11-14b.tsv",
-    ISSUED_KEY: Path(__file__).resolve().parents[2] / ISSUED_KEY,
+    ISSUED_KEY: (
+        Path(__file__).resolve().parents[2] / "l1/tag-site-benchmarking" / "l1_snorkel_designs.tsv"
+    ),
 }
 
 
@@ -111,7 +113,8 @@ def pinned_designs(expected_sha256: str = DESIGNS_SHA256) -> dict[str, dict]:
 #: two loop arms), replacing the pinned list above. Re-pin deliberately with the ranker.
 ARM_DECISIONS = (
     Path(__file__).resolve().parents[2]
-    / "sprint5/s5e13-tag-site-benchmarking/l1_internal_arm_decisions.tsv"
+    / "l1/tag-site-benchmarking"
+    / "l1_internal_arm_decisions.tsv"
 )
 # 2026-11-21: re-pinned after s5e13 l1_internal_additions.py appended SCNN1B's arm (l1-p3174-a1),
 # the internal co-receptor addition, then its refold pass; 2026-11-22: rows of retired members

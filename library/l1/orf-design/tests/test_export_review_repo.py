@@ -11,12 +11,21 @@ import subprocess
 import sys
 from pathlib import Path
 
+import pytest
+
 HERE = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(HERE / "reviewer-package"))
 
 import export_review_repo as err  # noqa: E402
 
 
+def _is_exported_review_repo() -> bool:
+    return (err.REPO / err.MANIFEST).is_file()
+
+
+@pytest.mark.skipif(
+    _is_exported_review_repo(), reason="exporter self-test requires the source repository"
+)
 def test_exported_scripts_are_import_closed_at_head():
     files = err.collect("HEAD", include_historical=False)
     tracked = set(err.git("ls-tree", "-r", "--name-only", "HEAD").decode().splitlines())
@@ -63,6 +72,9 @@ def _is_shallow() -> bool:
     return err.git("rev-parse", "--is-shallow-repository").decode().strip() == "true"
 
 
+@pytest.mark.skipif(
+    _is_exported_review_repo(), reason="exporter self-test requires the source repository"
+)
 def test_clean_paths_export_strips_internal_markers_and_stays_valid():
     files = err.collect("HEAD", clean_paths=True, include_historical=not _is_shallow())
     internal_dir = re.compile(r"(?:^|/)sprint\d+/|(?:^|/)s\d+e\d+-|(?:^|/)scratch/becca/")
@@ -83,6 +95,9 @@ def test_clean_paths_export_strips_internal_markers_and_stays_valid():
     assert "s5e13-tag-site-benchmarking" not in internal_arms
 
 
+@pytest.mark.skipif(
+    _is_exported_review_repo(), reason="exporter self-test requires the source repository"
+)
 def test_exported_clean_paths_repo_runs_offline_tests(tmp_path: Path):
     """End-to-end replay smoke test: export HEAD with clean paths into a fresh
     directory (no .git history, no warm cache, dead S3 endpoint) and run its
@@ -164,7 +179,15 @@ def test_exported_clean_paths_repo_runs_offline_tests(tmp_path: Path):
 def test_no_exported_script_calls_raw_git_show():
     """Every exported script must read historical commits via provenance.read_pinned_*,
     never raw ``git show`` subprocess calls that break without .git history."""
-    files = err.collect("HEAD", include_historical=False)
+    if _is_exported_review_repo():
+        manifest = json.loads((err.REPO / err.MANIFEST).read_text())["files"]
+        files = {
+            p: (err.REPO / p).read_bytes()
+            for p in manifest
+            if p.endswith(".py") and (err.REPO / p).is_file()
+        }
+    else:
+        files = err.collect("HEAD", include_historical=False)
     raw_git_show = re.compile(r'["\']git["\'][^\n]*["\']show["\']')
     allowed = {
         "library/l1/orf-design/reviewer-package/export_review_repo.py",

@@ -1,0 +1,78 @@
+{
+  "provenance": {
+    "created": "2026-11-06T02:09:44Z",
+    "git-commit": "0e972cf00a29485f4ce1026af7ba8f08c379c84f",
+    "git-dirty": "false",
+    "script": "analysis/sprint4/s4e9-orf-design-fg-panel/score_eligible_ortholog_pool.py",
+    "uv-lock-sha256": "31b7d210f1abf552",
+    "renv-lock-sha256": "28c620b48696c5a6"
+  },
+  "argv": [
+    "analysis/sprint4/s4e9-orf-design-fg-panel/score_eligible_ortholog_pool.py",
+    "--inputs",
+    "../ortholog-116/inputs",
+    "--pool",
+    "../ortholog-116/pool",
+    "--eligibility",
+    "../ortholog-cds-policy-final/eligibility/eligible_proteins.json",
+    "--eligibility-ledger",
+    "../ortholog-cds-policy-final/eligibility/ortholog_transcript_eligibility.tsv.gz",
+    "--topology",
+    "../ortholog-116/topology_snapshot.parquet",
+    "--prior-picks",
+    "../ortholog-116/replay-final/ortholog_provisional_picks.tsv",
+    "--netgpi-json",
+    "../ortholog-116/d1-v2/gpi_records.json",
+    "--netgpi-json",
+    "../ortholog-116/d1-source-expansion/gpi_records.json",
+    "--netgpi",
+    "../ortholog-116/combined/netgpi_predictions.txt",
+    "--workers",
+    "4",
+    "--out",
+    "../ortholog-cds-policy-final/scored"
+  ],
+  "script_sha256": "54c2e787dc8e1e3295c3b8e58337447b3c5abef404cd42908e7f75041f7d3261",
+  "outputs": [
+    {
+      "name": "all_unknown_candidate_sequences.fasta",
+      "sha256": "2635491c2a0c5b9e8253fc234fec9f555230462c12ac248b837cca145e222070"
+    },
+    {
+      "name": "missing_deeptmhmm_v1.fasta",
+      "sha256": "2ed331ca7364a1f40ef23b3bd596315de796ca87bb1774090e311a20668be671"
+    },
+    {
+      "name": "ortholog_before_after.tsv",
+      "sha256": "8201d439d3c1c9208b81cf5daf83551b970d50bc721f2a9fa412b6416c1b2940"
+    },
+    {
+      "name": "ortholog_candidate_ledger.tsv.gz",
+      "sha256": "aa24e2c3f2da8330ae9e98bba9b6dd92b57b9a11a7b0f8ffbb84b4d53290acca"
+    },
+    {
+      "name": "ortholog_pair_ledger.tsv",
+      "sha256": "13d3e29dc65ac4a514459ef682b1207881632f5d21253af0b360ab7832d32237"
+    },
+    {
+      "name": "ortholog_picks.fasta",
+      "sha256": "f8cd9d3da97e1bd6070562bdb4b7b5bd656018d063d79b0e2e105c7abd7983f5"
+    },
+    {
+      "name": "ortholog_provisional_picks.tsv",
+      "sha256": "dd8e1265aa71b83e6660ccf0ef4ee237c2d58a77fa41ce78d4f2504d467537ff"
+    },
+    {
+      "name": "ortholog_scoring_summary.json",
+      "sha256": "fdd4ba4915e6953c63d92081a0be511c939b705f9581d91ee509693a1436b981"
+    },
+    {
+      "name": "pending_netgpi.fasta",
+      "sha256": "26632ec1768c13a908deb880bec585339df928ccbf8c30f0e945847a259d753d"
+    },
+    {
+      "name": "uncertain_anchor_picks.tsv",
+      "sha256": "3291d7abddb2360d6a3b72b6161f29400857e553cac17f183ebc9d2233fee93b"
+    }
+  ]
+}

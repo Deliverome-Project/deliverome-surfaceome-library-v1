@@ -1,0 +1,57 @@
+[
+ {
+  "member_id": "SLC9A3",
+  "role": "native",
+  "after_residue": null,
+  "sequence_sha256": "b51fefb32007ce55cbcddddd69c471c6b4d798d8ffad2c7fe98ff6a6de84ba92",
+  "prediction": "SP",
+  "cleavage_site": 25,
+  "cleavage_probability": 0.9666,
+  "sp_probability": 0.866579,
+  "protein_length": 834
+ },
+ {
+  "member_id": "SLC9A3",
+  "role": "tagged",
+  "after_residue": 26,
+  "sequence_sha256": "8de3c5c8c65fa7c542d0bfc8333f482192fd0c2b88999374dc18ad706a36f99a",
+  "prediction": "SP",
+  "cleavage_site": 25,
+  "cleavage_probability": 0.6496,
+  "sp_probability": 0.666488,
+  "protein_length": 885
+ },
+ {
+  "member_id": "SLC9A3",
+  "role": "tagged",
+  "after_residue": 34,
+  "sequence_sha256": "251b75e200456bd2dd4a80ef0a97a86057cabb1f295cd16db519f6ad21c758c8",
+  "prediction": "SP",
+  "cleavage_site": 25,
+  "cleavage_probability": 0.973,
+  "sp_probability": 0.999848,
+  "protein_length": 885
+ },
+ {
+  "member_id": "SLC9A3",
+  "role": "tagged",
+  "after_residue": 40,
+  "sequence_sha256": "c473899c46935bd90e0782cd49d17de8ff1aaf24bd8aa41b26f6b74213335214",
+  "prediction": "SP",
+  "cleavage_site": 25,
+  "cleavage_probability": 0.9503,
+  "sp_probability": 0.99984,
+  "protein_length": 885
+ },
+ {
+  "member_id": "SLC9A3",
+  "role": "tagged",
+  "after_residue": 46,
+  "sequence_sha256": "4a3bec5a4a8c6f376586beb411210bca42a748a8040a8cac779b50d50c56c449",
+  "prediction": "SP",
+  "cleavage_site": 25,
+  "cleavage_probability": 0.9736,
+  "sp_probability": 0.999857,
+  "protein_length": 885
+ }
+]

@@ -1,0 +1,4273 @@
+{
+  "artifact_hashes": {
+    "../ortholog-cds-policy-complete/panel/ortholog_panel_cds_eligible.tsv": "bd44a58eb2f002cec1384a798ad12b945d004157ef4788f6d98e57154761dd30",
+    "../ortholog-cds-policy-complete/panel/panel_changes.tsv": "22735587b9fc475b09ef4c3798722280728b5baaa8542c27a75146263731e7db",
+    "../ortholog-cds-policy-complete/panel/selected_cds.json": "ccfc8f2d16f8e03e264428159323c1c801c1f2ba5fd7e019d2a483578a5d2a37",
+    "../ortholog-cds-policy-complete/scored/ortholog_before_after.tsv": "507712b2205b9e02475889b523a386af6a2f358f45d16248bb0a4344832a76da",
+    "../ortholog-cds-policy-complete/workflow.json": "f81cf904df1aefb9ca6a7112980c18a4427fe1d03b69cde2198fa9e4aa4d642e"
+  },
+  "final_run_source_commit": "5f6f8870248538d24451b6230640e2becf06e62c",
+  "interpretation": "186 previous gene/species panel entries leave and 186 different entries enter a full seeded redraw. The 14 overlapping gene/species entries retain exactly the old protein. This is not evidence that 186 prior sequences required correction. Changed full-pool candidate membership/order and enforced eligibility alter seeded sample membership while quotas/cutoffs stay fixed.",
+  "length_and_correspondence_review": {
+    "all_selected": [
+      {
+        "band": "diverged",
+        "correspondence": 0.9562,
+        "gene": "ADGRB2",
+        "human_length": 1554,
+        "human_unmatched_internal_residues": 68,
+        "human_unmatched_residues": 68,
+        "length_ratio": 0.9716859716859717,
+        "matching_residues": 1486,
+        "ortholog_length": 1510,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9509,
+        "gene": "ADGRL3",
+        "human_length": 1469,
+        "human_unmatched_internal_residues": 16,
+        "human_unmatched_residues": 16,
+        "length_ratio": 1.0401633764465623,
+        "matching_residues": 1453,
+        "ortholog_length": 1528,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9585,
+        "gene": "CD109",
+        "human_length": 1445,
+        "human_unmatched_internal_residues": 60,
+        "human_unmatched_residues": 60,
+        "length_ratio": 0.9979238754325259,
+        "matching_residues": 1385,
+        "ortholog_length": 1442,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9061,
+        "gene": "CD160",
+        "human_length": 181,
+        "human_unmatched_internal_residues": 17,
+        "human_unmatched_residues": 17,
+        "length_ratio": 1.0,
+        "matching_residues": 164,
+        "ortholog_length": 181,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9268,
+        "gene": "CD207",
+        "human_length": 328,
+        "human_unmatched_internal_residues": 24,
+        "human_unmatched_residues": 24,
+        "length_ratio": 1.0,
+        "matching_residues": 304,
+        "ortholog_length": 328,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9269,
+        "gene": "CD38",
+        "human_length": 300,
+        "human_unmatched_internal_residues": 21,
+        "human_unmatched_residues": 21,
+        "length_ratio": 1.0033333333333334,
+        "matching_residues": 279,
+        "ortholog_length": 301,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.8774,
+        "gene": "CD72",
+        "human_length": 359,
+        "human_unmatched_internal_residues": 44,
+        "human_unmatched_residues": 44,
+        "length_ratio": 1.0,
+        "matching_residues": 315,
+        "ortholog_length": 359,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.934,
+        "gene": "CHRM3",
+        "human_length": 590,
+        "human_unmatched_internal_residues": 10,
+        "human_unmatched_residues": 10,
+        "length_ratio": 1.0525423728813559,
+        "matching_residues": 580,
+        "ortholog_length": 621,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9539,
+        "gene": "CNGA3",
+        "human_length": 694,
+        "human_unmatched_internal_residues": 32,
+        "human_unmatched_residues": 32,
+        "length_ratio": 1.0,
+        "matching_residues": 662,
+        "ortholog_length": 694,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.95,
+        "gene": "FFAR1",
+        "human_length": 300,
+        "human_unmatched_internal_residues": 15,
+        "human_unmatched_residues": 15,
+        "length_ratio": 0.9933333333333333,
+        "matching_residues": 285,
+        "ortholog_length": 298,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9354,
+        "gene": "FLT4",
+        "human_length": 1363,
+        "human_unmatched_internal_residues": 45,
+        "human_unmatched_residues": 45,
+        "length_ratio": 1.033749082905356,
+        "matching_residues": 1318,
+        "ortholog_length": 1409,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9044,
+        "gene": "FOLR2",
+        "human_length": 255,
+        "human_unmatched_internal_residues": 9,
+        "human_unmatched_residues": 9,
+        "length_ratio": 1.0666666666666667,
+        "matching_residues": 246,
+        "ortholog_length": 272,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9588,
+        "gene": "GGT7",
+        "human_length": 662,
+        "human_unmatched_internal_residues": 11,
+        "human_unmatched_residues": 11,
+        "length_ratio": 1.0256797583081572,
+        "matching_residues": 651,
+        "ortholog_length": 679,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.8636,
+        "gene": "GLIPR1L1",
+        "human_length": 242,
+        "human_unmatched_internal_residues": 33,
+        "human_unmatched_residues": 33,
+        "length_ratio": 0.9917355371900827,
+        "matching_residues": 209,
+        "ortholog_length": 240,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9201,
+        "gene": "GPNMB",
+        "human_length": 588,
+        "human_unmatched_internal_residues": 47,
+        "human_unmatched_residues": 47,
+        "length_ratio": 0.9744897959183674,
+        "matching_residues": 541,
+        "ortholog_length": 573,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9412,
+        "gene": "GPRC5A",
+        "human_length": 357,
+        "human_unmatched_internal_residues": 21,
+        "human_unmatched_residues": 21,
+        "length_ratio": 0.9943977591036415,
+        "matching_residues": 336,
+        "ortholog_length": 355,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9411,
+        "gene": "IL12RB1",
+        "human_length": 662,
+        "human_unmatched_internal_residues": 39,
+        "human_unmatched_residues": 39,
+        "length_ratio": 1.0,
+        "matching_residues": 623,
+        "ortholog_length": 662,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.953,
+        "gene": "IL22RA1",
+        "human_length": 574,
+        "human_unmatched_internal_residues": 27,
+        "human_unmatched_residues": 27,
+        "length_ratio": 0.9982578397212544,
+        "matching_residues": 547,
+        "ortholog_length": 573,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.7264,
+        "gene": "IL31RA",
+        "human_length": 764,
+        "human_unmatched_internal_residues": 209,
+        "human_unmatched_residues": 209,
+        "length_ratio": 0.7827225130890052,
+        "matching_residues": 555,
+        "ortholog_length": 598,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.8778,
+        "gene": "IL6R",
+        "human_length": 468,
+        "human_unmatched_internal_residues": 30,
+        "human_unmatched_residues": 30,
+        "length_ratio": 1.0662393162393162,
+        "matching_residues": 438,
+        "ortholog_length": 499,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.8752,
+        "gene": "IL9R",
+        "human_length": 521,
+        "human_unmatched_internal_residues": 65,
+        "human_unmatched_residues": 65,
+        "length_ratio": 0.9865642994241842,
+        "matching_residues": 456,
+        "ortholog_length": 514,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9293,
+        "gene": "ITGA10",
+        "human_length": 1167,
+        "human_unmatched_internal_residues": 24,
+        "human_unmatched_residues": 24,
+        "length_ratio": 1.0539845758354756,
+        "matching_residues": 1143,
+        "ortholog_length": 1230,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9277,
+        "gene": "KCNK17",
+        "human_length": 332,
+        "human_unmatched_internal_residues": 24,
+        "human_unmatched_residues": 24,
+        "length_ratio": 1.0,
+        "matching_residues": 308,
+        "ortholog_length": 332,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9101,
+        "gene": "KLRG1",
+        "human_length": 189,
+        "human_unmatched_internal_residues": 15,
+        "human_unmatched_residues": 17,
+        "length_ratio": 1.0,
+        "matching_residues": 172,
+        "ortholog_length": 189,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.8406,
+        "gene": "LY6L",
+        "human_length": 138,
+        "human_unmatched_internal_residues": 22,
+        "human_unmatched_residues": 22,
+        "length_ratio": 1.0,
+        "matching_residues": 116,
+        "ortholog_length": 138,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.7305,
+        "gene": "LYPD2",
+        "human_length": 125,
+        "human_unmatched_internal_residues": 22,
+        "human_unmatched_residues": 22,
+        "length_ratio": 1.128,
+        "matching_residues": 103,
+        "ortholog_length": 141,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9212,
+        "gene": "MARCO",
+        "human_length": 520,
+        "human_unmatched_internal_residues": 40,
+        "human_unmatched_residues": 41,
+        "length_ratio": 1.0,
+        "matching_residues": 479,
+        "ortholog_length": 520,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.8216,
+        "gene": "MPIG6B",
+        "human_length": 241,
+        "human_unmatched_internal_residues": 43,
+        "human_unmatched_residues": 43,
+        "length_ratio": 0.9004149377593361,
+        "matching_residues": 198,
+        "ortholog_length": 217,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9302,
+        "gene": "MRAP",
+        "human_length": 172,
+        "human_unmatched_internal_residues": 12,
+        "human_unmatched_residues": 12,
+        "length_ratio": 1.0,
+        "matching_residues": 160,
+        "ortholog_length": 172,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.7566,
+        "gene": "MS4A10",
+        "human_length": 267,
+        "human_unmatched_internal_residues": 65,
+        "human_unmatched_residues": 65,
+        "length_ratio": 0.846441947565543,
+        "matching_residues": 202,
+        "ortholog_length": 226,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9552,
+        "gene": "NCR3",
+        "human_length": 201,
+        "human_unmatched_internal_residues": 9,
+        "human_unmatched_residues": 9,
+        "length_ratio": 1.0,
+        "matching_residues": 192,
+        "ortholog_length": 201,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.8738,
+        "gene": "NFASC",
+        "human_length": 1169,
+        "human_unmatched_internal_residues": 6,
+        "human_unmatched_residues": 6,
+        "length_ratio": 1.13857998289136,
+        "matching_residues": 1163,
+        "ortholog_length": 1331,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.6456,
+        "gene": "NIPAL4",
+        "human_length": 404,
+        "human_unmatched_internal_residues": 5,
+        "human_unmatched_residues": 5,
+        "length_ratio": 1.5297029702970297,
+        "matching_residues": 399,
+        "ortholog_length": 618,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.8617,
+        "gene": "OR3A2",
+        "human_length": 315,
+        "human_unmatched_internal_residues": 16,
+        "human_unmatched_residues": 16,
+        "length_ratio": 1.1015873015873017,
+        "matching_residues": 299,
+        "ortholog_length": 347,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.8942,
+        "gene": "OR51C1",
+        "human_length": 312,
+        "human_unmatched_internal_residues": 33,
+        "human_unmatched_residues": 33,
+        "length_ratio": 0.9967948717948718,
+        "matching_residues": 279,
+        "ortholog_length": 311,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.8938,
+        "gene": "OR7E24",
+        "human_length": 339,
+        "human_unmatched_internal_residues": 36,
+        "human_unmatched_residues": 36,
+        "length_ratio": 0.9882005899705014,
+        "matching_residues": 303,
+        "ortholog_length": 335,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9343,
+        "gene": "PCDHB16",
+        "human_length": 776,
+        "human_unmatched_internal_residues": 51,
+        "human_unmatched_residues": 51,
+        "length_ratio": 1.0,
+        "matching_residues": 725,
+        "ortholog_length": 776,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9522,
+        "gene": "PLAUR",
+        "human_length": 335,
+        "human_unmatched_internal_residues": 16,
+        "human_unmatched_residues": 16,
+        "length_ratio": 1.0,
+        "matching_residues": 319,
+        "ortholog_length": 335,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.937,
+        "gene": "PROCR",
+        "human_length": 238,
+        "human_unmatched_internal_residues": 15,
+        "human_unmatched_residues": 15,
+        "length_ratio": 1.0,
+        "matching_residues": 223,
+        "ortholog_length": 238,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.8777,
+        "gene": "PVR",
+        "human_length": 417,
+        "human_unmatched_internal_residues": 47,
+        "human_unmatched_residues": 51,
+        "length_ratio": 0.9808153477218226,
+        "matching_residues": 366,
+        "ortholog_length": 409,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9509,
+        "gene": "SLC47A1",
+        "human_length": 570,
+        "human_unmatched_internal_residues": 28,
+        "human_unmatched_residues": 28,
+        "length_ratio": 0.9982456140350877,
+        "matching_residues": 542,
+        "ortholog_length": 569,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.6238,
+        "gene": "SLC8A1",
+        "human_length": 973,
+        "human_unmatched_internal_residues": 75,
+        "human_unmatched_residues": 366,
+        "length_ratio": 0.6413155190133607,
+        "matching_residues": 607,
+        "ortholog_length": 624,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9262,
+        "gene": "SLC9B1",
+        "human_length": 515,
+        "human_unmatched_internal_residues": 38,
+        "human_unmatched_residues": 38,
+        "length_ratio": 1.0,
+        "matching_residues": 477,
+        "ortholog_length": 515,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.8079,
+        "gene": "TEX29",
+        "human_length": 151,
+        "human_unmatched_internal_residues": 29,
+        "human_unmatched_residues": 29,
+        "length_ratio": 1.0,
+        "matching_residues": 122,
+        "ortholog_length": 151,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9105,
+        "gene": "TFRC",
+        "human_length": 760,
+        "human_unmatched_internal_residues": 68,
+        "human_unmatched_residues": 68,
+        "length_ratio": 0.9631578947368421,
+        "matching_residues": 692,
+        "ortholog_length": 732,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9184,
+        "gene": "TMEM210",
+        "human_length": 147,
+        "human_unmatched_internal_residues": 12,
+        "human_unmatched_residues": 12,
+        "length_ratio": 1.0,
+        "matching_residues": 135,
+        "ortholog_length": 147,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9307,
+        "gene": "TMEM67",
+        "human_length": 995,
+        "human_unmatched_internal_residues": 69,
+        "human_unmatched_residues": 69,
+        "length_ratio": 0.9567839195979899,
+        "matching_residues": 926,
+        "ortholog_length": 952,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9556,
+        "gene": "TNFRSF13B",
+        "human_length": 293,
+        "human_unmatched_internal_residues": 13,
+        "human_unmatched_residues": 13,
+        "length_ratio": 1.0,
+        "matching_residues": 280,
+        "ortholog_length": 293,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9561,
+        "gene": "TRPM2",
+        "human_length": 1503,
+        "human_unmatched_internal_residues": 66,
+        "human_unmatched_residues": 66,
+        "length_ratio": 0.998003992015968,
+        "matching_residues": 1437,
+        "ortholog_length": 1500,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9126,
+        "gene": "ZACN",
+        "human_length": 412,
+        "human_unmatched_internal_residues": 35,
+        "human_unmatched_residues": 36,
+        "length_ratio": 0.9975728155339806,
+        "matching_residues": 376,
+        "ortholog_length": 411,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9878,
+        "gene": "ADCY3",
+        "human_length": 1144,
+        "human_unmatched_internal_residues": 13,
+        "human_unmatched_residues": 13,
+        "length_ratio": 1.0008741258741258,
+        "matching_residues": 1131,
+        "ortholog_length": 1145,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9763,
+        "gene": "ADGRG6",
+        "human_length": 1222,
+        "human_unmatched_internal_residues": 29,
+        "human_unmatched_residues": 29,
+        "length_ratio": 0.997545008183306,
+        "matching_residues": 1193,
+        "ortholog_length": 1219,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9977,
+        "gene": "ASTN1",
+        "human_length": 1294,
+        "human_unmatched_internal_residues": 3,
+        "human_unmatched_residues": 3,
+        "length_ratio": 1.0,
+        "matching_residues": 1291,
+        "ortholog_length": 1294,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9945,
+        "gene": "CACNA2D1",
+        "human_length": 1091,
+        "human_unmatched_internal_residues": 6,
+        "human_unmatched_residues": 6,
+        "length_ratio": 1.0,
+        "matching_residues": 1085,
+        "ortholog_length": 1091,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9927,
+        "gene": "CACNG5",
+        "human_length": 275,
+        "human_unmatched_internal_residues": 2,
+        "human_unmatched_residues": 2,
+        "length_ratio": 1.0,
+        "matching_residues": 273,
+        "ortholog_length": 275,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9869,
+        "gene": "CDH4",
+        "human_length": 916,
+        "human_unmatched_internal_residues": 12,
+        "human_unmatched_residues": 12,
+        "length_ratio": 1.0,
+        "matching_residues": 904,
+        "ortholog_length": 916,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9833,
+        "gene": "CLDN14",
+        "human_length": 239,
+        "human_unmatched_internal_residues": 4,
+        "human_unmatched_residues": 4,
+        "length_ratio": 1.0,
+        "matching_residues": 235,
+        "ortholog_length": 239,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.996,
+        "gene": "CLDND1",
+        "human_length": 253,
+        "human_unmatched_internal_residues": 1,
+        "human_unmatched_residues": 1,
+        "length_ratio": 1.0,
+        "matching_residues": 252,
+        "ortholog_length": 253,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9775,
+        "gene": "CMKLR2",
+        "human_length": 355,
+        "human_unmatched_internal_residues": 8,
+        "human_unmatched_residues": 8,
+        "length_ratio": 1.0,
+        "matching_residues": 347,
+        "ortholog_length": 355,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9801,
+        "gene": "COL25A1",
+        "human_length": 654,
+        "human_unmatched_internal_residues": 13,
+        "human_unmatched_residues": 13,
+        "length_ratio": 1.0,
+        "matching_residues": 641,
+        "ortholog_length": 654,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9626,
+        "gene": "CORIN",
+        "human_length": 1042,
+        "human_unmatched_internal_residues": 39,
+        "human_unmatched_residues": 39,
+        "length_ratio": 1.0,
+        "matching_residues": 1003,
+        "ortholog_length": 1042,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9616,
+        "gene": "CPM",
+        "human_length": 443,
+        "human_unmatched_internal_residues": 17,
+        "human_unmatched_residues": 17,
+        "length_ratio": 1.0,
+        "matching_residues": 426,
+        "ortholog_length": 443,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9804,
+        "gene": "DPP4",
+        "human_length": 766,
+        "human_unmatched_internal_residues": 15,
+        "human_unmatched_residues": 15,
+        "length_ratio": 1.0,
+        "matching_residues": 751,
+        "ortholog_length": 766,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9821,
+        "gene": "EDA",
+        "human_length": 391,
+        "human_unmatched_internal_residues": 7,
+        "human_unmatched_residues": 7,
+        "length_ratio": 0.9948849104859335,
+        "matching_residues": 384,
+        "ortholog_length": 389,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9677,
+        "gene": "ENTPD2",
+        "human_length": 495,
+        "human_unmatched_internal_residues": 16,
+        "human_unmatched_residues": 16,
+        "length_ratio": 1.0,
+        "matching_residues": 479,
+        "ortholog_length": 495,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9805,
+        "gene": "EPGN",
+        "human_length": 154,
+        "human_unmatched_internal_residues": 3,
+        "human_unmatched_residues": 3,
+        "length_ratio": 1.0,
+        "matching_residues": 151,
+        "ortholog_length": 154,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.998,
+        "gene": "EPHB2",
+        "human_length": 986,
+        "human_unmatched_internal_residues": 1,
+        "human_unmatched_residues": 1,
+        "length_ratio": 1.0010141987829615,
+        "matching_residues": 985,
+        "ortholog_length": 987,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9962,
+        "gene": "ERBB4",
+        "human_length": 1308,
+        "human_unmatched_internal_residues": 5,
+        "human_unmatched_residues": 5,
+        "length_ratio": 1.0,
+        "matching_residues": 1303,
+        "ortholog_length": 1308,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.994,
+        "gene": "FZD3",
+        "human_length": 666,
+        "human_unmatched_internal_residues": 4,
+        "human_unmatched_residues": 4,
+        "length_ratio": 1.0,
+        "matching_residues": 662,
+        "ortholog_length": 666,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9687,
+        "gene": "GPR19",
+        "human_length": 415,
+        "human_unmatched_internal_residues": 13,
+        "human_unmatched_residues": 13,
+        "length_ratio": 1.0,
+        "matching_residues": 402,
+        "ortholog_length": 415,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.997,
+        "gene": "GRID1",
+        "human_length": 1009,
+        "human_unmatched_internal_residues": 3,
+        "human_unmatched_residues": 3,
+        "length_ratio": 1.0,
+        "matching_residues": 1006,
+        "ortholog_length": 1009,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9896,
+        "gene": "GRPR",
+        "human_length": 384,
+        "human_unmatched_internal_residues": 4,
+        "human_unmatched_residues": 4,
+        "length_ratio": 1.0,
+        "matching_residues": 380,
+        "ortholog_length": 384,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9765,
+        "gene": "HCRTR1",
+        "human_length": 425,
+        "human_unmatched_internal_residues": 10,
+        "human_unmatched_residues": 10,
+        "length_ratio": 1.0,
+        "matching_residues": 415,
+        "ortholog_length": 425,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9632,
+        "gene": "HEPACAM2",
+        "human_length": 462,
+        "human_unmatched_internal_residues": 17,
+        "human_unmatched_residues": 17,
+        "length_ratio": 1.0,
+        "matching_residues": 445,
+        "ortholog_length": 462,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9894,
+        "gene": "HTR2A",
+        "human_length": 471,
+        "human_unmatched_internal_residues": 5,
+        "human_unmatched_residues": 5,
+        "length_ratio": 1.0,
+        "matching_residues": 466,
+        "ortholog_length": 471,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9862,
+        "gene": "ITGB5",
+        "human_length": 799,
+        "human_unmatched_internal_residues": 11,
+        "human_unmatched_residues": 11,
+        "length_ratio": 1.0,
+        "matching_residues": 788,
+        "ortholog_length": 799,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9874,
+        "gene": "KIAA2013",
+        "human_length": 634,
+        "human_unmatched_internal_residues": 8,
+        "human_unmatched_residues": 8,
+        "length_ratio": 0.9968454258675079,
+        "matching_residues": 626,
+        "ortholog_length": 632,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9713,
+        "gene": "KLB",
+        "human_length": 1044,
+        "human_unmatched_internal_residues": 30,
+        "human_unmatched_residues": 30,
+        "length_ratio": 1.0,
+        "matching_residues": 1014,
+        "ortholog_length": 1044,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9662,
+        "gene": "LYPD6B",
+        "human_length": 207,
+        "human_unmatched_internal_residues": 7,
+        "human_unmatched_residues": 7,
+        "length_ratio": 0.9951690821256038,
+        "matching_residues": 200,
+        "ortholog_length": 206,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9849,
+        "gene": "MC4R",
+        "human_length": 332,
+        "human_unmatched_internal_residues": 5,
+        "human_unmatched_residues": 5,
+        "length_ratio": 1.0,
+        "matching_residues": 327,
+        "ortholog_length": 332,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9886,
+        "gene": "MEGF10",
+        "human_length": 1140,
+        "human_unmatched_internal_residues": 13,
+        "human_unmatched_residues": 13,
+        "length_ratio": 0.9973684210526316,
+        "matching_residues": 1127,
+        "ortholog_length": 1137,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9893,
+        "gene": "MME",
+        "human_length": 750,
+        "human_unmatched_internal_residues": 8,
+        "human_unmatched_residues": 8,
+        "length_ratio": 1.0,
+        "matching_residues": 742,
+        "ortholog_length": 750,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9628,
+        "gene": "MRC2",
+        "human_length": 1479,
+        "human_unmatched_internal_residues": 55,
+        "human_unmatched_residues": 55,
+        "length_ratio": 0.9722785665990534,
+        "matching_residues": 1424,
+        "ortholog_length": 1438,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9961,
+        "gene": "NCAM1",
+        "human_length": 761,
+        "human_unmatched_internal_residues": 3,
+        "human_unmatched_residues": 3,
+        "length_ratio": 1.0,
+        "matching_residues": 758,
+        "ortholog_length": 761,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9875,
+        "gene": "NRG1",
+        "human_length": 640,
+        "human_unmatched_internal_residues": 8,
+        "human_unmatched_residues": 8,
+        "length_ratio": 1.0,
+        "matching_residues": 632,
+        "ortholog_length": 640,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.993,
+        "gene": "NRN1",
+        "human_length": 142,
+        "human_unmatched_internal_residues": 1,
+        "human_unmatched_residues": 1,
+        "length_ratio": 1.0,
+        "matching_residues": 141,
+        "ortholog_length": 142,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9861,
+        "gene": "NT5E",
+        "human_length": 574,
+        "human_unmatched_internal_residues": 8,
+        "human_unmatched_residues": 8,
+        "length_ratio": 1.0,
+        "matching_residues": 566,
+        "ortholog_length": 574,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9818,
+        "gene": "OMG",
+        "human_length": 440,
+        "human_unmatched_internal_residues": 8,
+        "human_unmatched_residues": 8,
+        "length_ratio": 1.0,
+        "matching_residues": 432,
+        "ortholog_length": 440,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9811,
+        "gene": "OPRL1",
+        "human_length": 370,
+        "human_unmatched_internal_residues": 7,
+        "human_unmatched_residues": 7,
+        "length_ratio": 1.0,
+        "matching_residues": 363,
+        "ortholog_length": 370,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9713,
+        "gene": "OR4K2",
+        "human_length": 314,
+        "human_unmatched_internal_residues": 9,
+        "human_unmatched_residues": 9,
+        "length_ratio": 1.0,
+        "matching_residues": 305,
+        "ortholog_length": 314,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9875,
+        "gene": "OR51E2",
+        "human_length": 320,
+        "human_unmatched_internal_residues": 4,
+        "human_unmatched_residues": 4,
+        "length_ratio": 1.0,
+        "matching_residues": 316,
+        "ortholog_length": 320,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9975,
+        "gene": "PCDH9",
+        "human_length": 1203,
+        "human_unmatched_internal_residues": 3,
+        "human_unmatched_residues": 3,
+        "length_ratio": 1.0,
+        "matching_residues": 1200,
+        "ortholog_length": 1203,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9843,
+        "gene": "SLC16A9",
+        "human_length": 509,
+        "human_unmatched_internal_residues": 8,
+        "human_unmatched_residues": 8,
+        "length_ratio": 1.0,
+        "matching_residues": 501,
+        "ortholog_length": 509,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9631,
+        "gene": "SLC22A8",
+        "human_length": 542,
+        "human_unmatched_internal_residues": 20,
+        "human_unmatched_residues": 20,
+        "length_ratio": 1.0,
+        "matching_residues": 522,
+        "ortholog_length": 542,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9919,
+        "gene": "SLC2A1",
+        "human_length": 492,
+        "human_unmatched_internal_residues": 4,
+        "human_unmatched_residues": 4,
+        "length_ratio": 1.0,
+        "matching_residues": 488,
+        "ortholog_length": 492,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9604,
+        "gene": "SLC4A11",
+        "human_length": 875,
+        "human_unmatched_internal_residues": 27,
+        "human_unmatched_residues": 27,
+        "length_ratio": 1.0091428571428571,
+        "matching_residues": 848,
+        "ortholog_length": 883,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9709,
+        "gene": "TGFBR3",
+        "human_length": 851,
+        "human_unmatched_internal_residues": 16,
+        "human_unmatched_residues": 16,
+        "length_ratio": 1.0105757931844888,
+        "matching_residues": 835,
+        "ortholog_length": 860,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9811,
+        "gene": "TNFSF11",
+        "human_length": 317,
+        "human_unmatched_internal_residues": 6,
+        "human_unmatched_residues": 6,
+        "length_ratio": 1.0,
+        "matching_residues": 311,
+        "ortholog_length": 317,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9948,
+        "gene": "UNC5D",
+        "human_length": 953,
+        "human_unmatched_internal_residues": 5,
+        "human_unmatched_residues": 5,
+        "length_ratio": 1.0,
+        "matching_residues": 948,
+        "ortholog_length": 953,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9858,
+        "gene": "VTCN1",
+        "human_length": 282,
+        "human_unmatched_internal_residues": 4,
+        "human_unmatched_residues": 4,
+        "length_ratio": 1.0,
+        "matching_residues": 278,
+        "ortholog_length": 282,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.6012,
+        "gene": "ADGRE5",
+        "human_length": 835,
+        "human_unmatched_internal_residues": 332,
+        "human_unmatched_residues": 333,
+        "length_ratio": 0.9796407185628743,
+        "matching_residues": 502,
+        "ortholog_length": 818,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.7715,
+        "gene": "ANPEP",
+        "human_length": 967,
+        "human_unmatched_internal_residues": 220,
+        "human_unmatched_residues": 221,
+        "length_ratio": 0.9989658738366081,
+        "matching_residues": 746,
+        "ortholog_length": 966,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.8627,
+        "gene": "ANTXR2",
+        "human_length": 488,
+        "human_unmatched_internal_residues": 67,
+        "human_unmatched_residues": 67,
+        "length_ratio": 0.9979508196721312,
+        "matching_residues": 421,
+        "ortholog_length": 487,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.7732,
+        "gene": "ASGR1",
+        "human_length": 291,
+        "human_unmatched_internal_residues": 59,
+        "human_unmatched_residues": 66,
+        "length_ratio": 0.9759450171821306,
+        "matching_residues": 225,
+        "ortholog_length": 284,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.5246,
+        "gene": "BTLA",
+        "human_length": 289,
+        "human_unmatched_internal_residues": 129,
+        "human_unmatched_residues": 129,
+        "length_ratio": 1.055363321799308,
+        "matching_residues": 160,
+        "ortholog_length": 305,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.8643,
+        "gene": "C11orf87",
+        "human_length": 197,
+        "human_unmatched_internal_residues": 25,
+        "human_unmatched_residues": 25,
+        "length_ratio": 1.0101522842639594,
+        "matching_residues": 172,
+        "ortholog_length": 199,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.664,
+        "gene": "CD14",
+        "human_length": 375,
+        "human_unmatched_internal_residues": 125,
+        "human_unmatched_residues": 126,
+        "length_ratio": 0.976,
+        "matching_residues": 249,
+        "ortholog_length": 366,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.828,
+        "gene": "CDH15",
+        "human_length": 814,
+        "human_unmatched_internal_residues": 121,
+        "human_unmatched_residues": 140,
+        "length_ratio": 0.9631449631449631,
+        "matching_residues": 674,
+        "ortholog_length": 784,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.8462,
+        "gene": "CHRNA6",
+        "human_length": 494,
+        "human_unmatched_internal_residues": 76,
+        "human_unmatched_residues": 76,
+        "length_ratio": 1.0,
+        "matching_residues": 418,
+        "ortholog_length": 494,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.655,
+        "gene": "CLEC1B",
+        "human_length": 229,
+        "human_unmatched_internal_residues": 78,
+        "human_unmatched_residues": 79,
+        "length_ratio": 1.0,
+        "matching_residues": 150,
+        "ortholog_length": 229,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.6804,
+        "gene": "CLEC4E",
+        "human_length": 219,
+        "human_unmatched_internal_residues": 64,
+        "human_unmatched_residues": 70,
+        "length_ratio": 0.9771689497716894,
+        "matching_residues": 149,
+        "ortholog_length": 214,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.8329,
+        "gene": "CORIN",
+        "human_length": 1042,
+        "human_unmatched_internal_residues": 168,
+        "human_unmatched_residues": 170,
+        "length_ratio": 1.0047984644913628,
+        "matching_residues": 872,
+        "ortholog_length": 1047,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.851,
+        "gene": "CPM",
+        "human_length": 443,
+        "human_unmatched_internal_residues": 66,
+        "human_unmatched_residues": 66,
+        "length_ratio": 1.0,
+        "matching_residues": 377,
+        "ortholog_length": 443,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.6167,
+        "gene": "CRB3",
+        "human_length": 120,
+        "human_unmatched_internal_residues": 46,
+        "human_unmatched_residues": 46,
+        "length_ratio": 0.9416666666666667,
+        "matching_residues": 74,
+        "ortholog_length": 113,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.716,
+        "gene": "DPEP2",
+        "human_length": 486,
+        "human_unmatched_internal_residues": 135,
+        "human_unmatched_residues": 138,
+        "length_ratio": 0.9835390946502057,
+        "matching_residues": 348,
+        "ortholog_length": 478,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.7518,
+        "gene": "DRD4",
+        "human_length": 419,
+        "human_unmatched_internal_residues": 103,
+        "human_unmatched_residues": 104,
+        "length_ratio": 0.9236276849642004,
+        "matching_residues": 315,
+        "ortholog_length": 387,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.7386,
+        "gene": "ENG",
+        "human_length": 658,
+        "human_unmatched_internal_residues": 172,
+        "human_unmatched_residues": 172,
+        "length_ratio": 0.9908814589665653,
+        "matching_residues": 486,
+        "ortholog_length": 652,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.833,
+        "gene": "GABRR3",
+        "human_length": 467,
+        "human_unmatched_internal_residues": 78,
+        "human_unmatched_residues": 78,
+        "length_ratio": 0.9935760171306209,
+        "matching_residues": 389,
+        "ortholog_length": 464,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.8464,
+        "gene": "GAS1",
+        "human_length": 345,
+        "human_unmatched_internal_residues": 52,
+        "human_unmatched_residues": 53,
+        "length_ratio": 0.9942028985507246,
+        "matching_residues": 292,
+        "ortholog_length": 343,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.785,
+        "gene": "GFRA3",
+        "human_length": 400,
+        "human_unmatched_internal_residues": 86,
+        "human_unmatched_residues": 86,
+        "length_ratio": 0.9925,
+        "matching_residues": 314,
+        "ortholog_length": 397,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.4674,
+        "gene": "ICAM1",
+        "human_length": 532,
+        "human_unmatched_internal_residues": 281,
+        "human_unmatched_residues": 281,
+        "length_ratio": 1.0093984962406015,
+        "matching_residues": 251,
+        "ortholog_length": 537,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.6732,
+        "gene": "IL17RA",
+        "human_length": 866,
+        "human_unmatched_internal_residues": 282,
+        "human_unmatched_residues": 283,
+        "length_ratio": 0.9976905311778291,
+        "matching_residues": 583,
+        "ortholog_length": 864,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.6764,
+        "gene": "IL17RC",
+        "human_length": 720,
+        "human_unmatched_internal_residues": 233,
+        "human_unmatched_residues": 233,
+        "length_ratio": 0.9930555555555556,
+        "matching_residues": 487,
+        "ortholog_length": 715,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.5792,
+        "gene": "IZUMO2",
+        "human_length": 221,
+        "human_unmatched_internal_residues": 92,
+        "human_unmatched_residues": 93,
+        "length_ratio": 0.995475113122172,
+        "matching_residues": 128,
+        "ortholog_length": 220,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.4958,
+        "gene": "MS4A7",
+        "human_length": 240,
+        "human_unmatched_internal_residues": 115,
+        "human_unmatched_residues": 121,
+        "length_ratio": 0.975,
+        "matching_residues": 119,
+        "ortholog_length": 234,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.8584,
+        "gene": "NPY5R",
+        "human_length": 445,
+        "human_unmatched_internal_residues": 45,
+        "human_unmatched_residues": 45,
+        "length_ratio": 1.047191011235955,
+        "matching_residues": 400,
+        "ortholog_length": 466,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.7939,
+        "gene": "NRN1L",
+        "human_length": 165,
+        "human_unmatched_internal_residues": 34,
+        "human_unmatched_residues": 34,
+        "length_ratio": 0.9818181818181818,
+        "matching_residues": 131,
+        "ortholog_length": 162,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.8584,
+        "gene": "OR10G6",
+        "human_length": 332,
+        "human_unmatched_internal_residues": 46,
+        "human_unmatched_residues": 47,
+        "length_ratio": 0.9337349397590361,
+        "matching_residues": 285,
+        "ortholog_length": 310,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.7519,
+        "gene": "PCDHB15",
+        "human_length": 787,
+        "human_unmatched_internal_residues": 189,
+        "human_unmatched_residues": 190,
+        "length_ratio": 1.008894536213469,
+        "matching_residues": 597,
+        "ortholog_length": 794,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.838,
+        "gene": "PLPP1",
+        "human_length": 284,
+        "human_unmatched_internal_residues": 41,
+        "human_unmatched_residues": 46,
+        "length_ratio": 0.9964788732394366,
+        "matching_residues": 238,
+        "ortholog_length": 283,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.6244,
+        "gene": "PLVAP",
+        "human_length": 442,
+        "human_unmatched_internal_residues": 166,
+        "human_unmatched_residues": 166,
+        "length_ratio": 0.9909502262443439,
+        "matching_residues": 276,
+        "ortholog_length": 438,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.6446,
+        "gene": "PROCR",
+        "human_length": 238,
+        "human_unmatched_internal_residues": 82,
+        "human_unmatched_residues": 82,
+        "length_ratio": 1.0168067226890756,
+        "matching_residues": 156,
+        "ortholog_length": 242,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.822,
+        "gene": "SIGIRR",
+        "human_length": 410,
+        "human_unmatched_internal_residues": 72,
+        "human_unmatched_residues": 73,
+        "length_ratio": 0.9975609756097561,
+        "matching_residues": 337,
+        "ortholog_length": 409,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.8168,
+        "gene": "SLC13A1",
+        "human_length": 595,
+        "human_unmatched_internal_residues": 109,
+        "human_unmatched_residues": 109,
+        "length_ratio": 0.9983193277310924,
+        "matching_residues": 486,
+        "ortholog_length": 594,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.8473,
+        "gene": "SLC14A2",
+        "human_length": 920,
+        "human_unmatched_internal_residues": 132,
+        "human_unmatched_residues": 132,
+        "length_ratio": 1.0108695652173914,
+        "matching_residues": 788,
+        "ortholog_length": 930,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.7905,
+        "gene": "SLC34A2",
+        "human_length": 690,
+        "human_unmatched_internal_residues": 139,
+        "human_unmatched_residues": 139,
+        "length_ratio": 1.010144927536232,
+        "matching_residues": 551,
+        "ortholog_length": 697,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.7524,
+        "gene": "SLC3A2",
+        "human_length": 529,
+        "human_unmatched_internal_residues": 130,
+        "human_unmatched_residues": 131,
+        "length_ratio": 0.994328922495274,
+        "matching_residues": 398,
+        "ortholog_length": 526,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.8369,
+        "gene": "SLC43A1",
+        "human_length": 559,
+        "human_unmatched_internal_residues": 86,
+        "human_unmatched_residues": 87,
+        "length_ratio": 1.0089445438282647,
+        "matching_residues": 472,
+        "ortholog_length": 564,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.8324,
+        "gene": "SLC44A4",
+        "human_length": 710,
+        "human_unmatched_internal_residues": 119,
+        "human_unmatched_residues": 119,
+        "length_ratio": 0.995774647887324,
+        "matching_residues": 591,
+        "ortholog_length": 707,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.7745,
+        "gene": "SLC46A2",
+        "human_length": 475,
+        "human_unmatched_internal_residues": 104,
+        "human_unmatched_residues": 104,
+        "length_ratio": 1.0084210526315789,
+        "matching_residues": 371,
+        "ortholog_length": 479,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.8027,
+        "gene": "SLC5A4",
+        "human_length": 659,
+        "human_unmatched_internal_residues": 130,
+        "human_unmatched_residues": 130,
+        "length_ratio": 0.9954476479514416,
+        "matching_residues": 529,
+        "ortholog_length": 656,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.8051,
+        "gene": "SPINT1",
+        "human_length": 513,
+        "human_unmatched_internal_residues": 100,
+        "human_unmatched_residues": 100,
+        "length_ratio": 0.9883040935672515,
+        "matching_residues": 413,
+        "ortholog_length": 507,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.5857,
+        "gene": "TFPI",
+        "human_length": 251,
+        "human_unmatched_internal_residues": 96,
+        "human_unmatched_residues": 104,
+        "length_ratio": 0.9840637450199203,
+        "matching_residues": 147,
+        "ortholog_length": 247,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.7877,
+        "gene": "TM7SF3",
+        "human_length": 570,
+        "human_unmatched_internal_residues": 121,
+        "human_unmatched_residues": 121,
+        "length_ratio": 0.9912280701754386,
+        "matching_residues": 449,
+        "ortholog_length": 565,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.6065,
+        "gene": "TMEM139",
+        "human_length": 216,
+        "human_unmatched_internal_residues": 84,
+        "human_unmatched_residues": 85,
+        "length_ratio": 0.9907407407407407,
+        "matching_residues": 131,
+        "ortholog_length": 214,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.6463,
+        "gene": "TMEM210",
+        "human_length": 147,
+        "human_unmatched_internal_residues": 50,
+        "human_unmatched_residues": 52,
+        "length_ratio": 1.0,
+        "matching_residues": 95,
+        "ortholog_length": 147,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.6549,
+        "gene": "TMEM86B",
+        "human_length": 226,
+        "human_unmatched_internal_residues": 77,
+        "human_unmatched_residues": 78,
+        "length_ratio": 1.0,
+        "matching_residues": 148,
+        "ortholog_length": 226,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.7519,
+        "gene": "TMIGD1",
+        "human_length": 262,
+        "human_unmatched_internal_residues": 65,
+        "human_unmatched_residues": 65,
+        "length_ratio": 0.9961832061068703,
+        "matching_residues": 197,
+        "ortholog_length": 261,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.7805,
+        "gene": "TMPRSS2",
+        "human_length": 492,
+        "human_unmatched_internal_residues": 106,
+        "human_unmatched_residues": 108,
+        "length_ratio": 0.9959349593495935,
+        "matching_residues": 384,
+        "ortholog_length": 490,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.8262,
+        "gene": "VSIG2",
+        "human_length": 327,
+        "human_unmatched_internal_residues": 56,
+        "human_unmatched_residues": 56,
+        "length_ratio": 1.003058103975535,
+        "matching_residues": 271,
+        "ortholog_length": 328,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9444,
+        "gene": "ADGRB1",
+        "human_length": 1584,
+        "human_unmatched_internal_residues": 88,
+        "human_unmatched_residues": 88,
+        "length_ratio": 0.9987373737373737,
+        "matching_residues": 1496,
+        "ortholog_length": 1582,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9375,
+        "gene": "ATP1B1",
+        "human_length": 303,
+        "human_unmatched_internal_residues": 18,
+        "human_unmatched_residues": 18,
+        "length_ratio": 1.0033003300330032,
+        "matching_residues": 285,
+        "ortholog_length": 304,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.8769,
+        "gene": "CACHD1",
+        "human_length": 1140,
+        "human_unmatched_internal_residues": 29,
+        "human_unmatched_residues": 29,
+        "length_ratio": 1.1114035087719298,
+        "matching_residues": 1111,
+        "ortholog_length": 1267,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9808,
+        "gene": "CACNA2D3",
+        "human_length": 1091,
+        "human_unmatched_internal_residues": 21,
+        "human_unmatched_residues": 21,
+        "length_ratio": 1.0,
+        "matching_residues": 1070,
+        "ortholog_length": 1091,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9486,
+        "gene": "CLEC2L",
+        "human_length": 214,
+        "human_unmatched_internal_residues": 11,
+        "human_unmatched_residues": 11,
+        "length_ratio": 0.985981308411215,
+        "matching_residues": 203,
+        "ortholog_length": 211,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.8822,
+        "gene": "CNNM3",
+        "human_length": 707,
+        "human_unmatched_internal_residues": 78,
+        "human_unmatched_residues": 78,
+        "length_ratio": 1.0084865629420086,
+        "matching_residues": 629,
+        "ortholog_length": 713,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9725,
+        "gene": "CNR1",
+        "human_length": 472,
+        "human_unmatched_internal_residues": 12,
+        "human_unmatched_residues": 12,
+        "length_ratio": 1.0021186440677967,
+        "matching_residues": 460,
+        "ortholog_length": 473,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9532,
+        "gene": "CNTN4",
+        "human_length": 1026,
+        "human_unmatched_internal_residues": 48,
+        "human_unmatched_residues": 48,
+        "length_ratio": 1.0,
+        "matching_residues": 978,
+        "ortholog_length": 1026,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.87,
+        "gene": "CNTNAP4",
+        "human_length": 1308,
+        "human_unmatched_internal_residues": 170,
+        "human_unmatched_residues": 170,
+        "length_ratio": 1.0,
+        "matching_residues": 1138,
+        "ortholog_length": 1308,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9,
+        "gene": "COL23A1",
+        "human_length": 540,
+        "human_unmatched_internal_residues": 54,
+        "human_unmatched_residues": 54,
+        "length_ratio": 0.9851851851851852,
+        "matching_residues": 486,
+        "ortholog_length": 532,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.913,
+        "gene": "CPD",
+        "human_length": 1380,
+        "human_unmatched_internal_residues": 120,
+        "human_unmatched_residues": 120,
+        "length_ratio": 0.9978260869565218,
+        "matching_residues": 1260,
+        "ortholog_length": 1377,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9583,
+        "gene": "EFNB2",
+        "human_length": 333,
+        "human_unmatched_internal_residues": 11,
+        "human_unmatched_residues": 11,
+        "length_ratio": 1.009009009009009,
+        "matching_residues": 322,
+        "ortholog_length": 336,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9304,
+        "gene": "EPHA2",
+        "human_length": 976,
+        "human_unmatched_internal_residues": 67,
+        "human_unmatched_residues": 67,
+        "length_ratio": 1.0010245901639345,
+        "matching_residues": 909,
+        "ortholog_length": 977,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9024,
+        "gene": "FIBCD1",
+        "human_length": 461,
+        "human_unmatched_internal_residues": 45,
+        "human_unmatched_residues": 45,
+        "length_ratio": 0.9956616052060737,
+        "matching_residues": 416,
+        "ortholog_length": 459,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9676,
+        "gene": "GPC6",
+        "human_length": 555,
+        "human_unmatched_internal_residues": 18,
+        "human_unmatched_residues": 18,
+        "length_ratio": 1.0,
+        "matching_residues": 537,
+        "ortholog_length": 555,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.894,
+        "gene": "GPR19",
+        "human_length": 415,
+        "human_unmatched_internal_residues": 44,
+        "human_unmatched_residues": 44,
+        "length_ratio": 1.0,
+        "matching_residues": 371,
+        "ortholog_length": 415,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9394,
+        "gene": "GPR6",
+        "human_length": 362,
+        "human_unmatched_internal_residues": 21,
+        "human_unmatched_residues": 21,
+        "length_ratio": 1.0027624309392265,
+        "matching_residues": 341,
+        "ortholog_length": 363,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.888,
+        "gene": "HTR5A",
+        "human_length": 357,
+        "human_unmatched_internal_residues": 39,
+        "human_unmatched_residues": 40,
+        "length_ratio": 1.0,
+        "matching_residues": 317,
+        "ortholog_length": 357,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9792,
+        "gene": "IGLON5",
+        "human_length": 336,
+        "human_unmatched_internal_residues": 7,
+        "human_unmatched_residues": 7,
+        "length_ratio": 1.0,
+        "matching_residues": 329,
+        "ortholog_length": 336,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.875,
+        "gene": "IGSF1",
+        "human_length": 1336,
+        "human_unmatched_internal_residues": 167,
+        "human_unmatched_residues": 167,
+        "length_ratio": 0.9925149700598802,
+        "matching_residues": 1169,
+        "ortholog_length": 1326,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.8987,
+        "gene": "ITFG1",
+        "human_length": 612,
+        "human_unmatched_internal_residues": 62,
+        "human_unmatched_residues": 62,
+        "length_ratio": 0.9967320261437909,
+        "matching_residues": 550,
+        "ortholog_length": 610,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.8756,
+        "gene": "ITGA3",
+        "human_length": 1051,
+        "human_unmatched_internal_residues": 129,
+        "human_unmatched_residues": 129,
+        "length_ratio": 1.0019029495718363,
+        "matching_residues": 922,
+        "ortholog_length": 1053,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.932,
+        "gene": "KCNE3",
+        "human_length": 103,
+        "human_unmatched_internal_residues": 7,
+        "human_unmatched_residues": 7,
+        "length_ratio": 1.0,
+        "matching_residues": 96,
+        "ortholog_length": 103,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.97,
+        "gene": "LHFPL6",
+        "human_length": 200,
+        "human_unmatched_internal_residues": 6,
+        "human_unmatched_residues": 6,
+        "length_ratio": 1.0,
+        "matching_residues": 194,
+        "ortholog_length": 200,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9571,
+        "gene": "LMBR1L",
+        "human_length": 489,
+        "human_unmatched_internal_residues": 21,
+        "human_unmatched_residues": 21,
+        "length_ratio": 1.0,
+        "matching_residues": 468,
+        "ortholog_length": 489,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9054,
+        "gene": "NCAM1",
+        "human_length": 761,
+        "human_unmatched_internal_residues": 71,
+        "human_unmatched_residues": 72,
+        "length_ratio": 0.9526938239159002,
+        "matching_residues": 689,
+        "ortholog_length": 725,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9227,
+        "gene": "NGFR",
+        "human_length": 427,
+        "human_unmatched_internal_residues": 33,
+        "human_unmatched_residues": 33,
+        "length_ratio": 1.0,
+        "matching_residues": 394,
+        "ortholog_length": 427,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.987,
+        "gene": "NLGN3",
+        "human_length": 848,
+        "human_unmatched_internal_residues": 11,
+        "human_unmatched_residues": 11,
+        "length_ratio": 0.9964622641509434,
+        "matching_residues": 837,
+        "ortholog_length": 845,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9283,
+        "gene": "NRG3",
+        "human_length": 696,
+        "human_unmatched_internal_residues": 49,
+        "human_unmatched_residues": 49,
+        "length_ratio": 1.0014367816091954,
+        "matching_residues": 647,
+        "ortholog_length": 697,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9927,
+        "gene": "NRXN1",
+        "human_length": 1507,
+        "human_unmatched_internal_residues": 11,
+        "human_unmatched_residues": 11,
+        "length_ratio": 1.0,
+        "matching_residues": 1496,
+        "ortholog_length": 1507,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9666,
+        "gene": "NTNG1",
+        "human_length": 539,
+        "human_unmatched_internal_residues": 18,
+        "human_unmatched_residues": 18,
+        "length_ratio": 1.0,
+        "matching_residues": 521,
+        "ortholog_length": 539,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9313,
+        "gene": "OR51E2",
+        "human_length": 320,
+        "human_unmatched_internal_residues": 21,
+        "human_unmatched_residues": 22,
+        "length_ratio": 1.0,
+        "matching_residues": 298,
+        "ortholog_length": 320,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9793,
+        "gene": "PCDH7",
+        "human_length": 1255,
+        "human_unmatched_internal_residues": 26,
+        "human_unmatched_residues": 26,
+        "length_ratio": 1.0,
+        "matching_residues": 1229,
+        "ortholog_length": 1255,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.8935,
+        "gene": "POPDC3",
+        "human_length": 291,
+        "human_unmatched_internal_residues": 31,
+        "human_unmatched_residues": 31,
+        "length_ratio": 1.0,
+        "matching_residues": 260,
+        "ortholog_length": 291,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.8766,
+        "gene": "PRTG",
+        "human_length": 1150,
+        "human_unmatched_internal_residues": 106,
+        "human_unmatched_residues": 106,
+        "length_ratio": 1.0356521739130435,
+        "matching_residues": 1044,
+        "ortholog_length": 1191,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9551,
+        "gene": "PTCH1",
+        "human_length": 1447,
+        "human_unmatched_internal_residues": 65,
+        "human_unmatched_residues": 65,
+        "length_ratio": 0.9910158949550795,
+        "matching_residues": 1382,
+        "ortholog_length": 1434,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9483,
+        "gene": "RHO",
+        "human_length": 348,
+        "human_unmatched_internal_residues": 18,
+        "human_unmatched_residues": 18,
+        "length_ratio": 1.0,
+        "matching_residues": 330,
+        "ortholog_length": 348,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.8943,
+        "gene": "RTN4R",
+        "human_length": 473,
+        "human_unmatched_internal_residues": 50,
+        "human_unmatched_residues": 50,
+        "length_ratio": 1.0,
+        "matching_residues": 423,
+        "ortholog_length": 473,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9001,
+        "gene": "SLC26A9",
+        "human_length": 791,
+        "human_unmatched_internal_residues": 79,
+        "human_unmatched_residues": 79,
+        "length_ratio": 0.9987357774968394,
+        "matching_residues": 712,
+        "ortholog_length": 790,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.8776,
+        "gene": "SLC39A10",
+        "human_length": 831,
+        "human_unmatched_internal_residues": 100,
+        "human_unmatched_residues": 100,
+        "length_ratio": 1.0024067388688327,
+        "matching_residues": 731,
+        "ortholog_length": 833,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9622,
+        "gene": "SLC61A1",
+        "human_length": 450,
+        "human_unmatched_internal_residues": 17,
+        "human_unmatched_residues": 17,
+        "length_ratio": 1.0,
+        "matching_residues": 433,
+        "ortholog_length": 450,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9415,
+        "gene": "SLC6A11",
+        "human_length": 632,
+        "human_unmatched_internal_residues": 37,
+        "human_unmatched_residues": 37,
+        "length_ratio": 0.9920886075949367,
+        "matching_residues": 595,
+        "ortholog_length": 627,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.912,
+        "gene": "SLC6A13",
+        "human_length": 602,
+        "human_unmatched_internal_residues": 53,
+        "human_unmatched_residues": 53,
+        "length_ratio": 1.0,
+        "matching_residues": 549,
+        "ortholog_length": 602,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.933,
+        "gene": "SMO",
+        "human_length": 787,
+        "human_unmatched_internal_residues": 49,
+        "human_unmatched_residues": 49,
+        "length_ratio": 1.0050825921219821,
+        "matching_residues": 738,
+        "ortholog_length": 791,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9459,
+        "gene": "TACR1",
+        "human_length": 407,
+        "human_unmatched_internal_residues": 21,
+        "human_unmatched_residues": 22,
+        "length_ratio": 1.0,
+        "matching_residues": 385,
+        "ortholog_length": 407,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.933,
+        "gene": "TMEM132E",
+        "human_length": 1074,
+        "human_unmatched_internal_residues": 72,
+        "human_unmatched_residues": 72,
+        "length_ratio": 1.0,
+        "matching_residues": 1002,
+        "ortholog_length": 1074,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9641,
+        "gene": "TMEM229B",
+        "human_length": 167,
+        "human_unmatched_internal_residues": 6,
+        "human_unmatched_residues": 6,
+        "length_ratio": 1.0,
+        "matching_residues": 161,
+        "ortholog_length": 167,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.8747,
+        "gene": "TMPRSS11F",
+        "human_length": 438,
+        "human_unmatched_internal_residues": 53,
+        "human_unmatched_residues": 54,
+        "length_ratio": 1.0022831050228311,
+        "matching_residues": 384,
+        "ortholog_length": 439,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.8826,
+        "gene": "TMPRSS7",
+        "human_length": 843,
+        "human_unmatched_internal_residues": 99,
+        "human_unmatched_residues": 99,
+        "length_ratio": 0.9833926453143536,
+        "matching_residues": 744,
+        "ortholog_length": 829,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.937,
+        "gene": "TSPAN4",
+        "human_length": 238,
+        "human_unmatched_internal_residues": 15,
+        "human_unmatched_residues": 15,
+        "length_ratio": 1.0,
+        "matching_residues": 223,
+        "ortholog_length": 238,
+        "species": "mouse"
+      }
+    ],
+    "limits": "Supported coding boundaries and native exact translation establish annotated CDS readiness, not experimental full length, domain preservation, functional equivalence, or expression. Shorter proteins and internal differences can reflect genuine isoforms or annotation differences. No domain database/pairwise structural audit was performed; retain the quantitative comparisons for review without inferring missing domains or inventing a cutoff.",
+    "lowest_length_ratio_20": [
+      {
+        "band": "diverged",
+        "correspondence": 0.6238,
+        "gene": "SLC8A1",
+        "human_length": 973,
+        "human_unmatched_internal_residues": 75,
+        "human_unmatched_residues": 366,
+        "length_ratio": 0.6413155190133607,
+        "matching_residues": 607,
+        "ortholog_length": 624,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.7264,
+        "gene": "IL31RA",
+        "human_length": 764,
+        "human_unmatched_internal_residues": 209,
+        "human_unmatched_residues": 209,
+        "length_ratio": 0.7827225130890052,
+        "matching_residues": 555,
+        "ortholog_length": 598,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.7566,
+        "gene": "MS4A10",
+        "human_length": 267,
+        "human_unmatched_internal_residues": 65,
+        "human_unmatched_residues": 65,
+        "length_ratio": 0.846441947565543,
+        "matching_residues": 202,
+        "ortholog_length": 226,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.8216,
+        "gene": "MPIG6B",
+        "human_length": 241,
+        "human_unmatched_internal_residues": 43,
+        "human_unmatched_residues": 43,
+        "length_ratio": 0.9004149377593361,
+        "matching_residues": 198,
+        "ortholog_length": 217,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.7518,
+        "gene": "DRD4",
+        "human_length": 419,
+        "human_unmatched_internal_residues": 103,
+        "human_unmatched_residues": 104,
+        "length_ratio": 0.9236276849642004,
+        "matching_residues": 315,
+        "ortholog_length": 387,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.8584,
+        "gene": "OR10G6",
+        "human_length": 332,
+        "human_unmatched_internal_residues": 46,
+        "human_unmatched_residues": 47,
+        "length_ratio": 0.9337349397590361,
+        "matching_residues": 285,
+        "ortholog_length": 310,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.6167,
+        "gene": "CRB3",
+        "human_length": 120,
+        "human_unmatched_internal_residues": 46,
+        "human_unmatched_residues": 46,
+        "length_ratio": 0.9416666666666667,
+        "matching_residues": 74,
+        "ortholog_length": 113,
+        "species": "mouse"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9054,
+        "gene": "NCAM1",
+        "human_length": 761,
+        "human_unmatched_internal_residues": 71,
+        "human_unmatched_residues": 72,
+        "length_ratio": 0.9526938239159002,
+        "matching_residues": 689,
+        "ortholog_length": 725,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9307,
+        "gene": "TMEM67",
+        "human_length": 995,
+        "human_unmatched_internal_residues": 69,
+        "human_unmatched_residues": 69,
+        "length_ratio": 0.9567839195979899,
+        "matching_residues": 926,
+        "ortholog_length": 952,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.828,
+        "gene": "CDH15",
+        "human_length": 814,
+        "human_unmatched_internal_residues": 121,
+        "human_unmatched_residues": 140,
+        "length_ratio": 0.9631449631449631,
+        "matching_residues": 674,
+        "ortholog_length": 784,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9105,
+        "gene": "TFRC",
+        "human_length": 760,
+        "human_unmatched_internal_residues": 68,
+        "human_unmatched_residues": 68,
+        "length_ratio": 0.9631578947368421,
+        "matching_residues": 692,
+        "ortholog_length": 732,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9562,
+        "gene": "ADGRB2",
+        "human_length": 1554,
+        "human_unmatched_internal_residues": 68,
+        "human_unmatched_residues": 68,
+        "length_ratio": 0.9716859716859717,
+        "matching_residues": 1486,
+        "ortholog_length": 1510,
+        "species": "cyno"
+      },
+      {
+        "band": "near",
+        "correspondence": 0.9628,
+        "gene": "MRC2",
+        "human_length": 1479,
+        "human_unmatched_internal_residues": 55,
+        "human_unmatched_residues": 55,
+        "length_ratio": 0.9722785665990534,
+        "matching_residues": 1424,
+        "ortholog_length": 1438,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.9201,
+        "gene": "GPNMB",
+        "human_length": 588,
+        "human_unmatched_internal_residues": 47,
+        "human_unmatched_residues": 47,
+        "length_ratio": 0.9744897959183674,
+        "matching_residues": 541,
+        "ortholog_length": 573,
+        "species": "cyno"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.4958,
+        "gene": "MS4A7",
+        "human_length": 240,
+        "human_unmatched_internal_residues": 115,
+        "human_unmatched_residues": 121,
+        "length_ratio": 0.975,
+        "matching_residues": 119,
+        "ortholog_length": 234,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.7732,
+        "gene": "ASGR1",
+        "human_length": 291,
+        "human_unmatched_internal_residues": 59,
+        "human_unmatched_residues": 66,
+        "length_ratio": 0.9759450171821306,
+        "matching_residues": 225,
+        "ortholog_length": 284,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.664,
+        "gene": "CD14",
+        "human_length": 375,
+        "human_unmatched_internal_residues": 125,
+        "human_unmatched_residues": 126,
+        "length_ratio": 0.976,
+        "matching_residues": 249,
+        "ortholog_length": 366,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.6804,
+        "gene": "CLEC4E",
+        "human_length": 219,
+        "human_unmatched_internal_residues": 64,
+        "human_unmatched_residues": 70,
+        "length_ratio": 0.9771689497716894,
+        "matching_residues": 149,
+        "ortholog_length": 214,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.6012,
+        "gene": "ADGRE5",
+        "human_length": 835,
+        "human_unmatched_internal_residues": 332,
+        "human_unmatched_residues": 333,
+        "length_ratio": 0.9796407185628743,
+        "matching_residues": 502,
+        "ortholog_length": 818,
+        "species": "mouse"
+      },
+      {
+        "band": "diverged",
+        "correspondence": 0.8777,
+        "gene": "PVR",
+        "human_length": 417,
+        "human_unmatched_internal_residues": 47,
+        "human_unmatched_residues": 51,
+        "length_ratio": 0.9808153477218226,
+        "matching_residues": 366,
+        "ortholog_length": 409,
+        "species": "cyno"
+      }
+    ],
+    "method": "Continuous length ratios plus SequenceMatcher (autojunk=False, matching the legacy scorer) exact-block accounting against actual human designed reference, without any new exclusion threshold. Internal unmatched-residue count excludes unmatched terminal human sequence; not a domain annotation."
+  },
+  "quotas": {
+    "cyno|diverged|GPI": 7,
+    "cyno|diverged|multipass": 18,
+    "cyno|diverged|type I": 15,
+    "cyno|diverged|type II": 7,
+    "cyno|diverged|type III": 3,
+    "cyno|near|GPI": 7,
+    "cyno|near|multipass": 22,
+    "cyno|near|type I": 12,
+    "cyno|near|type II": 7,
+    "cyno|near|type III": 2,
+    "mouse|diverged|GPI": 7,
+    "mouse|diverged|multipass": 18,
+    "mouse|diverged|type I": 15,
+    "mouse|diverged|type II": 8,
+    "mouse|diverged|type III": 2,
+    "mouse|near|GPI": 7,
+    "mouse|near|multipass": 23,
+    "mouse|near|type I": 12,
+    "mouse|near|type II": 6,
+    "mouse|near|type III": 2
+  },
+  "removed_186_counts": {
+    "final_provisional_states": {
+      "provisional_surface_pick": 186
+    },
+    "same_protein_remains_final_fullpool_representative": 183,
+    "still_CDS_eligible": 183
+  },
+  "removed_186_evidence": [
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "ADGRG5",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "ALPI",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "AMIGO3",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "ANPEP",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "ASIC1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "C3orf52",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "CACHD1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "CCR3",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "CD200R1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "CD244",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "CD276",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "CD55",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "CDH1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "CDON",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "CLEC1A",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "DPEP1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "DPEP2",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "EDA2R",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "ERVMER34-1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "FCRL6",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "FPR1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "GGT6",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "GHRHR",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "GJC3",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "GJE1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "IGSF5",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "IL11RA",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "ITGB2",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "LVRN",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "LY6K",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "MPZ",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "NFAM1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "NMUR1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "OPN3",
+      "old_CDS_eligible": "False",
+      "old_exclusion_reasons": "non_ATG_initiation_review;start_feature:no_start_feature",
+      "same_final_provisional_protein": false,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "OR2B2",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "OR2W3",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "OR5A2",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "OR5V1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "PAQR8",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "PECAM1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "PLVAP",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "RTN4RL1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "SLC3A2",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "SLCO3A1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "SPACA1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "STEAP4",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "TEX101",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "TMEM123",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "XKR8",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "ACVR1C",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "ADCY2",
+      "old_CDS_eligible": "False",
+      "old_exclusion_reasons": "non_ATG_initiation_review;start_feature:no_start_feature",
+      "same_final_provisional_protein": false,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "ANTXR2",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "CACNG1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "CCR9",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "CD40LG",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "CD83",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "CDH13",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "CDH6",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "CDHR1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "CHRM2",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "CLCN2",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "CLDN4",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "CLDN7",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "CNTN6",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "DDR2",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "ECE1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "ENPEP",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "FFAR2",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "GABRA4",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "GPC5",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "GPR37L1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "HPN",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "KCNH6",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "KCNK10",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "LCTL",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "LSAMP",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "LYPD1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "MDGA2",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "NRP2",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "P2RX1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "PCDH12",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "PROM1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "PRRG1",
+      "old_CDS_eligible": "False",
+      "old_exclusion_reasons": "non_ATG_initiation_review;start_feature:no_start_feature",
+      "same_final_provisional_protein": false,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "ROBO2",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "SCARA3",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "SLC12A3",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "SLC35G2",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "SLC39A6",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "SLC6A20",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "SLC6A3",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "SLC7A8",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "ST14",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "TCTA",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "TYRO3",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "cyno"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "ADAM28",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "ADGRF1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "ART1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "CCR9",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "CD200",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "CD40",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "CD70",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "CLEC9A",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "DISP2",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "ESAM",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "GGT6",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "GJA10",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "GJE1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "GPC2",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "GPR15",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "GPR35",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "GSG1L2",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "HEPH",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "IL1RL2",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "ILDR1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "IZUMO1R",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "KCNE2",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "KIRREL2",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "LRRC32",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "LYPD5",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "MCAM",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "MFRP",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "MMP17",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "MS4A12",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "OR10P1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "OR1F1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "P2RY14",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "PDGFRB",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "PRND",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "RXFP1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "SLAMF1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "SLC10A1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "SLC22A8",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "SLC29A4",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "SUSD3",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "TGFBR3",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "THSD1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "TMEM106A",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "TMEM238",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "TNFSF11",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "ABCC5",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "ADAM17",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "ADGRA2",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "ADRA1A",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "ANO6",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "AQP1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "ATP2B3",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "BMPR1B",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "CNTFR",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "CNTN2",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "COL25A1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "DPP10",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "DPP6",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "ECE1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "EFNA1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "EPHA5",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "FRMD3",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "FZD8",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "GLRA2",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "GRIK2",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "HJV",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "HTR1F",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "IL17RD",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "ITGA10",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "KCNA5",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "KCNE4",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "KCNH3",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "LMBRD2",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "LRP3",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "LRRC4C",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "MDGA1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "NECTIN3",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "NETO1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "PAQR8",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "PAQR9",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "PCDHGA10",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "PHEX",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "PTPRT",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "RNF130",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "SEMA6C",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "SEMA7A",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "SLC9A2",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "SLITRK1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "SSTR1",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "TMEM150A",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "TMEM181",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    },
+    {
+      "final_provisional_state": "provisional_surface_pick",
+      "gene": "TSPAN6",
+      "old_CDS_eligible": "True",
+      "old_exclusion_reasons": "",
+      "same_final_provisional_protein": true,
+      "species": "mouse"
+    }
+  ],
+  "retained_14": [
+    {
+      "gene": "ASTN1",
+      "sequence_sha256": "f2df801c958020a0ec33b6ea285f9e5223f31250e8f68176f3437df359900b28",
+      "species": "cyno"
+    },
+    {
+      "gene": "FZD3",
+      "sequence_sha256": "bca8ed0d19bac8b797e990c8aa8b87f12eea20f858ea4effb1bd69be2625e630",
+      "species": "cyno"
+    },
+    {
+      "gene": "MEGF10",
+      "sequence_sha256": "aa90dd488f8c231fbc02ea2496ccfc00a78982fd2b77e2738204bc3891a20fc4",
+      "species": "cyno"
+    },
+    {
+      "gene": "NRG1",
+      "sequence_sha256": "19af35645f79e7bbee2a9ab4c9e49c1c9a94cb436fb9037b741ec14bac3250f2",
+      "species": "cyno"
+    },
+    {
+      "gene": "NRN1",
+      "sequence_sha256": "9bdd5a6294753296d1c9337759ce5b977b75729731b846c455701e0ed545aa17",
+      "species": "cyno"
+    },
+    {
+      "gene": "TRPM2",
+      "sequence_sha256": "f7846460cfb36571b291bf5fd6ed32ec97fc1f9ed509cfe3ed363b9bd5fe890f",
+      "species": "cyno"
+    },
+    {
+      "gene": "CD14",
+      "sequence_sha256": "ed7389a52b3e26de178e194667a7414697e3b90439a02caa1df3808128790284",
+      "species": "mouse"
+    },
+    {
+      "gene": "CORIN",
+      "sequence_sha256": "2e0b1d2ce9936bfe50465a86c30d325da341a4a907c71df496dcce661de1ee41",
+      "species": "mouse"
+    },
+    {
+      "gene": "GABRR3",
+      "sequence_sha256": "7cdaa436b9f8a1b765f4fd71b2762dc1292359743cf7f99f6bd28753cf4fceb8",
+      "species": "mouse"
+    },
+    {
+      "gene": "NCAM1",
+      "sequence_sha256": "c2a4205e3f38aefcdd2b71f38a4f2021334105e3b778e2869bc892ee4a7e4d81",
+      "species": "mouse"
+    },
+    {
+      "gene": "PCDHB15",
+      "sequence_sha256": "67d4cd0ab1bbd5dbebf0f0f4466d654e4c48e4743bfcdc4c9bd1ffb8834c6b06",
+      "species": "mouse"
+    },
+    {
+      "gene": "POPDC3",
+      "sequence_sha256": "a661cd08849d0a49097a534c68882efb8e0d3bfab2fe43dfdcdec764c6906f5a",
+      "species": "mouse"
+    },
+    {
+      "gene": "PTCH1",
+      "sequence_sha256": "8a782d3db08c855444bc0152b529fc9d7c78ba4d09c6c3cfc9c6f8d45f217ee2",
+      "species": "mouse"
+    },
+    {
+      "gene": "TMPRSS2",
+      "sequence_sha256": "2b0690f291065e3bb4374d231e7beea5517de1d69e2e5ba67da6dff3b791b855",
+      "species": "mouse"
+    }
+  ],
+  "review_command_argv": [
+    "../review_final_ortholog_panel.py"
+  ],
+  "review_script_sha256": "39e70ecc3b3506fd3a3387d34949b7a32f5f576551cc084745c7e3e6487105b9",
+  "review_status": "pass_with_scientific_limits",
+  "selected_mRNA_boundary_advisories": [],
+  "source_clean": true,
+  "source_hash_checks": {
+    "cds116_cyno.gz": "c020084ea95df949ffb4fc1dbb96b765819e37fa84cd76f0fe5ed3e100e448d3",
+    "cds116_mouse.gz": "8c0a53a7fe973adaf6d884884ec86a329deebfb519d0d4f736bd1c0c67f09964"
+  },
+  "verified": {
+    "all_panel_output_hashes_match_summary": true,
+    "canonical_activation": false,
+    "exact_DNA_translation_and_protein_hash_matches": 200,
+    "exact_native_Ensembl116_CDS_matches": 200,
+    "independently_supported_coding_boundaries": 200,
+    "selected": 200,
+    "unique_proteins": 200,
+    "unique_species_human_gene_pairs": 200,
+    "zero_pending_winners": true,
+    "zero_stratum_shortfalls": true
+  }
+}

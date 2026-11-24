@@ -1,0 +1,21 @@
+{
+  "n_records": 65,
+  "served_versions": {
+    "topology": "topo_2026_05_16",
+    "isoforms": "topo_2026_05_25",
+    "paralogs": "paralog_topo_2026_05_16",
+    "ortholog_ecd": "orthologecd_topo_2026_05_16_idfix"
+  },
+  "mismatches": {},
+  "structure_placeholder_no_afdb_model": [],
+  "source_integrity": {
+    "ortholog_without_topology": [],
+    "ortholog_without_compara_row": [],
+    "ortholog_ecd_identity_missing": [],
+    "paralog_without_topology": [],
+    "paralog_rank_out_of_order": []
+  },
+  "advisory": {
+    "compara_ortholog_without_ecd_row": []
+  }
+}

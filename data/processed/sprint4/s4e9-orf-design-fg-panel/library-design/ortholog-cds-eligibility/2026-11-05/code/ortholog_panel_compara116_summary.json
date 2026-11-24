@@ -1,0 +1,28 @@
+{
+  "seed": 20261011,
+  "per_band": 50,
+  "total": 200,
+  "species": {
+    "mouse": {
+      "eligible": 1870,
+      "correspondence_split": 0.8644
+    },
+    "cyno": {
+      "eligible": 1836,
+      "correspondence_split": 0.9595
+    }
+  },
+  "retained_proteins": 11,
+  "removed_proteins": 189,
+  "added_proteins": 189,
+  "drawn_from_genes_absent_from_april_list": 45,
+  "new_forms_without_existing_member_id": 50,
+  "classes": {
+    "multipass": 81,
+    "GPI": 28,
+    "type I": 54,
+    "type II": 28,
+    "type III": 9
+  },
+  "status": "replacement panel selected; member-ID allocation and construct regeneration are downstream"
+}

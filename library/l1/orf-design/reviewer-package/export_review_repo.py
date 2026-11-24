@@ -34,6 +34,7 @@ import ast
 import hashlib
 import io
 import json
+import shutil
 import subprocess
 import sys
 import tarfile
@@ -71,6 +72,8 @@ ALWAYS = [
     "library/l1/tag-site-benchmarking/l1_internal_arms.py",
     "library/l1/tag-site-benchmarking/l1_internal_decisions.py",
     "library/l1/tag-site-benchmarking/l1_internal_sites_vs_v4.tsv",
+    "library/l1/tag-site-benchmarking/l1_snorkel_designs.tsv",
+    "library/l1/tag-site-benchmarking/ortholog_member_disorder_modal.py",
     "library/l1/tag-site-benchmarking/snorkel_design.py",
     "library/l1/tag-site-benchmarking/snorkel_spacer_test.json",
     "library/l1/tag-site-benchmarking/tag_site_model_v6.py",
@@ -384,20 +387,62 @@ def _remap_path(rel: str) -> str:
     return rel
 
 
+_CLEAN_SCRATCH_EXCLUDES: tuple[str, ...] = tuple(
+    sorted(new for old, new in CLEAN_PATH_MAP.items() if old.startswith("scratch/"))
+)
+
+
+def _rewrite_pyproject_clean_paths(text: str) -> str:
+    """Update ruff excludes and pytest testpaths in ``pyproject.toml`` for clean ``library/l1/*`` paths."""
+    excludes = [
+        '"scratch"',
+        '"analysis/*/data"',
+        '"library/l1/*/data"',
+        *(f'"{p}"' for p in _CLEAN_SCRATCH_EXCLUDES),
+    ]
+    replacement = "extend-exclude = [\n" + "".join(f"    {e},\n" for e in excludes) + "]"
+    text = text.replace('extend-exclude = ["scratch", "analysis/*/data"]', replacement)
+    return text.replace(
+        'testpaths = ["tests", "analysis"]',
+        'testpaths = ["tests", "library/l1/orf-design/tests"]',
+    )
+
+
+def _ruff_format_bytes(path: str, data: bytes) -> bytes:
+    """Re-format a clean-path-rewritten Python file with ruff if available so CI format checks pass."""
+    ruff = shutil.which("ruff")
+    if not ruff:
+        return data
+    proc = subprocess.run(
+        [ruff, "format", "--stdin-filename", path, "-"],
+        input=data,
+        capture_output=True,
+        check=False,
+    )
+    return proc.stdout if proc.returncode == 0 else data
+
+
 def apply_clean_paths(files: dict[str, bytes]) -> dict[str, bytes]:
     """Remap internal ``analysis/sprintN/sNeM-*`` and ``scratch/*`` paths to clean ``library/l1/*``
     paths, rewriting repo-relative references inside text files while leaving S3 keys intact."""
     out: dict[str, bytes] = {}
+    scratch_prefixes = tuple(f"{p}/" for p in _CLEAN_SCRATCH_EXCLUDES)
     for rel, data in files.items():
         dest = _remap_path(rel)
-        if dest.endswith(_REWRITE_SUFFIXES):
+        if dest == "pyproject.toml":
             text = data.decode("utf-8", errors="surrogateescape")
+            data = _rewrite_pyproject_clean_paths(text).encode("utf-8", errors="surrogateescape")
+        elif dest.endswith(_REWRITE_SUFFIXES):
+            orig_text = data.decode("utf-8", errors="surrogateescape")
+            text = orig_text
             for old, new in CLEAN_PATH_MAP.items():
                 text = text.replace(old, new)
             if dest.endswith(".py"):
                 for old, new in _CLEAN_REL_SUBS:
                     text = text.replace(old, new)
             data = text.encode("utf-8", errors="surrogateescape")
+            if dest.endswith(".py") and text != orig_text and not dest.startswith(scratch_prefixes):
+                data = _ruff_format_bytes(dest, data)
         out[dest] = data
     return out
 

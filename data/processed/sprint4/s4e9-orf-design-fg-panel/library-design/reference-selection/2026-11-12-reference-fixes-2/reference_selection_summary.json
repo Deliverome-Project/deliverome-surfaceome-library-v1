@@ -1,0 +1,49 @@
+{
+  "appris_release": "e115v50",
+  "uniprot_release": "2026_03",
+  "peptideatlas_build": "Human 2026-01",
+  "library_members": 2369,
+  "decision": {
+    "mane_appris_agree": 2172,
+    "unresolved_default_mane": 82,
+    "appris_only": 77,
+    "weak_evidence_mane": 13,
+    "resolved_mane": 9,
+    "no_reference_uniprot_canonical": 9,
+    "weak_evidence_appris": 7
+  },
+  "selected_source": {
+    "mane": 2274,
+    "appris": 66,
+    "named": 18,
+    "uniprot_canonical": 11
+  },
+  "changes_current_reference": 206,
+  "needs_review": 20,
+  "both_lanes": [
+    "ATP2B2",
+    "CD44"
+  ],
+  "current_reference_unsupported_by_any_transcript": 44,
+  "transcript_support_unknown": 11,
+  "disagreements": {
+    "n": 111,
+    "appris_class": {
+      "PRINCIPAL:4": 74,
+      "PRINCIPAL:2": 23,
+      "PRINCIPAL:3": 10,
+      "PRINCIPAL:M": 3,
+      "PRINCIPAL:1": 1
+    },
+    "with_any_peptide_data": 111,
+    "with_riboseq_orf": 51,
+    "riboseq_overlapping_a_discriminating_region": 0,
+    "mane_appris_label": {
+      "ALTERNATIVE:2": 64,
+      "ALTERNATIVE:1": 45,
+      "ALTERNATIVE:M": 2
+    },
+    "strong_evidence_threshold": 3,
+    "min_samples_threshold": 10
+  }
+}

@@ -1,0 +1,833 @@
+{
+ "ACKR2": {
+  "immunostaining": 6396.7,
+  "gpcr_class": "A",
+  "olfactory": false,
+  "prior_fail_gates": [
+   "spec"
+  ],
+  "arch_tier": "T2"
+ },
+ "ADRA2C": {
+  "immunostaining": 1031.2,
+  "gpcr_class": "A",
+  "olfactory": false,
+  "prior_fail_gates": [
+   "spec"
+  ],
+  "arch_tier": "T3"
+ },
+ "GABBR2": {
+  "immunostaining": 6209.6,
+  "gpcr_class": "C",
+  "olfactory": false,
+  "prior_fail_gates": [
+   "coreceptor"
+  ],
+  "arch_tier": "T2"
+ },
+ "GALR3": {
+  "immunostaining": 2684.6,
+  "gpcr_class": "A",
+  "olfactory": false,
+  "prior_fail_gates": [
+   "expr"
+  ],
+  "arch_tier": "T2"
+ },
+ "GPR141": {
+  "immunostaining": 6451.8,
+  "gpcr_class": "A",
+  "olfactory": false,
+  "prior_fail_gates": [
+   "membership"
+  ],
+  "arch_tier": "T3"
+ },
+ "GPR33": {
+  "immunostaining": 1124.6,
+  "gpcr_class": "A",
+  "olfactory": false,
+  "prior_fail_gates": [
+   "expr"
+  ],
+  "arch_tier": "T2"
+ },
+ "OR10C1": {
+  "immunostaining": 1612.9,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "spec",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR10G6": {
+  "immunostaining": 1029.2,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR10H4": {
+  "immunostaining": 1495.9,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR10J5": {
+  "immunostaining": 1078.5,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR10K1": {
+  "immunostaining": 1017.8,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR10K2": {
+  "immunostaining": 1672.3,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR10V1": {
+  "immunostaining": 1067.5,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR11H1": {
+  "immunostaining": 1217.5,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR11H6": {
+  "immunostaining": 1075.0,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR14A16": {
+  "immunostaining": 1467.6,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR14J1": {
+  "immunostaining": 1016.5,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR1B1": {
+  "immunostaining": 1032.3,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "spec",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR1C1": {
+  "immunostaining": 1105.9,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR1D5": {
+  "immunostaining": 1185.3,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR1J1": {
+  "immunostaining": 1004.5,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR1J2": {
+  "immunostaining": 1068.6,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR1J4": {
+  "immunostaining": 1019.3,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR2AJ1": {
+  "immunostaining": 1000.7,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR2AP1": {
+  "immunostaining": 1010.5,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR2B2": {
+  "immunostaining": 1026.3,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR2C3": {
+  "immunostaining": 1069.3,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR2D2": {
+  "immunostaining": 1075.6,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR2G3": {
+  "immunostaining": 1208.0,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR2L8": {
+  "immunostaining": 1256.4,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR2T33": {
+  "immunostaining": 1099.4,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR2V2": {
+  "immunostaining": 1088.2,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR2W1": {
+  "immunostaining": 1062.8,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR4A16": {
+  "immunostaining": 1050.5,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR4C5": {
+  "immunostaining": 1012.1,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR4C6": {
+  "immunostaining": 1025.4,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR4D1": {
+  "immunostaining": 1083.5,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR4D2": {
+  "immunostaining": 1146.7,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR4D5": {
+  "immunostaining": 1104.1,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR4F16": {
+  "immunostaining": 1101.1,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR4F17": {
+  "immunostaining": 1083.8,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR4F5": {
+  "immunostaining": 1008.4,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR4F6": {
+  "immunostaining": 1002.3,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR4K15": {
+  "immunostaining": 1002.6,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR4K2": {
+  "immunostaining": 1348.0,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR4P4": {
+  "immunostaining": 1050.1,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR4Q2": {
+  "immunostaining": 1116.3,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR4S1": {
+  "immunostaining": 1014.7,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR4S2": {
+  "immunostaining": 1052.3,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "coreceptor",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR51B2": {
+  "immunostaining": 1095.6,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR51G2": {
+  "immunostaining": 1081.2,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR51T1": {
+  "immunostaining": 1275.0,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR51V1": {
+  "immunostaining": 1004.3,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR52D1": {
+  "immunostaining": 1011.1,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR52J3": {
+  "immunostaining": 1053.4,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR52K1": {
+  "immunostaining": 1076.5,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR52L1": {
+  "immunostaining": 1018.0,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR56B4": {
+  "immunostaining": 1019.4,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR5AL1": {
+  "immunostaining": 1114.1,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR5AR1": {
+  "immunostaining": 1044.1,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR5AS1": {
+  "immunostaining": 1018.3,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR5B21": {
+  "immunostaining": 1124.6,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "spec",
+   "coreceptor",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR5D16": {
+  "immunostaining": 1393.0,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR5J2": {
+  "immunostaining": 1019.8,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR6C2": {
+  "immunostaining": 1064.1,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR6C4": {
+  "immunostaining": 1136.1,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR6C68": {
+  "immunostaining": 1014.7,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR6C74": {
+  "immunostaining": 1227.7,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR6F1": {
+  "immunostaining": 1057.4,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR7A10": {
+  "immunostaining": 1171.2,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR7A17": {
+  "immunostaining": 1046.1,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR7G1": {
+  "immunostaining": 1010.5,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR8B8": {
+  "immunostaining": 1120.7,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR8K3": {
+  "immunostaining": 1129.1,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR8K5": {
+  "immunostaining": 1002.2,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR8U1": {
+  "immunostaining": 1051.2,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR8U3": {
+  "immunostaining": 1093.7,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR8U8": {
+  "immunostaining": 1044.5,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR8U9": {
+  "immunostaining": 1052.0,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR9A2": {
+  "immunostaining": 1019.3,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OR9G9": {
+  "immunostaining": 1048.8,
+  "gpcr_class": "A (Olfactory)",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "OXTR": {
+  "immunostaining": 5386.6,
+  "gpcr_class": "A",
+  "olfactory": false,
+  "prior_fail_gates": [
+   "spec"
+  ],
+  "arch_tier": "T2"
+ },
+ "TAAR1": {
+  "immunostaining": 1159.3,
+  "gpcr_class": "A",
+  "olfactory": false,
+  "prior_fail_gates": [
+   "spec"
+  ],
+  "arch_tier": "T2"
+ },
+ "TAAR2": {
+  "immunostaining": 1117.6,
+  "gpcr_class": "A",
+  "olfactory": false,
+  "prior_fail_gates": [
+   "spec",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "VN1R2": {
+  "immunostaining": 1095.2,
+  "gpcr_class": "Vomeronasal",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ },
+ "VN1R4": {
+  "immunostaining": 1158.3,
+  "gpcr_class": "Vomeronasal",
+  "olfactory": true,
+  "prior_fail_gates": [
+   "membership",
+   "spec",
+   "expr"
+  ],
+  "arch_tier": "T3"
+ }
+}

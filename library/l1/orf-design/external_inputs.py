@@ -88,7 +88,15 @@ def fetching_scripts() -> list[str]:
 
 
 def _git_path(copy: str) -> Path:
-    return HERE / copy.removeprefix("git:")
+    rel = copy.removeprefix("git:")
+    path = HERE / rel
+    if not path.exists() and HERE.parents[1].name == "library":
+        remapped = rel.replace(
+            "../../sprint5/s5e13-tag-site-benchmarking/", "../tag-site-benchmarking/"
+        )
+        if remapped != rel:
+            return HERE / remapped
+    return path
 
 
 def _manifest_objects(copy: str) -> list[tuple[str, str, str]]:

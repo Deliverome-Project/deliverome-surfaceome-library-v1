@@ -1,0 +1,71 @@
+{
+  "compara_release": 116,
+  "rule_version": "ortholog-cds-eligibility-v1",
+  "files": {
+    "cds116_mouse.gz": {
+      "source": "external:ensembl/release-116/cds/Mus_musculus.GRCm39.cds.all.fa.gz",
+      "sha256": "8c0a53a7fe973adaf6d884884ec86a329deebfb519d0d4f736bd1c0c67f09964",
+      "origin": "https://ftp.ensembl.org/pub/release-116/fasta/mus_musculus/cds/Mus_musculus.GRCm39.cds.all.fa.gz",
+      "release": 116,
+      "species": "mouse",
+      "kind": "cds"
+    },
+    "cds116_cyno.gz": {
+      "source": "external:ensembl/release-116/cds/Macaca_fascicularis.Macaca_fascicularis_6.0.cds.all.fa.gz",
+      "sha256": "c020084ea95df949ffb4fc1dbb96b765819e37fa84cd76f0fe5ed3e100e448d3",
+      "origin": "https://ftp.ensembl.org/pub/release-116/fasta/macaca_fascicularis/cds/Macaca_fascicularis.Macaca_fascicularis_6.0.cds.all.fa.gz",
+      "release": 116,
+      "species": "cyno",
+      "kind": "cds"
+    },
+    "gtf116_cyno.gz": {
+      "source": "external:ensembl/release-116/gtf/Macaca_fascicularis.Macaca_fascicularis_6.0.116.gtf.gz",
+      "sha256": "8fc17ccec2d2f90b271495bfa7641ca496e14537a82636615a27c6a33cb5746c",
+      "origin": "https://ftp.ensembl.org/pub/release-116/gtf/macaca_fascicularis/Macaca_fascicularis.Macaca_fascicularis_6.0.116.gtf.gz",
+      "release": 116,
+      "species": "cyno",
+      "kind": "gtf"
+    },
+    "gtf116_mouse.gz": {
+      "source": "external:ensembl/release-116/gtf/Mus_musculus.GRCm39.116.gtf.gz",
+      "sha256": "5c29fd9e3157cf40fdbbf76ab25bfe7f79aa61313e0b672664ddb0cb251c02e1",
+      "origin": "https://ftp.ensembl.org/pub/release-116/gtf/mus_musculus/Mus_musculus.GRCm39.116.gtf.gz",
+      "release": 116,
+      "species": "mouse",
+      "kind": "gtf"
+    },
+    "pep116_mouse.gz": {
+      "source": "external:ensembl/release-116/pep/Mus_musculus.GRCm39.pep.all.fa.gz",
+      "sha256": "480d4a6eb540b1cc26bb4a80ad8f8a50aba514791c576ed41362127f56809a37",
+      "origin": "https://ftp.ensembl.org/pub/release-116/fasta/mus_musculus/pep/Mus_musculus.GRCm39.pep.all.fa.gz",
+      "species": "mouse",
+      "release": 116,
+      "kind": "pep"
+    },
+    "pep116_cyno.gz": {
+      "source": "external:ensembl/release-116/pep/Macaca_fascicularis.Macaca_fascicularis_6.0.pep.all.fa.gz",
+      "sha256": "6b6972f7e8f1d547437f7b396c1d8c6100fba892d7a372355bdcb7604164c512",
+      "origin": "https://ftp.ensembl.org/pub/release-116/fasta/macaca_fascicularis/pep/Macaca_fascicularis.Macaca_fascicularis_6.0.pep.all.fa.gz",
+      "species": "cyno",
+      "release": 116,
+      "kind": "pep"
+    },
+    "appris116_mouse.tsv": {
+      "source": "external:appris/2026_08.v50/e116v50/mus_musculus/appris_data.principal.txt",
+      "sha256": "1e9d500c61149d9a9fbe2af6b5657fa77bc72201d610357be435b59d2c0abe04",
+      "origin": "https://apprisws.bioinfo.cnio.es/pub/releases/2026_08.v50/datafiles/mus_musculus/e116v50/appris_data.principal.txt",
+      "species": "mouse",
+      "release": 116,
+      "appris_release": "2026_08.v50",
+      "appris_dataset": "e116v50",
+      "kind": "appris"
+    }
+  },
+  "documented_exception_registry": {
+    "rule_version": "ortholog-native-cds-exceptions-v1",
+    "exceptions": []
+  },
+  "candidate_universe": "Union of CDS, peptide and GTF transcript models within gene-level eligible Compara116 target genes; not a protein count.",
+  "primary_assembly_boundary": "All models retained in ledger; automatic encodings require the original chromosome/primary_assembly peptide boundary.",
+  "APPRIS_policy": "Use version-matched116 mouse APPRIS only after exact116 CDS/GTF gene/transcript/version coherence and translated protein equality to116 peptide. No external cyno source is pinned; missing APPRIS is not an eligibility exclusion."
+}

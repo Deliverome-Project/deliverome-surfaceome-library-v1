@@ -157,7 +157,16 @@ agentflow-cytometry = { git = "https://github.com/Deliverome-Project/agentflow.g
 [tool.ruff]
 line-length = 100
 target-version = "py314"
-extend-exclude = ["scratch", "analysis/*/data"]
+extend-exclude = [
+    "scratch",
+    "analysis/*/data",
+    "library/l1/*/data",
+    "library/l1/figures",
+    "library/l1/proteoform-selection",
+    "library/l1/proteomics-gap",
+    "library/l1/tag-site-architecture",
+    "library/l1/tag-site-corpus-audit",
+]
 # pre-commit passes changed files to ruff by explicit path, which overrides extend-exclude
 # unless force-exclude is set — without this, scratch/ (meant to be lint-exempt) is still linted
 # and its pushes are blocked. force-exclude makes the scratch exclusion effective in pre-commit.
@@ -197,7 +206,7 @@ ignore = [
 # are collected so an experiment's tests actually run in CI — they used to be invisible.
 # Experiment tests that need uncommitted inputs (S3 data, the flow group) must skip when
 # those are absent, the same way the live S3 tests do; CI has neither.
-testpaths = ["tests", "analysis"]
+testpaths = ["tests", "library/l1/orf-design/tests"]
 addopts = ["-q", "--strict-markers"]
 markers = [
     "slow: exercises the DNA Chisel solver (a few seconds each, still offline/deterministic)",

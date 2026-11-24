@@ -106,7 +106,13 @@ LEGACY_BUDGETS: dict[str, int] = {
 
 
 def _exported_core_files() -> list[str]:
-    files = err.collect("HEAD", include_historical=False)
+    manifest = REPO / err.MANIFEST
+    if manifest.is_file():
+        import json
+
+        files = list(json.loads(manifest.read_text())["files"])
+    else:
+        files = list(err.collect("HEAD", include_historical=False))
     prefixes = (
         "src/deliverome_analysis/",
         "library/l1/orf-design/",

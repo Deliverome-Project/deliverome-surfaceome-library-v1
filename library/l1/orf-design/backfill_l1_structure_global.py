@@ -84,9 +84,7 @@ def main() -> int:
     tp = pd.read_csv(HERE / "l1_tag_paths.tsv", sep="\t", low_memory=False)
     internal = tp[tp["placement"] == "internal"].copy()
     nm = pd.read_csv(HERE / "tag_refold_native_models.tsv", sep="\t", low_memory=False)
-    tgt = pd.read_csv(
-        REPO / "library/l1/tag-site-benchmarking/l1_adopted_targets.tsv", sep="\t"
-    )
+    tgt = pd.read_csv(REPO / "library/l1/tag-site-benchmarking/l1_adopted_targets.tsv", sep="\t")
     sha_to_acc = dict(zip(tgt["sequence_sha256"], tgt["uniprot_acc"], strict=False))
 
     m = internal.merge(nm, left_on="sequence_sha256", right_on="native_sha256", how="left")
