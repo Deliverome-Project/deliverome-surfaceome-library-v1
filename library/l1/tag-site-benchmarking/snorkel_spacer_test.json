@@ -1,0 +1,49 @@
+{
+  "preregistered_on": "2026-11-13",
+  "decided_by": "coordinator, under Becca's 2026-11-12 delegation",
+  "implemented_by": "ranker-pu-segment session (Claude Code), PR #245",
+  "change": "L1_GS 11 -> 30 residues ((GGGGS)x6); rest of the module unchanged",
+  "failing": {
+    "l1-p0557": "EMP2",
+    "l1-p1249": "MS4A1",
+    "l1-p2152": "TM4SF1",
+    "l1-p1667": "PMP22",
+    "l1-p1567": "PANX1"
+  },
+  "controls": {
+    "l1-p0325": "CD9",
+    "l1-p1256": "MS4A5"
+  },
+  "rescued": "full l1-tag-refold verdict = pass (native-region lDDT >= 0.85, lDDT within 15 of the site >= 0.7, tag exposure), cutoffs unchanged",
+  "baseline_verdicts_11aa_linker": {
+    "EMP2": "fail (site lDDT 0.551)",
+    "MS4A1": "fail (native 0.809)",
+    "TM4SF1": "fail (native 0.828)",
+    "PMP22": "fail (native 0.858 passes; another check fails)",
+    "PANX1": "fail (native 0.843)",
+    "CD9": "pass (native 0.861)",
+    "MS4A5": "pass (native 0.872)"
+  },
+  "works": ">= 3 of 5 failing rescued AND both controls still pass",
+  "prior": "a 10-residue spacer rescued 0 of 12 fold-disturbed multipass arms",
+  "constructs": "snorkel_spacer_test/2026-11-13/snorkel_spacer_test_constructs.tsv",
+  "result": {
+    "read_on": "2026-11-13",
+    "verdicts": "processed://sprint4/s4e9-orf-design-fg-panel/predicted-structures/tagged/2026-11-12/verdicts_cterm_spacer.tsv",
+    "native_lddt_shipped_to_spacer30": {
+      "EMP2": "0.880 -> 0.868 (site 0.551 -> 0.526), fail",
+      "MS4A1": "0.809 -> 0.805, fail",
+      "TM4SF1": "0.828 -> 0.812, fail",
+      "PMP22": "0.858 -> 0.837 (site 0.654 -> 0.621), fail",
+      "PANX1": "0.843 -> 0.841, fail",
+      "CD9 (control)": "0.861 -> 0.837, pass -> fail",
+      "MS4A5 (control)": "0.872 -> 0.788, pass -> fail"
+    },
+    "rescued": "0 of 5",
+    "controls_still_pass": "0 of 2",
+    "criterion_met": false,
+    "interpretation": "the longer L1 lowers native-region lDDT in 6 of 7; the spacer does not separate the module from the bundle",
+    "modal_spend_usd": 0.25,
+    "consequence": "the 22 failing snorkel members are held (HOLD_FAILING_SNORKELS=True)"
+  }
+}

@@ -2417,13 +2417,13 @@ SHA-256 `8796cc87…`, built from commit `e3336caf`), reading three SHA-256-pinn
 | PeptideAtlas build 607 queries | `external://peptideatlas/build-607/queries-2026-11-22-mane-gtf/` | distinguishing-peptide evidence for MANE/APPRIS disagreements and additions |
 
 To verify offline from the exported [review repository](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1)
-(source commit recorded in [`EXPORT_MANIFEST.json`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/blob/main/EXPORT_MANIFEST.json), clean paths under `library/l1/`):
+(source commit recorded in [`EXPORT_MANIFEST.json`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/blob/main/EXPORT_MANIFEST.json), clean paths under `library/l1/orf-design/`):
 
 ```bash
 git clone https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1.git && cd deliverome-surfaceome-library-v1
 uv sync --locked
 export DELIVEROME_ANALYSIS_S3_CACHE=$(mktemp -d)
-cd library/l1
+cd library/l1/orf-design
 uv run --locked python library_pipeline.py verify -j 4
 (cd reviewer-package && uv run --locked python order_plan.py)   # then git diff: no change
 ```
