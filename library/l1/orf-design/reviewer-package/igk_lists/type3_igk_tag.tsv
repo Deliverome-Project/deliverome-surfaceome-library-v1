@@ -1,0 +1,10 @@
+design_id	gene_symbol	candidate_set	species	group	basis
+l1-p0906	IGSF5	library_reference	human	type3_igk_tag	long_tail: IGSF5: human IGSF5 has no signal peptide (SignalP 6 P(SP) 0.000; the proteoform audit confirms Met1 and finds the loss is divergence, while mouse and cyno IGSF5 keep one), so as ordered a folded 266-residue Ig ectodomain would have to be translocated by TM1 acting as a signal-anchor, which folded N-domains block (Denzer et al. 1995), and TM1 is the weakest on the rung (Kyte-Doolittle 1.45, mid-helix Pro; it folds as a broken helix in the tag-alone refold). The leader gives the ectodomain co-translational entry, as the orthologs' own signal peptides do; v1 keeps the cassette outside and TM1 as the single TM in the Igk arm
+l1-p1068	KLB	library_reference	human	type3_igk_tag	long_tail: internal signal-like segment; v1 puts the cassette in the cytosol with the tag alone
+l1-p3000	KLB	ortholog	cyno	type3_igk_tag	long_tail: internal signal-like segment; v1 puts the cassette in the cytosol with the tag alone
+l1-p3340	PMEPA1	isoform	human	type3_igk_tag	short_tail: native N-tail <= 20 residues; the cassette moves it past the ~20-residue point where signal-anchor insertion changes (Kocik 2012)
+l1-p1727	RELL2	library_reference	human	type3_igk_tag	short_tail: native N-tail <= 20 residues; the cassette moves it past the ~20-residue point where signal-anchor insertion changes (Kocik 2012)
+l1-p2127	TEX29	library_reference	human	type3_igk_tag	mid_tail: flank-charge difference 0 <= 1: weak positive-inside drive for N-out
+l1-p2972	TEX29	ortholog	cyno	type3_igk_tag	mid_tail: flank-charge difference 1 <= 1: weak positive-inside drive for N-out
+l1-p2128	TEX38	library_reference	human	type3_igk_tag	short_tail: native N-tail <= 20 residues; the cassette moves it past the ~20-residue point where signal-anchor insertion changes (Kocik 2012)
+l1-p2233	TNFRSF17	library_reference	human	type3_igk_tag	mid_tail: flank-charge difference -1 <= 1: weak positive-inside drive for N-out

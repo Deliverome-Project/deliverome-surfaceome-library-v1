@@ -1,0 +1,12 @@
+design_id	gene_symbol	candidate_set	species	group	basis
+l1-p3067	CACHD1	ortholog		nterm_igk_deeptmhmm_only_unconfirmed	UniProt: no reviewed entry or isoform with the designed first 70 aa; DeepTMHMM v2: no row for the designed sequence
+l1-p0218	CACNA2D4	library_reference		nterm_igk_deeptmhmm_only_unconfirmed	UniProt Q7Z3S7 (first 70 aa identical); UniProt SIGNAL 1-19 (not within 3 of 60); DeepTMHMM v2 (topo_2026_09_27_dtm2); DeepTMHMM v2 SP 1-68 (not within 3 of 60)
+l1-p2949	CD84	ortholog		nterm_igk_deeptmhmm_only_unconfirmed	UniProt: no reviewed entry or isoform with the designed first 70 aa; DeepTMHMM v2: no row for the designed sequence
+l1-p0345	CDH24	library_reference		nterm_igk_deeptmhmm_only_unconfirmed	UniProt Q86UP0 (first 70 aa identical); UniProt SIGNAL 1-19 (not within 3 of 27); DeepTMHMM v2 (topo_2026_09_27_dtm2); DeepTMHMM v2 SP 1-19 (not within 3 of 27)
+l1-p0445	CNNM2	library_reference		nterm_igk_deeptmhmm_only_unconfirmed	UniProt Q9H8M5 (first 70 aa identical); DeepTMHMM v2 (topo_2026_09_27_dtm2); DeepTMHMM v2 SP 1-65 (not within 3 of 60)
+l1-p0504	DCBLD2	library_reference		nterm_igk_deeptmhmm_only_unconfirmed	UniProt Q96PD2 (first 70 aa identical); UniProt SIGNAL 1-66 (not within 3 of 60); DeepTMHMM v2 (topo_2026_09_27_dtm2); DeepTMHMM v2 SP 1-66 (not within 3 of 60)
+l1-p0820	GRM1	library_reference		nterm_igk_deeptmhmm_only_unconfirmed	UniProt Q13255 (first 70 aa identical); UniProt SIGNAL 1-18 (not within 3 of 30); DeepTMHMM v2 (topo_2026_09_27_dtm2); DeepTMHMM v2 SP 1-24 (not within 3 of 30)
+l1-p3038	IL17RC	ortholog		nterm_igk_deeptmhmm_only_unconfirmed	UniProt: no reviewed entry or isoform with the designed first 70 aa; DeepTMHMM v2: no row for the designed sequence
+l1-p1710	PTPRG	library_reference		nterm_igk_deeptmhmm_only_unconfirmed	UniProt P23470 (first 70 aa identical); UniProt SIGNAL 1-19 (not within 3 of 26); DeepTMHMM v2 (topo_2026_09_27_dtm2); DeepTMHMM v2 SP 1-53 (not within 3 of 26)
+l1-p2224	TNFRSF10A	library_reference		nterm_igk_deeptmhmm_only_unconfirmed	UniProt O00220 (first 70 aa identical); UniProt SIGNAL 1-23 (not within 3 of 15); DeepTMHMM v2 (topo_2026_09_27_dtm2)
+l1-p2313	UNC5C	library_reference		nterm_igk_deeptmhmm_only_unconfirmed	UniProt O95185 (first 70 aa identical); UniProt SIGNAL 1-40 (not within 3 of 33); DeepTMHMM v2 (topo_2026_09_27_dtm2); DeepTMHMM v2 SP 1-40 (not within 3 of 33)

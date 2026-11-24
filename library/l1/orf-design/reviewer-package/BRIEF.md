@@ -153,7 +153,7 @@ Drawn by [`fig_internalization_assay.py`](../../../../library/l1/figures/fig_int
 
 **Backbone.** p0039 is our insert-agnostic EFS–IRES2–PuroR destination vector
 (`pAG Lenti_236083_EFS_IRES_puro_insert_agnostic`, 7,672 bp). Its name and our vector-design
-record ([vector-design record](../../../sprint1/s1e2-fragmid-vector-design/README.md)) trace it to the
+record ([vector-design record](../../vector-design/README.md)) trace it to the
 lentiviral parent plasmid pAG Lenti CMV Empty Puro ([Addgene #236083](https://www.addgene.org/236083/)); the exact sequence is
 [`p0039_EFS_IRES_puro_backbone.gb`](../p0039_EFS_IRES_puro_backbone.gb) (GenBank). Two full maps
 of one member, AXL, show a finished construct in each layout of Figure 2a:
@@ -169,8 +169,8 @@ directly after the 212-bp EFS promoter. To keep the backbone Golden Gate–compa
 Fragmid's domesticated `IRES2_v1` (`pF_AA333`; [McGee et al., 2024](https://pubmed.ncbi.nlm.nih.gov/38484704/)),
 which carries three single-base edits relative to classic EMCV IRES2 (Addgene #100673) to remove
 two BbsI sites (`137 T→G`, `236 A→C`) and one ApaLI site (`480 G→A`). Folding and 79-isolate
-conservation checks ([`ires_domestication_analysis.py`](../../../sprint1/s1e2-fragmid-vector-design/ires_domestication_analysis.py),
-[`ires_domestication_edits.tsv`](../../../sprint1/s1e2-fragmid-vector-design/ires_domestication_edits.tsv))
+conservation checks ([`ires_domestication_analysis.py`](../../vector-design/ires_domestication_analysis.py),
+[`ires_domestication_edits.tsv`](../../vector-design/ires_domestication_edits.tsv))
 find the structural perturbation within random and natural EMCV variation with the eIF4G J–K
 platform and initiator AUG intact; `IRES2_v1` functionally drives `mScarlet3–P2A–PuroR` in our
 promoter-series constructs below, though no head-to-head comparison against undomesticated
@@ -279,11 +279,11 @@ penalty on one CDS, which at the bench is almost indistinguishable from that pro
 weak surface expressor.
 
 The pool is 30,000 barcodes of 20 nt, generated deterministically from a fixed seed by
-[`generate_barcodes.py`](../../../sprint1/s1e2-fragmid-vector-design/generate_barcodes.py) into
-[`barcodes_20nt_30k.tsv`](../../../sprint1/s1e2-fragmid-vector-design/barcodes_20nt_30k.tsv), so
+[`generate_barcodes.py`](../../vector-design/generate_barcodes.py) into
+[`barcodes_20nt_30k.tsv`](../../vector-design/barcodes_20nt_30k.tsv), so
 the file reproduces from the script alone. Seven rules are applied, each recorded with its
 source and whether we checked that source ourselves in
-[`barcode_filter_stack.py`](../../../sprint1/s1e2-fragmid-vector-design/barcode_filter_stack.py):
+[`barcode_filter_stack.py`](../../vector-design/barcode_filter_stack.py):
 
 | Rule | Why | Source |
 |---|---|---|
@@ -311,7 +311,7 @@ barcode.
 
 **Error-correction guarantees: full 20-nt pool vs. short in situ prefix.** Across the full 20-nt
 barcode, every pair in the 30,000-barcode pool satisfies **Levenshtein distance ≥ 3 and Hamming
-distance ≥ 4** ([`generate_barcodes.py`](../../../sprint1/s1e2-fragmid-vector-design/generate_barcodes.py)),
+distance ≥ 4** ([`generate_barcodes.py`](../../vector-design/generate_barcodes.py)),
 so full-length amplicon reads unambiguously correct one substitution or single-base indel. Because
 in situ sequencing reads only the first 10–12 bases (and random draws from the 28,506-barcode pool
 produce identical prefixes: 1,244 identical 10-nt pairs and 111 identical 12-nt pairs across the
@@ -392,7 +392,7 @@ differ from ours:
   leaves room for all 3,384 constructs under the prefix screen. The T7 promoter sits upstream of
   the 19-nt handle, beyond the reach of every junction screen, so it changes none of these
   counts. The junction seed screen is
-  part of [`reserve_barcodes.py`](../../../sprint1/s1e2-fragmid-vector-design/reserve_barcodes.py), which takes the 3′ flank as
+  part of [`reserve_barcodes.py`](../../vector-design/reserve_barcodes.py), which takes the 3′ flank as
   `--three-prime {current,t9a-draft}` and reports these counts with `--pool-stats`. The
   failure counts are by first reason only (enzyme, then splice donor, then seed), so a barcode
   failing two screens is counted once.
@@ -401,7 +401,7 @@ differ from ours:
   `GTTCCTG`). Both are kept as assigned; every new L1 barcode must pass the
   screen.
 - *L1's reserved block (3,644 barcodes) passes every screen under both 3′ flanks*, drawn in pool
-  order (`l1_screens_pass` in [`reserve_barcodes.py`](../../../sprint1/s1e2-fragmid-vector-design/reserve_barcodes.py),
+  order (`l1_screens_pass` in [`reserve_barcodes.py`](../../vector-design/reserve_barcodes.py),
   [`reserve_l1_block.py`](../reserve_l1_block.py)): Type IIS, splice donor, conserved miRNA 7-mer
   seeds across both junctions, 10-nt prefix Hamming ≥ 3, and RNA-binding-protein motifs (no
   Pumilio `TGTA[ACT]ATA`, AU-rich `ATTTA`, CPEB `TTTTAT`/`TTTTAAT`, poly(A) `AATAAA`/`ATTAAA`, or
@@ -427,7 +427,7 @@ differ from ours:
   `d ≥ 3`** in [`barcode_prefix_screen.py`](../barcode_prefix_screen.py), while L1's 3,384
   constructs already clear the stricter 10-nt `d ≥ 3` screen.
 - *Current state of barcode assignment:* screens and the 3,644-barcode provisional block exist and
-  are tested in CI ([`reserve_barcodes.py`](../../../sprint1/s1e2-fragmid-vector-design/reserve_barcodes.py),
+  are tested in CI ([`reserve_barcodes.py`](../../vector-design/reserve_barcodes.py),
   [`barcode_prefix_screen.py`](../barcode_prefix_screen.py),
   [`reserve_l1_block.py`](../reserve_l1_block.py), [`rbp_motif_screen.py`](../rbp_motif_screen.py),
   [`l1_barcode_block_provisional.tsv`](../l1_barcode_block_provisional.tsv),
@@ -582,7 +582,7 @@ That evidence and the catalog's per-gene calls (surface tier, surface fraction, 
 architecture) are written by the catalog's LLM agents from the literature and databases, in one
 deep dive per gene; they are curated calls, not measurements.
 A gene enters the library if it passes every gate of the filter in
-[`final_library.py`](../../../sprint1/s1e3-surface-library-filters/final_library.py), applied in
+[`final_library.py`](../../surface-filters/final_library.py), applied in
 the order below (starting from the 5,332-gene catalog). Each gate's remaining and excluded gene
 lists, with the exact value tested and row counts matching the numbers below, are in
 [`gate_lists/`](gate_lists/README.md), and every catalog gene's outcome is one row of
@@ -602,7 +602,7 @@ dated decision, each with its evidence, are in
 | Ectodomain | ≥ 30 extracellular residues (DeepTMHMM v1; GPI-anchored proteins exempt) | below that there is no domain to display | [2,134](gate_lists/09_ectodomain_passed.tsv) | [50](gate_lists/09_ectodomain_excluded.tsv) (e.g. CMTM2, CMTM4, CMTM6, FXYD2) |
 
 **How the co-receptor gate was updated.** The original frozen filter
-([`final_library.py`](../../../sprint1/s1e3-surface-library-filters/final_library.py)) required
+([`final_library.py`](../../surface-filters/final_library.py)) required
 every listed partner to have median ≥ 5 TPM across all 1,206 HPA cell lines, which removed the 160
 genes in [`05_coreceptor_excluded.tsv`](gate_lists/05_coreceptor_excluded.tsv). We subsequently
 replaced that criterion with the ARCHS4 v2.5 42-line screening-shortlist rule shown above (every
@@ -628,10 +628,10 @@ GTEx v10 / HPA v23 / TCGA tables:
 
 | Input / override | Scope & effect | File |
 |---|---|---|
-| Reviewed partner rules | 6 genes (`ATP1B3, CDC50A, P2RX6, HFE, ATP8B1, CDC50B`) where the catalog listed interchangeable alternative subunits flatly and the filter treated them as all required simultaneously; rules specify which alternative group is actually needed | [`coreceptor_rules.py`](../../../sprint1/s1e3-surface-library-filters/coreceptor_rules.py) |
+| Reviewed partner rules | 6 genes (`ATP1B3, CDC50A, P2RX6, HFE, ATP8B1, CDC50B`) where the catalog listed interchangeable alternative subunits flatly and the filter treated them as all required simultaneously; rules specify which alternative group is actually needed | [`coreceptor_rules.py`](../../surface-filters/coreceptor_rules.py) |
 | Manual co-receptor literature review | 146 genes flagged as co-receptor-dependent in the catalog were reviewed individually; 26 were confirmed to reach the surface without a heterologous partner (e.g. ITGB1, ITGAV, ITGB3, ATP1A1, CD74), so they bypass the co-receptor gate and enter L1 | [`coreceptor_calls.tsv`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/blob/main/data/processed/sprint4/s4e9-orf-design-fg-panel/library-design/pipeline-inputs/2026-11-02/s1e3/coreceptor_calls.tsv) |
 | Partner symbol resolution | 143 genes where free-text catalog partner names (e.g. "ATP4B-like beta subunit") were mapped to HGNC symbols for expression lookup | [`coreceptor_rationales.json`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/blob/main/data/processed/sprint4/s4e9-orf-design-fg-panel/library-design/pipeline-inputs/2026-11-02/s1e3/coreceptor_rationales.json) |
-| Compiled expression tables | Per-gene max TPM across GTEx v10, HPA v23 and TCGA ([`build_expression_join.py`](../../../sprint1/s1e3-surface-library-filters/build_expression_join.py)), plus HPA v23 cell-line medians recomputed from raw [HPA v23 `rna_celline.tsv`](https://pub-e53f37f6fe6b4745829c2066350fe26f.r2.dev/external/hpa/v23/rna_celline.tsv.zip) in [`data/external/expression-tpm/`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/tree/main/data/external/expression-tpm) (GTEx v10 and TCGA raw releases are not yet pinned separately) | [`genomewide_expression_tpm.csv`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/blob/main/data/external/expression-tpm/deliverome-internal-5a1416ea/genomewide_expression_tpm.csv), [`genomewide_expression_tpm_rederived.csv`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/blob/main/data/external/expression-tpm/rederived-2026-08-04/genomewide_expression_tpm_rederived.csv), [`hpa_celline_per_gene.csv`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/blob/main/data/external/expression-tpm/rederived-2026-08-04/hpa_celline_per_gene.csv) |
+| Compiled expression tables | Per-gene max TPM across GTEx v10, HPA v23 and TCGA ([`build_expression_join.py`](../../surface-filters/build_expression_join.py)), plus HPA v23 cell-line medians recomputed from raw [HPA v23 `rna_celline.tsv`](https://pub-e53f37f6fe6b4745829c2066350fe26f.r2.dev/external/hpa/v23/rna_celline.tsv.zip) in [`data/external/expression-tpm/`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/tree/main/data/external/expression-tpm) (GTEx v10 and TCGA raw releases are not yet pinned separately) | [`genomewide_expression_tpm.csv`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/blob/main/data/external/expression-tpm/deliverome-internal-5a1416ea/genomewide_expression_tpm.csv), [`genomewide_expression_tpm_rederived.csv`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/blob/main/data/external/expression-tpm/rederived-2026-08-04/genomewide_expression_tpm_rederived.csv), [`hpa_celline_per_gene.csv`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/blob/main/data/external/expression-tpm/rederived-2026-08-04/hpa_celline_per_gene.csv) |
 
 An unresolved partner is skipped when another partner resolves; a gene whose only listed partner
 cannot be resolved fails (e.g. WLS, whose catalog entry lists its cargo "WNT ligands"). Under the
@@ -1668,7 +1668,7 @@ Three counts appear here and measure different denominators: **605** CDSs sit on
 placement ([`l1_tag_paths.tsv`](../l1_tag_paths.tsv)); **594** carry at least one built construct
 (**1,090** loop constructs + **145** snorkels = 1,235 constructs) and **11** are held; and **579**
 is the earlier ranker decision-table row count
-([`l1_internal_decisions.tsv`](../../../sprint5/s5e13-tag-site-benchmarking/l1_internal_decisions.tsv))
+([`l1_internal_decisions.tsv`](../../tag-site-benchmarking/l1_internal_decisions.tsv))
 from before later additions and switches.
 
 **Rule.** An internal CDS is tagged in an extracellular loop at the top-ranked junction that (1)
@@ -1677,7 +1677,7 @@ flanking residue (*n*−2 to *n*+3), and (3) passes refold. A rank-1 refold fail
 next passing rank; where none passes, the best site is built and flagged.
 
 **The ranker.** Chosen by 5-fold gene-grouped CV on the 176 collected sites
-([`compare_internal_policies.py`](../../../sprint5/s5e13-tag-site-benchmarking/compare_internal_policies.py)):
+([`compare_internal_policies.py`](../../tag-site-benchmarking/compare_internal_policies.py)):
 
 | Policy | Top-1 within 10 residues | Top-3 within 10 | First pick in the right loop | A top-3 pick within 2 of a ligand contact |
 |---|---:|---:|---:|---:|
@@ -1698,13 +1698,13 @@ orientation mask, 24 fall back to a snorkel, 12 were held there, and 1 (`SLC68A1
 C-terminal on experimental topology ([Anzai & Matsumura, 2019](https://pubmed.ncbi.nlm.nih.gov/31615651/)).
 Against v4, of the 530 sites
 designed, 277 are identical, 143 within 10 residues, 72 further away and 38 on sequences v4
-never designed ([`l1_internal_sites_vs_v4.tsv`](../../../sprint5/s5e13-tag-site-benchmarking/l1_internal_sites_vs_v4.tsv)).
+never designed ([`l1_internal_sites_vs_v4.tsv`](../../tag-site-benchmarking/l1_internal_sites_vs_v4.tsv)).
 
 **Weak spots.** Top-1 hits the published residue < 5% of the time (reliable at the loop [73%] and
 10-aa window [49%], not the exact residue); 4 v5 training proteins (`NRXN1, ASIC1, SLC4A11,
 SLC9A6`: 5 of 176 positives and 858 of 35,650 rows) were misnumbered on another isoform (retrain
 deferred to L2; all 11 affected L1 CDSs were redesigned on corrected features,
-[`isoform_fix_redesign.tsv`](../../../sprint5/s5e13-tag-site-benchmarking/isoform_fix_redesign.tsv));
+[`isoform_fix_redesign.tsv`](../../tag-site-benchmarking/isoform_fix_redesign.tsv));
 and `SLC44A1`'s loop orientation remains unconfirmed by the gate.
 
 #### How many constructs an internal CDS gets
@@ -1716,12 +1716,12 @@ second region is within 10%; **3** if no region clears the median; and **2 loops
 every candidate loop falls below the 25th percentile (when C-terminus is cytoplasmic and the
 snorkel passes refold). Second/third loop sites are separated by another loop or ≥ 25 residues. Of
 the **594** built internal CDSs, **195** carry 1 construct, **157** carry 2, and **242** carry 3
-(snorkel counted as a construct; [`l1_internal_arm_decisions.tsv`](../../../sprint5/s5e13-tag-site-benchmarking/l1_internal_arm_decisions.tsv),
-[`l1_internal_arms.py`](../../../sprint5/s5e13-tag-site-benchmarking/l1_internal_arms.py)).
+(snorkel counted as a construct; [`l1_internal_arm_decisions.tsv`](../../tag-site-benchmarking/l1_internal_arm_decisions.tsv),
+[`l1_internal_arms.py`](../../tag-site-benchmarking/l1_internal_arms.py)).
 
 **Hard negatives and contact vetoes.** Adding literature ligands, protein-partner, and homomer
-interfaces as v6 hard negatives ([`hard_negative_benchmark.py`](../../../sprint5/s5e13-tag-site-benchmarking/hard_negative_benchmark.py),
-[`tag_site_model_v6.py`](../../../sprint5/s5e13-tag-site-benchmarking/tag_site_model_v6.py)) did
+interfaces as v6 hard negatives ([`hard_negative_benchmark.py`](../../tag-site-benchmarking/hard_negative_benchmark.py),
+[`tag_site_model_v6.py`](../../tag-site-benchmarking/tag_site_model_v6.py)) did
 not separate v6 from v5 (0.706 vs 0.709 within-10 top-3), while a hard veto on partner/homomer
 contacts would discard 17 of 176 known working sites (vs. 2 for ligand contacts). Accordingly,
 deposited/homolog ligand contacts and secreted protein-ligand contacts act as a **hard ±2 veto**
@@ -1733,7 +1733,7 @@ a **soft veto** (replaced by a clean site within 10% score, or flagged).
 **Why a snorkel.** When a protein's extracellular loops are too short or buried for a 51-aa
 insertion (e.g., tetraspanins, MS4A, claudin-like bundles), a *snorkel* appends a reversed mouse
 PDGFRB transmembrane helix plus the cassette (106 aa total; Figure 11b,
-[`snorkel_design.py`](../../../sprint5/s5e13-tag-site-benchmarking/snorkel_design.py);
+[`snorkel_design.py`](../../tag-site-benchmarking/snorkel_design.py);
 [Brown et al., 2013](https://pubmed.ncbi.nlm.nih.gov/24023844/)) to a cytoplasmic C-terminus,
 displaying the tag outside without disturbing native loops.
 
@@ -1751,13 +1751,13 @@ same CDS; any CDS with no usable loop construct is held. Snorkels enter when eve
 scores below the 25th percentile (under the order rule, or as a fallback when loops fail refold /
 hit ligand contacts; in the earlier decision round the advisory `snorkel_candidate` flag was set:
 it is set on 71 of the 541 loop CDSs and on only 5 of the 24 snorkel fallbacks) and require a confirmed
-cytoplasmic C-terminus ([`l1_internal_decisions.py`](../../../sprint5/s5e13-tag-site-benchmarking/l1_internal_decisions.py)).
+cytoplasmic C-terminus ([`l1_internal_decisions.py`](../../tag-site-benchmarking/l1_internal_decisions.py)).
 
 **Counts and holds.** The order carries 145 snorkel constructs, 141 of which
 pass refold (4 built flagged; in the earlier snorkel-only decision round,
 6 of the 30 constructs refolded then failed). A pre-registered spacer test lengthening the first linker from 11 to 30 aa
 rescued 0 of 5 failing snorkels and broke both passing controls
-([`snorkel_spacer_test.json`](../../../sprint5/s5e13-tag-site-benchmarking/snorkel_spacer_test.json)),
+([`snorkel_spacer_test.json`](../../tag-site-benchmarking/snorkel_spacer_test.json)),
 so the 11-aa linker stands. **11 internal CDSs are held** for mechanistic failure or lack of any
 usable loop construct (listed in [section 8](#where-every-cds-stands)).
 
@@ -2094,7 +2094,7 @@ review-band or low-confidence site is used only when no passing site exists, and
 The site ranker requires this check's per-residue mask. 45 CDSs added or switched to a new
 reference in the final rebuild had no mask row; their sites were picked from DeepTMHMM v1's
 extracellular residues without the check, as each one's `reason` in
-[`l1_internal_decisions.tsv`](../../../sprint5/s5e13-tag-site-benchmarking/l1_internal_decisions.tsv)
+[`l1_internal_decisions.tsv`](../../tag-site-benchmarking/l1_internal_decisions.tsv)
 records, and the check is still to be run on them. DeepTMHMM remains the topology of record; the
 check is a separate layer on top of it ([`membrane-side-gate/`](../membrane-side-gate/README.md)).
 

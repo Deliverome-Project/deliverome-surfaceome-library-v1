@@ -1,0 +1,2 @@
+design_id	gene_symbol	candidate_set	species	group	basis
+l1-p0475	CRHR2	library_reference	human	multipass_tag_alone	CRHR2 is built leader-free: its N-terminal pseudo signal peptide is uncleaved and cannot target the ER on its own (Rutz 2006, PMID 16766521). Behind a leader it would become an untested internal hydrophobic segment. Tedman displayed this transcript leader-free at 2,385 a.u. (screen median about 1,000)

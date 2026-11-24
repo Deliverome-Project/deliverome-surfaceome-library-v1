@@ -123,6 +123,14 @@ _CLEAN_REL_SUBS: tuple[tuple[str, str], ...] = (
     ("'l1/surface-filters'", "'l1/surface-filters'"),
     ("ranker-c7be01a4", "ranker-c7be01a4"),
 )
+_CLEAN_MD_REL_SUBS: tuple[tuple[str, str], ...] = (
+    ("../../../sprint1/s1e2-fragmid-vector-design/", "../../vector-design/"),
+    ("../../../sprint1/s1e3-surface-library-filters/", "../../surface-filters/"),
+    ("../../../sprint5/s5e13-tag-site-benchmarking/", "../../tag-site-benchmarking/"),
+    ("../../sprint1/s1e2-fragmid-vector-design/", "../vector-design/"),
+    ("../../sprint1/s1e3-surface-library-filters/", "../surface-filters/"),
+    ("../../sprint5/s5e13-tag-site-benchmarking/", "../tag-site-benchmarking/"),
+)
 _CLEAN_SUBDIR_MAP: dict[str, str] = {
     "ranker-c7be01a4": "ranker-c7be01a4",
 }
@@ -439,6 +447,9 @@ def apply_clean_paths(files: dict[str, bytes]) -> dict[str, bytes]:
                 text = text.replace(old, new)
             if dest.endswith(".py"):
                 for old, new in _CLEAN_REL_SUBS:
+                    text = text.replace(old, new)
+            elif dest.endswith(".md"):
+                for old, new in _CLEAN_MD_REL_SUBS:
                     text = text.replace(old, new)
             data = text.encode("utf-8", errors="surrogateescape")
             if dest.endswith(".py") and text != orig_text and not dest.startswith(scratch_prefixes):

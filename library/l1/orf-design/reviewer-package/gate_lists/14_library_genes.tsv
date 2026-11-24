@@ -1,0 +1,2418 @@
+gene	entered_by	added	source
+ABCA8	core		gene filter
+ABCB1	core		gene filter
+ABCB11	core		gene filter
+ABCB4	core		gene filter
+ABCC1	core		gene filter
+ABCC10	core		gene filter
+ABCC11	core		gene filter
+ABCC2	core		gene filter
+ABCC3	core		gene filter
+ABCC4	core		gene filter
+ABCC5	core		gene filter
+ABCC6	core		gene filter
+ABCG2	core		gene filter
+ABCG4	core		gene filter
+ACE	core		gene filter
+ACE2	core		gene filter
+ACHE	core		gene filter
+ACKR1	core		gene filter
+ACKR2	GPCR screen tier		gene filter
+ACKR3	core		gene filter
+ACKR4	core		gene filter
+ACKR5	core		gene filter
+ACVR1	core		gene filter
+ACVR1B	core		gene filter
+ACVR1C	core		gene filter
+ACVR2A	core		gene filter
+ACVR2B	core		gene filter
+ACVRL1	core		gene filter
+ADAM10	core		gene filter
+ADAM11	core		gene filter
+ADAM12	core		gene filter
+ADAM15	core		gene filter
+ADAM17	core		gene filter
+ADAM19	core		gene filter
+ADAM21	core		gene filter
+ADAM22	core		gene filter
+ADAM23	core		gene filter
+ADAM28	core		gene filter
+ADAM29	core		gene filter
+ADAM32	core		gene filter
+ADAM33	core		gene filter
+ADAM7	core		gene filter
+ADAM8	core		gene filter
+ADAM9	core		gene filter
+ADCY1	core		gene filter
+ADCY2	core		gene filter
+ADCY3	core		gene filter
+ADCY5	core		gene filter
+ADCY6	core		gene filter
+ADCY7	core		gene filter
+ADCY8	core		gene filter
+ADCY9	core		gene filter
+ADCYAP1R1	core		gene filter
+ADGRA1	core		gene filter
+ADGRA2	core		gene filter
+ADGRA3	core		gene filter
+ADGRB1	core		gene filter
+ADGRB2	core		gene filter
+ADGRB3	core		gene filter
+ADGRD1	core		gene filter
+ADGRD2	core		gene filter
+ADGRE1	core		gene filter
+ADGRE2	core		gene filter
+ADGRE3	core		gene filter
+ADGRE5	core		gene filter
+ADGRF1	core		gene filter
+ADGRF3	core		gene filter
+ADGRF5	core		gene filter
+ADGRG1	core		gene filter
+ADGRG2	core		gene filter
+ADGRG3	core		gene filter
+ADGRG5	core		gene filter
+ADGRG6	core		gene filter
+ADGRL1	core		gene filter
+ADGRL2	core		gene filter
+ADGRL3	core		gene filter
+ADGRL4	core		gene filter
+ADIPOR1	core		gene filter
+ADIPOR2	core		gene filter
+ADORA1	core		gene filter
+ADORA2A	core		gene filter
+ADORA2B	core		gene filter
+ADORA3	core		gene filter
+ADRA1A	core		gene filter
+ADRA1B	core		gene filter
+ADRA1D	core		gene filter
+ADRA2A	core		gene filter
+ADRA2B	core		gene filter
+ADRA2C	GPCR screen tier		gene filter
+ADRB1	core		gene filter
+ADRB2	core		gene filter
+ADRB3	core		gene filter
+ADTRP	core		gene filter
+AGER	core		gene filter
+AGTR1	core		gene filter
+AGTR2	core		gene filter
+AJAP1	core		gene filter
+ALCAM	core		gene filter
+ALK	core		gene filter
+ALPG	core		gene filter
+ALPI	core		gene filter
+ALPL	core		gene filter
+ALPP	core		gene filter
+AMHR2	core		gene filter
+AMIGO1	core		gene filter
+AMIGO2	core		gene filter
+AMIGO3	core		gene filter
+AMN	core		gene filter
+ANKH	core		gene filter
+ANO1	core		gene filter
+ANO2	core		gene filter
+ANO3	core		gene filter
+ANO4	core		gene filter
+ANO6	core		gene filter
+ANO7	core		gene filter
+ANPEP	core		gene filter
+ANTXR1	core		gene filter
+ANTXR2	core		gene filter
+ANTXRL	little-studied UniProt tier		gene filter
+AOC2	core		gene filter
+AOC3	core		gene filter
+APLNR	core		gene filter
+APLP1	core		gene filter
+APLP2	core		gene filter
+APP	core		gene filter
+AQP1	core		gene filter
+AQP10	core		gene filter
+AQP12B	little-studied UniProt tier		gene filter
+AQP2	overexpression tier		gene filter
+AQP3	core		gene filter
+AQP4	core		gene filter
+AQP5	core		gene filter
+AQP7	core		gene filter
+AQP9	core		gene filter
+AREG	core		gene filter
+ARMH4	core		gene filter
+ART1	core		gene filter
+ART3	core		gene filter
+ART4	core		gene filter
+ASAH2	core		gene filter
+ASGR1	core		gene filter
+ASGR2	core		gene filter
+ASIC1	core		gene filter
+ASIC2	core		gene filter
+ASIC3	core		gene filter
+ASIC5	core		gene filter
+ASTN1	core		gene filter
+ATP10D	core		gene filter
+ATP11A	core		gene filter
+ATP11C	core		gene filter
+ATP12A	core		gene filter
+ATP1A1	core		gene filter
+ATP1A2	core		gene filter
+ATP1A3	core		gene filter
+ATP1A4	core		gene filter
+ATP1B1	core		gene filter
+ATP1B2	core		gene filter
+ATP1B3	core		gene filter
+ATP2B1	core		gene filter
+ATP2B2	core		gene filter
+ATP2B3	core		gene filter
+ATP2B4	core		gene filter
+ATRN	core		gene filter
+ATRNL1	core		gene filter
+AVPR1A	core		gene filter
+AVPR1B	core		gene filter
+AVPR2	core		gene filter
+AXL	core		gene filter
+BACE1	overexpression tier		gene filter
+BACE2	core		gene filter
+BAMBI	core		gene filter
+BCAM	core		gene filter
+BCAN	core		gene filter
+BDKRB1	core		gene filter
+BDKRB2	core		gene filter
+BEST1	core		gene filter
+BEST2	core		gene filter
+BEST3	core		gene filter
+BEST4	core		gene filter
+BMPR1A	core		gene filter
+BMPR1B	core		gene filter
+BMPR2	core		gene filter
+BOC	core		gene filter
+BRICD5	little-studied UniProt tier		gene filter
+BRS3	core		gene filter
+BSG	core		gene filter
+BST1	core		gene filter
+BST2	core		gene filter
+BTC	core		gene filter
+BTLA	core		gene filter
+BTN1A1	core		gene filter
+BTN2A1	core		gene filter
+BTN2A2	core		gene filter
+BTN3A1	core		gene filter
+BTN3A2	core		gene filter
+BTN3A3	core		gene filter
+BTNL2	core		gene filter
+BTNL3	core		gene filter
+BTNL9	core		gene filter
+C11orf24	little-studied UniProt tier		gene filter
+C11orf87	little-studied UniProt tier		gene filter
+C14orf180	little-studied UniProt tier		gene filter
+C16orf54	core		gene filter
+C19orf18	little-studied UniProt tier		gene filter
+C19orf38	little-studied UniProt tier		gene filter
+C3AR1	core		gene filter
+C3orf52	core		gene filter
+C5AR1	core		gene filter
+C5AR2	core		gene filter
+C5orf15	little-studied UniProt tier		gene filter
+CA12	core		gene filter
+CA14	core		gene filter
+CA4	core		gene filter
+CA9	core		gene filter
+CACHD1	core		gene filter
+CACNA2D1	core		gene filter
+CACNA2D3	core		gene filter
+CACNA2D4	core		gene filter
+CACNG1	core		gene filter
+CACNG2	core		gene filter
+CACNG3	core		gene filter
+CACNG4	core		gene filter
+CACNG5	core		gene filter
+CACNG6	core		gene filter
+CACNG7	core		gene filter
+CADM1	core		gene filter
+CADM2	core		gene filter
+CADM3	core		gene filter
+CADM4	core		gene filter
+CALCR	core		gene filter
+CALHM1	core		gene filter
+CALHM2	core		gene filter
+CALHM3	little-studied UniProt tier		gene filter
+CALHM4	core		gene filter
+CALHM5	little-studied UniProt tier		gene filter
+CASR	core		gene filter
+CATSPERE	little-studied UniProt tier		gene filter
+CATSPERG	little-studied UniProt tier		gene filter
+CATSPERH	little-studied UniProt tier		gene filter
+CATSPERQ	little-studied UniProt tier		gene filter
+CCKAR	core		gene filter
+CCKBR	core		gene filter
+CCR1	core		gene filter
+CCR10	core		gene filter
+CCR2	core		gene filter
+CCR3	core		gene filter
+CCR4	core		gene filter
+CCR5	core		gene filter
+CCR6	core		gene filter
+CCR7	core		gene filter
+CCR8	core		gene filter
+CCR9	core		gene filter
+CCRL2	core		gene filter
+CD101	core		gene filter
+CD109	core		gene filter
+CD14	core		gene filter
+CD151	core		gene filter
+CD160	core		gene filter
+CD163	core		gene filter
+CD163L1	core		gene filter
+CD164	core		gene filter
+CD164L2	little-studied UniProt tier		gene filter
+CD177	core		gene filter
+CD19	core		gene filter
+CD1A	core		gene filter
+CD1B	core		gene filter
+CD1C	core		gene filter
+CD1D	core		gene filter
+CD2	core		gene filter
+CD200	core		gene filter
+CD200R1	core		gene filter
+CD200R1L	core		gene filter
+CD207	core		gene filter
+CD209	core		gene filter
+CD22	core		gene filter
+CD226	core		gene filter
+CD24	core		gene filter
+CD244	core		gene filter
+CD248	core		gene filter
+CD27	core		gene filter
+CD274	core		gene filter
+CD276	core		gene filter
+CD28	core		gene filter
+CD300A	core		gene filter
+CD300C	core		gene filter
+CD300E	core		gene filter
+CD300H	core		gene filter
+CD300LD	core		gene filter
+CD300LF	core		gene filter
+CD300LG	core		gene filter
+CD302	core		gene filter
+CD320	core		gene filter
+CD33	core		gene filter
+CD34	core		gene filter
+CD36	core		gene filter
+CD37	core		gene filter
+CD38	core		gene filter
+CD4	core		gene filter
+CD40	core		gene filter
+CD40LG	core		gene filter
+CD44	core		gene filter
+CD46	core		gene filter
+CD47	core		gene filter
+CD48	core		gene filter
+CD5	core		gene filter
+CD52	core		gene filter
+CD53	core		gene filter
+CD55	core		gene filter
+CD58	core		gene filter
+CD59	core		gene filter
+CD6	core		gene filter
+CD69	core		gene filter
+CD7	core		gene filter
+CD70	core		gene filter
+CD72	core		gene filter
+CD74	core		gene filter
+CD80	core		gene filter
+CD81	core		gene filter
+CD82	core		gene filter
+CD83	core		gene filter
+CD84	core		gene filter
+CD86	core		gene filter
+CD8A	core		gene filter
+CD8B2	core		gene filter
+CD9	core		gene filter
+CD93	core		gene filter
+CD96	core		gene filter
+CD99	core		gene filter
+CD99L2	core		gene filter
+CDC50A	core		gene filter
+CDCP1	core		gene filter
+CDH1	core		gene filter
+CDH10	core		gene filter
+CDH11	core		gene filter
+CDH12	core		gene filter
+CDH13	core		gene filter
+CDH15	core		gene filter
+CDH16	core		gene filter
+CDH17	core		gene filter
+CDH18	core		gene filter
+CDH19	core		gene filter
+CDH2	core		gene filter
+CDH20	core		gene filter
+CDH22	core		gene filter
+CDH24	core		gene filter
+CDH26	core		gene filter
+CDH3	core		gene filter
+CDH4	core		gene filter
+CDH5	core		gene filter
+CDH6	core		gene filter
+CDH7	core		gene filter
+CDH8	core		gene filter
+CDH9	core		gene filter
+CDHR1	core		gene filter
+CDHR2	core		gene filter
+CDHR3	core		gene filter
+CDHR5	core		gene filter
+CDON	core		gene filter
+CEACAM1	core		gene filter
+CEACAM19	core		gene filter
+CEACAM20	core		gene filter
+CEACAM21	core		gene filter
+CEACAM3	core		gene filter
+CEACAM4	core		gene filter
+CEACAM5	core		gene filter
+CEACAM6	core		gene filter
+CEACAM7	core		gene filter
+CEACAM8	core		gene filter
+CEMIP2	core		gene filter
+CFC1	core		gene filter
+CFTR	core		gene filter
+CHL1	core		gene filter
+CHRM1	core		gene filter
+CHRM2	core		gene filter
+CHRM3	core		gene filter
+CHRM4	core		gene filter
+CHRM5	core		gene filter
+CHRNA4	core		gene filter
+CHRNA6	core		gene filter
+CHRNA7	core		gene filter
+CHRNA9	core		gene filter
+CHRNB3	core		gene filter
+CHST15	core		gene filter
+CIST1	little-studied UniProt tier		gene filter
+CLCA2	core		gene filter
+CLCA4	core		gene filter
+CLCN1	core		gene filter
+CLCN2	core		gene filter
+CLDN1	core		gene filter
+CLDN10	core		gene filter
+CLDN11	core		gene filter
+CLDN12	core		gene filter
+CLDN14	core		gene filter
+CLDN15	core		gene filter
+CLDN16	core		gene filter
+CLDN17	core		gene filter
+CLDN18	core		gene filter
+CLDN19	core		gene filter
+CLDN2	core		gene filter
+CLDN20	core		gene filter
+CLDN22	core		gene filter
+CLDN23	core		gene filter
+CLDN24	core		gene filter
+CLDN25	core		gene filter
+CLDN3	core		gene filter
+CLDN4	core		gene filter
+CLDN5	core		gene filter
+CLDN6	core		gene filter
+CLDN7	core		gene filter
+CLDN8	core		gene filter
+CLDN9	core		gene filter
+CLDND1	core		gene filter
+CLEC10A	core		gene filter
+CLEC12A	core		gene filter
+CLEC12B	core		gene filter
+CLEC14A	core		gene filter
+CLEC17A	core		gene filter
+CLEC1A	core		gene filter
+CLEC1B	core		gene filter
+CLEC2A	core		gene filter
+CLEC2D	core		gene filter
+CLEC2L	core		gene filter
+CLEC4A	core		gene filter
+CLEC4C	core		gene filter
+CLEC4E	core		gene filter
+CLEC4G	core		gene filter
+CLEC4M	core		gene filter
+CLEC5A	core		gene filter
+CLEC6A	core		gene filter
+CLEC7A	core		gene filter
+CLEC9A	core		gene filter
+CLMP	core		gene filter
+CLRN1	core		gene filter
+CLRN3	core		gene filter
+CLSTN1	core		gene filter
+CLSTN2	core		gene filter
+CLSTN3	core		gene filter
+CLTRN	core		gene filter
+CMKLR1	core		gene filter
+CMKLR2	core		gene filter
+CNGA1	core		gene filter
+CNGA2	core		gene filter
+CNGA3	core		gene filter
+CNNM1	core		gene filter
+CNNM2	core		gene filter
+CNNM3	core		gene filter
+CNNM4	core		gene filter
+CNR1	core		gene filter
+CNR2	core		gene filter
+CNTFR	core		gene filter
+CNTN1	core		gene filter
+CNTN2	core		gene filter
+CNTN3	core		gene filter
+CNTN4	core		gene filter
+CNTN5	core		gene filter
+CNTN6	core		gene filter
+CNTNAP2	core		gene filter
+CNTNAP3	core		gene filter
+CNTNAP3B	core		gene filter
+CNTNAP4	core		gene filter
+CNTNAP5	core		gene filter
+COL13A1	core		gene filter
+COL17A1	core		gene filter
+COL23A1	core		gene filter
+COL25A1	core		gene filter
+COLEC12	core		gene filter
+CORIN	core		gene filter
+CPD	core		gene filter
+CPM	core		gene filter
+CR2	core		gene filter
+CRB1	core		gene filter
+CRB2	core		gene filter
+CRB3	core		gene filter
+CRHR1	core		gene filter
+CRHR2	core		gene filter
+CRIM1	core		gene filter
+CRIPTO	core		gene filter
+CRLF2	core		gene filter
+CRTAM	core		gene filter
+CSF1R	core		gene filter
+CSF2RA	core		gene filter
+CSF2RB	core		gene filter
+CSF3R	core		gene filter
+CSPG5	core		gene filter
+CTLA4	core		gene filter
+CX3CL1	core		gene filter
+CX3CR1	core		gene filter
+CXADR	core		gene filter
+CXCL16	core		gene filter
+CXCR1	core		gene filter
+CXCR2	core		gene filter
+CXCR3	core		gene filter
+CXCR4	core		gene filter
+CXCR5	core		gene filter
+CXCR6	core		gene filter
+CXorf66	little-studied UniProt tier		gene filter
+CYBB	core		gene filter
+CYBRD1	core		gene filter
+CYSLTR1	core		gene filter
+CYSLTR2	core		gene filter
+DAG1	core		gene filter
+DAGLA	core		gene filter
+DCBLD1	core		gene filter
+DCBLD2	core		gene filter
+DCC	core		gene filter
+DCST1	core		gene filter
+DCST2	core		gene filter
+DCSTAMP	core		gene filter
+DDR1	core		gene filter
+DDR2	core		gene filter
+DGCR2	core		gene filter
+DISP1	core		gene filter
+DISP2	core		gene filter
+DLK1	core		gene filter
+DLL1	core		gene filter
+DLL3	overexpression tier		gene filter
+DLL4	core		gene filter
+DNER	core		gene filter
+DPEP1	core		gene filter
+DPEP2	core		gene filter
+DPEP3	core		gene filter
+DPP10	core		gene filter
+DPP4	core		gene filter
+DPP6	core		gene filter
+DRD1	core		gene filter
+DRD2	core		gene filter
+DRD3	core		gene filter
+DRD4	core		gene filter
+DRD5	core		gene filter
+DSC1	core		gene filter
+DSC2	core		gene filter
+DSC3	core		gene filter
+DSG1	core		gene filter
+DSG2	core		gene filter
+DSG3	core		gene filter
+DYNAP	core		gene filter
+ECE1	core		gene filter
+ECSCR	core		gene filter
+EDA	core		gene filter
+EDA2R	core		gene filter
+EDNRA	core		gene filter
+EDNRB	core		gene filter
+EFNA1	core		gene filter
+EFNA2	core		gene filter
+EFNA3	core		gene filter
+EFNA4	core		gene filter
+EFNA5	core		gene filter
+EFNB1	core		gene filter
+EFNB2	core		gene filter
+EFNB3	core		gene filter
+EGFR	core		gene filter
+ELFN1	core		gene filter
+ELFN2	core		gene filter
+EMB	core		gene filter
+EMCN	core		gene filter
+EMP1	core		gene filter
+EMP2	core		gene filter
+EMP3	core		gene filter
+ENG	core		gene filter
+ENPEP	core		gene filter
+ENPP1	core		gene filter
+ENPP3	core		gene filter
+ENPP4	core		gene filter
+ENPP5	core		gene filter
+ENPP6	core		gene filter
+ENTPD1	core		gene filter
+ENTPD2	core		gene filter
+ENTPD3	core		gene filter
+ENTPD8	core		gene filter
+EPCAM	core		gene filter
+EPGN	core		gene filter
+EPHA1	core		gene filter
+EPHA10	core		gene filter
+EPHA2	core		gene filter
+EPHA3	core		gene filter
+EPHA4	core		gene filter
+EPHA5	core		gene filter
+EPHA6	core		gene filter
+EPHA7	core		gene filter
+EPHA8	core		gene filter
+EPHB1	core		gene filter
+EPHB2	core		gene filter
+EPHB3	core		gene filter
+EPHB4	core		gene filter
+EPHB6	core		gene filter
+EPOR	core		gene filter
+ERBB2	core		gene filter
+ERBB3	core		gene filter
+ERBB4	core		gene filter
+ERMAP	core		gene filter
+ERVFRD-1	core		gene filter
+ERVMER34-1	core		gene filter
+ERVV-2	core		gene filter
+ERVW-1	core		gene filter
+ESAM	core		gene filter
+EVI2A	core		gene filter
+EVI2B	core		gene filter
+F11R	core		gene filter
+F2R	core		gene filter
+F2RL1	core		gene filter
+F2RL2	core		gene filter
+F2RL3	core		gene filter
+F3	core		gene filter
+FAM171A1	core		gene filter
+FAM171A2	core		gene filter
+FAM174A	little-studied UniProt tier		gene filter
+FAM174B	core		gene filter
+FAM187A	little-studied UniProt tier		gene filter
+FAM187B	little-studied UniProt tier		gene filter
+FAM209A	little-studied UniProt tier		gene filter
+FAM209B	little-studied UniProt tier		gene filter
+FAP	core		gene filter
+FAS	core		gene filter
+FASLG	core		gene filter
+FCAMR	core		gene filter
+FCAR	core		gene filter
+FCER1A	core		gene filter
+FCER2	core		gene filter
+FCGR1A	core		gene filter
+FCGR2A	core		gene filter
+FCGR2B	core		gene filter
+FCGR2C	core		gene filter
+FCGR3A	core		gene filter
+FCGR3B	core		gene filter
+FCGRT	overexpression tier		gene filter
+FCMR	core		gene filter
+FCRL1	core		gene filter
+FCRL2	core		gene filter
+FCRL3	core		gene filter
+FCRL4	core		gene filter
+FCRL5	core		gene filter
+FCRL6	core		gene filter
+FFAR1	core		gene filter
+FFAR2	core		gene filter
+FFAR3	core		gene filter
+FFAR4	core		gene filter
+FGFR1	core		gene filter
+FGFR2	core		gene filter
+FGFR3	core		gene filter
+FGFR4	core		gene filter
+FGFRL1	core		gene filter
+FIBCD1	core		gene filter
+FLRT1	core		gene filter
+FLRT2	core		gene filter
+FLRT3	core		gene filter
+FLT1	core		gene filter
+FLT3	core		gene filter
+FLT3LG	core		gene filter
+FLT4	core		gene filter
+FLVCR1	core		gene filter
+FLVCR2	core		gene filter
+FMR1NB	core		gene filter
+FNDC10	little-studied UniProt tier		gene filter
+FOLH1	core		gene filter
+FOLR1	core		gene filter
+FOLR2	core		gene filter
+FPR1	core		gene filter
+FPR2	core		gene filter
+FPR3	core		gene filter
+FRMD3	core		gene filter
+FSHR	core		gene filter
+FXYD5	core		gene filter
+FZD1	core		gene filter
+FZD10	core		gene filter
+FZD2	core		gene filter
+FZD3	core		gene filter
+FZD4	core		gene filter
+FZD5	core		gene filter
+FZD6	core		gene filter
+FZD7	core		gene filter
+FZD8	core		gene filter
+FZD9	core		gene filter
+GABBR2	core		gene filter
+GABRA1	core		gene filter
+GABRA2	core		gene filter
+GABRA4	core		gene filter
+GABRA6	core		gene filter
+GABRE	core		gene filter
+GABRP	core		gene filter
+GABRR1	core		gene filter
+GABRR2	core		gene filter
+GABRR3	core		gene filter
+GALR1	core		gene filter
+GALR2	core		gene filter
+GALR3	GPCR screen tier		gene filter
+GAS1	core		gene filter
+GCGR	core		gene filter
+GDPD2	core		gene filter
+GDPD4	core		gene filter
+GDPD5	core		gene filter
+GFRA1	core		gene filter
+GFRA2	core		gene filter
+GFRA3	core		gene filter
+GFRA4	core		gene filter
+GFRAL	core		gene filter
+GGT1	core		gene filter
+GGT5	core		gene filter
+GGT6	core		gene filter
+GGT7	core		gene filter
+GHR	core		gene filter
+GHRHR	core		gene filter
+GHSR	core		gene filter
+GIPR	core		gene filter
+GJA1	core		gene filter
+GJA10	core		gene filter
+GJA3	core		gene filter
+GJA4	core		gene filter
+GJA5	core		gene filter
+GJA8	core		gene filter
+GJA9	core		gene filter
+GJB1	core		gene filter
+GJB2	core		gene filter
+GJB3	core		gene filter
+GJB4	core		gene filter
+GJB6	core		gene filter
+GJB7	core		gene filter
+GJC2	core		gene filter
+GJC3	core		gene filter
+GJD3	core		gene filter
+GJD4	core		gene filter
+GJE1	core		gene filter
+GLIPR1	core		gene filter
+GLIPR1L1	core		gene filter
+GLP1R	core		gene filter
+GLP2R	core		gene filter
+GLRA1	core		gene filter
+GLRA2	core		gene filter
+GLRA3	core		gene filter
+GML	core		gene filter
+GNRHR	core		gene filter
+GP2	core		gene filter
+GP5	core		gene filter
+GP6	core		gene filter
+GPA33	core		gene filter
+GPBAR1	core		gene filter
+GPC1	core		gene filter
+GPC2	core		gene filter
+GPC3	core		gene filter
+GPC4	core		gene filter
+GPC5	core		gene filter
+GPC6	core		gene filter
+GPIHBP1	core		gene filter
+GPM6A	core		gene filter
+GPM6B	core		gene filter
+GPNMB	core		gene filter
+GPR101	core		gene filter
+GPR119	core		gene filter
+GPR12	core		gene filter
+GPR132	core		gene filter
+GPR135	core		gene filter
+GPR139	core		gene filter
+GPR141	GPCR screen tier		gene filter
+GPR142	core		gene filter
+GPR146	core		gene filter
+GPR149	core		gene filter
+GPR15	core		gene filter
+GPR150	core		gene filter
+GPR151	core		gene filter
+GPR152	core		gene filter
+GPR153	core		gene filter
+GPR156	core		gene filter
+GPR157	core		gene filter
+GPR158	core		gene filter
+GPR160	core		gene filter
+GPR161	core		gene filter
+GPR162	core		gene filter
+GPR17	core		gene filter
+GPR171	core		gene filter
+GPR173	core		gene filter
+GPR174	core		gene filter
+GPR176	core		gene filter
+GPR18	core		gene filter
+GPR183	core		gene filter
+GPR19	core		gene filter
+GPR20	core		gene filter
+GPR21	core		gene filter
+GPR25	core		gene filter
+GPR26	core		gene filter
+GPR27	core		gene filter
+GPR3	core		gene filter
+GPR32	core		gene filter
+GPR33	GPCR screen tier		gene filter
+GPR34	core		gene filter
+GPR35	core		gene filter
+GPR37L1	core		gene filter
+GPR39	core		gene filter
+GPR4	core		gene filter
+GPR42	little-studied UniProt tier		gene filter
+GPR45	core		gene filter
+GPR50	core		gene filter
+GPR52	core		gene filter
+GPR55	core		gene filter
+GPR6	core		gene filter
+GPR61	core		gene filter
+GPR62	core		gene filter
+GPR63	core		gene filter
+GPR65	core		gene filter
+GPR68	core		gene filter
+GPR75	core		gene filter
+GPR78	core		gene filter
+GPR83	core		gene filter
+GPR84	core		gene filter
+GPR85	core		gene filter
+GPR87	core		gene filter
+GPR88	core		gene filter
+GPRC5A	core		gene filter
+GPRC5B	core		gene filter
+GPRC5C	core		gene filter
+GPRC5D	core		gene filter
+GPRC6A	core		gene filter
+GRIA1	core		gene filter
+GRIA2	core		gene filter
+GRIA3	core		gene filter
+GRIA4	core		gene filter
+GRID1	core		gene filter
+GRID2	core		gene filter
+GRIK1	core		gene filter
+GRIK2	core		gene filter
+GRIK3	core		gene filter
+GRIK4	core		gene filter
+GRM1	core		gene filter
+GRM2	core		gene filter
+GRM3	core		gene filter
+GRM4	core		gene filter
+GRM5	core		gene filter
+GRM6	core		gene filter
+GRM7	core		gene filter
+GRM8	core		gene filter
+GRPR	core		gene filter
+GSG1L	core		gene filter
+GSG1L2	little-studied UniProt tier		gene filter
+GUCY2C	core		gene filter
+GUCY2D	core		gene filter
+GUCY2F	core		gene filter
+GYPA	core		gene filter
+GYPB	core		gene filter
+GYPC	core		gene filter
+GYPE	core		gene filter
+HAS3	core		gene filter
+HAVCR1	core		gene filter
+HAVCR2	core		gene filter
+HBEGF	core		gene filter
+HCAR1	core		gene filter
+HCAR2	core		gene filter
+HCAR3	core		gene filter
+HCN1	core		gene filter
+HCN2	core		gene filter
+HCN3	core		gene filter
+HCN4	core		gene filter
+HCRTR1	core		gene filter
+HCRTR2	core		gene filter
+HEG1	core		gene filter
+HEPACAM	core		gene filter
+HEPACAM2	core		gene filter
+HEPH	core		gene filter
+HEPHL1	core		gene filter
+HFE	core		gene filter
+HHLA2	core		gene filter
+HJV	core		gene filter
+HLA-A	core		gene filter
+HLA-B	core		gene filter
+HLA-C	core		gene filter
+HLA-E	overexpression tier		gene filter
+HLA-G	core		gene filter
+HPN	core		gene filter
+HRH1	core		gene filter
+HRH2	core		gene filter
+HRH3	core		gene filter
+HRH4	core		gene filter
+HS3ST2	core		gene filter
+HTR1A	core		gene filter
+HTR1B	core		gene filter
+HTR1D	core		gene filter
+HTR1E	core		gene filter
+HTR1F	core		gene filter
+HTR2A	core		gene filter
+HTR2B	core		gene filter
+HTR2C	core		gene filter
+HTR3A	core		gene filter
+HTR4	core		gene filter
+HTR5A	core		gene filter
+HTR6	core		gene filter
+HTR7	core		gene filter
+HYAL2	core		gene filter
+ICAM1	core		gene filter
+ICAM2	core		gene filter
+ICAM3	core		gene filter
+ICAM4	core		gene filter
+ICAM5	core		gene filter
+ICOS	core		gene filter
+ICOSLG	core		gene filter
+IFNAR1	core		gene filter
+IFNAR2	core		gene filter
+IFNGR1	core		gene filter
+IFNGR2	core		gene filter
+IFNLR1	core		gene filter
+IGDCC3	core		gene filter
+IGDCC4	core		gene filter
+IGF1R	core		gene filter
+IGFLR1	core		gene filter
+IGLON5	core		gene filter
+IGSF1	core		gene filter
+IGSF11	core		gene filter
+IGSF21	core		gene filter
+IGSF23	little-studied UniProt tier		gene filter
+IGSF3	core		gene filter
+IGSF5	core		gene filter
+IGSF8	core		gene filter
+IGSF9	core		gene filter
+IGSF9B	core		gene filter
+IL10RA	core		gene filter
+IL10RB	core		gene filter
+IL11RA	core		gene filter
+IL12RB1	core		gene filter
+IL12RB2	core		gene filter
+IL13RA1	core		gene filter
+IL13RA2	core		gene filter
+IL15RA	core		gene filter
+IL17RA	core		gene filter
+IL17RB	core		gene filter
+IL17RC	core		gene filter
+IL17RD	core		gene filter
+IL17RE	core		gene filter
+IL18R1	core		gene filter
+IL18RAP	core		gene filter
+IL1R1	core		gene filter
+IL1R2	core		gene filter
+IL1RAP	core		gene filter
+IL1RAPL1	core		gene filter
+IL1RAPL2	core		gene filter
+IL1RL1	core		gene filter
+IL1RL2	core		gene filter
+IL20RA	core		gene filter
+IL20RB	core		gene filter
+IL21R	core		gene filter
+IL22RA1	core		gene filter
+IL23R	core		gene filter
+IL27RA	core		gene filter
+IL2RA	core		gene filter
+IL2RB	core		gene filter
+IL2RG	core		gene filter
+IL31RA	core		gene filter
+IL3RA	core		gene filter
+IL4R	core		gene filter
+IL5RA	core		gene filter
+IL6R	core		gene filter
+IL6ST	core		gene filter
+IL7R	core		gene filter
+IL9R	core		gene filter
+ILDR1	core		gene filter
+ILDR2	core		gene filter
+IMPG2	core		gene filter
+INSR	core		gene filter
+INSRR	core		gene filter
+ISLR	core		gene filter
+ISLR2	core		gene filter
+ITFG1	core		gene filter
+ITGA1	core		gene filter
+ITGA10	core		gene filter
+ITGA11	core		gene filter
+ITGA2	core		gene filter
+ITGA3	core		gene filter
+ITGA4	core		gene filter
+ITGA5	core		gene filter
+ITGA6	core		gene filter
+ITGA7	core		gene filter
+ITGA8	core		gene filter
+ITGA9	core		gene filter
+ITGAV	core		gene filter
+ITGB1	core		gene filter
+ITGB2	core		gene filter
+ITGB3	core		gene filter
+ITGB5	core		gene filter
+ITGB6	core		gene filter
+ITGB7	core		gene filter
+ITGB8	core		gene filter
+ITM2B	core		gene filter
+IZUMO1R	core		gene filter
+IZUMO2	core		gene filter
+IZUMO3	little-studied UniProt tier		gene filter
+JAG1	core		gene filter
+JAG2	core		gene filter
+JAM2	core		gene filter
+JAM3	core		gene filter
+JAML	core		gene filter
+KCNA1	core		gene filter
+KCNA10	core		gene filter
+KCNA2	core		gene filter
+KCNA3	core		gene filter
+KCNA4	core		gene filter
+KCNA5	core		gene filter
+KCNA6	core		gene filter
+KCNA7	core		gene filter
+KCNB1	core		gene filter
+KCNB2	core		gene filter
+KCNC1	core		gene filter
+KCNC2	core		gene filter
+KCNC3	core		gene filter
+KCNC4	core		gene filter
+KCND1	core		gene filter
+KCND3	core		gene filter
+KCNE2	core		gene filter
+KCNE3	core		gene filter
+KCNE4	core		gene filter
+KCNE5	core		gene filter
+KCNH1	core		gene filter
+KCNH2	core		gene filter
+KCNH3	core		gene filter
+KCNH4	core		gene filter
+KCNH5	overexpression tier		gene filter
+KCNH6	core		gene filter
+KCNH7	core		gene filter
+KCNH8	core		gene filter
+KCNJ1	core		gene filter
+KCNJ10	core		gene filter
+KCNJ12	core		gene filter
+KCNJ13	core		gene filter
+KCNJ14	core		gene filter
+KCNJ15	core		gene filter
+KCNJ2	core		gene filter
+KCNJ4	core		gene filter
+KCNJ5	core		gene filter
+KCNJ6	core		gene filter
+KCNJ9	core		gene filter
+KCNK10	core		gene filter
+KCNK13	core		gene filter
+KCNK17	core		gene filter
+KCNK18	core		gene filter
+KCNK2	core		gene filter
+KCNK3	core		gene filter
+KCNK4	core		gene filter
+KCNK5	core		gene filter
+KCNK9	core		gene filter
+KCNMA1	core		gene filter
+KCNMB1	core		gene filter
+KCNMB2	core		gene filter
+KCNN1	core		gene filter
+KCNN2	core		gene filter
+KCNN3	core		gene filter
+KCNN4	core		gene filter
+KCNQ1	core		gene filter
+KCNQ2	core		gene filter
+KCNQ4	core		gene filter
+KCNQ5	core		gene filter
+KCNT1	core		gene filter
+KCNT2	core		gene filter
+KCNU1	core		gene filter
+KDR	core		gene filter
+KEL	core		gene filter
+KIAA0319	core		gene filter
+KIAA2013	little-studied UniProt tier		gene filter
+KIR2DL1	core		gene filter
+KIR2DL2	core		gene filter
+KIR2DL3	core		gene filter
+KIR2DL5A	core		gene filter
+KIR2DS2	core		gene filter
+KIR2DS4	core		gene filter
+KIR2DS5	core		gene filter
+KIR3DL1	core		gene filter
+KIR3DL2	core		gene filter
+KIR3DL3	core		gene filter
+KIR3DS1	core		gene filter
+KIRREL1	core		gene filter
+KIRREL2	core		gene filter
+KIRREL3	core		gene filter
+KISS1R	core		gene filter
+KIT	core		gene filter
+KITLG	core		gene filter
+KL	core		gene filter
+KLB	core		gene filter
+KLRB1	core		gene filter
+KLRF1	core		gene filter
+KLRF2	core		gene filter
+KLRG1	core		gene filter
+KREMEN1	core		gene filter
+KREMEN2	core		gene filter
+L1CAM	core		gene filter
+LAG3	core		gene filter
+LAIR1	core		gene filter
+LAX1	core		gene filter
+LAYN	core		gene filter
+LCTL	core		gene filter
+LDLR	core		gene filter
+LDLRAD3	core		gene filter
+LEPR	core		gene filter
+LGR4	core		gene filter
+LGR5	core		gene filter
+LGR6	core		gene filter
+LHCGR	core		gene filter
+LHFPL6	core		gene filter
+LIFR	core		gene filter
+LILRA1	core		gene filter
+LILRA2	core		gene filter
+LILRA5	core		gene filter
+LILRA6	core		gene filter
+LILRB1	core		gene filter
+LILRB2	core		gene filter
+LILRB3	core		gene filter
+LILRB4	core		gene filter
+LILRB5	core		gene filter
+LIM2	core		gene filter
+LINGO1	core		gene filter
+LINGO2	core		gene filter
+LINGO3	core		gene filter
+LINGO4	little-studied UniProt tier		gene filter
+LMBR1L	core		gene filter
+LMBRD2	core		gene filter
+LMLN	core		gene filter
+LPAR1	core		gene filter
+LPAR2	core		gene filter
+LPAR3	core		gene filter
+LPAR4	core		gene filter
+LPAR5	core		gene filter
+LPAR6	core		gene filter
+LRFN1	core		gene filter
+LRFN2	core		gene filter
+LRFN3	core		gene filter
+LRFN4	core		gene filter
+LRFN5	core		gene filter
+LRIG1	core		gene filter
+LRIG2	core		gene filter
+LRIG3	core		gene filter
+LRIT1	core		gene filter
+LRIT3	core		gene filter
+LRP10	core		gene filter
+LRP11	core		gene filter
+LRP12	core		gene filter
+LRP3	core		gene filter
+LRP5	core		gene filter
+LRP6	core		gene filter
+LRP8	core		gene filter
+LRRC15	core		gene filter
+LRRC19	core		gene filter
+LRRC25	core		gene filter
+LRRC26	core		gene filter
+LRRC32	core		gene filter
+LRRC37A3	little-studied UniProt tier		gene filter
+LRRC37B	core		gene filter
+LRRC38	core		gene filter
+LRRC4	core		gene filter
+LRRC4B	core		gene filter
+LRRC4C	core		gene filter
+LRRC55	core		gene filter
+LRRC8A	core		gene filter
+LRRC8B	core		gene filter
+LRRC8C	core		gene filter
+LRRC8D	core		gene filter
+LRRC8E	core		gene filter
+LRRN1	core		gene filter
+LRRN2	core		gene filter
+LRRN3	core		gene filter
+LRRN4	core		gene filter
+LRRN4CL	little-studied UniProt tier		gene filter
+LRRTM1	core		gene filter
+LRRTM2	core		gene filter
+LRRTM3	core		gene filter
+LRRTM4	core		gene filter
+LRTM1	core		gene filter
+LRTM2	core		gene filter
+LSAMP	core		gene filter
+LSMEM2	core		gene filter
+LSR	core		gene filter
+LTB	core		gene filter
+LTB4R	core		gene filter
+LTB4R2	core		gene filter
+LTBR	core		gene filter
+LVRN	core		gene filter
+LY6D	core		gene filter
+LY6E	core		gene filter
+LY6G6C	core		gene filter
+LY6G6D	core		gene filter
+LY6G6F	core		gene filter
+LY6H	core		gene filter
+LY6K	core		gene filter
+LY6L	core		gene filter
+LY6S	core		gene filter
+LY9	core		gene filter
+LYNX1	core		gene filter
+LYPD1	core		gene filter
+LYPD2	core		gene filter
+LYPD3	core		gene filter
+LYPD5	core		gene filter
+LYPD6	core		gene filter
+LYPD6B	core		gene filter
+LYPD8	core		gene filter
+LYSMD3	core		gene filter
+LYSMD4	little-studied UniProt tier		gene filter
+LYVE1	core		gene filter
+M6PR	overexpression tier		gene filter
+MADCAM1	core		gene filter
+MAG	core		gene filter
+MANSC4	little-studied UniProt tier		gene filter
+MARCO	core		gene filter
+MARVELD3	core		gene filter
+MAS1	core		gene filter
+MAS1L	core		gene filter
+MC1R	core		gene filter
+MC3R	core		gene filter
+MC4R	core		gene filter
+MC5R	core		gene filter
+MCAM	core		gene filter
+MCEMP1	core		gene filter
+MCHR1	core		gene filter
+MCHR2	core		gene filter
+MDGA1	core		gene filter
+MDGA2	core		gene filter
+MEGF10	core		gene filter
+MEGF11	core		gene filter
+MEGF9	core		gene filter
+MELTF	core		gene filter
+MEP1B	core		gene filter
+MERTK	core		gene filter
+MET	core		gene filter
+MFRP	core		gene filter
+MFSD2A	core		gene filter
+MFSD2B	core		gene filter
+MFSD6	core		gene filter
+MICA	core		gene filter
+MICB	core		gene filter
+MILR1	core		gene filter
+MIP	core		gene filter
+MLNR	core		gene filter
+MME	core		gene filter
+MMEL1	core		gene filter
+MMP14	core		gene filter
+MMP15	core		gene filter
+MMP16	core		gene filter
+MMP17	core		gene filter
+MMP24	core		gene filter
+MMP25	core		gene filter
+MOG	core		gene filter
+MOSMO	core		gene filter
+MPIG6B	core		gene filter
+MPL	core		gene filter
+MPZ	core		gene filter
+MPZL1	core		gene filter
+MPZL2	core		gene filter
+MPZL3	core		gene filter
+MR1	overexpression tier		gene filter
+MRAP	core		gene filter
+MRAP2	core		gene filter
+MRC1	core		gene filter
+MRC2	core		gene filter
+MRGPRD	core		gene filter
+MRGPRE	core		gene filter
+MRGPRF	core		gene filter
+MRGPRX1	core		gene filter
+MRGPRX2	core		gene filter
+MRGPRX3	core		gene filter
+MRGPRX4	core		gene filter
+MS4A1	core		gene filter
+MS4A10	little-studied UniProt tier		gene filter
+MS4A12	core		gene filter
+MS4A13	core		gene filter
+MS4A2	core		gene filter
+MS4A3	core		gene filter
+MS4A4A	core		gene filter
+MS4A5	little-studied UniProt tier		gene filter
+MS4A6A	core		gene filter
+MS4A7	core		gene filter
+MSLN	core		gene filter
+MSR1	core		gene filter
+MST1R	core		gene filter
+MTNR1A	core		gene filter
+MTNR1B	core		gene filter
+MUC1	core		gene filter
+MUC13	core		gene filter
+MUC15	core		gene filter
+MUC21	core		gene filter
+MUSK	core		gene filter
+MXRA8	core		gene filter
+MYADM	core		gene filter
+MYMK	core		gene filter
+NAALAD2	core		gene filter
+NAALADL1	core		gene filter
+NAALADL2	core		gene filter
+NCAM1	core		gene filter
+NCAM2	core		gene filter
+NCR1	core		gene filter
+NCR3	core		gene filter
+NCR3LG1	core		gene filter
+NECTIN1	core		gene filter
+NECTIN2	core		gene filter
+NECTIN3	core		gene filter
+NECTIN4	core		gene filter
+NEGR1	core		gene filter
+NEO1	core		gene filter
+NETO1	core		gene filter
+NETO2	core		gene filter
+NFAM1	core		gene filter
+NFASC	core		gene filter
+NGFR	core		gene filter
+NIPA2	core		gene filter
+NIPAL4	core		gene filter
+NLGN1	core		gene filter
+NLGN2	core		gene filter
+NLGN3	core		gene filter
+NLGN4X	core		gene filter
+NMBR	core		gene filter
+NMUR1	core		gene filter
+NMUR2	core		gene filter
+NOX1	core		gene filter
+NOX3	core		gene filter
+NPBWR1	core		gene filter
+NPBWR2	core		gene filter
+NPC1L1	core		gene filter
+NPDC1	core		gene filter
+NPFFR1	core		gene filter
+NPFFR2	core		gene filter
+NPHS1	core		gene filter
+NPR1	core		gene filter
+NPR2	core		gene filter
+NPR3	core		gene filter
+NPSR1	core		gene filter
+NPTN	core		gene filter
+NPY1R	core		gene filter
+NPY2R	core		gene filter
+NPY4R	core		gene filter
+NPY4R2	core		gene filter
+NPY5R	core		gene filter
+NRCAM	core		gene filter
+NRG1	core		gene filter
+NRG2	core		gene filter
+NRG3	core		gene filter
+NRG4	core		gene filter
+NRN1	core		gene filter
+NRN1L	core		gene filter
+NRP1	core		gene filter
+NRP2	core		gene filter
+NRROS	core		gene filter
+NRXN1	core		gene filter
+NRXN2	core		gene filter
+NRXN3	core		gene filter
+NT5E	core		gene filter
+NTM	core		gene filter
+NTNG1	core		gene filter
+NTNG2	core		gene filter
+NTRK1	core		gene filter
+NTRK2	core		gene filter
+NTRK3	core		gene filter
+NTSR1	core		gene filter
+NTSR2	core		gene filter
+NYX	core		gene filter
+OCLN	core		gene filter
+OCSTAMP	core		gene filter
+OLR1	core		gene filter
+OMG	core		gene filter
+OPALIN	core		gene filter
+OPCML	core		gene filter
+OPN1LW	core		gene filter
+OPN1MW	core		gene filter
+OPN1MW2	core		gene filter
+OPN1MW3	core		gene filter
+OPN1SW	core		gene filter
+OPN3	core		gene filter
+OPN4	core		gene filter
+OPN5	core		gene filter
+OPRD1	core		gene filter
+OPRK1	core		gene filter
+OPRL1	core		gene filter
+OPRM1	core		gene filter
+OR10AC1	little-studied UniProt tier		gene filter
+OR10C1	GPCR screen tier		gene filter
+OR10G2	little-studied UniProt tier		gene filter
+OR10G6	GPCR screen tier		gene filter
+OR10G7	little-studied UniProt tier		gene filter
+OR10H1	core		gene filter
+OR10H2	core		gene filter
+OR10H4	GPCR screen tier		gene filter
+OR10H5	core		gene filter
+OR10J1	little-studied UniProt tier		gene filter
+OR10J5	GPCR screen tier		gene filter
+OR10K1	GPCR screen tier		gene filter
+OR10K2	GPCR screen tier		gene filter
+OR10P1	core		gene filter
+OR10Q1	little-studied UniProt tier		gene filter
+OR10R2	little-studied UniProt tier		gene filter
+OR10T2	little-studied UniProt tier		gene filter
+OR10V1	GPCR screen tier		gene filter
+OR10Z1	little-studied UniProt tier		gene filter
+OR11A1	core		gene filter
+OR11H1	GPCR screen tier		gene filter
+OR11H12	little-studied UniProt tier		gene filter
+OR11H6	GPCR screen tier		gene filter
+OR11H7	core		gene filter
+OR11L1	core		gene filter
+OR12D1	little-studied UniProt tier		gene filter
+OR12D2	little-studied UniProt tier		gene filter
+OR13A1	core		gene filter
+OR13D1	little-studied UniProt tier		gene filter
+OR14A16	GPCR screen tier		gene filter
+OR14I1	core		gene filter
+OR14J1	GPCR screen tier		gene filter
+OR14L1	little-studied UniProt tier		gene filter
+OR1B1	GPCR screen tier		gene filter
+OR1C1	GPCR screen tier		gene filter
+OR1D2	core		gene filter
+OR1D5	GPCR screen tier		gene filter
+OR1E1	core		gene filter
+OR1E2	core		gene filter
+OR1F1	core		gene filter
+OR1J1	GPCR screen tier		gene filter
+OR1J2	GPCR screen tier		gene filter
+OR1J4	GPCR screen tier		gene filter
+OR1L8	little-studied UniProt tier		gene filter
+OR1M1	little-studied UniProt tier		gene filter
+OR1N1	little-studied UniProt tier		gene filter
+OR2A1	little-studied UniProt tier		gene filter
+OR2A4	core		gene filter
+OR2A42	little-studied UniProt tier		gene filter
+OR2A7	core		gene filter
+OR2AJ1	GPCR screen tier		gene filter
+OR2AK2	little-studied UniProt tier		gene filter
+OR2AP1	GPCR screen tier		gene filter
+OR2B11	core		gene filter
+OR2B2	GPCR screen tier		gene filter
+OR2B6	core		gene filter
+OR2C1	core		gene filter
+OR2C3	GPCR screen tier		gene filter
+OR2D2	GPCR screen tier		gene filter
+OR2G3	GPCR screen tier		gene filter
+OR2H1	core		gene filter
+OR2H2	core		gene filter
+OR2I1	core		gene filter
+OR2L13	core		gene filter
+OR2L2	little-studied UniProt tier		gene filter
+OR2L3	little-studied UniProt tier		gene filter
+OR2L5	little-studied UniProt tier		gene filter
+OR2L8	GPCR screen tier		gene filter
+OR2M3	core		gene filter
+OR2S2	little-studied UniProt tier		gene filter
+OR2T10	little-studied UniProt tier		gene filter
+OR2T11	core		gene filter
+OR2T29	core		gene filter
+OR2T33	GPCR screen tier		gene filter
+OR2T5	little-studied UniProt tier		gene filter
+OR2T8	little-studied UniProt tier		gene filter
+OR2V1	little-studied UniProt tier		gene filter
+OR2V2	GPCR screen tier		gene filter
+OR2W1	GPCR screen tier		gene filter
+OR2W3	core		gene filter
+OR2Y1	little-studied UniProt tier		gene filter
+OR3A1	core		gene filter
+OR3A2	core		gene filter
+OR3A3	core		gene filter
+OR4A16	GPCR screen tier		gene filter
+OR4A47	little-studied UniProt tier		gene filter
+OR4B1	core		gene filter
+OR4C13	core		gene filter
+OR4C5	GPCR screen tier		gene filter
+OR4C6	GPCR screen tier		gene filter
+OR4D1	GPCR screen tier		gene filter
+OR4D10	little-studied UniProt tier		gene filter
+OR4D2	GPCR screen tier		gene filter
+OR4D5	GPCR screen tier		gene filter
+OR4E2	core		gene filter
+OR4F16	GPCR screen tier		gene filter
+OR4F17	GPCR screen tier		gene filter
+OR4F5	GPCR screen tier		gene filter
+OR4F6	GPCR screen tier		gene filter
+OR4K15	GPCR screen tier		gene filter
+OR4K17	little-studied UniProt tier		gene filter
+OR4K2	GPCR screen tier		gene filter
+OR4M2B	little-studied UniProt tier		gene filter
+OR4N2	little-studied UniProt tier		gene filter
+OR4N4	core		gene filter
+OR4P4	GPCR screen tier		gene filter
+OR4Q2	GPCR screen tier		gene filter
+OR4S1	GPCR screen tier		gene filter
+OR4S2	GPCR screen tier		gene filter
+OR51A7	core		gene filter
+OR51B2	GPCR screen tier		gene filter
+OR51B4	core		gene filter
+OR51B5	core		gene filter
+OR51C1	little-studied UniProt tier		gene filter
+OR51E1	core		gene filter
+OR51E2	core		gene filter
+OR51G2	GPCR screen tier		gene filter
+OR51I1	little-studied UniProt tier		gene filter
+OR51T1	GPCR screen tier		gene filter
+OR51V1	GPCR screen tier		gene filter
+OR52A1	core		gene filter
+OR52B6	core		gene filter
+OR52D1	GPCR screen tier		gene filter
+OR52H1	little-studied UniProt tier		gene filter
+OR52J3	GPCR screen tier		gene filter
+OR52K1	GPCR screen tier		gene filter
+OR52K2	little-studied UniProt tier		gene filter
+OR52L1	GPCR screen tier		gene filter
+OR52N2	little-studied UniProt tier		gene filter
+OR52N4	little-studied UniProt tier		gene filter
+OR52P1	little-studied UniProt tier		gene filter
+OR56A3	little-studied UniProt tier		gene filter
+OR56B1	core		gene filter
+OR56B4	GPCR screen tier		gene filter
+OR5A2	core		gene filter
+OR5AK2	little-studied UniProt tier		gene filter
+OR5AL1	GPCR screen tier		gene filter
+OR5AN1	core		gene filter
+OR5AR1	GPCR screen tier		gene filter
+OR5AS1	GPCR screen tier		gene filter
+OR5AU1	little-studied UniProt tier		gene filter
+OR5B12	core		gene filter
+OR5B21	GPCR screen tier		gene filter
+OR5C1	little-studied UniProt tier		gene filter
+OR5D16	GPCR screen tier		gene filter
+OR5H6	little-studied UniProt tier		gene filter
+OR5J2	GPCR screen tier		gene filter
+OR5V1	core		gene filter
+OR6B2	little-studied UniProt tier		gene filter
+OR6B3	little-studied UniProt tier		gene filter
+OR6C1	little-studied UniProt tier		gene filter
+OR6C2	GPCR screen tier		gene filter
+OR6C3	core		gene filter
+OR6C4	GPCR screen tier		gene filter
+OR6C68	GPCR screen tier		gene filter
+OR6C70	little-studied UniProt tier		gene filter
+OR6C74	GPCR screen tier		gene filter
+OR6F1	GPCR screen tier		gene filter
+OR7A10	GPCR screen tier		gene filter
+OR7A17	GPCR screen tier		gene filter
+OR7A5	core		gene filter
+OR7C1	core		gene filter
+OR7C2	little-studied UniProt tier		gene filter
+OR7D4	core		gene filter
+OR7E24	core		gene filter
+OR7G1	GPCR screen tier		gene filter
+OR7G2	little-studied UniProt tier		gene filter
+OR7G3	little-studied UniProt tier		gene filter
+OR8B8	GPCR screen tier		gene filter
+OR8D1	core		gene filter
+OR8G3	little-studied UniProt tier		gene filter
+OR8G5	little-studied UniProt tier		gene filter
+OR8J2	little-studied UniProt tier		gene filter
+OR8K3	GPCR screen tier		gene filter
+OR8K5	GPCR screen tier		gene filter
+OR8S1	little-studied UniProt tier		gene filter
+OR8U1	GPCR screen tier		gene filter
+OR8U3	GPCR screen tier		gene filter
+OR8U8	GPCR screen tier		gene filter
+OR8U9	GPCR screen tier		gene filter
+OR9A2	GPCR screen tier		gene filter
+OR9A4	little-studied UniProt tier		gene filter
+OR9G1	little-studied UniProt tier		gene filter
+OR9G9	GPCR screen tier		gene filter
+ORAI1	core		gene filter
+ORAI2	core		gene filter
+ORAI3	core		gene filter
+OSMR	core		gene filter
+OTOA	core		gene filter
+OTOP1	core		gene filter
+OTOP2	core		gene filter
+OTOP3	core		gene filter
+OXER1	core		gene filter
+OXGR1	core		gene filter
+OXTR	GPCR screen tier		gene filter
+P2RX1	core		gene filter
+P2RX2	core		gene filter
+P2RX3	core		gene filter
+P2RX5	core		gene filter
+P2RX6	core		gene filter
+P2RX7	core		gene filter
+P2RY1	core		gene filter
+P2RY10	core		gene filter
+P2RY11	core		gene filter
+P2RY12	core		gene filter
+P2RY13	core		gene filter
+P2RY14	core		gene filter
+P2RY2	core		gene filter
+P2RY4	core		gene filter
+P2RY6	core		gene filter
+P2RY8	core		gene filter
+PACC1	core		gene filter
+PAM	core		gene filter
+PANX1	core		gene filter
+PANX3	core		gene filter
+PAQR5	core		gene filter
+PAQR6	core		gene filter
+PAQR7	core		gene filter
+PAQR8	core		gene filter
+PAQR9	core		gene filter
+PCDH1	core		gene filter
+PCDH10	core		gene filter
+PCDH12	core		gene filter
+PCDH17	core		gene filter
+PCDH18	core		gene filter
+PCDH19	core		gene filter
+PCDH7	core		gene filter
+PCDH8	core		gene filter
+PCDH9	core		gene filter
+PCDHA1	core		gene filter
+PCDHA10	core		gene filter
+PCDHA11	core		gene filter
+PCDHA12	core		gene filter
+PCDHA13	core		gene filter
+PCDHA2	core		gene filter
+PCDHA3	core		gene filter
+PCDHA5	core		gene filter
+PCDHA6	core		gene filter
+PCDHA7	core		gene filter
+PCDHA9	core		gene filter
+PCDHAC1	core		gene filter
+PCDHAC2	core		gene filter
+PCDHB10	core		gene filter
+PCDHB11	core		gene filter
+PCDHB12	core		gene filter
+PCDHB13	core		gene filter
+PCDHB14	core		gene filter
+PCDHB15	core		gene filter
+PCDHB16	core		gene filter
+PCDHB2	core		gene filter
+PCDHB3	core		gene filter
+PCDHB4	core		gene filter
+PCDHB5	core		gene filter
+PCDHB6	core		gene filter
+PCDHB7	core		gene filter
+PCDHB8	core		gene filter
+PCDHB9	core		gene filter
+PCDHGA1	core		gene filter
+PCDHGA10	core		gene filter
+PCDHGA11	core		gene filter
+PCDHGA12	core		gene filter
+PCDHGA2	core		gene filter
+PCDHGA4	core		gene filter
+PCDHGA5	core		gene filter
+PCDHGA6	core		gene filter
+PCDHGA7	core		gene filter
+PCDHGA8	core		gene filter
+PCDHGA9	core		gene filter
+PCDHGB1	core		gene filter
+PCDHGB2	core		gene filter
+PCDHGB3	core		gene filter
+PCDHGB4	core		gene filter
+PCDHGB5	core		gene filter
+PCDHGB6	core		gene filter
+PCDHGB7	core		gene filter
+PCDHGC3	core		gene filter
+PCDHGC4	core		gene filter
+PCDHGC5	core		gene filter
+PDCD1	core		gene filter
+PDCD1LG2	core		gene filter
+PDGFRA	core		gene filter
+PDGFRB	core		gene filter
+PDPN	core		gene filter
+PEAR1	core		gene filter
+PECAM1	core		gene filter
+PERP	core		gene filter
+PGAP6	core		gene filter
+PHEX	core		gene filter
+PIANP	core		gene filter
+PIGR	core		gene filter
+PIK3IP1	core		gene filter
+PILRA	core		gene filter
+PILRB	core		gene filter
+PKD2L1	core		gene filter
+PLA2R1	core		gene filter
+PLAUR	core		gene filter
+PLB1	core		gene filter
+PLET1	core		gene filter
+PLLP	core		gene filter
+PLPP1	core		gene filter
+PLPP2	core		gene filter
+PLPP3	core		gene filter
+PLPP4	core		gene filter
+PLPPR1	core		gene filter
+PLPPR2	core		gene filter
+PLPPR3	core		gene filter
+PLPPR4	core		gene filter
+PLPPR5	core		gene filter
+PLVAP	core		gene filter
+PLXDC1	core		gene filter
+PLXDC2	core		gene filter
+PLXNC1	core		gene filter
+PMEPA1	core		gene filter
+PMP22	core		gene filter
+PODXL	core		gene filter
+PODXL2	core		gene filter
+POPDC1	core		gene filter
+POPDC3	core		gene filter
+PRIMA1	core		gene filter
+PRLHR	core		gene filter
+PRLR	core		gene filter
+PRND	core		gene filter
+PRNP	core		gene filter
+PROCR	core		gene filter
+PROKR1	core		gene filter
+PROKR2	core		gene filter
+PROM1	core		gene filter
+PROM2	core		gene filter
+PRRG1	core		gene filter
+PRRG2	core		gene filter
+PRRG3	core		gene filter
+PRRG4	core		gene filter
+PRSS21	core		gene filter
+PRSS41	core		gene filter
+PRSS55	core		gene filter
+PRSS8	core		gene filter
+PRTG	core		gene filter
+PSCA	core		gene filter
+PTAFR	core		gene filter
+PTCH1	core		gene filter
+PTCH2	core		gene filter
+PTCHD1	core		gene filter
+PTGDR	core		gene filter
+PTGDR2	core		gene filter
+PTGER1	core		gene filter
+PTGER2	core		gene filter
+PTGER3	core		gene filter
+PTGER4	core		gene filter
+PTGFR	core		gene filter
+PTGFRN	core		gene filter
+PTGIR	core		gene filter
+PTH1R	core		gene filter
+PTH2R	core		gene filter
+PTK7	core		gene filter
+PTPRA	core		gene filter
+PTPRC	core		gene filter
+PTPRG	core		gene filter
+PTPRH	core		gene filter
+PTPRJ	core		gene filter
+PTPRK	core		gene filter
+PTPRM	core		gene filter
+PTPRO	core		gene filter
+PTPRT	core		gene filter
+PTPRU	core		gene filter
+PTTG1IP2	little-studied UniProt tier		gene filter
+PVR	core		gene filter
+PVRIG	core		gene filter
+QRFPR	core		gene filter
+RAET1E	core		gene filter
+RAET1G	core		gene filter
+RAET1L	core		gene filter
+RECK	core		gene filter
+RELL1	core		gene filter
+RELL2	little-studied UniProt tier		gene filter
+RELT	core		gene filter
+RET	core		gene filter
+RGMA	core		gene filter
+RGMB	overexpression tier		gene filter
+RHAG	core		gene filter
+RHBDF2	core		gene filter
+RHBDL2	core		gene filter
+RHBG	core		gene filter
+RHCG	core		gene filter
+RHO	core		gene filter
+RNF130	core		gene filter
+RNF215	little-studied UniProt tier		gene filter
+RNF43	core		gene filter
+RNFT2	little-studied UniProt tier		gene filter
+ROBO1	core		gene filter
+ROBO2	core		gene filter
+ROBO3	core		gene filter
+ROBO4	core		gene filter
+ROR1	core		gene filter
+ROR2	core		gene filter
+RRH	core		gene filter
+RTN4R	core		gene filter
+RTN4RL1	core		gene filter
+RTN4RL2	core		gene filter
+RXFP1	core		gene filter
+RXFP2	core		gene filter
+RXFP3	core		gene filter
+RXFP4	core		gene filter
+RYK	core		gene filter
+S1PR1	core		gene filter
+S1PR2	core		gene filter
+S1PR3	core		gene filter
+S1PR4	core		gene filter
+S1PR5	core		gene filter
+SCARA3	core		gene filter
+SCARA5	core		gene filter
+SCARB1	core		gene filter
+SCARF1	core		gene filter
+SCARF2	core		gene filter
+SCART1	core		gene filter
+SCN1B	core		gene filter
+SCN2B	core		gene filter
+SCN3B	core		gene filter
+SCN4B	core		gene filter
+SCNN1A	core		gene filter
+SCNN1D	core		gene filter
+SCTR	core		gene filter
+SDC1	core		gene filter
+SDC2	core		gene filter
+SDC3	core		gene filter
+SDC4	core		gene filter
+SEL1L2	little-studied UniProt tier		gene filter
+SELE	core		gene filter
+SELL	core		gene filter
+SELP	core		gene filter
+SELPLG	core		gene filter
+SEMA4A	core		gene filter
+SEMA4B	core		gene filter
+SEMA4C	core		gene filter
+SEMA4D	core		gene filter
+SEMA4F	core		gene filter
+SEMA4G	core		gene filter
+SEMA5A	core		gene filter
+SEMA6A	core		gene filter
+SEMA6B	core		gene filter
+SEMA6C	core		gene filter
+SEMA6D	core		gene filter
+SEMA7A	core		gene filter
+SERINC1	core		gene filter
+SERINC2	core		gene filter
+SERINC3	core		gene filter
+SERINC5	core		gene filter
+SERTM2	little-studied UniProt tier		gene filter
+SEZ6	core		gene filter
+SEZ6L	core		gene filter
+SEZ6L2	core		gene filter
+SGMS2	core		gene filter
+SHISA6	core		gene filter
+SHISA7	core		gene filter
+SHISA9	core		gene filter
+SHISAL1	little-studied UniProt tier		gene filter
+SIGIRR	core		gene filter
+SIGLEC10	core		gene filter
+SIGLEC11	core		gene filter
+SIGLEC12	core		gene filter
+SIGLEC14	core		gene filter
+SIGLEC15	core		gene filter
+SIGLEC5	core		gene filter
+SIGLEC6	core		gene filter
+SIGLEC7	core		gene filter
+SIGLEC8	core		gene filter
+SIGLEC9	core		gene filter
+SIRPA	core		gene filter
+SIRPB2	core		gene filter
+SIRPG	core		gene filter
+SLAMF1	core		gene filter
+SLAMF6	core		gene filter
+SLAMF7	core		gene filter
+SLAMF8	core		gene filter
+SLAMF9	core		gene filter
+SLC10A1	core		gene filter
+SLC10A2	core		gene filter
+SLC10A5	core		gene filter
+SLC10A6	core		gene filter
+SLC12A2	core		gene filter
+SLC12A3	core		gene filter
+SLC12A4	core		gene filter
+SLC12A5	core		gene filter
+SLC12A6	core		gene filter
+SLC12A7	core		gene filter
+SLC12A8	core		gene filter
+SLC13A1	core		gene filter
+SLC13A2	core		gene filter
+SLC13A3	core		gene filter
+SLC13A4	core		gene filter
+SLC13A5	core		gene filter
+SLC14A1	core		gene filter
+SLC14A2	core		gene filter
+SLC15A1	core		gene filter
+SLC15A2	core		gene filter
+SLC16A1	core		gene filter
+SLC16A10	core		gene filter
+SLC16A12	core		gene filter
+SLC16A14	core		gene filter
+SLC16A2	core		gene filter
+SLC16A3	core		gene filter
+SLC16A4	core		gene filter
+SLC16A5	core		gene filter
+SLC16A6	core		gene filter
+SLC16A7	core		gene filter
+SLC16A8	core		gene filter
+SLC16A9	core		gene filter
+SLC17A1	core		gene filter
+SLC17A2	core		gene filter
+SLC17A3	core		gene filter
+SLC17A4	core		gene filter
+SLC19A1	core		gene filter
+SLC19A2	core		gene filter
+SLC19A3	core		gene filter
+SLC1A1	core		gene filter
+SLC1A2	core		gene filter
+SLC1A3	core		gene filter
+SLC1A4	core		gene filter
+SLC1A5	core		gene filter
+SLC1A6	core		gene filter
+SLC1A7	core		gene filter
+SLC20A1	core		gene filter
+SLC20A2	core		gene filter
+SLC22A1	core		gene filter
+SLC22A11	core		gene filter
+SLC22A12	core		gene filter
+SLC22A13	core		gene filter
+SLC22A15	core		gene filter
+SLC22A16	core		gene filter
+SLC22A17	core		gene filter
+SLC22A2	core		gene filter
+SLC22A24	core		gene filter
+SLC22A25	little-studied UniProt tier		gene filter
+SLC22A3	core		gene filter
+SLC22A4	core		gene filter
+SLC22A5	core		gene filter
+SLC22A6	core		gene filter
+SLC22A7	core		gene filter
+SLC22A8	core		gene filter
+SLC22A9	core		gene filter
+SLC23A1	core		gene filter
+SLC23A2	core		gene filter
+SLC24A1	core		gene filter
+SLC24A2	core		gene filter
+SLC24A3	core		gene filter
+SLC24A4	core		gene filter
+SLC26A1	core		gene filter
+SLC26A11	core		gene filter
+SLC26A2	core		gene filter
+SLC26A3	core		gene filter
+SLC26A4	core		gene filter
+SLC26A5	core		gene filter
+SLC26A6	core		gene filter
+SLC26A7	core		gene filter
+SLC26A8	core		gene filter
+SLC26A9	core		gene filter
+SLC28A1	core		gene filter
+SLC28A2	core		gene filter
+SLC28A3	core		gene filter
+SLC29A1	core		gene filter
+SLC29A2	core		gene filter
+SLC29A4	core		gene filter
+SLC2A1	core		gene filter
+SLC2A11	core		gene filter
+SLC2A12	overexpression tier		gene filter
+SLC2A14	core		gene filter
+SLC2A2	core		gene filter
+SLC2A3	core		gene filter
+SLC2A4	overexpression tier		gene filter
+SLC2A5	core		gene filter
+SLC2A7	core		gene filter
+SLC2A9	core		gene filter
+SLC30A1	core		gene filter
+SLC30A10	core		gene filter
+SLC31A1	core		gene filter
+SLC33A2	little-studied UniProt tier		gene filter
+SLC34A1	core		gene filter
+SLC34A2	core		gene filter
+SLC34A3	core		gene filter
+SLC35F2	core		gene filter
+SLC35G2	core		gene filter
+SLC36A1	core		gene filter
+SLC36A2	core		gene filter
+SLC38A1	core		gene filter
+SLC38A12	little-studied UniProt tier		gene filter
+SLC38A2	core		gene filter
+SLC38A3	core		gene filter
+SLC38A4	core		gene filter
+SLC38A5	core		gene filter
+SLC38A6	core		gene filter
+SLC38A8	core		gene filter
+SLC39A1	core		gene filter
+SLC39A10	core		gene filter
+SLC39A12	core		gene filter
+SLC39A14	core		gene filter
+SLC39A2	core		gene filter
+SLC39A3	core		gene filter
+SLC39A4	core		gene filter
+SLC39A5	core		gene filter
+SLC39A6	core		gene filter
+SLC39A8	core		gene filter
+SLC3A2	core		gene filter
+SLC40A1	core		gene filter
+SLC41A1	core		gene filter
+SLC41A2	core		gene filter
+SLC43A1	core		gene filter
+SLC43A2	core		gene filter
+SLC43A3	core		gene filter
+SLC44A1	core		gene filter
+SLC44A2	core		gene filter
+SLC44A3	core		gene filter
+SLC44A4	core		gene filter
+SLC44A5	core		gene filter
+SLC46A1	core		gene filter
+SLC46A2	core		gene filter
+SLC47A1	core		gene filter
+SLC47A2	core		gene filter
+SLC4A1	core		gene filter
+SLC4A10	core		gene filter
+SLC4A11	core		gene filter
+SLC4A2	core		gene filter
+SLC4A3	core		gene filter
+SLC4A4	core		gene filter
+SLC4A7	core		gene filter
+SLC4A8	core		gene filter
+SLC4A9	core		gene filter
+SLC52A1	core		gene filter
+SLC52A2	core		gene filter
+SLC52A3	core		gene filter
+SLC5A1	core		gene filter
+SLC5A10	core		gene filter
+SLC5A11	core		gene filter
+SLC5A12	core		gene filter
+SLC5A2	core		gene filter
+SLC5A3	core		gene filter
+SLC5A4	core		gene filter
+SLC5A5	core		gene filter
+SLC5A6	core		gene filter
+SLC5A8	core		gene filter
+SLC5A9	core		gene filter
+SLC60A2	core		gene filter
+SLC61A1	core		gene filter
+SLC67A1	core		gene filter
+SLC68A1	core		gene filter
+SLC6A1	core		gene filter
+SLC6A11	core		gene filter
+SLC6A12	core		gene filter
+SLC6A13	core		gene filter
+SLC6A14	core		gene filter
+SLC6A15	core		gene filter
+SLC6A16	core		gene filter
+SLC6A2	core		gene filter
+SLC6A20	core		gene filter
+SLC6A3	core		gene filter
+SLC6A4	core		gene filter
+SLC6A5	core		gene filter
+SLC6A6	core		gene filter
+SLC6A7	core		gene filter
+SLC6A8	core		gene filter
+SLC6A9	core		gene filter
+SLC71A2	little-studied UniProt tier		gene filter
+SLC7A1	core		gene filter
+SLC7A10	core		gene filter
+SLC7A11	core		gene filter
+SLC7A2	core		gene filter
+SLC7A3	core		gene filter
+SLC7A4	core		gene filter
+SLC7A5	core		gene filter
+SLC7A6	core		gene filter
+SLC7A7	core		gene filter
+SLC7A8	core		gene filter
+SLC8A1	core		gene filter
+SLC8A2	core		gene filter
+SLC8A3	core		gene filter
+SLC9A1	core		gene filter
+SLC9A2	core		gene filter
+SLC9A3	core		gene filter
+SLC9A4	core		gene filter
+SLC9A8	core		gene filter
+SLC9B1	core		gene filter
+SLC9C1	core		gene filter
+SLC9C2	core		gene filter
+SLC9D1	little-studied UniProt tier		gene filter
+SLCO1A2	core		gene filter
+SLCO1B1	core		gene filter
+SLCO1B3	core		gene filter
+SLCO1B3-SLCO1B7	little-studied UniProt tier		gene filter
+SLCO1C1	core		gene filter
+SLCO2A1	core		gene filter
+SLCO2B1	core		gene filter
+SLCO3A1	core		gene filter
+SLCO4A1	core		gene filter
+SLCO4C1	core		gene filter
+SLCO5A1	core		gene filter
+SLCO6A1	core		gene filter
+SLITRK1	core		gene filter
+SLITRK2	core		gene filter
+SLITRK3	core		gene filter
+SLITRK4	core		gene filter
+SLITRK5	core		gene filter
+SLITRK6	core		gene filter
+SMAGP	core		gene filter
+SMIM7	little-studied UniProt tier		gene filter
+SMO	core		gene filter
+SMPDL3B	core		gene filter
+SNORC	core		gene filter
+SORCS1	core		gene filter
+SORCS2	core		gene filter
+SORCS3	core		gene filter
+SORT1	core		gene filter
+SPACA1	core		gene filter
+SPACA4	core		gene filter
+SPACA6	core		gene filter
+SPAM1	core		gene filter
+SPINT1	core		gene filter
+SPINT2	core		gene filter
+SPN	core		gene filter
+SPNS2	core		gene filter
+SPPL2B	core		gene filter
+SPRN	core		gene filter
+SSTR1	core		gene filter
+SSTR2	core		gene filter
+SSTR3	core		gene filter
+SSTR4	core		gene filter
+SSTR5	core		gene filter
+ST14	core		gene filter
+STEAP1	core		gene filter
+STEAP1B	core		gene filter
+STEAP2	core		gene filter
+STEAP3	core		gene filter
+STEAP4	core		gene filter
+STRA6	core		gene filter
+SUCNR1	core		gene filter
+SUSD2	core		gene filter
+SUSD3	core		gene filter
+SUSD4	core		gene filter
+SUSD6	core		gene filter
+TAAR1	GPCR screen tier		gene filter
+TAAR2	GPCR screen tier		gene filter
+TAAR5	core		gene filter
+TAAR6	core		gene filter
+TACR1	core		gene filter
+TACR2	core		gene filter
+TACR3	core		gene filter
+TACSTD2	core		gene filter
+TARM1	core		gene filter
+TAS1R1	core		gene filter
+TAS1R2	core		gene filter
+TAS1R3	core		gene filter
+TAS2R1	core		gene filter
+TAS2R10	core		gene filter
+TAS2R13	core		gene filter
+TAS2R14	core		gene filter
+TAS2R19	core		gene filter
+TAS2R20	core		gene filter
+TAS2R3	core		gene filter
+TAS2R31	core		gene filter
+TAS2R38	core		gene filter
+TAS2R39	core		gene filter
+TAS2R4	core		gene filter
+TAS2R41	core		gene filter
+TAS2R42	little-studied UniProt tier		gene filter
+TAS2R43	core		gene filter
+TAS2R45	core		gene filter
+TAS2R46	core		gene filter
+TAS2R5	core		gene filter
+TAS2R50	core		gene filter
+TAS2R60	core		gene filter
+TAS2R7	core		gene filter
+TAS2R8	core		gene filter
+TAS2R9	core		gene filter
+TBXA2R	core		gene filter
+TCTA	core		gene filter
+TEK	core		gene filter
+TEX101	core		gene filter
+TEX29	little-studied UniProt tier		gene filter
+TEX38	little-studied UniProt tier		gene filter
+TFPI	core		gene filter
+TFR2	core		gene filter
+TFRC	core		gene filter
+TGFA	core		gene filter
+TGFBR1	core		gene filter
+TGFBR2	core		gene filter
+TGFBR3	core		gene filter
+TGFBR3L	core		gene filter
+THBD	core		gene filter
+THSD1	core		gene filter
+THSD7A	core		gene filter
+THY1	core		gene filter
+TIE1	core		gene filter
+TIGIT	core		gene filter
+TIMD4	core		gene filter
+TLCD1	core		gene filter
+TLCD2	little-studied UniProt tier		gene filter
+TLR1	core		gene filter
+TLR10	core		gene filter
+TLR2	core		gene filter
+TLR4	core		gene filter
+TLR5	core		gene filter
+TLR6	core		gene filter
+TM4SF1	core		gene filter
+TM4SF18	core		gene filter
+TM4SF4	core		gene filter
+TM4SF5	core		gene filter
+TM7SF3	core		gene filter
+TM9SF1	core		gene filter
+TMC2	core		gene filter
+TMC4	core		gene filter
+TMDD1	little-studied UniProt tier		gene filter
+TMEFF1	core		gene filter
+TMEFF2	core		gene filter
+TMEM106A	core		gene filter
+TMEM114	core		gene filter
+TMEM119	core		gene filter
+TMEM123	core		gene filter
+TMEM132A	core		gene filter
+TMEM132B	core		gene filter
+TMEM132D	core		gene filter
+TMEM132E	core		gene filter
+TMEM134	little-studied UniProt tier		gene filter
+TMEM139	little-studied UniProt tier		gene filter
+TMEM145	core		gene filter
+TMEM150A	core		gene filter
+TMEM150C	core		gene filter
+TMEM154	core		gene filter
+TMEM158	core		gene filter
+TMEM169	little-studied UniProt tier		gene filter
+TMEM170B	little-studied UniProt tier		gene filter
+TMEM174	little-studied UniProt tier		gene filter
+TMEM181	core		gene filter
+TMEM182	core		gene filter
+TMEM184A	core		gene filter
+TMEM190	little-studied UniProt tier		gene filter
+TMEM198	little-studied UniProt tier		gene filter
+TMEM204	core		gene filter
+TMEM205	core		gene filter
+TMEM210	little-studied UniProt tier		gene filter
+TMEM219	core		gene filter
+TMEM222	little-studied UniProt tier		gene filter
+TMEM225	little-studied UniProt tier		gene filter
+TMEM229B	little-studied UniProt tier		gene filter
+TMEM238	little-studied UniProt tier		gene filter
+TMEM26	core		gene filter
+TMEM266	little-studied UniProt tier		gene filter
+TMEM268	little-studied UniProt tier		gene filter
+TMEM273	little-studied UniProt tier		gene filter
+TMEM47	core		gene filter
+TMEM63B	core		gene filter
+TMEM67	core		gene filter
+TMEM81	core		gene filter
+TMEM86A	little-studied UniProt tier		gene filter
+TMEM86B	little-studied UniProt tier		gene filter
+TMEM89	little-studied UniProt tier		gene filter
+TMEM8B	core		gene filter
+TMEM95	core		gene filter
+TMIGD1	core		gene filter
+TMIGD2	core		gene filter
+TMPRSS11A	core		gene filter
+TMPRSS11B	core		gene filter
+TMPRSS11D	core		gene filter
+TMPRSS11E	core		gene filter
+TMPRSS11F	core		gene filter
+TMPRSS13	core		gene filter
+TMPRSS15	core		gene filter
+TMPRSS2	core		gene filter
+TMPRSS3	core		gene filter
+TMPRSS4	core		gene filter
+TMPRSS5	core		gene filter
+TMPRSS6	core		gene filter
+TMPRSS7	core		gene filter
+TMPRSS9	core		gene filter
+TNF	core		gene filter
+TNFRSF10A	core		gene filter
+TNFRSF10B	core		gene filter
+TNFRSF10C	core		gene filter
+TNFRSF10D	core		gene filter
+TNFRSF11A	core		gene filter
+TNFRSF12A	core		gene filter
+TNFRSF13B	core		gene filter
+TNFRSF13C	core		gene filter
+TNFRSF14	core		gene filter
+TNFRSF17	core		gene filter
+TNFRSF18	core		gene filter
+TNFRSF19	core		gene filter
+TNFRSF1A	core		gene filter
+TNFRSF1B	core		gene filter
+TNFRSF21	core		gene filter
+TNFRSF25	core		gene filter
+TNFRSF4	core		gene filter
+TNFRSF8	core		gene filter
+TNFRSF9	core		gene filter
+TNFSF10	core		gene filter
+TNFSF11	overexpression tier		gene filter
+TNFSF12	core		gene filter
+TNFSF13B	core		gene filter
+TNFSF14	core		gene filter
+TNFSF15	core		gene filter
+TNFSF18	core		gene filter
+TNFSF4	core		gene filter
+TNFSF8	core		gene filter
+TNFSF9	core		gene filter
+TP53I13	little-studied UniProt tier		gene filter
+TPBG	core		gene filter
+TPBGL	little-studied UniProt tier		gene filter
+TPO	core		gene filter
+TPRA1	core		gene filter
+TPSG1	core		gene filter
+TRABD2A	core		gene filter
+TRABD2B	core		gene filter
+TREH	core		gene filter
+TREML2	core		gene filter
+TRHDE	core		gene filter
+TRHR	core		gene filter
+TRIL	core		gene filter
+TRPA1	core		gene filter
+TRPC1	core		gene filter
+TRPC3	core		gene filter
+TRPC4	core		gene filter
+TRPC5	core		gene filter
+TRPC6	core		gene filter
+TRPC7	core		gene filter
+TRPM2	core		gene filter
+TRPM4	core		gene filter
+TRPM5	core		gene filter
+TRPM8	core		gene filter
+TRPV1	core		gene filter
+TRPV3	core		gene filter
+TRPV4	core		gene filter
+TRPV5	core		gene filter
+TRPV6	core		gene filter
+TSHR	core		gene filter
+TSPAN1	core		gene filter
+TSPAN10	core		gene filter
+TSPAN11	core		gene filter
+TSPAN12	core		gene filter
+TSPAN13	core		gene filter
+TSPAN14	core		gene filter
+TSPAN15	core		gene filter
+TSPAN16	core		gene filter
+TSPAN17	core		gene filter
+TSPAN18	core		gene filter
+TSPAN2	core		gene filter
+TSPAN31	core		gene filter
+TSPAN33	core		gene filter
+TSPAN4	core		gene filter
+TSPAN5	core		gene filter
+TSPAN6	core		gene filter
+TSPAN7	core		gene filter
+TSPAN8	core		gene filter
+TSPAN9	core		gene filter
+TSPO2	little-studied UniProt tier		gene filter
+TTYH1	core		gene filter
+TTYH2	core		gene filter
+TTYH3	core		gene filter
+TYRO3	core		gene filter
+ULBP1	core		gene filter
+ULBP2	core		gene filter
+ULBP3	core		gene filter
+UMOD	core		gene filter
+UNC5A	core		gene filter
+UNC5B	core		gene filter
+UNC5C	core		gene filter
+UNC5D	core		gene filter
+UNC93A	core		gene filter
+UPK1B	core		gene filter
+UPK3BL1	little-studied UniProt tier		gene filter
+UPK3BL2	little-studied UniProt tier		gene filter
+UTS2R	core		gene filter
+VANGL1	core		gene filter
+VANGL2	core		gene filter
+VASN	core		gene filter
+VCAM1	core		gene filter
+VIPR1	core		gene filter
+VIPR2	core		gene filter
+VLDLR	core		gene filter
+VN1R1	core		gene filter
+VN1R2	GPCR screen tier		gene filter
+VN1R4	GPCR screen tier		gene filter
+VNN1	core		gene filter
+VNN2	core		gene filter
+VSIG1	core		gene filter
+VSIG10	core		gene filter
+VSIG10L	core		gene filter
+VSIG2	core		gene filter
+VSIG4	core		gene filter
+VSIG8	core		gene filter
+VSIR	core		gene filter
+VSTM1	core		gene filter
+VSTM4	little-studied UniProt tier		gene filter
+VSTM5	core		gene filter
+VTCN1	core		gene filter
+XCR1	core		gene filter
+XG	core		gene filter
+XK	core		gene filter
+XKR3	core		gene filter
+XKR4	core		gene filter
+XKR5	little-studied UniProt tier		gene filter
+XKR6	core		gene filter
+XKR7	little-studied UniProt tier		gene filter
+XKR8	core		gene filter
+XKR9	core		gene filter
+XPNPEP2	core		gene filter
+XPR1	core		gene filter
+ZACN	core		gene filter
+ZNRF3	core		gene filter
+ZP1	core		gene filter
+ZP2	core		gene filter
+ZP3	core		gene filter
+ZP4	core		gene filter
+ITGA2B	dated addition	2026-11-21	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-21: every required partner >= 10 TPM in >= 2 of the 42 S2E18 shortlist lines (HPA v23 29 lines, ARCHS4 v2.5 13 lines at 15 CPM); coreceptor_host_line.py
+UPK3A	dated addition	2026-11-21	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-21: every required partner >= 10 TPM in >= 2 of the 42 S2E18 shortlist lines (HPA v23 29 lines, ARCHS4 v2.5 13 lines at 15 CPM); coreceptor_host_line.py
+ITGAD	dated addition	2026-11-21	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-21: every required partner >= 10 TPM in >= 2 of the 42 S2E18 shortlist lines (HPA v23 29 lines, ARCHS4 v2.5 13 lines at 15 CPM); coreceptor_host_line.py
+ITGAL	dated addition	2026-11-21	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-21: every required partner >= 10 TPM in >= 2 of the 42 S2E18 shortlist lines (HPA v23 29 lines, ARCHS4 v2.5 13 lines at 15 CPM); coreceptor_host_line.py
+ITGAM	dated addition	2026-11-21	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-21: every required partner >= 10 TPM in >= 2 of the 42 S2E18 shortlist lines (HPA v23 29 lines, ARCHS4 v2.5 13 lines at 15 CPM); coreceptor_host_line.py
+ITGAX	dated addition	2026-11-21	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-21: every required partner >= 10 TPM in >= 2 of the 42 S2E18 shortlist lines (HPA v23 29 lines, ARCHS4 v2.5 13 lines at 15 CPM); coreceptor_host_line.py
+CHRNB4	dated addition	2026-11-21	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-21: every required partner >= 10 TPM in >= 2 of the 42 S2E18 shortlist lines (HPA v23 29 lines, ARCHS4 v2.5 13 lines at 15 CPM); coreceptor_host_line.py
+CNTNAP1	dated addition	2026-11-21	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-21: every required partner >= 10 TPM in >= 2 of the 42 S2E18 shortlist lines (HPA v23 29 lines, ARCHS4 v2.5 13 lines at 15 CPM); coreceptor_host_line.py
+GRIN1	dated addition	2026-11-21	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-21: every required partner >= 10 TPM in >= 2 of the 42 S2E18 shortlist lines (HPA v23 29 lines, ARCHS4 v2.5 13 lines at 15 CPM); coreceptor_host_line.py
+KLRK1	dated addition	2026-11-21	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-21: every required partner >= 10 TPM in >= 2 of the 42 S2E18 shortlist lines (HPA v23 29 lines, ARCHS4 v2.5 13 lines at 15 CPM); coreceptor_host_line.py
+SLC51A	dated addition	2026-11-21	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-21: every required partner >= 10 TPM in >= 2 of the 42 S2E18 shortlist lines (HPA v23 29 lines, ARCHS4 v2.5 13 lines at 15 CPM); coreceptor_host_line.py
+CD300LB	dated addition	2026-11-21	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-21: every required partner >= 10 TPM in >= 2 of the 42 S2E18 shortlist lines (HPA v23 29 lines, ARCHS4 v2.5 13 lines at 15 CPM); coreceptor_host_line.py
+CD79B	dated addition	2026-11-21	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-21: every required partner >= 10 TPM in >= 2 of the 42 S2E18 shortlist lines (HPA v23 29 lines, ARCHS4 v2.5 13 lines at 15 CPM); coreceptor_host_line.py
+GABBR1	dated addition	2026-11-21	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-21: every required partner >= 10 TPM in >= 2 of the 42 S2E18 shortlist lines (HPA v23 29 lines, ARCHS4 v2.5 13 lines at 15 CPM); coreceptor_host_line.py
+ITGAE	dated addition	2026-11-21	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-21: every required partner >= 10 TPM in >= 2 of the 42 S2E18 shortlist lines (HPA v23 29 lines, ARCHS4 v2.5 13 lines at 15 CPM); coreceptor_host_line.py
+LILRA4	dated addition	2026-11-21	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-21: every required partner >= 10 TPM in >= 2 of the 42 S2E18 shortlist lines (HPA v23 29 lines, ARCHS4 v2.5 13 lines at 15 CPM); coreceptor_host_line.py
+NCR2	dated addition	2026-11-21	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-21: every required partner >= 10 TPM in >= 2 of the 42 S2E18 shortlist lines (HPA v23 29 lines, ARCHS4 v2.5 13 lines at 15 CPM); coreceptor_host_line.py
+SIGLEC16	dated addition	2026-11-21	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-21: every required partner >= 10 TPM in >= 2 of the 42 S2E18 shortlist lines (HPA v23 29 lines, ARCHS4 v2.5 13 lines at 15 CPM); coreceptor_host_line.py
+SIRPB1	dated addition	2026-11-21	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-21: every required partner >= 10 TPM in >= 2 of the 42 S2E18 shortlist lines (HPA v23 29 lines, ARCHS4 v2.5 13 lines at 15 CPM); coreceptor_host_line.py
+TREM1	dated addition	2026-11-21	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-21: every required partner >= 10 TPM in >= 2 of the 42 S2E18 shortlist lines (HPA v23 29 lines, ARCHS4 v2.5 13 lines at 15 CPM); coreceptor_host_line.py
+TREM2	dated addition	2026-11-21	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-21: every required partner >= 10 TPM in >= 2 of the 42 S2E18 shortlist lines (HPA v23 29 lines, ARCHS4 v2.5 13 lines at 15 CPM); coreceptor_host_line.py
+CHRNA2	dated addition	2026-11-22	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-22 (coreceptor_host_line.py; ARCHS4 v2.5 cell-line panel consensus, all 42 shortlist lines)
+CHRNA3	dated addition	2026-11-22	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-22 (coreceptor_host_line.py; ARCHS4 v2.5 cell-line panel consensus, all 42 shortlist lines)
+GRIN2A	dated addition	2026-11-22	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-22 (coreceptor_host_line.py; ARCHS4 v2.5 cell-line panel consensus, all 42 shortlist lines)
+GRIN2B	dated addition	2026-11-22	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-22 (coreceptor_host_line.py; ARCHS4 v2.5 cell-line panel consensus, all 42 shortlist lines)
+GRIN2C	dated addition	2026-11-22	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-22 (coreceptor_host_line.py; ARCHS4 v2.5 cell-line panel consensus, all 42 shortlist lines)
+GRIN2D	dated addition	2026-11-22	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-22 (coreceptor_host_line.py; ARCHS4 v2.5 cell-line panel consensus, all 42 shortlist lines)
+GRIN3A	dated addition	2026-11-22	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-22 (coreceptor_host_line.py; ARCHS4 v2.5 cell-line panel consensus, all 42 shortlist lines)
+GRIN3B	dated addition	2026-11-22	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-22 (coreceptor_host_line.py; ARCHS4 v2.5 cell-line panel consensus, all 42 shortlist lines)
+KCND2	dated addition	2026-11-22	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-22 (coreceptor_host_line.py; ARCHS4 v2.5 cell-line panel consensus, all 42 shortlist lines)
+KLRC1	dated addition	2026-11-22	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-22 (coreceptor_host_line.py; ARCHS4 v2.5 cell-line panel consensus, all 42 shortlist lines)
+KLRC2	dated addition	2026-11-22	accessible-surfaceome release 1.3.0 (doi:10.5281/zenodo.23445521); co-receptor gate restated 2026-11-22 (coreceptor_host_line.py; ARCHS4 v2.5 cell-line panel consensus, all 42 shortlist lines)
+C1orf159	dated addition	2026-11-22	reviewer-brief comments 2026-11-20 and 2026-11-22; surface_proteomics_gap_candidates.tsv (inputs pinned in surface_proteomics_inputs.json)
+CSF1	dated addition	2026-11-22	reviewer-brief comments 2026-11-20 and 2026-11-22; surface_proteomics_gap_candidates.tsv (inputs pinned in surface_proteomics_inputs.json)
+FAM171B	dated addition	2026-11-22	reviewer-brief comments 2026-11-20 and 2026-11-22; surface_proteomics_gap_candidates.tsv (inputs pinned in surface_proteomics_inputs.json)
+FAM234A	dated addition	2026-11-22	reviewer-brief comments 2026-11-20 and 2026-11-22; surface_proteomics_gap_candidates.tsv (inputs pinned in surface_proteomics_inputs.json)
+MFAP3	dated addition	2026-11-22	reviewer-brief comments 2026-11-20 and 2026-11-22; surface_proteomics_gap_candidates.tsv (inputs pinned in surface_proteomics_inputs.json)
+MYORG	dated addition	2026-11-22	reviewer-brief comments 2026-11-20 and 2026-11-22; surface_proteomics_gap_candidates.tsv (inputs pinned in surface_proteomics_inputs.json)
+RNF149	dated addition	2026-11-22	reviewer-brief comments 2026-11-20 and 2026-11-22; surface_proteomics_gap_candidates.tsv (inputs pinned in surface_proteomics_inputs.json)
+SLC45A4	dated addition	2026-11-22	reviewer-brief comments 2026-11-20 and 2026-11-22; surface_proteomics_gap_candidates.tsv (inputs pinned in surface_proteomics_inputs.json)
+SUSD5	dated addition	2026-11-22	reviewer-brief comments 2026-11-20 and 2026-11-22; surface_proteomics_gap_candidates.tsv (inputs pinned in surface_proteomics_inputs.json)
+SV2A	dated addition	2026-11-22	reviewer-brief comments 2026-11-20 and 2026-11-22; surface_proteomics_gap_candidates.tsv (inputs pinned in surface_proteomics_inputs.json)
+TM2D1	dated addition	2026-11-22	reviewer-brief comments 2026-11-20 and 2026-11-22; surface_proteomics_gap_candidates.tsv (inputs pinned in surface_proteomics_inputs.json)
+TMEM248	dated addition	2026-11-22	reviewer-brief comments 2026-11-20 and 2026-11-22; surface_proteomics_gap_candidates.tsv (inputs pinned in surface_proteomics_inputs.json)
+ANO9	dated addition	2026-11-23	PR #455 (01335bc) 2026-11-23-abundance-v8 surface-proteomics gap set (s3e8_gap_candidates.tsv)
+KLRG2	dated addition	2026-11-23	PR #455 (01335bc) 2026-11-23-abundance-v8 surface-proteomics gap set (s3e8_gap_candidates.tsv)
+RNF150	dated addition	2026-11-23	PR #455 (01335bc) 2026-11-23-abundance-v8 surface-proteomics gap set (s3e8_gap_candidates.tsv)
+TMEM117	dated addition	2026-11-23	PR #455 (01335bc) 2026-11-23-abundance-v8 surface-proteomics gap set (s3e8_gap_candidates.tsv)

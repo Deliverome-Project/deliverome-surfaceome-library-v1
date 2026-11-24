@@ -1,0 +1,568 @@
+design_id	gene_symbol	candidate_set	species	group	basis
+l1-p0005	ABCC1	library_reference	human	multipass_igk_tag	literature review verdict igk (high confidence: N-out is experimentally established (glycosylated N19/N23; HA at residue 4 is extracellular); leader locks the correct orientation and carries the 87-aa tagged tail. leader_free is also precedent-supported.)
+l1-p0006	ABCC10	library_reference	human	multipass_igk_tag	literature review verdict igk (medium confidence: Three-MSD MRP architecture predicts an extracellular N-terminus, but MRP7 lacks the conserved N-terminal glycosylation site, so there is no direct orientation evidence. Leader locks N-out.)
+l1-p0008	ABCC2	library_reference	human	multipass_igk_tag	literature review verdict igk (medium confidence: TMD0 N-out inferred from MRP1 homology plus two N-terminal sequons (N7, N12); no MRP2-specific glycosylation mapping found. Leader locks N-out.)
+l1-p0009	ABCC3	library_reference	human	multipass_igk_tag	literature review verdict igk (medium confidence: TMD0 resolved in cryo-EM (Wang 2023; UniProt TM1 38-54 from 8HVH); extracellular N-tail assignment is by structure/homology, sequon N18 unverified. Leader locks N-out.)
+l1-p0012	ABCC6	library_reference	human	multipass_igk_tag	literature review verdict igk (high confidence: Asn15 in the N-terminal region is the only N-glycosylation site of ABCC6 (Sinko 2003), so the N-terminus is extracellular; basolateral surface protein.)
+l1-p0018	ACKR1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0019	ACKR2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0020	ACKR3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0021	ACKR4	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0022	ACKR5	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0054	ADGRA1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0080	ADORA1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0081	ADORA2A	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0082	ADORA2B	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0083	ADORA3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0084	ADRA1A	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p3222	ADRA1A	isoform	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0085	ADRA1B	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0086	ADRA1D	library_reference	human	multipass_igk_tag	one arm per gene: the expression-rescue twin is the same Igk + tag protein, so it is retired and this reference carries the gene (rescue_one_arm.tsv)
+l1-p0087	ADRA2A	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0088	ADRA2B	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0089	ADRA2C	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0090	ADRB1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0091	ADRB2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0092	ADRB3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0095	AGTR1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0096	AGTR2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0122	APLNR	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0165	AVPR1A	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0166	AVPR1B	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0167	AVPR2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0174	BDKRB1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0175	BDKRB2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0185	BRS3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0206	C3AR1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0208	C5AR1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0209	C5AR2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0241	CCKAR	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0242	CCKBR	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0243	CCR1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0244	CCR10	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0245	CCR2	library_reference	human	multipass_igk_tag	one arm per gene: the expression-rescue twin is the same Igk + tag protein, so it is retired and this reference carries the gene (rescue_one_arm.tsv)
+l1-p0246	CCR3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0247	CCR4	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0248	CCR5	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2959	CCR5	ortholog	cyno	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0249	CCR6	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0251	CCR8	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0252	CCR9	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0253	CCRL2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0373	CHRM1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0374	CHRM2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0375	CHRM3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2938	CHRM3	ortholog	cyno	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0376	CHRM4	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0377	CHRM5	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0439	CMKLR1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0440	CMKLR2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2982	CMKLR2	ortholog	cyno	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0448	CNR1	library_reference	human	multipass_igk_tag	one arm per gene: the expression-rescue twin is the same Igk + tag protein, so it is retired and this reference carries the gene (rescue_one_arm.tsv)
+l1-p3071	CNR1	ortholog	mouse	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0449	CNR2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0487	CX3CR1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0490	CXCR1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0491	CXCR2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0492	CXCR3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p3236	CXCR3	isoform	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0493	CXCR4	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2426	CXCR4	isoform	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0494	CXCR5	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0495	CXCR6	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0499	CYSLTR1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0500	CYSLTR2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0525	DRD1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0526	DRD2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0527	DRD3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0528	DRD4	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p3031	DRD4	ortholog	mouse	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0529	DRD5	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0632	FFAR1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2940	FFAR1	ortholog	cyno	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0633	FFAR2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0634	FFAR3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0635	FFAR4	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0656	FPR1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0657	FPR2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0658	FPR3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0682	GALR1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0683	GALR2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0684	GALR3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0701	GHSR	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0729	GNRHR	library_reference	human	multipass_igk_tag	one arm per gene: the expression-rescue twin is the same Igk + tag protein, so it is retired and this reference carries the gene (rescue_one_arm.tsv)
+l1-p0734	GPBAR1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0745	GPR101	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0746	GPR119	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0747	GPR12	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0748	GPR132	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0749	GPR135	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0750	GPR139	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0751	GPR141	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0752	GPR142	library_reference	human	multipass_igk_tag	one arm per gene: the expression-rescue twin is the same Igk + tag protein, so it is retired and this reference carries the gene (rescue_one_arm.tsv)
+l1-p0753	GPR146	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0754	GPR149	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0755	GPR15	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0756	GPR150	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0757	GPR151	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0758	GPR152	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0759	GPR153	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0760	GPR156	library_reference	human	multipass_igk_tag	one arm per gene: the expression-rescue twin is the same Igk + tag protein, so it is retired and this reference carries the gene (rescue_one_arm.tsv)
+l1-p0761	GPR157	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0763	GPR160	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0764	GPR161	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0765	GPR162	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0766	GPR17	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0767	GPR171	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0768	GPR173	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0769	GPR174	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0770	GPR176	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0771	GPR18	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0772	GPR183	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0773	GPR19	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2992	GPR19	ortholog	cyno	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p3080	GPR19	ortholog	mouse	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0774	GPR20	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0775	GPR21	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0776	GPR25	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0777	GPR26	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0778	GPR27	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0779	GPR3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0780	GPR32	library_reference	human	multipass_igk_tag	one arm per gene: the expression-rescue twin is the same Igk + tag protein, so it is retired and this reference carries the gene (rescue_one_arm.tsv)
+l1-p0781	GPR33	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0782	GPR34	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0783	GPR35	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0785	GPR39	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0786	GPR4	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0787	GPR42	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0788	GPR45	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0789	GPR50	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0790	GPR52	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0791	GPR55	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0792	GPR6	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p3081	GPR6	ortholog	mouse	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0793	GPR61	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0794	GPR62	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0795	GPR63	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0796	GPR65	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0797	GPR68	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0798	GPR75	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0799	GPR78	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0801	GPR84	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0802	GPR85	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0803	GPR87	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0804	GPR88	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0805	GPRC5A	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2946	GPRC5A	ortholog	cyno	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0808	GPRC5D	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p3322	GPRC5D	isoform	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0828	GRPR	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2994	GRPR	ortholog	cyno	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0842	HCAR1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0843	HCAR2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0844	HCAR3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0849	HCRTR1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2995	HCRTR1	ortholog	cyno	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0850	HCRTR2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0865	HRH1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0866	HRH2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0867	HRH3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0868	HRH4	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0870	HTR1A	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0871	HTR1B	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0872	HTR1D	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0873	HTR1E	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0874	HTR1F	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0875	HTR2A	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2997	HTR2A	ortholog	cyno	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0876	HTR2B	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0879	HTR4	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0880	HTR5A	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p3082	HTR5A	ortholog	mouse	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0881	HTR6	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p0882	HTR7	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1033	KCNMA1	library_reference	human	multipass_igk_tag	literature review verdict igk (high confidence: S0 gives BK alpha an exoplasmic N-terminus (Meera 1997); the 86-aa Gly/Ser-rich tail plus cassette (~137 aa) is beyond leader-free translocation range, so the leader is the right call.)
+l1-p3250	KCNMA1	isoform	human	multipass_igk_tag	added 2026-11-21/22 (gene addition or panel redraw); not separately reviewed, so built as the rung's non-GPCR default: Igk + tag, which removes the leaderless translocation and TM1-flip risks at no identified cost (DeepTMHMM v1 places its N-terminus outside)
+l1-p1046	KCNU1	library_reference	human	multipass_igk_tag	literature review verdict igk (medium confidence: Slo3 is the Slo1 paralog with S0; N-out is by homology (sequon N8 in the tail unverified). Leader locks the expected orientation.)
+l1-p1064	KISS1R	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1104	LMBR1L	library_reference	human	multipass_igk_tag	literature review verdict igk (low confidence: No experimental orientation data; prediction says N-out with a 22-aa tail and no SP, and nothing contradicts it. Leader is the safer of the two options if kept on the rung.)
+l1-p3089	LMBR1L	ortholog	mouse	multipass_igk_tag	entered with the #283 redraw, not separately reviewed; built as its family's reviewed members (all igk: N-out established, or the leader removes the leaderless translocation and TM1-flip risks at no identified cost)
+l1-p1105	LMBRD2	library_reference	human	multipass_igk_tag	literature review verdict igk (low confidence: Prediction-only N-out with a 2-aa tail; the cassette would sit on TM1's N-flank (tagged delta_charge drops from 4 to 1), so if N-out is right a leader is needed.)
+l1-p1107	LPAR1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1108	LPAR2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1109	LPAR3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1110	LPAR4	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1111	LPAR5	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1112	LPAR6	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1162	LTB4R	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1163	LTB4R2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1193	MAS1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1194	MAS1L	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1195	MC1R	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1196	MC3R	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1197	MC4R	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p3001	MC4R	ortholog	cyno	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1198	MC5R	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1201	MCHR1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1202	MCHR2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1220	MLNR	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1242	MRGPRD	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1243	MRGPRE	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1244	MRGPRF	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1245	MRGPRX1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1246	MRGPRX2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1247	MRGPRX3	library_reference	human	multipass_igk_tag	one arm per gene: the expression-rescue twin is the same Igk + tag protein, so it is retired and this reference carries the gene (rescue_one_arm.tsv)
+l1-p2932	MRGPRX3	ortholog	cyno	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1248	MRGPRX4	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2970	MRGPRX4	ortholog	cyno	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1262	MTNR1A	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1263	MTNR1B	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1271	MYMK	library_reference	human	multipass_igk_tag	literature review verdict igk (medium confidence: N-out supported by an experimental 7-TM model with a cytoplasmic C-tail; 3-aa tail and tagged delta 0 mean a leader-free cassette risks flipping TM1, so lock N-out with Igk.)
+l1-p1291	NIPA2	library_reference	human	multipass_igk_tag	literature review verdict igk (high confidence: Cryo-EM of human NIPA2: 9 TM with extracellular N-terminus; 9-aa tail means the cassette sits on TM1's N-flank, which the leader neutralises.)
+l1-p1292	NIPAL4	library_reference	human	multipass_igk_tag	literature review verdict igk (medium confidence: N-out by homology to the NIPA2 structure; 55-aa tail with three predicted sequons (N7, N12, N40) gives a 106-aa tagged tail, so the leader helps translocation.)
+l1-p2962	NIPAL4	ortholog	cyno	multipass_igk_tag	entered with the #283 redraw, not separately reviewed; built as its family's reviewed members (all igk: N-out established, or the leader removes the leaderless translocation and TM1-flip risks at no identified cost)
+l1-p1297	NMBR	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1298	NMUR1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1299	NMUR2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1302	NPBWR1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1303	NPBWR2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1306	NPFFR1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1307	NPFFR2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1312	NPSR1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1314	NPY1R	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1315	NPY2R	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1316	NPY4R	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1317	NPY4R2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1318	NPY5R	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p3041	NPY5R	ortholog	mouse	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1339	NTSR1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1340	NTSR2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1348	OPN1LW	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1349	OPN1MW	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1352	OPN1SW	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1353	OPN3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1354	OPN4	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1355	OPN5	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1356	OPRD1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1357	OPRK1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1358	OPRL1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p3008	OPRL1	ortholog	cyno	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1359	OPRM1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p3262	OPRM1	isoform	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p3212	OR10AC1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1360	OR10C1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1361	OR10G2	library_reference	human	multipass_igk_tag	one arm per gene: the expression-rescue twin is the same Igk + tag protein, so it is retired and this reference carries the gene (rescue_one_arm.tsv)
+l1-p1362	OR10G6	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p3043	OR10G6	ortholog	mouse	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1363	OR10G7	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1364	OR10H1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1365	OR10H2	library_reference	human	multipass_igk_tag	one arm per gene: the expression-rescue twin is the same Igk + tag protein, so it is retired and this reference carries the gene (rescue_one_arm.tsv)
+l1-p1366	OR10H4	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1367	OR10H5	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1368	OR10J1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1369	OR10J5	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1370	OR10K1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1371	OR10K2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1372	OR10P1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1373	OR10Q1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1374	OR10R2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1375	OR10T2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1376	OR10V1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1377	OR10Z1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1378	OR11A1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1379	OR11H1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1380	OR11H12	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1381	OR11H6	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1382	OR11H7	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1383	OR11L1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2741	OR12D1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1384	OR12D2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1385	OR13A1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1386	OR13D1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1387	OR14A16	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1388	OR14I1	library_reference	human	multipass_igk_tag	one arm per gene: the expression-rescue twin is the same Igk + tag protein, so it is retired and this reference carries the gene (rescue_one_arm.tsv)
+l1-p1389	OR14J1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1390	OR14L1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1391	OR1B1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1392	OR1C1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1393	OR1D2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1394	OR1D5	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1395	OR1E1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1396	OR1E2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1397	OR1F1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1398	OR1J1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1399	OR1J2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1400	OR1J4	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1401	OR1L8	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1402	OR1M1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1403	OR1N1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1404	OR2A1	library_reference	human	multipass_igk_tag	one arm per gene: the expression-rescue twin is the same Igk + tag protein, so it is retired and this reference carries the gene (rescue_one_arm.tsv)
+l1-p1405	OR2A4	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1407	OR2A7	library_reference	human	multipass_igk_tag	one arm per gene: the expression-rescue twin is the same Igk + tag protein, so it is retired and this reference carries the gene (rescue_one_arm.tsv)
+l1-p1408	OR2AJ1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1409	OR2AK2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1410	OR2AP1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1411	OR2B11	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1412	OR2B2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1413	OR2B6	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1414	OR2C1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1415	OR2C3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1416	OR2D2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1417	OR2G3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1418	OR2H1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1419	OR2H2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1420	OR2I1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1421	OR2L13	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1422	OR2L2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1423	OR2L3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1424	OR2L5	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1425	OR2L8	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1426	OR2M3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1427	OR2S2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1428	OR2T10	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1429	OR2T11	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1430	OR2T29	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1431	OR2T33	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1432	OR2T5	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1433	OR2T8	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1434	OR2V1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1435	OR2V2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1436	OR2W1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1437	OR2W3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1438	OR2Y1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1439	OR3A1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1440	OR3A2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2963	OR3A2	ortholog	cyno	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1441	OR3A3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1442	OR4A16	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1443	OR4A47	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1444	OR4B1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1445	OR4C13	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1446	OR4C5	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1447	OR4C6	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1448	OR4D1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1449	OR4D10	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1450	OR4D2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1451	OR4D5	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1452	OR4E2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1453	OR4F16	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1454	OR4F17	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1455	OR4F5	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1456	OR4F6	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1457	OR4K15	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1458	OR4K17	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1459	OR4K2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p3009	OR4K2	ortholog	cyno	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1460	OR4M2B	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1461	OR4N2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1462	OR4N4	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1463	OR4P4	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p3213	OR4Q2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1464	OR4S1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1465	OR4S2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1466	OR51A7	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1467	OR51B2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1468	OR51B4	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1469	OR51B5	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1470	OR51C1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2964	OR51C1	ortholog	cyno	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1471	OR51E1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1472	OR51E2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p3010	OR51E2	ortholog	cyno	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p3096	OR51E2	ortholog	mouse	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1473	OR51G2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1474	OR51I1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1475	OR51T1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1476	OR51V1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1477	OR52A1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1478	OR52B6	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1479	OR52D1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1480	OR52H1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1481	OR52J3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1482	OR52K1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1483	OR52K2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1484	OR52L1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1485	OR52N2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1486	OR52N4	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1487	OR56A3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1488	OR56B1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1489	OR56B4	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1490	OR5A2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1491	OR5AK2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2742	OR5AL1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1492	OR5AN1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1493	OR5AR1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1494	OR5AS1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1495	OR5AU1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1496	OR5B12	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1497	OR5B21	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1498	OR5C1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1499	OR5D16	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1500	OR5H6	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1501	OR5J2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1502	OR5V1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1503	OR6B2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1504	OR6B3	library_reference	human	multipass_igk_tag	one arm per gene: the expression-rescue twin is the same Igk + tag protein, so it is retired and this reference carries the gene (rescue_one_arm.tsv)
+l1-p1505	OR6C1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1506	OR6C2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1507	OR6C3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1508	OR6C4	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1509	OR6C68	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1510	OR6C70	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1511	OR6C74	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1512	OR6F1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1513	OR7A10	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1514	OR7A17	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1515	OR7A5	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1516	OR7C1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1517	OR7C2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1518	OR7D4	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1519	OR7E24	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2965	OR7E24	ortholog	cyno	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1520	OR7G1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1521	OR7G2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1522	OR7G3	library_reference	human	multipass_igk_tag	one arm per gene: the expression-rescue twin is the same Igk + tag protein, so it is retired and this reference carries the gene (rescue_one_arm.tsv)
+l1-p1523	OR8B8	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1524	OR8D1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1525	OR8G3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung; OR8G3 opens on GTG, which initiates poorly in a construct; recoded to ATG with no added residue, as decided for SLC22A17 and TRPV6
+l1-p1526	OR8G5	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p3308	OR8J2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1527	OR8K3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1528	OR8K5	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1529	OR8S1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1530	OR8U1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1531	OR8U3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1532	OR8U8	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1533	OR8U9	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1534	OR9A2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1535	OR9A4	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1536	OR9G1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1537	OR9G9	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1546	OXER1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1547	OXGR1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1548	OXTR	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1555	P2RY1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1556	P2RY10	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1557	P2RY11	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1558	P2RY12	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1559	P2RY13	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1560	P2RY14	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1561	P2RY2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1562	P2RY4	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1563	P2RY6	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1564	P2RY8	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1670	POPDC1	library_reference	human	multipass_igk_tag	literature review verdict igk (high confidence: Bves/Pop1A N-terminus is glycosylated and extracellular (Knight 2003, chick); delta_charge is -1 (disagrees with N-out), so a leader removes the charge-driven flip risk.)
+l1-p1671	POPDC3	library_reference	human	multipass_igk_tag	literature review verdict igk (medium confidence: N-out by homology to POPDC1/Bves (sequon N4 predicted); delta_charge -1 disagrees with N-out, so the leader is protective.)
+l1-p3098	POPDC3	ortholog	mouse	multipass_igk_tag	entered with the #283 redraw, not separately reviewed; built as its family's reviewed members (all igk: N-out established, or the leader removes the leaderless translocation and TM1-flip risks at no identified cost)
+l1-p1673	PRLHR	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1678	PROKR1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1679	PROKR2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1692	PTAFR	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1696	PTGDR	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1697	PTGDR2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1698	PTGER1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1699	PTGER2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1700	PTGER3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1701	PTGER4	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1702	PTGFR	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1704	PTGIR	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1721	QRFPR	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1737	RHO	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p3101	RHO	ortholog	mouse	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1748	RRH	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1754	RXFP3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1755	RXFP4	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1757	S1PR1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1758	S1PR2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1759	S1PR3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1760	S1PR4	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1761	S1PR5	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p1828	SLC10A1	library_reference	human	multipass_igk_tag	literature review verdict igk (high confidence: N-out is established by several NTCP structures; tail 26 aa with N5/N11 sequons; delta_charge_tagged +2. Leader is low-risk and removes the cassette-charge risk)
+l1-p1829	SLC10A2	library_reference	human	multipass_igk_tag	literature review verdict igk (high confidence: N-out is supported by experimental glycosylation at N10 (UniProt cites Zhang 2004) and by homology to the NTCP structures; tail 29 aa)
+l1-p1831	SLC10A6	library_reference	human	multipass_igk_tag	literature review verdict igk (high confidence: Experimental N-out/C-in orientation for SOAT (Geyer 2007); tail 32 aa, delta_charge_tagged +4)
+l1-p1874	SLC20A1	library_reference	human	multipass_igk_tag	literature review verdict igk (medium confidence: N-out by close homology to PiT-2, whose N-terminus was shown extracellular by epitope tagging; tail 24 aa but delta_charge_tagged 0, so the leader removes the risk that the cassette flips TM1)
+l1-p1875	SLC20A2	library_reference	human	multipass_igk_tag	literature review verdict igk (high confidence: N-out shown experimentally (N-terminal epitope extracellular; N81 glycosylated). Only 8 aa before TM1 and delta_charge_tagged 0, so a leader-free cassette risks flipping TM1 (rule d))
+l1-p1927	SLC31A1	library_reference	human	multipass_igk_tag	literature review verdict igk (high confidence: N-out is established (N15 N-glycan and T27 O-glycan on the extracellular N-terminus). The tail is 69 aa, so the tagged tail is about 120 aa, which is poorly translocated without a leader (rule c). Caveat: without T27 O-glycosylation the first ~30 residues are cleaved off, taking an N-terminal tag with them)
+l1-p1944	SLC39A1	library_reference	human	multipass_igk_tag	literature review verdict igk (medium confidence: N-out by the ZIP fold and v1 (cytoplasmic His-rich TM3-TM4 loop); tail 30 aa. No member-specific experimental evidence)
+l1-p1948	SLC39A2	library_reference	human	multipass_igk_tag	literature review verdict igk (medium confidence: Same ZIP-fold reasoning as ZIP1/ZIP3. The input's 'Cytoplasmic (inferred)' does not match live UniProt Q9NP94, which now annotates 1-8 Extracellular. The 8-aa tail makes the leader-free cassette risky (rule d))
+l1-p1949	SLC39A3	library_reference	human	multipass_igk_tag	literature review verdict igk (medium confidence: ZIP-fold N-out; 8-aa tail, so a leader removes the TM1-flip risk (rule d))
+l1-p1957	SLC41A2	library_reference	human	multipass_igk_tag	literature review verdict igk (medium confidence: N-out rests on one experimental study against both DeepTMHMM versions. Igk is the form that makes the experimental orientation happen: it targets the 162-residue tail plus the 51-aa cassette to the lumen co-translationally, which TM1 alone (no charge bias, delta 0) is unlikely to do. If the predictors are right instead, the leader would invert the transporter; the refold and the surface stain are the checks.)
+l1-p3165	SLC51A	library_reference	human	multipass_igk_tag	added 2026-11-21/22 (gene addition or panel redraw); not separately reviewed, so built as the rung's non-GPCR default: Igk + tag, which removes the leaderless translocation and TM1-flip risks at no identified cost (DeepTMHMM v1 places its N-terminus outside)
+l1-p1982	SLC5A1	library_reference	human	multipass_igk_tag	literature review verdict igk (high confidence: N-out is established by glycosylation scanning and structures, and a His tag at residue 5 was surface-exposed with function retained. delta_charge_tagged is 0, so the leader is the safer choice for a 51-aa +3 cassette; leader-free is a reasonable fallback)
+l1-p1983	SLC5A10	library_reference	human	multipass_igk_tag	literature review verdict igk (medium confidence: N-out by homology to SGLT1/SGLT2 (same 14-TM fold, TM0 N-out); prediction-only for this member)
+l1-p1984	SLC5A11	library_reference	human	multipass_igk_tag	literature review verdict igk (medium confidence: N-out by homology to SGLT1/SGLT2 (same 14-TM fold, TM0 N-out); prediction-only for this member)
+l1-p1985	SLC5A12	library_reference	human	multipass_igk_tag	literature review verdict igk (medium confidence: 13-TM NIS/SMCT branch of SLC5, N-out by homology (SMCT1 structure in Han 2022) and v1; short to moderate tail (10-25 aa), so a leader removes the TM1-flip risk)
+l1-p1986	SLC5A2	library_reference	human	multipass_igk_tag	literature review verdict igk (high confidence: N-out is established by SGLT2-MAP17 structures; tail 24 aa)
+l1-p1987	SLC5A3	library_reference	human	multipass_igk_tag	literature review verdict igk (medium confidence: N-out by SGLT-family homology; only 8 aa before TM1 (rule d), so a leader is preferred)
+l1-p1988	SLC5A4	library_reference	human	multipass_igk_tag	literature review verdict igk (medium confidence: Contradicts the input flag: the UniProt cytoplasmic call is an 11-TM sequence prediction, while SGLT3 is about 70% identical to SGLT1 with the same 28-aa N-tail and 14-TM fold, whose N-terminus is experimentally extracellular)
+l1-p3056	SLC5A4	ortholog	mouse	multipass_igk_tag	entered with the #283 redraw, not separately reviewed; built as its family's reviewed members (all igk: N-out established, or the leader removes the leaderless translocation and TM1-flip risks at no identified cost)
+l1-p1989	SLC5A5	library_reference	human	multipass_igk_tag	literature review verdict igk (medium confidence: 13-TM NIS/SMCT branch of SLC5, N-out by homology (SMCT1 structure in Han 2022) and v1; short to moderate tail (10-25 aa), so a leader removes the TM1-flip risk)
+l1-p1990	SLC5A6	library_reference	human	multipass_igk_tag	literature review verdict igk (medium confidence: 13-TM NIS/SMCT branch of SLC5, N-out by homology (SMCT1 structure in Han 2022) and v1; short to moderate tail (10-25 aa), so a leader removes the TM1-flip risk)
+l1-p1991	SLC5A8	library_reference	human	multipass_igk_tag	literature review verdict igk (medium confidence: 13-TM NIS/SMCT branch of SLC5, N-out by homology (SMCT1 structure in Han 2022) and v1; short to moderate tail (10-25 aa), so a leader removes the TM1-flip risk)
+l1-p1992	SLC5A9	library_reference	human	multipass_igk_tag	literature review verdict igk (medium confidence: N-out by homology to SGLT1/SGLT2 (same 14-TM fold, TM0 N-out); prediction-only for this member)
+l1-p2510	SLC5A9	isoform	human	multipass_igk_tag	literature review verdict igk (medium confidence: [isoform, human] N-out by homology to SGLT1/SGLT2 (same 14-TM fold, TM0 N-out); prediction-only for this member)
+l1-p1994	SLC61A1	library_reference	human	multipass_igk_tag	stays on N at residue 1: DeepTMHMM v1 and v2, SignalP 6 and the AlphaFold model (13 crossings, pLDDT 89) all put the N-terminus outside, and the lane check (PR #296) rates the lane as holding; Igk + tag as for the rung's other non-GPCRs
+l1-p3105	SLC61A1	ortholog	mouse	multipass_igk_tag	stays on N at residue 1: DeepTMHMM v1 and v2, SignalP 6 and the AlphaFold model (13 crossings, pLDDT 89) all put the N-terminus outside, and the lane check (PR #296) rates the lane as holding; Igk + tag as for the rung's other non-GPCRs
+l1-p2030	SLC9A8	library_reference	human	multipass_igk_tag	literature review verdict igk (medium confidence: 59-aa N-tail with two sequons (N13/N20), at the rule-c threshold (tagged ~110 aa); N-out fits the NHE fold. Prediction plus homology only)
+l1-p2032	SLC9C1	library_reference	human	multipass_igk_tag	literature review verdict igk (low confidence: v1 N-out with 17 TM (NHE core plus VSD) is plausible, but the only structures are of sea urchin SLC9C1 and terminus side was not verified. delta_charge_tagged 0-1, so a leader is preferred if kept. Surface expression in HEK293 is doubtful: mouse SLC9C1 depends on TMEM217 in sperm)
+l1-p2033	SLC9C2	library_reference	human	multipass_igk_tag	literature review verdict igk (low confidence: v1 N-out with 17 TM (NHE core plus VSD) is plausible, but the only structures are of sea urchin SLC9C1 and terminus side was not verified. delta_charge_tagged 0-1, so a leader is preferred if kept. Surface expression in HEK293 is doubtful: mouse SLC9C1 depends on TMEM217 in sperm)
+l1-p2054	SMIM7	library_reference	human	multipass_igk_tag	literature review verdict igk (low confidence: Prediction-only. The positive cluster right after the hydrophobic segment (KLKKK at 22-26) argues for an N-out signal anchor, not a cleavable SP. Igk puts the cassette outside under either model.)
+l1-p2072	SSTR1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2073	SSTR2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2074	SSTR3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2075	SSTR4	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2076	SSTR5	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2083	STRA6	library_reference	human	multipass_igk_tag	literature review verdict igk (high confidence: N-out is shown by the STRA6 cryo-EM structure; tail 50 aa (tagged ~100, near the rule-c range), net -8 native)
+l1-p2084	SUCNR1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2089	TAAR1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2090	TAAR2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2091	TAAR5	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2092	TAAR6	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2093	TACR1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p3109	TACR1	ortholog	mouse	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2094	TACR2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2095	TACR3	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2101	TAS2R1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2102	TAS2R10	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2103	TAS2R13	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2104	TAS2R14	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2105	TAS2R19	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2106	TAS2R20	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2107	TAS2R3	library_reference	human	multipass_igk_tag	one arm per gene: the expression-rescue twin is the same Igk + tag protein, so it is retired and this reference carries the gene (rescue_one_arm.tsv)
+l1-p2108	TAS2R31	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2109	TAS2R38	library_reference	human	multipass_igk_tag	one arm per gene: the expression-rescue twin is the same Igk + tag protein, so it is retired and this reference carries the gene (rescue_one_arm.tsv)
+l1-p2110	TAS2R39	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2111	TAS2R4	library_reference	human	multipass_igk_tag	one arm per gene: the expression-rescue twin is the same Igk + tag protein, so it is retired and this reference carries the gene (rescue_one_arm.tsv)
+l1-p2112	TAS2R41	library_reference	human	multipass_igk_tag	one arm per gene: the expression-rescue twin is the same Igk + tag protein, so it is retired and this reference carries the gene (rescue_one_arm.tsv)
+l1-p2113	TAS2R42	library_reference	human	multipass_igk_tag	one arm per gene: the expression-rescue twin is the same Igk + tag protein, so it is retired and this reference carries the gene (rescue_one_arm.tsv)
+l1-p2114	TAS2R43	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2115	TAS2R45	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2116	TAS2R46	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2117	TAS2R5	library_reference	human	multipass_igk_tag	one arm per gene: the expression-rescue twin is the same Igk + tag protein, so it is retired and this reference carries the gene (rescue_one_arm.tsv)
+l1-p2118	TAS2R50	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2119	TAS2R60	library_reference	human	multipass_igk_tag	one arm per gene: the expression-rescue twin is the same Igk + tag protein, so it is retired and this reference carries the gene (rescue_one_arm.tsv)
+l1-p2120	TAS2R7	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2121	TAS2R8	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2122	TAS2R9	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2123	TBXA2R	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2144	TLCD1	library_reference	human	multipass_igk_tag	literature review verdict igk (medium confidence: Ortholog epitope mapping shows the N-terminus is extracellular and the predicted SP is not cleaved. Locking N-out is therefore safe, and the leader removes the charge erosion on a 7-aa tail. Leader-free is a defensible fallback given the precedent.)
+l1-p2145	TLCD2	library_reference	human	multipass_igk_tag	literature review verdict igk (medium confidence: Paralog of TLCD1 with the same N-terminal signal-anchor motif (FRGLHWGLRRL), so N-out by homology to the chicken TLCD1 epitope map. The 4-aa tail and tagged delta +1 favour a leader.)
+l1-p2179	TMEM170B	library_reference	human	multipass_igk_tag	literature review verdict igk (medium confidence: Paralog TMEM170A has a cytoplasmic C-terminus and a 3-TM fold, which puts the N-terminus lumenal. The 37-aa tail becomes 88 aa when tagged, so a leader aids translocation.)
+l1-p3319	TMEM182	isoform	human	multipass_igk_tag	entered with the #283 redraw, not separately reviewed; built as its family's reviewed members (all igk: N-out established, or the leader removes the leaderless translocation and TM1-flip risks at no identified cost)
+l1-p2183	TMEM184A	library_reference	human	multipass_igk_tag	literature review verdict igk (medium confidence: The TMEM184 family is related to OSTalpha, whose 7-TM topology has a cytoplasmic C-terminus and is glycosylated, which puts the N-terminus out. The 52-aa tail becomes 103 aa when tagged, so a leader helps. One soft conflict is noted.)
+l1-p2185	TMEM198	library_reference	human	multipass_igk_tag	literature review verdict igk (medium confidence: 7-TM protein whose cytoplasmic domain (the only large soluble region, the basic C-terminal 122 aa) recruits CK1, so the N-terminus is out by parity. Native delta 0 gives weak intrinsic bias, so the leader adds robustness.)
+l1-p2187	TMEM205	library_reference	human	multipass_igk_tag	literature review verdict igk (low confidence: Prediction-only N-out (TOPCONS, DeepTMHMM), supported by flank charges (N-tail E2,E3 vs a basic TM1 C-flank R40,R43,H44). A 12-aa tail means a leader-free cassette risks a flip.)
+l1-p2190	TMEM222	library_reference	human	multipass_igk_tag	entered with the #283 redraw, not separately reviewed; built as its family's reviewed members (all igk: N-out established, or the leader removes the leaderless translocation and TM1-flip risks at no identified cost)
+l1-p2199	TMEM63B	library_reference	human	multipass_igk_tag	literature review verdict igk (high confidence: N-out is established by the cryo-EM structure, so the question is only how to keep it out with a 51-aa cassette ahead of a 40-residue tail that opens with a hydrophobic stretch (residues 1-14, which DeepTMHMM v1 read as a signal peptide). Igk targets the tagged tail to the ER lumen directly; without it, TM0 alone would have to translocate a 91-residue N-terminal tail. Same call as the rung's other N-out non-GPCRs.)
+l1-p2257	TPRA1	library_reference	human	multipass_igk_tag	literature review verdict igk (high confidence: GPR175-like 7-TM with functional N-terminal glycans: N11/N23 glycans mediate virus binding on cells, so the N-terminus is extracellular. This fits the GPCR igk default, and a 44-aa tail becomes 95 aa when tagged.)
+l1-p2264	TRHR	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2302	TSPO2	library_reference	human	multipass_igk_tag	kept on N at residue 1 with Igk: with 5 helices exactly one terminus is extracellular. DeepTMHMM v1 (the topology of record) and TSPO1 homology (N-terminus non-cytosolic; PMIDs 9442055, 24653034) put the N-terminus outside, the 4-residue tail MRLQ carries the weak positive-inside bias for N-out (delta +1), and the Igk arm passes the tagged refold. Only DeepTMHMM v2 calls N-in. Low confidence: an N-glycosylation reporter or surface staining of an N- vs C-tagged pair would settle it
+l1-p2303	TTYH1	library_reference	human	multipass_igk_tag	literature review verdict igk (high confidence: Tweety family N-terminus is extracellular (glycosylation mapping on TTYH2/3; cryo-EM of TTYH1-3); 43-aa tail plus cassette = 94 aa, leader assures translocation.)
+l1-p2304	TTYH2	library_reference	human	multipass_igk_tag	literature review verdict igk (high confidence: Asn31 in the N-tail is glycosylated (He 2008; Sukalskaia 2021), proving N-out; tagged tail ~95 aa.)
+l1-p2305	TTYH3	library_reference	human	multipass_igk_tag	literature review verdict igk (high confidence: Family topology N-out by glycosylation mapping and cryo-EM; tagged tail ~93 aa.)
+l1-p3295	TTYH3	isoform	human	multipass_igk_tag	added 2026-11-21/22 (gene addition or panel redraw); not separately reviewed, so built as the rung's non-GPCR default: Igk + tag, which removes the leaderless translocation and TM1-flip risks at no identified cost (DeepTMHMM v1 places its N-terminus outside)
+l1-p2319	UTS2R	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2327	VN1R1	library_reference	human	multipass_igk_tag	one arm per gene: the expression-rescue twin is the same Igk + tag protein, so it is retired and this reference carries the gene (rescue_one_arm.tsv)
+l1-p2328	VN1R2	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2329	VN1R4	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung
+l1-p2343	XCR1	library_reference	human	multipass_igk_tag	GPCR on the multipass residue-1 rung

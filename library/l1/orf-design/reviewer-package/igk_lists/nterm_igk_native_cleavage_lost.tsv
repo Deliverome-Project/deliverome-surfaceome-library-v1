@@ -1,0 +1,128 @@
+design_id	gene_symbol	candidate_set	species	group	basis
+l1-p0060	ADGRD1	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0102	ALPL	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0171	BAMBI	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0190	BTLA	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p3299	BTLA	ortholog		nterm_igk_native_cleavage_lost	round-2 SignalP (no_row_igk): tagged form keeps the cleavage
+l1-p0197	BTNL2	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0205	C19orf38	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0260	CD163L1	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0266	CD1B	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0276	CD226	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0281	CD274	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0282	CD276	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0283	CD28	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0285	CD300C	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p3166	CD300LB	library_reference		nterm_igk_native_cleavage_lost	refold of native_site after 19 failed (lDDT within 15 of the site 0.697 < 0.7); next SignalP-passing form
+l1-p0309	CD58	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0327	CD96	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0363	CEACAM3	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0364	CEACAM4	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0366	CEACAM6	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0379	CHRNA6	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0381	CHRNA9	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0432	CLMP	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0519	DPEP1	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p3030	DPEP2	ortholog		nterm_igk_native_cleavage_lost	round-2 SignalP (no_row_igk): tagged form keeps the cleavage
+l1-p0546	EFNA4	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0548	EFNB1	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0549	EFNB2	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p3076	EFNB2	ortholog		nterm_igk_native_cleavage_lost	round-2 SignalP (igk_after_native_fail): tagged form keeps the cleavage
+l1-p2988	EPGN	ortholog		nterm_igk_native_cleavage_lost	round-2 SignalP (igk_after_native_fail): tagged form keeps the cleavage
+l1-p0577	EPHA5	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0578	EPHA6	library_reference		nterm_igk_native_cleavage_lost	round-2 SignalP (igk_after_native_fail): tagged form keeps the cleavage
+l1-p0588	ERBB3	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p3211	FCGR2C	library_reference		nterm_igk_native_cleavage_lost	round-2 SignalP (no_row_igk): tagged form keeps the cleavage
+l1-p0625	FCMR	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0627	FCRL2	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0631	FCRL6	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p2991	FZD3	ortholog		nterm_igk_native_cleavage_lost	round-2 SignalP (igk_after_native_fail): tagged form keeps the cleavage
+l1-p0668	FZD6	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0670	FZD8	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0694	GFRAL	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0721	GLIPR1	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p2944	GLIPR1L1	ortholog		nterm_igk_native_cleavage_lost	round-2 SignalP (igk_after_native_fail): tagged form keeps the cleavage
+l1-p0744	GPNMB	library_reference		nterm_igk_native_cleavage_lost	refold of native_site after 27 failed (lDDT within 15 of the site 0.14 < 0.7); next SignalP-passing form
+l1-p2945	GPNMB	ortholog		nterm_igk_native_cleavage_lost	round-2 SignalP (igk_after_native_fail): tagged form keeps the cleavage
+l1-p0810	GRIA1	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0815	GRID2	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0818	GRIK3	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0840	HAVCR2	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0853	HEPACAM2	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p2996	HEPACAM2	ortholog		nterm_igk_native_cleavage_lost	round-2 SignalP (igk_after_native_fail): tagged form keeps the cleavage
+l1-p3083	IGLON5	ortholog		nterm_igk_native_cleavage_lost	round-2 SignalP (igk_after_native_fail): tagged form keeps the cleavage
+l1-p0911	IL10RB	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0912	IL11RA	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0914	IL12RB2	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0919	IL17RB	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0924	IL18RAP	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0933	IL20RB	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p2948	IL22RA1	ortholog		nterm_igk_native_cleavage_lost	round-2 SignalP (igk_after_native_fail): tagged form keeps the cleavage
+l1-p0936	IL23R	library_reference		nterm_igk_native_cleavage_lost	refold of igk_swap after 22 failed (7 epitope residues confidently packed on the native domain); next SignalP-passing form
+l1-p0937	IL27RA	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0941	IL31RA	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0953	INSRR	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0958	ITGA10	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0963	ITGA5	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p0964	ITGA6	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p3171	ITGAE	library_reference		nterm_igk_native_cleavage_lost	round-2 SignalP (igk_after_native_fail): tagged form keeps the cleavage
+l1-p0983	JAM3	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1057	KIR3DL1	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1059	KIR3DL3	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1060	KIR3DS1	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1076	LAG3	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1083	LEPR	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1103	LINGO4	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1128	LRP6	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1131	LRRC19	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1152	LRRTM1	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1157	LRTM2	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1175	LY9	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p2465	LY9	isoform		nterm_igk_native_cleavage_lost	round-2 SignalP (no_row_igk): tagged form keeps the cleavage
+l1-p1183	LYPD8	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1188	MADCAM1	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1189	MAG	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1190	MANSC4	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1218	MILR1	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1236	MPZL3	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1240	MRC1	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1275	NCAM1	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1296	NLGN4X	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1328	NRROS	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1334	NTNG1	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p3095	NTNG1	ortholog		nterm_igk_native_cleavage_lost	round-2 SignalP (igk_after_native_fail): tagged form keeps the cleavage
+l1-p1347	OPCML	library_reference		nterm_igk_native_cleavage_lost	round-2 SignalP (igk_after_native_fail): tagged form keeps the cleavage
+l1-p1541	OSMR	library_reference		nterm_igk_native_cleavage_lost	round-2 SignalP (no_row_igk): tagged form keeps the cleavage
+l1-p1576	PCDH12	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1619	PCDHGA7	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1627	PCDHGB6	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p2483	PCDHGB6	isoform		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1628	PCDHGB7	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1630	PCDHGC4	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1633	PDCD1LG2	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1634	PDGFRA	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1691	PSCA	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1707	PTK7	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1717	PTPRU	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1718	PTTG1IP2	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p2495	PVRIG	isoform		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1724	RAET1L	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p3102	RTN4R	ortholog		nterm_igk_native_cleavage_lost	round-2 SignalP (igk_after_native_fail): tagged form keeps the cleavage
+l1-p1752	RXFP1	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1770	SCN3B	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1771	SCN4B	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1781	SELL	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p1782	SELP	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p2138	THSD1	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p2149	TLR4	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p3208	TM2D1	library_reference		nterm_igk_native_cleavage_lost	round-2 SignalP (igk_after_native_fail): tagged form keeps the cleavage
+l1-p2232	TNFRSF14	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p2242	TNFRSF9	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p2282	TSHR	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p2309	ULBP3	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p2323	VCAM1	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p2333	VSIG10	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p2335	VSIG2	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p3065	VSIG2	ortholog		nterm_igk_native_cleavage_lost	round-2 SignalP (igk_after_native_fail): tagged form keeps the cleavage
+l1-p2356	ZNRF3	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage
+l1-p2357	ZP1	library_reference		nterm_igk_native_cleavage_lost	native signal peptide fails at every site; Igκ-tagged form keeps the leader's cleavage

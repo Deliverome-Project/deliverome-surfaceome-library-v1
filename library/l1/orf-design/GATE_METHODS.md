@@ -1,7 +1,7 @@
 # How four of the L1 gene-list gates are actually decided
 
 The L1 gene list is produced by the S1E3 cohort filter,
-[`final_library.py`](../../sprint1/s1e3-surface-library-filters/final_library.py), run over
+[`final_library.py`](../surface-filters/final_library.py), run over
 accessible-surfaceome release 1.3.0. The brief states each gate as a rule. This page states
 how the call behind the rule is made: which attribute or predictor decides it, what version,
 over which sequence, at what threshold, and where the answer is durably kept. It covers the
@@ -97,7 +97,7 @@ The rule is `coreceptor_ok()`, and it has four layers, evaluated in this order:
 
 | Order | Layer | Effect |
 |---:|---|---|
-| 1 | six hand-reviewed accessions in [`coreceptor_rules.py`](../../sprint1/s1e3-surface-library-filters/coreceptor_rules.py) | decides outright, pass or fail, and is the only layer that distinguishes alternative partners from simultaneously required ones |
+| 1 | six hand-reviewed accessions in [`coreceptor_rules.py`](../surface-filters/coreceptor_rules.py) | decides outright, pass or fail, and is the only layer that distinguishes alternative partners from simultaneously required ones |
 | 2 | the `INCLUDE_ALONE` allowlist in `coreceptor_calls.tsv` | passes a subunit whose saved deep-dive rationale shows it reaches the surface without a heterologous partner |
 | 3 | `filters.co_receptor_dependency != "required"` | passes: the catalog does not consider the gene partner-dependent at all |
 | 4 | the partner-expression test | passes if partners are measurably common |
@@ -118,7 +118,7 @@ exception to the complex-partner localization veto), plus the `INCLUDE_ALONE` al
 the HPA RNA cell-line consensus file `rna_celline.tsv`
 (`proteinatlas.org/download/tsv/rna_celline.tsv.zip`; 20,151 genes × 1,206 cell lines, values
 in TPM). The per-gene median was computed in this repository on 2026-08-04 by
-[`build_expression_reference.py`](../../sprint1/s1e3-surface-library-filters/pipeline/build_expression_reference.py),
+[`build_expression_reference.py`](../surface-filters/pipeline/build_expression_reference.py),
 which streams the full per-cell-line matrix — the published per-gene summary carries only a
 maximum, and a maximum answers "detected in at least one line," not "a standard cell line
 supplies it." The gate reads the result as `median_tpm_celline` from

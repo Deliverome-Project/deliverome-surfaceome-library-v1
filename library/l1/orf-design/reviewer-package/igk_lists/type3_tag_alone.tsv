@@ -1,0 +1,35 @@
+design_id	gene_symbol	candidate_set	species	group	basis
+l1-p0181	BMPR1B	library_reference	human	type3_tag_alone	sp_in_member: BMPR1B: the ordered form is canonical O00238; SignalP 6 calls no signal peptide (OTHER, P(SP) 0.000), so UniProt's 1-13 annotation is not supported and TM1 is the signal-anchor. Mid N-tail 126, Delta +3: option B gives the tag alone
+l1-p3228	BMPR1B	isoform	human	type3_tag_alone	sp_in_member: BMPR1B isoform (redraw 2026-11-22), first 127 residues identical to l1-p0181: SignalP 6 calls no signal peptide (OTHER, P(SP) 0.000; run type3_sp6_2026_11_22, processed://sprint4/s4e9-orf-design-fg-panel/type3-nterm/signalp6-runs/), so UniProt's 1-13 annotation is not supported and TM1 is the signal-anchor, as for l1-p0181: tag alone
+l1-p0201	C11orf87	library_reference	human	type3_tag_alone	sp_in_member: C11orf87: the ordered form is canonical Q6NUJ2; SignalP 6 calls no signal peptide (OTHER, P(SP) 0.13). Mid N-tail 61, Delta +8: option B gives the tag alone
+l1-p2641	C11orf87	ortholog	mouse	type3_tag_alone	sp_in_member: mouse C11orf87: no SignalP 6 record; its first 24 residues, the region annotated as signal peptide in human, are identical to human C11orf87, which SignalP 6 calls OTHER (P(SP) 0.13). N-tail 60, Delta +8: tag alone, matching human
+l1-p0203	C16orf54	library_reference	human	type3_tag_alone	mid_tail: genuine type III (mid_tail) with no identified risk
+l1-p0540	EDA2R	library_reference	human	type3_tag_alone	long_tail: genuine type III (long_tail) with no identified risk
+l1-p0836	GYPC	library_reference	human	type3_tag_alone	mid_tail: genuine type III (mid_tail) with no identified risk
+l1-p2446	GYPC	isoform	human	type3_tag_alone	mid_tail: genuine type III (mid_tail) with no identified risk
+l1-p0904	IGSF23	library_reference	human	type3_tag_alone	long_tail: genuine type III (long_tail) with no identified risk
+l1-p1001	KCNE2	library_reference	human	type3_tag_alone	mid_tail: genuine type III (mid_tail) with no identified risk
+l1-p1002	KCNE3	library_reference	human	type3_tag_alone	mid_tail: genuine type III (mid_tail) with no identified risk
+l1-p3087	KCNE3	ortholog	mouse	type3_tag_alone	mid_tail: genuine type III (mid_tail) with no identified risk
+l1-p1003	KCNE4	library_reference	human	type3_tag_alone	mid_tail: genuine type III (mid_tail) with no identified risk
+l1-p1004	KCNE5	library_reference	human	type3_tag_alone	mid_tail: genuine type III (mid_tail) with no identified risk
+l1-p1078	LAX1	library_reference	human	type3_tag_alone	mid_tail: genuine type III (mid_tail) with no identified risk
+l1-p1238	MRAP	library_reference	human	type3_tag_alone	dual_topology: genuine type III (dual_topology) with no identified risk
+l1-p2958	MRAP	ortholog	cyno	type3_tag_alone	dual_topology: genuine type III (dual_topology) with no identified risk
+l1-p1239	MRAP2	library_reference	human	type3_tag_alone	dual_topology: genuine type III (dual_topology) with no identified risk
+l1-p1320	NRG1	library_reference	human	type3_tag_alone	long_tail: genuine type III (long_tail) with no identified risk
+l1-p2472	NRG1	isoform	human	type3_tag_alone	long_tail: genuine type III (long_tail) with no identified risk
+l1-p2591	NRG1	ortholog	cyno	type3_tag_alone	long_tail: genuine type III (long_tail) with no identified risk
+l1-p1323	NRG4	library_reference	human	type3_tag_alone	mid_tail: genuine type III (mid_tail) with no identified risk
+l1-p1346	OPALIN	library_reference	human	type3_tag_alone	mid_tail: OPALIN: native N-out established (glycosylated N-terminal domain, PMID 18490449); weak delta does not flag cassette risk
+l1-p1666	PMEPA1	library_reference	human	type3_tag_alone	mid_tail: genuine type III (mid_tail) with no identified risk
+l1-p1682	PRRG1	library_reference	human	type3_tag_alone	mid_tail: genuine type III (mid_tail) with no identified risk
+l1-p1684	PRRG3	library_reference	human	type3_tag_alone	mid_tail: genuine type III (mid_tail) with no identified risk
+l1-p1800	SERTM2	library_reference	human	type3_tag_alone	mid_tail: genuine type III (mid_tail) with no identified risk
+l1-p1809	SIGIRR	library_reference	human	type3_tag_alone	mid_tail: SIGIRR: native type III already translocating a 118-residue Ig domain; weak delta does not flag cassette risk
+l1-p3048	SIGIRR	ortholog	mouse	type3_tag_alone	mid_tail: mouse SIGIRR: the Delta <= 1 rule gives Igk + tag, but human SIGIRR (l1-p1809) went to tag alone because its type III topology is established (UniProt Q6IA17); the orthologs share the topology
+l1-p2053	SMAGP	library_reference	human	type3_tag_alone	mid_tail: genuine type III (mid_tail) with no identified risk
+l1-p2086	SUSD3	library_reference	human	type3_tag_alone	mid_tail: genuine type III (mid_tail) with no identified risk
+l1-p2230	TNFRSF13B	library_reference	human	type3_tag_alone	long_tail: genuine type III (long_tail) with no identified risk
+l1-p2974	TNFRSF13B	ortholog	cyno	type3_tag_alone	long_tail: genuine type III (long_tail) with no identified risk
+l1-p2231	TNFRSF13C	library_reference	human	type3_tag_alone	mid_tail: genuine type III (mid_tail) with no identified risk
