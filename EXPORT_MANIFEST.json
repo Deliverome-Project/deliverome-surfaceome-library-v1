@@ -1,6 +1,6 @@
 {
  "source_repository": "Deliverome-Project/deliverome-analysis",
- "source_commit": "1ee90f8b4e2964652edd9b324f0f9c51f3d48e8b",
+ "source_commit": "99e9fe991e88e92b25290f596b26b54f3bd0fc91",
  "source_ref": "HEAD",
  "files": {
   ".github/workflows/ci.yml": "4e5284d08c91ef7bf449f6c895e822b28cf12917a88e9bb3a92da91744acd648",
@@ -376,7 +376,7 @@
   "library/l1/orf-design/l1_swap_risk_summary.json": "2cdf5bbbcad50da92826760af9f79394c14f210a28f88385c8a027d0a6608c19",
   "library/l1/orf-design/l1_tag_paths.py": "d7c114ca9fa1b20117a51b2f5b14604b27ece3c6fa3f0eb8a12f49b54b98b641",
   "library/l1/orf-design/l1_tag_paths.tsv": "5260e235d307a46c5884ca0c531e0104e0c5a90d450c8183266a134d37ba660a",
-  "library/l1/orf-design/l1_tag_site_swaps_2026_11_23.tsv": "73882c4328dba9a039ca90843d7efc356d7a4190bdc8ad3222ac1ace872cf14f",
+  "library/l1/orf-design/l1_tag_site_swaps_2026_11_23.tsv": "26e886020cf1eff386dfc8105c3f173653fc393f7d13e117673807b6ef143a35",
   "library/l1/orf-design/l2_deeptmhmm_v1_topology_gap.tsv": "fa1f33213367826b851a87f9d3b5403d1ad4d7e83b560a4f66107a0a21a47300",
   "library/l1/orf-design/l2_structure_gap.tsv": "bdb1a3ee8dbf6a982b8f75f962fba4bfbf6b9098267c5d1934ad6f9ad590c20a",
   "library/l1/orf-design/l2_tag_paths.tsv": "9cc2ff1099c4b46369f0fb4f32e3910f0b1e50d4d61a2b155a3d930f2d7b7433",
@@ -643,8 +643,8 @@
   "library/l1/orf-design/reviewer-package/brief_numbers.json": "5cc26c5704fb6859ba99d784eae06320b415170145ebc06b62adae28c9a10ba5",
   "library/l1/orf-design/reviewer-package/brief_numbers.py": "f161e8ed6253c26c185e3eda9e3dd807632bdd8ec4855e31effe470bf38b882c",
   "library/l1/orf-design/reviewer-package/bundle.py": "55511efff5bafb22dcd8354ec1aaa7604ae6223f280e883fbb26bcdc3af953fe",
-  "library/l1/orf-design/reviewer-package/bundle_manifest.tsv": "01d766f324e04e9dce6e93fa2c31c4029b496c975886d9a2568c5795171de85a",
-  "library/l1/orf-design/reviewer-package/data_locations.tsv": "68c7dc6ad30bd326426469031f3bb03a3e731e1f076e393a17ef47e7ffe31ed8",
+  "library/l1/orf-design/reviewer-package/bundle_manifest.tsv": "e9b641dd50219be4158e5a0b8620c5ac3987e2a334be5f1cd8c63eb24682465e",
+  "library/l1/orf-design/reviewer-package/data_locations.tsv": "0194ee4c39ec6f953fcb91cc9ac22e220724db4cd9361f6f47cce8d96af921bb",
   "library/l1/orf-design/reviewer-package/export_review_repo.py": "ccecd04a8c3c8288ed0ea6547b037bdaa21e4ccf3a6270ab516c8b09b724af49",
   "library/l1/orf-design/reviewer-package/export_twist_draft.py": "23397b85bbd9b1a2eb1bbf0b706e0351a08ae0e8c383c2a98ccf86de7d18989c",
   "library/l1/orf-design/reviewer-package/figures/l1_candidate_sets.png": "ade20166fc460e04b094054f3e5db03ab886dbbb0f9e1d15622bd9258faea6eb",
