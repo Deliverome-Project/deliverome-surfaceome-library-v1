@@ -126,3 +126,9 @@ Files you add are never touched.
 
 New utilities go in `src/deliverome_analysis/`, with dependencies declared in
 `pyproject.toml` and locked in `uv.lock` (`uv add <package>`), never installed ad hoc.
+
+## License and citation
+
+- **Code:** [MIT License](LICENSE).
+- **Derived library designs, construct tables, brief, and figures:** dedicated to the public domain under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) — see [`LICENSING.md`](LICENSING.md) for full terms and upstream source licenses.
+- **Citation:** see [`CITATION.cff`](CITATION.cff) (also available via GitHub's *Cite this repository* button).

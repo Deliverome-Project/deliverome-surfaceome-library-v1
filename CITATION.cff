@@ -1,0 +1,62 @@
+cff-version: 1.2.0
+title: >-
+  Deliverome surfaceome library v1: design pipeline, construct catalog,
+  and external review package
+message: >-
+  If you use this library design, construct catalog, or pipeline code,
+  please cite it using the metadata below. Code is licensed under MIT
+  and derived library designs, tables, and documentation are dedicated
+  to the public domain under CC0 1.0 (see LICENSE and LICENSING.md).
+type: software
+authors:
+  - given-names: Rebecca J.
+    family-names: Carlson
+    affiliation: Deliverome Bio, Inc.
+    email: becca@deliverome.org
+    orcid: 'https://orcid.org/0000-0002-5423-9717'
+repository-code: >-
+  https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1
+url: 'https://surfaceome.deliverome.org/v1-review/'
+abstract: >-
+  Design pipeline, construct tables, verification tests, and external
+  review brief for the Deliverome v1 pooled, barcoded lentiviral
+  surface-protein ORF library (L1 in code). The library covers 2,762
+  active cell-surface protein CDSs (2,412 human reference proteins,
+  150 human isoforms, and 200 mouse and cynomolgus orthologs; 3,384
+  ordered constructs), each carrying a 51-aa extracellular SpyTag003
+  and ALFA dual-epitope tag cassette and a 20-nt barcode compatible
+  with FACS, optical pooled screening, and 10x Genomics Feature
+  Barcoding.
+keywords:
+  - surfaceome
+  - cell surface proteins
+  - ORF library
+  - lentiviral library
+  - endocytosis
+  - internalization
+  - protein tagging
+  - bioinformatics
+license: MIT
+version: 1.0.0-review
+date-released: '2026-11-24'
+references:
+  - type: article
+    title: The accessible human surfaceome
+    authors:
+      - given-names: Rebecca J.
+        family-names: Carlson
+        affiliation: Deliverome Bio, Inc.
+        orcid: 'https://orcid.org/0000-0002-5423-9717'
+      - given-names: L. Robert
+        family-names: Hollingsworth
+        affiliation: Deliverome Bio, Inc.
+        orcid: 'https://orcid.org/0000-0002-4130-3580'
+      - given-names: Michael J.
+        family-names: Smallegan
+        affiliation: Coral Biosciences, LLC
+        orcid: 'https://orcid.org/0000-0002-5919-6736'
+    journal: bioRxiv
+    year: 2026
+    month: 10
+    doi: 10.64898/2026.10.18.759859
+    url: 'https://doi.org/10.64898/2026.10.18.759859'
