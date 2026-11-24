@@ -1,0 +1,117 @@
+{
+  "inserts": 3384,
+  "inserts_source": "committed constructs_l1_*.fasta",
+  "inserts_sha256": "85d009b54a08e56f04e290df8d113c2ba54d4a712cac12e5cdc0c734ac499912",
+  "cassette_encodings": "l1_arm_cassette_encodings.tsv",
+  "checks": {
+    "backbone": {
+      "pass": 3384
+    },
+    "esp3i_shuttle": {
+      "pass": 3384
+    },
+    "golden_gate_domestication": {
+      "pass": 3384
+    },
+    "insert_matches_design": {
+      "pass": 3384
+    },
+    "diversified_linker": {
+      "pass": 3384
+    },
+    "barcode": {
+      "pass": 3384
+    },
+    "proteoform": {
+      "pass": 3384
+    },
+    "membrane_anchor": {
+      "skip": 3384
+    },
+    "single_orf": {
+      "pass": 3384
+    },
+    "cassette_placement": {
+      "pass": 3384
+    },
+    "tag_codons": {
+      "pass": 3384
+    },
+    "linkers_not_shared": {
+      "pass": 3358,
+      "warn": 26
+    },
+    "type_iis_junctions": {
+      "pass": 3384
+    },
+    "shuttle_digest": {
+      "pass": 3384
+    },
+    "backbone_features": {
+      "pass": 3384
+    },
+    "extra_type_iis": {
+      "warn": 2541,
+      "pass": 843
+    },
+    "protein_matches_table": {
+      "pass": 3384
+    },
+    "layout": {
+      "pass": 3384
+    },
+    "insert_ends": {
+      "pass": 3384
+    },
+    "synthesis_windows": {
+      "pass": 1990,
+      "warn": 1394
+    },
+    "cassette_not_shared": {
+      "pass": 3384
+    },
+    "cassette_region_tract": {
+      "pass": 2762,
+      "warn": 622
+    }
+  },
+  "pool_checks": {
+    "completeness": {
+      "ok": true,
+      "detail": "2743 built members, 3384 inserts; missing [] (0), not a built member [] (0), arm count off [] (0), order vs tables [] (0)"
+    }
+  },
+  "failing_checks": [],
+  "cassette_dna_variants": 3384,
+  "largest_shared_cassette_group": 1,
+  "cassette_region_tract_nt": {
+    "median": 74.0,
+    "p90": 109.0,
+    "max": 162,
+    "max_insert": "l1-p3120-a1",
+    "over_swap_gate_other_gene": 622,
+    "window": "cassette \u00b1 150 nt, cut at the barcode slot"
+  },
+  "backbone_features_checked": [
+    "3' LTR (Delta-U3)",
+    "AmpR",
+    "AmpR promoter",
+    "ColE1 origin",
+    "EFS_v1",
+    "HIV-1 Psi",
+    "IRES2_v1",
+    "PuroR",
+    "RRE",
+    "RSV promoter",
+    "SV40 ori",
+    "WPRE",
+    "cPPT/CTS",
+    "ori"
+  ],
+  "runtime_s": {
+    "total": 19.9,
+    "tract": 11.4
+  },
+  "decided_by": "Becca, 2026-11-21 (\"we want the plasmid qc to run on the pool\")",
+  "implemented_by": "Claude Code session l1-review-export-scope (pool QC fork)"
+}

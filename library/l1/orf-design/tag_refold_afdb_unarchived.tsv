@@ -1,0 +1,99 @@
+afdb_url	afdb_version	readers	reason
+https://alphafold.ebi.ac.uk/files/AF-Q8NGX6-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q8NH09-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q8NH21-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q8NHJ6-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q8NHL6-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q8NI17-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q8NI32-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q8QZT4-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q8R1S9-F1-model_v6.pdb	v6	native_index	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q8R4G0-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q8TCZ2-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q8VHR0-F1-model_v6.pdb	v6	native_index	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q8VIK5-F1-model_v6.pdb	v6	native_index	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q8WWV6-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q8WYK1-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q91XX0-F1-model_v6.pdb	v6	native_index	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q91XX4-F1-model_v6.pdb	v6	native_index	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q91Y04-F1-model_v6.pdb	v6	native_index	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q922B3-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q925D8-F1-model_v6.pdb	v6	native_index	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q92729-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q96BF3-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q96GP6-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q96GW7-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q96KR4-3-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q96KR4-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q96L08-2-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q96MU8-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q96QE4-F1-model_v6.pdb	v6	native_index;payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q99650-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q99KW9-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q99PD7-F1-model_v6.pdb	v6	native_index	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q99PI8-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9BGS7-F1-model_v6.pdb	v6	native_index	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9BWV1-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9BXN2-9-F1-model_v6.pdb	v6	native_index	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9BY67-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9BZW8-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9C0C4-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9CRG1-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9CS84-2-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9D7L8-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9DA16-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9DBU0-F1-model_v6.pdb	v6	native_index	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9DCG2-F1-model_v6.pdb	v6	native_index	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9DD23-F1-model_v6.pdb	v6	native_index	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9GK78-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9GZZ7-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9H013-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9H2S1-2-F1-model_v6.pdb	v6	native_index	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9HAR2-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9HDB5-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9JLZ8-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9NS40-F1-model_v6.pdb	v6	payload;s5e13	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9NS68-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9NTN9-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9NZH0-2-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9P0K1-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9QZC2-F1-model_v6.pdb	v6	native_index	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9R087-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9R097-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9R0W9-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9UF33-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9UIB8-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9WTW2-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9Y5I3-2-F1-model_v6.pdb	v6	native_index	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9Y653-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9Z0W1-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9Z109-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9Z1L5-F1-model_v6.pdb	v6	payload	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-Q9Z1Q3-F1-model_v6.pdb	v6	native_index	no local copy; AFDB refuses this machine
+https://alphafold.ebi.ac.uk/files/AF-A0A087WX63-F1-model_v6.pdb		payload	HTTP 404 on alphafold.ebi.ac.uk v6 (2026-11-23); payload URL not present in AFDB v6
+https://alphafold.ebi.ac.uk/files/AF-A0A6I8PTT2-F1-model_v6.pdb		payload	HTTP 404 on alphafold.ebi.ac.uk v6 (2026-11-23); payload URL not present in AFDB v6
+https://alphafold.ebi.ac.uk/files/AF-A0A8I5KQL9-F1-model_v6.pdb		payload	HTTP 404 on alphafold.ebi.ac.uk v6 (2026-11-23); payload URL not present in AFDB v6
+https://alphafold.ebi.ac.uk/files/AF-A0A8I5KUX3-F1-model_v6.pdb		payload	HTTP 404 on alphafold.ebi.ac.uk v6 (2026-11-23); payload URL not present in AFDB v6
+https://alphafold.ebi.ac.uk/files/AF-A0ACI8PGS7-F1-model_v6.pdb		payload	HTTP 404 on alphafold.ebi.ac.uk v6 (2026-11-23); payload URL not present in AFDB v6
+https://alphafold.ebi.ac.uk/files/AF-A0ACI8Q5T8-F1-model_v6.pdb		payload	HTTP 404 on alphafold.ebi.ac.uk v6 (2026-11-23); payload URL not present in AFDB v6
+https://alphafold.ebi.ac.uk/files/AF-A0ACI8QVC9-F1-model_v6.pdb		payload	HTTP 404 on alphafold.ebi.ac.uk v6 (2026-11-23); payload URL not present in AFDB v6
+https://alphafold.ebi.ac.uk/files/AF-A0ACI8QX80-F1-model_v6.pdb		payload	HTTP 404 on alphafold.ebi.ac.uk v6 (2026-11-23); payload URL not present in AFDB v6
+https://alphafold.ebi.ac.uk/files/AF-A0ACI8RDY2-F1-model_v6.pdb		payload	HTTP 404 on alphafold.ebi.ac.uk v6 (2026-11-23); payload URL not present in AFDB v6
+https://alphafold.ebi.ac.uk/files/AF-A0ACI8RI47-F1-model_v6.pdb		payload	HTTP 404 on alphafold.ebi.ac.uk v6 (2026-11-23); payload URL not present in AFDB v6
+https://alphafold.ebi.ac.uk/files/AF-A0ACI8RT92-F1-model_v6.pdb		payload	HTTP 404 on alphafold.ebi.ac.uk v6 (2026-11-23); payload URL not present in AFDB v6
+https://alphafold.ebi.ac.uk/files/AF-A0ACI8SAD0-F1-model_v6.pdb		payload	HTTP 404 on alphafold.ebi.ac.uk v6 (2026-11-23); payload URL not present in AFDB v6
+https://alphafold.ebi.ac.uk/files/AF-A0ACI8SI43-F1-model_v6.pdb		payload	HTTP 404 on alphafold.ebi.ac.uk v6 (2026-11-23); payload URL not present in AFDB v6
+https://alphafold.ebi.ac.uk/files/AF-A0ACI8SI53-F1-model_v6.pdb		payload	HTTP 404 on alphafold.ebi.ac.uk v6 (2026-11-23); payload URL not present in AFDB v6
+https://alphafold.ebi.ac.uk/files/AF-A0ACI8SSH6-F1-model_v6.pdb		payload	HTTP 404 on alphafold.ebi.ac.uk v6 (2026-11-23); payload URL not present in AFDB v6
+https://alphafold.ebi.ac.uk/files/AF-A0ACI8TXX4-F1-model_v6.pdb		payload	HTTP 404 on alphafold.ebi.ac.uk v6 (2026-11-23); payload URL not present in AFDB v6
+https://alphafold.ebi.ac.uk/files/AF-A0ACI8U2E2-F1-model_v6.pdb		payload	HTTP 404 on alphafold.ebi.ac.uk v6 (2026-11-23); payload URL not present in AFDB v6
+https://alphafold.ebi.ac.uk/files/AF-A0ACI8U7H9-F1-model_v6.pdb		payload	HTTP 404 on alphafold.ebi.ac.uk v6 (2026-11-23); payload URL not present in AFDB v6
+https://alphafold.ebi.ac.uk/files/AF-A0ACI8U8G7-F1-model_v6.pdb		payload	HTTP 404 on alphafold.ebi.ac.uk v6 (2026-11-23); payload URL not present in AFDB v6
+https://alphafold.ebi.ac.uk/files/AF-A0ACI8UJ48-F1-model_v6.pdb		payload	HTTP 404 on alphafold.ebi.ac.uk v6 (2026-11-23); payload URL not present in AFDB v6
+https://alphafold.ebi.ac.uk/files/AF-A0ACI8UZ81-F1-model_v6.pdb		payload	HTTP 404 on alphafold.ebi.ac.uk v6 (2026-11-23); payload URL not present in AFDB v6
+https://alphafold.ebi.ac.uk/files/AF-A0ACI8V5M4-F1-model_v6.pdb		payload	HTTP 404 on alphafold.ebi.ac.uk v6 (2026-11-23); payload URL not present in AFDB v6
+https://alphafold.ebi.ac.uk/files/AF-A0ACI8VCD6-F1-model_v6.pdb		payload	HTTP 404 on alphafold.ebi.ac.uk v6 (2026-11-23); payload URL not present in AFDB v6
+https://alphafold.ebi.ac.uk/files/AF-A0ACI8VMI9-F1-model_v6.pdb		payload	HTTP 404 on alphafold.ebi.ac.uk v6 (2026-11-23); payload URL not present in AFDB v6
+https://alphafold.ebi.ac.uk/files/AF-A0ACI8VNP2-F1-model_v6.pdb		payload	HTTP 404 on alphafold.ebi.ac.uk v6 (2026-11-23); payload URL not present in AFDB v6
+https://alphafold.ebi.ac.uk/files/AF-ENSMFAP00000045010-F1-model_v6.pdb		payload	HTTP 404 on alphafold.ebi.ac.uk v6 (2026-11-23); payload URL not present in AFDB v6
+https://alphafold.ebi.ac.uk/files/AF-F6YBN8-F1-model_v6.pdb		payload	HTTP 404 on alphafold.ebi.ac.uk v6 (2026-11-23); payload URL not present in AFDB v6

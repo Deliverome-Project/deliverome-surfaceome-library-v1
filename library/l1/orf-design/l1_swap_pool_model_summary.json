@@ -1,0 +1,125 @@
+{
+  "source": "Walton, Qin & Blainey, bioRxiv 2024.03.17.585235 (PMID 38558968): k=5.3e-4/bp",
+  "inserts": 3384,
+  "pool_weighting": "x3.5",
+  "pool_share_median": 8.240545339581028e-05,
+  "pool_share_1_over": 12135,
+  "min_block_nt": 20,
+  "background_partners_sampled_per_barcode": 96,
+  "specific_pairs": 113547,
+  "same_cds_pairs": {
+    "pairs": 883,
+    "suffix_tract_median_nt": 320.0,
+    "over_gate": 615,
+    "per_pair_rate_median": 0.1438,
+    "per_pair_rate_max": 0.4865,
+    "co_packaging_probability_median": 1.5e-08,
+    "library_fraction_all_791_pairs": 0.00021341911000000003,
+    "suffix_tract_nt_in_native_cds_median_fraction": 0.8625
+  },
+  "different_cds_specific_pairs": {
+    "pairs_over_50_nt_written": 1990,
+    "over_gate": 491
+  },
+  "library_fraction_wrong_protein": {
+    "specific_mislabel": 0.0008675760470901639,
+    "specific_chimera": 0.002119473643107791,
+    "background_mislabel": 0.021750978550959192,
+    "background_chimera": 0.029804644328574978,
+    "total": 0.05454267256973211,
+    "not_counted_leader_swap": 0.021578627580508807
+  },
+  "per_barcode_impurity": {
+    "median": 0.04290057486713461,
+    "max": 0.1003257117279618,
+    "specific_part_median": 0.0010651073378180062,
+    "specific_part_max": 0.02820651348474643,
+    "by_rung_median": {
+      "nterm": {
+        "inserts": 1322,
+        "impurity": 0.040933794307088024,
+        "mislabel": 0.022140942264333954,
+        "chimera": 0.018867200906166174,
+        "leader_swap": 0.03389083333299118
+      },
+      "type3": {
+        "inserts": 43,
+        "impurity": 0.041069927543459436,
+        "mislabel": 0.022156220491316086,
+        "chimera": 0.018909840674131432,
+        "leader_swap": 0.032998723473388177
+      },
+      "multipass": {
+        "inserts": 568,
+        "impurity": 0.04031330778875798,
+        "mislabel": 0.022116912127353353,
+        "chimera": 0.01824026876293967,
+        "leader_swap": 0.030570586255217694
+      },
+      "cterm": {
+        "inserts": 361,
+        "impurity": 0.07483882179647433,
+        "mislabel": 0.025544846714276745,
+        "chimera": 0.04931527544338689,
+        "leader_swap": 0.0
+      },
+      "internal": {
+        "inserts": 1090,
+        "impurity": 0.07478745749428668,
+        "mislabel": 0.022191950371074878,
+        "chimera": 0.052673998115940646,
+        "leader_swap": 0.0
+      }
+    }
+  },
+  "specific_impurity_by_insert_length": {
+    "median_by_length_quartile": {
+      "1": 0.0009685501696315509,
+      "2": 0.0007367982011933373,
+      "3": 0.0013077162793064538,
+      "4": 0.0013922646205202216
+    },
+    "quartile_upper_bounds_nt": [
+      1313.0,
+      1757.0,
+      2540.0
+    ],
+    "spearman_vs_insert_length": 0.308685474552602,
+    "barcodes_over_cut": {
+      "cut": 0.01,
+      "count": 15,
+      "max": 0.02820651348474643,
+      "insert_nt_range": [
+        4538,
+        4988
+      ],
+      "design_ids": [
+        "l1-p1693",
+        "l1-p2273",
+        "l1-p2975",
+        "l1-p3100",
+        "l1-p3120",
+        "l1-p3220",
+        "l1-p3221"
+      ]
+    }
+  },
+  "wrong_protein_by_block_region": {
+    "background|chimera|native CDS": 1.8239333193400265e-05,
+    "background|chimera|tag cassette": 0.029786404995381575,
+    "background|leader swap|native CDS": 1.0534731013169815e-05,
+    "background|leader swap|tag cassette": 0.021045536812651384,
+    "background|mislabel|3' tail": 0.021515655250106045,
+    "background|mislabel|native CDS": 3.133778202455168e-06,
+    "background|mislabel|tag cassette": 0.00023218952265068033,
+    "specific|chimera|native CDS": 0.0014219510796028216,
+    "specific|chimera|tag cassette": 0.0006975225635050037,
+    "specific|leader swap|native CDS": 3.8763768736548786e-06,
+    "specific|leader swap|tag cassette": 0.000518679659970588,
+    "specific|mislabel|3' tail": 0.00048574072303263243,
+    "specific|mislabel|native CDS": 0.0003676854698187394,
+    "specific|mislabel|tag cassette": 1.4149854238791667e-05
+  },
+  "rate_at_gate": 0.05028767596203798,
+  "rate_at_cassette_153": 0.07485593055013168
+}

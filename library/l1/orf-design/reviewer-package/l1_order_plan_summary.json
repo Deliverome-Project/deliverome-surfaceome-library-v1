@@ -1,0 +1,118 @@
+{
+ "inserts": 3384,
+ "members": 2743,
+ "plates_per_set": 36,
+ "plate_sets": {
+  "stock_ul": 20.0,
+  "pooling_ul_each": 5.0,
+  "pooling_sets": 2,
+  "spare_ul": 0.0
+ },
+ "concentration_scenarios": {
+  "100_ng_ul": {
+   "pooling_well_ug": 0.5,
+   "stock_well_ug": 2.0,
+   "delivered_ug": 3.0,
+   "pool_ug_total_per_pool_x3.5": 236.7
+  },
+  "75_ng_ul": {
+   "pooling_well_ug": 0.375,
+   "stock_well_ug": 1.5,
+   "delivered_ug": 2.25,
+   "pool_ug_total_per_pool_x3.5": 177.5
+  },
+  "50_ng_ul": {
+   "pooling_well_ug": 0.25,
+   "stock_well_ug": 1.0,
+   "delivered_ug": 1.5,
+   "pool_ug_total_per_pool_x3.5": 118.4
+  }
+ },
+ "ordered_ug": 4.0,
+ "assumed_ug": 3.0,
+ "conc_ng_ul": 100.0,
+ "insert_nt_min_median_max": [
+  497,
+  1757,
+  5450
+ ],
+ "vector_bp_min_max": [
+  7974,
+  12927
+ ],
+ "inserts_over_threshold": 104,
+ "reference_insert": {
+  "insert_nt": 4300,
+  "vector_bp": 11787
+ },
+ "weighting": {
+  "x2.0": {
+   "inserts_needing_extra": 104,
+   "extra_ug_assumed_total": 40.5,
+   "order_ug_max": 5.91,
+   "pool_ul_shortest": 0.2423,
+   "pool_ul_median": 0.6721,
+   "pool_ul_longest": 12.1688,
+   "inserts_below_hand_pipetting": 1081,
+   "pool_ug_total_per_pool": 395.2,
+   "longest_vs_shortest_pmol": 31.0,
+   "longest_vs_median_pmol": 12.9
+  },
+  "x2.5": {
+   "inserts_needing_extra": 104,
+   "extra_ug_assumed_total": 56.2,
+   "order_ug_max": 6.86,
+   "pool_ul_shortest": 0.1037,
+   "pool_ul_median": 0.3811,
+   "pool_ul_longest": 15.7288,
+   "inserts_below_hand_pipetting": 2116,
+   "pool_ug_total_per_pool": 305.6,
+   "longest_vs_shortest_pmol": 93.5,
+   "longest_vs_median_pmol": 29.5
+  },
+  "x3.5": {
+   "inserts_needing_extra": 104,
+   "extra_ug_assumed_total": 84.3,
+   "order_ug_max": 8.84,
+   "pool_ul_shortest": 0.0289,
+   "pool_ul_median": 0.162,
+   "pool_ul_longest": 23.1602,
+   "inserts_below_hand_pipetting": 2566,
+   "pool_ug_total_per_pool": 236.7,
+   "longest_vs_shortest_pmol": 495.2,
+   "longest_vs_median_pmol": 102.2
+  }
+ },
+ "pooling_plates": {
+  "x2.0": {
+   "plate_dilution_plates": 34,
+   "conc_ng_ul_range": [
+    6.132,
+    76.598
+   ],
+   "max_error_fold_plate_dilution": 1.27,
+   "max_error_fold_excluding_plate_1": 1.2,
+   "per_well_inserts": 120
+  },
+  "x2.5": {
+   "plate_dilution_plates": 34,
+   "conc_ng_ul_range": [
+    2.798,
+    70.986
+   ],
+   "max_error_fold_plate_dilution": 1.35,
+   "max_error_fold_excluding_plate_1": 1.27,
+   "per_well_inserts": 120
+  },
+  "x3.5": {
+   "plate_dilution_plates": 34,
+   "conc_ng_ul_range": [
+    0.858,
+    63.292
+   ],
+   "max_error_fold_plate_dilution": 1.48,
+   "max_error_fold_excluding_plate_1": 1.37,
+   "per_well_inserts": 120
+  }
+ }
+}

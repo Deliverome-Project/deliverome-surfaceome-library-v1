@@ -81,6 +81,169 @@ P003_CASSETTE_NT = (
 #: The two tags inside the cassette. Their DNA is what the readout binds and what was shown to
 #: display, so it is held on p003's codons; everything else in the cassette is linker.
 TAG_PEPTIDES: dict[str, str] = {"SpyTag003": "RGVPHIVMVDAYKRYK", "P-ALFA-P": "PSRLEEELRRRLTEP"}
+
+#: Murine Ig kappa-chain V-J2-C signal peptide (20 aa / 60 nt ending GGT) plus the +1 Asp
+#: every published Igk vector keeps (Thermo pSecTag2/Hygro; Addgene 219810, 259743, 259744).
+IGK_LEADER_NT = "ATGGAGACAGACACACTCCTGCTATGGGTACTGCTGCTCTGGGTTCCAGGTTCCACTGGT"
+IGK_LEADER_AA = "METDTLLLWVLLLWVPGSTG"
+IGK_PLUS1_NT = "GAC"
+IGK_PLUS1_AA = "D"
+
+# --- The insert wrapper ------------------------------------------------------------------- #
+# Every insert is ``ESP3I_5 | KOZAK | coding (with its stop) | readout | ESP3I_3``. An L1 rung
+# insert carries the L1 readout region (:func:`l1_readout`, :func:`wrap_insert`); every plasmid
+# ordered before L1, and the L1 rescue arms, carry the p003 readout ``SPACER | FWD_PRIMER |
+# barcode | REV_PRIMER | CS1`` (:func:`wrap_p003_insert`, ``P003_STOP_TO_BARCODE``). The rung
+# builders, the pool QC and the synthesis checks all assemble or parse these layouts, so they
+# are defined once, here.
+#
+# L1 readout region, adopted 2026-11-22 (Becca: "let's just leave the backbone as is but then
+# add the t7 and the feldman flank"). The p003 constants above stay as they are: they describe
+# the layout that every plasmid ordered before L1 carries, and the map audits check against
+# them. L1 inserts are assembled with ``l1_readout`` instead:
+#
+#   STOP · SPACER · T7_PROMOTER · FWD_PRIMER (JT832) · barcode · FELDMAN_3PRIME · CS1
+#
+# * T7_PROMOTER: T7 class III promoter, -17 to +3, forward, so in fixed cells T7 transcribes
+#   sense RNA across the handle, barcode and readout region that Feldman's RT primer and padlock
+#   read unchanged (in situ T7 transcription before RT, as in PerturbView, Kudo et al. 2025,
+#   doi:10.1038/s41587-024-02391-0). It lengthens the sequence every insert shares before its
+#   barcode by 20 nt, which the pooled swap model prices (s4e9 swap_t7_scenario.py).
+# * FELDMAN_3PRIME: replaces the 10-nt gap + RT site with Feldman's 17-nt padlock construct
+#   from lentiGuide-BC (Addgene #127168) followed by his RT site with T->A at position 9, which
+#   removes a GTAAG splice donor and a hairpin (reviewer brief, section 9). Same as
+#   s4e9 reserve_barcodes.FELDMAN_T9A_3PRIME, which every L1 barcode was screened against.
+# The insert still ends at CS1, so the Esp3I junction and the destination backbone are unchanged.
+T7_PROMOTER = "TAATACGACTCACTATAGGG"
+FELDMAN_3PRIME = "ACTGGCTATTCATTCGC" + "CCTTTGGGAAAGCACACGTC"
+
+#: The Esp3I sites that keep every insert excisable for shuttling, read off p0039_AXL:
+#: ``CGTCTC A|GACC...`` at the 5' end (the overhang is the Kozak's own first four bases) and
+#: ``...AAAG|A GAGACG`` at the 3' end (bottom strand; the last bases of 10x CS1 + the AG pad).
+#: p0039 carries no Esp3I of its own.
+ESP3I_5 = "CGTCTCA"
+ESP3I_3 = "AGA" + "GAGACG"
+#: The barcode position in a designed insert, before a barcode is assigned.
+BARCODE_SLOT = "N" * BARCODE_LEN
+#: 0-based offset of the coding sequence's first base (the ATG) in a wrapped insert.
+CODING_START = len(ESP3I_5) + len(KOZAK)
+#: The two constant halves of ``l1_readout`` either side of the barcode, for code that reads an
+#: L1 insert's 3' end (seam contexts, swap-risk tails, annotation, QC).
+L1_BEFORE_BARCODE = STOP + SPACER + T7_PROMOTER + FWD_PRIMER
+L1_AFTER_BARCODE = FELDMAN_3PRIME + CS1
+#: The 44 nt before the barcode of every L1 insert that ends on the cassette (a C-terminal
+#: arm): the stop codon, the pad, the T7 promoter and the 5' handle. Arms that keep a native
+#: C-terminus end on their own stop codon instead, followed by the same pad, T7 and handle.
+STOP_TO_BARCODE = L1_BEFORE_BARCODE
+#: The 24 nt before the barcode in the p003 layout (stop, pad, 5' handle), for pre-L1 maps.
+P003_STOP_TO_BARCODE = STOP + SPACER + FWD_PRIMER
+#: Where the wrapped insert replaces p0039's MCS + stuffer: 0-based start, immediately 3' of
+#: EFS, and the length replaced (MCS 28 + stuffer 167).
+BACKBONE_SLOT_START = 4808
+BACKBONE_SLOT_LEN = 195
+#: The enzymes every ORF is domesticated against, in the order the builders search them.
+DOMESTICATION_ENZYMES: tuple[str, ...] = ("BbsI", SHUTTLE_ENZYME, "BsaI")
+
+
+def l1_readout(barcode: str) -> str:
+    """Everything an L1 insert carries after its stop codon, for one barcode."""
+    assert len(barcode) == BARCODE_LEN, "barcodes are 20 nt"
+    return STOP + SPACER + T7_PROMOTER + FWD_PRIMER + barcode + FELDMAN_3PRIME + CS1
+
+
+assert l1_readout(BARCODE_SLOT) == L1_BEFORE_BARCODE + BARCODE_SLOT + L1_AFTER_BARCODE
+
+
+def wrap_insert(coding: str, barcode: str = BARCODE_SLOT) -> str:
+    """The ordered L1 insert around ``coding``, which must already end in its stop codon."""
+    return ESP3I_5 + KOZAK + coding + l1_readout(barcode)[len(STOP) :] + ESP3I_3
+
+
+def wrap_p003_insert(coding: str, barcode: str = BARCODE_SLOT) -> str:
+    """The insert around ``coding`` in the p003 readout layout (``coding`` ends in its stop).
+
+    The layout every plasmid ordered before L1 carries; the L1 rescue arms keep it.
+    """
+    return ESP3I_5 + KOZAK + coding + SPACER + FWD_PRIMER + barcode + REV_PRIMER + CS1 + ESP3I_3
+
+
+def wrapper_sites_only(insert: str, enzymes: tuple[str, ...] = DOMESTICATION_ENZYMES) -> bool:
+    """True when the only Type IIS sites in ``insert`` are the wrapper's two Esp3I."""
+    sites = seqtools.find_sites(insert, list(enzymes))
+    return len(sites) == 2 and all(s[0] == SHUTTLE_ENZYME for s in sites)
+
+
+def place_in_backbone(backbone: str, insert: str) -> str:
+    """The finished plasmid: ``insert`` in place of the empty p0039's MCS + stuffer slot."""
+    return (
+        backbone[:BACKBONE_SLOT_START]
+        + insert
+        + backbone[BACKBONE_SLOT_START + BACKBONE_SLOT_LEN :]
+    )
+
+
+def check_inserts_in_backbone(
+    inserts: list[tuple[str, str]],
+    backbone: str,
+    enzymes: tuple[str, ...] = DOMESTICATION_ENZYMES,
+) -> int:
+    """Verify each ``(label, insert)`` in ``backbone`` adds only the two wrapper Esp3I sites.
+
+    Compares per-enzyme site counts rather than total count alone, so an extra BsaI/BbsI site
+    cannot mask a missing Esp3I site. Returns the backbone's own site count.
+    """
+    enz_list = list(enzymes)
+    bb_sites = seqtools.find_sites(backbone, enz_list)
+    expected: dict[str, int] = {e: sum(s[0] == e for s in bb_sites) for e in enzymes}
+    expected[SHUTTLE_ENZYME] = expected.get(SHUTTLE_ENZYME, 0) + 2
+    for label, insert in inserts:
+        vec = place_in_backbone(backbone, insert)
+        sites = seqtools.find_sites(vec, enz_list)
+        got = {e: sum(s[0] == e for s in sites) for e in enzymes}
+        if got != expected:
+            raise AssertionError(f"{label}: vector sites {got}, expected {expected}")
+    return len(bb_sites)
+
+
+def translate_insert(insert: str) -> str:
+    """Protein of a linear wrapped insert, from the Kozak ATG to the first in-frame stop.
+
+    The stop is not included. A codon outside the genetic code (an ``N``) reads as ``X``, so
+    a barcode slot reached before any stop shows up in the protein rather than raising.
+    Raises ``ValueError`` when the insert has no Kozak or no ATG right after it. For a
+    circular plasmid use :func:`read_orf`.
+    """
+    k = insert.find(KOZAK)
+    if k < 0:
+        raise ValueError("insert carries no Kozak")
+    start = k + len(KOZAK)
+    if insert[start : start + 3] != "ATG":
+        raise ValueError("insert does not start ATG after the Kozak")
+    aa = []
+    for i in range(start, len(insert) - 2, 3):
+        c = seqtools.GENETIC_CODE.get(insert[i : i + 3], "X")
+        if c == "*":
+            break
+        aa.append(c)
+    return "".join(aa)
+
+
+def p003_tag_codons() -> dict[int, str]:
+    """``{cassette residue index: codon}`` for SpyTag003 and P-ALFA-P on p003's own DNA.
+
+    The ``fixed_codons`` every per-arm cassette encoding is drawn with (Becca, 2026-10-29):
+    the tags keep p003's validated codons and only the GGGGS linker blocks are recoded.
+    """
+    return seqtools.pin_codons(
+        P003_CASSETTE_NT, P003_CASSETTE_PEPTIDE, tuple(TAG_PEPTIDES.values())
+    )
+
+
+def keeps_p003_tag_codons(cassette_nt: str) -> bool:
+    """True when a 153-nt cassette encoding carries SpyTag003 and P-ALFA-P on p003's codons."""
+    return all(cassette_nt[3 * i : 3 * i + 3] == c for i, c in p003_tag_codons().items())
+
+
 #: Type IIS enzymes the assembly does not use but a downstream cloning step might. Reported as
 #: warnings, never gated (recognition sites, top strand).
 EXTRA_TYPE_IIS: dict[str, str] = {
@@ -146,6 +309,12 @@ class Spec:
     #: ``{label: sequence}`` of backbone features that must each occur exactly once in the
     #: finished plasmid (from the backbone's GenBank). Empty means "not checked".
     backbone_features: dict[str, str] = field(default_factory=dict)
+    #: What follows the ORF's stop codon up to the barcode, and what follows the barcode. The
+    #: defaults are the legacy readout (pad + 5' handle; gap + RT site). An L1 insert carries the
+    #: L1 readout region instead (Becca, 2026-11-22: pad + T7 promoter + 5' handle; Feldman's
+    #: padlock + RT site), so its spec names those (``L1_BEFORE_BARCODE``, ``FELDMAN_3PRIME``).
+    after_stop: str = SPACER + FWD_PRIMER
+    after_barcode: str = REV_PRIMER
 
     @classmethod
     def from_json(cls, path: Path) -> Spec:
@@ -415,12 +584,12 @@ def check_barcode(seq: str, spec: Spec) -> Finding:
         return Finding(
             "barcode", False, f"barcode is {len(spec.barcode)} nt, expected {BARCODE_LEN}"
         )
-    flanked = FWD_PRIMER + spec.barcode + REV_PRIMER
+    flanked = FWD_PRIMER + spec.barcode + spec.after_barcode
     copies = _circular_count(seq, flanked)
     if copies > 1:
         return Finding("barcode", False, f"barcode slot occurs {copies} times; expected once")
     if copies == 1:
-        if _circular_count(seq, FWD_PRIMER) != 1 or _circular_count(seq, REV_PRIMER) != 1:
+        if _circular_count(seq, FWD_PRIMER) != 1 or _circular_count(seq, spec.after_barcode) != 1:
             return Finding(
                 "barcode", False, "a second copy of the 5' handle or RT site is in the plasmid"
             )
@@ -551,8 +720,8 @@ def check_single_orf(seq: str, spec: Spec) -> Finding:
     # in-frame stop counted. Every Deliverome insert ends its ORF on a stop followed by the
     # pad and the 5' handle, so when the plasmid has a handle the ORF must end right there.
     if _circular_find(seq, FWD_PRIMER) >= 0:
-        after = doubled[i + 3 : i + 3 + len(SPACER) + len(FWD_PRIMER)]
-        if after != SPACER + FWD_PRIMER:
+        after = doubled[i + 3 : i + 3 + len(spec.after_stop)]
+        if after != spec.after_stop:
             return Finding(
                 "single_orf",
                 False,
@@ -757,7 +926,7 @@ def check_shuttle_digest(seq: str, spec: Spec) -> Finding:
     (c1, _), (c2, _) = cuts
     doubled = seq + seq
     fragments = [doubled[c1 : c2 + 4], doubled[c2 : c1 + len(seq) + 4]]
-    held = [f for f in fragments if FWD_PRIMER in f and REV_PRIMER in f]
+    held = [f for f in fragments if FWD_PRIMER in f and spec.after_barcode in f]
     if len(held) != 1:
         return Finding(
             "shuttle_digest", False, "the barcode handles are not on exactly one digest fragment"
@@ -988,7 +1157,7 @@ def check_plasmid(seq: str, spec: Spec) -> list[Finding]:
             out.append(fn(seq) if fn is check_shuttle_sites else fn(seq, spec))
         except Exception as exc:  # a check that crashes is a failure, not a pass
             # every entry of CHECKS is a def; Callable[..., Finding] just cannot say so
-            name = fn.__name__  # ty: ignore[missing-attribute]
+            name = fn.__name__  # ty: ignore[missing-union-attribute]
             out.append(Finding(name, False, f"check raised {type(exc).__name__}: {exc}"))
     return out
 

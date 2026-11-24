@@ -1,2 +1,0 @@
-gene	hgnc_id	uniprot	added	decided_by	source	evidence
-SLC67A1	HGNC:10964	Q96BI1	2026-11-02	Becca Carlson	accessible-surfaceome release 1.3.0 (cut 2026-10-18; doi:10.5281/zenodo.23445521), S1E3 cohort filter dry run 2026-11-01	formerly SLC22A18; the 1.3.0 DeepTMHMM v1 call on the canonical is 12 TM helices where the September cohort had 0, so it now passes the anchored and ectodomain gates (T3 -> T2); the only gene the 1.3.0 rerun adds to the frozen list, none removed

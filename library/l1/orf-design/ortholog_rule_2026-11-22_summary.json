@@ -1,0 +1,55 @@
+{
+  "decided_by": "Becca Carlson, 2026-11-22 (narrower feature rule: display-deciding features only)",
+  "implemented_by": "Claude Code session l1-review-export-scope (worker fork), 2026-11-22",
+  "status": "proposed; manifest, CDS records and rung tables unchanged",
+  "drawn_forms": 200,
+  "earlier_rule": {
+    "keep": 183,
+    "replace": 11,
+    "ask": 6
+  },
+  "narrow_rule": {
+    "keep": 194,
+    "replace": 6
+  },
+  "replaced_on_adoption": 11,
+  "replaced_and_still_replaced": [
+    "cyno:IL31RA:A0A2K5UY45",
+    "cyno:IL6R:ENSMFAP00000038545",
+    "cyno:ITGA10:A0A2K5VEV2",
+    "cyno:MS4A10:ENSMFAP00000061681",
+    "cyno:NFASC:ENSMFAP00000023063"
+  ],
+  "replaced_and_now_kept": [
+    "cyno:ADGRB2:A0A2K5USV4",
+    "cyno:FLT4:ENSMFAP00000045010",
+    "cyno:SLC8A1:ENSMFAP00000038334",
+    "cyno:TMEM67:A0A2K5W653",
+    "mouse:ADGRE5:ENSMUSP00000075240",
+    "mouse:BTLA:ENSMUSP00000099866"
+  ],
+  "kept_on_adoption_but_narrow_rule_replaces": [
+    "mouse:OR10G6:ENSMUSP00000057952"
+  ],
+  "panel_diff": {
+    "kept": 196,
+    "dropped": 4,
+    "added": 4
+  },
+  "held": [
+    "cyno:ADGRB2:A0A2K5USV4",
+    "cyno:SLC8A1:ENSMFAP00000038334"
+  ],
+  "retired_replacements": [
+    "l1-p2572",
+    "l1-p2941",
+    "l1-p3018",
+    "l1-p3022"
+  ],
+  "restored_l1_ids": [
+    "l1-p3296",
+    "l1-p3297",
+    "l1-p3298",
+    "l1-p3299"
+  ]
+}

@@ -1,0 +1,51 @@
+gene	uniprot_accession	result	extracellular_residues_deeptmhmm_v1	subcategory	library_tier	removed_after_filter
+CMTM2	Q8TAZ6	fail	20	multi_pass		
+CMTM4	Q8IZR5	fail	17	tetraspanin		
+CMTM6	Q9NX76	fail	17	multi_pass		
+CMTM7	Q96FZ5	fail	18	tetraspanin		
+CMTM8	Q8IZV2	fail	24	multi_pass		
+FXYD2	P54710	fail	27	single_pass_T1		
+FXYD3	Q14802	fail	16	single_pass_T1		
+FXYD4	P59646	fail	21	single_pass_T1		
+FXYD6	Q9H0Q3	fail	20	single_pass_T1		
+FXYD7	P58549	fail	26	single_pass_T1		
+HVCN1	Q96D96	fail	24	multi_pass		
+IFITM1	P13164	fail	19	other		
+IFITM5	A6NNB3	fail	28	multi_pass		
+LAT	O43561	fail	6	single_pass_T1		
+LAT2	Q9GZY6	fail	6	single_pass_T2		
+LIME1	Q9H400	fail	10	single_pass_T1		
+LST1	O00453	fail	11	single_pass_T2		
+MAL	P21145	fail	28	other		
+MS4A4E	Q96PG1	fail	17	multi_pass		
+MS4A8	Q9BY19	fail	26	tetraspanin		
+NINJ1	Q92982	fail	26	multi_pass		
+NINJ2	Q9NZG7	fail	27	multi_pass		
+PAG1	Q9NWQ8	fail	15	single_pass_T2		
+PDZK1IP1	Q13113	fail	13	single_pass_T1		
+PIRT	P0C851	fail	13	multi_pass		
+PLGRKT	Q9HBL7	fail	6	multi_pass		
+POPDC2	Q9HBU9	fail	28	multi_pass		
+PRRT1	Q99946	fail	10	single_pass_T2		
+PRRT2	Q7Z6L0	fail	5	multi_pass		
+PTPRE	P23469	fail	28	single_pass_T1		
+RELL2	Q8NC24	fail	14	single_pass_T1	LL	
+RGS9BP	Q6ZS82	fail	4	other		
+RHEX	Q6ZWK4	fail	11	single_pass_T1		
+RTP1	P59025	fail	6	single_pass_T2		
+SCIMP	Q6UWF3	fail	18	single_pass_T1		
+SIT1	Q9Y3P8	fail	18	single_pass_T1		
+SLC27A6	Q9Y2P4	fail	4	single_pass_T1		
+SMIM1	B2RUZ4	fail	8	single_pass_T2		
+STOM	P27105	fail	1	other		
+SYNDIG1	Q9H7V2	fail	12	other		
+TEX38	Q6PEX7	fail	14	single_pass_T1	LL	
+TMEM100	Q9NV29	fail	8	multi_pass		
+TMEM233	B4DJY2	fail	11	multi_pass		
+TMEM266	Q2M3C6	fail	22	multi_pass	LL	
+TMEM52B	Q4KMG9	fail	18	single_pass_T1		
+TMEM72	A0PK05	fail	21	multi_pass		
+TMEM98	Q9Y2Y6	fail	4	single_pass_T1		
+TRAT1	Q6PIZ9	fail	9	single_pass_T1		
+TSPO2	Q5TGU0	fail	20	multi_pass	LL	
+ZDHHC5	Q9C0B5	fail	25	multi_pass		

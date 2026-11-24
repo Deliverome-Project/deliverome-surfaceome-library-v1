@@ -1,0 +1,61 @@
+uniprot_accession	gene_symbol	change	n_surface_pubs_old	n_surface_pubs_new	n_membrane_pubs_old	n_membrane_pubs_new	n_global_pubs_old	n_global_pubs_new	lod_membrane_old	lod_membrane_new	reason	counts_changed
+A1A5C7	SLC22A23	added		20		7		0		1.094		False
+A2RU67	F234B	kept	26	30	16	16	9	9	0.732	0.735		True
+O00241	SIRPB1	kept	24	24	12	12	7	7	0.953	0.752		False
+O00468	AGRN	added		49		31		9		0.722		False
+O60279	SUSD5	kept	25	29	10	10	3	3	1.218	1.229		True
+O75096	LRP4	kept	26	29	11	11	7	7	1.171	1.123		True
+O94813	SLIT2	kept	22	25	7	7	3	3	1.413	1.393		True
+O95477	ABCA1	kept	38	43	23	23	6	6	0.922	0.888		True
+P00749	PLAU	added		34		20		4		0.65		False
+P01137	TGFB1	added		36		23		7		0.557		False
+P02751	FN1	added		53		40		9		0.453		False
+P04004	VTN	added		40		28		10		0.458		False
+P07996	THBS1	kept	44	51	32	32	8	8	0.748	0.767		True
+P09603	CSF1	kept	26	29	5	5	5	5	1.995	1.947		True
+P10586	PTPRF	kept	57	68	41	41	7	7	1.12	1.295		True
+P10909	CLU	added		52		40		11		0.403		False
+P11279	LAMP1	added		74		64		17		0.395		False
+P11717	IGF2R	added		78		61		13		1.176		False
+P20701	ITGAL	kept	31	32	13	13	8	8	1.264	1.084		True
+P23467	PTPRB	added		25		14		2		0.63		False
+P23468	PTPRD	kept	22	23	12	12	6	6	0.828	0.694		True
+P41221	WNT5A	kept	24	27	11	11	3	3	1.052	1.017		True
+P55058	PLTP	kept	23	25	11	11	7	7	0.99	0.908		True
+P55082	MFAP3	kept	22	27	11	11	2	2	0.927	1.017		True
+Q12767	TMM94	kept	31	35	20	20	4	4	0.732	0.699		True
+Q13332	PTPRS	kept	47	55	31	31	8	8	0.973	1.021		True
+Q14517	FAT1	added		48		32		7		0.621		False
+Q14766	LTBP1	added		26		15		7		0.602		False
+Q16563	SYPL1	added		61		51		11		0.298		False
+Q58EX2	SDK2	kept	28	31	12	12	8	8	1.189	1.127		True
+Q5BKX6	SLC45A4	kept	22	24	7	7	4	4	1.413	1.337		True
+Q5FWE3	PRRT3	added		22		4		1		1.772		False
+Q6N022	TENM4	kept	22	24	12	12	2	2	0.828	0.752		True
+Q6NSJ0	MYORG	kept	40	47	19	19	8	8	1.288	1.335		True
+Q6P995	FAM171B	added		20		6		4		1.252		False
+Q6UWP8	SBSN	added		21		10		2		0.778		False
+Q6V0I7	FAT4	kept	28	30	15	15	6	6	0.927	0.814		True
+Q7L0J3	SV2A	kept	33	36	20	20	8	8	0.842	0.747		True
+Q7Z5N4	SDK1	kept	28	30	12	12	7	7	1.189	1.076		True
+Q86XX4	FRAS1	kept	21	25	10	10	6	6	0.968	1.013		True
+Q8IZY2	ABCA7	added		26		13		7		0.772		False
+Q8N350	CBARP	added		21		10		0		0.778		False
+Q8NBJ4	GOLM1	added		49		38		13		0.358		False
+Q8NC42	RNF149	kept	42	51	29	29	7	7	0.797	0.927		True
+Q92508	PIEZO1	kept	57	65	43	43	10	10	1.017	0.98		True
+Q92542	NCSTN	added		71		59		12		0.499		False
+Q92896	GLG1	added		70		60		14		0.341		False
+Q96HA4	C1orf159	kept	38	41	6	6	4	4	2.479	2.351		True
+Q99985	SEMA3C	added		28		18		6		0.484		False
+Q9BX74	TM2D1	kept	24	25	5	5	8	8	1.876	1.732		True
+Q9H0X4	FAM234A	kept	58	69	40	40	7	7	1.251	1.424		True
+Q9HCM3	K1549	kept	22	26	9	9	5	5	1.147	1.184		True
+Q9HCU4	CELSR2	kept	34	40	12	12	8	8	1.521	1.562		True
+Q9NT68	TENM2	added		23		12		5		0.694		False
+Q9NW97	TMM51	added		23		13		2		0.602		False
+Q9NWD8	TMEM248	kept	30	34	17	17	7	7	0.885	0.859		True
+Q9NY47	CACNA2D2	added		22		12		5		0.635		False
+Q9NYQ6	CELSR1	kept	29	34	11	11	6	6	1.344	1.374		True
+Q9P273	TENM3	kept	32	37	20	20	10	10	0.787	0.795		True
+Q9UIQ6	LNPEP	added		76		56		12		1.231		False

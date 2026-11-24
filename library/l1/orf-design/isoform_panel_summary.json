@@ -1,0 +1,41 @@
+{
+  "seed": 20261009,
+  "inputs": "local files",
+  "replaced": 27,
+  "panel_size": 150,
+  "floors": {
+    "type III": 2,
+    "GPI": 5,
+    "type II": 5
+  },
+  "allocation": {
+    "observed": {
+      "type I": 43,
+      "type II": 10,
+      "multipass N-out": 13,
+      "multipass N-in": 21,
+      "GPI": 10,
+      "type III": 3
+    },
+    "prediction_only": {
+      "multipass N-in": 11,
+      "multipass N-out": 6,
+      "type I": 18,
+      "GPI": 6,
+      "type II": 7,
+      "type III": 2
+    }
+  },
+  "by_class": {
+    "type I": 61,
+    "multipass N-in": 32,
+    "multipass N-out": 19,
+    "type II": 17,
+    "GPI": 16,
+    "type III": 5
+  },
+  "genes": 132,
+  "already_in_cohort": 57,
+  "refilled_after_draw": 6,
+  "record": "isoform_panel_redraw_2026-11-22.tsv as applied (apply_panel_redraw_2026_11_22.py) plus panel_refill_2026-11-22_changes.tsv; written by write_panels_of_record.py"
+}

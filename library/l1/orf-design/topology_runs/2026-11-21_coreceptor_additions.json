@@ -1,0 +1,19 @@
+{
+ "topology_version": "topo_2026_11_21_coreceptor_additions",
+ "snapshot": "2026-11-21-coreceptor-additions",
+ "cohort": "library_designed_orf",
+ "base_snapshot": "accessible-surfaceome/topology/2026-11-12-cyno-restarts/topology.parquet",
+ "tool": "DeepTMHMM v1 (Modal volume deeptmhmm-v1); runtime identity in 2026-11-21_coreceptor_additions.3line.runtime.json",
+ "tool_version": "deeptmhmm-1.0-academic",
+ "command": "add_library_genes.py (writes the FASTA of additions with no v1 row); modal run library/l1/proteoform-selection/modal/deeptmhmm_v1_app.py::sweep --fasta topology_runs/2026-11-21_coreceptor_additions.fasta --out topology_runs/2026-11-21_coreceptor_additions.3line",
+ "modal_app_run": "ap-5t3eNrpDcRZElmoRya4IXw",
+ "run_completed": "2026-11-22T04:01:00+00:00",
+ "sequences": 2,
+ "pending_additions": {
+  "l1-p3169": "c6d4408f081b221852508aa39ba4577c404af00c21059d9ec09b369758ba6e13",
+  "l1-p3170": "a1d281e2dab6a5a9a559844deb7791fe3790d13eb80c397c5fddf2e84d9cafae"
+ },
+ "why": "the designed proteins of HLA-DQA1 and HLA-DQB1, two of the 26 genes the co-receptor rule adopted on 2026-11-21 admits (Becca: rebuild now), had no DeepTMHMM v1 row",
+ "implemented_by": "Claude Code session l1-review-export-scope",
+ "provenance_note": "published from an uncommitted tree at 0283d3a6 (its git-dirty stamp is true); the rows are derived only from the committed .3line and .fasta, whose SHA-256s the runtime file records"
+}

@@ -78,6 +78,7 @@ import argparse
 import itertools
 import json
 import math
+import os
 import random
 import sys
 import time
@@ -299,6 +300,132 @@ def barcode_swap_risk(members: dict[str, tuple[str, str]], *, k: float = WALTON_
     return SwapRisk(worst[0], barcode_swap_rate(worst[0], k), worst[1])
 
 
+_TRACT_BASE = np.uint64(0x9E3779B97F4A7C15)  # odd 64-bit multiplier; arithmetic wraps mod 2**64
+_TRACT_CODE: dict[str, int] = {"A": 1, "C": 2, "G": 3, "T": 4}
+_TRACT_LADDER_STEP = 16
+
+
+class TractIndex:
+    """Polynomial hashes of every substring of every DNA window, vectorized over the pool.
+
+    With ``y[k] = x[k] * B**k`` and ``S`` its running sum, ``S[p+L] - S[p]`` is a substring's
+    hash times ``B**p``; multiplying by ``B**(N-p)`` puts every substring on the same footing,
+    so equal substrings get equal values wherever they sit. All arithmetic wraps mod 2**64.
+    """
+
+    def __init__(self, windows: list[str], owners: list[int]) -> None:
+        self.windows = windows
+        lens = np.array([len(w) for w in windows], dtype=np.int64)
+        self.lens = lens
+        self.starts = np.concatenate([[0], np.cumsum(lens + 1)[:-1]]).astype(np.int64)
+        text = "\x00".join(windows) + "\x00"
+        codes = np.frombuffer(text.encode(), dtype=np.uint8)
+        x = np.zeros(len(codes), dtype=np.uint64)
+        for ch, v in _TRACT_CODE.items():
+            x[codes == ord(ch)] = v
+        n = len(codes)
+        with np.errstate(over="ignore"):
+            self.pw = np.cumprod(np.full(n + 1, _TRACT_BASE, dtype=np.uint64))
+            self.pw = np.concatenate([[np.uint64(1)], self.pw[:-1]])
+            self.cum = np.concatenate([[np.uint64(0)], np.cumsum(x * self.pw[:n])])
+        self.n = n
+        self.window_at = np.repeat(np.arange(len(windows), dtype=np.int64), lens + 1)
+        self.owner_at = np.repeat(np.asarray(owners, dtype=np.int64), lens + 1)
+        self.pos = np.arange(n, dtype=np.int64) - np.repeat(self.starts, lens + 1)
+
+    def table(
+        self, length: int
+    ) -> tuple[
+        np.ndarray[Any, Any],
+        np.ndarray[Any, Any],
+        np.ndarray[Any, Any],
+        np.ndarray[Any, Any],
+    ]:
+        """``(hash, window, owner, start)`` of every in-window L-mer, sorted by hash, owner."""
+        p = np.arange(self.n - length + 1, dtype=np.int64)
+        p = p[self.pos[p] + length <= self.lens[self.window_at[p]]]
+        with np.errstate(over="ignore"):
+            h = (self.cum[p + length] - self.cum[p]) * self.pw[self.n - p]
+        own = self.owner_at[p]
+        order = np.lexsort((own, h))
+        return h[order], self.window_at[p][order], own[order], p[order]
+
+    @staticmethod
+    def groups(
+        h: np.ndarray[Any, Any], own: np.ndarray[Any, Any]
+    ) -> tuple[np.ndarray[Any, Any], np.ndarray[Any, Any]]:
+        """Per element: its hash group's first and last index (groups sorted by owner)."""
+        edge = np.concatenate([[True], h[1:] != h[:-1]])
+        gid = np.cumsum(edge) - 1
+        first = np.nonzero(edge)[0]
+        last = np.concatenate([first[1:], [len(h)]]) - 1
+        return first[gid], last[gid]
+
+    def shared(self, length: int) -> np.ndarray[Any, Any]:
+        """Per window: a window of a different owner sharing one of its L-mers, or -1."""
+        h, win, own, _ = self.table(length)
+        out = np.full(len(self.windows), -1, dtype=np.int64)
+        if len(h):
+            f, last = self.groups(h, own)
+            multi = own[f] != own[last]
+            other = np.where(own[f] != own, win[f], win[last])
+            out[win[multi]] = other[multi]
+        return out
+
+    def confirm(self, i: int, j: int, length: int) -> bool:
+        """Window ``j`` really holds a length-``length`` substring of window ``i``."""
+        wi, wj = self.windows[i], self.windows[j]
+        return any(wi[q : q + length] in wj for q in range(len(wi) - length + 1))
+
+
+def longest_shared_across_pool(
+    windows: list[str], owners: list[int] | None = None
+) -> tuple[list[int], list[int | None]]:
+    """Per window, the longest substring it shares with a window of another owner, and that partner.
+
+    Pass ``owners`` to ignore matches between arms of the same member (same owner id); when
+    omitted, every window is its own owner. Uses a coarse ladder pass followed by a parallel
+    binary search over ``TractIndex``, and confirms every winning pair against the raw strings
+    so a 64-bit hash collision raises rather than reporting a false match.
+    """
+    if not windows:
+        return [], []
+    own = list(range(len(windows))) if owners is None else owners
+    if len(own) != len(windows):
+        raise ValueError("owners must have the same length as windows")
+    idx = TractIndex(windows, own)
+    n = len(windows)
+    lo = np.zeros(n, dtype=np.int64)
+    hi = np.array([len(w) + 1 for w in windows], dtype=np.int64)
+    partner = np.full(n, -1, dtype=np.int64)
+
+    def trial(length: int, who: np.ndarray[Any, Any]) -> None:
+        got = idx.shared(length)[who]
+        ok = got >= 0
+        lo[who[ok]] = length
+        partner[who[ok]] = got[ok]
+        hi[who[~ok]] = np.minimum(hi[who[~ok]], length)
+
+    for length in range(_TRACT_LADDER_STEP, int(hi.max()), _TRACT_LADDER_STEP):
+        who = np.nonzero((lo < length) & (length < hi))[0]
+        if len(who):
+            trial(length, who)
+    while True:
+        active = np.nonzero(hi - lo > 1)[0]
+        if len(active) == 0:
+            break
+        mid = (lo[active] + hi[active]) // 2
+        for m in np.unique(mid):
+            trial(int(m), active[mid == m])
+    out: list[int | None] = []
+    for i in range(n):
+        j = int(partner[i])
+        if lo[i] > 0 and j >= 0 and not idx.confirm(i, j, int(lo[i])):
+            raise AssertionError(f"hash collision between windows {i} and {j}")
+        out.append(j if lo[i] > 0 and j >= 0 else None)
+    return lo.tolist(), out
+
+
 def forbidden_patterns(enzymes: list[str]) -> list[str]:
     """Both-strand recognition patterns for the requested enzymes."""
     pats: list[str] = []
@@ -327,6 +454,56 @@ def split_codons(cds: str) -> list[str]:
 def translate(cds: str) -> str:
     """Translate an in-frame CDS to a one-letter protein string."""
     return "".join(GENETIC_CODE[c] for c in split_codons(cds))
+
+
+def read_fasta(path: str | os.PathLike[str]) -> list[tuple[str, str]]:
+    """``[(header, sequence), ...]`` in file order: whole header without ``>``, case kept.
+
+    Duplicate headers are kept, so a caller that needs unique ids uses :func:`fasta_by_id`.
+    Sequence lines are stripped and joined; text before the first header is ignored.
+    """
+    out: list[tuple[str, str]] = []
+    header: str | None = None
+    buf: list[str] = []
+    with open(path) as fh:
+        for line in fh.read().splitlines():
+            if line.startswith(">"):
+                if header is not None:
+                    out.append((header, "".join(buf)))
+                header, buf = line[1:], []
+            elif header is not None:
+                buf.append(line.strip())
+    if header is not None:
+        out.append((header, "".join(buf)))
+    return out
+
+
+def fasta_id(header: str) -> str:
+    """A FASTA record's id: the header up to the first ``|`` or whitespace."""
+    return (header.split("|")[0].split() or [""])[0]
+
+
+def fasta_by_id(path: str | os.PathLike[str]) -> dict[str, str]:
+    """``{id: sequence}`` keyed by :func:`fasta_id`, case kept; a repeated id raises ``ValueError``."""
+    out: dict[str, str] = {}
+    for header, seq in read_fasta(path):
+        key = fasta_id(header)
+        if key in out:
+            raise ValueError(f"{path}: duplicate FASTA id {key}")
+        out[key] = seq
+    return out
+
+
+def common_suffix(a: str, b: str) -> int:
+    """Length of the longest common suffix of two sequences.
+
+    The swap-tract measure: how far a template switch just before the barcode can run back
+    into two inserts without changing either.
+    """
+    n = 0
+    while n < min(len(a), len(b)) and a[-1 - n] == b[-1 - n]:
+        n += 1
+    return n
 
 
 def gc_content(seq: str) -> float:
@@ -1043,84 +1220,28 @@ class LinkerVariant:
         return asdict(self)
 
 
-def diversify_linker(
+def _prepare_linker_codons(
     peptide: str,
     *,
-    flank5: str = "",
-    flank3: str = "",
-    avoid_kmers: set[str] | None = None,
-    avoid_prefixes: set[str] | None = None,
-    avoid_suffixes: set[str] | None = None,
-    fixed_codons: Mapping[int, str] | None = None,
-    k: int = DEFAULT_RECOMBINOGENIC_K,
-    kmer_policy: str = "forbid",
-    candidates: int = 8,
-    max_junction_identity: int = DEFAULT_MAX_JUNCTION_IDENTITY,
-    enzymes: list[str] | None = None,
-    gc_min: float = DEFAULT_LINKER_GC_MIN,
-    gc_max: float = DEFAULT_LINKER_GC_MAX,
-    max_homopolymer: int = DEFAULT_LINKER_MAX_HOMOPOLYMER,
-    max_repeat: int = DEFAULT_MAX_INTERNAL_REPEAT,
-    min_codon_usage: float = DEFAULT_MIN_CODON_USAGE,
-    species: str = CODON_TABLE_SPECIES,
-    label: str | None = None,
-    max_attempts: int = 20_000,
-    rng: random.Random | None = None,
-) -> LinkerVariant:
-    """Draw a synonymous DNA encoding of ``peptide`` that avoids shared tracts.
-
-    Rejection sampling over GC-tilted, usage-weighted synonymous codons, in the
-    same style as :func:`generate_barcode`: draw, check every constraint, retry.
-    Raises rather than returning a sequence that violates one.
-
-    Parameters
-    ----------
-    peptide:
-        The amino-acid sequence to encode, without a stop codon. Pass the whole
-        cassette rather than one ``GGGGS`` block when you can: it has far more
-        codon freedom to spend, and the tags' own residues give the GC tilt
-        something to work with that a bare Gly/Ser block does not.
-    flank5, flank3:
-        Sequence immediately either side of the insertion point. Used only to
-        catch Type IIS sites created *across* the junction; 5 nt of each is
-        enough for that. Both may be empty for a standalone linker.
-    avoid_kmers:
-        Core-internal k-mers already issued to other members, from
-        :func:`core_kmers`.
-    kmer_policy:
-        ``"forbid"`` rejects any sequence sharing a k-mer with ``avoid_kmers``.
-        ``"minimize"`` instead keeps the best of ``candidates`` valid draws,
-        which is what a whole library needs: a GS-rich cassette runs out of
-        distinct k-mers long before a library runs out of members (measured:
-        ~48 members at k=20 for the 51-aa p003 cassette, because one ``GGGGS``
-        block has only ~57 usable encodings). Forbidding past that point fails;
-        minimizing degrades gracefully and reports what it achieved.
-    candidates:
-        How many valid draws ``"minimize"`` compares before returning the best.
-    avoid_prefixes, avoid_suffixes:
-        Opening and closing ``max_junction_identity + 1``-nt stretches already
-        used by members that share this one's flanking sequence. Rejecting
-        these is what stops a shared flanking tract running on through the
-        cassette.
-    fixed_codons:
-        ``{residue index: codon}`` held constant -- build it with
-        :func:`pin_codons`. Used to keep tags on one validated encoding while
-        only the linkers between them vary. Fixed codons are still scanned for
-        Type IIS sites, homopolymers and repeats in the context of the drawn
-        ones; k-mers wholly inside them are excluded from ``avoid_kmers``.
-    k:
-        Shared-tract length treated as recombinogenic. See
-        :data:`DEFAULT_RECOMBINOGENIC_K`.
-    max_repeat:
-        Longest direct repeat allowed *within* the linker itself.
-    """
-    enzymes = enzymes if enzymes is not None else list(ENZYME_SITES)
-    avoid_kmers = avoid_kmers or set()
-    avoid_prefixes = avoid_prefixes or set()
-    avoid_suffixes = avoid_suffixes or set()
-    rng = rng or random.Random()
-    flank5, flank3 = flank5.upper(), flank3.upper()
-
+    enzymes: list[str],
+    gc_min: float,
+    gc_max: float,
+    kmer_policy: str,
+    candidates: int,
+    min_codon_usage: float,
+    species: str,
+    fixed_codons: Mapping[int, str] | None,
+    pad5: str,
+    pad3: str,
+) -> tuple[
+    dict[int, str],
+    list[list[str]],
+    list[list[float]],
+    float,
+    float,
+    list[str],
+]:
+    """Validate ``diversify_linker`` arguments, compute codon choices/weights, and pre-flight ends."""
     unknown = set(enzymes) - set(ENZYME_SITES)
     if unknown:
         raise ValueError(f"Unknown enzyme(s): {sorted(unknown)}. Known: {sorted(ENZYME_SITES)}")
@@ -1158,16 +1279,7 @@ def diversify_linker(
         usage,
         (max(gc_min, reach_lo) + min(gc_max, reach_hi)) / 2,
     )
-
     site_patterns = forbidden_patterns(enzymes)
-    # A 6-nt recognition site can straddle the junction with as little as one
-    # base inside the linker, so carry 5 nt of flank into the site scan.
-    pad5, pad3 = flank5[-5:], flank3[:5]
-    edge = max_junction_identity + 1
-    # Pre-flight: a junction site that no codon choice can avoid is a property of
-    # the flank, not a sampling difficulty, so say so now rather than after 20,000
-    # futile draws. Every Gly codon is GGN, so a flank ending in the five bases
-    # that complete a recognition site leaves nothing to choose.
     for side, pad, opts in (("5'", pad5, choices[0]), ("3'", pad3, choices[-1])):
         if not pad:
             continue
@@ -1183,57 +1295,169 @@ def diversify_linker(
                 f"cassette can fix this — domesticate the flanking ORF with domesticate() so "
                 f"the {len(pad)} bases at the junction change, then re-run."
             )
+    return fixed, choices, weights, reach_lo, reach_hi, site_patterns
 
-    best: LinkerVariant | None = None
-    pool = 0
-    rejected = dict.fromkeys(("gc", "homopolymer", "type_iis", "end_taken", "repeat"), 0)
 
-    # When partners have already claimed ends, draw the free ones directly
-    # instead of waiting for rejection sampling to stumble on them: the GC tilt
-    # makes the GC-extreme codons rare, so the last few available ends at a
-    # Gly-rich boundary are reached essentially never by chance.
+def _free_end_samplers(
+    peptide: str,
+    choices: list[list[str]],
+    edge: int,
+    max_junction_identity: int,
+    avoid_prefixes: set[str],
+    avoid_suffixes: set[str],
+) -> tuple[
+    list[str],
+    dict[str, list[tuple[str, ...]]],
+    list[int],
+    list[str],
+    dict[str, list[tuple[str, ...]]],
+    list[int],
+]:
+    """Direct samplers for unclaimed 5'/3' boundary sequences when partners hold ends."""
     free5: list[str] = []
     free3: list[str] = []
     map5: dict[str, list[tuple[str, ...]]] = {}
     idx5: list[int] = []
     map3: dict[str, list[tuple[str, ...]]] = {}
     idx3: list[int] = []
-    if avoid_prefixes:
-        map5, idx5 = _end_codon_map(choices, edge, True)
-        if map5:
-            free5 = sorted(set(map5) - avoid_prefixes)
-            if not free5:
-                raise RuntimeError(
-                    f"all {len(map5)} reachable {edge}-nt 5' ends of {peptide!r} are "
-                    f"already taken by same-flank partners. That is the combinatorial "
-                    f"ceiling, not a sampling failure: raise max_junction_identity "
-                    f"(currently {max_junction_identity}) or change the residue at the "
-                    f"cassette's 5' boundary."
-                )
-    if avoid_suffixes:
-        map3, idx3 = _end_codon_map(choices, edge, False)
-        if map3:
-            free3 = sorted(set(map3) - avoid_suffixes)
-            if not free3:
-                raise RuntimeError(
-                    f"all {len(map3)} reachable {edge}-nt 3' ends of {peptide!r} are "
-                    f"already taken by same-flank partners. That is the combinatorial "
-                    f"ceiling, not a sampling failure: raise max_junction_identity "
-                    f"(currently {max_junction_identity}) or change the residue at the "
-                    f"cassette's 3' boundary."
-                )
+    for side, is_prefix, avoid in (
+        ("5'", True, avoid_prefixes),
+        ("3'", False, avoid_suffixes),
+    ):
+        if not avoid:
+            continue
+        cmap, idxs = _end_codon_map(choices, edge, is_prefix)
+        if not cmap:
+            continue
+        free = sorted(set(cmap) - avoid)
+        if not free:
+            raise RuntimeError(
+                f"all {len(cmap)} reachable {edge}-nt {side} ends of {peptide!r} are "
+                f"already taken by same-flank partners. That is the combinatorial "
+                f"ceiling, not a sampling failure: raise max_junction_identity "
+                f"(currently {max_junction_identity}) or change the residue at the "
+                f"cassette's {side} boundary."
+            )
+        if is_prefix:
+            free5, map5, idx5 = free, cmap, idxs
+        else:
+            free3, map3, idx3 = free, cmap, idxs
     if set(idx5) & set(idx3):  # the two forced ends overlap; fall back to rejection
-        free5, free3, idx5, idx3 = [], [], [], []
+        return [], {}, [], [], {}, []
+    return free5, map5, idx5, free3, map3, idx3
+
+
+def _linker_failure_message(
+    peptide: str,
+    max_attempts: int,
+    rejected: dict[str, int],
+    *,
+    gc_min: float,
+    gc_max: float,
+    reach_lo: float,
+    reach_hi: float,
+    max_homopolymer: int,
+    edge: int,
+    max_junction_identity: int,
+    max_repeat: int,
+) -> str:
+    """Diagnostic message naming the dominant rejection cause when sampling exhausts attempts."""
+    culprit = max(rejected, key=lambda key: rejected[key])
+    breakdown = ", ".join(f"{key}={count}" for key, count in rejected.items() if count)
+    advice = {
+        "gc": (
+            f"every draw fell outside %GC {gc_min:.2f}-{gc_max:.2f}; this peptide can only "
+            f"reach {reach_lo:.2f}-{reach_hi:.2f}"
+        ),
+        "homopolymer": f"max_homopolymer={max_homopolymer} is too tight for this peptide",
+        "type_iis": (
+            "every draw formed a Type IIS site across a junction. The cassette's first base "
+            "is fixed by its first codon — every Gly codon is GGN — so a flank ending in the "
+            "five bases that complete a site cannot be rescued by codon choice inside the "
+            "cassette. Domesticate the flanking ORF with domesticate() and re-run"
+        ),
+        "end_taken": (
+            f"the {edge}-nt ends still free were all rejected by the other constraints; raise "
+            f"max_junction_identity (currently {max_junction_identity}) to widen the choice"
+        ),
+        "repeat": f"max_repeat={max_repeat} is too tight for a peptide this repetitive",
+    }[culprit]
+    return (
+        f"Could not encode {peptide!r} ({len(peptide)} aa) in {max_attempts} attempts. "
+        f"Rejections: {breakdown}. Dominant cause is {culprit!r}: {advice}."
+    )
+
+
+def diversify_linker(
+    peptide: str,
+    *,
+    flank5: str = "",
+    flank3: str = "",
+    avoid_kmers: set[str] | None = None,
+    avoid_prefixes: set[str] | None = None,
+    avoid_suffixes: set[str] | None = None,
+    fixed_codons: Mapping[int, str] | None = None,
+    k: int = DEFAULT_RECOMBINOGENIC_K,
+    kmer_policy: str = "forbid",
+    candidates: int = 8,
+    max_junction_identity: int = DEFAULT_MAX_JUNCTION_IDENTITY,
+    enzymes: list[str] | None = None,
+    gc_min: float = DEFAULT_LINKER_GC_MIN,
+    gc_max: float = DEFAULT_LINKER_GC_MAX,
+    max_homopolymer: int = DEFAULT_LINKER_MAX_HOMOPOLYMER,
+    max_repeat: int = DEFAULT_MAX_INTERNAL_REPEAT,
+    min_codon_usage: float = DEFAULT_MIN_CODON_USAGE,
+    species: str = CODON_TABLE_SPECIES,
+    label: str | None = None,
+    max_attempts: int = 20_000,
+    rng: random.Random | None = None,
+) -> LinkerVariant:
+    """Draw a synonymous DNA encoding of ``peptide`` that avoids shared tracts.
+
+    Rejection sampling over GC-tilted, usage-weighted synonymous codons, in the same style as
+    :func:`generate_barcode`: draw, check every constraint, retry; raises if none succeeds.
+    Pass ``kmer_policy="minimize"`` to keep the best of ``candidates`` valid draws at library
+    scale, ``avoid_prefixes``/``avoid_suffixes`` to prevent shared flanking tracts from running
+    through the cassette, and ``fixed_codons`` (from :func:`pin_codons`) to hold tag codons
+    constant while recoding only the linkers.
+    """
+    enzymes = enzymes if enzymes is not None else list(ENZYME_SITES)
+    avoid_kmers = avoid_kmers or set()
+    avoid_prefixes = avoid_prefixes or set()
+    avoid_suffixes = avoid_suffixes or set()
+    rng = rng or random.Random()
+    pad5, pad3 = flank5.upper()[-5:], flank3.upper()[:5]
+    edge = max_junction_identity + 1
+
+    fixed, choices, weights, reach_lo, reach_hi, site_patterns = _prepare_linker_codons(
+        peptide,
+        enzymes=enzymes,
+        gc_min=gc_min,
+        gc_max=gc_max,
+        kmer_policy=kmer_policy,
+        candidates=candidates,
+        min_codon_usage=min_codon_usage,
+        species=species,
+        fixed_codons=fixed_codons,
+        pad5=pad5,
+        pad3=pad3,
+    )
+    free5, map5, idx5, free3, map3, idx3 = _free_end_samplers(
+        peptide, choices, edge, max_junction_identity, avoid_prefixes, avoid_suffixes
+    )
+
+    best: LinkerVariant | None = None
+    pool = 0
+    rejected = dict.fromkeys(("gc", "homopolymer", "type_iis", "end_taken", "repeat"), 0)
 
     for attempt in range(1, max_attempts + 1):
         codons = [
             rng.choices(opts, weights=w, k=1)[0] for opts, w in zip(choices, weights, strict=True)
         ]
         for free, cmap, idxs in ((free5, map5, idx5), (free3, map3, idx3)):
-            if not free:
-                continue
-            for pos, codon in zip(idxs, rng.choice(cmap[rng.choice(free)]), strict=True):
-                codons[pos] = codon
+            if free:
+                for pos, codon in zip(idxs, rng.choice(cmap[rng.choice(free)]), strict=True):
+                    codons[pos] = codon
         dna = "".join(codons)
         gc = gc_content(dna)
         if not (gc_min <= gc <= gc_max):
@@ -1245,10 +1469,9 @@ def diversify_linker(
         if any(p in pad5 + dna + pad3 for p in site_patterns):
             rejected["type_iis"] += 1
             continue
-        if avoid_prefixes and dna[:edge] in avoid_prefixes:
-            rejected["end_taken"] += 1
-            continue
-        if avoid_suffixes and dna[-edge:] in avoid_suffixes:
+        if (avoid_prefixes and dna[:edge] in avoid_prefixes) or (
+            avoid_suffixes and dna[-edge:] in avoid_suffixes
+        ):
             rejected["end_taken"] += 1
             continue
         rep = max_internal_repeat(dna)
@@ -1280,30 +1503,20 @@ def diversify_linker(
 
     if best is not None:
         return best
-
-    culprit = max(rejected, key=lambda key: rejected[key])
-    breakdown = ", ".join(f"{key}={count}" for key, count in rejected.items() if count)
-    advice = {
-        "gc": (
-            f"every draw fell outside %GC {gc_min:.2f}-{gc_max:.2f}; this peptide can only "
-            f"reach {reach_lo:.2f}-{reach_hi:.2f}"
-        ),
-        "homopolymer": f"max_homopolymer={max_homopolymer} is too tight for this peptide",
-        "type_iis": (
-            "every draw formed a Type IIS site across a junction. The cassette's first base "
-            "is fixed by its first codon — every Gly codon is GGN — so a flank ending in the "
-            "five bases that complete a site cannot be rescued by codon choice inside the "
-            "cassette. Domesticate the flanking ORF with domesticate() and re-run"
-        ),
-        "end_taken": (
-            f"the {edge}-nt ends still free were all rejected by the other constraints; raise "
-            f"max_junction_identity (currently {max_junction_identity}) to widen the choice"
-        ),
-        "repeat": f"max_repeat={max_repeat} is too tight for a peptide this repetitive",
-    }[culprit]
     raise RuntimeError(
-        f"Could not encode {peptide!r} ({len(peptide)} aa) in {max_attempts} attempts. "
-        f"Rejections: {breakdown}. Dominant cause is {culprit!r}: {advice}."
+        _linker_failure_message(
+            peptide,
+            max_attempts,
+            rejected,
+            gc_min=gc_min,
+            gc_max=gc_max,
+            reach_lo=reach_lo,
+            reach_hi=reach_hi,
+            max_homopolymer=max_homopolymer,
+            edge=edge,
+            max_junction_identity=max_junction_identity,
+            max_repeat=max_repeat,
+        )
     )
 
 

@@ -1,0 +1,3036 @@
+gene	uniprot_accession	result	deep_dive_tier	library_tier	removed_after_filter
+AAMP	Q13685	pass	canonical		
+ABCA1	O95477	pass	canonical		
+ABCA2	Q9BZC7	pass	likely		
+ABCA4	P78363	pass	likely		
+ABCA7	Q8IZY2	pass	canonical		
+ABCA8	O94911	pass	canonical	T2	
+ABCB1	P08183	pass	canonical	T2	
+ABCB11	O95342	pass	likely	T2	
+ABCB4	P21439	pass	likely	T2	
+ABCB6	Q9NP58	pass	likely		
+ABCC1	P33527	pass	canonical	T2	
+ABCC10	Q5T3U5	pass	canonical	T2	
+ABCC11	Q96J66	pass	canonical	T2	
+ABCC2	Q92887	pass	likely	T2	
+ABCC3	O15438	pass	canonical	T2	
+ABCC4	O15439	pass	canonical	T2	
+ABCC5	O15440	pass	canonical	T2	
+ABCC6	O95255	pass	likely	T2	
+ABCC8	Q09428	pass	canonical		
+ABCC9	O60706	pass	canonical		
+ABCG1	P45844	pass	likely		
+ABCG2	Q9UNQ0	pass	canonical	T2	
+ABCG4	Q9H172	pass	likely	T2	
+ABCG5	Q9H222	pass	likely		
+ABCG8	Q9H221	pass	likely		
+ABHD2	P08910	pass	likely		
+ACE	P12821	pass	canonical	T1	
+ACE2	Q9BYF1	pass	canonical	T1	
+ACHE	P22303	pass	likely	T1	
+ACKR1	Q16570	pass	canonical	T2	
+ACKR2	O00590	pass	likely	SV	
+ACKR3	P25106	pass	canonical	T3	
+ACKR4	Q9NPB9	pass	canonical	T2	
+ACKR5	O15218	pass	canonical	T2	
+ACP3	P15309	pass	likely		
+ACP4	Q9BZG2	pass	likely		
+ACRBP	Q8NEB7	pass	likely		
+ACRV1	P26436	pass	likely		
+ACVR1	Q04771	pass	canonical	T1	
+ACVR1B	P36896	pass	canonical	T1	
+ACVR1C	Q8NER5	pass	canonical	T1	
+ACVR2A	P27037	pass	canonical	T1	
+ACVR2B	Q13705	pass	canonical	T1	
+ACVRL1	P37023	pass	canonical	T1	
+ADA	P00813	pass	likely		
+ADAM10	O14672	pass	canonical	T1	
+ADAM11	O75078	pass	likely	T1	
+ADAM12	O43184	pass	canonical	T1	
+ADAM15	Q13444	pass	canonical	T1	
+ADAM17	P78536	pass	canonical	T1	
+ADAM19	Q9H013	pass	canonical	T1	
+ADAM2	Q99965	pass	likely		
+ADAM21	Q9UKJ8	pass	likely	T1	
+ADAM22	Q9P0K1	pass	canonical	T1	
+ADAM23	O75077	pass	canonical	T1	
+ADAM28	Q9UKQ2	pass	canonical	T1	
+ADAM29	Q9UKF5	pass	likely	T1	
+ADAM32	Q8TC27	pass	likely	T1	
+ADAM33	Q9BZ11	pass	likely	T1	
+ADAM7	Q9H2U9	pass	likely	T1	
+ADAM8	P78325	pass	canonical	T3	
+ADAM9	Q13443	pass	canonical	T3	
+ADAMTS10	Q9H324	pass	likely		
+ADAMTS16	Q8TE57	pass	canonical		
+ADAMTS5	Q9UNA0	pass	canonical		
+ADAMTS9	Q9P2N4	pass	likely		
+ADCY1	Q08828	pass	canonical	T2	
+ADCY2	Q08462	pass	likely	T2	
+ADCY3	O60266	pass	likely	T2	
+ADCY4	Q8NFM4	pass	likely		
+ADCY5	O95622	pass	canonical	T2	
+ADCY6	O43306	pass	canonical	T2	
+ADCY7	P51828	pass	canonical	T2	
+ADCY8	P40145	pass	likely	T2	
+ADCY9	O60503	pass	canonical	T2	
+ADCYAP1R1	P41586	pass	canonical	T2	
+ADGRA1	Q86SQ6	pass	likely	T2	
+ADGRA2	Q96PE1	pass	canonical	T2	
+ADGRA3	Q8IWK6	pass	canonical	T2	
+ADGRB1	O14514	pass	canonical	T2	
+ADGRB2	O60241	pass	likely	T2	
+ADGRB3	O60242	pass	canonical	T2	
+ADGRD1	Q6QNK2	pass	canonical	T2	
+ADGRD2	Q7Z7M1	pass	likely	T2	
+ADGRE1	Q14246	pass	canonical	T3	
+ADGRE2	Q9UHX3	pass	canonical	T2	
+ADGRE3	Q9BY15	pass	canonical	T2	
+ADGRE5	P48960	pass	canonical	T2	
+ADGRF1	Q5T601	pass	canonical	T2	
+ADGRF3	Q8IZF5	pass	likely	T2	
+ADGRF5	Q8IZF2	pass	canonical	T2	
+ADGRG1	Q9Y653	pass	canonical	T2	
+ADGRG2	Q8IZP9	pass	likely	T2	
+ADGRG3	Q86Y34	pass	canonical	T2	
+ADGRG4	Q8IZF6	pass	canonical		
+ADGRG5	Q8IZF4	pass	canonical	T2	
+ADGRG6	Q86SQ4	pass	canonical	T2	
+ADGRL1	O94910	pass	canonical	T3	
+ADGRL2	O95490	pass	canonical	T2	
+ADGRL3	Q9HAR2	pass	canonical	T2	
+ADGRL4	Q9HBW9	pass	canonical	T3	
+ADGRV1	Q8WXG9	pass	likely		
+ADIPOR1	Q96A54	pass	canonical	T2	
+ADIPOR2	Q86V24	pass	canonical	T3	
+ADORA1	P30542	pass	canonical	T2	
+ADORA2A	P29274	pass	canonical	T2	
+ADORA2B	P29275	pass	canonical	T2	
+ADORA3	P0DMS8	pass	canonical	T2	
+ADRA1A	P35348	pass	canonical	T2	
+ADRA1B	P35368	pass	canonical	T2	
+ADRA1D	P25100	pass	canonical	T2	
+ADRA2A	P08913	pass	canonical	T2	
+ADRA2B	P18089	pass	canonical	T2	
+ADRA2C	P18825	pass	likely	SV	
+ADRB1	P08588	pass	canonical	T2	
+ADRB2	P07550	pass	canonical	T2	
+ADRB3	P13945	pass	canonical	T2	
+ADTRP	Q96IZ2	pass	likely	T2	
+AGER	Q15109	pass	canonical	T1	
+AGR2	O95994	pass	likely		
+AGRN	O00468	pass	canonical		
+AGTR1	P30556	pass	canonical	T2	
+AGTR2	P50052	pass	canonical	T2	
+AHNAK	Q09666	pass	likely		
+AHNAK2	Q8IVF2	pass	likely		
+AJAP1	Q9UKB5	pass	canonical	T1	
+ALCAM	Q13740	pass	canonical	T1	
+ALK	Q9UM73	pass	canonical	T3	
+ALPG	P10696	pass	canonical	T3	
+ALPI	P09923	pass	likely	T1	
+ALPL	P05186	pass	canonical	T1	
+ALPP	P05187	pass	canonical	T1	
+AMFR	Q9UKV5	pass	likely		
+AMHR2	Q16671	pass	likely	T1	
+AMIGO1	Q86WK6	pass	likely	T1	
+AMIGO2	Q86SJ2	pass	canonical	T3	
+AMIGO3	Q86WK7	pass	canonical	T1	
+AMN	Q9BXJ7	pass	likely	T1	
+AMPD2	Q01433	pass	likely		
+ANKH	Q9HCJ1	pass	canonical	T2	
+ANO1	Q5XXA6	pass	canonical	T2	
+ANO2	Q9NQ90	pass	likely	T2	
+ANO3	Q9BYT9	pass	likely	T2	
+ANO4	Q32M45	pass	likely	T2	
+ANO6	Q4KMQ2	pass	canonical	T2	
+ANO7	Q6IWH7	pass	likely	T2	
+ANOS1	P23352	pass	canonical		
+ANPEP	P15144	pass	canonical	T1	
+ANTXR1	Q9H6X2	pass	canonical	T1	
+ANTXR2	P58335	pass	canonical	T1	
+ANXA1	P04083	pass	likely		
+ANXA13	P27216	pass	likely		
+ANXA2	P07355	pass	likely		
+ANXA2R	Q3ZCQ2	pass	likely		
+ANXA5	P08758	pass	likely		
+ANXA6	P08133	pass	likely		
+ANXA8	P13928	pass	likely		
+AOC2	O75106	pass	likely	T1	
+AOC3	Q16853	pass	canonical	T3	
+APCDD1	Q8J025	pass	canonical		
+APLNR	P35414	pass	canonical	T2	
+APLP1	P51693	pass	likely	T1	
+APLP2	Q06481	pass	canonical	T1	
+APMAP	Q9HDC9	pass	likely		
+APOD	P05090	pass	likely		
+APOH	P02749	pass	canonical		
+APOL1	O14791	pass	canonical		
+APP	P05067	pass	canonical	T1	
+AQP1	P29972	pass	canonical	T2	
+AQP10	Q96PS8	pass	likely	T2	
+AQP11	Q8NBQ7	pass	likely		
+AQP2	P41181	pass	likely	OE	
+AQP3	Q92482	pass	canonical	T2	
+AQP4	P55087	pass	canonical	T2	
+AQP5	P55064	pass	canonical	T2	
+AQP7	O14520	pass	canonical	T2	
+AQP8	O94778	pass	likely		
+AQP9	O43315	pass	canonical	T2	
+AREG	P15514	pass	canonical	T1	
+ARMH4	Q86TY3	pass	canonical	T1	
+ART1	P52961	pass	canonical	T1	
+ART3	Q13508	pass	likely	T1	
+ART4	Q93070	pass	likely	T1	
+ASAH2	Q9NR71	pass	canonical	T1	
+ASGR1	P07306	pass	canonical	T1	
+ASGR2	P07307	pass	canonical	T1	
+ASIC1	P78348	pass	canonical	T2	
+ASIC2	Q16515	pass	canonical	T2	
+ASIC3	Q9UHC3	pass	canonical	T2	
+ASIC5	Q9NY37	pass	likely	T2	
+ASPH	Q12797	pass	likely		
+ASTL	Q6HA08	pass	canonical		
+ASTN1	O14525	pass	likely	T2	
+ATP10D	Q9P241	pass	canonical	T2	
+ATP11A	P98196	pass	canonical	T2	
+ATP11C	Q8NB49	pass	canonical	T2	
+ATP12A	P54707	pass	canonical	T2	
+ATP1A1	P05023	pass	canonical	T2	
+ATP1A2	P50993	pass	canonical	T2	
+ATP1A3	P13637	pass	canonical	T2	
+ATP1A4	Q13733	pass	likely	T2	
+ATP1B1	P05026	pass	canonical	T1	
+ATP1B2	P14415	pass	likely	T1	
+ATP1B3	P54709	pass	canonical	T1	
+ATP2B1	P20020	pass	canonical	T2	
+ATP2B2	Q01814	pass	likely	T2	
+ATP2B3	Q16720	pass	canonical	T2	
+ATP2B4	P23634	pass	canonical	T2	
+ATP2C2	O75185	pass	likely		
+ATP4A	P20648	pass	likely		
+ATP4B	P51164	pass	likely		
+ATP5F1B	P06576	pass	likely		
+ATP6AP2	O75787	pass	likely		
+ATP6V0A2	Q9Y487	pass	likely		
+ATP6V0D2	Q8N8Y2	pass	likely		
+ATP7A	Q04656	pass	likely		
+ATP8B1	O43520	pass	likely		
+ATRAID	Q6UW56	pass	likely		
+ATRN	O75882	pass	canonical	T2	
+ATRNL1	Q5VV63	pass	canonical	T1	
+AVPR1A	P37288	pass	canonical	T2	
+AVPR1B	P47901	pass	canonical	T2	
+AVPR2	P30518	pass	canonical	T2	
+AXL	P30530	pass	canonical	T1	
+B2M	P61769	pass	canonical		
+B4GALT1	P15291	pass	likely		
+BACE1	P56817	pass	likely	OE	
+BACE2	Q9Y5Z0	pass	canonical	T1	
+BAMBI	Q13145	pass	canonical	T3	
+BCAM	P50895	pass	canonical	T1	
+BCAN	Q96GW7	pass	canonical	T3	
+BDKRB1	P46663	pass	likely	T3	
+BDKRB2	P30411	pass	canonical	T2	
+BEST1	O76090	pass	likely	T3	
+BEST2	Q8NFU1	pass	likely	T2	
+BEST3	Q8N1M1	pass	likely	T2	
+BEST4	Q8NFU0	pass	likely	T2	
+BGN	P21810	pass	canonical		
+BMPR1A	P36894	pass	canonical	T1	
+BMPR1B	O00238	pass	canonical	T1	
+BMPR2	Q13873	pass	canonical	T1	
+BOC	Q9BWV1	pass	canonical	T1	
+BPIFA1	Q9NP55	pass	canonical		
+BRS3	P32247	pass	canonical	T2	
+BSG	P35613	pass	canonical	T1	
+BSND	Q8WZ55	pass	canonical		
+BSPH1	Q075Z2	pass	likely		
+BST1	Q10588	pass	canonical	T1	
+BST2	Q10589	pass	canonical	T3	
+BTC	P35070	pass	canonical	T1	
+BTLA	Q7Z6A9	pass	canonical	T1	
+BTN1A1	Q13410	pass	canonical	T3	
+BTN2A1	Q7KYR7	pass	canonical	T1	
+BTN2A2	Q8WVV5	pass	canonical	T1	
+BTN3A1	O00481	pass	canonical	T1	
+BTN3A2	P78410	pass	canonical	T1	
+BTN3A3	O00478	pass	canonical	T1	
+BTNL2	Q9UIR0	pass	likely	T1	
+BTNL3	Q6UXE8	pass	likely	T1	
+BTNL8	Q6UX41	pass	likely		
+BTNL9	Q6UXG8	pass	likely	T1	
+C16orf54	Q6UWD8	pass	likely	T1	
+C1QBP	Q07021	pass	likely		
+C1QL3	Q5VWW1	pass	canonical		
+C1QTNF5	Q9BXJ0	pass	likely		
+C1orf56	Q9BUN1	pass	likely		
+C3	P01024	pass	canonical		
+C3AR1	Q16581	pass	canonical	T2	
+C3orf18	Q9UK00	pass	likely		
+C3orf52	Q5BVD1	pass	likely	T1	
+C5AR1	P21730	pass	canonical	T2	
+C5AR2	Q9P296	pass	canonical	T3	
+C8B	P07358	pass	likely		
+C9	P02748	pass	likely		
+CA12	O43570	pass	canonical	T1	
+CA14	Q9ULX7	pass	canonical	T1	
+CA4	P22748	pass	canonical	T1	
+CA9	Q16790	pass	canonical	T3	
+CABS1	Q96KC9	pass	likely		
+CACFD1	Q9UGQ2	pass	likely		
+CACHD1	Q5VU97	pass	likely	T1	
+CACNA1A	O00555	pass	canonical		
+CACNA1B	Q00975	pass	canonical		
+CACNA1C	Q13936	pass	canonical		
+CACNA1D	Q01668	pass	canonical		
+CACNA1E	Q15878	pass	canonical		
+CACNA1F	O60840	pass	likely		
+CACNA1G	O43497	pass	canonical		
+CACNA1H	O95180	pass	canonical		
+CACNA1I	Q9P0X4	pass	canonical		
+CACNA1S	Q13698	pass	likely		
+CACNA2D1	P54289	pass	canonical	T1	
+CACNA2D2	Q9NY47	pass	canonical		
+CACNA2D3	Q8IZS8	pass	canonical	T1	
+CACNA2D4	Q7Z3S7	pass	likely	T1	
+CACNG1	Q06432	pass	likely	T2	
+CACNG2	Q9Y698	pass	canonical	T2	
+CACNG3	O60359	pass	likely	T2	
+CACNG4	Q9UBN1	pass	likely	T2	
+CACNG5	Q9UF02	pass	likely	T2	
+CACNG6	Q9BXT2	pass	likely	T2	
+CACNG7	P62955	pass	likely	T2	
+CACNG8	Q8WXS5	pass	canonical		
+CADM1	Q9BY67	pass	canonical	T1	
+CADM2	Q8N3J6	pass	canonical	T1	
+CADM3	Q8N126	pass	likely	T1	
+CADM4	Q8NFZ8	pass	canonical	T1	
+CALCR	P30988	pass	canonical	T2	
+CALCRL	Q16602	pass	canonical		
+CALHM1	Q8IU99	pass	canonical	T2	
+CALHM2	Q9HA72	pass	canonical	T2	
+CALHM3	Q86XJ0	pass	likely	LL	
+CALHM4	Q5JW98	pass	likely	T2	
+CALHM6	Q5R3K3	pass	likely		
+CALR	P27797	pass	likely		
+CALY	Q9NYX4	pass	likely		
+CAMKV	Q8NCB2	pass	likely		
+CAMP	P49913	pass	likely		
+CANX	P27824	pass	likely		
+CAPRIN1	Q14444	pass	likely		
+CASR	P41180	pass	canonical	T2	
+CATSPER1	Q8NEC5	pass	likely		
+CATSPER2	Q96P56	pass	likely		
+CATSPER3	Q86XQ3	pass	likely		
+CATSPER4	Q7RTX7	pass	likely		
+CATSPERB	Q9H7T0	pass	likely		
+CATSPERD	Q86XM0	pass	likely		
+CATSPERE	Q5SY80	pass	likely	LL	
+CATSPERG	Q6ZRH7	pass	likely	LL	
+CATSPERH	E9PQX1	pass	likely	LL	
+CATSPERQ	Q2WGJ8	pass	likely	LL	
+CATSPERT	Q53TS8	pass	likely		
+CAV1	Q03135	pass	canonical		
+CAV2	P51636	pass	likely		
+CAV3	P56539	pass	likely		
+CCDC25	Q86WR0	pass	canonical		
+CCKAR	P32238	pass	canonical	T2	
+CCKBR	P32239	pass	canonical	T3	
+CCN2	P29279	pass	likely		
+CCN3	P48745	pass	likely		
+CCR1	P32246	pass	canonical	T2	
+CCR10	P46092	pass	canonical	T2	
+CCR2	P41597	pass	canonical	T2	
+CCR3	P51677	pass	canonical	T2	
+CCR4	P51679	pass	canonical	T2	
+CCR5	P51681	pass	canonical	T2	
+CCR6	P51684	pass	canonical	T2	
+CCR7	P32248	pass	canonical	T2	
+CCR8	P51685	pass	canonical	T3	
+CCR9	P51686	pass	canonical	T3	
+CCRL2	O00421	pass	canonical	T3	
+CD101	Q93033	pass	canonical	T1	
+CD109	Q6YHK3	pass	canonical	T1	
+CD14	P08571	pass	canonical	T1	
+CD151	P48509	pass	canonical	T2	
+CD160	O95971	pass	canonical	T1	
+CD163	Q86VB7	pass	canonical	T1	
+CD163L1	Q9NR16	pass	likely	T1	
+CD164	Q04900	pass	canonical	T1	
+CD177	Q8N6Q3	pass	canonical	T1	
+CD180	Q99467	pass	likely		
+CD19	P15391	pass	likely	T1	
+CD1A	P06126	pass	likely	T1	
+CD1B	P29016	pass	canonical	T1	
+CD1C	P29017	pass	canonical	T1	
+CD1D	P15813	pass	canonical	T1	
+CD2	P06729	pass	canonical	T1	
+CD200	P41217	pass	canonical	T1	
+CD200R1	Q8TD46	pass	canonical	T1	
+CD200R1L	Q6Q8B3	pass	likely	T1	
+CD207	Q9UJ71	pass	likely	T1	
+CD209	Q9NNX6	pass	canonical	T1	
+CD22	P20273	pass	canonical	T1	
+CD226	Q15762	pass	canonical	T1	
+CD24	P25063	pass	canonical	T1	
+CD244	Q9BZW8	pass	canonical	T1	
+CD247	P20963	pass	canonical		
+CD248	Q9HCU0	pass	canonical	T3	
+CD27	P26842	pass	canonical	T1	
+CD274	Q9NZQ7	pass	canonical	T1	
+CD276	Q5ZPR3	pass	canonical	T1	
+CD28	P10747	pass	canonical	T1	
+CD300A	Q9UGN4	pass	canonical	T1	
+CD300C	Q08708	pass	canonical	T1	
+CD300E	Q496F6	pass	likely	T1	
+CD300H	A0A0K2S4Q6	pass	likely	T1	
+CD300LB	A8K4G0	pass	likely		
+CD300LD	Q6UXZ3	pass	likely	T1	
+CD300LF	Q8TDQ1	pass	canonical	T1	
+CD300LG	Q6UXG3	pass	likely	T1	
+CD302	Q8IX05	pass	canonical	T1	
+CD320	Q9NPF0	pass	canonical	T1	
+CD33	P20138	pass	canonical	T1	
+CD34	P28906	pass	canonical	T1	
+CD36	P16671	pass	canonical	T2	
+CD37	P11049	pass	canonical	T2	
+CD38	P28907	pass	canonical	T1	
+CD3D	P04234	pass	likely		
+CD3E	P07766	pass	canonical		
+CD3G	P09693	pass	canonical		
+CD4	P01730	pass	canonical	T1	
+CD40	P25942	pass	canonical	T1	
+CD40LG	P29965	pass	canonical	T3	
+CD44	P16070	pass	canonical	T1	
+CD46	P15529	pass	canonical	T1	
+CD47	Q08722	pass	canonical	T2	
+CD48	P09326	pass	canonical	T1	
+CD5	P06127	pass	canonical	T1	
+CD52	P31358	pass	canonical	T1	
+CD53	P19397	pass	canonical	T2	
+CD55	P08174	pass	canonical	T1	
+CD58	P19256	pass	canonical	T1	
+CD59	P13987	pass	canonical	T1	
+CD6	P30203	pass	canonical	T1	
+CD63	P08962	pass	likely		
+CD68	P34810	pass	likely		
+CD69	Q07108	pass	canonical	T3	
+CD7	P09564	pass	canonical	T1	
+CD70	P32970	pass	canonical	T3	
+CD72	P21854	pass	canonical	T1	
+CD74	P04233	pass	canonical	T1	
+CD79A	P11912	pass	canonical		
+CD79B	P40259	pass	canonical		
+CD80	P33681	pass	canonical	T1	
+CD81	P60033	pass	canonical	T2	
+CD82	P27701	pass	canonical	T2	
+CD83	Q01151	pass	canonical	T3	
+CD84	Q9UIB8	pass	canonical	T1	
+CD86	P42081	pass	canonical	T1	
+CD8A	P01732	pass	canonical	T1	
+CD8B	P10966	pass	canonical		
+CD8B2	A6NJW9	pass	likely	T1	
+CD9	P21926	pass	canonical	T2	
+CD93	Q9NPY3	pass	canonical	T1	
+CD96	P40200	pass	canonical	T1	
+CD99	P14209	pass	canonical	T1	
+CD99L2	Q8TCZ2	pass	canonical	T1	
+CDC50A	Q9NV96	pass	canonical	T2	
+CDC50B	Q3MIR4	pass	likely		
+CDCP1	Q9H5V8	pass	canonical	T1	
+CDH1	P12830	pass	canonical	T1	
+CDH10	Q9Y6N8	pass	likely	T1	
+CDH11	P55287	pass	canonical	T1	
+CDH12	P55289	pass	likely	T1	
+CDH13	P55290	pass	canonical	T1	
+CDH15	P55291	pass	likely	T1	
+CDH16	O75309	pass	likely	T1	
+CDH17	Q12864	pass	likely	T1	
+CDH18	Q13634	pass	canonical	T1	
+CDH19	Q9H159	pass	likely	T1	
+CDH2	P19022	pass	canonical	T1	
+CDH20	Q9HBT6	pass	canonical	T1	
+CDH22	Q9UJ99	pass	canonical	T1	
+CDH23	Q9H251	pass	likely		
+CDH24	Q86UP0	pass	canonical	T1	
+CDH26	Q8IXH8	pass	canonical	T3	
+CDH3	P22223	pass	canonical	T1	
+CDH4	P55283	pass	canonical	T1	
+CDH5	P33151	pass	likely	T1	
+CDH6	P55285	pass	canonical	T1	
+CDH7	Q9ULB5	pass	likely	T1	
+CDH8	P55286	pass	likely	T1	
+CDH9	Q9ULB4	pass	likely	T1	
+CDHR1	Q96JP9	pass	likely	T1	
+CDHR2	Q9BYE9	pass	likely	T1	
+CDHR3	Q6ZTQ4	pass	likely	T1	
+CDHR5	Q9HBB8	pass	likely	T1	
+CDON	Q4KMG0	pass	canonical	T1	
+CDSN	Q15517	pass	likely		
+CEACAM1	P13688	pass	canonical	T1	
+CEACAM19	Q7Z692	pass	likely	T1	
+CEACAM20	Q6UY09	pass	likely	T1	
+CEACAM21	Q3KPI0	pass	canonical	T1	
+CEACAM3	P40198	pass	likely	T1	
+CEACAM4	O75871	pass	canonical	T3	
+CEACAM5	P06731	pass	canonical	T1	
+CEACAM6	P40199	pass	canonical	T1	
+CEACAM7	Q14002	pass	likely	T1	
+CEACAM8	P31997	pass	likely	T1	
+CELSR1	Q9NYQ6	pass	canonical		
+CELSR2	Q9HCU4	pass	canonical		
+CELSR3	Q9NYQ7	pass	canonical		
+CEMIP	Q8WUJ3	pass	likely		
+CEMIP2	Q9UHN6	pass	canonical	T1	
+CFAP95	Q5VTT2	pass	likely		
+CFC1	P0CG37	pass	canonical	T1	
+CFP	P27918	pass	likely		
+CFTR	P13569	pass	canonical	T2	
+CHGB	P05060	pass	likely		
+CHL1	O00533	pass	likely	T1	
+CHRFAM7A	Q494W8	pass	canonical		
+CHRM1	P11229	pass	canonical	T2	
+CHRM2	P08172	pass	canonical	T2	
+CHRM3	P20309	pass	canonical	T2	
+CHRM4	P08173	pass	canonical	T2	
+CHRM5	P08912	pass	canonical	T2	
+CHRNA1	P02708	pass	likely		
+CHRNA10	Q9GZZ6	pass	canonical		
+CHRNA2	Q15822	pass	canonical		
+CHRNA3	P32297	pass	canonical		
+CHRNA4	P43681	pass	canonical	T2	
+CHRNA5	P30532	pass	canonical		
+CHRNA6	Q15825	pass	likely	T2	
+CHRNA7	P36544	pass	canonical	T2	
+CHRNA9	Q9UGM1	pass	canonical	T2	
+CHRNB1	P11230	pass	likely		
+CHRNB2	P17787	pass	canonical		
+CHRNB3	Q05901	pass	likely	T2	
+CHRNB4	P30926	pass	canonical		
+CHRND	Q07001	pass	likely		
+CHRNE	Q04844	pass	likely		
+CHRNG	P07510	pass	likely		
+CHST15	Q7LFX5	pass	canonical	T3	
+CKAP4	Q07065	pass	likely		
+CLCA1	A8K7I4	pass	likely		
+CLCA2	Q9UQC9	pass	likely	T1	
+CLCA4	Q14CN2	pass	canonical	T1	
+CLCN1	P35523	pass	likely	T2	
+CLCN2	P51788	pass	canonical	T2	
+CLCN7	P51798	pass	likely		
+CLCNKA	P51800	pass	canonical		
+CLCNKB	P51801	pass	likely		
+CLDN1	O95832	pass	canonical	T3	
+CLDN10	P78369	pass	canonical	T2	
+CLDN11	O75508	pass	likely	T2	
+CLDN12	P56749	pass	canonical	T2	
+CLDN14	O95500	pass	canonical	T3	
+CLDN15	P56746	pass	canonical	T2	
+CLDN16	Q9Y5I7	pass	likely	T2	
+CLDN17	P56750	pass	canonical	T2	
+CLDN18	P56856	pass	canonical	T3	
+CLDN19	Q8N6F1	pass	likely	T2	
+CLDN2	P57739	pass	canonical	T3	
+CLDN20	P56880	pass	canonical	T2	
+CLDN22	Q8N7P3	pass	canonical	T2	
+CLDN23	Q96B33	pass	canonical	T2	
+CLDN24	A6NM45	pass	canonical	T2	
+CLDN25	C9JDP6	pass	canonical	T2	
+CLDN3	O15551	pass	canonical	T2	
+CLDN4	O14493	pass	canonical	T2	
+CLDN5	O00501	pass	canonical	T2	
+CLDN6	P56747	pass	canonical	T3	
+CLDN7	O95471	pass	canonical	T2	
+CLDN8	P56748	pass	canonical	T2	
+CLDN9	O95484	pass	canonical	T2	
+CLDND1	Q9NY35	pass	canonical	T2	
+CLEC10A	Q8IUN9	pass	canonical	T1	
+CLEC12A	Q5QGZ9	pass	canonical	T1	
+CLEC12B	Q2HXU8	pass	likely	T1	
+CLEC14A	Q86T13	pass	likely	T1	
+CLEC17A	Q6ZS10	pass	likely	T1	
+CLEC1A	Q8NC01	pass	canonical	T1	
+CLEC1B	Q9P126	pass	canonical	T1	
+CLEC2A	Q6UVW9	pass	likely	T1	
+CLEC2B	Q92478	pass	canonical		
+CLEC2D	Q9UHP7	pass	canonical	T3	
+CLEC2L	P0C7M8	pass	likely	T1	
+CLEC3A	O75596	pass	likely		
+CLEC4A	Q9UMR7	pass	canonical	T1	
+CLEC4C	Q8WTT0	pass	likely	T1	
+CLEC4D	Q8WXI8	pass	likely		
+CLEC4E	Q9ULY5	pass	canonical	T3	
+CLEC4G	Q6UXB4	pass	likely	T1	
+CLEC4M	Q9H2X3	pass	likely	T1	
+CLEC5A	Q9NY25	pass	canonical	T1	
+CLEC6A	Q6EIG7	pass	canonical	T1	
+CLEC7A	Q9BXN2	pass	canonical	T1	
+CLEC9A	Q6UXN8	pass	likely	T1	
+CLECL1	Q8IZS7	pass	likely		
+CLIC1	O00299	pass	likely		
+CLIC3	O95833	pass	likely		
+CLIC4	Q9Y696	pass	likely		
+CLMP	Q9H6B4	pass	canonical	T3	
+CLPTM1L	Q96KA5	pass	likely		
+CLRN1	P58418	pass	likely	T2	
+CLRN2	A0PK11	pass	likely		
+CLRN3	Q8NCR9	pass	likely	T2	
+CLSTN1	O94985	pass	canonical	T1	
+CLSTN2	Q9H4D0	pass	likely	T1	
+CLSTN3	Q9BQT9	pass	likely	T1	
+CLTRN	Q9HBJ8	pass	likely	T1	
+CMKLR1	Q99788	pass	canonical	T2	
+CMKLR2	P46091	pass	canonical	T2	
+CMTM2	Q8TAZ6	pass	likely		
+CMTM4	Q8IZR5	pass	canonical		
+CMTM5	Q96DZ9	pass	likely		
+CMTM6	Q9NX76	pass	canonical		
+CMTM7	Q96FZ5	pass	canonical		
+CMTM8	Q8IZV2	pass	canonical		
+CNGA1	P29973	pass	likely	T2	
+CNGA2	Q16280	pass	likely	T2	
+CNGA3	Q16281	pass	canonical	T2	
+CNGA4	Q8IV77	pass	likely		
+CNGB1	Q14028	pass	likely		
+CNGB3	Q9NQW8	pass	likely		
+CNNM1	Q9NRU3	pass	likely	T2	
+CNNM2	Q9H8M5	pass	likely	T2	
+CNNM3	Q8NE01	pass	canonical	T2	
+CNNM4	Q6P4Q7	pass	canonical	T2	
+CNR1	P21554	pass	canonical	T2	
+CNR2	P34972	pass	canonical	T2	
+CNTFR	P26992	pass	canonical	T1	
+CNTN1	Q12860	pass	canonical	T1	
+CNTN2	Q02246	pass	likely	T1	
+CNTN3	Q9P232	pass	canonical	T1	
+CNTN4	Q8IWV2	pass	likely	T1	
+CNTN5	O94779	pass	likely	T1	
+CNTN6	Q9UQ52	pass	canonical	T1	
+CNTNAP1	P78357	pass	likely		
+CNTNAP2	Q9UHC6	pass	canonical	T1	
+CNTNAP3	Q9BZ76	pass	likely	T1	
+CNTNAP3B	Q96NU0	pass	likely	T1	
+CNTNAP4	Q9C0A0	pass	likely	T1	
+CNTNAP5	Q8WYK1	pass	likely	T1	
+COL13A1	Q5TAT6	pass	likely	T1	
+COL17A1	Q9UMD9	pass	canonical	T1	
+COL23A1	Q86Y22	pass	canonical	T3	
+COL25A1	Q9BXS0	pass	likely	T1	
+COL6A3	P12111	pass	canonical		
+COL7A1	Q02388	pass	likely		
+COLEC12	Q5KU26	pass	canonical	T1	
+CORIN	Q9Y5Q5	pass	canonical	T1	
+CPAMD8	Q8IZJ3	pass	likely		
+CPD	O75976	pass	canonical	T1	
+CPM	P14384	pass	canonical	T1	
+CR1	P17927	pass	canonical		
+CR1L	Q2VPA4	pass	likely		
+CR2	P20023	pass	canonical	T1	
+CRB1	P82279	pass	likely	T1	
+CRB2	Q5IJ48	pass	likely	T1	
+CRB3	Q9BUF7	pass	likely	T1	
+CRHR1	P34998	pass	canonical	T2	
+CRHR2	Q13324	pass	canonical	T2	
+CRIM1	Q9NZV1	pass	canonical	T1	
+CRIPTO	P13385	pass	canonical	T3	
+CRISP2	P16562	pass	likely		
+CRLF2	Q9HC73	pass	canonical	T1	
+CRTAM	O95727	pass	canonical	T3	
+CSF1R	P07333	pass	canonical	T1	
+CSF2RA	P15509	pass	canonical	T1	
+CSF2RB	P32927	pass	canonical	T1	
+CSF3R	Q99062	pass	canonical	T1	
+CSMD1	Q96PZ7	pass	canonical		
+CSMD2	Q7Z408	pass	likely		
+CSMD3	Q7Z407	pass	likely		
+CSPG4	Q6UVK1	pass	canonical		
+CSPG5	O95196	pass	likely	T1	
+CTHRC1	Q96CG8	pass	likely		
+CTLA4	P16410	pass	canonical	T3	
+CTSB	P07858	pass	likely		
+CTSD	P07339	pass	likely		
+CTSE	P14091	pass	likely		
+CTSK	P43235	pass	likely		
+CTSZ	Q9UBR2	pass	likely		
+CUBN	O60494	pass	canonical		
+CX3CL1	P78423	pass	canonical	T3	
+CX3CR1	P49238	pass	canonical	T2	
+CXADR	P78310	pass	canonical	T1	
+CXCL12	P48061	pass	canonical		
+CXCL16	Q9H2A7	pass	canonical	T1	
+CXCR1	P25024	pass	canonical	T2	
+CXCR2	P25025	pass	canonical	T2	
+CXCR3	P49682	pass	canonical	T2	
+CXCR4	P61073	pass	canonical	T2	
+CXCR5	P32302	pass	canonical	T2	
+CXCR6	O00574	pass	canonical	T2	
+CYBA	P13498	pass	likely		
+CYBB	P04839	pass	canonical	T2	
+CYBRD1	Q53TN4	pass	canonical	T2	
+CYSLTR1	Q9Y271	pass	canonical	T2	
+CYSLTR2	Q9NS75	pass	canonical	T2	
+DAG1	Q14118	pass	canonical	T1	
+DAGLA	Q9Y4D2	pass	canonical	T2	
+DCBLD1	Q8N8Z6	pass	canonical	T3	
+DCBLD2	Q96PD2	pass	canonical	T1	
+DCC	P43146	pass	canonical	T1	
+DCHS1	Q96JQ0	pass	canonical		
+DCHS2	Q6V1P9	pass	canonical		
+DCLK1	O15075	pass	likely		
+DCST1	Q5T197	pass	likely	T2	
+DCST2	Q5T1A1	pass	likely	T2	
+DCSTAMP	Q9H295	pass	canonical	T2	
+DCT	P40126	pass	likely		
+DDR1	Q08345	pass	canonical	T1	
+DDR2	Q16832	pass	canonical	T1	
+DEFB103B	P81534	pass	likely		
+DEFB118	Q96PH6	pass	likely		
+DEFB126	Q9BYW3	pass	likely		
+DEFB132	Q7Z7B7	pass	likely		
+DGCR2	P98153	pass	likely	T1	
+DHH	O43323	pass	likely		
+DIP2A	Q14689	pass	canonical		
+DISP1	Q96F81	pass	canonical	T2	
+DISP2	A7MBM2	pass	likely	T2	
+DLK1	P80370	pass	canonical	T3	
+DLK2	Q6UY11	pass	likely		
+DLL1	O00548	pass	canonical	T1	
+DLL3	Q9NYJ7	pass	likely	OE	
+DLL4	Q9NR61	pass	canonical	T1	
+DMBT1	Q9UGM3	pass	canonical		
+DNER	Q8NFT8	pass	likely	T1	
+DPEP1	P16444	pass	canonical	T1	
+DPEP2	Q9H4A9	pass	likely	T1	
+DPEP3	Q9H4B8	pass	likely	T1	
+DPP10	Q8N608	pass	canonical	T1	
+DPP4	P27487	pass	canonical	T1	
+DPP6	P42658	pass	likely	T1	
+DRAM2	Q6UX65	pass	likely		
+DRD1	P21728	pass	canonical	T2	
+DRD2	P14416	pass	canonical	T2	
+DRD3	P35462	pass	canonical	T2	
+DRD4	P21917	pass	canonical	T2	
+DRD5	P21918	pass	canonical	T2	
+DSC1	Q08554	pass	likely	T1	
+DSC2	Q02487	pass	canonical	T1	
+DSC3	Q14574	pass	likely	T1	
+DSCAM	O60469	pass	canonical		
+DSCAML1	Q8TD84	pass	likely		
+DSG1	Q02413	pass	canonical	T1	
+DSG2	Q14126	pass	canonical	T1	
+DSG3	P32926	pass	likely	T1	
+DUOX1	Q9NRD9	pass	canonical		
+DUOX2	Q9NRD8	pass	canonical		
+DUOXA2	Q1HG44	pass	likely		
+DYNAP	Q8N1N2	pass	canonical	T3	
+DYSF	O75923	pass	likely		
+EBAG9	O00559	pass	canonical		
+ECE1	P42892	pass	canonical	T1	
+ECRG4	Q9H1Z8	pass	canonical		
+ECSCR	Q19T08	pass	likely	T1	
+EDA	Q92838	pass	likely	T1	
+EDA2R	Q9HAV5	pass	canonical	T1	
+EDAR	Q9UNE0	pass	likely		
+EDIL3	O43854	pass	canonical		
+EDNRA	P25101	pass	canonical	T2	
+EDNRB	P24530	pass	canonical	T2	
+EFNA1	P20827	pass	canonical	T1	
+EFNA2	O43921	pass	likely	T1	
+EFNA3	P52797	pass	canonical	T1	
+EFNA4	P52798	pass	canonical	T1	
+EFNA5	P52803	pass	canonical	T1	
+EFNB1	P98172	pass	canonical	T1	
+EFNB2	P52799	pass	canonical	T1	
+EFNB3	Q15768	pass	canonical	T1	
+EGFL6	Q8IUX8	pass	likely		
+EGFLAM	Q63HQ2	pass	likely		
+EGFR	P00533	pass	canonical	T1	
+ELAPOR1	Q6UXG2	pass	likely		
+ELFN1	P0C7U0	pass	likely	T1	
+ELFN2	Q5R3F8	pass	likely	T1	
+EMB	Q6PCB8	pass	canonical	T1	
+EMCN	Q9ULC0	pass	likely	T1	
+EMP1	P54849	pass	canonical	T2	
+EMP2	P54851	pass	canonical	T3	
+EMP3	P54852	pass	canonical	T2	
+ENG	P17813	pass	canonical	T1	
+ENO1	P06733	pass	likely		
+ENOX1	Q8TC92	pass	canonical		
+ENOX2	Q16206	pass	canonical		
+ENPEP	Q07075	pass	canonical	T1	
+ENPP1	P22413	pass	canonical	T1	
+ENPP2	Q13822	pass	likely		
+ENPP3	O14638	pass	canonical	T3	
+ENPP4	Q9Y6X5	pass	canonical	T3	
+ENPP5	Q9UJA9	pass	canonical	T1	
+ENPP6	Q6UWR7	pass	likely	T1	
+ENPP7	Q6UWV6	pass	likely		
+ENTPD1	P49961	pass	canonical	T2	
+ENTPD2	Q9Y5L3	pass	canonical	T1	
+ENTPD3	O75355	pass	canonical	T2	
+ENTPD8	Q5MY95	pass	canonical	T2	
+EPCAM	P16422	pass	canonical	T1	
+EPGN	Q6UW88	pass	canonical	T1	
+EPHA1	P21709	pass	canonical	T1	
+EPHA10	Q5JZY3	pass	canonical	T3	
+EPHA2	P29317	pass	canonical	T1	
+EPHA3	P29320	pass	canonical	T1	
+EPHA4	P54764	pass	canonical	T1	
+EPHA5	P54756	pass	canonical	T1	
+EPHA6	Q9UF33	pass	canonical	T1	
+EPHA7	Q15375	pass	canonical	T1	
+EPHA8	P29322	pass	canonical	T1	
+EPHB1	P54762	pass	likely	T1	
+EPHB2	P29323	pass	canonical	T1	
+EPHB3	P54753	pass	canonical	T1	
+EPHB4	P54760	pass	canonical	T1	
+EPHB6	O15197	pass	canonical	T1	
+EPOR	P19235	pass	canonical	T1	
+EPPIN	O95925	pass	likely	T1	yes
+EPS8	Q12929	pass	likely		
+EQTN	Q9NQ60	pass	likely		
+ERBB2	P04626	pass	canonical	T1	
+ERBB3	P21860	pass	canonical	T1	
+ERBB4	Q15303	pass	canonical	T1	
+ERMAP	Q96PL5	pass	likely	T1	
+ERV3-1	Q14264	pass	canonical		
+ERVFRD-1	P60508	pass	likely	T1	
+ERVMER34-1	Q9H9K5	pass	likely	T1	
+ERVV-1	B6SEH8	pass	likely		
+ERVV-2	B6SEH9	pass	likely	T1	
+ERVW-1	Q9UQF0	pass	likely	T1	
+ESAM	Q96AP7	pass	canonical	T1	
+EVI2A	P22794	pass	likely	T3	
+EVI2B	P34910	pass	canonical	T1	
+F11R	Q9Y624	pass	canonical	T3	
+F2R	P25116	pass	canonical	T2	
+F2RL1	P55085	pass	canonical	T2	
+F2RL2	O00254	pass	canonical	T2	
+F2RL3	Q96RI0	pass	canonical	T2	
+F3	P13726	pass	canonical	T1	
+FABP4	P15090	pass	likely		
+FABP5	Q01469	pass	likely		
+FAM171A1	Q5VUB5	pass	canonical	T3	
+FAM171A2	A8MVW0	pass	likely	T1	
+FAM174B	Q3ZCQ3	pass	likely	T1	
+FAP	Q12884	pass	canonical	T3	
+FAS	P25445	pass	canonical	T1	
+FASLG	P48023	pass	canonical	T3	
+FAT1	Q14517	pass	canonical		
+FAT2	Q9NYQ8	pass	canonical		
+FAT3	Q8TDW7	pass	likely		
+FAT4	Q6V0I7	pass	canonical		
+FBLN7	Q53RD9	pass	canonical		
+FCAMR	Q8WWV6	pass	canonical	T1	
+FCAR	P24071	pass	canonical	T1	
+FCER1A	P12319	pass	canonical	T1	
+FCER2	P06734	pass	canonical	T1	
+FCGR1A	P12314	pass	canonical	T1	
+FCGR2A	P12318	pass	canonical	T1	
+FCGR2B	P31994	pass	canonical	T1	
+FCGR2C	P31995	pass	canonical	T1	
+FCGR3A	P08637	pass	canonical	T1	
+FCGR3B	O75015	pass	canonical	T1	
+FCGRT	P55899	pass	likely	OE	
+FCMR	O60667	pass	canonical	T1	
+FCRL1	Q96LA6	pass	canonical	T1	
+FCRL2	Q96LA5	pass	canonical	T1	
+FCRL3	Q96P31	pass	canonical	T1	
+FCRL4	Q96PJ5	pass	likely	T1	
+FCRL5	Q96RD9	pass	canonical	T1	
+FCRL6	Q6DN72	pass	likely	T1	
+FFAR1	O14842	pass	canonical	T2	
+FFAR2	O15552	pass	canonical	T2	
+FFAR3	O14843	pass	canonical	T2	
+FFAR4	Q5NUL3	pass	canonical	T2	
+FGF2	P09038	pass	likely		
+FGFR1	P11362	pass	canonical	T1	
+FGFR2	P21802	pass	canonical	T1	
+FGFR3	P22607	pass	canonical	T1	
+FGFR4	P22455	pass	canonical	T1	
+FGFRL1	Q8N441	pass	canonical	T3	
+FGL2	Q14314	pass	canonical		
+FIBCD1	Q8N539	pass	canonical	T1	
+FLRT1	Q9NZU1	pass	canonical	T1	
+FLRT2	O43155	pass	canonical	T1	
+FLRT3	Q9NZU0	pass	canonical	T1	
+FLT1	P17948	pass	canonical	T1	
+FLT3	P36888	pass	canonical	T1	
+FLT3LG	P49771	pass	canonical	T1	
+FLT4	P35916	pass	canonical	T1	
+FLVCR1	Q9Y5Y0	pass	canonical	T2	
+FLVCR2	Q9UPI3	pass	likely	T2	
+FMR1NB	Q8N0W7	pass	likely	T3	
+FN1	P02751	pass	canonical		
+FNDC1	Q4ZHG4	pass	likely		
+FNDC4	Q9H6D8	pass	likely		
+FOLH1	Q04609	pass	canonical	T1	
+FOLR1	P15328	pass	canonical	T1	
+FOLR2	P14207	pass	canonical	T1	
+FPR1	P21462	pass	canonical	T2	
+FPR2	P25090	pass	canonical	T2	
+FPR3	P25089	pass	canonical	T3	
+FREM2	Q5SZK8	pass	likely		
+FRMD3	A2A2Y4	pass	likely	T1	
+FSHR	P23945	pass	likely	T2	
+FST	P19883	pass	likely		
+FSTL1	Q12841	pass	canonical		
+FUCA2	Q9BTY2	pass	likely		
+FURIN	P09958	pass	likely		
+FUT2	Q10981	pass	likely		
+FXYD1	O00168	pass	canonical		
+FXYD2	P54710	pass	likely		
+FXYD3	Q14802	pass	canonical		
+FXYD4	P59646	pass	likely		
+FXYD5	Q96DB9	pass	canonical	T3	
+FXYD6	Q9H0Q3	pass	canonical		
+FXYD7	P58549	pass	likely		
+FZD1	Q9UP38	pass	canonical	T2	
+FZD10	Q9ULW2	pass	canonical	T3	
+FZD2	Q14332	pass	canonical	T2	
+FZD3	Q9NPG1	pass	canonical	T2	
+FZD4	Q9ULV1	pass	canonical	T2	
+FZD5	Q13467	pass	canonical	T2	
+FZD6	O60353	pass	canonical	T2	
+FZD7	O75084	pass	canonical	T3	
+FZD8	Q9H461	pass	canonical	T2	
+FZD9	O00144	pass	canonical	T2	
+GABBR1	Q9UBS5	pass	canonical		
+GABBR2	O75899	pass	canonical	T2	
+GABRA1	P14867	pass	canonical	T2	
+GABRA2	P47869	pass	canonical	T2	
+GABRA3	P34903	pass	canonical		
+GABRA4	P48169	pass	canonical	T2	
+GABRA5	P31644	pass	canonical		
+GABRA6	Q16445	pass	canonical	T2	
+GABRB1	P18505	pass	canonical		
+GABRB2	P47870	pass	canonical		
+GABRB3	P28472	pass	canonical		
+GABRD	O14764	pass	canonical		
+GABRE	P78334	pass	canonical	T3	
+GABRG1	Q8N1C3	pass	canonical		
+GABRG2	P18507	pass	canonical		
+GABRG3	Q99928	pass	canonical		
+GABRP	O00591	pass	canonical	T3	
+GABRQ	Q9UN88	pass	likely		
+GABRR1	P24046	pass	canonical	T2	
+GABRR2	P28476	pass	canonical	T3	
+GABRR3	A8MPY1	pass	likely	T2	
+GALR1	P47211	pass	canonical	T2	
+GALR2	O43603	pass	canonical	T2	
+GALR3	O60755	pass	canonical	SV	
+GAS1	P54826	pass	canonical	T1	
+GCGR	P47871	pass	canonical	T2	
+GDPD2	Q9HCC8	pass	canonical	T2	
+GDPD4	Q6W3E5	pass	likely	T2	
+GDPD5	Q8WTR4	pass	canonical	T3	
+GFRA1	P56159	pass	canonical	T1	
+GFRA2	O00451	pass	canonical	T1	
+GFRA3	O60609	pass	canonical	T1	
+GFRA4	Q9GZZ7	pass	likely	T1	
+GFRAL	Q6UXV0	pass	likely	T1	
+GGT1	P19440	pass	canonical	T3	
+GGT5	P36269	pass	canonical	T1	
+GGT6	Q6P531	pass	likely	T1	
+GGT7	Q9UJ14	pass	canonical	T3	
+GHR	P10912	pass	canonical	T1	
+GHRHR	Q02643	pass	canonical	T2	
+GHSR	Q92847	pass	canonical	T2	
+GIPR	P48546	pass	canonical	T2	
+GJA1	P17302	pass	likely	T2	
+GJA10	Q969M2	pass	canonical	T2	
+GJA3	Q9Y6H8	pass	likely	T2	
+GJA4	P35212	pass	canonical	T2	
+GJA5	P36382	pass	likely	T2	
+GJA8	P48165	pass	likely	T2	
+GJA9	P57773	pass	canonical	T2	
+GJB1	P08034	pass	canonical	T2	
+GJB2	P29033	pass	canonical	T2	
+GJB3	O75712	pass	likely	T2	
+GJB4	Q9NTQ9	pass	likely	T2	
+GJB6	O95452	pass	canonical	T2	
+GJB7	Q6PEY0	pass	canonical	T2	
+GJC1	P36383	pass	likely		
+GJC2	Q5T442	pass	likely	T2	
+GJC3	Q8NFK1	pass	likely	T2	
+GJD3	Q8N144	pass	likely	T2	
+GJD4	Q96KN9	pass	likely	T3	
+GJE1	A6NN92	pass	likely	T2	
+GLDN	Q6ZMI3	pass	likely		
+GLG1	Q92896	pass	likely		
+GLIPR1	P48060	pass	canonical	T3	
+GLIPR1L1	Q6UWM5	pass	likely	T1	
+GLP1R	P43220	pass	canonical	T2	
+GLP2R	O95838	pass	canonical	T2	
+GLRA1	P23415	pass	canonical	T2	
+GLRA2	P23416	pass	canonical	T2	
+GLRA3	O75311	pass	canonical	T2	
+GLRB	P48167	pass	canonical		
+GML	Q99445	pass	likely	T1	
+GNRHR	P30968	pass	canonical	T2	
+GP1BA	P07359	pass	likely		
+GP1BB	P13224	pass	canonical		
+GP2	P55259	pass	canonical	T1	
+GP5	P40197	pass	likely	T1	
+GP6	Q9HCN6	pass	canonical	T1	
+GP9	P14770	pass	likely		
+GPA33	Q99795	pass	canonical	T1	
+GPBAR1	Q8TDU6	pass	canonical	T2	
+GPC1	P35052	pass	canonical	T1	
+GPC2	Q8N158	pass	canonical	T3	
+GPC3	P51654	pass	canonical	T3	
+GPC4	O75487	pass	canonical	T1	
+GPC5	P78333	pass	canonical	T1	
+GPC6	Q9Y625	pass	canonical	T1	
+GPER1	Q99527	pass	likely		
+GPI	P06744	pass	likely		
+GPIHBP1	Q8IV16	pass	likely	T1	
+GPM6A	P51674	pass	canonical	T2	
+GPM6B	Q13491	pass	canonical	T2	
+GPNMB	Q14956	pass	canonical	T1	
+GPR101	Q96P66	pass	canonical	T2	
+GPR119	Q8TDV5	pass	canonical	T2	
+GPR12	P47775	pass	canonical	T2	
+GPR132	Q9UNW8	pass	canonical	T2	
+GPR135	Q8IZ08	pass	canonical	T2	
+GPR139	Q6DWJ6	pass	likely	T2	
+GPR142	Q7Z601	pass	canonical	T2	
+GPR143	P51810	pass	likely		
+GPR146	Q96CH1	pass	canonical	T2	
+GPR149	Q86SP6	pass	likely	T2	
+GPR15	P49685	pass	canonical	T3	
+GPR150	Q8NGU9	pass	likely	T2	
+GPR151	Q8TDV0	pass	likely	T2	
+GPR152	Q8TDT2	pass	likely	T2	
+GPR153	Q6NV75	pass	canonical	T3	
+GPR156	Q8NFN8	pass	likely	T2	
+GPR157	Q5UAW9	pass	likely	T2	
+GPR158	Q5T848	pass	canonical	T2	
+GPR160	Q9UJ42	pass	canonical	T3	
+GPR161	Q8N6U8	pass	likely	T2	
+GPR162	Q16538	pass	likely	T2	
+GPR17	Q13304	pass	likely	T2	
+GPR171	O14626	pass	canonical	T3	
+GPR173	Q9NS66	pass	canonical	T2	
+GPR174	Q9BXC1	pass	likely	T2	
+GPR176	Q14439	pass	canonical	T2	
+GPR179	Q6PRD1	pass	likely		
+GPR18	Q14330	pass	canonical	T2	
+GPR183	P32249	pass	canonical	T2	
+GPR19	Q15760	pass	likely	T2	
+GPR20	Q99678	pass	canonical	T2	
+GPR21	Q99679	pass	canonical	T2	
+GPR25	O00155	pass	canonical	T3	
+GPR26	Q8NDV2	pass	likely	T2	
+GPR27	Q9NS67	pass	likely	T2	
+GPR3	P46089	pass	canonical	T2	
+GPR31	O00270	pass	canonical		
+GPR32	O75388	pass	canonical	T2	
+GPR33	Q49SQ1	pass	likely	SV	
+GPR34	Q9UPC5	pass	canonical	T2	
+GPR35	Q9HC97	pass	canonical	T2	
+GPR37	O15354	pass	likely		
+GPR37L1	O60883	pass	canonical	T2	
+GPR39	O43194	pass	canonical	T2	
+GPR4	P46093	pass	canonical	T2	
+GPR45	Q9Y5Y3	pass	likely	T2	
+GPR50	Q13585	pass	canonical	T2	
+GPR52	Q9Y2T5	pass	canonical	T2	
+GPR55	Q9Y2T6	pass	canonical	T2	
+GPR6	P46095	pass	likely	T2	
+GPR61	Q9BZJ8	pass	canonical	T2	
+GPR62	Q9BZJ7	pass	likely	T2	
+GPR63	Q9BZJ6	pass	canonical	T3	
+GPR65	Q8IYL9	pass	canonical	T2	
+GPR68	Q15743	pass	canonical	T2	
+GPR75	O95800	pass	canonical	T2	
+GPR78	Q96P69	pass	likely	T2	
+GPR83	Q9NYM4	pass	canonical	T2	
+GPR84	Q9NQS5	pass	canonical	T3	
+GPR85	P60893	pass	likely	T2	
+GPR87	Q9BY21	pass	canonical	T3	
+GPR88	Q9GZN0	pass	likely	T2	
+GPRC5A	Q8NFJ5	pass	canonical	T2	
+GPRC5B	Q9NZH0	pass	canonical	T2	
+GPRC5C	Q9NQ84	pass	canonical	T2	
+GPRC5D	Q9NZD1	pass	canonical	T3	
+GPRC6A	Q5T6X5	pass	canonical	T3	
+GREM1	O60565	pass	canonical		
+GRIA1	P42261	pass	canonical	T2	
+GRIA2	P42262	pass	canonical	T2	
+GRIA3	P42263	pass	canonical	T2	
+GRIA4	P48058	pass	canonical	T2	
+GRID1	Q9ULK0	pass	likely	T2	
+GRID2	O43424	pass	likely	T2	
+GRIK1	P39086	pass	canonical	T2	
+GRIK2	Q13002	pass	canonical	T2	
+GRIK3	Q13003	pass	canonical	T2	
+GRIK4	Q16099	pass	canonical	T2	
+GRIK5	Q16478	pass	canonical		
+GRIN1	Q05586	pass	canonical		
+GRIN2A	Q12879	pass	canonical		
+GRIN2B	Q13224	pass	canonical		
+GRIN2C	Q14957	pass	canonical		
+GRIN2D	O15399	pass	likely		
+GRIN3A	Q8TCU5	pass	canonical		
+GRIN3B	O60391	pass	likely		
+GRM1	Q13255	pass	canonical	T2	
+GRM2	Q14416	pass	canonical	T2	
+GRM3	Q14832	pass	canonical	T2	
+GRM4	Q14833	pass	canonical	T2	
+GRM5	P41594	pass	canonical	T2	
+GRM6	O15303	pass	likely	T2	
+GRM7	Q14831	pass	likely	T2	
+GRM8	O00222	pass	canonical	T2	
+GRPR	P30550	pass	canonical	T2	
+GSDMA	Q96QA5	pass	likely		
+GSDMB	Q8TAX9	pass	likely		
+GSDMC	Q9BYG8	pass	likely		
+GSDMD	P57764	pass	likely		
+GSDME	O60443	pass	likely		
+GSG1L	Q6UXU4	pass	likely	T2	
+GUCY2C	P25092	pass	likely	T1	
+GUCY2D	Q02846	pass	likely	T1	
+GUCY2F	P51841	pass	likely	T1	
+GYPA	P02724	pass	likely	T1	
+GYPB	P06028	pass	canonical	T1	
+GYPC	P04921	pass	likely	T1	
+GYPE	P15421	pass	likely	T1	
+H2BC26	Q8N257	pass	likely		
+HAPLN1	P10915	pass	canonical		
+HAS3	O00219	pass	canonical	T3	
+HAVCR1	Q96D42	pass	canonical	T1	
+HAVCR2	Q8TDQ0	pass	canonical	T1	
+HBEGF	Q99075	pass	canonical	T1	
+HCAR1	Q9BXC0	pass	canonical	T3	
+HCAR2	Q8TDS4	pass	canonical	T2	
+HCAR3	P49019	pass	canonical	T2	
+HCN1	O60741	pass	canonical	T2	
+HCN2	Q9UL51	pass	canonical	T2	
+HCN3	Q9P1Z3	pass	canonical	T2	
+HCN4	Q9Y3Q4	pass	canonical	T2	
+HCRTR1	O43613	pass	canonical	T2	
+HCRTR2	O43614	pass	canonical	T2	
+HCST	Q9UBK5	pass	canonical		
+HEG1	Q9ULI3	pass	canonical	T1	
+HEPACAM	Q14CZ8	pass	canonical	T1	
+HEPACAM2	A8MVW5	pass	likely	T1	
+HEPH	Q9BQS7	pass	likely	T1	
+HEPHL1	Q6MZM0	pass	likely	T1	
+HFE	Q30201	pass	canonical	T1	
+HHIP	Q96QV1	pass	canonical		
+HHLA2	Q9UM44	pass	canonical	T1	
+HJV	Q6ZVN8	pass	canonical	T1	
+HLA-A	P04439	pass	canonical	T1	
+HLA-B	P01889	pass	canonical	T1	
+HLA-C	P10321	pass	canonical	T1	
+HLA-DMB	P28068	pass	likely		
+HLA-DOB	P13765	pass	likely		
+HLA-DPA1	P20036	pass	canonical		
+HLA-DPB1	P04440	pass	canonical		
+HLA-DQA1	P01909	pass	canonical		
+HLA-DQA2	P01906	pass	likely		
+HLA-DQB1	P01920	pass	canonical		
+HLA-DQB2	P05538	pass	likely		
+HLA-DRA	P01903	pass	canonical		
+HLA-DRB1	P01911	pass	canonical		
+HLA-DRB3	P79483	pass	canonical		
+HLA-DRB4	P13762	pass	canonical		
+HLA-DRB5	Q30154	pass	likely		
+HLA-E	P13747	pass	likely	OE	
+HLA-F	P30511	pass	likely		
+HLA-G	P17693	pass	likely	T1	
+HMGB1	P09429	pass	likely		
+HMMR	O75330	pass	likely		
+HPN	P05981	pass	canonical	T3	
+HPSE	Q9Y251	pass	likely		
+HPSE2	Q8WWQ2	pass	canonical		
+HRH1	P35367	pass	canonical	T2	
+HRH2	P25021	pass	canonical	T2	
+HRH3	Q9Y5N1	pass	canonical	T2	
+HRH4	Q9H3N8	pass	likely	T2	
+HS3ST2	Q9Y278	pass	canonical	T1	
+HSP90AB1	P08238	pass	likely		
+HSP90B1	P14625	pass	likely		
+HSPA1A	P0DMV8	pass	likely		
+HSPA1B	P0DMV9	pass	likely		
+HSPA5	P11021	pass	likely		
+HSPA8	P11142	pass	likely		
+HSPA9	P38646	pass	likely		
+HSPD1	P10809	pass	likely		
+HSPG2	P98160	pass	canonical		
+HTR1A	P08908	pass	canonical	T2	
+HTR1B	P28222	pass	canonical	T2	
+HTR1D	P28221	pass	canonical	T2	
+HTR1E	P28566	pass	canonical	T2	
+HTR1F	P30939	pass	canonical	T2	
+HTR2A	P28223	pass	canonical	T2	
+HTR2B	P41595	pass	canonical	T2	
+HTR2C	P28335	pass	canonical	T2	
+HTR3A	P46098	pass	canonical	T2	
+HTR3B	O95264	pass	canonical		
+HTR3C	Q8WXA8	pass	canonical		
+HTR3D	Q70Z44	pass	likely		
+HTR3E	A5X5Y0	pass	likely		
+HTR4	Q13639	pass	canonical	T2	
+HTR5A	P47898	pass	canonical	T2	
+HTR6	P50406	pass	likely	T2	
+HTR7	P34969	pass	canonical	T2	
+HTRA1	Q92743	pass	canonical		
+HVCN1	Q96D96	pass	canonical		
+HYAL2	Q12891	pass	canonical	T1	
+HYAL3	O43820	pass	likely		
+HYOU1	Q9Y4L1	pass	likely		
+ICAM1	P05362	pass	canonical	T1	
+ICAM2	P13598	pass	canonical	T1	
+ICAM3	P32942	pass	canonical	T1	
+ICAM4	Q14773	pass	canonical	T1	
+ICAM5	Q9UMF0	pass	likely	T1	
+ICOS	Q9Y6W8	pass	canonical	T3	
+ICOSLG	O75144	pass	canonical	T1	
+IDE	P14735	pass	likely		
+IFIT5	Q13325	pass	likely		
+IFITM1	P13164	pass	canonical		
+IFITM2	Q01629	pass	likely		
+IFITM3	Q01628	pass	likely		
+IFITM5	A6NNB3	pass	likely		
+IFNAR1	P17181	pass	canonical	T1	
+IFNAR2	P48551	pass	canonical	T1	
+IFNGR1	P15260	pass	canonical	T1	
+IFNGR2	P38484	pass	canonical	T1	
+IFNLR1	Q8IU57	pass	canonical	T1	
+IGDCC3	Q8IVU1	pass	likely	T1	
+IGDCC4	Q8TDY8	pass	canonical	T3	
+IGF1R	P08069	pass	canonical	T1	
+IGF2R	P11717	pass	likely		
+IGFL2	Q6UWQ7	pass	likely		
+IGFLR1	Q9H665	pass	canonical	T1	
+IGLL1	P15814	pass	likely		
+IGLON5	A6NGN9	pass	canonical	T1	
+IGSF1	Q8N6C5	pass	likely	T2	
+IGSF11	Q5DX21	pass	canonical	T3	
+IGSF21	Q96ID5	pass	canonical	T1	
+IGSF3	O75054	pass	canonical	T1	
+IGSF5	Q9NSI5	pass	likely	T1	
+IGSF8	Q969P0	pass	canonical	T1	
+IGSF9	Q9P2J2	pass	canonical	T3	
+IGSF9B	Q9UPX0	pass	likely	T1	
+IL10RA	Q13651	pass	canonical	T1	
+IL10RB	Q08334	pass	canonical	T1	
+IL11RA	Q14626	pass	canonical	T1	
+IL12RB1	P42701	pass	canonical	T1	
+IL12RB2	Q99665	pass	canonical	T1	
+IL13RA1	P78552	pass	canonical	T1	
+IL13RA2	Q14627	pass	canonical	T3	
+IL15	P40933	pass	canonical		
+IL15RA	Q13261	pass	canonical	T1	
+IL17RA	Q96F46	pass	canonical	T1	
+IL17RB	Q9NRM6	pass	canonical	T1	
+IL17RC	Q8NAC3	pass	canonical	T1	
+IL17RD	Q8NFM7	pass	canonical	T1	
+IL17RE	Q8NFR9	pass	canonical	T1	
+IL18R1	Q13478	pass	canonical	T1	
+IL18RAP	O95256	pass	canonical	T1	
+IL1R1	P14778	pass	canonical	T1	
+IL1R2	P27930	pass	canonical	T3	
+IL1RAP	Q9NPH3	pass	canonical	T1	
+IL1RAPL1	Q9NZN1	pass	likely	T1	
+IL1RAPL2	Q9NP60	pass	likely	T1	
+IL1RL1	Q01638	pass	canonical	T1	
+IL1RL2	Q9HB29	pass	canonical	T1	
+IL20RA	Q9UHF4	pass	canonical	T1	
+IL20RB	Q6UXL0	pass	canonical	T1	
+IL21R	Q9HBE5	pass	canonical	T1	
+IL22RA1	Q8N6P7	pass	canonical	T1	
+IL23R	Q5VWK5	pass	canonical	T1	
+IL27RA	Q6UWB1	pass	canonical	T1	
+IL2RA	P01589	pass	canonical	T1	
+IL2RB	P14784	pass	canonical	T1	
+IL2RG	P31785	pass	canonical	T1	
+IL31RA	Q8NI17	pass	canonical	T1	
+IL3RA	P26951	pass	canonical	T1	
+IL4R	P24394	pass	canonical	T1	
+IL5RA	Q01344	pass	canonical	T1	
+IL6R	P08887	pass	canonical	T1	
+IL6ST	P40189	pass	canonical	T1	
+IL7R	P16871	pass	canonical	T1	
+IL9R	Q01113	pass	canonical	T1	
+ILDR1	Q86SU0	pass	likely	T1	
+ILDR2	Q71H61	pass	canonical	T3	
+IMPG2	Q9BZV3	pass	likely	T1	
+INSR	P06213	pass	canonical	T1	
+INSRR	P14616	pass	likely	T1	
+ISLR	O14498	pass	likely	T1	
+ISLR2	Q6UXK2	pass	likely	T1	
+ISM1	B1AKI9	pass	likely		
+ITFG1	Q8TB96	pass	canonical	T3	
+ITGA1	P56199	pass	canonical	T1	
+ITGA10	O75578	pass	canonical	T1	
+ITGA11	Q9UKX5	pass	canonical	T3	
+ITGA2	P17301	pass	canonical	T1	
+ITGA2B	P08514	pass	canonical		
+ITGA3	P26006	pass	canonical	T1	
+ITGA4	P13612	pass	canonical	T1	
+ITGA5	P08648	pass	canonical	T1	
+ITGA6	P23229	pass	canonical	T1	
+ITGA7	Q13683	pass	canonical	T1	
+ITGA8	P53708	pass	canonical	T1	
+ITGA9	Q13797	pass	canonical	T1	
+ITGAD	Q13349	pass	canonical		
+ITGAE	P38570	pass	likely		
+ITGAL	P20701	pass	canonical		
+ITGAM	P11215	pass	canonical		
+ITGAV	P06756	pass	canonical	T1	
+ITGAX	P20702	pass	canonical		
+ITGB1	P05556	pass	canonical	T1	
+ITGB2	P05107	pass	canonical	T1	
+ITGB3	P05106	pass	canonical	T1	
+ITGB4	P16144	pass	canonical		
+ITGB5	P18084	pass	canonical	T1	
+ITGB6	P18564	pass	canonical	T3	
+ITGB7	P26010	pass	canonical	T1	
+ITGB8	P26012	pass	canonical	T1	
+ITM2A	O43736	pass	likely		
+ITM2B	Q9Y287	pass	canonical	T1	
+ITPRIPL1	Q6GPH6	pass	canonical		
+IYD	Q6PHW0	pass	likely		
+IZUMO1	Q8IYV9	pass	likely		
+IZUMO1R	A6ND01	pass	likely	T1	
+IZUMO2	Q6UXV1	pass	likely	T1	
+JAG1	P78504	pass	canonical	T1	
+JAG2	Q9Y219	pass	canonical	T1	
+JAM2	P57087	pass	canonical	T1	
+JAM3	Q9BX67	pass	canonical	T1	
+JAML	Q86YT9	pass	canonical	T1	
+KARS1	Q15046	pass	likely		
+KCNA1	Q09470	pass	canonical	T2	
+KCNA10	Q16322	pass	canonical	T2	
+KCNA2	P16389	pass	canonical	T2	
+KCNA3	P22001	pass	canonical	T2	
+KCNA4	P22459	pass	canonical	T2	
+KCNA5	P22460	pass	canonical	T2	
+KCNA6	P17658	pass	canonical	T2	
+KCNA7	Q96RP8	pass	canonical	T2	
+KCNB1	Q14721	pass	canonical	T2	
+KCNB2	Q92953	pass	canonical	T2	
+KCNC1	P48547	pass	canonical	T2	
+KCNC2	Q96PR1	pass	likely	T2	
+KCNC3	Q14003	pass	canonical	T2	
+KCNC4	Q03721	pass	canonical	T2	
+KCND1	Q9NSA2	pass	canonical	T2	
+KCND2	Q9NZV8	pass	canonical		
+KCND3	Q9UK17	pass	canonical	T2	
+KCNE1	P15382	pass	canonical		
+KCNE2	Q9Y6J6	pass	canonical	T1	
+KCNE3	Q9Y6H6	pass	canonical	T1	
+KCNE4	Q8WWG9	pass	canonical	T3	
+KCNE5	Q9UJ90	pass	canonical	T1	
+KCNF1	Q9H3M0	pass	canonical		
+KCNG1	Q9UIX4	pass	canonical		
+KCNG2	Q9UJ96	pass	likely		
+KCNG3	Q8TAE7	pass	likely		
+KCNG4	Q8TDN1	pass	likely		
+KCNH1	O95259	pass	canonical	T3	
+KCNH2	Q12809	pass	canonical	T2	
+KCNH3	Q9ULD8	pass	likely	T2	
+KCNH4	Q9UQ05	pass	likely	T2	
+KCNH5	Q8NCM2	pass	likely	OE	
+KCNH6	Q9H252	pass	canonical	T2	
+KCNH7	Q9NS40	pass	likely	T2	
+KCNH8	Q96L42	pass	likely	T2	
+KCNJ1	P48048	pass	canonical	T2	
+KCNJ10	P78508	pass	canonical	T2	
+KCNJ11	Q14654	pass	canonical		
+KCNJ12	Q14500	pass	canonical	T2	
+KCNJ13	O60928	pass	canonical	T2	
+KCNJ14	Q9UNX9	pass	canonical	T2	
+KCNJ15	Q99712	pass	canonical	T2	
+KCNJ16	Q9NPI9	pass	canonical		
+KCNJ18	B7U540	pass	likely		
+KCNJ2	P63252	pass	canonical	T2	
+KCNJ3	P48549	pass	canonical		
+KCNJ4	P48050	pass	canonical	T2	
+KCNJ5	P48544	pass	canonical	T2	
+KCNJ6	P48051	pass	canonical	T2	
+KCNJ8	Q15842	pass	canonical		
+KCNJ9	Q92806	pass	canonical	T2	
+KCNK1	O00180	pass	likely		
+KCNK10	P57789	pass	canonical	T2	
+KCNK12	Q9HB15	pass	likely		
+KCNK13	Q9HB14	pass	canonical	T2	
+KCNK15	Q9H427	pass	canonical		
+KCNK16	Q96T55	pass	likely		
+KCNK17	Q96T54	pass	canonical	T2	
+KCNK18	Q7Z418	pass	canonical	T2	
+KCNK2	O95069	pass	canonical	T2	
+KCNK3	O14649	pass	canonical	T2	
+KCNK4	Q9NYG8	pass	canonical	T2	
+KCNK5	O95279	pass	canonical	T3	
+KCNK6	Q9Y257	pass	likely		
+KCNK9	Q9NPC2	pass	canonical	T2	
+KCNMA1	Q12791	pass	canonical	T2	
+KCNMB1	Q16558	pass	canonical	T2	
+KCNMB2	Q9Y691	pass	canonical	T2	
+KCNMB3	Q9NPA1	pass	canonical		
+KCNMB4	Q86W47	pass	likely		
+KCNN1	Q92952	pass	canonical	T2	
+KCNN2	Q9H2S1	pass	canonical	T2	
+KCNN3	Q9UGI6	pass	canonical	T2	
+KCNN4	O15554	pass	canonical	T2	
+KCNQ1	P51787	pass	canonical	T2	
+KCNQ2	O43526	pass	canonical	T2	
+KCNQ3	O43525	pass	canonical		
+KCNQ4	P56696	pass	canonical	T2	
+KCNQ5	Q9NR82	pass	canonical	T2	
+KCNS1	Q96KK3	pass	likely		
+KCNS2	Q9ULS6	pass	likely		
+KCNS3	Q9BQ31	pass	canonical		
+KCNT1	Q5JUK3	pass	canonical	T2	
+KCNT2	Q6UVM3	pass	canonical	T2	
+KCNU1	A8MYU2	pass	likely	T2	
+KCNV1	Q6PIU1	pass	likely		
+KCNV2	Q8TDN2	pass	likely		
+KDR	P35968	pass	canonical	T1	
+KEL	P23276	pass	likely	T1	
+KIAA0319	Q5VV43	pass	canonical	T1	
+KIAA0319L	Q8IZA0	pass	likely		
+KIDINS220	Q9ULH0	pass	likely		
+KIR2DL1	P43626	pass	canonical	T1	
+KIR2DL2	P43627	pass	canonical	T1	
+KIR2DL3	P43628	pass	canonical	T1	
+KIR2DL4	Q99706	pass	likely		
+KIR2DL5A	Q8N109	pass	canonical	T1	
+KIR2DL5B	Q8NHK3	pass	likely		
+KIR2DS1	Q14954	pass	canonical		
+KIR2DS2	P43631	pass	likely	T1	
+KIR2DS4	P43632	pass	canonical	T1	
+KIR2DS5	Q14953	pass	likely	T1	
+KIR3DL1	P43629	pass	canonical	T1	
+KIR3DL2	P43630	pass	canonical	T1	
+KIR3DL3	Q8N743	pass	likely	T3	
+KIR3DS1	Q14943	pass	likely	T1	
+KIRREL1	Q96J84	pass	canonical	T1	
+KIRREL2	Q6UWL6	pass	likely	T1	
+KIRREL3	Q8IZU9	pass	likely	T1	
+KISS1R	Q969F8	pass	canonical	T2	
+KIT	P10721	pass	canonical	T1	
+KITLG	P21583	pass	canonical	T1	
+KL	Q9UEF7	pass	likely	T1	
+KLB	Q86Z14	pass	canonical	T1	
+KLK2	P20151	pass	canonical		
+KLRB1	Q12918	pass	canonical	T1	
+KLRC1	P26715	pass	canonical		
+KLRC2	P26717	pass	canonical		
+KLRD1	Q13241	pass	canonical		
+KLRF1	Q9NZS2	pass	canonical	T1	
+KLRF2	D3W0D1	pass	likely	T1	
+KLRG1	Q96E93	pass	canonical	T1	
+KLRK1	P26718	pass	canonical		
+KREMEN1	Q96MU8	pass	canonical	T1	
+KREMEN2	Q8NCW0	pass	canonical	T1	
+KRT1	P04264	pass	likely		
+KRT8	P05787	pass	likely		
+L1CAM	P32004	pass	canonical	T1	
+LAG3	P18627	pass	canonical	T1	
+LAIR1	Q6GTX8	pass	canonical	T1	
+LAMA3	Q16787	pass	canonical		
+LAMP1	P11279	pass	likely		
+LAMP2	P13473	pass	likely		
+LAMP3	Q9UQV4	pass	likely		
+LAMP5	Q9UJQ1	pass	likely		
+LAPTM4B	Q86VI4	pass	likely		
+LAT	O43561	pass	likely		
+LAT2	Q9GZY6	pass	likely		
+LAX1	Q8IWV1	pass	likely	T1	
+LAYN	Q6UX15	pass	canonical	T1	
+LCN6	P62502	pass	likely		
+LCP1	P13796	pass	likely		
+LCT	P09848	pass	likely		
+LCTL	Q6UWM7	pass	likely	T1	
+LDLR	P01130	pass	canonical	T1	
+LDLRAD3	Q86YD5	pass	canonical	T1	
+LEPR	P48357	pass	canonical	T1	
+LGALS1	P09382	pass	likely		
+LGALS13	Q9UHV8	pass	likely		
+LGALS3	P17931	pass	likely		
+LGALS3BP	Q08380	pass	likely		
+LGALS4	P56470	pass	likely		
+LGALS7	P47929	pass	likely		
+LGALS8	O00214	pass	likely		
+LGALS9	O00182	pass	likely		
+LGI1	O95970	pass	canonical		
+LGI2	Q8N0V4	pass	canonical		
+LGI3	Q8N145	pass	canonical		
+LGI4	Q8N135	pass	canonical		
+LGMN	Q99538	pass	likely		
+LGR4	Q9BXB1	pass	canonical	T2	
+LGR5	O75473	pass	canonical	T2	
+LGR6	Q9HBX8	pass	canonical	T2	
+LHCGR	P22888	pass	canonical	T2	
+LHFPL5	Q8TAF8	pass	likely		
+LHFPL6	Q9Y693	pass	likely	T2	
+LIFR	P42702	pass	canonical	T1	
+LILRA1	O75019	pass	canonical	T1	
+LILRA2	Q8N149	pass	canonical	T1	
+LILRA4	P59901	pass	likely		
+LILRA5	A6NI73	pass	canonical	T1	
+LILRA6	Q6PI73	pass	likely	T1	
+LILRB1	Q8NHL6	pass	canonical	T1	
+LILRB2	Q8N423	pass	canonical	T1	
+LILRB3	O75022	pass	canonical	T1	
+LILRB4	Q8NHJ6	pass	canonical	T1	
+LILRB5	O75023	pass	canonical	T1	
+LIM2	P55344	pass	likely	T2	
+LIME1	Q9H400	pass	likely		
+LINGO1	Q96FE5	pass	likely	T1	
+LINGO2	Q7L985	pass	canonical	T1	
+LINGO3	P0C6S8	pass	canonical	T1	
+LIPC	P11150	pass	likely		
+LIPG	Q9Y5X9	pass	canonical		
+LMBR1L	Q6UX01	pass	canonical	T2	
+LMBRD2	Q68DH5	pass	canonical	T2	
+LMLN	Q96KR4	pass	likely	T1	
+LMTK3	Q96Q04	pass	likely		
+LNPEP	Q9UIQ6	pass	likely		
+LOXL2	Q9Y4K0	pass	canonical		
+LOXL4	Q96JB6	pass	canonical		
+LPAR1	Q92633	pass	canonical	T2	
+LPAR2	Q9HBW0	pass	canonical	T2	
+LPAR3	Q9UBY5	pass	canonical	T2	
+LPAR4	Q99677	pass	canonical	T3	
+LPAR5	Q9H1C0	pass	canonical	T2	
+LPAR6	P43657	pass	canonical	T2	
+LPL	P06858	pass	canonical		
+LRFN1	Q9P244	pass	likely	T1	
+LRFN2	Q9ULH4	pass	likely	T1	
+LRFN3	Q9BTN0	pass	likely	T1	
+LRFN4	Q6PJG9	pass	canonical	T1	
+LRFN5	Q96NI6	pass	likely	T1	
+LRIG1	Q96JA1	pass	canonical	T1	
+LRIG2	O94898	pass	canonical	T1	
+LRIG3	Q6UXM1	pass	canonical	T1	
+LRIT1	Q9P2V4	pass	likely	T1	
+LRIT3	Q3SXY7	pass	likely	T1	
+LRP1	Q07954	pass	canonical		
+LRP10	Q7Z4F1	pass	canonical	T1	
+LRP11	Q86VZ4	pass	likely	T1	
+LRP12	Q9Y561	pass	likely	T1	
+LRP1B	Q9NZR2	pass	canonical		
+LRP2	P98164	pass	canonical		
+LRP3	O75074	pass	likely	T1	
+LRP4	O75096	pass	canonical		
+LRP5	O75197	pass	canonical	T1	
+LRP6	O75581	pass	canonical	T1	
+LRP8	Q14114	pass	canonical	T1	
+LRRC15	Q8TF66	pass	canonical	T3	
+LRRC19	Q9H756	pass	likely	T1	
+LRRC25	Q8N386	pass	likely	T1	
+LRRC26	Q2I0M4	pass	likely	T1	
+LRRC32	Q14392	pass	canonical	T3	
+LRRC37B	Q96QE4	pass	likely	T1	
+LRRC38	Q5VT99	pass	likely	T1	
+LRRC4	Q9HBW1	pass	likely	T1	
+LRRC4B	Q9NT99	pass	likely	T1	
+LRRC4C	Q9HCJ2	pass	likely	T1	
+LRRC52	Q8N7C0	pass	likely		
+LRRC55	Q6ZSA7	pass	likely	T1	
+LRRC8A	Q8IWT6	pass	canonical	T2	
+LRRC8B	Q6P9F7	pass	canonical	T2	
+LRRC8C	Q8TDW0	pass	likely	T2	
+LRRC8D	Q7L1W4	pass	canonical	T2	
+LRRC8E	Q6NSJ5	pass	canonical	T2	
+LRRFIP1	Q32MZ4	pass	likely		
+LRRN1	Q6UXK5	pass	canonical	T1	
+LRRN2	O75325	pass	likely	T1	
+LRRN3	Q9H3W5	pass	likely	T1	
+LRRN4	Q8WUT4	pass	likely	T1	
+LRRTM1	Q86UE6	pass	likely	T1	
+LRRTM2	O43300	pass	likely	T1	
+LRRTM3	Q86VH5	pass	likely	T1	
+LRRTM4	Q86VH4	pass	likely	T1	
+LRTM1	Q9HBL6	pass	likely	T1	
+LRTM2	Q8N967	pass	likely	T1	
+LSAMP	Q13449	pass	likely	T1	
+LSMEM2	Q8N112	pass	likely	T1	
+LSR	Q86X29	pass	canonical	T3	
+LST1	O00453	pass	likely		
+LTA	P01374	pass	canonical		
+LTB	Q06643	pass	canonical	T3	
+LTB4R	Q15722	pass	canonical	T2	
+LTB4R2	Q9NPC1	pass	canonical	T2	
+LTBR	P36941	pass	canonical	T1	
+LTK	P29376	pass	likely		
+LVRN	Q6Q4G3	pass	canonical	T3	
+LY6D	Q14210	pass	canonical	T1	
+LY6E	Q16553	pass	canonical	T1	
+LY6G6C	O95867	pass	canonical	T1	
+LY6G6D	O95868	pass	canonical	T3	
+LY6G6F	Q5SQ64	pass	likely	T1	
+LY6H	O94772	pass	canonical	T1	
+LY6K	Q17RY6	pass	canonical	T3	
+LY6L	H3BQJ8	pass	likely	T1	
+LY6S	P0DTL4	pass	canonical	T3	
+LY75	O60449	pass	canonical		
+LY86	O95711	pass	likely		
+LY9	Q9HBG7	pass	canonical	T1	
+LY96	Q9Y6Y9	pass	canonical		
+LYNX1	P0DP58	pass	canonical	T1	
+LYPD1	Q8N2G4	pass	canonical	T3	
+LYPD2	Q6UXB3	pass	canonical	T1	
+LYPD3	O95274	pass	canonical	T1	
+LYPD5	Q6UWN5	pass	likely	T1	
+LYPD6	Q86Y78	pass	canonical	T1	
+LYPD6B	Q8NI32	pass	canonical	T1	
+LYPD8	Q6UX82	pass	likely	T1	
+LYSMD3	Q7Z3D4	pass	likely	T1	
+LYVE1	Q9Y5Y7	pass	canonical	T1	
+LYZL4	Q96KX0	pass	likely		
+LYZL6	O75951	pass	likely		
+M6PR	P20645	pass	likely	OE	
+MADCAM1	Q13477	pass	likely	T1	
+MAG	P20916	pass	likely	T1	
+MAL	P21145	pass	likely		
+MARCKS	P29966	pass	likely		
+MARCO	Q9UEW3	pass	likely	T1	
+MARVELD2	Q8N4S9	pass	likely		
+MARVELD3	Q96A59	pass	likely	T2	
+MAS1	P04201	pass	canonical	T2	
+MAS1L	P35410	pass	likely	T2	
+MC1R	Q01726	pass	canonical	T2	
+MC2R	Q01718	pass	likely		
+MC3R	P41968	pass	canonical	T2	
+MC4R	P32245	pass	canonical	T2	
+MC5R	P33032	pass	canonical	T2	
+MCAM	P43121	pass	canonical	T1	
+MCEMP1	Q8IX19	pass	likely	T1	
+MCHR1	Q99705	pass	canonical	T2	
+MCHR2	Q969V1	pass	canonical	T2	
+MCOLN2	Q8IZK6	pass	likely		
+MCOLN3	Q8TDD5	pass	likely		
+MDGA1	Q8NFP4	pass	canonical	T1	
+MDGA2	Q7Z553	pass	canonical	T1	
+MEGF10	Q96KG7	pass	canonical	T1	
+MEGF11	A6BM72	pass	likely	T1	
+MEGF8	Q7Z7M0	pass	canonical		
+MEGF9	Q9H1U4	pass	canonical	T3	
+MELTF	P08582	pass	canonical	T1	
+MEP1A	Q16819	pass	canonical		
+MEP1B	Q16820	pass	canonical	T1	
+MERTK	Q12866	pass	canonical	T1	
+MET	P08581	pass	canonical	T1	
+MFGE8	Q08431	pass	canonical		
+MFRP	Q9BY79	pass	likely	T1	
+MFSD2A	Q8NA29	pass	canonical	T2	
+MFSD2B	A6NFX1	pass	likely	T2	
+MFSD6	Q6ZSS7	pass	canonical	T2	
+MGAM	O43451	pass	likely		
+MICA	Q29983	pass	canonical	T3	
+MICB	Q29980	pass	canonical	T3	
+MILR1	Q7Z6M3	pass	canonical	T1	
+MIP	P30301	pass	likely	T2	
+MLKL	Q8NB16	pass	likely		
+MLNR	O43193	pass	canonical	T2	
+MME	P08473	pass	canonical	T1	
+MMEL1	Q495T6	pass	likely	T1	
+MMP14	P50281	pass	canonical	T1	
+MMP15	P51511	pass	canonical	T1	
+MMP16	P51512	pass	canonical	T1	
+MMP17	Q9ULZ9	pass	canonical	T1	
+MMP24	Q9Y5R2	pass	likely	T1	
+MMP25	Q9NPA2	pass	canonical	T3	
+MMP28	Q9H239	pass	likely		
+MMP9	P14780	pass	likely		
+MMRN1	Q13201	pass	likely		
+MMRN2	Q9H8L6	pass	likely		
+MOG	Q16653	pass	likely	T2	
+MOSMO	Q8NHV5	pass	canonical	T2	
+MOSPD2	Q8NHP6	pass	likely		
+MPEG1	Q2M385	pass	likely		
+MPIG6B	O95866	pass	likely	T1	
+MPL	P40238	pass	canonical	T1	
+MPZ	P25189	pass	likely	T1	
+MPZL1	O95297	pass	canonical	T1	
+MPZL2	O60487	pass	canonical	T3	
+MPZL3	Q6UWV2	pass	likely	T1	
+MR1	Q95460	pass	likely	OE	
+MRAP	Q8TCY5	pass	likely	T1	
+MRAP2	Q96G30	pass	canonical	T1	
+MRC1	P22897	pass	canonical	T1	
+MRC2	Q9UBG0	pass	canonical	T1	
+MRGPRD	Q8TDS7	pass	canonical	T2	
+MRGPRE	Q86SM8	pass	canonical	T2	
+MRGPRF	Q96AM1	pass	canonical	T2	
+MRGPRX1	Q96LB2	pass	likely	T2	
+MRGPRX2	Q96LB1	pass	likely	T2	
+MRGPRX3	Q96LB0	pass	likely	T2	
+MRGPRX4	Q96LA9	pass	likely	T2	
+MS4A1	P11836	pass	canonical	T2	
+MS4A12	Q9NXJ0	pass	likely	T2	
+MS4A13	Q5J8X5	pass	likely	T2	
+MS4A2	Q01362	pass	likely	T2	
+MS4A3	Q96HJ5	pass	canonical	T2	
+MS4A4A	Q96JQ5	pass	canonical	T2	
+MS4A4E	Q96PG1	pass	likely		
+MS4A6A	Q9H2W1	pass	likely	T2	
+MS4A7	Q9GZW8	pass	likely	T2	
+MS4A8	Q9BY19	pass	canonical		
+MSLN	Q13421	pass	canonical	T3	
+MSR1	P21757	pass	canonical	T1	
+MST1R	Q04912	pass	canonical	T1	
+MTDH	Q86UE4	pass	likely		
+MTNR1A	P48039	pass	canonical	T2	
+MTNR1B	P49286	pass	canonical	T2	
+MUC1	P15941	pass	canonical	T1	
+MUC12	Q9UKN1	pass	likely		
+MUC13	Q9H3R2	pass	canonical	T1	
+MUC15	Q8N387	pass	canonical	T1	
+MUC16	Q8WXI7	pass	canonical		
+MUC17	Q685J3	pass	likely		
+MUC20	Q8N307	pass	canonical		
+MUC21	Q5SSG8	pass	canonical	T1	
+MUC22	E2RYF6	pass	likely		
+MUC3A	Q02505	pass	likely		
+MUC3B	Q9H195	pass	canonical		
+MUC4	Q99102	pass	canonical		
+MUCL1	Q96DR8	pass	likely		
+MUSK	O15146	pass	likely	T1	
+MXRA5	Q9NR99	pass	canonical		
+MXRA8	Q9BRK3	pass	canonical	T1	
+MYADM	Q96S97	pass	canonical	T2	
+MYH9	P35579	pass	likely		
+MYMK	A6NI61	pass	canonical	T3	
+MYMX	A0A1B0GTQ4	pass	likely		
+MYO18A	Q92614	pass	likely		
+MYOC	Q99972	pass	likely		
+MYOF	Q9NZM1	pass	likely		
+NAALAD2	Q9Y3Q0	pass	likely	T1	
+NAALADL1	Q9UQQ1	pass	canonical	T3	
+NAALADL2	Q58DX5	pass	likely	T3	
+NALCN	Q8IZF0	pass	canonical		
+NALF1	B1AL88	pass	canonical		
+NCAM1	P13591	pass	canonical	T1	
+NCAM2	O15394	pass	canonical	T1	
+NCR1	O76036	pass	canonical	T1	
+NCR2	O95944	pass	canonical		
+NCR3	O14931	pass	canonical	T1	
+NCR3LG1	Q68D85	pass	canonical	T3	
+NCSTN	Q92542	pass	canonical		
+NDNF	Q8TB73	pass	likely		
+NECTIN1	Q15223	pass	canonical	T1	
+NECTIN2	Q92692	pass	canonical	T1	
+NECTIN3	Q9NQS3	pass	canonical	T1	
+NECTIN4	Q96NY8	pass	canonical	T1	
+NEDD9	Q14511	pass	likely		
+NEGR1	Q7Z3B1	pass	canonical	T1	
+NELL1	Q92832	pass	canonical		
+NEO1	Q92859	pass	canonical	T1	
+NETO1	Q8TDF5	pass	likely	T1	
+NETO2	Q8NC67	pass	canonical	T1	
+NEU1	Q99519	pass	likely		
+NEU3	Q9UQ49	pass	canonical		
+NFAM1	Q8NET5	pass	likely	T1	
+NFASC	O94856	pass	likely	T1	
+NGFR	P08138	pass	canonical	T1	
+NINJ1	Q92982	pass	canonical		
+NINJ2	Q9NZG7	pass	canonical		
+NIPA2	Q8N8Q9	pass	canonical	T2	
+NIPAL4	Q0D2K0	pass	likely	T2	
+NKTR	P30414	pass	likely		
+NLGN1	Q8N2Q7	pass	canonical	T1	
+NLGN2	Q8NFZ4	pass	canonical	T1	
+NLGN3	Q9NZ94	pass	canonical	T1	
+NLGN4X	Q8N0W4	pass	canonical	T1	
+NLGN4Y	Q8NFZ3	pass	likely		
+NMBR	P28336	pass	canonical	T2	
+NMUR1	Q9HB89	pass	canonical	T2	
+NMUR2	Q9GZQ4	pass	canonical	T2	
+NOTCH1	P46531	pass	canonical		
+NOTCH2	Q04721	pass	canonical		
+NOTCH3	Q9UM47	pass	canonical		
+NOTCH4	Q99466	pass	canonical		
+NOX1	Q9Y5S8	pass	canonical	T3	
+NOX3	Q9HBY0	pass	likely	T2	
+NOX5	Q96PH1	pass	likely		
+NPBWR1	P48145	pass	canonical	T2	
+NPBWR2	P48146	pass	canonical	T2	
+NPC1L1	Q9UHC9	pass	canonical	T2	
+NPDC1	Q9NQX5	pass	likely	T1	
+NPFFR1	Q9GZQ6	pass	canonical	T2	
+NPFFR2	Q9Y5X5	pass	canonical	T2	
+NPHS1	O60500	pass	likely	T1	
+NPHS2	Q9NP85	pass	likely		
+NPM1	P06748	pass	likely		
+NPNT	Q6UXI9	pass	canonical		
+NPR1	P16066	pass	canonical	T1	
+NPR2	P20594	pass	canonical	T1	
+NPR3	P17342	pass	canonical	T1	
+NPSR1	Q6W5P4	pass	canonical	T2	
+NPTN	Q9Y639	pass	canonical	T1	
+NPTX1	Q15818	pass	canonical		
+NPTXR	O95502	pass	canonical		
+NPY1R	P25929	pass	canonical	T2	
+NPY2R	P49146	pass	canonical	T2	
+NPY4R	P50391	pass	likely	T2	
+NPY4R2	P0DQD5	pass	likely	T2	
+NPY5R	Q15761	pass	canonical	T2	
+NRCAM	Q92823	pass	canonical	T1	
+NRDC	O43847	pass	likely		
+NRG1	Q02297	pass	canonical	T1	
+NRG2	O14511	pass	canonical	T2	
+NRG3	P56975	pass	likely	T2	
+NRG4	Q8WWG1	pass	likely	T1	
+NRN1	Q9NPD7	pass	canonical	T1	
+NRN1L	Q496H8	pass	likely	T1	
+NRP1	O14786	pass	canonical	T1	
+NRP2	O60462	pass	canonical	T1	
+NRROS	Q86YC3	pass	likely	T1	
+NRXN1	P58400	pass	likely	T1	
+NRXN2	P58401	pass	canonical	T1	
+NRXN3	Q9HDB5	pass	canonical	T1	
+NT5E	P21589	pass	canonical	T1	
+NTM	Q9P121	pass	canonical	T1	
+NTNG1	Q9Y2I2	pass	canonical	T1	
+NTNG2	Q96CW9	pass	canonical	T1	
+NTRK1	P04629	pass	canonical	T1	
+NTRK2	Q16620	pass	canonical	T1	
+NTRK3	Q16288	pass	canonical	T1	
+NTSR1	P30989	pass	canonical	T2	
+NTSR2	O95665	pass	canonical	T3	
+NUS1	Q96E22	pass	likely		
+NXPE1	Q8N323	pass	likely		
+NXPH1	P58417	pass	likely		
+NXPH3	O95157	pass	likely		
+NYX	Q9GZU5	pass	likely	T1	
+OCLN	Q16625	pass	canonical	T3	
+OCSTAMP	Q9BR26	pass	canonical	T3	
+ODR4	Q5SWX8	pass	likely		
+OLFM1	Q99784	pass	likely		
+OLFM2	O95897	pass	likely		
+OLFM3	Q96PB7	pass	likely		
+OLFM4	Q6UX06	pass	likely		
+OLR1	P78380	pass	canonical	T1	
+OMG	P23515	pass	likely	T1	
+OPALIN	Q96PE5	pass	likely	T1	
+OPCML	Q14982	pass	canonical	T1	
+OPN1LW	P04000	pass	likely	T2	
+OPN1MW	P04001	pass	likely	T2	
+OPN1MW2	P0DN77	pass	likely	T2	
+OPN1MW3	P0DN78	pass	likely	T2	
+OPN1SW	P03999	pass	likely	T2	
+OPN3	Q9H1Y3	pass	canonical	T2	
+OPN4	Q9UHM6	pass	likely	T2	
+OPN5	Q6U736	pass	canonical	T2	
+OPRD1	P41143	pass	canonical	T2	
+OPRK1	P41145	pass	canonical	T2	
+OPRL1	P41146	pass	canonical	T2	
+OPRM1	P35372	pass	canonical	T2	
+OR10A2	Q9H208	pass	likely		
+OR10A3	P58181	pass	likely		
+OR10A4	Q9H209	pass	likely		
+OR10A5	Q9H207	pass	likely		
+OR10A6	Q8NH74	pass	likely		
+OR10G4	Q8NGN3	pass	likely		
+OR10G7	Q8NGN6	pass	likely	LL	
+OR10G9	Q8NGN4	pass	likely		
+OR10H1	Q9Y4A9	pass	canonical	T3	
+OR10H2	O60403	pass	likely	T3	
+OR10H5	Q8NGA6	pass	likely	T3	
+OR10J5	Q8NHC4	pass	likely	SV	
+OR10P1	Q8NGE3	pass	likely	T3	
+OR10S1	Q8NGN2	pass	likely		
+OR10X1	Q8NGY0	pass	likely		
+OR11A1	Q9GZK7	pass	likely	T3	
+OR11H2	Q8NH07	pass	likely		
+OR11H4	Q8NGC9	pass	canonical		
+OR11H6	Q8NGC7	pass	likely	SV	
+OR11H7	Q8NGC8	pass	likely	T3	
+OR11L1	Q8NGX0	pass	likely	T3	
+OR13A1	Q8NGR1	pass	likely	T3	
+OR14A16	Q8NHC5	pass	likely	SV	
+OR14A2	Q96R54	pass	likely		
+OR14I1	A6ND48	pass	likely	T3	
+OR14J1	Q9UGF5	pass	canonical	SV	
+OR1A1	Q9P1Q5	pass	likely		
+OR1A2	Q9Y585	pass	likely		
+OR1D2	P34982	pass	likely	T3	
+OR1D4	P47884	pass	likely		
+OR1E1	P30953	pass	likely	T3	
+OR1E2	P47887	pass	likely	T3	
+OR1F1	O43749	pass	likely	T3	
+OR1G1	P47890	pass	likely		
+OR1I1	O60431	pass	likely		
+OR2A2	Q6IF42	pass	likely		
+OR2A25	A4D2G3	pass	likely		
+OR2A4	O95047	pass	likely	T3	
+OR2A7	Q96R45	pass	likely	T3	
+OR2AG1	Q9H205	pass	likely		
+OR2AG2	A6NM03	pass	likely		
+OR2AT4	A6NND4	pass	likely		
+OR2B11	Q5JQS5	pass	canonical	T3	
+OR2B6	P58173	pass	likely	T3	
+OR2C1	O95371	pass	likely	T3	
+OR2D2	Q9H210	pass	likely	SV	
+OR2D3	Q8NGH3	pass	likely		
+OR2H1	Q9GZK4	pass	canonical	T3	
+OR2H2	O95918	pass	likely	T3	
+OR2I1	Q8NGU4	pass	likely	T3	
+OR2J2	O76002	pass	likely		
+OR2J3	O76001	pass	likely		
+OR2L13	Q8N349	pass	likely	T3	
+OR2M3	Q8NG83	pass	likely	T3	
+OR2M4	Q96R27	pass	likely		
+OR2M7	Q8NG81	pass	likely		
+OR2T1	O43869	pass	likely		
+OR2T11	Q8NH01	pass	likely	T3	
+OR2T29	Q8NH02	pass	likely	T3	
+OR2T34	Q8NGX1	pass	likely		
+OR2T4	Q8NH00	pass	likely		
+OR2T6	Q8NHC8	pass	likely		
+OR2W1	Q9Y3N9	pass	likely	SV	
+OR2W3	Q7Z3T1	pass	likely	T3	
+OR3A1	P47881	pass	canonical	T3	
+OR3A2	P47893	pass	likely	T3	
+OR3A3	P47888	pass	likely	T3	
+OR4B1	Q8NGF8	pass	likely	T3	
+OR4C13	Q8NGP0	pass	likely	T3	
+OR4C45	A6NMZ5	pass	likely		
+OR4D1	Q15615	pass	likely	SV	
+OR4D11	Q8NGI4	pass	likely		
+OR4D2	P58180	pass	likely	SV	
+OR4D5	Q8NGN0	pass	likely	SV	
+OR4E2	Q8NGC2	pass	likely	T3	
+OR4K15	Q8NH41	pass	likely	SV	
+OR4M1	Q8NGD0	pass	canonical		
+OR4N4	Q8N0Y3	pass	likely	T3	
+OR4N4C	A0A096LPK9	pass	likely		
+OR4Q3	Q8NH05	pass	likely		
+OR4S1	Q8NGB4	pass	likely	SV	
+OR4S2	Q8NH73	pass	canonical	SV	
+OR4X2	Q8NGF9	pass	likely		
+OR51A2	Q8NGJ7	pass	likely		
+OR51A7	Q8NH64	pass	likely	T3	
+OR51B4	Q9Y5P0	pass	likely	T3	
+OR51B5	Q9H339	pass	likely	T3	
+OR51D1	Q8NGF3	pass	likely		
+OR51E1	Q8TCB6	pass	canonical	T3	
+OR51E2	Q9H255	pass	canonical	T3	
+OR51M1	Q9H341	pass	likely		
+OR51Q1	Q8NH59	pass	likely		
+OR51S1	Q8NGJ8	pass	likely		
+OR52A1	Q9UKL2	pass	likely	T3	
+OR52A5	Q9H2C5	pass	likely		
+OR52B2	Q96RD2	pass	likely		
+OR52B6	Q8NGF0	pass	likely	T3	
+OR52E2	Q8NGJ4	pass	likely		
+OR52N5	Q8NH56	pass	likely		
+OR52W1	Q6IF63	pass	likely		
+OR56A4	Q8NGH8	pass	likely		
+OR56B1	Q8NGI3	pass	likely	T3	
+OR5A1	Q8NGJ0	pass	likely		
+OR5A2	Q8NGI9	pass	likely	T3	
+OR5AN1	Q8NGI8	pass	likely	T3	
+OR5B12	Q96R08	pass	likely	T3	
+OR5B2	Q96R09	pass	likely		
+OR5D14	Q8NGL3	pass	likely		
+OR5H1	A6NKK0	pass	likely		
+OR5H15	A6NDH6	pass	likely		
+OR5K1	Q8NHB7	pass	likely		
+OR5M3	Q8NGP4	pass	likely		
+OR5P3	Q8WZ94	pass	likely		
+OR5V1	Q9UGF6	pass	likely	T3	
+OR6A2	O95222	pass	canonical		
+OR6C3	Q9NZP0	pass	likely	T3	
+OR6F1	Q8NGZ6	pass	likely	SV	
+OR6M1	Q8NGM8	pass	likely		
+OR6Y1	Q8NGX8	pass	likely		
+OR7A17	O14581	pass	likely	SV	
+OR7A5	Q15622	pass	likely	T3	
+OR7C1	O76099	pass	likely	T3	
+OR7D2	Q96RA2	pass	likely		
+OR7D4	Q8NG98	pass	likely	T3	
+OR7E24	Q6IFN5	pass	likely	T3	
+OR8B3	Q8NGG8	pass	likely		
+OR8D1	Q8WZ84	pass	canonical	T3	
+OR8D2	Q9GZM6	pass	likely		
+OR9G9	P0C7N8	pass	likely	SV	
+ORAI1	Q96D31	pass	canonical	T2	
+ORAI2	Q96SN7	pass	canonical	T2	
+ORAI3	Q9BRQ5	pass	canonical	T3	
+OSCAR	Q8IYS5	pass	canonical		
+OSCP1	Q8WVF1	pass	likely		
+OSMR	Q99650	pass	canonical	T1	
+OTOA	Q7RTW8	pass	likely	T1	
+OTOP1	Q7RTM1	pass	likely	T2	
+OTOP2	Q7RTS6	pass	canonical	T2	
+OTOP3	Q7RTS5	pass	canonical	T2	
+OXER1	Q8TDS5	pass	canonical	T2	
+OXGR1	Q96P68	pass	canonical	T2	
+OXTR	P30559	pass	likely	SV	
+P2RX1	P51575	pass	canonical	T2	
+P2RX2	Q9UBL9	pass	canonical	T2	
+P2RX3	P56373	pass	canonical	T2	
+P2RX4	Q99571	pass	likely		
+P2RX5	Q93086	pass	canonical	T3	
+P2RX6	O15547	pass	canonical	T2	
+P2RX7	Q99572	pass	canonical	T2	
+P2RY1	P47900	pass	canonical	T2	
+P2RY10	O00398	pass	canonical	T2	
+P2RY11	Q96G91	pass	canonical	T2	
+P2RY12	Q9H244	pass	canonical	T2	
+P2RY13	Q9BPV8	pass	canonical	T2	
+P2RY14	Q15391	pass	canonical	T2	
+P2RY2	P41231	pass	canonical	T2	
+P2RY4	P51582	pass	canonical	T2	
+P2RY6	Q15077	pass	canonical	T2	
+P2RY8	Q86VZ1	pass	likely	T2	
+P4HB	P07237	pass	likely		
+PACC1	Q9H813	pass	canonical	T2	
+PAG1	Q9NWQ8	pass	canonical		
+PAM	P19021	pass	likely	T1	
+PANX1	Q96RD7	pass	canonical	T2	
+PANX3	Q96QZ0	pass	canonical	T2	
+PAPPA	Q13219	pass	canonical		
+PAQR5	Q9NXK6	pass	canonical	T2	
+PAQR6	Q6TCH4	pass	likely	T2	
+PAQR7	Q86WK9	pass	canonical	T3	
+PAQR8	Q8TEZ7	pass	canonical	T2	
+PAQR9	Q6ZVX9	pass	canonical	T3	
+PATE1	Q8WXA2	pass	likely		
+PATE2	Q6UY27	pass	likely		
+PATE3	B3GLJ2	pass	likely		
+PCDH1	Q08174	pass	likely	T1	
+PCDH10	Q9P2E7	pass	canonical	T1	
+PCDH11X	Q9BZA7	pass	likely		
+PCDH11Y	Q9BZA8	pass	likely		
+PCDH12	Q9NPG4	pass	likely	T1	
+PCDH15	Q96QU1	pass	likely		
+PCDH17	O14917	pass	canonical	T1	
+PCDH18	Q9HCL0	pass	canonical	T1	
+PCDH19	Q8TAB3	pass	canonical	T1	
+PCDH20	Q8N6Y1	pass	likely		
+PCDH7	O60245	pass	canonical	T1	
+PCDH8	O95206	pass	canonical	T3	
+PCDH9	Q9HC56	pass	canonical	T1	
+PCDHA1	Q9Y5I3	pass	likely	T1	
+PCDHA10	Q9Y5I2	pass	likely	T1	
+PCDHA11	Q9Y5I1	pass	likely	T1	
+PCDHA12	Q9UN75	pass	likely	T1	
+PCDHA13	Q9Y5I0	pass	likely	T1	
+PCDHA2	Q9Y5H9	pass	likely	T1	
+PCDHA3	Q9Y5H8	pass	likely	T1	
+PCDHA5	Q9Y5H7	pass	likely	T1	
+PCDHA6	Q9UN73	pass	likely	T1	
+PCDHA7	Q9UN72	pass	likely	T1	
+PCDHA8	Q9Y5H6	pass	likely		
+PCDHA9	Q9Y5H5	pass	likely	T1	
+PCDHAC1	Q9H158	pass	likely	T1	
+PCDHAC2	Q9Y5I4	pass	likely	T1	
+PCDHB1	Q9Y5F3	pass	canonical		
+PCDHB10	Q9UN67	pass	likely	T1	
+PCDHB11	Q9Y5F2	pass	likely	T1	
+PCDHB12	Q9Y5F1	pass	likely	T1	
+PCDHB13	Q9Y5F0	pass	canonical	T3	
+PCDHB14	Q9Y5E9	pass	likely	T1	
+PCDHB15	Q9Y5E8	pass	likely	T1	
+PCDHB16	Q9NRJ7	pass	likely	T1	
+PCDHB2	Q9Y5E7	pass	likely	T1	
+PCDHB3	Q9Y5E6	pass	likely	T1	
+PCDHB4	Q9Y5E5	pass	likely	T1	
+PCDHB5	Q9Y5E4	pass	likely	T1	
+PCDHB6	Q9Y5E3	pass	likely	T1	
+PCDHB7	Q9Y5E2	pass	likely	T1	
+PCDHB8	Q9UN66	pass	likely	T1	
+PCDHB9	Q9Y5E1	pass	canonical	T3	
+PCDHGA1	Q9Y5H4	pass	likely	T1	
+PCDHGA10	Q9Y5H3	pass	likely	T1	
+PCDHGA11	Q9Y5H2	pass	likely	T1	
+PCDHGA12	O60330	pass	likely	T1	
+PCDHGA2	Q9Y5H1	pass	likely	T1	
+PCDHGA3	Q9Y5H0	pass	likely		
+PCDHGA4	Q9Y5G9	pass	likely	T1	
+PCDHGA5	Q9Y5G8	pass	likely	T1	
+PCDHGA6	Q9Y5G7	pass	likely	T1	
+PCDHGA7	Q9Y5G6	pass	likely	T1	
+PCDHGA8	Q9Y5G5	pass	likely	T1	
+PCDHGA9	Q9Y5G4	pass	canonical	T3	
+PCDHGB1	Q9Y5G3	pass	likely	T1	
+PCDHGB2	Q9Y5G2	pass	likely	T1	
+PCDHGB3	Q9Y5G1	pass	likely	T1	
+PCDHGB4	Q9UN71	pass	canonical	T1	
+PCDHGB5	Q9Y5G0	pass	canonical	T1	
+PCDHGB6	Q9Y5F9	pass	likely	T1	
+PCDHGB7	Q9Y5F8	pass	likely	T1	
+PCDHGC3	Q9UN70	pass	canonical	T3	
+PCDHGC4	Q9Y5F7	pass	likely	T1	
+PCDHGC5	Q9Y5F6	pass	canonical	T1	
+PCSK5	Q92824	pass	likely		
+PCSK7	Q16549	pass	likely		
+PCSK9	Q8NBP7	pass	canonical		
+PDCD1	Q15116	pass	canonical	T1	
+PDCD1LG2	Q9BQ51	pass	canonical	T1	
+PDGFC	Q9NRA1	pass	likely		
+PDGFRA	P16234	pass	canonical	T1	
+PDGFRB	P09619	pass	canonical	T1	
+PDIA3	P30101	pass	likely		
+PDIA4	P13667	pass	likely		
+PDIA6	Q15084	pass	likely		
+PDPN	Q86YL7	pass	canonical	T1	
+PDZK1IP1	Q13113	pass	canonical		
+PEAR1	Q5VY43	pass	canonical	T1	
+PEBP4	Q96S96	pass	likely		
+PECAM1	P16284	pass	canonical	T1	
+PERP	Q96FX8	pass	likely	T2	
+PGAP6	Q9HCN3	pass	canonical	T2	
+PGRMC1	O00264	pass	likely		
+PHB1	P35232	pass	likely		
+PHB2	Q99623	pass	likely		
+PHEX	P78562	pass	canonical	T1	
+PIANP	Q8IYJ0	pass	canonical	T1	
+PIEZO1	Q92508	pass	canonical		
+PIEZO2	Q9H5I5	pass	canonical		
+PIGR	P01833	pass	canonical	T1	
+PIK3IP1	Q96FE7	pass	canonical	T3	
+PILRA	Q9UKJ1	pass	canonical	T1	
+PILRB	Q9UKJ0	pass	canonical	T1	
+PIRT	P0C851	pass	likely		
+PITPNM3	Q9BZ71	pass	canonical		
+PKD1	P98161	pass	canonical		
+PKD1L1	Q8TDX9	pass	likely		
+PKD1L3	Q7Z443	pass	likely		
+PKD2	Q13563	pass	likely		
+PKD2L1	Q9P0L9	pass	likely	T2	
+PKDREJ	Q9NTG1	pass	likely		
+PKHD1	P08F94	pass	likely		
+PKHD1L1	Q86WI1	pass	likely		
+PLA2G2F	Q9BZM2	pass	likely		
+PLA2R1	Q13018	pass	canonical	T1	
+PLAC1	Q9HBJ0	pass	canonical		
+PLAU	P00749	pass	canonical		
+PLAUR	Q03405	pass	canonical	T1	
+PLB1	Q6P1J6	pass	likely	T1	
+PLD4	Q96BZ4	pass	likely		
+PLEC	Q15149	pass	likely		
+PLET1	Q6UQ28	pass	likely	T1	
+PLG	P00747	pass	canonical		
+PLGRKT	Q9HBL7	pass	canonical		
+PLLP	Q9Y342	pass	likely	T2	
+PLP1	P60201	pass	likely		
+PLPP1	O14494	pass	canonical	T2	
+PLPP2	O43688	pass	canonical	T2	
+PLPP3	O14495	pass	canonical	T2	
+PLPP4	Q5VZY2	pass	likely	T2	
+PLPPR1	Q8TBJ4	pass	likely	T2	
+PLPPR2	Q96GM1	pass	likely	T2	
+PLPPR3	Q6T4P5	pass	likely	T2	
+PLPPR4	Q7Z2D5	pass	likely	T2	
+PLPPR5	Q32ZL2	pass	likely	T2	
+PLSCR1	O15162	pass	canonical		
+PLVAP	Q9BX97	pass	likely	T1	
+PLXDC1	Q8IUK5	pass	canonical	T3	
+PLXDC2	Q6UX71	pass	canonical	T1	
+PLXNA1	Q9UIW2	pass	canonical		
+PLXNA2	O75051	pass	canonical		
+PLXNA3	P51805	pass	canonical		
+PLXNA4	Q9HCM2	pass	canonical		
+PLXNB1	O43157	pass	canonical		
+PLXNB2	O15031	pass	canonical		
+PLXNB3	Q9ULL4	pass	canonical		
+PLXNC1	O60486	pass	canonical	T1	
+PLXND1	Q9Y4D7	pass	canonical		
+PMEPA1	Q969W9	pass	canonical	T3	
+PMP22	Q01453	pass	canonical	T2	
+PODXL	O00592	pass	canonical	T1	
+PODXL2	Q9NZ53	pass	likely	T1	
+POPDC1	Q8NE79	pass	likely	T2	
+POPDC2	Q9HBU9	pass	likely		
+POPDC3	Q9HBV1	pass	likely	T2	
+PPIA	P62937	pass	likely		
+PPT1	P50897	pass	likely		
+PRDX1	Q06830	pass	likely		
+PRDX6	P30041	pass	likely		
+PRG4	Q92954	pass	canonical		
+PRIMA1	Q86XR5	pass	likely	T1	
+PRLHR	P49683	pass	canonical	T2	
+PRLR	P16471	pass	canonical	T1	
+PRND	Q9UKY0	pass	likely	T1	
+PRNP	P04156	pass	canonical	T1	
+PROCR	Q9UNN8	pass	canonical	T1	
+PROKR1	Q8TCW9	pass	canonical	T2	
+PROKR2	Q8NFJ6	pass	canonical	T2	
+PROM1	O43490	pass	canonical	T2	
+PROM2	Q8N271	pass	canonical	T2	
+PRPH2	P23942	pass	likely		
+PRRG1	O14668	pass	canonical	T3	
+PRRG2	O14669	pass	canonical	T1	
+PRRG3	Q9BZD7	pass	likely	T1	
+PRRG4	Q9BZD6	pass	canonical	T3	
+PRRT1	Q99946	pass	likely		
+PRRT2	Q7Z6L0	pass	likely		
+PRSS21	Q9Y6M0	pass	likely	T1	
+PRSS41	Q7RTY9	pass	likely	T1	
+PRSS55	Q6UWB4	pass	likely	T1	
+PRSS8	Q16651	pass	canonical	T1	
+PRTG	Q2VWP7	pass	canonical	T3	
+PRTN3	P24158	pass	likely		
+PSCA	O43653	pass	canonical	T1	
+PTAFR	P25105	pass	canonical	T2	
+PTCH1	Q13635	pass	canonical	T2	
+PTCH2	Q9Y6C5	pass	canonical	T2	
+PTCHD1	Q96NR3	pass	likely	T2	
+PTCRA	Q6ISU1	pass	likely		
+PTGDR	Q13258	pass	canonical	T2	
+PTGDR2	Q9Y5Y4	pass	likely	T2	
+PTGER1	P34995	pass	canonical	T2	
+PTGER2	P43116	pass	canonical	T2	
+PTGER3	P43115	pass	canonical	T2	
+PTGER4	P35408	pass	canonical	T2	
+PTGFR	P43088	pass	likely	T2	
+PTGFRN	Q9P2B2	pass	canonical	T3	
+PTGIR	P43119	pass	canonical	T2	
+PTH1R	Q03431	pass	canonical	T2	
+PTH2R	P49190	pass	canonical	T2	
+PTK7	Q13308	pass	canonical	T1	
+PTP4A3	O75365	pass	likely		
+PTPRA	P18433	pass	canonical	T1	
+PTPRB	P23467	pass	likely		
+PTPRC	P08575	pass	canonical	T1	
+PTPRCAP	Q14761	pass	canonical		
+PTPRD	P23468	pass	canonical		
+PTPRE	P23469	pass	canonical		
+PTPRF	P10586	pass	canonical		
+PTPRG	P23470	pass	canonical	T1	
+PTPRH	Q9HD43	pass	likely	T1	
+PTPRJ	Q12913	pass	canonical	T1	
+PTPRK	Q15262	pass	canonical	T1	
+PTPRM	P28827	pass	canonical	T1	
+PTPRN	Q16849	pass	likely		
+PTPRN2	Q92932	pass	likely		
+PTPRO	Q16827	pass	canonical	T1	
+PTPRQ	Q9UMZ3	pass	likely		
+PTPRR	Q15256	pass	likely		
+PTPRS	Q13332	pass	canonical		
+PTPRT	O14522	pass	canonical	T1	
+PTPRU	Q92729	pass	likely	T1	
+PTPRZ1	P23471	pass	canonical		
+PTPRZ2	P23471	pass	canonical		
+PTTG1IP	P53801	pass	likely		
+PVR	P15151	pass	canonical	T1	
+PVRIG	Q6DKI7	pass	likely	T1	
+QRFPR	Q96P65	pass	canonical	T2	
+QSOX1	O00391	pass	likely		
+RAB44	Q7Z6P3	pass	likely		
+RAET1E	Q8TD07	pass	canonical	T3	
+RAET1G	Q6H3X3	pass	canonical	T3	
+RAET1L	Q5VY80	pass	canonical	T3	
+RAMP1	O60894	pass	canonical		
+RAMP2	O60895	pass	canonical		
+RAMP3	O60896	pass	canonical		
+RARRES1	P49788	pass	canonical		
+RCN1	Q15293	pass	likely		
+RECK	O95980	pass	canonical	T1	
+RELL1	Q8IUW5	pass	canonical	T3	
+RELL2	Q8NC24	pass	likely	LL	
+RELT	Q969Z4	pass	likely	T1	
+RET	P07949	pass	canonical	T1	
+RFTN1	Q14699	pass	likely		
+RGMA	Q96B86	pass	canonical	T1	
+RGMB	Q6NW40	pass	likely	OE	
+RGR	P47804	pass	likely		
+RGS9BP	Q6ZS82	pass	likely		
+RHAG	Q02094	pass	likely	T2	
+RHBDF2	Q6PJF5	pass	canonical	T2	
+RHBDL2	Q9NX52	pass	canonical	T2	
+RHBG	Q9H310	pass	likely	T2	
+RHCE	P18577	pass	likely		
+RHCG	Q9UBD6	pass	canonical	T2	
+RHD	Q02161	pass	likely		
+RHEX	Q6ZWK4	pass	likely		
+RHO	P08100	pass	likely	T2	
+RNASE2	P10153	pass	likely		
+RNF128	Q8TEB7	pass	likely		
+RNF130	Q86XS8	pass	likely	T2	
+RNF167	Q9H6Y7	pass	likely		
+RNF43	Q68DV7	pass	canonical	T1	
+RNLS	Q5VYX0	pass	likely		
+RO60	P10155	pass	likely		
+ROBO1	Q9Y6N7	pass	canonical	T1	
+ROBO2	Q9HCK4	pass	canonical	T1	
+ROBO3	Q96MS0	pass	canonical	T3	
+ROBO4	Q8WZ75	pass	canonical	T1	
+ROM1	Q03395	pass	likely		
+ROR1	Q01973	pass	canonical	T3	
+ROR2	Q01974	pass	canonical	T3	
+ROS1	P08922	pass	canonical		
+RPSA	P08865	pass	likely		
+RPSA2	A0A8I5KQE6	pass	likely		
+RRH	O14718	pass	likely	T2	
+RTN4R	Q9BZR6	pass	canonical	T1	
+RTN4RL1	Q86UN2	pass	canonical	T1	
+RTN4RL2	Q86UN3	pass	likely	T1	
+RTP1	P59025	pass	likely		
+RTP2	Q5QGT7	pass	likely		
+RTP3	Q9BQQ7	pass	likely		
+RXFP1	Q9HBX9	pass	canonical	T2	
+RXFP2	Q8WXD0	pass	canonical	T2	
+RXFP3	Q9NSD7	pass	canonical	T2	
+RXFP4	Q8TDU9	pass	canonical	T2	
+RYK	P34925	pass	canonical	T1	
+S100A10	P60903	pass	likely		
+S100A11	P31949	pass	likely		
+S100A14	Q9HCY8	pass	canonical		
+S100A16	Q96FQ6	pass	likely		
+S100A7	P31151	pass	likely		
+S100A7A	Q86SG5	pass	likely		
+S100A8	P05109	pass	likely		
+S100P	P25815	pass	likely		
+S1PR1	P21453	pass	canonical	T2	
+S1PR2	O95136	pass	canonical	T2	
+S1PR3	Q99500	pass	canonical	T2	
+S1PR4	O95977	pass	canonical	T2	
+S1PR5	Q9H228	pass	canonical	T2	
+SCARA3	Q6AZY7	pass	canonical	T1	
+SCARA5	Q6ZMJ2	pass	canonical	T1	
+SCARB1	Q8WTV0	pass	canonical	T2	
+SCARB2	Q14108	pass	likely		
+SCARF1	Q14162	pass	canonical	T1	
+SCARF2	Q96GP6	pass	canonical	T1	
+SCART1	Q4G0T1	pass	likely	T1	
+SCEL	O95171	pass	likely		
+SCIMP	Q6UWF3	pass	likely		
+SCN10A	Q9Y5Y9	pass	canonical		
+SCN11A	Q9UI33	pass	likely		
+SCN1A	P35498	pass	likely		
+SCN1B	Q07699	pass	canonical	T1	
+SCN2A	Q99250	pass	canonical		
+SCN2B	O60939	pass	canonical	T1	
+SCN3A	Q9NY46	pass	canonical		
+SCN3B	Q9NY72	pass	canonical	T1	
+SCN4A	P35499	pass	canonical		
+SCN4B	Q8IWT1	pass	canonical	T1	
+SCN5A	Q14524	pass	canonical		
+SCN7A	Q01118	pass	canonical		
+SCN8A	Q9UQD0	pass	canonical		
+SCN9A	Q15858	pass	canonical		
+SCNN1A	P37088	pass	canonical	T2	
+SCNN1B	P51168	pass	canonical		
+SCNN1D	P51172	pass	canonical	T2	
+SCNN1G	P51170	pass	canonical		
+SCTR	P47872	pass	canonical	T3	
+SCUBE1	Q8IWY4	pass	canonical		
+SCUBE2	Q9NQ36	pass	canonical		
+SCUBE3	Q8IX30	pass	canonical		
+SDC1	P18827	pass	canonical	T1	
+SDC2	P34741	pass	canonical	T1	
+SDC3	O75056	pass	canonical	T1	
+SDC4	P31431	pass	canonical	T1	
+SDK1	Q7Z5N4	pass	canonical		
+SDK2	Q58EX2	pass	likely		
+SELE	P16581	pass	canonical	T3	
+SELL	P14151	pass	canonical	T1	
+SELP	P16109	pass	canonical	T3	
+SELPLG	Q14242	pass	canonical	T1	
+SEMA3A	Q14563	pass	canonical		
+SEMA3B	Q13214	pass	canonical		
+SEMA4A	Q9H3S1	pass	canonical	T1	
+SEMA4B	Q9NPR2	pass	canonical	T1	
+SEMA4C	Q9C0C4	pass	canonical	T1	
+SEMA4D	Q92854	pass	canonical	T1	
+SEMA4F	O95754	pass	likely	T1	
+SEMA4G	Q9NTN9	pass	canonical	T3	
+SEMA5A	Q13591	pass	canonical	T3	
+SEMA6A	Q9H2E6	pass	canonical	T1	
+SEMA6B	Q9H3T3	pass	canonical	T1	
+SEMA6C	Q9H3T2	pass	likely	T1	
+SEMA6D	Q8NFY4	pass	canonical	T1	
+SEMA7A	O75326	pass	canonical	T1	
+SEMG1	P04279	pass	likely		
+SERINC1	Q9NRX5	pass	likely	T2	
+SERINC2	Q96SA4	pass	canonical	T2	
+SERINC3	Q13530	pass	canonical	T2	
+SERINC5	Q86VE9	pass	canonical	T2	
+SERPINA12	Q8IW75	pass	likely		
+SERPINE1	P05121	pass	likely		
+SEZ6	Q53EL9	pass	likely	T1	
+SEZ6L	Q9BYH1	pass	likely	T1	
+SEZ6L2	Q6UXD5	pass	canonical	T1	
+SFTPC	P11686	pass	likely		
+SGCA	Q16586	pass	likely		
+SGCB	Q16585	pass	likely		
+SGCD	Q92629	pass	likely		
+SGCE	O43556	pass	canonical		
+SGCG	Q13326	pass	likely		
+SGCZ	Q96LD1	pass	canonical		
+SGMS2	Q8NHU3	pass	canonical	T2	
+SHH	Q15465	pass	canonical		
+SHISA6	Q6ZSJ9	pass	likely	T1	
+SHISA7	A6NL88	pass	likely	T1	
+SHISA9	B4DS77	pass	likely	T1	
+SI	P14410	pass	likely		
+SIDT1	Q9NXL6	pass	likely		
+SIGIRR	Q6IA17	pass	canonical	T1	
+SIGLEC1	Q9BZZ2	pass	canonical		
+SIGLEC10	Q96LC7	pass	canonical	T1	
+SIGLEC11	Q96RL6	pass	likely	T1	
+SIGLEC12	Q96PQ1	pass	canonical	T3	
+SIGLEC14	Q08ET2	pass	canonical	T1	
+SIGLEC15	Q6ZMC9	pass	canonical	T1	
+SIGLEC16	A6NMB1	pass	likely		
+SIGLEC5	O15389	pass	canonical	T1	
+SIGLEC6	O43699	pass	canonical	T1	
+SIGLEC7	Q9Y286	pass	canonical	T1	
+SIGLEC8	Q9NYZ4	pass	likely	T1	
+SIGLEC9	Q9Y336	pass	canonical	T1	
+SIRPA	P78324	pass	canonical	T1	
+SIRPB1	O00241	pass	likely		
+SIRPB2	Q5JXA9	pass	likely	T1	
+SIRPG	Q9P1W8	pass	likely	T1	
+SIT1	Q9Y3P8	pass	likely		
+SLAMF1	Q13291	pass	canonical	T3	
+SLAMF6	Q96DU3	pass	canonical	T1	
+SLAMF7	Q9NQ25	pass	canonical	T1	
+SLAMF8	Q9P0V8	pass	likely	T1	
+SLAMF9	Q96A28	pass	canonical	T1	
+SLC10A1	Q14973	pass	canonical	T2	
+SLC10A2	Q12908	pass	likely	T2	
+SLC10A5	Q5PT55	pass	likely	T2	
+SLC10A6	Q3KNW5	pass	canonical	T2	
+SLC11A2	P49281	pass	likely		
+SLC12A1	Q13621	pass	likely		
+SLC12A2	P55011	pass	canonical	T2	
+SLC12A3	P55017	pass	likely	T2	
+SLC12A4	Q9UP95	pass	canonical	T2	
+SLC12A5	Q9H2X9	pass	canonical	T2	
+SLC12A6	Q9UHW9	pass	canonical	T2	
+SLC12A7	Q9Y666	pass	canonical	T2	
+SLC12A8	A0AV02	pass	canonical	T2	
+SLC13A1	Q9BZW2	pass	likely	T2	
+SLC13A2	Q13183	pass	likely	T2	
+SLC13A3	Q8WWT9	pass	canonical	T2	
+SLC13A4	Q9UKG4	pass	likely	T2	
+SLC13A5	Q86YT5	pass	canonical	T2	
+SLC14A1	Q13336	pass	canonical	T2	
+SLC14A2	Q15849	pass	canonical	T2	
+SLC15A1	P46059	pass	canonical	T2	
+SLC15A2	Q16348	pass	canonical	T2	
+SLC16A1	P53985	pass	canonical	T2	
+SLC16A10	Q8TF71	pass	canonical	T2	
+SLC16A11	Q8NCK7	pass	likely		
+SLC16A12	Q6ZSM3	pass	likely	T2	
+SLC16A13	Q7RTY0	pass	likely		
+SLC16A14	Q7RTX9	pass	canonical	T2	
+SLC16A2	P36021	pass	canonical	T2	
+SLC16A3	O15427	pass	canonical	T2	
+SLC16A4	O15374	pass	canonical	T2	
+SLC16A5	O15375	pass	canonical	T2	
+SLC16A6	O15403	pass	canonical	T2	
+SLC16A7	O60669	pass	canonical	T2	
+SLC16A8	O95907	pass	likely	T2	
+SLC16A9	Q7RTY1	pass	canonical	T2	
+SLC17A1	Q14916	pass	likely	T2	
+SLC17A2	O00624	pass	likely	T2	
+SLC17A3	O00476	pass	likely	T2	
+SLC17A4	Q9Y2C5	pass	likely	T2	
+SLC17A5	Q9NRA2	pass	likely		
+SLC19A1	P41440	pass	canonical	T2	
+SLC19A2	O60779	pass	canonical	T2	
+SLC19A3	Q9BZV2	pass	canonical	T2	
+SLC1A1	P43005	pass	canonical	T2	
+SLC1A2	P43004	pass	canonical	T2	
+SLC1A3	P43003	pass	canonical	T3	
+SLC1A4	P43007	pass	canonical	T2	
+SLC1A5	Q15758	pass	canonical	T2	
+SLC1A6	P48664	pass	likely	T2	
+SLC1A7	O00341	pass	likely	T2	
+SLC20A1	Q8WUM9	pass	canonical	T2	
+SLC20A2	Q08357	pass	canonical	T2	
+SLC22A1	O15245	pass	canonical	T2	
+SLC22A11	Q9NSA0	pass	likely	T2	
+SLC22A12	Q96S37	pass	canonical	T2	
+SLC22A13	Q9Y226	pass	canonical	T2	
+SLC22A15	Q8IZD6	pass	canonical	T2	
+SLC22A16	Q86VW1	pass	canonical	T2	
+SLC22A17	Q8WUG5	pass	canonical	T3	
+SLC22A2	O15244	pass	canonical	T2	
+SLC22A24	Q8N4F4	pass	likely	T2	
+SLC22A3	O75751	pass	canonical	T2	
+SLC22A4	Q9H015	pass	canonical	T2	
+SLC22A5	O76082	pass	canonical	T2	
+SLC22A6	Q4U2R8	pass	likely	T2	
+SLC22A7	Q9Y694	pass	likely	T2	
+SLC22A8	Q8TCC7	pass	canonical	T2	
+SLC22A9	Q8IVM8	pass	likely	T2	
+SLC23A1	Q9UHI7	pass	likely	T2	
+SLC23A2	Q9UGH3	pass	canonical	T2	
+SLC24A1	O60721	pass	likely	T2	
+SLC24A2	Q9UI40	pass	canonical	T2	
+SLC24A3	Q9HC58	pass	canonical	T2	
+SLC24A4	Q8NFF2	pass	likely	T2	
+SLC26A1	Q9H2B4	pass	canonical	T2	
+SLC26A11	Q86WA9	pass	canonical	T2	
+SLC26A2	P50443	pass	canonical	T2	
+SLC26A3	P40879	pass	canonical	T2	
+SLC26A4	O43511	pass	canonical	T2	
+SLC26A5	P58743	pass	likely	T2	
+SLC26A6	Q9BXS9	pass	canonical	T2	
+SLC26A7	Q8TE54	pass	likely	T2	
+SLC26A8	Q96RN1	pass	likely	T2	
+SLC26A9	Q7LBE3	pass	likely	T2	
+SLC27A1	Q6PCB7	pass	likely		
+SLC27A6	Q9Y2P4	pass	likely		
+SLC28A1	O00337	pass	likely	T2	
+SLC28A2	O43868	pass	canonical	T2	
+SLC28A3	Q9HAS3	pass	canonical	T2	
+SLC29A1	Q99808	pass	canonical	T2	
+SLC29A2	Q14542	pass	canonical	T2	
+SLC29A4	Q7RTT9	pass	canonical	T2	
+SLC2A1	P11166	pass	canonical	T2	
+SLC2A10	O95528	pass	likely		
+SLC2A11	Q9BYW1	pass	likely	T2	
+SLC2A12	Q8TD20	pass	likely	OE	
+SLC2A13	Q96QE2	pass	likely		
+SLC2A14	Q8TDB8	pass	canonical	T2	
+SLC2A2	P11168	pass	canonical	T2	
+SLC2A3	P11169	pass	canonical	T2	
+SLC2A4	P14672	pass	likely	OE	
+SLC2A5	P22732	pass	canonical	T2	
+SLC2A7	Q6PXP3	pass	canonical	T2	
+SLC2A8	Q9NY64	pass	likely		
+SLC2A9	Q9NRM0	pass	canonical	T2	
+SLC30A1	Q9Y6M5	pass	canonical	T3	
+SLC30A10	Q6XR72	pass	canonical	T2	
+SLC30A8	Q8IWU4	pass	likely		
+SLC31A1	O15431	pass	canonical	T2	
+SLC34A1	Q06495	pass	canonical	T2	
+SLC34A2	O95436	pass	canonical	T3	
+SLC34A3	Q8N130	pass	likely	T2	
+SLC35F2	Q8IXU6	pass	canonical	T3	
+SLC35G2	Q8TBE7	pass	canonical	T3	
+SLC36A1	Q7Z2H8	pass	canonical	T2	
+SLC36A2	Q495M3	pass	likely	T2	
+SLC38A1	Q9H2H9	pass	canonical	T2	
+SLC38A2	Q96QD8	pass	canonical	T2	
+SLC38A3	Q99624	pass	canonical	T2	
+SLC38A4	Q969I6	pass	canonical	T2	
+SLC38A5	Q8WUX1	pass	canonical	T3	
+SLC38A6	Q8IZM9	pass	canonical	T2	
+SLC38A7	Q9NVC3	pass	likely		
+SLC38A8	A6NNN8	pass	likely	T2	
+SLC39A1	Q9NY26	pass	canonical	T2	
+SLC39A10	Q9ULF5	pass	canonical	T3	
+SLC39A12	Q504Y0	pass	canonical	T3	
+SLC39A14	Q15043	pass	canonical	T2	
+SLC39A2	Q9NP94	pass	canonical	T2	
+SLC39A3	Q9BRY0	pass	likely	T2	
+SLC39A4	Q6P5W5	pass	canonical	T2	
+SLC39A5	Q6ZMH5	pass	likely	T2	
+SLC39A6	Q13433	pass	canonical	T3	
+SLC39A8	Q9C0K1	pass	canonical	T2	
+SLC39A9	Q9NUM3	pass	likely		
+SLC3A1	Q07837	pass	likely		
+SLC3A2	P08195	pass	canonical	T3	
+SLC40A1	Q9NP59	pass	canonical	T2	
+SLC41A1	Q8IVJ1	pass	canonical	T2	
+SLC41A2	Q96JW4	pass	canonical	T2	
+SLC43A1	O75387	pass	canonical	T2	
+SLC43A2	Q8N370	pass	canonical	T2	
+SLC43A3	Q8NBI5	pass	canonical	T2	
+SLC44A1	Q8WWI5	pass	canonical	T2	
+SLC44A2	Q8IWA5	pass	canonical	T2	
+SLC44A3	Q8N4M1	pass	likely	T2	
+SLC44A4	Q53GD3	pass	likely	T2	
+SLC44A5	Q8NCS7	pass	likely	T2	
+SLC45A3	Q96JT2	pass	likely		
+SLC46A1	Q96NT5	pass	canonical	T2	
+SLC46A2	Q9BY10	pass	likely	T2	
+SLC47A1	Q96FL8	pass	canonical	T2	
+SLC47A2	Q86VL8	pass	likely	T2	
+SLC49A4	Q96SL1	pass	likely		
+SLC4A1	P02730	pass	likely	T2	
+SLC4A10	Q6U841	pass	canonical	T2	
+SLC4A11	Q8NBS3	pass	canonical	T2	
+SLC4A2	P04920	pass	canonical	T2	
+SLC4A3	P48751	pass	likely	T2	
+SLC4A4	Q9Y6R1	pass	canonical	T2	
+SLC4A5	Q9BY07	pass	likely		
+SLC4A7	Q9Y6M7	pass	canonical	T2	
+SLC4A8	Q2Y0W8	pass	canonical	T2	
+SLC4A9	Q96Q91	pass	likely	T2	
+SLC51A	Q86UW1	pass	likely		
+SLC51B	Q86UW2	pass	canonical		
+SLC52A1	Q9NWF4	pass	canonical	T2	
+SLC52A2	Q9HAB3	pass	canonical	T2	
+SLC52A3	Q9NQ40	pass	canonical	T2	
+SLC5A1	P13866	pass	canonical	T2	
+SLC5A10	A0PJK1	pass	likely	T2	
+SLC5A11	Q8WWX8	pass	canonical	T2	
+SLC5A12	Q1EHB4	pass	canonical	T3	
+SLC5A2	P31639	pass	likely	T2	
+SLC5A3	P53794	pass	canonical	T3	
+SLC5A4	Q9NY91	pass	likely	T2	
+SLC5A5	Q92911	pass	canonical	T2	
+SLC5A6	Q9Y289	pass	canonical	T2	
+SLC5A7	Q9GZV3	pass	likely		
+SLC5A8	Q8N695	pass	likely	T2	
+SLC5A9	Q2M3M2	pass	likely	T2	
+SLC60A2	Q5TF39	pass	likely	T2	
+SLC61A1	Q6N075	pass	canonical	T2	
+SLC67A1	Q96BI1	pass	likely	T2	
+SLC68A1	Q14CX5	pass	canonical	T3	
+SLC6A1	P30531	pass	canonical	T2	
+SLC6A11	P48066	pass	canonical	T2	
+SLC6A12	P48065	pass	canonical	T2	
+SLC6A13	Q9NSD5	pass	canonical	T2	
+SLC6A14	Q9UN76	pass	canonical	T3	
+SLC6A15	Q9H2J7	pass	canonical	T2	
+SLC6A16	Q9GZN6	pass	likely	T2	
+SLC6A18	Q96N87	pass	likely		
+SLC6A19	Q695T7	pass	canonical		
+SLC6A2	P23975	pass	canonical	T2	
+SLC6A20	Q9NP91	pass	likely	T2	
+SLC6A3	Q01959	pass	canonical	T2	
+SLC6A4	P31645	pass	canonical	T2	
+SLC6A5	Q9Y345	pass	canonical	T2	
+SLC6A6	P31641	pass	canonical	T2	
+SLC6A7	Q99884	pass	likely	T2	
+SLC6A8	P48029	pass	canonical	T2	
+SLC6A9	P48067	pass	canonical	T2	
+SLC75A1	Q14728	pass	likely		
+SLC7A1	P30825	pass	canonical	T2	
+SLC7A10	Q9NS82	pass	canonical	T2	
+SLC7A11	Q9UPY5	pass	canonical	T2	
+SLC7A13	Q8TCU3	pass	likely		
+SLC7A2	P52569	pass	canonical	T2	
+SLC7A3	Q8WY07	pass	canonical	T2	
+SLC7A4	O43246	pass	canonical	T2	
+SLC7A5	Q01650	pass	canonical	T2	
+SLC7A6	Q92536	pass	canonical	T2	
+SLC7A7	Q9UM01	pass	canonical	T2	
+SLC7A8	Q9UHI5	pass	canonical	T2	
+SLC7A9	P82251	pass	canonical		
+SLC8A1	P32418	pass	canonical	T2	
+SLC8A2	Q9UPR5	pass	canonical	T2	
+SLC8A3	P57103	pass	canonical	T2	
+SLC9A1	P19634	pass	canonical	T2	
+SLC9A2	Q9UBY0	pass	canonical	T2	
+SLC9A3	P48764	pass	likely	T2	
+SLC9A4	Q6AI14	pass	canonical	T2	
+SLC9A5	Q14940	pass	likely		
+SLC9A8	Q9Y2E8	pass	likely	T2	
+SLC9B1	Q4ZJI4	pass	likely	T2	
+SLC9B2	Q86UD5	pass	likely		
+SLC9C1	Q4G0N8	pass	likely	T2	
+SLC9C2	Q5TAH2	pass	likely	T2	
+SLCO1A2	P46721	pass	canonical	T2	
+SLCO1B1	Q9Y6L6	pass	likely	T2	
+SLCO1B3	Q9NPD5	pass	likely	T2	
+SLCO1C1	Q9NYB5	pass	canonical	T2	
+SLCO2A1	Q92959	pass	canonical	T2	
+SLCO2B1	O94956	pass	canonical	T2	
+SLCO3A1	Q9UIG8	pass	canonical	T2	
+SLCO4A1	Q96BD0	pass	canonical	T3	
+SLCO4C1	Q6ZQN7	pass	canonical	T2	
+SLCO5A1	Q9H2Y9	pass	canonical	T2	
+SLCO6A1	Q86UG4	pass	likely	T2	
+SLITRK1	Q96PX8	pass	likely	T1	
+SLITRK2	Q9H156	pass	likely	T1	
+SLITRK3	O94933	pass	likely	T1	
+SLITRK4	Q8IW52	pass	likely	T1	
+SLITRK5	O94991	pass	canonical	T1	
+SLITRK6	Q9H5Y7	pass	likely	T1	
+SLMAP	Q14BN4	pass	likely		
+SMAGP	Q0VAQ4	pass	canonical	T3	
+SMIM1	B2RUZ4	pass	likely		
+SMO	Q99835	pass	canonical	T3	
+SMPD1	P17405	pass	likely		
+SMPD3	Q9NY59	pass	likely		
+SMPDL3B	Q92485	pass	canonical	T1	
+SNAP23	O00161	pass	likely		
+SNORC	Q6UX34	pass	likely	T1	
+SNRNP200	O75643	pass	likely		
+SOD3	P08294	pass	canonical		
+SORCS1	Q8WY21	pass	canonical	T1	
+SORCS2	Q96PQ0	pass	canonical	T1	
+SORCS3	Q9UPU3	pass	likely	T1	
+SORL1	Q92673	pass	canonical		
+SORT1	Q99523	pass	canonical	T1	
+SPACA1	Q9HBV2	pass	likely	T1	
+SPACA3	Q8IXA5	pass	likely		
+SPACA4	Q8TDM5	pass	likely	T1	
+SPACA6	W5XKT8	pass	likely	T1	
+SPAG11A	Q6PDA7	pass	likely		
+SPAG8	Q99932	pass	likely		
+SPAM1	P38567	pass	likely	T1	
+SPART	Q8N0X7	pass	likely		
+SPESP1	Q6UW49	pass	likely		
+SPINK2	P20155	pass	likely		
+SPINT1	O43278	pass	likely	T1	
+SPINT2	O43291	pass	likely	T1	
+SPN	P16150	pass	canonical	T1	
+SPNS2	Q8IVW8	pass	canonical	T2	
+SPPL2B	Q8TCT7	pass	canonical	T2	
+SPRN	Q5BIV9	pass	likely	T1	
+SRC	P12931	pass	likely		
+SRGN	P10124	pass	likely		
+SRRM2	Q9UQ35	pass	likely		
+SSB	P05455	pass	likely		
+SSPN	Q14714	pass	canonical		
+SSTR1	P30872	pass	canonical	T2	
+SSTR2	P30874	pass	canonical	T2	
+SSTR3	P32745	pass	canonical	T2	
+SSTR4	P31391	pass	canonical	T2	
+SSTR5	P35346	pass	canonical	T2	
+ST14	Q9Y5Y6	pass	likely	T1	
+ST3GAL1	Q11201	pass	likely		
+ST6GAL1	P15907	pass	likely		
+STAB1	Q9NY15	pass	canonical		
+STAB2	Q8WWQ8	pass	likely		
+STEAP1	Q9UHE8	pass	canonical	T2	
+STEAP1B	Q6NZ63	pass	canonical	T3	
+STEAP2	Q8NFT2	pass	canonical	T3	
+STEAP3	Q658P3	pass	canonical	T2	
+STEAP4	Q687X5	pass	canonical	T3	
+STIM1	Q13586	pass	likely		
+STIM2	Q9P246	pass	likely		
+STIP1	P31948	pass	likely		
+STOM	P27105	pass	canonical		
+STRA6	Q9BX79	pass	canonical	T2	
+STRC	Q7RTU9	pass	likely		
+STX11	O75558	pass	likely		
+STX3	Q13277	pass	likely		
+STX4	Q12846	pass	likely		
+SUCNR1	Q9BXA5	pass	canonical	T2	
+SULF1	Q8IWU6	pass	canonical		
+SULF2	Q8IWU5	pass	canonical		
+SUSD2	Q9UGT4	pass	canonical	T1	
+SUSD3	Q96L08	pass	canonical	T3	
+SUSD4	Q5VX71	pass	likely	T1	
+SUSD6	Q92537	pass	likely	T3	
+SYNDIG1	Q9H7V2	pass	likely		
+SYT3	Q9BQG1	pass	likely		
+SYT8	Q8NBV8	pass	likely		
+TAAR1	Q96RJ0	pass	likely	SV	
+TAAR2	Q9P1P5	pass	likely	SV	
+TAAR5	O14804	pass	likely	T2	
+TAAR6	Q96RI8	pass	canonical	T2	
+TAAR8	Q969N4	pass	canonical		
+TAAR9	Q96RI9	pass	canonical		
+TACR1	P25103	pass	canonical	T2	
+TACR2	P21452	pass	canonical	T2	
+TACR3	P29371	pass	canonical	T2	
+TACSTD2	P09758	pass	canonical	T1	
+TAPBPL	Q9BX59	pass	likely		
+TARM1	B6A8C7	pass	canonical	T1	
+TAS1R1	Q7RTX1	pass	canonical	T3	
+TAS1R2	Q8TE23	pass	canonical	T3	
+TAS1R3	Q7RTX0	pass	canonical	T3	
+TAS2R1	Q9NYW7	pass	canonical	T3	
+TAS2R10	Q9NYW0	pass	canonical	T3	
+TAS2R13	Q9NYV9	pass	likely	T3	
+TAS2R14	Q9NYV8	pass	canonical	T3	
+TAS2R16	Q9NYV7	pass	likely		
+TAS2R19	P59542	pass	canonical	T3	
+TAS2R20	P59543	pass	canonical	T3	
+TAS2R3	Q9NYW6	pass	likely	T3	
+TAS2R30	P59541	pass	likely		
+TAS2R31	P59538	pass	likely	T3	
+TAS2R33	P0DSN6	pass	likely		
+TAS2R36	P0DTE0	pass	canonical		
+TAS2R38	P59533	pass	canonical	T3	
+TAS2R39	P59534	pass	canonical	T3	
+TAS2R4	Q9NYW5	pass	canonical	T3	
+TAS2R40	P59535	pass	likely		
+TAS2R41	P59536	pass	likely	T3	
+TAS2R42	Q7RTR8	pass	likely	LL	
+TAS2R43	P59537	pass	canonical	T3	
+TAS2R45	P59539	pass	canonical	T3	
+TAS2R46	P59540	pass	canonical	T3	
+TAS2R5	Q9NYW4	pass	likely	T3	
+TAS2R50	P59544	pass	canonical	T3	
+TAS2R60	P59551	pass	likely	T3	
+TAS2R7	Q9NYW3	pass	canonical	T3	
+TAS2R8	Q9NYW2	pass	canonical	T3	
+TAS2R9	Q9NYW1	pass	likely	T3	
+TAX1BP3	O14907	pass	likely		
+TBXA2R	P21731	pass	canonical	T2	
+TCAF2	A6NFQ2	pass	canonical		
+TCIRG1	Q13488	pass	likely		
+TCTA	P57738	pass	likely	T1	
+TCTN1	Q2MV58	pass	likely		
+TCTN2	Q96GX1	pass	likely		
+TCTN3	Q6NUS6	pass	likely		
+TECTA	O75443	pass	likely		
+TECTB	Q96PL2	pass	likely		
+TEK	Q02763	pass	canonical	T1	
+TENM1	Q9UKZ4	pass	canonical		
+TENM2	Q9NT68	pass	likely		
+TENM3	Q9P273	pass	likely		
+TENM4	Q6N022	pass	canonical		
+TEX101	Q9BY14	pass	likely	T1	
+TEX38	Q6PEX7	pass	likely	LL	
+TFPI	P10646	pass	canonical	T1	
+TFPI2	P48307	pass	likely		
+TFR2	Q9UP52	pass	canonical	T1	
+TFRC	P02786	pass	canonical	T1	
+TGFA	P01135	pass	canonical	T1	
+TGFB1	P01137	pass	likely		
+TGFBR1	P36897	pass	canonical	T1	
+TGFBR2	P37173	pass	canonical	T1	
+TGFBR3	Q03167	pass	canonical	T1	
+TGFBR3L	H3BV60	pass	likely	T1	
+TGM2	P21980	pass	likely		
+TGOLN2	O43493	pass	likely		
+THBD	P07204	pass	canonical	T1	
+THBS1	P07996	pass	canonical		
+THBS3	P49746	pass	likely		
+THBS4	P35443	pass	canonical		
+THSD1	Q9NS62	pass	likely	T1	
+THSD7A	Q9UPZ6	pass	likely	T1	
+THY1	P04216	pass	canonical	T1	
+TIE1	P35590	pass	canonical	T1	
+TIGIT	Q495A1	pass	canonical	T1	
+TIMD4	Q96H15	pass	canonical	T1	
+TIMP1	P01033	pass	likely		
+TIMP2	P16035	pass	canonical		
+TIMP4	Q99727	pass	canonical		
+TLCD1	Q96CP7	pass	canonical	T2	
+TLR1	Q15399	pass	canonical	T1	
+TLR10	Q9BXR5	pass	likely	T1	
+TLR2	O60603	pass	canonical	T1	
+TLR3	O15455	pass	likely		
+TLR4	O00206	pass	canonical	T1	
+TLR5	O60602	pass	canonical	T1	
+TLR6	Q9Y2C9	pass	canonical	T1	
+TM4SF1	P30408	pass	canonical	T2	
+TM4SF18	Q96CE8	pass	canonical	T3	
+TM4SF19	Q96DZ7	pass	likely		
+TM4SF4	P48230	pass	canonical	T3	
+TM4SF5	O14894	pass	canonical	T3	
+TM7SF3	Q9NS93	pass	canonical	T2	
+TM9SF1	O15321	pass	likely	T2	
+TMC1	Q8TDI8	pass	likely		
+TMC2	Q8TDI7	pass	likely	T2	
+TMC4	Q7Z404	pass	likely	T2	
+TMEFF1	Q8IYR6	pass	likely	T1	
+TMEFF2	Q9UIK5	pass	likely	T1	
+TMEM100	Q9NV29	pass	canonical		
+TMEM106A	Q96A25	pass	canonical	T1	
+TMEM106B	Q9NUM4	pass	likely		
+TMEM114	B3SHH9	pass	likely	T2	
+TMEM119	Q4V9L6	pass	likely	T1	
+TMEM123	Q8N131	pass	canonical	T3	
+TMEM131L	A2VDJ0	pass	likely		
+TMEM132A	Q24JP5	pass	canonical	T1	
+TMEM132B	Q14DG7	pass	likely	T1	
+TMEM132D	Q14C87	pass	likely	T1	
+TMEM132E	Q6IEE7	pass	likely	T1	
+TMEM145	Q8NBT3	pass	likely	T2	
+TMEM150A	Q86TG1	pass	canonical	T3	
+TMEM150C	B9EJG8	pass	likely	T2	
+TMEM154	Q6P9G4	pass	canonical	T1	
+TMEM158	Q8WZ71	pass	likely	T1	
+TMEM163	Q8TC26	pass	likely		
+TMEM181	Q9P2C4	pass	canonical	T2	
+TMEM182	Q6ZP80	pass	likely	T2	
+TMEM184A	Q6ZMB5	pass	likely	T2	
+TMEM204	Q9BSN7	pass	likely	T2	
+TMEM205	Q6UW68	pass	likely	T3	
+TMEM215	Q68D42	pass	likely		
+TMEM219	Q86XT9	pass	canonical	T2	
+TMEM233	B4DJY2	pass	likely		
+TMEM237	Q96Q45	pass	likely		
+TMEM25	Q86YD3	pass	likely		
+TMEM26	Q6ZUK4	pass	likely	T2	
+TMEM266	Q2M3C6	pass	likely	LL	
+TMEM47	Q9BQJ4	pass	likely	T2	
+TMEM52B	Q4KMG9	pass	likely		
+TMEM63A	O94886	pass	likely		
+TMEM63B	Q5T3F8	pass	canonical	T3	
+TMEM67	Q5HYA8	pass	canonical	T2	
+TMEM72	A0PK05	pass	likely		
+TMEM81	Q6P7N7	pass	likely	T1	
+TMEM87A	Q8NBN3	pass	likely		
+TMEM8B	A6NDV4	pass	canonical	T2	
+TMEM95	Q3KNT9	pass	likely	T1	
+TMEM97	Q5BJF2	pass	likely		
+TMEM98	Q9Y2Y6	pass	canonical		
+TMIE	Q8NEW7	pass	likely		
+TMIGD1	Q6UXZ0	pass	likely	T1	
+TMIGD2	Q96BF3	pass	canonical	T1	
+TMPRSS11A	Q6ZMR5	pass	likely	T1	
+TMPRSS11B	Q86T26	pass	likely	T1	
+TMPRSS11D	O60235	pass	canonical	T1	
+TMPRSS11E	Q9UL52	pass	likely	T1	
+TMPRSS11F	Q6ZWK6	pass	likely	T1	
+TMPRSS12	Q86WS5	pass	likely		
+TMPRSS13	Q9BYE2	pass	canonical	T1	
+TMPRSS15	P98073	pass	likely	T1	
+TMPRSS2	O15393	pass	canonical	T1	
+TMPRSS3	P57727	pass	likely	T1	
+TMPRSS4	Q9NRS4	pass	likely	T1	
+TMPRSS5	Q9H3S3	pass	likely	T1	
+TMPRSS6	Q8IU80	pass	canonical	T1	
+TMPRSS7	Q7RTY8	pass	likely	T1	
+TMPRSS9	Q7Z410	pass	likely	T1	
+TMX1	Q9H3N1	pass	likely		
+TMX3	Q96JJ7	pass	likely		
+TNC	P24821	pass	canonical		
+TNF	P01375	pass	canonical	T3	
+TNFRSF10A	O00220	pass	canonical	T1	
+TNFRSF10B	O14763	pass	canonical	T1	
+TNFRSF10C	O14798	pass	canonical	T1	
+TNFRSF10D	Q9UBN6	pass	canonical	T1	
+TNFRSF11A	Q9Y6Q6	pass	canonical	T1	
+TNFRSF12A	Q9NP84	pass	canonical	T3	
+TNFRSF13B	O14836	pass	canonical	T1	
+TNFRSF13C	Q96RJ3	pass	canonical	T1	
+TNFRSF14	Q92956	pass	canonical	T1	
+TNFRSF17	Q02223	pass	canonical	T1	
+TNFRSF18	Q9Y5U5	pass	canonical	T1	
+TNFRSF19	Q9NS68	pass	canonical	T3	
+TNFRSF1A	P19438	pass	canonical	T1	
+TNFRSF1B	P20333	pass	canonical	T1	
+TNFRSF21	O75509	pass	canonical	T1	
+TNFRSF25	Q93038	pass	canonical	T1	
+TNFRSF4	P43489	pass	canonical	T3	
+TNFRSF8	P28908	pass	canonical	T3	
+TNFRSF9	Q07011	pass	canonical	T3	
+TNFSF10	P50591	pass	canonical	T3	
+TNFSF11	O14788	pass	likely	OE	
+TNFSF12	O43508	pass	likely	T1	
+TNFSF13B	Q9Y275	pass	canonical	T1	
+TNFSF14	O43557	pass	canonical	T3	
+TNFSF15	O95150	pass	canonical	T3	
+TNFSF18	Q9UNG2	pass	canonical	T3	
+TNFSF4	P23510	pass	canonical	T3	
+TNFSF8	P32971	pass	canonical	T3	
+TNFSF9	P41273	pass	canonical	T1	
+TPBG	Q13641	pass	canonical	T3	
+TPCN2	Q8NHX9	pass	likely		
+TPO	P07202	pass	likely	T1	
+TPRA1	Q86W33	pass	canonical	T3	
+TPSG1	Q9NRR2	pass	likely	T1	
+TRA	P0DSE1	pass	canonical		
+TRABD2A	Q86V40	pass	canonical	T1	
+TRABD2B	A6NFA1	pass	canonical	T1	
+TRARG1	Q8IXB3	pass	likely		
+TRAT1	Q6PIZ9	pass	likely		
+TRB	P0DSE2	pass	likely		
+TREH	O43280	pass	likely	T1	
+TREM1	Q9NP99	pass	canonical		
+TREM2	Q9NZC2	pass	canonical		
+TREML1	Q86YW5	pass	likely		
+TREML2	Q5T2D2	pass	canonical	T1	
+TREML4	Q6UXN2	pass	canonical		
+TRHDE	Q9UKU6	pass	likely	T1	
+TRHR	P34981	pass	likely	T2	
+TRIL	Q7L0X0	pass	canonical	T1	
+TRIM72	Q6ZMU5	pass	likely		
+TRPA1	O75762	pass	canonical	T2	
+TRPC1	P48995	pass	canonical	T3	
+TRPC3	Q13507	pass	canonical	T2	
+TRPC4	Q9UBN4	pass	canonical	T2	
+TRPC5	Q9UL62	pass	canonical	T2	
+TRPC6	Q9Y210	pass	canonical	T2	
+TRPC7	Q9HCX4	pass	canonical	T2	
+TRPM1	Q7Z4N2	pass	likely		
+TRPM2	O94759	pass	canonical	T2	
+TRPM3	Q9HCF6	pass	canonical		
+TRPM4	Q8TD43	pass	canonical	T2	
+TRPM5	Q9NZQ8	pass	canonical	T2	
+TRPM6	Q9BX84	pass	likely		
+TRPM7	Q96QT4	pass	canonical		
+TRPM8	Q7Z2W7	pass	canonical	T2	
+TRPV1	Q8NER1	pass	canonical	T2	
+TRPV2	Q9Y5S1	pass	likely		
+TRPV3	Q8NET8	pass	canonical	T2	
+TRPV4	Q9HBA0	pass	canonical	T2	
+TRPV5	Q9NQA5	pass	canonical	T2	
+TRPV6	Q9H1D0	pass	canonical	T2	
+TSHR	P16473	pass	canonical	T2	
+TSPAN1	O60635	pass	canonical	T3	
+TSPAN10	Q9H1Z9	pass	likely	T2	
+TSPAN11	A1L157	pass	likely	T2	
+TSPAN12	O95859	pass	canonical	T2	
+TSPAN13	O95857	pass	canonical	T3	
+TSPAN14	Q8NG11	pass	canonical	T2	
+TSPAN15	O95858	pass	canonical	T2	
+TSPAN16	Q9UKR8	pass	likely	T2	
+TSPAN17	Q96FV3	pass	likely	T2	
+TSPAN18	Q96SJ8	pass	likely	T2	
+TSPAN2	O60636	pass	canonical	T2	
+TSPAN3	O60637	pass	likely		
+TSPAN31	Q12999	pass	canonical	T2	
+TSPAN33	Q86UF1	pass	canonical	T3	
+TSPAN4	O14817	pass	canonical	T2	
+TSPAN5	P62079	pass	canonical	T2	
+TSPAN6	O43657	pass	canonical	T2	
+TSPAN7	P41732	pass	canonical	T2	
+TSPAN8	P19075	pass	canonical	T2	
+TSPAN9	O75954	pass	canonical	T2	
+TSPO2	Q5TGU0	pass	likely	LL	
+TTYH1	Q9H313	pass	canonical	T3	
+TTYH2	Q9BSA4	pass	canonical	T2	
+TTYH3	Q9C0H2	pass	canonical	T2	
+TYRO3	Q06418	pass	canonical	T1	
+TYROBP	O43914	pass	canonical		
+TYRP1	P17643	pass	likely		
+ULBP1	Q9BZM6	pass	canonical	T3	
+ULBP2	Q9BZM5	pass	canonical	T1	
+ULBP3	Q9BZM4	pass	canonical	T3	
+UMOD	P07911	pass	likely	T1	
+UNC5A	Q6ZN44	pass	canonical	T1	
+UNC5B	Q8IZJ1	pass	canonical	T1	
+UNC5C	O95185	pass	canonical	T1	
+UNC5D	Q6UXZ4	pass	canonical	T1	
+UNC93A	Q86WB7	pass	likely	T2	
+UPK1A	O00322	pass	likely		
+UPK1B	O75841	pass	likely	T2	
+UPK2	O00526	pass	likely		
+UPK3A	O75631	pass	likely		
+UPK3B	Q9BT76	pass	likely		
+USH2A	O75445	pass	likely		
+UTS2R	Q9UKP6	pass	canonical	T2	
+VAMP7	P51809	pass	likely		
+VANGL1	Q8TAA9	pass	canonical	T2	
+VANGL2	Q9ULK5	pass	canonical	T2	
+VASN	Q6EMK4	pass	canonical	T1	
+VCAM1	P19320	pass	canonical	T1	
+VIM	P08670	pass	likely		
+VIPR1	P32241	pass	canonical	T2	
+VIPR2	P41587	pass	canonical	T2	
+VLDLR	P98155	pass	canonical	T1	
+VN1R1	Q9GZP7	pass	likely	T3	
+VNN1	O95497	pass	canonical	T1	
+VNN2	O95498	pass	canonical	T1	
+VPREB1	P12018	pass	likely		
+VSIG1	Q86XK7	pass	likely	T1	
+VSIG10	Q8N0Z9	pass	likely	T1	
+VSIG10L	Q86VR7	pass	likely	T1	
+VSIG2	Q96IQ7	pass	canonical	T3	
+VSIG4	Q9Y279	pass	likely	T1	
+VSIG8	P0DPA2	pass	canonical	T1	
+VSIR	Q9H7M9	pass	canonical	T1	
+VSTM1	Q6UX27	pass	canonical	T1	
+VSTM5	A8MXK1	pass	likely	T1	
+VTCN1	Q7Z7D3	pass	canonical	T3	
+XCR1	P46094	pass	likely	T2	
+XG	P55808	pass	likely	T1	
+XK	P51811	pass	canonical	T2	
+XKR3	Q5GH77	pass	likely	T2	
+XKR4	Q5GH76	pass	canonical	T3	
+XKR6	Q5GH73	pass	likely	T3	
+XKR8	Q9H6D3	pass	canonical	T3	
+XKR9	Q5GH70	pass	likely	T3	
+XPNPEP2	O43895	pass	canonical	T1	
+XPR1	Q9UBH6	pass	canonical	T2	
+ZACN	Q401N2	pass	canonical	T2	
+ZAN	Q9Y493	pass	likely		
+ZDHHC2	Q9UIJ5	pass	likely		
+ZDHHC5	Q9C0B5	pass	canonical		
+ZNRF3	Q9ULT6	pass	canonical	T1	
+ZP1	P60852	pass	likely	T1	
+ZP2	Q05996	pass	likely	T1	
+ZP3	P21754	pass	likely	T1	
+ZP4	Q12836	pass	likely	T1	
+ZPBP	Q9BS86	pass	likely		

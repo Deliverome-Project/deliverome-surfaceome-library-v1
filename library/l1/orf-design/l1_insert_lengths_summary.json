@@ -1,0 +1,35 @@
+{
+  "cds_orf_nt_per_cds": {
+    "n": 2762,
+    "median": 1405.5,
+    "min": 186,
+    "max": 5139
+  },
+  "tagged_orf_nt_per_insert": {
+    "n": 3384,
+    "median": 1599.0,
+    "min": 339,
+    "max": 5292
+  },
+  "insert_nt_with_barcode_per_insert": {
+    "n": 3384,
+    "median": 1757.0,
+    "min": 497,
+    "max": 5450
+  },
+  "tagged_orf_nt_per_cds_median_of_constructs": {
+    "n": 2743,
+    "median": 1575.0,
+    "min": 339,
+    "max": 5292
+  },
+  "insert_nt_per_cds_median_of_constructs": {
+    "n": 2743,
+    "median": 1733.0,
+    "min": 497,
+    "max": 5450
+  },
+  "constant_insert_overhead_nt": [
+    158
+  ]
+}

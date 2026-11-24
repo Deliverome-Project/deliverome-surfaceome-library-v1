@@ -1,0 +1,94 @@
+{
+ "record": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/reference-selection/2026-11-22-mane-gtf/reference_selection.tsv",
+ "genes": 2427,
+ "ladder_decision": {
+  "mane_appris_agree": 2221,
+  "resolved_mane": 22,
+  "unresolved_default_mane": 124,
+  "weak_evidence_mane": 25,
+  "weak_evidence_appris": 8,
+  "appris_only": 15,
+  "no_reference_uniprot_canonical": 11,
+  "both_observed": 1
+ },
+ "source_built": {
+  "mane": 2368,
+  "named": 36,
+  "appris": 12,
+  "uniprot_canonical": 11
+ },
+ "source_built_by_decision": {
+  "appris_only": {
+   "appris": 12,
+   "named": 3
+  },
+  "both_observed": {
+   "named": 1
+  },
+  "mane_appris_agree": {
+   "mane": 2215,
+   "named": 6
+  },
+  "no_reference_uniprot_canonical": {
+   "uniprot_canonical": 11
+  },
+  "resolved_mane": {
+   "mane": 15,
+   "named": 7
+  },
+  "unresolved_default_mane": {
+   "mane": 109,
+   "named": 15
+  },
+  "weak_evidence_appris": {
+   "mane": 8
+  },
+  "weak_evidence_mane": {
+   "named": 4,
+   "mane": 21
+  }
+ },
+ "genes_with_both_mane_and_appris": 2401,
+ "mane_appris_disagree": 180,
+ "mane_appris_disagree_fraction": 0.075,
+ "disagreements_appris_principal_label": {
+  "PRINCIPAL:2": 29,
+  "PRINCIPAL:3": 13,
+  "PRINCIPAL:1": 47,
+  "PRINCIPAL:4": 82,
+  "PRINCIPAL:M": 9
+ },
+ "disagreements_appris_label_on_mane": {
+  "ALTERNATIVE:2": 65,
+  "ALTERNATIVE:1": 46,
+  "": 66,
+  "ALTERNATIVE:M": 3
+ },
+ "genes_with_uniprot_canonical": 2420,
+ "reference_differs_from_uniprot_canonical": 194,
+ "differs_by_source": {
+  "mane": 166,
+  "named": 18,
+  "appris": 10
+ },
+ "differs_by_decision": {
+  "mane_appris_agree": 124,
+  "unresolved_default_mane": 43,
+  "weak_evidence_mane": 4,
+  "weak_evidence_appris": 8,
+  "resolved_mane": 4,
+  "appris_only": 10,
+  "both_observed": 1
+ },
+ "canonical_longer_than_reference": 111,
+ "canonical_shorter_than_reference": 66,
+ "same_length_residues_differ": 17,
+ "uniprot_canonical_not_any_ensembl115_translation": 46,
+ "uniprot_canonical_not_any_ensembl115_translation_by_decision": {
+  "mane_appris_agree": 33,
+  "unresolved_default_mane": 3,
+  "appris_only": 8,
+  "both_observed": 1,
+  "resolved_mane": 1
+ }
+}

@@ -29,13 +29,134 @@ import hashlib
 import json
 import subprocess
 import sys
-from collections.abc import Mapping
+from collections.abc import Mapping, Sequence
+from concurrent.futures import ThreadPoolExecutor
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, cast
 
 PNG_KEY = "Deliverome-Provenance"
 _PKG_DIR = Path(__file__).resolve().parent
+PINNED_SNAPSHOT_DIR = "historical/git-snapshots"
+PINNED_MANIFEST_NAME = "SHA256SUMS.json"
+
+
+def sha256_file(path: Path, *, chunk_bytes: int = 8 << 20) -> str:
+    """Streaming SHA-256 hex digest of a file on disk."""
+    h = hashlib.sha256()
+    with path.open("rb") as fh:
+        for block in iter(lambda: fh.read(chunk_bytes), b""):
+            h.update(block)
+    return h.hexdigest()
+
+
+def verify_s3_objects(
+    objects: Sequence[tuple[str, str, str]],
+    *,
+    max_workers: int = 12,
+) -> tuple[list[str], list[str]]:
+    """Verify ``(bucket_name, key, expected_sha256)`` tuples against S3 in parallel.
+
+    Returns ``(missing_or_error_labels, changed_labels)`` in input order.
+    """
+    from deliverome_analysis.s3 import external, processed
+
+    stores = {"external": external, "processed": processed}
+
+    def _check_one(item: tuple[str, str, str]) -> tuple[str, str] | None:
+        bucket, key, expected = item
+        label = f"{bucket}://{key}"
+        try:
+            local = Path(stores[bucket].download(key))
+        except Exception as exc:
+            return ("missing", f"{label}: {exc}")
+        if sha256_file(local) != expected:
+            return ("changed", label)
+        return None
+
+    with ThreadPoolExecutor(max_workers=max(1, max_workers)) as pool:
+        results = [res for res in pool.map(_check_one, objects) if res is not None]
+    missing = [msg for kind, msg in results if kind == "missing"]
+    changed = [msg for kind, msg in results if kind == "changed"]
+    return missing, changed
+
+
+def _repo_root(repo: Path | None) -> Path:
+    if repo is not None:
+        return repo
+    for cand in (_PKG_DIR, *_PKG_DIR.parents):
+        if (cand / PINNED_SNAPSHOT_DIR).is_dir() or (cand / "pyproject.toml").is_file():
+            return cand
+    return _PKG_DIR.parents[1]
+
+
+def read_pinned_bytes(
+    commit: str,
+    rel_path: str,
+    *,
+    repo: Path | None = None,
+    expected_sha256: str | None = None,
+) -> bytes:
+    """Read a file pinned at ``commit`` without requiring git history in exported archives.
+
+    Resolution order:
+    1. Materialized snapshot at ``<repo>/historical/git-snapshots/<commit>/<rel_path>``,
+       verified against ``SHA256SUMS.json`` when present.
+    2. Fallback to ``git -C <repo> show <commit>:<rel_path>`` inside a live git checkout.
+    """
+    root = _repo_root(repo)
+    norm_rel = rel_path.lstrip("/")
+    snap_root = root / PINNED_SNAPSHOT_DIR
+    snap_file = snap_root / commit / norm_rel
+    if snap_file.is_file():
+        data = snap_file.read_bytes()
+        manifest_path = snap_root / PINNED_MANIFEST_NAME
+        if manifest_path.is_file():
+            manifest = json.loads(manifest_path.read_text())
+            key = f"{commit}/{norm_rel}"
+            pinned = manifest.get(key)
+            actual = hashlib.sha256(data).hexdigest()
+            if pinned is None:
+                raise ValueError(f"pinned snapshot missing from {PINNED_MANIFEST_NAME}: {key}")
+            if actual != pinned:
+                raise ValueError(
+                    f"pinned snapshot checksum mismatch for {key}: expected {pinned}, got {actual}"
+                )
+    else:
+        proc = subprocess.run(
+            ["git", "-C", str(root), "show", f"{commit}:{norm_rel}"],
+            capture_output=True,
+            check=False,
+        )
+        if proc.returncode != 0:
+            err = proc.stderr.decode("utf-8", errors="replace").strip()
+            raise FileNotFoundError(
+                f"pinned snapshot {commit}:{norm_rel} not found at {snap_file} "
+                f"and git show failed: {err}"
+            )
+        data = proc.stdout
+
+    if expected_sha256 is not None:
+        actual = hashlib.sha256(data).hexdigest()
+        if actual != expected_sha256:
+            raise ValueError(
+                f"checksum mismatch for {commit}:{norm_rel}: "
+                f"expected {expected_sha256}, got {actual}"
+            )
+    return data
+
+
+def read_pinned_text(
+    commit: str,
+    rel_path: str,
+    *,
+    repo: Path | None = None,
+    expected_sha256: str | None = None,
+) -> str:
+    """UTF-8 text wrapper around :func:`read_pinned_bytes`."""
+    return read_pinned_bytes(commit, rel_path, repo=repo, expected_sha256=expected_sha256).decode(
+        "utf-8"
+    )
 
 
 def _git(*args: str, cwd: Path) -> str | None:

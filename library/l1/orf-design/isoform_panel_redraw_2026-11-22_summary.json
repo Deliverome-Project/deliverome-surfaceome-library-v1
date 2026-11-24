@@ -1,0 +1,262 @@
+{
+  "decided_by": "Becca Carlson, 2026-11-22 ('yes we should always rebuild with the latest'; 'yes let's split this up into two'; narrower feature rule)",
+  "implemented_by": "Claude Code session l1-review-export-scope (worker fork), 2026-11-22",
+  "status": "proposed; manifest, references, CDS records and rung tables unchanged",
+  "seed": 20261009,
+  "panel_size": 150,
+  "genes": 133,
+  "floors": {
+    "type III": 2,
+    "GPI": 5,
+    "type II": 5
+  },
+  "allocation": {
+    "observed": {
+      "type I": 43,
+      "type II": 10,
+      "multipass N-out": 13,
+      "multipass N-in": 21,
+      "GPI": 10,
+      "type III": 3
+    },
+    "prediction_only": {
+      "multipass N-in": 11,
+      "multipass N-out": 6,
+      "type I": 18,
+      "GPI": 6,
+      "type II": 7,
+      "type III": 2
+    }
+  },
+  "by_class": {
+    "type I": 61,
+    "multipass N-in": 32,
+    "multipass N-out": 19,
+    "type II": 17,
+    "GPI": 16,
+    "type III": 5
+  },
+  "library_genes_by_class": {
+    "type I": 834,
+    "multipass N-out": 672,
+    "multipass N-in": 551,
+    "GPI": 146,
+    "type II": 126,
+    "type III": 33
+  },
+  "cohort_forms": 1899,
+  "gate_pass": 1690,
+  "replaced_in_draw": 27,
+  "random_stream": "one shared stream: random.Random(20261009), strata in sequence",
+  "diff_vs_panel_of_record": {
+    "kept": 69,
+    "dropped": 81,
+    "added": 81
+  },
+  "diff_by_stratum": {
+    "observed / GPI": {
+      "kept": 3,
+      "dropped": 7,
+      "added": 7
+    },
+    "observed / multipass": {
+      "kept": 0,
+      "dropped": 29,
+      "added": 0
+    },
+    "observed / multipass N-in": {
+      "kept": 0,
+      "dropped": 0,
+      "added": 21
+    },
+    "observed / multipass N-out": {
+      "kept": 5,
+      "dropped": 0,
+      "added": 8
+    },
+    "observed / type I": {
+      "kept": 34,
+      "dropped": 9,
+      "added": 9
+    },
+    "observed / type II": {
+      "kept": 8,
+      "dropped": 2,
+      "added": 2
+    },
+    "observed / type III": {
+      "kept": 2,
+      "dropped": 1,
+      "added": 1
+    },
+    "prediction_only / GPI": {
+      "kept": 3,
+      "dropped": 3,
+      "added": 3
+    },
+    "prediction_only / multipass": {
+      "kept": 0,
+      "dropped": 17,
+      "added": 0
+    },
+    "prediction_only / multipass N-in": {
+      "kept": 0,
+      "dropped": 0,
+      "added": 11
+    },
+    "prediction_only / multipass N-out": {
+      "kept": 0,
+      "dropped": 0,
+      "added": 6
+    },
+    "prediction_only / type I": {
+      "kept": 13,
+      "dropped": 5,
+      "added": 5
+    },
+    "prediction_only / type II": {
+      "kept": 0,
+      "dropped": 7,
+      "added": 7
+    },
+    "prediction_only / type III": {
+      "kept": 1,
+      "dropped": 1,
+      "added": 1
+    }
+  },
+  "rejected_as_unbuildable_in_redraw": {
+    "NCAM1:ENST00000401611": "no designed CDS (no transcript encodes the drawn form)",
+    "KCNE3:ENST00000532569": "no designed CDS (no transcript encodes the drawn form)"
+  },
+  "added_moved_from_l2": 81,
+  "added_with_earlier_retired_l1_id": 4,
+  "added_without_l2_member": [],
+  "new_l1_ids": "l1-p3215..l1-p3295",
+  "added_without_v1_topology_in_shared_snapshot": [
+    "ACVR2A:ENST00000943650",
+    "ADGRG2:ENST00000971549",
+    "ADGRL2:ENST00000674209;ENST00000855574;ENST00000926503",
+    "ADGRL2:ENST00000674442",
+    "ADGRL2:ENST00000686636",
+    "ADGRL2:ENST00000941344;ENST00000941350;ENST00000941351",
+    "ATP1A2:ENST00000969831",
+    "BMPR1B:ENST00000873511",
+    "BOC:ENST00000959896",
+    "CD40:ENST00000890868",
+    "CD55:ENST00000695828",
+    "CLDND1:ENST00000394181",
+    "DPP4:ENST00000881343",
+    "EPHA5:ENST00000622150",
+    "FGFR1:ENST00000684654;ENST00000857934;ENST00000965843;ENST00000965844",
+    "FRMD3:ENST00000874517",
+    "GGT7:ENST00000885992",
+    "GPM6B:ENST00000493677",
+    "HCN1:ENST00000634658",
+    "HLA-A:ENST00000376806;ENST00000706898",
+    "KCNN1:ENST00000682421;ENST00000684725;ENST00000925809;ENST00000925810",
+    "KCNT1:ENST00000491806",
+    "LILRB4:ENST00000430952",
+    "MELTF:ENST00000937763",
+    "MICB:ENST00000458032",
+    "MOSMO:ENST00000569656",
+    "NCAM1:ENST00000619839",
+    "PRSS41:ENST00000674256",
+    "SERINC1:ENST00000910728",
+    "SERINC1:ENST00000910731",
+    "SERINC3:ENST00000885448",
+    "SLC16A7:ENST00000958121;ENST00000958123",
+    "SLC1A7:ENST00000620347",
+    "SLC22A5:ENST00000938827",
+    "SLC22A9:ENST00000863026",
+    "SLC2A11:ENST00000611880;ENST00000618114",
+    "SPNS2:ENST00000947403",
+    "TMEM222:ENST00000915855",
+    "TNFSF10:ENST00000855871",
+    "TNFSF12:ENST00000700053"
+  ],
+  "added_without_v1_topology_in_gate_snapshot": [],
+  "would_retire": [
+    "l1-p2390",
+    "l1-p2391",
+    "l1-p2392",
+    "l1-p2393",
+    "l1-p2394",
+    "l1-p2397",
+    "l1-p2398",
+    "l1-p2399",
+    "l1-p2403",
+    "l1-p2404",
+    "l1-p2405",
+    "l1-p2406",
+    "l1-p2407",
+    "l1-p2408",
+    "l1-p2416",
+    "l1-p2419",
+    "l1-p2421",
+    "l1-p2440",
+    "l1-p2442",
+    "l1-p2443",
+    "l1-p2445",
+    "l1-p2449",
+    "l1-p2457",
+    "l1-p2459",
+    "l1-p2461",
+    "l1-p2466",
+    "l1-p2473",
+    "l1-p2478",
+    "l1-p2479",
+    "l1-p2485",
+    "l1-p2487",
+    "l1-p2490",
+    "l1-p2497",
+    "l1-p2499",
+    "l1-p2501",
+    "l1-p2503",
+    "l1-p2504",
+    "l1-p2505",
+    "l1-p2507",
+    "l1-p2508",
+    "l1-p2509",
+    "l1-p2512",
+    "l1-p2513",
+    "l1-p2515",
+    "l1-p2517",
+    "l1-p2518",
+    "l1-p2519",
+    "l1-p2521",
+    "l1-p2522",
+    "l1-p2525",
+    "l1-p2526",
+    "l1-p2527",
+    "l1-p2528",
+    "l1-p3117",
+    "l1-p3122",
+    "l1-p3123",
+    "l1-p3124",
+    "l1-p3125",
+    "l1-p3126",
+    "l1-p3127",
+    "l1-p3128",
+    "l1-p3129",
+    "l1-p3130",
+    "l1-p3131",
+    "l1-p3132",
+    "l1-p3133",
+    "l1-p3134",
+    "l1-p3135",
+    "l1-p3136",
+    "l1-p3137",
+    "l1-p3142",
+    "l1-p3143",
+    "l1-p3144",
+    "l1-p3145",
+    "l1-p3146",
+    "l1-p3147",
+    "l1-p3148",
+    "l1-p3149",
+    "l1-p3150",
+    "l1-p3151",
+    "l1-p3152"
+  ]
+}

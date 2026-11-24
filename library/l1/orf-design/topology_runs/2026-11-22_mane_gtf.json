@@ -1,0 +1,21 @@
+{
+  "topology_version": "topo_2026_11_22_mane_gtf",
+  "snapshot": "2026-11-22-mane-gtf",
+  "cohort": "library_designed_orf",
+  "base_snapshot": "accessible-surfaceome/topology/2026-11-22-isoform-redraw/topology.parquet",
+  "tool": "DeepTMHMM v1 (Modal volume deeptmhmm-v1); runtime identity in 2026-11-22_mane_gtf.3line.runtime.json",
+  "tool_version": "deeptmhmm-1.0-academic",
+  "command": "apply_mane_gtf.py build (writes the FASTA of switched references with no v1 row); modal run library/l1/proteoform-selection/modal/deeptmhmm_v1_app.py::sweep --fasta topology_runs/2026-11-22_mane_gtf.fasta --out topology_runs/2026-11-22_mane_gtf.3line",
+  "modal_app_run": "ap-ESphoNaSiv70x3QuCCbfG7",
+  "run_completed": "2026-11-22T18:39:36+00:00",
+  "sequences": 5,
+  "pending_additions": {
+    "l1-p0076": "0c7b9d6c8e0598ed50a4deb481d2eb6011718c7c4c8570ee7a8a04eac0bbb957",
+    "l1-p1266": "2aeea43d647fc3bd2f7aaf04a86f9d1ee3405ce11d877c7414c120ec0d82ebcf",
+    "l1-p1333": "92f1c3421cae99c0eb838e02e1bf556f3579ae4f6eb82a210041c6cf9dcb63d9",
+    "l1-p3205": "1ec98ad9c40a2087cec6ce8e4aabf5ce7e2e6e2c6820ef25d69c91c357631e0a",
+    "l1-p2205": "6964aa964e28428dab2ca8fab8fa2dac0fa22f99a106245e3141ed5142f707c1"
+  },
+  "why": "new reference proteins of the GTF MANE rerun (apply_mane_gtf.py, Becca 2026-11-22) with no DeepTMHMM v1 row: ADGRL3, MUC15, NTM, SLC45A4, TMEM8B",
+  "implemented_by": "Claude Code session l1-review-export-scope (subagent)"
+}

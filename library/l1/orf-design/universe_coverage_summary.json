@@ -1,0 +1,28 @@
+{
+ "library_genes": 2417,
+ "april_query_set": 2355,
+ "library_genes_in_april_set": 1816,
+ "library_genes_without_ensembl_gene": 20,
+ "recorded_pairs_checked": {
+  "mouse": 1972,
+  "cyno": 1927
+ },
+ "mouse": {
+  "eligible_in_compara115": 1910,
+  "in_ortholog_list": 1486,
+  "eligible_not_listed": 424,
+  "eligible_not_listed_outside_april_set": 424
+ },
+ "cyno": {
+  "eligible_in_compara115": 1887,
+  "in_ortholog_list": 1465,
+  "eligible_not_listed": 422,
+  "eligible_not_listed_outside_april_set": 422
+ },
+ "isoform": {
+  "genes_with_uniprot_isoform": 1244,
+  "in_isoform_cohort": 945,
+  "isoform_gene_not_in_cohort": 479,
+  "of_which_outside_april_set": 95
+ }
+}

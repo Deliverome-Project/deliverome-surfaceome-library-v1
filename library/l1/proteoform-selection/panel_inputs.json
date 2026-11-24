@@ -1,0 +1,67 @@
+{
+ "snapshot": "2026-11-01",
+ "prefix": "sprint4/s4e9-orf-design-fg-panel/library-design/panel-inputs/2026-11-01/",
+ "reproduces": {
+  "isoform_panel.tsv": "878cb8a3dd9b90c00919e294bf40d547f6810e54fc8145a3833a1cdbf8c8ab0e",
+  "ortholog_panel.tsv": "bae9c81b68e8b4d3dc7621a05f2d112a2a19e7a5653b99b9c38ad914edc9b856"
+ },
+ "files": {
+  "isoform_cohorts.tsv": {
+   "sha256": "391203a90912dc3501c89df723b7595cdf87c5ee95ca81f453ddb82000a9b815",
+   "origin": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/isoform_cohorts.tsv (isoform_cohorts.py)"
+  },
+  "reference_selection.tsv": {
+   "sha256": "884d90db0670d866595490207f29a927e17d2c3a96ead8a8febab79586c361b1",
+   "origin": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/reference_selection.tsv (select_reference.py)"
+  },
+  "ortholog_repick_mouse.tsv": {
+   "sha256": "95cc04dcb17646dddfdfd164d720376968f01e98400da8b58d22c77f37d13066",
+   "origin": "processed://.../library-design/ortholog_repick_mouse.tsv (repick_orthologs.py)"
+  },
+  "ortholog_repick_cyno.tsv": {
+   "sha256": "8766abe814835ceab55f99380aed8b78e52c725c993e16984c61e57c696944df",
+   "origin": "processed://.../library-design/ortholog_repick_cyno.tsv (repick_orthologs.py)"
+  },
+  "ortholog_topology_labels.tsv": {
+   "sha256": "4ced22295fa02f0606156638a8c7f30f8ec486d3bc99fef9b7cd7f3218d731e7",
+   "origin": "processed://.../library-design/ortholog_topology_labels.tsv"
+  },
+  "surface_subcategory.tsv": {
+   "sha256": "1a1d823c3d3bef1614dd82a795e6f724f8fb504b49e812f805b619d52b1605c1",
+   "origin": "processed://.../library-design/surface_subcategory.tsv (fetch_surface_subcategory.py, D1)"
+  },
+  "gpi_supplement.tsv": {
+   "sha256": "53c767e419c92cb76d4a34989edc61a42adfe62dd88e5eb8d3110da08413d720",
+   "origin": "processed://.../library-design/gpi_supplement.tsv (cited rows)"
+  },
+  "gpi_exclusions.tsv": {
+   "sha256": "deeadc311547d251833b16791c68e12c25a2f537684e5a2c5d064437390a7d60",
+   "origin": "processed://.../library-design/gpi_exclusions.tsv"
+  },
+  "uniprot_human_gpi.tsv": {
+   "sha256": "ed277d6f0f3c6dbe0d72229595d46d1080ab617748cd51dc2b4873348b35af28",
+   "origin": "UniProt REST release 2026_03: keyword:KW-0336 AND organism_id:9606 AND reviewed:true, fields accession,gene_primary"
+  },
+  "deeptmhmm_human_canonical.tsv": {
+   "sha256": "10d905f453b3b98d1256e71b280d3b271126829d3571ad575beed5974864d39a",
+   "origin": "accessible-surfaceome f9c73691 data/processed/deeptmhmm/ (git LFS)"
+  },
+  "deeptmhmm_human_isoforms.tsv": {
+   "sha256": "e3bbcb3439802413b54e1b9724b89c576fa472a814f6f979fcb379c387ec5a94",
+   "origin": "accessible-surfaceome f9c73691 data/processed/deeptmhmm/ (git LFS)"
+  },
+  "library_reference_missing_topology.3line": {
+   "sha256": "9d1125992948fca72cd53147352415a6839237a84fa84ef6f8ef12cfde5591be",
+   "origin": "deliverome-analysis library/l1/proteoform-selection/ (committed)"
+  },
+  "gpi_set.tsv": {
+   "sha256": "dbb1db6e68bc3e1bdb3e69fee365e963a5a36f90434f88dd9e8d42a0df6f1b20",
+   "origin": "deliverome-analysis library/l1/orf-design/gpi_set.tsv (build_gpi_set.py; NetGPI per form, the GPI set of record from 2026-11-01)"
+  }
+ },
+ "isoform_gate": {
+  "key": "sprint4/s4e9-orf-design-fg-panel/library-design/panel-inputs/2026-11-12-isoform-gate-2/isoform_gate.tsv",
+  "sha256": "f00ad9f22cf379e31e7cc1c4acde3e717252ec8814340d9758495ebf44c444b1",
+  "origin": "library/l1/orf-design/isoform_gate.tsv (gate_isoform_cohort.py; Becca Carlson, 2026-11-12, 'Gate cohort, redraw'; implemented by Claude Code session l1-reviewer-package (subagent), PR #283). Read by sample_isoform_panel.py --gate; not part of --original. Regenerated (-2) after the second-round reference fixes of 2026-11-12 (l1-proteoform-audit decisions applied by l1-reviewer-package, PR #283): reference lengths of DISP2, TSPAN10, LMLN and EPHA6 change, no verdict changes. The first table stays at 2026-11-12-isoform-gate/."
+ }
+}

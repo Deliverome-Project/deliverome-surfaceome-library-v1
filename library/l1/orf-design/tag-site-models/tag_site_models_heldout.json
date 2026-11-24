@@ -1,0 +1,76 @@
+{
+  "inputs": {
+    "v5_training_table.tsv": {
+      "sha256": "e7d948688cf47f1cbf1ad3a6ff39a4e256f1822a6091c9b3174122568e10d23c",
+      "s3": "processed://sprint5/s5e13-tag-site-benchmarking/v5/2026-11-14/v5_training_table.tsv"
+    },
+    "all_extracellular_targets.tsv": {
+      "sha256": "d3dcdac545b1bfe322df2965f5510c45c68eee780fb4b8c08628ea21462ffefe",
+      "s3": "processed://sprint5/s5e13-tag-site-benchmarking/v5/2026-11-14/all_extracellular_targets.tsv"
+    },
+    "gold_standard.tsv": "fb5130d59e36c863fa171fa21c3be6a9e2cee71f5ab4be1b593f2f274c5ae14c",
+    "region_labels.tsv": "a0e7e1e98ba90438d024b7cf2be0064ab374f3a6dbf788bb02bf30ab280ae77d",
+    "audit.tsv": "2e08d4f36f5b10581f4967cc0c7e6fc70f7fa40b2ef6c4c0c68653d09b889b40"
+  },
+  "refit_vs_committed_shipped_rank_model_max_abs_diff": 5.551115123125783e-16,
+  "gold_sites_scored": 149,
+  "gold_proteins_scored": 108,
+  "confirmed_frame": {
+    "rows": 32922,
+    "positives": 149,
+    "proteins_with_positive": 108
+  },
+  "pu": {
+    "bags": 50,
+    "unlabelled_per_positive_per_bag": 1,
+    "seed": 20261014,
+    "arms": {
+      "PU, no hard negatives": {
+        "hard_negative_weight": 0.0,
+        "rows_by_role": {
+          "unlabelled_pool": 41196,
+          "positive": 176
+        }
+      },
+      "PU + hard negatives at weight 5": {
+        "hard_negative_weight": 5.0,
+        "rows_by_role": {
+          "unlabelled_pool": 39055,
+          "hard_negative": 2141,
+          "positive": 176
+        }
+      },
+      "PU + hard negatives at weight 1": {
+        "hard_negative_weight": 1.0,
+        "rows_by_role": {
+          "unlabelled_pool": 39055,
+          "hard_negative": 2141,
+          "positive": 176
+        }
+      },
+      "PU + hard negatives at weight 5, confirmed sites": {
+        "hard_negative_weight": 5.0,
+        "rows_by_role": {
+          "unlabelled_pool": 28960,
+          "hard_negative": 2014,
+          "positive": 149
+        }
+      }
+    }
+  },
+  "splits": {
+    "gene": "GroupKFold-5 by gene symbol",
+    "family": "GroupKFold-5 by HGNC gene group (training_gene_families.tsv; GABA-A subunits added to their group)"
+  },
+  "outputs": {
+    "summary": "library/l1/orf-design/tag-site-models/tag_site_models_heldout.tsv",
+    "per_protein": "library/l1/orf-design/tag-site-models/tag_site_models_heldout_per_protein.tsv",
+    "ablation": "library/l1/orf-design/tag-site-models/tag_site_models_feature_blocks.tsv",
+    "paired": "library/l1/orf-design/tag-site-models/tag_site_models_paired.tsv"
+  },
+  "figures": [
+    "library/l1/orf-design/reviewer-package/figures/tag_site_models_heldout.png",
+    "library/l1/orf-design/reviewer-package/figures/tag_site_models_rank_cdf.png",
+    "library/l1/orf-design/reviewer-package/figures/tag_site_models_feature_blocks.png"
+  ]
+}

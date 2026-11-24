@@ -1,0 +1,82 @@
+gene	uniprot_accession	result	low_endogenous_expression	max_tpm	library_tier	removed_after_filter
+CLRN2	A0PK11	fail	True	1.33		
+GALR3	O60755	fail	True	4.43	SV	
+GPR31	O00270	fail	True	2.03		
+GPR33	Q49SQ1	fail	True	2.70	SV	
+KIR2DL5B	Q8NHK3	fail	True			
+KIR2DS1	Q14954	fail	True			
+OR10A3	P58181	fail	True	1.55		
+OR10A4	Q9H209	fail	True	2.64		
+OR10A5	Q9H207	fail	True	4.19		
+OR10A6	Q8NH74	fail	True	1.39		
+OR10G4	Q8NGN3	fail	True	3.66		
+OR10G9	Q8NGN4	fail	True	1.95		
+OR10J5	Q8NHC4	fail	True	1.82	SV	
+OR10X1	Q8NGY0	fail	True	0.82		
+OR11H2	Q8NH07	fail	True	2.07		
+OR11H4	Q8NGC9	fail	True	2.49		
+OR11H6	Q8NGC7	fail	True	0.88	SV	
+OR14A16	Q8NHC5	fail	True	3.56	SV	
+OR14J1	Q9UGF5	fail	True	4.40	SV	
+OR1A2	Q9Y585	fail	True	0.84		
+OR1D4	P47884	fail	True	1.55		
+OR1I1	O60431	fail	True	2.30		
+OR2A2	Q6IF42	fail	True	0.92		
+OR2A25	A4D2G3	fail	True	0.43		
+OR2AG1	Q9H205	fail	True	1.41		
+OR2AG2	A6NM03	fail	True	1.29		
+OR2AT4	A6NND4	fail	True	3.10		
+OR2D2	Q9H210	fail	True	2.70	SV	
+OR2D3	Q8NGH3	fail	True	1.93		
+OR2J3	O76001	fail	True	0.75		
+OR2M4	Q96R27	fail	True	3.00		
+OR2M7	Q8NG81	fail	True	3.10		
+OR2T1	O43869	fail	True	0.37		
+OR2T34	Q8NGX1	fail	True	3.70		
+OR2T4	Q8NH00	fail	True	4.33		
+OR2T6	Q8NHC8	fail	True	3.14		
+OR2W1	Q9Y3N9	fail	True	0.49	SV	
+OR4C45	A6NMZ5	fail	True	2.28		
+OR4D1	Q15615	fail	True	1.10	SV	
+OR4D11	Q8NGI4	fail	True	1.49		
+OR4D2	P58180	fail	True	0.55	SV	
+OR4D5	Q8NGN0	fail	True	1.19	SV	
+OR4K15	Q8NH41	fail	True	0.43	SV	
+OR4M1	Q8NGD0	fail	True	1.00		
+OR4N4C	A0A096LPK9	fail	True	4.62		
+OR4Q3	Q8NH05	fail	True	2.34		
+OR4S1	Q8NGB4	fail	True	0.35	SV	
+OR4X2	Q8NGF9	fail	True	0.57		
+OR51A2	Q8NGJ7	fail	True	1.61		
+OR51D1	Q8NGF3	fail	True	1.14		
+OR51M1	Q9H341	fail	True	4.00		
+OR51Q1	Q8NH59	fail	True	2.70		
+OR51S1	Q8NGJ8	fail	True	4.40		
+OR52A5	Q9H2C5	fail	True	2.20		
+OR52E2	Q8NGJ4	fail	True	4.70		
+OR52W1	Q6IF63	fail	True	1.00		
+OR56A4	Q8NGH8	fail	True	2.20		
+OR5A1	Q8NGJ0	fail	True	2.54		
+OR5B2	Q96R09	fail	True	4.70		
+OR5D14	Q8NGL3	fail	True	0.34		
+OR5H1	A6NKK0	fail	True	1.20		
+OR5H15	A6NDH6	fail	True	0.86		
+OR5K1	Q8NHB7	fail	True	0.74		
+OR5M3	Q8NGP4	fail	True	2.67		
+OR5P3	Q8WZ94	fail	True	4.12		
+OR6A2	O95222	fail	True	3.48		
+OR6F1	Q8NGZ6	fail	True	3.34	SV	
+OR6M1	Q8NGM8	fail	True	1.40		
+OR7A17	O14581	fail	True	1.40	SV	
+OR7D2	Q96RA2	fail	True	4.15		
+OR8B3	Q8NGG8	fail	True	0.51		
+OR8D2	Q9GZM6	fail	True	1.91		
+OR9G9	P0C7N8	fail	True		SV	
+PCDH20	Q8N6Y1	fail	True	0.30		
+PCDHB1	Q9Y5F3	fail	True	2.90		
+TAAR8	Q969N4	fail	True	2.40		
+TAAR9	Q96RI9	fail	True	1.50		
+TAS2R16	Q9NYV7	fail	True	0.71		
+TAS2R33	P0DSN6	fail	True			
+TAS2R36	P0DTE0	fail	True			
+TAS2R40	P59535	fail	True	1.42		

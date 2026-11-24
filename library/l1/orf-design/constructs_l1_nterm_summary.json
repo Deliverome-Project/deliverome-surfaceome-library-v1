@@ -1,0 +1,37 @@
+{
+  "tranche": "l1",
+  "rung": "N after SP",
+  "decisions": {
+    "igk_swap": 231,
+    "native_site": 1091,
+    "no_nterm_arm": 5,
+    "routed_internal": 2
+  },
+  "built": 1322,
+  "built_by_arm": {
+    "igk_swap": 231,
+    "native_site": 1091
+  },
+  "built_inside_predicted_fold": 531,
+  "seam_failures": [],
+  "no_nterm_arm": [
+    "l1-p0239 CATSPERH",
+    "l1-p2188 TMEM210",
+    "l1-p2973 TMEM210",
+    "l1-p3061 TMEM210",
+    "l1-p3238 EFNA1"
+  ],
+  "by_set": {
+    "isoform": 88,
+    "library_reference": 1139,
+    "ortholog": 95
+  },
+  "type_iis": "every insert: 2 Esp3I (wrapper), 0 BbsI, 0 BsaI; in p0039: backbone's 4 + 2",
+  "insert_nt_range": [
+    497,
+    5450
+  ],
+  "cassette": "full p003 tandem, this arm's own linker encoding (l1_arm_cassette_encodings.tsv)",
+  "barcode": "20-N placeholder; barcodes not reserved (issue #1)",
+  "swap": "linkers recoded per arm (Becca, 2026-11-21: no shared linkers in the middle)"
+}

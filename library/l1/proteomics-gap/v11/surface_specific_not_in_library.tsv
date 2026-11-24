@@ -1,0 +1,38 @@
+uniprot_accession	gene_symbol	symbol_resolved	catalog_tier	n_surface_pubs	n_membrane_pubs	n_global_pubs	surface_minus_membrane	surface_minus_global	frac_surface	frac_membrane	frac_global	n_tm	has_gpi	contaminant_flag	protein_name	library
+Q9UIQ6	LNPEP	True	likely	66	55	12	11	54	0.88	0.724	0.667					
+Q9H0X4	FAM234A	True	low	60	39	7	21	53	0.8	0.513	0.389	1	False		Protein FAM234A (Protein ITFG3)	
+P10586	PTPRF	True	canonical	59	40	7	19	52	0.787	0.526	0.389					
+Q92508	PIEZO1	True	canonical	58	42	10	16	48	0.773	0.553	0.556					
+Q13332	PTPRS	True	canonical	48	30	8	18	40	0.64	0.395	0.444					
+P07996	THBS1	True	canonical	43	31	8	12	35	0.573	0.408	0.444					
+Q14517	FAT1	True	canonical	42	31	7	11	35	0.56	0.408	0.389					
+Q8NC42	RNF149	True	no	40	28	7	12	33	0.533	0.368	0.389	1	False		E3 ubiquitin-protein ligase RNF149 (EC 2.3.2.27) (DNA polymerase-transactivated protein 2) (RING finger protein 149) (RING-type E3 ubiquitin transferase RNF149)	
+O00468	AGRN	True	canonical	40	30	9	10	31	0.533	0.395	0.5					
+Q6NSJ0	MYORG	True	not_deep_dived	39	18	8	21	31	0.52	0.237	0.444	1	False		Alpha-galactosidase MYORG (EC 3.2.1.22) (Myogenesis regulating glycosidase) (Nuclear envelope transmembrane protein 37)	
+P04004	VTN	True	no	38	27	10	11	28	0.507	0.355	0.556	0	False		Vitronectin (VN) (S-protein) (Serum-spreading factor) (V75) [Cleaved into: Vitronectin V65 subunit; Vitronectin V10 subunit; Somatomedin-B]	
+Q96HA4	C1orf159	True	low	38	6	4	32	34	0.507	0.079	0.222	1	False		Uncharacterized protein C1orf159	
+O95477	ABCA1	True	canonical	38	22	6	16	32	0.507	0.289	0.333					
+Q9P273	TENM3	True	likely	36	19	10	17	26	0.48	0.25	0.556					
+Q9HCU4	CELSR2	True	canonical	33	11	8	22	25	0.44	0.145	0.444					
+Q9NYQ6	CELSR1	True	canonical	31	10	6	21	25	0.413	0.132	0.333					
+Q7L0J3	SV2A	True	low	31	19	8	12	23	0.413	0.25	0.444	12	False		Synaptic vesicle glycoprotein 2A	
+P20701	ITGAL	True	canonical	31	12	8	19	23	0.413	0.158	0.444					
+Q12767	TMM94	True	not_deep_dived	29	19	4	10	25	0.387	0.25	0.222	10	False		Transmembrane protein 94 (Endoplasmic reticulum magnesium ATPase)	
+Q7Z5N4	SDK1	True	canonical	28	11	7	17	21	0.373	0.145	0.389					
+Q9NWD8	TMEM248	True	uncertain	28	16	7	12	21	0.373	0.211	0.389	4	False		Transmembrane protein 248	
+Q6V0I7	FAT4	True	canonical	28	14	6	14	22	0.373	0.184	0.333					
+Q58EX2	SDK2	True	likely	28	12	8	16	20	0.373	0.158	0.444					
+O60279	SUSD5	True	low	26	9	3	17	23	0.347	0.118	0.167	1	False		Sushi domain-containing protein 5	
+A2RU67	F234B	True	not_deep_dived	26	16	9	10	17	0.347	0.211	0.5	1	False		Protein FAM234B	
+O00241	SIRPB1	True	likely	25	12	7	13	18	0.333	0.158	0.389					
+O75096	LRP4	True	canonical	25	10	7	15	18	0.333	0.132	0.389					
+Q9BX74	TM2D1	True	low	24	5	8	19	16	0.32	0.066	0.444	2	False		TM2 domain-containing protein 1 (Amyloid-beta-binding protein) (hBBP)	
+P41221	WNT5A	True	no	23	10	3	13	20	0.307	0.132	0.167	0	False		Protein Wnt-5a	
+Q5BKX6	SLC45A4	True	low	23	7	4	16	19	0.307	0.092	0.222	12	False		Polyamine-transporter SLC45A4 (Solute carrier family 45 member 4)	
+P09603	CSF1	True	low	23	5	5	18	18	0.307	0.066	0.278	1	False		Macrophage colony-stimulating factor 1 (CSF-1) (M-CSF) (MCSF) (Lanimostim) (Proteoglycan macrophage colony-stimulating factor) (PG-M-CSF) [Cleaved into: Processed macrophage colony-stimulating factor 1; Macrophage colony-stimulating factor 1 43 kDa subunit]	
+P55058	PLTP	True	not_deep_dived	23	10	7	13	16	0.307	0.132	0.389	0	False		Phospholipid transfer protein (Lipid transfer protein II)	
+P55082	MFAP3	True	no	23	11	2	12	21	0.307	0.145	0.111	1	False		Microfibril-associated glycoprotein 3	
+Q6N022	TENM4	True	canonical	22	11	2	11	20	0.293	0.145	0.111					
+Q8IZY2	ABCA7	True	canonical	22	12	7	10	15	0.293	0.158	0.389					
+O94813	SLIT2	True	no	21	6	3	15	18	0.28	0.079	0.167	0	False		Slit homolog 2 protein (Slit-2) [Cleaved into: Slit homolog 2 protein N-product; Slit homolog 2 protein C-product]	
+Q86XX4	FRAS1	True	low	20	10	6	10	14	0.267	0.132	0.333	1	False		Extracellular matrix organizing protein FRAS1 (Fraser syndrome 1 protein)	

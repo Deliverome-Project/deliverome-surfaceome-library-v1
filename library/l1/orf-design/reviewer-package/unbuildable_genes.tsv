@@ -1,0 +1,5 @@
+gene	uniprot	uniprot_aa	transcript	biotype	ensembl_aa	vs_uniprot
+OR8J2	Q8NGG1	315	ENST00000570683	protein_coding_LoF	315	same length, 1 residue(s) differ
+OR8J2	Q8NGG1	315	ENST00000641465	protein_coding_LoF	315	same length, 1 residue(s) differ
+OR8J2	Q8NGG1	315	ENST00000708991	protein_coding_LoF	315	same length, 1 residue(s) differ
+SIGLEC16	A6NMB1	481	ENST00000602139	protein_coding_LoF	487	+6 aa; 190/481 reference residues aligned

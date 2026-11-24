@@ -1,0 +1,9 @@
+{
+ "2aeea43d647fc3bd2f7aaf04a86f9d1ee3405ce11d877c7414c120ec0d82ebcf": {
+  "cleavage_probability": null,
+  "cleavage_site": null,
+  "other_probability": 0.875953,
+  "prediction": "OTHER",
+  "sp_probability": 0.124029
+ }
+}

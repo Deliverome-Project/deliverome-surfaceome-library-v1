@@ -1,0 +1,34 @@
+panel_tier	topology_class	rejected	reason	replacement	candidates
+observed	type I	PCDHA1:Q9Y5I3-2	fails the cohort gate: reference's first TM helix sequence absent	MICB:ENST00000458032	263
+observed	type I	PDPN:ENST00000509009	fails the cohort gate: loses the reference's signal peptide	SEZ6L2:Q6UXD5-5	262
+observed	type I	SIGLEC15:Q6ZMC9-2	fails the cohort gate: loses the reference's signal peptide	SLAMF6:Q96DU3-2	261
+observed	type I	CD46:ENST00000695777	fails the cohort gate: reference's first TM helix sequence absent	PTK7:Q13308-4	260
+observed	type I	BTN3A3:O00478-2	fails the cohort gate: loses the reference's signal peptide	PCDHGB5:Q9Y5G0-2	259
+observed	type I	IL9R:Q01113-3	fails the cohort gate: loses the reference's signal peptide	HLA-A:ENST00000376806;ENST00000706898	258
+observed	type I	LRRC37B:ENST00000582117	no designed CDS (no transcript encodes the drawn form)	BTN3A1:O00481-2	257
+observed	type I	ZP3:P21754-3	fails the cohort gate: loses the reference's signal peptide	LILRB4:ENST00000430952	256
+observed	type I	CPD:O75976-2	fails the cohort gate: loses the reference's signal peptide	EPHA5:ENST00000622150	255
+observed	type II	CLEC7A:Q9BXN2-9	explicit rejection: UniProt Q9BXN2-9 is 77 aa: the cytoplasmic tail, TM and a stalk fragment, with no C-type lectin domain (Pfam PF00059 absent). Becca named CLEC7A as a fragment isoform on 2026-11-11. It passes the cohort gate because the gate tests only the N-terminus and first TM.	TMPRSS13:Q9BYE2-4	34
+observed	type II	TFRC:ENST00000421258	fails the cohort gate: reference's first TM helix sequence absent	MSR1:P21757-2	33
+observed	multipass N-out	SLC9D1:ENST00000622371	fails the cohort gate: protein does not start with M; Ensembl 115 CDS starts ATA, not ATG; loses the reference's signal peptide	ADGRB2:O60241	90
+observed	multipass N-out	CNR1:P21554-2	fails the cohort gate: no Ensembl 115 transcript encodes exactly this protein	PTGDR:Q13258-2	89
+observed	multipass N-in	OTOP3:Q7RTS5	fails the cohort gate: no Ensembl 115 transcript encodes exactly this protein	ATP1A1:P05023-4	127
+observed	multipass N-in	SLC16A10:ENST00000419619	fails the cohort gate: protein does not start with M; Ensembl 115 CDS starts NCA, not ATG; N-terminus O after any signal peptide, reference I; reference's first TM helix sequence absent	MOSMO:ENST00000569656	126
+observed	multipass N-in	VANGL2:ENST00000696602	fails the cohort gate: no Ensembl 115 CDS record translates exactly to the protein	GPM6B:ENST00000493677	125
+observed	multipass N-in	TMEM182:ENST00000409173	fails the cohort gate: N-terminus O after any signal peptide, reference I; reference's first TM helix sequence absent	SLC26A9:Q7LBE3-2	124
+observed	multipass N-in	CLDN18:P56856-2	fails the cohort gate: reference's first TM helix sequence absent	SLC43A2:ENST00000572801;ENST00000633994	123
+observed	multipass N-in	SLC1A3:ENST00000504121;ENST00000512374	fails the cohort gate: reference's first TM helix sequence absent	TMEM134:Q9H6X4	122
+observed	GPI	LSAMP:ENST00000333617	fails the cohort gate: no Ensembl 115 CDS record translates exactly to the protein	CD55:ENST00000695828	22
+observed	GPI	ALPL:P05186-2	fails the cohort gate: loses the reference's signal peptide	NTM:Q9P121-4	21
+observed	GPI	CD55:P08174	is the gene's built reference protein	PRSS8:Q16651-2	20
+prediction_only	multipass N-out	SLC39A14:Q15043-3	fails the cohort gate: reference's first TM helix sequence absent	ADGRG2:ENST00000971549	152
+prediction_only	type I	NRP2:O60462-4	fails the cohort gate: reference's first TM helix sequence absent	ACVR2A:ENST00000943650	472
+prediction_only	type I	NECTIN2:ENST00000917943	explicit rejection: ENST00000917943 (537 aa, no UniProt isoform) differs from the L1 reference by one residue deleted inside the signal peptide (DeepTMHMM v1 SP 30 vs 31). The mature protein is therefore identical to the reference's, so the slot adds no isoform information.	CD40:ENST00000890868	471
+prediction_only	type II	ATP1B3:ENST00000874841	fails the cohort gate: reference's first TM helix sequence absent	FRMD3:ENST00000874517	53
+prediction_only	type III	PMEPA1:Q969W9-3	fails the cohort gate: reference's first TM helix sequence absent	PRRG1:ENST00000868176;ENST00000960027	5
+observed	type I	LSR:ENST00000361790;ENST00000605618	its protein became its gene's reference (MANE GTF rerun 2026-11-22); refilled after the draw by the same seeded RNG	ITGA6:P23229	254
+observed	type I	PCDH9:Q9HC56	its protein became its gene's reference (MANE GTF rerun 2026-11-22); refilled after the draw by the same seeded RNG	PAM:ENST00000304400	253
+observed	type I	MUC13:Q9H3R2	its protein became its gene's reference (MANE GTF rerun 2026-11-22); refilled after the draw by the same seeded RNG	KIT:ENST00000686011	252
+observed	multipass N-out	ADGRB2:O60241	its protein became its gene's reference (MANE GTF rerun 2026-11-22); refilled after the draw by the same seeded RNG	TTYH1:Q9H313-2	88
+observed	multipass N-in	STEAP3:Q658P3-2	its protein became its gene's reference (MANE GTF rerun 2026-11-22); refilled after the draw by the same seeded RNG	SLC12A2:P55011-3	121
+observed	multipass N-in	TMEM134:Q9H6X4	its protein became its gene's reference (MANE GTF rerun 2026-11-22); refilled after the draw by the same seeded RNG	SLC4A7:Q9Y6M7-2	120

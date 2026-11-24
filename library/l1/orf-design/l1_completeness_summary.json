@@ -1,0 +1,78 @@
+{
+ "active_members": 2762,
+ "status": {
+  "built": 2743,
+  "held": 19
+ },
+ "by_placement": {
+  "C-terminal": {
+   "built": 216,
+   "held": 3
+  },
+  "N after SP": {
+   "built": 1322,
+   "held": 5
+  },
+  "N at residue 1, multipass": {
+   "built": 568
+  },
+  "N at residue 1, single-pass (type III)": {
+   "built": 43
+  },
+  "internal": {
+   "built": 594,
+   "held": 11
+  }
+ },
+ "stale_member_id": 0,
+ "stale_sequence": 0,
+ "snorkel_only_members": [],
+ "multi_arm_on_single_arm_rung": [],
+ "arm_rule_in_force": true,
+ "orthologs_without_built_human": [],
+ "refold_verdicts_by_placement": {
+  "C-terminal": {
+   "fail": 9,
+   "pass": 205
+  },
+  "N after SP": {
+   "fail: 10 epitope residues confidently packed on the native domain": 1,
+   "fail: 17 epitope residues confidently packed on the native domain": 1,
+   "fail: 5 epitope residues confidently packed on the native domain": 9,
+   "fail: 6 epitope residues confidently packed on the native domain": 1,
+   "fail: 7 epitope residues confidently packed on the native domain": 6,
+   "fail: 8 epitope residues confidently packed on the native domain": 3,
+   "fail: 9 epitope residues confidently packed on the native domain": 2,
+   "fail: SpyTag003 buried (RSA 0.175); 10 epitope residues confidently packed on the native domain": 1,
+   "fail: lDDT within 15 of the site 0.634 < 0.7": 1,
+   "fail: lDDT within 15 of the site 0.644 < 0.7": 1,
+   "fail: lDDT within 15 of the site 0.698 < 0.7": 1,
+   "fail: native-region lDDT 0.721 < 0.85; lDDT within 15 of the site 0.642 < 0.7": 1,
+   "fail: native-region lDDT 0.726 < 0.85": 1,
+   "fail: native-region lDDT 0.744 < 0.85": 1,
+   "fail: native-region lDDT 0.756 < 0.85": 1,
+   "fail: native-region lDDT 0.775 < 0.85": 1,
+   "fail: native-region lDDT 0.783 < 0.85": 1,
+   "fail: native-region lDDT 0.799 < 0.85": 2,
+   "fail: native-region lDDT 0.825 < 0.85": 1,
+   "fail: native-region lDDT 0.83 < 0.85": 1,
+   "pass": 1285
+  },
+  "N at residue 1, multipass": {
+   "fail (kept as built)": 71,
+   "pass": 497
+  },
+  "N at residue 1, single-pass (type III)": {
+   "fail": 4,
+   "pass": 39
+  },
+  "internal": {
+   "fail": 78,
+   "fail (#301; snorkel, ranker redecision pending)": 4,
+   "pass": 1012,
+   "pass (#301)": 141
+  }
+ },
+ "arm_tables_missing": [],
+ "join_key": "design_id (via l1_member_renumbering.tsv)"
+}

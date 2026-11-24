@@ -1,0 +1,22 @@
+{
+ "release": "2026_04",
+ "key": "external://uniprot/2026_04/nterm-propeptides/uniprot_features.tsv",
+ "sha256": "b2f9f5e7f0e04c9b7113e039ec761546a9b7c87dd8514cba38e58639bf918b23",
+ "entries": 1158,
+ "genes_queried": 1131,
+ "query": "gene_exact AND organism_id:9606 AND reviewed:true",
+ "fields": "accession,gene_primary,sequence,ft_signal,ft_propep,ft_chain",
+ "fetched_utc": "2026-11-13T01:07:39Z",
+ "processed_key": "sprint4/s4e9-orf-design-fg-panel/reviewer-package/nterm/uniprot-propeptides/2026_04/uniprot_features.tsv",
+ "note": "Read from the append-only external copy (published by l1-reviewer-package, verified byte-identical 2026-11-14); processed_key is the original upload.",
+ "supplements": [
+  {
+   "key": "external://uniprot/2026_04/nterm-propeptides-coreceptor-additions/uniprot_features.tsv",
+   "sha256": "b154141998b64e1d92221cd5c226561854666dcc7faefe08c5c0f1b8a5e12555",
+   "release": "2026_04",
+   "entries": 23,
+   "genes_queried": 22,
+   "why": "the 22 co-receptor additions on this rung (Becca, 2026-11-21: rebuild now); same query and fields, fetched 2026-11-22 by Claude Code session l1-review-export-scope (subagent)"
+  }
+ ]
+}

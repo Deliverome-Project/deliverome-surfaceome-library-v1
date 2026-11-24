@@ -1,0 +1,17 @@
+uniprot_accession	rank	symbol	catalog_tier	beads_enriched	median_log2_enrichment	n_tm	gpi	signal_peptide	uniprot_location	hpa_location	hela_ntpm	class
+P09603	1	CSF1	low / uncertain	6	6.485	1	False	True	Cell membrane ; Single-pass type I membrane protein .; [Processed macrophage colony-stimulating factor 1]: Secreted, extracellular space.	Nuclear bodies,Plasma membrane	12.9	A
+Q9NVV5	2	AIG1	not surface	6	5.529	6	False	False	Cell membrane ; Multi-pass membrane protein .	Golgi apparatus	30.8	A
+Q9NQX7	3	ITM2C	low / uncertain	6	5.479	1	False	False	Lysosome membrane ; Single-pass type II membrane protein . Cell membrane ; Single-pass type II membrane protein .		58.4	A
+P55082	4	MFAP3	not surface	6	5.218	1	False	True	Cell membrane ; Single-pass type I membrane protein .	Nucleoplasm,Golgi apparatus	26.3	A
+Q8WVN6	5	SECTM1	low / uncertain	4	2.916	1	False	True	Cell membrane ; Single-pass type I membrane protein . Secreted.		17.7	A
+Q86XX4	6	FRAS1	low / uncertain	5	2.736	1	False	True	Cell membrane ; Single-pass type I membrane protein ; Extracellular side .		10.9	A
+Q9H0X4	7	FAM234A	low / uncertain	6	6.39	1	False	False	Membrane ; Single-pass type II membrane protein .	Nucleoplasm,Mitochondria	45.9	A
+Q8NC42	8	RNF149	not surface	6	5.443	1	False	True	Membrane ; Single-pass membrane protein .	Vesicles,Plasma membrane	12.0	A
+Q9H8M9	9	EVA1A;EVA1B	low / uncertain	6	3.979	1	False	False	Endoplasmic reticulum membrane ; Single-pass membrane protein . Lysosome membrane ; Single-pass membrane protein .	Vesicles,Plasma membrane	3.7	A
+Q5T9L3	10	WLS	not surface	6	2.796	8	False	False	Golgi apparatus membrane ; Multi-pass membrane protein . Cytoplasmic vesicle membrane ; Multi-pass membrane protein . Cell membrane ; Multi-pass membrane protei	Endoplasmic reticulum,Cytosol	52.4	A
+Q8TCT8	11	SPPL2A	not surface	6	2.582	9	False	True	Late endosome membrane ; Multi-pass membrane protein . Lysosome membrane ; Multi-pass membrane protein . Membrane ; Multi-pass membrane protein ; Lumenal side .	Vesicles	45.1	A
+P21964	12	COMT	not surface	6	2.553	1	False	False	[Isoform Soluble]: Cytoplasm .; [Isoform Membrane-bound]: Cell membrane ; Single-pass type II membrane protein ; Extracellular side .	Endoplasmic reticulum,Vesicles	79.9	A
+Q16563	13	SYPL1	not surface	5	2.245	4	False	False	Cytoplasmic vesicle membrane ; Multi-pass membrane protein . Melanosome . Note=Cytoplasmic transport vesicles (By similarity). Identified by mass spectrometry i		66.7	A
+Q9HCM3	14	KIAA1549	not surface	6	6.2	2	False	False	Membrane ; Multi-pass membrane protein . Cell projection, cilium . Note=In the retinal photoreceptor cells, localizes at the connecting cilium, a thin bridge li	Nuclear membrane,Intermediate filaments	9.7	A
+Q96MM7	15	HS6ST2	not surface	6	4.488	1	False	False	Membrane ; Single-pass type II membrane protein .	Golgi apparatus,Plasma membrane	36.4	A
+Q86VU5	16	COMTD1	not surface	6	2.382	1	False	False	Membrane ; Single-pass type II membrane protein .	Golgi apparatus,Plasma membrane,Cytosol	10.7	A

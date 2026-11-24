@@ -1,0 +1,423 @@
+uniprot_accession	gene_symbol	symbol_resolved	catalog_tier	n_surface_pubs	n_membrane_pubs	n_global_pubs	surface_minus_membrane	surface_minus_global	frac_surface	frac_membrane	frac_global	n_tm	has_gpi	contaminant_flag	protein_name	library
+P05556	ITGB1	True	canonical	84	66	16	18	68	1.0	0.857	0.889					l1,l2
+P08195	SLC3A2	True	canonical	82	63	16	19	66	0.976	0.818	0.889					l1,l2
+P35613	BSG	True	canonical	81	67	15	14	66	0.964	0.87	0.833					l1,l2
+P02786	TFRC	True	canonical	81	67	15	14	66	0.964	0.87	0.833					l1
+P54709	ATP1B3	True	canonical	81	66	13	15	68	0.964	0.857	0.722					l1,l2
+O14672	ADAM10	True	canonical	81	53	12	28	69	0.964	0.688	0.667					l1,l2
+O15031	PLXNB2	True	canonical	80	57	15	23	65	0.952	0.74	0.833					l2
+Q15758	SLC1A5	True	canonical	78	58	10	20	68	0.929	0.753	0.556					l1,l2
+P11717	IGF2R	True	likely	78	61	13	17	65	0.929	0.792	0.722					
+P08648	ITGA5	True	canonical	77	54	11	23	66	0.917	0.701	0.611					l1,l2
+Q9Y639	NPTN	True	canonical	76	54	12	22	64	0.905	0.701	0.667					l1,l2
+Q9UIQ6	LNPEP	True	likely	76	56	12	20	64	0.905	0.727	0.667					
+Q9NV96	CDC50A	True	canonical	76	51	12	25	64	0.905	0.662	0.667					l1,l2
+P05026	ATP1B1	True	canonical	76	61	10	15	66	0.905	0.792	0.556					l1,l2
+P15529	CD46	True	canonical	75	41	9	34	66	0.893	0.532	0.5					l1,l2
+Q13740	ALCAM	True	canonical	75	52	13	23	62	0.893	0.675	0.722					l1,l2
+P23229	ITGA6	True	canonical	74	50	12	24	62	0.881	0.649	0.667					l1,l2
+P06756	ITGAV	True	canonical	74	57	14	17	60	0.881	0.74	0.778					l1,l2
+P11279	LAMP1	True	likely	74	64	17	10	57	0.881	0.831	0.944					
+P20645	M6PR	True	likely	74	58	13	16	61	0.881	0.753	0.722					l1,l2
+P05362	ICAM1	True	canonical	73	48	12	25	61	0.869	0.623	0.667					l1
+P16070	CD44	True	canonical	73	63	13	10	60	0.869	0.818	0.722					l1,l2
+Q7KYR7	BTN2A1	True	canonical	73	31	7	42	66	0.869	0.403	0.389					l1,l2
+P48960	ADGRE5	True	canonical	73	49	13	24	60	0.869	0.636	0.722					l1,l2
+Q08722	CD47	True	canonical	73	56	13	17	60	0.869	0.727	0.722					l1,l2
+P08069	IGF1R	True	canonical	73	33	11	40	62	0.869	0.429	0.611					l1,l2
+Q13433	SLC39A6	True	canonical	72	29	11	43	61	0.857	0.377	0.611					l1,l2
+Q9UIW2	PLXNA1	True	canonical	72	38	10	34	62	0.857	0.494	0.556					l2
+P19256	CD58	True	canonical	72	37	9	35	63	0.857	0.481	0.5					l1,l2
+P42892	ECE1	True	canonical	72	43	13	29	59	0.857	0.558	0.722					l1,l2
+Q969P0	IGSF8	True	canonical	71	36	11	35	60	0.845	0.468	0.611					l1
+Q9UHN6	CEMIP2	True	canonical	71	39	11	32	60	0.845	0.506	0.611					l1,l2
+Q92542	NCSTN	True	canonical	71	59	12	12	59	0.845	0.766	0.667					
+O95297	MPZL1	True	canonical	71	45	12	26	59	0.845	0.584	0.667					l1,l2
+Q4KMQ2	ANO6	True	canonical	71	48	11	23	60	0.845	0.623	0.611					l1,l2
+P11166	SLC2A1	True	canonical	71	61	12	10	59	0.845	0.792	0.667					l1,l2
+Q92896	GLG1	True	likely	70	60	14	10	56	0.833	0.779	0.778					
+Q8IWA5	SLC44A2	True	canonical	70	52	13	18	57	0.833	0.675	0.722					l1,l2
+P18084	ITGB5	True	canonical	70	46	9	24	61	0.833	0.597	0.5					l1,l2
+Q15043	SLC39A14	True	canonical	69	43	7	26	62	0.821	0.558	0.389					l1,l2
+Q9H0X4	FAM234A	True	low	69	40	7	29	62	0.821	0.519	0.389	1	False		Protein FAM234A (Protein ITFG3)	
+Q14118	DAG1	True	canonical	69	48	11	21	58	0.821	0.623	0.611					l1
+P04156	PRNP	True	canonical	68	38	11	30	57	0.81	0.494	0.611					l1
+P10586	PTPRF	True	canonical	68	41	7	27	61	0.81	0.532	0.389					
+P15151	PVR	True	canonical	68	43	9	25	59	0.81	0.558	0.5					l1,l2
+P17301	ITGA2	True	canonical	68	47	11	21	57	0.81	0.61	0.611					l1
+Q9Y6M7	SLC4A7	True	canonical	68	47	9	21	59	0.81	0.61	0.5					l1,l2
+O75882	ATRN	True	canonical	67	31	10	36	57	0.798	0.403	0.556					l1,l2
+P06213	INSR	True	canonical	67	32	8	35	59	0.798	0.416	0.444					l1,l2
+Q12913	PTPRJ	True	canonical	67	29	13	38	54	0.798	0.377	0.722					l1
+P43007	SLC1A4	True	canonical	67	38	9	29	58	0.798	0.494	0.5					l1
+P48509	CD151	True	canonical	67	45	9	22	58	0.798	0.584	0.5					l1,l2
+Q9ULF5	SLC39A10	True	canonical	67	40	8	27	59	0.798	0.519	0.444					l1,l2
+P78536	ADAM17	True	canonical	67	40	9	27	58	0.798	0.519	0.5					l1,l2
+Q13308	PTK7	True	canonical	66	47	12	19	54	0.786	0.61	0.667					l1,l2
+P26006	ITGA3	True	canonical	66	49	12	17	54	0.786	0.636	0.667					l1,l2
+P30825	SLC7A1	True	canonical	66	45	12	21	54	0.786	0.584	0.667					l1
+P10321	HLA-C	True	canonical	66	52	8	14	58	0.786	0.675	0.444					l1,l2
+P33527	ABCC1	True	canonical	65	51	8	14	57	0.774	0.662	0.444					l1,l2
+Q92508	PIEZO1	True	canonical	65	43	10	22	55	0.774	0.558	0.556					
+P25445	FAS	True	canonical	65	34	7	31	58	0.774	0.442	0.389					l1,l2
+P01130	LDLR	True	canonical	65	43	8	22	57	0.774	0.558	0.444					l1,l2
+P98172	EFNB1	True	canonical	64	37	8	27	56	0.762	0.481	0.444					l1
+P01889	HLA-B	True	canonical	64	53	10	11	54	0.762	0.688	0.556					l1,l2
+Q15223	NECTIN1	True	canonical	64	25	10	39	54	0.762	0.325	0.556					l1
+P56199	ITGA1	True	canonical	63	35	10	28	53	0.75	0.455	0.556					l1
+Q5ZPR3	CD276	True	canonical	63	42	12	21	51	0.75	0.545	0.667					l1,l2
+O00592	PODXL	True	canonical	63	43	8	20	55	0.75	0.558	0.444					l1
+Q8WWI5	SLC44A1	True	canonical	63	49	9	14	54	0.75	0.636	0.5					l1,l2
+P08174	CD55	True	canonical	63	44	10	19	53	0.75	0.571	0.556					l1,l2
+Q14126	DSG2	True	canonical	63	45	13	18	50	0.75	0.584	0.722					l1
+Q9Y624	F11R	True	canonical	63	47	9	16	54	0.75	0.61	0.5					l1,l2
+P21589	NT5E	True	canonical	62	51	11	11	51	0.738	0.662	0.611					l1,l2
+P40189	IL6ST	True	canonical	62	34	10	28	52	0.738	0.442	0.556					l1,l2
+Q16563	SYPL1	True	no	61	51	11	10	50	0.726	0.662	0.611	4	False		Synaptophysin-like protein 1 (Pantophysin)	
+Q9P2B2	PTGFRN	True	canonical	61	48	10	13	51	0.726	0.623	0.556					l1
+Q10589	BST2	True	canonical	61	41	11	20	50	0.726	0.532	0.611					l1
+Q99808	SLC29A1	True	canonical	61	46	9	15	52	0.726	0.597	0.5					l1,l2
+P78324	SIRPA	True	canonical	61	32	6	29	55	0.726	0.416	0.333					l1,l2
+Q6PCB8	EMB	True	canonical	61	24	9	37	52	0.726	0.312	0.5					l1
+Q6YHK3	CD109	True	canonical	61	44	12	17	49	0.726	0.571	0.667					l1
+Q8WTV0	SCARB1	True	canonical	61	45	8	16	53	0.726	0.584	0.444					l1,l2
+P13612	ITGA4	True	canonical	61	25	10	36	51	0.726	0.325	0.556					l1
+Q9UBG0	MRC2	True	canonical	60	40	12	20	48	0.714	0.519	0.667					l1
+P19440	GGT1	True	canonical	60	26	8	34	52	0.714	0.338	0.444					l1
+Q04721	NOTCH2	True	canonical	60	32	6	28	54	0.714	0.416	0.333					l2
+Q07954	LRP1	True	canonical	60	49	12	11	48	0.714	0.636	0.667					l2
+P50895	BCAM	True	canonical	60	42	9	18	51	0.714	0.545	0.5					l1,l2
+Q6P4Q7	CNNM4	True	canonical	60	35	10	25	50	0.714	0.455	0.556					l1
+Q92859	NEO1	True	canonical	60	22	8	38	52	0.714	0.286	0.444					l1,l2
+Q92854	SEMA4D	True	canonical	60	11	8	49	52	0.714	0.143	0.444					l1
+Q92692	NECTIN2	True	canonical	60	42	6	18	54	0.714	0.545	0.333					l1,l2
+Q13641	TPBG	True	canonical	60	42	11	18	49	0.714	0.545	0.611					l1
+P43121	MCAM	True	canonical	59	43	7	16	52	0.702	0.558	0.389					l1,l2
+Q96J84	KIRREL1	True	canonical	59	29	8	30	51	0.702	0.377	0.444					l1
+Q15262	PTPRK	True	canonical	59	31	10	28	49	0.702	0.403	0.556					l1,l2
+Q8N8Z6	DCBLD1	True	canonical	59	16	8	43	51	0.702	0.208	0.444					l1,l2
+P29323	EPHB2	True	canonical	59	37	7	22	52	0.702	0.481	0.389					l1,l2
+Q13443	ADAM9	True	canonical	58	39	8	19	50	0.69	0.506	0.444					l1
+Q9H813	PACC1	True	canonical	58	28	9	30	49	0.69	0.364	0.5					l1,l2
+Q9NY35	CLDND1	True	canonical	58	37	9	21	49	0.69	0.481	0.5					l1,l2
+O14786	NRP1	True	canonical	58	35	8	23	50	0.69	0.455	0.444					l1,l2
+Q9NPH3	IL1RAP	True	canonical	58	25	5	33	53	0.69	0.325	0.278					l1,l2
+Q13444	ADAM15	True	canonical	57	38	6	19	51	0.679	0.494	0.333					l1,l2
+Q9C0H2	TTYH3	True	canonical	57	37	10	20	47	0.679	0.481	0.556					l1,l2
+Q9H2H9	SLC38A1	True	canonical	57	38	5	19	52	0.679	0.494	0.278					l1,l2
+Q9Y4D7	PLXND1	True	canonical	57	29	8	28	49	0.679	0.377	0.444					l2
+Q8NE01	CNNM3	True	canonical	56	34	7	22	49	0.667	0.442	0.389					l1,l2
+P35052	GPC1	True	canonical	56	34	7	22	49	0.667	0.442	0.389					l1
+Q9Y6M5	SLC30A1	True	canonical	56	44	3	12	53	0.667	0.571	0.167					l1
+P29317	EPHA2	True	canonical	55	43	7	12	48	0.655	0.558	0.389					l1,l2
+Q9Y6N7	ROBO1	True	canonical	55	22	7	33	48	0.655	0.286	0.389					l1,l2
+P19022	CDH2	True	canonical	55	35	11	20	44	0.655	0.455	0.611					l1,l2
+Q13332	PTPRS	True	canonical	55	31	8	24	47	0.655	0.403	0.444					
+Q03405	PLAUR	True	canonical	55	34	11	21	44	0.655	0.442	0.611					l1
+O75054	IGSF3	True	canonical	55	25	10	30	45	0.655	0.325	0.556					l1,l2
+P54760	EPHB4	True	canonical	54	41	6	13	48	0.643	0.532	0.333					l1,l2
+P15260	IFNGR1	True	canonical	54	23	6	31	48	0.643	0.299	0.333					l1
+P78310	CXADR	True	canonical	54	38	9	16	45	0.643	0.494	0.5					l1,l2
+P32004	L1CAM	True	canonical	54	36	7	18	47	0.643	0.468	0.389					l1,l2
+P23470	PTPRG	True	canonical	54	32	7	22	47	0.643	0.416	0.389					l1,l2
+P08581	MET	True	canonical	53	29	6	24	47	0.631	0.377	0.333					l1,l2
+P02751	FN1	True	canonical	53	40	9	13	44	0.631	0.519	0.5					
+Q24JP5	TMEM132A	True	canonical	53	17	7	36	46	0.631	0.221	0.389					l1,l2
+Q8TCZ2	CD99L2	True	canonical	53	26	1	27	52	0.631	0.338	0.056					l1,l2
+P17813	ENG	True	canonical	52	36	5	16	47	0.619	0.468	0.278					l1,l2
+P27701	CD82	True	canonical	52	34	10	18	42	0.619	0.442	0.556					l1,l2
+Q96PD2	DCBLD2	True	canonical	52	33	6	19	46	0.619	0.429	0.333					l1
+P46531	NOTCH1	True	canonical	52	29	6	23	46	0.619	0.377	0.333					l2
+P10909	CLU	True	no	52	40	11	12	41	0.619	0.519	0.611	0	False		Clusterin (Aging-associated gene 4 protein) (Apolipoprotein J) (Apo-J) (Complement cytolysis inhibitor) (CLI) (Complement-associated protein SP-40,40) (Ku70-binding protein 1) (NA1/NA2) (Sulfated glycoprotein 2) (SGP-2) (Testosterone-repressed prostate message 2) (TRPM-2) [Cleaved into: Clusterin beta chain (ApoJalpha) (Complement cytolysis inhibitor a chain) (SP-40,40 beta-chain); Clusterin alpha chain (ApoJbeta) (Complement cytolysis inhibitor b chain) (SP-40,40 alpha-chain)]	
+Q96F46	IL17RA	True	canonical	52	18	8	34	44	0.619	0.234	0.444					l1,l2
+Q8NBI5	SLC43A3	True	canonical	52	33	6	19	46	0.619	0.429	0.333					l1,l2
+Q8NC42	RNF149	True	no	51	29	7	22	44	0.607	0.377	0.389	1	False		E3 ubiquitin-protein ligase RNF149 (EC 2.3.2.27) (DNA polymerase-transactivated protein 2) (RING finger protein 149) (RING-type E3 ubiquitin transferase RNF149)	
+Q8NFZ8	CADM4	True	canonical	51	20	10	31	41	0.607	0.26	0.556					l1,l2
+P05106	ITGB3	True	canonical	51	32	5	19	46	0.607	0.416	0.278					l1
+Q9UNN8	PROCR	True	canonical	51	37	9	14	42	0.607	0.481	0.5					l1
+P04920	SLC4A2	True	canonical	51	37	2	14	49	0.607	0.481	0.111					l1,l2
+Q9BY67	CADM1	True	canonical	51	29	8	22	43	0.607	0.377	0.444					l1,l2
+P07996	THBS1	True	canonical	51	32	8	19	43	0.607	0.416	0.444					
+P22413	ENPP1	True	canonical	50	27	7	23	43	0.595	0.351	0.389					l1
+P08582	MELTF	True	canonical	50	37	8	13	42	0.595	0.481	0.444					l1,l2
+P17181	IFNAR1	True	canonical	50	11	8	39	42	0.595	0.143	0.444					l1,l2
+Q9C0C4	SEMA4C	True	canonical	50	23	8	27	42	0.595	0.299	0.444					l1,l2
+P54289	CACNA2D1	True	canonical	50	35	9	15	41	0.595	0.455	0.5					l1,l2
+Q9NPR2	SEMA4B	True	canonical	50	23	9	27	41	0.595	0.299	0.5					l1
+O00468	AGRN	True	canonical	49	31	9	18	40	0.583	0.403	0.5					
+Q8NBJ4	GOLM1	True	low	49	38	13	11	36	0.583	0.494	0.722	1	False		Golgi membrane protein 1 (Golgi membrane protein GP73) (Golgi phosphoprotein 2)	
+Q14114	LRP8	True	canonical	49	26	6	23	43	0.583	0.338	0.333					l1,l2
+Q29983	MICA	True	canonical	49	13	6	36	43	0.583	0.169	0.333					l1
+Q9UHW9	SLC12A6	True	canonical	49	31	7	18	42	0.583	0.403	0.389					l1,l2
+P50443	SLC26A2	True	canonical	49	30	6	19	43	0.583	0.39	0.333					l1
+Q9NQS3	NECTIN3	True	canonical	49	22	6	27	43	0.583	0.286	0.333					l1,l2
+Q6EMK4	VASN	True	canonical	49	19	6	30	43	0.583	0.247	0.333					l1
+Q6UVK1	CSPG4	True	canonical	49	36	9	13	40	0.583	0.468	0.5					l2
+P14384	CPM	True	canonical	48	29	6	19	42	0.571	0.377	0.333					l1,l2
+Q14517	FAT1	True	canonical	48	32	7	16	41	0.571	0.416	0.389					
+O43157	PLXNB1	True	canonical	48	25	7	23	41	0.571	0.325	0.389					l2
+O75144	ICOSLG	True	canonical	48	13	10	35	38	0.571	0.169	0.556					l1,l2
+Q8TB96	ITFG1	True	canonical	48	33	9	15	39	0.571	0.429	0.5					l1,l2
+Q13873	BMPR2	True	canonical	48	18	7	30	41	0.571	0.234	0.389					l1
+P11169	SLC2A3	True	canonical	48	35	5	13	43	0.571	0.455	0.278					l1
+O60462	NRP2	True	canonical	48	25	3	23	45	0.571	0.325	0.167					l1,l2
+O60449	LY75	True	canonical	47	22	7	25	40	0.56	0.286	0.389					l2
+P78504	JAG1	True	canonical	47	20	7	27	40	0.56	0.26	0.389					l1,l2
+O95490	ADGRL2	True	canonical	47	26	8	21	39	0.56	0.338	0.444					l1,l2
+Q6NSJ0	MYORG	True	not_deep_dived	47	19	8	28	39	0.56	0.247	0.444	1	False		Alpha-galactosidase MYORG (EC 3.2.1.22) (Myogenesis regulating glycosidase) (Nuclear envelope transmembrane protein 37)	
+P13726	F3	True	canonical	47	26	10	21	37	0.56	0.338	0.556					l1
+P53794	SLC5A3	True	canonical	46	29	6	17	40	0.548	0.377	0.333					l1
+Q9H6X2	ANTXR1	True	canonical	46	23	9	23	37	0.548	0.299	0.5					l1
+P30530	AXL	True	canonical	46	33	5	13	41	0.548	0.429	0.278					l1,l2
+P41440	SLC19A1	True	canonical	46	29	2	17	44	0.548	0.377	0.111					l1,l2
+Q9H5V8	CDCP1	True	canonical	46	31	5	15	41	0.548	0.403	0.278					l1,l2
+P25942	CD40	True	canonical	45	21	7	24	38	0.536	0.273	0.389					l1,l2
+Q9Y653	ADGRG1	True	canonical	45	18	7	27	38	0.536	0.234	0.389					l1,l2
+O60503	ADCY9	True	canonical	45	23	4	22	41	0.536	0.299	0.222					l1
+O75326	SEMA7A	True	canonical	45	24	7	21	38	0.536	0.312	0.389					l1,l2
+Q8TDW0	LRRC8C	True	likely	45	31	6	14	39	0.536	0.403	0.333					l1
+P32970	CD70	True	canonical	44	22	5	22	39	0.524	0.286	0.278					l1
+P52799	EFNB2	True	canonical	44	14	4	30	40	0.524	0.182	0.222					l1
+P51805	PLXNA3	True	canonical	44	22	7	22	37	0.524	0.286	0.389					l2
+Q08334	IL10RB	True	canonical	44	16	6	28	38	0.524	0.208	0.333					l1
+Q9P0K1	ADAM22	True	canonical	44	11	5	33	39	0.524	0.143	0.278					l1,l2
+Q8IUW5	RELL1	True	canonical	44	31	3	13	41	0.524	0.403	0.167					l1
+Q9H8M5	CNNM2	True	likely	44	25	7	19	37	0.524	0.325	0.389					l1,l2
+O14763	TNFRSF10B	True	canonical	44	32	1	12	43	0.524	0.416	0.056					l1,l2
+Q6UXD5	SEZ6L2	True	canonical	43	21	10	22	33	0.512	0.273	0.556					l1,l2
+O75051	PLXNA2	True	canonical	43	28	7	15	36	0.512	0.364	0.389					l2
+O95477	ABCA1	True	canonical	43	23	6	20	37	0.512	0.299	0.333					
+Q92673	SORL1	True	canonical	43	32	9	11	34	0.512	0.416	0.5					l2
+Q04771	ACVR1	True	canonical	43	22	6	21	37	0.512	0.286	0.333					l1,l2
+P31641	SLC6A6	True	canonical	43	26	4	17	39	0.512	0.338	0.222					l1,l2
+Q92536	SLC7A6	True	canonical	42	27	2	15	40	0.5	0.351	0.111					l1
+P13598	ICAM2	True	canonical	42	22	7	20	35	0.5	0.286	0.389					l1
+P13591	NCAM1	True	canonical	42	25	9	17	33	0.5	0.325	0.5					l1,l2
+Q9NPF0	CD320	True	canonical	42	28	1	14	41	0.5	0.364	0.056					l1,l2
+Q68D85	NCR3LG1	True	canonical	42	15	6	27	36	0.5	0.195	0.333					l1
+P54852	EMP3	True	canonical	42	27	7	15	35	0.5	0.351	0.389					l1
+Q92485	SMPDL3B	True	canonical	41	25	7	16	34	0.488	0.325	0.389					l1
+Q9BX67	JAM3	True	canonical	41	24	8	17	33	0.488	0.312	0.444					l1,l2
+Q96HA4	C1orf159	True	low	41	6	4	35	37	0.488	0.078	0.222	1	False		Uncharacterized protein C1orf159	
+Q14542	SLC29A2	True	canonical	41	14	2	27	39	0.488	0.182	0.111					l1,l2
+P27487	DPP4	True	canonical	41	26	8	15	33	0.488	0.338	0.444					l1,l2
+Q9NZ53	PODXL2	True	likely	41	19	9	22	32	0.488	0.247	0.5					l1
+Q6UWB1	IL27RA	True	canonical	41	12	5	29	36	0.488	0.156	0.278					l1
+Q9BZM5	ULBP2	True	canonical	41	23	3	18	38	0.488	0.299	0.167					l1
+Q9H6B4	CLMP	True	canonical	40	19	5	21	35	0.476	0.247	0.278					l1,l2
+Q9UGH3	SLC23A2	True	canonical	40	25	7	15	33	0.476	0.325	0.389					l1
+P04004	VTN	True	no	40	28	10	12	30	0.476	0.364	0.556	0	False		Vitronectin (VN) (S-protein) (Serum-spreading factor) (V75) [Cleaved into: Vitronectin V65 subunit; Vitronectin V10 subunit; Somatomedin-B]	
+P28827	PTPRM	True	canonical	40	13	6	27	34	0.476	0.169	0.333					l1,l2
+Q9HCU4	CELSR2	True	canonical	40	12	8	28	32	0.476	0.156	0.444					
+Q8IWK6	ADGRA3	True	canonical	40	13	7	27	33	0.476	0.169	0.389					l1
+O60486	PLXNC1	True	canonical	40	20	7	20	33	0.476	0.26	0.389					l1
+Q12866	MERTK	True	canonical	40	14	7	26	33	0.476	0.182	0.389					l1
+P11362	FGFR1	True	canonical	40	21	7	19	33	0.476	0.273	0.389					l1,l2
+P25116	F2R	True	canonical	40	13	6	27	34	0.476	0.169	0.333					l1
+Q29980	MICB	True	canonical	40	11	4	29	36	0.476	0.143	0.222					l1,l2
+O15394	NCAM2	True	canonical	39	17	7	22	32	0.464	0.221	0.389					l1
+Q92823	NRCAM	True	canonical	39	13	8	26	31	0.464	0.169	0.444					l1,l2
+Q9ULI3	HEG1	True	canonical	39	24	7	15	32	0.464	0.312	0.389					l1,l2
+P48029	SLC6A8	True	canonical	39	16	3	23	36	0.464	0.208	0.167					l1,l2
+Q9UMF0	ICAM5	True	likely	39	13	5	26	34	0.464	0.169	0.278					l1
+Q9BZR6	RTN4R	True	canonical	39	13	6	26	33	0.464	0.169	0.333					l1
+Q9NZQ7	CD274	True	canonical	39	15	7	24	32	0.464	0.195	0.389					l1
+Q01973	ROR1	True	canonical	39	19	2	20	37	0.464	0.247	0.111					l1
+O95858	TSPAN15	True	canonical	39	25	10	14	29	0.464	0.325	0.556					l1,l2
+P16284	PECAM1	True	canonical	39	28	7	11	32	0.464	0.364	0.389					l1,l2
+O00478	BTN3A3	True	canonical	38	20	8	18	30	0.452	0.26	0.444					l1,l2
+O95980	RECK	True	canonical	38	25	5	13	33	0.452	0.325	0.278					l1
+O43278	SPINT1	True	likely	38	23	4	15	34	0.452	0.299	0.222					l1,l2
+Q8WUM9	SLC20A1	True	canonical	38	28	2	10	36	0.452	0.364	0.111					l1,l2
+P28907	CD38	True	canonical	38	13	7	25	31	0.452	0.169	0.389					l1
+Q9UPY5	SLC7A11	True	canonical	38	25	1	13	37	0.452	0.325	0.056					l1
+Q02487	DSC2	True	canonical	38	22	7	16	31	0.452	0.286	0.389					l1,l2
+Q96BD0	SLCO4A1	True	canonical	37	15	5	22	32	0.44	0.195	0.278					l1
+O75581	LRP6	True	canonical	37	19	3	18	34	0.44	0.247	0.167					l1,l2
+Q14332	FZD2	True	canonical	37	25	2	12	35	0.44	0.325	0.111					l1
+O60353	FZD6	True	canonical	37	21	3	16	34	0.44	0.273	0.167					l1,l2
+Q5VU97	CACHD1	True	likely	37	16	2	21	35	0.44	0.208	0.111					l1,l2
+P98155	VLDLR	True	canonical	37	21	3	16	34	0.44	0.273	0.167					l1,l2
+P36941	LTBR	True	canonical	37	15	4	22	33	0.44	0.195	0.222					l1
+P08575	PTPRC	True	canonical	37	26	8	11	29	0.44	0.338	0.444					l1,l2
+Q9P273	TENM3	True	likely	37	20	10	17	27	0.44	0.26	0.556					
+P12821	ACE	True	canonical	37	20	7	17	30	0.44	0.26	0.389					l1,l2
+O60245	PCDH7	True	canonical	37	18	6	19	31	0.44	0.234	0.333					l1,l2
+P37173	TGFBR2	True	canonical	36	20	6	16	30	0.429	0.26	0.333					l1,l2
+P01137	TGFB1	True	likely	36	23	7	13	29	0.429	0.299	0.389					
+Q9H1U4	MEGF9	True	canonical	36	8	3	28	33	0.429	0.104	0.167					l1,l2
+Q5VUB5	FAM171A1	True	canonical	36	22	3	14	33	0.429	0.286	0.167					l1,l2
+O14817	TSPAN4	True	canonical	36	18	3	18	33	0.429	0.234	0.167					l1,l2
+Q08174	PCDH1	True	likely	36	18	8	18	28	0.429	0.234	0.444					l1,l2
+Q9UN70	PCDHGC3	True	canonical	36	14	8	22	28	0.429	0.182	0.444					l1
+O00220	TNFRSF10A	True	canonical	36	19	4	17	32	0.429	0.247	0.222					l1
+Q8TCT7	SPPL2B	True	canonical	36	21	6	15	30	0.429	0.273	0.333					l1,l2
+Q86SQ4	ADGRG6	True	canonical	36	15	5	21	31	0.429	0.195	0.278					l1,l2
+Q99650	OSMR	True	canonical	36	15	5	21	31	0.429	0.195	0.278					l1,l2
+P48067	SLC6A9	True	canonical	36	16	4	20	32	0.429	0.208	0.222					l1,l2
+Q06418	TYRO3	True	canonical	36	7	5	29	31	0.429	0.091	0.278					l1,l2
+Q86SJ2	AMIGO2	True	canonical	36	11	4	25	32	0.429	0.143	0.222					l1
+Q7L0J3	SV2A	True	low	36	20	8	16	28	0.429	0.26	0.444	12	False		Synaptic vesicle glycoprotein 2A	
+O75387	SLC43A1	True	canonical	36	18	2	18	34	0.429	0.234	0.111					l1
+A8MVW0	FAM171A2	True	likely	35	15	4	20	31	0.417	0.195	0.222					l1,l2
+Q9BZM4	ULBP3	True	canonical	35	19	3	16	32	0.417	0.247	0.167					l1
+P18827	SDC1	True	canonical	35	25	3	10	32	0.417	0.325	0.167					l1,l2
+Q12767	TMM94	True	not_deep_dived	35	20	4	15	31	0.417	0.26	0.222	10	False		Transmembrane protein 94 (Endoplasmic reticulum magnesium ATPase)	
+Q9UHX3	ADGRE2	True	canonical	35	12	3	23	32	0.417	0.156	0.167					l1,l2
+O60266	ADCY3	True	likely	35	23	4	12	31	0.417	0.299	0.222					l1,l2
+P48551	IFNAR2	True	canonical	34	6	7	28	27	0.405	0.078	0.389					l1,l2
+P00749	PLAU	True	canonical	34	20	4	14	30	0.405	0.26	0.222					
+Q01974	ROR2	True	canonical	34	18	3	16	31	0.405	0.234	0.167					l1
+O15440	ABCC5	True	canonical	34	24	5	10	29	0.405	0.312	0.278					l1,l2
+Q9NYQ6	CELSR1	True	canonical	34	11	6	23	28	0.405	0.143	0.333					
+Q9NWD8	TMEM248	True	uncertain	34	17	7	17	27	0.405	0.221	0.389	4	False		Transmembrane protein 248	
+O60779	SLC19A2	True	canonical	33	14	1	19	32	0.393	0.182	0.056					l1
+Q7Z3B1	NEGR1	True	canonical	33	21	3	12	30	0.393	0.273	0.167					l1
+O76082	SLC22A5	True	canonical	33	14	5	19	28	0.393	0.182	0.278					l1,l2
+Q9HCN3	PGAP6	True	canonical	33	16	7	17	26	0.393	0.208	0.389					l1
+Q96NT5	SLC46A1	True	canonical	33	17	7	16	26	0.393	0.221	0.389					l1
+P13688	CEACAM1	True	canonical	33	19	8	14	25	0.393	0.247	0.444					l1,l2
+Q13478	IL18R1	True	canonical	32	8	4	24	28	0.381	0.104	0.222					l1,l2
+O00481	BTN3A1	True	canonical	32	15	1	17	31	0.381	0.195	0.056					l1,l2
+P20701	ITGAL	True	canonical	32	13	8	19	24	0.381	0.169	0.444					
+Q9NZU0	FLRT3	True	canonical	32	10	5	22	27	0.381	0.13	0.278					l1
+Q9UM47	NOTCH3	True	canonical	32	13	5	19	27	0.381	0.169	0.278					l2
+P32942	ICAM3	True	canonical	32	17	8	15	24	0.381	0.221	0.444					l1
+P19438	TNFRSF1A	True	canonical	31	16	5	15	26	0.369	0.208	0.278					l1
+P10646	TFPI	True	canonical	31	16	5	15	26	0.369	0.208	0.278					l1
+P52569	SLC7A2	True	canonical	31	20	6	11	25	0.369	0.26	0.333					l1,l2
+P21860	ERBB3	True	canonical	31	13	5	18	26	0.369	0.169	0.278					l1
+Q9NZV1	CRIM1	True	canonical	31	17	2	14	29	0.369	0.221	0.111					l1,l2
+O43155	FLRT2	True	canonical	31	13	3	18	28	0.369	0.169	0.167					l1
+Q9H7M9	VSIR	True	canonical	31	20	7	11	24	0.369	0.26	0.389					l1,l2
+Q13449	LSAMP	True	likely	31	16	4	15	27	0.369	0.208	0.222					l1,l2
+P49961	ENTPD1	True	canonical	31	21	6	10	25	0.369	0.273	0.333					l1,l2
+Q58EX2	SDK2	True	likely	31	12	8	19	23	0.369	0.156	0.444					
+Q5R3F8	ELFN2	True	likely	31	5	4	26	27	0.369	0.065	0.222					l1
+A2RU67	F234B	True	not_deep_dived	30	16	9	14	21	0.357	0.208	0.5	1	False		Protein FAM234B	
+Q8N441	FGFRL1	True	canonical	30	3	5	27	25	0.357	0.039	0.278					l1
+Q9UIG8	SLCO3A1	True	canonical	30	16	5	14	25	0.357	0.208	0.278					l1
+Q7Z5N4	SDK1	True	canonical	30	12	7	18	23	0.357	0.156	0.389					
+O95136	S1PR2	True	canonical	30	5	3	25	27	0.357	0.065	0.167					l1
+O75487	GPC4	True	canonical	30	20	6	10	24	0.357	0.26	0.333					l1,l2
+P54753	EPHB3	True	canonical	30	20	7	10	23	0.357	0.26	0.389					l1
+Q12891	HYAL2	True	canonical	30	19	7	11	23	0.357	0.247	0.389					l1,l2
+P20138	CD33	True	canonical	30	8	3	22	27	0.357	0.104	0.167					l1,l2
+Q6V0I7	FAT4	True	canonical	30	15	6	15	24	0.357	0.195	0.333					
+P54764	EPHA4	True	canonical	30	17	3	13	27	0.357	0.221	0.167					l1,l2
+Q8NFZ4	NLGN2	True	canonical	30	12	0	18	30	0.357	0.156	0.0					l1
+P07204	THBD	True	canonical	30	15	8	15	22	0.357	0.195	0.444					l1
+O75197	LRP5	True	canonical	30	17	7	13	23	0.357	0.221	0.389					l1,l2
+O94910	ADGRL1	True	canonical	30	10	5	20	25	0.357	0.13	0.278					l1,l2
+P51511	MMP15	True	canonical	30	17	3	13	27	0.357	0.221	0.167					l1,l2
+O75096	LRP4	True	canonical	29	11	7	18	22	0.345	0.143	0.389					
+O94856	NFASC	True	likely	29	16	4	13	25	0.345	0.208	0.222					l1,l2
+Q9HC56	PCDH9	True	canonical	29	3	7	26	22	0.345	0.039	0.389					l1,l2
+Q86UN3	RTN4RL2	True	likely	29	11	2	18	27	0.345	0.143	0.111					l1
+P09603	CSF1	True	low	29	5	5	24	24	0.345	0.065	0.278	1	False		Macrophage colony-stimulating factor 1 (CSF-1) (M-CSF) (MCSF) (Lanimostim) (Proteoglycan macrophage colony-stimulating factor) (PG-M-CSF) [Cleaved into: Processed macrophage colony-stimulating factor 1; Macrophage colony-stimulating factor 1 43 kDa subunit]	
+Q03167	TGFBR3	True	canonical	29	10	3	19	26	0.345	0.13	0.167					l1,l2
+Q8IZJ1	UNC5B	True	canonical	29	16	6	13	23	0.345	0.208	0.333					l1,l2
+Q9UP38	FZD1	True	canonical	29	16	3	13	26	0.345	0.208	0.167					l1
+P57087	JAM2	True	canonical	29	14	7	15	22	0.345	0.182	0.389					l1,l2
+Q96JA1	LRIG1	True	canonical	29	18	6	11	23	0.345	0.234	0.333					l1
+O60279	SUSD5	True	low	29	10	3	19	26	0.345	0.13	0.167	1	False		Sushi domain-containing protein 5	
+Q9NT99	LRRC4B	True	likely	29	5	5	24	24	0.345	0.065	0.278					l1
+Q6UX71	PLXDC2	True	canonical	29	19	8	10	21	0.345	0.247	0.444					l1,l2
+P0C7U0	ELFN1	True	likely	29	9	5	20	24	0.345	0.117	0.278					l1
+P78552	IL13RA1	True	canonical	28	17	6	11	22	0.333	0.221	0.333					l1
+Q99985	SEMA3C	True	no	28	18	6	10	22	0.333	0.234	0.333	0	False		Semaphorin-3C (Semaphorin-E) (Sema E)	
+P26012	ITGB8	True	canonical	28	12	6	16	22	0.333	0.156	0.333					l1,l2
+Q6P9F7	LRRC8B	True	canonical	28	13	8	15	20	0.333	0.169	0.444					l1
+O75509	TNFRSF21	True	canonical	28	13	5	15	23	0.333	0.169	0.278					l1
+Q6PJG9	LRFN4	True	canonical	28	10	4	18	24	0.333	0.13	0.222					l1
+P28908	TNFRSF8	True	canonical	28	8	2	20	26	0.333	0.104	0.111					l1
+Q12860	CNTN1	True	canonical	27	16	6	11	21	0.321	0.208	0.333					l1
+P09326	CD48	True	canonical	27	10	5	17	22	0.321	0.13	0.278					l1
+Q96F81	DISP1	True	canonical	27	5	3	22	24	0.321	0.065	0.167					l1,l2
+Q9C0K1	SLC39A8	True	canonical	27	9	3	18	24	0.321	0.117	0.167					l1,l2
+O95274	LYPD3	True	canonical	27	10	4	17	23	0.321	0.13	0.222					l1
+P34910	EVI2B	True	canonical	27	14	5	13	22	0.321	0.182	0.278					l1
+Q9BXB1	LGR4	True	canonical	27	16	4	11	23	0.321	0.208	0.222					l1,l2
+P55283	CDH4	True	canonical	27	9	4	18	23	0.321	0.117	0.222					l1
+P41221	WNT5A	True	no	27	11	3	16	24	0.321	0.143	0.167	0	False		Protein Wnt-5a	
+P55082	MFAP3	True	no	27	11	2	16	25	0.321	0.143	0.111	1	False		Microfibril-associated glycoprotein 3	
+P55285	CDH6	True	canonical	26	10	4	16	22	0.31	0.13	0.222					l1
+O60487	MPZL2	True	canonical	26	15	8	11	18	0.31	0.195	0.444					l1
+Q9HCJ1	ANKH	True	canonical	26	16	2	10	24	0.31	0.208	0.111					l1,l2
+Q14766	LTBP1	True	no	26	15	7	11	19	0.31	0.195	0.389	0	False		Latent-transforming growth factor beta-binding protein 1 (LTBP-1) (Transforming growth factor beta-1-binding protein 1) (TGF-beta1-BP-1)	
+Q9HCM3	K1549	True	not_deep_dived	26	9	5	17	21	0.31	0.117	0.278	2	False		UPF0606 protein KIAA1549	
+Q9H015	SLC22A4	True	canonical	26	5	3	21	23	0.31	0.065	0.167					l1,l2
+Q4KMG0	CDON	True	canonical	26	6	4	20	22	0.31	0.078	0.222					l1,l2
+Q8IZY2	ABCA7	True	canonical	26	13	7	13	19	0.31	0.169	0.389					
+P15509	CSF2RA	True	canonical	26	10	5	16	21	0.31	0.13	0.278					l1,l2
+Q8WTR4	GDPD5	True	canonical	26	10	6	16	20	0.31	0.13	0.333					l1,l2
+Q9Y219	JAG2	True	canonical	25	14	5	11	20	0.298	0.182	0.278					l1,l2
+P34925	RYK	True	canonical	25	3	2	22	23	0.298	0.039	0.111					l1,l2
+P55058	PLTP	True	not_deep_dived	25	11	7	14	18	0.298	0.143	0.389	0	False		Phospholipid transfer protein (Lipid transfer protein II)	
+Q15768	EFNB3	True	canonical	25	6	4	19	21	0.298	0.078	0.222					l1
+Q01151	CD83	True	canonical	25	5	5	20	20	0.298	0.065	0.278					l1,l2
+P23467	PTPRB	True	likely	25	14	2	11	23	0.298	0.182	0.111					
+Q13421	MSLN	True	canonical	25	14	2	11	23	0.298	0.182	0.111					l1,l2
+P54756	EPHA5	True	canonical	25	13	4	12	21	0.298	0.169	0.222					l1,l2
+P15328	FOLR1	True	canonical	25	15	7	10	18	0.298	0.195	0.389					l1
+O94813	SLIT2	True	no	25	7	3	18	22	0.298	0.091	0.167	0	False		Slit homolog 2 protein (Slit-2) [Cleaved into: Slit homolog 2 protein N-product; Slit homolog 2 protein C-product]	
+Q86XX4	FRAS1	True	low	25	10	6	15	19	0.298	0.13	0.333	1	False		Extracellular matrix organizing protein FRAS1 (Fraser syndrome 1 protein)	
+P10721	KIT	True	canonical	25	10	7	15	18	0.298	0.13	0.389					l1,l2
+P19397	CD53	True	canonical	25	8	6	17	19	0.298	0.104	0.333					l1,l2
+Q8TF66	LRRC15	True	canonical	25	13	4	12	21	0.298	0.169	0.222					l1,l2
+Q6GTX8	LAIR1	True	canonical	25	7	5	18	20	0.298	0.091	0.278					l1,l2
+Q7Z6M3	MILR1	True	canonical	25	4	6	21	19	0.298	0.052	0.333					l1
+P27037	ACVR2A	True	canonical	25	9	2	16	23	0.298	0.117	0.111					l1,l2
+Q9BX74	TM2D1	True	low	25	5	8	20	17	0.298	0.065	0.444	2	False		TM2 domain-containing protein 1 (Amyloid-beta-binding protein) (hBBP)	
+P41217	CD200	True	canonical	24	13	2	11	22	0.286	0.169	0.111					l1,l2
+Q9P244	LRFN1	True	likely	24	5	5	19	19	0.286	0.065	0.278					l1
+Q5BKX6	SLC45A4	True	low	24	7	4	17	20	0.286	0.091	0.222	12	False		Polyamine-transporter SLC45A4 (Solute carrier family 45 member 4)	
+O00241	SIRPB1	True	likely	24	12	7	12	17	0.286	0.156	0.389					
+Q92729	PTPRU	True	likely	24	5	6	19	18	0.286	0.065	0.333					l1,l2
+Q8N6C5	IGSF1	True	likely	24	10	8	14	16	0.286	0.13	0.444					l1,l2
+P21709	EPHA1	True	canonical	24	11	2	13	22	0.286	0.143	0.111					l1,l2
+Q6N022	TENM4	True	canonical	24	12	2	12	22	0.286	0.156	0.111					
+P61073	CXCR4	True	canonical	24	14	3	10	21	0.286	0.182	0.167					l1,l2
+P16150	SPN	True	canonical	24	12	3	12	21	0.286	0.156	0.167					l1
+Q14242	SELPLG	True	canonical	24	6	3	18	21	0.286	0.078	0.167					l1,l2
+Q96GP6	SCARF2	True	canonical	24	14	2	10	22	0.286	0.182	0.111					l1,l2
+Q9H3S1	SEMA4A	True	canonical	24	10	4	14	20	0.286	0.13	0.222					l1,l2
+P56159	GFRA1	True	canonical	23	11	2	12	21	0.274	0.143	0.111					l1,l2
+Q9Y5L3	ENTPD2	True	canonical	23	11	3	12	20	0.274	0.143	0.167					l1
+P23468	PTPRD	True	canonical	23	12	6	11	17	0.274	0.156	0.333					
+Q9UBN6	TNFRSF10D	True	canonical	23	12	3	11	20	0.274	0.156	0.167					l1
+Q9NW97	TMM51	True	not_deep_dived	23	13	2	10	21	0.274	0.169	0.111	2	False		Transmembrane protein 51	
+Q9NT68	TENM2	True	likely	23	12	5	11	18	0.274	0.156	0.278					
+P21583	KITLG	True	canonical	22	10	4	12	18	0.262	0.13	0.222					l1,l2
+Q9UKU6	TRHDE	True	likely	22	12	4	10	18	0.262	0.156	0.222					l1
+Q8TDY8	IGDCC4	True	canonical	22	6	5	16	17	0.262	0.078	0.278					l1,l2
+P17342	NPR3	True	canonical	22	10	2	12	20	0.262	0.13	0.111					l1,l2
+Q9BQ51	PDCD1LG2	True	canonical	22	11	2	11	20	0.262	0.143	0.111					l1
+Q9Y5Z0	BACE2	True	canonical	22	10	2	12	20	0.262	0.13	0.111					l1,l2
+Q5FWE3	PRRT3	True	low	22	4	1	18	21	0.262	0.052	0.056	7	False		Proline-rich transmembrane protein 3	
+Q8N2Q7	NLGN1	True	canonical	22	4	2	18	20	0.262	0.052	0.111					l1,l2
+Q9NY47	CACNA2D2	True	canonical	22	12	5	10	17	0.262	0.156	0.278					
+O94991	SLITRK5	True	canonical	22	9	2	13	20	0.262	0.117	0.111					l1
+Q96DU3	SLAMF6	True	canonical	22	6	5	16	17	0.262	0.078	0.278					l1,l2
+P20023	CR2	True	canonical	22	1	4	21	18	0.262	0.013	0.222					l1,l2
+Q0VAQ4	SMAGP	True	canonical	22	10	0	12	22	0.262	0.13	0.0					l1,l2
+P11049	CD37	True	canonical	22	10	5	12	17	0.262	0.13	0.278					l1,l2
+Q07075	ENPEP	True	canonical	22	12	6	10	16	0.262	0.156	0.333					l1,l2
+P26010	ITGB7	True	canonical	22	9	5	13	17	0.262	0.117	0.278					l1,l2
+P29320	EPHA3	True	canonical	22	11	4	11	18	0.262	0.143	0.222					l1,l2
+Q6P9G4	TMEM154	True	canonical	22	6	1	16	21	0.262	0.078	0.056					l1
+O43194	GPR39	True	canonical	21	9	3	12	18	0.25	0.117	0.167					l1
+Q9H2J7	SLC6A15	True	canonical	21	10	5	11	16	0.25	0.13	0.278					l1,l2
+Q6UWP8	SBSN	True	low	21	10	2	11	19	0.25	0.13	0.111	0	False		Suprabasin	
+Q86UF1	TSPAN33	True	canonical	21	9	3	12	18	0.25	0.117	0.167					l1,l2
+Q9NTN9	SEMA4G	True	canonical	21	7	4	14	17	0.25	0.091	0.222					l1,l2
+Q8N350	CBARP	True	low	21	10	0	11	21	0.25	0.13	0.0	1	False		Voltage-dependent calcium channel beta subunit-associated regulatory protein	
+P21802	FGFR2	True	canonical	21	6	3	15	18	0.25	0.078	0.167					l1,l2
+Q13797	ITGA9	True	canonical	21	9	7	12	14	0.25	0.117	0.389					l1,l2
+Q9HCK4	ROBO2	True	canonical	21	9	2	12	19	0.25	0.117	0.111					l1,l2
+A1A5C7	SLC22A23	True	low	20	7	0	13	20	0.238	0.091	0.0	10	False		Solute carrier family 22 member 23	
+Q9Y6Q6	TNFRSF11A	True	canonical	20	1	4	19	16	0.238	0.013	0.222					l1
+P20273	CD22	True	canonical	20	7	6	13	14	0.238	0.091	0.333					l1,l2
+Q13467	FZD5	True	canonical	20	4	1	16	19	0.238	0.052	0.056					l1
+O95196	CSPG5	True	likely	20	2	4	18	16	0.238	0.026	0.222					l1,l2
+Q6P995	FAM171B	True	low	20	6	4	14	16	0.238	0.078	0.222	1	False		Protein FAM171B	

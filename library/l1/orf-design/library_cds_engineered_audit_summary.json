@@ -1,0 +1,129 @@
+{
+  "snapshots": {
+    "engineered_current": {
+      "manifest_rows": 7082,
+      "active_members": 7014,
+      "retired_rows_excluded": 68,
+      "non_l1_l2_rows_excluded": 0,
+      "by_library": {
+        "l1": {
+          "active_members": 2735,
+          "flagged_members": 0,
+          "evidence_classes": {
+            "construct_only_expression_rescue": 25,
+            "raw_cds_and_construct": 2710
+          },
+          "issue_member_counts": {}
+        },
+        "l2": {
+          "active_members": 4279,
+          "flagged_members": 0,
+          "evidence_classes": {
+            "construct_only_giant_truncation": 24,
+            "raw_cds_and_construct": 4255
+          },
+          "issue_member_counts": {}
+        }
+      }
+    },
+    "engineered_compara116": {
+      "manifest_rows": 7271,
+      "active_members": 6875,
+      "retired_rows_excluded": 396,
+      "non_l1_l2_rows_excluded": 0,
+      "by_library": {
+        "l1": {
+          "active_members": 2735,
+          "flagged_members": 0,
+          "evidence_classes": {
+            "construct_only_expression_rescue": 25,
+            "raw_cds_and_construct": 2710
+          },
+          "issue_member_counts": {}
+        },
+        "l2": {
+          "active_members": 4140,
+          "flagged_members": 0,
+          "evidence_classes": {
+            "construct_only_giant_truncation": 24,
+            "raw_cds_and_construct": 4116
+          },
+          "issue_member_counts": {}
+        }
+      }
+    }
+  },
+  "rule_version": "library-cds-audit-v1",
+  "rule_definitions": {
+    "CDS001": "Every active member has a domesticated constructed ORF.",
+    "CDS002": "Raw transcript CDS exists unless a separately sourced rescue/giant arm applies.",
+    "CDS101": "First triplet is ATG; non-ATG is flagged for initiation review.",
+    "CDS102": "Nucleotide length is divisible by three.",
+    "CDS103": "Every nucleotide is A, C, G or T (case-insensitive).",
+    "CDS104": "Final in-frame codon is TAA, TAG or TGA.",
+    "CDS105": "No standard-code stop occurs before the final in-frame codon.",
+    "CDS106": "Complete diagnostic codons translate with standard nuclear table 1.",
+    "CDS201": "Raw CDS and domesticated ORF encode identical proteins, excluding one terminal stop.",
+    "CDS301": "Rescue/giant arm source explicitly supports constructed-ORF-only classification."
+  },
+  "script_commit": "9124f51140f8980e2205c12d3be17f5eaa688a2c",
+  "script_has_uncommitted_changes": false,
+  "script_sha256": "32b55a6a8ba1f42ca90a95188bc9d758670a71cad7052edfbe571313435ac995",
+  "command_argv": [
+    "audit_library_cds.py",
+    "--snapshot",
+    "engineered_current",
+    "library/l1/orf-design/candidate_manifest_tranches.tsv",
+    "../cds-review-final/engineered/engineered_candidate_cds.json",
+    "../cds-review-final/engineered/engineered_candidate_constructs.json",
+    "--snapshot",
+    "engineered_compara116",
+    "../cds-review-final/adoption/review/candidate_manifest_tranches_review.tsv",
+    "../cds-review-final/engineered/engineered_candidate_cds.json",
+    "../cds-review-final/engineered/engineered_candidate_constructs.json",
+    "--out",
+    "../cds-review-final/audit-after"
+  ],
+  "input_provenance": {
+    "engineered_current": {
+      "manifest": {
+        "file": "candidate_manifest_tranches.tsv",
+        "sha256": "7ad0538b831b521a10526f290f3b40eb9ec1f2333f0d674f88a831092c13cdf4"
+      },
+      "cds": {
+        "file": "engineered_candidate_cds.json",
+        "sha256": "c61325d0155d7c49f9e1012c1c8db23f5312a84a3b08f1e4ae07b54667752301"
+      },
+      "constructs": {
+        "file": "engineered_candidate_constructs.json",
+        "sha256": "6fea29d57929d2abf69e8749d825fcba5136882486de5427b66fd2e6f379e4a1"
+      }
+    },
+    "engineered_compara116": {
+      "manifest": {
+        "file": "candidate_manifest_tranches_review.tsv",
+        "sha256": "87cc321f33b59447f4377c3c601ddc921f00f92bcd33e3f9738aad2efd52fc66"
+      },
+      "cds": {
+        "file": "engineered_candidate_cds.json",
+        "sha256": "c61325d0155d7c49f9e1012c1c8db23f5312a84a3b08f1e4ae07b54667752301"
+      },
+      "constructs": {
+        "file": "engineered_candidate_constructs.json",
+        "sha256": "6fea29d57929d2abf69e8749d825fcba5136882486de5427b66fd2e6f379e4a1"
+      }
+    }
+  },
+  "translation_table": 1,
+  "sequences_changed": false,
+  "scope": "all active L1/L2 records; raw transcript CDS and domesticated pre-tag ORFs",
+  "limitations": [
+    "Sequence checks do not establish initiation or expression in cells.",
+    "Separate rescue/giant constructed arms lack a directly comparable raw transcript CDS."
+  ],
+  "output_sha256": {
+    "library_cds_audit.tsv": "648174d95500c5e9b0bdaf58c17e2454727f40ca7a34514df3c787fd9c5a288d",
+    "library_cds_audit.tsv.gz": "0149cb0449d923ba1b0b8656c5c463d242a564df3a41c6fb414a81aa4451011d",
+    "library_cds_transitions.tsv": "6720eb60aa589e99b82ffefe90d55257f2e83050a4e46c3f1f43f250ab37290d"
+  }
+}

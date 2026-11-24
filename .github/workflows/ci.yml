@@ -1,0 +1,24 @@
+name: Offline review checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  offline-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.13.6"
+          enable-cache: true
+      - name: Install locked environment (without flow/modal groups)
+        run: uv sync --locked --group dev --no-group flow --no-group flow-gui --no-group modal
+      - name: Ruff lint and format
+        run: |
+          uv run --locked ruff check
+          uv run --locked ruff format --check
+      - name: Offline tests
+        run: uv run --locked pytest -q tests/ library/l1/orf-design/tests/

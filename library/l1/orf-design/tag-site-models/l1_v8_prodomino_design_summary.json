@@ -1,0 +1,45 @@
+{
+  "prodomino_parity_cldn17": {
+    "n_residues": 76,
+    "max_abs_diff": 0.13116,
+    "pearson_r": 0.999909
+  },
+  "l1_feature_coverage_after_backfill": {
+    "n_proteins": 492,
+    "pct_with_plddt": 96.1,
+    "pct_with_prodomino": 100.0,
+    "pct_with_protrusion_14": 100.0,
+    "pct_with_d_other_domain": 19.7
+  },
+  "v8_prodomino_designs": {
+    "n_scored": 492,
+    "n_designed": 492,
+    "n_no_eligible_site": 0,
+    "loop_arm_counts": {
+      "1": 159,
+      "2": 219,
+      "3": 114
+    },
+    "n_snorkel_companions": 118,
+    "total_loop_constructs": 939
+  },
+  "vs_v5_comparison": {
+    "exact_same_top1": 36,
+    "shift_1_to_3": 186,
+    "shift_4_to_10": 71,
+    "shift_gt_10": 199,
+    "old_outside_v8_picks_w10": 92,
+    "moved_median_delta_plddt": -1.57,
+    "moved_frac_lower_plddt": 0.564,
+    "moved_median_delta_prodomino": 0.1452,
+    "moved_frac_higher_prodomino": 0.895,
+    "moved_median_delta_protrusion_14": -8.0,
+    "moved_frac_less_crowded": 0.555,
+    "old_top1_crowded_q75": 5,
+    "new_top1_crowded_q75": 0,
+    "old_top1_seam_8A": 4,
+    "new_top1_seam_8A": 0,
+    "old_top1_hard_veto": 13,
+    "new_top1_hard_veto": 0
+  }
+}

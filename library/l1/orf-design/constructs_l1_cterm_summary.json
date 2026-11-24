@@ -1,0 +1,52 @@
+{
+  "cterm_members": 219,
+  "snorkel_members": 145,
+  "built": 361,
+  "held": [
+    {
+      "candidate_id": "l1-p3274",
+      "design_id": "l1-p3274",
+      "gene_symbol": "SLC1A6",
+      "flags": "cout_unconfirmed: C-terminal orientation unconfirmed: DeepTMHMM v2 puts the C-terminus in the cytoplasm and no independent source places it outside"
+    },
+    {
+      "candidate_id": "l1-p3289",
+      "design_id": "l1-p3289",
+      "gene_symbol": "TMEM222",
+      "flags": "cout_unconfirmed: UniProt: Cytoplasmic 208-208 (ECO:0000255)"
+    },
+    {
+      "candidate_id": "l1-p3320",
+      "design_id": "l1-p3320",
+      "gene_symbol": "TSPAN6",
+      "flags": "cout_unconfirmed: UniProt: Cytoplasmic 230-245 (ECO:0000255)"
+    }
+  ],
+  "relocated": {
+    "l1-p0976": "ITM2B: cassette after residue 235 (before the furin site)"
+  },
+  "refold_moves": {
+    "l1-p0864": "HPN: cassette after stalk residue 43",
+    "l1-p1070": "KLRF1: cassette after stalk residue 84"
+  },
+  "by_set": {
+    "library_reference": 299,
+    "isoform": 24,
+    "ortholog": 38
+  },
+  "junction_edits": {},
+  "type_iis": "every insert: 2 Esp3I (wrapper), 0 BbsI, 0 BsaI; in p0039: backbone's 4 + 2",
+  "inserts_with_cassette_features": 46,
+  "insert_nt_range": [
+    623,
+    4988
+  ],
+  "barcode": "20-N placeholder; barcodes not reserved (issue #1)",
+  "swap": {
+    "members_measured": 2762,
+    "cterm_median_nt": 56,
+    "cterm_max_nt": 56,
+    "cterm_over_preferred_80": 0,
+    "cterm_over_gate_100": 0
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "topology_version": "topo_2026_11_22_round2_additions",
+  "snapshot": "2026-11-22-round2-additions",
+  "cohort": "library_designed_orf",
+  "base_snapshot": "accessible-surfaceome/topology/2026-11-21-coreceptor-additions/topology.parquet",
+  "tool": "DeepTMHMM v1 (Modal volume deeptmhmm-v1); runtime identity in 2026-11-22_round2_additions.3line.runtime.json",
+  "tool_version": "deeptmhmm-1.0-academic",
+  "command": "add_library_genes.py (writes the FASTA of additions with no v1 row); modal run library/l1/proteoform-selection/modal/deeptmhmm_v1_app.py::sweep --fasta topology_runs/2026-11-22_round2_additions.fasta --out topology_runs/2026-11-22_round2_additions.3line",
+  "modal_app_run": "ap-MTP0wWRk57qu5e5LppTvOA",
+  "run_completed": "2026-11-22T18:01:30+00:00",
+  "sequences": 4,
+  "pending_additions": {
+    "l1-p3210": "e2aa652b724f72701a661682f1679d1cb52d2a059e6763c9eb7cfb5849cab54c",
+    "l1-p3211": "d37e344abcb6572d1915f4f972f1168adae425a144f63103e807a74a1f7e7f29",
+    "l1-p3213": "22832d2a0a1e0f1ce631c51e06b4981179670855e30bb891a35f61b45321ad78",
+    "l1-p3214": "c0eec2f0c4ccb8ea82ec3b8d64b510cda08886deb121812b83e473bf45ad6c83"
+  },
+  "why": "designed proteins with no DeepTMHMM v1 row among the round-2 additions of 2026-11-22: TMEM94 (surface-proteomics addition, Becca 2026-11-22) and the allele restorations of FCGR2C, OR4Q2 and OR52P1 (allele_restorations.tsv, Becca 2026-11-22)",
+  "implemented_by": "Claude Code session l1-review-export-scope"
+}

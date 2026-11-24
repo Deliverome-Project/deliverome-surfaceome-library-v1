@@ -1,0 +1,41 @@
+uniprot_accession	gene_symbol	symbol_resolved	catalog_tier	n_surface_pubs	n_membrane_pubs	n_global_pubs	surface_minus_membrane	surface_minus_global	frac_surface	frac_membrane	frac_global	n_tm	has_gpi	contaminant_flag	protein_name	library
+Q9UIQ6	LNPEP	True	likely	68	55	12	13	56	0.883	0.724	0.667					
+Q9H0X4	FAM234A	True	low	61	39	7	22	54	0.792	0.513	0.389	1	False		Protein FAM234A (Protein ITFG3)	
+P10586	PTPRF	True	canonical	60	40	7	20	53	0.779	0.526	0.389					
+Q92508	PIEZO1	True	canonical	59	42	10	17	49	0.766	0.553	0.556					
+Q13332	PTPRS	True	canonical	49	30	8	19	41	0.636	0.395	0.444					
+P07996	THBS1	True	canonical	44	31	8	13	36	0.571	0.408	0.444					
+Q14517	FAT1	True	canonical	43	31	7	12	36	0.558	0.408	0.389					
+Q8NC42	RNF149	True	no	41	28	7	13	34	0.532	0.368	0.389	1	False		E3 ubiquitin-protein ligase RNF149 (EC 2.3.2.27) (DNA polymerase-transactivated protein 2) (RING finger protein 149) (RING-type E3 ubiquitin transferase RNF149)	
+O00468	AGRN	True	canonical	40	30	9	10	31	0.519	0.395	0.5					
+O95477	ABCA1	True	canonical	39	22	6	17	33	0.506	0.289	0.333					
+Q96HA4	C1orf159	True	low	39	6	4	33	35	0.506	0.079	0.222	1	False		Uncharacterized protein C1orf159	
+P04004	VTN	True	no	39	27	10	12	29	0.506	0.355	0.556	0	False		Vitronectin (VN) (S-protein) (Serum-spreading factor) (V75) [Cleaved into: Vitronectin V65 subunit; Vitronectin V10 subunit; Somatomedin-B]	
+Q6NSJ0	MYORG	True	not_deep_dived	39	18	8	21	31	0.506	0.237	0.444	1	False		Alpha-galactosidase MYORG (EC 3.2.1.22) (Myogenesis regulating glycosidase) (Nuclear envelope transmembrane protein 37)	
+Q9P273	TENM3	True	likely	37	19	10	18	27	0.481	0.25	0.556					
+Q9HCU4	CELSR2	True	canonical	34	11	8	23	26	0.442	0.145	0.444					
+P20701	ITGAL	True	canonical	33	12	8	21	25	0.429	0.158	0.444					
+Q7L0J3	SV2A	True	low	32	19	8	13	24	0.416	0.25	0.444	12	False		Synaptic vesicle glycoprotein 2A	
+Q9NYQ6	CELSR1	True	canonical	31	10	6	21	25	0.403	0.132	0.333					
+Q12767	TMM94	True	not_deep_dived	30	19	4	11	26	0.39	0.25	0.222	10	False		Transmembrane protein 94 (Endoplasmic reticulum magnesium ATPase)	
+Q58EX2	SDK2	True	likely	29	12	8	17	21	0.377	0.158	0.444					
+Q6V0I7	FAT4	True	canonical	29	14	6	15	23	0.377	0.184	0.333					
+Q7Z5N4	SDK1	True	canonical	29	11	7	18	22	0.377	0.145	0.389					
+Q9NWD8	TMEM248	True	uncertain	28	16	7	12	21	0.364	0.211	0.389	4	False		Transmembrane protein 248	
+O00241	SIRPB1	True	likely	27	12	7	15	20	0.351	0.158	0.389					
+O60279	SUSD5	True	low	26	9	3	17	23	0.338	0.118	0.167	1	False		Sushi domain-containing protein 5	
+O75096	LRP4	True	canonical	26	10	7	16	19	0.338	0.132	0.389					
+A2RU67	F234B	True	not_deep_dived	26	16	9	10	17	0.338	0.211	0.5	1	False		Protein FAM234B	
+Q9BX74	TM2D1	True	low	24	5	8	19	16	0.312	0.066	0.444	2	False		TM2 domain-containing protein 1 (Amyloid-beta-binding protein) (hBBP)	
+P55082	MFAP3	True	no	24	11	2	13	22	0.312	0.145	0.111	1	False		Microfibril-associated glycoprotein 3	
+P09603	CSF1	True	low	24	5	5	19	19	0.312	0.066	0.278	1	False		Macrophage colony-stimulating factor 1 (CSF-1) (M-CSF) (MCSF) (Lanimostim) (Proteoglycan macrophage colony-stimulating factor) (PG-M-CSF) [Cleaved into: Processed macrophage colony-stimulating factor 1; Macrophage colony-stimulating factor 1 43 kDa subunit]	
+P23467	PTPRB	True	likely	23	13	2	10	21	0.299	0.171	0.111					
+P41221	WNT5A	True	no	23	10	3	13	20	0.299	0.132	0.167	0	False		Protein Wnt-5a	
+Q8IZY2	ABCA7	True	canonical	23	12	7	11	16	0.299	0.158	0.389					
+Q6N022	TENM4	True	canonical	23	11	2	12	21	0.299	0.145	0.111					
+P55058	PLTP	True	not_deep_dived	23	10	7	13	16	0.299	0.132	0.389	0	False		Phospholipid transfer protein (Lipid transfer protein II)	
+Q5BKX6	SLC45A4	True	low	23	7	4	16	19	0.299	0.092	0.222	12	False		Polyamine-transporter SLC45A4 (Solute carrier family 45 member 4)	
+P20702	ITGAX	True	canonical	22	12	4	10	18	0.286	0.158	0.222					
+P23468	PTPRD	True	canonical	22	12	6	10	16	0.286	0.158	0.333					
+O94813	SLIT2	True	no	21	6	3	15	18	0.273	0.079	0.167	0	False		Slit homolog 2 protein (Slit-2) [Cleaved into: Slit homolog 2 protein N-product; Slit homolog 2 protein C-product]	
+Q86XX4	FRAS1	True	low	21	10	6	11	15	0.273	0.132	0.333	1	False		Extracellular matrix organizing protein FRAS1 (Fraser syndrome 1 protein)	

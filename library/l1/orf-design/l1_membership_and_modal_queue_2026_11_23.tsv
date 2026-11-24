@@ -1,0 +1,11 @@
+batch	targets	action	new_deeptmhmm	est_modal_colabfold	rationale
+drop_mhc_ii	HLA-DPB1,HLA-DQA1,HLA-DQB1,HLA-DRA,HLA-DRB1,HLA-DRB3,HLA-DRB4,HLA-DRB5	drop_8_genes	0	0	Obligate heterodimers + CD74/HLA-DM/CIITA machinery; 0% K562 display; eliminates worst 208-nt HLA-DRB1/DRB3 swap pair
+drop_lof_lowconf	OR52P1	drop_1_gene	0	0	Lower confidence double-indel restoration with 5 unphased GRCh38 residue diffs vs UniProt Q8NH57
+add_lof_restored	OR8J2	add_cds_from_allele_restorations	1	1-2	1-nt restoration (rs55684887, codon 64 TGA->CGA, 0 diffs vs Q8NGG1); needs DeepTMHMM + tag placement + ColabFold refold
+add_lof_restored	SIGLEC16	add_cds_from_allele_restorations	1	1-2	Functional human Siglec-16 (A6NMB1, 481 aa, 0 diffs; ~22% global / ~40-50% EUR carriers, Cao 2008); needs DeepTMHMM + SignalP + ColabFold refold
+switch_mane_5	APP,GRIN1,KCNMA1,NFASC,SIRPA	switch_reference_to_mane	5	5-8	Removed from reference_overrides.tsv; MANE Select favored on PeptideAtlas / canonical evidence; need tag placement + ColabFold refold on new MANE protein
+tag_fix_modal	AREG (l1-p0135)	refold_juxtamembrane_stalk	0	2	Refold @193 and @194 downstream of ADAM17 K187|T188 (replaces v8 @54 inside cleaved propeptide 20-100); fallback @123 already passes
+tag_fix_modal	TMEM222 (l1-p2190)	refold_nterm_type3	0	1	Move off C-term R208 (cytoplasmic) to N-term residue 1 on 55-aa extracellular N-tail
+isoform_redraw	isoform_gate_2026_11_23.tsv	redraw_150_panel_relaxed_nonfrag	0	~20-24	Relaxed N-term/TM1 + short-fragment guard (1,749/1,899 pass); 100% of cohort already has DeepTMHMM v1; newly entering non-canonical isoforms need ColabFold refold on Modal
+drop_proteomics_6	CBARP,FAM234B,LNPEP,PRRT3,SLC22A23,TMEM94	drop_6_genes	0	0	Replaced by refined 2026-11-23-abundance-v8 surface-proteomics gap set (PR #455, 01335bc); removes glyco-only organellar leaks (FAM234B, TMEM94) and intracellular LNPEP
+add_proteomics_4	ANO9,KLRG2,RNF150,TMEM117	add_4_genes	4	4-6	Newly qualifying L1-fitting (<=2,349 nt) outside-catalog candidates from PR #455 (01335bc): ANO9 and TMEM117 (broad+lineage), RNF150 and KLRG2 (lineage-only, lod_biotin>0, >=2 biotin pubs); 12 other PR #455 L1-fitting genes are already built

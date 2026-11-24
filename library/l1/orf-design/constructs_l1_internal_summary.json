@@ -1,0 +1,104 @@
+{
+  "tranche": "l1",
+  "rung": "internal",
+  "members_on_rung": 605,
+  "members_with_an_arm": 594,
+  "arms": 1090,
+  "arm_decisions": "l1_internal_arm_decisions.tsv",
+  "members_by_arm_count": {
+    "1": 217,
+    "2": 258,
+    "3": 119
+  },
+  "arms_by_decision": {
+    "hold_no_passing_arm": 5,
+    "internal_loop": 1043,
+    "internal_loop_orientation_unconfirmed": 3,
+    "snorkel": 39
+  },
+  "arms_by_confidence": {
+    "": 1090
+  },
+  "arms_by_refold_verdict": {
+    "fail": 78,
+    "pass": 1012
+  },
+  "decided_no_arm_here": [
+    {
+      "design_id": "l1-p0567",
+      "gene_symbol": "ENTPD2",
+      "decision": "hold_no_passing_arm",
+      "reason": "refold moved it: the site after 34 fails (7 epitope residues confidently packed on the native domain); v5 rank 2 after 458 passes; v8 (2026-11-22): every built loop site failed refold mechanistically (epitope packed on the native domain); a snorkel cannot be the only construct: held"
+    },
+    {
+      "design_id": "l1-p1321",
+      "gene_symbol": "NRG2",
+      "decision": "snorkel",
+      "reason": "SignalP 6 calls no signal peptide on any native or Igk form (#254), so there is no N-after-SP arm; the membrane-side gate finds fewer than two confident helices, so the ranker refuses an internal site. The C-terminus is cytoplasmic on two independent signals: DeepTMHMM v1 (deeptmhmm-1.0.24) ends it 'I', and the 15 residues after the last TM carry 5 K/R (positive-inside). A snorkel (Brown et al. 2013, PMID 24023844) needs only that; the ectodomain is shed (shed_risk high, strong evidence; UniProt O14511 chain 112-404 is the released Neuregulin-2), and v5's best ectodomain site (153, pLDDT 33) lies in that chain, so its tag would leave with the shed ectodomain; the snorkel keeps the tag membrane-anchored"
+    },
+    {
+      "design_id": "l1-p1552",
+      "gene_symbol": "P2RX5",
+      "decision": "hold_no_passing_arm",
+      "reason": "2026-11-22 addition or GTF MANE Select switch (Becca, 2026-11-21/22): every v5-designed site has a ligand contact within 2 residues of the junction; no loop arm, and a snorkel is never an arm alone"
+    },
+    {
+      "design_id": "l1-p1553",
+      "gene_symbol": "P2RX6",
+      "decision": "hold_no_passing_arm",
+      "reason": "v5 rank-1 eligible junction under membrane-side mask r4; v8 (2026-11-22): every built loop site failed refold mechanistically (epitope packed on the native domain); a snorkel cannot be the only construct: held"
+    },
+    {
+      "design_id": "l1-p1567",
+      "gene_symbol": "PANX1",
+      "decision": "hold_no_passing_arm",
+      "reason": "the snorkel arm fails refold (native-region lDDT 0.843 < 0.85), and no internal site is left: every designed internal site fails refold (after 92: native-region lDDT 0.835 < 0.85; lDDT within 15 of the site 0.656 < 0.7; 8 epitope residues confidently packed on the native domain; alternatives: 241, 62), so a snorkel (Brown et al. 2013, PMID 24023844) displays the tag without opening a loop; v1 C-terminus 'I', 2 K/R after the last TM, face confirmed by the membrane-side gate (r8 usable). Held with no arm"
+    },
+    {
+      "design_id": "l1-p2171",
+      "gene_symbol": "TMEM134",
+      "decision": "hold_no_passing_arm",
+      "reason": "2026-11-22 addition or GTF MANE Select switch (Becca, 2026-11-21/22): v5 rank-1 site in the extracellular span 145-154, scored without the r8 mask (no row for this sequence; the span is DeepTMHMM v1's extracellular residues); features on the AlphaFold DB v6 model of Q9H6X4, identical to the designed protein; best region ceiling 0.670 against published regions (median 0.6951, q25 0.5574) -> 1 site(s) by the order rule; replaces the decision made on its earlier protein (sequence_sha256 1978cedda6cf), whose reference moved; its only designed site failed refold mechanistically: held"
+    },
+    {
+      "design_id": "l1-p2178",
+      "gene_symbol": "TMEM169",
+      "decision": "hold_no_passing_arm",
+      "reason": "the snorkel arm fails refold (native-region lDDT 0.828 < 0.85), and no internal site is left: v1 extracellular exposure 2 residues and the gate rejects all of it; a snorkel tag (TM + tag on the cytoplasmic C-terminus, Brown et al. 2013, PMID 24023844) is built for multipass proteins with small loops. Held with no arm"
+    },
+    {
+      "design_id": "l1-p2180",
+      "gene_symbol": "TMEM174",
+      "decision": "hold_no_passing_arm",
+      "reason": "the snorkel arm fails refold (lDDT within 15 of the site 0.685 < 0.7), and no internal site is left: v1 extracellular exposure 12 residues and the gate rejects all of it; a snorkel tag (TM + tag on the cytoplasmic C-terminus, Brown et al. 2013, PMID 24023844) is built for multipass proteins with small loops. Held with no arm"
+    },
+    {
+      "design_id": "l1-p2193",
+      "gene_symbol": "TMEM238",
+      "decision": "snorkel",
+      "reason": "every designed internal site fails refold (after 62: confident 11-residue helix inside the cassette (not ALFA); alternatives: none designed), so a snorkel (Brown et al. 2013, PMID 24023844) displays the tag without opening a loop; v1 C-terminus 'I', 2 K/R after the last TM, face confirmed by the membrane-side gate (r8 usable)"
+    },
+    {
+      "design_id": "l1-p2987",
+      "gene_symbol": "ENTPD2",
+      "decision": "hold_no_passing_arm",
+      "reason": "refold moved it: the site after 33 fails (7 epitope residues confidently packed on the native domain); v5 rank 2 after 458 passes; held 2026-11-22 with its human member l1-p0567 (ENTPD2), whose v8 sites failed refold mechanistically"
+    },
+    {
+      "design_id": "l1-p3277",
+      "gene_symbol": "SLC22A9",
+      "decision": "hold_no_passing_arm",
+      "reason": "2026-11-22 addition or GTF MANE Select switch (Becca, 2026-11-21/22): v5 rank-1 site in the extracellular span 38-494, scored without the r8 mask (no row for this sequence; the span is DeepTMHMM v1's extracellular residues); features on our ColabFold model of the designed protein (processed://sprint4/s4e9-orf-design-fg-panel/predicted-structures/tagged/2026-11-22-natives/native.040125b14638.pdb); best region ceiling 0.763 against published regions (median 0.6951, q25 0.5574) -> 1 site(s) by the order rule; its only designed site failed refold mechanistically: held"
+    }
+  ],
+  "held_at_build": [],
+  "no_site": [],
+  "type_iis": "every insert: 2 Esp3I (wrapper), 0 BbsI, 0 BsaI; in p0039: backbone's 4 + 2",
+  "insert_nt_range": [
+    770,
+    5177
+  ],
+  "cassette": "p003 tandem, this arm's own linker encoding (l1_arm_cassette_encodings.tsv)",
+  "constructs_key": "sprint4/s4e9-orf-design-fg-panel/library-candidates/2026-11-23-pre-freeze/candidate_constructs.json",
+  "barcode": "20-N placeholder; barcodes not reserved (issue #1)"
+}

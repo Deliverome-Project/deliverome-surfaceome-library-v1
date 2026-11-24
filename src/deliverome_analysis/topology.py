@@ -56,9 +56,28 @@ import pandas as pd
 # (s4e9 ortholog_start_trims.tsv; publish_topology_supplement.py, run files under
 # processed://sprint4/s4e9-orf-design-fg-panel/topology-runs/2026-11-12_cyno_restarts.*).
 # 71,700 rows; every 2026-11-06 row is preserved. Bumped by l1-reviewer-package, PR #283.
-SNAPSHOT_KEY = "accessible-surfaceome/topology/2026-11-12-cyno-restarts/topology.parquet"
+# 2026-11-21: plus 2 v1 rows (topo_2026_11_21_coreceptor_additions, library_designed_orf) for the
+# designed proteins of HLA-DQA1 and HLA-DQB1, two of the co-receptor additions (Becca,
+# 2026-11-21); run files under processed://sprint4/s4e9-orf-design-fg-panel/topology-runs/
+# 2026-11-21_coreceptor_additions.*. 71,702 rows; every earlier row is preserved.
+# 2026-11-22: plus 4 v1 rows (topo_2026_11_22_round2_additions, library_designed_orf) for the
+# designed proteins of TMEM94 (a surface-proteomics addition) and the allele restorations of
+# FCGR2C, OR4Q2 and OR52P1 (Becca, 2026-11-22); run files under the same prefix,
+# 2026-11-22_round2_additions.*. 71,706 rows; every earlier row is preserved.
+# 2026-11-22: plus 40 existing v1 rows copied unchanged from the isoform gate's snapshot under
+# (topo_2026_11_22_isoform_redraw, human_isoforms), so every member the isoform panel redraw
+# adds has its row (s4e9 publish_isoform_redraw_topology.py). 71,746 rows; every earlier row
+# is preserved.
+# 2026-11-22: plus 5 v1 rows (topo_2026_11_22_mane_gtf, library_designed_orf) for the new
+# proteins of references switched to MANE Select read from the Ensembl 115 GTF (Becca,
+# 2026-11-22: "Yes, in this build"; s4e9 apply_mane_gtf.py). 71,751 rows; earlier rows kept.
+# 2026-11-22: plus 2 existing v1 rows copied unchanged from the isoform gate's snapshot under
+# (topo_2026_11_22_isoform_refill, human_isoforms), for the PAM and KIT forms that refill
+# isoform-panel slots left by the MANE switch (s4e9 publish_isoform_redraw_topology.py
+# --mode refill). 71,753 rows; every earlier row is preserved.
+SNAPSHOT_KEY = "accessible-surfaceome/topology/2026-11-23-pre-freeze/topology.parquet"
 #: SHA-256 of the object at :data:`SNAPSHOT_KEY`.
-SNAPSHOT_SHA256 = "c8fb5874437acd0677da76e2864aa76089ac7fa072f3defd2338f15f3890292e"
+SNAPSHOT_SHA256 = "15373cecc098699394d6c9ad816d6b31ed4a6c87567eaa4ba1e6a9958f887ee8"
 
 # 2026-11-10: the ortholog CDS-policy snapshot, adopted with that panel (s4e9
 # adopt_ortholog_cds_policy.py). It is the 2026-11-01 export (topology_public with the

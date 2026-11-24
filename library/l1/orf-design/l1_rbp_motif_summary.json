@@ -1,0 +1,149 @@
+{
+ "members": 2762,
+ "inputs": {
+  "designed_cds": "processed://sprint4/s4e9-orf-design-fg-panel/library-candidates/2026-11-23-pre-freeze/candidate_constructs.json",
+  "backbone": "processed://sprint4/s4e9-orf-design-fg-panel/p0039_EFS_IRES_puro_backbone.gb",
+  "manifest": "candidate_manifest_tranches.tsv"
+ },
+ "transcript": "EFS end -> 3' LTR R end (AATAAA + 25 nt), insert as INSERT in this script",
+ "decisions": {
+  "motif_panel": {
+   "decided_by": "Becca, 2026-11-08 (request relayed to the rbp-motif-screen session on 2026-11-10)",
+   "implemented_by": "Claude Code session rbp-motif-screen (worktree blissful-hugle-cab8fa), PR #277",
+   "reason": "PRE TGTA[ACT]ATA, CFIm25 TGTA clusters, ARE ATTTA and TTATTTA[AT][AT], CPE TTTTAT/TTTTAAT, PAS AATAAA/ATTAAA, splice donor GT[AG]AG and a simple acceptor screen, as requested; motivated by the four tiled PREs in the miR-L no-target arms"
+  },
+  "cluster_window_50nt": {
+   "decided_by": "Becca, 2026-11-08 (request relayed to the rbp-motif-screen session on 2026-11-10)",
+   "implemented_by": "Claude Code session rbp-motif-screen (worktree blissful-hugle-cab8fa), PR #277",
+   "reason": "Becca asked to flag >=2 TGTA within ~50 nt; the agent applied the same window to ATTTA"
+  },
+  "min_shared_20nt": {
+   "decided_by": "Claude Code session rbp-motif-screen, 2026-11-10; no separate sign-off, shipped in PR #277 (merged by Becca 2026-11-10)",
+   "implemented_by": "Claude Code session rbp-motif-screen (worktree blissful-hugle-cab8fa), PR #277",
+   "reason": "20 nt of identical context (motif plus flanks) separates tiled copies from chance repeats: the miR-L scramble unit is 21 nt, and two random 20-mers match at ~1e-12"
+  },
+  "acceptor_12_of_15_pyrimidines": {
+   "decided_by": "Claude Code session rbp-motif-screen, 2026-11-10; no separate sign-off, shipped in PR #277 (merged by Becca 2026-11-10)",
+   "implemented_by": "Claude Code session rbp-motif-screen (worktree blissful-hugle-cab8fa), PR #277",
+   "reason": "Becca asked for 'a simple acceptor screen'; a YAG after >=12 pyrimidines in 15 nt is a polypyrimidine-tract heuristic with no branch point, chosen to be simple and to over-call"
+  },
+  "strong_donor_MAG_GTRAGT": {
+   "decided_by": "Claude Code session rbp-motif-screen, 2026-11-10; no separate sign-off, shipped in PR #277 (merged by Becca 2026-11-10)",
+   "implemented_by": "Claude Code session rbp-motif-screen (worktree blissful-hugle-cab8fa), PR #277",
+   "reason": "a bare GT[AG]AG occurs about every 500 nt, so only near-consensus donors are flagged"
+  },
+  "ltr_pas_to_cleavage_25nt": {
+   "decided_by": "Claude Code session rbp-motif-screen, 2026-11-10; no separate sign-off, shipped in PR #277 (merged by Becca 2026-11-10)",
+   "implemented_by": "Claude Code session rbp-motif-screen (worktree blissful-hugle-cab8fa), PR #277",
+   "reason": "the transcript ends at the HIV-1 R/U5 boundary, AATAAA + GCTTGCCTTGAGTGCTTCA, read off the p0039 3' LTR sequence"
+  },
+  "block_only_designed_sequence": {
+   "decided_by": "Claude Code session rbp-motif-screen, 2026-11-10; no separate sign-off, shipped in PR #277 (merged by Becca 2026-11-10)",
+   "implemented_by": "Claude Code session rbp-motif-screen (worktree blissful-hugle-cab8fa), PR #277",
+   "reason": "natural CDSs and backbone elements (IRES2, WPRE, LTR) carry motifs that a gate cannot act on; Becca's request already separated ORF-intrinsic from shared-element hits"
+  },
+  "dropout_never_blocks": {
+   "decided_by": "Claude Code session rbp-motif-screen, 2026-11-10; no separate sign-off, shipped in PR #277 (merged by Becca 2026-11-10)",
+   "implemented_by": "Claude Code session rbp-motif-screen (worktree blissful-hugle-cab8fa), PR #277",
+   "reason": "the p0039 stuffer is cut out during cloning and never reaches a finished construct"
+  },
+  "split_shared_junction_orf": {
+   "decided_by": "Becca, 2026-11-08 (request relayed to the rbp-motif-screen session on 2026-11-10)",
+   "implemented_by": "Claude Code session rbp-motif-screen (worktree blissful-hugle-cab8fa), PR #277",
+   "reason": "natural CDSs carry some motifs, so shared-element hits are reported apart from ORF-intrinsic ones; the junction class (hits spanning the ORF boundary) was added by the agent because those are designed sequence"
+  },
+  "barcode_masked_pool_scanned_separately": {
+   "decided_by": "Claude Code session rbp-motif-screen, 2026-11-10; no separate sign-off, shipped in PR #277 (merged by Becca 2026-11-10)",
+   "implemented_by": "Claude Code session rbp-motif-screen (worktree blissful-hugle-cab8fa), PR #277",
+   "reason": "L1 members have no barcodes yet, so the slot is masked and the s1e2 pool is scanned in a 18-nt handle/RT context on its own"
+  }
+ },
+ "shared": {
+  "positions_in_every_member": 11,
+  "by_motif": {
+   "splice_donor": 2,
+   "CFIm_TGTA": 7,
+   "splice_acceptor": 1,
+   "PAS_AATAAA": 1
+  },
+  "flagged_in_designed_sequence": [],
+  "positions_in_some_members_only": 0
+ },
+ "junction": {
+  "members_with_junction_hit": 53,
+  "members_with_flagged_junction_hit": 53
+ },
+ "orf_intrinsic": {
+  "hits_by_motif": {
+   "PRE": 96,
+   "CFIm_TGTA": 11120,
+   "ARE_pentamer": 2813,
+   "ARE_nonamer": 50,
+   "CPE_TTTTAT": 1163,
+   "CPE_TTTTAAT": 215,
+   "PAS_AATAAA": 816,
+   "PAS_ATTAAA": 685,
+   "splice_donor": 5183,
+   "splice_acceptor": 4757
+  },
+  "members_with_motif": {
+   "PRE": 95,
+   "CFIm_TGTA": 2488,
+   "ARE_pentamer": 1247,
+   "ARE_nonamer": 50,
+   "CPE_TTTTAT": 762,
+   "CPE_TTTTAAT": 189,
+   "PAS_AATAAA": 567,
+   "PAS_ATTAAA": 504,
+   "splice_donor": 2068,
+   "splice_acceptor": 2086
+  },
+  "members_with_PRE_ge2": 1,
+  "members_with_tiled_flagged_motif": 11
+ },
+ "cassettes": {
+  "encodings": 489,
+  "with_flagged_hit": 0,
+  "hits_by_motif": {
+   "PRE": 0,
+   "CFIm_TGTA": 0,
+   "ARE_pentamer": 0,
+   "ARE_nonamer": 0,
+   "CPE_TTTTAT": 0,
+   "CPE_TTTTAAT": 0,
+   "PAS_AATAAA": 0,
+   "PAS_ATTAAA": 0,
+   "splice_donor": 0,
+   "splice_acceptor": 0
+  }
+ },
+ "barcode_pool": {
+  "pool": "processed://sprint1/s1e2-fragmid-vector-design/barcodes_20nt_30k.tsv",
+  "barcodes": 28506,
+  "context": "5' handle[-18:] + barcode + gap+RT[:18]",
+  "barcodes_with_motif": {
+   "PRE": 0,
+   "CFIm_TGTA": 1409,
+   "ARE_pentamer": 0,
+   "ARE_nonamer": 0,
+   "CPE_TTTTAT": 0,
+   "CPE_TTTTAAT": 0,
+   "PAS_AATAAA": 0,
+   "PAS_ATTAAA": 0,
+   "splice_donor": 272,
+   "splice_acceptor": 874
+  },
+  "barcodes_with_flagged_motif": {
+   "PRE": 0,
+   "CFIm_TGTA": 19,
+   "ARE_pentamer": 0,
+   "ARE_nonamer": 0,
+   "CPE_TTTTAT": 0,
+   "CPE_TTTTAAT": 0,
+   "PAS_AATAAA": 0,
+   "PAS_ATTAAA": 0,
+   "splice_donor": 0,
+   "splice_acceptor": 874
+  }
+ }
+}

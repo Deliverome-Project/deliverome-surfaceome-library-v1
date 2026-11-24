@@ -1,0 +1,1049 @@
+{
+ "by_group_note": {
+  "igk_disagree:interval": 46,
+  "ortholog:no": 73,
+  "igk_disagree:no": 2,
+  "ortholog:placeable": 41,
+  "ortholog:refused_sp_disagree_deeptmhmm_v1_only": 7,
+  "ortholog:degenerate": 24
+ },
+ "notes": [
+  {
+   "candidate_id": "l1-p0037",
+   "group": "igk_disagree",
+   "note": "interval 59-109"
+  },
+  {
+   "candidate_id": "l1-p0058",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p0076",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p0097",
+   "group": "igk_disagree",
+   "note": "interval 43-279"
+  },
+  {
+   "candidate_id": "l1-p0164",
+   "group": "igk_disagree",
+   "note": "interval 60-62"
+  },
+  {
+   "candidate_id": "l1-p0170",
+   "group": "igk_disagree",
+   "note": "interval 22-75"
+  },
+  {
+   "candidate_id": "l1-p0210",
+   "group": "igk_disagree",
+   "note": "interval 45-186"
+  },
+  {
+   "candidate_id": "l1-p0218",
+   "group": "igk_disagree",
+   "note": "interval 60-71"
+  },
+  {
+   "candidate_id": "l1-p0238",
+   "group": "igk_disagree",
+   "note": "interval 37-39"
+  },
+  {
+   "candidate_id": "l1-p0239",
+   "group": "igk_disagree",
+   "note": "interval 22-24"
+  },
+  {
+   "candidate_id": "l1-p0344",
+   "group": "igk_disagree",
+   "note": "interval 38-62"
+  },
+  {
+   "candidate_id": "l1-p0345",
+   "group": "igk_disagree",
+   "note": "interval 27-46"
+  },
+  {
+   "candidate_id": "l1-p0353",
+   "group": "igk_disagree",
+   "note": "interval 21-54"
+  },
+  {
+   "candidate_id": "l1-p0444",
+   "group": "igk_disagree",
+   "note": "interval 38-41"
+  },
+  {
+   "candidate_id": "l1-p0445",
+   "group": "igk_disagree",
+   "note": "interval 60-72"
+  },
+  {
+   "candidate_id": "l1-p0455",
+   "group": "igk_disagree",
+   "note": "interval 23-96"
+  },
+  {
+   "candidate_id": "l1-p0496",
+   "group": "igk_disagree",
+   "note": "interval 17-40"
+  },
+  {
+   "candidate_id": "l1-p0504",
+   "group": "igk_disagree",
+   "note": "interval 60-71"
+  },
+  {
+   "candidate_id": "l1-p0592",
+   "group": "igk_disagree",
+   "note": "interval 24-26"
+  },
+  {
+   "candidate_id": "l1-p0597",
+   "group": "igk_disagree",
+   "note": "interval 23-202"
+  },
+  {
+   "candidate_id": "l1-p0642",
+   "group": "igk_disagree",
+   "note": "interval 51-53"
+  },
+  {
+   "candidate_id": "l1-p0646",
+   "group": "igk_disagree",
+   "note": "interval 27-32"
+  },
+  {
+   "candidate_id": "l1-p0675",
+   "group": "igk_disagree",
+   "note": "interval 35-41"
+  },
+  {
+   "candidate_id": "l1-p0681",
+   "group": "igk_disagree",
+   "note": "interval 24-65"
+  },
+  {
+   "candidate_id": "l1-p0724",
+   "group": "igk_disagree",
+   "note": "interval 66-68"
+  },
+  {
+   "candidate_id": "l1-p0744",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p0816",
+   "group": "igk_disagree",
+   "note": "no tracks"
+  },
+  {
+   "candidate_id": "l1-p0820",
+   "group": "igk_disagree",
+   "note": "interval 30-37"
+  },
+  {
+   "candidate_id": "l1-p0824",
+   "group": "igk_disagree",
+   "note": "interval 18-26"
+  },
+  {
+   "candidate_id": "l1-p0877",
+   "group": "igk_disagree",
+   "note": "interval 32-40"
+  },
+  {
+   "candidate_id": "l1-p0950",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p0975",
+   "group": "igk_disagree",
+   "note": "interval 42-45"
+  },
+  {
+   "candidate_id": "l1-p1138",
+   "group": "igk_disagree",
+   "note": "interval 38-44"
+  },
+  {
+   "candidate_id": "l1-p1160",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p1182",
+   "group": "igk_disagree",
+   "note": "interval 60-62"
+  },
+  {
+   "candidate_id": "l1-p1225",
+   "group": "igk_disagree",
+   "note": "no tracks"
+  },
+  {
+   "candidate_id": "l1-p1265",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p1266",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p1282",
+   "group": "igk_disagree",
+   "note": "interval 55-58"
+  },
+  {
+   "candidate_id": "l1-p1333",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p1541",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p1605",
+   "group": "igk_disagree",
+   "note": "interval 27-29"
+  },
+  {
+   "candidate_id": "l1-p1616",
+   "group": "igk_disagree",
+   "note": "interval 59-61"
+  },
+  {
+   "candidate_id": "l1-p1629",
+   "group": "igk_disagree",
+   "note": "interval 31-33"
+  },
+  {
+   "candidate_id": "l1-p1664",
+   "group": "igk_disagree",
+   "note": "interval 30-108"
+  },
+  {
+   "candidate_id": "l1-p1710",
+   "group": "igk_disagree",
+   "note": "interval 26-58"
+  },
+  {
+   "candidate_id": "l1-p1730",
+   "group": "igk_disagree",
+   "note": "interval 47-49"
+  },
+  {
+   "candidate_id": "l1-p1786",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p1947",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2064",
+   "group": "igk_disagree",
+   "note": "interval 26-28"
+  },
+  {
+   "candidate_id": "l1-p2065",
+   "group": "igk_disagree",
+   "note": "interval 35-37"
+  },
+  {
+   "candidate_id": "l1-p2087",
+   "group": "igk_disagree",
+   "note": "interval 47-53"
+  },
+  {
+   "candidate_id": "l1-p2162",
+   "group": "igk_disagree",
+   "note": "interval 38-61"
+  },
+  {
+   "candidate_id": "l1-p2173",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2188",
+   "group": "igk_disagree",
+   "note": "interval 30-32"
+  },
+  {
+   "candidate_id": "l1-p2224",
+   "group": "igk_disagree",
+   "note": "interval 15-130"
+  },
+  {
+   "candidate_id": "l1-p2225",
+   "group": "igk_disagree",
+   "note": "interval 53-80"
+  },
+  {
+   "candidate_id": "l1-p2311",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2313",
+   "group": "igk_disagree",
+   "note": "interval 33-57"
+  },
+  {
+   "candidate_id": "l1-p2334",
+   "group": "igk_disagree",
+   "note": "interval 21-198"
+  },
+  {
+   "candidate_id": "l1-p2358",
+   "group": "igk_disagree",
+   "note": "interval 38-45"
+  },
+  {
+   "candidate_id": "l1-p2386",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2388",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2389",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2396",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2409",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2415",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2418",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2425",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2427",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2434",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2438",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2441",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2447",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2452",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2453",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2454",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2455",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2460",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2464",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2465",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2468",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2474",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2493",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2498",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2500",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2548",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "A0A2K5VYM4"
+  },
+  {
+   "candidate_id": "l1-p2581",
+   "group": "ortholog",
+   "note": "refused_sp_disagree_deeptmhmm_v1_only",
+   "accession": "A0A2K5WSK6"
+  },
+  {
+   "candidate_id": "l1-p2592",
+   "group": "ortholog",
+   "note": "degenerate",
+   "accession": "I7G955"
+  },
+  {
+   "candidate_id": "l1-p2644",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "P10810"
+  },
+  {
+   "candidate_id": "l1-p2933",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2934",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "A0A2K5VNN2"
+  },
+  {
+   "candidate_id": "l1-p2935",
+   "group": "ortholog",
+   "note": "degenerate",
+   "accession": "A0A2K5VIE1"
+  },
+  {
+   "candidate_id": "l1-p2942",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "A0A2K5U042"
+  },
+  {
+   "candidate_id": "l1-p2944",
+   "group": "ortholog",
+   "note": "degenerate",
+   "accession": "G7PI27"
+  },
+  {
+   "candidate_id": "l1-p2945",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "A0A2K5TPM4"
+  },
+  {
+   "candidate_id": "l1-p2947",
+   "group": "ortholog",
+   "note": "degenerate",
+   "accession": "A0A2K5VWV1"
+  },
+  {
+   "candidate_id": "l1-p2948",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "A0A2K5TKX9"
+  },
+  {
+   "candidate_id": "l1-p2949",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2950",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "A0A2K5UMB3"
+  },
+  {
+   "candidate_id": "l1-p2951",
+   "group": "ortholog",
+   "note": "refused_sp_disagree_deeptmhmm_v1_only",
+   "accession": "A0A2K5X6A0"
+  },
+  {
+   "candidate_id": "l1-p2952",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "A0A2K5TXK0"
+  },
+  {
+   "candidate_id": "l1-p2955",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2956",
+   "group": "ortholog",
+   "note": "refused_sp_disagree_deeptmhmm_v1_only",
+   "accession": "A0A7N9D2U2"
+  },
+  {
+   "candidate_id": "l1-p2960",
+   "group": "ortholog",
+   "note": "degenerate",
+   "accession": "G7P4P5"
+  },
+  {
+   "candidate_id": "l1-p2961",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2967",
+   "group": "ortholog",
+   "note": "degenerate",
+   "accession": "Q9GK78"
+  },
+  {
+   "candidate_id": "l1-p2968",
+   "group": "ortholog",
+   "note": "refused_sp_disagree_deeptmhmm_v1_only",
+   "accession": "A0A7N9D585"
+  },
+  {
+   "candidate_id": "l1-p2973",
+   "group": "ortholog",
+   "note": "refused_sp_disagree_deeptmhmm_v1_only",
+   "accession": "A0A2K5X5W9"
+  },
+  {
+   "candidate_id": "l1-p2976",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "A0A2K5TZW0"
+  },
+  {
+   "candidate_id": "l1-p2978",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p2979",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "A0A2K5W8A6"
+  },
+  {
+   "candidate_id": "l1-p2980",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "A0A2K5VRW1"
+  },
+  {
+   "candidate_id": "l1-p2985",
+   "group": "ortholog",
+   "note": "degenerate",
+   "accession": "A0A2K5TSF2"
+  },
+  {
+   "candidate_id": "l1-p2988",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "G7P5K4"
+  },
+  {
+   "candidate_id": "l1-p2989",
+   "group": "ortholog",
+   "note": "degenerate",
+   "accession": "A0A7N9CQH5"
+  },
+  {
+   "candidate_id": "l1-p2990",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "A0A2K5W0D3"
+  },
+  {
+   "candidate_id": "l1-p2991",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "G7PCZ7"
+  },
+  {
+   "candidate_id": "l1-p2993",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "A0A2K5WKB9"
+  },
+  {
+   "candidate_id": "l1-p2996",
+   "group": "ortholog",
+   "note": "degenerate",
+   "accession": "A0A2K5TYI0"
+  },
+  {
+   "candidate_id": "l1-p2998",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "A0A2K5UEB4"
+  },
+  {
+   "candidate_id": "l1-p3002",
+   "group": "ortholog",
+   "note": "degenerate",
+   "accession": "A0A2K5VD65"
+  },
+  {
+   "candidate_id": "l1-p3004",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "A0A2K5X497"
+  },
+  {
+   "candidate_id": "l1-p3005",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p3006",
+   "group": "ortholog",
+   "note": "degenerate",
+   "accession": "G7P4C7"
+  },
+  {
+   "candidate_id": "l1-p3007",
+   "group": "ortholog",
+   "note": "degenerate",
+   "accession": "A0A2K5V5U7"
+  },
+  {
+   "candidate_id": "l1-p3011",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p3016",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "A0A2K5TYK2"
+  },
+  {
+   "candidate_id": "l1-p3020",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "Q6DFX2"
+  },
+  {
+   "candidate_id": "l1-p3023",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "P33146"
+  },
+  {
+   "candidate_id": "l1-p3024",
+   "group": "ortholog",
+   "note": "degenerate",
+   "accession": "Q9R0W9"
+  },
+  {
+   "candidate_id": "l1-p3028",
+   "group": "ortholog",
+   "note": "degenerate",
+   "accession": "Q80V42"
+  },
+  {
+   "candidate_id": "l1-p3029",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "Q8QZT4"
+  },
+  {
+   "candidate_id": "l1-p3030",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p3032",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "Q3UAM9"
+  },
+  {
+   "candidate_id": "l1-p3033",
+   "group": "ortholog",
+   "note": "refused_sp_disagree_deeptmhmm_v1_only",
+   "accession": "B2RXA8"
+  },
+  {
+   "candidate_id": "l1-p3034",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "Q01721"
+  },
+  {
+   "candidate_id": "l1-p3035",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "O35118"
+  },
+  {
+   "candidate_id": "l1-p3036",
+   "group": "ortholog",
+   "note": "degenerate",
+   "accession": "P13597"
+  },
+  {
+   "candidate_id": "l1-p3037",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "Q60943"
+  },
+  {
+   "candidate_id": "l1-p3038",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p3039",
+   "group": "ortholog",
+   "note": "degenerate",
+   "accession": "Q9DA16"
+  },
+  {
+   "candidate_id": "l1-p3042",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "Q8C4W3"
+  },
+  {
+   "candidate_id": "l1-p3044",
+   "group": "ortholog",
+   "note": "degenerate",
+   "accession": "Q91XZ8"
+  },
+  {
+   "candidate_id": "l1-p3047",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "Q64695"
+  },
+  {
+   "candidate_id": "l1-p3057",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "Q9R097"
+  },
+  {
+   "candidate_id": "l1-p3058",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p3059",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p3061",
+   "group": "ortholog",
+   "note": "refused_sp_disagree_deeptmhmm_v1_only",
+   "accession": "Q9D2F0"
+  },
+  {
+   "candidate_id": "l1-p3063",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "Q9D7L8"
+  },
+  {
+   "candidate_id": "l1-p3065",
+   "group": "ortholog",
+   "note": "degenerate",
+   "accession": "Q9Z109"
+  },
+  {
+   "candidate_id": "l1-p3066",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "Q3UHD1"
+  },
+  {
+   "candidate_id": "l1-p3067",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p3068",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "Q9Z1L5"
+  },
+  {
+   "candidate_id": "l1-p3070",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "Q32NY4"
+  },
+  {
+   "candidate_id": "l1-p3072",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "Q69Z26"
+  },
+  {
+   "candidate_id": "l1-p3073",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p3075",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "O89001"
+  },
+  {
+   "candidate_id": "l1-p3076",
+   "group": "ortholog",
+   "note": "degenerate",
+   "accession": "P52800"
+  },
+  {
+   "candidate_id": "l1-p3077",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "Q03145"
+  },
+  {
+   "candidate_id": "l1-p3079",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "Q9R087"
+  },
+  {
+   "candidate_id": "l1-p3083",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "Q8HW98"
+  },
+  {
+   "candidate_id": "l1-p3084",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p3085",
+   "group": "ortholog",
+   "note": "degenerate",
+   "accession": "Q99KW9"
+  },
+  {
+   "candidate_id": "l1-p3086",
+   "group": "ortholog",
+   "note": "degenerate",
+   "accession": "Q62470"
+  },
+  {
+   "candidate_id": "l1-p3090",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p3091",
+   "group": "ortholog",
+   "note": "degenerate",
+   "accession": "Q9Z0W1"
+  },
+  {
+   "candidate_id": "l1-p3092",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "A2AGI2"
+  },
+  {
+   "candidate_id": "l1-p3094",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p3095",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "Q8R4G0"
+  },
+  {
+   "candidate_id": "l1-p3097",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p3099",
+   "group": "ortholog",
+   "note": "degenerate",
+   "accession": "Q2EY15"
+  },
+  {
+   "candidate_id": "l1-p3102",
+   "group": "ortholog",
+   "note": "degenerate",
+   "accession": "Q99PI8"
+  },
+  {
+   "candidate_id": "l1-p3104",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "Q6P5F6"
+  },
+  {
+   "candidate_id": "l1-p3108",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p3110",
+   "group": "ortholog",
+   "note": "placeable",
+   "accession": "Q6IEE6"
+  },
+  {
+   "candidate_id": "l1-p3211",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p3215",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p3218",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p3219",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p3220",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p3221",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p3230",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p3241",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p3255",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p3259",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p3264",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p3296",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p3297",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p3298",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p3299",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p3324",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  },
+  {
+   "candidate_id": "l1-p3325",
+   "group": "ortholog",
+   "note": "no ortholog row"
+  }
+ ]
+}

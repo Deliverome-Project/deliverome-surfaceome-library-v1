@@ -1,0 +1,60 @@
+# L1 design review: what is still open before the order
+
+The [design brief](BRIEF.md) is the design. This note tracks only what remains open before
+sending the order to synthesis, what was completed in the `2026-11-23-pre-freeze` rebuild, and the
+known risks we are carrying knowingly.
+
+Status is as of **2026-11-24**, against the order of record
+(`l1_order_inserts_recoded.fasta`, cut **`2026-11-23-pre-freeze`**, SHA-256 `8796cc87…`, built
+from commit `e3336caf`): **2,417** genes, **2,762** active CDSs, **2,743** built CDSs (**19**
+held), **3,384** ordered constructs across **36** 96-well plates, **3,384 / 3,384 (100%)**
+ColabFold-refolded (`3,181` pass, `203` flagged with recorded dispositions, `0` pending) and
+**3,384 / 3,384** passing plasmid QC. Every count is measured by
+[`brief_numbers.py`](brief_numbers.py).
+
+## Completed in the `2026-11-23-pre-freeze` rebuild
+
+Every decision locked in on 2026-11-23 is now **built, refolded, verified, and cut** into
+`2026-11-23-pre-freeze` (no Modal compute or membership items remain queued):
+
+| Area | Resolution built into `2026-11-23-pre-freeze` |
+|---|---|
+| **Gene list (`2,417` genes)** | Adopted `2026-11-23-abundance-v8` surface-proteomics tranche of 16 L1-fitting genes (`+ANO9, KLRG2, RNF150, TMEM117`; `-CBARP, FAM234B, LNPEP, PRRT3, SLC22A23, TMEM94`); dropped all 8 MHC class II chains (`HLA-DPB1, DQA1, DQB1, DRA, DRB1/3/4/5`), eliminating the 208-nt `HLA-DRB1/DRB3` swap pair. |
+| **Segregating human LoF alleles** | Built high-confidence/0-diff `OR4Q2` (patch), `FCGR2C`, `OR10AC1`, `OR8J2`, and `SIGLEC16`; dropped lower-confidence `OR52P1` (5 unphased residue diffs). |
+| **14 GTF-MANE vs. APPRIS genes** | Switched 5 to MANE (`APP, GRIN1, KCNMA1, NFASC, SIRPA`); kept 9 on APPRIS on PeptideAtlas support (`ADGRG6, ATP1A3, CSPG5, DPP10, DPP6, KCNQ2, ROBO2, SLC12A3, SLC4A7`). |
+| **Isoform panel redraw (`150` forms)** | Relaxed reference N-term-side & TM1 matching in [`gate_isoform_cohort.py`](../gate_isoform_cohort.py) with short-fragment guard (`1,749/1,899` pass); redrawn across all 6 strata with fresh DeepTMHMM v1 & ColabFold structures. |
+| **Literature ligand-contact screen (`556/556` internal genes)** | Finished the final 52 internal genes (100% coverage). Caught 4 hard vetoes (`SLC1A3 @156`, `STEAP4 @234`, `XKR8 @40` dropped; `SLC6A2 @197 → @195` swapped to 0-clash PASS) and flagged 7 soft/partner hits. |
+| **25 steric-clash & propeptide upgrades** | Applied 21 zero-GPU internal upgrades (incl. `BACE1 @44 → @56`, `SCNN1A @168`, `PTCH1 @301`, `SLC4A7 @777`, `FCAMR @296`, `OTOP2 @215`, `SLCO2A1 @437`, `SLC46A2 @436`) + 4 Modal ColabFold swaps (`AREG @54 → @193` post-ADAM17 stalk, `FZD1 @243 → @588`, `OTOP3 @251 → @244`, `SLC6A20 @532 → @536`). |
+| **Topology & GPI resolutions** | Primary literature settled all 4 GPI conflicts (`CFC1, CRIPTO, RAET1G` dual TM+GPI, `GML`) and the 4 UniProt-discordant C-term genes (`LYSMD3, LYSMD4, SLC24A1` kept C-term; `TMEM222` reference moved to multipass residue 1). |
+| **N-after-SP borderline rule retired** | Retired N-term-only `lddt_borderline_counted_as_pass` (`LDDT_MARGIN = 0.0`): `SNORC, SMO, SLITRK2` shifted to PASS sites, `CD300LB` rescued by Igκ PASS, `CIST1` & `FOLR1` built and flagged uniformly; bonus rescue `IL12RB1` cyno PASS. |
+| **High & Not Accepted–only synthesis recoding** | All `3,160` Low and Medium inserts stay untouched native codons; only `207` High/Not-Accepted inserts (`810` codons, −86% vs. recoding Medium) are minimally recoded, leaving **`0` Not Accepted** and **`24` High** (protected native SP codons). |
+| **Structure models & metadata** | Folded 24 missing natives + 61 tagged constructs on Modal (`2,762/2,762` active CDSs have native models; `3,384/3,384` constructs folded); added `design_id` to [`l1_rbp_motif_cassettes.tsv`](../l1_rbp_motif_cassettes.tsv); accepted `OR9G1/OR9G9` (102 nt) and `FCGR2A/FCGR2C` (174 nt) in CI. |
+| **ISS barcode prefix standard & clean export** | Adopted **12-nt `d ≥ 3`** for future reservations in [`barcode_prefix_screen.py`](../barcode_prefix_screen.py) (+8,896 headroom; L1's 3,384 constructs satisfy 10-nt `d ≥ 3`). Clean-path export (`library/l1/*`) pushed to [Deliverome-Project/deliverome-surfaceome-library-v1](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1). |
+
+## Open before order freeze
+
+Only two scientific design questions and a small set of operational pre-order steps remain:
+
+| Item | Type | What closes it |
+|---|---|---|
+| **Promoter: EFS (current) vs. EF1a** ([brief Q1](BRIEF.md#decisions-we-would-like-reviewers-to-weigh-in-on)) | Scientific decision | Matched-MOI test of a few dim-to-moderate library ORFs in direct `IRES2–PuroR` (EFS vs. EF1a), or reviewer consensus weighing EF1a's 1.5–2.7× display gain against +967 bp titer cost and intron A splicing risk. |
+| **T7 0-nt spacer before `JT832`** ([brief Q2](BRIEF.md#decisions-we-would-like-reviewers-to-weigh-in-on)) | Scientific decision | Single-copy pilot or reviewer feedback on whether `STOP · CC · T7 · JT832` (3 nt `GGG` before `JT832`, 7 nt `GGGAGTC` before the 15-nt padlock arm) needs a short upstream spacer before freezing synthesis. |
+| **Vendor re-quote on `2026-11-23-pre-freeze`** | External send | Submit `l1_order_inserts_recoded.fasta` (`3,384` inserts; `0` Not Accepted, `24` High in protected SP codons) to Twist to confirm manufacturability and turnaround. |
+| **Concrete barcode assignment** | Freeze step | Assign 3,384 barcodes from the 3,644-barcode provisional block ([`l1_barcode_block_provisional.tsv`](../l1_barcode_block_provisional.tsv) + [`l1_barcode_block_extension_2026-11-15.tsv`](../l1_barcode_block_extension_2026-11-15.tsv)) to replace the `20-N` placeholder and release the 260 unused rows. |
+| **Plate format & 4-plasmid titer test** ([brief section 10](BRIEF.md#10-how-the-library-is-ordered)) | Wet-lab / ordering | Choose low-binding V-bottom vs. skirted PCR plates; run the 4-plasmid (`p0028, p0032, p0023, p0022`) low-MOI qPCR/ddPCR length-titer test to set `FACTOR` in [`order_plan.py`](order_plan.py) before diluting pooling plates. |
+| **3 native weak-SP cleavage calls (`TMEM81, MXRA8, IL1RAPL2`)** | Minor protein review | DeepTMHMM v1 and SignalP 6 disagree by > 5 aa; currently kept native and flagged. |
+| **7 internal constructs splitting a predicted N-glycan sequon** | Minor protein review | Flagged in internal review; kept unless reviewer feedback prefers a shift. |
+| **Licensing check on private S3 storage for DTU binaries** | Operations | Confirm whether licensed DeepTMHMM 1.0.24 / SignalP 6.0+h packages may be archived in private S3 alongside their recorded hashes. |
+
+## Known risks carried knowingly
+
+| Risk | Mitigation or empirical check |
+|---|---|
+| **Local synthesis rules approximate Twist's proprietary scorer** | Vendor re-quote of `l1_order_inserts_recoded.fasta` before ordering. |
+| **216 chaperone-dependent CDSs + 31 K562-negative co-receptor genes** | Retained in the main pool and flagged outside the K562 display denominator until screened in lineage-matched or factor-complemented hosts. |
+| **No within-gene Igκ vs. leaderless control on 567 multipass CDSs** | Evaluated against panel controls (`CCR5, OR51E2, CNR1`) and K562 display readout. |
+| **9 of 21 multipass taste receptors & 14 class A GPCRs fail refold** (buried SpyTag003 or packed epitope; 10-aa spacer rescued 0/12) | Kept as built and flagged ([`multipass_refold_dispositions.tsv`](../multipass_refold_dispositions.tsv)); ALFA stays exposed (`RSA 0.56–0.74`) as display readout. |
+| **Tag-site model v5 had 4 misnumbered training proteins (858 of 35,650 rows)** | All 11 affected L1 CDSs were redesigned on corrected features; full ranker retrain deferred to L2. |
+| **Two native-ORF paralog pairs share > 100 nt before the barcode** (`OR9G1/OR9G9` 102 nt, `FCGR2A/FCGR2C` 174 nt) | Accepted as known covariates (shared sequence is native 3′ ORF, never recoded); actual recombination measured by long-read ORF–barcode sequencing. |
+| **Non-assembly Type IIS enzymes** (`AarI/PaqCI` in 1,508, `BtgZI` in 1,426, `SapI` in 3,384 inserts) | Working as intended — cloning uses only `BbsI`, `Esp3I`, and `BsaI` (`0` internal sites across all 3,384 inserts). |
+| **90 AFDB payload URLs unarchived** (`tag_refold_afdb_unarchived.tsv`, incl. 27 HTTP 404 in AFDB v6) | Every active L1 CDS (`2,762/2,762`) has a verified archived AFDB or ColabFold native model; every ordered construct (`3,384/3,384`) has its own ColabFold tagged fold. |

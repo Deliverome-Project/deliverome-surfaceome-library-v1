@@ -444,7 +444,7 @@ _REPO_ROOT = Path(__file__).resolve().parents[2]
 #: s1e2 experiment for historical reasons -- it was generated there and has
 #: three callers now. Relocating it to package data is a sensible follow-up;
 #: until then this mirrors the repo-root convention used by env and plotting.
-MIRNA_SEED_TSV = _REPO_ROOT / "analysis/sprint1/s1e2-fragmid-vector-design/mirna_seed_sites.tsv"
+MIRNA_SEED_TSV = _REPO_ROOT / "library/l1/vector-design/mirna_seed_sites.tsv"
 
 #: Tiers worth excluding by default. "poorly_conserved" and "unassigned" are
 #: numerous and weakly supported; screening on them rejects almost everything.

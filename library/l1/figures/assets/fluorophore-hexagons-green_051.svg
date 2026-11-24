@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 73.4 89.8">
+  <defs>
+    <style>
+      .cls-1 {
+        filter: url(#outer-glow-1);
+      }
+
+      .cls-2 {
+        fill: #61bb46;
+      }
+    </style>
+    <filter id="outer-glow-1" x="-12.07" y="-12.15" width="98" height="114" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur" stdDeviation="4"/>
+      <feFlood flood-color="#68bd45" flood-opacity="1"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="receptors">
+    <g class="cls-1">
+      <polygon class="cls-2" points="29.56 79.08 52.59 89.8 73.4 75.22 71.17 49.91 48.13 39.18 27.33 53.77 29.56 79.08"/>
+      <polygon class="cls-2" points="2.23 39.89 25.26 50.62 46.07 36.03 43.84 10.72 20.8 0 0 14.59 2.23 39.89"/>
+    </g>
+  </g>
+</svg>

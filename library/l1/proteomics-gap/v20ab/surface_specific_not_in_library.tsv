@@ -1,0 +1,61 @@
+uniprot_accession	gene_symbol	symbol_resolved	catalog_tier	n_surface_pubs	n_membrane_pubs	n_global_pubs	surface_minus_membrane	surface_minus_global	frac_surface	frac_membrane	frac_global	n_tm	has_gpi	contaminant_flag	protein_name	library
+P11717	IGF2R	True	likely	78	61	13	17	65	0.929	0.792	0.722					
+Q9UIQ6	LNPEP	True	likely	76	56	12	20	64	0.905	0.727	0.667					
+P11279	LAMP1	True	likely	74	64	17	10	57	0.881	0.831	0.944					
+Q92542	NCSTN	True	canonical	71	59	12	12	59	0.845	0.766	0.667					
+Q92896	GLG1	True	likely	70	60	14	10	56	0.833	0.779	0.778					
+Q9H0X4	FAM234A	True	low	69	40	7	29	62	0.821	0.519	0.389	1	False		Protein FAM234A (Protein ITFG3)	
+P10586	PTPRF	True	canonical	68	41	7	27	61	0.81	0.532	0.389					
+Q92508	PIEZO1	True	canonical	65	43	10	22	55	0.774	0.558	0.556					
+Q16563	SYPL1	True	no	61	51	11	10	50	0.726	0.662	0.611	4	False		Synaptophysin-like protein 1 (Pantophysin)	
+Q13332	PTPRS	True	canonical	55	31	8	24	47	0.655	0.403	0.444					
+P02751	FN1	True	canonical	53	40	9	13	44	0.631	0.519	0.5					
+P10909	CLU	True	no	52	40	11	12	41	0.619	0.519	0.611	0	False		Clusterin (Aging-associated gene 4 protein) (Apolipoprotein J) (Apo-J) (Complement cytolysis inhibitor) (CLI) (Complement-associated protein SP-40,40) (Ku70-binding protein 1) (NA1/NA2) (Sulfated glycoprotein 2) (SGP-2) (Testosterone-repressed prostate message 2) (TRPM-2) [Cleaved into: Clusterin beta chain (ApoJalpha) (Complement cytolysis inhibitor a chain) (SP-40,40 beta-chain); Clusterin alpha chain (ApoJbeta) (Complement cytolysis inhibitor b chain) (SP-40,40 alpha-chain)]	
+Q8NC42	RNF149	True	no	51	29	7	22	44	0.607	0.377	0.389	1	False		E3 ubiquitin-protein ligase RNF149 (EC 2.3.2.27) (DNA polymerase-transactivated protein 2) (RING finger protein 149) (RING-type E3 ubiquitin transferase RNF149)	
+P07996	THBS1	True	canonical	51	32	8	19	43	0.607	0.416	0.444					
+O00468	AGRN	True	canonical	49	31	9	18	40	0.583	0.403	0.5					
+Q8NBJ4	GOLM1	True	low	49	38	13	11	36	0.583	0.494	0.722	1	False		Golgi membrane protein 1 (Golgi membrane protein GP73) (Golgi phosphoprotein 2)	
+Q14517	FAT1	True	canonical	48	32	7	16	41	0.571	0.416	0.389					
+Q6NSJ0	MYORG	True	not_deep_dived	47	19	8	28	39	0.56	0.247	0.444	1	False		Alpha-galactosidase MYORG (EC 3.2.1.22) (Myogenesis regulating glycosidase) (Nuclear envelope transmembrane protein 37)	
+O95477	ABCA1	True	canonical	43	23	6	20	37	0.512	0.299	0.333					
+Q96HA4	C1orf159	True	low	41	6	4	35	37	0.488	0.078	0.222	1	False		Uncharacterized protein C1orf159	
+P04004	VTN	True	no	40	28	10	12	30	0.476	0.364	0.556	0	False		Vitronectin (VN) (S-protein) (Serum-spreading factor) (V75) [Cleaved into: Vitronectin V65 subunit; Vitronectin V10 subunit; Somatomedin-B]	
+Q9HCU4	CELSR2	True	canonical	40	12	8	28	32	0.476	0.156	0.444					
+Q9P273	TENM3	True	likely	37	20	10	17	27	0.44	0.26	0.556					
+P01137	TGFB1	True	likely	36	23	7	13	29	0.429	0.299	0.389					
+Q7L0J3	SV2A	True	low	36	20	8	16	28	0.429	0.26	0.444	12	False		Synaptic vesicle glycoprotein 2A	
+Q12767	TMM94	True	not_deep_dived	35	20	4	15	31	0.417	0.26	0.222	10	False		Transmembrane protein 94 (Endoplasmic reticulum magnesium ATPase)	
+P00749	PLAU	True	canonical	34	20	4	14	30	0.405	0.26	0.222					
+Q9NYQ6	CELSR1	True	canonical	34	11	6	23	28	0.405	0.143	0.333					
+Q9NWD8	TMEM248	True	uncertain	34	17	7	17	27	0.405	0.221	0.389	4	False		Transmembrane protein 248	
+P20701	ITGAL	True	canonical	32	13	8	19	24	0.381	0.169	0.444					
+Q58EX2	SDK2	True	likely	31	12	8	19	23	0.369	0.156	0.444					
+A2RU67	F234B	True	not_deep_dived	30	16	9	14	21	0.357	0.208	0.5	1	False		Protein FAM234B	
+Q7Z5N4	SDK1	True	canonical	30	12	7	18	23	0.357	0.156	0.389					
+Q6V0I7	FAT4	True	canonical	30	15	6	15	24	0.357	0.195	0.333					
+O75096	LRP4	True	canonical	29	11	7	18	22	0.345	0.143	0.389					
+P09603	CSF1	True	low	29	5	5	24	24	0.345	0.065	0.278	1	False		Macrophage colony-stimulating factor 1 (CSF-1) (M-CSF) (MCSF) (Lanimostim) (Proteoglycan macrophage colony-stimulating factor) (PG-M-CSF) [Cleaved into: Processed macrophage colony-stimulating factor 1; Macrophage colony-stimulating factor 1 43 kDa subunit]	
+O60279	SUSD5	True	low	29	10	3	19	26	0.345	0.13	0.167	1	False		Sushi domain-containing protein 5	
+Q99985	SEMA3C	True	no	28	18	6	10	22	0.333	0.234	0.333	0	False		Semaphorin-3C (Semaphorin-E) (Sema E)	
+P41221	WNT5A	True	no	27	11	3	16	24	0.321	0.143	0.167	0	False		Protein Wnt-5a	
+P55082	MFAP3	True	no	27	11	2	16	25	0.321	0.143	0.111	1	False		Microfibril-associated glycoprotein 3	
+Q14766	LTBP1	True	no	26	15	7	11	19	0.31	0.195	0.389	0	False		Latent-transforming growth factor beta-binding protein 1 (LTBP-1) (Transforming growth factor beta-1-binding protein 1) (TGF-beta1-BP-1)	
+Q9HCM3	K1549	True	not_deep_dived	26	9	5	17	21	0.31	0.117	0.278	2	False		UPF0606 protein KIAA1549	
+Q8IZY2	ABCA7	True	canonical	26	13	7	13	19	0.31	0.169	0.389					
+P55058	PLTP	True	not_deep_dived	25	11	7	14	18	0.298	0.143	0.389	0	False		Phospholipid transfer protein (Lipid transfer protein II)	
+P23467	PTPRB	True	likely	25	14	2	11	23	0.298	0.182	0.111					
+O94813	SLIT2	True	no	25	7	3	18	22	0.298	0.091	0.167	0	False		Slit homolog 2 protein (Slit-2) [Cleaved into: Slit homolog 2 protein N-product; Slit homolog 2 protein C-product]	
+Q86XX4	FRAS1	True	low	25	10	6	15	19	0.298	0.13	0.333	1	False		Extracellular matrix organizing protein FRAS1 (Fraser syndrome 1 protein)	
+Q9BX74	TM2D1	True	low	25	5	8	20	17	0.298	0.065	0.444	2	False		TM2 domain-containing protein 1 (Amyloid-beta-binding protein) (hBBP)	
+Q5BKX6	SLC45A4	True	low	24	7	4	17	20	0.286	0.091	0.222	12	False		Polyamine-transporter SLC45A4 (Solute carrier family 45 member 4)	
+O00241	SIRPB1	True	likely	24	12	7	12	17	0.286	0.156	0.389					
+Q6N022	TENM4	True	canonical	24	12	2	12	22	0.286	0.156	0.111					
+P23468	PTPRD	True	canonical	23	12	6	11	17	0.274	0.156	0.333					
+Q9NW97	TMM51	True	not_deep_dived	23	13	2	10	21	0.274	0.169	0.111	2	False		Transmembrane protein 51	
+Q9NT68	TENM2	True	likely	23	12	5	11	18	0.274	0.156	0.278					
+Q5FWE3	PRRT3	True	low	22	4	1	18	21	0.262	0.052	0.056	7	False		Proline-rich transmembrane protein 3	
+Q9NY47	CACNA2D2	True	canonical	22	12	5	10	17	0.262	0.156	0.278					
+Q6UWP8	SBSN	True	low	21	10	2	11	19	0.25	0.13	0.111	0	False		Suprabasin	
+Q8N350	CBARP	True	low	21	10	0	11	21	0.25	0.13	0.0	1	False		Voltage-dependent calcium channel beta subunit-associated regulatory protein	
+A1A5C7	SLC22A23	True	low	20	7	0	13	20	0.238	0.091	0.0	10	False		Solute carrier family 22 member 23	
+Q6P995	FAM171B	True	low	20	6	4	14	16	0.238	0.078	0.222	1	False		Protein FAM171B	

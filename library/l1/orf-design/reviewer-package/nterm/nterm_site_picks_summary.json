@@ -1,0 +1,39 @@
+{
+ "tranche": "l1",
+ "members": 1327,
+ "status": {
+  "held_igk": 109,
+  "held_inside_fold": 365,
+  "held_moved_upstream": 55,
+  "ready": 605,
+  "refused": 193
+ },
+ "ready_offset_histogram": {
+  "1": 156,
+  "2": 114,
+  "3": 80,
+  "4": 45,
+  "5": 27,
+  "6": 20,
+  "7": 19,
+  "8": 12,
+  "9": 19,
+  "10": 15,
+  "11": 17,
+  "12": 3,
+  "13": 10,
+  "14": 9,
+  "15": 8,
+  "16": 15,
+  "17": 4,
+  "18": 7,
+  "19": 15,
+  "20": 10
+ },
+ "ready_softened_over_0_07": 99,
+ "ready_by_set": {
+  "isoform": 29,
+  "library_reference": 573,
+  "ortholog": 3
+ }
+}

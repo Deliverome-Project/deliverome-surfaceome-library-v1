@@ -68,17 +68,24 @@ LIBRARIES: tuple[str, ...] = (LIBRARY_L1, LIBRARY_L2)
 #: Then (``ortholog-start-trims``) cyno CCR5 restarted at the native Met aligned to human Met1
 #: (s4e9 ``apply_ortholog_start_trims.py``); every other entry unchanged. Then
 #: (``ortholog-start-trims-2``) cyno CHRM3, NIPAL4 and OR3A2 restarted the same way, once
-#: their DeepTMHMM v1 rows were published; the CCR5-only record stays at its key.
+#: their DeepTMHMM v1 rows were published; the CCR5-only record stays at its key. 2026-11-21
+#: (``coreceptor-additions``): the 25 genes the restated co-receptor gate admits, appended by s4e9
+#: ``add_library_genes.py`` (Becca, 2026-11-21); every earlier entry unchanged. 2026-11-22
+#: (``round2-additions``): the co-receptor gate on ARCHS4 at 10 CPM, the surface-proteomics
+#: additions and four allele restorations (Becca, 2026-11-22), appended the same way; SCNN1B
+#: is withdrawn from the gene list but keeps its entry, its member retired in the manifest.
+#: Then (``mane-gtf``): 44 references switched to MANE Select read from the Ensembl 115 GTF,
+#: which the APPRIS file had omitted, plus named PTPRM and LY6H (Becca, 2026-11-22: "Yes, in this
+#: build"; s4e9 ``apply_mane_gtf.py``); every other entry unchanged.
 CDS_KEY = (
-    "sprint4/s4e9-orf-design-fg-panel/library-candidates/"
-    "2026-11-12-ortholog-start-trims-2/candidate_cds.json"
+    "sprint4/s4e9-orf-design-fg-panel/library-candidates/2026-11-23-pre-freeze/candidate_cds.json"
 )
 
 #: Domesticated ORF per candidate (``construct``, edit counts), keyed like :data:`CDS_KEY`
 #: and versioned with it.
 CONSTRUCTS_KEY = (
     "sprint4/s4e9-orf-design-fg-panel/library-candidates/"
-    "2026-11-12-ortholog-start-trims-2/candidate_constructs.json"
+    "2026-11-23-pre-freeze/candidate_constructs.json"
 )
 
 #: The records :data:`CDS_KEY` and :data:`CONSTRUCTS_KEY` extend. They stay the published

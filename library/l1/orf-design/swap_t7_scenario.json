@@ -1,0 +1,34 @@
+{
+  "scenario": "forward T7 promoter (TAATACGACTCACTATAGGG) just 5' of the JT832 handle",
+  "order_of_record": "sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-22-v8/l1_order_inserts_recoded.fasta",
+  "order_of_record_sha256": "75025fb0a9889febaa5ebe8519743f04d0b09990ec6ac5f0f0be62fe4aaf633b",
+  "inserts": 3405,
+  "added_nt_per_insert": 20,
+  "distinct_seams": 1,
+  "splice_donor_motifs_in_seam": [],
+  "library_fraction_wrong_protein": {
+    "specific_mislabel": 0.001559667850720633,
+    "specific_chimera": 0.0021088623914715075,
+    "background_mislabel": 0.052002095943496834,
+    "background_chimera": 0.030252378512306836,
+    "total": 0.08592300469799581,
+    "not_counted_leader_swap": 0.021144457948055667
+  },
+  "wrong_protein_by_block_region": {
+    "background|chimera|native CDS": 3.506216178924377e-05,
+    "background|chimera|tag cassette": 0.030217316350517588,
+    "background|leader swap|native CDS": 1.0110094999496635e-05,
+    "background|leader swap|tag cassette": 0.020620979789485034,
+    "background|mislabel|3' tail": 0.05177265717932561,
+    "background|mislabel|native CDS": 3.7013074890246258e-06,
+    "background|mislabel|tag cassette": 0.0002257374566822166,
+    "specific|chimera|native CDS": 0.0013940544370381546,
+    "specific|chimera|tag cassette": 0.0007148079544333642,
+    "specific|leader swap|native CDS": 3.705852822604975e-06,
+    "specific|leader swap|tag cassette": 0.0005096622107485279,
+    "specific|mislabel|3' tail": 0.0011770279099293168,
+    "specific|mislabel|native CDS": 0.00036952217532737903,
+    "specific|mislabel|tag cassette": 1.311776546395395e-05
+  },
+  "model": "l1_swap_pool_model.main() unchanged, on the spliced inserts"
+}

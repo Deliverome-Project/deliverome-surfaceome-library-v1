@@ -1,0 +1,74 @@
+{
+ "members": 1329,
+ "members_on_rung": 1327,
+ "arms": {
+  "igk_swap": 231,
+  "native_site": 1091,
+  "no_nterm_arm": 5,
+  "routed_internal": 2
+ },
+ "inside_predicted_fold": {
+  "igk_swap:0": 123,
+  "igk_swap:1": 108,
+  "native_site:0": 668,
+  "native_site:1": 423,
+  "no_nterm_arm:": 5,
+  "routed_internal:": 2
+ },
+ "decided_by": {
+  "Becca Carlson, 2026-11-22 ('Yes, build them'): refold failures flag, never hold": 13,
+  "Becca, 2026-11-11 (re-prediction-gated site rule)": 512,
+  "coordinator under Becca's delegation, 2026-11-15 (weak predicted SP: native or tagged cleavage-site probability < 0.5, proposed by nterm-reviewer-package, not yet confirmed by Becca)": 46,
+  "nterm-reviewer-package (delegated by Becca 2026-11-12, \"use your best judgment\")": 678,
+  "coordinator under Becca's 2026-11-12 delegation, 2026-11-14 (second-source rule)": 59,
+  "coordinator under Becca's 2026-11-12 delegation and 2026-11-14 rescue request (multipass disposition rule)": 21
+ },
+ "routed_internal": [
+  "l1-p0163 ATRN routed_internal",
+  "l1-p1321 NRG2 routed_internal"
+ ],
+ "no_nterm_arm": [
+  "l1-p0239 CATSPERH",
+  "l1-p2188 TMEM210",
+  "l1-p2973 TMEM210",
+  "l1-p3061 TMEM210",
+  "l1-p3238 EFNA1"
+ ],
+ "calls_from_runs": [
+  "nterm_sp6_2026_11_10",
+  "nterm_sp6_2026_11_12",
+  "nterm_sp6_2026_11_12b",
+  "nterm_sp6_2026_11_12c",
+  "nterm_sp6_2026_11_12d",
+  "nterm_sp6_2026_11_12e",
+  "nterm_sp6_2026_11_12f",
+  "nterm_sp6_2026_11_14g",
+  "nterm_sp6_2026_11_14h",
+  "nterm_sp6_2026_11_14i",
+  "nterm_sp6_2026_11_14j",
+  "nterm_sp6_2026_11_15a",
+  "nterm_sp6_2026_11_21a",
+  "nterm_sp6_2026_11_21b",
+  "nterm_sp6_2026_11_22a",
+  "nterm_sp6_2026_11_22b",
+  "nterm_sp6_2026_11_22c",
+  "nterm_sp6_2026_11_22d",
+  "nterm_sp6_2026_11_22e",
+  "nterm_sp6_2026_11_22f",
+  "nterm_sp6_2026_11_22g",
+  "nterm_sp6_2026_11_22h",
+  "nterm_sp6_2026_11_23a",
+  "nterm_sp6_2026_11_23b"
+ ],
+ "refold_verdicts": {
+  "": 6,
+  "fail": 38,
+  "pass": 1285
+ },
+ "refold_requests": 0,
+ "relocated_past_propeptide": 53,
+ "refold_verdicts_sha256": "12f9887258736694c0d70e82e814ebfe973173b5d85f09e9ea81fbd580da66c5",
+ "refold_verdicts_source": "tag_refold_verdicts.tsv",
+ "hold_pending": false,
+ "uniprot_snapshot": "2026_04"
+}

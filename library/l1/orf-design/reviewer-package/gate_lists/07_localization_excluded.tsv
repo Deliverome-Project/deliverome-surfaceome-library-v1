@@ -1,0 +1,8 @@
+gene	uniprot_accession	result	surface_call_reason	library_tier	removed_after_filter
+BSND	Q8WZ55	fail	stable_complex_partner		
+DCHS2	Q6V1P9	fail	stable_complex_partner		
+FXYD1	O00168	fail	stable_complex_partner		
+KCNK15	Q9H427	fail	stable_complex_partner		
+NCSTN	Q92542	fail	stable_complex_partner		
+SGCE	O43556	fail	stable_complex_partner		
+SGCZ	Q96LD1	fail	stable_complex_partner		

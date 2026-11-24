@@ -1,0 +1,194 @@
+{
+ "rule": "ordered inserts sorted by (ordered_insert_nt, arm_id), numbered l1-i0001.., 96 per plate, column-major; members keep their design id as candidate_id",
+ "order_freeze": null,
+ "members": 2762,
+ "members_built": 2743,
+ "members_held": 19,
+ "members_by_inserts": {
+  "0": 19,
+  "1": 2344,
+  "2": 157,
+  "3": 242
+ },
+ "inserts": 3384,
+ "inserts_by_rung": {
+  "nterm": 1322,
+  "type3": 43,
+  "multipass": 568,
+  "cterm": 361,
+  "internal": 1090
+ },
+ "plates": 36,
+ "last_plate_wells": 24,
+ "ordered_insert_nt": {
+  "first": 497,
+  "last": 5450,
+  "per_plate": {
+   "1": [
+    497,
+    848
+   ],
+   "2": [
+    848,
+    947
+   ],
+   "3": [
+    947,
+    998
+   ],
+   "4": [
+    998,
+    1049
+   ],
+   "5": [
+    1049,
+    1124
+   ],
+   "6": [
+    1124,
+    1190
+   ],
+   "7": [
+    1190,
+    1265
+   ],
+   "8": [
+    1268,
+    1304
+   ],
+   "9": [
+    1304,
+    1316
+   ],
+   "10": [
+    1316,
+    1340
+   ],
+   "11": [
+    1340,
+    1379
+   ],
+   "12": [
+    1379,
+    1433
+   ],
+   "13": [
+    1433,
+    1469
+   ],
+   "14": [
+    1469,
+    1511
+   ],
+   "15": [
+    1511,
+    1580
+   ],
+   "16": [
+    1580,
+    1649
+   ],
+   "17": [
+    1649,
+    1712
+   ],
+   "18": [
+    1712,
+    1790
+   ],
+   "19": [
+    1790,
+    1835
+   ],
+   "20": [
+    1835,
+    1892
+   ],
+   "21": [
+    1892,
+    1961
+   ],
+   "22": [
+    1961,
+    2021
+   ],
+   "23": [
+    2021,
+    2120
+   ],
+   "24": [
+    2120,
+    2231
+   ],
+   "25": [
+    2231,
+    2369
+   ],
+   "26": [
+    2372,
+    2483
+   ],
+   "27": [
+    2486,
+    2630
+   ],
+   "28": [
+    2633,
+    2738
+   ],
+   "29": [
+    2738,
+    2891
+   ],
+   "30": [
+    2891,
+    3083
+   ],
+   "31": [
+    3083,
+    3245
+   ],
+   "32": [
+    3245,
+    3497
+   ],
+   "33": [
+    3503,
+    3770
+   ],
+   "34": [
+    3788,
+    4196
+   ],
+   "35": [
+    4196,
+    4880
+   ],
+   "36": [
+    4886,
+    5450
+   ]
+  }
+ },
+ "members_by_set": {
+  "library_reference": 2412,
+  "isoform": 150,
+  "ortholog": 200
+ },
+ "retired_l1_rows_keeping_design_id": 389,
+ "member_ids_per_record": {
+  "l1_tag_paths.tsv": 0,
+  "l1_cassette_encodings.tsv": 0,
+  "l1_swap_risk.tsv": 0,
+  "l1_swap_risk_summary.json": 0,
+  "l1_structure_gap.tsv": 0,
+  "proteoform_match.tsv": 0,
+  "residue_offsets.tsv": 0,
+  "library_topology_index.tsv": 0,
+  "library_structure_payload.tsv": 0,
+  "library_manifest_l1.tsv": 0,
+  "l1_internal_members.tsv": 0,
+  "l1_deeptmhmm_v1_topology_gap.tsv": 0,
+  "structure_coverage_baseline.json": 0
+ }
+}

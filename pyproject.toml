@@ -249,6 +249,15 @@ module = [
 strict = true
 
 [[tool.mypy.overrides]]
+# QC metric modules: chromatography (TIC, spray, LC), surface topology, and the pipeline
+module = [
+    "deliverome_analysis.raw_chromatography",
+    "deliverome_analysis.surface_topology",
+    "deliverome_analysis.dia_qc_pipeline",
+]
+strict = true
+
+[[tool.mypy.overrides]]
 module = [
     "pandas",
     "pandas.*",

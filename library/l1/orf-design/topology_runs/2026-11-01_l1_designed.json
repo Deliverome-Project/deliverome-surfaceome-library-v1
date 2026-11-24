@@ -1,0 +1,11 @@
+{
+ "topology_version": "topo_2026_11_01_l1_designed",
+ "snapshot": "2026-11-01",
+ "base_snapshot": "accessible-surfaceome/topology/2026-10-14r2/topology.parquet",
+ "tool": "DeepTMHMM v1 (deeptmhmm-1.0.24, Modal volume deeptmhmm-v1)",
+ "command": "modal run library/l1/proteoform-selection/modal/deeptmhmm_v1_app.py::sweep --fasta topology_runs/2026-11-01_l1_designed.fasta --out topology_runs/2026-11-01_l1_designed.3line",
+ "modal_app_run": "ap-mCYrvq2jb3oarooMuLQAwb",
+ "run_completed": "2026-11-01T23:24:57+00:00",
+ "members": ["l1-p2731", "l1-p2733", "l1-p2734"],
+ "why": "panel redraw (redraw_panels.py) added these members; none had a v1 row"
+}

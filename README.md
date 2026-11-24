@@ -1,16 +1,32 @@
-# L1 surface-protein ORF library: design review
+# Deliverome surfaceome library v1
 
-This repository holds the design of Deliverome's L1 ORF library for external review, and
-the code to rerun it. Start with the brief,
-[`BRIEF.md`](analysis/sprint4/s4e9-orf-design-fg-panel/reviewer-package/BRIEF.md). The issues
-still being worked on before the order are tracked in the
-[cover note](analysis/sprint4/s4e9-orf-design-fg-panel/reviewer-package/COVER_NOTE.md).
+The Deliverome surfaceome library v1 (L1 in the code) is a pooled, barcoded lentiviral library of
+human cell-surface proteins, each expressed from its own open reading frame (ORF) with an
+extracellular epitope tag: SpyTag003 and ALFA in one 51-amino-acid cassette. It is built to screen
+which surface proteins carry a bound binder into the cell, and how far, in one pooled experiment:
+every cell carries one construct, the tag reports display and uptake, and a 20-nucleotide barcode
+says which protein the cell expressed.
+
+This repository holds the library's design for external review, and the code and frozen inputs
+to rerun every design decision offline.
+
+## Where to start
+
+| Read | What it gives you |
+|---|---|
+| [Design brief](library/l1/orf-design/reviewer-package/BRIEF.md) | the design as one argument: which genes, which protein form of each, where the tag goes and why, the construct and vector, barcodes and readout, and the questions we would like reviewers to weigh in on (section 12) |
+| [Cover note](library/l1/orf-design/reviewer-package/COVER_NOTE.md) | what is still being worked on before the order, with links to the open issues |
+| [Library layout map](library/l1/orf-design/l1_example_AXL_ires_puro.gb) | one complete construct (AXL as the example ORF) in the library vector, EFS – ORF – IRES2 – PuroR, annotated element by element (GenBank) |
+| [Alternative layout map](library/l1/orf-design/l1_example_AXL_sv40_puro.gb) | the same insert with PuroR from its own SV40 promoter, the layout we did not use (GenBank) |
+| [Decision log](library/l1/orf-design/reviewer-package/DECISION_LOG.md) | every design decision, dated, with who made it and why |
+
+Comments are welcome as issues on this repository, or as comments on the brief.
 
 ## Rerun the design
 
 You need [uv](https://docs.astral.sh/uv/) and the frozen input bundle, attached to this
 repository's release
-[`bundle-2026-11-21b`](https://github.com/Deliverome-Project/l1-library-review/releases/tag/bundle-2026-11-21b)
+[`bundle-2026-11-21b`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/releases/tag/bundle-2026-11-21b)
 as two tarballs. `l1-reviewer-bundle-2026-11-21b.tar.gz` holds the 3,125 files the rerun reads
 (1.38 GB, SHA-256 `f34eb18f6d99beafc6607798b3bb12ffdafa54eb94e406566de453b4d43924ac`).
 `l1-pinned-releases-2026-11-21b.tar` holds the rest of every pinned release, for inspection only
@@ -18,7 +34,7 @@ as two tarballs. `l1-reviewer-bundle-2026-11-21b.tar.gz` holds the 3,125 files t
 After the download, no credentials or network access are used.
 
 **Where the data lives.** Every bundle file has one listed home in
-[`data_locations.tsv`](analysis/sprint4/s4e9-orf-design-fg-panel/reviewer-package/data_locations.tsv),
+[`data_locations.tsv`](library/l1/orf-design/reviewer-package/data_locations.tsv),
 and a test fails if any file of the bundle is missing from it:
 
 | Home | What | How to get it |
@@ -31,7 +47,7 @@ The release tarballs alone are enough to rerun everything; the public bucket and
 for reading or citing individual files without them.
 
 ```bash
-gh release download bundle-2026-11-21b --repo Deliverome-Project/l1-library-review --dir ..
+gh release download bundle-2026-11-21b --repo Deliverome-Project/deliverome-surfaceome-library-v1 --dir ..
 ```
 
 ```bash
@@ -49,7 +65,7 @@ uv sync --locked
 ```
 
 ```bash
-cd analysis/sprint4/s4e9-orf-design-fg-panel/reviewer-package
+cd library/l1/orf-design/reviewer-package
 uv run --locked python run_review.py --bundle ../../../../../l1-reviewer-bundle
 ```
 
@@ -93,9 +109,9 @@ the brief's links work unchanged.
 
 | Path | What it is |
 |---|---|
-| `analysis/sprint4/s4e9-orf-design-fg-panel/` | the library pipeline, its committed tables, and `reviewer-package/` (brief, runner, bundle tools) |
-| `analysis/sprint1/s1e3-surface-library-filters/` | the gene filter |
-| `scratch/becca/appris-principal/` | proteoform selection, panels, CDS resolution and construct assembly |
+| `library/l1/orf-design/` | the library pipeline, its committed tables, and `reviewer-package/` (brief, runner, bundle tools) |
+| `library/l1/surface-filters/` | the gene filter |
+| `library/l1/proteoform-selection/` | proteoform selection, panels, CDS resolution and construct assembly |
 | `src/deliverome_analysis/` | the shared utilities this code imports (S3 access and the offline mirror, sequence tools, topology, plotting); the rest of the lab's package, unrelated to L1, is not exported |
 | `historical/` | script versions two stages rerun as they were when their records were made |
 | `EXPORT_MANIFEST.json` | which analysis-repo commit each managed file came from, with its SHA-256 |

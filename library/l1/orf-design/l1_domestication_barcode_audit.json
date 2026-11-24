@@ -1,0 +1,105 @@
+{
+  "integration_ref": "e3336caf6b0e4c084cbfeec9e5d189015794284e",
+  "inserts": 3384,
+  "by_rung": {
+    "C-terminal/snorkel": 361,
+    "N after SP": 1322,
+    "N at residue 1, multipass": 568,
+    "N at residue 1, type III": 43,
+    "internal": 1090
+  },
+  "insert_checks_failed": {
+    "wrapper_only": [],
+    "kozak_and_start": [],
+    "single_stop_at_end": [],
+    "protein_matches_table": []
+  },
+  "extra_type_iis_reported": {
+    "SapI": 3384,
+    "AarI": 1508,
+    "BtgZI": 1426,
+    "PaqCI": 1508
+  },
+  "barcode_slots_not_one": [],
+  "native_nt_not_verbatim": {
+    "inserts_with_any": 3,
+    "by_rung": {
+      "internal": 3
+    }
+  },
+  "domestication": {
+    "members": 2762,
+    "members_edited": 2432,
+    "codons_edited": 8419,
+    "nonsynonymous": 0,
+    "edits_new_atg": 481,
+    "edits_new_splice_donor": 53,
+    "edits_new_polya": 2
+  },
+  "swap_tract_final_dna": {
+    "inserts_measured": 3384,
+    "median_nt": 50.0,
+    "max_nt": 3856,
+    "over_80": 326,
+    "over_100": 297
+  },
+  "swap_tract_same_member": {
+    "pairs": 883,
+    "members": 399,
+    "inserts_in_multi_arm_members": 1040,
+    "fraction_of_inserts": 0.3073,
+    "tract_nt_median": 320.0,
+    "tract_nt_min": 41,
+    "tract_nt_max": 3405,
+    "pairs_over_100": 615,
+    "modelled_swap_median": 0.1438,
+    "modelled_swap_max": 0.4865,
+    "modelled_swap_at_100_nt_gate": 0.0503
+  },
+  "barcodes": {
+    "block_size": 3644,
+    "block_rows": 3200,
+    "extension_rows": 444,
+    "unique": true,
+    "length_20_acgt": true,
+    "gc_min": 0.4,
+    "gc_max": 0.6,
+    "longest_homopolymer_max": 2,
+    "contains_atg": 0,
+    "hamming_min_full_20nt": 4,
+    "pairs_at_full_min": 1,
+    "levenshtein_min_over_kmer_candidates": 4,
+    "pairs_levenshtein_below_3": [],
+    "pool_claim": "s1e2 pool: min Levenshtein 3 and min Hamming 4 (s1e2 README)",
+    "hamming_min_prefix": 3,
+    "prefix_rule": "3 over the first 12 nt",
+    "pairs_at_prefix_min": 2020,
+    "screen_failures_both_flanks": {},
+    "found_in_an_insert_or_backbone": [],
+    "registry_block_rows": 3644,
+    "not_exactly_once_in_registry": [],
+    "draw_replays_identically": false,
+    "draw_replay_note": "replayed against the registry rows that precede the block, with today's local barcode tables"
+  },
+  "recoded": {
+    "recoded_fasta": "processed://sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-23-pre-freeze/l1_order_inserts_recoded.fasta",
+    "recoded_inserts": 3384,
+    "retired_members_still_in_order": 0,
+    "rebuilt_since_order_not_compared": [],
+    "not_in_original_set": 0,
+    "inserts_recoded": 207,
+    "codons_recoded": 810,
+    "problems": {
+      "new unscreened Type IIS site (AarI/PaqCI/BtgZI/SapI)": 2
+    },
+    "cterm_terminal_linker_blocks_shared": 0,
+    "swap_tract_recoded_dna": {
+      "median_nt": 50.0,
+      "max_nt": 3856,
+      "over_100": 297,
+      "inserts_whose_tract_grew": 0,
+      "largest_growth_nt": 0
+    },
+    "recoded_fasta_sha256": "8796cc8740196fbc041696809f4dc0b2b5bf02b63974a23f357fa3e4a3e0890a"
+  }
+}

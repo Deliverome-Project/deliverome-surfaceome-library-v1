@@ -1,0 +1,35 @@
+{
+  "order_of_record": "processed://sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-23-pre-freeze/l1_order_inserts_recoded.fasta",
+  "order_of_record_sha256": "8796cc8740196fbc041696809f4dc0b2b5bf02b63974a23f357fa3e4a3e0890a",
+  "refold_table": "library/l1/orf-design/tag_refold_structures.tsv at e3336caf (PR #301)",
+  "inserts": 3384,
+  "status": {
+    "ok": 3384
+  },
+  "folded_form": {
+    "precursor": 2808,
+    "mature chain": 576
+  },
+  "n_terminal_peptides_not_folded": {
+    "METDTLLLWVLLLWVPGSTG": 576
+  },
+  "by_rung": {
+    "nterm": {
+      "ok": 1322
+    },
+    "type3": {
+      "ok": 43
+    },
+    "multipass": {
+      "ok": 568
+    },
+    "cterm": {
+      "ok": 361
+    },
+    "internal": {
+      "ok": 1090
+    }
+  },
+  "decided_by": "coordinator under Becca's 2026-11-12 overnight delegation",
+  "implemented_by": "Claude Code session l1-reviewer-package, 2026-11-13"
+}

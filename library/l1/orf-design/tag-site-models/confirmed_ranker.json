@@ -1,0 +1,43 @@
+{
+  "inputs": {
+    "v5_training_table.tsv": "e7d948688cf47f1cbf1ad3a6ff39a4e256f1822a6091c9b3174122568e10d23c",
+    "all_extracellular_targets.tsv": "d3dcdac545b1bfe322df2965f5510c45c68eee780fb4b8c08628ea21462ffefe",
+    "l1_member_extracellular.tsv": "376461da576005b72d6bf672547282a109fbced17ca4ce3ac55903e24dea84e4",
+    "gold_standard.tsv": "fb5130d59e36c863fa171fa21c3be6a9e2cee71f5ab4be1b593f2f274c5ae14c",
+    "region_labels.tsv": "a0e7e1e98ba90438d024b7cf2be0064ab374f3a6dbf788bb02bf30ab280ae77d",
+    "audit.tsv": "2e08d4f36f5b10581f4967cc0c7e6fc70f7fa40b2ef6c4c0c68653d09b889b40",
+    "l1_internal_decisions.tsv": "56a6046f82d8f673080391dab4326c56c993b1fa0b825e6c6663779414dbc477"
+  },
+  "confirmed_frame": {
+    "rows": 32922,
+    "confirmed_sites": 149,
+    "proteins": 108,
+    "hard_negatives": 2014
+  },
+  "scored": {
+    "sites": 149,
+    "proteins": 108
+  },
+  "l1_agreement": {
+    "cds": 492,
+    "decided_site_within10_of_top3": 482,
+    "decided_site_is_top3": 218,
+    "median_spearman_vs_176_ranker": 0.9624
+  },
+  "outputs": {
+    "heldout": "library/l1/orf-design/tag-site-models/confirmed_ranker_heldout.tsv",
+    "per_protein": "library/l1/orf-design/tag-site-models/confirmed_ranker_per_protein.tsv",
+    "by_class": "library/l1/orf-design/tag-site-models/confirmed_ranker_by_class.tsv",
+    "training_by_class": "library/l1/orf-design/tag-site-models/confirmed_ranker_training_by_class.tsv",
+    "feature_blocks": "library/l1/orf-design/tag-site-models/confirmed_ranker_feature_blocks.tsv",
+    "paired": "library/l1/orf-design/tag-site-models/confirmed_ranker_paired.tsv",
+    "vs_176": "library/l1/orf-design/tag-site-models/confirmed_ranker_vs_176.tsv",
+    "l1_agreement": "library/l1/orf-design/tag-site-models/confirmed_ranker_l1_agreement.tsv"
+  },
+  "figures": [
+    "library/l1/orf-design/reviewer-package/figures/tag_site_ranker_top3.png",
+    "library/l1/orf-design/reviewer-package/figures/tag_site_ranker_by_class.png",
+    "library/l1/orf-design/reviewer-package/figures/tag_site_ranker_feature_blocks.png"
+  ],
+  "s3": "processed://sprint4/s4e9-orf-design-fg-panel/tag-site-models/confirmed-ranker/2026-11-22/"
+}

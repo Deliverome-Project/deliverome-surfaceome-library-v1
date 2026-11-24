@@ -1,0 +1,210 @@
+{
+  "date": "2026-11-05",
+  "s3_prefix": "sprint4/s4e9-orf-design-fg-panel/library-design/ortholog-rebuild/2026-11-05/",
+  "topology_version": "topo_2026_11_05_l1_compara116",
+  "netgpi": [
+    {
+      "run_id": "legacy-netgpi_ortho_candidate_predictions-4ec2a624712c",
+      "output": "legacy-gpi/netgpi_ortho_candidate_predictions.txt",
+      "fasta": null,
+      "job_id": null,
+      "digest_ids": false
+    },
+    {
+      "run_id": "legacy-netgpi_ortholog_predictions-99a3afa54cba",
+      "output": "legacy-gpi/netgpi_ortholog_predictions.txt",
+      "fasta": null,
+      "job_id": null,
+      "digest_ids": false
+    },
+    {
+      "run_id": "legacy-netgpi_control_predictions-6ebdc212edce",
+      "output": "legacy-gpi/netgpi_control_predictions.txt",
+      "fasta": null,
+      "job_id": null,
+      "digest_ids": false
+    },
+    {
+      "run_id": "legacy-netgpi_gpi_human_predictions-2d04d12d0ccf",
+      "output": "legacy-gpi/netgpi_gpi_human_predictions.txt",
+      "fasta": null,
+      "job_id": null,
+      "digest_ids": false
+    },
+    {
+      "run_id": "l1-compara116-20261105-netgpi-0",
+      "output": "scored/netgpi_predictions.txt",
+      "fasta": "scored/pending_netgpi.fasta",
+      "job_id": "6AECE04B0002D389BA4D1082",
+      "digest_ids": true
+    },
+    {
+      "run_id": "l1-compara116-20261105-netgpi-1",
+      "output": "after-predictions/new_netgpi_predictions.txt",
+      "fasta": "after-predictions/new_netgpi.fasta",
+      "job_id": "6AECE1BD0002D4EB7B773641",
+      "digest_ids": true
+    },
+    {
+      "run_id": "l1-compara116-20261105-netgpi-2",
+      "output": "round2/new_netgpi_predictions.txt",
+      "fasta": "round2/new_netgpi.fasta",
+      "job_id": "6AECE29A0002D6E1EDCB9F5E",
+      "digest_ids": true
+    },
+    {
+      "run_id": "l1-compara116-20261105-netgpi-3",
+      "output": "round3/new_netgpi_predictions.txt",
+      "fasta": "round3/pending_netgpi.fasta",
+      "job_id": "6AECE88D0002FCAE5D2E267B",
+      "digest_ids": true
+    },
+    {
+      "run_id": "l1-compara116-20261105-netgpi-4",
+      "output": "round4/new_netgpi_predictions.txt",
+      "fasta": "round4/pending_netgpi.fasta",
+      "job_id": "6AECE8CC0002FCE537BD4DF3",
+      "digest_ids": true
+    },
+    {
+      "run_id": "l1-compara116-20261105-netgpi-5",
+      "output": "round5/new_netgpi_predictions.txt",
+      "fasta": "round5/pending_netgpi.fasta",
+      "job_id": "6AECE90A0002FD3AABB637BA",
+      "digest_ids": true
+    },
+    {
+      "run_id": "l1-compara116-20261105-netgpi-6",
+      "output": "round6/new_netgpi_predictions.txt",
+      "fasta": "round6/pending_netgpi.fasta",
+      "job_id": "6AECE9470002FDAB1CED5C1B",
+      "digest_ids": true
+    },
+    {
+      "run_id": "l1-compara116-20261105-netgpi-7",
+      "output": "round7/new_netgpi_predictions.txt",
+      "fasta": "round7/pending_netgpi.fasta",
+      "job_id": "6AECE9A10002FE6CC409C5A4",
+      "digest_ids": true
+    }
+  ],
+  "topology": [
+    {
+      "run_id": "l1-compara116-20261105-v1-0",
+      "fasta": "scored/missing_deeptmhmm_v1.fasta",
+      "output": "scored/deeptmhmm_v1.3line",
+      "modal_url": "https://modal.com/apps/becca-19646/main/ap-P9EG5mAIt8zqkYiDKk7XoL",
+      "tool_version": "deeptmhmm-1.0.24"
+    },
+    {
+      "run_id": "l1-compara116-20261105-v1-1",
+      "fasta": "after-predictions/missing_deeptmhmm_v1.fasta",
+      "output": "after-predictions/replacement_deeptmhmm_v1.3line",
+      "modal_url": "https://modal.com/apps/becca-19646/main/ap-ALgxTnYc0gZScRTL2ZjNRg",
+      "tool_version": "deeptmhmm-1.0.24"
+    },
+    {
+      "run_id": "l1-compara116-20261105-v1-2",
+      "fasta": "round2/missing_deeptmhmm_v1.fasta",
+      "output": "round2/replacement_deeptmhmm_v1.3line",
+      "modal_url": "https://modal.com/apps/becca-19646/main/ap-haEjqvWQC2xdCzNLc5T98l",
+      "tool_version": "deeptmhmm-1.0.24"
+    },
+    {
+      "run_id": "l1-compara116-20261105-v1-3",
+      "fasta": "round3/missing_deeptmhmm_v1.fasta",
+      "output": "round3/replacement_deeptmhmm_v1.3line",
+      "modal_url": "https://modal.com/apps/becca-19646/main/ap-U4EYIo2GN37VhEn5sj0EgR",
+      "tool_version": "deeptmhmm-1.0.24"
+    },
+    {
+      "run_id": "l1-compara116-20261105-v1-4",
+      "fasta": "round4/missing_deeptmhmm_v1.fasta",
+      "output": "round4/replacement_deeptmhmm_v1.3line",
+      "modal_url": "https://modal.com/apps/becca-19646/main/ap-c4yXpC6NI7zpxtTiFXFgUd",
+      "tool_version": "deeptmhmm-1.0.24"
+    },
+    {
+      "run_id": "l1-compara116-20261105-v1-5",
+      "fasta": "round5/missing_deeptmhmm_v1.fasta",
+      "output": "round5/replacement_deeptmhmm_v1.3line",
+      "modal_url": "https://modal.com/apps/becca-19646/main/ap-so4I5DGqJTOdCy9jDQ0iZV",
+      "tool_version": "deeptmhmm-1.0.24"
+    },
+    {
+      "run_id": "l1-compara116-20261105-v1-6",
+      "fasta": "round6/missing_deeptmhmm_v1.fasta",
+      "output": "round6/replacement_deeptmhmm_v1.3line",
+      "modal_url": "https://modal.com/apps/becca-19646/main/ap-oFyW3bEDJ3XOrPls6iltpS",
+      "tool_version": "deeptmhmm-1.0.24"
+    },
+    {
+      "run_id": "l1-compara116-20261105-v1-7",
+      "fasta": "round7/missing_deeptmhmm_v1.fasta",
+      "output": "round7/replacement_deeptmhmm_v1.3line",
+      "modal_url": "https://modal.com/apps/becca-19646/main/ap-cYXVA1LmPggOZPfE6gzvqX",
+      "tool_version": "deeptmhmm-1.0.24"
+    }
+  ],
+  "curation": [
+    {
+      "path": "legacy-gpi/gpi_exclusions.tsv",
+      "kind": "curation_exclusion"
+    },
+    {
+      "path": "legacy-gpi/gpi_form_overrides.tsv",
+      "kind": "manual_form_override"
+    },
+    {
+      "path": "legacy-gpi/gpi_selected_forms.tsv",
+      "kind": "derived_selected_form"
+    },
+    {
+      "path": "legacy-gpi/gpi_supplement.tsv",
+      "kind": "literature_supplement"
+    },
+    {
+      "path": "legacy-gpi/netgpi_blind_spots.tsv",
+      "kind": "predictor_blind_spot_curation"
+    },
+    {
+      "path": "legacy-gpi/netgpi_gpi_form_calls.tsv",
+      "kind": "derived_form_call"
+    },
+    {
+      "path": "legacy-gpi/netgpi_gpi_gene_summary.tsv",
+      "kind": "derived_gene_summary"
+    },
+    {
+      "path": "legacy-gpi/netgpi_ortholog_verdicts.tsv",
+      "kind": "derived_ortholog_verdict"
+    },
+    {
+      "path": "legacy-gpi/gpi_set.tsv",
+      "kind": "derived_gene_call"
+    },
+    {
+      "path": "legacy-gpi/gpi_anchored_genes.tsv",
+      "kind": "curated_triage_snapshot"
+    }
+  ],
+  "pick_tables": [
+    "scored/ortholog_provisional_picks.tsv",
+    "after-predictions/ortholog_provisional_picks.tsv",
+    "round2/ortholog_provisional_picks.tsv",
+    "round3/ortholog_provisional_picks.tsv",
+    "round4/ortholog_provisional_picks.tsv",
+    "round5/ortholog_provisional_picks.tsv",
+    "round6/ortholog_provisional_picks.tsv",
+    "round7/ortholog_provisional_picks.tsv",
+    "round8/ortholog_provisional_picks.tsv"
+  ],
+  "gpi_decision_policy": {
+    "negative_confidence_threshold": 0.55,
+    "code": "library/l1/orf-design/build_gpi_set.py",
+    "current_human_gene_decisions": "legacy-gpi/gpi_set.tsv",
+    "manual_form_overrides": "legacy-gpi/gpi_form_overrides.tsv",
+    "conflicts_tracked_in": "https://github.com/Deliverome-Project/l1-library-review/issues/21",
+    "legacy_missing_inputs": "Original submitted sequences and job IDs are not established for archived legacy runs; retain null and unresolved_legacy rather than infer them."
+  }
+}

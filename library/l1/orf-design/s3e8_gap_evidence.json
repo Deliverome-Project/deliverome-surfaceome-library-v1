@@ -1,0 +1,1278 @@
+{
+  "A1A5B4": {
+    "catalog_db_votes": 3,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "low",
+    "catalog_n_sources": 3,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "multipass_with_exposed_loops"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "low",
+      "ecd_accessibility_class": "large",
+      "ecd_length_residues": 249,
+      "low_endogenous_expression": false,
+      "protein_length": 782,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "tissue_restricted_surface",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "mostly_intracellular",
+      "tm_helix_count": 8
+    },
+    "gap_list_symbol": "ANO9",
+    "gene_symbol": "ANO9"
+  },
+  "A4D1S0": {
+    "catalog_db_votes": 0,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "low",
+    "catalog_n_sources": 0,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "classical_surface_receptor"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "low",
+      "ecd_accessibility_class": "moderate",
+      "ecd_length_residues": 128,
+      "low_endogenous_expression": true,
+      "protein_length": 409,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "other",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "surface_dominant",
+      "tm_helix_count": 1
+    },
+    "gap_list_symbol": "KLRG2",
+    "gene_symbol": "KLRG2"
+  },
+  "O60279": {
+    "catalog_db_votes": 13,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "low",
+    "catalog_n_sources": 3,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "classical_surface_receptor"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "low",
+      "ecd_accessibility_class": "large",
+      "ecd_length_residues": 539,
+      "low_endogenous_expression": true,
+      "protein_length": 629,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "other",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "surface_dominant",
+      "tm_helix_count": 1
+    },
+    "gap_list_symbol": "SUSD5",
+    "gene_symbol": "SUSD5"
+  },
+  "O75096": {
+    "catalog_db_votes": 15,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "canonical",
+    "catalog_n_sources": 4,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "classical_surface_receptor"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "canonical",
+      "ecd_accessibility_class": "large",
+      "ecd_length_residues": 1705,
+      "low_endogenous_expression": true,
+      "protein_length": 1905,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "classical_surface_receptor",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "surface_dominant",
+      "tm_helix_count": 1
+    },
+    "gap_list_symbol": "LRP4",
+    "gene_symbol": "LRP4"
+  },
+  "O95477": {
+    "catalog_db_votes": 21,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "canonical",
+    "catalog_n_sources": 3,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "multipass_with_exposed_loops"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "canonical",
+      "ecd_accessibility_class": "large",
+      "ecd_length_residues": 1031,
+      "low_endogenous_expression": false,
+      "protein_length": 2261,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "multipass_with_exposed_loops",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "mixed",
+      "tm_helix_count": 12
+    },
+    "gap_list_symbol": "ABCA1",
+    "gene_symbol": "ABCA1"
+  },
+  "P04234": {
+    "catalog_db_votes": 4,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "likely",
+    "catalog_n_sources": 4,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "classical_surface_receptor"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "likely",
+      "ecd_accessibility_class": "moderate",
+      "ecd_length_residues": 85,
+      "low_endogenous_expression": false,
+      "protein_length": 171,
+      "requires_coreceptor_for_expression": true,
+      "surface_call_reason": "tissue_restricted_surface",
+      "surface_expression_dependency": "required",
+      "surface_specificity": "surface_dominant",
+      "tm_helix_count": 1
+    },
+    "gap_list_symbol": "CD3D",
+    "gene_symbol": "CD3D"
+  },
+  "P09603": {
+    "catalog_db_votes": 29,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "low",
+    "catalog_n_sources": 4,
+    "catalog_triage": [
+      null,
+      [
+        "contextual",
+        "dual_localization"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "low",
+      "ecd_accessibility_class": "large",
+      "ecd_length_residues": 464,
+      "low_endogenous_expression": false,
+      "protein_length": 554,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "dual_localization",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "mostly_intracellular",
+      "tm_helix_count": 1
+    },
+    "gap_list_symbol": "CSF1",
+    "gene_symbol": "CSF1"
+  },
+  "P09693": {
+    "catalog_db_votes": 5,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "canonical",
+    "catalog_n_sources": 5,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "classical_surface_receptor"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "canonical",
+      "ecd_accessibility_class": "moderate",
+      "ecd_length_residues": 95,
+      "low_endogenous_expression": false,
+      "protein_length": 182,
+      "requires_coreceptor_for_expression": true,
+      "surface_call_reason": "stable_complex_partner",
+      "surface_expression_dependency": "required",
+      "surface_specificity": "surface_dominant",
+      "tm_helix_count": 1
+    },
+    "gap_list_symbol": "CD3G",
+    "gene_symbol": "CD3G"
+  },
+  "P10586": {
+    "catalog_db_votes": 13,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "canonical",
+    "catalog_n_sources": 3,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "classical_surface_receptor"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "canonical",
+      "ecd_accessibility_class": "large",
+      "ecd_length_residues": 1231,
+      "low_endogenous_expression": false,
+      "protein_length": 1907,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "classical_surface_receptor",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "surface_dominant",
+      "tm_helix_count": 1
+    },
+    "gap_list_symbol": "PTPRF",
+    "gene_symbol": "PTPRF"
+  },
+  "P11717": {
+    "catalog_db_votes": 14,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "likely",
+    "catalog_n_sources": 3,
+    "catalog_triage": [
+      null,
+      [
+        "contextual",
+        "dual_localization"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "likely",
+      "ecd_accessibility_class": "large",
+      "ecd_length_residues": 2269,
+      "low_endogenous_expression": false,
+      "protein_length": 2491,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "dual_localization",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "mostly_intracellular",
+      "tm_helix_count": 1
+    },
+    "gap_list_symbol": "IGF2R",
+    "gene_symbol": "IGF2R"
+  },
+  "P17927": {
+    "catalog_db_votes": 5,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "canonical",
+    "catalog_n_sources": 5,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "classical_surface_receptor"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "canonical",
+      "ecd_accessibility_class": "large",
+      "ecd_length_residues": 1931,
+      "low_endogenous_expression": false,
+      "protein_length": 2039,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "classical_surface_receptor",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "surface_dominant",
+      "tm_helix_count": 1
+    },
+    "gap_list_symbol": "CR1",
+    "gene_symbol": "CR1"
+  },
+  "P20701": {
+    "catalog_db_votes": 15,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "canonical",
+    "catalog_n_sources": 4,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "classical_surface_receptor"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "canonical",
+      "ecd_accessibility_class": "large",
+      "ecd_length_residues": 1064,
+      "low_endogenous_expression": false,
+      "protein_length": 1170,
+      "requires_coreceptor_for_expression": true,
+      "surface_call_reason": "classical_surface_receptor",
+      "surface_expression_dependency": "required",
+      "surface_specificity": "surface_dominant",
+      "tm_helix_count": 1
+    },
+    "gap_list_symbol": "ITGAL",
+    "gene_symbol": "ITGAL"
+  },
+  "P23471": {
+    "catalog_db_votes": 0,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "canonical",
+    "catalog_n_sources": 0,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "classical_surface_receptor"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "canonical",
+      "ecd_accessibility_class": "large",
+      "ecd_length_residues": 1615,
+      "low_endogenous_expression": false,
+      "protein_length": 2315,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "classical_surface_receptor",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "mixed",
+      "tm_helix_count": 1
+    },
+    "gap_list_symbol": "PTPRZ2",
+    "gene_symbol": "PTPRZ2"
+  },
+  "P55082": {
+    "catalog_db_votes": 13,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "no",
+    "catalog_n_sources": 3,
+    "catalog_triage": [
+      null,
+      [
+        "contextual",
+        "stable_surface_attachment"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "no",
+      "ecd_accessibility_class": "moderate",
+      "ecd_length_residues": 127,
+      "low_endogenous_expression": true,
+      "protein_length": 362,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "secreted_only",
+      "surface_expression_dependency": "unknown",
+      "surface_specificity": "mostly_intracellular",
+      "tm_helix_count": 1
+    },
+    "gap_list_symbol": "MFAP3",
+    "gene_symbol": "MFAP3"
+  },
+  "Q13332": {
+    "catalog_db_votes": 31,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "canonical",
+    "catalog_n_sources": 5,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "classical_surface_receptor"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "canonical",
+      "ecd_accessibility_class": "large",
+      "ecd_length_residues": 1253,
+      "low_endogenous_expression": false,
+      "protein_length": 1948,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "classical_surface_receptor",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "surface_dominant",
+      "tm_helix_count": 1
+    },
+    "gap_list_symbol": "PTPRS",
+    "gene_symbol": "PTPRS"
+  },
+  "Q14517": {
+    "catalog_db_votes": 13,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "canonical",
+    "catalog_n_sources": 3,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "classical_surface_receptor"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "canonical",
+      "ecd_accessibility_class": "large",
+      "ecd_length_residues": 4159,
+      "low_endogenous_expression": false,
+      "protein_length": 4588,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "classical_surface_receptor",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "surface_dominant",
+      "tm_helix_count": 1
+    },
+    "gap_list_symbol": "FAT1",
+    "gene_symbol": "FAT1"
+  },
+  "Q14761": {
+    "catalog_db_votes": 1,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "canonical",
+    "catalog_n_sources": 1,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "classical_surface_receptor"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "canonical",
+      "ecd_accessibility_class": "minimal",
+      "ecd_length_residues": 13,
+      "low_endogenous_expression": false,
+      "protein_length": 206,
+      "requires_coreceptor_for_expression": true,
+      "surface_call_reason": "stable_complex_partner",
+      "surface_expression_dependency": "required",
+      "surface_specificity": "surface_dominant",
+      "tm_helix_count": 1
+    },
+    "gap_list_symbol": "PTPRCAP",
+    "gene_symbol": "PTPRCAP"
+  },
+  "Q5BKX6": {
+    "catalog_db_votes": 4,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "low",
+    "catalog_n_sources": 4,
+    "catalog_triage": [
+      null,
+      [
+        "no",
+        "endomembrane_resident"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "low",
+      "ecd_accessibility_class": "moderate",
+      "ecd_length_residues": 80,
+      "low_endogenous_expression": false,
+      "protein_length": 768,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "dual_localization",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "mixed",
+      "tm_helix_count": 12
+    },
+    "gap_list_symbol": "SLC45A4",
+    "gene_symbol": "SLC45A4"
+  },
+  "Q6N022": {
+    "catalog_db_votes": 5,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "canonical",
+    "catalog_n_sources": 2,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "classical_surface_receptor"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "canonical",
+      "ecd_accessibility_class": "large",
+      "ecd_length_residues": 2407,
+      "low_endogenous_expression": false,
+      "protein_length": 2769,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "classical_surface_receptor",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "surface_dominant",
+      "tm_helix_count": 1
+    },
+    "gap_list_symbol": "TENM4",
+    "gene_symbol": "TENM4"
+  },
+  "Q6NSJ0": {
+    "catalog_db_votes": 0,
+    "catalog_deep_dive": null,
+    "catalog_deep_dive_tier": null,
+    "catalog_n_sources": 0,
+    "catalog_triage": [
+      null,
+      [
+        "no",
+        "endomembrane_resident"
+      ],
+      null
+    ],
+    "deep_dive_record": null,
+    "error": "gene_not_annotated",
+    "gap_list_symbol": "MYORG",
+    "gene_symbol": "MYORG"
+  },
+  "Q6P995": {
+    "catalog_db_votes": 2,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "low",
+    "catalog_n_sources": 2,
+    "catalog_triage": [
+      null,
+      [
+        "contextual",
+        "tissue_restricted_surface"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "low",
+      "ecd_accessibility_class": "large",
+      "ecd_length_residues": 325,
+      "low_endogenous_expression": true,
+      "protein_length": 826,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "tissue_restricted_surface",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "mixed",
+      "tm_helix_count": 1
+    },
+    "gap_list_symbol": "FAM171B",
+    "gene_symbol": "FAM171B"
+  },
+  "Q6V0I7": {
+    "catalog_db_votes": 13,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "canonical",
+    "catalog_n_sources": 3,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "classical_surface_receptor"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "canonical",
+      "ecd_accessibility_class": "large",
+      "ecd_length_residues": 4464,
+      "low_endogenous_expression": false,
+      "protein_length": 4981,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "classical_surface_receptor",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "mixed",
+      "tm_helix_count": 1
+    },
+    "gap_list_symbol": "FAT4",
+    "gene_symbol": "FAT4"
+  },
+  "Q6ZVL6": {
+    "catalog_db_votes": 1,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "low",
+    "catalog_n_sources": 1,
+    "catalog_triage": [
+      null,
+      [
+        "contextual",
+        "other"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "low",
+      "ecd_accessibility_class": "large",
+      "ecd_length_residues": 1181,
+      "low_endogenous_expression": true,
+      "protein_length": 1849,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "other",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "mixed",
+      "tm_helix_count": 1
+    },
+    "gap_list_symbol": "KIAA1549L",
+    "gene_symbol": "KIAA1549L"
+  },
+  "Q7L0J3": {
+    "catalog_db_votes": 3,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "low",
+    "catalog_n_sources": 3,
+    "catalog_triage": [
+      null,
+      [
+        "no",
+        "endomembrane_resident"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "low",
+      "ecd_accessibility_class": "moderate",
+      "ecd_length_residues": 172,
+      "low_endogenous_expression": true,
+      "protein_length": 742,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "dual_localization",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "mostly_intracellular",
+      "tm_helix_count": 12
+    },
+    "gap_list_symbol": "SV2A",
+    "gene_symbol": "SV2A"
+  },
+  "Q7Z408": {
+    "catalog_db_votes": 2,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "likely",
+    "catalog_n_sources": 2,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "classical_surface_receptor"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "likely",
+      "ecd_accessibility_class": "large",
+      "ecd_length_residues": 3410,
+      "low_endogenous_expression": true,
+      "protein_length": 3487,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "tissue_restricted_surface",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "surface_dominant",
+      "tm_helix_count": 1
+    },
+    "gap_list_symbol": "CSMD2",
+    "gene_symbol": "CSMD2"
+  },
+  "Q7Z5N4": {
+    "catalog_db_votes": 13,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "canonical",
+    "catalog_n_sources": 3,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "classical_surface_receptor"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "canonical",
+      "ecd_accessibility_class": "large",
+      "ecd_length_residues": 1917,
+      "low_endogenous_expression": true,
+      "protein_length": 2213,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "classical_surface_receptor",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "surface_dominant",
+      "tm_helix_count": 2
+    },
+    "gap_list_symbol": "SDK1",
+    "gene_symbol": "SDK1"
+  },
+  "Q8NC42": {
+    "catalog_db_votes": 28,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "no",
+    "catalog_n_sources": 3,
+    "catalog_triage": [
+      null,
+      [
+        "no",
+        "endomembrane_resident"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "no",
+      "ecd_accessibility_class": "moderate",
+      "ecd_length_residues": 168,
+      "low_endogenous_expression": true,
+      "protein_length": 400,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "endomembrane_resident",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "mostly_intracellular",
+      "tm_helix_count": 1
+    },
+    "gap_list_symbol": "RNF149",
+    "gene_symbol": "RNF149"
+  },
+  "Q8TDW7": {
+    "catalog_db_votes": 4,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "likely",
+    "catalog_n_sources": 4,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "classical_surface_receptor"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "likely",
+      "ecd_accessibility_class": "large",
+      "ecd_length_residues": 4122,
+      "low_endogenous_expression": true,
+      "protein_length": 4557,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "tissue_restricted_surface",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "surface_dominant",
+      "tm_helix_count": 1
+    },
+    "gap_list_symbol": "FAT3",
+    "gene_symbol": "FAT3"
+  },
+  "Q92478": {
+    "catalog_db_votes": 1,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "canonical",
+    "catalog_n_sources": 1,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "classical_surface_receptor"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "canonical",
+      "ecd_accessibility_class": "moderate",
+      "ecd_length_residues": 120,
+      "low_endogenous_expression": true,
+      "protein_length": 149,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "cell_state_induced",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "mixed",
+      "tm_helix_count": 0
+    },
+    "gap_list_symbol": "CLEC2B",
+    "gene_symbol": "CLEC2B"
+  },
+  "Q92508": {
+    "catalog_db_votes": 3,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "canonical",
+    "catalog_n_sources": 3,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "multipass_with_exposed_loops"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "canonical",
+      "ecd_accessibility_class": "large",
+      "ecd_length_residues": 598,
+      "low_endogenous_expression": false,
+      "protein_length": 2521,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "multipass_with_exposed_loops",
+      "surface_expression_dependency": "modulatory",
+      "surface_specificity": "mixed",
+      "tm_helix_count": 38
+    },
+    "gap_list_symbol": "PIEZO1",
+    "gene_symbol": "PIEZO1"
+  },
+  "Q96HA4": {
+    "catalog_db_votes": 8,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "low",
+    "catalog_n_sources": 1,
+    "catalog_triage": [
+      null,
+      [
+        "no",
+        "endomembrane_resident"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "low",
+      "ecd_accessibility_class": "moderate",
+      "ecd_length_residues": 130,
+      "low_endogenous_expression": true,
+      "protein_length": 380,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "other",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "mostly_intracellular",
+      "tm_helix_count": 1
+    },
+    "gap_list_symbol": "C1orf159",
+    "gene_symbol": "C1orf159"
+  },
+  "Q96JQ0": {
+    "catalog_db_votes": 5,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "canonical",
+    "catalog_n_sources": 5,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "classical_surface_receptor"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "canonical",
+      "ecd_accessibility_class": "large",
+      "ecd_length_residues": 2895,
+      "low_endogenous_expression": true,
+      "protein_length": 3298,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "classical_surface_receptor",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "surface_dominant",
+      "tm_helix_count": 1
+    },
+    "gap_list_symbol": "DCHS1",
+    "gene_symbol": "DCHS1"
+  },
+  "Q9BX74": {
+    "catalog_db_votes": 9,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "low",
+    "catalog_n_sources": 2,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "multipass_with_exposed_loops"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "low",
+      "ecd_accessibility_class": "moderate",
+      "ecd_length_residues": 124,
+      "low_endogenous_expression": true,
+      "protein_length": 207,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "other",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "mixed",
+      "tm_helix_count": 2
+    },
+    "gap_list_symbol": "TM2D1",
+    "gene_symbol": "TM2D1"
+  },
+  "Q9BZA7": {
+    "catalog_db_votes": 3,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "likely",
+    "catalog_n_sources": 3,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "classical_surface_receptor"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "likely",
+      "ecd_accessibility_class": "large",
+      "ecd_length_residues": 789,
+      "low_endogenous_expression": false,
+      "protein_length": 1347,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "tissue_restricted_surface",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "mostly_intracellular",
+      "tm_helix_count": 1
+    },
+    "gap_list_symbol": "PCDH11X",
+    "gene_symbol": "PCDH11X"
+  },
+  "Q9H0C3": {
+    "catalog_db_votes": 1,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "low",
+    "catalog_n_sources": 1,
+    "catalog_triage": [
+      null,
+      [
+        "contextual",
+        "dual_localization"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "low",
+      "ecd_accessibility_class": "moderate",
+      "ecd_length_residues": 155,
+      "low_endogenous_expression": true,
+      "protein_length": 514,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "dual_localization",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "mostly_intracellular",
+      "tm_helix_count": 8
+    },
+    "gap_list_symbol": "TMEM117",
+    "gene_symbol": "TMEM117"
+  },
+  "Q9H0X4": {
+    "catalog_db_votes": 3,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "low",
+    "catalog_n_sources": 2,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "classical_surface_receptor"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "low",
+      "ecd_accessibility_class": "large",
+      "ecd_length_residues": 483,
+      "low_endogenous_expression": true,
+      "protein_length": 552,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "dual_localization",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "mostly_intracellular",
+      "tm_helix_count": 1
+    },
+    "gap_list_symbol": "FAM234A",
+    "gene_symbol": "FAM234A"
+  },
+  "Q9HCM3": {
+    "catalog_db_votes": 0,
+    "catalog_deep_dive": null,
+    "catalog_deep_dive_tier": null,
+    "catalog_n_sources": 0,
+    "catalog_triage": [
+      null,
+      [
+        "no",
+        "cytoplasmic"
+      ],
+      null
+    ],
+    "deep_dive_record": null,
+    "error": "gene_not_annotated",
+    "gap_list_symbol": "K1549",
+    "gene_symbol": "KIAA1549"
+  },
+  "Q9HCU4": {
+    "catalog_db_votes": 13,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "canonical",
+    "catalog_n_sources": 3,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "multipass_with_exposed_loops"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "canonical",
+      "ecd_accessibility_class": "large",
+      "ecd_length_residues": 2381,
+      "low_endogenous_expression": false,
+      "protein_length": 2923,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "classical_surface_receptor",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "surface_dominant",
+      "tm_helix_count": 7
+    },
+    "gap_list_symbol": "CELSR2",
+    "gene_symbol": "CELSR2"
+  },
+  "Q9NT68": {
+    "catalog_db_votes": 4,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "likely",
+    "catalog_n_sources": 4,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "classical_surface_receptor"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "likely",
+      "ecd_accessibility_class": "large",
+      "ecd_length_residues": 2378,
+      "low_endogenous_expression": false,
+      "protein_length": 2774,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "tissue_restricted_surface",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "surface_dominant",
+      "tm_helix_count": 1
+    },
+    "gap_list_symbol": "TENM2",
+    "gene_symbol": "TENM2"
+  },
+  "Q9NWD8": {
+    "catalog_db_votes": 1,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "uncertain",
+    "catalog_n_sources": 1,
+    "catalog_triage": [
+      null,
+      [
+        "contextual",
+        "dual_localization"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "uncertain",
+      "ecd_accessibility_class": "large",
+      "ecd_length_residues": 224,
+      "low_endogenous_expression": true,
+      "protein_length": 314,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "dual_localization",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "mixed",
+      "tm_helix_count": 2
+    },
+    "gap_list_symbol": "TMEM248",
+    "gene_symbol": "TMEM248"
+  },
+  "Q9NYQ6": {
+    "catalog_db_votes": 29,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "canonical",
+    "catalog_n_sources": 4,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "multipass_with_exposed_loops"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "canonical",
+      "ecd_accessibility_class": "large",
+      "ecd_length_residues": 2486,
+      "low_endogenous_expression": false,
+      "protein_length": 3014,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "multipass_with_exposed_loops",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "surface_dominant",
+      "tm_helix_count": 7
+    },
+    "gap_list_symbol": "CELSR1",
+    "gene_symbol": "CELSR1"
+  },
+  "Q9NYQ7": {
+    "catalog_db_votes": 3,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "canonical",
+    "catalog_n_sources": 3,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "multipass_with_exposed_loops"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "canonical",
+      "ecd_accessibility_class": "large",
+      "ecd_length_residues": 2545,
+      "low_endogenous_expression": true,
+      "protein_length": 3312,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "classical_surface_receptor",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "surface_dominant",
+      "tm_helix_count": 7
+    },
+    "gap_list_symbol": "CELSR3",
+    "gene_symbol": "CELSR3"
+  },
+  "Q9UIQ6": {
+    "catalog_db_votes": 13,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "likely",
+    "catalog_n_sources": 3,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "classical_surface_receptor"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "likely",
+      "ecd_accessibility_class": "large",
+      "ecd_length_residues": 894,
+      "low_endogenous_expression": false,
+      "protein_length": 1025,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "dual_localization",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "mostly_intracellular",
+      "tm_helix_count": 1
+    },
+    "gap_list_symbol": "LNPEP",
+    "gene_symbol": "LNPEP"
+  },
+  "Q9UKZ4": {
+    "catalog_db_votes": 4,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "canonical",
+    "catalog_n_sources": 4,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "classical_surface_receptor"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "canonical",
+      "ecd_accessibility_class": "large",
+      "ecd_length_residues": 2386,
+      "low_endogenous_expression": true,
+      "protein_length": 2725,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "cell_state_induced",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "mixed",
+      "tm_helix_count": 1
+    },
+    "gap_list_symbol": "TENM1",
+    "gene_symbol": "TENM1"
+  },
+  "Q9ULK6": {
+    "catalog_db_votes": 2,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "uncertain",
+    "catalog_n_sources": 2,
+    "catalog_triage": [
+      null,
+      [
+        "no",
+        "cytoplasmic"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "uncertain",
+      "ecd_accessibility_class": "moderate",
+      "ecd_length_residues": 174,
+      "low_endogenous_expression": true,
+      "protein_length": 438,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "other",
+      "surface_expression_dependency": "unknown",
+      "surface_specificity": "mostly_intracellular",
+      "tm_helix_count": 1
+    },
+    "gap_list_symbol": "RNF150",
+    "gene_symbol": "RNF150"
+  },
+  "Q9Y3P8": {
+    "catalog_db_votes": 2,
+    "catalog_deep_dive": true,
+    "catalog_deep_dive_tier": "likely",
+    "catalog_n_sources": 2,
+    "catalog_triage": [
+      null,
+      [
+        "yes",
+        "classical_surface_receptor"
+      ],
+      null
+    ],
+    "deep_dive_record": {
+      "deep_dive_tier": "likely",
+      "ecd_accessibility_class": "minimal",
+      "ecd_length_residues": 18,
+      "low_endogenous_expression": false,
+      "protein_length": 196,
+      "requires_coreceptor_for_expression": false,
+      "surface_call_reason": "tissue_restricted_surface",
+      "surface_expression_dependency": "none",
+      "surface_specificity": "surface_dominant",
+      "tm_helix_count": 1
+    },
+    "gap_list_symbol": "SIT1",
+    "gene_symbol": "SIT1"
+  },
+  "_provenance": {
+    "bench_version": "21731d746b50",
+    "broad_rule": "Membrane-anchored (TM/GPI) & z_expr_m > 2.0",
+    "catalog_n_rows": 19324,
+    "lineage_rule": "Membrane-anchored (TM/GPI) & k_s < 20 & >=35% within-lineage (min 3) & lod_lineage > 1.2 & lod_membrane > 0.3 & lod_biotin > 0 & biotin_publications >= 2",
+    "s3e8_snapshot": "2026-11-23-abundance-v8",
+    "universe_version": "cu_2026_05_12_post_silentdrop_fix"
+  }
+}

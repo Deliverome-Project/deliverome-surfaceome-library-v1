@@ -1,0 +1,48 @@
+uniprot_accession	gene_symbol	change	n_surface_pubs_old	n_surface_pubs_new	n_membrane_pubs_old	n_membrane_pubs_new	n_global_pubs_old	n_global_pubs_new	lod_membrane_old	lod_membrane_new	reason	counts_changed
+A2RU67	F234B	kept	26	26	16	16	9	9	0.674	0.759		False
+O00241	SIRPB1	kept	25	23	12	12	7	7	0.958	0.916		True
+O00468	AGRN	kept	40	38	30	30	9	9	0.553	0.561		True
+O60279	SUSD5	kept	26	24	9	9	3	3	1.336	1.299		True
+O75096	LRP4	kept	25	25	10	10	7	7	1.163	1.245		False
+O94813	SLIT2	kept	21	20	6	6	3	3	1.454	1.463		True
+O95477	ABCA1	kept	38	37	22	22	6	6	0.911	0.968		True
+P00734	F2	kept	26	25	18	18	5	5	0.526	0.55		True
+P00749	PLAU	added		26		19		4		0.541		False
+P04004	VTN	kept	38	37	27	27	10	10	0.614	0.671		True
+P04440	HLA-DPB1	dropped	21		14		7		0.531		now fails the rule	False
+P07996	THBS1	kept	43	42	31	31	8	8	0.659	0.733		True
+P09603	CSF1	kept	23	24	5	5	5	5	1.761	1.903		True
+P10586	PTPRF	kept	59	56	40	40	7	7	1.179	1.189		True
+P11717	IGF2R	kept	67	65	60	60	13	13	0.773	1.011		True
+P20701	ITGAL	kept	31	30	12	12	8	8	1.295	1.333		True
+P20702	ITGAX	dropped	20		12		4		0.645		now fails the rule	False
+P23467	PTPRB	kept	22	20	13	13	2	2	0.682	0.627		True
+P23468	PTPRD	kept	21	21	12	12	6	6	0.711	0.787		False
+P41221	WNT5A	kept	23	23	10	10	3	3	1.042	1.121		False
+P55058	PLTP	kept	23	22	10	10	7	7	1.042	1.057		True
+P55082	MFAP3	kept	23	21	11	11	2	2	0.936	0.886		True
+Q12767	TMM94	kept	29	31	19	19	4	4	0.626	0.83		True
+Q13332	PTPRS	kept	48	46	30	30	8	8	0.989	1.022		True
+Q14517	FAT1	kept	42	40	31	31	7	7	0.606	0.619		True
+Q14766	LTBP1	added		21		15		7		0.524		False
+Q58EX2	SDK2	kept	28	27	12	12	8	8	1.13	1.16		True
+Q5BKX6	SLC45A4	kept	23	22	7	7	4	4	1.423	1.438		True
+Q6N022	TENM4	kept	22	22	11	11	2	2	0.874	0.951		False
+Q6NSJ0	MYORG	kept	39	39	18	18	8	8	1.23	1.346		False
+Q6V0I7	FAT4	kept	28	27	14	14	6	6	0.95	0.98		True
+Q7L0J3	SV2A	kept	31	31	19	19	8	8	0.736	0.83		False
+Q7Z5N4	SDK1	kept	28	27	11	11	7	7	1.229	1.258		True
+Q86XX4	FRAS1	kept	20	20	10	10	6	6	0.85	0.925		False
+Q8IZY2	ABCA7	kept	22	22	12	12	7	7	0.775	0.852		False
+Q8NC42	RNF149	kept	40	39	28	28	7	7	0.663	0.727		True
+Q92508	PIEZO1	kept	58	55	42	42	10	10	0.998	1.004		True
+Q96HA4	C1orf159	kept	38	37	6	6	4	4	2.41	2.467		True
+Q9BX74	TM2D1	kept	24	23	5	5	8	8	1.822	1.84		True
+Q9H0X4	FAM234A	kept	60	57	39	39	7	7	1.31	1.326		True
+Q9HCM3	K1549	added		20		8		5		1.166		False
+Q9HCU4	CELSR2	kept	33	33	11	11	8	8	1.502	1.601		False
+Q9NWD8	TMEM248	kept	28	29	16	16	7	7	0.788	0.934		True
+Q9NY47	CACNA2D2	dropped	20		12		5		0.645		now fails the rule	False
+Q9NYQ6	CELSR1	kept	31	28	10	10	6	6	1.5	1.423		True
+Q9P273	TENM3	kept	36	32	19	19	10	10	1.002	0.886		True
+Q9UIQ6	LNPEP	kept	66	63	55	55	12	12	0.998	1.063		True
