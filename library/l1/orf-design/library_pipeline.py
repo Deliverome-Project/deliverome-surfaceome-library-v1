@@ -239,11 +239,20 @@ def additions(withdrawn: bool = False) -> list[str]:
     return [r["gene"] for r in rows if bool((r.get("withdrawn") or "").strip()) == withdrawn]
 
 
+def exclusions() -> set[str]:
+    """Genes in ``gene_list_exclusions.tsv`` (post-filter or post-freeze removals)."""
+    import csv
+
+    with EXCLUSIONS.open() as fh:
+        return {r["gene"] for r in csv.DictReader(fh, delimiter="\t")}
+
+
 def gene_list(dest: Path) -> Path:
-    """The library's gene list: the frozen 2,368 root plus the active ``gene_list_additions.tsv`` rows."""
+    """The library's gene list: frozen root minus ``gene_list_exclusions.tsv`` plus active ``gene_list_additions.tsv``."""
 
     root = stage_inputs(["library_members.json"], dest / "root")["library_members.json"]
-    genes = json.loads(root.read_text())
+    excluded = exclusions()
+    genes = [g for g in json.loads(root.read_text()) if g not in excluded]
     added = additions()
     clash = sorted(set(added) & set(genes))
     if clash:

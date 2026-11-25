@@ -12,7 +12,7 @@ in [`nterm/`](nterm/README.md).
 | Item | Notes |
 |---|---|
 | This repository, with its git history (or an exported review repo with `historical/`) | a clone, or a `git bundle` of the branch. Exported review repos ship `historical/` tarballs and `historical/git-snapshots/` so all 30 stages run with zero git history. |
-| The frozen input bundle | a folder (or tarballs) holding `s3/external/...` and `s3/processed/...`: [`bundle_manifest.tsv`](bundle_manifest.tsv) currently indexes **3,510** files (**3,245** `read_by_replay=yes`, ~2.95 GB uncompressed; plus **265** `read_by_replay=no` supplement files, ~1.94 GB uncompressed, for inspection only) |
+| The frozen input bundle | a folder (or tarballs) holding `s3/external/...` and `s3/processed/...`: [`bundle_manifest.tsv`](bundle_manifest.tsv) currently indexes **3,513** files (**3,247** `read_by_replay=yes`, ~2.98 GB uncompressed; plus **266** `read_by_replay=no` supplement files, ~1.94 GB uncompressed, for inspection only) |
 | [uv](https://docs.astral.sh/uv/) | installs the locked Python environment from `uv.lock` |
 | ~10 GB free disk, ~5 minutes | the whole run is offline |
 
@@ -101,10 +101,10 @@ or active record constant pins is missing.
 | `deliverome_curation` | 345 | 54 | internal inputs: curation calls, the compiled expression table, the vector backbone map, DeepTMHMM and NetGPI predictions, ColabFold structures, the ortholog draw inputs, and the audited S5E13 tag-site positives the brief cites |
 | `deliverome_record` | 46 | 126 | published library records: what the replay is compared with, the Compara 116 ortholog draw and its verification, and the ortholog correspondence review |
 
-Data homes in [`data_locations.tsv`](data_locations.tsv) mirror the same 3,510 files: **2,892**
+Data homes in [`data_locations.tsv`](data_locations.tsv) mirror the same 3,513 files: **2,892**
 public files on R2 (including APPRIS under CC BY-NC-ND 4.0 unmodified) + **1** upstream Pfam-A file
 at EBI (3.50 GB total), **198** small tables committed in the review repo (`data/`, 0.09 GB), and
-**419** files in the private release tarballs (1.30 GB). Reviewers receive the full bundle, all five
+**422** files in the private release tarballs (1.33 GB). Reviewers receive the full bundle, all five
 classes (Becca, 2026-11-04). A bundle can still be packed without a class
 (`bundle.py pack --exclude-class ...`); the stages that read the missing files then fail with a
 message naming the absent key.

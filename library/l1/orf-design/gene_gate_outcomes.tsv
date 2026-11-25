@@ -255,6 +255,8 @@ CATSPER3	Q86XQ3	excluded			co-receptor	pass	pass	pass	pass	fail	not_reached	not_
 CATSPER4	Q7RTX7	excluded			co-receptor	pass	pass	pass	pass	fail	not_reached	not_reached	not_reached	not_reached
 CATSPERB	Q9H7T0	excluded			co-receptor	pass	pass	pass	pass	fail	not_reached	not_reached	not_reached	not_reached
 CATSPERD	Q86XM0	excluded			co-receptor	pass	pass	pass	pass	fail	not_reached	not_reached	not_reached	not_reached
+CATSPERH	E9PQX1	excluded			co-receptor	pass	pass	pass	pass	fail	not_reached	not_reached	not_reached	not_reached
+CATSPERQ	Q2WGJ8	excluded			co-receptor	pass	pass	pass	pass	fail	not_reached	not_reached	not_reached	not_reached
 CD180	Q99467	excluded			co-receptor	pass	pass	pass	pass	fail	not_reached	not_reached	not_reached	not_reached
 CD247	P20963	excluded			co-receptor	pass	pass	pass	pass	fail	not_reached	not_reached	not_reached	not_reached
 CD300LB	A8K4G0	excluded			co-receptor	pass	pass	pass	pass	fail	not_reached	not_reached	not_reached	not_reached
@@ -424,6 +426,7 @@ POPDC2	Q9HBU9	excluded			ectodomain	pass	pass	pass	pass	pass	pass	pass	pass	fail
 PRRT1	Q99946	excluded			ectodomain	pass	pass	pass	pass	pass	pass	pass	pass	fail
 PRRT2	Q7Z6L0	excluded			ectodomain	pass	pass	pass	pass	pass	pass	pass	pass	fail
 PTPRE	P23469	excluded			ectodomain	pass	pass	pass	pass	pass	pass	pass	pass	fail
+RELL2	Q8NC24	excluded			ectodomain	pass	pass	pass	pass	pass	pass	pass	pass	fail
 RGS9BP	Q6ZS82	excluded			ectodomain	pass	pass	pass	pass	pass	pass	pass	pass	fail
 RHEX	Q6ZWK4	excluded			ectodomain	pass	pass	pass	pass	pass	pass	pass	pass	fail
 RTP1	P59025	excluded			ectodomain	pass	pass	pass	pass	pass	pass	pass	pass	fail
@@ -433,12 +436,15 @@ SLC27A6	Q9Y2P4	excluded			ectodomain	pass	pass	pass	pass	pass	pass	pass	pass	fai
 SMIM1	B2RUZ4	excluded			ectodomain	pass	pass	pass	pass	pass	pass	pass	pass	fail
 STOM	P27105	excluded			ectodomain	pass	pass	pass	pass	pass	pass	pass	pass	fail
 SYNDIG1	Q9H7V2	excluded			ectodomain	pass	pass	pass	pass	pass	pass	pass	pass	fail
+TEX38	Q6PEX7	excluded			ectodomain	pass	pass	pass	pass	pass	pass	pass	pass	fail
 TMEM100	Q9NV29	excluded			ectodomain	pass	pass	pass	pass	pass	pass	pass	pass	fail
 TMEM233	B4DJY2	excluded			ectodomain	pass	pass	pass	pass	pass	pass	pass	pass	fail
+TMEM266	Q2M3C6	excluded			ectodomain	pass	pass	pass	pass	pass	pass	pass	pass	fail
 TMEM52B	Q4KMG9	excluded			ectodomain	pass	pass	pass	pass	pass	pass	pass	pass	fail
 TMEM72	A0PK05	excluded			ectodomain	pass	pass	pass	pass	pass	pass	pass	pass	fail
 TMEM98	Q9Y2Y6	excluded			ectodomain	pass	pass	pass	pass	pass	pass	pass	pass	fail
 TRAT1	Q6PIZ9	excluded			ectodomain	pass	pass	pass	pass	pass	pass	pass	pass	fail
+TSPO2	Q5TGU0	excluded			ectodomain	pass	pass	pass	pass	pass	pass	pass	pass	fail
 ZDHHC5	Q9C0B5	excluded			ectodomain	pass	pass	pass	pass	pass	pass	pass	pass	fail
 CLRN2	A0PK11	excluded			expression	pass	pass	pass	pass	pass	fail	not_reached	not_reached	not_reached
 GPR31	O00270	excluded			expression	pass	pass	pass	pass	pass	fail	not_reached	not_reached	not_reached
@@ -968,6 +974,7 @@ CTXND2	A0A1B0GV90	excluded			surface evidence	fail	not_reached	not_reached	not_r
 CUTA	O60888	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 CUZD1	Q86UP6	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 CXCL9	Q07325	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
+CXorf66	Q5JRM2	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 CYB561	P49447	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 CYB561D1	Q8N8Q1	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 CYB5B	O43169	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
@@ -1533,6 +1540,7 @@ MRGPRG	Q86SM5	excluded			surface evidence	fail	not_reached	not_reached	not_reach
 MS4A14	Q96JA4	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 MS4A15	Q8N5U1	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 MS4A18	Q3C1V0	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
+MS4A5	Q9H3V2	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 MS4A6E	Q96DS6	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 MSMB	P08118	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 MSMP	Q1L6U9	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
@@ -2240,6 +2248,7 @@ SMIM44	A0A286YF18	excluded			surface evidence	fail	not_reached	not_reached	not_r
 SMIM47	D0EPY3	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 SMIM48	A0A494C1I1	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 SMIM5	Q71RC9	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
+SMIM7	Q9BQ49	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 SMIM9	A6NGZ8	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 SMLR1	H3BR10	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 SMPD2	O60906	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
@@ -2402,6 +2411,8 @@ TMEM125	Q96AQ2	excluded			surface evidence	fail	not_reached	not_reached	not_reac
 TMEM127	O75204	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM130	Q8N3G9	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM132C	Q8N3T6	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
+TMEM134	Q9H6X4	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
+TMEM139	Q8IV31	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM140	Q9NV12	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM141	Q96I45	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM150B	A6NC51	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
@@ -2412,8 +2423,10 @@ TMEM161A	Q9NX61	excluded			surface evidence	fail	not_reached	not_reached	not_rea
 TMEM161B	Q8NDZ6	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM164	Q5U3C3	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM165	Q9HC07	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
+TMEM169	Q96HH4	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM17	Q86X19	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM171	Q8WVE6	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
+TMEM174	Q8WUU8	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM176A	Q96HP8	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM176B	Q3YBM2	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM178A	Q8NBL3	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
@@ -2431,12 +2444,14 @@ TMEM200B	Q69YZ2	excluded			surface evidence	fail	not_reached	not_reached	not_rea
 TMEM200C	A6NKL6	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM202	A6NGA9	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM207	Q6UWW9	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
+TMEM210	A6NLX4	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM212	A6NML5	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM213	A2RRL7	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM217	Q8N7C4	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM217B	A0A494BZU4	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM218	A2RU14	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM220	Q6QAJ8	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
+TMEM222	Q9H0R3	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM225B	P0DP42	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM229A	B2RXF0	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM230	Q96A57	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
@@ -2445,6 +2460,7 @@ TMEM232	C9JQI7	excluded			surface evidence	fail	not_reached	not_reached	not_reac
 TMEM234	Q8WY98	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM235	A6NFC5	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM236	Q5W0B7	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
+TMEM238	C9JI98	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM240	Q5SV17	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM243	Q9BU79	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM244	Q5VVB8	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
@@ -2459,8 +2475,10 @@ TMEM260	Q9NX78	excluded			surface evidence	fail	not_reached	not_reached	not_reac
 TMEM263	Q8WUH6	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM265	A0A087WTH1	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM267	Q0VDI3	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
+TMEM268	Q5VZI3	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM269	A0A1B0GVZ9	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM270	Q6UE05	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
+TMEM273	Q5T292	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM275	A0A0U1RQS6	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM278	A6NKF7	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM31	Q5JXX7	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
@@ -2483,6 +2501,8 @@ TMEM74	Q96NL1	excluded			surface evidence	fail	not_reached	not_reached	not_reach
 TMEM79	Q9BSE2	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM80	Q96HE8	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM82	A0PJX8	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
+TMEM86A	Q8N2M4	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
+TMEM86B	Q8N661	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM87B	Q96K49	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM88	Q6PEY1	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM9	Q9P0T7	excluded			surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
@@ -5098,13 +5118,7 @@ ZP4	Q12836	in_library	core	T1		pass	pass	pass	pass	pass	pass	pass	pass	pass
 CALHM3	Q86XJ0	in_library	little-studied UniProt tier		co-receptor	pass	pass	pass	pass	fail	not_reached	not_reached	not_reached	not_reached
 CATSPERE	Q5SY80	in_library	little-studied UniProt tier		co-receptor	pass	pass	pass	pass	fail	not_reached	not_reached	not_reached	not_reached
 CATSPERG	Q6ZRH7	in_library	little-studied UniProt tier		co-receptor	pass	pass	pass	pass	fail	not_reached	not_reached	not_reached	not_reached
-CATSPERH	E9PQX1	in_library	little-studied UniProt tier		co-receptor	pass	pass	pass	pass	fail	not_reached	not_reached	not_reached	not_reached
-CATSPERQ	Q2WGJ8	in_library	little-studied UniProt tier		co-receptor	pass	pass	pass	pass	fail	not_reached	not_reached	not_reached	not_reached
 OR4S2	Q8NH73	in_library	GPCR screen tier		co-receptor	pass	pass	pass	pass	fail	not_reached	not_reached	not_reached	not_reached
-RELL2	Q8NC24	in_library	little-studied UniProt tier		ectodomain	pass	pass	pass	pass	pass	pass	pass	pass	fail
-TEX38	Q6PEX7	in_library	little-studied UniProt tier		ectodomain	pass	pass	pass	pass	pass	pass	pass	pass	fail
-TMEM266	Q2M3C6	in_library	little-studied UniProt tier		ectodomain	pass	pass	pass	pass	pass	pass	pass	pass	fail
-TSPO2	Q5TGU0	in_library	little-studied UniProt tier		ectodomain	pass	pass	pass	pass	pass	pass	pass	pass	fail
 GALR3	O60755	in_library	GPCR screen tier		expression	pass	pass	pass	pass	pass	fail	not_reached	not_reached	not_reached
 GPR33	Q49SQ1	in_library	GPCR screen tier		expression	pass	pass	pass	pass	pass	fail	not_reached	not_reached	not_reached
 OR10J5	Q8NHC4	in_library	GPCR screen tier		expression	pass	pass	pass	pass	pass	fail	not_reached	not_reached	not_reached
@@ -5133,7 +5147,6 @@ C5orf15	Q8NC54	in_library	little-studied UniProt tier		surface evidence	fail	not
 CALHM5	Q8N5C1	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 CD164L2	Q6UWJ8	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 CIST1	A0A2R8Y7Y5	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
-CXorf66	Q5JRM2	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 FAM174A	Q8TBP5	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 FAM187A	A6NFU0	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 FAM187B	Q17R55	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
@@ -5152,7 +5165,6 @@ LRRN4CL	Q8ND94	in_library	little-studied UniProt tier		surface evidence	fail	not
 LYSMD4	Q5XG99	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 MANSC4	A6NHS7	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 MS4A10	Q96PG2	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
-MS4A5	Q9H3V2	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 OR10AC1	Q8NH08	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 OR10C1	Q96KK4	in_library	GPCR screen tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 OR10G2	Q8NGC3	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
@@ -5282,26 +5294,14 @@ SLC38A12	Q8NE00	in_library	little-studied UniProt tier		surface evidence	fail	no
 SLC71A2	Q5SR56	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 SLC9D1	Q6UWJ1	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 SLCO1B3-SLCO1B7	F5H094	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
-SMIM7	Q9BQ49	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TEX29	Q8N6K0	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TLCD2	A6NGC4	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMDD1	P0DPE3	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
-TMEM134	Q9H6X4	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
-TMEM139	Q8IV31	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
-TMEM169	Q96HH4	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM170B	Q5T4T1	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
-TMEM174	Q8WUU8	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM190	Q8WZ59	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM198	Q66K66	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
-TMEM210	A6NLX4	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
-TMEM222	Q9H0R3	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM225	Q6GV28	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM229B	Q8NBD8	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
-TMEM238	C9JI98	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
-TMEM268	Q5VZI3	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
-TMEM273	Q5T292	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
-TMEM86A	Q8N2M4	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
-TMEM86B	Q8N661	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TMEM89	A2RUT3	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TP53I13	Q8NBR0	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached
 TPBGL	P0DKB5	in_library	little-studied UniProt tier		surface evidence	fail	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached	not_reached

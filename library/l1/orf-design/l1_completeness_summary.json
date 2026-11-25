@@ -1,27 +1,27 @@
 {
- "active_members": 2762,
+ "active_members": 2740,
  "status": {
-  "built": 2743,
-  "held": 19
+  "built": 2730,
+  "held": 10
  },
  "by_placement": {
   "C-terminal": {
-   "built": 216,
-   "held": 3
+   "built": 217,
+   "held": 2
   },
   "N after SP": {
-   "built": 1322,
-   "held": 5
+   "built": 1321,
+   "held": 1
   },
   "N at residue 1, multipass": {
-   "built": 568
+   "built": 566
   },
   "N at residue 1, single-pass (type III)": {
-   "built": 43
+   "built": 41
   },
   "internal": {
-   "built": 594,
-   "held": 11
+   "built": 585,
+   "held": 7
   }
  },
  "stale_member_id": 0,
@@ -33,7 +33,7 @@
  "refold_verdicts_by_placement": {
   "C-terminal": {
    "fail": 9,
-   "pass": 205
+   "pass": 206
   },
   "N after SP": {
    "fail: 10 epitope residues confidently packed on the native domain": 1,
@@ -56,21 +56,21 @@
    "fail: native-region lDDT 0.799 < 0.85": 2,
    "fail: native-region lDDT 0.825 < 0.85": 1,
    "fail: native-region lDDT 0.83 < 0.85": 1,
-   "pass": 1285
+   "pass": 1284
   },
   "N at residue 1, multipass": {
    "fail (kept as built)": 71,
-   "pass": 497
+   "pass": 495
   },
   "N at residue 1, single-pass (type III)": {
    "fail": 4,
-   "pass": 39
+   "pass": 37
   },
   "internal": {
-   "fail": 77,
+   "fail": 74,
    "fail (#301; snorkel, ranker redecision pending)": 4,
-   "pass": 1004,
-   "pass (#301)": 141
+   "pass": 992,
+   "pass (#301)": 137
   }
  },
  "arm_tables_missing": [],

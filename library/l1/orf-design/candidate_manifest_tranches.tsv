@@ -237,8 +237,8 @@ l1-p0235	l1-p0235	lib:CALHM5	library_reference	human	ENST00000368599	named trans
 l1-p0236	l1-p0236	lib:CASR	library_reference	human	ENST00000639785	named transcript	0	3237	10804	5	7	6	2	3327	False	deferred	not reserved	l1		l1-p0236		
 l1-p0237	l1-p0237	lib:CATSPERE	library_reference	human	ENST00000366534	named transcript	0	2856	10423	1	1	6	2	2946	False	deferred	not reserved	l1		l1-p0237		
 l1-p0238	l1-p0238	lib:CATSPERG	library_reference	human	ENST00000409235	named transcript	0	3480	11047	5	5	6	2	3570	False	deferred	not reserved	l1		l1-p0238		
-l1-p0239	l1-p0239	lib:CATSPERH	library_reference	human	ENST00000530719	named transcript	0	351	7918	1	1	6	2	441	False	deferred	not reserved	l1		l1-p0239		
-l1-p0240	l1-p0240	lib:CATSPERQ	library_reference	human	ENST00000696146	named transcript	0	708	8275	3	3	6	2	798	False	deferred	not reserved	l1		l1-p0240		
+l1-p0239	l1-p0239	lib:CATSPERH	library_reference	human	ENST00000530719	named transcript	0	351	7918	1	1	6	2	441	False	deferred	not reserved	l1		l1-p0239	ectodomain_below_30aa_gate:CATSPERH (Becca 2026-11-25; LL tier missed ecd_ok check)	
+l1-p0240	l1-p0240	lib:CATSPERQ	library_reference	human	ENST00000696146	named transcript	0	708	8275	3	3	6	2	798	False	deferred	not reserved	l1		l1-p0240	ectodomain_below_30aa_gate:CATSPERQ (Becca 2026-11-25; LL tier missed ecd_ok check)	
 l1-p0241	l1-p0241	lib:CCKAR	library_reference	human	ENST00000295589	named transcript	0	1287	8854	1	1	6	2	1377	False	deferred	not reserved	l1		l1-p0241		
 l1-p0242	l1-p0242	lib:CCKBR	library_reference	human	ENST00000334619	named transcript	0	1344	8911	1	1	6	2	1434	False	deferred	not reserved	l1		l1-p0242		
 l1-p0243	l1-p0243	lib:CCR1	library_reference	human	ENST00000296140	named transcript	0	1068	8635	0	0	6	2	1158	False	deferred	not reserved	l1		l1-p0243		
@@ -494,7 +494,7 @@ l1-p0492	l1-p0492	lib:CXCR3	library_reference	human	ENST00000373693	named transc
 l1-p0493	l1-p0493	lib:CXCR4	library_reference	human	ENST00000241393	named transcript	0	1059	8626	1	3	6	2	1149	False	deferred	not reserved	l1		l1-p0493		
 l1-p0494	l1-p0494	lib:CXCR5	library_reference	human	ENST00000292174	named transcript	0	1119	8686	2	2	6	2	1209	False	deferred	not reserved	l1		l1-p0494		
 l1-p0495	l1-p0495	lib:CXCR6	library_reference	human	ENST00000304552	named transcript	0	1029	8596	2	4	6	2	1119	False	deferred	not reserved	l1		l1-p0495		
-l1-p0496	l1-p0496	lib:CXorf66	library_reference	human	ENST00000370540	named transcript	0	1086	8653	0	0	6	2	1176	False	deferred	not reserved	l1		l1-p0496		
+l1-p0496	l1-p0496	lib:CXorf66	library_reference	human	ENST00000370540	named transcript	0	1086	8653	0	0	6	2	1176	False	deferred	not reserved	l1		l1-p0496	ectodomain_below_30aa_gate:CXorf66 (Becca 2026-11-25; LL tier missed ecd_ok check)	
 l1-p0497	l1-p0497	lib:CYBB	library_reference	human	ENST00000378588	named transcript	0	1713	9280	3	3	6	2	1803	False	deferred	not reserved	l1		l1-p0497		
 l1-p0498	l1-p0498	lib:CYBRD1	library_reference	human	ENST00000321348	named transcript	0	861	8428	1	1	6	2	951	False	deferred	not reserved	l1		l1-p0498		
 l1-p0499	l1-p0499	lib:CYSLTR1	library_reference	human	ENST00000373304	named transcript	0	1014	8581	0	0	6	2	1104	False	deferred	not reserved	l1		l1-p0499		
@@ -1254,7 +1254,7 @@ l1-p1252	l1-p1252	lib:MS4A13	library_reference	human	ENST00000378186	named trans
 l1-p1253	l1-p1253	lib:MS4A2	library_reference	human	ENST00000278888	named transcript	0	735	8302	2	2	6	2	825	False	deferred	not reserved	l1		l1-p1253		
 l1-p1254	l1-p1254	lib:MS4A3	library_reference	human	ENST00000278865	named transcript	0	645	8212	0	0	6	2	735	False	deferred	not reserved	l1		l1-p1254		
 l1-p1255	l1-p1255	lib:MS4A4A	library_reference	human	ENST00000337908	named transcript	0	720	8287	0	0	6	2	810	False	deferred	not reserved	l1		l1-p1255		
-l1-p1256	l1-p1256	lib:MS4A5	library_reference	human	ENST00000300190	named transcript	0	603	8170	0	0	6	2	693	False	deferred	not reserved	l1		l1-p1256		
+l1-p1256	l1-p1256	lib:MS4A5	library_reference	human	ENST00000300190	named transcript	0	603	8170	0	0	6	2	693	False	deferred	not reserved	l1		l1-p1256	ectodomain_below_30aa_gate:MS4A5 (Becca 2026-11-25; LL tier missed ecd_ok check)	
 l1-p1257	l1-p1257	lib:MS4A6A	library_reference	human	ENST00000530839	named transcript	0	747	8314	1	1	6	2	837	False	deferred	not reserved	l1		l1-p1257		
 l1-p1258	l1-p1258	lib:MS4A7	library_reference	human	ENST00000300184	named transcript	0	723	8290	0	0	6	2	813	False	deferred	not reserved	l1		l1-p1258		
 l1-p1259	l1-p1259	lib:MSLN	library_reference	human	ENST00000545450	named transcript	0	1869	9436	3	3	6	2	1959	False	deferred	not reserved	l1		l1-p1259		
@@ -1725,7 +1725,7 @@ l1-p1723	l1-p1723	lib:RAET1G	library_reference	human	ENST00000367360	named trans
 l1-p1724	l1-p1724	lib:RAET1L	library_reference	human	ENST00000367341	named transcript	0	741	8308	1	1	6	2	831	False	deferred	not reserved	l1		l1-p1724		
 l1-p1725	l1-p1725	lib:RECK	library_reference	human	ENST00000377966	named transcript	0	2916	10483	7	8	6	2	3006	False	deferred	not reserved	l1		l1-p1725		
 l1-p1726	l1-p1726	lib:RELL1	library_reference	human	ENST00000454158	named transcript	0	816	8383	3	3	6	2	906	False	deferred	not reserved	l1		l1-p1726		
-l1-p1727	l1-p1727	lib:RELL2	library_reference	human	ENST00000297164	named transcript	0	912	8479	2	2	6	2	1002	False	deferred	not reserved	l1		l1-p1727		
+l1-p1727	l1-p1727	lib:RELL2	library_reference	human	ENST00000297164	named transcript	0	912	8479	2	2	6	2	1002	False	deferred	not reserved	l1		l1-p1727	ectodomain_below_30aa_gate:RELL2 (Becca 2026-11-25; LL tier missed ecd_ok check)	
 l1-p1728	l1-p1728	lib:RELT	library_reference	human	ENST00000064780	named transcript	0	1293	8860	2	2	6	2	1383	False	deferred	not reserved	l1		l1-p1728		
 l1-p1729	l1-p1729	lib:RET	library_reference	human	ENST00000355710	named transcript	0	3345	10912	10	13	6	2	3435	False	deferred	not reserved	l1		l1-p1729		
 l1-p1730	l1-p1730	lib:RGMA	library_reference	human	ENST00000329082	named transcript	0	1353	8920	3	3	6	2	1443	False	deferred	not reserved	l1		l1-p1730		
@@ -2052,7 +2052,7 @@ l1-p2050	l1-p2050	lib:SLITRK4	library_reference	human	ENST00000356928	named tran
 l1-p2051	l1-p2051	lib:SLITRK5	library_reference	human	ENST00000683689	named transcript	0	2877	10444	8	9	6	2	2967	False	deferred	not reserved	l1		l1-p2051		
 l1-p2052	l1-p2052	lib:SLITRK6	library_reference	human	ENST00000647374	named transcript	0	2526	10093	3	3	6	2	2616	False	deferred	not reserved	l1		l1-p2052		
 l1-p2053	l1-p2053	lib:SMAGP	library_reference	human	ENST00000603798	named transcript	0	294	7861	1	1	6	2	384	False	deferred	not reserved	l1		l1-p2053		
-l1-p2054	l1-p2054	lib:SMIM7	library_reference	human	ENST00000487416	named transcript	0	228	7795	0	0	6	2	318	False	deferred	not reserved	l1		l1-p2054		
+l1-p2054	l1-p2054	lib:SMIM7	library_reference	human	ENST00000487416	named transcript	0	228	7795	0	0	6	2	318	False	deferred	not reserved	l1		l1-p2054	ectodomain_below_30aa_gate:SMIM7 (Becca 2026-11-25; LL tier missed ecd_ok check)	
 l1-p2055	l1-p2055	lib:SMO	library_reference	human	ENST00000249373	named transcript	0	2364	9931	2	3	6	2	2454	False	deferred	not reserved	l1		l1-p2055		
 l1-p2056	l1-p2056	lib:SMPDL3B	library_reference	human	ENST00000373894	named transcript	0	1368	8935	1	1	6	2	1458	False	deferred	not reserved	l1		l1-p2056		
 l1-p2057	l1-p2057	lib:SNORC	library_reference	human	ENST00000331342	named transcript	0	366	7933	1	2	6	2	456	False	deferred	not reserved	l1		l1-p2057		
@@ -2126,7 +2126,7 @@ l1-p2124	l1-p2124	lib:TCTA	library_reference	human	ENST00000273590	named transcr
 l1-p2125	l1-p2125	lib:TEK	library_reference	human	ENST00000380036	named transcript	0	3375	10942	3	4	6	2	3465	False	deferred	not reserved	l1		l1-p2125		
 l1-p2126	l1-p2126	lib:TEX101	library_reference	human	ENST00000598265	named transcript	0	750	8317	2	2	6	2	840	False	deferred	not reserved	l1		l1-p2126		
 l1-p2127	l1-p2127	lib:TEX29	library_reference	human	ENST00000283547	named transcript	0	456	8023	1	2	6	2	546	False	deferred	not reserved	l1		l1-p2127		
-l1-p2128	l1-p2128	lib:TEX38	library_reference	human	ENST00000334122	named transcript	0	621	8188	2	4	6	2	711	False	deferred	not reserved	l1		l1-p2128		
+l1-p2128	l1-p2128	lib:TEX38	library_reference	human	ENST00000334122	named transcript	0	621	8188	2	4	6	2	711	False	deferred	not reserved	l1		l1-p2128	ectodomain_below_30aa_gate:TEX38 (Becca 2026-11-25; LL tier missed ecd_ok check)	
 l1-p2129	l1-p2129	lib:TFPI	library_reference	human	ENST00000409676	protein match	0	756	8323	0	0	6	2	846	False	deferred	not reserved	l1		l1-p2129		
 l1-p2130	l1-p2130	lib:TFR2	library_reference	human	ENST00000223051	named transcript	0	2406	9973	5	5	6	2	2496	False	deferred	not reserved	l1		l1-p2130		
 l1-p2131	l1-p2131	lib:TFRC	library_reference	human	ENST00000360110	named transcript	0	2283	9850	1	1	6	2	2373	False	deferred	not reserved	l1		l1-p2131		
@@ -2169,16 +2169,16 @@ l1-p2167	l1-p2167	lib:TMEM132A	library_reference	human	ENST00000453848	named tra
 l1-p2168	l1-p2168	lib:TMEM132B	library_reference	human	ENST00000682704	named transcript	0	3252	10819	8	11	6	2	3342	False	deferred	not reserved	l1		l1-p2168		
 l1-p2169	l1-p2169	lib:TMEM132D	library_reference	human	ENST00000422113	named transcript	0	3300	10867	12	17	6	2	3390	False	deferred	not reserved	l1		l1-p2169		
 l1-p2170	l1-p2170	lib:TMEM132E	library_reference	human	ENST00000631683	named transcript	0	3225	10792	8	9	6	2	3315	False	deferred	not reserved	l1		l1-p2170		
-l1-p2171	l1-p2171	lib:TMEM134	library_reference	human	ENST00000308022	named transcript	0	588	8155	0	0	6	2	678	False	deferred	not reserved	l1		l1-p2171		
-l1-p2172	l1-p2172	lib:TMEM139	library_reference	human	ENST00000359333	named transcript	0	651	8218	0	0	6	2	741	False	deferred	not reserved	l1		l1-p2172		
+l1-p2171	l1-p2171	lib:TMEM134	library_reference	human	ENST00000308022	named transcript	0	588	8155	0	0	6	2	678	False	deferred	not reserved	l1		l1-p2171	ectodomain_below_30aa_gate:TMEM134 (Becca 2026-11-25; LL tier missed ecd_ok check)	
+l1-p2172	l1-p2172	lib:TMEM139	library_reference	human	ENST00000359333	named transcript	0	651	8218	0	0	6	2	741	False	deferred	not reserved	l1		l1-p2172	ectodomain_below_30aa_gate:TMEM139 (Becca 2026-11-25; LL tier missed ecd_ok check)	
 l1-p2173	l1-p2173	lib:TMEM145	library_reference	human	ENST00000301204	named transcript	0	1482	9049	1	2	6	2	1572	False	deferred	not reserved	l1		l1-p2173		
 l1-p2174	l1-p2174	lib:TMEM150A	library_reference	human	ENST00000334462	named transcript	0	816	8383	2	2	6	2	906	False	deferred	not reserved	l1		l1-p2174		
 l1-p2175	l1-p2175	lib:TMEM150C	library_reference	human	ENST00000449862	named transcript	0	750	8317	0	0	6	2	840	False	deferred	not reserved	l1		l1-p2175		
 l1-p2176	l1-p2176	lib:TMEM154	library_reference	human	ENST00000304385	named transcript	0	552	8119	1	1	6	2	642	False	deferred	not reserved	l1		l1-p2176		
 l1-p2177	l1-p2177	lib:TMEM158	library_reference	human	ENST00000503771	named transcript	0	903	8470	0	0	6	2	993	False	deferred	not reserved	l1		l1-p2177		
-l1-p2178	l1-p2178	lib:TMEM169	library_reference	human	ENST00000437356	named transcript	0	894	8461	0	0	6	2	984	False	deferred	not reserved	l1		l1-p2178		
+l1-p2178	l1-p2178	lib:TMEM169	library_reference	human	ENST00000437356	named transcript	0	894	8461	0	0	6	2	984	False	deferred	not reserved	l1		l1-p2178	ectodomain_below_30aa_gate:TMEM169 (Becca 2026-11-25; LL tier missed ecd_ok check)	
 l1-p2179	l1-p2179	lib:TMEM170B	library_reference	human	ENST00000379426	named transcript	0	399	7966	0	0	6	2	489	False	deferred	not reserved	l1		l1-p2179		
-l1-p2180	l1-p2180	lib:TMEM174	library_reference	human	ENST00000296776	named transcript	0	732	8299	0	0	6	2	822	False	deferred	not reserved	l1		l1-p2180		
+l1-p2180	l1-p2180	lib:TMEM174	library_reference	human	ENST00000296776	named transcript	0	732	8299	0	0	6	2	822	False	deferred	not reserved	l1		l1-p2180	ectodomain_below_30aa_gate:TMEM174 (Becca 2026-11-25; LL tier missed ecd_ok check)	
 l1-p2181	l1-p2181	lib:TMEM181	library_reference	human	ENST00000684151	named transcript	0	1428	8995	3	3	6	2	1518	False	deferred	not reserved	l1		l1-p2181		
 l1-p2182	l1-p2182	lib:TMEM182	library_reference	human	ENST00000412401	named transcript	0	690	8257	0	0	6	2	780	False	deferred	not reserved	l1		l1-p2182		
 l1-p2183	l1-p2183	lib:TMEM184A	library_reference	human	ENST00000297477	named transcript	0	1242	8809	3	5	6	2	1332	False	deferred	not reserved	l1		l1-p2183		
@@ -2186,22 +2186,22 @@ l1-p2184	l1-p2184	lib:TMEM190	library_reference	human	ENST00000291934	named tran
 l1-p2185	l1-p2185	lib:TMEM198	library_reference	human	ENST00000373883	named transcript	0	1083	8650	3	3	6	2	1173	False	deferred	not reserved	l1		l1-p2185		
 l1-p2186	l1-p2186	lib:TMEM204	library_reference	human	ENST00000566264	named transcript	0	681	8248	1	3	6	2	771	False	deferred	not reserved	l1		l1-p2186		
 l1-p2187	l1-p2187	lib:TMEM205	library_reference	human	ENST00000354882	named transcript	0	570	8137	1	3	6	2	660	False	deferred	not reserved	l1		l1-p2187		
-l1-p2188	l1-p2188	lib:TMEM210	library_reference	human	ENST00000413619	named transcript	0	444	8011	1	2	6	2	534	False	deferred	not reserved	l1		l1-p2188		
+l1-p2188	l1-p2188	lib:TMEM210	library_reference	human	ENST00000413619	named transcript	0	444	8011	1	2	6	2	534	False	deferred	not reserved	l1		l1-p2188	ectodomain_below_30aa_gate:TMEM210 (Becca 2026-11-25; LL tier missed ecd_ok check)	
 l1-p2189	l1-p2189	lib:TMEM219	library_reference	human	ENST00000279396	named transcript	0	723	8290	3	4	6	2	813	False	deferred	not reserved	l1		l1-p2189		
-l1-p2190	l1-p2190	lib:TMEM222	library_reference	human	ENST00000374076	named transcript	0	627	8194	2	2	6	2	717	False	deferred	not reserved	l1		l1-p2190		
+l1-p2190	l1-p2190	lib:TMEM222	library_reference	human	ENST00000374076	named transcript	0	627	8194	2	2	6	2	717	False	deferred	not reserved	l1		l1-p2190	ectodomain_below_30aa_gate:TMEM222 (Becca 2026-11-25; LL tier missed ecd_ok check)	
 l1-p2191	l1-p2191	lib:TMEM225	library_reference	human	ENST00000375026	named transcript	0	678	8245	0	0	6	2	768	False	deferred	not reserved	l1		l1-p2191		
 l1-p2192	l1-p2192	lib:TMEM229B	library_reference	human	ENST00000554480	named transcript	0	504	8071	0	0	6	2	594	False	deferred	not reserved	l1		l1-p2192		
-l1-p2193	l1-p2193	lib:TMEM238	library_reference	human	ENST00000444469	named transcript	0	531	8098	0	0	6	2	621	False	deferred	not reserved	l1		l1-p2193		
+l1-p2193	l1-p2193	lib:TMEM238	library_reference	human	ENST00000444469	named transcript	0	531	8098	0	0	6	2	621	False	deferred	not reserved	l1		l1-p2193	ectodomain_below_30aa_gate:TMEM238 (Becca 2026-11-25; LL tier missed ecd_ok check)	
 l1-p2194	l1-p2194	lib:TMEM26	library_reference	human	ENST00000399298	named transcript	0	1107	8674	7	7	6	2	1197	False	deferred	not reserved	l1		l1-p2194		
-l1-p2195	l1-p2195	lib:TMEM266	library_reference	human	ENST00000388942	named transcript	0	1572	9139	1	1	6	2	1662	False	deferred	not reserved	l1		l1-p2195		
-l1-p2196	l1-p2196	lib:TMEM268	library_reference	human	ENST00000288502	named transcript	0	1029	8596	1	1	6	2	1119	False	deferred	not reserved	l1		l1-p2196		
-l1-p2197	l1-p2197	lib:TMEM273	library_reference	human	ENST00000374153	named transcript	0	390	7957	0	0	6	2	480	False	deferred	not reserved	l1		l1-p2197		
+l1-p2195	l1-p2195	lib:TMEM266	library_reference	human	ENST00000388942	named transcript	0	1572	9139	1	1	6	2	1662	False	deferred	not reserved	l1		l1-p2195	ectodomain_below_30aa_gate:TMEM266 (Becca 2026-11-25; LL tier missed ecd_ok check)	
+l1-p2196	l1-p2196	lib:TMEM268	library_reference	human	ENST00000288502	named transcript	0	1029	8596	1	1	6	2	1119	False	deferred	not reserved	l1		l1-p2196	ectodomain_below_30aa_gate:TMEM268 (Becca 2026-11-25; LL tier missed ecd_ok check)	
+l1-p2197	l1-p2197	lib:TMEM273	library_reference	human	ENST00000374153	named transcript	0	390	7957	0	0	6	2	480	False	deferred	not reserved	l1		l1-p2197	ectodomain_below_30aa_gate:TMEM273 (Becca 2026-11-25; LL tier missed ecd_ok check)	
 l1-p2198	l1-p2198	lib:TMEM47	library_reference	human	ENST00000275954	named transcript	0	546	8113	1	1	6	2	636	False	deferred	not reserved	l1		l1-p2198		
 l1-p2199	l1-p2199	lib:TMEM63B	library_reference	human	ENST00000323267	named transcript	0	2499	10066	3	3	6	2	2589	False	deferred	not reserved	l1		l1-p2199		
 l1-p2200	l1-p2200	lib:TMEM67	library_reference	human	ENST00000453321	named transcript	0	2988	10555	2	2	6	2	3078	False	deferred	not reserved	l1		l1-p2200		
 l1-p2201	l1-p2201	lib:TMEM81	library_reference	human	ENST00000367167	named transcript	0	768	8335	2	2	6	2	858	False	deferred	not reserved	l1		l1-p2201		
-l1-p2202	l1-p2202	lib:TMEM86A	library_reference	human	ENST00000280734	named transcript	0	723	8290	1	1	6	2	813	False	deferred	not reserved	l1		l1-p2202		
-l1-p2203	l1-p2203	lib:TMEM86B	library_reference	human	ENST00000327042	named transcript	0	681	8248	1	1	6	2	771	False	deferred	not reserved	l1		l1-p2203		
+l1-p2202	l1-p2202	lib:TMEM86A	library_reference	human	ENST00000280734	named transcript	0	723	8290	1	1	6	2	813	False	deferred	not reserved	l1		l1-p2202	ectodomain_below_30aa_gate:TMEM86A (Becca 2026-11-25; LL tier missed ecd_ok check)	
+l1-p2203	l1-p2203	lib:TMEM86B	library_reference	human	ENST00000327042	named transcript	0	681	8248	1	1	6	2	771	False	deferred	not reserved	l1		l1-p2203	ectodomain_below_30aa_gate:TMEM86B (Becca 2026-11-25; LL tier missed ecd_ok check)	
 l1-p2204	l1-p2204	lib:TMEM89	library_reference	human	ENST00000330862	named transcript	0	480	8047	1	1	6	2	570	False	deferred	not reserved	l1		l1-p2204		
 l1-p2205	l1-p2205	lib:TMEM8B	library_reference	human	ENST00000643932	named transcript	0	2775	10342	2	2	6	2	2865	False	deferred	not reserved	l1		l1-p2205		
 l1-p2206	l1-p2206	lib:TMEM95	library_reference	human	ENST00000576060	named transcript	0	531	8098	2	2	6	2	621	False	deferred	not reserved	l1		l1-p2206		
@@ -2300,7 +2300,7 @@ l1-p2298	l1-p2298	lib:TSPAN6	library_reference	human	ENST00000373020	named trans
 l1-p2299	l1-p2299	lib:TSPAN7	library_reference	human	ENST00000378482	named transcript	0	750	8317	2	2	6	2	840	False	deferred	not reserved	l1		l1-p2299		
 l1-p2300	l1-p2300	lib:TSPAN8	library_reference	human	ENST00000247829	named transcript	0	714	8281	2	2	6	2	804	False	deferred	not reserved	l1		l1-p2300		
 l1-p2301	l1-p2301	lib:TSPAN9	library_reference	human	ENST00000011898	named transcript	0	720	8287	0	0	6	2	810	False	deferred	not reserved	l1		l1-p2301		
-l1-p2302	l1-p2302	lib:TSPO2	library_reference	human	ENST00000373161	named transcript	0	513	8080	0	0	6	2	603	False	deferred	not reserved	l1		l1-p2302		
+l1-p2302	l1-p2302	lib:TSPO2	library_reference	human	ENST00000373161	named transcript	0	513	8080	0	0	6	2	603	False	deferred	not reserved	l1		l1-p2302	ectodomain_below_30aa_gate:TSPO2 (Becca 2026-11-25; LL tier missed ecd_ok check)	
 l1-p2303	l1-p2303	lib:TTYH1	library_reference	human	ENST00000376530	named transcript	0	1353	8920	4	5	6	2	1443	False	deferred	not reserved	l1		l1-p2303		
 l1-p2304	l1-p2304	lib:TTYH2	library_reference	human	ENST00000269346	named transcript	0	1605	9172	2	2	6	2	1695	False	deferred	not reserved	l1		l1-p2304		
 l1-p2305	l1-p2305	lib:TTYH3	library_reference	human	ENST00000258796	named transcript	0	1572	9139	3	3	6	2	1662	False	deferred	not reserved	l1		l1-p2305		
@@ -7122,7 +7122,7 @@ l1-p2969	l1-p2969	ort:cyno:SLC47A1:A0A0R8GG88	ortholog	cyno	ENSMFAT00000007184	a
 l1-p2970	l1-p2970	ort:cyno:MRGPRX4:A0A7N9CJD3	ortholog	cyno	ENSMFAT00000087586	protein match	0	969	8536	1	1	6	2	1059	False	deferred	not reserved	l1	ortholog_panel	l2-p2452		
 l1-p2971	l1-p2971	ort:cyno:SLC9B1:ENSMFAP00000062637	ortholog	cyno	ENSMFAT00000073969	Ensembl116 CDS-eligible (ortholog_cds_policy, final-v2)	0	1548	9115	4	6	6	2	1638	False	deferred	not reserved	l1	ortholog_panel	l1-p2971		
 l1-p2972	l1-p2972	ort:cyno:TEX29:ENSMFAP00000015918	ortholog	cyno	ENSMFAT00000066448	Ensembl116 CDS-eligible (ortholog_cds_policy, final-v2)	0	456	8023	1	2	6	2	546	False	deferred	not reserved	l1	ortholog_panel	l1-p2972		
-l1-p2973	l1-p2973	ort:cyno:TMEM210:ENSMFAP00000044854	ortholog	cyno	ENSMFAT00000019155	Ensembl116 CDS-eligible (ortholog_cds_policy, final-v2)	0	444	8011	1	2	6	2	534	False	deferred	not reserved	l1	ortholog_panel	l1-p2973		
+l1-p2973	l1-p2973	ort:cyno:TMEM210:ENSMFAP00000044854	ortholog	cyno	ENSMFAT00000019155	Ensembl116 CDS-eligible (ortholog_cds_policy, final-v2)	0	444	8011	1	2	6	2	534	False	deferred	not reserved	l1	ortholog_panel	l1-p2973	parent_gene_dropped_ectodomain_below_30aa:TMEM210 (Becca 2026-11-25)	
 l1-p2974	l1-p2974	ort:cyno:TNFRSF13B:ENSMFAP00000026444	ortholog	cyno	ENSMFAT00000000625	Ensembl116 CDS-eligible (ortholog_cds_policy, final-v2)	0	882	8449	3	4	6	2	972	False	deferred	not reserved	l1	ortholog_panel	l1-p2974		
 l1-p2975	l1-p2975	ort:cyno:TRPM2:ENSMFAP00000004384	ortholog	cyno	ENSMFAT00000023046	Ensembl116 CDS-eligible (ortholog_cds_policy, final-v2)	0	4503	12070	14	15	6	2	4593	False	deferred	not reserved	l1	ortholog_panel	l1-p2975		
 l1-p2976	l1-p2976	ort:cyno:ZACN:A0A2K5TZW0	ortholog	cyno	ENSMFAT00000024296	protein match	0	1236	8803	2	2	6	2	1326	False	deferred	not reserved	l1	ortholog_panel	l2-p2990		
@@ -7209,9 +7209,9 @@ l1-p3056	l1-p3056	ort:mouse:SLC5A4:Q9ET37	ortholog	mouse	ENSMUST00000020450	prot
 l1-p3057	l1-p3057	ort:mouse:SPINT1:Q9R097	ortholog	mouse	ENSMUST00000110817	Ensembl116 CDS-eligible (ortholog_cds_policy, final-v2)	0	1524	9091	1	1	6	2	1614	False	deferred	not reserved	l1	ortholog_panel	l1-p3057		
 l1-p3058	l1-p3058	ort:mouse:TFPI:ENSMUSP00000107340	ortholog	mouse	ENSMUST00000111711	Ensembl116 CDS-eligible (ortholog_cds_policy, final-v2)	0	744	8311	1	1	6	2	834	False	deferred	not reserved	l1	ortholog_panel	l1-p3058		
 l1-p3059	l1-p3059	ort:mouse:TM7SF3:Q9CRG1	ortholog	mouse	ENSMUST00000037709	gene symbol	4	1698	9265	3	4	6	2	1788	False	deferred	not reserved	l1	ortholog_panel	l2-p4227		
-l1-p3060	l1-p3060	ort:mouse:TMEM139:ENSMUSP00000100590	ortholog	mouse	ENSMUST00000095987	Ensembl116 CDS-eligible (ortholog_cds_policy, final-v2)	0	645	8212	0	0	6	2	735	False	deferred	not reserved	l1	ortholog_panel	l1-p3060		
-l1-p3061	l1-p3061	ort:mouse:TMEM210:Q9D2F0	ortholog	mouse	ENSMUST00000028340	Ensembl116 CDS-eligible (ortholog_cds_policy, final-v2)	0	444	8011	0	0	6	2	534	False	deferred	not reserved	l1	ortholog_panel	l1-p3061		
-l1-p3062	l1-p3062	ort:mouse:TMEM86B:Q497J1	ortholog	mouse	ENSMUST00000055085	Ensembl116 CDS-eligible (ortholog_cds_policy, final-v2)	0	681	8248	0	0	6	2	771	False	deferred	not reserved	l1	ortholog_panel	l1-p3062		
+l1-p3060	l1-p3060	ort:mouse:TMEM139:ENSMUSP00000100590	ortholog	mouse	ENSMUST00000095987	Ensembl116 CDS-eligible (ortholog_cds_policy, final-v2)	0	645	8212	0	0	6	2	735	False	deferred	not reserved	l1	ortholog_panel	l1-p3060	parent_gene_dropped_ectodomain_below_30aa:TMEM139 (Becca 2026-11-25)	
+l1-p3061	l1-p3061	ort:mouse:TMEM210:Q9D2F0	ortholog	mouse	ENSMUST00000028340	Ensembl116 CDS-eligible (ortholog_cds_policy, final-v2)	0	444	8011	0	0	6	2	534	False	deferred	not reserved	l1	ortholog_panel	l1-p3061	parent_gene_dropped_ectodomain_below_30aa:TMEM210 (Becca 2026-11-25)	
+l1-p3062	l1-p3062	ort:mouse:TMEM86B:Q497J1	ortholog	mouse	ENSMUST00000055085	Ensembl116 CDS-eligible (ortholog_cds_policy, final-v2)	0	681	8248	0	0	6	2	771	False	deferred	not reserved	l1	ortholog_panel	l1-p3062	parent_gene_dropped_ectodomain_below_30aa:TMEM86B (Becca 2026-11-25)	
 l1-p3063	l1-p3063	ort:mouse:TMIGD1:Q9D7L8	ortholog	mouse	ENSMUST00000102495	protein match	0	786	8353	1	1	6	2	876	False	deferred	not reserved	l1	ortholog_panel	l2-p4249		
 l1-p3064	l1-p3064	ort:mouse:TMPRSS2:Q9JIQ8	ortholog	mouse	ENSMUST00000000395	Ensembl116 CDS-eligible (ortholog_cds_policy, final-v2)	0	1473	9040	4	6	6	2	1563	False	deferred	not reserved	l1	ortholog_panel	l1-p3064		
 l1-p3065	l1-p3065	ort:mouse:VSIG2:Q9Z109	ortholog	mouse	ENSMUST00000002008	protein match	0	987	8554	2	2	6	2	1077	False	deferred	not reserved	l1	ortholog_panel	l2-p4309		
@@ -7348,7 +7348,7 @@ l1-p3195	l1-p3195	lib:CSF1	library_reference	human	ENST00000329608	named transcr
 l1-p3196	l1-p3196	lib:FAM171B	library_reference	human	ENST00000304698	named transcript	0	2481	10048	4	5	6	2	2571	False	deferred	not reserved	l1		l1-p3196		
 l1-p3197	l1-p3197	lib:FAM234A	library_reference	human	ENST00000399932	named transcript	0	1659	9226	6	9	6	2	1749	False	deferred	not reserved	l1		l1-p3197		
 l1-p3198	l1-p3198	lib:FAM234B	library_reference	human	ENST00000197268	named transcript	0	1869	9436	6	8	6	2	1959	False	deferred	not reserved	l1		l1-p3198	withdrawn_from_gene_list:FAM234B (Becca 2026-11-23; replaced by PR #455 abundance-v8 proteomics set)	
-l1-p3199	l1-p3199	lib:LNPEP	library_reference	human	ENST00000231368	named transcript	0	3078	10645	1	3	6	2	3168	False	deferred	not reserved	l1		l1-p3199	withdrawn_from_gene_list:LNPEP (Becca 2026-11-23; replaced by PR #455 abundance-v8 proteomics set)	
+l1-p3199	l1-p3199	lib:LNPEP	library_reference	human	ENST00000231368	named transcript	0	3078	10645	1	3	6	2	3168	False	deferred	not reserved	l1		l1-p3199		
 l1-p3200	l1-p3200	lib:MFAP3	library_reference	human	ENST00000522782	named transcript	0	1089	8656	2	3	6	2	1179	False	deferred	not reserved	l1		l1-p3200		
 l1-p3201	l1-p3201	lib:MYORG	library_reference	human	ENST00000297625	named transcript	0	2145	9712	3	4	6	2	2235	False	deferred	not reserved	l1		l1-p3201		
 l1-p3202	l1-p3202	lib:PRRT3	library_reference	human	ENST00000412055	named transcript	0	2946	10513	2	2	6	2	3036	False	deferred	not reserved	l1		l1-p3202	withdrawn_from_gene_list:PRRT3 (Becca 2026-11-23; replaced by PR #455 abundance-v8 proteomics set)	
@@ -7363,7 +7363,7 @@ l1-p3210	l1-p3210	lib:TMEM94	library_reference	human	ENST00000314256	named trans
 l1-p3211	l1-p3211	lib:FCGR2C	library_reference	human	ENST00000466542	common_intact_allele	1	972	8539	0	0	6	2	1062	False	deferred	not reserved	l1		l1-p3211		
 l1-p3212	l1-p3212	lib:OR10AC1	library_reference	human	ENST00000439431	common_intact_allele	0	978	8545	1	1	6	2	1068	False	deferred	not reserved	l1		l1-p3212		
 l1-p3213	l1-p3213	lib:OR4Q2	library_reference	human	ENST00000710368	screened_patch_form	0	942	8509	0	0	6	2	1032	False	deferred	not reserved	l1		l1-p3213		
-l1-p3214	l1-p3214	lib:OR52P1	library_reference	human	ENST00000438474	common_intact_allele	5	966	8533	2	2	6	2	1056	False	deferred	not reserved	l1		l1-p3214	withdrawn_allele_restoration:OR52P1 (Becca 2026-11-23; lower-confidence double indel with 5 unphased diffs)	
+l1-p3214	l1-p3214	lib:OR52P1	library_reference	human	ENST00000438474	functional_human_allele	0	966	8533	2	2	6	2	1056	False	deferred	not reserved	l1		l1-p3214		
 l1-p3215	l1-p3215	iso:ACVR2A:ENST00000943650	isoform	human	ENST00000943650	named transcript	0	1533	9100	2	3	6	2	1623	False	deferred	not reserved	l1	isoform_panel	l2-p0026		
 l1-p3216	l1-p3216	iso:ADGRB2:O60241	isoform	human	ENST00000373658	named transcript	0	4758	12325	6	8	6	2	4848	False	deferred	not reserved	l1	isoform_panel	l2-p0071	duplicates_reference:lib:ADGRB2 (its reference moved to this protein, GTF MANE rerun 2026-11-22; isoform slot to be refilled by the panel redraw)	
 l1-p3217	l1-p3217	iso:ADGRG2:ENST00000971549	isoform	human	ENST00000971549	named transcript	0	3003	10570	4	7	6	2	3093	False	deferred	not reserved	l1	isoform_panel	l2-p0089	dropped_from_panel:isoform_redraw_2026-11-23 (Becca 2026-11-23; relaxed non-fragment gate)	
@@ -7438,7 +7438,7 @@ l1-p3285	l1-p3285	iso:SPNS2:ENST00000947403	isoform	human	ENST00000947403	named 
 l1-p3286	l1-p3286	iso:STEAP3:Q658P3-2	isoform	human	ENST00000393110	named transcript	0	1497	9064	1	1	6	2	1587	False	deferred	not reserved	l1	isoform_panel	l2-p1545	duplicates_reference:lib:STEAP3 (its reference moved to this protein, GTF MANE rerun 2026-11-22; isoform slot to be refilled by the panel redraw)	
 l1-p3287	l1-p3287	iso:TMEM134:Q9H6X4	isoform	human	ENST00000308022	named transcript	0	588	8155	0	0	6	2	678	False	deferred	not reserved	l1	isoform_panel	l2-p1586	duplicates_reference:lib:TMEM134 (its reference moved to this protein, GTF MANE rerun 2026-11-22; isoform slot to be refilled by the panel redraw)	
 l1-p3288	l1-p3288	iso:TMEM181:Q9P2C4-1	isoform	human	ENST00000367090	named transcript	0	1551	9118	3	3	6	2	1641	False	deferred	not reserved	l1	isoform_panel	l2-p1592		
-l1-p3289	l1-p3289	iso:TMEM222:ENST00000915855	isoform	human	ENST00000915855	named transcript	0	618	8185	2	2	6	2	708	False	deferred	not reserved	l1	isoform_panel	l2-p1598		
+l1-p3289	l1-p3289	iso:TMEM222:ENST00000915855	isoform	human	ENST00000915855	named transcript	0	618	8185	2	2	6	2	708	False	deferred	not reserved	l1	isoform_panel	l2-p1598	parent_gene_dropped_ectodomain_below_30aa:TMEM222 (Becca 2026-11-25)	
 l1-p3290	l1-p3290	iso:TMIGD2:Q96BF3	isoform	human	ENST00000301272	named transcript	0	849	8416	3	5	6	2	939	False	deferred	not reserved	l1	isoform_panel	l2-p1604		
 l1-p3291	l1-p3291	iso:TMPRSS13:Q9BYE2	isoform	human	ENST00000445164	named transcript	0	1761	9328	2	2	6	2	1851	False	deferred	not reserved	l1	isoform_panel	l2-p1606		
 l1-p3292	l1-p3292	iso:TMPRSS13:Q9BYE2-4	isoform	human	ENST00000526090	named transcript	0	1476	9043	1	1	6	2	1566	False	deferred	not reserved	l1	isoform_panel	l2-p1607	dropped_from_panel:isoform_redraw_2026-11-23 (Becca 2026-11-23; relaxed non-fragment gate)	
@@ -7490,3 +7490,4 @@ l1-p3337	l1-p3337	iso:SLC39A14:Q15043-3	isoform	human	ENST00000359741	named tran
 l1-p3338	l1-p3338	iso:NRP2:O60462-4	isoform	human	ENST00000357118	named transcript	0	2706	10273	3	4	6	2	2796	False	deferred	not reserved	l1	isoform_panel	l2-p1033		
 l1-p3339	l1-p3339	iso:ATP1B3:ENST00000874841	isoform	human	ENST00000874841	named transcript	0	816	8383	1	1	6	2	906	False	deferred	not reserved	l1	isoform_panel	l2-p0202		
 l1-p3340	l1-p3340	iso:PMEPA1:Q969W9-3	isoform	human	ENST00000265626	named transcript	0	714	8281	0	0	6	2	804	False	deferred	not reserved	l1	isoform_panel	l2-p1162		
+l1-p3341	l1-p3341	lib:PCDH11X	library_reference	human	ENST00000682573	named transcript	0	4044	11611	1	1	6	2	4134	False	deferred	not reserved	l1		l1-p3341		

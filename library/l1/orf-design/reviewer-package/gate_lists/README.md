@@ -27,9 +27,9 @@ UniProt canonical sequence, as recorded in the release.
 | File | Tier | Genes |
 |---|---|---:|
 | [`10_tier_core.tsv`](10_tier_core.tsv) | passes every gate (tiers T1-T3 by architecture risk) | 2,134 |
-| [`11_tier_low_literature_uniprot.tsv`](11_tier_low_literature_uniprot.tsv) | low-literature UniProt surface tier | 139 |
+| [`11_tier_low_literature_uniprot.tsv`](11_tier_low_literature_uniprot.tsv) | low-literature UniProt surface tier | 119 |
 | [`12_tier_screen_validated_gpcr.tsv`](12_tier_screen_validated_gpcr.tsv) | screen-validated GPCR tier (Tedman et al., 2026) | 85 |
 | [`13_tier_overexpression_surface.tsv`](13_tier_overexpression_surface.tsv) | overexpression-surface tier | 12 |
 
-The filter passes 2,370 genes (core 2,134 plus the three tiers); 1 removed afterwards ([`gene_list_exclusions.tsv`](../../gene_list_exclusions.tsv): EPPIN) leaves 2,369, the library's gene count. Cohort: 5,332 genes.
-[`14_library_genes.tsv`](14_library_genes.tsv) lists all 2,417 library genes: the 2,369 above and 48 dated additions ([`gene_list_additions.tsv`](../../gene_list_additions.tsv)).
+The filter passes 2,350 genes (core 2,134 plus the three tiers); 1 removed afterwards ([`gene_list_exclusions.tsv`](../../gene_list_exclusions.tsv): EPPIN) leaves 2,349, the library's gene count. Cohort: 5,332 genes.
+[`14_library_genes.tsv`](14_library_genes.tsv) lists all 2,399 library genes: the 2,349 above and 50 dated additions ([`gene_list_additions.tsv`](../../gene_list_additions.tsv)).

@@ -207,7 +207,7 @@ def issue(
             r["candidate_id"] for r in csv.DictReader(fh, delimiter="\t") if r["retired_reason"]
         }
     gone = {a for a in set(previous) - set(arms)}
-    member = {a: a.split(":")[0].rsplit("-a", 1)[0] for a in gone}
+    member = {a: a.split("@")[0].split(":")[0].rsplit("-a", 1)[0] for a in gone}
     superseded = set(reissues())  # an old protein's arm: kept issued, unused
     stale = sorted(
         a for a in gone if member[a] not in retired and a not in superseded and a not in held_arms()

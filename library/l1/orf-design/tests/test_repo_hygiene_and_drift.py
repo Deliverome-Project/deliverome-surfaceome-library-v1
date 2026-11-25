@@ -310,7 +310,7 @@ def _exported_python_files() -> list[tuple[str, Path]]:
 
 
 def test_isoform_panel_matches_active_manifest_1_to_1() -> None:
-    """isoform_panel.tsv (150 rows) must match active L1 isoforms in candidate_manifest_tranches.tsv."""
+    """isoform_panel.tsv (149 rows after dropping TMEM222 <30 aa parent) must match active L1 isoforms 1:1."""
     iso_rows = _read_tsv(S4E9 / "isoform_panel.tsv")
     manifest_rows = _read_tsv(S4E9 / "candidate_manifest_tranches.tsv")
     active_iso = [
@@ -319,15 +319,15 @@ def test_isoform_panel_matches_active_manifest_1_to_1() -> None:
         if r["set"] == "isoform" and r["library"] == "l1" and not r["retired_reason"].strip()
     ]
 
-    assert len(iso_rows) == 150, f"expected 150 rows in isoform_panel.tsv, got {len(iso_rows)}"
-    assert len(active_iso) == 150, (
-        f"expected 150 active L1 isoforms in candidate_manifest_tranches.tsv, got {len(active_iso)}"
+    assert len(iso_rows) == 149, f"expected 149 rows in isoform_panel.tsv, got {len(iso_rows)}"
+    assert len(active_iso) == 149, (
+        f"expected 149 active L1 isoforms in candidate_manifest_tranches.tsv, got {len(active_iso)}"
     )
 
     iso_by_key = {_isoform_key(r): r for r in iso_rows}
     manifest_by_key = {r["key"]: r for r in active_iso}
-    assert len(iso_by_key) == 150, "duplicate keys in isoform_panel.tsv"
-    assert len(manifest_by_key) == 150, "duplicate keys in active L1 isoform manifest"
+    assert len(iso_by_key) == 149, "duplicate keys in isoform_panel.tsv"
+    assert len(manifest_by_key) == 149, "duplicate keys in active L1 isoform manifest"
 
     only_panel = sorted(set(iso_by_key) - set(manifest_by_key))
     only_manifest = sorted(set(manifest_by_key) - set(iso_by_key))
@@ -358,7 +358,7 @@ def test_isoform_architecture_classes_matches_panel_and_gate() -> None:
     gate_rows = _read_tsv(S4E9 / "isoform_gate_2026_11_23.tsv")
 
     panel_sum = sum(int(r["panel_forms"]) for r in iac_rows)
-    assert panel_sum == len(iso_rows) == 150, (
+    assert panel_sum == len(iso_rows) == 149, (
         f"panel_forms sum ({panel_sum}) != len(isoform_panel.tsv) ({len(iso_rows)})"
     )
 

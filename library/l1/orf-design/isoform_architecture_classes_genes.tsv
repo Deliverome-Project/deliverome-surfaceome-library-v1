@@ -239,8 +239,8 @@ CALHM5	multipass N-in	multipass	multipass, N-terminus cytoplasmic	4	0	cytoplasmi
 CASR	multipass N-out	multipass	multipass, N-terminus extracellular	7	19	extracellular	222
 CATSPERE	type I	type I		1	19	extracellular	27
 CATSPERG	type I	type I		1	37	extracellular	71
-CATSPERH	multipass N-out	multipass	multipass, N-terminus extracellular	3	22	extracellular	17
-CATSPERQ	multipass N-in	multipass	multipass, N-terminus cytoplasmic	2	0	cytoplasmic	131
+CATSPERH	multipass N-out	no built reference					
+CATSPERQ	multipass N-in	no built reference					
 CCKAR	multipass N-out	multipass	multipass, N-terminus extracellular	7	0	extracellular	55
 CCKBR	multipass N-out	multipass	multipass, N-terminus extracellular	7	0	extracellular	54
 CCR1	multipass N-out	multipass	multipass, N-terminus extracellular	7	0	extracellular	51
@@ -503,7 +503,7 @@ CXCR3	multipass N-out	multipass	multipass, N-terminus extracellular	7	0	extracel
 CXCR4	multipass N-out	multipass	multipass, N-terminus extracellular	7	0	extracellular	47
 CXCR5	multipass N-out	multipass	multipass, N-terminus extracellular	7	0	extracellular	48
 CXCR6	multipass N-out	multipass	multipass, N-terminus extracellular	7	0	extracellular	51
-CXorf66	type I	type I		1	17	extracellular	294
+CXorf66	type I	no built reference					
 CYBB	multipass N-in	multipass	multipass, N-terminus cytoplasmic	6	0	cytoplasmic	281
 CYBRD1	multipass N-in	multipass	multipass, N-terminus cytoplasmic	6	0	cytoplasmic	64
 CYSLTR1	multipass N-out	multipass	multipass, N-terminus extracellular	7	0	extracellular	39
@@ -1138,6 +1138,7 @@ LINGO4	type I	type I		1	29	extracellular	39
 LMBR1L	multipass N-out	multipass	multipass, N-terminus extracellular	9	0	extracellular	37
 LMBRD2	multipass N-out	multipass	multipass, N-terminus extracellular	9	0	extracellular	149
 LMLN	GPI	GPI		0	43	extracellular	
+LNPEP	unclassified	type II		1	0	cytoplasmic	894
 LPAR1	multipass N-out	multipass	multipass, N-terminus extracellular	7	0	extracellular	53
 LPAR2	multipass N-out	multipass	multipass, N-terminus extracellular	7	0	extracellular	56
 LPAR3	multipass N-out	multipass	multipass, N-terminus extracellular	7	0	extracellular	58
@@ -1288,7 +1289,7 @@ MS4A13	multipass N-in	multipass	multipass, N-terminus cytoplasmic	4	0	cytoplasmi
 MS4A2	multipass N-in	multipass	multipass, N-terminus cytoplasmic	4	0	cytoplasmic	47
 MS4A3	multipass N-in	multipass	multipass, N-terminus cytoplasmic	4	0	cytoplasmic	19
 MS4A4A	multipass N-in	multipass	multipass, N-terminus cytoplasmic	4	0	cytoplasmic	39
-MS4A5	multipass N-in	multipass	multipass, N-terminus cytoplasmic	4	0	cytoplasmic	14
+MS4A5	multipass N-in	no built reference					
 MS4A6A	multipass N-in	multipass	multipass, N-terminus cytoplasmic	4	0	cytoplasmic	46
 MS4A7	multipass N-in	multipass	multipass, N-terminus cytoplasmic	4	0	cytoplasmic	39
 MSLN	GPI	GPI		0	36	extracellular	
@@ -1524,7 +1525,7 @@ OR52K2	multipass N-out	multipass	multipass, N-terminus extracellular	7	0	extrace
 OR52L1	multipass N-out	multipass	multipass, N-terminus extracellular	7	0	extracellular	17
 OR52N2	multipass N-out	multipass	multipass, N-terminus extracellular	7	0	extracellular	24
 OR52N4	multipass N-out	multipass	multipass, N-terminus extracellular	7	0	extracellular	24
-OR52P1	multipass N-out	no built reference					
+OR52P1	multipass N-out	multipass	multipass, N-terminus extracellular	7	0	extracellular	25
 OR56A3	multipass N-out	multipass	multipass, N-terminus extracellular	7	0	extracellular	17
 OR56B1	multipass N-out	multipass	multipass, N-terminus extracellular	7	0	extracellular	22
 OR56B4	multipass N-out	multipass	multipass, N-terminus extracellular	7	0	extracellular	21
@@ -1616,6 +1617,7 @@ PAQR8	multipass N-in	multipass	multipass, N-terminus cytoplasmic	8	0	cytoplasmic
 PAQR9	multipass N-in	multipass	multipass, N-terminus cytoplasmic	8	0	cytoplasmic	9
 PCDH1	type I	type I		1	57	extracellular	363
 PCDH10	type I	type I		1	18	extracellular	302
+PCDH11X	unclassified	type I		1	23	extracellular	513
 PCDH12	type I	type I		1	24	extracellular	447
 PCDH17	type I	type I		1	17	extracellular	438
 PCDH18	type I	type I		1	27	extracellular	415
@@ -1767,7 +1769,7 @@ RAET1G	GPI	GPI		1	28	extracellular	92
 RAET1L	GPI	GPI		0	25	extracellular	
 RECK	GPI	GPI		0	26	extracellular	
 RELL1	type I	type I		1	23	extracellular	194
-RELL2	type III	type III		1	0	extracellular	268
+RELL2	type III	no built reference					
 RELT	type I	type I		1	25	extracellular	245
 RET	type I	type I		1	28	extracellular	457
 RGMA	GPI	GPI		0	47	extracellular	
@@ -2101,7 +2103,7 @@ SLITRK4	type I	type I		1	18	extracellular	195
 SLITRK5	type I	type I		1	38	extracellular	270
 SLITRK6	type I	type I		1	21	extracellular	212
 SMAGP	type III	type III		1	0	extracellular	40
-SMIM7	multipass N-out	multipass	multipass, N-terminus extracellular	2	0	extracellular	3
+SMIM7	multipass N-out	no built reference					
 SMO	multipass N-out	multipass	multipass, N-terminus extracellular	7	29	extracellular	249
 SMPDL3B	GPI	GPI		0	18	extracellular	
 SNORC	type I	type I		1	24	extracellular	6
@@ -2177,7 +2179,7 @@ TCTA	type II	type II		1	0	cytoplasmic	45
 TEK	type I	type I		1	22	extracellular	355
 TEX101	GPI	GPI		0	23	extracellular	
 TEX29	type III	type III		1	0	extracellular	72
-TEX38	type III	type III		1	0	extracellular	171
+TEX38	type III	no built reference					
 TFPI	GPI	GPI		0	28	extracellular	
 TFR2	type II	type II		1	0	cytoplasmic	697
 TFRC	type II	type II		1	0	cytoplasmic	674
@@ -2222,16 +2224,16 @@ TMEM132A	type I	type I		1	36	extracellular	150
 TMEM132B	type III	type I		1	26	extracellular	156
 TMEM132D	type I	type I		1	30	extracellular	160
 TMEM132E	type I	type I		1	23	extracellular	160
-TMEM134	multipass N-in	multipass	multipass, N-terminus cytoplasmic	2	0	cytoplasmic	19
-TMEM139	multipass N-in	multipass	multipass, N-terminus cytoplasmic	2	0	cytoplasmic	157
+TMEM134	multipass N-in	no built reference					
+TMEM139	multipass N-in	no built reference					
 TMEM145	multipass N-out	multipass	multipass, N-terminus extracellular	7	29	extracellular	92
 TMEM150A	multipass N-in	multipass	multipass, N-terminus cytoplasmic	6	0	cytoplasmic	42
 TMEM150C	multipass N-in	multipass	multipass, N-terminus cytoplasmic	6	0	cytoplasmic	36
 TMEM154	type I	type I		1	22	extracellular	85
 TMEM158	type I	type I		1	20	extracellular	57
-TMEM169	multipass N-in	multipass	multipass, N-terminus cytoplasmic	4	0	cytoplasmic	65
+TMEM169	multipass N-in	no built reference					
 TMEM170B	multipass N-out	multipass	multipass, N-terminus extracellular	3	0	extracellular	7
-TMEM174	multipass N-in	multipass	multipass, N-terminus cytoplasmic	2	0	cytoplasmic	153
+TMEM174	multipass N-in	no built reference					
 TMEM181	multipass N-in	multipass	multipass, N-terminus cytoplasmic	8	0	cytoplasmic	56
 TMEM182	multipass N-in	multipass	multipass, N-terminus cytoplasmic	4	0	cytoplasmic	7
 TMEM184A	multipass N-out	multipass	multipass, N-terminus extracellular	7	0	extracellular	93
@@ -2239,23 +2241,23 @@ TMEM190	type I	type I		1	21	extracellular	74
 TMEM198	multipass N-out	multipass	multipass, N-terminus extracellular	7	0	extracellular	124
 TMEM204	multipass N-in	multipass	multipass, N-terminus cytoplasmic	4	0	cytoplasmic	38
 TMEM205	multipass N-out	multipass	multipass, N-terminus extracellular	4	0	extracellular	6
-TMEM210	type I	type I		1	30	extracellular	79
+TMEM210	type I	no built reference					
 TMEM219	multipass N-in	multipass	multipass, N-terminus cytoplasmic	2	0	cytoplasmic	15
-TMEM222	type II	type II	type II, C-tail <= 30 aa (tail-anchored-like)	1	0	cytoplasmic	7
+TMEM222	type II	no built reference					
 TMEM225	multipass N-in	multipass	multipass, N-terminus cytoplasmic	4	0	cytoplasmic	65
 TMEM229B	multipass N-in	multipass	multipass, N-terminus cytoplasmic	4	0	cytoplasmic	31
-TMEM238	multipass N-in	multipass	multipass, N-terminus cytoplasmic	2	0	cytoplasmic	87
+TMEM238	multipass N-in	no built reference					
 TMEM248	unclassified	multipass	multipass, N-terminus cytoplasmic	2	0	cytoplasmic	24
 TMEM26	multipass N-in	multipass	multipass, N-terminus cytoplasmic	8	0	cytoplasmic	63
-TMEM266	multipass N-in	multipass	multipass, N-terminus cytoplasmic	4	0	cytoplasmic	322
-TMEM268	multipass N-in	multipass	multipass, N-terminus cytoplasmic	2	0	cytoplasmic	190
-TMEM273	type I	type I		1	23	extracellular	75
+TMEM266	multipass N-in	no built reference					
+TMEM268	multipass N-in	no built reference					
+TMEM273	type I	no built reference					
 TMEM47	multipass N-in	multipass	multipass, N-terminus cytoplasmic	4	0	cytoplasmic	9
 TMEM63B	multipass N-out	multipass	multipass, N-terminus extracellular	11	10	extracellular	106
 TMEM67	multipass N-out	multipass	multipass, N-terminus extracellular	7	36	extracellular	32
 TMEM81	type I	type I		1	24	extracellular	8
-TMEM86A	multipass N-in	multipass	multipass, N-terminus cytoplasmic	8	0	cytoplasmic	16
-TMEM86B	multipass N-in	multipass	multipass, N-terminus cytoplasmic	8	0	cytoplasmic	8
+TMEM86A	multipass N-in	no built reference					
+TMEM86B	multipass N-in	no built reference					
 TMEM89	type I	type I		1	22	extracellular	77
 TMEM8B	multipass N-out	multipass	multipass, N-terminus cytoplasmic	8	0	cytoplasmic	47
 TMEM95	type I	type I		1	16	extracellular	11
@@ -2356,7 +2358,7 @@ TSPAN6	multipass N-in	multipass	multipass, N-terminus cytoplasmic	4	0	cytoplasmi
 TSPAN7	multipass N-in	multipass	multipass, N-terminus cytoplasmic	4	0	cytoplasmic	14
 TSPAN8	multipass N-in	multipass	multipass, N-terminus cytoplasmic	4	0	cytoplasmic	7
 TSPAN9	multipass N-in	multipass	multipass, N-terminus cytoplasmic	4	0	cytoplasmic	15
-TSPO2	multipass N-out	multipass	multipass, N-terminus extracellular	5	0	extracellular	20
+TSPO2	multipass N-out	no built reference					
 TTYH1	multipass N-out	multipass	multipass, N-terminus extracellular	5	0	extracellular	39
 TTYH2	multipass N-out	multipass	multipass, N-terminus extracellular	5	0	extracellular	125
 TTYH3	multipass N-out	multipass	multipass, N-terminus extracellular	5	0	extracellular	116

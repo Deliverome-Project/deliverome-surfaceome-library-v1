@@ -897,10 +897,6 @@ l1-p0238	l1-p0238	CATSPERG	534	1600	ACG	ACT	T	True	False	False	False
 l1-p0238	l1-p0238	CATSPERG	576	1726	ACC	ACA	T	True	False	False	False
 l1-p0238	l1-p0238	CATSPERG	584	1750	GAC	GAT	D	True	False	False	False
 l1-p0238	l1-p0238	CATSPERG	1129	3385	CTG	TTG	L	True	False	False	False
-l1-p0239	l1-p0239	CATSPERH	36	106	GAC	GAT	D	True	True	False	False
-l1-p0240	l1-p0240	CATSPERQ	52	154	TTC	TTT	F	True	False	False	False
-l1-p0240	l1-p0240	CATSPERQ	88	262	ACC	ACA	T	True	True	False	False
-l1-p0240	l1-p0240	CATSPERQ	91	271	TTC	TTT	F	True	False	False	False
 l1-p0241	l1-p0241	CCKAR	26	76	ACG	ACT	T	True	False	False	False
 l1-p0242	l1-p0242	CCKBR	289	865	GAC	GAT	D	True	False	False	False
 l1-p0244	l1-p0244	CCR10	162	484	TCC	AGC	S	True	False	False	False
@@ -5113,8 +5109,6 @@ l1-p1725	l1-p1725	RECK	937	2809	TCC	AGC	S	True	False	False	False
 l1-p1726	l1-p1726	RELL1	17	49	TTC	TTT	F	True	False	False	False
 l1-p1726	l1-p1726	RELL1	43	127	ACG	ACT	T	True	False	False	False
 l1-p1726	l1-p1726	RELL1	72	214	CTC	CTA	L	True	False	False	False
-l1-p1727	l1-p1727	RELL2	25	73	TTC	TTT	F	True	False	False	False
-l1-p1727	l1-p1727	RELL2	161	481	ACC	ACA	T	True	False	False	False
 l1-p1728	l1-p1728	RELT	172	514	TTC	TTT	F	True	False	False	False
 l1-p1728	l1-p1728	RELT	368	1102	AAG	AAA	K	True	False	False	False
 l1-p1729	l1-p1729	RET	126	376	TTC	TTT	F	True	False	False	False
@@ -6422,8 +6416,6 @@ l1-p2125	l1-p2125	TEK	922	2764	ACG	ACT	T	True	False	False	False
 l1-p2126	l1-p2126	TEX101	129	385	ACC	ACA	T	True	False	False	False
 l1-p2126	l1-p2126	TEX101	227	679	CTT	CTG	L	True	False	False	False
 l1-p2127	l1-p2127	TEX29	34	100	TCC	AGC	S	True	False	False	False
-l1-p2128	l1-p2128	TEX38	16	46	TCA	AGT	S	True	False	False	False
-l1-p2128	l1-p2128	TEX38	194	580	GAC	GAT	D	True	False	False	False
 l1-p2130	l1-p2130	TFR2	40	118	GAC	GAT	D	True	True	False	False
 l1-p2130	l1-p2130	TFR2	255	763	GAC	GAT	D	True	False	False	False
 l1-p2130	l1-p2130	TFR2	329	985	GAC	GAT	D	True	False	False	False
@@ -6583,12 +6575,9 @@ l1-p2185	l1-p2185	TMEM198	311	931	GAC	GAT	D	True	True	False	False
 l1-p2185	l1-p2185	TMEM198	324	970	CGG	AGG	R	True	False	False	False
 l1-p2186	l1-p2186	TMEM204	17	49	TCA	AGT	S	True	False	False	False
 l1-p2187	l1-p2187	TMEM205	33	97	TCA	AGT	S	True	False	False	False
-l1-p2188	l1-p2188	TMEM210	116	346	TCC	AGC	S	True	False	False	False
 l1-p2189	l1-p2189	TMEM219	59	175	TCT	AGT	S	True	False	False	False
 l1-p2189	l1-p2189	TMEM219	83	247	TCT	TCG	S	True	False	False	False
 l1-p2189	l1-p2189	TMEM219	96	286	GAC	GAT	D	True	True	False	False
-l1-p2190	l1-p2190	TMEM222	32	94	ACG	ACT	T	True	False	False	False
-l1-p2190	l1-p2190	TMEM222	186	556	AAG	AAA	K	True	False	False	False
 l1-p2194	l1-p2194	TMEM26	6	16	TTC	TTT	F	True	False	False	False
 l1-p2194	l1-p2194	TMEM26	89	265	ACC	ACA	T	True	False	False	False
 l1-p2194	l1-p2194	TMEM26	108	322	GAC	GAT	D	True	False	False	False
@@ -6596,8 +6585,6 @@ l1-p2194	l1-p2194	TMEM26	128	382	ACG	ACT	T	True	False	False	False
 l1-p2194	l1-p2194	TMEM26	195	583	ACC	ACA	T	True	False	False	False
 l1-p2194	l1-p2194	TMEM26	262	784	TTC	TTT	F	True	False	False	False
 l1-p2194	l1-p2194	TMEM26	273	817	CTC	CTA	L	True	False	False	False
-l1-p2195	l1-p2195	TMEM266	298	892	ACG	ACT	T	True	False	False	False
-l1-p2196	l1-p2196	TMEM268	218	652	AAG	AAA	K	True	False	False	False
 l1-p2198	l1-p2198	TMEM47	179	535	GAC	GAT	D	True	False	False	False
 l1-p2199	l1-p2199	TMEM63B	109	325	CTC	CTA	L	True	False	False	False
 l1-p2199	l1-p2199	TMEM63B	346	1036	GAC	GAT	D	True	False	False	False
@@ -6606,8 +6593,6 @@ l1-p2200	l1-p2200	TMEM67	301	901	GAC	GAT	D	True	False	False	False
 l1-p2200	l1-p2200	TMEM67	542	1624	AAG	AAA	K	True	False	False	False
 l1-p2201	l1-p2201	TMEM81	61	181	ACC	ACA	T	True	False	False	False
 l1-p2201	l1-p2201	TMEM81	135	403	TTC	TTT	F	True	False	False	False
-l1-p2202	l1-p2202	TMEM86A	77	229	TTC	TTT	F	True	False	False	False
-l1-p2203	l1-p2203	TMEM86B	11	31	AAG	AAA	K	True	False	False	False
 l1-p2204	l1-p2204	TMEM89	25	73	AGA	AGG	R	True	False	False	False
 l1-p2205	l1-p2205	TMEM8B	304	910	CTC	CTA	L	True	False	False	False
 l1-p2205	l1-p2205	TMEM8B	854	2560	ACC	ACA	T	True	False	False	False
@@ -7401,7 +7386,6 @@ l1-p2971	l1-p2971	SLC9B1	154	460	TCA	AGT	S	True	False	False	False
 l1-p2971	l1-p2971	SLC9B1	274	820	TTC	TTT	F	True	False	False	False
 l1-p2971	l1-p2971	SLC9B1	311	931	GAC	GAT	D	True	False	False	False
 l1-p2972	l1-p2972	TEX29	34	100	TCC	AGC	S	True	False	False	False
-l1-p2973	l1-p2973	TMEM210	116	346	TCC	AGC	S	True	False	False	False
 l1-p2974	l1-p2974	TNFRSF13B	21	61	TCT	TCG	S	True	False	False	False
 l1-p2974	l1-p2974	TNFRSF13B	209	625	TCC	AGC	S	True	False	False	False
 l1-p2974	l1-p2974	TNFRSF13B	229	685	ACC	ACA	T	True	True	False	False
@@ -8042,6 +8026,7 @@ l1-p3197	l1-p3197	FAM234A	292	874	CTC	CTA	L	True	False	False	False
 l1-p3197	l1-p3197	FAM234A	448	1342	ACG	ACT	T	True	False	False	False
 l1-p3197	l1-p3197	FAM234A	450	1348	ACC	ACA	T	True	False	False	False
 l1-p3197	l1-p3197	FAM234A	510	1528	TCT	AGT	S	True	False	False	False
+l1-p3199	l1-p3199	LNPEP	537	1609	TCA	AGT	S	True	False	False	False
 l1-p3200	l1-p3200	MFAP3	75	223	CTC	TTA	L	True	False	False	False
 l1-p3200	l1-p3200	MFAP3	274	820	AGA	AGG	R	True	False	False	False
 l1-p3201	l1-p3201	MYORG	81	241	TCC	AGC	S	True	False	False	False
@@ -8067,6 +8052,8 @@ l1-p3207	l1-p3207	SV2A	736	2206	ACC	ACA	T	True	False	False	False
 l1-p3208	l1-p3208	TM2D1	27	79	TCA	AGT	S	True	False	False	False
 l1-p3209	l1-p3209	TMEM248	23	67	TTC	TTT	F	True	False	False	False
 l1-p3212	l1-p3212	OR10AC1	25	73	AGA	AGG	R	True	False	False	False
+l1-p3214	l1-p3214	OR52P1	14	40	TTC	TTT	F	True	False	False	False
+l1-p3214	l1-p3214	OR52P1	218	652	CTC	CTA	L	True	False	False	False
 l1-p3215	l1-p3215	ACVR2A	285	853	TCT	AGT	S	True	False	False	False
 l1-p3215	l1-p3215	ACVR2A	424	1270	GAC	GAT	D	True	False	False	False
 l1-p3218	l1-p3218	ADGRL2	4	10	TCT	AGT	S	True	False	False	False
@@ -8285,8 +8272,6 @@ l1-p3285	l1-p3285	SPNS2	432	1294	ACG	ACT	T	True	False	False	False
 l1-p3288	l1-p3288	TMEM181	65	193	TTC	TTT	F	True	False	False	False
 l1-p3288	l1-p3288	TMEM181	207	619	AAG	AAA	K	True	False	False	False
 l1-p3288	l1-p3288	TMEM181	364	1090	TTC	TTT	F	True	False	False	False
-l1-p3289	l1-p3289	TMEM222	32	94	ACG	ACT	T	True	False	False	False
-l1-p3289	l1-p3289	TMEM222	183	547	AAG	AAA	K	True	False	False	False
 l1-p3290	l1-p3290	TMIGD2	245	733	AGA	AGG	R	True	False	False	False
 l1-p3290	l1-p3290	TMIGD2	257	769	TCT	AGT	S	True	False	False	False
 l1-p3290	l1-p3290	TMIGD2	262	784	TCT	AGT	S	True	False	False	False
@@ -8418,3 +8403,4 @@ l1-p3338	l1-p3338	NRP2	603	1807	ACG	ACT	T	True	False	False	False
 l1-p3338	l1-p3338	NRP2	847	2539	TCC	AGC	S	True	False	False	False
 l1-p3338	l1-p3338	NRP2	865	2593	AAG	AAA	K	True	False	False	False
 l1-p3339	l1-p3339	ATP1B3	101	301	GAC	GAT	D	True	False	False	False
+l1-p3341	l1-p3341	PCDH11X	1072	3214	GAC	GAT	D	True	False	False	False

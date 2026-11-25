@@ -1,33 +1,33 @@
 {
-  "order_of_record": "processed://sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-24-pre-freeze-c/l1_order_inserts_recoded.fasta",
-  "order_of_record_sha256": "ef810d1d7ae674f6d0409398d2463d6f0a476d1dd7c638e0c0cc23426027e8d2",
-  "refold_table": "library/l1/orf-design/tag_refold_structures.tsv at 7dc06001 (PR #301)",
-  "inserts": 3375,
+  "order_of_record": "processed://sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-25-pre-freeze-e/l1_order_inserts_recoded.fasta",
+  "order_of_record_sha256": "658682f876598307bc30ad5103199ef77757ca2b00dcb1b00927f6989087ceb3",
+  "refold_table": "library/l1/orf-design/tag_refold_structures.tsv at 4422a9c4 (PR #301)",
+  "inserts": 3352,
   "status": {
-    "ok": 3375
+    "ok": 3352
   },
   "folded_form": {
-    "precursor": 2799,
-    "mature chain": 576
+    "precursor": 2780,
+    "mature chain": 572
   },
   "n_terminal_peptides_not_folded": {
-    "METDTLLLWVLLLWVPGSTG": 576
+    "METDTLLLWVLLLWVPGSTG": 572
   },
   "by_rung": {
     "nterm": {
-      "ok": 1322
+      "ok": 1321
     },
     "type3": {
-      "ok": 43
-    },
-    "multipass": {
-      "ok": 568
+      "ok": 41
     },
     "cterm": {
-      "ok": 361
+      "ok": 358
     },
     "internal": {
-      "ok": 1081
+      "ok": 1066
+    },
+    "multipass": {
+      "ok": 566
     }
   },
   "decided_by": "coordinator under Becca's 2026-11-12 overnight delegation",

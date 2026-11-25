@@ -20,13 +20,11 @@ l1-p1346	l1-p1346	library_reference	human	OPALIN	mid_tail	35	1	18	2.73	TM	extrac
 l1-p1666	l1-p1666	library_reference	human	PMEPA1	mid_tail	43	6	19	3.53	TM	extracellular	TM	0	1	1		O	TM	0	1	1	out	O	SP+TM	20	1	1	out	O
 l1-p1682	l1-p1682	library_reference	human	PRRG1	mid_tail	80	5	21	2.83	TM	extracellular	TM	0	1	1		O	TM	0	1	1	out	O	SP+TM	20	1	1	out	O
 l1-p1684	l1-p1684	library_reference	human	PRRG3	mid_tail	79	4	21	3.0	TM	extracellular	TM	0	1	1		O	TM	0	1	1	out	O	SP+TM	20	1	1	out	O
-l1-p1727	l1-p1727	library_reference	human	RELL2	short_tail	14	9	21	2.79	TM	extracellular	TM	0	1	1		O	TM	0	1	1	out	O	SP+TM	20	1	1	out	O
 l1-p1800	l1-p1800	library_reference	human	SERTM2	mid_tail	37	2	21	2.73	TM	extracellular	TM	0	1	1		O	TM	0	1	1	out	O	SP+TM	20	1	1	out	O
 l1-p1809	l1-p1809	library_reference	human	SIGIRR	mid_tail	118	0	22	2.89	TM	extracellular	TM	0	1	1		O	TM	0	1	1	out	O	SP+TM	20	1	1	out	O
 l1-p2053	l1-p2053	library_reference	human	SMAGP	mid_tail	35	4	22	3.19	TM	extracellular	TM	0	1	1		O	TM	0	1	1	out	O	SP+TM	20	1	1	out	O
 l1-p2086	l1-p2086	library_reference	human	SUSD3	mid_tail	105	6	19	2.63	TM	extracellular	TM	0	1	1		O	TM	0	1	1	out	O	SP+TM	20	1	1	out	O
 l1-p2127	l1-p2127	library_reference	human	TEX29	mid_tail	56	0	23	2.42	TM	extracellular	TM	0	1	1		O	TM	0	1	1	out	O	SP+TM	20	1	1	out	O
-l1-p2128	l1-p2128	library_reference	human	TEX38	short_tail	14	4	21	2.06	TM	extracellular	TM	0	1	1		O	TM	0	1	1	out	O	SP+TM	20	1	1	out	O
 l1-p2230	l1-p2230	library_reference	human	TNFRSF13B	long_tail	162	3	21	2.42	SP+TM	extracellular	TM	0	1	1		O	TM	0	1	1	out	O	SP+TM	20	1	1	out	O
 l1-p2231	l1-p2231	library_reference	human	TNFRSF13C	mid_tail	80	7	19	2.74	TM	extracellular	TM	0	1	1		O	TM	0	1	1	out	O	SP+TM	20	1	1	out	O
 l1-p2233	l1-p2233	library_reference	human	TNFRSF17	mid_tail	53	-1	23	2.54	TM	extracellular	TM	0	1	1		O	TM	0	1	1	out	O	SP+TM	20	1	1	out	O

@@ -286,8 +286,6 @@ l1-p0235	l1-p0235	CALHM5	internal	loop_best after 164	164	out	out	concordant	seg
 l1-p0236	l1-p0236	CASR	N after SP	N after SP	23	out	out	concordant	segment 20-610; items out:23		topdb:CASR_HUMAN(exact;topdb:PostTransMod/NGlyc); topdb:CASR_HUMAN(exact;topdb:Structure/PDBTM); uniprot:P41180(exact;experimental)	PDB:7DTT; PDB:7DTU; PDB:7DTV; PDB:7DTW; PDB:7E6T; PDB:7E6U; PDB:7M3E; PDB:7M3F; PDB:7M3G; PDB:7M3J; PDB:7SIL; PDB:7SIM; PDB:7SIN; PDB:8SZF; PDB:8SZG; PDB:8SZH; PDB:8SZI; PDB:8WPG; PDB:8WPU; PDB:9AXF; PDB:9AYF; PubMed:27434672; PubMed:34194040
 l1-p0237	l1-p0237	CATSPERE	N after SP	N after SP	22	out	none	no_evidence	segment 20-903			
 l1-p0238	l1-p0238	CATSPERG	N after SP	N after SP	39	out	none	no_evidence	segment 38-1067			
-l1-p0239	l1-p0239	CATSPERH	N after SP	N after SP	23	out	membrane	discordant	site in a helix; items membrane:1; 6 residue(s) from the nearest experimental helix end; rest of the v1 loop: none		uniprot:D3Z338(mapped;experimental)	PubMed:34225353
-l1-p0240	l1-p0240	CATSPERQ	internal	loop_best after 85	85	out	out	concordant	segment 83-88; items out:1		uniprot:A0A2R8VHF7(mapped;experimental)	PubMed:34225353
 l1-p0241	l1-p0241	CCKAR	N at residue 1, multipass	residue 1	1	out	out	concordant	segment 1-41; items out:10		topdb:CCKAR_HUMAN(exact;topdb:Structure/PDBTM)	PDB:7EZH; PDB:7EZK; PDB:7EZM; PDB:7F8U; PDB:7F8X; PDB:7F8Y; PDB:7MBX; PDB:7MBY; PDB:9BKJ; PDB:9BKK
 l1-p0242	l1-p0242	CCKBR	N at residue 1, multipass	residue 1	1	out	out	concordant	segment 1-54; items out:3		topdb:GASR_HUMAN(exact;topdb:Structure/PDBTM); uniprot:P32239(exact;experimental)	PDB:7XOW; PDB:8IA7; PubMed:34556863
 l1-p0243	l1-p0243	CCR1	N at residue 1, multipass	residue 1	1	out	out	concordant	segment 1-35; items out:2		topdb:CCR1_HUMAN(exact;topdb:Structure/PDBTM)	PDB:7VL9; PDB:7VLA
@@ -587,7 +585,6 @@ l1-p0492	l1-p0492	CXCR3	N at residue 1, multipass	residue 1	1	out	out	concordant
 l1-p0493	l1-p0493	CXCR4	N at residue 1, multipass	residue 1	1	out	out	concordant	segment 1-38; items out:15		topdb:CXCR4_HUMAN(exact;topdb:PostTransMod/NGlyc); topdb:CXCR4_HUMAN(exact;topdb:Structure/PDBTM); uniprot:P61073(exact;experimental)	PDB:3ODU; PDB:3OE0; PDB:3OE6; PDB:3OE8; PDB:3OE9; PDB:4RWS; PDB:8K3Z; PDB:8U4N; PDB:8U4O; PDB:8U4P; PDB:8U4Q; PDB:8U4R; PDB:8U4S; PubMed:10756055; PubMed:20929726
 l1-p0494	l1-p0494	CXCR5	N at residue 1, multipass	residue 1	1	out	none	no_evidence	segment 1-51			
 l1-p0495	l1-p0495	CXCR6	N at residue 1, multipass	residue 1	1	out	none	no_evidence	segment 1-31			
-l1-p0496	l1-p0496	CXorf66	N after SP	N after SP	35	out	none	no_evidence	segment 18-46			
 l1-p0497	l1-p0497	CYBB	internal	loop_best after 147	147	out	out	concordant	segment 131-163; items out:8		topdb:CY24B_HUMAN(exact;topdb:Fusion/Ubiquitin-GFP); topdb:CY24B_HUMAN(exact;topdb:PostTransMod/NGlyc); topdb:CY24B_HUMAN(exact;topdb:Structure/PDBTM); uniprot:P04839(exact;experimental)	PDB:7U8G; PDB:8GZ3; PDB:8KEI; PDB:8WEJ; PDB:8X2L; PubMed:19159218; PubMed:31668924; PubMed:36413210
 l1-p0497	l1-p0497	CYBB	internal	loop_2 after 252	252	out	out	concordant	segment 225-267; items out:8		topdb:CY24B_HUMAN(exact;topdb:Chemical_modification/Lys); topdb:CY24B_HUMAN(exact;topdb:PostTransMod/NGlyc); topdb:CY24B_HUMAN(exact;topdb:Structure/PDBTM); uniprot:P04839(exact;experimental)	PDB:7U8G; PDB:8GZ3; PDB:8KEI; PDB:8WEJ; PDB:8X2L; PubMed:19159218; PubMed:36413210; PubMed:36613715
 l1-p0497	l1-p0497	CYBB	internal	loop_3 after 36	36	out	helix_end	concordant	site in a helix; items membrane:4; 0 residue(s) from the nearest experimental helix end; rest of the v1 loop: out		uniprot:P04839(exact;experimental)	PDB:7U8G; PDB:8GZ3; PubMed:36241643; PubMed:36413210
@@ -1459,8 +1456,6 @@ l1-p1254	l1-p1254	MS4A3	internal	loop_best after 80	80	out	none	no_evidence	segm
 l1-p1254	l1-p1254	MS4A3	internal	loop_2 after 155	155	out	none	no_evidence	segment 146-168			
 l1-p1255	l1-p1255	MS4A4A	internal	loop_best after 164	164	out	none	no_evidence	segment 156-185			
 l1-p1255	l1-p1255	MS4A4A	internal	loop_2 after 90	90	out	none	no_evidence	segment 86-101			
-l1-p1256	l1-p1256	MS4A5	internal	loop_best after 150	150	out	none	no_evidence	segment 142-161			
-l1-p1256	l1-p1256	MS4A5	internal	loop_2 after 74	74	out	none	no_evidence	segment 73-80			
 l1-p1257	l1-p1257	MS4A6A	internal	loop_best after 167	167	out	none	no_evidence	segment 138-185			
 l1-p1258	l1-p1258	MS4A7	internal	loop_best after 163	163	out	none	no_evidence	segment 137-183			
 l1-p1258	l1-p1258	MS4A7	internal	loop_2 after 76	76	out	none	no_evidence	segment 68-85			
@@ -1962,7 +1957,6 @@ l1-p1723	l1-p1723	RAET1G	N after SP	N after SP	30	out	out	concordant	segment 29-
 l1-p1724	l1-p1724	RAET1L	N after SP	N after SP	27	out	none	no_evidence	segment 26-246			
 l1-p1725	l1-p1725	RECK	N after SP	N after SP	32	out	none	no_evidence	segment 27-971			
 l1-p1726	l1-p1726	RELL1	N after SP	N after SP	43	out	out	concordant	segment 24-57; items out:2		topdb:RELL1_HUMAN(exact;topdb:Chemical_modification/Lys)	PubMed:32483232; PubMed:36613715
-l1-p1727	l1-p1727	RELL2	N at residue 1, single-pass (type III)	residue 1	1	out	none	no_evidence	segment 1-14			
 l1-p1728	l1-p1728	RELT	N after SP	N after SP	39	out	none	no_evidence	segment 26-164			
 l1-p1729	l1-p1729	RET	N after SP	N after SP	30	out	out	concordant	segment 29-635; items out:1		topdb:RET_HUMAN(exact;topdb:PostTransMod/NGlyc)	PubMed:20473317
 l1-p1730	l1-p1730	RGMA	N after SP	N after SP	50	out	none	no_evidence	segment 48-450			
@@ -2401,7 +2395,6 @@ l1-p2050	l1-p2050	SLITRK4	N after SP	N after SP	22	out	none	no_evidence	segment 
 l1-p2051	l1-p2051	SLITRK5	N after SP	N after SP	41	out	none	no_evidence	segment 39-664			
 l1-p2052	l1-p2052	SLITRK6	N after SP	N after SP	28	out	none	no_evidence	segment 22-608			
 l1-p2053	l1-p2053	SMAGP	N at residue 1, single-pass (type III)	residue 1	1	out	none	no_evidence	segment 1-35			
-l1-p2054	l1-p2054	SMIM7	N at residue 1, multipass	residue 1	1	out	none	no_evidence	segment 1-4			
 l1-p2055	l1-p2055	SMO	N after SP	N after SP	41	out	out	concordant	segment 30-229; items out:16		topdb:SMO_HUMAN(exact;topdb:PostTransMod/NGlyc); topdb:SMO_HUMAN(exact;topdb:Structure/PDBTM)	PDB:4JKV; PDB:4N4W; PDB:4O9R; PDB:4QIM; PDB:4QIN; PDB:5L7D; PDB:5L7I; PDB:5V56; PDB:5V57; PDB:6OT0; PDB:6XBJ; PDB:6XBK; PDB:6XBL; PDB:6XBM; PDB:7ZI0; PubMed:29671580
 l1-p2056	l1-p2056	SMPDL3B	N after SP	N after SP	20	out	none	no_evidence	segment 19-455			
 l1-p2057	l1-p2057	SNORC	N after SP	N after SP	45	out	none	no_evidence	segment 25-91			
@@ -2481,7 +2474,6 @@ l1-p2124	l1-p2124	TCTA	C-terminal	C-terminus	103	out	none	no_evidence	segment 59
 l1-p2125	l1-p2125	TEK	N after SP	N after SP	24	out	out	concordant	segment 23-746; items out:3		topdb:TIE2_HUMAN(exact;topdb:PostTransMod/NGlyc)	PubMed:16732286; PubMed:19159218; PubMed:23345538
 l1-p2126	l1-p2126	TEX101	N after SP	N after SP	26	out	none	no_evidence	segment 24-249			
 l1-p2127	l1-p2127	TEX29	N at residue 1, single-pass (type III)	residue 1	1	out	none	no_evidence	segment 1-56			
-l1-p2128	l1-p2128	TEX38	N at residue 1, single-pass (type III)	residue 1	1	out	none	no_evidence	segment 1-14			
 l1-p2129	l1-p2129	TFPI	N after SP	N after SP	37	out	none	no_evidence	segment 29-251			
 l1-p2130	l1-p2130	TFR2	C-terminal	C-terminus	801	out	out	concordant	segment 105-801; items out:2		topdb:TFR2_HUMAN(exact;topdb:Chemical_modification/Lys); topdb:TFR2_HUMAN(exact;topdb:PostTransMod/NGlyc)	PubMed:19159218; PubMed:28211907
 l1-p2131	l1-p2131	TFRC	C-terminal	C-terminus	760	out	out	concordant	segment 87-760; items out:14		topdb:TFR1_HUMAN(exact;topdb:Chemical_modification/COOH); topdb:TFR1_HUMAN(exact;topdb:Chemical_modification/Lys); topdb:TFR1_HUMAN(exact;topdb:PostTransMod/NGlyc)	PubMed:10531064; PubMed:1421757; PubMed:16335952; PubMed:19159218; PubMed:19349973; PubMed:2403553; PubMed:28211907; PubMed:29741879; PubMed:31673029; PubMed:32483232; PubMed:34089345; PubMed:36613715; PubMed:7780197; PubMed:9136890
@@ -2533,7 +2525,6 @@ l1-p2167	l1-p2167	TMEM132A	N after SP	N after SP	38	out	none	no_evidence	segment
 l1-p2168	l1-p2168	TMEM132B	N after SP	N after SP	30	out	none	no_evidence	segment 27-901			
 l1-p2169	l1-p2169	TMEM132D	N after SP	N after SP	33	out	none	no_evidence	segment 31-919			
 l1-p2170	l1-p2170	TMEM132E	N after SP	N after SP	36	out	none	no_evidence	segment 24-886			
-l1-p2172	l1-p2172	TMEM139	internal	loop_best after 34	34	out	none	no_evidence	segment 32-37			
 l1-p2173	l1-p2173	TMEM145	N after SP	N after SP	32	out	none	no_evidence	segment 30-174			
 l1-p2174	l1-p2174	TMEM150A	internal	loop_best after 49	49	out	none	no_evidence	segment 26-77			
 l1-p2175	l1-p2175	TMEM150C	internal	loop_best after 46	46	out	none	no_evidence	segment 30-66			
@@ -2553,28 +2544,18 @@ l1-p2184	l1-p2184	TMEM190	N after SP	N after SP	24	out	none	no_evidence	segment 
 l1-p2185	l1-p2185	TMEM198	N at residue 1, multipass	residue 1	1	out	none	no_evidence	segment 1-35			
 l1-p2186	l1-p2186	TMEM204	internal	loop_best after 160	160	out	none	no_evidence	segment 154-167			
 l1-p2187	l1-p2187	TMEM205	N at residue 1, multipass	residue 1	1	out	none	no_evidence	segment 1-12			
-l1-p2188	l1-p2188	TMEM210	N after SP	N after SP	31	out	none	no_evidence	segment 31-44			
 l1-p2189	l1-p2189	TMEM219	internal	loop_best after 171	171	out	none	no_evidence	segment 44-204			
-l1-p2190	l1-p2190	TMEM222	N at residue 1, multipass	residue 1	1	in	none	no_evidence	segment 1-190			
 l1-p2191	l1-p2191	TMEM225	internal	loop_best after 56	56	out	none	no_evidence	segment 31-67			
 l1-p2191	l1-p2191	TMEM225	internal	loop_2 after 134	134	out	none	no_evidence	segment 120-138			
 l1-p2191	l1-p2191	TMEM225	internal	loop_3 after 31	31	out	none	no_evidence	segment 31-67			
 l1-p2192	l1-p2192	TMEM229B	internal	loop_best after 108	108	out	none	no_evidence	segment 96-114			
 l1-p2192	l1-p2192	TMEM229B	internal	loop_2 after 38	38	out	none	no_evidence	segment 31-46			
 l1-p2194	l1-p2194	TMEM26	internal	loop_best after 98	98	out	out	concordant	segment 86-142; items out:1		topdb:TMM26_HUMAN(exact;topdb:PostTransMod/NGlyc)	PubMed:19349973
-l1-p2195	l1-p2195	TMEM266	internal	loop_best after 187	187	out	none	no_evidence	segment 183-191			
-l1-p2195	l1-p2195	TMEM266	internal	loop_2 after 121	121	out	none	no_evidence	segment 116-128			
-l1-p2196	l1-p2196	TMEM268	internal	loop_best after 128	128	out	none	no_evidence	segment 125-131			
-l1-p2197	l1-p2197	TMEM273	N after SP	N after SP	26	out	none	no_evidence	segment 24-33			
 l1-p2198	l1-p2198	TMEM47	internal	loop_best after 144	144	out	none	no_evidence	segment 136-150			
 l1-p2198	l1-p2198	TMEM47	internal	loop_2 after 62	62	out	none	no_evidence	segment 41-78			
 l1-p2199	l1-p2199	TMEM63B	N at residue 1, multipass	residue 1	1	signal	none	no_evidence	site in a helix			
 l1-p2200	l1-p2200	TMEM67	N after SP	N after SP	39	out	out	concordant	segment 37-518; items out:2		topdb:MKS3_HUMAN(exact;topdb:PostTransMod/NGlyc); topdb:MKS3_HUMAN(exact;topdb:Structure/PDBTM); uniprot:Q5HYA8(exact;experimental)	PDB:7FH1; PubMed:34731008
 l1-p2201	l1-p2201	TMEM81	N after SP	N after SP	32	out	none	no_evidence	segment 25-226			
-l1-p2202	l1-p2202	TMEM86A	internal	loop_best after 33	33	out	none	no_evidence	segment 31-36			
-l1-p2202	l1-p2202	TMEM86A	internal	loop_2 after 89	89	out	none	no_evidence	segment 88-91			
-l1-p2203	l1-p2203	TMEM86B	internal	loop_best after 43	43	out	none	no_evidence	segment 41-46			
-l1-p2203	l1-p2203	TMEM86B	internal	loop_2 after 194	194	out	none	no_evidence	segment 190-196			
 l1-p2204	l1-p2204	TMEM89	N after SP	N after SP	26	out	none	no_evidence	segment 23-72			
 l1-p2205	l1-p2205	TMEM8B	internal	loop_best after 472	472	out	none	no_evidence	segment 167-681			
 l1-p2206	l1-p2206	TMEM95	internal	loop_best after 48	48	out	none	no_evidence	segment 17-143			
@@ -2710,7 +2691,6 @@ l1-p2299	l1-p2299	TSPAN7	internal	loop_best after 52	52	out	none	no_evidence	seg
 l1-p2300	l1-p2300	TSPAN8	internal	loop_best after 47	47	out	none	no_evidence	segment 36-52			
 l1-p2301	l1-p2301	TSPAN9	internal	loop_best after 129	129	out	none	no_evidence	segment 107-203			
 l1-p2301	l1-p2301	TSPAN9	internal	loop_2 after 46	46	out	none	no_evidence	segment 37-53			
-l1-p2302	l1-p2302	TSPO2	N at residue 1, multipass	residue 1	1	out	none	no_evidence	segment 1-4			
 l1-p2303	l1-p2303	TTYH1	N at residue 1, multipass	residue 1	1	out	out	concordant	segment 1-43; items out:1		topdb:TTYH1_HUMAN(exact;topdb:Structure/PDBTM)	PDB:7P5J
 l1-p2304	l1-p2304	TTYH2	N at residue 1, multipass	residue 1	1	out	out	concordant	segment 1-44; items out:2		topdb:TTYH2_HUMAN(exact;topdb:Structure/PDBTM)	PDB:7P54; PDB:7P5M
 l1-p2305	l1-p2305	TTYH3	N at residue 1, multipass	residue 1	1	out	out	concordant	segment 1-42; items out:1		topdb:TTYH3_HUMAN(exact;topdb:Structure/PDBTM)	PDB:7P5C
@@ -2912,7 +2892,6 @@ l1-p2969	l1-p2969	SLC47A1	C-terminal	C-terminus	569	out	none	no_evidence	segment
 l1-p2970	l1-p2970	MRGPRX4	N at residue 1, multipass	residue 1	1	out	out	concordant	segment 1-27; items out:4		topdb:MRGX4_HUMAN(mapped;topdb:Structure/PDBTM); uniprot:Q96LA9(mapped;experimental)	PDB:7S8P; PDB:8K4S; PDB:8KEX; PubMed:34789874
 l1-p2971	l1-p2971	SLC9B1	internal	loop_best after 278	278	out	none	no_evidence	segment 271-286			
 l1-p2972	l1-p2972	TEX29	N at residue 1, single-pass (type III)	residue 1	1	out	none	no_evidence	segment 1-56			
-l1-p2973	l1-p2973	TMEM210	N after SP	N after SP	31	out	none	no_evidence	segment 31-44			
 l1-p2974	l1-p2974	TNFRSF13B	N at residue 1, single-pass (type III)	residue 1	1	out	none	no_evidence	segment 1-161			
 l1-p2975	l1-p2975	TRPM2	internal	loop_best after 1012	1012	out	context_changed	no_evidence	segment 983-1019; mapped context changed: TRPM2_HUMAN			
 l1-p2975	l1-p2975	TRPM2	internal	loop_2 after 987	987	out	context_changed	no_evidence	segment 983-1019; mapped context changed: TRPM2_HUMAN			
@@ -3011,11 +2990,6 @@ l1-p3056	l1-p3056	SLC5A4	N at residue 1, multipass	residue 1	1	out	none	no_evide
 l1-p3057	l1-p3057	SPINT1	N after SP	N after SP	36	out	none	no_evidence	segment 27-444			
 l1-p3058	l1-p3058	TFPI	N after SP	N after SP	32	out	none	no_evidence	segment 29-247			
 l1-p3059	l1-p3059	TM7SF3	N after SP	N after SP	24	out	none	no_evidence	segment 20-286			
-l1-p3060	l1-p3060	TMEM139	internal	loop_best after 34	34	out	none	no_evidence	segment 32-37			
-l1-p3061	l1-p3061	TMEM210	N after SP	N after SP	31	out	none	no_evidence	segment 31-47			
-l1-p3062	l1-p3062	TMEM86B	internal	loop_2 after 144	144	out	none	no_evidence	segment 141-147			
-l1-p3062	l1-p3062	TMEM86B	internal	loop_best after 43	43	out	none	no_evidence	segment 41-46			
-l1-p3062	l1-p3062	TMEM86B	internal	loop_3 after 194	194	out	none	no_evidence	segment 190-196			
 l1-p3063	l1-p3063	TMIGD1	N after SP	N after SP	28	out	none	no_evidence	segment 27-222			
 l1-p3064	l1-p3064	TMPRSS2	C-terminal	C-terminus	490	out	none	no_evidence	segment 105-490			
 l1-p3065	l1-p3065	VSIG2	N after SP	N after SP	27	out	none	no_evidence	segment 25-242			
@@ -3110,6 +3084,7 @@ l1-p3193	l1-p3193	C1orf159	N after SP	N after SP	21	out	none	no_evidence	segment
 l1-p3195	l1-p3195	CSF1	N after SP	N after SP	35	out	out	concordant	segment 33-496; items out:3		topdb:CSF1_HUMAN(exact;topdb:PostTransMod/NGlyc)	PubMed:22171320; PubMed:23399548; PubMed:23584533
 l1-p3196	l1-p3196	FAM171B	N after SP	N after SP	32	out	none	no_evidence	segment 29-353			
 l1-p3197	l1-p3197	FAM234A	C-terminal	C-terminus	552	out	out	concordant	segment 71-552; items out:2		topdb:F234A_HUMAN(exact;topdb:PostTransMod/NGlyc)	PubMed:19159218; PubMed:19349973
+l1-p3199	l1-p3199	LNPEP	C-terminal	C-terminus	1025	out	out	concordant	segment 132-1025; items out:3		topdb:LCAP_HUMAN(exact;topdb:Chemical_modification/Lys); topdb:LCAP_HUMAN(exact;topdb:PostTransMod/NGlyc)	PubMed:19349973; PubMed:25408552; PubMed:36613715
 l1-p3200	l1-p3200	MFAP3	N after SP	N after SP	38	out	none	no_evidence	segment 22-148			
 l1-p3201	l1-p3201	MYORG	C-terminal	C-terminus	714	out	out	concordant	segment 78-714; items out:1		topdb:MYORG_HUMAN(exact;topdb:PostTransMod/NGlyc)	PubMed:19159218
 l1-p3203	l1-p3203	RNF149	N after SP	N after SP	34	out	none	no_evidence	segment 33-200			
@@ -3124,6 +3099,7 @@ l1-p3209	l1-p3209	TMEM248	internal	loop_best after 92	92	out	none	no_evidence	se
 l1-p3211	l1-p3211	FCGR2C	N after SP	N after SP	48	out	out	concordant	segment 43-221; items out:1		topdb:FCG2C_HUMAN(mapped;topdb:PostTransMod/NGlyc)	PubMed:23744091
 l1-p3212	l1-p3212	OR10AC1	N at residue 1, multipass	residue 1	1	out	none	no_evidence	segment 1-26			
 l1-p3213	l1-p3213	OR4Q2	N at residue 1, multipass	residue 1	1	out	none	no_evidence	segment 1-24			
+l1-p3214	l1-p3214	OR52P1	N at residue 1, multipass	residue 1	1	out	none	no_evidence	segment 1-26			
 l1-p3215	l1-p3215	ACVR2A	N after SP	N after SP	30	out	none	no_evidence	segment 24-138			
 l1-p3218	l1-p3218	ADGRL2	N after SP	N after SP	28	out	out	concordant	segment 26-835; items out:3		topdb:AGRL2_HUMAN(mapped;topdb:PostTransMod/NGlyc); topdb:AGRL2_MOUSE(mapped;topdb:PostTransMod/NGlyc)	PubMed:19159218; PubMed:19349973; PubMed:19656770
 l1-p3219	l1-p3219	ADGRL2	N after SP	N after SP	28	out	out	concordant	segment 26-835; items out:3		topdb:AGRL2_HUMAN(mapped;topdb:PostTransMod/NGlyc); topdb:AGRL2_MOUSE(mapped;topdb:PostTransMod/NGlyc)	PubMed:19159218; PubMed:19349973; PubMed:19656770
@@ -3188,7 +3164,6 @@ l1-p3285	l1-p3285	SPNS2	internal	loop_best after 353	353	out	out	concordant	segm
 l1-p3285	l1-p3285	SPNS2	internal	loop_2 after 490	490	out	out	concordant	segment 481-499; items out:12		topdb:SPNS2_HUMAN(mapped;topdb:Structure/PDBTM)	PDB:7YUB; PDB:7YUD; PDB:7YUF; PDB:8EX4; PDB:8EX5; PDB:8EX6; PDB:8EX7; PDB:8EX8; PDB:8G92; PDB:8JHQ; PDB:8JHR; PDB:8KAE
 l1-p3288	l1-p3288	TMEM181	internal	loop_best after 129	129	out	none	no_evidence	segment 78-215			
 l1-p3288	l1-p3288	TMEM181	internal	loop_2 after 95	95	out	none	no_evidence	segment 78-215			
-l1-p3289	l1-p3289	TMEM222	C-terminal	C-terminus	205	out	none	no_evidence	segment 203-205			
 l1-p3290	l1-p3290	TMIGD2	N after SP	N after SP	25	out	none	no_evidence	segment 23-149			
 l1-p3291	l1-p3291	TMPRSS13	C-terminal	C-terminus	586	out	none	no_evidence	segment 187-586			
 l1-p3293	l1-p3293	TNFSF10	C-terminal	C-terminus	279	out	none	no_evidence	segment 38-279			
@@ -3237,3 +3212,4 @@ l1-p3337	l1-p3337	SLC39A14	N after SP	N after SP	37	out	out	concordant	segment 3
 l1-p3338	l1-p3338	NRP2	N after SP	N after SP	25	out	out	concordant	segment 23-592; items out:1		topdb:NRP2_HUMAN(mapped;topdb:PostTransMod/NGlyc)	PubMed:17989695
 l1-p3339	l1-p3339	ATP1B3	C-terminal	C-terminus	271	out	out	concordant	segment 55-271; items out:6		topdb:AT1B3_HUMAN(mapped;topdb:Chemical_modification/COOH); topdb:AT1B3_HUMAN(mapped;topdb:Chemical_modification/Lys); topdb:AT1B3_HUMAN(mapped;topdb:PostTransMod/NGlyc); topdb:AT1B3_MOUSE(mapped;topdb:PostTransMod/NGlyc)	PubMed:12754519; PubMed:19349973; PubMed:19656770; PubMed:31673029; PubMed:32483232; PubMed:36613715
 l1-p3340	l1-p3340	PMEPA1	N at residue 1, single-pass (type III)	residue 1	1	out	none	no_evidence	segment 1-1			
+l1-p3341	l1-p3341	PCDH11X	N after SP	N after SP	25	out	out	concordant	segment 24-812; items out:1		topdb:PC11X_HUMAN(exact;topdb:PostTransMod/NGlyc)	PubMed:29671580

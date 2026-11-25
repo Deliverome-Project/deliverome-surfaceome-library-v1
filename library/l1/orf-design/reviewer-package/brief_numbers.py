@@ -86,12 +86,17 @@ def _gene_list() -> dict:
     added = [r["gene"] for r in add_rows if not (r.get("withdrawn") or "").strip()]
     withdrawn = [r["gene"] for r in add_rows if (r.get("withdrawn") or "").strip()]
     excluded = [r["gene"] for r in _tsv(S4E9 / "gene_list_exclusions.tsv")]
+    excluded_set = set(excluded)
+    excluded_from_root = sorted(g for g in root if g in excluded_set)
+    active_root = [g for g in root if g not in excluded_set]
     return {
         "frozen_root_genes": len(root),
+        "excluded_from_root": excluded_from_root,
+        "active_root_genes": len(active_root),
         "added": added,
         "withdrawn_additions": withdrawn,
         "excluded_from_filter_output": excluded,
-        "library_genes": len(root) + len(added),
+        "library_genes": len(active_root) + len(added),
     }
 
 

@@ -467,7 +467,7 @@ CTXND2	A0A1B0GV90	fail	low
 CUTA	O60888	fail	no		
 CUZD1	Q86UP6	fail	low		
 CXCL9	Q07325	fail	no		
-CXorf66	Q5JRM2	fail	low	LL	
+CXorf66	Q5JRM2	fail	low		yes
 CYB561	P49447	fail	low		
 CYB561D1	Q8N8Q1	fail	no		
 CYB5B	O43169	fail	low		
@@ -1051,7 +1051,7 @@ MS4A10	Q96PG2	fail	low	LL
 MS4A14	Q96JA4	fail	low		
 MS4A15	Q8N5U1	fail	no		
 MS4A18	Q3C1V0	fail	low		
-MS4A5	Q9H3V2	fail	low	LL	
+MS4A5	Q9H3V2	fail	low		yes
 MS4A6E	Q96DS6	fail	low		
 MSMB	P08118	fail	no		
 MSMP	Q1L6U9	fail	no		
@@ -1888,7 +1888,7 @@ SMIM44	A0A286YF18	fail	uncertain
 SMIM47	D0EPY3	fail	no		
 SMIM48	A0A494C1I1	fail	no		
 SMIM5	Q71RC9	fail	uncertain		
-SMIM7	Q9BQ49	fail	no	LL	
+SMIM7	Q9BQ49	fail	no		yes
 SMIM9	A6NGZ8	fail	low		
 SMLR1	H3BR10	fail	no		
 SMPD2	O60906	fail	no		
@@ -2054,8 +2054,8 @@ TMEM125	Q96AQ2	fail	no
 TMEM127	O75204	fail	no		
 TMEM130	Q8N3G9	fail	uncertain		
 TMEM132C	Q8N3T6	fail	low		
-TMEM134	Q9H6X4	fail	no	LL	
-TMEM139	Q8IV31	fail	low	LL	
+TMEM134	Q9H6X4	fail	no		yes
+TMEM139	Q8IV31	fail	low		yes
 TMEM140	Q9NV12	fail	low		
 TMEM141	Q96I45	fail	no		
 TMEM150B	A6NC51	fail	low		
@@ -2066,11 +2066,11 @@ TMEM161A	Q9NX61	fail	no
 TMEM161B	Q8NDZ6	fail	low		
 TMEM164	Q5U3C3	fail	no		
 TMEM165	Q9HC07	fail	no		
-TMEM169	Q96HH4	fail	low	LL	
+TMEM169	Q96HH4	fail	low		yes
 TMEM17	Q86X19	fail	no		
 TMEM170B	Q5T4T1	fail	low	LL	
 TMEM171	Q8WVE6	fail	no		
-TMEM174	Q8WUU8	fail	low	LL	
+TMEM174	Q8WUU8	fail	low		yes
 TMEM176A	Q96HP8	fail	low		
 TMEM176B	Q3YBM2	fail	low		
 TMEM178A	Q8NBL3	fail	no		
@@ -2090,14 +2090,14 @@ TMEM200B	Q69YZ2	fail	low
 TMEM200C	A6NKL6	fail	low		
 TMEM202	A6NGA9	fail	low		
 TMEM207	Q6UWW9	fail	no		
-TMEM210	A6NLX4	fail	low	LL	
+TMEM210	A6NLX4	fail	low		yes
 TMEM212	A6NML5	fail	low		
 TMEM213	A2RRL7	fail	no		
 TMEM217	Q8N7C4	fail	low		
 TMEM217B	A0A494BZU4	fail	no		
 TMEM218	A2RU14	fail	low		
 TMEM220	Q6QAJ8	fail	uncertain		
-TMEM222	Q9H0R3	fail	no	LL	
+TMEM222	Q9H0R3	fail	no		yes
 TMEM225	Q6GV28	fail	no	LL	
 TMEM225B	P0DP42	fail	no		
 TMEM229A	B2RXF0	fail	uncertain		
@@ -2108,7 +2108,7 @@ TMEM232	C9JQI7	fail	no
 TMEM234	Q8WY98	fail	low		
 TMEM235	A6NFC5	fail	no		
 TMEM236	Q5W0B7	fail	uncertain		
-TMEM238	C9JI98	fail	no	LL	
+TMEM238	C9JI98	fail	no		yes
 TMEM240	Q5SV17	fail	low		
 TMEM243	Q9BU79	fail	low		
 TMEM244	Q5VVB8	fail	no		
@@ -2123,10 +2123,10 @@ TMEM260	Q9NX78	fail	low
 TMEM263	Q8WUH6	fail	low		
 TMEM265	A0A087WTH1	fail	uncertain		
 TMEM267	Q0VDI3	fail	low		
-TMEM268	Q5VZI3	fail	low	LL	
+TMEM268	Q5VZI3	fail	low		yes
 TMEM269	A0A1B0GVZ9	fail	uncertain		
 TMEM270	Q6UE05	fail	uncertain		
-TMEM273	Q5T292	fail	low	LL	
+TMEM273	Q5T292	fail	low		yes
 TMEM275	A0A0U1RQS6	fail	uncertain		
 TMEM278	A6NKF7	fail	low		
 TMEM31	Q5JXX7	fail	low		
@@ -2149,8 +2149,8 @@ TMEM74	Q96NL1	fail	low
 TMEM79	Q9BSE2	fail	no		
 TMEM80	Q96HE8	fail	low		
 TMEM82	A0PJX8	fail	low		
-TMEM86A	Q8N2M4	fail	no	LL	
-TMEM86B	Q8N661	fail	no	LL	
+TMEM86A	Q8N2M4	fail	no		yes
+TMEM86B	Q8N661	fail	no		yes
 TMEM87B	Q96K49	fail	no		
 TMEM88	Q6PEY1	fail	low		
 TMEM89	A2RUT3	fail	uncertain	LL	

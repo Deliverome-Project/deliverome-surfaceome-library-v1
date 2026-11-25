@@ -1,11 +1,11 @@
 {
-  "library_genes": 2417,
+  "library_genes": 2419,
   "cohort_forms": 1899,
-  "panel_forms": 150,
+  "panel_forms": 149,
   "class_rows": {
     "type I": {
       "library_genes": 834,
-      "library_share": 0.3451,
+      "library_share": 0.3448,
       "cohort_genes": 430,
       "cohort_forms_observed": 384,
       "cohort_forms_prediction_only": 515,
@@ -28,18 +28,18 @@
       "cohort_forms_prediction_only": 61,
       "cohort_forms": 108,
       "drawable_forms_gate_of_record": 102,
-      "panel_forms": 17,
+      "panel_forms": 16,
       "panel_forms_observed": 10,
-      "panel_forms_prediction_only": 7,
-      "panel_genes": 15,
+      "panel_forms_prediction_only": 6,
+      "panel_genes": 14,
       "uniform_expected_from_cohort": 8.7,
-      "enrichment_vs_uniform_cohort": 1.95,
+      "enrichment_vs_uniform_cohort": 1.84,
       "uniform_expected_from_drawable": 9.0,
-      "enrichment_vs_uniform_drawable": 1.89
+      "enrichment_vs_uniform_drawable": 1.78
     },
     "type III": {
       "library_genes": 33,
-      "library_share": 0.0137,
+      "library_share": 0.0136,
       "cohort_genes": 13,
       "cohort_forms_observed": 12,
       "cohort_forms_prediction_only": 12,
@@ -73,7 +73,7 @@
     },
     "multipass N-out": {
       "library_genes": 672,
-      "library_share": 0.278,
+      "library_share": 0.2778,
       "cohort_genes": 133,
       "cohort_forms_observed": 118,
       "cohort_forms_prediction_only": 168,
@@ -90,7 +90,7 @@
     },
     "multipass N-in": {
       "library_genes": 551,
-      "library_share": 0.228,
+      "library_share": 0.2278,
       "cohort_genes": 258,
       "cohort_forms_observed": 185,
       "cohort_forms_prediction_only": 307,
@@ -140,8 +140,8 @@
       "enrichment_vs_uniform_drawable": ""
     },
     "unclassified": {
-      "library_genes": 55,
-      "library_share": 0.0228,
+      "library_genes": 57,
+      "library_share": 0.0236,
       "cohort_genes": 3,
       "cohort_forms_observed": 3,
       "cohort_forms_prediction_only": 2,
@@ -158,27 +158,28 @@
     }
   },
   "built_reference_subclasses": {
-    "multipass, N-terminus cytoplasmic": 560,
-    "multipass, N-terminus extracellular": 682,
-    "type II, C-tail <= 30 aa (tail-anchored-like)": 1
+    "multipass, N-terminus cytoplasmic": 549,
+    "multipass, N-terminus extracellular": 680
   },
   "panel_class_vs_built_reference_class_v1": {
-    "same": 1136,
+    "same": 1130,
     "different": {
-      "multipass N-out -> multipass": 668,
-      "multipass N-in -> multipass": 551,
-      "unclassified -> type I": 25,
+      "multipass N-out -> multipass": 666,
+      "multipass N-in -> multipass": 540,
+      "unclassified -> type I": 26,
       "unclassified -> multipass": 23,
-      "unclassified -> type II": 6,
-      "multipass N-out -> no built reference": 4,
+      "multipass N-in -> no built reference": 11,
+      "unclassified -> type II": 7,
+      "multipass N-out -> no built reference": 6,
+      "type I -> no built reference": 4,
       "type III -> type I": 2,
+      "type III -> no built reference": 2,
       "unclassified -> GPI": 1,
-      "type I -> no built reference": 1
+      "type II -> no built reference": 1
     }
   },
   "panel_genes_by_subclass": {
     "multipass, N-terminus extracellular": 15,
-    "multipass, N-terminus cytoplasmic": 30,
-    "type II, C-tail <= 30 aa (tail-anchored-like)": 1
+    "multipass, N-terminus cytoplasmic": 30
   }
 }

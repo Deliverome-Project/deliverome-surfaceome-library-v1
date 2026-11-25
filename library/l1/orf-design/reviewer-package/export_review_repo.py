@@ -153,22 +153,22 @@ _S1E3 = "library/l1/surface-filters"
 #: ``historical/git-snapshots/<commit>/<path>`` with ``SHA256SUMS.json`` so exported
 #: repos and Zenodo archives replay offline with zero ``.git`` history.
 PINNED_GIT_SNAPSHOTS: tuple[tuple[str, str], ...] = (
-    # synthesis_compliance.py & audit_domestication_barcodes.py (2026-11-24-pre-freeze)
-    ("7dc06001adfd2e6438aa3387c24f574e1a237375", f"{_S4E9}/constructs_l1_nterm.fasta"),
-    ("7dc06001adfd2e6438aa3387c24f574e1a237375", f"{_S4E9}/constructs_l1_nterm.tsv"),
-    ("7dc06001adfd2e6438aa3387c24f574e1a237375", f"{_S4E9}/constructs_l1_multipass.fasta"),
-    ("7dc06001adfd2e6438aa3387c24f574e1a237375", f"{_S4E9}/constructs_l1_multipass.tsv"),
-    ("7dc06001adfd2e6438aa3387c24f574e1a237375", f"{_S4E9}/constructs_l1_type3.fasta"),
-    ("7dc06001adfd2e6438aa3387c24f574e1a237375", f"{_S4E9}/constructs_l1_type3.tsv"),
-    ("7dc06001adfd2e6438aa3387c24f574e1a237375", f"{_S4E9}/constructs_l1_internal.fasta"),
-    ("7dc06001adfd2e6438aa3387c24f574e1a237375", f"{_S4E9}/constructs_l1_internal.tsv"),
-    ("7dc06001adfd2e6438aa3387c24f574e1a237375", f"{_S4E9}/constructs_l1_cterm.fasta"),
-    ("7dc06001adfd2e6438aa3387c24f574e1a237375", f"{_S4E9}/constructs_l1_cterm.tsv"),
-    ("7dc06001adfd2e6438aa3387c24f574e1a237375", f"{_S4E9}/candidate_manifest_tranches.tsv"),
-    ("7dc06001adfd2e6438aa3387c24f574e1a237375", f"{_S4E9}/l1_cassette_encodings.tsv"),
-    ("96484ceedfacf33476b04a3b671e12c5e3174ea7", f"{_S4E9}/synthesis_recodes.tsv"),
+    # synthesis_compliance.py & audit_domestication_barcodes.py (2026-11-25-pre-freeze-d)
+    ("4422a9c4c6e2a5569e8a38a7190ef12046e5ddf2", f"{_S4E9}/constructs_l1_nterm.fasta"),
+    ("4422a9c4c6e2a5569e8a38a7190ef12046e5ddf2", f"{_S4E9}/constructs_l1_nterm.tsv"),
+    ("4422a9c4c6e2a5569e8a38a7190ef12046e5ddf2", f"{_S4E9}/constructs_l1_multipass.fasta"),
+    ("4422a9c4c6e2a5569e8a38a7190ef12046e5ddf2", f"{_S4E9}/constructs_l1_multipass.tsv"),
+    ("4422a9c4c6e2a5569e8a38a7190ef12046e5ddf2", f"{_S4E9}/constructs_l1_type3.fasta"),
+    ("4422a9c4c6e2a5569e8a38a7190ef12046e5ddf2", f"{_S4E9}/constructs_l1_type3.tsv"),
+    ("4422a9c4c6e2a5569e8a38a7190ef12046e5ddf2", f"{_S4E9}/constructs_l1_internal.fasta"),
+    ("4422a9c4c6e2a5569e8a38a7190ef12046e5ddf2", f"{_S4E9}/constructs_l1_internal.tsv"),
+    ("4422a9c4c6e2a5569e8a38a7190ef12046e5ddf2", f"{_S4E9}/constructs_l1_cterm.fasta"),
+    ("4422a9c4c6e2a5569e8a38a7190ef12046e5ddf2", f"{_S4E9}/constructs_l1_cterm.tsv"),
+    ("4422a9c4c6e2a5569e8a38a7190ef12046e5ddf2", f"{_S4E9}/candidate_manifest_tranches.tsv"),
+    ("4422a9c4c6e2a5569e8a38a7190ef12046e5ddf2", f"{_S4E9}/l1_cassette_encodings.tsv"),
+    ("599ba2483347d9c80f4e3dc8f801c337f727dfd7", f"{_S4E9}/synthesis_recodes.tsv"),
     # reviewer-package/fold_order_check.py
-    ("7dc06001", f"{_S4E9}/tag_refold_structures.tsv"),
+    ("4422a9c4", f"{_S4E9}/tag_refold_structures.tsv"),
     # Prior cut snapshots retained for historical comparison & exporter smoke tests
     ("8432c0104c8fdaa57e78173d18fc5bb7064d91bd", f"{_S4E9}/constructs_l1_cterm.tsv"),
     ("8432c010", f"{_S4E9}/tag_refold_structures.tsv"),

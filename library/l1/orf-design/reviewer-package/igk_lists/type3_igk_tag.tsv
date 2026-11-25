@@ -3,8 +3,6 @@ l1-p0906	IGSF5	library_reference	human	type3_igk_tag	long_tail: IGSF5: human IGS
 l1-p1068	KLB	library_reference	human	type3_igk_tag	long_tail: internal signal-like segment; v1 puts the cassette in the cytosol with the tag alone
 l1-p3000	KLB	ortholog	cyno	type3_igk_tag	long_tail: internal signal-like segment; v1 puts the cassette in the cytosol with the tag alone
 l1-p3340	PMEPA1	isoform	human	type3_igk_tag	short_tail: native N-tail <= 20 residues; the cassette moves it past the ~20-residue point where signal-anchor insertion changes (Kocik 2012)
-l1-p1727	RELL2	library_reference	human	type3_igk_tag	short_tail: native N-tail <= 20 residues; the cassette moves it past the ~20-residue point where signal-anchor insertion changes (Kocik 2012)
 l1-p2127	TEX29	library_reference	human	type3_igk_tag	mid_tail: flank-charge difference 0 <= 1: weak positive-inside drive for N-out
 l1-p2972	TEX29	ortholog	cyno	type3_igk_tag	mid_tail: flank-charge difference 1 <= 1: weak positive-inside drive for N-out
-l1-p2128	TEX38	library_reference	human	type3_igk_tag	short_tail: native N-tail <= 20 residues; the cassette moves it past the ~20-residue point where signal-anchor insertion changes (Kocik 2012)
 l1-p2233	TNFRSF17	library_reference	human	type3_igk_tag	mid_tail: flank-charge difference -1 <= 1: weak positive-inside drive for N-out

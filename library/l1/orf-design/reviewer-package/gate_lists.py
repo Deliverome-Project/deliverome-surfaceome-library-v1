@@ -244,7 +244,8 @@ def main(argv=None) -> int:
     assert n_core == sum(1 for d in committed.values() if d["entered_by"] == "core")
 
     total = len(membership)
-    lib = total - sum(1 for g in removed if g in membership)
+    removed_from_filter = sorted(g for g in removed if g in membership)
+    lib = total - len(removed_from_filter)
     lines = [
         "# Genes at each L1 gene-list gate",
         "",
@@ -275,8 +276,8 @@ def main(argv=None) -> int:
     lines += [
         "",
         f"The filter passes {total:,} genes (core {n_core:,} plus the three tiers); "
-        f"{len(removed)} removed afterwards ([`gene_list_exclusions.tsv`]"
-        f"(../../gene_list_exclusions.tsv): {', '.join(sorted(removed))}) leaves "
+        f"{len(removed_from_filter)} removed afterwards ([`gene_list_exclusions.tsv`]"
+        f"(../../gene_list_exclusions.tsv): {', '.join(removed_from_filter)}) leaves "
         f"{lib:,}, the library's gene count. Cohort: {len(F.recs):,} genes.",
         "",
     ]

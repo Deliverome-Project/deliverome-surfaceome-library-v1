@@ -75,7 +75,7 @@ class TestLeaderSwapClassification:
     def test_cleavable_leader_keys_exclude_non_leader_constructs(self) -> None:
         cleavable = swap_model._cleavable_leader_keys()
         # 1,322 nterm + 567 multipass igk_tag + 9 type3 igk_tag = 1,898
-        assert len(cleavable) == 1322 + 567 + 9
+        assert len(cleavable) == 1321 + 565 + 7
         # CRHR2 (leaderless multipass), HPN (cterm stalk), internal loops, type3 tag_alone excluded
         assert ("multipass", "l1-p0475") not in cleavable  # CRHR2
         assert ("cterm", "l1-p0864") not in cleavable  # HPN

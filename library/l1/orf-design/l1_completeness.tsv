@@ -237,8 +237,6 @@ l1-p0235	l1-p0235	CALHM5	library_reference	human	internal	built	2	decided:2	#299
 l1-p0236	l1-p0236	CASR	library_reference	human	N after SP	built	1	built:1	#254		
 l1-p0237	l1-p0237	CATSPERE	library_reference	human	N after SP	built	1	built:1	#254		
 l1-p0238	l1-p0238	CATSPERG	library_reference	human	N after SP	built	1	built:1	#254		
-l1-p0239	l1-p0239	CATSPERH	library_reference	human	N after SP	held	0		#254	arm=no_nterm_arm	coordinator under Becca's 2026-11-12 delegation, 2026-11-14 (second-source rule)
-l1-p0240	l1-p0240	CATSPERQ	library_reference	human	internal	built	2	built:1;decided:1	#299 (loops) / #284 (snorkel)		
 l1-p0241	l1-p0241	CCKAR	library_reference	human	N at residue 1, multipass	built	1	decided:1	#280		
 l1-p0242	l1-p0242	CCKBR	library_reference	human	N at residue 1, multipass	built	1	decided:1	#280		
 l1-p0243	l1-p0243	CCR1	library_reference	human	N at residue 1, multipass	built	1	decided:1	#280		
@@ -494,7 +492,6 @@ l1-p0492	l1-p0492	CXCR3	library_reference	human	N at residue 1, multipass	built	
 l1-p0493	l1-p0493	CXCR4	library_reference	human	N at residue 1, multipass	built	1	decided:1	#280		
 l1-p0494	l1-p0494	CXCR5	library_reference	human	N at residue 1, multipass	built	1	decided:1	#280		
 l1-p0495	l1-p0495	CXCR6	library_reference	human	N at residue 1, multipass	built	1	decided:1	#280		
-l1-p0496	l1-p0496	CXorf66	library_reference	human	N after SP	built	1	built:1	#254		
 l1-p0497	l1-p0497	CYBB	library_reference	human	internal	built	3	decided:3	#299 (loops) / #284 (snorkel)		
 l1-p0498	l1-p0498	CYBRD1	library_reference	human	internal	built	3	built:1;decided:2	#299 (loops) / #284 (snorkel)		
 l1-p0499	l1-p0499	CYSLTR1	library_reference	human	N at residue 1, multipass	built	1	decided:1	#280		
@@ -1254,7 +1251,6 @@ l1-p1252	l1-p1252	MS4A13	library_reference	human	internal	built	3	built:1;decide
 l1-p1253	l1-p1253	MS4A2	library_reference	human	internal	built	2	decided:2	#299 (loops) / #284 (snorkel)		
 l1-p1254	l1-p1254	MS4A3	library_reference	human	internal	built	2	decided:2	#299 (loops) / #284 (snorkel)		
 l1-p1255	l1-p1255	MS4A4A	library_reference	human	internal	built	2	decided:2	#299 (loops) / #284 (snorkel)		
-l1-p1256	l1-p1256	MS4A5	library_reference	human	internal	built	2	decided:2	#299 (loops) / #284 (snorkel)		
 l1-p1257	l1-p1257	MS4A6A	library_reference	human	internal	built	1	decided:1	#299 (loops) / #284 (snorkel)		
 l1-p1258	l1-p1258	MS4A7	library_reference	human	internal	built	2	decided:2	#299 (loops) / #284 (snorkel)		
 l1-p1259	l1-p1259	MSLN	library_reference	human	N after SP	built	1	built:1	#254		
@@ -1722,7 +1718,6 @@ l1-p1723	l1-p1723	RAET1G	library_reference	human	N after SP	built	1	built:1	#254
 l1-p1724	l1-p1724	RAET1L	library_reference	human	N after SP	built	1	built:1	#254		
 l1-p1725	l1-p1725	RECK	library_reference	human	N after SP	built	1	built:1	#254		
 l1-p1726	l1-p1726	RELL1	library_reference	human	N after SP	built	1	built:1	#254		
-l1-p1727	l1-p1727	RELL2	library_reference	human	N at residue 1, single-pass (type III)	built	1	built:1	#282		
 l1-p1728	l1-p1728	RELT	library_reference	human	N after SP	built	1	built:1	#254		
 l1-p1729	l1-p1729	RET	library_reference	human	N after SP	built	1	built:1	#254		
 l1-p1730	l1-p1730	RGMA	library_reference	human	N after SP	built	1	built:1	#254		
@@ -2049,7 +2044,6 @@ l1-p2050	l1-p2050	SLITRK4	library_reference	human	N after SP	built	1	built:1	#25
 l1-p2051	l1-p2051	SLITRK5	library_reference	human	N after SP	built	1	built:1	#254		
 l1-p2052	l1-p2052	SLITRK6	library_reference	human	N after SP	built	1	built:1	#254		
 l1-p2053	l1-p2053	SMAGP	library_reference	human	N at residue 1, single-pass (type III)	built	1	built:1	#282		
-l1-p2054	l1-p2054	SMIM7	library_reference	human	N at residue 1, multipass	built	1	decided:1	#280		
 l1-p2055	l1-p2055	SMO	library_reference	human	N after SP	built	1	built:1	#254		
 l1-p2056	l1-p2056	SMPDL3B	library_reference	human	N after SP	built	1	built:1	#254		
 l1-p2057	l1-p2057	SNORC	library_reference	human	N after SP	built	1	built:1	#254		
@@ -2123,7 +2117,6 @@ l1-p2124	l1-p2124	TCTA	library_reference	human	C-terminal	built	1	built:1	#284
 l1-p2125	l1-p2125	TEK	library_reference	human	N after SP	built	1	built:1	#254		
 l1-p2126	l1-p2126	TEX101	library_reference	human	N after SP	built	1	built:1	#254		
 l1-p2127	l1-p2127	TEX29	library_reference	human	N at residue 1, single-pass (type III)	built	1	built:1	#282		
-l1-p2128	l1-p2128	TEX38	library_reference	human	N at residue 1, single-pass (type III)	built	1	built:1	#282		
 l1-p2129	l1-p2129	TFPI	library_reference	human	N after SP	built	1	built:1	#254		
 l1-p2130	l1-p2130	TFR2	library_reference	human	C-terminal	built	1	built:1	#284		
 l1-p2131	l1-p2131	TFRC	library_reference	human	C-terminal	built	1	built:1	#284		
@@ -2166,16 +2159,12 @@ l1-p2167	l1-p2167	TMEM132A	library_reference	human	N after SP	built	1	built:1	#2
 l1-p2168	l1-p2168	TMEM132B	library_reference	human	N after SP	built	1	built:1	#254		
 l1-p2169	l1-p2169	TMEM132D	library_reference	human	N after SP	built	1	built:1	#254		
 l1-p2170	l1-p2170	TMEM132E	library_reference	human	N after SP	built	1	built:1	#254		
-l1-p2171	l1-p2171	TMEM134	library_reference	human	internal	held	0		#299 (loops) / #284 (snorkel)	decision=hold_no_passing_arm	"Claude Code session l1-review-export-scope (subagent), under Becca's 2026-11-21 ""Yes, rebuild now"" and 2026-11-22 ""Yes, in this build""; site rules of PR #245, order rule adopted by the coordinator 2026-11-15"
-l1-p2172	l1-p2172	TMEM139	library_reference	human	internal	built	1	decided:1	#299 (loops) / #284 (snorkel)		
 l1-p2173	l1-p2173	TMEM145	library_reference	human	N after SP	built	1	built:1	#254		
 l1-p2174	l1-p2174	TMEM150A	library_reference	human	internal	built	1	decided:1	#299 (loops) / #284 (snorkel)		
 l1-p2175	l1-p2175	TMEM150C	library_reference	human	internal	built	3	decided:3	#299 (loops) / #284 (snorkel)		
 l1-p2176	l1-p2176	TMEM154	library_reference	human	N after SP	built	1	built:1	#254		
 l1-p2177	l1-p2177	TMEM158	library_reference	human	N after SP	built	1	built:1	#254		
-l1-p2178	l1-p2178	TMEM169	library_reference	human	internal	held	0		#299 (loops) / #284 (snorkel)	decision=hold_no_passing_arm	"ranker-pu-segment (delegated by Becca 2026-11-12, ""use your best judgment"")"
 l1-p2179	l1-p2179	TMEM170B	library_reference	human	N at residue 1, multipass	built	1	decided:1	#280		
-l1-p2180	l1-p2180	TMEM174	library_reference	human	internal	held	0		#299 (loops) / #284 (snorkel)	decision=hold_no_passing_arm	"ranker-pu-segment (delegated by Becca 2026-11-12, ""use your best judgment"")"
 l1-p2181	l1-p2181	TMEM181	library_reference	human	internal	built	3	decided:3	#299 (loops) / #284 (snorkel)		
 l1-p2182	l1-p2182	TMEM182	library_reference	human	internal	built	3	decided:3	#299 (loops) / #284 (snorkel)		
 l1-p2183	l1-p2183	TMEM184A	library_reference	human	N at residue 1, multipass	built	1	decided:1	#280		
@@ -2183,22 +2172,14 @@ l1-p2184	l1-p2184	TMEM190	library_reference	human	N after SP	built	1	built:1	#25
 l1-p2185	l1-p2185	TMEM198	library_reference	human	N at residue 1, multipass	built	1	decided:1	#280		
 l1-p2186	l1-p2186	TMEM204	library_reference	human	internal	built	1	decided:1	#299 (loops) / #284 (snorkel)		
 l1-p2187	l1-p2187	TMEM205	library_reference	human	N at residue 1, multipass	built	1	decided:1	#280		
-l1-p2188	l1-p2188	TMEM210	library_reference	human	N after SP	held	0		#254	arm=no_nterm_arm	"nterm-reviewer-package (delegated by Becca 2026-11-12, ""use your best judgment"")"
 l1-p2189	l1-p2189	TMEM219	library_reference	human	internal	built	1	decided:1	#299 (loops) / #284 (snorkel)		
-l1-p2190	l1-p2190	TMEM222	library_reference	human	N at residue 1, multipass	built	1	decided:1	#280		
 l1-p2191	l1-p2191	TMEM225	library_reference	human	internal	built	3	decided:3	#299 (loops) / #284 (snorkel)		
 l1-p2192	l1-p2192	TMEM229B	library_reference	human	internal	built	3	built:1;decided:2	#299 (loops) / #284 (snorkel)		
-l1-p2193	l1-p2193	TMEM238	library_reference	human	internal	held	0		#299 (loops) / #284 (snorkel)	decision=snorkel	"ranker-pu-segment (delegated by Becca 2026-11-12, ""use your best judgment"")"
 l1-p2194	l1-p2194	TMEM26	library_reference	human	internal	built	1	decided:1	#299 (loops) / #284 (snorkel)		
-l1-p2195	l1-p2195	TMEM266	library_reference	human	internal	built	2	decided:2	#299 (loops) / #284 (snorkel)		
-l1-p2196	l1-p2196	TMEM268	library_reference	human	internal	built	2	built:1;decided:1	#299 (loops) / #284 (snorkel)		
-l1-p2197	l1-p2197	TMEM273	library_reference	human	N after SP	built	1	built:1	#254		
 l1-p2198	l1-p2198	TMEM47	library_reference	human	internal	built	2	decided:2	#299 (loops) / #284 (snorkel)		
 l1-p2199	l1-p2199	TMEM63B	library_reference	human	N at residue 1, multipass	built	1	decided:1	#280		
 l1-p2200	l1-p2200	TMEM67	library_reference	human	N after SP	built	1	built:1	#254		
 l1-p2201	l1-p2201	TMEM81	library_reference	human	N after SP	built	1	built:1	#254		
-l1-p2202	l1-p2202	TMEM86A	library_reference	human	internal	built	3	built:1;decided:2	#299 (loops) / #284 (snorkel)		
-l1-p2203	l1-p2203	TMEM86B	library_reference	human	internal	built	3	built:1;decided:2	#299 (loops) / #284 (snorkel)		
 l1-p2204	l1-p2204	TMEM89	library_reference	human	N after SP	built	1	built:1	#254		
 l1-p2205	l1-p2205	TMEM8B	library_reference	human	internal	built	1	decided:1	#299 (loops) / #284 (snorkel)		
 l1-p2206	l1-p2206	TMEM95	library_reference	human	internal	built	1	decided:1	#299 (loops) / #284 (snorkel)		
@@ -2297,7 +2278,6 @@ l1-p2298	l1-p2298	TSPAN6	library_reference	human	internal	built	2	decided:2	#299
 l1-p2299	l1-p2299	TSPAN7	library_reference	human	internal	built	1	decided:1	#299 (loops) / #284 (snorkel)		
 l1-p2300	l1-p2300	TSPAN8	library_reference	human	internal	built	1	decided:1	#299 (loops) / #284 (snorkel)		
 l1-p2301	l1-p2301	TSPAN9	library_reference	human	internal	built	3	built:1;decided:2	#299 (loops) / #284 (snorkel)		
-l1-p2302	l1-p2302	TSPO2	library_reference	human	N at residue 1, multipass	built	1	decided:1	#280		
 l1-p2303	l1-p2303	TTYH1	library_reference	human	N at residue 1, multipass	built	1	decided:1	#280		
 l1-p2304	l1-p2304	TTYH2	library_reference	human	N at residue 1, multipass	built	1	decided:1	#280		
 l1-p2305	l1-p2305	TTYH3	library_reference	human	N at residue 1, multipass	built	1	decided:1	#280		
@@ -2476,7 +2456,6 @@ l1-p2969	l1-p2969	SLC47A1	ortholog	cyno	C-terminal	built	1	built:1	#284
 l1-p2970	l1-p2970	MRGPRX4	ortholog	cyno	N at residue 1, multipass	built	1	decided:1	#280		
 l1-p2971	l1-p2971	SLC9B1	ortholog	cyno	internal	built	1	decided:1	#299 (loops) / #284 (snorkel)		
 l1-p2972	l1-p2972	TEX29	ortholog	cyno	N at residue 1, single-pass (type III)	built	1	built:1	#282		
-l1-p2973	l1-p2973	TMEM210	ortholog	cyno	N after SP	held	0		#254	arm=no_nterm_arm	"nterm-reviewer-package (delegated by Becca 2026-11-12, ""use your best judgment"")"
 l1-p2974	l1-p2974	TNFRSF13B	ortholog	cyno	N at residue 1, single-pass (type III)	built	1	built:1	#282		
 l1-p2975	l1-p2975	TRPM2	ortholog	cyno	internal	built	3	decided:3	#299 (loops) / #284 (snorkel)		
 l1-p2976	l1-p2976	ZACN	ortholog	cyno	N after SP	built	1	built:1	#254		
@@ -2561,9 +2540,6 @@ l1-p3056	l1-p3056	SLC5A4	ortholog	mouse	N at residue 1, multipass	built	1	decide
 l1-p3057	l1-p3057	SPINT1	ortholog	mouse	N after SP	built	1	built:1	#254		
 l1-p3058	l1-p3058	TFPI	ortholog	mouse	N after SP	built	1	built:1	#254		
 l1-p3059	l1-p3059	TM7SF3	ortholog	mouse	N after SP	built	1	built:1	#254		
-l1-p3060	l1-p3060	TMEM139	ortholog	mouse	internal	built	1	decided:1	#299 (loops) / #284 (snorkel)		
-l1-p3061	l1-p3061	TMEM210	ortholog	mouse	N after SP	held	0		#254	arm=no_nterm_arm	"nterm-reviewer-package (delegated by Becca 2026-11-12, ""use your best judgment"")"
-l1-p3062	l1-p3062	TMEM86B	ortholog	mouse	internal	built	3	decided:3	#299 (loops) / #284 (snorkel)		
 l1-p3063	l1-p3063	TMIGD1	ortholog	mouse	N after SP	built	1	built:1	#254		
 l1-p3064	l1-p3064	TMPRSS2	ortholog	mouse	C-terminal	built	1	built:1	#284		
 l1-p3065	l1-p3065	VSIG2	ortholog	mouse	N after SP	built	1	built:1	#254		
@@ -2654,6 +2630,7 @@ l1-p3193	l1-p3193	C1orf159	library_reference	human	N after SP	built	1	built:1	#2
 l1-p3195	l1-p3195	CSF1	library_reference	human	N after SP	built	1	built:1	#254		
 l1-p3196	l1-p3196	FAM171B	library_reference	human	N after SP	built	1	built:1	#254		
 l1-p3197	l1-p3197	FAM234A	library_reference	human	C-terminal	built	1	built:1	#284		
+l1-p3199	l1-p3199	LNPEP	library_reference	human	C-terminal	built	1	built:1	#284		
 l1-p3200	l1-p3200	MFAP3	library_reference	human	N after SP	built	1	built:1	#254		
 l1-p3201	l1-p3201	MYORG	library_reference	human	C-terminal	built	1	built:1	#284		
 l1-p3203	l1-p3203	RNF149	library_reference	human	N after SP	built	1	built:1	#254		
@@ -2665,6 +2642,7 @@ l1-p3209	l1-p3209	TMEM248	library_reference	human	internal	built	1	decided:1	#29
 l1-p3211	l1-p3211	FCGR2C	library_reference	human	N after SP	built	1	built:1	#254		
 l1-p3212	l1-p3212	OR10AC1	library_reference	human	N at residue 1, multipass	built	1	decided:1	#280		
 l1-p3213	l1-p3213	OR4Q2	library_reference	human	N at residue 1, multipass	built	1	decided:1	#280		
+l1-p3214	l1-p3214	OR52P1	library_reference	human	N at residue 1, multipass	built	1	decided:1	#280		
 l1-p3215	l1-p3215	ACVR2A	isoform	human	N after SP	built	1	built:1	#254		
 l1-p3218	l1-p3218	ADGRL2	isoform	human	N after SP	built	1	built:1	#254		
 l1-p3219	l1-p3219	ADGRL2	isoform	human	N after SP	built	1	built:1	#254		
@@ -2716,7 +2694,6 @@ l1-p3283	l1-p3283	SLC6A9	isoform	human	internal	built	1	decided:1	#299 (loops) /
 l1-p3284	l1-p3284	SLC8A3	isoform	human	N after SP	built	1	built:1	#254		
 l1-p3285	l1-p3285	SPNS2	isoform	human	internal	built	3	built:1;decided:2	#299 (loops) / #284 (snorkel)		
 l1-p3288	l1-p3288	TMEM181	isoform	human	internal	built	2	decided:2	#299 (loops) / #284 (snorkel)		
-l1-p3289	l1-p3289	TMEM222	isoform	human	C-terminal	held	0		#284	decision=hold (not built): UniProt: Cytoplasmic 208-208 (ECO:0000255)	coordinator under Becca's 2026-11-12 delegation and her 2026-11-14 instruction to manage the C-terminal rung
 l1-p3290	l1-p3290	TMIGD2	isoform	human	N after SP	built	1	built:1	#254		
 l1-p3291	l1-p3291	TMPRSS13	isoform	human	C-terminal	built	1	built:1	#284		
 l1-p3293	l1-p3293	TNFSF10	isoform	human	C-terminal	built	1	built:1	#284		
@@ -2761,3 +2738,4 @@ l1-p3337	l1-p3337	SLC39A14	isoform	human	N after SP	built	1	built:1	#254
 l1-p3338	l1-p3338	NRP2	isoform	human	N after SP	built	1	built:1	#254		
 l1-p3339	l1-p3339	ATP1B3	isoform	human	C-terminal	built	1	built:1	#284		
 l1-p3340	l1-p3340	PMEPA1	isoform	human	N at residue 1, single-pass (type III)	built	1	built:1	#282		
+l1-p3341	l1-p3341	PCDH11X	library_reference	human	N after SP	built	1	built:1	#254		

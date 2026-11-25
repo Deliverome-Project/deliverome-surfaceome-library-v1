@@ -1662,7 +1662,7 @@ RAET1G	Q6H3X3	pass	cell_state_induced	T3
 RAET1L	Q5VY80	pass	cell_state_induced	T3	
 RECK	O95980	pass	gpi_anchored	T1	
 RELL1	Q8IUW5	pass	cell_state_induced	T3	
-RELL2	Q8NC24	pass	tissue_restricted_surface	LL	
+RELL2	Q8NC24	pass	tissue_restricted_surface		yes
 RELT	Q969Z4	pass	tissue_restricted_surface	T1	
 RET	P07949	pass	classical_surface_receptor	T1	
 RGMA	Q96B86	pass	gpi_anchored	T1	
@@ -2075,7 +2075,7 @@ TENM1	Q9UKZ4	pass	cell_state_induced
 TENM2	Q9NT68	pass	tissue_restricted_surface		
 TENM4	Q6N022	pass	classical_surface_receptor		
 TEX101	Q9BY14	pass	tissue_restricted_surface	T1	
-TEX38	Q6PEX7	pass	tissue_restricted_surface	LL	
+TEX38	Q6PEX7	pass	tissue_restricted_surface		yes
 TFPI	P10646	pass	dual_localization	T1	
 TFR2	Q9UP52	pass	classical_surface_receptor	T1	
 TFRC	P02786	pass	classical_surface_receptor	T1	
@@ -2130,7 +2130,7 @@ TMEM205	Q6UW68	pass	cell_state_induced	T3
 TMEM219	Q86XT9	pass	classical_surface_receptor	T2	
 TMEM233	B4DJY2	pass	tissue_restricted_surface		
 TMEM26	Q6ZUK4	pass	tissue_restricted_surface	T2	
-TMEM266	Q2M3C6	pass	tissue_restricted_surface	LL	
+TMEM266	Q2M3C6	pass	tissue_restricted_surface		yes
 TMEM47	Q9BQJ4	pass	tissue_restricted_surface	T2	
 TMEM52B	Q4KMG9	pass	cell_state_induced		
 TMEM63B	Q5T3F8	pass	cell_state_induced	T3	
@@ -2236,7 +2236,7 @@ TSPAN6	O43657	pass	multipass_with_exposed_loops	T2
 TSPAN7	P41732	pass	multipass_with_exposed_loops	T2	
 TSPAN8	P19075	pass	multipass_with_exposed_loops	T2	
 TSPAN9	O75954	pass	multipass_with_exposed_loops	T2	
-TSPO2	Q5TGU0	pass	tissue_restricted_surface	LL	
+TSPO2	Q5TGU0	pass	tissue_restricted_surface		yes
 TTYH1	Q9H313	pass	cell_state_induced	T3	
 TTYH2	Q9BSA4	pass	multipass_with_exposed_loops	T2	
 TTYH3	Q9C0H2	pass	multipass_with_exposed_loops	T2	

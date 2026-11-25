@@ -768,6 +768,7 @@ l1-p1566	PAM	library_reference		nterm_native	re-prediction-gated site before the
 l1-p1574	PCDH1	library_reference		nterm_native	only preserved sites are inside the predicted fold; chosen by unsoftened cleavage, then junction disorder percentile (69)
 l1-p1575	PCDH10	library_reference		nterm_native	only preserved sites are inside the predicted fold; chosen by unsoftened cleavage, then junction disorder percentile (69)
 l1-p3329	PCDH10	isoform		nterm_native	only preserved sites are inside the predicted fold (re-predicted after the sweep); gated pick
+l1-p3341	PCDH11X	library_reference		nterm_native	preserves native SP cleavage at 23 (prob 0.9786) outside Cadherin 1 domain (26-139); matches PCDH10/18/19 SP+1 pattern; tagged ColabFold refold passes (lDDT 0.956, site lDDT 0.896, 0 epitope contacts)
 l1-p1577	PCDH17	library_reference		nterm_native	only preserved sites are inside the predicted fold; chosen by unsoftened cleavage, then junction disorder percentile (67)
 l1-p1578	PCDH18	library_reference		nterm_native	only preserved sites are inside the predicted fold; chosen by unsoftened cleavage, then junction disorder percentile (69)
 l1-p1579	PCDH19	library_reference		nterm_native	only preserved sites are inside the predicted fold; chosen by unsoftened cleavage, then junction disorder percentile (70)
@@ -1028,7 +1029,6 @@ l1-p2173	TMEM145	library_reference		nterm_native	refold of native_site after 30 
 l1-p2176	TMEM154	library_reference		nterm_native	re-prediction-gated site before the predicted fold
 l1-p2177	TMEM158	library_reference		nterm_native	re-prediction-gated site before the predicted fold
 l1-p2184	TMEM190	library_reference		nterm_native	re-prediction-gated site before the predicted fold
-l1-p2197	TMEM273	library_reference		nterm_native	re-prediction-gated site before the predicted fold
 l1-p2200	TMEM67	library_reference		nterm_native	only preserved sites are inside the predicted fold; chosen by unsoftened cleavage, then junction disorder percentile (91)
 l1-p3297	TMEM67	ortholog		nterm_native	round-2 SignalP (no_row_native): tagged form keeps the cleavage
 l1-p2201	TMEM81	library_reference		nterm_native	only preserved sites are inside the predicted fold; chosen by unsoftened cleavage, then junction disorder percentile (72)

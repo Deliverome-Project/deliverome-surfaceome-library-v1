@@ -108,7 +108,7 @@ import assemble_candidates  # noqa: E402
 #: The commit whose arm tables are audited: main at cdb78068 (2026-11-14), the build the
 #: 2026-11-14-final order of record was made from (synthesis_compliance.INPUT_REF). Earlier
 #: audits read the draft integration branch (496d3482, then 5cfd91c0, PR #299), not on main.
-INTEGRATION_REF = "7dc06001adfd2e6438aa3387c24f574e1a237375"
+INTEGRATION_REF = "4422a9c4c6e2a5569e8a38a7190ef12046e5ddf2"
 RUNGS = {
     "C-terminal/snorkel": "constructs_l1_cterm",
     "N after SP": "constructs_l1_nterm",
@@ -759,15 +759,15 @@ def main(argv=None) -> int:
     return 0
 
 
-RECODED_KEY = "sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-24-pre-freeze-c/l1_order_inserts_recoded.fasta"
+RECODED_KEY = "sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-25-pre-freeze-e/l1_order_inserts_recoded.fasta"
 #: The Twist-compliant recoded inserts, the order of record (synthesis_compliance.py), regenerated
 #: by l1-reviewer-package from main at cdb78068 on 2026-11-14: 2,629 inserts on the five rungs,
 #: named by member id (ordered-length numbering). Superseded pins: 2026-11-13-one-arm-renamed/
 #: b426e433 (2,678 inserts, draft integration 496d3482), 2026-11-13/ d1257f0a (2,716 inserts,
 #: with the 25 retired rescue arms) and the undated #303 slice 9b1c9f55.
-RECODED_SHA256 = "ef810d1d7ae674f6d0409398d2463d6f0a476d1dd7c638e0c0cc23426027e8d2"
+RECODED_SHA256 = "658682f876598307bc30ad5103199ef77757ca2b00dcb1b00927f6989087ceb3"
 #: The synthesis_recodes.tsv this order was made with (l1-reviewer-package, final regeneration).
-RECODES_REF = "96484ceedfacf33476b04a3b671e12c5e3174ea7"
+RECODES_REF = "599ba2483347d9c80f4e3dc8f801c337f727dfd7"
 RUNG_OF_TAG = {
     "cterm": "C-terminal/snorkel",
     "nterm": "N after SP",

@@ -55,7 +55,7 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`apply_mane_gtf.py`](apply_mane_gtf.py) | called | Rerun the L1 reference ladder with MANE Select read from the GTF, and carry the switches through. | `mane_gtf_changes_2026-11-22_summary.json`, `mane_gtf_decisions_2026-11-22.tsv` |
 | [`apply_ortholog_start_trims.py`](apply_ortholog_start_trims.py) | stage | Restart four cyno L1 orthologs at the native Met aligned to human Met1 (5' trim only). | `ortholog_start_trims_summary.json` |
 | [`apply_panel_redraw_2026_11_22.py`](apply_panel_redraw_2026_11_22.py) | called | Apply the 2026-11-22 isoform redraw and ortholog feature rule to the L1 manifest. | — |
-| [`apply_preorder_audit_fixes_2026_11_24.py`](apply_preorder_audit_fixes_2026_11_24.py) | documented | Apply the 2026-11-24 pre-order biological audit fixes to the L1 internal arm tables. | — |
+| [`apply_preorder_audit_fixes_2026_11_24.py`](apply_preorder_audit_fixes_2026_11_24.py) | one-off | Apply the 2026-11-24 pre-order biological audit fixes to the L1 internal arm tables. | — |
 | [`apply_reference_fixes.py`](apply_reference_fixes.py) | stage | Apply the approved L1 reference-form fixes: named references and start-codon replacements. | `library_cds_boundary_decisions.tsv`, `reference_changes_summary.json` |
 | [`assemble_vector.py`](assemble_vector.py) | called | Assemble a finished, fully annotated plasmid: p0039 backbone + one shuttled insert. | — |
 | [`assign_p0040_barcode.py`](assign_p0040_barcode.py) | called | Give p0040 its own barcode, so it is distinguishable from p0016 by amplicon. | — |
@@ -131,7 +131,7 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`gate_isoform_cohort.py`](gate_isoform_cohort.py) | stage | Gate every isoform-cohort form before the panel draw: native start, and the canonical's | `isoform_gate.tsv`, `isoform_gate_summary.json` |
 | [`gene_gate_outcomes.py`](gene_gate_outcomes.py) | called | Every cohort gene's outcome at the L1 gene-list gates, as a table a reviewer can read. | `gene_gate_outcomes.tsv` |
 | [`genes_without_reference_cds.py`](genes_without_reference_cds.py) | called | How each library gene without a buildable GRCh38 reference copy entered the gene list, and why. | `genes_without_reference_cds.tsv` |
-| [`hela_surface_labeling_candidates.py`](hela_surface_labeling_candidates.py) | documented | Where the HeLa surface-labeling off-list candidates fall against the library's gates. | `hela_surface_labeling_candidates.tsv` |
+| [`hela_surface_labeling_candidates.py`](hela_surface_labeling_candidates.py) | one-off | Where the HeLa surface-labeling off-list candidates fall against the library's gates. | `hela_surface_labeling_candidates.tsv` |
 | [`iffl_reaction_order.py`](iffl_reaction_order.py) | called | Why a fully complementary site represses hard but does not dosage-compensate. | — |
 | [`isoform_architecture_classes.py`](isoform_architecture_classes.py) | called | Membrane-architecture classes in the library, the isoform cohort and the isoform panel, | `isoform_architecture_classes.tsv`, `isoform_architecture_classes_genes.tsv`, `isoform_architecture_classes_summary.json` |
 | [`isoform_v1_topology.py`](isoform_v1_topology.py) | called | Give every isoform-cohort form, and its gene's reference, a DeepTMHMM v1 topology. | — |
@@ -252,6 +252,7 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`reviewer-package/nterm/sp_disagree_review.py`](reviewer-package/nterm/sp_disagree_review.py) | called | Second-source review of members whose signal peptide only DeepTMHMM v1 calls. | `sp_disagree_review.tsv` |
 | [`reviewer-package/nterm/weak_sp.py`](reviewer-package/nterm/weak_sp.py) | called | Native arms with a weak predicted signal peptide, and the Igκ form that would replace each. | `weak_sp.tsv` |
 | [`reviewer-package/order_plan.py`](reviewer-package/order_plan.py) | called | How the L1 library is ordered: plate layout, volumes, and length-weighted pooling amounts. | `l1_order_plan.tsv`, `l1_order_plan_summary.json` |
+| [`reviewer-package/plot_placement_rules_schematic.py`](reviewer-package/plot_placement_rules_schematic.py) | one-off | Five-panel schematic of L1 tag placement rules by membrane topology. | — |
 | [`reviewer-package/public_data.py`](reviewer-package/public_data.py) | called | Where every file of the reviewer bundle lives for a reviewer, and the public copies. | — |
 | [`reviewer-package/render_brief.py`](reviewer-package/render_brief.py) | called | Render the brief and the cover note to self-contained PDF and Word files, and copy them out. | — |
 | [`reviewer-package/review_fingerprint.py`](reviewer-package/review_fingerprint.py) | called | Fingerprint every L1 member's protein sequence and tag location for review freshness. | — |
@@ -321,4 +322,4 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`write_panels_of_record.py`](write_panels_of_record.py) | called | Write the L1 panel tables of record from the panels as applied on 2026-11-22. | — |
 | [`write_structure_baseline.py`](write_structure_baseline.py) | documented | Regenerate the structure-coverage baseline the repo tests assert against. | `structure_coverage_baseline.json` |
 
-Totals: called 183, documented 32, one-off 26, stage 30, test 6
+Totals: called 183, documented 30, one-off 29, stage 30, test 6

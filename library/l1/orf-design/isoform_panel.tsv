@@ -143,7 +143,6 @@ TMIGD2	Q96BF3	ENST00000301272	282	278	both	False	full_only	prediction (TRIFID)	u
 ATP1B3		ENST00000874841	271	279	ensembl_only	False	full_only	prediction (TRIFID)	not_detected		0.569	MINOR	type II	prediction_only
 DPP4		ENST00000881343	764	766	ensembl_only	False	full_only	prediction (TRIFID)	not_detected		0.6709	ALTERNATIVE:1	type II	prediction_only
 GGT7		ENST00000885992	657	662	ensembl_only	False	full_only	prediction (TRIFID)	not_detected		0.6432	ALTERNATIVE:1	type II	prediction_only
-TMEM222		ENST00000915855	205	208	ensembl_only	False	full_only	prediction (TRIFID)	not_detected		0.6229	ALTERNATIVE:1	type II	prediction_only
 TMPRSS13	Q9BYE2	ENST00000445164	586	567	both	False	full_only	prediction (TRIFID)	not_detected	0	0.925	ALTERNATIVE:2	type II	prediction_only
 TNFSF10		ENST00000855871	279	281	ensembl_only	False	full_only	prediction (TRIFID)	not_detected		0.5252	ALTERNATIVE:2	type II	prediction_only
 TNFSF12		ENST00000700053	248	249	ensembl_only	False	full_only	prediction (TRIFID)	not_detected		0.6682	ALTERNATIVE:1	type II	prediction_only

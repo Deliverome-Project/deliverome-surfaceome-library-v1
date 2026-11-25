@@ -2,28 +2,24 @@
   "tranche": "l1",
   "rung": "N after SP",
   "decisions": {
-    "igk_swap": 231,
+    "igk_swap": 230,
     "native_site": 1091,
-    "no_nterm_arm": 5,
+    "no_nterm_arm": 1,
     "routed_internal": 2
   },
-  "built": 1322,
+  "built": 1321,
   "built_by_arm": {
-    "igk_swap": 231,
+    "igk_swap": 230,
     "native_site": 1091
   },
   "built_inside_predicted_fold": 531,
   "seam_failures": [],
   "no_nterm_arm": [
-    "l1-p0239 CATSPERH",
-    "l1-p2188 TMEM210",
-    "l1-p2973 TMEM210",
-    "l1-p3061 TMEM210",
     "l1-p3238 EFNA1"
   ],
   "by_set": {
     "isoform": 88,
-    "library_reference": 1139,
+    "library_reference": 1138,
     "ortholog": 95
   },
   "type_iis": "every insert: 2 Esp3I (wrapper), 0 BbsI, 0 BsaI; in p0039: backbone's 4 + 2",

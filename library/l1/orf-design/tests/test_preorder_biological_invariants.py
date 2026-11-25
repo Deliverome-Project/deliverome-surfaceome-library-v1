@@ -608,3 +608,46 @@ def test_fold_to_order_parity_across_all_five_rungs() -> None:
         f"Built arms missing kind=='tagged' row in tag_refold_structures.tsv: {missing_trs[:10]}"
     )
     assert not sha_mismatch, f"Fold-to-order SHA-256 mismatches: {sha_mismatch[:10]}"
+
+
+def test_no_minimal_ectodomain_non_gpi_reference_genes() -> None:
+    """Every active non-GPI L1 reference gene must clear the >=30 aa ectodomain gate.
+
+    Guards against the 2026-11-25 regression where tier LL in final_library.py omitted the
+    ``ecd_ok(r)`` gate and admitted 20 minimal-ectodomain (<30 aa) non-GPI genes.
+    Runs strictly offline from committed tables so it executes in both repos.
+    """
+    gpi_genes = {
+        r["gene_symbol"]
+        for r in _read_tsv(GPI_SET_TSV)
+        if r.get("gene_symbol") and r.get("gpi_anchored") == "True"
+    }
+    ecto_excluded = {
+        r["gene"]
+        for r in _read_tsv(REVIEWER / "gate_lists" / "09_ectodomain_excluded.tsv")
+        if r.get("gene")
+    }
+    gate_outcomes = {
+        r["gene"]: r for r in _read_tsv(S4E9 / "gene_gate_outcomes.tsv") if r.get("gene")
+    }
+    violations: list[str] = []
+    for r in _read_tsv(TAG_PATHS_TSV):
+        if r["candidate_set"] != "library_reference":
+            continue
+        gene = r["gene_symbol"]
+        if gene in gpi_genes:
+            continue
+        cid = r["candidate_id"]
+        if gene in ecto_excluded:
+            violations.append(f"{cid} ({gene}): in 09_ectodomain_excluded.tsv")
+        outcome = gate_outcomes.get(gene)
+        if outcome and outcome.get("ectodomain") == "fail":
+            violations.append(f"{cid} ({gene}): gene_gate_outcomes ectodomain=fail")
+        if int(r["n_tm"]) == 1 and int(r["longest_ecto_run_aa"]) < 30:
+            violations.append(
+                f"{cid} ({gene}): 1-TM non-GPI longest_ecto_run_aa={r['longest_ecto_run_aa']} < 30"
+            )
+    assert not violations, (
+        f"Active non-GPI L1 reference genes below 30 aa ectodomain gate ({len(violations)}): "
+        f"{violations[:10]}"
+    )

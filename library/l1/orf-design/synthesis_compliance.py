@@ -84,7 +84,7 @@ from deliverome_analysis.plasmid_qc import P003_CASSETTE_PEPTIDE  # noqa: E402
 #: 2026-11-14b and the SLC68A1 arm; #331/#333 internal redesign; #324 disposition gate). A
 #: commit on main, so main alone rebuilds the order (pinned_refs stage). 496d3482 was the
 #: draft integration branch and is superseded.
-INPUT_REF = "7dc06001adfd2e6438aa3387c24f574e1a237375"
+INPUT_REF = "4422a9c4c6e2a5569e8a38a7190ef12046e5ddf2"
 RUNG_REFS = {
     "nterm": INPUT_REF,
     "multipass": INPUT_REF,
@@ -100,7 +100,7 @@ INSERT_NUMBERING = HERE / "l1_insert_numbering.tsv"
 RECODES = HERE / "synthesis_recodes.tsv"
 SUMMARY = HERE / "synthesis_compliance_summary.json"
 #: The order of record. Versioned by date: a new run writes a new key, never over an old one.
-FASTA_KEY = "sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-24-pre-freeze-c/l1_order_inserts_recoded.fasta"
+FASTA_KEY = "sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-25-pre-freeze-e/l1_order_inserts_recoded.fasta"
 DOMESTICATION_EDITS = HERE / "l1_domestication_edits.tsv"
 #: Superseded orders of record, kept unchanged: 2026-11-21-arm-linkers (sha256 8b1c4ed3…, the
 #: same inserts with the 109 snorkel arms on one shared module encoding); 2026-11-15-final-e (sha256 20e8f275…, the same

@@ -138,7 +138,7 @@ ARM_DECISIONS = (
 # ANO4 cytoplasmic, 4 SLC44A1 membrane-core, LYPD6 GPI-omega, 3 close-pair twins; 8 swaps to
 # passing sites: ATRN @1038, CDH3 @645, CDH5 @586, MDGA2 @151, BST2 @149, PRND @97, TRPV3 @615,
 # XPR1 @503) -> 1,226 built internal arms (1,081 loop + 145 snorkel).
-ARM_DECISIONS_SHA256 = "cae103a9a5279b925c3d14ef34df89ef0a03ab1d3adf724f6346a3e3ca62800b"
+ARM_DECISIONS_SHA256 = "f0ba31c84d4d0a41adfb49a28544168080fc50cee075b9bb1d2ea1c3b332def6"
 
 
 def arm_designs(expected_sha256: str = ARM_DECISIONS_SHA256) -> dict[str, dict] | None:

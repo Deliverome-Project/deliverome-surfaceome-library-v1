@@ -1,7 +1,7 @@
 placement	members	with_experimental_call	via_exact_sequence	concordant	discordant	discordant_wrong_side	discordant_site_inside_helix	discordant_pct	discordant_pct_95ci	concordant_but_site_at_helix_end	conflicting_evidence	evidence_entry_but_no_call_at_site	no_evidence_entry	no_tagged_site	n_terminus_with_call	n_terminus_v1_disagrees	c_terminus_with_call	c_terminus_v1_disagrees
-N after SP	1327	558	421	555	3	2	1	0.5	0.2-1.6	0	0	15	754	0	550	2	166	9
-N at residue 1, multipass	568	208	181	208	0	0	0	0.0	0.0-1.8	0	0	16	344	0	209	1	208	1
-N at residue 1, single-pass (type III)	43	10	6	9	1	1	0	10.0	1.8-40.4	0	0	1	32	0	10	1	4	0
-C-terminal	219	81	60	81	0	0	0	0.0	0.0-4.5	0	0	6	132	0	20	1	81	1
-internal	605	263	202	260	3	0	3	1.1	0.4-3.3	5	0	19	320	11	201	1	206	1
-all	2762	1120	870	1113	7	3	4	0.6	0.3-1.3	5	0	57	1582	11	990	6	665	12
+N after SP	1322	558	422	556	2	2	0	0.4	0.1-1.3	0	0	15	749	0	551	2	165	8
+N at residue 1, multipass	566	208	181	208	0	0	0	0.0	0.0-1.8	0	0	16	342	0	209	1	208	1
+N at residue 1, single-pass (type III)	41	10	6	9	1	1	0	10.0	1.8-40.4	0	0	1	30	0	10	1	4	0
+C-terminal	219	82	61	82	0	0	0	0.0	0.0-4.5	0	0	6	131	0	20	1	82	1
+internal	592	262	202	259	3	0	3	1.1	0.4-3.3	5	0	19	308	7	201	1	205	1
+all	2740	1120	872	1114	6	3	3	0.5	0.2-1.2	5	0	57	1560	7	991	6	664	11

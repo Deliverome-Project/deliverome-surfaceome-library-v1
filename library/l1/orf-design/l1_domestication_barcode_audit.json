@@ -1,12 +1,12 @@
 {
-  "integration_ref": "7dc06001adfd2e6438aa3387c24f574e1a237375",
-  "inserts": 3375,
+  "integration_ref": "4422a9c4c6e2a5569e8a38a7190ef12046e5ddf2",
+  "inserts": 3352,
   "by_rung": {
-    "C-terminal/snorkel": 361,
-    "N after SP": 1322,
-    "N at residue 1, multipass": 568,
-    "N at residue 1, type III": 43,
-    "internal": 1081
+    "C-terminal/snorkel": 358,
+    "N after SP": 1321,
+    "N at residue 1, multipass": 566,
+    "N at residue 1, type III": 41,
+    "internal": 1066
   },
   "insert_checks_failed": {
     "wrapper_only": [],
@@ -15,10 +15,10 @@
     "protein_matches_table": []
   },
   "extra_type_iis_reported": {
-    "SapI": 3375,
-    "AarI": 1507,
-    "BtgZI": 1419,
-    "PaqCI": 1507
+    "SapI": 3352,
+    "AarI": 1495,
+    "BtgZI": 1413,
+    "PaqCI": 1495
   },
   "barcode_slots_not_one": [],
   "native_nt_not_verbatim": {
@@ -28,31 +28,31 @@
     }
   },
   "domestication": {
-    "members": 2762,
-    "members_edited": 2432,
-    "codons_edited": 8419,
+    "members": 2740,
+    "members_edited": 2423,
+    "codons_edited": 8405,
     "nonsynonymous": 0,
-    "edits_new_atg": 481,
+    "edits_new_atg": 479,
     "edits_new_splice_donor": 53,
     "edits_new_polya": 2
   },
   "swap_tract_final_dna": {
-    "inserts_measured": 3375,
+    "inserts_measured": 3352,
     "median_nt": 50.0,
     "max_nt": 3856,
     "over_80": 326,
     "over_100": 297
   },
   "swap_tract_same_member": {
-    "pairs": 867,
-    "members": 397,
-    "inserts_in_multi_arm_members": 1029,
-    "fraction_of_inserts": 0.3049,
-    "tract_nt_median": 302.0,
+    "pairs": 854,
+    "members": 390,
+    "inserts_in_multi_arm_members": 1012,
+    "fraction_of_inserts": 0.3019,
+    "tract_nt_median": 317.0,
     "tract_nt_min": 41,
     "tract_nt_max": 3405,
-    "pairs_over_100": 599,
-    "modelled_swap_median": 0.137,
+    "pairs_over_100": 592,
+    "modelled_swap_median": 0.1427,
     "modelled_swap_max": 0.4865,
     "modelled_swap_at_100_nt_gate": 0.0503
   },
@@ -82,8 +82,8 @@
     "draw_replay_note": "replayed against the registry rows that precede the block, with today's local barcode tables"
   },
   "recoded": {
-    "recoded_fasta": "processed://sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-24-pre-freeze-c/l1_order_inserts_recoded.fasta",
-    "recoded_inserts": 3375,
+    "recoded_fasta": "processed://sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-25-pre-freeze-e/l1_order_inserts_recoded.fasta",
+    "recoded_inserts": 3352,
     "retired_members_still_in_order": 0,
     "rebuilt_since_order_not_compared": [],
     "not_in_original_set": 0,
@@ -100,6 +100,6 @@
       "inserts_whose_tract_grew": 0,
       "largest_growth_nt": 0
     },
-    "recoded_fasta_sha256": "ef810d1d7ae674f6d0409398d2463d6f0a476d1dd7c638e0c0cc23426027e8d2"
+    "recoded_fasta_sha256": "658682f876598307bc30ad5103199ef77757ca2b00dcb1b00927f6989087ceb3"
   }
 }

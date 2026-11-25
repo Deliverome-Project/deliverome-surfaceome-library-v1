@@ -78,14 +78,14 @@ LIBRARIES: tuple[str, ...] = (LIBRARY_L1, LIBRARY_L2)
 #: which the APPRIS file had omitted, plus named PTPRM and LY6H (Becca, 2026-11-22: "Yes, in this
 #: build"; s4e9 ``apply_mane_gtf.py``); every other entry unchanged.
 CDS_KEY = (
-    "sprint4/s4e9-orf-design-fg-panel/library-candidates/2026-11-23-pre-freeze/candidate_cds.json"
+    "sprint4/s4e9-orf-design-fg-panel/library-candidates/2026-11-25-pre-freeze-d/candidate_cds.json"
 )
 
 #: Domesticated ORF per candidate (``construct``, edit counts), keyed like :data:`CDS_KEY`
 #: and versioned with it.
 CONSTRUCTS_KEY = (
     "sprint4/s4e9-orf-design-fg-panel/library-candidates/"
-    "2026-11-23-pre-freeze/candidate_constructs.json"
+    "2026-11-25-pre-freeze-d/candidate_constructs.json"
 )
 
 #: The records :data:`CDS_KEY` and :data:`CONSTRUCTS_KEY` extend. They stay the published

@@ -253,8 +253,8 @@ CATSPERB	Q9H7T0	pass	1	single_pass_T1
 CATSPERD	Q86XM0	pass	1	single_pass_T1		
 CATSPERE	Q5SY80	pass	1	single_pass_T1	LL	
 CATSPERG	Q6ZRH7	pass	1	single_pass_T1	LL	
-CATSPERH	E9PQX1	pass	3	multi_pass	LL	
-CATSPERQ	Q2WGJ8	pass	2	multi_pass	LL	
+CATSPERH	E9PQX1	pass	3	multi_pass		yes
+CATSPERQ	Q2WGJ8	pass	2	multi_pass		yes
 CCKAR	P32238	pass	7	GPCR	T2	
 CCKBR	P32239	pass	7	GPCR	T3	
 CCR1	P32246	pass	7	GPCR	T2	
@@ -1867,7 +1867,7 @@ RAMP2	O60895	pass	1	single_pass_T1
 RAMP3	O60896	pass	1	single_pass_T1		
 RECK	O95980	pass	0	GPI_anchored	T1	
 RELL1	Q8IUW5	pass	1	single_pass_T1	T3	
-RELL2	Q8NC24	pass	1	single_pass_T1	LL	
+RELL2	Q8NC24	pass	1	single_pass_T1		yes
 RELT	Q969Z4	pass	1	single_pass_T1	T1	
 RET	P07949	pass	1	single_pass_T1	T1	
 RGMA	Q96B86	pass	0	GPI_anchored	T1	
@@ -2307,7 +2307,7 @@ TENM2	Q9NT68	pass	1	single_pass_T2
 TENM3	Q9P273	pass	1	single_pass_T2		
 TENM4	Q6N022	pass	1	single_pass_T2		
 TEX101	Q9BY14	pass	0	GPI_anchored	T1	
-TEX38	Q6PEX7	pass	1	single_pass_T1	LL	
+TEX38	Q6PEX7	pass	1	single_pass_T1		yes
 TFPI	P10646	pass	0	GPI_anchored	T1	
 TFR2	Q9UP52	pass	1	single_pass_T2	T1	
 TFRC	P02786	pass	1	single_pass_T2	T1	
@@ -2362,7 +2362,7 @@ TMEM205	Q6UW68	pass	4	multi_pass	T3
 TMEM219	Q86XT9	pass	2	single_pass_T1	T2	
 TMEM233	B4DJY2	pass	3	multi_pass		
 TMEM26	Q6ZUK4	pass	8	multi_pass	T2	
-TMEM266	Q2M3C6	pass	4	multi_pass	LL	
+TMEM266	Q2M3C6	pass	4	multi_pass		yes
 TMEM47	Q9BQJ4	pass	4	tetraspanin	T2	
 TMEM52B	Q4KMG9	pass	1	single_pass_T1		
 TMEM63B	Q5T3F8	pass	11	multi_pass	T3	
@@ -2473,7 +2473,7 @@ TSPAN6	O43657	pass	4	tetraspanin	T2
 TSPAN7	P41732	pass	4	tetraspanin	T2	
 TSPAN8	P19075	pass	4	tetraspanin	T2	
 TSPAN9	O75954	pass	4	tetraspanin	T2	
-TSPO2	Q5TGU0	pass	5	multi_pass	LL	
+TSPO2	Q5TGU0	pass	5	multi_pass		yes
 TTYH1	Q9H313	pass	5	multi_pass	T3	
 TTYH2	Q9BSA4	pass	5	multi_pass	T2	
 TTYH3	Q9C0H2	pass	5	multi_pass	T2	

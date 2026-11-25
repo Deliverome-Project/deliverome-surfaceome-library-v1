@@ -237,8 +237,6 @@ l1-p0235	l1	library_reference	human	CALHM5	internal	internal	0		4	0	309	60	60	12
 l1-p0236	l1	library_reference	human	CASR	N after SP	N after SP	0		7	19	1078	26	593	20	n_terminal			human_canonical	topo_2026_05_16	6c2adc8809792b84c0c5bc19ff04e45e74db85abcf49bcaf002a0c6627f2e06c
 l1-p0237	l1	library_reference	human	CATSPERE	N after SP	N after SP	0		1	19	951	0	884	20	n_terminal			human_canonical	topo_2026_05_16	756c3c0f5170a4cbd4dc886decb4f37affd0341fbfc29761cd88631fe2dca0a6
 l1-p0238	l1	library_reference	human	CATSPERG	N after SP	N after SP	0		1	37	1159	0	1030	38	n_terminal			human_canonical	topo_2026_05_16	59d0a9fc64badb2133abffe28afc385652e5b36e5cf7453c4ad047e7590623db
-l1-p0239	l1	library_reference	human	CATSPERH	N after SP	N after SP	0		3	22	116	11	11	72	inter_tm			human_canonical	topo_2026_05_16	84f03fc623111a51bb3009f4ca37992d8ba98493dcece712dba59957b6c45520
-l1-p0240	l1	library_reference	human	CATSPERQ	internal	internal	0		2	0	235	10	10	79	inter_tm			human_canonical	topo_2026_05_16	e247c162a24e5efd4a36390d35df50d9456875214c510cf49608fd7d8e0fc0dc
 l1-p0241	l1	library_reference	human	CCKAR	N at residue 1, multipass	N at residue 1	0		7	0	428	32	41	1	n_terminal			human_canonical	topo_2026_05_16	db51d7d7e7d75f30f42489829f22d751b64154d93bce190aaf7ae6f239a55695
 l1-p0242	l1	library_reference	human	CCKBR	N at residue 1, multipass	N at residue 1	0		7	0	447	28	54	1	n_terminal			human_canonical	topo_2026_05_16	2c8914a1edf8f03f1b41a31b62559b7c92e1e9823aba7436ba3157b60801482e
 l1-p0243	l1	library_reference	human	CCR1	N at residue 1, multipass	N at residue 1	0		7	0	355	25	35	1	n_terminal			human_canonical	topo_2026_05_16	420451b14360d287ee30cbef35f348be0ae8c0dab656127c92f4f7cac8429043
@@ -494,7 +492,6 @@ l1-p0492	l1	library_reference	human	CXCR3	N at residue 1, multipass	N at residue
 l1-p0493	l1	library_reference	human	CXCR4	N at residue 1, multipass	N at residue 1	0		7	0	352	22	38	1	n_terminal			human_canonical	topo_2026_05_16	745dbb36c09682458fa172f0f7c03032517c82c090ad360605494be94709518b
 l1-p0494	l1	library_reference	human	CXCR5	N at residue 1, multipass	N at residue 1	0		7	0	372	28	51	1	n_terminal			human_canonical	topo_2026_05_16	d15489f2a503ff480764bfa7b9e3566a3f4695e70b94fb4ec4528b764d422f2b
 l1-p0495	l1	library_reference	human	CXCR6	N at residue 1, multipass	N at residue 1	0		7	0	342	19	31	1	n_terminal			human_canonical	topo_2026_05_16	c0d6d308e9b1922a23ba04241cffcf6e3baa852bf50939ab504e1fefb7eddeb0
-l1-p0496	l1	library_reference	human	CXorf66	N after SP	N after SP	0		1	17	361	0	29	18	n_terminal			human_canonical	topo_2026_05_16	81e638da0182d99ba0c29335af8da9e246254123d75ee61d264154ff4e2f103b
 l1-p0497	l1	library_reference	human	CYBB	internal	internal	0		6	0	570	48	48	122	inter_tm			human_canonical	topo_2026_05_16	cc35fa7eda9edd48ed92ee7389120fa45d068e178002964b52513b874ecfe555
 l1-p0498	l1	library_reference	human	CYBRD1	internal	internal	0		6	0	286	18	18	180	inter_tm			human_canonical	topo_2026_05_16	bef764ac41a7935ca32865b6326b4ea9b41a4cf25e85ac235e7970f635ba2af5
 l1-p0499	l1	library_reference	human	CYSLTR1	N at residue 1, multipass	N at residue 1	0		7	0	337	25	25	161	inter_tm			human_canonical	topo_2026_05_16	beb226775d78746b62055a7d3bbac0a3adad8e2ab6bb1906a3662dc7c2093658
@@ -1254,7 +1251,6 @@ l1-p1252	l1	library_reference	human	MS4A13	internal	internal	0		4	0	152	20	20	18
 l1-p1253	l1	library_reference	human	MS4A2	internal	internal	0		4	0	244	31	31	151	inter_tm			human_canonical	topo_2026_05_16	7e09059ee236bb36fc2fc420cc3278186b68df6a3052cc872a5d964dc3d5e4b9
 l1-p1254	l1	library_reference	human	MS4A3	internal	internal	0		4	0	214	23	23	146	inter_tm			human_canonical	topo_2026_05_16	8c16193a08b6a6e2681089fec7d2907595b48a6b0685363caf5615fd1f543d76
 l1-p1255	l1	library_reference	human	MS4A4A	internal	internal	0		4	0	239	30	30	156	inter_tm			human_canonical	topo_2026_05_16	20e7247f3c0dcefd34567de122c82731cac60b79b92a2776d7b710a50098b789
-l1-p1256	l1	library_reference	human	MS4A5	internal	internal	0		4	0	200	20	20	142	inter_tm			human_canonical	topo_2026_05_16	2e066bdd29fe4cc2ae2a758a3d3d172b49a90cd326e26c197340b79ca10fbad2
 l1-p1257	l1	library_reference	human	MS4A6A	internal	internal	0		4	0	248	48	48	138	inter_tm			human_canonical	topo_2026_05_16	0c1f395526fdc3412ded9a2e4e360148b03097b8c86b6c8783244d8b338931f9
 l1-p1258	l1	library_reference	human	MS4A7	internal	internal	0		4	0	240	47	47	137	inter_tm			human_canonical	topo_2026_05_16	cfd9f49eb935b5ced11987042d8a3bca4b98f5a586be85ff7309d0ce6cf19e32
 l1-p1259	l1	library_reference	human	MSLN	N after SP	N after SP	0		0	36	622	0	586	37	no_tm	high	strong	human_isoforms	topo_2026_05_25	7770047e14b3e290ac41fcd52590654b6db17355683802fa5819eac283a9bae4
@@ -1722,7 +1718,6 @@ l1-p1723	l1	library_reference	human	RAET1G	N after SP	N after SP	0		1	28	334	0	2
 l1-p1724	l1	library_reference	human	RAET1L	N after SP	N after SP	0		0	25	246	0	221	26	no_tm	high	strong	human_canonical	topo_2026_05_16	063745826d08977212777d10af59835e84fc493b8c028689780a26c710ea6eb0
 l1-p1725	l1	library_reference	human	RECK	N after SP	N after SP	0		0	26	971	0	945	27	no_tm			human_canonical	topo_2026_05_16	eed1f737e85896209025b3b49563f40c97f76255da3a5e57de804e6a3ffac74d
 l1-p1726	l1	library_reference	human	RELL1	N after SP	N after SP	0		1	23	271	0	35	24	n_terminal			human_canonical	topo_2026_05_16	b95c6c90b61d7776eedf3952cbc88f50d52dabe9dcc6b9c0b5691ca5c8114880
-l1-p1727	l1	library_reference	human	RELL2	N at residue 1, single-pass (type III)	N at residue 1	0		1	0	303	0	14	1	n_terminal			human_canonical	topo_2026_05_16	e267f3d07488f16eafb7d113e9f7bf0a536e0bad87c81c8748d840667cf82160
 l1-p1728	l1	library_reference	human	RELT	N after SP	N after SP	0		1	25	430	0	139	26	n_terminal	moderate	moderate	human_canonical	topo_2026_05_16	fb09a901644eebcb4035d1d3c934177347ba9b238488ef89e7f6c9b4151fdf7b
 l1-p1729	l1	library_reference	human	RET	N after SP	N after SP	0		1	28	1114	0	608	29	n_terminal			human_canonical	topo_2026_05_16	10ec8a9e8316e42cd33c02e147ccc5d057ce4ecac76498c455a230ec4485d6be
 l1-p1730	l1	library_reference	human	RGMA	N after SP	N after SP	0		0	47	450	0	403	48	no_tm	high	strong	human_canonical	topo_2026_05_16	befc8d1ee7622d163e941d3ff2237f0eda6f793d8e268b4f1df09ea8eda13e48
@@ -2049,7 +2044,6 @@ l1-p2050	l1	library_reference	human	SLITRK4	N after SP	N after SP	0		1	18	837	0	
 l1-p2051	l1	library_reference	human	SLITRK5	N after SP	N after SP	0		1	38	958	0	626	39	n_terminal			human_canonical	topo_2026_05_16	8b88f9c1589fa02060dd0e7c0072b5c0cb3e5ee571d2b4c5b940e0db5191fee9
 l1-p2052	l1	library_reference	human	SLITRK6	N after SP	N after SP	0		1	21	841	0	587	22	n_terminal			human_canonical	topo_2026_05_16	d151d9158d254f1ac70922f6d09edd70733fc24a8df8dc4e715aebcd3c69e2f2
 l1-p2053	l1	library_reference	human	SMAGP	N at residue 1, single-pass (type III)	N at residue 1	0		1	0	97	0	35	1	n_terminal	low	weak	human_canonical	topo_2026_05_16	5aa7d9dff9383f2a01317c84c2cb68c613c0921f5c9273d41c5e6008f68c15a9
-l1-p2054	l1	library_reference	human	SMIM7	N at residue 1, multipass	N at residue 1	0		2	0	75	0	4	1	n_terminal			human_canonical	topo_2026_05_16	6b449d01961633765323225e6726eeb9e3f6d1a17762b205c000c1ddf6c7222c
 l1-p2055	l1	library_reference	human	SMO	N after SP	N after SP	0		7	29	787	47	202	30	n_terminal			human_canonical	topo_2026_05_16	2174c461817c35101eddf5c5ded44c7993684802e2ae40eb8566d574eccf79c1
 l1-p2056	l1	library_reference	human	SMPDL3B	N after SP	N after SP	0		0	18	455	0	437	19	no_tm	moderate	moderate	human_canonical	topo_2026_05_16	5601ab8d6f31c4eefcdd3d64ea0d06843c4092c6baf1f60205550ddc92dc214e
 l1-p2057	l1	library_reference	human	SNORC	N after SP	N after SP	0		1	24	121	0	67	25	n_terminal			human_canonical	topo_2026_05_16	c3d192e927f3b66623a0acb5fc031376dd8981da61dd7fb4e78e619d39f18669
@@ -2123,7 +2117,6 @@ l1-p2124	l1	library_reference	human	TCTA	C-terminal	C-terminal	0		1	0	103	0	45	5
 l1-p2125	l1	library_reference	human	TEK	N after SP	N after SP	0		1	22	1124	0	724	23	n_terminal	moderate	moderate	human_canonical	topo_2026_05_16	098f8e95556545c4417a8526c58549235f89930e00529d662ba941c1c2e8a9dd
 l1-p2126	l1	library_reference	human	TEX101	N after SP	N after SP	0		0	23	249	0	226	24	no_tm	moderate	strong	human_canonical	topo_2026_05_16	2a6d028c0d6f252d57674138d783c00ab5f1612c1ece9fedba6d1e37516bcd4d
 l1-p2127	l1	library_reference	human	TEX29	N at residue 1, single-pass (type III)	N at residue 1	0		1	0	151	0	56	1	n_terminal			human_canonical	topo_2026_05_16	789b2c89f1a6d5c13cc046061a647cfddd3b2156883de3e7f12a98e03965fc99
-l1-p2128	l1	library_reference	human	TEX38	N at residue 1, single-pass (type III)	N at residue 1	0		1	0	206	0	14	1	n_terminal			human_canonical	topo_2026_05_16	192e00dc4eb5fd365a3b0ecfb49398dc75754e776f4bb7f0e6f3a5bc9183ca47
 l1-p2129	l1	library_reference	human	TFPI	N after SP	N after SP	0		0	28	251	0	223	29	no_tm			human_isoforms	topo_2026_05_25	0b87be8cae7aceacd59228116d667047c77bca5edcb282e04e8931fcfb14172e
 l1-p2130	l1	library_reference	human	TFR2	C-terminal	C-terminal	0		1	0	801	0	697	105	c_terminal	moderate	strong	human_canonical	topo_2026_05_16	7ec5e39c5cc467bd0696d41958a7201bad2b0d10b22bbed36cb5db59ca0be4be
 l1-p2131	l1	library_reference	human	TFRC	C-terminal	C-terminal	0		1	0	760	0	674	87	c_terminal	moderate	strong	human_canonical	topo_2026_05_16	c6a44b119bef130274a956ef9023aa7b51713ae3ba54bf0da32d5ebdbf133834
@@ -2166,16 +2159,12 @@ l1-p2167	l1	library_reference	human	TMEM132A	N after SP	N after SP	0		1	36	1023	
 l1-p2168	l1	library_reference	human	TMEM132B	N after SP	N after SP	0		1	26	1083	0	875	27	n_terminal			library_designed_orf	topo_2026_10_14_l1_designed	1d93046c7d01f3b188d7028929a9b6ca7ae46451473ab0e914b31a10e2119073
 l1-p2169	l1	library_reference	human	TMEM132D	N after SP	N after SP	0		1	30	1099	0	889	31	n_terminal			human_canonical	topo_2026_05_16	3d5cf60a0234c377826252e0f73751357605cf1d08a4972e5d08b9065a4cb0ff
 l1-p2170	l1	library_reference	human	TMEM132E	N after SP	N after SP	0		1	23	1074	0	863	24	n_terminal			human_canonical	topo_2026_05_16	486cc524c710fa23e17ce46241c541fee401ac4afffc29c79b153428c57e9cc6
-l1-p2171	l1	library_reference	human	TMEM134	internal	internal	0		2	0	195	10	10	145	inter_tm			human_canonical	topo_2026_05_16	22c5fd0a9a388320357b24d85cb9ec95c4556d72b907be4a9d92a25d2bed482d
-l1-p2172	l1	library_reference	human	TMEM139	internal	internal	0		2	0	216	6	6	32	inter_tm			human_canonical	topo_2026_05_16	18cf09274c97afcd14f1fccd2c11263d5e049e4e437875bba81aca1ceb69c0b9
 l1-p2173	l1	library_reference	human	TMEM145	N after SP	N after SP	0		7	29	493	19	145	30	n_terminal			human_canonical	topo_2026_05_16	300bea564310b443f0daebf46d380bf9b72a025e8f9538ef4c8e7e30a69bc743
 l1-p2174	l1	library_reference	human	TMEM150A	internal	internal	0		6	0	271	52	52	26	inter_tm			human_canonical	topo_2026_05_16	46048cb22a513da3b3d0949356f2e28b001df52132b081de68a0592f885128a1
 l1-p2175	l1	library_reference	human	TMEM150C	internal	internal	0		6	0	249	37	37	30	inter_tm			human_canonical	topo_2026_05_16	2309ba1c51e1388c923da063531b4f3eb50d989baebf5dffd19e71ecfe6fe5a8
 l1-p2176	l1	library_reference	human	TMEM154	N after SP	N after SP	0		1	22	183	0	53	23	n_terminal			human_canonical	topo_2026_05_16	2cfa1b7a1624c75afa100f9a10fa344030dc054a070b2653fdbda15c6912df9c
 l1-p2177	l1	library_reference	human	TMEM158	N after SP	N after SP	0		1	20	300	0	202	21	n_terminal			human_canonical	topo_2026_05_16	35c24a65e02c00f597f6bfdd78457cb7d5afe1f75b6517c4f92977de80309f57
-l1-p2178	l1	library_reference	human	TMEM169	internal	internal	0		4	0	297	1	1	175	inter_tm			human_canonical	topo_2026_05_16	280d66924e0b469f74d1e0fd82aad60339dc684d5dd0fefea649c9b4c5486d07
 l1-p2179	l1	library_reference	human	TMEM170B	N at residue 1, multipass	N at residue 1	0		3	0	132	19	37	1	n_terminal			human_canonical	topo_2026_05_16	b1c6bb96c7d3e70a33aa4bc7564d5a74fd6fdba33252fbbfdd26c63248c42503
-l1-p2180	l1	library_reference	human	TMEM174	internal	internal	0		2	0	243	12	12	61	inter_tm			human_canonical	topo_2026_05_16	0df90dcf320c31dddb0f34856a198d56665fcd5d96f574bb5e705191a799e151
 l1-p2181	l1	library_reference	human	TMEM181	internal	internal	0		8	0	475	138	138	37	inter_tm			human_canonical	topo_2026_05_16	fad933f576820b668419c3e1b73f5c1ea6ccb00627fe0fe14b38da765096047c
 l1-p2182	l1	library_reference	human	TMEM182	internal	internal	0		4	0	229	87	87	28	inter_tm			human_canonical	topo_2026_05_16	3635f4f9bd5d798808bac3e3e5ebc4bf3968e394584ab5b82fa12abed4f3be3b
 l1-p2183	l1	library_reference	human	TMEM184A	N at residue 1, multipass	N at residue 1	0		7	0	413	21	52	1	n_terminal			human_canonical	topo_2026_05_16	09d8258f1a6e2e7c4a6cf4e5c71c217c9816ba5d02b7d32a5613139009ff666f
@@ -2183,22 +2172,14 @@ l1-p2184	l1	library_reference	human	TMEM190	N after SP	N after SP	0		1	21	177	0	
 l1-p2185	l1	library_reference	human	TMEM198	N at residue 1, multipass	N at residue 1	0		7	0	360	25	35	1	n_terminal			human_canonical	topo_2026_05_16	9e36f7a376512665b406d5863926530e9889aa4dd1cd73c61be054d53fa24fa3
 l1-p2186	l1	library_reference	human	TMEM204	internal	internal	0		4	0	226	74	74	27	inter_tm			human_canonical	topo_2026_05_16	0843823fc68f8f908e3edd99a2899ff64066e240bde3cf50bab8a125104d2711
 l1-p2187	l1	library_reference	human	TMEM205	N at residue 1, multipass	N at residue 1	0		4	0	189	12	12	1	n_terminal			human_canonical	topo_2026_05_16	36b4a4a12a876a9edff5531a9cebdfe6ba6a85aaf02719ca3c46a2436ae80198
-l1-p2188	l1	library_reference	human	TMEM210	N after SP	N after SP	0		1	30	147	0	14	31	n_terminal			human_canonical	topo_2026_05_16	61b7faa23432d4002dd37f39e357e4d3c915231b22207c617f599f00db732957
 l1-p2189	l1	library_reference	human	TMEM219	internal	internal	0		2	0	240	161	161	44	inter_tm			human_canonical	topo_2026_05_16	ab5104865c330bee51751996dcdfab39e9e566360e0dfe51c89f1bedd4941ebe
-l1-p2190	l1	library_reference	human	TMEM222	N at residue 1, multipass	C-terminal	0	UniProt Q9H0R3 annotates a 3-TM multipass topology with a 55-aa extracellular N-tail (1-55) and cytoplasmic C-terminus ending in positively charged R208 (TM3 187-207); DeepTMHMM v1 calls only TM3 with a 7-aa C-tail. Moved off C-terminal onto N at residue 1 (multipass) so the cassette sits on the extracellular N-tail	1	0	208	0	7	202	c_terminal			human_canonical	topo_2026_05_16	ea48bf0c30607237bcb28a2ad746479be0d4c078a38614ea09be0161194a55eb
 l1-p2191	l1	library_reference	human	TMEM225	internal	internal	0		4	0	225	37	37	31	inter_tm			human_canonical	topo_2026_05_16	3f3d4a5d393dbcc47cbe6c93945bcf8583a7615991e10f0e706348a5b08a6dfa
 l1-p2192	l1	library_reference	human	TMEM229B	internal	internal	0		4	0	167	19	19	96	inter_tm			human_canonical	topo_2026_05_16	e8ac3a5c1599fa365629febf2066b1e0e0639eb982f2f070526f4873131441aa
-l1-p2193	l1	library_reference	human	TMEM238	internal	internal	0		2	0	176	10	10	59	inter_tm			human_canonical	topo_2026_05_16	aa7aa17e085978a50159a405b665dbc0e61bdaefcb8826563ed447a54311970e
 l1-p2194	l1	library_reference	human	TMEM26	internal	internal	0		8	0	368	57	57	86	inter_tm			human_canonical	topo_2026_05_16	36590174d31b1fb6c667146de28101aa9f66080aee08ecf4e71d1c3398021d44
-l1-p2195	l1	library_reference	human	TMEM266	internal	internal	0		4	0	523	13	13	116	inter_tm			human_canonical	topo_2026_05_16	8aad9ad9b62dbb6bc95e103f9cd324d6f693253252542d990ea7ab8df212646a
-l1-p2196	l1	library_reference	human	TMEM268	internal	internal	0		2	0	342	7	7	125	inter_tm			human_canonical	topo_2026_05_16	fb4f91b1f9cd603830d29c965e3e92cf0a49dcc926a48b91e32d6e0932912c1d
-l1-p2197	l1	library_reference	human	TMEM273	N after SP	N after SP	0		1	23	129	0	10	24	n_terminal			human_isoforms	topo_2026_05_25	b161e646b3bbcffd668ce3550819027b0a58b5821f18048acbbd4ba7475c0379
 l1-p2198	l1	library_reference	human	TMEM47	internal	internal	0		4	0	181	38	38	41	inter_tm			human_canonical	topo_2026_05_16	987f0e4586cc05c3b18c093ade826704a206f7df82a032eb5a87f9d43f9c1885
 l1-p2199	l1	library_reference	human	TMEM63B	N at residue 1, multipass	N after SP	0	No signal peptide: DeepTMHMM v1 called residues 1-10 a signal peptide, but SignalP 6 calls none, and the cryo-EM structure of human TMEM63B puts residues 1-40 outside the cell ahead of TM0 at 41-65, as DeepTMHMM v2 does. N-out is established by structure, so the member qualifies for the residue-1 multipass rung; the earlier Igk swap deleted residues 1-10 of the extracellular tail. Built Igk + tag at Met1 on the full native sequence, the rung's non-GPCR default	11	0	832	30	30	11	n_terminal			human_canonical	topo_2026_05_16	69b67984d0b38f76c08fa95a24ef016ff38f4e44184f7d50183a7759bb7095a0
 l1-p2200	l1	library_reference	human	TMEM67	N after SP	N after SP	0		7	36	995	25	482	37	n_terminal	moderate	strong	human_canonical	topo_2026_05_16	16857c52c05e16d56e767beb65dc9f47c6877cbf54d421775774bf62e3d98d47
 l1-p2201	l1	library_reference	human	TMEM81	N after SP	N after SP	0		1	24	255	0	202	25	n_terminal			human_canonical	topo_2026_05_16	688d3bf3976c8008ed4d7240ffb1634bde99fd86c70370b1b6753bd9cc0b3575
-l1-p2202	l1	library_reference	human	TMEM86A	internal	internal	0		8	0	240	7	7	137	inter_tm			human_canonical	topo_2026_05_16	27fe27e94047b47aef93a7059dc0b5d4a44ef00758f29bf415101ca7b4687d2e
-l1-p2203	l1	library_reference	human	TMEM86B	internal	internal	0		8	0	226	7	7	141	inter_tm			human_canonical	topo_2026_05_16	192716e06ccf0980a0a6f57d2128b02f05c777d7255cdefb075b1e79d7782f53
 l1-p2204	l1	library_reference	human	TMEM89	N after SP	N after SP	0		1	22	159	0	50	23	n_terminal			human_canonical	topo_2026_05_16	431102bee5074278c7b55a58146664878b3968c44901d53bdeaa8929175c4173
 l1-p2205	l1	library_reference	human	TMEM8B	internal	internal	0		8	0	924	515	515	167	inter_tm			library_designed_orf	topo_2026_11_22_mane_gtf	6964aa964e28428dab2ca8fab8fa2dac0fa22f99a106245e3141ed5142f707c1
 l1-p2206	l1	library_reference	human	TMEM95	internal	N after SP	0	rescue round: held on the N after SP rung with no arm; internal loop arm(s) pass the membrane-side gate and the tagged refold	1	16	176	0	127	17	n_terminal			human_canonical	topo_2026_05_16	9aaca7a9fb116e0b82d5d7ad4b51e1784f1aed82b902e9057f04e36b10fa9fd5
@@ -2297,7 +2278,6 @@ l1-p2298	l1	library_reference	human	TSPAN6	internal	internal	0		4	0	245	97	97	11
 l1-p2299	l1	library_reference	human	TSPAN7	internal	internal	0		4	0	249	100	100	113	inter_tm			human_canonical	topo_2026_05_16	24c8d6e38239d72cd6bfc0972e2d80b46275fe8e5743e0e5908217413f220592
 l1-p2300	l1	library_reference	human	TSPAN8	internal	internal	0		4	0	237	98	98	108	inter_tm			human_canonical	topo_2026_05_16	52cd31489fca498b1fa74914c387351d8810a277639616ddbad78b9bb4ffb948
 l1-p2301	l1	library_reference	human	TSPAN9	internal	internal	0		4	0	239	97	97	107	inter_tm			human_canonical	topo_2026_05_16	820ebb87e5335d8434b26e56820b8622cadb6a9544c911c6e66c366dd166c052
-l1-p2302	l1	library_reference	human	TSPO2	N at residue 1, multipass	N at residue 1	0		5	0	170	11	11	66	inter_tm			human_canonical	topo_2026_05_16	4f25ce8ed76f472234d74176eb6d81ff4a1d0750525bd6b0036f60939adf873e
 l1-p2303	l1	library_reference	human	TTYH1	N at residue 1, multipass	N at residue 1	0		5	0	450	128	128	264	inter_tm			human_canonical	topo_2026_05_16	87dd3174f408f1a7629f92d72fe777e328b6579f8248d9906d9546d2966edf4a
 l1-p2304	l1	library_reference	human	TTYH2	N at residue 1, multipass	N at residue 1	0		5	0	534	127	127	262	inter_tm			human_canonical	topo_2026_05_16	a0c084890237a0a31cf5e3d2545ee60ecb721322677093b64e78f3558434a391
 l1-p2305	l1	library_reference	human	TTYH3	N at residue 1, multipass	N at residue 1	0		5	0	523	129	129	259	inter_tm			human_canonical	topo_2026_05_16	11d1dfa2cfdb58ecba0bce733ac33cb3781ec15ee2342f89767e42d3cbccc739
@@ -2476,7 +2456,6 @@ l1-p2969	l1	ortholog	cyno	SLC47A1	C-terminal	C-terminal	0		13	0	569	20	20	138	in
 l1-p2970	l1	ortholog	cyno	MRGPRX4	N at residue 1, multipass	N at residue 1	0		7	0	322	17	27	1	n_terminal			cyno_ortholog	topo_2026_05_16	a81bcbc17e748d7a05477d139f9dcce9aea6ff824dc24ba2bf2753e8b130c8f3
 l1-p2971	l1	ortholog	cyno	SLC9B1	internal	internal	0		14	0	515	18	18	452	inter_tm			cyno_ortholog	topo_2026_05_16	e17f6ef68f5a1f21fd3b34ab0b4406105201a91e30b330ed8f20f2a69bfda34e
 l1-p2972	l1	ortholog	cyno	TEX29	N at residue 1, single-pass (type III)	N at residue 1	0		1	0	151	0	56	1	n_terminal			cyno_ortholog	topo_2026_05_16	f8cc1b46089fd7dfb61b62b99218ba6b15a1e82bd1c02626770d97c3bf0e5d54
-l1-p2973	l1	ortholog	cyno	TMEM210	N after SP	N after SP	0		1	30	147	0	14	31	n_terminal			cyno_ortholog	topo_2026_05_16	8be785e8b4cd17cc6d319346975a531d531b074b2becc2da582a8c0cc6086aab
 l1-p2974	l1	ortholog	cyno	TNFRSF13B	N at residue 1, single-pass (type III)	N at residue 1	0		1	0	293	0	161	1	n_terminal	moderate	strong	cyno_ortholog	topo_2026_05_16	503c97f2b2e51d637e4c1c98cc8691d77ea8fd4b9c3f9b7f28b62203608ff11b
 l1-p2975	l1	ortholog	cyno	TRPM2	internal	internal	0		8	0	1500	72	72	949	inter_tm			cyno_ortholog	topo_2026_05_16	f7846460cfb36571b291bf5fd6ed32ec97fc1f9ed509cfe3ed363b9bd5fe890f
 l1-p2976	l1	ortholog	cyno	ZACN	N after SP	N after SP	0		4	24	411	10	209	25	n_terminal			cyno_ortholog	topo_2026_05_16	437f4b84b089bd02033f4630917646699f53caba094870e0fa38e47805fd70df
@@ -2561,9 +2540,6 @@ l1-p3056	l1	ortholog	mouse	SLC5A4	N at residue 1, multipass	N at residue 1	0		14
 l1-p3057	l1	ortholog	mouse	SPINT1	N after SP	N after SP	0		1	26	507	0	418	27	n_terminal	moderate	moderate	mouse_ortholog	topo_2026_05_16	abc119f58e3e2b81d20619bd8de050b1900297ab0d608793c85127662c71acd5
 l1-p3058	l1	ortholog	mouse	TFPI	N after SP	N after SP	0		0	28	247	0	219	29	no_tm			mouse_ortholog_repick	topo_2026_11_05_l1_compara116	868e9605a7ef6546be9f49f8312ebacfc0383389783156ddf52217f20ef45521
 l1-p3059	l1	ortholog	mouse	TM7SF3	N after SP	N after SP	0		7	19	565	32	267	20	n_terminal			mouse_ortholog_cds_policy	topo_2026_11_05_ortholog_cds_policy	c770cf3288daea2abc6336bbdc567c3795ccecdf9985896cb8ad6d69735f5d5a
-l1-p3060	l1	ortholog	mouse	TMEM139	internal	internal	0		2	0	214	6	6	32	inter_tm			mouse_ortholog	topo_2026_05_16	abb9aa7f6a8b080d8af5fad8c82a3c1b745eb06844e6b8f3949e84cc1ab16375
-l1-p3061	l1	ortholog	mouse	TMEM210	N after SP	N after SP	0		1	30	147	0	17	31	n_terminal			mouse_ortholog	topo_2026_05_16	80fb508f100d9b78499a72ed20590d2f1ea7d0cc093d127500fa9490b934518b
-l1-p3062	l1	ortholog	mouse	TMEM86B	internal	internal	0		8	0	226	7	7	141	inter_tm			mouse_ortholog	topo_2026_05_16	d50753b501ea914e54ab31459880de95f34bd6237cc15943f31a307040705fc7
 l1-p3063	l1	ortholog	mouse	TMIGD1	N after SP	N after SP	0		1	26	261	0	196	27	n_terminal			mouse_ortholog	topo_2026_05_16	6a356da2a5af53e62fa7dbc8ef45c0d7db860d7f521c72c852aaa269f02816fb
 l1-p3064	l1	ortholog	mouse	TMPRSS2	C-terminal	C-terminal	0		1	0	490	0	386	105	c_terminal	moderate	moderate	mouse_ortholog	topo_2026_05_16	2b0690f291065e3bb4374d231e7beea5517de1d69e2e5ba67da6dff3b791b855
 l1-p3065	l1	ortholog	mouse	VSIG2	N after SP	N after SP	0		1	24	328	0	218	25	n_terminal			mouse_ortholog	topo_2026_05_16	543e1e62c3a78ebdd5025713e5f89f831468623768502f209b9ad8b0c2bf802d
@@ -2654,6 +2630,7 @@ l1-p3193	l1	library_reference	human	C1orf159	N after SP	N after SP	0		1	18	198	0
 l1-p3195	l1	library_reference	human	CSF1	N after SP	N after SP	0		1	32	554	0	464	33	n_terminal			human_canonical	topo_2026_05_16	60b10b993cfd888778f03d4b241102486f66f721101f22ff7a1c7fa7361b039b
 l1-p3196	l1	library_reference	human	FAM171B	N after SP	N after SP	0		1	28	826	0	325	29	n_terminal			human_canonical	topo_2026_05_16	35882e5c5f84a36cbfeea2532a4d9f39264b96a50026248e9c0e572ddfce2f2e
 l1-p3197	l1	library_reference	human	FAM234A	C-terminal	C-terminal	0		1	0	552	0	483	70	c_terminal			human_canonical	topo_2026_05_16	5a1da20522c33ec41b9f5e7ff900fe6eac33b3df453edb353e03985afbb76584
+l1-p3199	l1	library_reference	human	LNPEP	C-terminal	C-terminal	0		1	0	1025	0	894	132	c_terminal			human_canonical	topo_2026_05_16	af9d0a0d9d335ee165532ecbc020f3e0ecb82944f3feba9df619e34c98bd1106
 l1-p3200	l1	library_reference	human	MFAP3	N after SP	N after SP	0		1	21	362	0	127	22	n_terminal			human_canonical	topo_2026_05_16	b3fbf026a81571eeae3942b3ee017dbf96850813168c1eaa7dd62b64dcee4e19
 l1-p3201	l1	library_reference	human	MYORG	C-terminal	C-terminal	0		1	0	714	0	637	78	c_terminal			human_canonical	topo_2026_05_16	fe79aaa633115da4e9a2e3f35972d18beabb5be72ae58ecd6ec85ef24e798695
 l1-p3203	l1	library_reference	human	RNF149	N after SP	N after SP	0		1	32	400	0	168	33	n_terminal			human_canonical	topo_2026_05_16	d549a8579afcf4e0c2ab3ad6a77a543818e6ad1eca8ea5334744d3e1cad653b4
@@ -2665,6 +2642,7 @@ l1-p3209	l1	library_reference	human	TMEM248	internal	internal	0		2	0	314	224	224
 l1-p3211	l1	library_reference	human	FCGR2C	N after SP	N after SP	0		1	42	323	0	182	43	n_terminal			library_designed_orf	topo_2026_11_22_round2_additions	d37e344abcb6572d1915f4f972f1168adae425a144f63103e807a74a1f7e7f29
 l1-p3212	l1	library_reference	human	OR10AC1	N at residue 1, multipass	N at residue 1	0		7	0	325	30	30	171	inter_tm			human_canonical	topo_2026_05_16	631d6a19884787c36b86330c0a072583e3b4f81485490512767bf11e8d1f8459
 l1-p3213	l1	library_reference	human	OR4Q2	N at residue 1, multipass	N at residue 1	0		7	0	313	29	29	166	inter_tm			library_designed_orf	topo_2026_11_22_round2_additions	22832d2a0a1e0f1ce631c51e06b4981179670855e30bb891a35f61b45321ad78
+l1-p3214	l1	library_reference	human	OR52P1	N at residue 1, multipass	N at residue 1	0		7	0	321	33	33	166	inter_tm			human_canonical	topo_2026_05_16	a90372c5431af473b3d5f6d71abb03344d5d8c94e64380b9bc88d78f72e879b0
 l1-p3215	l1	isoform	human	ACVR2A	N after SP	N after SP	0		1	23	510	0	115	24	n_terminal			human_isoforms	topo_2026_11_22_isoform_redraw	440882c3d216d33bc740029e8dc9a000eb2ffab64add99b4fbf4e2dab8102db5
 l1-p3218	l1	isoform	human	ADGRL2	N after SP	N after SP	0		7	25	1446	18	813	26	n_terminal	low	weak	human_isoforms	topo_2026_11_22_isoform_redraw	415ebd16e95ca39909195e1ec91f8f92e7eb135fefb012c3854f8511f757f24c
 l1-p3219	l1	isoform	human	ADGRL2	N after SP	N after SP	0		7	25	1163	18	813	26	n_terminal	low	weak	human_isoforms	topo_2026_11_22_isoform_redraw	1ee1752e12042a9cb336b5012703491748a9193eb75e47367b314d72f45fe3a2
@@ -2716,7 +2694,6 @@ l1-p3283	l1	isoform	human	SLC6A9	internal	internal	0		12	0	706	77	77	209	inter_t
 l1-p3284	l1	isoform	human	SLC8A3	N after SP	N after SP	0		10	30	925	15	47	31	n_terminal	moderate	moderate	human_isoforms	topo_2026_05_25	097e7739d08f486f2cccf3f4ce2bec92a5a2822403236faedc8e323e1ad9bcde
 l1-p3285	l1	isoform	human	SPNS2	internal	internal	0		12	0	547	27	27	335	inter_tm			human_isoforms	topo_2026_11_22_isoform_redraw	2c4892707566a1cd0a74996234708b485a3a11ce6ea3c806b4d65a27a5ea1588
 l1-p3288	l1	isoform	human	TMEM181	internal	internal	0		8	0	516	138	138	78	inter_tm			human_isoforms	topo_2026_05_25	55d529a120a77e6d3db34e01cea90fa53394e1d8a841d5ce4ee6b470506066d6
-l1-p3289	l1	isoform	human	TMEM222	C-terminal	C-terminal	0		1	0	205	0	3	203	c_terminal			human_isoforms	topo_2026_11_22_isoform_redraw	cd1187572718718b042ccce1a1fe87b5c3f75eb02424e263d7182bdaf1236a44
 l1-p3290	l1	isoform	human	TMIGD2	N after SP	N after SP	0		1	22	282	0	127	23	n_terminal			human_canonical	topo_2026_05_16	f696e44a72978b1f538a2440573de7d739857eff9998672688c9f857da86f885
 l1-p3291	l1	isoform	human	TMPRSS13	C-terminal	C-terminal	0		1	0	586	0	400	187	c_terminal	moderate	strong	human_canonical	topo_2026_05_16	cc6848d841c3a2b7be865332e628eebb35a99029604880618d1366cf2836c324
 l1-p3293	l1	isoform	human	TNFSF10	C-terminal	C-terminal	0		1	0	279	0	242	38	c_terminal	moderate	moderate	human_isoforms	topo_2026_11_22_isoform_redraw	47ec12afa897b698590058152de0e01bb50ce0dfffd91164dedbd68360081fa3
@@ -2761,3 +2738,4 @@ l1-p3337	l1	isoform	human	SLC39A14	N after SP	N after SP	0		6	30	492	16	124	31	n
 l1-p3338	l1	isoform	human	NRP2	N after SP	N after SP	0		1	22	901	0	811	23	n_terminal			human_isoforms	topo_2026_05_25	ba594cad9a9043ef866965c0ad5ace1f8e8cd79ec4f9418ebc4963513e49810d
 l1-p3339	l1	isoform	human	ATP1B3	C-terminal	C-terminal	0		1	0	271	0	217	55	c_terminal			human_isoforms	topo_2026_11_23_pre_freeze	54b41c61efdd14e2aa01a02cfafff427191012405f5ea82b2c1a9a0680a1700e
 l1-p3340	l1	isoform	human	PMEPA1	N at residue 1, single-pass (type III)	N at residue 1	0		1	0	237	0	1	1	n_terminal			human_isoforms	topo_2026_05_25	7f1c47a46721675271abff7398a598a80d18f09e6578ac7e0a2e779ff44590b1
+l1-p3341	l1	library_reference	human	PCDH11X	N after SP	N after SP	0		1	23	1347	0	789	24	n_terminal			human_canonical	topo_2026_05_16	63d9ee002765ac8f69ea7413c3507933668f3db1cd501d794f97e1de08502868

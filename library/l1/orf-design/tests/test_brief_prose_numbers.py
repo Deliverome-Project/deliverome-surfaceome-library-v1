@@ -25,16 +25,19 @@ NUMBERS = json.loads((RP / "brief_numbers.json").read_text())
 
 #: (fragment with {} placeholders, paths into brief_numbers.json, one per placeholder)
 CLAIMS = [
-    # section 5 rungs
+    # section 7 placements
     (
-        "| N after SP | the residue after the signal peptide is extracellular | predicted cleavage site | {} |",
+        "| **1. N after SP** | Extracellular N-terminus with a cleavable signal peptide (includes 186 of 191 GPI CDSs) | After SP cleavage, verified by SignalP 6: native SP (`1,091`) or Igκ swap (`230`) | **{}** (1,321 / 1) |",
         ["tag_paths.placement.N after SP"],
     ),
     (
-        "| C-terminal | C-terminus extracellular | topology only | {} |",
+        "| **4. C-terminal** | Extracellular C-terminus, cytoplasmic N-terminus | Cassette at native C-terminus (`214`), or moved to stalk/pre-furin site (`3`) | **{}** (217 / 2) |",
         ["tag_paths.placement.C-terminal"],
     ),
-    ("needs a loop or ectodomain site | {} |", ["tag_paths.placement.internal"]),
+    (
+        "| **5. Internal loops (+ snorkels)** | Neither terminus freely extracellular (both ends cytoplasmic, C-GPI `BST2`, or terminal fallback) | 1–3 ranked extracellular loop sites (`1,066` arms) + C-terminal snorkel companions (`141`) | **{}** (585 / 7) |",
+        ["tag_paths.placement.internal"],
+    ),
     (
         # Reworded 2026-11-22: the brief now counts the decisions, not the built ones; built is
         # pinned by the tag-path table claim below (rungs.n_after_sp.built).
@@ -257,7 +260,7 @@ CLAIMS = [
     ),
     # section 11 reproducibility order count
     (
-        "**Order of record (`2026-11-24-pre-freeze-c`).** **{}** constructs across **2,743** built CDSs",
+        "**Order of record (`2026-11-25-pre-freeze-e`).** **{}** constructs across **2,730** built CDSs",
         ["order_plan.inserts"],
     ),
 ]

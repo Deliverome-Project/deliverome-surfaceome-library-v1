@@ -385,7 +385,7 @@ for r in recs:
     n = f.get("n_papers_found")
     if n is None or n >= 100 or B.passes_canonical(f):
         continue
-    if not anchored(r) or (mx(g) or 0) < EXPR_MIN_TPM or not orf_ok(r):
+    if not anchored(r) or (mx(g) or 0) < EXPR_MIN_TPM or not orf_ok(r) or not ecd_ok(r):
         continue
     _lib_tier[g] = "LL"
     a = agg["LL"]

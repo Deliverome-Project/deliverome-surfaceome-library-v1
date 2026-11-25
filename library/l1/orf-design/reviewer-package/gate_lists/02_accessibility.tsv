@@ -328,8 +328,8 @@ CATSPERB	Q9H7T0	pass	moderate
 CATSPERD	Q86XM0	pass	high		
 CATSPERE	Q5SY80	pass	moderate	LL	
 CATSPERG	Q6ZRH7	pass	moderate	LL	
-CATSPERH	E9PQX1	pass	moderate	LL	
-CATSPERQ	Q2WGJ8	pass	moderate	LL	
+CATSPERH	E9PQX1	pass	moderate		yes
+CATSPERQ	Q2WGJ8	pass	moderate		yes
 CATSPERT	Q53TS8	pass	moderate		
 CAV1	Q03135	pass	moderate		
 CAV2	P51636	pass	moderate		
@@ -2230,7 +2230,7 @@ RARRES1	P49788	pass	moderate
 RCN1	Q15293	pass	moderate		
 RECK	O95980	pass	high	T1	
 RELL1	Q8IUW5	pass	moderate	T3	
-RELL2	Q8NC24	pass	moderate	LL	
+RELL2	Q8NC24	pass	moderate		yes
 RELT	Q969Z4	pass	moderate	T1	
 RET	P07949	pass	high	T1	
 RFTN1	Q14699	pass	moderate		
@@ -2767,7 +2767,7 @@ TENM2	Q9NT68	pass	moderate
 TENM3	Q9P273	pass	high		
 TENM4	Q6N022	pass	high		
 TEX101	Q9BY14	pass	high	T1	
-TEX38	Q6PEX7	pass	moderate	LL	
+TEX38	Q6PEX7	pass	moderate		yes
 TFPI	P10646	pass	high	T1	
 TFPI2	P48307	pass	moderate		
 TFR2	Q9UP52	pass	high	T1	
@@ -2841,7 +2841,7 @@ TMEM233	B4DJY2	pass	moderate
 TMEM237	Q96Q45	pass	moderate		
 TMEM25	Q86YD3	pass	moderate		
 TMEM26	Q6ZUK4	pass	moderate	T2	
-TMEM266	Q2M3C6	pass	moderate	LL	
+TMEM266	Q2M3C6	pass	moderate		yes
 TMEM47	Q9BQJ4	pass	moderate	T2	
 TMEM52B	Q4KMG9	pass	moderate		
 TMEM63A	O94886	pass	moderate		
@@ -2968,7 +2968,7 @@ TSPAN6	O43657	pass	moderate	T2
 TSPAN7	P41732	pass	high	T2	
 TSPAN8	P19075	pass	high	T2	
 TSPAN9	O75954	pass	moderate	T2	
-TSPO2	Q5TGU0	pass	moderate	LL	
+TSPO2	Q5TGU0	pass	moderate		yes
 TTYH1	Q9H313	pass	high	T3	
 TTYH2	Q9BSA4	pass	high	T2	
 TTYH3	Q9C0H2	pass	high	T2	

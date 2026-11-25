@@ -29,7 +29,7 @@ POPDC2	Q9HBU9	fail	28	multi_pass
 PRRT1	Q99946	fail	10	single_pass_T2		
 PRRT2	Q7Z6L0	fail	5	multi_pass		
 PTPRE	P23469	fail	28	single_pass_T1		
-RELL2	Q8NC24	fail	14	single_pass_T1	LL	
+RELL2	Q8NC24	fail	14	single_pass_T1		yes
 RGS9BP	Q6ZS82	fail	4	other		
 RHEX	Q6ZWK4	fail	11	single_pass_T1		
 RTP1	P59025	fail	6	single_pass_T2		
@@ -39,15 +39,15 @@ SLC27A6	Q9Y2P4	fail	4	single_pass_T1
 SMIM1	B2RUZ4	fail	8	single_pass_T2		
 STOM	P27105	fail	1	other		
 SYNDIG1	Q9H7V2	fail	12	other		
-TEX38	Q6PEX7	fail	14	single_pass_T1	LL	
+TEX38	Q6PEX7	fail	14	single_pass_T1		yes
 TMEM100	Q9NV29	fail	8	multi_pass		
 TMEM233	B4DJY2	fail	11	multi_pass		
-TMEM266	Q2M3C6	fail	22	multi_pass	LL	
+TMEM266	Q2M3C6	fail	22	multi_pass		yes
 TMEM52B	Q4KMG9	fail	18	single_pass_T1		
 TMEM72	A0PK05	fail	21	multi_pass		
 TMEM98	Q9Y2Y6	fail	4	single_pass_T1		
 TRAT1	Q6PIZ9	fail	9	single_pass_T1		
-TSPO2	Q5TGU0	fail	20	multi_pass	LL	
+TSPO2	Q5TGU0	fail	20	multi_pass		yes
 ZDHHC5	Q9C0B5	fail	25	multi_pass		
 ABCA8	O94911	pass	398	multi_pass	T2	
 ABCB1	P08183	pass	109	multi_pass	T2	

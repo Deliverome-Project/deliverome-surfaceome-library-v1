@@ -1,95 +1,95 @@
 {
   "source": "Walton, Qin & Blainey, bioRxiv 2024.03.17.585235 (PMID 38558968): k=5.3e-4/bp",
-  "inserts": 3375,
+  "inserts": 3352,
   "pool_weighting": "x3.5",
-  "pool_share_median": 8.188281748139479e-05,
-  "pool_share_1_over": 12213,
+  "pool_share_median": 8.360884813631285e-05,
+  "pool_share_1_over": 11960,
   "min_block_nt": 20,
   "background_partners_sampled_per_barcode": 96,
-  "specific_pairs": 113016,
+  "specific_pairs": 112613,
   "same_cds_pairs": {
-    "pairs": 867,
-    "suffix_tract_median_nt": 302.0,
-    "over_gate": 599,
-    "per_pair_rate_median": 0.137,
+    "pairs": 854,
+    "suffix_tract_median_nt": 317.0,
+    "over_gate": 592,
+    "per_pair_rate_median": 0.1427,
     "per_pair_rate_max": 0.4865,
     "co_packaging_probability_median": 1.5e-08,
-    "library_fraction_all_791_pairs": 0.00021358469999999997,
-    "suffix_tract_nt_in_native_cds_median_fraction": 0.8543046357615894
+    "library_fraction_all_791_pairs": 0.0002128123,
+    "suffix_tract_nt_in_native_cds_median_fraction": 0.861198738170347
   },
   "different_cds_specific_pairs": {
-    "pairs_over_50_nt_written": 1990,
+    "pairs_over_50_nt_written": 1970,
     "over_gate": 491
   },
   "library_fraction_wrong_protein": {
-    "specific_mislabel": 0.0008680404456470044,
-    "specific_chimera": 0.002156430083942734,
-    "background_mislabel": 0.021763705421922856,
-    "background_chimera": 0.03126909748237861,
-    "total": 0.0560572734338912,
-    "not_counted_leader_swap": 0.02011277819732569,
-    "total_including_leader_swap": 0.0761700516312169
+    "specific_mislabel": 0.0008720244470801626,
+    "specific_chimera": 0.0021598171620896695,
+    "background_mislabel": 0.021756804083188877,
+    "background_chimera": 0.03131213771580848,
+    "total": 0.056100783408167196,
+    "not_counted_leader_swap": 0.020023546877873857,
+    "total_including_leader_swap": 0.07612433028604104
   },
   "per_barcode_impurity": {
-    "median": 0.0457668290899126,
-    "max": 0.0998784144448635,
-    "specific_part_median": 0.0011820766299774472,
-    "specific_part_max": 0.02825357587503269,
+    "median": 0.04563895523349356,
+    "max": 0.09984800860268819,
+    "specific_part_median": 0.0011906906782386212,
+    "specific_part_max": 0.02824935624234751,
     "by_rung_median": {
       "nterm": {
-        "inserts": 1322,
-        "impurity": 0.04230169783459482,
-        "mislabel": 0.0221343460528486,
-        "chimera": 0.02023576869266426,
-        "leader_swap": 0.03257181665192325
+        "inserts": 1321,
+        "impurity": 0.042287694352836455,
+        "mislabel": 0.022144967278292228,
+        "chimera": 0.020242456508238842,
+        "leader_swap": 0.03265610241353992
       },
       "type3": {
-        "inserts": 43,
-        "impurity": 0.07454185317226686,
-        "mislabel": 0.022155043989655065,
-        "chimera": 0.052445011012787875,
+        "inserts": 41,
+        "impurity": 0.07468896822173995,
+        "mislabel": 0.022119788887422717,
+        "chimera": 0.05252222268236284,
         "leader_swap": 0.0
       },
-      "multipass": {
-        "inserts": 568,
-        "impurity": 0.04176387884873904,
-        "mislabel": 0.02213688865717585,
-        "chimera": 0.01970971882611543,
-        "leader_swap": 0.029219302503527937
-      },
       "cterm": {
-        "inserts": 361,
-        "impurity": 0.07480463015618133,
-        "mislabel": 0.0255550577207035,
-        "chimera": 0.0492576841530212,
+        "inserts": 358,
+        "impurity": 0.0748625243247851,
+        "mislabel": 0.025640544859654293,
+        "chimera": 0.04919822996069545,
         "leader_swap": 0.0
       },
       "internal": {
-        "inserts": 1081,
-        "impurity": 0.07492453902229897,
-        "mislabel": 0.022190657315754255,
-        "chimera": 0.05278122829826323,
+        "inserts": 1066,
+        "impurity": 0.07493418224544095,
+        "mislabel": 0.022181757323334092,
+        "chimera": 0.05278362875803601,
         "leader_swap": 0.0
+      },
+      "multipass": {
+        "inserts": 566,
+        "impurity": 0.04175877427419068,
+        "mislabel": 0.022136496828837126,
+        "chimera": 0.01970768630991128,
+        "leader_swap": 0.02922041130932119
       }
     }
   },
   "specific_impurity_by_insert_length": {
     "median_by_length_quartile": {
-      "1": 0.0012191992299312214,
-      "2": 0.0007657913435002813,
-      "3": 0.0013812874368985906,
-      "4": 0.0014092839968149846
+      "1": 0.0011908990833197307,
+      "2": 0.0008007326783888125,
+      "3": 0.0013782972526978595,
+      "4": 0.0014209849599940414
     },
     "quartile_upper_bounds_nt": [
-      1313.0,
-      1751.0,
-      2540.0
+      1316.0,
+      1769.0,
+      2558.0
     ],
-    "spearman_vs_insert_length": 0.23359878621405095,
+    "spearman_vs_insert_length": 0.2380210427763482,
     "barcodes_over_cut": {
       "cut": 0.01,
       "count": 15,
-      "max": 0.02825357587503269,
+      "max": 0.02824935624234751,
       "insert_nt_range": [
         4538,
         4988
@@ -106,20 +106,20 @@
     }
   },
   "wrong_protein_by_block_region": {
-    "background|chimera|native CDS": 2.8640484485050267e-05,
-    "background|chimera|tag cassette": 0.03124045699789355,
-    "background|leader swap|native CDS": 7.6722668432428e-06,
-    "background|leader swap|tag cassette": 0.01961689393050587,
-    "background|mislabel|3' tail": 0.021517756184492323,
-    "background|mislabel|native CDS": 2.145625346485196e-06,
-    "background|mislabel|tag cassette": 0.00024380361208406966,
-    "specific|chimera|native CDS": 0.0014256862199410402,
-    "specific|chimera|tag cassette": 0.0007307438640017106,
-    "specific|leader swap|native CDS": 3.861664552232422e-06,
-    "specific|leader swap|tag cassette": 0.00048435033542435635,
-    "specific|mislabel|3' tail": 0.00048545770881725767,
-    "specific|mislabel|native CDS": 0.00036836625287147676,
-    "specific|mislabel|tag cassette": 1.4216483958260334e-05
+    "background|chimera|native CDS": 2.456171331435202e-05,
+    "background|chimera|tag cassette": 0.031287576002494176,
+    "background|leader swap|native CDS": 8.865100937602983e-06,
+    "background|leader swap|tag cassette": 0.01952359723726021,
+    "background|mislabel|3' tail": 0.02151879320040658,
+    "background|mislabel|native CDS": 2.0515938034624944e-06,
+    "background|mislabel|tag cassette": 0.0002359592889788338,
+    "specific|chimera|native CDS": 0.0014205897106702903,
+    "specific|chimera|tag cassette": 0.0007392274514193972,
+    "specific|leader swap|native CDS": 3.847844361654716e-06,
+    "specific|leader swap|tag cassette": 0.0004872366953143908,
+    "specific|mislabel|3' tail": 0.0004901281095882877,
+    "specific|mislabel|native CDS": 0.00036703853894503663,
+    "specific|mislabel|tag cassette": 1.485779854683623e-05
   },
   "rate_at_gate": 0.05028767596203798,
   "rate_at_cassette_153": 0.07485593055013168

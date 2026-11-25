@@ -237,8 +237,6 @@ CALHM5	little-studied UniProt tier		gene filter
 CASR	core		gene filter
 CATSPERE	little-studied UniProt tier		gene filter
 CATSPERG	little-studied UniProt tier		gene filter
-CATSPERH	little-studied UniProt tier		gene filter
-CATSPERQ	little-studied UniProt tier		gene filter
 CCKAR	core		gene filter
 CCKBR	core		gene filter
 CCR1	core		gene filter
@@ -494,7 +492,6 @@ CXCR3	core		gene filter
 CXCR4	core		gene filter
 CXCR5	core		gene filter
 CXCR6	core		gene filter
-CXorf66	little-studied UniProt tier		gene filter
 CYBB	core		gene filter
 CYBRD1	core		gene filter
 CYSLTR1	core		gene filter
@@ -1256,7 +1253,6 @@ MS4A13	core		gene filter
 MS4A2	core		gene filter
 MS4A3	core		gene filter
 MS4A4A	core		gene filter
-MS4A5	little-studied UniProt tier		gene filter
 MS4A6A	core		gene filter
 MS4A7	core		gene filter
 MSLN	core		gene filter
@@ -1733,7 +1729,6 @@ RAET1G	core		gene filter
 RAET1L	core		gene filter
 RECK	core		gene filter
 RELL1	core		gene filter
-RELL2	little-studied UniProt tier		gene filter
 RELT	core		gene filter
 RET	core		gene filter
 RGMA	core		gene filter
@@ -2061,7 +2056,6 @@ SLITRK4	core		gene filter
 SLITRK5	core		gene filter
 SLITRK6	core		gene filter
 SMAGP	core		gene filter
-SMIM7	little-studied UniProt tier		gene filter
 SMO	core		gene filter
 SMPDL3B	core		gene filter
 SNORC	core		gene filter
@@ -2135,7 +2129,6 @@ TCTA	core		gene filter
 TEK	core		gene filter
 TEX101	core		gene filter
 TEX29	little-studied UniProt tier		gene filter
-TEX38	little-studied UniProt tier		gene filter
 TFPI	core		gene filter
 TFR2	core		gene filter
 TFRC	core		gene filter
@@ -2178,16 +2171,12 @@ TMEM132A	core		gene filter
 TMEM132B	core		gene filter
 TMEM132D	core		gene filter
 TMEM132E	core		gene filter
-TMEM134	little-studied UniProt tier		gene filter
-TMEM139	little-studied UniProt tier		gene filter
 TMEM145	core		gene filter
 TMEM150A	core		gene filter
 TMEM150C	core		gene filter
 TMEM154	core		gene filter
 TMEM158	core		gene filter
-TMEM169	little-studied UniProt tier		gene filter
 TMEM170B	little-studied UniProt tier		gene filter
-TMEM174	little-studied UniProt tier		gene filter
 TMEM181	core		gene filter
 TMEM182	core		gene filter
 TMEM184A	core		gene filter
@@ -2195,22 +2184,14 @@ TMEM190	little-studied UniProt tier		gene filter
 TMEM198	little-studied UniProt tier		gene filter
 TMEM204	core		gene filter
 TMEM205	core		gene filter
-TMEM210	little-studied UniProt tier		gene filter
 TMEM219	core		gene filter
-TMEM222	little-studied UniProt tier		gene filter
 TMEM225	little-studied UniProt tier		gene filter
 TMEM229B	little-studied UniProt tier		gene filter
-TMEM238	little-studied UniProt tier		gene filter
 TMEM26	core		gene filter
-TMEM266	little-studied UniProt tier		gene filter
-TMEM268	little-studied UniProt tier		gene filter
-TMEM273	little-studied UniProt tier		gene filter
 TMEM47	core		gene filter
 TMEM63B	core		gene filter
 TMEM67	core		gene filter
 TMEM81	core		gene filter
-TMEM86A	little-studied UniProt tier		gene filter
-TMEM86B	little-studied UniProt tier		gene filter
 TMEM89	little-studied UniProt tier		gene filter
 TMEM8B	core		gene filter
 TMEM95	core		gene filter
@@ -2309,7 +2290,6 @@ TSPAN6	core		gene filter
 TSPAN7	core		gene filter
 TSPAN8	core		gene filter
 TSPAN9	core		gene filter
-TSPO2	little-studied UniProt tier		gene filter
 TTYH1	core		gene filter
 TTYH2	core		gene filter
 TTYH3	core		gene filter
@@ -2404,6 +2384,7 @@ C1orf159	dated addition	2026-11-22	reviewer-brief comments 2026-11-20 and 2026-1
 CSF1	dated addition	2026-11-22	reviewer-brief comments 2026-11-20 and 2026-11-22; surface_proteomics_gap_candidates.tsv (inputs pinned in surface_proteomics_inputs.json)
 FAM171B	dated addition	2026-11-22	reviewer-brief comments 2026-11-20 and 2026-11-22; surface_proteomics_gap_candidates.tsv (inputs pinned in surface_proteomics_inputs.json)
 FAM234A	dated addition	2026-11-22	reviewer-brief comments 2026-11-20 and 2026-11-22; surface_proteomics_gap_candidates.tsv (inputs pinned in surface_proteomics_inputs.json)
+LNPEP	dated addition	2026-11-25	PR #455 (01335bc) 2026-11-23-abundance-v8 surface-proteomics gap set (s3e8_gap_candidates.tsv)
 MFAP3	dated addition	2026-11-22	reviewer-brief comments 2026-11-20 and 2026-11-22; surface_proteomics_gap_candidates.tsv (inputs pinned in surface_proteomics_inputs.json)
 MYORG	dated addition	2026-11-22	reviewer-brief comments 2026-11-20 and 2026-11-22; surface_proteomics_gap_candidates.tsv (inputs pinned in surface_proteomics_inputs.json)
 RNF149	dated addition	2026-11-22	reviewer-brief comments 2026-11-20 and 2026-11-22; surface_proteomics_gap_candidates.tsv (inputs pinned in surface_proteomics_inputs.json)
@@ -2416,3 +2397,4 @@ ANO9	dated addition	2026-11-23	PR #455 (01335bc) 2026-11-23-abundance-v8 surface
 KLRG2	dated addition	2026-11-23	PR #455 (01335bc) 2026-11-23-abundance-v8 surface-proteomics gap set (s3e8_gap_candidates.tsv)
 RNF150	dated addition	2026-11-23	PR #455 (01335bc) 2026-11-23-abundance-v8 surface-proteomics gap set (s3e8_gap_candidates.tsv)
 TMEM117	dated addition	2026-11-23	PR #455 (01335bc) 2026-11-23-abundance-v8 surface-proteomics gap set (s3e8_gap_candidates.tsv)
+PCDH11X	dated addition	2026-11-25	PR #455 (01335bc) 2026-11-23-abundance-v8 surface-proteomics gap set (s3e8_gap_candidates.tsv)

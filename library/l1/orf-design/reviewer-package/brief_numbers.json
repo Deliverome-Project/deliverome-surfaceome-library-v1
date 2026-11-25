@@ -1,6 +1,29 @@
 {
  "gene_list": {
   "frozen_root_genes": 2368,
+  "excluded_from_root": [
+   "CATSPERH",
+   "CATSPERQ",
+   "CXorf66",
+   "MS4A5",
+   "RELL2",
+   "SMIM7",
+   "TEX38",
+   "TMEM134",
+   "TMEM139",
+   "TMEM169",
+   "TMEM174",
+   "TMEM210",
+   "TMEM222",
+   "TMEM238",
+   "TMEM266",
+   "TMEM268",
+   "TMEM273",
+   "TMEM86A",
+   "TMEM86B",
+   "TSPO2"
+  ],
+  "active_root_genes": 2348,
   "added": [
    "SLC67A1",
    "ITGA2B",
@@ -39,6 +62,7 @@
    "CSF1",
    "FAM171B",
    "FAM234A",
+   "LNPEP",
    "MFAP3",
    "MYORG",
    "RNF149",
@@ -50,7 +74,8 @@
    "ANO9",
    "KLRG2",
    "RNF150",
-   "TMEM117"
+   "TMEM117",
+   "PCDH11X"
   ],
   "withdrawn_additions": [
    "HLA-DPB1",
@@ -64,15 +89,34 @@
    "HLA-DRB5",
    "CBARP",
    "FAM234B",
-   "LNPEP",
    "PRRT3",
    "SLC22A23",
    "TMEM94"
   ],
   "excluded_from_filter_output": [
-   "EPPIN"
+   "EPPIN",
+   "CATSPERH",
+   "CATSPERQ",
+   "CXorf66",
+   "MS4A5",
+   "RELL2",
+   "SMIM7",
+   "TEX38",
+   "TMEM134",
+   "TMEM139",
+   "TMEM169",
+   "TMEM174",
+   "TMEM210",
+   "TMEM222",
+   "TMEM238",
+   "TMEM266",
+   "TMEM268",
+   "TMEM273",
+   "TMEM86A",
+   "TMEM86B",
+   "TSPO2"
   ],
-  "library_genes": 2417
+  "library_genes": 2399
  },
  "reference": {
   "genes": 2417,
@@ -214,17 +258,17 @@
   }
  },
  "tranches": {
-  "l1_rows": 3151,
-  "l1_retired_duplicates": 389,
-  "l1_active": 2762,
+  "l1_rows": 3152,
+  "l1_retired_duplicates": 412,
+  "l1_active": 2740,
   "l1_active_by_set": {
-   "library_reference": 2412,
-   "ortholog": 200,
-   "isoform": 150
+   "library_reference": 2395,
+   "ortholog": 196,
+   "isoform": 149
   },
   "l2_active": 4001,
-  "all_rows_with_orf": 7491,
-  "l1_active_orf_nt_median": 1407,
+  "all_rows_with_orf": 7492,
+  "l1_active_orf_nt_median": 1419,
   "genes_without_reference_member": {
    "encoded_by_another_member": [
     "OPN1MW2",
@@ -233,7 +277,26 @@
     "UPK3BL2"
    ],
    "no_designed_cds": [
-    "OR52P1"
+    "CATSPERH",
+    "CATSPERQ",
+    "CXorf66",
+    "MS4A5",
+    "RELL2",
+    "SMIM7",
+    "TEX38",
+    "TMEM134",
+    "TMEM139",
+    "TMEM169",
+    "TMEM174",
+    "TMEM210",
+    "TMEM222",
+    "TMEM238",
+    "TMEM266",
+    "TMEM268",
+    "TMEM273",
+    "TMEM86A",
+    "TMEM86B",
+    "TSPO2"
    ]
   },
   "isoform_panel": {
@@ -300,16 +363,16 @@
   }
  },
  "domestication": {
-  "members_with_edit_count": 2762,
+  "members_with_edit_count": 2740,
   "edits_median": 3,
   "edits_max": 20,
-  "members_needing_no_edit": 330,
+  "members_needing_no_edit": 317,
   "esp3i_sites_per_vector": {
-   "2": 2762
+   "2": 2740
   },
   "vector_bp_min_median_max": [
    7753,
-   8974,
+   8986,
    12706
   ],
   "untagged_draft_igk_leader_members": 0
@@ -332,49 +395,49 @@
  },
  "tag_paths": {
   "tool": "deeptmhmm_v1",
-  "members": 2762,
+  "members": 2740,
   "placement": {
-   "N after SP": 1327,
-   "N at residue 1, multipass": 568,
-   "N at residue 1, single-pass (type III)": 43,
+   "N after SP": 1322,
+   "N at residue 1, multipass": 566,
+   "N at residue 1, single-pass (type III)": 41,
    "C-terminal": 219,
-   "internal": 605
+   "internal": 592
   },
   "placement_by_set": {
    "N after SP": {
-    "library_reference": 1141,
+    "library_reference": 1138,
     "isoform": 89,
-    "ortholog": 97
+    "ortholog": 95
    },
    "N at residue 1, multipass": {
-    "library_reference": 526,
+    "library_reference": 524,
     "isoform": 9,
     "ortholog": 33
    },
    "N at residue 1, single-pass (type III)": {
-    "library_reference": 31,
+    "library_reference": 29,
     "isoform": 4,
     "ortholog": 8
    },
    "C-terminal": {
-    "library_reference": 167,
-    "isoform": 23,
+    "library_reference": 168,
+    "isoform": 22,
     "ortholog": 29
    },
    "internal": {
-    "library_reference": 547,
+    "library_reference": 536,
     "isoform": 25,
-    "ortholog": 33
+    "ortholog": 31
    }
   },
   "gpi_rerouted": [
    "BST2"
   ],
   "topology_version": {
-   "topo_2026_05_16": 2392,
-   "topo_2026_05_25": 198,
+   "topo_2026_05_16": 2372,
+   "topo_2026_05_25": 197,
    "topo_2026_10_14_l1_designed": 85,
-   "topo_2026_11_22_isoform_redraw": 30,
+   "topo_2026_11_22_isoform_redraw": 29,
    "topo_2026_10_09_ortholog_repick": 19,
    "topo_2026_11_05_l1_compara116": 16,
    "topo_2026_11_05_ortholog_cds_policy": 6,
@@ -385,11 +448,11 @@
    "topo_2026_10_11_ortholog_gap": 1
   },
   "topology_cohort": {
-   "human_canonical": 2236,
-   "human_isoforms": 234,
+   "human_canonical": 2220,
+   "human_isoforms": 232,
    "library_designed_orf": 95,
-   "cyno_ortholog": 86,
-   "mouse_ortholog": 69,
+   "cyno_ortholog": 85,
+   "mouse_ortholog": 66,
    "mouse_ortholog_repick": 27,
    "cyno_ortholog_repick": 9,
    "mouse_ortholog_cds_policy": 4,
@@ -418,13 +481,6 @@
    "PCDHB16",
    "PDCD1",
    "PRND",
-   "TMEM139",
-   "TMEM139",
-   "TMEM169",
-   "TMEM268",
-   "TMEM86A",
-   "TMEM86B",
-   "TMEM86B",
    "TMEM95",
    "VTCN1",
    "VTCN1"
@@ -465,7 +521,7 @@
    "contained": 27
   },
   "verdict_active": {
-   "identical": 2418,
+   "identical": 2398,
    "different": 177,
    "contained": 27
   },
@@ -473,15 +529,15 @@
    "library_reference": 170,
    "ortholog": 7
   },
-  "different_same_length_active": 22
+  "different_same_length_active": 23
  },
  "refold": {
-  "inserts": 3375,
-  "fold_check_ok": 3375,
-  "ordered_igk_leader_inserts": 576,
+  "inserts": 3352,
+  "fold_check_ok": 3352,
+  "ordered_igk_leader_inserts": 572,
   "by_group": {
    "cterm: C-terminal": {
-    "pass": 205,
+    "pass": 206,
     "fail": 8
    },
    "cterm: internal, before furin site": {
@@ -492,48 +548,48 @@
    },
    "cterm: snorkel (TM module, then cassette)": {
     "fail": 4,
-    "pass": 141
+    "pass": 137
    },
    "internal": {
-    "fail": 77,
-    "pass": 1004
+    "fail": 74,
+    "pass": 992
    },
    "multipass": {
-    "pass": 497,
-    "fail": 71
+    "fail": 71,
+    "pass": 495
    },
    "nterm": {
     "fail": 37,
-    "pass": 1285
+    "pass": 1284
    },
    "type3": {
-    "pass": 39,
+    "pass": 37,
     "fail": 4
    }
   },
-  "pass": 3173,
-  "fail": 202,
-  "pass_pct": 94.0
+  "pass": 3153,
+  "fail": 199,
+  "pass_pct": 94.1
  },
  "rungs": {
   "n_after_sp": {
    "source": "reviewer-package/nterm/nterm_decisions.tsv",
-   "decisions": 1329,
+   "decisions": 1324,
    "arm": {
     "native_site": 1091,
-    "igk_swap": 231,
-    "no_nterm_arm": 5,
-    "routed_internal": 2
+    "igk_swap": 230,
+    "routed_internal": 2,
+    "no_nterm_arm": 1
    },
    "by_rule": {
-    "native: re-prediction-gated site before the predicted fold (rule 1, Becca 2026-11-11)": 512,
+    "native: re-prediction-gated site before the predicted fold (rule 1, Becca 2026-11-11)": 511,
     "native: only preserved sites lie inside the predicted fold (rule 2)": 331,
     "native: cleavage shifts but stays upstream of the cassette (rule 3)": 43,
     "native: ortholog SignalP release admitted (rule 5)": 46,
-    "native: round-2 SignalP on members with no prior call": 55,
+    "native: round-2 SignalP on members with no prior call": 56,
     "native: moved past a UniProt N-terminal pro-peptide": 49,
     "native: next SignalP-passing site after a failed refold": 23,
-    "igk: only DeepTMHMM v1 calls the signal peptide; a second source confirms it": 47,
+    "igk: only DeepTMHMM v1 calls the signal peptide; a second source confirms it": 46,
     "igk: only DeepTMHMM v1 calls it; a second source places the cleavage elsewhere": 11,
     "igk: only DeepTMHMM v1 calls it; a signal anchor, its rung move deferred": 0,
     "igk: native signal peptide fails at every site (rule 4)": 104,
@@ -541,9 +597,9 @@
     "igk: moved past a UniProt N-terminal pro-peptide": 0,
     "igk: next SignalP-passing form after a failed refold": 3,
     "no arm: refold fails and no other SignalP-passing form": 1,
-    "no arm: no tagged form keeps a SignalP cleavage site": 3,
+    "no arm: no tagged form keeps a SignalP cleavage site": 0,
     "no arm: the mature N-terminus after a pro-peptide has no passing form": 0,
-    "no arm: only DeepTMHMM v1 calls a signal peptide and no second source confirms it": 1,
+    "no arm: only DeepTMHMM v1 calls a signal peptide and no second source confirms it": 0,
     "no arm: replacement arm's refold pending": 0,
     "routed to another rung: a signal anchor or first TM helix, not a signal peptide": 0,
     "igk: weak predicted signal peptide (cleavage-site probability < 0.5; Becca 2026-11-14)": 46,
@@ -553,7 +609,7 @@
     "built and flagged: refold failed at every passing form (flag, never hold; Becca 2026-11-22)": 13,
     "routed back to internal: no form keeps a cleavage site": 2
    },
-   "built": 1322,
+   "built": 1321,
    "built_inside_predicted_fold": 531,
    "decided_by_becca_rule": 525,
    "igk_confirmed_by_deeptmhmm_v2_only": [
@@ -588,36 +644,36 @@
   },
   "igk": {
    "n_after_sp": {
-    "igk_swap": 231,
+    "igk_swap": 230,
     "native_site": 1091
    },
    "type3": {
-    "igk_tag": 9,
+    "igk_tag": 7,
     "tag_alone": 34,
     "by_rule": {
      "igk: GPI form with no signal peptide": 0,
      "igk: ordered form lacks the gene's signal peptide": 1,
-     "igk: native N-tail of 20 residues or fewer": 3,
+     "igk: native N-tail of 20 residues or fewer": 1,
      "igk: weak positive-inside drive (flank-charge difference <= 1)": 3,
      "igk: internal signal-like segment (KLB)": 2,
      "tag alone: genuine type III with no identified risk": 34
     }
    },
    "multipass": {
-    "igk_tag": 567,
+    "igk_tag": 565,
     "tag_alone": 1,
-    "gpcr": 504,
-    "non_gpcr": 64,
+    "gpcr": 505,
+    "non_gpcr": 61,
     "by_rule": {
-     "igk: GPCR default (Becca 2026-11-10)": 480,
+     "igk: GPCR default (Becca 2026-11-10)": 481,
      "igk: GPCR reference of a retired expression-rescue member": 23,
-     "igk: non-GPCR, literature review verdict": 52,
-     "igk: non-GPCR, built as its reviewed family": 6,
-     "igk: non-GPCR, lane checked and kept (SLC61A1, TSPO2)": 6,
+     "igk: non-GPCR, literature review verdict": 51,
+     "igk: non-GPCR, built as its reviewed family": 5,
+     "igk: non-GPCR, lane checked and kept (SLC61A1, TSPO2)": 5,
      "tag alone: CRHR2 pseudo signal peptide": 1
     }
    },
-   "ordered_inserts_folded_as_igk_mature_chain": 576,
+   "ordered_inserts_folded_as_igk_mature_chain": 572,
    "rule_comparison": {
     "repredicted_members": 1064,
     "preserved_cleavage_plus_1": 726,
@@ -630,30 +686,30 @@
     "below_0_5": 31,
     "below_0_5_with_a_preserved_candidate": 13
    },
-   "members_with_igk_leader": 807
+   "members_with_igk_leader": 802
   },
   "internal": {
    "source": "library/l1/tag-site-benchmarking/l1_internal_decisions.tsv",
-   "members": 579,
+   "members": 566,
    "decision": {
-    "internal_loop": 541,
-    "snorkel": 24,
-    "hold_no_passing_arm": 12,
+    "internal_loop": 534,
+    "snorkel": 21,
+    "hold_no_passing_arm": 9,
     "internal_loop_orientation_unconfirmed": 1,
     "route_to_cterm_experimental_topology": 1
    },
    "loop_pick_rank": {
-    "1.0": 468,
+    "1.0": 461,
     "1": 52,
     "2.0": 21
    },
    "loop_confidence": {
-    "medium": 417,
-    "low": 108,
+    "medium": 413,
+    "low": 105,
     "high": 16
    },
    "loop_refold": {
-    "pass": 524,
+    "pass": 517,
     "fail: native-region lDDT 0.689 < 0.85; lDDT within 15 of the site 0.579 < 0.7": 1,
     "fail: native-region lDDT 0.717 < 0.85": 1,
     "fail: native-region lDDT 0.678 < 0.85; lDDT within 15 of the site 0.621 < 0.7": 1,
@@ -672,8 +728,8 @@
     "fail: native-region lDDT 0.725 < 0.85": 1,
     "fail": 1
    },
-   "contact_vetoes": 48,
-   "literature_pass": 404,
+   "contact_vetoes": 47,
+   "literature_pass": 392,
    "literature_not_run": 136,
    "vs_v4": {
     "identical": 277,
@@ -735,29 +791,29 @@
    }
   },
   "snorkel": {
-   "decided": 24,
+   "decided": 21,
    "trigger": {
-    "every designed internal site fails refold": 21,
+    "every designed internal site fails refold": 18,
     "every designed internal site sits on a ligand contact": 2,
     "no N-after-SP form and the gate rejects every junction": 1,
     "v1 exposure too small for a loop, gate rejects all of it": 0
    },
    "snorkel_refold": {
-    "pass": 141,
+    "pass": 137,
     "fail": 4
    },
    "snorkel_verdict_column": {
-    "pass": 24
+    "pass": 21
    },
-   "built_arms": 145,
-   "held_no_passing_arm": 12,
+   "built_arms": 141,
+   "held_no_passing_arm": 9,
    "held_snorkel_refold": {
-    "fail": 6,
-    "": 6
+    "": 5,
+    "fail": 4
    },
-   "snorkel_arms_refolded": 30,
-   "snorkel_arms_failing": 6,
-   "loops_flagged_snorkel_candidate": 71,
+   "snorkel_arms_refolded": 25,
+   "snorkel_arms_failing": 4,
+   "loops_flagged_snorkel_candidate": 68,
    "snorkels_flagged_snorkel_candidate": 5,
    "spacer_test": {
     "change": "L1_GS 11 -> 30 residues ((GGGGS)x6); rest of the module unchanged",
@@ -772,12 +828,12 @@
   "cterm": {
    "members": 219,
    "built_arms_by_placement": {
-    "C-terminal": 213,
-    "snorkel (TM module, then cassette)": 145,
+    "C-terminal": 214,
+    "snorkel (TM module, then cassette)": 141,
     "internal, stalk (refold)": 2,
     "internal, before furin site": 1
    },
-   "inserts_ending_in_cassette": 358,
+   "inserts_ending_in_cassette": 355,
    "stalk_or_furin_sites": [
     "HPN (internal, stalk (refold))",
     "ITM2B (internal, before furin site)",
@@ -785,11 +841,10 @@
    ],
    "held": [
     "SLC1A6",
-    "TMEM222",
     "TSPAN6"
    ],
    "decision_questions": {
-    "terminus ends inside a confidently predicted fold": 36,
+    "terminus ends inside a confidently predicted fold": 39,
     "UniProt records processing that cuts or releases the ectodomain": 29,
     "tagged refold failed": 11,
     "weak C-out call (no_v2)": 10,
@@ -797,9 +852,9 @@
     "UniProt records processing that cuts or releases the ectodomain (furin)": 5,
     "weak C-out call (v2_no_tm)": 3,
     "C-out call: UniProt annotates the C-terminus cytoplasmic; DeepTMHMM v1 and v2 both call it extracellular": 3,
-    "weak C-out call (short_ecto_tail, no_v2)": 2,
     "moved to the stalk site on epitope packing alone": 1,
     "weak C-out call (v2_cterm_cytoplasmic)": 1,
+    "weak C-out call (short_ecto_tail, no_v2)": 1,
     "weak C-out call (short_ecto_tail, v2_cterm_cytoplasmic)": 1,
     "stop context TAAC (pad CC) or TAAG (pad GC)": 1
    },
@@ -812,31 +867,31 @@
   },
   "refold_by_rung": {
    "cterm": {
-    "pass": 348,
+    "pass": 345,
     "fail": 13
    },
    "internal": {
-    "fail": 77,
-    "pass": 1004
+    "fail": 74,
+    "pass": 992
    },
    "multipass": {
-    "pass": 497,
-    "fail": 71
+    "fail": 71,
+    "pass": 495
    },
    "nterm": {
     "fail": 37,
-    "pass": 1285
+    "pass": 1284
    },
    "type3": {
-    "pass": 39,
+    "pass": 37,
     "fail": 4
    }
   }
  },
  "order_plan": {
-  "inserts": 3375,
-  "members": 2743,
-  "plates_per_set": 36,
+  "inserts": 3352,
+  "members": 2730,
+  "plates_per_set": 35,
   "plate_sets": {
    "stock_ul": 20.0,
    "pooling_ul_each": 5.0,
@@ -848,19 +903,19 @@
     "pooling_well_ug": 0.5,
     "stock_well_ug": 2.0,
     "delivered_ug": 3.0,
-    "pool_ug_total_per_pool_x3.5": 236.4
+    "pool_ug_total_per_pool_x3.5": 236.9
    },
    "75_ng_ul": {
     "pooling_well_ug": 0.375,
     "stock_well_ug": 1.5,
     "delivered_ug": 2.25,
-    "pool_ug_total_per_pool_x3.5": 177.3
+    "pool_ug_total_per_pool_x3.5": 177.7
    },
    "50_ng_ul": {
     "pooling_well_ug": 0.25,
     "stock_well_ug": 1.0,
     "delivered_ug": 1.5,
-    "pool_ug_total_per_pool_x3.5": 118.2
+    "pool_ug_total_per_pool_x3.5": 118.4
    }
   },
   "ordered_ug": 4.0,
@@ -868,189 +923,189 @@
   "conc_ng_ul": 100.0,
   "insert_nt_min_median_max": [
    497,
-   1751,
+   1769,
    5450
   ],
   "vector_bp_min_max": [
    7974,
    12927
   ],
-  "inserts_over_threshold": 104,
+  "inserts_over_threshold": 105,
   "reference_insert": {
    "insert_nt": 4300,
    "vector_bp": 11787
   },
   "weighting": {
    "x2.0": {
-    "inserts_needing_extra": 104,
-    "extra_ug_assumed_total": 40.5,
+    "inserts_needing_extra": 105,
+    "extra_ug_assumed_total": 40.6,
     "order_ug_max": 5.91,
     "pool_ul_shortest": 0.2423,
-    "pool_ul_median": 0.6689,
+    "pool_ul_median": 0.6786,
     "pool_ul_longest": 12.1688,
-    "inserts_below_hand_pipetting": 1079,
-    "pool_ug_total_per_pool": 394.3,
+    "inserts_below_hand_pipetting": 1058,
+    "pool_ug_total_per_pool": 394.0,
     "longest_vs_shortest_pmol": 31.0,
-    "longest_vs_median_pmol": 13.0
+    "longest_vs_median_pmol": 12.8
    },
    "x2.5": {
-    "inserts_needing_extra": 104,
+    "inserts_needing_extra": 105,
     "extra_ug_assumed_total": 56.2,
     "order_ug_max": 6.86,
     "pool_ul_shortest": 0.1037,
-    "pool_ul_median": 0.3787,
+    "pool_ul_median": 0.3858,
     "pool_ul_longest": 15.7288,
-    "inserts_below_hand_pipetting": 2113,
-    "pool_ug_total_per_pool": 305.0,
+    "inserts_below_hand_pipetting": 2088,
+    "pool_ug_total_per_pool": 305.2,
     "longest_vs_shortest_pmol": 93.5,
-    "longest_vs_median_pmol": 29.6
+    "longest_vs_median_pmol": 29.2
    },
    "x3.5": {
-    "inserts_needing_extra": 104,
+    "inserts_needing_extra": 105,
     "extra_ug_assumed_total": 84.3,
     "order_ug_max": 8.84,
     "pool_ul_shortest": 0.0289,
-    "pool_ul_median": 0.1606,
+    "pool_ul_median": 0.1646,
     "pool_ul_longest": 23.1602,
-    "inserts_below_hand_pipetting": 2559,
-    "pool_ug_total_per_pool": 236.4,
+    "inserts_below_hand_pipetting": 2534,
+    "pool_ug_total_per_pool": 236.9,
     "longest_vs_shortest_pmol": 495.2,
-    "longest_vs_median_pmol": 102.9
+    "longest_vs_median_pmol": 100.6
    }
   },
   "pooling_plates": {
    "x2.0": {
-    "plate_dilution_plates": 34,
+    "plate_dilution_plates": 33,
     "conc_ng_ul_range": [
-     6.132,
-     77.864
+     6.146,
+     64.098
     ],
     "max_error_fold_plate_dilution": 1.27,
-    "max_error_fold_excluding_plate_1": 1.22,
-    "per_well_inserts": 111
+    "max_error_fold_excluding_plate_1": 1.15,
+    "per_well_inserts": 184
    },
    "x2.5": {
-    "plate_dilution_plates": 34,
+    "plate_dilution_plates": 33,
     "conc_ng_ul_range": [
-     2.798,
-     72.498
+     2.808,
+     56.454
     ],
     "max_error_fold_plate_dilution": 1.35,
-    "max_error_fold_excluding_plate_1": 1.3,
-    "per_well_inserts": 111
+    "max_error_fold_excluding_plate_1": 1.19,
+    "per_well_inserts": 184
    },
    "x3.5": {
-    "plate_dilution_plates": 34,
+    "plate_dilution_plates": 33,
     "conc_ng_ul_range": [
-     0.858,
-     65.098
+     0.862,
+     46.618
     ],
-    "max_error_fold_plate_dilution": 1.48,
-    "max_error_fold_excluding_plate_1": 1.41,
-    "per_well_inserts": 111
+    "max_error_fold_plate_dilution": 1.49,
+    "max_error_fold_excluding_plate_1": 1.27,
+    "per_well_inserts": 184
    }
   },
   "subpool_strategies": {
    "k1_per_plate": {
     "x2.0": {
-     "subpool_tubes": 36,
-     "worst_from_target_fold": 1.34,
+     "subpool_tubes": 35,
+     "worst_from_target_fold": 1.47,
      "worst_plate": 35,
-     "total_max_min_skew_fold": 1.79,
-     "p95_from_target_fold": 1.1,
-     "master_pool_ul_min": 26.84,
-     "master_pool_ul_max": 611.3,
+     "total_max_min_skew_fold": 2.17,
+     "p95_from_target_fold": 1.11,
+     "master_pool_ul_min": 26.94,
+     "master_pool_ul_max": 726.8,
      "tubes_below_2ul": 0
     },
     "x2.5": {
-     "subpool_tubes": 36,
-     "worst_from_target_fold": 1.45,
-     "worst_plate": 35,
-     "total_max_min_skew_fold": 2.12,
-     "p95_from_target_fold": 1.13,
-     "master_pool_ul_min": 11.95,
-     "master_pool_ul_max": 655.6,
-     "tubes_below_2ul": 0
-    },
-    "x3.5": {
-     "subpool_tubes": 36,
+     "subpool_tubes": 35,
      "worst_from_target_fold": 1.65,
      "worst_plate": 35,
      "total_max_min_skew_fold": 2.72,
-     "p95_from_target_fold": 1.18,
-     "master_pool_ul_min": 3.53,
-     "master_pool_ul_max": 728.4,
+     "p95_from_target_fold": 1.15,
+     "master_pool_ul_min": 12.0,
+     "master_pool_ul_max": 840.0,
+     "tubes_below_2ul": 0
+    },
+    "x3.5": {
+     "subpool_tubes": 35,
+     "worst_from_target_fold": 1.95,
+     "worst_plate": 35,
+     "total_max_min_skew_fold": 3.8,
+     "p95_from_target_fold": 1.2,
+     "master_pool_ul_min": 3.55,
+     "master_pool_ul_max": 1045.0,
      "tubes_below_2ul": 0
     }
    },
    "k2_per_plate": {
     "x2.0": {
-     "subpool_tubes": 72,
-     "worst_from_target_fold": 1.16,
+     "subpool_tubes": 70,
+     "worst_from_target_fold": 1.33,
      "worst_plate": 35,
-     "total_max_min_skew_fold": 1.35,
+     "total_max_min_skew_fold": 1.78,
      "p95_from_target_fold": 1.05,
-     "master_pool_ul_min": 13.05,
-     "master_pool_ul_max": 355.3,
+     "master_pool_ul_min": 13.08,
+     "master_pool_ul_max": 401.2,
      "tubes_below_2ul": 0
     },
     "x2.5": {
-     "subpool_tubes": 72,
-     "worst_from_target_fold": 1.21,
+     "subpool_tubes": 70,
+     "worst_from_target_fold": 1.45,
      "worst_plate": 35,
-     "total_max_min_skew_fold": 1.47,
-     "p95_from_target_fold": 1.07,
-     "master_pool_ul_min": 5.76,
-     "master_pool_ul_max": 397.8,
+     "total_max_min_skew_fold": 2.1,
+     "p95_from_target_fold": 1.06,
+     "master_pool_ul_min": 5.78,
+     "master_pool_ul_max": 477.1,
      "tubes_below_2ul": 0
     },
     "x3.5": {
-     "subpool_tubes": 72,
-     "worst_from_target_fold": 1.3,
+     "subpool_tubes": 70,
+     "worst_from_target_fold": 1.64,
      "worst_plate": 35,
-     "total_max_min_skew_fold": 1.68,
-     "p95_from_target_fold": 1.09,
-     "master_pool_ul_min": 1.68,
-     "master_pool_ul_max": 471.7,
+     "total_max_min_skew_fold": 2.71,
+     "p95_from_target_fold": 1.08,
+     "master_pool_ul_min": 1.69,
+     "master_pool_ul_max": 619.5,
      "tubes_below_2ul": 1
     }
    },
    "k4_per_plate": {
     "x2.0": {
-     "subpool_tubes": 144,
-     "worst_from_target_fold": 1.1,
-     "worst_plate": 36,
-     "total_max_min_skew_fold": 1.21,
+     "subpool_tubes": 140,
+     "worst_from_target_fold": 1.24,
+     "worst_plate": 35,
+     "total_max_min_skew_fold": 1.55,
      "p95_from_target_fold": 1.02,
      "master_pool_ul_min": 6.31,
-     "master_pool_ul_max": 186.7,
+     "master_pool_ul_max": 215.3,
      "tubes_below_2ul": 0
     },
     "x2.5": {
-     "subpool_tubes": 144,
-     "worst_from_target_fold": 1.13,
-     "worst_plate": 36,
-     "total_max_min_skew_fold": 1.28,
+     "subpool_tubes": 140,
+     "worst_from_target_fold": 1.32,
+     "worst_plate": 35,
+     "total_max_min_skew_fold": 1.75,
      "p95_from_target_fold": 1.03,
      "master_pool_ul_min": 2.76,
-     "master_pool_ul_max": 212.1,
+     "master_pool_ul_max": 261.3,
      "tubes_below_2ul": 0
     },
     "x3.5": {
-     "subpool_tubes": 144,
-     "worst_from_target_fold": 1.18,
-     "worst_plate": 36,
-     "total_max_min_skew_fold": 1.39,
+     "subpool_tubes": 140,
+     "worst_from_target_fold": 1.46,
+     "worst_plate": 35,
+     "total_max_min_skew_fold": 2.12,
      "p95_from_target_fold": 1.04,
      "master_pool_ul_min": 0.8,
-     "master_pool_ul_max": 257.1,
-     "tubes_below_2ul": 28
+     "master_pool_ul_max": 350.0,
+     "tubes_below_2ul": 27
     }
    }
   },
-  "cds_with_construct": 2743,
-  "cds_with_2_or_3_constructs": 397,
-  "constructs_of_cds_with_2_or_3": 1029
+  "cds_with_construct": 2730,
+  "cds_with_2_or_3_constructs": 390,
+  "constructs_of_cds_with_2_or_3": 1012
  },
  "proteoform_audit": {
   "flagged_major": 55,
@@ -1083,10 +1138,10 @@
   "canonical_strong_ours_none": 18
  },
  "swap_pool": {
-  "pool_share_1_over": 12213,
+  "pool_share_1_over": 11960,
   "pool_weighting": "x3.5",
-  "sibling_tract_median_nt": 302,
-  "sibling_rate_median_pct": 13.7,
+  "sibling_tract_median_nt": 317,
+  "sibling_rate_median_pct": 14.3,
   "tail_mislabel_pct": 2.2,
   "shared_tag_chimera_pct": 3.1,
   "specific_pct": 0.3,
@@ -1097,7 +1152,7 @@
   "by_length": {
    "longest_quarter_specific_median_pct": 0.14,
    "shortest_quarter_specific_median_pct": 0.12,
-   "spearman_length_vs_specific": 0.23,
+   "spearman_length_vs_specific": 0.24,
    "barcodes_over_1pct": 15,
    "max_specific_pct": 2.8
   }
@@ -1172,32 +1227,32 @@
   "region_label_window_proteins": 16
  },
  "swap_risk": {
-  "members": 2762,
+  "members": 2740,
   "gate_bp": 100,
   "schemes": {
    "shared": {
     "worst_partner_tract_median": 50.0,
-    "members_over_gate_100": 647,
-    "cterm_members": 402,
+    "members_over_gate_100": 638,
+    "cterm_members": 393,
     "cterm_worst_partner_median": 364.0,
     "cterm_worst_partner_max": 2549
    },
    "whole_cassette_widened": {
     "worst_partner_tract_median": 50.0,
     "members_over_gate_100": 245,
-    "cterm_members": 402,
+    "cterm_members": 393,
     "cterm_worst_partner_median": 56.0,
     "cterm_worst_partner_max": 56
    },
    "linkers_only": {
     "worst_partner_tract_median": 50.0,
     "members_over_gate_100": 245,
-    "cterm_members": 402,
+    "cterm_members": 393,
     "cterm_worst_partner_median": 56.0,
     "cterm_worst_partner_max": 56
    }
   },
-  "whole_cassette_9nt_rule": "FAILED after 28 of 402 C-terminal members",
+  "whole_cassette_9nt_rule": "FAILED after 28 of 393 C-terminal members",
   "issued_linker_only_encodings": 489,
   "issue_batches": [
    "1",
@@ -1248,13 +1303,13 @@
     "library_genes": 126,
     "cohort_forms": 108,
     "drawable_forms_gate_of_record": 102,
-    "panel_forms": 17,
+    "panel_forms": 16,
     "panel_forms_observed": 10,
-    "panel_forms_prediction_only": 7,
+    "panel_forms_prediction_only": 6,
     "uniform_expected_from_cohort": 8.7,
-    "enrichment_vs_uniform_cohort": 1.95,
+    "enrichment_vs_uniform_cohort": 1.84,
     "uniform_expected_from_drawable": 9.0,
-    "enrichment_vs_uniform_drawable": 1.89
+    "enrichment_vs_uniform_drawable": 1.78
    },
    "type III": {
     "library_genes": 33,
@@ -1307,16 +1362,16 @@
   }
  },
  "review_fingerprint": {
-  "n_tag_paths": 2762,
+  "n_tag_paths": 2740,
   "placements": {
    "C-terminal": 219,
-   "N after SP": 1327,
-   "N at residue 1, multipass": 568,
-   "N at residue 1, single-pass (type III)": 43,
-   "internal": 605
+   "N after SP": 1322,
+   "N at residue 1, multipass": 566,
+   "N at residue 1, single-pass (type III)": 41,
+   "internal": 592
   },
-  "n_members_fingerprinted": 2762,
-  "library_sha256": "819d60c8daca75ef8a6fea9b94cad9a80f34062e7e359b5ccac345b5dd567bfe",
+  "n_members_fingerprinted": 2740,
+  "library_sha256": "32028c6cb10b030eb547a9432b19a8b8f6775fe4f3b075b757f0bcd2fac89579",
   "members": {
    "l1-p0001": "6f50dde06d89b0a5",
    "l1-p0002": "06710a0604ab64e9",
@@ -1556,8 +1611,6 @@
    "l1-p0236": "b1dbcae4f40c34fd",
    "l1-p0237": "6a6f0f432c604164",
    "l1-p0238": "9da52582209b7f72",
-   "l1-p0239": "8bad06f9d60cc58f",
-   "l1-p0240": "11c1988b4fdec84e",
    "l1-p0241": "167e97ed741130b0",
    "l1-p0242": "41483186b0b71522",
    "l1-p0243": "5ce83da19b69b6de",
@@ -1813,7 +1866,6 @@
    "l1-p0493": "2d10927262a0b2ec",
    "l1-p0494": "19ed962e9306a502",
    "l1-p0495": "7457887c97d9267f",
-   "l1-p0496": "73dff2ac46393a39",
    "l1-p0497": "7238ee21cd355cf2",
    "l1-p0498": "1a22046ae9fe8a9e",
    "l1-p0499": "d97910ada57bc130",
@@ -2573,7 +2625,6 @@
    "l1-p1253": "20b5cabd8fffdea9",
    "l1-p1254": "901a0d31e599fff0",
    "l1-p1255": "6d6fd873f5279a98",
-   "l1-p1256": "8d8e27d7068f053d",
    "l1-p1257": "bdaab2bd9c25e8f6",
    "l1-p1258": "c37add5cdb4b8d00",
    "l1-p1259": "b305a9c9f113432f",
@@ -3041,7 +3092,6 @@
    "l1-p1724": "00fc5b0fb5da917c",
    "l1-p1725": "88eceec5da80c93e",
    "l1-p1726": "0e97c6d95eafb119",
-   "l1-p1727": "d19e63cc5efd13a8",
    "l1-p1728": "6f99c7f4d70c6a85",
    "l1-p1729": "cc8feb9c5ba29230",
    "l1-p1730": "a0cbcc42a21c2b81",
@@ -3368,7 +3418,6 @@
    "l1-p2051": "8b82c68f98b3ac18",
    "l1-p2052": "f1349ecaa2abf70d",
    "l1-p2053": "fd1c48f802ef84e1",
-   "l1-p2054": "fa0656eecf7ed7c2",
    "l1-p2055": "abe74546150604bc",
    "l1-p2056": "efa658fa09bd7153",
    "l1-p2057": "776d7fbabc3266b6",
@@ -3442,7 +3491,6 @@
    "l1-p2125": "8026ee7d678522b1",
    "l1-p2126": "868327b1bac759bb",
    "l1-p2127": "ac43fa6ba55b4183",
-   "l1-p2128": "f632c1a585a5fe69",
    "l1-p2129": "cc7a2efd43388c21",
    "l1-p2130": "3c53d4ff8bf0a3b6",
    "l1-p2131": "f4e9b52cf6670ee2",
@@ -3485,16 +3533,12 @@
    "l1-p2168": "d9847ea5a12c268e",
    "l1-p2169": "79402d08da3e8c82",
    "l1-p2170": "d8f514020884b7e1",
-   "l1-p2171": "7d87fe6929f10209",
-   "l1-p2172": "b103bfac33ac6a1e",
    "l1-p2173": "82686105379926f7",
    "l1-p2174": "36a1c06a6adcbe39",
    "l1-p2175": "84c26d7e4d59efd7",
    "l1-p2176": "e7adb244d15a4f4e",
    "l1-p2177": "bb0327058bb5b1e6",
-   "l1-p2178": "c7438a88664a5ebc",
    "l1-p2179": "12eecf3372eee7b4",
-   "l1-p2180": "81546517c19a8d48",
    "l1-p2181": "d9be9e5205a09dd6",
    "l1-p2182": "9afb4c2d51d415a0",
    "l1-p2183": "e0ff17512fcc8de2",
@@ -3502,22 +3546,14 @@
    "l1-p2185": "314aa1c72dc7729d",
    "l1-p2186": "3bc55ee154634e59",
    "l1-p2187": "feb28237308f15f1",
-   "l1-p2188": "00c0752f1ddfedab",
    "l1-p2189": "c8230bc4a9f60eb7",
-   "l1-p2190": "b71bcd2dc1bec8ac",
    "l1-p2191": "2421aed87563abb0",
    "l1-p2192": "5949541a68f42d13",
-   "l1-p2193": "cc046a54886a7229",
    "l1-p2194": "45227f279bf35506",
-   "l1-p2195": "f60bfc3972366cfa",
-   "l1-p2196": "4a32ab1937874b30",
-   "l1-p2197": "6577d0cad487e43f",
    "l1-p2198": "e98b0d3f8628573f",
    "l1-p2199": "5b2fc5a35dfdc9a2",
    "l1-p2200": "4862a8b246f535e5",
    "l1-p2201": "a235117d825d09c9",
-   "l1-p2202": "ca623868cf76e0eb",
-   "l1-p2203": "e8a04cf38bc8c963",
    "l1-p2204": "7226d02f471867b9",
    "l1-p2205": "eec893dcc06888b6",
    "l1-p2206": "75a1856a8fb428bd",
@@ -3616,7 +3652,6 @@
    "l1-p2299": "ada0b51a55849627",
    "l1-p2300": "7eaabad7eda80e05",
    "l1-p2301": "bf2403c1730c14c8",
-   "l1-p2302": "36209c4d01d5b62d",
    "l1-p2303": "981bd65196fb11bc",
    "l1-p2304": "7782258cc3baa17d",
    "l1-p2305": "c1c2713f781cb8f7",
@@ -3795,7 +3830,6 @@
    "l1-p2970": "1610b9f4753fb10f",
    "l1-p2971": "c8588c81aa90ce04",
    "l1-p2972": "d942017d135874b6",
-   "l1-p2973": "a83942d02e539e25",
    "l1-p2974": "e3d6ddf9679136bb",
    "l1-p2975": "8d583921981e337c",
    "l1-p2976": "8ba98b0c5b0751f1",
@@ -3880,9 +3914,6 @@
    "l1-p3057": "6f88440b7612c7a0",
    "l1-p3058": "0c6c8c86ee3b3ee1",
    "l1-p3059": "2f4fd24903520e2d",
-   "l1-p3060": "9c12548ac0bad16e",
-   "l1-p3061": "427d0c702fff9db2",
-   "l1-p3062": "520c5669eb244e0f",
    "l1-p3063": "f37c9f5755e58e43",
    "l1-p3064": "38e1927526dff93d",
    "l1-p3065": "9a9d83f7de8697d2",
@@ -3973,6 +4004,7 @@
    "l1-p3195": "1ce2c4aa391083c8",
    "l1-p3196": "eee6e2a07e0fd094",
    "l1-p3197": "9df93faa426217cc",
+   "l1-p3199": "eb258750e762ffd9",
    "l1-p3200": "52315f1e7b877359",
    "l1-p3201": "a9654453b14eab21",
    "l1-p3203": "54953198232982ea",
@@ -3984,6 +4016,7 @@
    "l1-p3211": "5133fcbb66aabbba",
    "l1-p3212": "9002a2ef94c96511",
    "l1-p3213": "9032842615951412",
+   "l1-p3214": "74998cabd9ee3776",
    "l1-p3215": "67ab09666969094e",
    "l1-p3218": "6ead0e5320518113",
    "l1-p3219": "61b03b29d8380aa9",
@@ -4035,7 +4068,6 @@
    "l1-p3284": "271f0894fd3c705b",
    "l1-p3285": "4d2143175246eecf",
    "l1-p3288": "783c67d78e138b07",
-   "l1-p3289": "78ea0c7a3410b69e",
    "l1-p3290": "ed76dbc0e3af9d5e",
    "l1-p3291": "f74fe0897f75f19e",
    "l1-p3293": "48a4286b48b756f2",
@@ -4079,7 +4111,8 @@
    "l1-p3337": "7b75e070a220ad9d",
    "l1-p3338": "2bf8b64b2bd4a49c",
    "l1-p3339": "3f26f55eeb52f8b1",
-   "l1-p3340": "94cc7ad9e15b543e"
+   "l1-p3340": "94cc7ad9e15b543e",
+   "l1-p3341": "ca60ccbd480953c9"
   }
  }
 }
