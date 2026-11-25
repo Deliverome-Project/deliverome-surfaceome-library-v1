@@ -1,3 +1,4 @@
+# ruff: noqa: RUF001
 """The numbers the reviewer brief states in prose equal the ones measured from the tables.
 
 ``reviewer-package/brief_numbers.py`` measures every count into ``brief_numbers.json``; the
@@ -256,12 +257,69 @@ CLAIMS = [
             "rungs.igk.type3.igk_tag",
         ],
     ),
+    # section 3 swap risk
+    (
+        "Diversifying the linkers, as ordered, lowers that to {}%",
+        ["swap_pool.total_pct"],
+    ),
+    (
+        "| the tag cassette (wrong-protein fusions) | every pair | 4.6% | {}% (the two tags only) |",
+        ["swap_pool.shared_tag_chimera_pct"],
+    ),
+    (
+        "the median is {}% of a barcode's cells and\n0.30% of the library ({}% chimeras, {}% mislabels)",
+        [
+            "swap_pool.specific_median_per_barcode_pct",
+            "swap_pool.specific_chimera_pct",
+            "swap_pool.specific_mislabel_pct",
+        ],
+    ),
+    # section 9 cassette uniqueness and snorkel count
+    (
+        "all **{} cassettes are unique**",
+        ["order_plan.inserts"],
+    ),
+    (
+        "Each\nof the {} snorkel constructs",
+        ["rungs.snorkel.built_arms"],
+    ),
+    # section 10 order plan & pooling
+    (
+        "(at 3.5×/kb weighting: **{} µg** per pool at 100 ng/µL, **{} µg** at 75 ng/µL,\n**{} µg** at 50 ng/µL)",
+        [
+            ("order_plan", "concentration_scenarios", "100_ng_ul", "pool_ug_total_per_pool_x3.5"),
+            ("order_plan", "concentration_scenarios", "75_ng_ul", "pool_ug_total_per_pool_x3.5"),
+            ("order_plan", "concentration_scenarios", "50_ng_ul", "pool_ug_total_per_pool_x3.5"),
+        ],
+    ),
+    (
+        "The **{}** constructs over 4.3 kb require extra DNA",
+        ["order_plan.inserts_over_threshold"],
+    ),
+    (
+        "| 2.0× | 13× / 18× | 31× / 50× | {} µg / 54.1 µg |",
+        [("order_plan", "weighting", "x2.0", "extra_ug_assumed_total")],
+    ),
+    (
+        "| 2.5× | 30× / 41× | 94× / 152× | {} µg / 74.9 µg |",
+        [("order_plan", "weighting", "x2.5", "extra_ug_assumed_total")],
+    ),
+    (
+        "| 3.5× | 102× / 143× | 495× / 803× | {} µg / 112.4 µg |",
+        [("order_plan", "weighting", "x3.5", "extra_ug_assumed_total")],
+    ),
+    # section 11 reproducibility order count
+    (
+        "**Order of record (`2026-11-23-pre-freeze`).** **{}** constructs in one synthesis-recoded FASTA",
+        ["order_plan.inserts"],
+    ),
 ]
 
 
-def get(path: str):
+def get(path: str | tuple[str, ...]):
+    parts = path.split(".") if isinstance(path, str) else path
     node = NUMBERS
-    for part in path.split("."):
+    for part in parts:
         node = node[part]
     return node
 

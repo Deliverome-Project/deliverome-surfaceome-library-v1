@@ -1,44 +1,45 @@
 {
   "scenario": "SpyTag003 and P-ALFA-P recoded per construct as well as the linkers",
-  "order_of_record": "sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-23-v8-veto/l1_order_inserts_recoded.fasta",
-  "order_of_record_sha256": "d15fd3800d14c2985a65cb45dc83fe100fadcff266d452d1b1d9d84653301091",
+  "order_of_record": "sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-23-pre-freeze/l1_order_inserts_recoded.fasta",
+  "order_of_record_sha256": "8796cc8740196fbc041696809f4dc0b2b5bf02b63974a23f357fa3e4a3e0890a",
   "seed": 20261122,
-  "inserts": 3404,
-  "encodings_sha256": "a17e10a3a804066a85be58a7d2154fa8cc50d655baaa70ca4afe8dca971a8d6d",
+  "inserts": 3384,
+  "encodings_sha256": "0f803199c8466fd3ad7c077b8a72263b524d41dfb497b541c377acfd0ce063d9",
   "pinning": "none: every cassette redrawn whole (a pin fixes the whole cassette)",
   "longest_shared_cassette_nt": {
     "current_order": 134,
-    "tags_recoded": 51
+    "tags_recoded": 59
   },
   "library_fraction_wrong_protein": {
-    "specific_mislabel": 0.0007137838512997608,
-    "specific_chimera": 0.00145934099113651,
-    "background_mislabel": 0.02166704237655865,
-    "background_chimera": 0.0003067074174145988,
-    "total": 0.02414687463640952,
-    "not_counted_leader_swap": 0.00025014764282095515
+    "specific_mislabel": 0.0007150358487422871,
+    "specific_chimera": 0.0014863549099170155,
+    "background_mislabel": 0.021662695151111477,
+    "background_chimera": 0.00030094057233055234,
+    "total": 0.024165026482101327,
+    "not_counted_leader_swap": 0.0002302225954334617,
+    "total_including_leader_swap": 0.024395249077534792
   },
   "wrong_protein_by_block_region": {
-    "background|chimera|native CDS": 3.461627228104686e-05,
-    "background|chimera|tag cassette": 0.0002720911451335519,
-    "background|leader swap|native CDS": 1.2772722476962817e-05,
-    "background|leader swap|tag cassette": 0.00019172302262673196,
-    "background|mislabel|3' tail": 0.02166413725566173,
-    "background|mislabel|native CDS": 1.12001952560638e-06,
-    "background|mislabel|tag cassette": 1.785101371316723e-06,
-    "specific|chimera|native CDS": 0.0013944132927512134,
-    "specific|chimera|tag cassette": 6.492769838530981e-05,
-    "specific|leader swap|native CDS": 3.5763666851325e-06,
-    "specific|leader swap|tag cassette": 4.20755310321274e-05,
-    "specific|mislabel|3' tail": 0.0003474156345889132,
-    "specific|mislabel|native CDS": 0.0003658572562039463,
-    "specific|mislabel|tag cassette": 5.109605068987188e-07
+    "background|chimera|native CDS": 2.3315541208972213e-05,
+    "background|chimera|tag cassette": 0.00027762503112158034,
+    "background|leader swap|native CDS": 8.893956237852909e-06,
+    "background|leader swap|tag cassette": 0.00017625452102824484,
+    "background|mislabel|3' tail": 0.021659812607854337,
+    "background|mislabel|native CDS": 4.7353251567079625e-07,
+    "background|mislabel|tag cassette": 2.4090107414700677e-06,
+    "specific|chimera|native CDS": 0.00142198223154622,
+    "specific|chimera|tag cassette": 6.437267837080601e-05,
+    "specific|leader swap|native CDS": 3.7165186302710844e-06,
+    "specific|leader swap|tag cassette": 4.1357599537092597e-05,
+    "specific|mislabel|3' tail": 0.0003468295941866585,
+    "specific|mislabel|native CDS": 0.0003677960051822598,
+    "specific|mislabel|tag cassette": 4.102493733743588e-07
   },
   "per_barcode_impurity": {
-    "median": 0.02246391319928385,
-    "max": 0.04830070110887658,
-    "specific_part_median": 0.00038362419108456977,
-    "specific_part_max": 0.025774651166695032
+    "median": 0.022483762221005538,
+    "max": 0.0484234204503132,
+    "specific_part_median": 0.0003895079914232869,
+    "specific_part_max": 0.025920982440300073
   },
   "model": "l1_swap_pool_model.main() unchanged, on the spliced inserts"
 }

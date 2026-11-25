@@ -46,12 +46,17 @@ import numpy as np
 import pandas as pd
 
 HERE = Path(__file__).resolve().parent
+REPO = HERE.parents[2]
 MASK_KEY = (
-    "sprint4/s4e9-orf-design-fg-panel/membrane-side-gate/2026-11-11-r4/"
+    "sprint4/s4e9-orf-design-fg-panel/membrane-side-gate/2026-11-12-r8/"
     "l1_extracellular_mask_residues.tsv"
 )
-LOCAL = HERE / "data" / "mask_r4" / "l1_extracellular_mask_residues.tsv"
+LOCAL = REPO / "library/l1/orf-design/membrane-side-gate" / "l1_extracellular_mask_residues.tsv"
 ELIGIBLE = "E"
+#: Mask characters that remain within one extracellular loop (eligible 'E' and shallow
+#: review-band 'r' dips); regions split only at transmembrane/non-O ('.', 'M', 'i'),
+#: membrane-core ('m'), cytoplasmic ('c'), unmodelled ('u'), or excluded ('x') boundaries.
+LOOP_CONTINUOUS = frozenset(("E", "r"))
 
 
 class MaskMissing(RuntimeError):
@@ -134,16 +139,17 @@ def eligible_after(masks: tuple[str, str], residues) -> np.ndarray:
 def masked_regions(residues, masks: tuple[str, str] | None = None) -> np.ndarray:
     """Region index for eligible residues, with boundaries set by the per-residue mask.
 
-    Runs are contiguous residues where mask == 'E' or the junction is eligible, so a
-    junction-eligible residue in the review band stays in the region it adjoins; a
-    residue the mask rejects on both counts ends the region.
+    Runs are contiguous residues staying on the extracellular face (mask in {'E', 'r'} or
+    an eligible junction), so a short review-band ('r') dip does not split a single
+    extracellular loop into separate regions; regions split only at transmembrane ('.'/'M'),
+    membrane-core ('m'), cytoplasmic ('c'), or excluded/unmodelled boundaries.
     """
     res = np.asarray(residues, int)
     if masks is not None:
         mask, junction = masks
         run_of, run = {}, -1
         for i in range(len(mask)):
-            if mask[i] == ELIGIBLE or junction[i] == ELIGIBLE:
+            if mask[i] in LOOP_CONTINUOUS or junction[i] == ELIGIBLE:
                 if i == 0 or (i not in run_of):  # position i (1-based) not in the previous run
                     run += 1
                 run_of[i + 1] = run

@@ -112,6 +112,10 @@ COLUMNS = [
 RBP_FAMILIES = {"Pumilio", "ARE", "CPEB", "PAS", "CFIm25"}
 RBP_MOTIFS = tuple(m for m in rbp_motifs.MOTIFS if m.family in RBP_FAMILIES)
 CFIM_WINDOW = rbp_motifs.CLUSTER_WINDOW
+#: Prefix width L1's provisional block (2026-11-10) and extension (2026-11-15) were drawn under.
+#: ``barcode_prefix_screen.PREFIX_BASES`` later moved to 12 for post-L1 reservations; pinning 10
+#: here keeps L1's draw replayable (and 10-nt d >= 3 strictly implies 12-nt d >= 3).
+L1_PREFIX_BASES = 10
 
 
 def rbp_hits(bc: str, three_prime: str) -> list[str]:
@@ -140,7 +144,9 @@ def rbp_pass(bc: str, flanks: tuple[str, ...] = L1_DRAW_FLANKS) -> tuple[bool, s
     return True, ""
 
 
-def draw(n: int | None, after: int = -1) -> tuple[list[tuple[int, str]], dict[str, int]]:
+def draw(
+    n: int | None, after: int = -1, prefix_bases: int = L1_PREFIX_BASES
+) -> tuple[list[tuple[int, str]], dict[str, int]]:
     """``n`` barcodes (``None``: every one that passes) from pool indices above ``after``."""
     used_bc, used_ix, skipped, _done, _p = read_registry()
     _local, local_bc = _locally_assigned()
@@ -150,7 +156,7 @@ def draw(n: int | None, after: int = -1) -> tuple[list[tuple[int, str]], dict[st
         for r in csv.DictReader(Path(processed.download(POOL_KEY)).open(), delimiter="\t")
         if r.get("index")
     }
-    prefix = PrefixScreen(existing=used_bc)
+    prefix = PrefixScreen(bases=prefix_bases, existing=used_bc)
     block, why = [], {}
     for idx in sorted(i for i in pool if i > after):
         if n is not None and len(block) == n:

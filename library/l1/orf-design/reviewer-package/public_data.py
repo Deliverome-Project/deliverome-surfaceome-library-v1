@@ -29,15 +29,19 @@ from __future__ import annotations
 
 import argparse
 import csv
+import datetime
+import email.utils
 import hashlib
 import os
 import re
 import sys
+import tempfile
 import time
 import urllib.error
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
+from typing import Any
 
 HERE = Path(__file__).parent
 MANIFEST = HERE / "bundle_manifest.tsv"
@@ -172,6 +176,28 @@ def locations(*homes: str) -> list[dict[str, str]]:
     return [r for r in rows if not homes or r["home"] in homes]
 
 
+def _is_retryable_status(code: int) -> bool:
+    return code == 429 or 500 <= code < 600
+
+
+def _retry_delay(attempt: int, headers: Any = None) -> float:
+    """Seconds to wait before retry, honouring numeric or HTTP-date Retry-After."""
+    raw = headers.get("Retry-After") if headers is not None else None
+    if raw is not None:
+        text = str(raw).strip()
+        try:
+            return max(0.0, float(text))
+        except ValueError:
+            try:
+                dt = email.utils.parsedate_to_datetime(text)
+                if dt.tzinfo is None:
+                    dt = dt.replace(tzinfo=datetime.UTC)
+                return max(0.0, dt.timestamp() - time.time())
+            except TypeError, ValueError, OverflowError:
+                pass
+    return float(2**attempt)
+
+
 def _head(url: str) -> int | None:
     """Content-Length of ``url``, or None if absent; backs off on rate limits (r2.dev returns 429)."""
     for attempt in range(8):
@@ -182,8 +208,10 @@ def _head(url: str) -> int | None:
         except urllib.error.HTTPError as exc:
             if exc.code == 404:
                 return None
-            if exc.code not in (429, 500, 502, 503, 504) or attempt == 7:
+            if not _is_retryable_status(exc.code) or attempt == 7:
                 raise
+            time.sleep(_retry_delay(attempt, exc.headers))
+            continue
         time.sleep(2**attempt)
     return None
 
@@ -202,9 +230,40 @@ def _put(path: Path, key: str, account: str, token: str) -> None:
                 if resp.status == 200:
                     return
         except urllib.error.HTTPError as exc:
-            if exc.code not in (429, 500, 502, 503, 504) or attempt == 7:
+            if not _is_retryable_status(exc.code) or attempt == 7:
                 raise
+            time.sleep(_retry_delay(attempt, exc.headers))
+            continue
         time.sleep(2**attempt)
+
+
+def _download_file(url: str, dest: Path, *, max_attempts: int = 8) -> None:
+    """Download ``url`` to ``dest`` atomically, retrying HTTP 429 and 5xx with backoff."""
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    for attempt in range(max_attempts):
+        req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+        tmp: Path | None = None
+        try:
+            with urllib.request.urlopen(req, timeout=900) as resp:
+                fd, tmp_name = tempfile.mkstemp(
+                    dir=dest.parent, prefix=f".{dest.name}.", suffix=".part"
+                )
+                tmp = Path(tmp_name)
+                with os.fdopen(fd, "wb") as fh:
+                    for chunk in iter(lambda: resp.read(1 << 20), b""):
+                        fh.write(chunk)
+            os.replace(tmp, dest)
+            return
+        except urllib.error.HTTPError as exc:
+            if tmp is not None:
+                tmp.unlink(missing_ok=True)
+            if not _is_retryable_status(exc.code) or attempt == max_attempts - 1:
+                raise
+            time.sleep(_retry_delay(attempt, exc.headers))
+        except BaseException:
+            if tmp is not None:
+                tmp.unlink(missing_ok=True)
+            raise
 
 
 def upload(bundle: Path, workers: int) -> int:
@@ -245,11 +304,7 @@ def fetch(out: Path, workers: int) -> int:
         dest = out / "s3" / r["bucket"] / r["key"]
         if dest.is_file() and sha256(dest) == r["sha256"]:
             return
-        dest.parent.mkdir(parents=True, exist_ok=True)
-        req = urllib.request.Request(r["location"], headers={"User-Agent": USER_AGENT})
-        with urllib.request.urlopen(req, timeout=900) as resp, dest.open("wb") as fh:
-            for chunk in iter(lambda: resp.read(1 << 20), b""):
-                fh.write(chunk)
+        _download_file(r["location"], dest)
         if sha256(dest) != r["sha256"]:
             bad.append(f"{r['location']}: SHA-256 differs")
 

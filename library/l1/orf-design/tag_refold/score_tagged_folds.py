@@ -98,6 +98,47 @@ def longest_run(mask: np.ndarray) -> int:
     return int(best)
 
 
+def cassette_non_alfa_helix(
+    hel: np.ndarray,
+    plddt: np.ndarray,
+    cas: np.ndarray,
+    a0: int,
+    *,
+    alfa_len: int = len(ALFA),
+    min_len: int = CASSETTE_HELIX_FAIL,
+    min_plddt: float = CONFIDENT_PLDDT,
+) -> tuple[int, int]:
+    """Evaluate contiguous helical runs separately on pre-ALFA and post-ALFA cassette segments.
+
+    Returns ``(longest_run_len, longest_confident_run_len)``, where a run is confident iff
+    its length is >= ``min_len`` and the mean pLDDT on that specific run is >= ``min_plddt``.
+    """
+    pre = cas[cas < a0]
+    post = cas[cas >= a0 + alfa_len]
+    best = 0
+    best_conf = 0
+    for seg in (pre, post):
+        if not len(seg):
+            continue
+        start: int | None = None
+        for idx, is_hel in enumerate(hel[seg]):
+            if is_hel:
+                if start is None:
+                    start = idx
+            elif start is not None:
+                run_len = idx - start
+                best = max(best, run_len)
+                if run_len >= min_len and float(np.mean(plddt[seg[start:idx]])) >= min_plddt:
+                    best_conf = max(best_conf, run_len)
+                start = None
+        if start is not None:
+            run_len = len(seg) - start
+            best = max(best, run_len)
+            if run_len >= min_len and float(np.mean(plddt[seg[start:]])) >= min_plddt:
+                best_conf = max(best_conf, run_len)
+    return int(best), int(best_conf)
+
+
 _ARCHIVE: dict[str, dict[str, str]] | None = None
 
 
@@ -298,14 +339,14 @@ def score(row: dict, folds: Path, index: dict) -> dict:
             )
 
         # A helix inside the cassette other than ALFA (which is a helix by design): for a
-        # type III or residue-1 tag this is the "second TM-like helix" risk.
+        # type III or residue-1 tag this is the "second TM-like helix" risk. Evaluate pre-ALFA
+        # and post-ALFA segments separately and require mean(pLDDT) >= 70 on the run itself.
         hel = t.helix()
-        non_alfa = np.array([i for i in cas if not a0 <= i < a0 + len(ALFA)])
-        run = longest_run(hel[non_alfa])
+        run, conf_run = cassette_non_alfa_helix(hel, t.plddt, cas, a0)
         out["cassette_longest_helix_excl_alfa"] = run
         out["spytag003_longest_helix"] = longest_run(hel[s0 : s0 + len(SPYTAG003)])
-        if run >= CASSETTE_HELIX_FAIL and float(np.mean(t.plddt[non_alfa][hel[non_alfa]])) >= 70:
-            reasons.append(f"confident {run}-residue helix inside the cassette (not ALFA)")
+        if conf_run >= CASSETTE_HELIX_FAIL:
+            reasons.append(f"confident {conf_run}-residue helix inside the cassette (not ALFA)")
         if row.get("tm1_span_folded"):
             s1, e1 = (int(x) for x in row["tm1_span_folded"].split("-"))
             tm = np.arange(s1 - 1, e1)

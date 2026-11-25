@@ -43,8 +43,9 @@ import numpy as np
 import pandas as pd
 
 HERE = Path(__file__).resolve().parent
+REPO = HERE.parents[2]
 sys.path.insert(0, str(HERE))
-sys.path.insert(0, str(HERE.parents[3] / "src"))
+sys.path.insert(0, str(REPO / "src"))
 
 import contact_veto as CV  # noqa: E402
 import l1_internal_decisions as L  # noqa: E402
@@ -87,9 +88,7 @@ GATE_SESSION = {
 #: members built on another rung, so their internal rows are holds (coordinator, 2026-11-15)
 BUILT_ELSEWHERE = {"l1-p1362": "built on the residue-1 multipass rung, #361"}
 #: refold verdicts of record (s4e9 tag_refold tables on main), keyed by tagged_sha256
-TAG_REFOLD_VERDICTS = (
-    HERE.parents[1] / "sprint4" / "s4e9-orf-design-fg-panel" / "tag_refold_verdicts.tsv"
-)
+TAG_REFOLD_VERDICTS = REPO / "library/l1/orf-design" / "tag_refold_verdicts.tsv"
 
 
 #: the annotation rule's per-arm verdicts (annotation_rule.py, on the #370 table)

@@ -226,14 +226,6 @@ plugins = ["pydantic.mypy"]
 follow_imports = "silent"
 untyped_calls_exclude = ["Bio"]
 
-[[tool.mypy.overrides]]
-module = ["deliverome_analysis.peptide_metrics", "deliverome_analysis.alphadia_trim"]
-strict = true
-
-[[tool.mypy.overrides]]
-module = "deliverome_analysis.raw_provenance"
-strict = true
-
 # The shared modules the L1 library review repository exports.
 [[tool.mypy.overrides]]
 module = [
@@ -254,15 +246,6 @@ module = [
     "deliverome_analysis.tag_placement",
     "deliverome_analysis.topology",
     "deliverome_analysis.trust_store",
-]
-strict = true
-
-[[tool.mypy.overrides]]
-# QC metric modules: chromatography (TIC, spray, LC), surface topology, and the pipeline
-module = [
-    "deliverome_analysis.raw_chromatography",
-    "deliverome_analysis.surface_topology",
-    "deliverome_analysis.dia_qc_pipeline",
 ]
 strict = true
 

@@ -74,8 +74,9 @@ from sklearn.metrics import roc_auc_score
 from sklearn.model_selection import GroupKFold
 
 HERE = Path(__file__).resolve().parent
+REPO = HERE.parents[2]
 sys.path.insert(0, str(HERE))
-sys.path.insert(0, str(HERE.parents[3] / "src"))
+sys.path.insert(0, str(REPO / "src"))
 
 from endonb_scored import TOL, leave_gene_out, rank_of  # noqa: E402
 from final_report import fold_eval, mask_keep  # noqa: E402

@@ -30,6 +30,7 @@ Writes, in this folder:
 
 from __future__ import annotations
 
+import functools
 import json
 import sys
 from pathlib import Path
@@ -59,20 +60,24 @@ MIN_SEPARATION = 25
 MIN_REGION_LEN = 10
 
 
+@functools.lru_cache(maxsize=1)
+def _calibration() -> dict:
+    return json.loads((HERE / "calibration.json").read_text())
+
+
 def thresholds() -> ms.GateThresholds:
-    cal = json.loads((HERE / "calibration.json").read_text())
-    return ms.GateThresholds(**cal["thresholds"])
+    return ms.GateThresholds(**_calibration()["thresholds"])
 
 
 #: design_id -> candidate_id for the members of this run; filled by main().
 CID_OF_DESIGN: dict[str, str] = {}
 
 
-def uniprot_inverted() -> set[str]:
+def uniprot_inverted(cid_of_design: dict[str, str] | None = None) -> set[str]:
     """Members (candidate ids) whose face UniProt experimental topology (ECO:0000269)
     contradicts. Recorded by design id in calibration.json, which survives renumbering."""
-    cal = json.loads((HERE / "calibration.json").read_text())
-    return {CID_OF_DESIGN[d] for d in cal["uniprot_inverted_design_ids"] if d in CID_OF_DESIGN}
+    mapping = CID_OF_DESIGN if cid_of_design is None else cid_of_design
+    return {mapping[d] for d in _calibration()["uniprot_inverted_design_ids"] if d in mapping}
 
 
 #: Manual exclusions of partner-assembly interfaces, one row per gene, with who decided,
@@ -112,7 +117,34 @@ def manual_exclusions(members: pd.DataFrame) -> dict[str, dict]:
 V2_AGREES: dict[str, bool | None] = {}
 
 
-def orientation_ok(cid: str, p: dict, th, inverted: set[str]) -> bool:
+def _member_state(
+    members: pd.DataFrame,
+    cid_of_design: dict[str, str] | None = None,
+    v2_agrees: dict[str, bool | None] | None = None,
+) -> tuple[dict[str, str], dict[str, bool | None]]:
+    """Resolve explicit or module-level member orientation state, deriving from ``members`` if unset."""
+    if cid_of_design is None:
+        cid_of_design = CID_OF_DESIGN or (
+            dict(zip(members["design_id"], members["candidate_id"], strict=True))
+            if {"design_id", "candidate_id"}.issubset(members.columns)
+            else {}
+        )
+    if v2_agrees is None:
+        v2_agrees = V2_AGREES or (
+            dict(zip(members["candidate_id"], members["v2_termini_agree"], strict=True))
+            if {"candidate_id", "v2_termini_agree"}.issubset(members.columns)
+            else {}
+        )
+    return cid_of_design, v2_agrees
+
+
+def orientation_ok(
+    cid: str,
+    p: dict,
+    th,
+    inverted: set[str],
+    v2_agrees: dict[str, bool | None] | None = None,
+) -> bool:
     """The chosen face is backed by the topology vote and not contradicted.
 
     A face fails when experimental UniProt topology inverts it, or when the topology vote is
@@ -129,7 +161,8 @@ def orientation_ok(cid: str, p: dict, th, inverted: set[str]) -> bool:
     if p["topo_for"] < th.min_topology_ratio * max(p["topo_against"], 1):
         return False
     kr_contradicts = (p["kr_out"] - p["kr_in"]) > th.max_kr_excess_outside
-    return not (kr_contradicts and V2_AGREES.get(cid) is not True)
+    agrees = V2_AGREES if v2_agrees is None else v2_agrees
+    return not (kr_contradicts and agrees.get(cid) is not True)
 
 
 def junction(z: np.ndarray, n: int) -> float:
@@ -238,8 +271,18 @@ def collect_picks(members: pd.DataFrame) -> tuple[pd.DataFrame, dict]:
 # --- verdicts -----------------------------------------------------------------------
 
 
-def score_picks(picks: pd.DataFrame, members: pd.DataFrame, placed: dict, th) -> pd.DataFrame:
+def score_picks(
+    picks: pd.DataFrame,
+    members: pd.DataFrame,
+    placed: dict,
+    th,
+    *,
+    cid_of_design: dict[str, str] | None = None,
+    v2_agrees: dict[str, bool | None] | None = None,
+) -> pd.DataFrame:
     exclusions = manual_exclusions(members)
+    cid_map, v2_map = _member_state(members, cid_of_design, v2_agrees)
+    inverted = uniprot_inverted(cid_map)
     by_cid = members.set_index("candidate_id")
     out = []
     for r in picks.to_dict("records"):
@@ -271,7 +314,7 @@ def score_picks(picks: pd.DataFrame, members: pd.DataFrame, placed: dict, th) ->
             continue
         z = junction(p["z"], n)
         pl = float(np.nanmean(p["plddt"][n - 1 : n + 1]))
-        orient_ok = orientation_ok(r["candidate_id"], p, th, uniprot_inverted())
+        orient_ok = orientation_ok(r["candidate_id"], p, th, inverted, v2_map)
         v = ms.site_verdict(z, pl, orient_ok, th)
         row = r | dict(
             model_source=p["model_source"],
@@ -311,7 +354,16 @@ def score_picks(picks: pd.DataFrame, members: pd.DataFrame, placed: dict, th) ->
 # --- member table and corrected mask ------------------------------------------------
 
 
-def member_table(members: pd.DataFrame, placed: dict, th) -> pd.DataFrame:
+def member_table(
+    members: pd.DataFrame,
+    placed: dict,
+    th,
+    *,
+    cid_of_design: dict[str, str] | None = None,
+    v2_agrees: dict[str, bool | None] | None = None,
+) -> pd.DataFrame:
+    cid_map, v2_map = _member_state(members, cid_of_design, v2_agrees)
+    inverted = uniprot_inverted(cid_map)
     rows = []
     for m in members.itertuples():
         p = placed[m.candidate_id]
@@ -337,8 +389,8 @@ def member_table(members: pd.DataFrame, placed: dict, th) -> pd.DataFrame:
                 topology_votes_against=p["topo_against"],
                 kr_flank_extracellular=p["kr_out"],
                 kr_flank_cytoplasmic=p["kr_in"],
-                orientation_supported=orientation_ok(m.candidate_id, p, th, uniprot_inverted()),
-                uniprot_experimental_inverted=m.candidate_id in uniprot_inverted(),
+                orientation_supported=orientation_ok(m.candidate_id, p, th, inverted, v2_map),
+                uniprot_experimental_inverted=m.candidate_id in inverted,
             )
         rows.append(base)
     return pd.DataFrame(rows)
@@ -385,8 +437,16 @@ MASK_ALPHABET = {
 }
 
 
-def residue_mask(members: pd.DataFrame, placed: dict, th) -> pd.DataFrame:
+def residue_mask(
+    members: pd.DataFrame,
+    placed: dict,
+    th,
+    *,
+    cid_of_design: dict[str, str] | None = None,
+    v2_agrees: dict[str, bool | None] | None = None,
+) -> pd.DataFrame:
     exclusions = manual_exclusions(members)
+    cid_map, v2_map = _member_state(members, cid_of_design, v2_agrees)
     """One row per internal member: a per-residue extracellular mask for site rankers.
 
     Keyed by ``sequence_sha256`` of the designed protein, the join a ranker must use. A
@@ -398,7 +458,7 @@ def residue_mask(members: pd.DataFrame, placed: dict, th) -> pd.DataFrame:
     (``E``), sits in the review band (``r``), the membrane (``m``) or the cytoplasm (``c``),
     or lacks a coordinate (``u``); ``.`` where v1 does not call residue n ``O``.
     """
-    inverted = uniprot_inverted()
+    inverted = uniprot_inverted(cid_map)
     rows = []
     for m in members.itertuples():
         if m.placement != "internal":
@@ -423,7 +483,7 @@ def residue_mask(members: pd.DataFrame, placed: dict, th) -> pd.DataFrame:
                 base | dict(orientation_supported=False, usable=0, mask="", junction_mask="")
             )
             continue
-        ok = orientation_ok(m.candidate_id, p, th, inverted)
+        ok = orientation_ok(m.candidate_id, p, th, inverted, v2_map)
         z, pl, t = p["z"], p["plddt"], m.topology
         chars = []
         for i, state in enumerate(t):

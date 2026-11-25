@@ -704,6 +704,7 @@ def alternatives(cid, m, base, calls, positions, r2, replaced) -> list[dict]:
                         "arm": "native_site" if t["arm"] == "tagged" else "igk_swap",
                         "n": int(t["after_residue"]),
                         "native_n": int(t["native_after_residue"] or t["after_residue"]),
+                        "cleavage_site": par["cleavage_site"],
                         "sha": t["sequence_sha256"],
                         "strict": t["strict"] == "1",
                         "cp": call["cleavage_probability"] or 0,
@@ -724,6 +725,13 @@ def alternatives(cid, m, base, calls, positions, r2, replaced) -> list[dict]:
             seen.add(o["sha"])
             ranked.append(o)
     return ranked
+
+
+def _opt_cleavage_site(opt: dict, fallback: object) -> object:
+    """Cleavage site for an alternative arm; never carry native cleavage_site onto an igk_swap."""
+    if opt.get("cleavage_site") not in (None, ""):
+        return opt["cleavage_site"]
+    return len(LEADER_AA) if opt.get("arm") == "igk_swap" else fallback
 
 
 def apply_refold(out, members, base, calls, positions, r2, replaced, row):
@@ -787,7 +795,7 @@ def apply_refold(out, members, base, calls, positions, r2, replaced, row):
                     o["arm"],
                     o["n"],
                     o["native_n"],
-                    d["cleavage_site"],
+                    _opt_cleavage_site(o, d["cleavage_site"]),
                     int(not o["strict"]),
                     o["cp"],
                     o["sha"],
@@ -840,7 +848,7 @@ def apply_refold(out, members, base, calls, positions, r2, replaced, row):
             alt["arm"],
             alt["n"],
             alt["native_n"],
-            d["cleavage_site"],
+            _opt_cleavage_site(alt, d["cleavage_site"]),
             int(not alt["strict"]),
             alt["cp"],
             alt["sha"],
@@ -1165,15 +1173,26 @@ def finalize(out, row):
                 "refold_rule_date": "2026-11-12",
             }
         if d.get("refold_disposition"):
-            rule = {
-                "refold_rule": "built_and_flagged_multipass_disposition_rule",
-                "refold_rule_metric": d["refold_verdict"].removeprefix("fail: "),
-                "refold_rule_threshold": "fold intact (native-region lDDT >= 0.85, site lDDT >= "
-                "0.70 where scored), ALFA RSA >= 0.25; class epitope_packed or "
-                "low_confidence_burial",
-                "refold_rule_decided_by": DISPOSITION_BY,
-                "refold_rule_date": "2026-11-14",
-            }
+            if d["decided_by"] == FLAG_RULE_BY or str(d["refold_disposition"]).startswith(
+                "refold_flag="
+            ):
+                rule = {
+                    "refold_rule": "built_and_flagged_refold_flag_never_hold",
+                    "refold_rule_metric": d["refold_verdict"].removeprefix("fail: "),
+                    "refold_rule_threshold": "flag, never hold (fold_disturbed or tail_local)",
+                    "refold_rule_decided_by": FLAG_RULE_BY,
+                    "refold_rule_date": "2026-11-22",
+                }
+            else:
+                rule = {
+                    "refold_rule": "built_and_flagged_multipass_disposition_rule",
+                    "refold_rule_metric": d["refold_verdict"].removeprefix("fail: "),
+                    "refold_rule_threshold": "fold intact (native-region lDDT >= 0.85, site lDDT >= "
+                    "0.70 where scored), ALFA RSA >= 0.25; class epitope_packed or "
+                    "low_confidence_burial",
+                    "refold_rule_decided_by": DISPOSITION_BY,
+                    "refold_rule_date": "2026-11-14",
+                }
         result.append(
             d
             | rule

@@ -11,19 +11,20 @@ in [`nterm/`](nterm/README.md).
 
 | Item | Notes |
 |---|---|
-| This repository, with its git history | a clone, or a `git bundle` of the branch. History is needed only for two stages (below). |
-| The frozen input bundle | a folder (or tarball) holding `s3/external/...` and `s3/processed/...`: 98 files the replay reads, ~1.14 GB. A second tarball adds the rest of every pinned release (238 files, ~1.40 GB); the replay does not need it |
+| This repository, with its git history (or an exported review repo with `historical/`) | a clone, or a `git bundle` of the branch. Exported review repos ship `historical/` tarballs and `historical/git-snapshots/` so all 30 stages run with zero git history. |
+| The frozen input bundle | a folder (or tarballs) holding `s3/external/...` and `s3/processed/...`: [`bundle_manifest.tsv`](bundle_manifest.tsv) currently indexes **3,509** files (**3,245** `read_by_replay=yes`, ~2.95 GB uncompressed; plus **264** `read_by_replay=no` supplement files, ~1.93 GB uncompressed, for inspection only) |
 | [uv](https://docs.astral.sh/uv/) | installs the locked Python environment from `uv.lock` |
 | ~10 GB free disk, ~5 minutes | the whole run is offline |
 
 No network access, AWS account or `.env` file is used. The runner points the repository's
-S3 helper at the bundle (`DELIVEROME_S3_MIRROR`) and sends any other S3 call to a closed
-local port, so a stage that tried to read live data would fail rather than pass.
+S3 helper at the bundle (`DELIVEROME_S3_MIRROR`) and sends any other S3 or HTTP(S) call to a closed
+local port (`127.0.0.1:9`), so a stage that tried to read live data fails loudly rather than passing
+(for kernel-level isolation, run via `docker run --network=none`).
 
 ## Run it
 
 ```bash
-uv sync --locked
+uv sync --locked --no-group flow --no-group flow-gui --no-group modal
 ```
 
 ```bash
@@ -31,8 +32,8 @@ cd library/l1/orf-design/reviewer-package
 uv run --locked python run_review.py --bundle /path/to/l1-reviewer-bundle
 ```
 
-It first checks every bundle file against [`bundle_manifest.tsv`](bundle_manifest.tsv) (SHA-256), then
-reruns each of the 23 pipeline stages and prints what each decides and whether it reproduces
+It first checks every unpacked bundle file against [`bundle_manifest.tsv`](bundle_manifest.tsv) (SHA-256), then
+reruns all **30** pipeline stages in `library_pipeline.py` and prints what each decides and whether it reproduces
 its published record, then recomputes the brief's numbers and compares them with
 [`brief_numbers.json`](brief_numbers.json). A summary is written to `review_report.json`. One stage:
 
@@ -44,27 +45,43 @@ uv run --locked python run_review.py --bundle /path/to/bundle --stage reference
 
 | # | Stage | Decides | Checked against |
 |---:|---|---|---|
-| 1 | gene_list | which genes: the cohort filter over surfaceome release 1.3.0 | 2,370 pass; minus the recorded EPPIN exclusion = the 2,369 library genes |
-| 2 | gpi_set | which forms are GPI-anchored | `gpi_set.tsv`, byte for byte |
-| 3 | reference | each gene's reference proteoform (the ladder) | `reference_selection.tsv`, byte for byte |
-| 4 | isoform_universe | every alternate form and its evidence tier | summaries byte for byte; cohort table row for row (see the hash-seed limit in the brief) |
-| 5 | ortholog_repick | each gene's mouse and cyno proteoform | byte for byte |
-| 5b | universe_coverage | how many library genes the isoform and ortholog pools could draw from (Compara 115) | `universe_coverage.tsv` and its summary, byte for byte |
-| 6 | panels | the 150-isoform and 200-ortholog draws | byte for byte |
-| 7 | rescue_arms | 25 expression-rescue arms | byte for byte |
-| 8 | giants | truncations of oversized genes (L2) | byte for byte |
-| 9 | candidate_cds | each member's designed CDS | all 7,017 recorded CDS |
-| 10 | constructs | domesticated ORFs and vectors | all 7,017 ORFs and 7,066 vectors |
-| 11 | tranches | L1/L2 membership, duplicates retired | no two active members share a protein |
-| 12 | topology | DeepTMHMM v1 per designed protein | every active member has one |
-| 13 | tag_paths | each member's placement rung | `l1_tag_paths.tsv`, `l2_tag_paths.tsv`, byte for byte |
-| 14 | cassettes | each C-terminal member's linker encoding | every issued batch replays |
+| 1 | `gene_list` | which genes: S1E3 filter over surfaceome release 1.3.0 + restated co-receptor & gap additions, minus exclusions and withdrawals | the 2,417 library genes exactly |
+| 2 | `gpi_set` | which forms are GPI-anchored | `gpi_set.tsv`, byte for byte |
+| 3 | `reference` | each gene's reference proteoform (the ladder) | `reference_selection.tsv`, `reference_disagreements.tsv`, `reference_selection_sequences.tsv` |
+| 4 | `isoform_universe` | every alternate form and its evidence tier | summaries byte for byte; cohort table row for row (see the hash-seed limit in the brief) |
+| 5 | `ortholog_repick` | each gene's mouse and cyno proteoform (April Compara 115 pool) | byte for byte |
+| 6 | `universe_coverage` | how many library genes the isoform and ortholog pools could draw from (Compara 115) | `universe_coverage.tsv` and its summary, byte for byte |
+| 7 | `isoform_gate` | which isoform-cohort forms may be drawn (native ATG, CDS, N-terminal architecture) | `isoform_gate.tsv` and pinned S3 key |
+| 8 | `panels` | original and 2026-11-12 gated panel draws, plus 1:1 check of current `isoform_panel.tsv` | `isoform_panel_2026-11-12.tsv`, `ortholog_panel.tsv`, active manifest |
+| 9 | `ortholog_adoption` | L1 Compara 116 CDS-eligible ortholog panel (final-v2) + correspondence review + 2026-11-22 restorations | `ortholog_panel_adopted.tsv`, manifest, S3 records |
+| 10 | `rescue_arms` | 25 expression-rescue arms (retired record) | byte for byte |
+| 11 | `giants` | truncations of oversized genes (L2) | byte for byte |
+| 12 | `candidate_cds` | each member's designed CDS | `candidate_cds.json` (all entries end in a stop codon) |
+| 13 | `reference_fixes` | named reference fixes, ATG start replacements, EPHA6 trim | `reference_changes.tsv` and S3 records |
+| 14 | `ortholog_start_trims` | 4 cyno 5' Met restarts | `ortholog_start_trims.tsv` and S3 records |
+| 15 | `constructs` | domesticated ORFs (BbsI/Esp3I/BsaI) and p0039 vectors | `candidate_constructs.json` and manifest vectors |
+| 16 | `tranches` | L1/L2 membership, duplicates retired | no two active members share a protein |
+| 17 | `topology` | DeepTMHMM v1 per designed protein | every active L1 member has a v1 row in the pinned snapshot |
+| 18 | `tag_paths` | each member's placement rung | `l1_tag_paths.tsv`, `l2_tag_paths.tsv`, byte for byte |
+| 19 | `cassettes` | each C-terminal member's linker encoding | every issued batch replays |
+| 20 | `renumber` | plate-ordered member ids (`l1-mNNNN`) and design-id keying | `l1_member_renumbering_summary.json` |
+| 21 | `cterm_review` | C-terminal proteolysis/burial review and decisions | `l1_cterm_review.tsv` and `l1_cterm_decisions.tsv` |
+| 22 | `cterm_arms` | C-terminal and snorkel inserts + diversified snorkel modules | `constructs_l1_cterm.tsv/.fasta` |
+| 23 | `rung_arms` | N-after-SP, multipass, type III and internal arms + diversified linkers | all four `constructs_l1_*.tsv/.fasta` tables |
+| 24 | `consistency` | protein, cassette, layout, fold, and completeness across all built arms | `l1_consistency.py --check`, `l1_completeness.py --check` |
+| 25 | `synthesis_compliance` | vendor synthesis check and minimal synonymous recodes | `synthesis_compliance.py --check` |
+| 26 | `saved_inputs` | SHA-256 of every S3 object recorded in `library_pipeline_inputs_saved.tsv` | `pipeline_input_manifest.py` |
+| 27 | `pinned_refs` | every pinned git ref is an ancestor of `HEAD` (or materialized in `historical/git-snapshots/` in exported repos) | `pinned_refs.py` |
+| 28 | `structure_models` | every AlphaFold DB v6 model read by the design is archived with its SHA-256/size | `pin_structure_models.py` |
+| 29 | `rung_builds` | five rung builds per cut saved on S3 | `save_rung_builds.py` |
+| 30 | `external_inputs` | every external source has a saved copy or recorded tool identity | `external_inputs.py` |
 
-Stages 4 and 5 rerun scripts at the commits that produced their records, so they read the
-repository's git history; without it the runner reports them as skipped, never as passed.
+Stages 4 and 5 rerun scripts at the commits that produced their records, reading from this
+repository's git history or from `historical/<commit>.tar` in an exported review repo; without
+either, the runner reports them as skipped, never as passed.
 
 DeepTMHMM and NetGPI are not rerun: their predictions are inputs, pinned as committed
-outputs and in the bundle's topology snapshot. Stage 12 checks that every member has a
+outputs and in the bundle's topology snapshot. Stage 17 checks that every member has a
 prediction for its exact sequence, not that the predictor would return the same call.
 
 ## What is in the bundle, and what is public
@@ -74,19 +91,23 @@ version and source URL, and whether the replay reads it (`read_by_replay`). Ever
 design rests on is bundled whole, not only the files the replay opens, so a reviewer can
 inspect it; [`pinned_releases.md`](pinned_releases.md) lists them (release, version, date
 pinned, size, place in the bundle), and `bundle.py audit` fails if anything an input manifest
-pins is missing.
+or active record constant pins is missing.
 
 | Class | Read by the replay | Rest of the pinned releases | Meaning |
 |---|---:|---:|---|
-| `public_release` | 26 | 31 | byte-identical to a named public release (Ensembl 115 and 116 including the Compara homology dumps, UniProt, APPRIS, OpenProt 2.2, Pfam 39.0, surfaceome 1.3.0 on Zenodo, GENCODE Ribo-seq ORFs, the published GPCR screen table) |
-| `public_derived` | 7 | 36 | public data, as queried by us (PeptideAtlas build 607, MyGene.info, UniProt keyword and accession queries) |
+| `public_release` | 2,820 | 37 | byte-identical to a named public release (AlphaFold DB v6 archive, Ensembl 115 and 116 including Compara homology dumps, UniProt, APPRIS, OpenProt 2.2, Pfam 39.0, HPA v23, surfaceome 1.3.0 on Zenodo, GENCODE Ribo-seq ORFs, the published GPCR screen table) |
+| `public_derived` | 19 | 47 | public data, as queried by us (PeptideAtlas build 607, ARCHS4 v2.5, MyGene.info, UniProt keyword and accession queries) |
 | `surfaceome_repo` | 15 | 1 | files of the accessible-surfaceome repository at commit f9c73691 |
-| `deliverome_curation` | 35 | 48 | internal inputs: curation calls, the compiled expression table, the vector backbone map, DeepTMHMM and NetGPI predictions, the ortholog draw inputs, and the audited S5E13 tag-site positives the brief cites |
-| `deliverome_record` | 15 | 122 | published library records: what the replay is compared with, the Compara 116 ortholog draw and its verification, and the ortholog correspondence review |
+| `deliverome_curation` | 345 | 54 | internal inputs: curation calls, the compiled expression table, the vector backbone map, DeepTMHMM and NetGPI predictions, ColabFold structures, the ortholog draw inputs, and the audited S5E13 tag-site positives the brief cites |
+| `deliverome_record` | 41 | 125 | published library records: what the replay is compared with, the Compara 116 ortholog draw and its verification, and the ortholog correspondence review |
 
-Reviewers receive the full bundle, all five classes (Becca, 2026-11-04). A bundle can still
-be packed without a class (`bundle.py pack --exclude-class ...`); the stages
-that read the missing files then fail with a message naming the absent key.
+Data homes in [`data_locations.tsv`](data_locations.tsv) mirror the same 3,509 files: **2,892**
+public files on R2 (including APPRIS under CC BY-NC-ND 4.0 unmodified) + **1** upstream Pfam-A file
+at EBI (3.50 GB total), **198** small tables committed in the review repo (`data/`, 0.09 GB), and
+**418** files in the private release tarballs (1.29 GB). Reviewers receive the full bundle, all five
+classes (Becca, 2026-11-04). A bundle can still be packed without a class
+(`bundle.py pack --exclude-class ...`); the stages that read the missing files then fail with a
+message naming the absent key.
 
 ## Building the bundle (lab side)
 
@@ -129,22 +150,25 @@ generated from this one by `export_review_repo.py`. It contains:
 - the complete `deliverome_analysis` package, `pyproject.toml` and `uv.lock`;
 - in `historical/`, the old script versions that stages 4 and 5 rerun.
 
-The input bundle is attached to that repository's release
-[`bundle-2026-11-20`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/releases/tag/bundle-2026-11-20)
-as two tarballs: `l1-reviewer-bundle-2026-11-20.tar.gz` (the 3,120 files the replay reads, 1.36 GB,
-SHA-256 `8bdb0006b739f28a860017aef7dd480d24e50bb2c2fa6d68120276a00a3be165`; gzipped to stay under
-GitHub's 2 GiB asset limit) and `l1-pinned-releases-2026-11-20.tar` (the rest of every pinned
-release and every S3 file the brief cites, 246 files, 1.65 GB, SHA-256
-`56bd5618245f7ef0ae7e7ab85ee2445c31f39ec501af771ae6287c68adb73d13`). The same files are staged at
-`processed://sprint4/s4e9-orf-design-fg-panel/reviewer-package/2026-11-20/`. `tar -xf` reads both.
+The latest published GitHub release on that repository is
+[`bundle-2026-11-21b`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/releases/tag/bundle-2026-11-21b)
+as two tarballs: `l1-reviewer-bundle-2026-11-21b.tar.gz` (3,125 replay files, 1.38 GB compressed,
+SHA-256 `f34eb18f6d99beafc6607798b3bb12ffdafa54eb94e406566de453b4d43924ac`; gzipped to stay under
+GitHub's 2 GiB asset limit) and `l1-pinned-releases-2026-11-21b.tar` (the rest of every pinned
+release and every S3 file the brief cites, 251 files, 1.85 GB, SHA-256
+`88757386561c991e30591c703447fc6b328f64831927797db629a9cacee0c645`). The working
+[`bundle_manifest.tsv`](bundle_manifest.tsv) currently indexes **3,509** files (**3,245** replay /
+**264** supplement) ahead of the next `bundle.py collect` & release cut for `2026-11-23-pre-freeze`.
+`tar -xf` reads both.
 A rebuilt bundle goes on a new release with a new date, never over an existing one; earlier
 releases are `bundle-2026-11-02` (before l1-p2740..2742), `bundle-2026-11-05` (before the
 audited tag-site positives were added), `bundle-2026-11-05-r2` (before the stop-codon fix of 13
 designed CDS and the extended audit), `bundle-2026-11-05-r3` (before the tag-site gold
 standard), `bundle-2026-11-05-r4` (before the final audit refresh), `bundle-2026-11-05-r5`
-(before the universe-coverage stage and its Compara dumps) and `bundle-2026-11-05-r6` (before
-the Compara 116 ortholog panel was adopted and every pinned release was bundled whole), and
-`bundle-2026-11-10` (before the 2026-11-14 order of record and the files the brief cites).
+(before the universe-coverage stage and its Compara dumps), `bundle-2026-11-05-r6` (before
+the Compara 116 ortholog panel was adopted and every pinned release was bundled whole),
+`bundle-2026-11-10` (before the 2026-11-14 order of record and the files the brief cites), and
+`bundle-2026-11-20` (3,120 replay / 246 supplement files).
 
 `EXPORT_MANIFEST.json` there records the source commit and a SHA-256 per managed file. To
 update it after changes here:

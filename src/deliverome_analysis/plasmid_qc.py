@@ -480,7 +480,7 @@ def check_shuttle_sites(seq: str) -> Finding:
     Intact is the requirement here, not absent: Esp3I is how the insert moves to another
     backbone. Any number other than two means the insert cannot be shuttled cleanly.
     """
-    sites = seqtools.find_sites(seq + seq[:10], [SHUTTLE_ENZYME])
+    sites = _sites_circular(seq, [SHUTTLE_ENZYME])
     n = len({s[2] for s in sites})
     if n == 2:
         return Finding("esp3i_shuttle", True, "2 Esp3I sites, as expected")
@@ -844,6 +844,8 @@ def check_linkers_not_shared(seq: str, spec: Spec) -> Finding:
 
 def _sites_circular(seq: str, enzymes: list[str]) -> list[tuple[str, str, int]]:
     """Type IIS sites on a circular sequence, each once, positions in ``seq``'s numbering."""
+    if not enzymes or len(seq) < min(len(seqtools.ENZYME_SITES[e]) for e in enzymes):
+        return []
     pad = max(len(seqtools.ENZYME_SITES[e]) for e in enzymes) - 1
     return [h for h in seqtools.find_sites(seq + seq[:pad], enzymes) if h[2] < len(seq)]
 

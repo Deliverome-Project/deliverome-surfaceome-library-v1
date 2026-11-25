@@ -48,18 +48,20 @@ import numpy as np
 import pandas as pd
 
 HERE = Path(__file__).resolve().parent
+REPO = HERE.parents[2]
 sys.path.insert(0, str(HERE))
-sys.path.insert(0, str(HERE.parents[3] / "src"))
+sys.path.insert(0, str(REPO / "src"))
 
 import ranker_hard_negative_layer as L  # noqa: E402
 import ranker_pu_segment as R  # noqa: E402
 from corpus_tier_retrain import gene_folds  # noqa: E402
-from independent_model_search import smooth, within_protein  # noqa: E402
 from two_tier_model import build_global  # noqa: E402
 
 DRAWS = (R.SEED, 1, 2)  # v4's negative draw, then two more (as refit_corrected_hard_negative.py)
 HN_WEIGHT = 5
 VETO_HALF = L.VETO_HALF
+VETO_LO = VETO_HALF
+VETO_HI = VETO_HALF + 1  # junction after n sits between n and n+1 -> n-2..n+3
 OUT = HERE / "compare_internal_policies.tsv"
 OUT_PROT = HERE / "compare_internal_policies_per_protein.tsv"
 OUT_JSON = HERE / "compare_internal_policies.json"
@@ -68,9 +70,9 @@ OUT_JSON = HERE / "compare_internal_policies.json"
 def oof_pu_seeded(pos, allx, ev, feats, fog, seed):
     """R.oof_pu with an explicit seed, so the PU arm can be repeated on three draws."""
     full = R.pu_frame(pos, allx)
-    tr_z = within_protein(full, feats, "z")
+    tr_z = L.zscore_from_reference(full, ev, feats)
     y = full["label"].to_numpy()
-    ed = within_protein(ev, feats, "z")
+    ed = L.zscore_from_reference(ev, ev, feats)
     gg = ev["gene_symbol"].to_numpy()
     sc = np.full(len(ev), np.nan)
     rng = np.random.default_rng(seed)
@@ -78,7 +80,7 @@ def oof_pu_seeded(pos, allx, ev, feats, fog, seed):
         mask = np.isin(gg, list(set(full.iloc[b]["gene_symbol"])))
         (p,) = R.pu_fit_predict(tr_z.iloc[a].reset_index(drop=True), y[a], [ed[mask]], feats, rng)
         sc[mask] = p
-    return smooth(ev, sc, 2)
+    return L.smooth_contiguous(ev, sc, 2)
 
 
 def literature_keys(path: str | None, ev: pd.DataFrame) -> set[tuple[str, int]]:
@@ -111,9 +113,9 @@ def contact_metrics(ev, sc, contact: np.ndarray) -> dict:
         s = g["s"].to_numpy()
         bad = res[g["c"].to_numpy()]
         picks = R.separated_top(res, s)
-        top1 += bool(np.abs(picks[0] - bad).min() <= VETO_HALF)
-        top3 += any(np.abs(p - bad).min() <= VETO_HALF for p in picks)
-        order = s.argsort().argsort() / max(len(s) - 1, 1) * 100
+        top1 += bool(((bad >= picks[0] - VETO_LO) & (bad <= picks[0] + VETO_HI)).any())
+        top3 += any(((bad >= p - VETO_LO) & (bad <= p + VETO_HI)).any() for p in picks)
+        order = pd.Series(s).rank(method="average", pct=True).to_numpy() * 100.0
         pct.append(float(np.median(order[g["c"].to_numpy()])))
     return {
         "contact_proteins": n,
@@ -144,7 +146,7 @@ def main() -> int:
     lit = literature_keys(args.literature, ev)
     key = list(zip(ev["uniprot_acc"], ev["residue"].astype(int), strict=False))
     contact = ev["hn_ligand_contact"].to_numpy() | np.array([k in lit for k in key])
-    veto = L.near(ev, pd.Series(contact, index=ev.index), VETO_HALF)
+    veto = L.near(ev, pd.Series(contact, index=ev.index), VETO_LO, hi=VETO_HI)
 
     rows, prot_rows = [], []
     fog = None

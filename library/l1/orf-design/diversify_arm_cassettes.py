@@ -62,7 +62,7 @@ from diversify_cassettes import LINKER_ONLY_JUNCTION_IDENTITY
 from deliverome_analysis import plasmid_qc as qc
 from deliverome_analysis import seqtools
 
-HERE = Path(__file__).parent
+HERE = Path(__file__).resolve().parent
 OUT = HERE / "l1_arm_cassette_encodings.tsv"
 REISSUES = HERE / "l1_arm_reissues.tsv"
 REISSUE_FIELDS = (
@@ -88,7 +88,7 @@ def held_arms() -> set[str]:
             r["candidate_id"] for r in csv.DictReader(fh, delimiter="\t")
             if r["arm"] == "no_nterm_arm"
         }  # fmt: skip
-    arms = HERE.parents[1] / "sprint5/s5e13-tag-site-benchmarking/l1_internal_arm_decisions.tsv"
+    arms = HERE.parents[1] / "l1/tag-site-benchmarking" / "l1_internal_arm_decisions.tsv"
     with arms.open() as fh:
         held |= {r["arm_id"] for r in csv.DictReader(fh, delimiter="\t") if r["decision"] == "hold"}
     return held

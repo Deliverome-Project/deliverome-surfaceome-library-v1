@@ -866,9 +866,7 @@ def main() -> None:
             native = (ref or {}).get("native_seq", "")
             if not native:
                 c0, c1 = cassette_span(tagged)
-                native = (
-                    tagged[:c0] + tagged[c1:] if c0 > len(igk) or not tagged.startswith(igk) else ""
-                )
+                native = tagged[:c0] + tagged[c1:] if not tagged.startswith(igk) else ""
             if not native:
                 print(f"  order {design_id}: native not derivable; not queued", file=sys.stderr)
                 continue

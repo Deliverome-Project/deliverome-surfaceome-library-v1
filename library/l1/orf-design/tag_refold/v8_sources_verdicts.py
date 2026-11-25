@@ -22,12 +22,13 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 EXP = HERE.parent
+REPO = EXP.parents[2]
 sys.path.insert(0, str(HERE))
 
 from coreceptor_additions_publish import append, tsv  # noqa: E402
 from publish_tagged_structures import VERDICT_COLS  # noqa: E402
 
-ARMS = EXP.parents[1] / "sprint5/s5e13-tag-site-benchmarking/l1_internal_arm_decisions.tsv"
+ARMS = REPO / "library/l1/tag-site-benchmarking" / "l1_internal_arm_decisions.tsv"
 PREFIX = "sprint4/s4e9-orf-design-fg-panel/predicted-structures/tagged/2026-11-22-v8-"
 BATCHES = {"internal": "internal", "snorkel": "cterm"}
 DECIDED = 'Becca Carlson, 2026-11-22 ("i want to stay with the v8 picks exactly")'

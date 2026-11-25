@@ -12,6 +12,7 @@ a duplicate) and the topology tool (DeepTMHMM v1) they refer to.
     uv run --locked python brief_numbers.py --no-figures
 """
 
+# ruff: noqa: RUF001  (typographic multiplication sign, alpha, and en-dashes in figure labels are intentional)
 from __future__ import annotations
 
 import argparse
@@ -551,11 +552,12 @@ def figures(n: dict) -> None:
 
     setup_plotting_style()
 
-    # Figure 1: the reference ladder, one bar per decision, split by the source taken.
+    # Figure 1 (Figure 6 in BRIEF.md): the reference ladder, one bar per decision, split by source.
     order = [
         "mane_appris_agree",
         "appris_only",
         "no_reference_uniprot_canonical",
+        "both_observed",
         "resolved_mane",
         "weak_evidence_mane",
         "weak_evidence_appris",
@@ -565,6 +567,7 @@ def figures(n: dict) -> None:
         "MANE = APPRIS",
         "APPRIS only",
         "neither (UniProt)",
+        "disagree: both strongly observed",
         "disagree: strong MANE evidence",
         "disagree: weak MANE evidence",
         "disagree: weak APPRIS evidence",
@@ -636,30 +639,370 @@ def figures(n: dict) -> None:
     ax.legend(loc="upper right", frameon=False)
     save_figure(fig, "l1_swap_tracts", output_dir=FIGURES)
 
-    # Figure 4: what L1 is made of, one stacked bar. The counts ride in the legend rather
-    # than on the segments: at 150 and 200 against 2,360 the small ones have no room for a
-    # label, and a leader line into a 5-pixel segment is less readable than the legend.
-    by_set = n["tranches"]["l1_active_by_set"]
-    fig, ax = create_figure(figsize=(12, 1.9))
-    left = 0.0
-    for s in SETS:
-        v = float(by_set[s])
-        ax.barh(
-            [0],
-            [v],
-            left=[left],
-            height=0.45,
-            color=set_colors[s],
-            label=f"{s.replace('_', ' ')} ({int(v):,})",
+    _draw_candidate_sets_figure(FIGURES)
+    _draw_promoter_comparison_figure(FIGURES)
+
+
+def _draw_candidate_sets_figure(out_dir: Path) -> None:
+    """Two-panel composition figure: counts and CDS length distributions by set and species."""
+    import matplotlib.pyplot as plt
+    import numpy as np
+
+    from deliverome_analysis.plotting import get_color, save_figure
+
+    rows = _tsv(S4E9 / "l1_tag_paths.tsv")
+    groups = [
+        ("library_reference", "human", "Human reference", get_color("secondary")),
+        ("isoform", "human", "Human isoforms", get_color("accent")),
+        ("ortholog", "mouse", "Mouse orthologs", get_color("quaternary")),
+        ("ortholog", "cyno", "Cynomolgus orthologs", get_color("primary")),
+    ]
+    lengths_kb = [
+        np.array(
+            [
+                int(r["length_aa"]) * 3 / 1000.0
+                for r in rows
+                if r["candidate_set"] == cs and r["species"] == sp
+            ],
+            dtype=float,
         )
-        left += v
-    ax.text(left * 1.01, 0, f"{int(left):,}", va="center")
-    ax.set_yticks([])
-    ax.set_ylim(-0.4, 0.4)
-    ax.set_xlim(0, left * 1.12)
-    ax.set_xlabel("L1 CDSs")
-    ax.legend(loc="lower center", bbox_to_anchor=(0.5, -1.25), ncol=3, frameon=False)
-    save_figure(fig, "l1_candidate_sets", output_dir=FIGURES)
+        for cs, sp, _, _ in groups
+    ]
+    labels = [g[2] for g in groups]
+    colors = [g[3] for g in groups]
+    counts = [len(a) for a in lengths_kb]
+    y = np.arange(len(groups))[::-1]
+
+    fig, (ax_cnt, ax_len) = plt.subplots(
+        1, 2, figsize=(13.5, 4.2), gridspec_kw={"width_ratios": [1.05, 1.35]}, sharey=True
+    )
+    ax_cnt.barh(y, counts, height=0.58, color=colors, edgecolor="#1F2933", linewidth=0.6)
+    for yi, cnt in zip(y, counts, strict=True):
+        ax_cnt.text(
+            cnt + 45, yi, f"{cnt:,}", va="center", ha="left", fontsize=11, fontweight="semibold"
+        )
+    ax_cnt.set_yticks(y, labels, fontsize=11)
+    ax_cnt.set_xlim(0, max(counts) * 1.2)
+    ax_cnt.set_xlabel("Active CDSs (total 2,762)", fontsize=11)
+    ax_cnt.text(
+        0.0,
+        1.04,
+        "A  Library composition by candidate set",
+        transform=ax_cnt.transAxes,
+        ha="left",
+        va="bottom",
+        fontsize=12,
+        fontweight="semibold",
+    )
+    ax_cnt.spines[["top", "right"]].set_visible(False)
+
+    parts = ax_len.violinplot(lengths_kb, positions=y, vert=False, widths=0.65, showextrema=False)
+    for body, col in zip(parts["bodies"], colors, strict=True):
+        body.set_facecolor(col)
+        body.set_edgecolor(col)
+        body.set_alpha(0.32)
+    for yi, arr, col in zip(y, lengths_kb, colors, strict=True):
+        q25, med, q75 = np.percentile(arr, [25, 50, 75])
+        ax_len.plot([q25, q75], [yi, yi], color=col, lw=4.5, solid_capstyle="round", zorder=3)
+        ax_len.scatter([med], [yi], color="white", edgecolor=col, s=52, lw=1.8, zorder=4)
+        ax_len.text(
+            q75 + 0.14,
+            yi + 0.24,
+            f"median {med:.2f} kb",
+            va="center",
+            ha="left",
+            fontsize=9.5,
+            color="#334155",
+        )
+    ax_len.axvline(5.0, color="#64748B", ls="--", lw=1.2)
+    ax_len.text(
+        4.92, y[0] + 0.32, "5.0 kb cap", ha="right", va="center", fontsize=9.5, color="#64748B"
+    )
+    ax_len.set_xlim(0, 5.55)
+    ax_len.set_xlabel("Native CDS length (kb)", fontsize=11)
+    ax_len.text(
+        0.0,
+        1.04,
+        "B  CDS length distribution (median and IQR)",
+        transform=ax_len.transAxes,
+        ha="left",
+        va="bottom",
+        fontsize=12,
+        fontweight="semibold",
+    )
+    ax_len.spines[["top", "right"]].set_visible(False)
+
+    fig.tight_layout(rect=(0, 0, 1, 0.94), w_pad=2.2)
+    save_figure(fig, "l1_candidate_sets", output_dir=out_dir)
+
+
+_PROMOTER_COLORS = {
+    "ef1a": "#376B62",
+    "efs": "#9E2A3B",
+    "orig": "#ED9B96",
+    "sv40": "#8B95A1",
+    "pgk": "#E6A328",
+}
+
+
+def _draw_promoter_panel_a(ax) -> None:
+    """Panel A: 72 h pre-selection mScarlet3 gMFI fold-change vs PGK (S5E11 gmfi.tsv)."""
+    import numpy as np
+
+    cells_a = ["HEK293T", "HeLa", "Nalm-6", "K562"]
+    fold_a = {
+        "EF1a": {
+            "HEK293T": [10.83, 10.61, 11.59, 12.48],
+            "HeLa": [5.21, 5.13, 5.52, 5.50],
+            "Nalm-6": [3.43, 3.44, 3.13, 3.02],
+            "K562": [2.51, 2.43, 2.25],
+        },
+        "EFS": {
+            "HEK293T": [2.68, 2.91, 3.08, 3.51],
+            "HeLa": [None, 2.12, 3.27, 3.07],
+            "Nalm-6": [1.56, 1.63, 1.76, 1.79],
+            "K562": [],
+        },
+        "EFS_orig": {
+            "HEK293T": [2.02, 1.96, 1.81, 1.62],
+            "HeLa": [None, 0.68, 0.44, 0.48],
+            "Nalm-6": [1.11, 1.14, 1.08, 1.08],
+            "K562": [1.09, 1.00, 0.90],
+        },
+    }
+    markers = ["o", "s", "^", "D"]
+    xa = np.arange(len(cells_a))
+    w = 0.25
+    series_a = [
+        ("EF1a", -w, _PROMOTER_COLORS["ef1a"], 0.8),
+        ("EFS", 0.0, _PROMOTER_COLORS["efs"], 1.8),
+        ("EFS_orig", w, _PROMOTER_COLORS["orig"], 0.8),
+    ]
+    ax.axhline(1.0, color=_PROMOTER_COLORS["pgk"], ls="--", lw=1.8, zorder=1)
+    for key, dx, col, lw in series_a:
+        for i, cell in enumerate(cells_a):
+            real = [(j, v) for j, v in enumerate(fold_a[key][cell]) if v is not None]
+            if not real:
+                ax.text(
+                    xa[i] + dx,
+                    1.4,
+                    "n/a",
+                    ha="center",
+                    va="bottom",
+                    rotation=90,
+                    fontsize=9,
+                    color="#64748B",
+                )
+                continue
+            med = float(np.median([v for _, v in real]))
+            ax.bar(
+                xa[i] + dx,
+                med - 1.0,
+                bottom=1.0,
+                width=w * 0.92,
+                color=col,
+                edgecolor="#1F2933",
+                linewidth=lw,
+                zorder=2,
+            )
+            offsets = np.linspace(-w * 0.26, w * 0.26, len(real))
+            for (j, v), off in zip(real, offsets, strict=True):
+                ax.scatter(
+                    xa[i] + dx + off,
+                    v,
+                    marker=markers[j],
+                    s=26,
+                    facecolor="white",
+                    edgecolor="#1F2933",
+                    linewidth=0.9,
+                    zorder=4,
+                )
+    ax.set_yscale("log")
+    ax.set_ylim(0.35, 18)
+    ax.set_yticks([0.5, 1, 2, 5, 10], ["0.5", "1", "2", "5", "10"])
+    ax.set_xticks(xa, cells_a, fontsize=10.5)
+    ax.set_ylabel("72 h mScarlet3 gMFI, fold vs. PGK (log)", fontsize=10.5)
+    ax.text(
+        0.0,
+        1.04,
+        "A  Pre-selection expression (72 h, 4 virus doses)",
+        transform=ax.transAxes,
+        ha="left",
+        va="bottom",
+        fontsize=11,
+        fontweight="semibold",
+    )
+    ax.spines[["top", "right"]].set_visible(False)
+
+
+def _draw_promoter_panel_b(ax) -> None:
+    """Panel B: Post-selection % SpyCatcher+ (37 C) + EF1a/EFS gMFI gain callout."""
+    import numpy as np
+
+    cells_bc = ["HEK293T", "K562", "Nalm-6"]
+    spy_pct = {"EF1a": [95, 92, 94], "EFS": [83, 76, 87], "SV40": [60, 45, 27]}
+    spy_gain = ["2.0×", "2.4×", "1.5×"]  # EF1a / EFS SpyCatcher gMFI at 37 C
+    xb = np.arange(len(cells_bc))
+    wb = 0.25
+    for key, dx, col, lw in [
+        ("EF1a", -wb, _PROMOTER_COLORS["ef1a"], 0.8),
+        ("EFS", 0.0, _PROMOTER_COLORS["efs"], 1.8),
+        ("SV40", wb, _PROMOTER_COLORS["sv40"], 0.8),
+    ]:
+        vals = spy_pct[key]
+        ax.bar(
+            xb + dx, vals, width=wb * 0.92, color=col, edgecolor="#1F2933", linewidth=lw, zorder=2
+        )
+        for i, v in enumerate(vals):
+            ax.text(xb[i] + dx, v + 1.8, f"{v}%", ha="center", va="bottom", fontsize=9)
+    for i, g in enumerate(spy_gain):
+        ax.text(
+            xb[i] - wb * 0.5,
+            106,
+            f"EF1α {g} gMFI",
+            ha="center",
+            va="bottom",
+            fontsize=8.8,
+            color=_PROMOTER_COLORS["ef1a"],
+            fontweight="semibold",
+        )
+    ax.set_ylim(0, 118)
+    ax.set_xticks(xb, cells_bc, fontsize=10.5)
+    ax.set_ylabel("SpyCatcher+ live cells at 37 °C (%)", fontsize=10.5)
+    ax.text(
+        0.0,
+        1.04,
+        "B  Post-selection surface display (TfR1)",
+        transform=ax.transAxes,
+        ha="left",
+        va="bottom",
+        fontsize=11,
+        fontweight="semibold",
+    )
+    ax.spines[["top", "right"]].set_visible(False)
+
+
+def _draw_promoter_panel_c(ax) -> None:
+    """Panel C: Post-selection % internalized (37 C, repeat run; first run in diamonds)."""
+    import numpy as np
+
+    cells_bc = ["HEK293T", "K562", "Nalm-6"]
+    pct_int = {"EF1a": [34, 45, 23], "EFS": [41, 53, 36], "SV40": [41, 41, 41]}
+    pct_int_r1 = {"EF1a": [None, 44, 23], "EFS": [None, 57, 26], "SV40": [None, 42, 35]}
+    xb = np.arange(len(cells_bc))
+    wb = 0.25
+    for key, dx, col, lw in [
+        ("EF1a", -wb, _PROMOTER_COLORS["ef1a"], 0.8),
+        ("EFS", 0.0, _PROMOTER_COLORS["efs"], 1.8),
+        ("SV40", wb, _PROMOTER_COLORS["sv40"], 0.8),
+    ]:
+        vals = pct_int[key]
+        ax.bar(
+            xb + dx, vals, width=wb * 0.92, color=col, edgecolor="#1F2933", linewidth=lw, zorder=2
+        )
+        for i, v in enumerate(vals):
+            r1 = pct_int_r1[key][i]
+            top = max(v, r1 or 0)
+            ax.text(xb[i] + dx, top + 2.2, f"{v}%", ha="center", va="bottom", fontsize=9)
+            if r1 is not None:
+                ax.scatter(
+                    xb[i] + dx,
+                    r1,
+                    marker="D",
+                    s=34,
+                    facecolor="white",
+                    edgecolor="#1F2933",
+                    linewidth=1.1,
+                    zorder=4,
+                )
+    ax.set_ylim(0, 72)
+    ax.set_xticks(xb, cells_bc, fontsize=10.5)
+    ax.set_ylabel("TfR1 internalized at 37 °C (%)", fontsize=10.5)
+    ax.text(
+        0.0,
+        1.04,
+        "C  Post-selection internalization (30 min)",
+        transform=ax.transAxes,
+        ha="left",
+        va="bottom",
+        fontsize=11,
+        fontweight="semibold",
+    )
+    ax.spines[["top", "right"]].set_visible(False)
+
+
+def _promoter_legend_handles() -> list:
+    from matplotlib.lines import Line2D
+    from matplotlib.patches import Patch
+
+    return [
+        Patch(
+            facecolor=_PROMOTER_COLORS["ef1a"],
+            edgecolor="#1F2933",
+            linewidth=0.8,
+            label="EF1α + domesticated IRES2",
+        ),
+        Patch(
+            facecolor=_PROMOTER_COLORS["efs"],
+            edgecolor="#1F2933",
+            linewidth=1.8,
+            label="EFS + domesticated IRES2 (current baseline)",
+        ),
+        Patch(
+            facecolor=_PROMOTER_COLORS["orig"],
+            edgecolor="#1F2933",
+            linewidth=0.8,
+            label="EFS + undomesticated IRES2 (Panel A)",
+        ),
+        Patch(
+            facecolor=_PROMOTER_COLORS["sv40"],
+            edgecolor="#1F2933",
+            linewidth=0.8,
+            label="EFS + separate SV40–PuroR (Panels B–C)",
+        ),
+        Line2D(
+            [0],
+            [0],
+            color=_PROMOTER_COLORS["pgk"],
+            ls="--",
+            lw=1.8,
+            label="PGK baseline = 1 (Panel A)",
+        ),
+        Line2D(
+            [0],
+            [0],
+            marker="D",
+            color="none",
+            markerfacecolor="white",
+            markeredgecolor="#1F2933",
+            markersize=6,
+            label="First assay run (Panel C)",
+        ),
+    ]
+
+
+def _draw_promoter_comparison_figure(out_dir: Path) -> None:
+    """Three-panel promoter and selection comparison in the SAB-deck style."""
+    import matplotlib.pyplot as plt
+
+    from deliverome_analysis.plotting import save_figure
+
+    fig, (ax_a, ax_b, ax_c) = plt.subplots(
+        1, 3, figsize=(16.5, 5.2), gridspec_kw={"width_ratios": [1.25, 1.0, 1.0]}
+    )
+    _draw_promoter_panel_a(ax_a)
+    _draw_promoter_panel_b(ax_b)
+    _draw_promoter_panel_c(ax_c)
+    fig.legend(
+        handles=_promoter_legend_handles(),
+        loc="lower center",
+        bbox_to_anchor=(0.5, -0.02),
+        ncol=3,
+        frameon=False,
+        fontsize=9.8,
+    )
+    fig.tight_layout(rect=(0, 0.10, 1, 0.94), w_pad=2.0)
+    save_figure(fig, "l1_promoter_comparison", output_dir=out_dir)
 
 
 def main(argv=None) -> int:

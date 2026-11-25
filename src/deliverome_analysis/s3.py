@@ -97,6 +97,7 @@ import io
 import os
 import re
 import shutil
+import tempfile
 from collections.abc import Callable
 from functools import lru_cache
 from pathlib import Path
@@ -284,6 +285,15 @@ def client() -> Any:
 # ---------------------------------------------------------------------------
 
 
+def _is_not_found(exc: Exception) -> bool:
+    resp = getattr(exc, "response", None)
+    if not isinstance(resp, dict):
+        return False
+    code = str(resp.get("Error", {}).get("Code", ""))
+    status = resp.get("ResponseMetadata", {}).get("HTTPStatusCode")
+    return code in {"404", "NoSuchKey", "NotFound"} or status == 404
+
+
 def _refuse_write_in_mirror(key: str) -> None:
     m = _mirror()
     if m is not None and m[1] == "read":
@@ -371,8 +381,10 @@ class _ReadBucket:
         try:
             self._head(key)
             return True
-        except Exception:
-            return False
+        except Exception as exc:
+            if _is_not_found(exc):
+                return False
+            raise
 
     def download(self, key: str, dest: str | Path | None = None) -> Path:
         """Download an object to local disk. Returns the path.
@@ -398,9 +410,17 @@ class _ReadBucket:
         cached = self._cache_path(key, etag)
         if not cached.exists():
             cached.parent.mkdir(parents=True, exist_ok=True)
-            tmp = cached.with_suffix(cached.suffix + ".part")
-            self._client_factory().download_file(self._name, key, str(tmp))
-            tmp.rename(cached)
+            fd, tmp_name = tempfile.mkstemp(
+                dir=cached.parent, prefix=f".{cached.name}.", suffix=".part"
+            )
+            os.close(fd)
+            tmp = Path(tmp_name)
+            try:
+                self._client_factory().download_file(self._name, key, str(tmp))
+                os.replace(tmp, cached)
+            except BaseException:
+                tmp.unlink(missing_ok=True)
+                raise
         self._record(key, cached)
 
         if dest is None:
@@ -461,8 +481,7 @@ class _ReadBucket:
         try:
             return cast(str, self._head(key)["ETag"]).strip('"')
         except Exception as exc:
-            code = str(getattr(exc, "response", {}).get("Error", {}).get("Code", ""))
-            if code in {"404", "NoSuchKey", "NotFound"}:
+            if _is_not_found(exc):
                 return None
             raise
 
@@ -478,8 +497,7 @@ class _ReadBucket:
         try:
             return self._head(key)
         except Exception as exc:
-            code = str(getattr(exc, "response", {}).get("Error", {}).get("Code", ""))
-            if code in {"404", "NoSuchKey", "NotFound"}:
+            if _is_not_found(exc):
                 return None
             raise
 

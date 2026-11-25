@@ -54,7 +54,11 @@ Q90_PROT = 459.0
 
 
 def fit_absolute_model(
-    allx: pd.DataFrame, gold: pd.DataFrame
+    allx: pd.DataFrame,
+    gold: pd.DataFrame,
+    *,
+    regions: pd.DataFrame | None = None,
+    audit: pd.DataFrame | None = None,
 ) -> tuple[SimpleImputer, StandardScaler, LogisticRegression, float, float]:
     """Fit 5-feature absolute scorer on confirmed sites and compute OOF region-ceiling median/q25."""
     gold_sites = gold.groupby("uniprot_acc")["residue"].apply(lambda v: np.array(v)).to_dict()
@@ -74,8 +78,19 @@ def fit_absolute_model(
     )
     key = ev.set_index(["uniprot_acc", "residue"]).index
     on_gold = key.isin(list(zip(gold_in["uniprot_acc"], gold_in["residue"], strict=True)))
-    near10 = B.near(ev, gold_sites, half=10)
-    train_valid = on_gold | ~near10
+    exclude = B.near(ev, gold_sites, half=10)
+    if audit is not None and "insert_after_residue" in audit.columns:
+        cited = audit.dropna(subset=["insert_after_residue"])
+        if len(cited):
+            cited_sites = (
+                cited.groupby("uniprot_acc")["insert_after_residue"]
+                .apply(lambda v: np.array(v, int))
+                .to_dict()
+            )
+            exclude |= B.near(ev, cited_sites, half=10)
+    if regions is not None and len(regions):
+        exclude |= B.in_windows(ev, regions)
+    train_valid = on_gold | ~exclude
 
     def feat_mat(df: pd.DataFrame) -> np.ndarray:
         p_abs = 1.0 - df["plddt_w5"].to_numpy(float) / 100.0
@@ -125,23 +140,33 @@ def pick_arms(
     g: pd.DataFrame,
     pub_med: float,
     pub_q25: float,
+    *,
+    cterm_cytoplasmic: bool = False,
 ) -> dict:
     """Apply L1's 1/2/3 construct + snorkel order rule on eligible, non-vetoed junctions."""
     elig = g[g["eligible"] & ~g["hard_veto"]].copy()
     if elig.empty:
         return {"status": "no_eligible_site", "n_arms": 0, "picks": []}
 
+    if "region_index" not in elig.columns or elig["region_index"].isna().any():
+        elig["region_index"] = MM.masked_regions(elig["residue"], None)
+
     # Prefer regions of length >= MIN_REGION_LEN if any exist
     r_lens = elig.groupby("region_index")["residue"].transform("count")
     if (r_lens >= MIN_REGION_LEN).any():
         elig = elig[r_lens >= MIN_REGION_LEN].copy()
 
-    # Region ceilings from absolute scorer
-    reg_ceil = elig.groupby("region_index")["s_abs"].max().sort_values(ascending=False)
-    best_ceil = float(reg_ceil.iloc[0])
-    runner_ceil = float(reg_ceil.iloc[1]) if len(reg_ceil) >= 2 else 0.0
+    # Region ceilings from absolute scorer (deterministic tie-break by region_index)
+    reg_ceil = (
+        elig.groupby("region_index")["s_abs"]
+        .max()
+        .reset_index()
+        .sort_values(["s_abs", "region_index"], ascending=[False, True], kind="mergesort")
+    )
+    best_ceil = float(reg_ceil["s_abs"].iloc[0])
+    runner_ceil = float(reg_ceil["s_abs"].iloc[1]) if len(reg_ceil) >= 2 else 0.0
 
-    snorkel_companion = best_ceil < pub_q25
+    snorkel_companion = best_ceil < pub_q25 and cterm_cytoplasmic
     if snorkel_companion:
         n_target = 2  # + 1 snorkel companion = 3
     elif best_ceil < pub_med:
@@ -152,7 +177,7 @@ def pick_arms(
         n_target = 1
 
     # Greedy picks separated by >= MIN_SEPARATION (or in different regions)
-    order = elig.sort_values("s_rank", ascending=False)
+    order = elig.sort_values(["s_rank", "residue"], ascending=[False, True], kind="mergesort")
     picks = []
     for r in order.itertuples(index=False):
         if all(
@@ -186,6 +211,73 @@ def pick_arms(
         "snorkel_companion": snorkel_companion,
         "picks": picks,
     }
+
+
+def apply_membrane_mask(pool: pd.DataFrame, mm: pd.DataFrame) -> pd.DataFrame:
+    """Apply membrane-side mask fail-closed on usable == 0 and recompute masked_regions."""
+    out = pool.copy()
+    dedup = mm.drop_duplicates("sequence_sha256")
+    usable_flag = dedup["usable"] == 1
+    if "orientation_supported" in dedup.columns:
+        usable_flag = usable_flag & (
+            dedup["orientation_supported"].astype(str).str.lower() != "false"
+        )
+    masks_by_sha = {
+        r.sequence_sha256: (r.mask, r.junction_mask)
+        for r in dedup.loc[usable_flag].itertuples(index=False)
+    }
+    unusable_shas = set(dedup.loc[~usable_flag, "sequence_sha256"])
+
+    eligible = []
+    for sha, res in zip(out["sequence_sha256"], out["residue"], strict=True):
+        if sha in unusable_shas:
+            # Fail closed: membrane-side gate recorded orientation_supported=False / usable=0.
+            eligible.append(False)
+        elif (mk := masks_by_sha.get(sha)) is not None:
+            jm = mk[1]
+            eligible.append(1 <= int(res) <= len(jm) and jm[int(res) - 1] == MM.ELIGIBLE)
+        else:
+            eligible.append(True)
+    out["eligible"] = np.array(eligible, dtype=bool)
+    if "region_index" in out.columns:
+        out["v1_region_index"] = out["region_index"]
+    out["region_index"] = np.nan
+    for sha, idx in out.groupby("sequence_sha256", dropna=False).indices.items():
+        elig_idx = idx[out["eligible"].to_numpy()[idx]]
+        if not len(elig_idx):
+            continue
+        res = out["residue"].to_numpy()[elig_idx]
+        mk = masks_by_sha.get(sha)
+        out.iloc[elig_idx, out.columns.get_loc("region_index")] = MM.masked_regions(res, mk)
+    return out
+
+
+def compute_soft_penalties(
+    pool: pd.DataFrame, dis_wide: np.ndarray, buried_win: np.ndarray
+) -> tuple[pd.DataFrame, np.ndarray]:
+    """Mutually exclusive EB soft penalties with n-2..n+3 domain-seam windowing."""
+    out = pool.copy()
+    raw_seam_6a = (out["d_other_domain"] <= 6.0).fillna(False).to_numpy(bool)
+    raw_seam_8a = (out["d_other_domain"] <= 8.0).fillna(False).to_numpy(bool)
+    seam_6a = N.window_mask(out, raw_seam_6a)
+    seam_8a = N.window_mask(out, raw_seam_8a) & ~seam_6a
+
+    crowded_q90 = (out["protrusion_14"] >= Q90_PROT).fillna(False).to_numpy(bool)
+    crowded_q75 = ((out["protrusion_14"] >= Q75_PROT) & ~crowded_q90).fillna(False).to_numpy(bool)
+
+    out["crowded_q75"] = crowded_q75
+    out["crowded_q90"] = crowded_q90
+    out["seam_6A"] = seam_6a
+    out["seam_8A"] = seam_8a
+    soft_pen = (
+        1.7569 * crowded_q75.astype(float)
+        + 1.8071 * crowded_q90.astype(float)
+        + 0.5497 * seam_6a.astype(float)
+        + 0.4774 * seam_8a.astype(float)
+        + 0.7190 * np.asarray(dis_wide, dtype=float)
+        + 1.3774 * np.asarray(buried_win, dtype=float)
+    )
+    return out, soft_pen
 
 
 def _load_backfilled_pool(allx: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, dict]:
@@ -248,19 +340,7 @@ def _load_backfilled_pool(allx: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFram
     pool = pool.merge(sg_map, on=["sequence_sha256", "residue"], how="left")
 
     mm = MM.load()
-    jmask_by_sha = dict(
-        zip(
-            mm.loc[mm["usable"] == 1, "sequence_sha256"],
-            mm.loc[mm["usable"] == 1, "junction_mask"],
-            strict=False,
-        )
-    )
-    pool["eligible"] = [
-        True
-        if (jm := jmask_by_sha.get(sha)) is None
-        else (1 <= res <= len(jm) and jm[res - 1] == MM.ELIGIBLE)
-        for sha, res in zip(pool["sequence_sha256"], pool["residue"], strict=True)
-    ]
+    pool = apply_membrane_mask(pool, mm)
     parity = {
         "n_residues": len(par),
         "max_abs_diff": round(parity_max_diff, 5) if parity_max_diff is not None else None,
@@ -327,10 +407,7 @@ def _annotate_and_score_pool(pool: pd.DataFrame, imp_f, sca_f, m_f) -> pd.DataFr
     pool["lig_win"] = lig_win
     pool["dis_flank"] = dis_flank
     pool["split_seq"] = split_seq
-    pool["crowded_q75"] = (pool["protrusion_14"] >= Q75_PROT).fillna(False)
-    pool["crowded_q90"] = (pool["protrusion_14"] >= Q90_PROT).fillna(False)
-    pool["seam_6A"] = (pool["d_other_domain"] <= 6.0).fillna(False)
-    pool["seam_8A"] = (pool["d_other_domain"] <= 8.0).fillna(False)
+    pool, soft_pen = compute_soft_penalties(pool, dis_wide, buried_win)
 
     r_plddt = A.rank_pct_within_protein(pool, -pool["plddt_w5"].to_numpy(float))
     r_prodom = A.rank_pct_within_protein(pool, pool["prodomino"].to_numpy(float))
@@ -338,14 +415,6 @@ def _annotate_and_score_pool(pool: pd.DataFrame, imp_f, sca_f, m_f) -> pd.DataFr
         np.isnan(r_prodom),
         r_plddt,
         np.where(np.isnan(r_plddt), r_prodom, 0.5 * r_plddt + 0.5 * r_prodom),
-    )
-    soft_pen = (
-        1.7569 * pool["crowded_q75"].to_numpy(float)
-        + 1.8071 * pool["crowded_q90"].to_numpy(float)
-        + 0.5497 * pool["seam_6A"].to_numpy(float)
-        + 0.4774 * pool["seam_8A"].to_numpy(float)
-        + 0.7190 * dis_wide.astype(float)
-        + 1.3774 * buried_win.astype(float)
     )
     pool["s_rank"] = base_rank - 0.08 * soft_pen - 0.05 * lp_win.astype(float)
 
@@ -362,15 +431,31 @@ def _annotate_and_score_pool(pool: pd.DataFrame, imp_f, sca_f, m_f) -> pd.DataFr
     return pool
 
 
+def _cterm_cytoplasmic_by_sha() -> dict[str, bool]:
+    seg_path = B.MODELS / "l1_internal_segments.tsv"
+    if not seg_path.is_file():
+        return {}
+    seg = pd.read_csv(seg_path, sep="\t", usecols=["sequence_sha256", "segment_index", "state"])
+    last = seg.sort_values(["sequence_sha256", "segment_index"]).groupby("sequence_sha256").last()
+    return (last["state"] == "I").to_dict()
+
+
 def _design_members(
     dec: pd.DataFrame, pool: pd.DataFrame, pub_med: float, pub_q25: float
 ) -> pd.DataFrame:
+    cterm_cyto = _cterm_cytoplasmic_by_sha()
     design_rows = []
     for r in dec.itertuples(index=False):
         g = pool[pool["uniprot_acc"] == r.uniprot_acc]
         if g.empty:
             continue
-        res_v8 = pick_arms(g, pub_med, pub_q25)
+        is_cyto = cterm_cyto.get(
+            r.sequence_sha256,
+            bool(getattr(r, "snorkel_candidate", False))
+            if pd.notna(getattr(r, "snorkel_candidate", False))
+            else False,
+        )
+        res_v8 = pick_arms(g, pub_med, pub_q25, cterm_cytoplasmic=is_cyto)
         old_site = int(r.insert_after_residue)
         old_row = g[g["residue"] == old_site]
         old_r = old_row.iloc[0] if not old_row.empty else None
@@ -416,10 +501,14 @@ def _design_members(
                 "delta_protrusion_14": float(new_r["protrusion_14"] - old_r["protrusion_14"])
                 if old_r is not None
                 else np.nan,
-                "old_crowded_q75": bool(old_r["crowded_q75"]) if old_r is not None else False,
-                "new_crowded_q75": bool(new_r["crowded_q75"]),
-                "old_seam_8A": bool(old_r["seam_8A"]) if old_r is not None else False,
-                "new_seam_8A": bool(new_r["seam_8A"]),
+                "old_crowded_q75": bool(old_r["crowded_q75"] or old_r["crowded_q90"])
+                if old_r is not None
+                else False,
+                "new_crowded_q75": bool(new_r["crowded_q75"] or new_r["crowded_q90"]),
+                "old_seam_8A": bool(old_r["seam_8A"] or old_r["seam_6A"])
+                if old_r is not None
+                else False,
+                "new_seam_8A": bool(new_r["seam_8A"] or new_r["seam_6A"]),
                 "old_hard_veto": bool(old_r["hard_veto"]) if old_r is not None else False,
                 "new_hard_veto": bool(new_r["hard_veto"]),
             }
@@ -481,8 +570,10 @@ def _build_summary(pool: pd.DataFrame, ddf: pd.DataFrame, parity: dict) -> dict:
 
 def main() -> int:
     _tr, allx = B.inputs()
-    gold, _regions, _audit = B.truth()
-    imp_f, sca_f, m_f, pub_med, pub_q25 = fit_absolute_model(allx, gold)
+    gold, regions, audit = B.truth()
+    imp_f, sca_f, m_f, pub_med, pub_q25 = fit_absolute_model(
+        allx, gold, regions=regions, audit=audit
+    )
     print(f"Absolute model OOF hosting-region ceilings: median={pub_med:.4f}, q25={pub_q25:.4f}")
 
     dec, pool, parity = _load_backfilled_pool(allx)

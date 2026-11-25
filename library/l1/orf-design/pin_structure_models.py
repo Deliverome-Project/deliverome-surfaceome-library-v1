@@ -30,7 +30,6 @@ from __future__ import annotations
 import argparse
 import csv
 import hashlib
-import os
 import sys
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -83,8 +82,9 @@ def problems(deep: bool = False) -> tuple[list[str], int]:
     from deliverome_analysis.s3 import client, external
 
     to_check = [archive[u] for u in afdb_urls() if u in archive]
+    mirror_root = external._mirror_path("")
     sizes_by_key: dict[str, int] = {}
-    if not deep and not os.environ.get("DELIVEROME_S3_MIRROR"):
+    if not deep and mirror_root is None:
         # One paginated LIST on alphafold-db/v6/ replaces ~2,700 sequential S3 HEAD requests.
         paginator = client().get_paginator("list_objects_v2")
         for page in paginator.paginate(Bucket=external._name, Prefix="alphafold-db/v6/"):
@@ -98,9 +98,18 @@ def problems(deep: bool = False) -> tuple[list[str], int]:
             if hashlib.sha256(data).hexdigest() != r["sha256"]:
                 return f"{r['archive_key']}: SHA-256 differs"
             return None
-        size = sizes_by_key.get(key)
-        if size is None:
-            size = int(external._head(key)["ContentLength"])
+        local = external._mirror_path(key)
+        if local is not None:
+            if not local.is_file():
+                return f"{r['archive_key']}: missing from offline mirror"
+            size = local.stat().st_size
+        else:
+            size = sizes_by_key.get(key)
+            if size is None:
+                head = external.head(key)
+                if head is None:
+                    return f"{r['archive_key']}: missing on S3"
+                size = int(head["ContentLength"])
         if size != int(r["bytes"]):
             return f"{r['archive_key']}: size differs from the archive record"
         return None

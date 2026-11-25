@@ -340,7 +340,7 @@ def main() -> int:
     ct = contact_tiers(pd.read_csv(HERE / "contacts_by_protein.tsv", sep="\t", low_memory=False))
     ct = ct[ct["tier"].isin(["hard", "soft"])]
     # every verdict already on record (s4e9 tables, then the s5e13 verdicts seen)
-    vt = pd.read_csv(HERE.parents[1] / "sprint4" / "s4e9-orf-design-fg-panel"
+    vt = pd.read_csv(HERE.parents[1] / "l1" / "orf-design"
                      / "tag_refold_verdicts.tsv", sep="\t", low_memory=False)  # fmt: skip
     vs_seen = pd.read_csv(L.VERDICTS_SEEN, sep="\t")
     verdict = dict(zip(vs_seen["tagged_sha256"], vs_seen["verdict"], strict=False))

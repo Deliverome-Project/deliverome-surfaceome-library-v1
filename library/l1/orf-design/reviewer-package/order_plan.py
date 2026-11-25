@@ -61,7 +61,7 @@ STOCK_UL, POOL_UL, N_POOLS = 20.0, 5.0, 2
 CONC_SCENARIOS = (100.0, 75.0, 50.0)  # ng/uL: assumed, and two lower deliveries
 EXTRA_THRESHOLD_NT = 4300  # members whose insert is longer get extra DNA for pooling
 FACTOR = 3.5  # fold lower functional titer per extra kb (Moon et al. 2026)
-SENSITIVITY = (2.0, 2.5, 3.5)
+SENSITIVITY = tuple(sorted({2.0, 2.5, FACTOR}))
 WELLS = [f"{r}{c:02d}" for c in range(1, 13) for r in "ABCDEFGH"]  # column-major: A01, B01, ...
 NG_PER_PMOL_PER_BP = 0.65  # 650 g/mol per bp of double-stranded DNA
 MIN_HAND_UL = 0.5  # smallest volume worth pipetting by hand
@@ -193,8 +193,8 @@ def plan(rows: list[dict]) -> tuple[list[dict], dict]:
                 "pooling_well_ug": round(POOL_UL * c / 1000, 3),
                 "stock_well_ug": round(STOCK_UL * c / 1000, 3),
                 "delivered_ug": round(available_ul * c / 1000, 3),
-                "pool_ug_total_per_pool_x3.5": round(
-                    sum(r["pool_ng_per_pool_x3.5"] for r in out) * c / CONC_NG_UL / 1000, 1
+                f"pool_ug_total_per_pool_x{FACTOR}": round(
+                    sum(r[f"pool_ng_per_pool_x{FACTOR}"] for r in out) * c / CONC_NG_UL / 1000, 1
                 ),
             }
             for c in CONC_SCENARIOS
@@ -254,11 +254,8 @@ def figure(rows: list[dict]) -> None:
     setup_plotting_style()
     fig, ax = create_figure(figsize=(11, 6.5))
     x = [r["insert_nt"] for r in rows]
-    for f, color in (
-        (3.5, get_color("primary")),
-        (2.5, get_color("accent")),
-        (2.0, get_color("secondary")),
-    ):
+    palette = (get_color("primary"), get_color("accent"), get_color("secondary"))
+    for f, color in zip(reversed(SENSITIVITY), palette, strict=False):
         ax.scatter(
             x,
             [r[f"pool_ul_per_pool_x{f}"] for r in rows],

@@ -60,7 +60,7 @@ sha256sum -c SHA256SUMS
 
 ```bash
 git clone deliverome-surfaceome-library-v1.bundle deliverome-surfaceome-library-v1
-tar -xzf l1-reviewer-bundle.tar.gz
+mkdir -p l1-reviewer-bundle && tar -xzf l1-reviewer-bundle.tar.gz -C l1-reviewer-bundle
 ```
 
 ## 3. Replay with zero network access

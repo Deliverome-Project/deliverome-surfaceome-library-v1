@@ -1705,12 +1705,17 @@ class LibraryLinkerPlan:
         for (a, b), flank in pair5.items():
             core = _common_prefix(seq[a], seq[b])
             run5 = max(run5, core)
-            if core < len(seq[a]):  # tract terminates inside the cassette
+            if core < max(len(seq[a]), len(seq[b])):  # tract terminates inside the cassette
                 span = max(span, flank + core)
             else:  # cassette identical end to end; tract continues into flank3
                 span = max(span, flank + core + pair3.get((a, b), 0))
-        for (a, b), _ in pair3.items():
-            run3 = max(run3, _common_suffix(seq[a], seq[b]))
+        for (a, b), flank in pair3.items():
+            core = _common_suffix(seq[a], seq[b])
+            run3 = max(run3, core)
+            if core < max(len(seq[a]), len(seq[b])):  # tract terminates inside the cassette
+                span = max(span, flank + core)
+            else:  # cassette identical end to end; tract continues into flank5
+                span = max(span, flank + core + pair5.get((a, b), 0))
 
         return {
             "members": len(self.variants),

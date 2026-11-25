@@ -281,8 +281,9 @@ def load_topdb(path: Path, gene_of_mnemonic: dict[str, str]) -> list[Entry]:
                     sub = exp.findtext(f"{ns}Subtype") or ""
                     ref = exp.get("Ref", "0")
                     pdb = exp.find(f"{ns}pdbRef")
+                    pdb_id = (pdb.get("ID") or "").upper() if pdb is not None else ""
                     cite = (
-                        f"PDB:{pdb.get('ID')}"
+                        f"PDB:{pdb_id}"
                         if pdb is not None
                         else (f"PubMed:{ref}" if ref not in ("", "0") else "")
                     )
@@ -297,7 +298,7 @@ def load_topdb(path: Path, gene_of_mnemonic: dict[str, str]) -> list[Entry]:
                         chain = ",".join(
                             c.get("ID", "") for c in pdb.iterfind(f"{ns}Chains/{ns}Chain")
                         )
-                        chains[(pdb.get("ID"), chain)].append(region)
+                        chains[(pdb_id, chain)].append(region)
                     else:
                         e.regions.append(region)
             for regs in chains.values():
@@ -428,12 +429,20 @@ def _bounds(topo: str, evidence: list[Mapped] | None) -> set[int]:
     return b
 
 
+def _norm_cite(cite: str) -> str:
+    """Normalize citation identifiers so PDB:7EPT and PDB:7ept collapse across sources."""
+    c = cite.strip()
+    if c.upper().startswith("PDB:"):
+        return "PDB:" + c.split(":", 1)[1].strip().upper()
+    return c
+
+
 def _vote(topo, site, seg, evidence, *, use_membrane=True):
     """{item: (side, region_kinds, ends)} over independent evidence items.
 
-    An item is one citation (a PDB entry, a PubMed record) within one source, so 40 chains
-    of one cryo-EM entry count once and a single mis-placed structure cannot outvote the
-    rest of the literature.
+    An item is one citation (a PDB entry, a PubMed record) deduplicated across sources
+    (case-normalized for PDB IDs), so 40 chains of one cryo-EM entry or the same PDB entry
+    in both UniProt and TOPDB count once.
     """
     items: dict[tuple[str, str], dict] = {}
     skipped = []
@@ -449,10 +458,11 @@ def _vote(topo, site, seg, evidence, *, use_membrane=True):
                     continue
             elif seg is None or r.end < seg[0] or r.start > seg[1]:
                 continue
-            for cite in (r.cite or f"{m.entry.accession}:{r.kind}").split(";"):
-                it = items.setdefault(
-                    (m.entry.source, cite), {"sides": set(), "src": set(), "edge": 99}
-                )
+            raw_cites = r.cite.split(";") if r.cite else []
+            for raw in raw_cites or [f"{m.entry.accession}:{r.kind}"]:
+                cite = _norm_cite(raw)
+                key = ("cite", cite) if raw_cites else (m.entry.source, cite)
+                it = items.setdefault(key, {"sides": set(), "src": set(), "edge": 99})
                 it["sides"].add(r.side)
                 it["src"].add(f"{m.entry.source}:{m.entry.accession}({m.match};{r.kind})")
                 if r.side == "membrane":
@@ -609,7 +619,7 @@ def main(argv: list[str] | None = None) -> int:
     nterm_site = {r["candidate_id"]: int(r["native_after_residue"]) + 1 for r in _tsv(NTERM)}
     arms: dict[str, list[dict]] = collections.defaultdict(list)
     for r in _tsv(INTERNAL):
-        if r["decision"].startswith("internal_loop") and r["cassette_after_residue"]:
+        if r.get("arm_role", "").startswith("loop") and r["cassette_after_residue"]:
             arms[r["candidate_id"]].append(r)
     overrides = {r["design_id"]: r for r in _tsv(LANE_OVERRIDES)}
 

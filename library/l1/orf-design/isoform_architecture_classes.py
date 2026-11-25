@@ -185,7 +185,10 @@ def main() -> int:
     gene_rows = built_reference_rows(genes, v1, cls, gpi, s.classify)
 
     cohort = read(rb.OUT_COHORT)
-    gate = {r["form_id"]: r["verdict"] for r in read(rb.OUT_GATE)}
+    gate_path = HERE / "isoform_gate_2026_11_23.tsv"
+    if not gate_path.exists():
+        gate_path = rb.OUT_GATE
+    gate = {r["form_id"]: r["verdict"] for r in read(gate_path)}
     panel = read(HERE / "isoform_panel.tsv")
     fid = lambda r: f"{r['gene']}:{r['uniprot'].strip() or r['ensembl_transcripts']}"  # noqa: E731
     tiers = ("observed", "full_only")

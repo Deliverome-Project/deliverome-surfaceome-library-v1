@@ -402,8 +402,10 @@ def snorkel() -> dict:
         "decided": len(sn),
         "trigger": classify(sn, SNORKEL_TRIGGERS, "snorkel decisions"),
         # the refold of the ordered snorkel arm, from the refold table of record (the decision
-        # table's snorkel_verdict column is not refreshed after later refolds)
-        "snorkel_refold": ordered_verdicts({r["design_id"] for r in built}),
+        # table's snorkel_verdict column is not refreshed after later refolds; filter to rung ==
+        # "cterm" because snorkel arms live in constructs_l1_cterm.tsv while multi-arm internal
+        # members also carry separate internal-loop rows under the same design_id)
+        "snorkel_refold": ordered_verdicts({r["design_id"] for r in built}, rung="cterm"),
         "snorkel_verdict_column": dict(
             Counter(r["snorkel_verdict"] or "none" for r in sn).most_common()
         ),
@@ -432,14 +434,14 @@ def snorkel() -> dict:
     }
 
 
-def ordered_verdicts(design_ids: set[str]) -> dict[str, int]:
+def ordered_verdicts(design_ids: set[str], *, rung: str | None = None) -> dict[str, int]:
     """Refold verdicts of the ordered inserts of these design ids (fold_order_check.tsv)."""
     verdict = {r["fold_id"]: r["verdict"] for r in _tsv(S4E9 / "tag_refold_structures.tsv")}
     return dict(
         Counter(
             verdict.get(r["fold_id"], "no verdict")
             for r in _tsv(S4E9 / "fold_order_check.tsv")
-            if r["design_id"] in design_ids
+            if r["design_id"] in design_ids and (rung is None or r["rung"] == rung)
         ).most_common()
     )
 

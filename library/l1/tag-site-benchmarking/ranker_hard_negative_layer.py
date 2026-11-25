@@ -53,12 +53,13 @@ import pandas as pd
 from sklearn.model_selection import GroupKFold
 
 HERE = Path(__file__).resolve().parent
+REPO = HERE.parents[2]
 sys.path.insert(0, str(HERE))
-sys.path.insert(0, str(HERE.parents[3] / "src"))
+sys.path.insert(0, str(REPO / "src"))
 
 import ranker_pu_segment as R  # noqa: E402
 from final_report import mask_keep  # noqa: E402
-from independent_model_search import make, smooth, within_protein  # noqa: E402
+from independent_model_search import make  # noqa: E402
 from l1_loop_evidence import member_rows  # noqa: E402
 from l1_loop_evidence import score as full_fit_score  # noqa: E402
 from two_tier_model import build_global  # noqa: E402
@@ -131,14 +132,71 @@ def flags(rows: pd.DataFrame, cols: list[str]) -> pd.Series:
     return rows[cols].any(axis=1)
 
 
-def near(rows: pd.DataFrame, flag: pd.Series, half: int) -> np.ndarray:
-    """True where a flagged residue of the same protein lies within `half`."""
+def near(rows: pd.DataFrame, flag: pd.Series, half: int, hi: int | None = None) -> np.ndarray:
+    """True where a flagged residue of the same protein lies in [n - half, n + hi].
+
+    When ``hi`` is None, uses a symmetric +/-``half`` window around residue ``n``.
+    For an insertion after residue ``n`` (junction between ``n`` and ``n+1``), pass
+    ``hi=half + 1`` so the window covers ``n - half .. n + half + 1`` (e.g. ``n-2..n+3``).
+    """
+    upper = half if hi is None else hi
     out = np.zeros(len(rows), bool)
     res = rows["residue"].astype(int).to_numpy()
+    f = flag.to_numpy(dtype=bool)
     for _, idx in rows.groupby("uniprot_acc").indices.items():
-        bad = res[idx][flag.to_numpy()[idx]]
+        bad = res[idx][f[idx]]
         if len(bad):
-            out[idx] = np.abs(res[idx][:, None] - bad[None, :]).min(1) <= half
+            d = bad[None, :] - res[idx][:, None]
+            out[idx] = ((d >= -half) & (d <= upper)).any(1)
+    return out
+
+
+def smooth_contiguous(frame: pd.DataFrame, scores: np.ndarray, half: int = 2) -> np.ndarray:
+    """Smooth scores within each contiguous extracellular residue run (never across TM gaps)."""
+    out = np.asarray(scores, dtype=float).copy()
+    if half <= 0:
+        return out
+    ker = np.ones(2 * half + 1) / (2 * half + 1)
+    tmp = frame[["uniprot_acc", "residue"]].copy()
+    tmp["s"] = out
+    for _, g in tmp.groupby("uniprot_acc"):
+        g = g.sort_values("residue", kind="mergesort")
+        res = g["residue"].astype(int).to_numpy()
+        vals = g["s"].to_numpy(dtype=float)
+        idx = g.index.to_numpy()
+        splits = np.where(np.diff(res) != 1)[0] + 1
+        start = 0
+        for end in [*splits.tolist(), len(res)]:
+            seg = vals[start:end]
+            pad = np.pad(seg, half, mode="edge")
+            out[idx[start:end]] = np.convolve(pad, ker, mode="valid")
+            start = end
+    return out
+
+
+def zscore_from_reference(df: pd.DataFrame, ref: pd.DataFrame, feats: list[str]) -> pd.DataFrame:
+    """Standardize ``feats`` per protein using mean/std from the full extracellular ``ref``.
+
+    Prevents train/eval z-score shift when ``df`` is a subsampled training frame and
+    ``ref`` holds all extracellular residues. Proteins absent from ``ref`` fall back to
+    their own per-protein mean/std in ``df``.
+    """
+    out = df.copy()
+    cols = [f for f in feats if f in out.columns and f in ref.columns]
+    if not cols:
+        return out
+    ref_g = ref.groupby("uniprot_acc")[cols]
+    ref_mu = ref_g.mean()
+    ref_sd = ref_g.std().replace(0, np.nan)
+    own_g = out.groupby("uniprot_acc")
+    for f in cols:
+        mu = out["uniprot_acc"].map(ref_mu[f])
+        sd = out["uniprot_acc"].map(ref_sd[f])
+        missing = ~out["uniprot_acc"].isin(ref_mu.index)
+        if missing.any():
+            mu = mu.where(~missing, own_g[f].transform("mean"))
+            sd = sd.where(~missing, own_g[f].transform("std").replace(0, np.nan))
+        out[f] = (out[f] - mu) / sd
     return out
 
 
@@ -236,8 +294,8 @@ def l1_pick_table(pos, allx_raw, screens) -> tuple[pd.DataFrame, dict]:
 def oof_weighted(train, w, ev, feats, fold_of_gene):
     """oof_residue with per-row sample weights passed to the forest."""
     y = train["label"].to_numpy()
-    tr = within_protein(train, feats, "z")
-    ed = within_protein(ev, feats, "z")
+    tr = zscore_from_reference(train, ev, feats)
+    ed = zscore_from_reference(ev, ev, feats)
     gg = ev["gene_symbol"].to_numpy()
     sc = np.full(len(ev), np.nan)
     fold = np.full(len(ev), -1)
@@ -251,7 +309,7 @@ def oof_weighted(train, w, ev, feats, fold_of_gene):
         mask = np.array([fold_of_gene.get(g, -1) == i for g in gg])
         sc[mask] = m.predict_proba(ed[mask])[:, 1]
         fold[mask] = i
-    return smooth(ev, sc, 2), fold
+    return smooth_contiguous(ev, sc, 2), fold
 
 
 def upweight_frame(base, pos, allx):
@@ -307,9 +365,9 @@ def oof_pu_hard(pos, allx, ev, feats, fold_of_gene, bags=R.PU_BAGS):
             for a, r, lab in zip(full["uniprot_acc"], full["residue"], full["label"], strict=False)
         ]
     )
-    tr_z = within_protein(full, feats, "z")
+    tr_z = zscore_from_reference(full, ev, feats)
     y = full["label"].to_numpy()
-    ed = within_protein(ev, feats, "z")
+    ed = zscore_from_reference(ev, ev, feats)
     gg = ev["gene_symbol"].to_numpy()
     sc = np.full(len(ev), np.nan)
     fold = np.full(len(ev), -1)
@@ -335,7 +393,7 @@ def oof_pu_hard(pos, allx, ev, feats, fold_of_gene, bags=R.PU_BAGS):
             acc += m.predict_proba(ed[mask])[:, 1]
         sc[mask] = acc / bags
         fold[mask] = i
-    return smooth(ev, sc, 2), fold, int(is_hn.sum())
+    return smooth_contiguous(ev, sc, 2), fold, int(is_hn.sum())
 
 
 def exact_top1(prot: pd.DataFrame) -> pd.Series:

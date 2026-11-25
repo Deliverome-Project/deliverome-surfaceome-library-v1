@@ -26,14 +26,14 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 WORKDIR /workspace
 
-# Install locked dependencies first for layer caching.
-# Flow/modal groups are excluded: L1 does not use agentflow-cytometry or Modal at replay time.
-COPY pyproject.toml uv.lock .python-version ./
-COPY src/ ./src/
-RUN uv sync --locked --no-install-project --group dev --no-group flow --no-group flow-gui --no-group modal
+# Install locked runtime dependencies first (before copying src/) so dependency layers cache
+# cleanly across code edits. Dev/flow/modal groups are excluded: offline replay does not use
+# dev tooling, agentflow-cytometry, or Modal.
+COPY pyproject.toml uv.lock .python-version README.md ./
+RUN uv sync --frozen --no-dev --no-install-project --no-group flow --no-group flow-gui --no-group modal
 
 COPY . .
-RUN uv sync --locked --group dev --no-group flow --no-group flow-gui --no-group modal
+RUN uv sync --frozen --no-dev --no-group flow --no-group flow-gui --no-group modal
 
-ENTRYPOINT ["uv", "run", "--locked", "--offline", "python", "library/l1/orf-design/reviewer-package/run_review.py"]
+ENTRYPOINT ["uv", "run", "--no-sync", "--offline", "python", "library/l1/orf-design/reviewer-package/run_review.py"]
 CMD ["--bundle", "/bundle"]

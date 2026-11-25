@@ -45,8 +45,9 @@ import numpy as np
 import pandas as pd
 
 HERE = Path(__file__).resolve().parent
+REPO = HERE.parents[2]
 sys.path.insert(0, str(HERE))
-sys.path.insert(0, str(HERE.parents[3] / "src"))
+sys.path.insert(0, str(REPO / "src"))
 
 import membrane_mask  # noqa: E402
 import tag_site_model_v6 as V6  # noqa: E402

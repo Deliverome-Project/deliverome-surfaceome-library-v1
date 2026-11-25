@@ -50,8 +50,9 @@ import joblib
 import pandas as pd
 
 HERE = Path(__file__).resolve().parent
+REPO = HERE.parents[2]
 sys.path.insert(0, str(HERE))
-sys.path.insert(0, str(HERE.parents[3] / "src"))
+sys.path.insert(0, str(REPO / "src"))
 
 import tag_site_model_v4 as V4  # noqa: E402
 import tag_site_model_v5 as V5  # noqa: E402
@@ -73,6 +74,10 @@ UNFOLDED_DOMAIN = ("collagen", "coiled")
 #: residues of the mature N-terminus excluded: a site this close to the signal-peptide
 #: cleavage is the held N-after-SP placement under another name, and can alter cleavage
 SP_MARGIN = 10
+#: minimum clearance upstream of a GPI omega cleavage/attachment site: positions
+#: omega-11 .. omega-1 form the polar linker / GPI-transamidase recognition motif, so
+#: an insertion after residue r must satisfy r <= omega_member - GPI_OMEGA_UPSTREAM_CLEARANCE.
+GPI_OMEGA_UPSTREAM_CLEARANCE = 12
 #: VTCN1 (coordinator, 2026-11-14): the N-terminal segment's topology is unresolved. SignalP 6
 #: calls no signal peptide, both DeepTMHMM versions call ~7-29 a signal anchor, and UniProt's
 #: signal peptide 1-24 and TM 260-280 are predictions; one report (PMID 12818166, mouse,
@@ -214,7 +219,7 @@ def span(m: pd.Series, seq: str, hum: dict, gpi: pd.DataFrame) -> dict:
         start = pm.get(mature, mature)
         allowed = {r for r in allowed if r > start + SP_MARGIN}
     if omega_member is not None:
-        allowed = {r for r in allowed if r < omega_member}
+        allowed = {r for r in allowed if r <= omega_member - GPI_OMEGA_UPSTREAM_CLEARANCE}
     return {
         "ref": ref_acc,
         "ref_is_identical": bool(use_own),
@@ -299,7 +304,7 @@ def main() -> int:
     _i, _d, prot = head_tables()
     scored = score(feat)
     tp = pd.read_csv(
-        HERE.parents[1] / "sprint4" / "s4e9-orf-design-fg-panel" / "l1_tag_paths.tsv",
+        REPO / "library/l1/orf-design" / "l1_tag_paths.tsv",
         sep="\t",
         usecols=["candidate_id", "shed_risk"],
     )

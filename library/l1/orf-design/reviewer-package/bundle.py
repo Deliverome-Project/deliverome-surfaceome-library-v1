@@ -569,12 +569,50 @@ def add_pinned(out: Path) -> int:
     return 1 if bad else 0
 
 
+def active_record_pins() -> dict[tuple[str, str], dict]:
+    """Active code-pinned S3 records read by ``library_pipeline.py`` and ``brief_numbers.py``."""
+    if str(S4E9) not in sys.path:
+        sys.path.insert(0, str(S4E9))
+    import library_pipeline as lp
+
+    from deliverome_analysis import library_design as ld
+    from deliverome_analysis import topology
+
+    return {
+        ("external", topology.SNAPSHOT_KEY): {
+            "sha256": topology.SNAPSHOT_SHA256,
+            "pinned_by": {"topology.SNAPSHOT_KEY"},
+        },
+        ("processed", ld.CDS_KEY): {
+            "sha256": "",
+            "pinned_by": {"library_design.CDS_KEY"},
+        },
+        ("processed", ld.CONSTRUCTS_KEY): {
+            "sha256": "",
+            "pinned_by": {"library_design.CONSTRUCTS_KEY"},
+        },
+        ("processed", lp.PREFIX + lp.REFERENCE_RECORD + "reference_selection.tsv"): {
+            "sha256": "",
+            "pinned_by": {"library_pipeline.REFERENCE_RECORD"},
+        },
+        ("processed", lp.PREFIX + lp.REFERENCE_RECORD + "reference_disagreements.tsv"): {
+            "sha256": "",
+            "pinned_by": {"library_pipeline.REFERENCE_RECORD"},
+        },
+    }
+
+
 def audit() -> int:
-    """Pinned inputs (manifests and PINNED releases) that bundle_manifest.tsv does not hold."""
+    """Pinned inputs (manifests, active records, and PINNED releases) absent from ``bundle_manifest.tsv``."""
     with MANIFEST.open() as fh:
         have = {(r["bucket"], r["key"]): r for r in csv.DictReader(fh, delimiter="\t")}
+    pins = manifest_pins()
+    for bk, info in active_record_pins().items():
+        p = pins.setdefault(bk, {"sha256": "", "pinned_by": set()})
+        p["pinned_by"].update(info["pinned_by"])
+        p["sha256"] = p["sha256"] or info["sha256"]
     missing, wrong = [], []
-    for bk, pin in sorted(manifest_pins().items()):
+    for bk, pin in sorted(pins.items()):
         if bk not in have:
             missing.append(f"{bk[0]}://{bk[1]}  (pinned by {', '.join(sorted(pin['pinned_by']))})")
         elif pin["sha256"] and have[bk]["sha256"] != pin["sha256"]:

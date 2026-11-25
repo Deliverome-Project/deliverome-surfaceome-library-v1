@@ -82,6 +82,7 @@ ALWAYS = [
     "pyproject.toml",
     "uv.lock",
     ".python-version",
+    "tests/test_l1_core_modules.py",
     "tests/test_provenance_snapshots.py",
     "tests/test_s3_offline_mirror.py",
 ]
@@ -91,6 +92,7 @@ S5E13 = "library/l1/tag-site-benchmarking"
 GENERATED = {
     "README.md": "README.md",
     ".gitignore": "gitignore",
+    ".dockerignore": "dockerignore",
     "Dockerfile": "Dockerfile",
     ".github/workflows/ci.yml": "ci.yml",
 }
@@ -113,6 +115,12 @@ CLEAN_PATH_MAP: dict[str, str] = {
     "library/l1/figures": "library/l1/figures",
 }
 _CLEAN_REL_SUBS: tuple[tuple[str, str], ...] = (
+    ('"library" / "l1" / "orf-design"', '"library" / "l1" / "orf-design"'),
+    ("'library' / 'l1' / 'orf-design'", "'library' / 'l1' / 'orf-design'"),
+    ('"l1" / "orf-design"', '"l1" / "orf-design"'),
+    ("'l1' / 'orf-design'", "'l1' / 'orf-design'"),
+    ('/ "l1/orf-design"', '/ "l1/orf-design"'),
+    ("/ 'l1/orf-design'", "/ 'l1/orf-design'"),
     ('"l1" / "tag-site-benchmarking"', '"l1" / "tag-site-benchmarking"'),
     ("'l1' / 'tag-site-benchmarking'", "'l1' / 'tag-site-benchmarking'"),
     ('"l1/tag-site-benchmarking"', '"l1/tag-site-benchmarking"'),
@@ -144,21 +152,24 @@ _S1E3 = "library/l1/surface-filters"
 #: ``historical/git-snapshots/<commit>/<path>`` with ``SHA256SUMS.json`` so exported
 #: repos and Zenodo archives replay offline with zero ``.git`` history.
 PINNED_GIT_SNAPSHOTS: tuple[tuple[str, str], ...] = (
-    # synthesis_compliance.py & audit_domestication_barcodes.py
-    ("8432c0104c8fdaa57e78173d18fc5bb7064d91bd", f"{_S4E9}/constructs_l1_nterm.fasta"),
-    ("8432c0104c8fdaa57e78173d18fc5bb7064d91bd", f"{_S4E9}/constructs_l1_nterm.tsv"),
-    ("8432c0104c8fdaa57e78173d18fc5bb7064d91bd", f"{_S4E9}/constructs_l1_multipass.fasta"),
-    ("8432c0104c8fdaa57e78173d18fc5bb7064d91bd", f"{_S4E9}/constructs_l1_multipass.tsv"),
-    ("8432c0104c8fdaa57e78173d18fc5bb7064d91bd", f"{_S4E9}/constructs_l1_type3.fasta"),
-    ("8432c0104c8fdaa57e78173d18fc5bb7064d91bd", f"{_S4E9}/constructs_l1_type3.tsv"),
-    ("8432c0104c8fdaa57e78173d18fc5bb7064d91bd", f"{_S4E9}/constructs_l1_internal.fasta"),
-    ("8432c0104c8fdaa57e78173d18fc5bb7064d91bd", f"{_S4E9}/constructs_l1_internal.tsv"),
-    ("8432c0104c8fdaa57e78173d18fc5bb7064d91bd", f"{_S4E9}/constructs_l1_cterm.fasta"),
-    ("8432c0104c8fdaa57e78173d18fc5bb7064d91bd", f"{_S4E9}/constructs_l1_cterm.tsv"),
-    ("8432c0104c8fdaa57e78173d18fc5bb7064d91bd", f"{_S4E9}/candidate_manifest_tranches.tsv"),
-    ("8432c0104c8fdaa57e78173d18fc5bb7064d91bd", f"{_S4E9}/l1_cassette_encodings.tsv"),
-    ("3b00f73ea842a69150738bdabd9c7cdbd79b9436", f"{_S4E9}/synthesis_recodes.tsv"),
+    # synthesis_compliance.py & audit_domestication_barcodes.py (2026-11-23-pre-freeze)
+    ("e3336caf6b0e4c084cbfeec9e5d189015794284e", f"{_S4E9}/constructs_l1_nterm.fasta"),
+    ("e3336caf6b0e4c084cbfeec9e5d189015794284e", f"{_S4E9}/constructs_l1_nterm.tsv"),
+    ("e3336caf6b0e4c084cbfeec9e5d189015794284e", f"{_S4E9}/constructs_l1_multipass.fasta"),
+    ("e3336caf6b0e4c084cbfeec9e5d189015794284e", f"{_S4E9}/constructs_l1_multipass.tsv"),
+    ("e3336caf6b0e4c084cbfeec9e5d189015794284e", f"{_S4E9}/constructs_l1_type3.fasta"),
+    ("e3336caf6b0e4c084cbfeec9e5d189015794284e", f"{_S4E9}/constructs_l1_type3.tsv"),
+    ("e3336caf6b0e4c084cbfeec9e5d189015794284e", f"{_S4E9}/constructs_l1_internal.fasta"),
+    ("e3336caf6b0e4c084cbfeec9e5d189015794284e", f"{_S4E9}/constructs_l1_internal.tsv"),
+    ("e3336caf6b0e4c084cbfeec9e5d189015794284e", f"{_S4E9}/constructs_l1_cterm.fasta"),
+    ("e3336caf6b0e4c084cbfeec9e5d189015794284e", f"{_S4E9}/constructs_l1_cterm.tsv"),
+    ("e3336caf6b0e4c084cbfeec9e5d189015794284e", f"{_S4E9}/candidate_manifest_tranches.tsv"),
+    ("e3336caf6b0e4c084cbfeec9e5d189015794284e", f"{_S4E9}/l1_cassette_encodings.tsv"),
+    ("4c90b70e73e6c960d9d23ec7474a64428dd223c1", f"{_S4E9}/synthesis_recodes.tsv"),
     # reviewer-package/fold_order_check.py
+    ("e3336caf", f"{_S4E9}/tag_refold_structures.tsv"),
+    # Prior cut snapshots retained for historical comparison & exporter smoke tests
+    ("8432c0104c8fdaa57e78173d18fc5bb7064d91bd", f"{_S4E9}/constructs_l1_cterm.tsv"),
     ("8432c010", f"{_S4E9}/tag_refold_structures.tsv"),
     # s1e3/audit_coreceptors.py
     ("6b3d53ccab9b95246a0605b79427d69dca36aeb2", f"{_S1E3}/final_library.py"),
@@ -166,17 +177,22 @@ PINNED_GIT_SNAPSHOTS: tuple[tuple[str, str], ...] = (
     ("6bf341f231e0841ffea13e589c4119a909fde93f", f"{_S4E9}/l1_tag_paths.tsv"),
     ("6bf341f231e0841ffea13e589c4119a909fde93f", f"{_S4E9}/candidate_manifest_tranches.tsv"),
     ("6bf341f231e0841ffea13e589c4119a909fde93f", f"{_S4E9}/library_structure_payload.tsv"),
+    ("34910ec68217eff67e10a8299524ae93bb210b8a", f"{_S4E9}/l1_tag_paths.tsv"),
+    ("34910ec68217eff67e10a8299524ae93bb210b8a", f"{_S4E9}/candidate_manifest_tranches.tsv"),
+    ("34910ec68217eff67e10a8299524ae93bb210b8a", f"{_S4E9}/library_structure_payload.tsv"),
     ("debbc418", f"{_S5E13}/l1_internal_decisions.tsv"),
     # multipass_rung_changes.py
     ("fbd83ab2", f"{_S4E9}/nterm_res1_multipass.tsv"),
     ("fbd83ab2", f"{_S4E9}/constructs_l1_multipass.tsv"),
-    # tag_refold/build_refold_inputs.py & native_models.py
+    # tag_refold/build_refold_inputs.py, native_models.py & verify_ordered_constructs.py
     ("5b97ddfc557de0a1c78737b100daf16a1f734202", f"{_S4E9}/candidate_manifest_tranches.tsv"),
     ("5b133d0b", f"{_S4E9}/candidate_manifest_tranches.tsv"),
     ("5b133d0b", f"{_S4E9}/l1_tag_paths.tsv"),
     ("5b133d0b", f"{_S4E9}/library_structure_payload.tsv"),
     ("3ef7f910aff5510c452632b378a2985992436cb1", f"{_S4E9}/constructs_l1_cterm.fasta"),
     ("3ef7f910aff5510c452632b378a2985992436cb1", f"{_S4E9}/constructs_l1_cterm.tsv"),
+    ("59050daa", f"{_S4E9}/l1_cassette_encodings.tsv"),
+    ("8d4b935e22b10357b6cb45cacd615fc4c8a3c71e", f"{_S4E9}/synthesis_recodes.tsv"),
     # s5e13 internal-site scripts
     ("798d8717", f"{_S5E13}/l1_internal_arm_decisions.tsv"),
     ("89226cb2", f"{_S5E13}/l1_internal_arm_decisions.tsv"),
@@ -400,8 +416,25 @@ _CLEAN_SCRATCH_EXCLUDES: tuple[str, ...] = tuple(
 )
 
 
+_DEAD_MYPY_OVERRIDES: tuple[str, ...] = (
+    "[[tool.mypy.overrides]]\n"
+    'module = ["deliverome_analysis.peptide_metrics", "deliverome_analysis.alphadia_trim"]\n'
+    "strict = true\n\n",
+    '[[tool.mypy.overrides]]\nmodule = "deliverome_analysis.raw_provenance"\nstrict = true\n\n',
+    "[[tool.mypy.overrides]]\n"
+    "# QC metric modules: chromatography (TIC, spray, LC), surface topology, and the pipeline\n"
+    "module = [\n"
+    '    "deliverome_analysis.raw_chromatography",\n'
+    '    "deliverome_analysis.surface_topology",\n'
+    '    "deliverome_analysis.dia_qc_pipeline",\n'
+    "]\n"
+    "strict = true\n\n",
+)
+
+
 def _rewrite_pyproject_clean_paths(text: str) -> str:
-    """Update ruff excludes and pytest testpaths in ``pyproject.toml`` for clean ``library/l1/*`` paths."""
+    """Update ruff excludes, pytest testpaths, and mypy overrides in ``pyproject.toml``
+    for clean ``library/l1/*`` exports without invalidating ``uv.lock``."""
     excludes = [
         '"scratch"',
         '"analysis/*/data"',
@@ -410,10 +443,15 @@ def _rewrite_pyproject_clean_paths(text: str) -> str:
     ]
     replacement = "extend-exclude = [\n" + "".join(f"    {e},\n" for e in excludes) + "]"
     text = text.replace('extend-exclude = ["scratch", "analysis/*/data"]', replacement)
-    return text.replace(
+    text = text.replace(
         'testpaths = ["tests", "analysis"]',
         'testpaths = ["tests", "library/l1/orf-design/tests"]',
     )
+    # Strip mypy overrides for non-exported lab modules (safe: uv.lock ignores [tool.mypy];
+    # [tool.uv.sources] and dependency-groups stay intact so uv sync --locked / --frozen passes).
+    for block in _DEAD_MYPY_OVERRIDES:
+        text = text.replace(block, "")
+    return text
 
 
 def _ruff_format_bytes(path: str, data: bytes) -> bytes:

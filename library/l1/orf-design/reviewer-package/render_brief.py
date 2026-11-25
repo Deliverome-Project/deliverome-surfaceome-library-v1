@@ -31,7 +31,7 @@ import markdown
 
 HERE = Path(__file__).parent
 REPO = HERE.parents[3]
-DEV_VIEWER = "https://dev.surfaceome.deliverome.org"
+DEV_VIEWER = "https://surfaceome.deliverome.org"
 #: Technical abbreviations that collide with human gene symbols (e.g. CPM = counts per million,
 #: GPI = glycosylphosphatidylinositol anchor) and must never be auto-linked as proteins.
 NON_PROTEIN_TOKENS = frozenset(
@@ -168,7 +168,7 @@ def _protein_viewer_links() -> tuple[re.Pattern[str], dict[str, str], set[str]]:
                     if r.get("set") == "library_reference":
                         gene = r["key"].split(":", 1)[1] if ":" in r["key"] else r["key"]
                         if gene and gene not in NON_PROTEIN_TOKENS:
-                            urls[gene] = f"{DEV_VIEWER}/l1-review/?m={did}"
+                            urls[gene] = f"{DEV_VIEWER}/v1-review/?m={did}"
     if "TFRC" in urls:
         urls["TfR1"] = urls["TFRC"]
     for path, col in (
@@ -201,7 +201,7 @@ def _split_protein_links(text: str, pat: re.Pattern[str], urls: dict[str, str], 
         if not href and tok.startswith("l1-p"):
             base_did = tok.split("-a", 1)[0]
             if base_did in dids:
-                href = f"{DEV_VIEWER}/l1-review/?m={base_did}"
+                href = f"{DEV_VIEWER}/v1-review/?m={base_did}"
         if not href:
             continue
         if m.start() > pos:

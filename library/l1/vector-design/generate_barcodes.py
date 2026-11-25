@@ -19,7 +19,9 @@ whether we verified it):
                                                 the less conservative of the two until this.
   no GT[AG]AG 5' splice-donor core            ours -- a cryptic donor in the 3'UTR would
                                                 splice out the IRES and the marker. ADDED
-                                                2026-09-26; see f_no_splice_donor
+                                                2026-09-26 as a post-hoc filter preserving the
+                                                original 1..30,000 indices (1,494 retired ->
+                                                28,506 reservable); see filter_pool_splice.py
   no BbsI / Esp3I-BsmBI / BsaI, both strands    non-palindromic, so they need naming; every
                                                 PALINDROMIC 6-cutter is already excluded as a
                                                 side effect of the hairpin rule (see below)
@@ -56,8 +58,10 @@ end as an independent sanity test.
 
 Run:
     uv run python library/l1/vector-design/generate_barcodes.py
+    uv run python library/l1/vector-design/generate_barcodes.py --check
 """
 
+import argparse
 import csv
 import itertools
 import random
@@ -84,6 +88,8 @@ MIN_DISTANCE = 3  # Levenshtein
 MIN_HAMMING = 4
 SEED = 20260812
 OUT = HERE / f"barcodes_{LENGTH}nt_{TARGET // 1000}k.tsv"
+OUT_ASGENERATED = HERE / f"barcodes_{LENGTH}nt_{TARGET // 1000}k_asgenerated.tsv"
+OUT_RETIRED_SPLICE = HERE / f"barcodes_{LENGTH}nt_{TARGET // 1000}k_retired_splice.tsv"
 
 
 def _pack(s):
@@ -104,13 +110,29 @@ def levenshtein(a, b):
     return prev[-1]
 
 
-def main():
+def _read_indexed(path: Path) -> list[tuple[int, str]]:
+    with path.open() as fh:
+        return [(int(r["index"]), r["barcode"]) for r in csv.DictReader(fh, delimiter="\t")]
+
+
+def main(argv: list[str] | None = None) -> int:
+    ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    ap.add_argument(
+        "--check",
+        action="store_true",
+        help="replay the draw + post-hoc splice filter and assert exact match to committed TSVs",
+    )
+    args = ap.parse_args(argv)
+
     rng = random.Random(SEED)
     polya = polyadenylation_hexamers()
     seeds = load_seeds({"broadly_conserved", "conserved"}, 6)
     seed_ok = make_seed_filter(seeds, 6)
 
-    def ok(bc):
+    # Step 1: draw the original 30,000-barcode pool from SEED. `f_no_splice_donor` was added
+    # post-hoc on 2026-09-26 (Step 2 below) so pool_index assignments in the P-series registry
+    # stay immutable; applying it inside this loop would alter RNG consumption from index 7 on.
+    def ok_draw(bc):
         return (
             f_gc(bc)
             and f_no_triples(bc)
@@ -118,9 +140,11 @@ def main():
             and f_no_polya(bc, polya)
             and f_no_enzyme(bc)
             and f_no_selfcomp3(bc)
-            and f_no_splice_donor(bc)
             and seed_ok(bc)
         )
+
+    def ok_full(bc):
+        return ok_draw(bc) and f_no_splice_donor(bc)
 
     print(f"generating {TARGET:,} x {LENGTH} nt, min Levenshtein {MIN_DISTANCE}")
     print(f"  miRNA 6-mer seed sites excluded: {len(seeds)} (conserved+, Slutskin definition)")
@@ -147,7 +171,7 @@ def main():
     while len(barcodes) < TARGET:
         drawn += 1
         bc = "".join(rng.choice("ACGT") for _ in range(LENGTH))
-        if not ok(bc):
+        if not ok_draw(bc):
             rejected_constraints += 1
             continue
         nb = [
@@ -167,6 +191,12 @@ def main():
         if len(barcodes) % 5000 == 0:
             print(f"  {len(barcodes):>6,} accepted   {drawn:>9,} drawn")
 
+    # Step 2: post-hoc splice-donor retirement, preserving original 1-based pool indices.
+    as_generated = list(enumerate(barcodes, 1))
+    survivors = [(i, b) for i, b in as_generated if f_no_splice_donor(b)]
+    retired = [(i, b) for i, b in as_generated if not f_no_splice_donor(b)]
+    survivor_codes = [b for _, b in survivors]
+
     print(f"\ndone: {len(barcodes):,} barcodes from {drawn:,} draws")
     print(
         f"  rejected by constraints: {rejected_constraints:>9,} "
@@ -179,20 +209,24 @@ def main():
     print(
         f"  rejected by Hamming:     {rejected_hamming:>9,} ({100 * rejected_hamming / drawn:.2f}%)"
     )
+    print(
+        f"  retired post-hoc (GT[AG]AG splice donor): {len(retired):,} "
+        f"-> {len(survivors):,} reservable (original indices preserved)"
+    )
 
-    gc = [(b.count("G") + b.count("C")) / LENGTH for b in barcodes]
+    gc = [(b.count("G") + b.count("C")) / LENGTH for b in survivor_codes]
     print(f"\n  GC: min {min(gc):.2f}  mean {sum(gc) / len(gc):.3f}  max {max(gc):.2f}")
 
-    # every barcode must still pass every filter -- catches any bug in the accept path
-    assert all(ok(b) for b in barcodes), "a written barcode fails the filter stack"
-    assert len(set(barcodes)) == len(barcodes), "duplicate barcode"
+    # every surviving barcode must pass every filter -- catches any bug in the accept path
+    assert all(ok_full(b) for b in survivor_codes), "a written barcode fails the filter stack"
+    assert len(set(survivor_codes)) == len(survivor_codes), "duplicate barcode"
     print("  all barcodes re-pass the full filter stack, and all are unique")
 
-    # sampled independent distance check (full pairwise is 4.5e8 comparisons)
+    # sampled independent distance check (full pairwise is ~4e8 comparisons)
     n_pairs = 300_000
     worst = LENGTH
     for _ in range(n_pairs):
-        a, b = rng.sample(barcodes, 2)
+        a, b = rng.sample(survivor_codes, 2)
         worst = min(worst, levenshtein(a, b))
     print(
         f"  sampled {n_pairs:,} random pairs: minimum observed distance = {worst} "
@@ -200,13 +234,31 @@ def main():
     )
     assert worst >= MIN_DISTANCE, "sampled pair violates the distance guarantee"
 
-    with OUT.open("w", newline="") as fh:
-        w = csv.writer(fh, delimiter="\t")
-        w.writerow(["index", "barcode"])
-        for i, b in enumerate(barcodes, 1):
-            w.writerow([i, b])
-    print(f"\nwrote {OUT}")
+    if args.check:
+        assert _read_indexed(OUT) == survivors, f"{OUT.name} does not match replay"
+        if OUT_ASGENERATED.exists():
+            assert _read_indexed(OUT_ASGENERATED) == as_generated, (
+                f"{OUT_ASGENERATED.name} does not match replay"
+            )
+        if OUT_RETIRED_SPLICE.exists():
+            assert _read_indexed(OUT_RETIRED_SPLICE) == retired, (
+                f"{OUT_RETIRED_SPLICE.name} does not match replay"
+            )
+        print(f"\ncheck ok: exact match to {OUT.name} ({len(survivors):,} rows)")
+        return 0
+
+    for path, rows in (
+        (OUT, survivors),
+        (OUT_ASGENERATED, as_generated),
+        (OUT_RETIRED_SPLICE, retired),
+    ):
+        with path.open("w", newline="") as fh:
+            w = csv.writer(fh, delimiter="\t", lineterminator="\n")
+            w.writerow(["index", "barcode"])
+            w.writerows(rows)
+        print(f"wrote {path} ({len(rows):,} rows)")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

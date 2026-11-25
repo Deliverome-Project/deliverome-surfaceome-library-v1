@@ -10,14 +10,14 @@
       "cohort_forms_observed": 384,
       "cohort_forms_prediction_only": 515,
       "cohort_forms": 899,
-      "drawable_forms_gate_of_record": 791,
+      "drawable_forms_gate_of_record": 817,
       "panel_forms": 61,
       "panel_forms_observed": 43,
       "panel_forms_prediction_only": 18,
       "panel_genes": 54,
       "uniform_expected_from_cohort": 71.8,
       "enrichment_vs_uniform_cohort": 0.85,
-      "uniform_expected_from_drawable": 70.6,
+      "uniform_expected_from_drawable": 70.7,
       "enrichment_vs_uniform_drawable": 0.86
     },
     "type II": {
@@ -34,8 +34,8 @@
       "panel_genes": 15,
       "uniform_expected_from_cohort": 8.7,
       "enrichment_vs_uniform_cohort": 1.95,
-      "uniform_expected_from_drawable": 9.6,
-      "enrichment_vs_uniform_drawable": 1.78
+      "uniform_expected_from_drawable": 9.0,
+      "enrichment_vs_uniform_drawable": 1.89
     },
     "type III": {
       "library_genes": 33,
@@ -44,7 +44,7 @@
       "cohort_forms_observed": 12,
       "cohort_forms_prediction_only": 12,
       "cohort_forms": 24,
-      "drawable_forms_gate_of_record": 20,
+      "drawable_forms_gate_of_record": 23,
       "panel_forms": 5,
       "panel_forms_observed": 3,
       "panel_forms_prediction_only": 2,
@@ -52,7 +52,7 @@
       "uniform_expected_from_cohort": 2.1,
       "enrichment_vs_uniform_cohort": 2.43,
       "uniform_expected_from_drawable": 2.2,
-      "enrichment_vs_uniform_drawable": 2.32
+      "enrichment_vs_uniform_drawable": 2.26
     },
     "GPI": {
       "library_genes": 146,
@@ -68,8 +68,8 @@
       "panel_genes": 14,
       "uniform_expected_from_cohort": 7.7,
       "enrichment_vs_uniform_cohort": 2.09,
-      "uniform_expected_from_drawable": 7.0,
-      "enrichment_vs_uniform_drawable": 2.27
+      "uniform_expected_from_drawable": 6.8,
+      "enrichment_vs_uniform_drawable": 2.36
     },
     "multipass N-out": {
       "library_genes": 672,
@@ -78,15 +78,15 @@
       "cohort_forms_observed": 118,
       "cohort_forms_prediction_only": 168,
       "cohort_forms": 286,
-      "drawable_forms_gate_of_record": 260,
+      "drawable_forms_gate_of_record": 265,
       "panel_forms": 19,
       "panel_forms_observed": 13,
       "panel_forms_prediction_only": 6,
       "panel_genes": 15,
       "uniform_expected_from_cohort": 22.5,
       "enrichment_vs_uniform_cohort": 0.84,
-      "uniform_expected_from_drawable": 23.6,
-      "enrichment_vs_uniform_drawable": 0.8
+      "uniform_expected_from_drawable": 23.1,
+      "enrichment_vs_uniform_drawable": 0.82
     },
     "multipass N-in": {
       "library_genes": 551,
@@ -95,15 +95,15 @@
       "cohort_forms_observed": 185,
       "cohort_forms_prediction_only": 307,
       "cohort_forms": 492,
-      "drawable_forms_gate_of_record": 442,
+      "drawable_forms_gate_of_record": 467,
       "panel_forms": 32,
       "panel_forms_observed": 21,
       "panel_forms_prediction_only": 11,
       "panel_genes": 30,
       "uniform_expected_from_cohort": 37.3,
       "enrichment_vs_uniform_cohort": 0.86,
-      "uniform_expected_from_drawable": 37.0,
-      "enrichment_vs_uniform_drawable": 0.86
+      "uniform_expected_from_drawable": 38.3,
+      "enrichment_vs_uniform_drawable": 0.84
     },
     "single-pass other": {
       "library_genes": 0,

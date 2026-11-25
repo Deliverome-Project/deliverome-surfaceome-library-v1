@@ -202,14 +202,29 @@ def verify_gene_list(work: Path) -> str:
     # construct gates but not S1E3's surface-evidence gate, so they are listed, not derived.
     with GAP_ADDITIONS.open() as fh:
         gap = {r["gene"] for r in csv.DictReader(fh, delimiter="\t")}
+    # Refined 2026-11-23-abundance-v8 surface-proteomics gap additions (PR #455, 01335bc) and
+    # later recorded withdrawals (e.g. MHC class II single chains, superseded gap genes, SCNN1B)
+    # are recorded in gene_list_additions.tsv.
+    with ADDITIONS.open() as fh:
+        add_rows = list(csv.DictReader(fh, delimiter="\t"))
+    v8_gap = {
+        r["gene"]
+        for r in add_rows
+        if not (r.get("withdrawn") or "").strip() and "2026-11-23-abundance-v8" in r["source"]
+    }
+    withdrawn = set(additions(withdrawn=True))
     library = set(json.loads(gene_list(work / "genes").read_text()))
-    unexplained = sorted(((passed | restated | gap) - set(excluded)) ^ library)
+    unexplained = sorted(((passed | restated | gap | v8_gap) - set(excluded) - withdrawn) ^ library)
     assert not unexplained, f"filter output differs from the gene list for {unexplained}"
+    active_restated = len(restated - withdrawn)
+    active_gap = len((gap | v8_gap) - withdrawn)
     return (
         f"S1E3 filter over surfaceome release 1.3.0 passes {len(passed)} genes; plus "
-        f"{len(restated)} the restated co-receptor gate admits; plus {len(gap)} surface-proteomics "
-        f"additions; minus {len(excluded)} recorded "
-        f"exclusion(s) ({', '.join(excluded)}) = the {len(library)} library genes exactly"
+        f"{active_restated} active restated co-receptor additions ({len(restated & withdrawn)} "
+        f"withdrawn); plus {active_gap} active surface-proteomics additions "
+        f"({len(gap & withdrawn)} superseded, {len(v8_gap)} v8 additions); minus "
+        f"{len(excluded)} recorded exclusion(s) ({', '.join(excluded)}) = "
+        f"the {len(library)} library genes exactly"
     )
 
 
@@ -343,11 +358,20 @@ def verify_isoform_gate(work: Path) -> str:
 
 
 def verify_panels(work: Path) -> str:
+    import csv
+
+    from redraw_panels import iso_keys
+
     rej = HERE / "panel_rejections.tsv"
     spec = json.loads((AP / "panel_inputs.json").read_text())
-    # The isoform redraw runs through the cohort gate (2026-11-12); the original ortholog
-    # panel keeps its recorded redraw (retired from L1, kept as the record).
+    # The 2026-11-12 isoform redraw (kept as isoform_panel_2026-11-12.tsv since the later
+    # split-multipass and 2026-11-23 redraws) runs through the cohort gate; the original
+    # ortholog panel keeps its recorded redraw (retired from L1, kept as the record).
     extra = {"isoform": ["--gate", str(HERE / "isoform_gate.tsv")], "ortholog": []}
+    expected = {
+        "isoform": HERE / "isoform_panel_2026-11-12.tsv",
+        "ortholog": HERE / "ortholog_panel.tsv",
+    }
     for kind in ("isoform", "ortholog"):
         run([str(AP / f"sample_{kind}_panel.py"), "--snapshot", "--original"], work)
         assert sha256(work / f"{kind}_panel.tsv") == spec["reproduces"][f"{kind}_panel.tsv"], (
@@ -357,12 +381,26 @@ def verify_panels(work: Path) -> str:
             [str(AP / f"sample_{kind}_panel.py"), "--snapshot", "--reject", str(rej), *extra[kind]],
             work,
         )
-        assert same_bytes(work / f"{kind}_panel.tsv", HERE / f"{kind}_panel.tsv"), (
-            f"{kind}: redraw does not reproduce the committed panel"
+        assert same_bytes(work / f"{kind}_panel.tsv", expected[kind]), (
+            f"{kind}: redraw does not reproduce {expected[kind].name}"
         )
+    # Also verify the current isoform panel of record matches the 150 active L1 isoform members.
+    with (HERE / "candidate_manifest_tranches.tsv").open() as fh:
+        active_iso = {
+            r["key"]
+            for r in csv.DictReader(fh, delimiter="\t")
+            if r["library"] == "l1" and not r["retired_reason"] and r["set"] == "isoform"
+        }
+    with (HERE / "isoform_panel.tsv").open() as fh:
+        cur_iso = list(csv.DictReader(fh, delimiter="\t"))
+    hits = [sorted(iso_keys(r) & active_iso) for r in cur_iso]
+    assert len(cur_iso) == len(active_iso) and all(len(h) == 1 for h in hits), (
+        "isoform_panel.tsv does not match the active L1 isoform members 1:1"
+    )
+    assert {h[0] for h in hits} == active_iso, "isoform_panel.tsv active member set mismatch"
     return (
-        "both panels: original draw and rule-based redraw reproduce byte for byte (isoform "
-        "redraw through the cohort gate)"
+        "both panels: original draw and 2026-11-12 gated redraw reproduce byte for byte; "
+        f"current isoform_panel.tsv matches all {len(active_iso)} active L1 isoform members 1:1"
     )
 
 
@@ -531,10 +569,12 @@ def verify_cterm_review(work: Path) -> str:
     out = work / "l1_cterm_review.tsv"
     run([str(HERE / "review_l1_cterm_members.py"), "--out", str(out)], HERE)
     assert same_bytes(out, HERE / "l1_cterm_review.tsv"), "l1_cterm_review.tsv differs"
-    run([str(HERE / "l1_cterm_decisions.py")], work)  # writes next to the script
-    proc = subprocess.run(["git", "diff", "--quiet", "--", "l1_cterm_decisions.tsv"], cwd=HERE)
-    assert proc.returncode == 0, "l1_cterm_decisions.tsv does not reproduce from the review"
-    return "l1_cterm_review.tsv reproduces byte for byte from the pinned UniProt snapshot"
+    # Verify l1_cterm_decisions.tsv in-memory via --check (no in-place write, no git dependency).
+    run([str(HERE / "l1_cterm_decisions.py"), "--check"], HERE)
+    return (
+        "l1_cterm_review.tsv and l1_cterm_decisions.tsv reproduce byte for byte from the pinned "
+        "UniProt snapshot"
+    )
 
 
 def verify_cterm_arms(work: Path) -> str:
@@ -715,14 +755,85 @@ def verify_universe_coverage(work: Path) -> str:
     )
 
 
+def _strip_ortholog_rule_2026_11_22(manifest_tsv: str) -> str:
+    """Undo the 4 documented 2026-11-22 narrower-feature-rule restorations in ``manifest_tsv``
+    so the pre-2026-11-22 ortholog adoption rows can be compared byte-for-byte."""
+    import csv
+
+    rule_path = HERE / "ortholog_rule_2026-11-22.tsv"
+    with rule_path.open() as fh:
+        restored = [
+            r
+            for r in csv.DictReader(fh, delimiter="\t")
+            if r["panel_change"].startswith("restore ")
+        ]
+    restored_ids = {r["restored_form_design_id"] for r in restored}
+    retired_repl = {r["replacement_design_id"] for r in restored}
+    moved_reasons = {f"moved_to:{did}" for did in restored_ids}
+
+    lines = manifest_tsv.splitlines(keepends=True)
+    header = lines[0].rstrip("\r\n").split("\t")
+    cid_col = header.index("candidate_id")
+    ret_col = header.index("retired_reason")
+    out = [lines[0]]
+    for line in lines[1:]:
+        fields = line.rstrip("\r\n").split("\t")
+        cid = fields[cid_col]
+        if cid in restored_ids:
+            continue
+        if (
+            cid in retired_repl
+            and fields[ret_col] == "replaced_by_original:ortholog_rule_2026-11-22"
+        ):
+            fields[ret_col] = ""
+            line = "\t".join(fields) + "\n"
+        elif fields[ret_col] in moved_reasons:
+            fields[ret_col] = ""
+            line = "\t".join(fields) + "\n"
+        out.append(line)
+    return "".join(out)
+
+
 def verify_ortholog_adoption(work: Path) -> str:
-    """The L1 ortholog panel: the final-v2 draw, the correspondence swaps, the members."""
+    """The L1 ortholog panel: the final-v2 draw, the correspondence swaps, the members,
+    and the 2026-11-22 narrower-feature-rule restorations."""
     import adopt_ortholog_cds_policy as adopt
     import review_ortholog_correspondence as review
+    import write_panels_of_record as wpr
+
+    from deliverome_analysis.s3 import processed
 
     rows, _, _ = review.replay_draw(work / "draw")  # asserts the committed panel back
-    detail = adopt.verify(work / "adopt")
-    return f"final-v2 draw over {len(rows)} sampleable forms reproduces the panel; {detail}"
+    r = adopt.reproduce(work / "adopt")
+    for path, text in adopt.outputs(r).items():
+        if path == adopt.MANIFEST:
+            committed = adopt.masked_trims(
+                adopt.ortholog_rows(
+                    adopt.unnumbered(_strip_ortholog_rule_2026_11_22(path.read_text()))
+                )
+            )
+            expected = adopt.masked_trims(adopt.ortholog_rows(text))
+            assert committed == expected, f"{path.name} does not reproduce"
+        else:
+            assert path.read_text() == text, f"{path.name} does not reproduce"
+    for name, data in (
+        ("candidate_cds.json", adopt.record_bytes(r["cds_record"])),
+        ("candidate_constructs.json", adopt.record_bytes(r["con_record"])),
+        ("added_vectors.fasta", "".join(r["fasta"]).encode()),
+    ):
+        got = Path(processed.download(adopt.RECORDS + name, work / f"rec_{name}")).read_bytes()
+        assert got == data, f"processed://{adopt.RECORDS}{name} does not reproduce"
+    # Also verify the current ortholog_panel_adopted.tsv (2026-11-10 adoption + 4 restorations).
+    ort_cols = list(wpr.read(wpr.ORT_ADOPTED_2026_11_10)[0])
+    assert wpr.ORT_ADOPTED.read_text() == wpr.tsv_text(wpr.ortholog_panel(), ort_cols), (
+        "ortholog_panel_adopted.tsv does not reproduce from the 2026-11-10 adoption + 4 restorations"
+    )
+    s = r["summary"]
+    return (
+        f"final-v2 draw over {len(rows)} sampleable forms reproduces the panel; "
+        f"{s['panel_forms']} adopted forms ({len(s['replacements'])} replaced by review) "
+        f"reproduce plus 4 narrower-feature-rule restorations in ortholog_panel_adopted.tsv"
+    )
 
 
 def verify_tranches(work: Path) -> str:

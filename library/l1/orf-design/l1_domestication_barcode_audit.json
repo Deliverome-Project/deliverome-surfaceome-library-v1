@@ -78,7 +78,7 @@
     "found_in_an_insert_or_backbone": [],
     "registry_block_rows": 3644,
     "not_exactly_once_in_registry": [],
-    "draw_replays_identically": false,
+    "draw_replays_identically": true,
     "draw_replay_note": "replayed against the registry rows that precede the block, with today's local barcode tables"
   },
   "recoded": {

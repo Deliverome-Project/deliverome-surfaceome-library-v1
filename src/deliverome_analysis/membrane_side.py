@@ -40,6 +40,7 @@ Everything is pure computation on coordinates; fetching models is the caller's j
 
 from __future__ import annotations
 
+import math
 import re
 from collections.abc import Sequence
 from dataclasses import dataclass
@@ -163,9 +164,11 @@ def segments(topology: str, state: str) -> list[tuple[int, int]]:
 
 def superpose(a: np.ndarray, b: np.ndarray) -> tuple[np.ndarray, np.ndarray, float]:
     """Rotation ``r`` and translation ``t`` minimising |a @ r.T + t - b|, and the RMSD."""
+    if a.ndim != 2 or b.ndim != 2 or a.shape != b.shape or a.shape[1] != 3 or len(a) == 0:
+        raise ValueError("a and b must be non-empty (N, 3) coordinate arrays of the same shape")
     ca, cb = a.mean(0), b.mean(0)
     u, _, vt = np.linalg.svd((a - ca).T @ (b - cb))
-    d = np.sign(np.linalg.det(u @ vt))
+    d = -1.0 if np.linalg.det(u @ vt) < 0 else 1.0
     r = (u @ np.diag([1.0, 1.0, d]) @ vt).T
     t = cb - ca @ r.T
     return r, t, float(np.sqrt((((a @ r.T + t) - b) ** 2).sum(1).mean()))
@@ -369,7 +372,7 @@ VERDICTS = (
 
 def site_verdict(z: float, plddt: float, orientation_ok: bool, th: GateThresholds) -> str:
     """Gate verdict for one insertion junction at height ``z`` (A) with pLDDT ``plddt``."""
-    if np.isnan(z):
+    if not (math.isfinite(z) and math.isfinite(plddt)):
         return "unscorable"
     if not orientation_ok:
         return "review_orientation"

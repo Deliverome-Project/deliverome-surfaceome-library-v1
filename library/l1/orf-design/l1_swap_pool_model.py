@@ -83,11 +83,34 @@ HEAD = audit.WRAP_5  # every upstream region starts after the 5' Esp3I wrapper
 # ----------------------------------------------------------------------------- inputs
 
 
+def _cleavable_leader_keys() -> set[tuple[str, str]]:
+    """``(rung, design_id)`` pairs whose tag sits behind a cleavable SP or Igk leader."""
+    cleavable: set[tuple[str, str]] = set()
+    with (HERE / "constructs_l1_nterm.tsv").open() as fh:
+        cleavable |= {
+            ("nterm", r["design_id"])
+            for r in csv.DictReader(fh, delimiter="\t")
+            if r["arm"] in ("native_site", "igk_swap")
+        }
+    for rung, fname in (
+        ("multipass", "constructs_l1_multipass.tsv"),
+        ("type3", "constructs_l1_type3.tsv"),
+    ):
+        with (HERE / fname).open() as fh:
+            cleavable |= {
+                (rung, r["design_id"])
+                for r in csv.DictReader(fh, delimiter="\t")
+                if r["design"] == "igk_tag"
+            }
+    return cleavable
+
+
 def load() -> list[dict]:
     rec, digest = audit.recoded_inserts(None)
     if digest != audit.RECODED_SHA256:
         raise SystemExit("order of record changed; re-pin it in audit_domestication_barcodes")
     plan = {r["arm_id"]: r for r in csv.DictReader(PLAN.open(), delimiter="\t")}
+    cleavable = _cleavable_leader_keys()
     out = []
     for r in rec:
         p = plan[r["key"]]
@@ -104,6 +127,7 @@ def load() -> list[dict]:
                 "design_id": p["design_id"],
                 "rung": p["rung"],
                 "set": p["set"],
+                "has_cleavable_leader": (p["rung"], p["design_id"]) in cleavable,
                 "up": up,
                 "protein": protein,
                 # region boundaries in upstream coordinates
@@ -173,13 +197,17 @@ def product_protein(a: dict, b: dict, i: int, j: int, n: int) -> str:
     return "".join(aa)
 
 
-def leader_swap(prot: str, b: dict) -> bool:
-    """b's protein from its tag onward, behind a different short leader (<= LEADER_AA residues).
+def leader_swap(prot: str, a: dict, b: dict) -> bool:
+    """b's protein from its tag onward, behind a's short cleavable leader (<= LEADER_AA residues).
 
-    The product of a switch inside the shared tag cassette when both members carry the tag near
-    their N-terminus: b's mature protein, tagged, with a's signal peptide or Igκ leader. The
-    leader is cleaved, so the displayed protein is b's; only the leader's efficiency differs.
+    The product of a switch inside the shared tag cassette when both members carry the tag
+    behind a cleavable signal peptide or Igk leader (not an internal loop, C-terminal or stalk
+    insertion, or leaderless type III / multipass N-terminus): b's mature protein, tagged, with
+    a's cleavable leader. The leader is cleaved, so the displayed protein is b's; only the
+    leader's efficiency differs.
     """
+    if not (a.get("has_cleavable_leader") and b.get("has_cleavable_leader")):
+        return False
     tail = b["protein"][b["cas_aa"] :]
     return b["cas_aa"] <= LEADER_AA and prot.endswith(tail) and len(prot) - len(tail) <= LEADER_AA
 
@@ -194,7 +222,7 @@ def pair_terms(a: dict, b: dict, idx_a: dict | None = None) -> list[tuple[str, s
             outcome = "correct"
         elif prot == a["protein"]:
             outcome = "mislabel"
-        elif leader_swap(prot, b):
+        elif leader_swap(prot, a, b):
             outcome = "leader swap"
         else:
             outcome = "chimera"
@@ -423,6 +451,7 @@ def main() -> None:
             "background_chimera": wq(bg_chi),
             "total": wq(imp),
             "not_counted_leader_swap": wq(spec_lead + bg_lead),
+            "total_including_leader_swap": wq(imp + spec_lead + bg_lead),
         },
         "per_barcode_impurity": {
             "median": float(np.median(imp)),

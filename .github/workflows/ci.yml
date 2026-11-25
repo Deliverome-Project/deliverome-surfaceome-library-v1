@@ -20,5 +20,47 @@ jobs:
         run: |
           uv run --locked ruff check
           uv run --locked ruff format --check
+      - name: Static type check (mypy)
+        run: uv run --locked mypy src/deliverome_analysis
       - name: Offline tests
         run: uv run --locked pytest -q tests/ library/l1/orf-design/tests/
+      - name: Manifest, pinned snapshots, and bundle audit
+        run: |
+          uv run --locked python library/l1/orf-design/pinned_refs.py
+          uv run --locked python library/l1/orf-design/reviewer-package/bundle.py audit
+      - name: Markdown relative-link and CITATION.cff check
+        run: |
+          uv run --locked python - <<'PY'
+          import re, yaml
+          from pathlib import Path
+
+          root = Path(".")
+          link_re = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
+          broken = []
+          for md in sorted(root.rglob("*.md")):
+              if any(p in {".git", ".venv", "historical"} for p in md.parts):
+                  continue
+              text = md.read_text(errors="ignore")
+              for raw in link_re.findall(text):
+                  target = raw.split("#", 1)[0].strip().strip("<>")
+                  if not target or target.startswith(("http://", "https://", "mailto:", "#")):
+                      continue
+                  if not (md.parent / target).exists():
+                      broken.append(f"{md}: {target}")
+          assert not broken, "Broken relative markdown links:\n  " + "\n  ".join(broken[:20])
+          print("markdown relative links OK")
+
+          cff = root / "CITATION.cff"
+          if cff.is_file():
+              data = yaml.safe_load(cff.read_text())
+              for req in ("cff-version", "title", "authors"):
+                  assert data and req in data, f"CITATION.cff missing {req!r}"
+              print("CITATION.cff OK")
+          PY
+      - name: CLI smoke checks
+        run: |
+          uv run --locked python library/l1/orf-design/reviewer-package/run_review.py --help > /dev/null
+          uv run --locked python library/l1/orf-design/reviewer-package/bundle.py --help > /dev/null
+          uv run --locked python library/l1/orf-design/library_pipeline.py plan > /dev/null
+          uv run --locked python library/l1/orf-design/l1_cterm_decisions.py --check
+          uv run --locked python library/l1/orf-design/gate_isoform_cohort.py --help > /dev/null

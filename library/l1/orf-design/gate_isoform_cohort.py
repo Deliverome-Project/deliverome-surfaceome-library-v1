@@ -67,6 +67,12 @@ DECISION_REASON = (
     "a panel form must start at a native ATG that an Ensembl 115 CDS supports, and keep its "
     "canonical's signal peptide, N-terminal orientation and first TM helix (DeepTMHMM v1)"
 )
+DECIDED_BY_2026_11_23 = "Becca Carlson, 2026-11-23 (relax N-term/TM1 + reject short fragments <25% ref or <100aa & <50% ref)"
+IMPLEMENTED_BY_2026_11_23 = "Antigravity session, 2026-11-23"
+DECISION_REASON_2026_11_23 = (
+    "native ATG + exact Ensembl 115 CDS + signal peptide kept + non-fragment; "
+    "N-term/TM1 relaxed because every isoform receives its own DeepTMHMM v1 tag placement"
+)
 COLUMNS = [
     "form_id",
     "gene",
@@ -218,6 +224,19 @@ def gate(
         row["key"]: row["per_residue_topology"] for row in topo.to_dict("records") if row["found"]
     }
 
+    decided_by = (
+        DECIDED_BY_2026_11_23 if (relax_nterm_tm1 and reject_short_fragments) else DECIDED_BY
+    )
+    implemented_by = (
+        IMPLEMENTED_BY_2026_11_23
+        if (relax_nterm_tm1 and reject_short_fragments)
+        else IMPLEMENTED_BY
+    )
+    decision_reason = (
+        DECISION_REASON_2026_11_23
+        if (relax_nterm_tm1 and reject_short_fragments)
+        else DECISION_REASON
+    )
     out = []
     for r in cohort:
         fid = form_id(r)
@@ -230,9 +249,9 @@ def gate(
             "ensembl_transcripts": r["ensembl_transcripts"],
             "cohort_tier": r["cohort_tier"],
             "form_length": len(prot),
-            "decided_by": DECIDED_BY,
-            "implemented_by": IMPLEMENTED_BY,
-            "decision_reason": DECISION_REASON,
+            "decided_by": decided_by,
+            "implemented_by": implemented_by,
+            "decision_reason": decision_reason,
         }
         # ---- 1. native ATG start, supported by an Ensembl 115 CDS -------------------------
         if not prot:
@@ -351,28 +370,53 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--check", action="store_true")
     ap.add_argument("--publish", action="store_true")
+    ap.add_argument(
+        "--relax-nterm-tm1",
+        action="store_true",
+        help="do not fail forms on N-terminal side or first-TM-helix mismatch vs reference",
+    )
+    ap.add_argument(
+        "--reject-short-fragments",
+        action="store_true",
+        help="fail short fragments (<25%% of reference length, or <100 aa and <50%% of reference)",
+    )
+    ap.add_argument("--cohort", type=Path, default=None, help="override cohort TSV path")
+    ap.add_argument("--snapshot-key", default=None, help="override topology snapshot S3 key")
+    ap.add_argument("--snapshot-sha256", default=None, help="override topology snapshot SHA-256")
+    ap.add_argument("--out", type=Path, default=OUT, help="output gate TSV path")
+    ap.add_argument("--summary", type=Path, default=SUMMARY, help="output summary JSON path")
     args = ap.parse_args(argv)
     work = Path(tempfile.mkdtemp(prefix="isoform-gate-"))
-    rows = gate(load_inputs(work))
+    inp = load_inputs(
+        work,
+        cohort_path=args.cohort,
+        snapshot_key=args.snapshot_key,
+        snapshot_sha256=args.snapshot_sha256,
+    )
+    rows = gate(
+        inp,
+        relax_nterm_tm1=args.relax_nterm_tm1,
+        reject_short_fragments=args.reject_short_fragments,
+    )
     text = tsv_text(rows)
     summary = json.dumps(summarise(rows), indent=2) + "\n"
     if args.check:
-        assert OUT.read_text() == text, f"{OUT.name} does not reproduce"
-        assert SUMMARY.read_text() == summary, f"{SUMMARY.name} does not reproduce"
-        print(f"{OUT.name} reproduces ({len(rows)} forms)")
+        assert args.out.read_text() == text, f"{args.out.name} does not reproduce"
+        assert args.summary.read_text() == summary, f"{args.summary.name} does not reproduce"
+        print(f"{args.out.name} reproduces ({len(rows)} forms)")
         return 0
     if args.publish:
         from deliverome_analysis.s3 import processed
 
-        if OUT.read_text() != text:
-            raise SystemExit(f"{OUT.name} differs from the rerun; write and commit first")
+        if args.out.read_text() != text:
+            raise SystemExit(f"{args.out.name} differs from the rerun; write and commit first")
         if processed.exists(GATE_KEY):
             raise SystemExit(f"processed://{GATE_KEY} exists; pinned keys are never overwritten")
-        processed.upload(str(OUT), GATE_KEY)
-        print(f"published processed://{GATE_KEY} sha256 {sha256(OUT)}")
+        processed.upload(str(args.out), GATE_KEY)
+        print(f"published processed://{GATE_KEY} sha256 {sha256(args.out)}")
         return 0
-    OUT.write_text(text)
-    SUMMARY.write_text(summary)
+    args.out.write_text(text)
+    args.summary.write_text(summary)
     print(summary)
     return 0
 

@@ -79,7 +79,7 @@ import tag_site_model_v5 as V5  # noqa: E402
 
 from deliverome_analysis import plasmid_qc as qc  # noqa: E402
 
-PANEL = HERE.parents[1] / "sprint4" / "s4e9-orf-design-fg-panel"
+PANEL = HERE.parents[1] / "l1" / "orf-design"
 DECISIONS = HERE / "l1_internal_decisions.tsv"
 ARMS = HERE / "l1_internal_arm_decisions.tsv"
 MAX_ARMS = 3

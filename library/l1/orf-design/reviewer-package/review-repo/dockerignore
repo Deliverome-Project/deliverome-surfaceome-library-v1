@@ -1,0 +1,15 @@
+.git
+.gitignore
+.venv
+__pycache__
+*.py[cod]
+*$py.class
+.pytest_cache
+.ruff_cache
+.mypy_cache
+.env
+review_report.json
+l1-reviewer-bundle*
+*.tar
+*.tar.gz
+*.bundle

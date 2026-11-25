@@ -278,10 +278,10 @@ FEATURES             Location/Qualifiers
                      relative to p003"
                      /gene="pac from Streptomyces alboniger"
                      /product="puromycin N-acetyltransferase"
-                     /translation="TEYKPTVRLATRDDVPRAVRTLAAAFADYPATRHTVDPDRHIERV
-                     TELQELFLTRVGLDIGKVWVADDGAAVAVWTTPESVEAGAVFAEIGPRMAELSGSRLAA
-                     QQQMEGLLAPHRPKEPAWFLATVGVSPDHQGKGLGSAVVLPGVEAAERAGVPAFLETSA
-                     PRNLPFYERLGFTVTADVEVPEGPRTWCMTRKPGA*"
+                     /translation="MTEYKPTVRLATRDDVPRAVRTLAAAFADYPATRHTVDPDRHIER
+                     VTELQELFLTRVGLDIGKVWVADDGAAVAVWTTPESVEAGAVFAEIGPRMAELSGSRL
+                     AAQQQMEGLLAPHRPKEPAWFLATVGVSPDHQGKGLGSAVVLPGVEAAERAGVPAFLE
+                     TSAPRNLPFYERLGFTVTADVEVPEGPRTWCMTRKPGA*"
      primer_bind     8929..8949
                      /label="Puro-F"
                      /ApEinfo_revcolor="#ff9ccd"

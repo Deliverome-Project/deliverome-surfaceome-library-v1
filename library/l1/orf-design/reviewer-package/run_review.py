@@ -47,43 +47,68 @@ def sha256(path: Path) -> str:
     return sha256_file(Path(path))
 
 
-def check_bundle(bundle: Path) -> int:
-    """Every file the replay reads present with its recorded hash; returns the file count.
+def verify_bundle(bundle: Path) -> tuple[int, int]:
+    """Verify bundle files against ``bundle_manifest.tsv``.
 
-    Rows marked ``read_by_replay = no`` are the rest of the pinned releases, shipped as a
-    separate supplement tarball; they are checked when present and not required.
+    Returns ``(checked_count, skipped_optional_count)``. Rows marked ``read_by_replay = no`` are
+    the rest of the pinned releases, shipped as a separate supplement tarball; they are checked
+    when present on disk and counted as skipped (not checked) when absent.
     """
     with MANIFEST.open() as fh:
         rows = list(csv.DictReader(fh, delimiter="\t"))
 
-    def _check_one(r: dict[str, str]) -> str | None:
+    def _check_one(r: dict[str, str]) -> tuple[str, str | None]:
         path = bundle / "s3" / r["bucket"] / r["key"]
         if not path.is_file():
             if r.get("read_by_replay", "yes") == "yes":
-                return f"missing  {r['bucket']}://{r['key']}"
-            return None
+                return "bad", f"missing  {r['bucket']}://{r['key']}"
+            return "skipped", None
         if sha256(path) != r["sha256"]:
-            return f"changed  {r['bucket']}://{r['key']}"
-        return None
+            return "bad", f"changed  {r['bucket']}://{r['key']}"
+        return "ok", None
 
     with ThreadPoolExecutor(max_workers=min(8, os.cpu_count() or 4)) as pool:
-        bad = [err for err in pool.map(_check_one, rows) if err is not None]
+        outcomes = list(pool.map(_check_one, rows))
+    bad = [err for status, err in outcomes if status == "bad" and err is not None]
     if bad:
         raise SystemExit("bundle does not match bundle_manifest.tsv:\n  " + "\n  ".join(bad))
-    return len(rows)
+    checked = sum(1 for status, _ in outcomes if status == "ok")
+    skipped = sum(1 for status, _ in outcomes if status == "skipped")
+    return checked, skipped
+
+
+def check_bundle(bundle: Path) -> int:
+    """Every present bundle file matches its recorded SHA-256; returns count actually verified."""
+    checked, _ = verify_bundle(bundle)
+    return checked
 
 
 def offline_env(bundle: Path, home: Path) -> dict[str, str]:
-    """Environment for the replay: bundle reads only, real S3 unreachable, fixed hash seed."""
+    """Environment for the replay: bundle reads only, S3 and HTTP(S) unreachable, fixed hash seed.
+
+    Sets ``S3_ENDPOINT_URL`` and standard HTTP(S) proxy variables to ``http://127.0.0.1:9``
+    (discard/closed port) so accidental live S3 or HTTP requests via ``boto3``, ``requests``,
+    ``urllib`` or ``httpx`` fail immediately. For full kernel-level network isolation (blocking
+    raw sockets / DNS as well), run inside the container with ``docker run --network=none``.
+    """
     env = dict(os.environ)
     env.update(
         {
             "DELIVEROME_S3_MIRROR": str(bundle / "s3"),
             "DELIVEROME_S3_MIRROR_MODE": "read",
-            # If anything bypasses the mirror it meets a closed port and fails loudly.
+            # If anything bypasses the mirror or makes an HTTP(S) request, it meets a closed
+            # local port and fails loudly.
             "S3_ENDPOINT_URL": "http://127.0.0.1:9",
             "S3_ACCESS_KEY_ID": "offline-replay",
             "S3_SECRET_ACCESS_KEY": "offline-replay",
+            "HTTP_PROXY": "http://127.0.0.1:9",
+            "HTTPS_PROXY": "http://127.0.0.1:9",
+            "ALL_PROXY": "http://127.0.0.1:9",
+            "NO_PROXY": "",
+            "http_proxy": "http://127.0.0.1:9",
+            "https_proxy": "http://127.0.0.1:9",
+            "all_proxy": "http://127.0.0.1:9",
+            "no_proxy": "",
             # A fresh home: no developer cache can stand in for a bundle file.
             "HOME": str(home),
             "DELIVEROME_ANALYSIS_S3_CACHE": str(home / "s3-cache"),
@@ -96,9 +121,12 @@ def offline_env(bundle: Path, home: Path) -> dict[str, str]:
 def has_history(commit: str) -> bool:
     if (REPO / "historical" / f"{commit}.tar").is_file():
         return True
-    proc = subprocess.run(
-        ["git", "-C", str(REPO), "cat-file", "-e", f"{commit}^{{commit}}"], capture_output=True
-    )
+    try:
+        proc = subprocess.run(
+            ["git", "-C", str(REPO), "cat-file", "-e", f"{commit}^{{commit}}"], capture_output=True
+        )
+    except FileNotFoundError:
+        return False
     return proc.returncode == 0
 
 
@@ -156,8 +184,11 @@ def main(argv=None) -> int:
     )
     args = ap.parse_args(argv)
 
-    n = check_bundle(args.bundle)
-    print(f"bundle: {n} files, every SHA-256 matches bundle_manifest.tsv\n")
+    checked, skipped_optional = verify_bundle(args.bundle)
+    note = (
+        f" ({skipped_optional} optional supplement files not unpacked)" if skipped_optional else ""
+    )
+    print(f"bundle: {checked} files verified against bundle_manifest.tsv{note}\n")
     home = Path(tempfile.mkdtemp(prefix="l1-review-home-"))
     env = offline_env(args.bundle.resolve(), home)
 
@@ -181,7 +212,17 @@ def main(argv=None) -> int:
     print(f"brief numbers: {status} {detail}")
     results.append({"stage": "brief_numbers", "status": status, "detail": detail})
 
-    args.report.write_text(json.dumps({"bundle_files": n, "results": results}, indent=1) + "\n")
+    args.report.write_text(
+        json.dumps(
+            {
+                "bundle_files_verified": checked,
+                "bundle_files_optional_absent": skipped_optional,
+                "results": results,
+            },
+            indent=1,
+        )
+        + "\n"
+    )
     failed = [r["stage"] for r in results if r["status"] == "FAIL"]
     skipped = [r["stage"] for r in results if r["status"] == "SKIP"]
     print(

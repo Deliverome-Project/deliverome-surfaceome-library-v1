@@ -60,6 +60,7 @@ def compute(s4e9_dir: Path = S4E9) -> dict[str, Any]:
             "lane_override": r.get("lane_override", ""),
             "length_aa": r.get("length_aa", ""),
             "signal_peptide_aa": r.get("signal_peptide_aa", ""),
+            "sequence_sha256": r.get("sequence_sha256", ""),
         }
 
     for rung, filename in ARM_TABLES:
@@ -76,6 +77,9 @@ def compute(s4e9_dir: Path = S4E9) -> dict[str, Any]:
                 or "",
                 "native_aa": r.get("native_aa", ""),
                 "protein_aa": r.get("protein_aa", ""),
+                "native_sha256": r.get("native_sha256", ""),
+                "protein_sha256": r.get("protein_sha256", ""),
+                "mature_sha256": r.get("mature_sha256", ""),
             }
             by_member.setdefault(did, {"tag_path": None, "arms": []})["arms"].append(arm_rec)
 
@@ -88,6 +92,9 @@ def compute(s4e9_dir: Path = S4E9) -> dict[str, Any]:
                 a["construct_id"],
                 a["placement"],
                 a["cassette_after_residue"],
+                a["protein_sha256"],
+                a["native_sha256"],
+                a["mature_sha256"],
                 a["protein_aa"],
             )
         )
