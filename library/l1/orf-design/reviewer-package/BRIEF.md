@@ -335,84 +335,56 @@ differ from ours:
   Feldman's own primer would bind the A site with one A:A mismatch, so the matched primer above
   replaces it. The padlock then needs one new arm, on the barcode-proximal 15 nt of the
   Tycko handle (`GTTAGCTGCCGTTCC`, 45.7 °C nearest-neighbor at 50 mM Na⁺, against 46.1 °C for
-  Feldman's RT-side arm); the handle itself does not change. Feldman's other arm
-  (`GTGTTCAATCAACATTCC`) is in no deposited plasmid map: it enters with his cloned barcode
-  cassette, so it is inferred, not shown, to sit directly 5′ of his barcode. It does not occur in
-  L1. Seven-mers on the fixed flank that match human miRNA seeds remain: `ACTGGCT`
-  (miR-575/4676-5p), `CTATTCA` (miR-5585-3p), `CTTTGGG` (miR-186-3p) and `AAGCACA`
-  (miR-218-5p, broadly conserved), the last two present today as well. The flank carries no
-  `GT[AG]AG` and no BbsI, Esp3I or BsaI site, and no 15-mer of the padlock arm or the
-  arm-plus-RT region occurs anywhere else in the backbone or the 3,375 L1 inserts. A full map of
-  one CDS with the adopted readout (T7 promoter, handle, barcode slot, padlock arm, RT site, CS1)
-  is [`l1_example_AXL_ires_puro.gb`](../l1_example_AXL_ires_puro.gb), built by
-  [`l1_example_vector_maps.py`](../l1_example_vector_maps.py). Priming RT from CS1 instead
-  stays an alternative that needs no RT site at all, but it is untested: a PubMed and a
-  Consensus search (2026-11-08) found no published optical screen that uses a 10x capture
-  sequence as the in situ RT primer. In the adopted layout CS1 sits 37 nt from the barcode,
-  which does not affect 10x capture, since read 2 of the feature library starts from the
-  handle-side primer.
-- *The new junction changes which barcodes can be used.* Screening the barcode pool in its full
-  context (handle + barcode + flank + CS1 + shuttle) for BbsI, Esp3I and BsaI sites, splice-donor
-  motifs and conserved miRNA seed 7-mers that span either barcode junction:
-
-| Flank | Barcodes passing (of 28,506) | Failing: seed across a junction / Type IIS / splice donor | Drawable at prefix distance 3 over 10 nt |
-|---|---:|---|---:|
-| Earlier flank | 23,807 | 4,339 / 88 / 272 | 3,856 |
-| Adopted | 21,394 | 6,911 / 201 / 0 | 3,741 |
-| Both, the rule L1's block was drawn under | 19,950 | 8,196 / 88 / 272 | 3,665 |
-
-  The adopted flank loses 3,857 barcodes that pass under the earlier one and gains 1,444 that fail it, and still
-  leaves room for all 3,375 constructs under the prefix screen. The T7 promoter sits upstream of
-  the 19-nt handle, beyond the reach of every junction screen, so it changes none of these
-  counts. The junction seed screen is
-  part of [`reserve_barcodes.py`](../reserve_barcodes.py), which takes the 3′ flank as
-  `--three-prime {current,t9a-draft}` and reports these counts with `--pool-stats`. The
-  failure counts are by first reason only (enzyme, then splice donor, then seed), so a barcode
-  failing two screens is counted once.
-- *Two barcodes already assigned would fail the junction seed screen:* CNR1
-  (`GAGAGTAGTCAAGCACCAAG`, completing `AAGGGAT`) and TFRC (`TGTCTCTCTCAGCTTCTCTC`, completing
-  `GTTCCTG`). Both are kept as assigned; every new L1 barcode must pass the
-  screen.
-- *L1's reserved block (3,644 barcodes) passes every screen under both 3′ flanks*, drawn in pool
-  order (`l1_screens_pass` in [`reserve_barcodes.py`](../reserve_barcodes.py),
-  [`reserve_l1_block.py`](../reserve_l1_block.py)): Type IIS, splice donor, conserved miRNA 7-mer
-  seeds across both junctions, 10-nt prefix Hamming ≥ 3, and RNA-binding-protein motifs (no
-  Pumilio `TGTA[ACT]ATA`, AU-rich `ATTTA`, CPEB `TTTTAT`/`TTTTAAT`, poly(A) `AATAAA`/`ATTAAA`, or
-  CFIm25 `TGTA` pair within 50 nt). The 3,644 provisional rows
-  ([`l1_barcode_block_provisional.tsv`](../l1_barcode_block_provisional.tsv), 3,200 +
-  [`l1_barcode_block_extension_2026-11-15.tsv`](../l1_barcode_block_extension_2026-11-15.tsv), 444)
-  cover all **3,375** constructs with **269** to spare; constructs receive their barcodes at order
-  freeze and unused rows are released. While L1's block exhausts the strict 10-nt `d ≥ 3` screen
-  under both flanks, Hamming ≥ 3 over 10 nt is strictly stronger than over 11–12 nt, so L1
-  imposes zero capacity penalty for longer ISS prefixes. Under the adopted Feldman T9A 3′ flank
-  plus RBP screen, 17,923 pool barcodes remain available after assigning L1's 3,375 constructs:
-
-| ISS prefix | Min Hamming `d` | Extra barcodes keeping L1 fixed | Combined total (vs fresh redraw) | Notes |
-|---:|---:|---:|---:|---|
-| 10 nt | 3 | +322 | 3,726 (3,716) | L1 alone runs in 10 cycles with full 1-error correction |
-| 11 nt | 3 | +3,994 | 7,398 (7,375) | Zero capacity loss vs fresh redraw |
-| **12 nt** | **3** | **+8,896** | **12,300 (12,293)** | Adopted default for future reservations (Feldman 12-cycle SBS; >35,000 with a second 20-nt pool) |
-| 10 nt | 2 | +9,759 | 13,163 (13,165) | Error detection only (discards 1-error reads) |
-
-  We retain `d ≥ 3` rather than `d ≥ 2` for cell yield: at 1–3% per-cycle in situ SBS error rates,
-  1-error correction rescues **9–23% of cells at 10 cycles** and **11–26% at 12 cycles** while
-  keeping 2-error miscorrection below 0.06% at 12 cycles. Future reservations default to **12-nt
-  `d ≥ 3`** in [`barcode_prefix_screen.py`](../barcode_prefix_screen.py), while L1's 3,375
-  constructs already clear the stricter 10-nt `d ≥ 3` screen.
-- *Current state of barcode assignment:* screens and the 3,644-barcode provisional block exist and
-  are tested in CI ([`reserve_barcodes.py`](../reserve_barcodes.py),
-  [`barcode_prefix_screen.py`](../barcode_prefix_screen.py),
-  [`reserve_l1_block.py`](../reserve_l1_block.py), [`rbp_motif_screen.py`](../rbp_motif_screen.py),
-  [`l1_barcode_block_provisional.tsv`](../l1_barcode_block_provisional.tsv),
-  [`l1_barcode_block_extension_2026-11-15.tsv`](../l1_barcode_block_extension_2026-11-15.tsv));
-  concrete one-to-one assignment replaces the 20-N placeholder when the order freezes. Expression
-  of the intercistronic barcode is expected (as in lentiGuide-BC) but not yet directly measured.
+  Feldman's RT-side arm); the handle itself does not change. Feldman et al.'s other arm
+  (`GTGTTCAATCAACATTCC`) is in no deposited plasmid map: it enters with their cloned barcode
+  cassette, so it is inferred to sit directly 5′ of their barcode and does not occur in v1.
+  Four fixed-flank 7-mers match human miRNA seeds in TargetScanHuman 8.0
+  ([McGeary et al., 2019](https://pubmed.ncbi.nlm.nih.gov/31806698/)): `ACTGGCT`
+  (miR-575/4676-5p), `CTATTCA` (miR-5585-3p), `CTTTGGG` (miR-186-3p), and `AAGCACA`
+  (miR-218-5p, broadly conserved). The flank carries no `GT[AG]AG` splice donor and no BbsI,
+  Esp3I, or BsaI site, and no 15-mer of the padlock arm or arm-plus-RT region occurs anywhere else
+  in the backbone or the 3,375 v1 inserts. A full map of one CDS with the adopted readout
+  (T7 promoter, handle, barcode slot, padlock arm, RT site, CS1) is
+  [`l1_example_AXL_ires_puro.gb`](../l1_example_AXL_ires_puro.gb), built by
+  [`l1_example_vector_maps.py`](../l1_example_vector_maps.py). Priming RT directly from CS1
+  remains an untested alternative (no published optical screen uses a 10x capture sequence as an
+  in situ RT primer). In the adopted layout CS1 sits 37 nt downstream of the barcode, leaving 10x
+  feature-library read 2 (primed from the 5′ handle) unaffected.
+- *Full-context barcode + flanking-junction screening.* Every barcode is screened not only internally
+  but across its **full flanking context** (`5′ handle + 20-nt barcode + 3′ T9A flank + CS1 + shuttle`)
+  for Type IIS sites (`BbsI`, `Esp3I`, `BsaI`), consensus splice donors (`GT[AG]AG`), RNA-binding-protein
+  motifs (Pumilio `TGTA[ACT]ATA`, AU-rich `ATTTA`, CPEB `TTTTAT`/`TTTTAAT`, poly(A) `AATAAA`/`ATTAAA`,
+  and CFIm25 `TGTA` pairs within 50 nt), and conserved miRNA seed matches spanning either barcode junction
+  ([`reserve_barcodes.py`](../reserve_barcodes.py), [`rbp_motif_screen.py`](../rbp_motif_screen.py)).
+  miRNA seed sites are taken from TargetScanHuman 8.0 (`miR_Family_Info.txt`, Species ID 9606;
+  [McGeary et al., 2019](https://pubmed.ncbi.nlm.nih.gov/31806698/)), committed directly in the
+  review repository at [`mirna_seed_sites.tsv`](../../vector-design/mirna_seed_sites.tsv):
+  across all **2,064 human miRNA families** (`108` broadly conserved, `111` conserved, `220` poorly
+  conserved, `1,625` unassigned), the **219 broadly conserved and conserved families** yield **207
+  unique 6-mer seed sites** excluded from the base barcode pool (following the Slutskin et al., 2018
+  criterion) and their 7-mer seeds are screened across both 5′ and 3′ barcode junctions. Under the
+  adopted T9A 3′ flank, **21,394 of 28,506** pool barcodes pass junction screening (`6,911` fail a
+  junction miRNA seed, `201` fail a junction Type IIS site, `0` fail splice donor; `3,741` drawable
+  at 10-nt prefix `d ≥ 3`). The T7 promoter sits upstream of the 19-nt handle and does not touch
+  either barcode junction.
+- *Reserved v1 barcode block and ISS prefix distance.* The **3,644** reserved v1 barcodes
+  ([`reserve_l1_block.py`](../reserve_l1_block.py)) pass every internal, flanking-junction, and RBP
+  screen plus a 10-nt prefix Hamming distance `d ≥ 3`, covering all **3,375** constructs with
+  **269** to spare (assigned one-to-one in place of the `20-N` placeholder at order freeze; unused
+  rows are released). Keeping `d ≥ 3` enables 1-base error correction in situ (recovering ~9–26% of
+  cells at 1–3% per-cycle SBS error rates with <0.06% miscorrection); extending future reservations
+  to a **12-nt `d ≥ 3` prefix** in [`barcode_prefix_screen.py`](../barcode_prefix_screen.py) leaves
+  +8,896 additional barcodes available (12,300 combined) while v1's 3,375 constructs already satisfy
+  the stricter 10-nt `d ≥ 3` rule. Intercistronic barcode expression is expected (as in
+  `lentiGuide-BC`) but not yet directly measured.
 
 **10x 3′ Feature Barcoding.** The 3′ v3 Feature Barcoding gel beads carry the reverse complement
 of CS1, so the RNA must carry `GCTTTAAGGCCGGTCCTAGCAA` in sense
-([Replogle et al., 2020](https://pubmed.ncbi.nlm.nih.gov/32231336/)). Our EFS transcript does,
-37 nt downstream of the barcode, so the orientation is right. What is untested is capture of an
-internal site in a long Pol II mRNA; Replogle et al. placed CS1 in a short sgRNA stem loop.
+([Replogle et al., 2020](https://pubmed.ncbi.nlm.nih.gov/32231336/)). Our EFS transcript places CS1
+in sense 37 nt downstream of the barcode. While Replogle et al. originally placed CS1 inside a
+short Pol III sgRNA stem loop and subsequent direct-capture designs have embedded CS1 in Pol II
+mRNA 3′ UTRs, capture efficiency of our longer ORF–IRES2–PuroR transcript at this internal position
+has not yet been benchmarked empirically in this vector.
 
 **T7 in situ transcription.** Each L1 insert carries a T7 promoter in sense, between the stop
 codon's pad and the 5′ handle. In fixed cells, T7 RNA polymerase then makes many sense copies of
@@ -464,45 +436,49 @@ co-packaged partner is any other construct with probability equal to that constr
 pool. The pool has 3,375 constructs, so the average share is 1 in 3,375, but the
 pool is length-weighted (3.5× more per kilobase, to offset the lower titer of long
 constructs; [section 10](#10-how-the-library-is-ordered)), so long constructs take a much larger
-share and the median construct's share is 1 in 12,135.
+share and the median construct's share is 1 in 12,213.
 
-**The bottom line.** The share of integrants whose barcode names a protein other than the one they
-carry, as an upper bound (every particle assumed to carry two different constructs). Without codon
-diversification, at most 7.1% of integrants would carry a barcode naming the wrong protein.
-Diversifying the linkers, as ordered, lowers that to 5.6%, and recoding the tags as well would lower
-it to 2.4%. The rest is the 2.2% from the constant tail before the barcode, which no recoding can
-remove. In addition, recombination inside the shared tag cassette between two constructs that both
-carry a cleavable signal peptide swaps only the cleaved leader (leaving the mature displayed protein
-intact); that leader-swap term is **2.0%** (`1.99%`) on the order of record (`2.9%` without
-diversification, `0.02%` if tags are recoded), giving **7.6%** (`7.61%`) combined if leader swaps
-are included.
+**Modeled swap rates.** Assuming every virion packages two distinct constructs (an upper bound),
+without codon diversification at most 7.1% of integrants would carry a barcode mapping to a
+different protein than the encoded ORF. Diversifying the four `GGGGS` linkers, as ordered, lowers
+that to 5.6%, and recoding the epitope tags as well would lower it to 2.4%. The remaining 2.2%
+comes from the constant tail before the barcode, which cannot be recoded. In addition,
+recombination inside the shared tag cassette between two cleavable-SP constructs swaps only the
+cleaved leader (leaving the mature displayed protein intact); that leader-swap term is **2.0%**
+on the order of record (`2.9%` without diversification, `0.02%` if tags are recoded), giving
+**7.6%** combined if leader swaps are included.
 
-![Modeled share of integrants with a barcode naming the wrong protein, by shared sequence](figures/l1_swap_bottom_line.png)
+![Modeled fraction of integrants with a discordant barcode, by shared sequence](figures/l1_swap_bottom_line.png)
 
-*Figure 3. The share of integrants whose barcode names a protein other than the one they carry,
-as an upper bound (every particle carries two different constructs), modeled under our 3.5× per kb
-length-weighted pool (every partner, including specific partners, weighted by its molar pool share
-in [`l1_order_plan.tsv`](l1_order_plan.tsv)) and split by where the shared sequence lies: the
+*Figure 3. Upper-bound fraction of integrants whose barcode maps to a different protein than the
+encoded ORF (assuming every virion carries two distinct constructs), modeled under our 3.5× per kb
+length-weighted pool (every partner weighted by its molar pool share in
+[`l1_order_plan.tsv`](l1_order_plan.tsv)) and split by where the shared sequence lies: the
 constant tail before the barcode (T7 promoter included), the tag cassette, and specific partners
 (siblings, isoforms, orthologs, paralogs, and any other pair sharing ≥20 nt). Top, no codon
-diversification (7.1%); middle, the order of record with the linkers diversified (5.6%); bottom,
-tags recoded too (2.4%). SP-to-SP leader swaps (2.0% on the order of record) are tracked separately.
-Unit: integrant; n = 3,375 constructs. Each bar is one value from the
-pooled model ([`l1_swap_pool_model.py`](../l1_swap_pool_model.py), Walton et al. 2024 fit), not
-a mean of measurements. The bottom bar is a scenario, not the order: recoded tags have not been
-shown to display. Scenarios: [`swap_nothing_diversified_scenario.py`](../swap_nothing_diversified_scenario.py),
+diversification (7.1%); middle, the order of record with the `GGGGS` linkers diversified (5.6%);
+bottom, tags recoded too (2.4%). SP-to-SP leader swaps (2.0% on the order of record) are tracked
+separately. Unit: integrant; n = 3,375 constructs. Each bar is one value from the pooled model
+([`l1_swap_pool_model.py`](../l1_swap_pool_model.py), Walton et al. 2024 fit), not a mean of
+measurements. The bottom bar is a scenario, not the order: recoded tags have not been shown to
+display. Scenarios: [`swap_nothing_diversified_scenario.py`](../swap_nothing_diversified_scenario.py),
 [`swap_tags_recoded_scenario.py`](../swap_tags_recoded_scenario.py). Drawn by
 [`plot_swap_bottom_line.py`](../plot_swap_bottom_line.py).*
 
 
-| Shared sequence | Present in | No codon diversification | Order of record: linkers diversified | Tags diversified too |
+| Shared sequence | Present in | No codon diversification | Order of record: `GGGGS` linkers diversified | Tags diversified too |
 |---|---|---:|---:|---:|
-| the constant tail between stop codon and barcode, T7 promoter included | every pair | 2.2% | 2.2% | 2.2% |
+| the constant tail between stop codon and barcode (T7 included) + C-terminal cassette mislabels* | every pair | 2.20% | 2.18% | 2.17% |
 | the tag cassette (wrong-protein fusions) | every pair | 4.6% | 3.1% (the two tags only) | 0.03% |
 | native sequence or cassette shared by a specific partner | siblings, isoforms, orthologs, paralogs | 0.28% | 0.30% | 0.22% |
 | **total wrong-protein integrants** | | **7.1%** | **5.6%** | **2.4%** |
 | *SP-to-SP leader swaps (same mature protein, tracked separately)* | *cleavable-SP pairs* | *2.9%* | *2.0%* | *0.02%* |
 | *combined (wrong protein + SP-to-SP leader swap)* | | *9.9%* | *7.6%* | *2.4%* |
+
+*\*The slight decrease from 2.20% → 2.18% → 2.17% comes from C-terminal-tagged constructs:
+recombination inside a C-terminal tag cassette transfers an intact upstream ORF onto another
+barcode (counted as a mislabel rather than a chimera), contributing 0.045% without diversification,
+0.024% with diversified `GGGGS` linkers, and 0.0001% when tags are also recoded.*
 
 All three columns are computed on the current order with the 3.5× per kb length-weighted pool
 and the T7 promoter ([section 2](#2-the-barcode-and-readout-region-and-the-assays-it-could-support)),
@@ -510,35 +486,26 @@ which adds 20 nt to the shared pre-barcode tail and roughly doubles the tail ter
 2.2%; [`swap_t7_scenario.py`](../swap_t7_scenario.py)). The tail (a 2-nt `CC` pad, 20-nt T7
 promoter, and 19-nt primer handle) cannot be diversified because every barcode is amplified and
 read through it. In the order of record, SpyTag003 (48 nt) and P-ALFA-P (45 nt) keep validated
-`p003` codons while the four `GGGGS` linkers are synonymously diversified per construct
+codons while the four `GGGGS` linkers are synonymously diversified per construct
 ([section 9](#9-domestication-linker-encoding-and-synthesis-compliance)). Typical construct pairs
 share only the two fixed tags separately (48 and 45 nt). Recoding the tags as well cuts the
 longest shared cassette stretch to 56 nt and drops the cassette term to 0.03%
 ([`swap_tags_recoded_scenario.py`](../swap_tags_recoded_scenario.py)), at the cost of using
-untested tag codons ([question 7](#decisions-we-would-like-reviewers-to-weigh-in-on)).
+untested tag codons.
 
 **Specific partners and length weighting.** [`l1_swap_pool_model.py`](../l1_swap_pool_model.py)
-scans actual sequence identity all-vs-all across all 3,375 constructs (not just annotated paralogs
-or same-CDS siblings): every pair sharing any 24-mer seen in rare inserts (113,014 specific
-pairs) is evaluated exactly by summing *Y*(*L*) over every maximal identical block ≥20 nt
-upstream of the barcode, weighted by each partner's molar pool share under our default 3.5× per
-kb length weighting ([`l1_order_plan.tsv`](l1_order_plan.tsv)), and counted whenever the
-recombined product does not encode *b*'s protein (gating benign leader swaps strictly on pairs where
-both constructs carry a cleavable signal peptide). Two constructs of one CDS share a median 302 nt
-(13.7% per co-packaged pair), but multiplied by a partner's pool share (median 1 in 12,213) that
-contributes ~0.0016% per pair; summed across all specific partners (siblings, isoforms, orthologs,
-paralogs and any other sequence-similar constructs), the median is 0.12% of a barcode's cells and
-0.30% of the library (0.22% chimeras, 0.09% mislabels). Because long constructs receive larger
-molar pool shares under the 3.5× per kb default weighting, specific-partner impurity rises with
-insert length: the median is 0.14% of a barcode's cells in the longest quarter of constructs and 0.12%
-in the shortest (Spearman 0.23 against insert length). The 15 barcodes above 1% are all long
-multi-construct families of 4.5–5.0 kb: PTCH1 (internal sites on the human gene and its mouse
-ortholog), TRPM2 (human and cyno) and ADGRL2 (three isoforms); the highest is 2.8%. A milder
-weighting (2× per kb instead of our 3.5× per kb default) would roughly halve those, while leaving
-the library-wide term around 0.2% either way — well below the 3.1% from the shared tags — so the
-long families are flagged as our watch list for long-read QC. Per-construct and per-pair numbers:
-[`l1_swap_pool_model.tsv`](../l1_swap_pool_model.tsv),
-[`l1_swap_pool_model_summary.json`](../l1_swap_pool_model_summary.json).
+evaluates every sequence-similar pair across all 3,375 constructs (113,014 pairs sharing any rare
+24-mer, weighted by molar pool share under 3.5×/kb weighting in
+[`l1_order_plan.tsv`](l1_order_plan.tsv)). Same-CDS siblings share a median 302 nt (13.7% per
+co-packaged pair), but multiplied by a partner's pool share (median 1 in 12,213) each contributes
+~0.0016%. Summed across all specific partners, the median is 0.12% of a barcode's cells and
+0.30% of the library (0.22% chimeras, 0.09% mislabels). Under 3.5×/kb weighting, specific-partner
+impurity rises mildly with insert length — the median is 0.14% of a barcode's cells in the longest
+quarter of constructs and 0.12% in the shortest (Spearman 0.23 against insert length). The 15
+barcodes above 1% are all 4.5–5.0 kb multi-construct families (`PTCH1`, `TRPM2`, `ADGRL2`; highest
+is 2.8%), which are flagged as our watch list for long-read QC
+([`l1_swap_pool_model.tsv`](../l1_swap_pool_model.tsv),
+[`l1_swap_pool_model_summary.json`](../l1_swap_pool_model_summary.json)).
 
 These are upper bounds from a model, not measurements: they assume every particle carries two
 different constructs, that a 45–83-nt block recombines at the per-base rate measured over
@@ -547,247 +514,174 @@ practice, surface proteins expressed in HEK293T packaging cells during lentiviru
 also incorporate into or neutralize/interfere with viral particles; both template switching and
 construct-level packaging effects will be measured empirically (via long-read ORF–barcode
 sequencing and transduced-cell barcode representation; [section 10](#10-how-the-library-is-ordered)).
-The per-pair rate is still the right test for whether two constructs could be confused, which is
+The per-pair rate is still the right test for whether two constructs could be misassigned, which is
 why the library keeps a 100-nt limit on sequence shared before the barcode
 ([section 9](#9-domestication-linker-encoding-and-synthesis-compliance)).
 
 ## 4. Genes: from the surfaceome universe to 2,417
 
-Genes come from the accessible-surfaceome catalog, release 1.3.0
+Genes start from the 5,332-gene accessible-surfaceome catalog, release 1.3.0
 ([Carlson & Smallegan, 2026](https://doi.org/10.5281/zenodo.23445521); CC0; release files indexed
 in [`README.md`](https://pub-e53f37f6fe6b4745829c2066350fe26f.r2.dev/external/accessible-surfaceome/release-1.3.0/README.md)
 and [`deep-dive-preset-membership.tsv`](https://pub-e53f37f6fe6b4745829c2066350fe26f.r2.dev/external/accessible-surfaceome/release-1.3.0/deep-dive-preset-membership.tsv)
-on our public bucket), which records for each gene the
-evidence that it reaches the cell surface, its membrane architecture and its predicted topology.
-That evidence and the catalog's per-gene calls (surface tier, surface fraction, localization,
-architecture) are written by the catalog's LLM agents from the literature and databases, in one
-deep dive per gene; they are curated calls, not measurements.
-A gene enters the library if it passes every gate of the filter in
-[`final_library.py`](../../surface-filters/final_library.py), applied in
-the order below (starting from the 5,332-gene catalog). Each gate's remaining and excluded gene
-lists, with the exact value tested and row counts matching the numbers below, are in
-[`gate_lists/`](gate_lists/README.md), and every catalog gene's outcome is one row of
-[`gene_gate_outcomes.tsv`](../gene_gate_outcomes.tsv). Genes added to the filter's output by a
-dated decision, each with its evidence, are in
-[`gene_list_additions.tsv`](../gene_list_additions.tsv).
+on our public bucket; gate definitions and cutoff derivations are detailed in Carlson & Smallegan, 2026).
+A gene enters the core set by passing eight sequential gates in
+[`final_library.py`](../../surface-filters/final_library.py), grouped below
+by whether the gate reads the catalog's LLM-curated literature calls or deterministic sequence and
+expression tables. Each gate's passing and excluded lists are in
+[`gate_lists/`](gate_lists/README.md), every gene's outcome is in
+[`gene_gate_outcomes.tsv`](../gene_gate_outcomes.tsv), and recorded additions/exclusions are in
+[`gene_list_additions.tsv`](../gene_list_additions.tsv) and
+[`gene_list_exclusions.tsv`](../gene_list_exclusions.tsv).
 
-| Gate | Rule | Why | Genes remaining | Genes excluded (examples) |
+| Gate | Source | Rule | Remaining | Excluded (examples) |
 |---|---|---|---:|---:|
-| Surface evidence | in the catalog's canonical or likely surface tier (as called by the catalog's LLM-written deep dives; no gene failed the subsequent accessibility check) | the call that the protein reaches the surface | [3,035](gate_lists/01_surface_evidence_passed.tsv) | [2,297](gate_lists/01_surface_evidence_excluded.tsv) (e.g. A2ML1, AADACL2, AATK) |
-| Surface fraction | mostly at the surface, or mixed | a protein mostly held inside the cell gives little surface signal | [2,673](gate_lists/03_surface_fraction_passed.tsv) | [362](gate_lists/03_surface_fraction_excluded.tsv) (e.g. ABCA2, ABCA4, ABCB6) |
-| Anchored | ≥1 transmembrane helix (DeepTMHMM v1 on the canonical sequence) or GPI-anchored (catalog curation; manual GPI review also removes EPPIN below) | an unanchored protein is secreted, not displayed | [2,532](gate_lists/04_anchored_passed.tsv) | [141](gate_lists/04_anchored_excluded.tsv) (e.g. AAMP, ADAMTS5, AGRN) |
-| Co-receptor | no obligate partner, or every required partner (one per group of alternatives) ≥ 10 CPM in ≥ 2 of the [42 screening-shortlist lines](../coreceptor_host_line_line_pass.tsv) (ARCHS4 v2.5 consensus; [Lachmann et al., 2018](https://pubmed.ncbi.nlm.nih.gov/29636450/)) | a protein that needs a partner the host cell lacks would fail for reasons unrelated to itself | [2,372](gate_lists/05_coreceptor_passed.tsv) | [160](gate_lists/05_coreceptor_excluded.tsv) (e.g. ABCC8, ABCC9, ABCG5; 32 active additions later re-admitted under the ARCHS4 shortlist rule below after dropping MHC class II) |
-| Expression | passes unless **both** flagged low-expressed in the catalog **and** < 5 TPM everywhere in GTEx v10 ([GTEx Consortium, 2020](https://pubmed.ncbi.nlm.nih.gov/32913098/)), HPA v23 ([Uhlén et al., 2015](https://pubmed.ncbi.nlm.nih.gov/25613900/)), or TCGA ([Vivian et al., 2017](https://pubmed.ncbi.nlm.nih.gov/28398314/)) — all 625 flagged genes reaching ≥ 5 TPM pass | a protein expressed in no tissue, tumor or cell line has no cell a binder could be used on | [2,291](gate_lists/06_expression_passed.tsv) | [81](gate_lists/06_expression_excluded.tsv) (e.g. CLRN2, GALR3, GPR31) |
-| Localization | surface call does not rest solely on being secreted, intracellular, inner-leaflet anchored, MHC-presented, or complex-only without qualifying partners | in each case the protein's own sequence is not displayed on the outer surface | [2,284](gate_lists/07_localization_passed.tsv) | [7](gate_lists/07_localization_excluded.tsv) (all 7: BSND, DCHS2, FXYD1, KCNK15, NCSTN, SGCE, SGCZ) |
-| ORF size | canonical ORF ≤ 5,000 nt | lentiviral packaging (below); genes over it are excluded from L1 | [2,184](gate_lists/08_orf_size_passed.tsv) | [100](gate_lists/08_orf_size_excluded.tsv) (e.g. ABCA1, ABCA7, ADGRV1, CACNA1A) |
-| Ectodomain | ≥ 30 extracellular residues (DeepTMHMM v1; GPI-anchored proteins exempt) | below that there is no domain to display | [2,134](gate_lists/09_ectodomain_passed.tsv) | [50](gate_lists/09_ectodomain_excluded.tsv) (e.g. CMTM2, CMTM4, CMTM6, FXYD2) |
+| Surface evidence | Catalog LLM curation | canonical or likely surface tier (no gene failed the subsequent accessibility check) | [3,035](gate_lists/01_surface_evidence_passed.tsv) | [2,297](gate_lists/01_surface_evidence_excluded.tsv) (e.g. A2ML1, AADACL2, AATK) |
+| Surface fraction | Catalog LLM curation | surface-dominant or mixed steady-state localization | [2,673](gate_lists/03_surface_fraction_passed.tsv) | [362](gate_lists/03_surface_fraction_excluded.tsv) (e.g. ABCA2, ABCA4, ABCB6) |
+| Localization | Catalog LLM curation | not secreted-only, intracellular-only, inner-leaflet anchored, MHC-presented, or complex-only without qualifying partners | [2,284](gate_lists/07_localization_passed.tsv) | [7](gate_lists/07_localization_excluded.tsv) (all 7: BSND, DCHS2, FXYD1, KCNK15, NCSTN, SGCE, SGCZ) |
+| Anchored | Deterministic (DeepTMHMM v1.0.24) + catalog GPI | ≥ 1 transmembrane helix on the canonical sequence or GPI-anchored (`gpi_set.tsv`, refined by NetGPI 1.1; EPPIN removed below) | [2,532](gate_lists/04_anchored_passed.tsv) | [141](gate_lists/04_anchored_excluded.tsv) (e.g. AAMP, ADAMTS5, AGRN) |
+| Co-receptor | Catalog LLM curation + deterministic expression | no obligate heterologous partner (after agent-reviewed partner rules below), or required partners expressed in screening cell lines (root filter: HPA v23 cell-line median ≥ 5 TPM; 32 additional genes admitted under the 42-line ARCHS4 v2.5 ≥ 10 CPM rule below) | [2,372](gate_lists/05_coreceptor_passed.tsv) | [160](gate_lists/05_coreceptor_excluded.tsv) (e.g. ABCC8, ABCC9, ABCG5; 32 re-admitted below) |
+| Expression | Deterministic (GTEx v10, HPA v23, TCGA) | passes unless **both** flagged low-expressed in the catalog **and** < 5 TPM across GTEx v10 ([GTEx Consortium, 2020](https://pubmed.ncbi.nlm.nih.gov/32913098/)), HPA v23 ([Uhlén et al., 2015](https://pubmed.ncbi.nlm.nih.gov/25613900/)), and TCGA ([Vivian et al., 2017](https://pubmed.ncbi.nlm.nih.gov/28398314/)) | [2,291](gate_lists/06_expression_passed.tsv) | [81](gate_lists/06_expression_excluded.tsv) (e.g. CLRN2, GALR3, GPR31) |
+| ORF size | Deterministic (sequence) | canonical ORF ≤ 5,000 nt | [2,184](gate_lists/08_orf_size_passed.tsv) | [100](gate_lists/08_orf_size_excluded.tsv) (e.g. ABCA1, ABCA7, ADGRV1, CACNA1A) |
+| Ectodomain | Deterministic (DeepTMHMM v1.0.24) | ≥ 30 total extracellular residues (GPI-anchored proteins exempt) | [2,134](gate_lists/09_ectodomain_passed.tsv) | [50](gate_lists/09_ectodomain_excluded.tsv) (e.g. CMTM2, CMTM4, CMTM6, FXYD2) |
 
-**How the co-receptor gate was updated.** The original frozen filter
-([`final_library.py`](../../surface-filters/final_library.py)) required
-every listed partner to have median ≥ 5 TPM across all 1,206 HPA cell lines, which removed the 160
-genes in [`05_coreceptor_excluded.tsv`](gate_lists/05_coreceptor_excluded.tsv). We subsequently
-replaced that criterion with the ARCHS4 v2.5 42-line screening-shortlist rule shown above (every
-required partner ≥ 10 CPM in ≥ 2 of the [42 shortlist lines](../coreceptor_host_line_line_pass.tsv),
-counting interchangeable subunits once). Rather than re-cutting the frozen root filter, the **32**
-active genes passing that rule (after dropping the 8 MHC class II chains, [below](#well-known-surface-proteins-excluded-or-host-dependent))
-enter as dated additions ([`gene_list_additions.tsv`](../gene_list_additions.tsv)).
+*(Note: gates execute in the numbered order in `gate_lists/01`–`09`, so the counts in the table
+reflect sequential filtering: 5,332 → 3,035 → 2,673 → 2,532 → 2,372 → 2,291 → 2,284 → 2,184 → 2,134.)*
 
-**How the gates read the catalog.** Every gate reads fields of the gene's catalog record on its
-UniProt canonical sequence (UniProtKB 2026_03;
-[UniProt Consortium, 2025](https://pubmed.ncbi.nlm.nih.gov/39552041/)), not on the built proteoform
-([section 5](#5-proteoforms-one-reference-protein-per-gene)).
-[`GATE_METHODS.md`](../GATE_METHODS.md) gives each gate's field, version, threshold and data
-location, and [`gene_gate_outcomes.tsv`](../gene_gate_outcomes.tsv) records each of the 5,332
-catalog genes' outcome. For anchoring, transmembrane helices come from DeepTMHMM v1 and GPI
-anchoring from the catalog's curated call, refined by manual review (EPPIN removed after manual
-inspection below; tag-placement GPI calls in [section 7](#7-tag-placement-topology-and-placement-rules) combine catalog
-curation, NetGPI 1.1 and manual overrides in [`gpi_set.tsv`](../gpi_set.tsv)).
+**How the gates read the catalog and pinned inputs.** Every gate evaluates the gene's catalog record
+on its UniProtKB 2026_03 canonical sequence ([UniProt Consortium, 2025](https://pubmed.ncbi.nlm.nih.gov/39552041/))
+prior to proteoform selection in [section 5](#5-proteoforms-one-reference-protein-per-gene)
+([`GATE_METHODS.md`](../GATE_METHODS.md)). Topology and GPI calls use DeepTMHMM 1.0.24 and
+NetGPI 1.1 (`gpi_set.tsv` and `l1_tag_paths.tsv`, detailed in [section 7](#7-tag-placement-topology-and-placement-rules)).
+Expression tables are pinned with SHA-256 checksums in [`bundle_manifest.tsv`](bundle_manifest.tsv):
+ARCHS4 v2.5 consensus (`s3/external/archs4/v2.5/cell-line-panel-consensus/2026-09-04/`, [Lachmann et al., 2018](https://pubmed.ncbi.nlm.nih.gov/29636450/)),
+raw HPA v23 cell-line TPM (`s3/external/hpa/v23/rna_celline.tsv.zip`), and the compiled GTEx v10 /
+HPA v23 / TCGA per-gene table ([`data/external/expression-tpm/`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/tree/main/data/external/expression-tpm),
+built by [`build_expression_join.py`](../../surface-filters/build_expression_join.py);
+GTEx v10 and HPA v23 are the current releases, and archiving the standalone raw GTEx/TCGA source
+dumps alongside the compiled table is tracked in the cover note).
 
-**Co-receptor review and expression tables.** Catalog partner requirements are refined by three
-reviewed overrides applied before the partner-expression check, and expression gates read pinned
-GTEx v10 / HPA v23 / TCGA tables:
-
-| Input / override | Scope & effect | File |
-|---|---|---|
-| Reviewed partner rules | 6 genes (`ATP1B3, CDC50A, P2RX6, HFE, ATP8B1, CDC50B`) where the catalog listed interchangeable alternative subunits flatly and the filter treated them as all required simultaneously; rules specify which alternative group is actually needed | [`coreceptor_rules.py`](../../surface-filters/coreceptor_rules.py) |
-| Manual co-receptor literature review | 146 genes flagged as co-receptor-dependent in the catalog were reviewed individually; 26 were confirmed to reach the surface without a heterologous partner (e.g. ITGB1, ITGAV, ITGB3, ATP1A1, CD74), so they bypass the co-receptor gate and enter L1 | [`coreceptor_calls.tsv`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/blob/main/data/processed/sprint4/s4e9-orf-design-fg-panel/library-design/pipeline-inputs/2026-11-02/s1e3/coreceptor_calls.tsv) |
-| Partner symbol resolution | 143 genes where free-text catalog partner names (e.g. "ATP4B-like beta subunit") were mapped to HGNC symbols for expression lookup | [`coreceptor_rationales.json`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/blob/main/data/processed/sprint4/s4e9-orf-design-fg-panel/library-design/pipeline-inputs/2026-11-02/s1e3/coreceptor_rationales.json) |
-| Compiled expression tables | Per-gene max TPM across GTEx v10, HPA v23 and TCGA ([`build_expression_join.py`](../../surface-filters/build_expression_join.py)), plus HPA v23 cell-line medians recomputed from raw [HPA v23 `rna_celline.tsv`](https://pub-e53f37f6fe6b4745829c2066350fe26f.r2.dev/external/hpa/v23/rna_celline.tsv.zip) in [`data/external/expression-tpm/`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/tree/main/data/external/expression-tpm) (GTEx v10 and TCGA raw releases are not yet pinned separately) | [`genomewide_expression_tpm.csv`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/blob/main/data/external/expression-tpm/deliverome-internal-5a1416ea/genomewide_expression_tpm.csv), [`genomewide_expression_tpm_rederived.csv`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/blob/main/data/external/expression-tpm/rederived-2026-08-04/genomewide_expression_tpm_rederived.csv), [`hpa_celline_per_gene.csv`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/blob/main/data/external/expression-tpm/rederived-2026-08-04/hpa_celline_per_gene.csv) |
-
+**Co-receptor partner review and screening-line rule.** Before the co-receptor gate is evaluated
+(so the 160 exclusions in [`05_coreceptor_excluded.tsv`](gate_lists/05_coreceptor_excluded.tsv)
+already reflect these rules), three agent-assisted reviews refine catalog partner annotations:
+(1) alternative-subunit rules for 6 genes (`ATP1B3, CDC50A, P2RX6, HFE, ATP8B1, CDC50B`) in
+[`coreceptor_rules.py`](../../surface-filters/coreceptor_rules.py);
+(2) per-gene review by agents of 146 partner-flagged genes, confirming 26 reach the surface without
+a heterologous partner (e.g. `ITGB1, ITGAV, ITGB3, ATP1A1, CD74`;
+[`coreceptor_calls.tsv`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/blob/main/data/processed/sprint4/s4e9-orf-design-fg-panel/library-design/pipeline-inputs/2026-11-02/s1e3/coreceptor_calls.tsv));
+and (3) free-text partner symbol resolution for 143 genes
+([`coreceptor_rationales.json`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/blob/main/data/processed/sprint4/s4e9-orf-design-fg-panel/library-design/pipeline-inputs/2026-11-02/s1e3/coreceptor_rationales.json)).
 An unresolved partner is skipped when another partner resolves; a gene whose only listed partner
-cannot be resolved fails (e.g. WLS, whose catalog entry lists its cargo "WNT ligands"). Under the
-adopted ARCHS4 v2.5 42-line shortlist rule, agreement with HPA v23 ≥ 10 TPM across the 29 shared
-lines is flat from 10 to 20 CPM (Cohen's κ 0.73–0.76); 10 CPM is chosen because it retains
-TYROBP-dependent myeloid receptors (14.4 CPM in U937 in ARCHS4; 31.8 TPM in HPA). Each input
-file's SHA-256 is recorded in [`bundle_manifest.tsv`](bundle_manifest.tsv).
+cannot be resolved is excluded (e.g. `WLS`, whose catalog entry lists its cargo `"WNT ligands"`).
 
-**The ORF cap.** The vector carries 4,087 bp from the 5′ LTR to the 3′ LTR besides the insert
-(read from [`l1_example_AXL_ires_puro.gb`](../l1_example_AXL_ires_puro.gb)), so a 5,000-nt ORF
-packages at about 9.4 kb once the 153-nt tag cassette and the constant 158 nt of the insert are
-added, the upper end of what L1 orders. The longest insert, NRXN2's 5,450 nt (the one CDS over
-the cap, below), packages at 9,537 nt. Lentiviral titer falls
-3–4-fold per extra kilobase and packaging fails near 10 kb
-([Sweeney & Vink, 2021](https://pubmed.ncbi.nlm.nih.gov/34095341/)). The cap keeps 100 genes out
-of L1 (canonical proteins of 1,682 to 14,507 residues). The cap is tested on the catalog's canonical sequence, so one built CDS
-exceeds it: NRXN2's catalog record is the 666-residue β form, while the reference built is the
-1,712-residue α form, a 5,139-nt ORF ([`orf_size_cap.py`](../orf_size_cap.py),
-[`orf_size_cap_genes.tsv`](../orf_size_cap_genes.tsv)).
-
-**Entry tiers beyond the core.** Genes that pass every gate make up the core of
-[2,134](gate_lists/10_tier_core.tsv). Three further groups enter by their own rule, because each
-has direct evidence of surface expression that the gates miss:
-
-| Tier | Rule | Genes |
-|---|---|---:|
-| Little-studied UniProt surface proteins | UniProt places the protein at the cell surface, fewer than 100 papers describe it, the catalog does not already call it canonical, and it is membrane-anchored (the anchoring test above), reaches 5 TPM somewhere and has an ORF ≤ 5,000 nt. The catalog's surface call rests on literature, so for little-studied proteins UniProt's annotation stands in | [139](gate_lists/11_tier_low_literature_uniprot.tsv) |
-| GPCRs with measured surface display | GPCRs the gates exclude whose anti-HA surface staining is ≥ 1,000 a.u. in a pooled HEK293T screen of the human GPCRome ([Tedman et al., 2026](https://pubmed.ncbi.nlm.nih.gov/42736269/)); of these 85, 63 failed surface evidence (mostly sparse-literature olfactory/orphan GPCRs), 16 failed expression, 5 failed surface fraction, and 1 failed co-receptor | [85](gate_lists/12_tier_screen_validated_gpcr.tsv) |
-| Surface pool on overexpression | Proteins classified from the catalog's saved LLM deep-dive rationales ([`oe_calls_136.tsv`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/blob/main/data/processed/sprint4/s4e9-orf-design-fg-panel/library-design/pipeline-inputs/2026-11-02/s1e3/oe_calls_136.tsv)) as mostly intracellular at baseline yet carrying a functional plasma-membrane pool when overexpressed (the DLL3, GLUT4 and FcRn pattern). These pass every other gate (including anchoring, ≥ 5 TPM expression, and ORF ≤ 5,000 nt) and fail only the surface-fraction gate | [12](gate_lists/13_tier_overexpression_surface.tsv) |
-
-Note that the little-studied UniProt tier applies only the conditions listed in its row, so a
-gene it admits can have an ectodomain below the 30-residue core minimum.
-
-The filter passes 2,370 genes. One, EPPIN, is removed
-([`gene_list_exclusions.tsv`](../gene_list_exclusions.tsv)): it entered only because the catalog
-calls it GPI-anchored, whereas UniProt carries no GPI annotation, NetGPI calls all five human
-forms unanchored, DeepTMHMM finds no helix, and EPPIN reaches the sperm surface only through
-partners. That leaves 2,369 genes. Adding **48** active dated additions from evidence outside the
-frozen filter — **32** under the screening-line co-receptor rule
-([below](#well-known-surface-proteins-excluded-or-host-dependent)) and **16** detected recurrently
-by published surface proteomics ([below](#testing-the-gates-against-published-surface-proteomics)) —
-gives the library's **2,417 genes** ([`14_library_genes.tsv`](gate_lists/14_library_genes.tsv),
-[`brief_numbers.json`](brief_numbers.json) `gene_list`). The list is fixed: a later catalog release
-changes it only through a dated, recorded addition or removal.
-
-### Testing the gates against published surface proteomics
-
-A cross-method survey of published human cell-surface proteomics (snapshot
-`2026-11-23-abundance-v8`: **103 counted intact-cell surface-labeling arms across 89
-publications**, contrasted against **77 unlabeled membrane-fractionation controls**) selects
-proteins by experimental detection independently of this filter, testing our gates from outside.
-It is browsable per protein in the
-[surface-proteomics viewer](https://dev.surfaceome.deliverome.org/surface-proteomics/).
-
-We evaluate two complementary rules on membrane-anchored (TM/GPI) proteins (agreeing 100% with
-DeepTMHMM/NetGPI on all outside-catalog hits):
-
-- **Broad rule** (expression-conditioned surface vs. membrane Wald `z_expr_m > 2.0` across
-  HPA-matched cell lines with `nTPM ≥ 5`; no biotin-amine filter, avoiding bias against
-  lysine-poor multipass transporters/channels while keeping a `2/905` strict UniProt organelle
-  leak rate and AUROC 0.943 on an organelle benchmark): **306** proteins qualify, **273 (89.2%)**
-  are already in L1 or L2, and **33 are in neither L1 nor L2**.
-- **Lineage-specific rule** (`k_s < 20`, detected in ≥ 35% of one lineage's counted publications
-  [minimum 3], `lod_lineage > 1.2`, `lod_membrane > 0.3`, plus an orthogonal impermeable
-  biotin-amine guard `lod_biotin > 0` and `biotin_publications ≥ 2` because small lineage cohorts
-  are heavily glycocapture-dominated): **128** unique proteins qualify, **111 (86.7%)** are
-  already in L1 or L2, 4 overlap the broad gap (`ANO9`, `CELSR3`, `KIAA1549L`, `TMEM117`), and
-  **13 additional lineage-only proteins are in neither L1 nor L2**.
-
-**Every one of the 46 combined gap proteins (33 broad, 13 lineage-only) has a recorded failing
-gate**, with none left unexplained ([`s3e8_gap_gate_reasons.tsv`](../s3e8_gap_gate_reasons.tsv),
-regenerated offline from [`s3e8_gap_candidates.tsv`](../s3e8_gap_candidates.tsv) and
-[`s3e8_gap_evidence.json`](../s3e8_gap_evidence.json) by
-[`s3e8_gap_gate_reasons.py`](../s3e8_gap_gate_reasons.py)). Each gene is counted once below under
-the **first** gate it fails:
-
-| Gate the protein fails first | Broad (33) | Lineage-only (13) | Type case |
-|---|---:|---:|---|
-| ORF over 5,000 nt — **routed to L2 truncation, not excluded** | 16 | 5 | `FAT4` (4,981 aa), `PIEZO1` (2,521 aa); `CR1` (2,039 aa) |
-| Surface evidence: not in the canonical or likely tier | 15 | 2 | `FAM234A` (`low`), `SLC45A4` (12-TM); `KLRG2` (`low`, `surface_dominant`) |
-| Co-receptor: an obligate partner the host line must also express | 1 | 3 | `ITGAL` (`ITGB2`); `CD3D`, `CD3G`, `PTPRCAP` |
-| Specificity: mostly intracellular at steady state | 1 | 1 | `LNPEP`; `PCDH11X` |
-| Anchored: no transmembrane helix and no GPI (DeepTMHMM) | 0 | 1 | `CLEC2B` (`tm_helix_count=0`) |
-| Ectodomain: minimal extracellular domain (< 25 aa) | 0 | 1 | `SIT1` (18 aa ECD) |
-
-![Log-odds against membrane fractionation and against whole-lysate glycoproteomes](../figures/surface_proteomics_logodds_compare.png)
-
-*Figure 4. Log-odds of intact-cell surface detection against membrane fractionation (x-axis) vs.
-whole-lysate glycoproteomes (y-axis) across recurring proteins (diagnostic comparison showing why
-membrane fractionation rather than whole-lysate glycoproteomes is used as background). Drawn by
-[`surface_proteomics_logodds_compare.py`](../surface_proteomics_logodds_compare.py).*
-
-**16 outside-catalog additions built into L1 (14 broad + 2 lineage-only fitting under 5,000 nt).**
-Across the 46 gap proteins, **18** sit outside the canonical/likely catalog: **16 broad** (6 clear
-Benjamini–Hochberg `q_TM < 0.05`: `C1orf159`, `FAM234A`, `CSF1`, `SUSD5`, `TM2D1`, `TMEM117`; 14
-fit under L1's 5,000-nt cap while `KIAA1549` and `KIAA1549L` [5,550 nt] exceed it) and **2
-biotin-supported lineage-only** (`KLRG2` [1,230 nt], `RNF150` [1,317 nt]). Glyco-only organellar
-leaks (`TLR9`, `SLC9A9`, `TMC8`, `CHST11`, `FAM234B`, `TMEM94`) and single-biotin endosomal/ER
-edge cases (`TLR7`, `ANO5`) are excluded automatically. All **16 L1-fitting genes** are built in
-the current cut (`ANO9`, `C1orf159`, `CSF1`, `FAM171B`, `FAM234A`, `KLRG2`, `MFAP3`, `MYORG`,
-`RNF149`, `RNF150`, `SLC45A4`, `SUSD5`, `SV2A`, `TM2D1`, `TMEM117`, `TMEM248`), replacing six
-earlier sweep-v20 candidates that no longer qualify under `abundance-v8` (`CBARP`, `FAM234B`,
-`LNPEP`, `PRRT3`, `SLC22A23`, `TMEM94`). Each enters through the same reference-selection and
-DeepTMHMM v1 tag-placement pipeline as every other gene ([section 5](#5-proteoforms-one-reference-protein-per-gene)).
-
-**Candidates from our own surface labeling.** One unpublished HeLa surface-biotinylation
-experiment of ours enriched 16 membrane-anchored proteins outside the catalog's surface tiers
-(≥ 4-fold over input at q < 0.01 in ≥ 4 of 6 bead eluates). Scored with the same tests
-([`hela_surface_labeling_candidates.tsv`](../hela_surface_labeling_candidates.tsv),
-[`hela_surface_labeling_candidates.py`](../hela_surface_labeling_candidates.py)):
-
-| Outcome | Proteins |
-|---|---|
-| pass, and among the 16 proteomics additions built above | CSF1, FAM234A, MFAP3, RNF149 |
-| pass, not added: one unpublished experiment in one line (UniProt places SPPL2A and SYPL1 on endosomal or vesicle membranes) | AIG1, EVA1A, ITM2C, SECTM1, SPPL2A, SYPL1 |
-| partner requirement not yet reviewed | HS6ST2 |
-| fail | FRAS1 (ORF over 5,000 nt), WLS (co-receptor), COMT (under 30 extracellular residues), KIAA1549 (ORF size, co-receptor), COMTD1 (co-receptor, anchoring, ectodomain) |
-
-### Well-known surface proteins excluded or host-dependent
-
-Absence from L1 — or failure to display in a single host line — does not mean a protein is absent
-from the cell surface. Two host-dependence mechanisms account for most well-known exceptions:
-**obligate co-receptor complexes** (filtered by the co-receptor gate) and **trafficking accessory
-factors** (not captured by the co-receptor gate).
-
-**Obligate co-receptors.** A subunit that reaches the surface only inside an obligate complex
-cannot display alone in a cell lacking its partners. Under our adopted screening-line rule, a gene
-passes when every required partner (one per group of alternatives) is ≥ 10 CPM in ≥ 2 of the
-[42 shortlist lines](../coreceptor_host_line_line_pass.tsv) (ARCHS4 v2.5 consensus).
-[`coreceptor_host_line.py`](../coreceptor_host_line.py) evaluates all 163 genes that pass every
-other gate and require a heterologous partner: 46 are already in L1, 40 clear the 42-line rule
-(of which **32** enter L1 after we explicitly withdrew the 8 MHC class II chains below), and 74
-remain excluded (plus 3 whose catalog partner names do not resolve to a gene).
+To include obligate heteromers that display in at least two of our 42 candidate screening lines
+(every required partner ≥ 10 CPM in ≥ 2 of the [42 shortlist lines](../coreceptor_host_line_line_pass.tsv)
+in ARCHS4 v2.5; Cohen's κ 0.73–0.76 vs. HPA v23 ≥ 10 TPM, retaining `TYROBP`-dependent myeloid
+receptors at 14.4 CPM in U937), **32** genes passing that rule enter v1 (`ITGA2B/D/L/M/X/E`,
+`TREM1/2`, `SIGLEC16`, `SIRPB1`, `NCR2`, `CD300LB`, `KLRK1`, `KLRC1/2`, `CHRNA2/3`, `CHRNB4`,
+`GRIN1/2A–D/3A/3B`, `KCND2`, `GABBR1`, `CD79B`, `CNTNAP1`, `LILRA4`, `SLC51A`, `UPK3A`), while the
+8 MHC class II chains (`HLA-DPB1, DQA1, DQB1, DRA, DRB1/3/4/5`) are explicitly withheld (single-chain
+MHC-II is allele-confounded and created a 208-nt swap pair) and TCR–CD3 (`CD3D/E/G, CD247`) reaches
+≥ 10 CPM in only one shortlist line (Jurkat). In our planned **K562** first screen, 31 of those 32
+(all except `GRIN1`) lack their partner in K562 and are flagged outside the K562 display denominator
+([`coreceptor_host_line.py`](../coreceptor_host_line.py), [`coreceptor_host_line_genes.tsv`](../coreceptor_host_line_genes.tsv)).
 
 ![Partner presence across the 42 screening-shortlist lines under the co-receptor rule](../figures/coreceptor_host_line.png)
 
-*Figure 5. (a) 160 of the 163 genes (ADAM2, CD180 and PCDHA8 left out because their listed
-partners do not resolve). x: CPM of the gene's limiting partner in its second-best line; y:
-shortlist lines where every required partner is ≥ 10 CPM. Color: in L1 from root filter (46),
-cleared the 42-line rule (40; 32 built after dropping 8 MHC-II chains), excluded (74); rings mark
-genes whose partners are ≥ 10 CPM in K562 (45). (b) The 40 rule-passing genes and the four TCR–CD3
-subunits excluded; squares mark lines with all required partners ≥ 10 CPM. Drawn by
-[`coreceptor_host_line.py`](../coreceptor_host_line.py).*
+*Figure 5. (a) 160 of 163 partner-dependent genes (3 unresolved partner names omitted): limiting
+partner CPM in its second-best line vs. number of shortlist lines with every required partner ≥ 10 CPM
+(46 in v1 from root filter, 40 clearing the 42-line rule [32 built after withdrawing 8 MHC-II chains],
+74 excluded; rings mark partners ≥ 10 CPM in K562). (b) The 40 rule-passing genes and 4 excluded TCR–CD3
+subunits across shortlist lines. Drawn by [`coreceptor_host_line.py`](../coreceptor_host_line.py).*
 
-Well-known complex subunits excluded from L1:
+**The ORF cap.** The vector carries 4,087 bp between the 5′ and 3′ LTRs besides the insert
+([`l1_example_AXL_ires_puro.gb`](../l1_example_AXL_ires_puro.gb)), so a 5,000-nt ORF packages at
+~9.4 kb once the 153-nt tag cassette and 158-nt constant flank/readout block are added — the upper
+end of what we order in v1. Lentiviral titer falls 3–4-fold per extra kilobase and packaging fails
+near 10 kb ([Sweeney & Vink, 2021](https://pubmed.ncbi.nlm.nih.gov/34095341/); [Moon et al., 2026](https://pubmed.ncbi.nlm.nih.gov/42031729/)
+similarly model a ~3.5× per kb length-titer penalty for pooled ORF libraries). The 5,000-nt cap
+excludes 100 oversized genes (1,682–14,507 aa). Because the cap is evaluated on the catalog's
+canonical sequence before proteoform selection ([section 5](#5-proteoforms-one-reference-protein-per-gene)),
+one built CDS (`NRXN2`, α form, 5,139 nt; packaged genome 9,537 nt) slightly exceeds 5,000 nt
+([`orf_size_cap.py`](../orf_size_cap.py), [`orf_size_cap_genes.tsv`](../orf_size_cap_genes.tsv)).
 
-| Gene(s) | Obligate partners | Why excluded from L1 |
-|---|---|---|
-| `CD3D, CD3E, CD3G, CD247` | other CD3 chains and TCR α/β | Partners reach ≥ 10 CPM in only one shortlist line (Jurkat), below the ≥ 2-line cut |
-| `HLA-DPB1, DQA1, DQB1, DRA, DRB1, DRB3, DRB4, DRB5` | obligate αβ pairing + CD74 / HLA-DM / CIITA | **Withdrawn ([question 8](#decisions-we-would-like-reviewers-to-weigh-in-on)):** single-chain MHC-II is allele-confounded even in B-cell lines and created our worst 208-nt swap pair (`HLA-DRB1/DRB3`) |
-| `CD79A` | CD79B and membrane IgM | Fails another filter gate outside the co-receptor rule (by contrast, **CD79B** passes and is in L1 via NALM-6 and GM12878) |
-| `B2M` | MHC class I heavy chains | Soluble light chain with no transmembrane helix (fails the anchoring gate) |
+**Entry tiers beyond the core.** Genes passing all eight gates form the **2,134-gene core**
+([`10_tier_core.tsv`](gate_lists/10_tier_core.tsv)). Three additional evidence tiers admit genes
+with direct annotation or experimental support for cell-surface display:
 
-The **32 co-receptor additions built into L1** under the 42-line rule:
+| Tier | Rule | Genes |
+|---|---|---:|
+| Little-studied UniProt surface proteins | UniProtKB 2026_03 cell-surface subcellular location (`SL-0039` / plasma membrane; see Carlson & Smallegan, 2026), < 100 papers, not already canonical in the catalog, membrane-anchored, ≥ 5 TPM in ≥ 1 tissue/line, and ORF ≤ 5,000 nt | [139](gate_lists/11_tier_low_literature_uniprot.tsv) |
+| GPCRs with measured surface display | GPCRs with anti-HA surface immunostaining ≥ 1,000 a.u. (the paper's autonomous surface-positive cutoff in factor-free HEK293T; [Tedman et al., 2026](https://pubmed.ncbi.nlm.nih.gov/42736269/)). Of these 85, 63 failed surface evidence (and also missed the little-studied UniProt tier due to lacking UniProt cell-surface annotation, < 5 TPM expression, or ≥ 100 papers), 16 failed expression, 5 failed surface fraction, and 1 failed co-receptor | [85](gate_lists/12_tier_screen_validated_gpcr.tsv) |
+| Surface pool on overexpression | Proteins classified from catalog deep-dive rationales ([`oe_calls_136.tsv`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/blob/main/data/processed/sprint4/s4e9-orf-design-fg-panel/library-design/pipeline-inputs/2026-11-02/s1e3/oe_calls_136.tsv)) as mostly intracellular at baseline yet displaying a functional plasma-membrane pool when overexpressed (the `DLL3`, `GLUT4` [`SLC2A4`], and `FcRn` [`FCGRT`] pattern), passing every gate except surface fraction | [12](gate_lists/13_tier_overexpression_surface.tsv) |
 
-| Group | Genes |
-|---|---|
-| β2 and αE integrins, αIIb | `ITGA2B, ITGAD, ITGAL, ITGAM, ITGAX, ITGAE` |
-| TYROBP/DAP12 myeloid receptors | `TREM1, TREM2, SIGLEC16, SIRPB1, NCR2, CD300LB` |
-| NKG2 family | `KLRK1, KLRC1, KLRC2` |
-| Ion channels and receptors | `CHRNA2, CHRNA3, CHRNB4, GRIN1, GRIN2A–D, GRIN3A, GRIN3B, KCND2, GABBR1` |
-| Others | `CD79B, CNTNAP1, LILRA4, SLC51A, UPK3A` |
+*(Note: unlike the core tier, the little-studied UniProt tier did not apply the ≥ 30-aa ectodomain
+floor, admitting 20 non-GPI genes with < 30 total extracellular residues — including four held CDSs
+`TMEM134, TMEM169, TMEM174, TMEM210` — which we flag for uniform pre-order tightening alongside the
+held list.)*
 
-Because our first pooled screen is planned in **K562**, only `GRIN1` among these 32 has its
-partners expressed in K562; the remaining **31** require a lineage-matched host (such as U937,
-GM12878, or neuronal lines) and are flagged as expected negatives outside the K562 display
-denominator ([`CORECEPTOR_HOST_LINE.md`](../CORECEPTOR_HOST_LINE.md),
-[`coreceptor_host_line_genes.tsv`](../coreceptor_host_line_genes.tsv)).
+**Total gene count (`2,417`).** Combining the four tiers gives **2,370** genes (`2,134` core + `139`
+little-studied UniProt + `85` GPCR screen + `12` overexpression). Removing `EPPIN` (`−1`; catalog
+called it GPI-anchored, but UniProt has no GPI call, NetGPI 1.1 calls all 5 human forms unanchored,
+and DeepTMHMM 1.0.24 finds no TM helix) leaves **2,369** genes. Adding the **32** screening-line
+co-receptor rescues above and **16** surface-proteomics additions below (`+48` total) yields the
+library's **2,417 genes** ([`14_library_genes.tsv`](gate_lists/14_library_genes.tsv),
+[`brief_numbers.json`](brief_numbers.json) `gene_list`).
 
-**Host accessory factors in K562.** Unlike obligate co-receptors, trafficking chaperones are
-rarely listed in the catalog (only 2 of L1's 182 reference olfactory receptors carry one), so the
-co-receptor gate does not catch them. Four families in L1 depend on factors that K562 lacks (all
-< 1 TPM in HPA v23):
+### Independent validation against published surface proteomics
 
-| Family in L1 | Factor K562 lacks | What the factor does | CDSs (Core / Low-lit / Screen-val) | Factor-free HEK293T ≥ 1,000 / < 1,000 / unmeasured |
+A cross-method survey of published human cell-surface proteomics (**103 counted intact-cell
+surface-labeling arms across 89 publications**, contrasted against **77 unlabeled
+membrane-fractionation controls**; browsable in the
+[surface-proteomics viewer](https://surfaceome.deliverome.org/surface-proteomics/)) provides an
+independent experimental benchmark of our gene gates. Two complementary enrichment rules are
+evaluated across membrane-anchored (TM/GPI) proteins:
+
+- **Broad rule:** expression-conditioned surface-vs.-membrane enrichment (`z_expr_m > 2.0` across
+  HPA-matched cell lines with `nTPM ≥ 5`). No biotin-amine requirement is applied so lysine-poor
+  multipass transporters and channels are not penalized, while keeping false-positive intracellular
+  organelle leakage low (`2/905` strict UniProt organelle proteins; AUROC `0.943`). **306** proteins
+  qualify (`273` [89.2%] already in the pre-addition filter; `33` outside).
+- **Lineage-specific rule:** proteins detected in < 20 total publications but ≥ 35% of one
+  lineage's publications (minimum 3), with `lod_lineage > 1.2`, `lod_membrane > 0.3`, and an
+  impermeable biotin-amine check (`lod_biotin > 0`, ≥ 2 biotin publications) to guard small
+  glycocapture-heavy cohorts. **128** proteins qualify (`111` [86.7%] already covered; `4` overlap
+  the broad set and **13** additional lineage-only proteins sit outside the root filter).
+
+Every one of the **46** recurring proteomics hits missed by the root filter (33 broad + 13
+lineage-only) has a recorded gate outcome in the
+[surface-proteomics gap table](../s3e8_gap_gate_reasons.tsv) (regenerated offline by the
+[gap-audit script](../s3e8_gap_gate_reasons.py)). Of those 46, **16 buildable outside-catalog genes
+are added into v1** (`ANO9, C1orf159, CSF1, FAM171B, FAM234A, KLRG2, MFAP3, MYORG, RNF149, RNF150,
+SLC45A4, SUSD5, SV2A, TM2D1, TMEM117, TMEM248` — 14 broad + 2 lineage-only, including 9 that were
+flagged mostly intracellular at steady state but show reproducible surface enrichment), leaving
+**30** excluded by an explicit biophysical or packaging limit:
+
+| First gate failed in root filter | Broad (33) | Lineage (13) | Status in v1 | Examples |
+|---|---:|---:|---|---|
+| ORF > 5,000 nt | 16 | 5 | Excluded (lentiviral packaging cap) | `FAT4`, `PIEZO1`, `CR1`, `IGF2R` |
+| Surface evidence (not canonical/likely) | 15 | 2 | **16 added to v1** (`1` oversized `KIAA1549L` excluded) | `FAM234A, SLC45A4, KLRG2, RNF150` |
+| Co-receptor (obligate partner) | 1 | 3 | `ITGAL` added via 42-line rule; 3 excluded | `CD3D, CD3G, PTPRCAP` |
+| Surface fraction (mostly intracellular at steady state) | 1 | 1 | 2 remaining excluded (9 other intracellular hits already added above) | `LNPEP, PCDH11X` |
+| Anchored (no TM helix or GPI) | 0 | 1 | Excluded | `CLEC2B` |
+| Ectodomain (< 30 aa) | 0 | 1 | Excluded | `SIT1` (18 aa ECD) |
+
+![Surface-proteomics background comparison across recurring proteins](../figures/surface_proteomics_logodds_compare.png)
+
+*Figure 4. Diagnostic comparison of membrane fractionation vs. whole-lysate glycoproteomes as the
+background for intact-cell surface proteomics (`n = 2,108` recurring proteins). (A) Surface vs.
+membrane-fractionation log-odds (x-axis) against surface vs. whole-lysate glycoproteome log-odds
+(y-axis), shaded where membrane log-odds > 0.5; 820 non-v1 proteins clear the lysate background
+but fail the membrane background. (B, C) Marginal distributions showing clean separation of v1
+surface proteins from non-v1 intracellular proteins under membrane fractionation (B) versus heavy
+overlap under whole-lysate glycoproteomes (C). Drawn by
+[`surface_proteomics_logodds_compare.py`](../surface_proteomics_logodds_compare.py).*
+
+**Host trafficking accessory factors in K562.** Unlike obligate co-receptors, trafficking chaperones
+are rarely annotated in the catalog, so four families in v1 depend on factors that K562 lacks (< 1 TPM
+in HPA v23):
+
+| Family in v1 | Factor K562 lacks | What the factor does | CDSs (Core / Low-lit / Screen-val) | Factor-free HEK293T ≥ 1,000 / < 1,000 / unmeasured |
 |---|---|---|---:|---:|
 | Odorant receptors (OR) | RTP1/2 (REEP1 weaker) | Promotes OR ER exit and surface trafficking ([Saito et al., 2004](https://pubmed.ncbi.nlm.nih.gov/15550249/); [Zhuang & Matsunami, 2007](https://pubmed.ncbi.nlm.nih.gov/17387175/); some ORs traffic independently, [Sharma et al., 2017](https://pubmed.ncbi.nlm.nih.gov/28262096/)) | 189 (55 / 57 / 77) | 84 / 100 / 5 |
 | Bitter taste receptors (TAS2R) | RTP3/4 | Improves surface localization for some TAS2Rs ([Behrens et al., 2006](https://pubmed.ncbi.nlm.nih.gov/16720576/)) | 22 (21 / 1 / 0) | 2 / 19 / 1 |
@@ -795,28 +689,18 @@ co-receptor gate does not catch them. Four families in L1 depend on factors that
 | `CHRNA7` | NACHO (`TMEM35A`) | Promotes α7 pentamer folding and surface expression ([Gu et al., 2016](https://pubmed.ncbi.nlm.nih.gov/26875622/)) | 1 (1 / 0 / 0) | — / — / 1 |
 | **Total** | | | **216 (81 / 58 / 77)** | **86 / 119 / 11** |
 
-Three other families were reviewed and are **not** expected to be factor-limited in K562: sweet/umami
-receptors (`TAS1R1–3`, where REEP2 alters signaling without increasing surface display;
-[Ilegems et al., 2010](https://pubmed.ncbi.nlm.nih.gov/20943918/)), Na,K-ATPase α subunits
-(`ATP1A1–4`, whose partner `ATP1B3` is expressed at 111 TPM in K562;
-[Geering, 2008](https://pubmed.ncbi.nlm.nih.gov/18695395/)), and `TAAR`/`VN1R` receptors (no
-obligate chaperone reported).
-
-In total, **216 of the 2,762 active L1 CDSs (7.8%)** depend on a factor absent in K562. In
-[Tedman et al. (2026)](https://pubmed.ncbi.nlm.nih.gov/42736269/) — which screened GPCRs in
-factor-free HEK293T (also 0.0 TPM for RTP1–4) — 86 of the 205 measured CDSs still displayed at
-≥ 1,000 a.u., while 119 fell below 1,000 a.u. Together with the 11 unmeasured CDSs, **130 CDSs**
-are expected to fail display in K562 for lack of a host factor rather than construct defects (plus
-10 unreviewed heteromer subunits whose unlisted partners are ≤ 0.8 TPM in K562). These CDSs stay
-in the library and are flagged for separate analysis in K562
+In total, **216 of the 2,762 active v1 CDSs (7.8%)** depend on a factor absent in K562 (of 205
+measured in factor-free HEK293T in Tedman et al., 2026, 86 still displayed at ≥ 1,000 a.u. and 119
+fell below). These CDSs remain in the library and are flagged for separate analysis in K562
 ([`accessory_factor_dependence.py`](../accessory_factor_dependence.py),
-[`accessory_factor_dependence.tsv`](../accessory_factor_dependence.tsv),
-[`accessory_factor_dependence_factors.tsv`](../accessory_factor_dependence_factors.tsv)).
+[`accessory_factor_dependence.tsv`](../accessory_factor_dependence.tsv)).
 
 ## 5. Proteoforms: one reference protein per gene
 
-**From 2,417 library genes to 2,412 reference CDSs.** Every one of the **2,417** genes selected in
-[section 4](#4-genes-from-the-surfaceome-universe-to-2417) goes through reference-proteoform
+Many surface genes express multiple biologically real proteoforms — we sample a dedicated 150-form
+alternative-isoform panel in [section 6](#6-isoforms-and-orthologs) — but the core library requires
+one canonical, transcript-backed coding sequence per gene. Every one of the **2,417** genes selected
+in [section 4](#4-genes-from-the-surfaceome-universe-to-2417) goes through reference-proteoform
 selection ([`select_reference.py`](../../../../library/l1/proteoform-selection/select_reference.py)),
 producing **2,412 distinct reference CDSs**:
 
@@ -824,12 +708,12 @@ producing **2,412 distinct reference CDSs**:
 |---|---:|---:|---|
 | Built as its own reference CDS | 2,412 | 2,412 | one chosen transcript-backed protein per gene |
 | Identical protein already built under a paralog | 4 | 0 | `OPN1MW2`/`OPN1MW3` → `OPN1MW`, `OR2A42` → `OR2A1`, `UPK3BL2` → `UPK3BL1` (same protein residue for residue; built once) |
-| Dropped: no intact Ensembl 115 copy and low-confidence allele restoration | 1 | 0 | `OR52P1` carries a double frameshift in Ensembl 115 with no patch copy, and restoring the frame leaves 5 unphased residue diffs vs. UniProt `Q8NH57` ([below](#genes-without-a-buildable-reference-copy)) |
-| **Total** | **2,417** | **2,412** | *(the 2,762 total L1 CDSs add 150 isoforms + 200 orthologs in [section 6](#6-isoforms-and-orthologs))* |
+| Dropped: no intact Ensembl 115 copy and low-confidence allele restoration | 1 | 0 | `OR52P1` (entered via the little-studied UniProt tier, not the GPCR screen) carries a double frameshift in Ensembl 115 with no patch copy, and restoring the frame leaves 5 unphased residue diffs vs. UniProt `Q8NH57` ([below](#genes-without-a-buildable-reference-copy)) |
+| **Total** | **2,417** | **2,412** | *(the 2,762 total v1 CDSs add 150 isoforms + 200 orthologs in [section 6](#6-isoforms-and-orthologs))* |
 
 ### Quality checks on all 2,762 designed CDSs
 
-[`check_library_transcripts.py`](../check_library_transcripts.py) verifies every one of L1's
+[`check_library_transcripts.py`](../check_library_transcripts.py) verifies every one of v1's
 **2,762 designed CDSs** (2,412 references + 150 isoforms + 200 orthologs) against its pinned
 Ensembl 115 / 116 transcript and UniProt sequence
 ([`library_transcript_check.tsv`](../library_transcript_check.tsv)):
@@ -843,83 +727,61 @@ Ensembl 115 / 116 transcript and UniProt sequence
 | Human CDS identical to a reviewed UniProt protein | **2,436 / 2,562** human CDSs |
 | Human CDS built from an alt-haplotype or patch scaffold | **15**: 5 primary-LoF loci built from intact alt/patch copies (`KIR2DS4, OR12D1, OR5AL1, OR11H7, OR4Q2`), 9 genes absent from the primary assembly (`KIR2DL2, KIR2DL5A, KIR2DS2, KIR2DS5, KIR3DS1, OR8U8, OR8U9, OR9G9, TAS2R45`), plus `MICA` |
 
-**Why MANE Select vs. APPRIS?** Because the library synthesizes coding DNA, each reference must
-come from an annotated transcript (UniProt's canonical entry is a protein-level annotation that
-does not guarantee a matching Ensembl CDS). Two transcript-level standards exist:
+### Reference-selection ladder (`MANE Select → APPRIS principal → UniProt canonical`)
 
-- **MANE Select** ([Morales et al., 2022](https://pubmed.ncbi.nlm.nih.gov/35388217/)) is the
-  single representative transcript per gene jointly agreed between NCBI RefSeq and Ensembl/GENCODE
-  to serve as the clinical and genomic default, prioritizing biological expression support,
-  full-length transcript completeness, and cross-database concordance. We read `MANE_Select` directly
-  from the Ensembl 115 GTF ([Dyer et al., 2025](https://pubmed.ncbi.nlm.nih.gov/39656687/)), not
-  from APPRIS's partial MANE column (which omits 775 of Ensembl 115's 19,276 MANE Select entries).
+Because the library synthesizes coding DNA, each reference is selected from annotated transcripts
+rather than protein-only UniProt canonical entries, using two transcript-level standards compared on
+the exact protein they encode:
+
+- **MANE Select** ([Morales et al., 2022](https://pubmed.ncbi.nlm.nih.gov/35388217/)): the single
+  representative transcript per gene jointly agreed between NCBI RefSeq and Ensembl/GENCODE, read
+  directly from the pinned Ensembl 115 GTF ([Dyer et al., 2025](https://pubmed.ncbi.nlm.nih.gov/39656687/);
+  [`Homo_sapiens.GRCh38.115.gtf.gz`](https://pub-e53f37f6fe6b4745829c2066350fe26f.r2.dev/external/ensembl/release-115/gtf/Homo_sapiens.GRCh38.115.gtf.gz),
+  parsed by [`derive_mane_select.py`](../derive_mane_select.py) into [`mane_select_ensembl115.tsv`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/blob/main/data/processed/sprint4/s4e9-orf-design-fg-panel/library-design/mane_select_ensembl115.tsv)).
 - **APPRIS principal** ([Rodriguez et al., 2022](https://pubmed.ncbi.nlm.nih.gov/34755885/),
-  e115v50) selects a principal isoform from structural, functional-domain, and evolutionary
-  conservation features, assigning confidence tiers `PRINCIPAL:1` (highest) down to `PRINCIPAL:5`.
+  e115v50; [`appris_homo_sapiens_e115v50.txt`](https://pub-e53f37f6fe6b4745829c2066350fe26f.r2.dev/external/appris/e115v50/appris_homo_sapiens_e115v50.txt)):
+  a structural-domain and evolutionary-conservation principal call (`PRINCIPAL:1` highest to
+  `PRINCIPAL:5` lowest).
 
-When MANE Select and APPRIS agree on the encoded protein (92% of L1 genes), both standards point to
-the same CDS. When they disagree, we check PeptideAtlas build 607 distinguishing peptides first;
-if proteomics does not clearly favor APPRIS, we **default to MANE Select** for two reasons:
-(1) across all disagreements with strong PeptideAtlas support, every single one (`21 / 21`) favors
-MANE and none favors APPRIS alone; and (2) nearly half of all disagreements (`82 / 177`) carry
-APPRIS's lowest-confidence principal labels, so defaulting to APPRIS would side with it precisely
-where its structural/conservation call is weakest. Both source files are pinned on our public R2
-bucket: [`Homo_sapiens.GRCh38.115.gtf.gz`](https://pub-e53f37f6fe6b4745829c2066350fe26f.r2.dev/external/ensembl/release-115/gtf/Homo_sapiens.GRCh38.115.gtf.gz)
-(parsed by [`derive_mane_select.py`](../derive_mane_select.py) into [`mane_select_ensembl115.tsv`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/blob/main/data/processed/sprint4/s4e9-orf-design-fg-panel/library-design/mane_select_ensembl115.tsv),
-EMBL-EBI unrestricted) and [`appris_homo_sapiens_e115v50.txt`](https://pub-e53f37f6fe6b4745829c2066350fe26f.r2.dev/external/appris/e115v50/appris_homo_sapiens_e115v50.txt)
-(CC BY-NC-ND 4.0, SHA-256 in [`data_locations.tsv`](data_locations.tsv)).
-
-### The selection ladder and automatic membrane-anchoring filter
-
-MANE Select and the APPRIS principal are compared on the protein they encode, not the transcript
-ID. Of the **2,417** library genes, 2,393 have both; they agree on **2,215** and disagree on **178**
-(7.4%): 177 settled by the evidence rule below, and `NFASC`, where both forms have strong peptide
-support.
+The ladder follows **MANE Select → APPRIS principal → UniProt canonical** (unless mass-spectrometry
+evidence strongly favors APPRIS), with an automatic DeepTMHMM 1.0.24 membrane-anchoring guard that
+skips explicitly soluble (`SP`/`GLOB`) splice forms on non-GPI genes (on the current ladder, **0**
+genes require automatic soluble-guard demotion; the **6** GPI-vs.-soluble cases are handled by
+explicit overrides below). Across all **2,417** genes, MANE Select and APPRIS principal agree on
+**2,215 (92%)** and disagree on **178 (7.4%)**:
 
 | Step | Rule | Genes |
 |---|---|---:|
 | 1 | MANE Select and APPRIS principal encode the same protein: take it | 2,215 |
-| 2 | Only one exists (in L1 always APPRIS principal): take it | 15 |
+| 2 | Only one exists (always APPRIS principal here): take it | 15 |
 | 2 | Neither exists: take the UniProt canonical protein | 9 |
-| 3 | They differ: take the form with strong PeptideAtlas support; otherwise default to MANE Select | 177 |
-| 3 | Both have strong PeptideAtlas support (`NFASC`: MANE `O94856-9` has 78 unique peptides [20 in ≥ 10 samples, max 297] vs. APPRIS `O94856-3` with 64 unique [16 in ≥ 10 samples, max 177]; switched to MANE in this cut) | 1 |
+| 3 | They differ: take the form with strong [PeptideAtlas](https://pubmed.ncbi.nlm.nih.gov/41490290/) build 607 (2025) support; otherwise default to MANE Select (**21** strong MANE, **0** strong APPRIS alone, **33** weak [`25` MANE, `8` APPRIS], **123** no distinguishing peptides → default MANE) | 177 |
+| 3 | Both have strong PeptideAtlas support (`NFASC`: MANE `O94856-9` has 78 unique peptides [20 in ≥ 10 samples, max 297] vs. APPRIS `O94856-3` with 64 unique [16 in ≥ 10 samples, max 177]; MANE chosen) | 1 |
 
-Strong evidence requires **≥ 3 unique distinguishing peptides** in PeptideAtlas human build 607
-(pinned 2026-11-02; [Deutsch et al., 2025](https://pubmed.ncbi.nlm.nih.gov/41490290/)), with at
-least one peptide in ≥ 10 samples, and **0 unique peptides** for the other form (GENCODE Ribo-seq
-ORFs, [Mudge et al., 2022](https://pubmed.ncbi.nlm.nih.gov/35831657/), are recorded alongside but
-do not override). Of the 177 disagreements, 21 have strong evidence for MANE, 0 for APPRIS alone,
-33 have weak evidence (25 MANE, 8 APPRIS), and 123 have no distinguishing peptides. PeptideAtlas
-query responses (`data/external/peptideatlas/build-607/queries-2026-11-01/`) and Ribo-seq files
-are pinned with SHA-256s in [`bundle_manifest.tsv`](bundle_manifest.tsv).
+**Why default to MANE Select and how PeptideAtlas evidence is defined.** We define **strong**
+PeptideAtlas human build 607 support ([Deutsch et al., 2025](https://pubmed.ncbi.nlm.nih.gov/41490290/))
+as **≥ 3 unique proteotypic peptides** exclusively matching one form, **0** on the competing form,
+and at least one peptide observed in **≥ 10 distinct PeptideAtlas samples** (PeptideAtlas counts
+samples rather than studies; `≥ 10` sits cleanly in the gap between shallow hits [1–8 samples] and
+robust hits [17–137 samples]); **weak** evidence is 1–2 exclusive peptides or `< 10` samples. In
+practice, `≥ 3` peptides is not overly conservative: among the 8 weak-APPRIS disagreements, 5 rest
+on a single peptide and 3 on two peptides (2–7 samples), and all strong unilateral hits (`21 / 21`)
+favor MANE while nearly half of disagreements (`82 / 177`) carry APPRIS's lowest-confidence labels.
+We also tested GENCODE Ribo-seq ORFs ([Mudge et al., 2022](https://pubmed.ncbi.nlm.nih.gov/35831657/)),
+which provided **0 / 178** distinguishing calls because that catalog annotates non-canonical ORFs
+(`uORF`, `dORF`, `intORF`) rather than competing canonical CDS exons. Query files are pinned in
+[`bundle_manifest.tsv`](bundle_manifest.tsv).
 
-**Automatic non-surface isoform filter.** At every ladder rung, [`select_reference.py`](../../../../library/l1/proteoform-selection/select_reference.py)
-checks exact-sequence DeepTMHMM 1.0.24 topology (from catalog canonical/isoform tables and
-supplemental runs): if a candidate is called `SP` (secreted) or `GLOB` (no TM helix) on a non-GPI
-gene, the ladder automatically skips that soluble splice form and steps down to the next
-membrane-anchored candidate. Any candidate without a precomputed call receives its own DeepTMHMM v1
-run during tag placement ([section 7](#7-tag-placement-topology-and-placement-rules)).
+**Per-form GPI anchoring** is evaluated per proteoform ([`build_gpi_set.py`](../build_gpi_set.py);
+**157 GPI genes** combining NetGPI 1.1 on 918 forms and curated [`gpi_anchored_genes.tsv`](../gpi_anchored_genes.tsv),
+detailed in [section 7, GPI anchors](#gpi-anchors)) because several genes (`ACHE, BCAN, CD58, NCAM1,
+TFPI`) encode both GPI-anchored and transmembrane/secreted isoforms.
 
-**Per-form GPI anchoring.** Anchoring is evaluated per proteoform because several genes (e.g.,
-`ACHE, BCAN, CD58, NCAM1, TFPI`) have both GPI-anchored and transmembrane/secreted isoforms
-([`build_gpi_set.py`](../build_gpi_set.py); **157 GPI genes** combining NetGPI 1.1 on 918 forms
-[`netgpi_gpi_human_predictions.txt`](../../../../library/l1/proteoform-selection/netgpi_gpi_human_predictions.txt)
-and curated [`gpi_anchored_genes.tsv`](../gpi_anchored_genes.tsv), detailed in
-[section 7, GPI anchors](#gpi-anchors)).
+### The 31 explicit per-gene overrides (`reference_overrides.tsv`)
 
-### GTF-only MANE resolutions and the 31 manual overrides
-
-Reading `MANE_Select` directly from the Ensembl 115 GTF surfaced 66 genes that had previously
-fallen through to APPRIS because APPRIS's MANE column omitted them. Comparing PeptideAtlas build
-607 distinguishing peptides across all 66 ([`mane_gtf_decisions_2026-11-22.tsv`](../mane_gtf_decisions_2026-11-22.tsv))
-moved 47 genes cleanly to MANE Select (42 default switches where APPRIS lacked ≥ 10-sample support,
-plus 5 dual-observed genes switched to MANE in this cut: `APP`, `GRIN1`, `KCNMA1`, `NFASC`,
-`SIRPA`) and retained 11 on APPRIS on strong/abundant PeptideAtlas support (`ADGRL2`, `MS4A6A`,
-plus 9 dual-observed genes flagged in [question 3](#decisions-we-would-like-reviewers-to-weigh-in-on):
-`ADGRG6, ATP1A3, CSPG5, DPP10, DPP6, KCNQ2, ROBO2, SLC12A3, SLC4A7`).
-
-In total, **31 genes** take a named override recorded in
-[`reference_overrides.tsv`](../../../../library/l1/proteoform-selection/reference_overrides.tsv):
+Thirty-one genes take a recorded per-gene override in
+[`reference_overrides.tsv`](../../../../library/l1/proteoform-selection/reference_overrides.tsv)
+(labeled *"named"* in Figure 6):
 
 | Genes | Why the ladder's pick is not built | Built instead |
 |---|---|---|
@@ -930,49 +792,32 @@ In total, **31 genes** take a named override recorded in
 | `DISP2, TSPAN10` (2) | APPRIS-only Ensembl model truncates TM helices | UniProt canonical (`A7MBM2`, `Q9H1Z9`) |
 | `PTPRM, LY6H` (2) | `PTPRM` deletion-junction peptides favor canonical (7 vs 0); `LY6H` MANE adds 21 aa upstream of SP | UniProt canonical / APPRIS (`P28827`, `O94772`) |
 | `ADGRL2, MS4A6A` (2) | abundant PeptideAtlas support for APPRIS (4–5 peptides in ≥ 10 samples vs 0 for MANE) | APPRIS form (`O95490-2`, `Q9H2W1`) |
-| `ADGRG6, ATP1A3, CSPG5, DPP10, DPP6, KCNQ2, ROBO2, SLC12A3, SLC4A7` (9) | both isoforms observed in PeptideAtlas or APPRIS has ≥ 10-sample support | APPRIS form kept on peptide support, flagged for reviewer challenge ([question 3](#decisions-we-would-like-reviewers-to-weigh-in-on)) |
+| `ADGRG6, ATP1A3, CSPG5, DPP10, DPP6, KCNQ2, ROBO2, SLC12A3, SLC4A7` (9) | both isoforms observed in PeptideAtlas or APPRIS has ≥ 10-sample support | APPRIS form kept on peptide support, flagged for reviewer input ([question 2](#decisions-we-would-like-reviewers-to-weigh-in-on)) |
 
 Across all **2,417 library genes**, the final reference source is **MANE Select for 2,365, APPRIS
-for 12, UniProt canonical for 9, and a named override for 31** (Figure 6).
+for 12, UniProt canonical for 9, and an explicit override in `reference_overrides.tsv` (`named`) for
+31** (Figure 6).
 
 ![How each gene's reference protein was chosen](figures/l1_reference_ladder.png)
 
 *Figure 6. How each of the 2,417 genes got its reference protein: one bar per step outcome,
-colored by the source finally taken. Unit: gene; values are counts, log scale. Drawn by
-[`brief_numbers.py`](brief_numbers.py).*
+colored by the source finally taken (`named` = explicit per-gene override in `reference_overrides.tsv`).
+Unit: gene; values are counts, log scale. Drawn by [`brief_numbers.py`](brief_numbers.py).*
 
-### Auditing the 2,412 reference CDSs against UniProt canonical and PeptideAtlas
+### TL;DR: auditing the 2,412 reference CDSs against UniProt canonical and PeptideAtlas
 
-We audited all **2,412 built reference CDSs** against UniProt canonical and proteomics evidence:
-
-| Audit layer | Scope | Result |
-|---|---|---|
-| **Exact match to UniProt canonical** ([`l1_proteoform_audit.tsv`](../l1_proteoform_audit.tsv)) | 2,412 references | **2,223 identical** to UniProt canonical; **188 differ** (every downstream tool matches built proteins by exact sequence, [section 8](#structure-models)) |
-| **1. Automated structural/domain audit** ([`audit_l1_proteoforms.py`](../audit_l1_proteoforms.py)) | all 2,412 (188 differing) | checks fragments, lost SPs, ≥ 20 missing terminal aa, < 90% canonical aligned, TM count/orientation shifts, or lost Pfam domains → **55 flagged** (reviewed and logged in [`l1_proteoform_decisions.tsv`](../l1_proteoform_decisions.tsv)) |
-| **2. Unflagged > 10% length-difference review** | 11 unflagged extensions | 9 reviewed individually and kept ([`PROTEOFORM_REVIEW_2026-11-22.md`](../PROTEOFORM_REVIEW_2026-11-22.md)); 2 (`SHISA6`, `TMEM273`) newly switched to MANE |
-| **3. Full-isoform PeptideAtlas build 607 check** ([`proteoform_review_2026-11-22.tsv`](../proteoform_review_2026-11-22.tsv)) | 212 pre-MANE differing genes (726 UniProt accessions) | only 2 covered non-canonical references (`ACHE`, `MUC1`) have a ≥ 10-sample canonical-only peptide with none for ours — both intentional overrides |
-
-**Why 46 genes cannot match UniProt canonical from Ensembl 115.** For 46 genes the UniProt canonical protein is not the
-translation of any Ensembl 115 transcript: 9 are the same length and differ in residues
-(UniProt's reference allele is not the GRCh38 allele), and 37 differ in length (a form
-Ensembl does not annotate). Building the canonical for these would need a synthetic CDS, so the
-Ensembl protein is built and every downstream record is matched to it by sequence
-([`reference_vs_uniprot.py`](../reference_vs_uniprot.py)).
-
-**Structural flags and unflagged length extensions.** Of the 188 references that differ from the
-canonical, 55 trip one of these checks. Because automated checks look for canonical residues the
-reference lacks rather than residues it adds, [`audit_l1_proteoforms.py`](../audit_l1_proteoforms.py)
-records > 10% length differences without raising a flag, so 11 references with such a
-difference trip no check (`GFRA4, GPM6B, HRH2, KCNC1, KCNN2, PCDH1, PCDH7, PLPPR2, SHISA6, TMEM273, TSPAN17`;
-9 reviewed individually and kept, with `HRH2` and `GFRA4` low-confidence, plus `SHISA6` and `TMEM273` newly on MANE).
-
-**Full-isoform PeptideAtlas check.** To check whether proteomics contradicted non-canonical picks,
-we queried PeptideAtlas build 607 across 212 pre-MANE differing genes for every reviewed UniProt accession of each gene, the canonical and all
-its isoforms (726 accessions) — capturing isoform-unique and deletion-junction peptides. Of
-the 212, 32 have peptides only for our form, 34 only for the canonical, 67 for both and 79 for
-neither. Of the 18 with a ≥ 10-sample canonical-only peptide and none for ours, 14 moved to
-canonical, 2 (`GPNMB, SLC45A4`) moved to MANE, `ACHE` keeps its GPI isoform, and `MUC1` keeps its
-synthesizable 273-aa form (the 980-aa canonical tandem-repeat array cannot be synthesized).
+- **2,223 of 2,412** built references are **identical to UniProt canonical** ([`l1_proteoform_audit.tsv`](../l1_proteoform_audit.tsv));
+  **188 differ** (including 46 genes where no Ensembl 115 transcript encodes the UniProt canonical
+  protein — 9 same-length allele differences and 37 length differences; [`reference_vs_uniprot.py`](../reference_vs_uniprot.py)).
+- **Automated structural audit** ([`audit_l1_proteoforms.py`](../audit_l1_proteoforms.py)): 55 of the
+  188 non-canonical picks tripped a structural/SP/TM/Pfam check and 11 carried an unflagged > 10%
+  length extension; every case was reviewed in [`l1_proteoform_decisions.tsv`](../l1_proteoform_decisions.tsv).
+- **Full-isoform PeptideAtlas check** ([`proteoform_review_2026-11-22.tsv`](../proteoform_review_2026-11-22.tsv)):
+  querying PeptideAtlas build 607 across all 726 reviewed UniProt accessions of 212 differing genes
+  (`32` peptides only for our form, `34` only for canonical, `67` both, `79` neither) left only two
+  non-canonical picks (`ACHE` GPI form and synthesizable 273-aa `MUC1`) with ≥ 10-sample
+  canonical-only peptides, both intentional overrides. Every downstream tool matches built proteins
+  by exact sequence ([section 8](#structure-models)).
 
 ### Genes without a buildable reference copy
 
@@ -1029,47 +874,33 @@ are in [section 11](#11-reproducibility-what-is-pinned-and-the-one-permanent-lim
 **How an isoform reaches the draw.** Four steps, in order:
 
 1. **Universe.** Every UniProt and Ensembl 115 protein of each library gene (described below).
-2. **Cohort.** A form is kept if it has observed evidence or a TRIFID score above 0.5, and if it
-   keeps its gene's membrane anchoring
+2. **Cohort.** A form is kept if it has observed evidence or a TRIFID functional-importance score
+   above 0.5 ([Pozo et al., 2021](https://pubmed.ncbi.nlm.nih.gov/34046593/) — APPRIS's ML score
+   trained on proteomics-detected isoforms; on our universe it separates MS-observed from
+   unobserved isoforms with AUC `0.731`) and keeps its gene's membrane anchoring
    ([`isoform_cohorts.py`](../../../../library/l1/proteoform-selection/isoform_cohorts.py)). The
-   cohort has two evidence tiers. A form is **observed** if PeptideAtlas build 607 holds a
-   peptide that distinguishes it (strong or weak evidence; pinned isoform query pools in the
-   review repository at
-   [`data/external/peptideatlas/build-607/queries-2026-11-22-isoforms/peptideatlas_build607_pools.json`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/blob/main/data/external/peptideatlas/build-607/queries-2026-11-22-isoforms/peptideatlas_build607_pools.json),
-   indexed with SHA-256 in [`data_locations.tsv`](data_locations.tsv)) or [OpenProt 2.2](https://www.openprot.org/)
-   gives it a translation-evidence score above 0 (processed by
-   [`openprot_evidence.py`](../../../../library/l1/proteoform-selection/openprot_evidence.py) into
-   [`openprot_evidence_summary.json`](../../../../library/l1/proteoform-selection/openprot_evidence_summary.json);
-   the 231 MB upstream table `human-openprot-2_2-refprots+altprots+isoforms-min_2_pep-uniprot2022_06_01.tsv.zip`
-   is pinned in [`data_locations.tsv`](data_locations.tsv) and [`bundle_manifest.tsv`](bundle_manifest.tsv)).
-   It is **prediction-only** if it has no observed evidence but a TRIFID score above 0.5. TRIFID
-   is APPRIS's machine-learning score of an isoform's functional importance, trained on isoforms
-   detected by proteomics ([Pozo et al., 2021](https://pubmed.ncbi.nlm.nih.gov/34046593/)); on
-   our universe it ranks observed forms above unobserved ones with an AUC of 0.731. TRIFID scores
-   are read from the APPRIS e115v50 release file
-   [`appris_data.appris.txt`](https://pub-e53f37f6fe6b4745829c2066350fe26f.r2.dev/external/appris/2026_06.v50/e115v50/homo_sapiens/appris_data.appris.txt)
-   (pinned with SHA-256 in [`data_locations.tsv`](data_locations.tsv) and
-   [`bundle_manifest.tsv`](bundle_manifest.tsv); upstream at
-   [APPRIS 2026_06.v50](https://apprisws.bioinfo.cnio.es/pub/releases/2026_06.v50/)).
-3. **Gate.** The isoform gate ([`gate_isoform_cohort.py`](../gate_isoform_cohort.py); its
-   verdicts on the rebuilt cohort are [`isoform_gate_rebuild.tsv`](../isoform_gate_rebuild.tsv)) admits a form only if it
-   meets every criterion below, each judged by DeepTMHMM v1 on the form's own sequence.
-4. **Draw.** The panel is drawn from the forms that pass, by class and tier.
+   cohort has two evidence tiers: **observed** (a distinguishing PeptideAtlas build 607 peptide in
+   [`peptideatlas_build607_pools.json`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/blob/main/data/external/peptideatlas/build-607/queries-2026-11-22-isoforms/peptideatlas_build607_pools.json),
+   or an [OpenProt 2.2](https://www.openprot.org/) translation-evidence score > 0 from
+   [`human-openprot-2_2-refprots+altprots+isoforms-min_2_pep-uniprot2022_06_01.tsv.zip`](https://www.openprot.org/p/download),
+   processed by [`openprot_evidence.py`](../../../../library/l1/proteoform-selection/openprot_evidence.py),
+   pinned in [`bundle_manifest.tsv`](bundle_manifest.tsv)) and **prediction-only** (no MS evidence,
+   TRIFID > 0.5, read from
+   [`appris_data.appris.txt`](https://pub-e53f37f6fe6b4745829c2066350fe26f.r2.dev/external/appris/2026_06.v50/e115v50/homo_sapiens/appris_data.appris.txt)).
+3. **Gate.** The isoform gate ([`gate_isoform_cohort.py`](../gate_isoform_cohort.py); verdicts in
+   [`isoform_gate_2026_11_23.tsv`](../isoform_gate_2026_11_23.tsv)) admits a form only if it meets
+   all three criteria below, judged by DeepTMHMM v1 on the form's own sequence (passing **1,749 /
+   1,899** cohort forms). Because every drawn isoform receives its own independent DeepTMHMM v1 tag
+   placement in [section 7](#7-tag-placement-topology-and-placement-rules), isoforms are not
+   restricted to match their reference's N-terminal orientation or first TM helix.
+4. **Draw.** The 150-form panel ([`isoform_panel.tsv`](../isoform_panel.tsv)) is drawn from
+   gate-passing forms across six membrane-architecture strata and both evidence tiers.
 
-| Gate criterion | Why it is applied |
+| Gate criterion | Purpose |
 |---|---|
-| starts at a native ATG supported by an exact Ensembl 115 CDS | the CDS built is a native sequence, not a repaired one |
+| starts at a native ATG supported by an exact Ensembl 115 CDS | ensures the built CDS is a native sequence, not a repaired one |
 | keeps the reference's signal peptide (when the reference has one) | preserves ER targeting for N-after-SP isoforms |
-| passes the short-fragment guard (`≥ 25%` of reference length, and not `< 100 aa` while `< 50%` of reference) | excludes severe partial fragments without imposing a blunt 50% floor that would drop valid shorter isoforms |
-
-*Relaxing N-terminal-side and first-TM-helix matching (applied 2026-11-23; [question 5](#decisions-we-would-like-reviewers-to-weigh-in-on)).*
-Earlier draws also required every isoform to match its reference's N-terminal side and first TM
-helix, excluding 73 native-ATG isoforms. Because every drawn isoform already receives its own
-independent DeepTMHMM v1 tag placement in [section 7](#7-tag-placement-topology-and-placement-rules),
-we relaxed those two reference-matching checks while adding the short-fragment guard above
-(passing **1,749 / 1,899** cohort forms in [`isoform_gate_2026_11_23.tsv`](../isoform_gate_2026_11_23.tsv))
-and redrew the 150-form panel on the exact same six strata and seed
-([`isoform_panel_redraw_2026-11-23.tsv`](../isoform_panel_redraw_2026-11-23.tsv)).
+| passes the short-fragment guard (`≥ 25%` of reference length, and not `< 100 aa` while `< 50%` of reference) | excludes severe partial fragments without a blunt 50% floor that would drop valid shorter isoforms (e.g. `HLA-G` at 46%) |
 
 A gene's class is read from its reference protein's DeepTMHMM v1 topology, and every isoform
 takes its gene's class, not one computed on its own sequence:
@@ -1154,87 +985,29 @@ which has no answer without the human CDS; where the human CDS is held, its orth
 held with it. [`l1_completeness.py`](../l1_completeness.py) fails if a mouse or cyno CDS is built while no human
 CDS of its gene is.
 
-**Every cohort form is judged by the gate on its own prediction**
-([`gate_isoform_cohort.py`](../gate_isoform_cohort.py)). Every cohort form has a DeepTMHMM v1
-prediction on its own sequence: the 955 proteins that lacked one were predicted for this review
-and added to the topology snapshot as a new, separately versioned set of rows. Under the current
-gate (`--relax-nterm-tm1 --reject-short-fragments`; [`isoform_gate_2026_11_23.tsv`](../isoform_gate_2026_11_23.tsv)),
-1,749 of the 1,899 forms of the rebuilt cohort (below) pass (669 of 796 observed, 1,080 of 1,103
-prediction-only; 898 genes have a drawable form). The 150 failures (by primary defect) are: the
-form loses the reference's signal peptide (66), has no Ensembl 115 transcript encoding it exactly
-(43), does not start with Met (23), is a truncated short fragment (`<= 25%` of reference length and
-`< 300 aa`, or `< 100 aa`: 14 not already caught by an earlier defect), or has a CDS record that
-does not translate to it (4). Compared with the earlier strict gate (1,690/1,899 passing), relaxing
-the N-terminal orientation and TM1 checks admits legitimate alternative N-termini and transmembrane
-isoforms while the short-fragment filter removes truncated fragments (replacing 29 of the 150 panel
-picks in [`isoform_panel.tsv`](../isoform_panel.tsv) /
-[`isoform_panel_redraw_2026-11-23.tsv`](../isoform_panel_redraw_2026-11-23.tsv)). The new
-predictions agree residue for residue with an earlier v1 run on the 863 proteins the two runs
-share.
+**Isoform cohort and gate verdicts** ([`gate_isoform_cohort.py`](../gate_isoform_cohort.py),
+[`isoform_gate_2026_11_23.tsv`](../isoform_gate_2026_11_23.tsv)). Enumerating every UniProt
+(2026-10-11) and Ensembl 115 protein of the 2,369 frozen-root library genes (the 48 net genes added
+after the frozen root have no isoform forms in this build) yields **2,111 forms of 1,010 genes**
+above the evidence bar (PeptideAtlas build 607, OpenProt 2.2, or TRIFID > 0.5). Requiring
+membrane anchoring against the gene's built reference removes 184 forms that lose membrane
+anchoring and 27 GPI-gene forms that lose the GPI anchor, leaving **1,899 cohort forms across 946
+genes** (451 library genes have a non-canonical UniProt isoform but no cohort form: 399 fall below
+the evidence bar and 52 lose surface anchoring; verified by
+[`audit_isoform_coverage.py`](../audit_isoform_coverage.py)). Thirteen cohort forms are identical
+to their gene's built reference and are refused at the draw.
 
-A pick that fails the gate, duplicates another CDS's protein or is encoded by no transcript is
-replaced by continuing the seeded draw: 27 of the 150 picks were replaced this way in the initial
-strict-gate draw, among them NCAM1 and KCNE3 forms that no transcript encodes
-([`isoform_panel_redraw_2026-11-22.tsv`](../isoform_panel_redraw_2026-11-22.tsv)), followed by the
-relaxed-gate + short-fragment redraw above. While a blunt 50% length floor was rejected (it would
-discard evidence-supported isoforms such as HLA-G at 46% of its reference), the 2026-11-23 gate
-rejects extreme truncated fragments (`<= 25%` of reference length and `< 300 aa`, or `< 100 aa`).
-
-**The isoform universe spans the library.** It is built by enumerating every UniProt and
-Ensembl 115 protein of each gene on the library list, so it is not limited to the April 2026
-`surfaceome_expressed` query set. That set (1,775 of the 2,369 genes on the library list when
-the universe was built) bounded the original ortholog pool, not the isoform universe: the
-rebuilt isoform cohort holds 335 forms of 184 genes outside it, and 25 of the panel's 132 genes
-are outside it. The one library gene the
-universe lacked is SLC67A1 (formerly SLC22A18), added to the library after the
-universe was built. The April files did feed one decision: the cohort's membrane tests read
-DeepTMHMM labels looked up by UniProt accession, and compared each form with the universe's
-first-choice reference rather than with the protein the library builds.
-
-A fresh rebuild removes both dependencies. It reruns the universe, mass-spectrometry,
-translation and APPRIS evidence steps with their original code and pinned releases (UniProt
-2026-10-11, Ensembl 115, APPRIS e115v50, PeptideAtlas build 607, OpenProt 2.2) over the
-2,369 genes on the library list before the 48 net genes added in the final pre-freeze updates
-(which have no isoform forms in this build), and judges
-every form that clears the evidence bar by DeepTMHMM
-v1 on its own sequence against the gene's built reference protein. 2,111 forms of 1,010 genes
-clear the evidence bar; 1,899 forms of 946 genes remain after the membrane tests, which
-exclude 184 forms that lose the reference's membrane anchoring and 27 forms of GPI genes that
-do not keep the anchor. The rebuilt cohort contains all 1,894 forms of the cohort of record
-plus 5 new ones (three NCAM1 forms, which become alternative forms once NCAM-120 is the built
-reference, and two SLC67A1 forms). 13 forms in it are identical to their gene's built
-reference protein and are refused at the draw, as the sampler refuses reference forms. 1,749
-of the 1,899 pass the current isoform gate, and 898 genes have a drawable form (1,690 and 866
-under the earlier strict gate).
-
-Within the cohort every library gene is accounted for: all 451 library genes with a
-non-canonical UniProt isoform but no form in the cohort of record have scored rows, and the
-cohort's own rules exclude each one ([`audit_isoform_coverage.py`](../audit_isoform_coverage.py), which fails on an
-unexplained absence). For 399 of those genes every alternative form is below the evidence bar,
-which requires a diagnostic peptide, a positive OpenProt translation score or a TRIFID score
-above 0.5; the other 52 include forms excluded for lost surface anchoring. Lack of evidence is
-not evidence that an isoform is absent.
-
-**The panel is drawn on the rebuilt cohort and its gate**, with multipass split by N-terminal
-side. A form is replaced only when it loses a feature that decides display (the signal peptide,
-the N-terminal side, the first TM helix or the membrane anchor) or cannot be built natively;
-the gate already tests exactly these, so the narrower feature rule adopted for orthologs (below)
-changes no isoform verdict. Against the panel drawn before on the earlier cohort and five
-classes, 69 picks are kept and 81 are replaced. The change is concentrated in multipass (5 of
-its 51 picks kept), whose slots are now two separate draws; the other strata change too,
-because every stratum draws in turn from one seeded sequence, so a change in one shifts the
-sample of every later stratum. No dropped pick fails the rebuilt gate; each is dropped only
-because the draw changed. Per form:
-[`panel_redraw_2026-11-22_changes.tsv`](../panel_redraw_2026-11-22_changes.tsv).
-
-Six panel members became identical to their gene's reference when the MANE correction
-([section 5](#5-proteoforms-one-reference-protein-per-gene)) moved the reference onto them
-(ADGRB2, LSR, MUC13, PCDH9, STEAP3 and TMEM134), and are withdrawn as duplicates. Each slot is
-refilled by continuing the same seeded sequence within its stratum after the whole draw, so no
-other member moves: ITGA6, PAM and KIT (type I), TTYH1 (multipass, N-terminus extracellular),
-and SLC12A2 and SLC4A7 (multipass, N-terminus cytoplasmic), all from the observed tier
-([`panel_refill_2026-11-22_changes.tsv`](../panel_refill_2026-11-22_changes.tsv)). The counts
-in this section are those of the panel after the refill.
+Every cohort form is evaluated on its own DeepTMHMM v1 prediction. Under the gate of record
+(`--relax-nterm-tm1 --reject-short-fragments`), **1,749 of 1,899** cohort forms pass (**669 of 796**
+observed, **1,080 of 1,103** prediction-only; **898 genes** have a drawable form). The 150
+failures (by primary defect) are: lost reference signal peptide (66), no exact Ensembl 115
+transcript (43), non-Met start (23), truncated short fragment (`<= 25%` of reference length and
+`< 300 aa`, or `< 100 aa`: 14), or CDS translation mismatch (4). Any drawn pick that fails the
+gate, duplicates another built CDS, or lacks an exact transcript is replaced by continuing the
+same seeded sequence within its stratum (27 of the 150 picks in the panel draw were replaced by
+continuing the seeded sequence, plus 6 withdrawn reference duplicates refilled in-stratum;
+[`isoform_panel.tsv`](../isoform_panel.tsv),
+[`panel_refill_2026-11-22_changes.tsv`](../panel_refill_2026-11-22_changes.tsv)).
 
 **Orthologs are drawn from every library gene, and admitted only with a supported coding
 sequence.** The pool is the Ensembl Compara 116 one-to-one, high-confidence mouse and cyno
@@ -1693,7 +1466,7 @@ never designed ([`l1_internal_sites_vs_v4.tsv`](../../tag-site-benchmarking/l1_i
 **Weak spots.** Top-1 hits the published residue < 5% of the time (reliable at the loop [73%] and
 10-aa window [49%], not the exact residue); 4 v5 training proteins (`NRXN1, ASIC1, SLC4A11,
 SLC9A6`: 5 of 176 positives and 858 of 35,650 rows) were misnumbered on another isoform (retrain
-deferred to L2; all 11 affected L1 CDSs were redesigned on corrected features,
+deferred to future library versions; all 11 affected v1 CDSs were redesigned on corrected features,
 [`isoform_fix_redesign.tsv`](../../tag-site-benchmarking/isoform_fix_redesign.tsv));
 and `SLC44A1`'s loop orientation remains unconfirmed by the gate.
 
@@ -2232,7 +2005,7 @@ drove **25 targeted pre-freeze site upgrades** (plus 14 biological-audit fixes i
   (clashes 6 → 2), and `SLC6A20 @532 → @536` (clashes 8 → 1).
 - All continuous refold features (`own_ref` lDDT, `±8` lDDT, `cassette_contact_res`, `<2.5 Å`
   steric clashes, epitope protrusion) are retained as pre-registered covariates to calibrate an
-  empirical L2 filter on the **3,375-construct** L1 display readout (including 397 multi-arm CDSs).
+  empirical display filter on the **3,375-construct** v1 display readout (including 397 multi-arm CDSs).
 
 ### Where every CDS stands
 

@@ -50,7 +50,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import pandas as pd
 
-from deliverome_analysis.plotting import get_color, save_figure, setup_plotting_style
+from deliverome_analysis.plotting import save_figure, setup_plotting_style
 
 HERE = Path(__file__).resolve().parent
 COUNTS = HERE / "surface_proteomics_counts.tsv"
@@ -104,34 +104,145 @@ def score(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def figure(df: pd.DataFrame, current: str) -> None:
+    import numpy as np
+
     setup_plotting_style()
-    sub = df[df.snapshot.eq(current)]
-    fig, ax = plt.subplots(figsize=(8, 7))
-    groups = [
-        ("in L1 or L2", sub.in_library, get_color("neutral"), 6, 0.35),
-        ("not in L1 or L2", ~sub.in_library, get_color("primary"), 10, 0.6),
-    ]
-    for label, mask, color, size, alpha in groups:
-        ax.scatter(
-            sub.lod_membrane[mask],
-            sub.lod_global[mask],
-            s=size,
-            c=color,
-            alpha=alpha,
-            label=label,
-            linewidths=0,
+    sub = df[df.snapshot.eq(current)].copy()
+    in_v1 = sub.library.astype(str).str.contains(r"\bl1\b")
+    pass_mem = sub.pass_membrane
+    outside_pass = (~in_v1) & pass_mem
+    outside_fail = (~in_v1) & (~pass_mem)
+
+    fig = plt.figure(figsize=(10.6, 4.6))
+    gs = fig.add_gridspec(2, 2, width_ratios=[1.38, 1.0], hspace=0.42, wspace=0.28)
+    ax = fig.add_subplot(gs[:, 0])
+    ax_m = fig.add_subplot(gs[0, 1])
+    ax_g = fig.add_subplot(gs[1, 1])
+
+    c_v1 = "#0F766E"
+    c_out_bg = "#C8C2BE"
+    c_out_hi = "#B3243B"
+
+    # Left panel: joint scatter with shaded membrane-passing region
+    ax.axvspan(LOD_MIN, 4.0, color=c_v1, alpha=0.055, zorder=0)
+    ax.scatter(
+        sub.lod_membrane[outside_fail],
+        sub.lod_global[outside_fail],
+        s=9,
+        c=c_out_bg,
+        alpha=0.55,
+        linewidths=0,
+        label=f"Outside v1, membrane ≤ 0.5 (n = {int(outside_fail.sum()):,})",
+        zorder=1,
+    )
+    ax.scatter(
+        sub.lod_membrane[in_v1],
+        sub.lod_global[in_v1],
+        s=12,
+        c=c_v1,
+        alpha=0.58,
+        linewidths=0,
+        label=f"In v1 library (n = {int(in_v1.sum()):,})",
+        zorder=2,
+    )
+    ax.scatter(
+        sub.lod_membrane[outside_pass],
+        sub.lod_global[outside_pass],
+        s=26,
+        c=c_out_hi,
+        edgecolors="white",
+        linewidths=0.5,
+        alpha=0.92,
+        label=f"Outside v1, membrane > 0.5 (n = {int(outside_pass.sum()):,})",
+        zorder=3,
+    )
+    ax.axvline(LOD_MIN, color="#1f1718", lw=1.0, ls="--", zorder=4)
+    ax.axhline(LOD_MIN, color="#6f5d5a", lw=0.9, ls=":", zorder=4)
+
+    n_ul = int((outside_fail & sub.pass_global).sum())
+    n_r_v1 = int((in_v1 & pass_mem).sum())
+    ax.text(
+        -2.55,
+        2.95,
+        f"{n_ul:,} non-v1 proteins pass lysate\nbackground but fail membrane",
+        fontsize=8.0,
+        color="#524644",
+        va="top",
+        ha="left",
+        bbox=dict(boxstyle="round,pad=0.28", fc="white", ec="#e0d9d4", alpha=0.94),
+    )
+    ax.text(
+        3.48,
+        2.95,
+        f"Membrane > 0.5\n{n_r_v1:,} in v1 · {int(outside_pass.sum())} outside",
+        fontsize=8.0,
+        color=c_v1,
+        fontweight="bold",
+        va="top",
+        ha="right",
+        bbox=dict(boxstyle="round,pad=0.28", fc="white", ec="#c7dedb", alpha=0.94),
+    )
+    ax.text(
+        0.0,
+        1.03,
+        "A. Background comparison across recurring surface-proteomics proteins",
+        transform=ax.transAxes,
+        fontsize=9.5,
+        fontweight="bold",
+        color="#1f1718",
+        ha="left",
+        va="bottom",
+    )
+    ax.set_xlim(-2.7, 3.6)
+    ax.set_ylim(-1.85, 3.35)
+    ax.set_xlabel("Surface vs. membrane fractionation (log-odds)", fontsize=10.5)
+    ax.set_ylabel("Surface vs. whole-lysate glycoproteome (log-odds)", fontsize=10.5)
+    ax.tick_params(labelsize=9)
+    ax.legend(frameon=True, facecolor="white", edgecolor="#e0d9d4", fontsize=7.8, loc="lower left")
+
+    # Right panels: 1D distributions comparing separation of v1 vs outside-v1
+    bins = np.linspace(-2.5, 3.5, 42)
+    for panel, col, label_txt, ls in [
+        (ax_m, "lod_membrane", "B. Membrane-fractionation background (clean separation)", "--"),
+        (ax_g, "lod_global", "C. Whole-lysate glycoproteome background (heavy overlap)", ":"),
+    ]:
+        panel.hist(
+            sub.loc[~in_v1, col],
+            bins=bins,
+            density=True,
+            color="#B3243B",
+            alpha=0.28,
+            label="Outside v1",
+            edgecolor="none",
         )
-    ax.axvline(LOD_MIN, color="0.3", lw=0.8, ls="--")
-    ax.axhline(LOD_MIN, color="0.3", lw=0.8, ls=":")
-    ax.set_xlabel("log-odds, surface vs membrane fractionation")
-    ax.set_ylabel("log-odds, surface vs whole-lysate glycoproteome")
-    handles, labels = ax.get_legend_handles_labels()
-    handles += [
-        plt.Line2D([], [], color="0.3", lw=0.8, ls="--"),
-        plt.Line2D([], [], color="0.3", lw=0.8, ls=":"),
-    ]
-    labels += ["membrane threshold 0.5 (rule B)", "global threshold 0.5"]
-    ax.legend(handles, labels, frameon=False, fontsize=7, loc="lower right")
+        panel.hist(
+            sub.loc[in_v1, col],
+            bins=bins,
+            density=True,
+            color=c_v1,
+            alpha=0.48,
+            label="In v1 library",
+            edgecolor="none",
+        )
+        panel.axvline(LOD_MIN, color="#1f1718", lw=0.95, ls=ls)
+        panel.text(
+            0.0,
+            1.05,
+            label_txt,
+            transform=panel.transAxes,
+            fontsize=9.0,
+            fontweight="bold",
+            color="#1f1718",
+            ha="left",
+            va="bottom",
+        )
+        panel.set_xlim(-2.6, 3.5)
+        panel.set_ylabel("Density", fontsize=9.5)
+        panel.tick_params(labelsize=8.5)
+    ax_m.legend(frameon=False, fontsize=8.0, loc="upper right")
+    ax_g.set_xlabel("Log-odds (intact-cell surface vs. background)", fontsize=10.5)
+
+    fig.subplots_adjust(left=0.075, right=0.98, top=0.90, bottom=0.13)
     save_figure(fig, FIGURE)
 
 

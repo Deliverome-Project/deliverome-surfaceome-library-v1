@@ -96,6 +96,15 @@ CHROME_CANDIDATES = (
 FONT = "Manrope"
 CSS = """
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap');
+@page {
+  margin: 0.72in 0.72in 0.82in 0.72in;
+  @bottom-center {
+    content: "Page " counter(page) " of " counter(pages);
+    font-family: 'Manrope', -apple-system, Helvetica, Arial, sans-serif;
+    font-size: 8.5pt;
+    color: #6f5d5a;
+  }
+}
 body { font-family: 'Manrope', -apple-system, Helvetica, Arial, sans-serif; font-size: 10.5pt;
        line-height: 1.4; max-width: 7.2in; margin: 0 auto; color: #1f1718; }
 h1 { font-size: 17pt; } h2 { font-size: 13.5pt; margin-top: 1.4em; } h3 { font-size: 11.5pt; }
@@ -518,9 +527,10 @@ def _run(paragraph, text: str, style: dict, pt=None) -> None:
     from docx.shared import Pt, RGBColor
 
     if not style.get("pre"):
-        # Markdown source wraps paragraphs at ~100 columns; a newline there is a soft wrap,
-        # not a line break, and Word and Google Docs would otherwise show it as one.
-        text = " ".join(text.split("\n"))
+        # Markdown source wraps paragraphs and bullet lists with indentation; collapsing any
+        # whitespace run (newlines + continuation spaces) to a single space prevents extra
+        # gaps inside wrapped list items in Word and Google Docs.
+        text = re.sub(r"\s+", " ", text)
     run = paragraph.add_run(text)
     run.bold, run.italic = style.get("bold"), style.get("italic")
     if style.get("code"):
@@ -529,6 +539,45 @@ def _run(paragraph, text: str, style: dict, pt=None) -> None:
         run.font.size = Pt(style["size_pt"])
     if style.get("color_rgb"):
         run.font.color.rgb = RGBColor(*style["color_rgb"])
+
+
+def _add_page_number_footer(doc) -> None:
+    """Add a centered 'Page X of Y' footer to every section of a .docx document."""
+    from docx.enum.text import WD_ALIGN_PARAGRAPH
+    from docx.oxml import OxmlElement
+    from docx.oxml.ns import qn
+    from docx.shared import Pt, RGBColor
+
+    def _append_field(paragraph, field_name: str) -> None:
+        run = paragraph.add_run()
+        run.font.name = FONT
+        run.font.size = Pt(8.5)
+        run.font.color.rgb = RGBColor(0x6F, 0x5D, 0x5A)
+        fld_begin = OxmlElement("w:fldChar")
+        fld_begin.set(qn("w:fldCharType"), "begin")
+        instr = OxmlElement("w:instrText")
+        instr.set(qn("xml:space"), "preserve")
+        instr.text = f" {field_name} "
+        fld_sep = OxmlElement("w:fldChar")
+        fld_sep.set(qn("w:fldCharType"), "separate")
+        fld_end = OxmlElement("w:fldChar")
+        fld_end.set(qn("w:fldCharType"), "end")
+        run._r.append(fld_begin)
+        run._r.append(instr)
+        run._r.append(fld_sep)
+        run._r.append(fld_end)
+
+    for section in doc.sections:
+        footer = section.footer
+        footer.is_linked_to_previous = False
+        p = footer.paragraphs[0] if footer.paragraphs else footer.add_paragraph()
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        for txt, fld in (("Page ", "PAGE"), (" of ", "NUMPAGES")):
+            r = p.add_run(txt)
+            r.font.name = FONT
+            r.font.size = Pt(8.5)
+            r.font.color.rgb = RGBColor(0x6F, 0x5D, 0x5A)
+            _append_field(p, fld)
 
 
 def to_docx(md_path: Path, commit: str, out: Path, *, clean_paths: bool = False) -> None:
@@ -602,6 +651,7 @@ def to_docx(md_path: Path, commit: str, out: Path, *, clean_paths: bool = False)
     sentence, url = stamp_text(md_path, commit, clean_paths=clean_paths)
     p = doc.add_paragraph()
     _hyperlink(p, url, sentence, {"italic": True, "size_pt": 8.5})
+    _add_page_number_footer(doc)
     doc.save(out)
 
 

@@ -149,48 +149,40 @@ CLAIMS = [
     ),
     ("| NetGPI calls a form anchored | {} | yes |", ["gpi.basis.netgpi_anchored"]),
     ("That gives {} GPI genes with {} L1 CDSs.", ["gpi.gpi_set_genes", "gpi.l1_gpi_members"]),
-    # swap impurity by construct length (section 2)
+    # swap impurity by construct length (section 3)
     (
-        "the median is {}% of a barcode's cells in the longest quarter of constructs and {}%",
+        "the median is {}% of a barcode's cells in the longest\nquarter of constructs and {}% in the shortest (Spearman {} against insert length). The {}\nbarcodes above 1%",
         [
             "swap_pool.by_length.longest_quarter_specific_median_pct",
             "swap_pool.by_length.shortest_quarter_specific_median_pct",
-        ],
-    ),
-    (
-        "in the shortest (Spearman {} against insert length). The {} barcodes above 1%",
-        [
             "swap_pool.by_length.spearman_length_vs_specific",
             "swap_pool.by_length.barcodes_over_1pct",
         ],
     ),
-    ("highest is {}%.", ["swap_pool.by_length.max_specific_pct"]),
-    # proteoform audit and canonical proteins with no Ensembl transcript (section 4)
+    ("highest\nis {}%)", ["swap_pool.by_length.max_specific_pct"]),
+    # proteoform audit and canonical proteins with no Ensembl transcript (section 5)
     (
-        "For {} genes the UniProt canonical protein is not the\ntranslation of any Ensembl 115 "
-        "transcript: {} are the same length",
+        "(including {} genes where no Ensembl 115 transcript encodes the UniProt canonical\n  protein — {} same-length allele differences and {} length differences;",
         [
             "reference.canonical_without_transcript.genes",
             "reference.canonical_without_transcript.same_length_residues_differ",
+            "reference.canonical_without_transcript.length_differs",
         ],
     ),
-    ("and {} differ in length (a form", ["reference.canonical_without_transcript.length_differs"]),
-    ("canonical, {} trip one of these checks", ["proteoform_audit.flagged_major"]),
     (
-        "so {} references with such a\ndifference trip no check",
-        ["proteoform_audit.unflagged_over_10pct"],
+        "{} of the\n  188 non-canonical picks tripped a structural/SP/TM/Pfam check and {} carried an unflagged > 10%",
+        [
+            "proteoform_audit.flagged_major",
+            "proteoform_audit.unflagged_over_10pct",
+        ],
     ),
     # The brief's PeptideAtlas evidence is now the 2026-11-22 review's full-accession query,
     # not the audit's pinned-pool query (which covered only some genes).
     (
-        "for every reviewed UniProt accession of each gene, the canonical and all\nits isoforms "
-        "({} accessions)",
-        ["proteoform_review.accessions_queried"],
-    ),
-    (
-        "Of\nthe {}, {} have peptides only for our form, {} only for the canonical, {} for both "
-        "and {} for\nneither.",
+        "querying PeptideAtlas build 607 across all {} reviewed UniProt accessions of {} differing genes\n"
+        "  (`{}` peptides only for our form, `{}` only for canonical, `{}` both, `{}` neither)",
         [
+            "proteoform_review.accessions_queried",
             "proteoform_review.reviewed",
             "proteoform_review.evidence_class.ours_supported",
             "proteoform_review.evidence_class.canonical_supported",
@@ -215,7 +207,7 @@ CLAIMS = [
         ],
     ),
     (
-        "replaced by continuing the seeded draw: {} of the {} picks were replaced this way",
+        "({} of the {} picks in the panel draw were replaced",
         ["isoform_panel.replaced", "isoform_panel.size"],
     ),
     # The class table since the 2026-11-22 redraw: multipass is two strata, the cohort and gate
@@ -259,7 +251,7 @@ CLAIMS = [
     ),
     # section 3 swap risk
     (
-        "Diversifying the linkers, as ordered, lowers that to {}%",
+        "Diversifying the four `GGGGS` linkers, as ordered, lowers\nthat to {}%",
         ["swap_pool.total_pct"],
     ),
     (
