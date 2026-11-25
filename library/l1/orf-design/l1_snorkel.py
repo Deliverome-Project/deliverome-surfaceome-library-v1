@@ -134,10 +134,11 @@ ARM_DECISIONS = (
 # lit-52 upgrades + 4 Modal clash/propeptide swaps (AREG @193, FZD1 @588, OTOP3 @244, SLC6A20 @536),
 # dropped 3 lit-52 hard-vetoed multi-arm sites (SLC1A3 a4, STEAP4 a5, XKR8 a4), and added the 5 new
 # internal CDSs (ANO9, TMEM117, CLDN18.2, KCNK2, SCNN1A).
-# 2026-11-24: table hygiene & audit flags (PLLP refold_disposition -> fail_flagged, 6 v5 loops
-# veto_class -> none, transparent audit_flag entries on SLC44A1/ATRN, 4 GPI omega-proximal arms,
-# and 5 close-pair loop pairs; zero decision or construct sequence changes).
-ARM_DECISIONS_SHA256 = "928e99acac407ff16f35d59818e4ad2679357326937ec8694306bce050403eab"
+# 2026-11-24b: pre-order biological audit fixes across 14 CDSs (-9 defective/redundant arms:
+# ANO4 cytoplasmic, 4 SLC44A1 membrane-core, LYPD6 GPI-omega, 3 close-pair twins; 8 swaps to
+# passing sites: ATRN @1038, CDH3 @645, CDH5 @586, MDGA2 @151, BST2 @149, PRND @97, TRPV3 @615,
+# XPR1 @503) -> 1,226 built internal arms (1,081 loop + 145 snorkel).
+ARM_DECISIONS_SHA256 = "cae103a9a5279b925c3d14ef34df89ef0a03ab1d3adf724f6346a3e3ca62800b"
 
 
 def arm_designs(expected_sha256: str = ARM_DECISIONS_SHA256) -> dict[str, dict] | None:

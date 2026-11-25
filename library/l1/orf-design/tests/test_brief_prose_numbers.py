@@ -310,7 +310,7 @@ CLAIMS = [
     ),
     # section 11 reproducibility order count
     (
-        "**Order of record (`2026-11-23-pre-freeze`).** **{}** constructs in one synthesis-recoded FASTA",
+        "**Order of record (`2026-11-24-pre-freeze-b`).** **{}** constructs in one synthesis-recoded FASTA",
         ["order_plan.inserts"],
     ),
 ]

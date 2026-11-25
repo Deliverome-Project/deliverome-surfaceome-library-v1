@@ -476,8 +476,8 @@
   "different_same_length_active": 22
  },
  "refold": {
-  "inserts": 3384,
-  "fold_check_ok": 3384,
+  "inserts": 3375,
+  "fold_check_ok": 3375,
   "ordered_igk_leader_inserts": 576,
   "by_group": {
    "cterm: C-terminal": {
@@ -495,8 +495,8 @@
     "pass": 141
    },
    "internal": {
-    "fail": 78,
-    "pass": 1012
+    "fail": 77,
+    "pass": 1004
    },
    "multipass": {
     "pass": 497,
@@ -511,8 +511,8 @@
     "fail": 4
    }
   },
-  "pass": 3181,
-  "fail": 203,
+  "pass": 3173,
+  "fail": 202,
   "pass_pct": 94.0
  },
  "rungs": {
@@ -816,8 +816,8 @@
     "fail": 13
    },
    "internal": {
-    "fail": 78,
-    "pass": 1012
+    "fail": 77,
+    "pass": 1004
    },
    "multipass": {
     "pass": 497,
@@ -834,7 +834,7 @@
   }
  },
  "order_plan": {
-  "inserts": 3384,
+  "inserts": 3375,
   "members": 2743,
   "plates_per_set": 36,
   "plate_sets": {
@@ -848,19 +848,19 @@
     "pooling_well_ug": 0.5,
     "stock_well_ug": 2.0,
     "delivered_ug": 3.0,
-    "pool_ug_total_per_pool_x3.5": 236.7
+    "pool_ug_total_per_pool_x3.5": 236.4
    },
    "75_ng_ul": {
     "pooling_well_ug": 0.375,
     "stock_well_ug": 1.5,
     "delivered_ug": 2.25,
-    "pool_ug_total_per_pool_x3.5": 177.5
+    "pool_ug_total_per_pool_x3.5": 177.3
    },
    "50_ng_ul": {
     "pooling_well_ug": 0.25,
     "stock_well_ug": 1.0,
     "delivered_ug": 1.5,
-    "pool_ug_total_per_pool_x3.5": 118.4
+    "pool_ug_total_per_pool_x3.5": 118.2
    }
   },
   "ordered_ug": 4.0,
@@ -868,7 +868,7 @@
   "conc_ng_ul": 100.0,
   "insert_nt_min_median_max": [
    497,
-   1757,
+   1751,
    5450
   ],
   "vector_bp_min_max": [
@@ -886,36 +886,36 @@
     "extra_ug_assumed_total": 40.5,
     "order_ug_max": 5.91,
     "pool_ul_shortest": 0.2423,
-    "pool_ul_median": 0.6721,
+    "pool_ul_median": 0.6689,
     "pool_ul_longest": 12.1688,
-    "inserts_below_hand_pipetting": 1081,
-    "pool_ug_total_per_pool": 395.2,
+    "inserts_below_hand_pipetting": 1079,
+    "pool_ug_total_per_pool": 394.3,
     "longest_vs_shortest_pmol": 31.0,
-    "longest_vs_median_pmol": 12.9
+    "longest_vs_median_pmol": 13.0
    },
    "x2.5": {
     "inserts_needing_extra": 104,
     "extra_ug_assumed_total": 56.2,
     "order_ug_max": 6.86,
     "pool_ul_shortest": 0.1037,
-    "pool_ul_median": 0.3811,
+    "pool_ul_median": 0.3787,
     "pool_ul_longest": 15.7288,
-    "inserts_below_hand_pipetting": 2116,
-    "pool_ug_total_per_pool": 305.6,
+    "inserts_below_hand_pipetting": 2113,
+    "pool_ug_total_per_pool": 305.0,
     "longest_vs_shortest_pmol": 93.5,
-    "longest_vs_median_pmol": 29.5
+    "longest_vs_median_pmol": 29.6
    },
    "x3.5": {
     "inserts_needing_extra": 104,
     "extra_ug_assumed_total": 84.3,
     "order_ug_max": 8.84,
     "pool_ul_shortest": 0.0289,
-    "pool_ul_median": 0.162,
+    "pool_ul_median": 0.1606,
     "pool_ul_longest": 23.1602,
-    "inserts_below_hand_pipetting": 2566,
-    "pool_ug_total_per_pool": 236.7,
+    "inserts_below_hand_pipetting": 2559,
+    "pool_ug_total_per_pool": 236.4,
     "longest_vs_shortest_pmol": 495.2,
-    "longest_vs_median_pmol": 102.2
+    "longest_vs_median_pmol": 102.9
    }
   },
   "pooling_plates": {
@@ -923,36 +923,36 @@
     "plate_dilution_plates": 34,
     "conc_ng_ul_range": [
      6.132,
-     76.598
+     77.864
     ],
     "max_error_fold_plate_dilution": 1.27,
-    "max_error_fold_excluding_plate_1": 1.2,
-    "per_well_inserts": 120
+    "max_error_fold_excluding_plate_1": 1.22,
+    "per_well_inserts": 111
    },
    "x2.5": {
     "plate_dilution_plates": 34,
     "conc_ng_ul_range": [
      2.798,
-     70.986
+     72.498
     ],
     "max_error_fold_plate_dilution": 1.35,
-    "max_error_fold_excluding_plate_1": 1.27,
-    "per_well_inserts": 120
+    "max_error_fold_excluding_plate_1": 1.3,
+    "per_well_inserts": 111
    },
    "x3.5": {
     "plate_dilution_plates": 34,
     "conc_ng_ul_range": [
      0.858,
-     63.292
+     65.098
     ],
     "max_error_fold_plate_dilution": 1.48,
-    "max_error_fold_excluding_plate_1": 1.37,
-    "per_well_inserts": 120
+    "max_error_fold_excluding_plate_1": 1.41,
+    "per_well_inserts": 111
    }
   },
   "cds_with_construct": 2743,
-  "cds_with_2_or_3_constructs": 399,
-  "constructs_of_cds_with_2_or_3": 1040
+  "cds_with_2_or_3_constructs": 397,
+  "constructs_of_cds_with_2_or_3": 1029
  },
  "proteoform_audit": {
   "flagged_major": 55,
@@ -985,10 +985,10 @@
   "canonical_strong_ours_none": 18
  },
  "swap_pool": {
-  "pool_share_1_over": 12135,
+  "pool_share_1_over": 12213,
   "pool_weighting": "x3.5",
-  "sibling_tract_median_nt": 320,
-  "sibling_rate_median_pct": 14.4,
+  "sibling_tract_median_nt": 302,
+  "sibling_rate_median_pct": 13.7,
   "tail_mislabel_pct": 2.2,
   "shared_tag_chimera_pct": 3.1,
   "specific_pct": 0.3,
@@ -999,7 +999,7 @@
   "by_length": {
    "longest_quarter_specific_median_pct": 0.14,
    "shortest_quarter_specific_median_pct": 0.12,
-   "spearman_length_vs_specific": 0.24,
+   "spearman_length_vs_specific": 0.23,
    "barcodes_over_1pct": 15,
    "max_specific_pct": 2.8
   }
@@ -1218,7 +1218,7 @@
    "internal": 605
   },
   "n_members_fingerprinted": 2762,
-  "library_sha256": "5613352e479fd6d45ff899fff09649301c3e3a47df5b15205f59a5160ef70ed8",
+  "library_sha256": "819d60c8daca75ef8a6fea9b94cad9a80f34062e7e359b5ccac345b5dd567bfe",
   "members": {
    "l1-p0001": "6f50dde06d89b0a5",
    "l1-p0002": "06710a0604ab64e9",
@@ -1332,7 +1332,7 @@
    "l1-p0110": "d9371a72528da7ce",
    "l1-p0111": "8b4398d9cf62479c",
    "l1-p0112": "efcd6a3a3e5635f2",
-   "l1-p0113": "f40a43be2840553c",
+   "l1-p0113": "584089627ceb959b",
    "l1-p0114": "43662a5f88bacddd",
    "l1-p0115": "9d4d9186544fc241",
    "l1-p0116": "60ea0518167f1fd2",
@@ -1350,7 +1350,7 @@
    "l1-p0128": "560b32997bef0db3",
    "l1-p0129": "7cfb220299eea670",
    "l1-p0130": "1ae609ed9e07f483",
-   "l1-p0131": "5710a3e26b78d49c",
+   "l1-p0131": "2a0dc1dae6402bc5",
    "l1-p0132": "5c42754eedd0b050",
    "l1-p0133": "9dfb67fae9a602a9",
    "l1-p0134": "272d0f132fc05f9a",
@@ -1382,7 +1382,7 @@
    "l1-p0160": "84f580439d498ce1",
    "l1-p0161": "3240452e59bf38e6",
    "l1-p0162": "d4c35f1283884845",
-   "l1-p0163": "7abe6902778c2c52",
+   "l1-p0163": "82359a09162e6534",
    "l1-p0164": "e83400611eaa0a51",
    "l1-p0165": "27b870b73e11840e",
    "l1-p0166": "6e48ae1371f0e617",
@@ -1407,7 +1407,7 @@
    "l1-p0185": "118c857dab21d376",
    "l1-p0186": "5e06df3a07d6f910",
    "l1-p0187": "38799b70d081b9b1",
-   "l1-p0188": "11d3422eccff10fb",
+   "l1-p0188": "0edcb93e7f437b56",
    "l1-p0189": "d4fc953b94888fdb",
    "l1-p0190": "22e1915e75cd647c",
    "l1-p0191": "855846283387bd30",
@@ -1566,9 +1566,9 @@
    "l1-p0344": "f64b49d32a4f6820",
    "l1-p0345": "94e53bb52e442367",
    "l1-p0346": "a44de1472f9b20bc",
-   "l1-p0347": "6c8acc8f4daff512",
+   "l1-p0347": "209cda5ed433c4eb",
    "l1-p0348": "6be7ef63dbeb2539",
-   "l1-p0349": "9c85a77d3d8fb4d9",
+   "l1-p0349": "63d9257f3be54e9b",
    "l1-p0350": "24e7e566c8e7aae5",
    "l1-p0351": "6f99e38fec7fa431",
    "l1-p0352": "2351773a1ca73474",
@@ -2065,7 +2065,7 @@
    "l1-p0843": "0272041818710711",
    "l1-p0844": "66557981b7f9dc84",
    "l1-p0845": "9cc264986d5c7b69",
-   "l1-p0846": "34daf08c78e69dd9",
+   "l1-p0846": "74893e077a39b91b",
    "l1-p0847": "e4a1934f2913ca94",
    "l1-p0848": "64f4e1e6b9f8ab4f",
    "l1-p0849": "7c346109d7ad4db7",
@@ -2400,7 +2400,7 @@
    "l1-p1178": "435a6a866ec67d0d",
    "l1-p1179": "87d459219306af96",
    "l1-p1180": "c14f993b1c5ff578",
-   "l1-p1181": "e109b5f6f79b8240",
+   "l1-p1181": "2dca080eb17dcba9",
    "l1-p1182": "e840e54b9a860a50",
    "l1-p1183": "46f90e1f387dce32",
    "l1-p1184": "e0606756e164076d",
@@ -2423,7 +2423,7 @@
    "l1-p1201": "a00a21e09a172a31",
    "l1-p1202": "e1d2c8e2be8f5e9e",
    "l1-p1203": "3f92a410bafa54fa",
-   "l1-p1204": "75921ddaa34fbf67",
+   "l1-p1204": "5694062307bc5443",
    "l1-p1205": "f898e2a07d865fbb",
    "l1-p1206": "62e07e47ba10054b",
    "l1-p1207": "d00c3bf0d442573b",
@@ -2891,7 +2891,7 @@
    "l1-p1672": "3140a8291a818e64",
    "l1-p1673": "c8b28ad59c667450",
    "l1-p1674": "b90e15049f179b8b",
-   "l1-p1675": "42579ed8c7428b38",
+   "l1-p1675": "9476f5b009e6e726",
    "l1-p1676": "30f46107fb93c5a2",
    "l1-p1677": "719e5e481969dcf0",
    "l1-p1678": "c4e33a8ff787fc97",
@@ -3177,7 +3177,7 @@
    "l1-p1958": "fe4ce1527b308f38",
    "l1-p1959": "0e2bc0b168240965",
    "l1-p1960": "d03cbfeba3e14cea",
-   "l1-p1961": "d3ef90ee539eddea",
+   "l1-p1961": "825e09fd5658421f",
    "l1-p1962": "c389bb8c5729dc1f",
    "l1-p1963": "b87dc74962a7bd2a",
    "l1-p1964": "d32497d050da4ab7",
@@ -3231,7 +3231,7 @@
    "l1-p2012": "93463b30235b45de",
    "l1-p2013": "9e87caec56687ee9",
    "l1-p2014": "b4931c4400d47f2f",
-   "l1-p2015": "9195237d410c4428",
+   "l1-p2015": "c8576ff24af88615",
    "l1-p2016": "dd6f185e96fc65ed",
    "l1-p2017": "8c00f85264250478",
    "l1-p2018": "90fada950198cfee",
@@ -3494,7 +3494,7 @@
    "l1-p2275": "fe369b164a39394e",
    "l1-p2276": "e670423e160f03ed",
    "l1-p2277": "5d8b22103cfa0411",
-   "l1-p2278": "58301c91cb5cb3b8",
+   "l1-p2278": "9ead7c26b30e60eb",
    "l1-p2279": "67c567ef7b473c97",
    "l1-p2280": "a5c8a46a644064f1",
    "l1-p2281": "362fb905eeb04cf7",
@@ -3569,7 +3569,7 @@
    "l1-p2351": "25e861412d9ae036",
    "l1-p2352": "dd7d9c92d18e799f",
    "l1-p2353": "863cf65988e1d5f7",
-   "l1-p2354": "458c368b714e0b88",
+   "l1-p2354": "66f50cf0fb9d68ec",
    "l1-p2355": "4bf355b0085810a1",
    "l1-p2356": "5a34669bb16368e0",
    "l1-p2357": "85dc139d30d443b2",
@@ -3931,7 +3931,7 @@
    "l1-p3276": "d82e2d526519e191",
    "l1-p3277": "87e1f47ddcec8537",
    "l1-p3279": "f9aaf56be15fd4ab",
-   "l1-p3281": "ed928999eb4c2eb9",
+   "l1-p3281": "1696c04d1dd0a375",
    "l1-p3282": "d4d483f1138d7795",
    "l1-p3283": "47d94abe4211a24e",
    "l1-p3284": "271f0894fd3c705b",

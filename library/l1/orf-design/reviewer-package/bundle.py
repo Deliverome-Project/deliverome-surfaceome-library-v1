@@ -574,10 +574,12 @@ def active_record_pins() -> dict[tuple[str, str], dict]:
     if str(S4E9) not in sys.path:
         sys.path.insert(0, str(S4E9))
     import library_pipeline as lp
+    import synthesis_compliance as sc
 
     from deliverome_analysis import library_design as ld
     from deliverome_analysis import topology
 
+    sc_summary = json.loads((S4E9 / "synthesis_compliance_summary.json").read_text())
     return {
         ("external", topology.SNAPSHOT_KEY): {
             "sha256": topology.SNAPSHOT_SHA256,
@@ -590,6 +592,10 @@ def active_record_pins() -> dict[tuple[str, str], dict]:
         ("processed", ld.CONSTRUCTS_KEY): {
             "sha256": "",
             "pinned_by": {"library_design.CONSTRUCTS_KEY"},
+        },
+        ("processed", sc.FASTA_KEY): {
+            "sha256": sc_summary["recoded_fasta_sha256"],
+            "pinned_by": {"synthesis_compliance.FASTA_KEY"},
         },
         ("processed", lp.PREFIX + lp.REFERENCE_RECORD + "reference_selection.tsv"): {
             "sha256": "",

@@ -1,0 +1,267 @@
+fold_id	uniprot_acc	gene_symbol	class	insert_after_native_residue	native_aa	lddt_confident_own_ref	lddt_site_8_own_ref	cassette_contact_res	clash_pairs_2p5A	clash_cassette_res_2p5A
+v.positive.P08183.105	P08183	ABCB1	positive	105	1280	1.0	0.9953	1.0	0	0
+v.positive.P08183.324	P08183	ABCB1	positive	324	1280	0.999	0.957	1.0	0	0
+v.positive.P08183.740	P08183	ABCB1	positive	740	1280	0.998	0.9125	2.0	1	1
+v.positive.P08183.745	P08183	ABCB1	positive	745	1280	0.997	0.8601	1.0	0	0
+v.positive.P08183.965	P08183	ABCB1	positive	965	1280	0.999	0.9218	3.0	0	0
+v.positive.P21439.99	P21439	ABCB4	positive	99	1286	1.0	0.9338	0.0	0	0
+v.positive.P33527.4	P33527	ABCC1	positive	4	1531	1.0	0.9232	0.0	0	0
+v.positive.P33527.163	P33527	ABCC1	positive	163	1531	1.0	0.8944	0.0	0	0
+v.positive.P33527.574	P33527	ABCC1	positive	574	1531	0.997	0.8723	3.0	1	1
+v.positive.P33527.1001	P33527	ABCC1	positive	1001	1531	0.998	0.9071	1.0	1	1
+v.positive.P33527.1222	P33527	ABCC1	positive	1222	1531	0.998	0.9192	0.0	1	1
+v.positive.Q9UNQ0.423	Q9UNQ0	ABCG2	positive	423	655	0.991	0.8263	3.0	0	0
+v.positive.Q9UNQ0.499	Q9UNQ0	ABCG2	positive	499	655	0.994	0.9077	4.0	0	0
+v.positive.O94910.919	O94910	ADGRL1	positive	919	1474	0.996	0.8982	10.0	3	3
+v.positive.O95490.824	O95490	ADGRL2	positive	824	1459	0.996	0.9645	13.0	5	4
+v.positive.Q5XXA6.850	Q5XXA6	ANO1	positive	850	986	0.996	0.8984	1.0	1	1
+v.positive.P05067.683	P05067	APP	positive	683	770	0.997		0.0	0	0
+v.positive.P29972.43	P29972	AQP1	positive	43	269	0.998	0.994	5.0	6	4
+v.positive.P55064.116	P55064	AQP5	positive	116	265	0.989	0.918	4.0	4	3
+v.positive.P78348.147	P78348	ASIC1	positive	147	528	0.996	0.9366	0.0	0	0
+v.positive.P78348.298	P78348	ASIC1	positive	298	528	0.999	0.9366	3.0	0	0
+v.positive.P05023.119	P05023	ATP1A1	positive	119	1023	0.996	0.8217	0.0	0	0
+v.positive.P05023.318	P05023	ATP1A1	positive	318	1023	0.995	0.8618	3.0	1	1
+v.positive.P30518.30	P30518	AVPR2	positive	30	371	0.998	0.967	12.0	8	6
+v.positive.Q10589.154	Q10589	BST2	positive	154	180	1.0	0.9955	0.0	0	0
+v.positive.Q5VU97.38	Q5VU97	CACHD1	positive	38	1274	1.0	1.0	0.0	0	0
+v.positive.P54289.568	P54289	CACNA2D1	positive	568	1103	0.997	0.9182	2.0	0	0
+v.positive.Q8IZS8.36	Q8IZS8	CACNA2D3	positive	36	1091	1.0	1.0	2.0	0	0
+v.positive.P41180.371	P41180	CASR	positive	371	1078	1.0		5.0	2	2
+v.positive.P31358.29	P31358	CD52	positive	29	61	0.918		0.0	0	0
+v.positive.P60033.179	P60033	CD81	positive	179	236	0.925		2.0	2	2
+v.positive.P13569.891	P13569	CFTR	positive	891	1480	0.999		0.0	0	0
+v.positive.P13569.901	P13569	CFTR	positive	901	1480	1.0		0.0	0	0
+v.positive.P35523.438	P35523	CLCN1	positive	438	988	0.998	0.9187	3.0	1	1
+v.positive.P21554.179	P21554	CNR1	positive	179	472	0.961	0.7486	1.0	1	1
+v.positive.Q5IJ48.1096	Q5IJ48	CRB2	positive	1096	1285	0.992	0.685	10.0	3	3
+v.positive.Q14118.489	Q14118	DAG1	positive	489	895	0.994	0.9944	0.0	1	1
+v.positive.Q14118.724	Q14118	DAG1	positive	724	895	0.996	0.9821	0.0	0	0
+v.positive.P43146.1090	P43146	DCC	positive	1090	1447	0.977		0.0	0	0
+v.positive.Q08345.378	Q08345	DDR1	positive	378	913	0.995		0.0	0	0
+v.positive.Q08345.397	Q08345	DDR1	positive	397	913	0.995		0.0	0	0
+v.positive.Q9UQF0.51	Q9UQF0	ERVW-1	positive	51	538	1.0		5.0	0	0
+v.positive.Q9UQF0.139	Q9UQF0	ERVW-1	positive	139	538	1.0	0.6377	4.0	1	1
+v.positive.Q9UQF0.156	Q9UQF0	ERVW-1	positive	156	538	1.0		1.0	1	1
+v.positive.P48169.39	P48169	GABRA4	positive	39	554	0.999	1.0	2.0	0	0
+v.positive.P31644.35	P31644	GABRA5	positive	35	462	1.0		0.0	0	0
+v.positive.Q16445.23	Q16445	GABRA6	positive	23	453	1.0	0.9196	0.0	0	0
+v.positive.Q8N1C3.39	Q8N1C3	GABRG1	positive	39	465	1.0		0.0	0	0
+v.positive.P18507.43	P18507	GABRG2	positive	43	475	1.0		1.0	0	0
+v.positive.Q99928.21	Q99928	GABRG3	positive	21	467	1.0		4.0	1	1
+v.positive.Q8WTR4.423	Q8WTR4	GDPD5	positive	423	605	0.985	0.7263	5.0	1	1
+v.positive.P43220.375	P43220	GLP1R	positive	375	463	0.983	0.873	24.0	5	5
+v.positive.P43220.376	P43220	GLP1R	positive	376	463	0.985	0.8807	20.0	5	5
+v.positive.P43220.377	P43220	GLP1R	positive	377	463	0.986	0.883	24.0	6	6
+v.positive.Q8IV16.34	Q8IV16	GPIHBP1	positive	34	184	0.98		14.0	2	2
+v.positive.P42261.280	P42261	GRIA1	positive	280	906	0.999	0.9841	0.0	0	0
+v.positive.Q13255.384	Q13255	GRM1	positive	384	1194	0.992	0.7556	1.0	0	0
+v.positive.Q14416.547	Q14416	GRM2	positive	547	872	0.997	0.9327	1.0	0	0
+v.positive.Q14416.715	Q14416	GRM2	positive	715	872	0.995	0.8574	1.0	1	1
+v.positive.Q9UPX0.28	Q9UPX0	IGSF9B	positive	28	1349	1.0	1.0	8.0	0	0
+v.positive.P05556.101	P05556	ITGB1	positive	101	798	0.994	0.9814	0.0	0	0
+v.positive.P26010.42	P26010	ITGB7	positive	42	798	1.0	0.9904	3.0	0	0
+v.positive.P26010.48	P26010	ITGB7	positive	48	798	0.993	0.8069	3.0	1	1
+v.positive.P26010.446	P26010	ITGB7	positive	446	798	0.997	0.9334	3.0	0	0
+v.positive.P26010.450	P26010	ITGB7	positive	450	798	0.997	0.9267	4.0	0	0
+v.positive.P22460.307	P22460	KCNA5	positive	307	613	1.0		1.0	0	0
+v.positive.Q14721.221	Q14721	KCNB1	positive	221	858	0.993	0.8447	1.0	0	0
+v.positive.P48547.231	P48547	KCNC1	positive	231	511	0.99	0.866	11.0	1	1
+v.positive.Q9UK17.212	Q9UK17	KCND3	positive	212	655	0.999	0.9596	0.0	0	0
+v.positive.Q9UK17.216	Q9UK17	KCND3	positive	216	655	0.99	0.8769	3.0	0	0
+v.positive.O95259.317	O95259	KCNH1	positive	317	989	0.999		0.0	0	0
+v.positive.Q12809.436	Q12809	KCNH2	positive	436	1159	1.0	1.0	3.0	1	1
+v.positive.Q12809.443	Q12809	KCNH2	positive	443	1159	1.0	0.9211	0.0	0	0
+v.positive.Q9NS40.441	Q9NS40	KCNH7	positive	441	1196	1.0		0.0	0	0
+v.positive.O60928.90	O60928	KCNJ13	positive	90	360	0.993	0.9157	4.0	1	1
+v.positive.Q99712.97	Q99712	KCNJ15	positive	97	375	0.998	0.9514	4.0	0	0
+v.positive.P63252.116	P63252	KCNJ2	positive	116	427	0.997	0.9226	0.0	1	1
+v.positive.Q96T54.234	Q96T54	KCNK17	positive	234	332	0.977	0.8376	12.0	1	1
+v.positive.O95069.134	O95069	KCNK2	positive	134	426	0.998	1.0	3.0	0	0
+v.positive.O14649.50	O14649	KCNK3	positive	50	394	0.965	0.7123	6.0	3	3
+v.positive.O14649.214	O14649	KCNK3	positive	214	394	0.976	0.7434	6.0	7	6
+v.positive.Q9NPC2.40	Q9NPC2	KCNK9	positive	40	374	0.977	0.9223	8.0	1	1
+v.positive.Q16558.130	Q16558	KCNMB1	positive	130	191	0.779	0.8272	4.0	0	0
+v.positive.Q9Y691.137	Q9Y691	KCNMB2	positive	137	235	0.934	0.7861	3.0	0	0
+v.positive.P51787.146	P51787	KCNQ1	positive	146	676	0.98	0.7209	0.0	1	1
+v.positive.P51787.148	P51787	KCNQ1	positive	148	676	0.976	0.7106	2.0	0	0
+v.known_failure.Q8IWT6.76	Q8IWT6	LRRC8A	known_failure	76	810	0.999		12.0	11	7
+v.positive.Q6NSJ5.59	Q6NSJ5	LRRC8E	positive	59	796	0.998	0.9279	5.0	1	1
+v.positive.P50281.111	P50281	MMP14	positive	111	582	0.991	0.9415	3.0	0	0
+v.positive.Q9BRK3.99	Q9BRK3	MXRA8	positive	99	442	0.988	0.8767	5.0	0	0
+v.positive.O94856.518	O94856	NFASC	positive	518	1347	0.981	0.9237	8.0	0	0
+v.positive.O94856.603	O94856	NFASC	positive	603	1347	0.991	0.9174	6.0	1	1
+v.positive.O94856.679	O94856	NFASC	positive	679	1347	0.985	0.8813	6.0	2	2
+v.positive.O94856.808	O94856	NFASC	positive	808	1347	0.985	0.9317	2.0	2	1
+v.positive.Q9UHC9.986	Q9UHC9	NPC1L1	positive	986	1359	0.999	0.9347	4.0	1	1
+v.positive.P56975.337	P56975	NRG3	positive	337	720	0.993	0.9819	0.0	0	0
+v.positive.P58400.371	P58400	NRXN1	positive	371	472	0.998		0.0	0	0
+v.function_lost.Q7RTM1.227	Q7RTM1	OTOP1	function_lost	227	612	0.979	0.7771	8.0	1	1
+v.function_lost.Q7RTM1.565	Q7RTM1	OTOP1	function_lost	565	612	0.95	0.8126	15.0	2	2
+v.positive.Q9H813.277	Q9H813	PACC1	positive	277	350	0.967	0.8499	4.0	0	0
+v.positive.Q9P2E7.696	Q9P2E7	PCDH10	positive	696	1040	0.992		0.0	0	0
+v.positive.Q01453.125	Q01453	PMP22	positive	125	160	0.773	0.8354	2.0	0	0
+v.known_failure.Q03431.93	Q03431	PTH1R	known_failure	93	593	0.997		22.0	6	6
+v.positive.P37088.168	P37088	SCNN1A	positive	168	669	0.996	0.9425	4.0	1	1
+v.positive.P31431.27	P31431	SDC4	positive	27	198	0.948		0.0	0	0
+v.positive.Q86VE9.290	Q86VE9	SERINC5	positive	290	423	0.993	0.9103	2.0	0	0
+v.known_failure.B4DS77.29	B4DS77	SHISA9	known_failure	29	424	0.955		0.0	0	0
+v.positive.P55011.397	P55011	SLC12A2	positive	397	1212	0.998	0.9019	0.0	0	0
+v.positive.P55017.414	P55017	SLC12A3	positive	414	1021	0.999	0.9608	1.0	0	0
+v.positive.Q9H2X9.248	Q9H2X9	SLC12A5	positive	248	1139	0.996	0.936	1.0	1	1
+v.positive.Q9H2X9.406	Q9H2X9	SLC12A5	positive	406	1139	1.0	0.9669	0.0	0	0
+v.positive.P41440.297	P41440	SLC19A1	positive	297	591	0.903	0.7975	24.0	10	8
+v.positive.P41440.427	P41440	SLC19A1	positive	427	591	0.889	0.6781	8.0	0	0
+v.positive.P43004.199	P43004	SLC1A2	positive	199	574	1.0	0.9972	2.0	0	0
+v.positive.P43004.221	P43004	SLC1A2	positive	221	574	1.0	0.9875	1.0	0	0
+v.positive.Q9UI40.83	Q9UI40	SLC24A2	positive	83	661	1.0		0.0	0	0
+v.positive.Q9UI40.88	Q9UI40	SLC24A2	positive	88	661	1.0		1.0	1	1
+v.positive.Q9H2B4.155	Q9H2B4	SLC26A1	positive	155	701	1.0		0.0	0	0
+v.positive.P02730.556	P02730	SLC4A1	positive	556	911	0.992	0.9792	2.0	0	0
+v.positive.Q8NBS3.544	Q8NBS3	SLC4A11	positive	544	875	1.0		0.0	0	0
+v.positive.P04920.870	P04920	SLC4A2	positive	870	1241	1.0		1.0	0	0
+v.positive.Q9Y289.483	Q9Y289	SLC5A6	positive	483	635	1.0	0.97	2.0	0	0
+v.positive.Q01959.194	Q01959	SLC6A3	positive	194	620	1.0	0.9685	12.0	2	2
+v.positive.Q92581.53	Q92581	SLC9A6	positive	53	701	0.999	0.9826	10.0	5	5
+v.known_failure.Q99835.149	Q99835	SMO	known_failure	149	787	0.995	0.9068	6.0	1	1
+v.positive.Q99523.80	Q99523	SORT1	positive	80	831	0.999		15.0	2	2
+v.positive.P02786.111	P02786	TFRC	positive	111	760	1.0		0.0	0	0
+v.positive.Q96CP7.73	Q96CP7	TLCD1	positive	73	247	0.915	0.5565	6.0	2	2
+v.positive.Q8N131.33	Q8N131	TMEM123	positive	33	208	0.999		0.0	0	0
+v.positive.Q9UL62.460	Q9UL62	TRPC5	positive	460	973	0.995	0.8916	3.0	1	1
+v.positive.Q8TD43.1015	Q8TD43	TRPM4	positive	1015	1214	0.995	0.8095	0.0	0	0
+v.positive.Q8NER1.468	Q8NER1	TRPV1	positive	468	839	0.996	0.8584	0.0	1	1
+v.positive.Q8NER1.606	Q8NER1	TRPV1	positive	606	839	1.0	1.0	8.0	4	4
+v.positive.Q8NET8.613	Q8NET8	TRPV3	positive	613	790	1.0	0.9941	0.0	0	0
+v.positive.O60636.154	O60636	TSPAN2	positive	154	221	0.889	0.7609	2.0	1	1
+v.function_lost.P07911.59	P07911	UMOD	function_lost	59	640	0.997	0.9538	2.0	1	1
+v.positive.P98155.437	P98155	VLDLR	positive	437	873	0.979	0.9245	0.0	0	0
+v.positive.Q9UBH6.428	Q9UBH6	XPR1	positive	428	696	0.99	0.7007	0.0	0	0
+v.known_failure.O94856.533	O94856	NFASC	known_failure	533	1347	0.984	0.8895	16.0	7	6
+v.known_failure.O94856.570	O94856	NFASC	known_failure	570	1347	0.979	0.703	23.0	30	12
+v.known_failure.Q01959.288	Q01959	SLC6A3	known_failure	288	620	0.994	0.9283	5.0	0	0
+v.known_failure.Q01959.387	Q01959	SLC6A3	known_failure	387	620	0.981	0.7684	10.0	2	2
+v.known_failure.Q8NER1.464	Q8NER1	TRPV1	known_failure	464	839	0.993	0.7888	0.0	0	0
+v.decoy_core.O14649.88	O14649	KCNK3	decoy_core	88	394	0.878	0.7224	7.0	0	0
+v.decoy_hardneg.O14649.199	O14649	KCNK3	decoy_hardneg	199	394	0.977	0.8152	8.0	1	1
+v.decoy_core.O60636.174	O60636	TSPAN2	decoy_core	174	221	0.766	0.7539	5.0	2	2
+v.decoy_hardneg.O60636.139	O60636	TSPAN2	decoy_hardneg	139	221	0.89	0.7538	2.0	0	0
+v.decoy_core.O60928.113	O60928	KCNJ13	decoy_core	113	360	0.962	0.7283	6.0	1	1
+v.decoy_core.O94856.213	O94856	NFASC	decoy_core	213	1347	0.979	0.8235	13.0	5	4
+v.decoy_hardneg.O94856.838	O94856	NFASC	decoy_hardneg	838	1347	0.983	0.9192	18.0	3	3
+v.decoy_core.O94910.383	O94910	ADGRL1	decoy_core	383	1474	0.991	0.8803	6.0	1	1
+v.decoy_hardneg.O94910.322	O94910	ADGRL1	decoy_hardneg	322	1474	0.996	0.9937	10.0	1	1
+v.decoy_core.O95069.260	O95069	KCNK2	decoy_core	260	426	0.978	0.8671	6.0	3	3
+v.decoy_hardneg.O95069.108	O95069	KCNK2	decoy_hardneg	108	426	0.975	0.7472	14.0	0	0
+v.decoy_hardneg.O95259.415	O95259	KCNH1	decoy_hardneg	415	989	0.994	0.867	1.0	0	0
+v.decoy_core.O95490.379	O95490	ADGRL2	decoy_core	379	1459	0.986	0.8516	6.0	0	0
+v.decoy_hardneg.O95490.788	O95490	ADGRL2	decoy_hardneg	788	1459	0.997	0.929	6.0	5	4
+v.decoy_hardneg.P02730.642	P02730	SLC4A1	decoy_hardneg	642	911	0.988	0.8123	2.0	0	0
+v.decoy_core.P02786.256	P02786	TFRC	decoy_core	256	760	0.991	0.8387	12.0	5	4
+v.decoy_hardneg.P02786.453	P02786	TFRC	decoy_hardneg	453	760	0.996	0.9352	9.0	6	5
+v.decoy_hardneg.P04920.1181	P04920	SLC4A2	decoy_hardneg	1181	1241	0.994	0.861	6.0	6	4
+v.decoy_core.P05067.184	P05067	APP	decoy_core	184	770	0.994	0.9612	12.0	15	7
+v.decoy_hardneg.P05067.321	P05067	APP	decoy_hardneg	321	770	0.994	0.9437	13.0	6	5
+v.decoy_core.P05556.146	P05556	ITGB1	decoy_core	146	798	0.983	0.9696	13.0	18	8
+v.decoy_hardneg.P05556.489	P05556	ITGB1	decoy_hardneg	489	798	0.981	0.8766	5.0	2	2
+v.decoy_core.P08183.73	P08183	ABCB1	decoy_core	73	1280	0.998	0.9377	3.0	2	2
+v.decoy_core.P13569.107	P13569	CFTR	decoy_core	107	1480	0.995	0.8273	7.0	2	1
+v.decoy_core.P21439.335	P21439	ABCB4	decoy_core	335	1286	0.997	0.9057	9.0	9	5
+v.decoy_core.P21554.265	P21554	CNR1	decoy_core	265	472	0.957	0.7569	8.0	0	0
+v.decoy_hardneg.P21554.104	P21554	CNR1	decoy_hardneg	104	472	0.993	0.8581	3.0	2	2
+v.decoy_core.P26010.196	P26010	ITGB7	decoy_core	196	798	0.996	0.9389	9.0	9	4
+v.decoy_hardneg.P26010.253	P26010	ITGB7	decoy_hardneg	253	798	0.993	0.8835	4.0	1	1
+v.decoy_core.P29972.194	P29972	AQP1	decoy_core	194	269	0.961	0.8568	12.0	12	8
+v.decoy_hardneg.P29972.205	P29972	AQP1	decoy_hardneg	205	269	0.986	0.9085	4.0	1	1
+v.decoy_core.P30518.192	P30518	AVPR2	decoy_core	192	371	0.958	0.6964	21.0	11	9
+v.decoy_hardneg.P30518.194	P30518	AVPR2	decoy_hardneg	194	371	0.983	0.852	17.0	4	4
+v.decoy_core.P33527.36	P33527	ABCC1	decoy_core	36	1531	0.998	0.8903	7.0	2	2
+v.decoy_hardneg.P33527.32	P33527	ABCC1	decoy_hardneg	32	1531	0.998	0.9317	6.0	3	2
+v.decoy_core.P35523.146	P35523	CLCN1	decoy_core	146	988	0.991	0.8122	3.0	0	0
+v.decoy_hardneg.P35523.532	P35523	CLCN1	decoy_hardneg	532	988	0.996	0.9313	11.0	13	7
+v.decoy_core.P37088.130	P37088	SCNN1A	decoy_core	130	669	0.993	0.9235	27.0	20	9
+v.decoy_hardneg.P37088.229	P37088	SCNN1A	decoy_hardneg	229	669	0.954	0.6866	19.0	2	2
+v.decoy_core.P41180.142	P41180	CASR	decoy_core	142	1078	0.988	0.8375	10.0	7	5
+v.decoy_hardneg.P41180.542	P41180	CASR	decoy_hardneg	542	1078	0.996	0.9379	2.0	1	1
+v.decoy_core.P41440.52	P41440	SLC19A1	decoy_core	52	591	0.885	0.6868	16.0	5	4
+v.decoy_hardneg.P41440.49	P41440	SLC19A1	decoy_hardneg	49	591	0.895	0.8286	27.0	12	10
+v.decoy_core.P42261.29	P42261	GRIA1	decoy_core	29	906	0.995	0.8892	7.0	9	6
+v.decoy_hardneg.P42261.787	P42261	GRIA1	decoy_hardneg	787	906	0.991	0.9988	0.0	0	0
+v.decoy_core.P43004.298	P43004	SLC1A2	decoy_core	298	574	0.967	0.7754	7.0	2	1
+v.decoy_hardneg.P43004.441	P43004	SLC1A2	decoy_hardneg	441	574	0.996	0.8974	6.0	0	0
+v.decoy_core.P43146.398	P43146	DCC	decoy_core	398	1447	0.979	0.9506	9.0	14	6
+v.decoy_hardneg.P43146.117	P43146	DCC	decoy_hardneg	117	1447	0.982	0.848	6.0	1	1
+v.decoy_core.P43220.102	P43220	GLP1R	decoy_core	102	463	0.969	0.9172	23.0	7	7
+v.decoy_hardneg.P43220.118	P43220	GLP1R	decoy_hardneg	118	463	0.968	0.8824	21.0	3	3
+v.decoy_core.P48169.246	P48169	GABRA4	decoy_core	246	554	0.986	0.8699	9.0	5	5
+v.decoy_hardneg.P48169.186	P48169	GABRA4	decoy_hardneg	186	554	0.995	0.9577	7.0	3	3
+v.decoy_core.P48547.396	P48547	KCNC1	decoy_core	396	511	0.994	0.9234	7.0	1	1
+v.decoy_hardneg.P48547.373	P48547	KCNC1	decoy_hardneg	373	511	0.99	0.7844	2.0	0	0
+v.decoy_core.P50281.244	P50281	MMP14	decoy_core	244	582	0.98	0.9254	12.0	11	8
+v.decoy_hardneg.P50281.250	P50281	MMP14	decoy_hardneg	250	582	0.969	0.8958	5.0	0	0
+v.decoy_core.P51787.308	P51787	KCNQ1	decoy_core	308	676	0.991	0.9074	7.0	0	0
+v.decoy_hardneg.P51787.289	P51787	KCNQ1	decoy_hardneg	289	676	0.984	0.7576	0.0	0	0
+v.decoy_core.P54289.360	P54289	CACNA2D1	decoy_core	360	1103	0.988	0.8291	6.0	0	0
+v.decoy_hardneg.P54289.248	P54289	CACNA2D1	decoy_hardneg	248	1103	0.995	0.9116	12.0	7	7
+v.decoy_core.P55011.314	P55011	SLC12A2	decoy_core	314	1212	0.998	0.9326	4.0	7	4
+v.decoy_hardneg.P55011.568	P55011	SLC12A2	decoy_hardneg	568	1212	0.998	0.9177	1.0	0	0
+v.decoy_core.P55017.165	P55017	SLC12A3	decoy_core	165	1021	0.997	0.9351	5.0	4	2
+v.decoy_hardneg.P55017.430	P55017	SLC12A3	decoy_hardneg	430	1021	0.994	0.8422	1.0	0	0
+v.decoy_core.P55064.187	P55064	AQP5	decoy_core	187	265	0.982	0.921	12.0	4	3
+v.decoy_hardneg.P56975.290	P56975	NRG3	decoy_hardneg	290	720	0.97	0.8057	1.0	0	0
+v.decoy_core.P58400.249	P58400	NRXN1	decoy_core	249	472	0.951	0.7687	5.0	0	0
+v.decoy_hardneg.P58400.188	P58400	NRXN1	decoy_hardneg	188	472	0.977	0.9042	6.0	0	0
+v.decoy_core.P60033.127	P60033	CD81	decoy_core	127	236	0.77	0.6327	4.0	2	2
+v.decoy_hardneg.P60033.156	P60033	CD81	decoy_hardneg	156	236	0.858	0.7701	6.0	1	1
+v.decoy_core.P63252.136	P63252	KCNJ2	decoy_core	136	427	0.962	0.7484	10.0	1	1
+v.decoy_hardneg.P63252.135	P63252	KCNJ2	decoy_hardneg	135	427	0.958	0.7696	6.0	1	1
+v.decoy_core.P78348.90	P78348	ASIC1	decoy_core	90	528	0.994	0.9412	12.0	13	7
+v.decoy_hardneg.P78348.404	P78348	ASIC1	decoy_hardneg	404	528	0.985	0.8469	5.0	0	0
+v.decoy_core.P98155.184	P98155	VLDLR	decoy_core	184	873	0.974	0.6806	2.0	0	0
+v.decoy_hardneg.P98155.749	P98155	VLDLR	decoy_hardneg	749	873	0.978	0.9125	3.0	0	0
+v.decoy_core.Q01453.28	Q01453	PMP22	decoy_core	28	160	0.653	0.5959	6.0	5	4
+v.decoy_hardneg.Q01453.41	Q01453	PMP22	decoy_hardneg	41	160	0.656	0.6319	2.0	0	0
+v.decoy_core.Q01959.398	Q01959	SLC6A3	decoy_core	398	620	0.993	0.8879	5.0	0	0
+v.decoy_hardneg.Q01959.476	Q01959	SLC6A3	decoy_hardneg	476	620	0.988	0.8348	15.0	2	2
+v.decoy_core.Q08345.102	Q08345	DDR1	decoy_core	102	913	0.978	0.7328	20.0	20	12
+v.decoy_hardneg.Q08345.348	Q08345	DDR1	decoy_hardneg	348	913	0.993	0.9705	7.0	4	3
+v.decoy_hardneg.Q10589.91	Q10589	BST2	decoy_hardneg	91	180	0.945	0.9337	1.0	1	1
+v.decoy_hardneg.Q12809.622	Q12809	KCNH2	decoy_hardneg	622	1159	0.989	0.7783	1.0	0	0
+v.decoy_core.Q13255.49	Q13255	GRM1	decoy_core	49	1194	0.998	0.9793	14.0	14	7
+v.decoy_hardneg.Q13255.67	Q13255	GRM1	decoy_hardneg	67	1194	0.996	0.9055	3.0	0	0
+v.decoy_core.Q14118.193	Q14118	DAG1	decoy_core	193	895	0.989	0.9432	10.0	6	4
+v.decoy_hardneg.Q14118.669	Q14118	DAG1	decoy_hardneg	669	895	0.995	0.9461	1.0	0	0
+v.decoy_core.Q14416.36	Q14416	GRM2	decoy_core	36	872	0.995	0.9249	10.0	9	5
+v.decoy_hardneg.Q14416.402	Q14416	GRM2	decoy_hardneg	402	872	0.997	0.8978	0.0	0	0
+v.decoy_core.Q14721.373	Q14721	KCNB1	decoy_core	373	858	0.993	0.8958	7.0	7	3
+v.decoy_hardneg.Q14721.283	Q14721	KCNB1	decoy_hardneg	283	858	0.997	0.9268	2.0	0	0
+v.decoy_core.Q16445.168	Q16445	GABRA6	decoy_core	168	453	0.981	0.9045	4.0	1	1
+v.decoy_core.Q16558.76	Q16558	KCNMB1	decoy_core	76	191	0.815	0.6511	5.0	5	5
+v.decoy_hardneg.Q16558.80	Q16558	KCNMB1	decoy_hardneg	80	191	0.714	0.5433	13.0	11	9
+v.decoy_core.Q5IJ48.258	Q5IJ48	CRB2	decoy_core	258	1285	0.989	0.8328	8.0	3	2
+v.decoy_core.Q5VU97.343	Q5VU97	CACHD1	decoy_core	343	1274	0.989	0.7869	6.0	0	0
+v.decoy_core.Q5XXA6.366	Q5XXA6	ANO1	decoy_core	366	986	0.988	0.7708	7.0	1	1
+v.decoy_core.Q6NSJ5.116	Q6NSJ5	LRRC8E	decoy_core	116	796	0.996	0.9247	5.0	2	2
+v.decoy_core.Q86VE9.89	Q86VE9	SERINC5	decoy_core	89	423	0.978	0.8022	9.0	1	1
+v.decoy_core.Q8IV16.89	Q8IV16	GPIHBP1	decoy_core	89	184	0.868	0.7894	18.0	21	13
+v.decoy_core.Q8IZS8.294	Q8IZS8	CACNA2D3	decoy_core	294	1091	0.991	0.8226	6.0	2	2
+v.decoy_core.Q8WTR4.263	Q8WTR4	GDPD5	decoy_core	263	605	0.996	0.9668	9.0	5	5
+v.decoy_core.Q92581.284	Q92581	SLC9A6	decoy_core	284	701	0.95	0.6489	8.0	2	2
+v.decoy_core.Q96CP7.135	Q96CP7	TLCD1	decoy_core	135	247	0.943	0.7771	12.0	1	1
+v.decoy_core.Q96T54.219	Q96T54	KCNK17	decoy_core	219	332	0.953	0.8439	5.0	1	1
+v.decoy_core.Q99523.126	Q99523	SORT1	decoy_core	126	831	0.986	0.8445	31.0	10	9
+v.decoy_core.Q99712.123	Q99712	KCNJ15	decoy_core	123	375	0.971	0.8144	10.0	1	1
+v.decoy_core.Q9BRK3.272	Q9BRK3	MXRA8	decoy_core	272	442	0.982	0.851	16.0	5	5
+v.decoy_core.Q9H2B4.138	Q9H2B4	SLC26A1	decoy_core	138	701	0.993	0.8292	6.0	3	3
+v.decoy_core.Q9H2X9.311	Q9H2X9	SLC12A5	decoy_core	311	1139	0.998	0.9579	6.0	9	3
+v.decoy_core.Q9H813.185	Q9H813	PACC1	decoy_core	185	350	0.981	0.9648	13.0	2	1
+v.decoy_core.Q9NPC2.88	Q9NPC2	KCNK9	decoy_core	88	374	0.885	0.7942	13.0	5	5
+v.decoy_core.Q9P2E7.203	Q9P2E7	PCDH10	decoy_core	203	1040	0.949	0.862	8.0	1	1
+v.decoy_core.Q9UBH6.270	Q9UBH6	XPR1	decoy_core	270	696	0.975	0.7622	15.0	3	3
+v.decoy_core.Q9UHC9.154	Q9UHC9	NPC1L1	decoy_core	154	1359	0.998	0.9635	5.0	3	3
+v.decoy_core.Q9UI40.204	Q9UI40	SLC24A2	decoy_core	204	661	0.966	0.797	7.0	1	1
+v.decoy_core.Q9UK17.361	Q9UK17	KCND3	decoy_core	361	655	0.99	0.9154	4.0	2	2
+v.decoy_core.Q9UPX0.288	Q9UPX0	IGSF9B	decoy_core	288	1349	0.988	0.8003	7.0	1	1
+v.decoy_core.Q9UQF0.290	Q9UQF0	ERVW-1	decoy_core	290	538	0.939	0.3535	19.0	7	5
+v.decoy_core.Q9Y289.90	Q9Y289	SLC5A6	decoy_core	90	635	0.983	0.8756	14.0	4	3
+v.decoy_core.Q9Y691.114	Q9Y691	KCNMB2	decoy_core	114	235	0.922	0.8991	8.0	3	3

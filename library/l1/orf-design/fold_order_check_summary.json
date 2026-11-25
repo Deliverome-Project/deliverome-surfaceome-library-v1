@@ -1,13 +1,13 @@
 {
-  "order_of_record": "processed://sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-23-pre-freeze/l1_order_inserts_recoded.fasta",
-  "order_of_record_sha256": "8796cc8740196fbc041696809f4dc0b2b5bf02b63974a23f357fa3e4a3e0890a",
-  "refold_table": "library/l1/orf-design/tag_refold_structures.tsv at e3336caf (PR #301)",
-  "inserts": 3384,
+  "order_of_record": "processed://sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-24-pre-freeze-b/l1_order_inserts_recoded.fasta",
+  "order_of_record_sha256": "0d712d97e812bfc19815fe8de384d39d13282f897f9f06220641d9a31be2a9a9",
+  "refold_table": "library/l1/orf-design/tag_refold_structures.tsv at 7dc06001 (PR #301)",
+  "inserts": 3375,
   "status": {
-    "ok": 3384
+    "ok": 3375
   },
   "folded_form": {
-    "precursor": 2808,
+    "precursor": 2799,
     "mature chain": 576
   },
   "n_terminal_peptides_not_folded": {
@@ -27,7 +27,7 @@
       "ok": 361
     },
     "internal": {
-      "ok": 1090
+      "ok": 1081
     }
   },
   "decided_by": "coordinator under Becca's 2026-11-12 overnight delegation",

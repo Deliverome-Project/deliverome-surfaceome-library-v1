@@ -111,7 +111,7 @@ l1-p0109	l1-p0109	ANKH	library_reference	human	internal	built	3	decided:3	#299 (
 l1-p0110	l1-p0110	ANO1	library_reference	human	internal	built	2	decided:2	#299 (loops) / #284 (snorkel)		
 l1-p0111	l1-p0111	ANO2	library_reference	human	internal	built	1	decided:1	#299 (loops) / #284 (snorkel)		
 l1-p0112	l1-p0112	ANO3	library_reference	human	internal	built	1	decided:1	#299 (loops) / #284 (snorkel)		
-l1-p0113	l1-p0113	ANO4	library_reference	human	internal	built	3	decided:3	#299 (loops) / #284 (snorkel)		
+l1-p0113	l1-p0113	ANO4	library_reference	human	internal	built	2	decided:2	#299 (loops) / #284 (snorkel)		
 l1-p0114	l1-p0114	ANO6	library_reference	human	internal	built	2	decided:2	#299 (loops) / #284 (snorkel)		
 l1-p0115	l1-p0115	ANO7	library_reference	human	internal	built	3	built:1;decided:2	#299 (loops) / #284 (snorkel)		
 l1-p0116	l1-p0116	ANPEP	library_reference	human	C-terminal	built	1	built:1	#284		
@@ -129,7 +129,7 @@ l1-p0127	l1-p0127	AQP10	library_reference	human	internal	built	3	built:1;decided
 l1-p0128	l1-p0128	AQP12B	library_reference	human	internal	built	2	decided:2	#299 (loops) / #284 (snorkel)		
 l1-p0129	l1-p0129	AQP2	library_reference	human	internal	built	3	built:1;decided:2	#299 (loops) / #284 (snorkel)		
 l1-p0130	l1-p0130	AQP3	library_reference	human	internal	built	3	built:1;decided:2	#299 (loops) / #284 (snorkel)		
-l1-p0131	l1-p0131	AQP4	library_reference	human	internal	built	3	decided:3	#299 (loops) / #284 (snorkel)		
+l1-p0131	l1-p0131	AQP4	library_reference	human	internal	built	2	decided:2	#299 (loops) / #284 (snorkel)		
 l1-p0132	l1-p0132	AQP5	library_reference	human	internal	built	2	built:1;decided:1	#299 (loops) / #284 (snorkel)		
 l1-p0133	l1-p0133	AQP7	library_reference	human	internal	built	3	built:1;decided:2	#299 (loops) / #284 (snorkel)		
 l1-p0134	l1-p0134	AQP9	library_reference	human	internal	built	3	built:1;decided:2	#299 (loops) / #284 (snorkel)		
@@ -844,7 +844,7 @@ l1-p0842	l1-p0842	HCAR1	library_reference	human	N at residue 1, multipass	built	
 l1-p0843	l1-p0843	HCAR2	library_reference	human	N at residue 1, multipass	built	1	decided:1	#280		
 l1-p0844	l1-p0844	HCAR3	library_reference	human	N at residue 1, multipass	built	1	decided:1	#280		
 l1-p0845	l1-p0845	HCN1	library_reference	human	internal	built	3	decided:3	#299 (loops) / #284 (snorkel)		
-l1-p0846	l1-p0846	HCN2	library_reference	human	internal	built	3	decided:3	#299 (loops) / #284 (snorkel)		
+l1-p0846	l1-p0846	HCN2	library_reference	human	internal	built	2	decided:2	#299 (loops) / #284 (snorkel)		
 l1-p0847	l1-p0847	HCN3	library_reference	human	internal	built	1	decided:1	#299 (loops) / #284 (snorkel)		
 l1-p0848	l1-p0848	HCN4	library_reference	human	internal	built	3	built:1;decided:2	#299 (loops) / #284 (snorkel)		
 l1-p0849	l1-p0849	HCRTR1	library_reference	human	N at residue 1, multipass	built	1	decided:1	#280		
@@ -1179,7 +1179,7 @@ l1-p1177	l1-p1177	LYPD1	library_reference	human	N after SP	built	1	built:1	#254
 l1-p1178	l1-p1178	LYPD2	library_reference	human	N after SP	built	1	built:1	#254		
 l1-p1179	l1-p1179	LYPD3	library_reference	human	N after SP	built	1	built:1	#254		
 l1-p1180	l1-p1180	LYPD5	library_reference	human	N after SP	built	1	built:1	#254		
-l1-p1181	l1-p1181	LYPD6	library_reference	human	internal	built	3	decided:3	#299 (loops) / #284 (snorkel)		
+l1-p1181	l1-p1181	LYPD6	library_reference	human	internal	built	2	decided:2	#299 (loops) / #284 (snorkel)		
 l1-p1182	l1-p1182	LYPD6B	library_reference	human	N after SP	built	1	built:1	#254		
 l1-p1183	l1-p1183	LYPD8	library_reference	human	N after SP	built	1	built:1	#254		
 l1-p1184	l1-p1184	LYSMD3	library_reference	human	C-terminal	built	1	built:1	#284		
@@ -1956,7 +1956,7 @@ l1-p1957	l1-p1957	SLC41A2	library_reference	human	N at residue 1, multipass	buil
 l1-p1958	l1-p1958	SLC43A1	library_reference	human	internal	built	1	decided:1	#299 (loops) / #284 (snorkel)		
 l1-p1959	l1-p1959	SLC43A2	library_reference	human	internal	built	1	decided:1	#299 (loops) / #284 (snorkel)		
 l1-p1960	l1-p1960	SLC43A3	library_reference	human	internal	built	1	decided:1	#299 (loops) / #284 (snorkel)		
-l1-p1961	l1-p1961	SLC44A1	library_reference	human	internal	built	3	decided:3	#299 (loops) / #284 (snorkel)		
+l1-p1961	l1-p1961	SLC44A1	library_reference	human	internal	built	1	decided:1	#299 (loops) / #284 (snorkel)		
 l1-p1962	l1-p1962	SLC44A2	library_reference	human	internal	built	1	decided:1	#299 (loops) / #284 (snorkel)		
 l1-p1963	l1-p1963	SLC44A3	library_reference	human	internal	built	1	decided:1	#299 (loops) / #284 (snorkel)		
 l1-p1964	l1-p1964	SLC44A4	library_reference	human	internal	built	2	decided:2	#299 (loops) / #284 (snorkel)		
@@ -2010,7 +2010,7 @@ l1-p2011	l1-p2011	SLC6A9	library_reference	human	internal	built	1	decided:1	#299
 l1-p2012	l1-p2012	SLC71A2	library_reference	human	internal	built	1	decided:1	#299 (loops) / #284 (snorkel)		
 l1-p2013	l1-p2013	SLC7A1	library_reference	human	internal	built	2	decided:2	#299 (loops) / #284 (snorkel)		
 l1-p2014	l1-p2014	SLC7A10	library_reference	human	internal	built	3	built:1;decided:2	#299 (loops) / #284 (snorkel)		
-l1-p2015	l1-p2015	SLC7A11	library_reference	human	internal	built	3	decided:3	#299 (loops) / #284 (snorkel)		
+l1-p2015	l1-p2015	SLC7A11	library_reference	human	internal	built	2	decided:2	#299 (loops) / #284 (snorkel)		
 l1-p2016	l1-p2016	SLC7A2	library_reference	human	internal	built	1	decided:1	#299 (loops) / #284 (snorkel)		
 l1-p2017	l1-p2017	SLC7A3	library_reference	human	internal	built	2	decided:2	#299 (loops) / #284 (snorkel)		
 l1-p2018	l1-p2018	SLC7A4	library_reference	human	internal	built	3	decided:3	#299 (loops) / #284 (snorkel)		
@@ -2710,7 +2710,7 @@ l1-p3275	l1-p3275	SLC1A7	isoform	human	internal	built	1	decided:1	#299 (loops) /
 l1-p3276	l1-p3276	SLC22A5	isoform	human	internal	built	3	built:1;decided:2	#299 (loops) / #284 (snorkel)		
 l1-p3277	l1-p3277	SLC22A9	isoform	human	internal	held	0		#299 (loops) / #284 (snorkel)	decision=hold_no_passing_arm	"Claude Code session l1-review-export-scope (subagent), under Becca's 2026-11-21 ""Yes, rebuild now"" and 2026-11-22 ""Yes, in this build""; site rules of PR #245, order rule adopted by the coordinator 2026-11-15"
 l1-p3279	l1-p3279	SLC2A11	isoform	human	C-terminal	built	1	built:1	#284		
-l1-p3281	l1-p3281	SLC44A1	isoform	human	internal	built	3	decided:3	#299 (loops) / #284 (snorkel)		
+l1-p3281	l1-p3281	SLC44A1	isoform	human	internal	built	1	decided:1	#299 (loops) / #284 (snorkel)		
 l1-p3282	l1-p3282	SLC4A2	isoform	human	internal	built	1	decided:1	#299 (loops) / #284 (snorkel)		
 l1-p3283	l1-p3283	SLC6A9	isoform	human	internal	built	1	decided:1	#299 (loops) / #284 (snorkel)		
 l1-p3284	l1-p3284	SLC8A3	isoform	human	N after SP	built	1	built:1	#254		

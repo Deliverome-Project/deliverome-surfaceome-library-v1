@@ -360,10 +360,10 @@ constructs_l1_cterm	#283 (from #284)	l1-p3249-a5	l1-p3249	KCNJ1	internal	ok	ok (
 constructs_l1_cterm	#283 (from #284)	l1-p3273-a6	l1-p3273	SLC16A7	internal	ok	ok (snorkel: native leads)	folded	pass		
 constructs_l1_cterm	#283 (from #284)	l1-p3276-a6	l1-p3276	SLC22A5	internal	ok	ok (snorkel: native leads)	folded	pass		
 constructs_l1_cterm	#283 (from #284)	l1-p3285-a5	l1-p3285	SPNS2	internal	ok	ok (snorkel: native leads)	folded	pass		
-constructs_l1_nterm	#254	l1-p0306	l1-p0306	CD52	N after SP	ok	ok	folded	fail	N after SP rule: built_and_flagged_multipass_disposition_rule	
-constructs_l1_nterm	#254	l1-p0837	l1-p0837	GYPE	N after SP	ok	ok	folded	fail	N after SP rule: built_and_flagged_multipass_disposition_rule	
+constructs_l1_nterm	#254	l1-p0306	l1-p0306	CD52	N after SP	ok	ok	folded	fail	N after SP rule: built_and_flagged_refold_flag_never_hold	
+constructs_l1_nterm	#254	l1-p0837	l1-p0837	GYPE	N after SP	ok	ok	folded	fail	N after SP rule: built_and_flagged_refold_flag_never_hold	
 constructs_l1_nterm	#254	l1-p0277	l1-p0277	CD24	N after SP	ok	ok	folded	pass		
-constructs_l1_nterm	#254	l1-p0835	l1-p0835	GYPB	N after SP	ok	ok	folded	fail	N after SP rule: built_and_flagged_multipass_disposition_rule	
+constructs_l1_nterm	#254	l1-p0835	l1-p0835	GYPB	N after SP	ok	ok	folded	fail	N after SP rule: built_and_flagged_refold_flag_never_hold	
 constructs_l1_nterm	#254	l1-p3029	l1-p3029	CRB3	N after SP	ok	ok (igk: native tail intact)	folded	pass		
 constructs_l1_nterm	#254	l1-p1691	l1-p1691	PSCA	N after SP	ok	ok (igk: native tail intact)	folded	pass		
 constructs_l1_nterm	#254	l1-p1176	l1-p1176	LYNX1	N after SP	ok	ok	folded	pass		
@@ -382,8 +382,8 @@ constructs_l1_nterm	#254	l1-p1173	l1-p1173	LY6L	N after SP	ok	ok	folded	pass
 constructs_l1_nterm	#254	l1-p2955	l1-p2955	LY6L	N after SP	ok	ok	folded	pass		
 constructs_l1_nterm	#254	l1-p1177	l1-p1177	LYPD1	N after SP	ok	ok (igk: native tail intact)	folded	fail	N after SP rule: built_and_flagged_multipass_disposition_rule	
 constructs_l1_nterm	#254	l1-p2956	l1-p2956	LYPD2	N after SP	ok	ok (igk: native tail intact)	folded	pass		
-constructs_l1_nterm	#254	l1-p1324	l1-p1324	NRN1	N after SP	ok	ok	folded	fail	N after SP rule: built_and_flagged_multipass_disposition_rule	
-constructs_l1_nterm	#254	l1-p3006	l1-p3006	NRN1	N after SP	ok	ok	folded	fail	N after SP rule: built_and_flagged_multipass_disposition_rule	
+constructs_l1_nterm	#254	l1-p1324	l1-p1324	NRN1	N after SP	ok	ok	folded	fail	N after SP rule: built_and_flagged_refold_flag_never_hold	
+constructs_l1_nterm	#254	l1-p3006	l1-p3006	NRN1	N after SP	ok	ok	folded	fail	N after SP rule: built_and_flagged_refold_flag_never_hold	
 constructs_l1_nterm	#254	l1-p0834	l1-p0834	GYPA	N after SP	ok	ok	folded	pass		
 constructs_l1_nterm	#254	l1-p2071	l1-p2071	SPRN	N after SP	ok	ok	folded	pass		
 constructs_l1_nterm	#254	l1-p1672	l1-p1672	PRIMA1	N after SP	ok	ok	folded	pass		
@@ -459,7 +459,7 @@ constructs_l1_nterm	#254	l1-p1771	l1-p1771	SCN4B	N after SP	ok	ok (igk: native t
 constructs_l1_nterm	#254	l1-p0205	l1-p0205	C19orf38	N after SP	ok	ok (igk: native tail intact)	folded	pass		
 constructs_l1_nterm	#254	l1-p0291	l1-p0291	CD302	N after SP	ok	ok	folded	pass		
 constructs_l1_nterm	#254	l1-p0623	l1-p0623	FCGR3B	N after SP	ok	ok (igk: native tail intact)	folded	pass		
-constructs_l1_nterm	#254	l1-p0384	l1-p0384	CIST1	N after SP	ok	ok	folded	fail	N after SP rule: built_and_flagged_multipass_disposition_rule	
+constructs_l1_nterm	#254	l1-p0384	l1-p0384	CIST1	N after SP	ok	ok	folded	fail	N after SP rule: built_and_flagged_refold_flag_never_hold	
 constructs_l1_nterm	#254	l1-p0323	l1-p0323	CD8A	N after SP	ok	ok	folded	pass		
 constructs_l1_nterm	#254	l1-p0647	l1-p0647	FLT3LG	N after SP	ok	ok	folded	pass		
 constructs_l1_nterm	#254	l1-p1236	l1-p1236	MPZL3	N after SP	ok	ok (igk: native tail intact)	folded	pass		
@@ -500,7 +500,7 @@ constructs_l1_nterm	#254	l1-p0655	l1-p0655	FOLR2	N after SP	ok	ok	folded	pass
 constructs_l1_nterm	#254	l1-p2201	l1-p2201	TMEM81	N after SP	ok	ok	folded	pass		
 constructs_l1_nterm	#254	l1-p2242	l1-p2242	TNFRSF9	N after SP	ok	ok (igk: native tail intact)	folded	pass		
 constructs_l1_nterm	#254	l1-p0617	l1-p0617	FCER1A	N after SP	ok	ok	folded	pass		
-constructs_l1_nterm	#254	l1-p0654	l1-p0654	FOLR1	N after SP	ok	ok	folded	fail	N after SP rule: built_and_flagged_multipass_disposition_rule	
+constructs_l1_nterm	#254	l1-p0654	l1-p0654	FOLR1	N after SP	ok	ok	folded	fail	N after SP rule: built_and_flagged_refold_flag_never_hold	
 constructs_l1_nterm	#254	l1-p2226	l1-p2226	TNFRSF10C	N after SP	ok	ok	folded	pass		
 constructs_l1_nterm	#254	l1-p0171	l1-p0171	BAMBI	N after SP	ok	ok (igk: native tail intact)	folded	pass		
 constructs_l1_nterm	#254	l1-p0280	l1-p0280	CD27	N after SP	ok	ok	folded	pass		
@@ -907,7 +907,7 @@ constructs_l1_nterm	#254	l1-p0282	l1-p0282	CD276	N after SP	ok	ok (igk: native t
 constructs_l1_nterm	#254	l1-p0730	l1-p0730	GP2	N after SP	ok	ok	folded	pass		
 constructs_l1_nterm	#254	l1-p0103	l1-p0103	ALPP	N after SP	ok	ok	folded	pass		
 constructs_l1_nterm	#254	l1-p0199	l1-p0199	BTNL9	N after SP	ok	ok (igk: native tail intact)	folded	pass		
-constructs_l1_nterm	#254	l1-p0593	l1-p0593	ERVV-2	N after SP	ok	ok	folded	fail	N after SP rule: built_and_flagged_multipass_disposition_rule	
+constructs_l1_nterm	#254	l1-p0593	l1-p0593	ERVV-2	N after SP	ok	ok	folded	fail	N after SP rule: built_and_flagged_refold_flag_never_hold	
 constructs_l1_nterm	#254	l1-p0666	l1-p0666	FZD4	N after SP	ok	ok	folded	pass		
 constructs_l1_nterm	#254	l1-p3036	l1-p3036	ICAM1	N after SP	ok	ok	folded	pass		
 constructs_l1_nterm	#254	l1-p0591	l1-p0591	ERVFRD-1	N after SP	ok	ok	folded	pass		
@@ -949,7 +949,7 @@ constructs_l1_nterm	#254	l1-p0117	l1-p0117	ANTXR1	N after SP	ok	ok	folded	pass
 constructs_l1_nterm	#254	l1-p0664	l1-p0664	FZD2	N after SP	ok	ok	folded	pass		
 constructs_l1_nterm	#254	l1-p3059	l1-p3059	TM7SF3	N after SP	ok	ok	folded	pass		
 constructs_l1_nterm	#254	l1-p0484	l1-p0484	CSPG5	N after SP	ok	ok	folded	pass		
-constructs_l1_nterm	#254	l1-p1267	l1-p1267	MUC21	N after SP	ok	ok	folded	fail	N after SP rule: built_and_flagged_multipass_disposition_rule	
+constructs_l1_nterm	#254	l1-p1267	l1-p1267	MUC21	N after SP	ok	ok	folded	fail	N after SP rule: built_and_flagged_refold_flag_never_hold	
 constructs_l1_nterm	#254	l1-p1080	l1-p1080	LCTL	N after SP	ok	ok	folded	pass		
 constructs_l1_nterm	#254	l1-p2134	l1-p2134	TGFBR2	N after SP	ok	ok	folded	pass		
 constructs_l1_nterm	#254	l1-p0327	l1-p0327	CD96	N after SP	ok	ok (igk: native tail intact)	folded	pass		
@@ -1104,7 +1104,7 @@ constructs_l1_nterm	#254	l1-p0124	l1-p0124	APLP2	N after SP	ok	ok	folded	pass
 constructs_l1_nterm	#254	l1-p0125	l1-p0125	APP	N after SP	ok	ok	folded	pass		
 constructs_l1_nterm	#254	l1-p0042	l1-p0042	ADAM7	N after SP	ok	ok	folded	pass		
 constructs_l1_nterm	#254	l1-p1753	l1-p1753	RXFP2	N after SP	ok	ok	folded	pass		
-constructs_l1_nterm	#254	l1-p1952	l1-p1952	SLC39A6	N after SP	ok	ok	folded	fail	N after SP rule: built_and_flagged_multipass_disposition_rule	
+constructs_l1_nterm	#254	l1-p1952	l1-p1952	SLC39A6	N after SP	ok	ok	folded	fail	N after SP rule: built_and_flagged_refold_flag_never_hold	
 constructs_l1_nterm	#254	l1-p0279	l1-p0279	CD248	N after SP	ok	ok	folded	pass		
 constructs_l1_nterm	#254	l1-p1061	l1-p1061	KIRREL1	N after SP	ok	ok	folded	pass		
 constructs_l1_nterm	#254	l1-p1752	l1-p1752	RXFP1	N after SP	ok	ok (igk: native tail intact)	folded	pass		
@@ -1598,7 +1598,7 @@ constructs_l1_nterm	#254	l1-p3173	l1-p3173	NCR2	N after SP	ok	ok	folded	pass
 constructs_l1_nterm	#254	l1-p3175	l1-p3175	SIRPB1	N after SP	ok	ok	folded	pass		
 constructs_l1_nterm	#254	l1-p3176	l1-p3176	TREM1	N after SP	ok	ok	folded	pass		
 constructs_l1_nterm	#254	l1-p3177	l1-p3177	TREM2	N after SP	ok	ok	folded	pass		
-constructs_l1_nterm	#254	l1-p3160	l1-p3160	CHRNB4	N after SP	ok	ok	folded	fail	N after SP rule: built_and_flagged_multipass_disposition_rule	
+constructs_l1_nterm	#254	l1-p3160	l1-p3160	CHRNB4	N after SP	ok	ok	folded	fail	N after SP rule: built_and_flagged_refold_flag_never_hold	
 constructs_l1_nterm	#254	l1-p3178	l1-p3178	CHRNA2	N after SP	ok	ok	folded	pass		
 constructs_l1_nterm	#254	l1-p3179	l1-p3179	CHRNA3	N after SP	ok	ok	folded	pass		
 constructs_l1_nterm	#254	l1-p3180	l1-p3180	GRIN2A	N after SP	ok	ok	folded	pass		
@@ -1633,7 +1633,7 @@ constructs_l1_nterm	#254	l1-p3261	l1-p3261	NTM	N after SP	ok	ok	folded	pass
 constructs_l1_nterm	#254	l1-p3264	l1-p3264	PRSS41	N after SP	ok	ok	folded	pass		
 constructs_l1_nterm	#254	l1-p3267	l1-p3267	SEMA7A	N after SP	ok	ok	folded	pass		
 constructs_l1_nterm	#254	l1-p3284	l1-p3284	SLC8A3	N after SP	ok	ok	folded	pass		
-constructs_l1_nterm	#254	l1-p3290	l1-p3290	TMIGD2	N after SP	ok	ok	folded	fail	N after SP rule: built_and_flagged_multipass_disposition_rule	
+constructs_l1_nterm	#254	l1-p3290	l1-p3290	TMIGD2	N after SP	ok	ok	folded	fail	N after SP rule: built_and_flagged_refold_flag_never_hold	
 constructs_l1_nterm	#254	l1-p3296	l1-p3296	FLT4	N after SP	ok	ok	folded	pass		
 constructs_l1_nterm	#254	l1-p3297	l1-p3297	TMEM67	N after SP	ok	ok	folded	pass		
 constructs_l1_nterm	#254	l1-p3298	l1-p3298	ADGRE5	N after SP	ok	ok	folded	pass		
@@ -1668,7 +1668,7 @@ constructs_l1_nterm	#254	l1-p3310	l1-p3310	SIGLEC16	N after SP	ok	ok	folded	pass
 constructs_l1_nterm	#254	l1-p3312	l1-p3312	EFNA3	N after SP	ok	ok	folded (same protein folded as l1-p3117)	pass		
 constructs_l1_nterm	#254	l1-p3313	l1-p3313	UMOD	N after SP	ok	ok	folded	pass		
 constructs_l1_nterm	#254	l1-p3321	l1-p3321	ADGRE5	N after SP	ok	ok	folded	pass		
-constructs_l1_nterm	#254	l1-p3323	l1-p3323	APP	N after SP	ok	ok	folded	fail	N after SP rule: built_and_flagged_multipass_disposition_rule	
+constructs_l1_nterm	#254	l1-p3323	l1-p3323	APP	N after SP	ok	ok	folded	fail	N after SP rule: built_and_flagged_refold_flag_never_hold	
 constructs_l1_nterm	#254	l1-p3324	l1-p3324	CD46	N after SP	ok	ok	folded	pass		
 constructs_l1_nterm	#254	l1-p3325	l1-p3325	CNTNAP3	N after SP	ok	ok	folded	pass		
 constructs_l1_nterm	#254	l1-p3326	l1-p3326	ERBB4	N after SP	ok	ok	folded	pass		
@@ -2333,7 +2333,6 @@ constructs_l1_internal	#299 (sites #245)	l1-p0110-a5	l1-p0110	ANO1	internal	ok	o
 constructs_l1_internal	#299 (sites #245)	l1-p0111-a4	l1-p0111	ANO2	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p0112-a4	l1-p0112	ANO3	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p0113-a5	l1-p0113	ANO4	internal	ok	ok	folded	pass		
-constructs_l1_internal	#299 (sites #245)	l1-p0113-a6	l1-p0113	ANO4	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p0113-a7	l1-p0113	ANO4	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p0114-a1	l1-p0114	ANO6	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p0114-a3	l1-p0114	ANO6	internal	ok	ok	folded	pass		
@@ -2349,7 +2348,6 @@ constructs_l1_internal	#299 (sites #245)	l1-p0129-a5	l1-p0129	AQP2	internal	ok	o
 constructs_l1_internal	#299 (sites #245)	l1-p0130-a5	l1-p0130	AQP3	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p0130-a6	l1-p0130	AQP3	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p0131-a3	l1-p0131	AQP4	internal	ok	ok	folded	pass		
-constructs_l1_internal	#299 (sites #245)	l1-p0131-a4	l1-p0131	AQP4	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p0131-a5	l1-p0131	AQP4	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p0132-a1	l1-p0132	AQP5	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p0133-a2	l1-p0133	AQP7	internal	ok	ok	folded	pass		
@@ -2384,7 +2382,7 @@ constructs_l1_internal	#299 (sites #245)	l1-p0161-a2	l1-p0161	ATP2B3	internal	ok
 constructs_l1_internal	#299 (sites #245)	l1-p0161-a3	l1-p0161	ATP2B3	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p0162-a2	l1-p0162	ATP2B4	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p0162-a3	l1-p0162	ATP2B4	internal	ok	ok	folded	pass		
-constructs_l1_internal	#299 (sites #245)	l1-p0163-a2	l1-p0163	ATRN	internal	ok	ok	folded	pass		
+constructs_l1_internal	#299 (sites #245)	l1-p0163-a1	l1-p0163	ATRN	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p0169-a1	l1-p0169	BACE1	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p0176-a1	l1-p0176	BEST1	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p0176-a3	l1-p0176	BEST1	internal	ok	ok	folded	pass		
@@ -2393,7 +2391,7 @@ constructs_l1_internal	#299 (sites #245)	l1-p0177-a5	l1-p0177	BEST2	internal	ok	
 constructs_l1_internal	#299 (sites #245)	l1-p0178-a3	l1-p0178	BEST3	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p0178-a4	l1-p0178	BEST3	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p0179-a2	l1-p0179	BEST4	internal	ok	ok	folded	pass		
-constructs_l1_internal	#299 (sites #245)	l1-p0188-a2	l1-p0188	BST2	internal	ok	ok	folded	pass		
+constructs_l1_internal	#299 (sites #245)	l1-p0188-a3	l1-p0188	BST2	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p0219-a2	l1-p0219	CACNG1	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p0220-a3	l1-p0220	CACNG2	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p0220-a4	l1-p0220	CACNG2	internal	ok	ok	folded	pass		
@@ -2428,8 +2426,8 @@ constructs_l1_internal	#299 (sites #245)	l1-p0325-a3	l1-p0325	CD9	internal	ok	ok
 constructs_l1_internal	#299 (sites #245)	l1-p0330-a4	l1-p0330	CDC50A	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p0330-a5	l1-p0330	CDC50A	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p0330-a6	l1-p0330	CDC50A	internal	ok	ok	folded	pass		
-constructs_l1_internal	#299 (sites #245)	l1-p0347-a5	l1-p0347	CDH3	internal	ok	ok	folded	pass		
-constructs_l1_internal	#299 (sites #245)	l1-p0349-a2	l1-p0349	CDH5	internal	ok	ok	folded	pass		
+constructs_l1_internal	#299 (sites #245)	l1-p0347-a4	l1-p0347	CDH3	internal	ok	ok	folded	pass		
+constructs_l1_internal	#299 (sites #245)	l1-p0349-a1	l1-p0349	CDH5	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p0371-a2	l1-p0371	CFTR	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p0387-a3	l1-p0387	CLCN1	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p0387-a4	l1-p0387	CLCN1	internal	ok	ok	folded	pass		
@@ -2600,7 +2598,6 @@ constructs_l1_internal	#299 (sites #245)	l1-p0845-a3	l1-p0845	HCN1	internal	ok	o
 constructs_l1_internal	#299 (sites #245)	l1-p0845-a4	l1-p0845	HCN1	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p0846-a1	l1-p0846	HCN2	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p0846-a3	l1-p0846	HCN2	internal	ok	ok	folded	pass		
-constructs_l1_internal	#299 (sites #245)	l1-p0846-a4	l1-p0846	HCN2	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p0847-a2	l1-p0847	HCN3	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p0848-a5	l1-p0848	HCN4	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p0848-a6	l1-p0848	HCN4	internal	ok	ok	folded	pass		
@@ -2727,13 +2724,12 @@ constructs_l1_internal	#299 (sites #245)	l1-p1144-a2	l1-p1144	LRRC8C	internal	ok
 constructs_l1_internal	#299 (sites #245)	l1-p1145-a3	l1-p1145	LRRC8D	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p1145-a4	l1-p1145	LRRC8D	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p1146-a1	l1-p1146	LRRC8E	internal	ok	ok	folded	pass		
-constructs_l1_internal	#299 (sites #245)	l1-p1181-a1	l1-p1181	LYPD6	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p1181-a2	l1-p1181	LYPD6	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p1181-a3	l1-p1181	LYPD6	internal	ok	ok	folded	fail	internal arm built with flag: refold fail: lDDT within 15 of the site 0.544 < 0.7 (built; flag, never hold, Be	
 constructs_l1_internal	#299 (sites #245)	l1-p1192-a2	l1-p1192	MARVELD3	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p1192-a3	l1-p1192	MARVELD3	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p1192-a4	l1-p1192	MARVELD3	internal	ok	ok	folded	pass		
-constructs_l1_internal	#299 (sites #245)	l1-p1204-a3	l1-p1204	MDGA2	internal	ok	ok	folded	pass		
+constructs_l1_internal	#299 (sites #245)	l1-p1204-a2	l1-p1204	MDGA2	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p1213-a2	l1-p1213	MFSD2A	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p1214-a1	l1-p1214	MFSD2B	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p1215-a3	l1-p1215	MFSD6	internal	ok	ok	folded	pass		
@@ -2829,7 +2825,7 @@ constructs_l1_internal	#299 (sites #245)	l1-p1661-a4	l1-p1661	PLPPR5	internal	ok
 constructs_l1_internal	#299 (sites #245)	l1-p1661-a5	l1-p1661	PLPPR5	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p1667-a2	l1-p1667	PMP22	internal	ok	ok	folded	fail	internal arm built with flag: refold fail: native-region lDDT 0.728 < 0.85 (built; flag, never hold, Becca 202	
 constructs_l1_internal	#299 (sites #245)	l1-p1667-a3	l1-p1667	PMP22	internal	ok	ok	folded	fail	internal arm built with flag: refold fail: native-region lDDT 0.708 < 0.85; lDDT within 15 of the site 0.617 <	
-constructs_l1_internal	#299 (sites #245)	l1-p1675-a2	l1-p1675	PRND	internal	ok	ok	folded	fail	internal arm built with flag: refold fail: native-region lDDT 0.846 < 0.85 (built; flag, never hold, Becca 202	
+constructs_l1_internal	#299 (sites #245)	l1-p1675-a3	l1-p1675	PRND	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p1693-a4	l1-p1693	PTCH1	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p1693-a5	l1-p1693	PTCH1	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p1694-a3	l1-p1694	PTCH2	internal	ok	ok	folded	pass		
@@ -3015,8 +3011,6 @@ constructs_l1_internal	#299 (sites #245)	l1-p1958-a2	l1-p1958	SLC43A1	internal	o
 constructs_l1_internal	#299 (sites #245)	l1-p1959-a2	l1-p1959	SLC43A2	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p1960-a2	l1-p1960	SLC43A3	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p1961-a2	l1-p1961	SLC44A1	internal	ok	ok	folded	pass		
-constructs_l1_internal	#299 (sites #245)	l1-p1961-a3	l1-p1961	SLC44A1	internal	ok	ok	folded	pass		
-constructs_l1_internal	#299 (sites #245)	l1-p1961-a4	l1-p1961	SLC44A1	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p1962-a3	l1-p1962	SLC44A2	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p1963-a1	l1-p1963	SLC44A3	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p1964-a3	l1-p1964	SLC44A4	internal	ok	ok	folded	pass		
@@ -3070,7 +3064,6 @@ constructs_l1_internal	#299 (sites #245)	l1-p2013-a4	l1-p2013	SLC7A1	internal	ok
 constructs_l1_internal	#299 (sites #245)	l1-p2014-a4	l1-p2014	SLC7A10	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p2014-a5	l1-p2014	SLC7A10	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p2015-a2	l1-p2015	SLC7A11	internal	ok	ok	folded	pass		
-constructs_l1_internal	#299 (sites #245)	l1-p2015-a3	l1-p2015	SLC7A11	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p2015-a4	l1-p2015	SLC7A11	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p2016-a2	l1-p2016	SLC7A2	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p2017-a4	l1-p2017	SLC7A3	internal	ok	ok	folded	pass		
@@ -3189,7 +3182,7 @@ constructs_l1_internal	#299 (sites #245)	l1-p2276-a2	l1-p2276	TRPM8	internal	ok	
 constructs_l1_internal	#299 (sites #245)	l1-p2276-a4	l1-p2276	TRPM8	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p2277-a4	l1-p2277	TRPV1	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p2278-a1	l1-p2278	TRPV3	internal	ok	ok	folded	pass		
-constructs_l1_internal	#299 (sites #245)	l1-p2278-a3	l1-p2278	TRPV3	internal	ok	ok	folded	pass		
+constructs_l1_internal	#299 (sites #245)	l1-p2278-a2	l1-p2278	TRPV3	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p2279-a4	l1-p2279	TRPV4	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p2280-a1	l1-p2280	TRPV5	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p2280-a3	l1-p2280	TRPV5	internal	ok	ok	folded	pass		
@@ -3266,8 +3259,8 @@ constructs_l1_internal	#299 (sites #245)	l1-p2351-a3	l1-p2351	XKR8	internal	ok	o
 constructs_l1_internal	#299 (sites #245)	l1-p2352-a4	l1-p2352	XKR9	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p2352-a5	l1-p2352	XKR9	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p2352-a6	l1-p2352	XKR9	internal	ok	ok	folded	pass		
+constructs_l1_internal	#299 (sites #245)	l1-p2354-a3	l1-p2354	XPR1	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p2354-a4	l1-p2354	XPR1	internal	ok	ok	folded	pass		
-constructs_l1_internal	#299 (sites #245)	l1-p2354-a5	l1-p2354	XPR1	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p2354-a6	l1-p2354	XPR1	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p2540-a3	l1-p2540	CACNG5	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p2551-a2	l1-p2551	CLDND1	internal	ok	ok	folded	pass		
@@ -3366,8 +3359,6 @@ constructs_l1_internal	#299 (sites #245)	l1-p3275-a2	l1-p3275	SLC1A7	internal	ok
 constructs_l1_internal	#299 (sites #245)	l1-p3276-a2	l1-p3276	SLC22A5	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p3276-a4	l1-p3276	SLC22A5	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p3281-a3	l1-p3281	SLC44A1	internal	ok	ok	folded	pass		
-constructs_l1_internal	#299 (sites #245)	l1-p3281-a4	l1-p3281	SLC44A1	internal	ok	ok	folded	pass		
-constructs_l1_internal	#299 (sites #245)	l1-p3281-a5	l1-p3281	SLC44A1	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p3282-a2	l1-p3282	SLC4A2	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p3283-a2	l1-p3283	SLC6A9	internal	ok	ok	folded	pass		
 constructs_l1_internal	#299 (sites #245)	l1-p3285-a1	l1-p3285	SPNS2	internal	ok	ok	folded	pass		

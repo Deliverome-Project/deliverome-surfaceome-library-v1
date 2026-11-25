@@ -3,25 +3,25 @@
   "rung": "internal",
   "members_on_rung": 605,
   "members_with_an_arm": 594,
-  "arms": 1090,
+  "arms": 1081,
   "arm_decisions": "l1_internal_arm_decisions.tsv",
   "members_by_arm_count": {
-    "1": 217,
-    "2": 258,
-    "3": 119
+    "1": 219,
+    "2": 263,
+    "3": 112
   },
   "arms_by_decision": {
     "hold_no_passing_arm": 5,
-    "internal_loop": 1043,
-    "internal_loop_orientation_unconfirmed": 3,
+    "internal_loop": 1036,
+    "internal_loop_orientation_unconfirmed": 1,
     "snorkel": 39
   },
   "arms_by_confidence": {
-    "": 1090
+    "": 1081
   },
   "arms_by_refold_verdict": {
-    "fail": 78,
-    "pass": 1012
+    "fail": 77,
+    "pass": 1004
   },
   "decided_no_arm_here": [
     {

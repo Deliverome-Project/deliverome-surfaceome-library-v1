@@ -51,6 +51,8 @@ from pathlib import Path
 HERE = Path(__file__).parent
 S4E9 = HERE.parent
 MANIFEST = S4E9 / "candidate_manifest_tranches.tsv"
+NUMBERING = S4E9 / "l1_insert_numbering.tsv"
+COMPLIANCE = S4E9 / "synthesis_compliance.tsv"
 OUT = HERE / "l1_order_plan.tsv"
 SUMMARY = HERE / "l1_order_plan_summary.json"
 PLATES = HERE / "l1_order_pooling_plates.tsv"
@@ -71,6 +73,58 @@ MIN_HAND_UL = 0.5  # smallest volume worth pipetting by hand
 PER_WELL_PLATES = 2
 
 
+def verify_numbering_matches_compliance(
+    numbered: list[dict[str, str]], compliance: list[dict[str, str]]
+) -> None:
+    """Fail closed if ``l1_insert_numbering.tsv`` and ``synthesis_compliance.tsv`` disagree
+    on the set of ``(arm_id, insert_nt)`` pairs."""
+
+    def _index(rows: list[dict[str, str]], length_col: str, label: str) -> dict[str, int]:
+        out: dict[str, int] = {}
+        for row in rows:
+            arm_id = row["arm_id"].strip()
+            if not arm_id:
+                raise ValueError(f"{label} contains a row with an empty arm_id")
+            if arm_id in out:
+                raise ValueError(f"duplicate arm_id {arm_id!r} in {label}")
+            try:
+                nt = int(row[length_col])
+            except (KeyError, TypeError, ValueError) as exc:
+                raise ValueError(
+                    f"invalid {length_col}={row.get(length_col)!r} for {arm_id!r} in {label}"
+                ) from exc
+            out[arm_id] = nt
+        return out
+
+    numbered_by_arm = _index(numbered, "ordered_insert_nt", "l1_insert_numbering.tsv")
+    compliance_by_arm = _index(compliance, "insert_nt", "synthesis_compliance.tsv")
+
+    missing = sorted(set(compliance_by_arm) - set(numbered_by_arm))
+    extra = sorted(set(numbered_by_arm) - set(compliance_by_arm))
+    length_mismatches = sorted(
+        (arm, numbered_by_arm[arm], compliance_by_arm[arm])
+        for arm in set(numbered_by_arm) & set(compliance_by_arm)
+        if numbered_by_arm[arm] != compliance_by_arm[arm]
+    )
+    if missing or extra or length_mismatches:
+        parts: list[str] = []
+        if missing:
+            parts.append(f"missing from l1_insert_numbering.tsv ({len(missing)}): {missing[:5]}")
+        if extra:
+            parts.append(f"extra in l1_insert_numbering.tsv ({len(extra)}): {extra[:5]}")
+        if length_mismatches:
+            parts.append(
+                f"insert_nt mismatch vs synthesis_compliance.tsv ({len(length_mismatches)}): "
+                f"{length_mismatches[:5]}"
+            )
+        raise ValueError(
+            "l1_insert_numbering.tsv does not match synthesis_compliance.tsv; "
+            "rerun renumber_library_members.py --write and synthesis_compliance.py ("
+            + "; ".join(parts)
+            + ")"
+        )
+
+
 def inserts() -> list[dict]:
     """Ordered L1 inserts, in plate order, with their ordered insert and vector lengths.
 
@@ -79,8 +133,11 @@ def inserts() -> list[dict]:
     manifest (decided 2026-11-14 by the coordinator under Becca's delegation). The vector grows
     by the same number of bases. Held members have no insert and are not ordered.
     """
-    with (S4E9 / "l1_insert_numbering.tsv").open() as fh:
+    with NUMBERING.open() as fh:
         numbered = list(csv.DictReader(fh, delimiter="\t"))
+    with COMPLIANCE.open() as fh:
+        compliance = list(csv.DictReader(fh, delimiter="\t"))
+    verify_numbering_matches_compliance(numbered, compliance)
     with MANIFEST.open() as fh:
         member = {
             r["design_id"]: r

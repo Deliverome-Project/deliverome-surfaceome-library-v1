@@ -1,0 +1,13 @@
+negative_class	score	n_positive	n_negative	auroc	boot95_lo	boot95_hi	mwu_p
+known_failure	native-region lDDT (own_ref)	131	9	0.687	0.522	0.808	0.05852
+known_failure	site lDDT (+/-8, own_ref)	101	6	0.719	0.572	0.857	0.07275
+known_failure	cassette_contact_res (negated)	131	9	0.748	0.435	0.949	0.01146
+known_failure	steric clashes <2.5 A (negated)	131	9	0.713	0.473	0.937	0.01671
+decoy_core	native-region lDDT (own_ref)	131	75	0.779	0.73	0.831	0.0
+decoy_core	site lDDT (+/-8, own_ref)	101	75	0.678	0.603	0.753	6e-05
+decoy_core	cassette_contact_res (negated)	131	75	0.868	0.813	0.919	0.0
+decoy_core	steric clashes <2.5 A (negated)	131	75	0.817	0.751	0.879	0.0
+decoy_hardneg	native-region lDDT (own_ref)	131	48	0.741	0.679	0.801	0.0
+decoy_hardneg	site lDDT (+/-8, own_ref)	101	48	0.629	0.537	0.711	0.01112
+decoy_hardneg	cassette_contact_res (negated)	131	48	0.705	0.632	0.777	2e-05
+decoy_hardneg	steric clashes <2.5 A (negated)	131	48	0.613	0.534	0.696	0.01059

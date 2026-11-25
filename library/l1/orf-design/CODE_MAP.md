@@ -55,6 +55,7 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`apply_mane_gtf.py`](apply_mane_gtf.py) | called | Rerun the L1 reference ladder with MANE Select read from the GTF, and carry the switches through. | `mane_gtf_changes_2026-11-22_summary.json`, `mane_gtf_decisions_2026-11-22.tsv` |
 | [`apply_ortholog_start_trims.py`](apply_ortholog_start_trims.py) | stage | Restart four cyno L1 orthologs at the native Met aligned to human Met1 (5' trim only). | `ortholog_start_trims_summary.json` |
 | [`apply_panel_redraw_2026_11_22.py`](apply_panel_redraw_2026_11_22.py) | called | Apply the 2026-11-22 isoform redraw and ortholog feature rule to the L1 manifest. | — |
+| [`apply_preorder_audit_fixes_2026_11_24.py`](apply_preorder_audit_fixes_2026_11_24.py) | documented | Apply the 2026-11-24 pre-order biological audit fixes to the L1 internal arm tables. | — |
 | [`apply_reference_fixes.py`](apply_reference_fixes.py) | stage | Apply the approved L1 reference-form fixes: named references and start-codon replacements. | `library_cds_boundary_decisions.tsv`, `reference_changes_summary.json` |
 | [`assemble_vector.py`](assemble_vector.py) | called | Assemble a finished, fully annotated plasmid: p0039 backbone + one shuttled insert. | — |
 | [`assign_p0040_barcode.py`](assign_p0040_barcode.py) | called | Give p0040 its own barcode, so it is distinguishable from p0016 by amplicon. | — |
@@ -102,7 +103,7 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`coreceptor_host_line.py`](coreceptor_host_line.py) | called | Co-receptor gate against the screening line: what a K562 (or lower-median) rule would change. | — |
 | [`dedupe_library_members.py`](dedupe_library_members.py) | stage | Retire library members whose ordered protein duplicates another member's. | `library_duplicate_members.tsv`, `library_duplicate_summary.json` |
 | [`derive_mane_select.py`](derive_mane_select.py) | called | MANE Select per gene, read from the pinned Ensembl 115 GTF's ``tag "MANE_Select"``. | — |
-| [`design_l1_internal_v8_prodomino.py`](design_l1_internal_v8_prodomino.py) | documented | Production candidate L1 internal-site designer: ProDomino + pLDDT + EB penalties + vetoes. | — |
+| [`design_l1_internal_v8_prodomino.py`](design_l1_internal_v8_prodomino.py) | called | Production candidate L1 internal-site designer: ProDomino + pLDDT + EB penalties + vetoes. | — |
 | [`design_orfs.py`](design_orfs.py) | called | Golden Gate domestication of the nine non-Tedman ORFs on Brenna's 15-receptor panel. | — |
 | [`design_p0050_bc_reverse.py`](design_p0050_bc_reverse.py) | one-off | Design the barcode-amplicon reverse primer for the P-0050-backbone set (P-0051..P-0075). | `p0050_bc_reverse_primer.json` |
 | [`diversify_arm_cassettes.py`](diversify_arm_cassettes.py) | stage | Issue one linker encoding of the tag cassette per N-terminal, internal, multipass and type III arm. | `l1_arm_cassette_encodings.tsv` |
@@ -192,7 +193,7 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`publish_predicted_structures.py`](publish_predicted_structures.py) | called | Publish the ColabFold predictions to S3, so the tag-site lanes have a model to read. | — |
 | [`publish_topology_supplement.py`](publish_topology_supplement.py) | stage | Give every active library member a DeepTMHMM v1 topology, reproducibly. | — |
 | [`publish_upstream_copies.py`](publish_upstream_copies.py) | called | Copy the upstream reference inputs that were saved in processed:// to external://. | `upstream_copies.tsv` |
-| [`publish_viewer_release.py`](publish_viewer_release.py) | documented | Publish an L1 cut to the surfaceome viewer: ColabFold R2 mirror, D1 loads, and cache purge. | — |
+| [`publish_viewer_release.py`](publish_viewer_release.py) | called | Publish an L1 cut to the surfaceome viewer: ColabFold R2 mirror, D1 loads, and cache purge. | — |
 | [`puro_only_backbone.py`](puro_only_backbone.py) | called | The puro-only intermediate: p003 with mScarlet3 and P2A deleted. | — |
 | [`rbp_motif_screen.py`](rbp_motif_screen.py) | documented | RBP-motif screen of the L1 library: shared elements once, ORF-intrinsic hits per member. | `l1_rbp_motif_cassettes.tsv`, `l1_rbp_motif_members.tsv`, `l1_rbp_motif_shared.tsv`, `l1_rbp_motif_summary.json` |
 | [`rebuild_disorder_anchored.py`](rebuild_disorder_anchored.py) | called | Re-place the N-terminal cassette on the disorder-anchored junction, not the cleavage site. | — |
@@ -203,7 +204,8 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`redraw_panels.py`](redraw_panels.py) | stage | Redraw the L1 isoform panel by rule, and bring the manifest into line. | — |
 | [`reference_vs_uniprot.py`](reference_vs_uniprot.py) | documented | How the reference ladder's picks relate to MANE, APPRIS and the UniProt canonical sequence. | `reference_vs_uniprot_summary.json` |
 | [`refill_isoform_panel_2026_11_22.py`](refill_isoform_panel_2026_11_22.py) | called | Refill the isoform-panel slots emptied by the MANE-GTF reference switch (2026-11-22). | — |
-| [`refold_check_validation.py`](refold_check_validation.py) | documented | Does the L1 refold check tell tag insertions that work from ones that fail? | — |
+| [`refold_check_clash_validation.py`](refold_check_clash_validation.py) | documented | Reproduce steric-clash (<2.5 A), +/-8 own_ref lDDT, and cassette_contact_res validation AUROCs. | `refold_check_validation_clashes.tsv`, `refold_check_validation_clashes_auroc.tsv` |
+| [`refold_check_validation.py`](refold_check_validation.py) | called | Does the L1 refold check tell tag insertions that work from ones that fail? | — |
 | [`refresh_registry_positions.py`](refresh_registry_positions.py) | one-off | Re-derive the barcode registry's position and notes from the designed records. | — |
 | [`regate_isoform_forms.py`](regate_isoform_forms.py) | called | Rerun the isoform gate on the cohort of record once every form has a DeepTMHMM v1 row. | `isoform_gate_full_v1.tsv`, `isoform_gate_full_v1_summary.json` |
 | [`rekey_rung_tables.py`](rekey_rung_tables.py) | called | Re-key the rung arm tables and their decision inputs after a renumber, through design ids. | — |
@@ -294,7 +296,7 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`tag_refold/refold_queue.py`](tag_refold/refold_queue.py) | called | Read ``tag_refold_queue.tsv`` with its sequences joined back in. | — |
 | [`tag_refold/score_tagged_folds.py`](tag_refold/score_tagged_folds.py) | called | Score every tagged refold against its native model and give each a pass/flag verdict. | — |
 | [`tag_refold/structure_metrics.py`](tag_refold/structure_metrics.py) | called | Structure comparisons for tagged-vs-native models, with the residue correspondence known. | — |
-| [`tag_refold/v8_sources_verdicts.py`](tag_refold/v8_sources_verdicts.py) | one-off | Index the v8_prodomino refolds' verdicts: source rows, then verdict and viewer rows. | — |
+| [`tag_refold/v8_sources_verdicts.py`](tag_refold/v8_sources_verdicts.py) | called | Index the v8_prodomino refolds' verdicts: source rows, then verdict and viewer rows. | — |
 | [`tag_refold/verify_ordered_constructs.py`](tag_refold/verify_ordered_constructs.py) | called | Prove every refold is the protein that will be ordered. | — |
 | [`tag_site_fine_tolerance.py`](tag_site_fine_tolerance.py) | called | Fine-grained residue-level tolerance evaluation (+/-0, +/-3, +/-5, +/-10) and L1 diff. | — |
 | [`tag_site_model_ablations.py`](tag_site_model_ablations.py) | called | Diagnostic ablations and model-improvement tests for the internal tag-site ranker. | — |
@@ -319,4 +321,4 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`write_panels_of_record.py`](write_panels_of_record.py) | called | Write the L1 panel tables of record from the panels as applied on 2026-11-22. | — |
 | [`write_structure_baseline.py`](write_structure_baseline.py) | documented | Regenerate the structure-coverage baseline the repo tests assert against. | `structure_coverage_baseline.json` |
 
-Totals: called 179, documented 33, one-off 27, stage 30, test 6
+Totals: called 183, documented 32, one-off 26, stage 30, test 6

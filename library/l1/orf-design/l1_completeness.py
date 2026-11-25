@@ -48,6 +48,7 @@ import argparse
 import csv
 import hashlib
 import json
+import math
 import re
 import sys
 from collections import Counter, defaultdict
@@ -116,16 +117,93 @@ def read(path: Path) -> list[dict]:
         return list(csv.DictReader(fh, delimiter="\t"))
 
 
-def by_design(rows: list[dict]) -> dict[str, list[dict]]:
+def _index_unique(rows: list[dict], key: str, label: str) -> dict[str, dict]:
+    """Index ``rows`` by ``key``, failing loudly on missing/empty or duplicate keys."""
+    out: dict[str, dict] = {}
+    for row in rows:
+        k = (row.get(key) or "").strip()
+        if not k:
+            raise ValueError(f"{label}: missing/empty {key!r}")
+        if k in out:
+            raise ValueError(f"{label}: duplicate {key} {k!r}")
+        out[k] = row
+    return out
+
+
+def by_design(rows: list[dict], *, strict: bool = False) -> dict[str, list[dict]]:
     out: dict[str, list[dict]] = defaultdict(list)
     for r in rows:
-        did = r.get("design_id")
+        did = (r.get("design_id") or "").strip()
         if not did and r.get("scope"):
             m = re.search(r"\b(l1-p[0-9]{4})\b", r["scope"])
             did = m.group(1) if m else ""
         if did:
             out[did].append(r)
+        elif strict:
+            raise ValueError(f"row missing design_id in {r.get('_table') or 'arm table'}: {r!r}")
     return out
+
+
+def _check_arm_table_ids(table_name: str, rows: list[dict]) -> None:
+    """Reject duplicate built ``arm_id`` or ``construct_id`` entries in an arm table."""
+    seen_arm: set[str] = set()
+    seen_cid: set[str] = set()
+    for r in rows:
+        if "insert_nt" in r and not (r.get("insert_nt") or "").strip():
+            continue
+        aid = (r.get("arm_id") or "").strip()
+        if aid:
+            if aid in seen_arm:
+                raise ValueError(f"{table_name}: duplicate arm_id {aid!r}")
+            seen_arm.add(aid)
+        cid = (r.get("construct_id") or "").strip()
+        if cid:
+            if cid in seen_cid:
+                raise ValueError(f"{table_name}: duplicate construct_id {cid!r}")
+            seen_cid.add(cid)
+
+
+def _load_arm_built(path: Path) -> set[str]:
+    """Design ids with a ``decision == build`` row, failing closed on duplicate/malformed rows."""
+    if not path.exists():
+        return set()
+    rows = read(path)
+    _index_unique(rows, "arm_id", path.name)
+    out: set[str] = set()
+    for r in rows:
+        dec = (r.get("decision") or "").strip()
+        if dec not in ("build", "hold"):
+            raise ValueError(f"{path.name}: {r['arm_id']} has unexpected decision {dec!r}")
+        if dec == "build":
+            did = (r.get("design_id") or "").strip()
+            if not did:
+                raise ValueError(f"{path.name}: {r['arm_id']} missing design_id")
+            out.add(did)
+    return out
+
+
+def _multipass_verdict(arm: dict, mp_refold: dict, tag_verdicts: dict[str, dict]) -> str:
+    """Resolve a multipass arm's refold verdict without silently defaulting unrecorded fails."""
+    m = mp_refold.get(arm.get("construct_id", ""))
+    if m:
+        verdict = m["verdict"]
+        if m.get("disposition", "").startswith("keep"):
+            verdict += " (kept as built)"
+        return verdict
+    if tag_verdicts:
+        hit = next(
+            (
+                tag_verdicts[s]
+                for s in (arm.get("protein_sha256"), arm.get("mature_sha256"))
+                if s and s in tag_verdicts
+            ),
+            None,
+        )
+        if hit is None:
+            return "not recorded"
+        if hit["verdict"] != "pass":
+            return f"{hit['verdict']} (unrecorded in multipass_refold_dispositions)"
+    return "pass"
 
 
 def hold_reason(row: dict) -> str | None:
@@ -167,7 +245,15 @@ def arm_matches_sequence(arm: dict, native: str, native_sha: str) -> bool | None
     if n and tagged and native:
         from build_constructs import CASSETTE_AA
 
-        k = int(float(n))
+        try:
+            val = float(n)
+        except ValueError:
+            return False
+        if not math.isfinite(val) or val != int(val):
+            return False
+        k = int(val)
+        if not (0 <= k <= len(native)):
+            return False
         return sha(native[:k] + CASSETTE_AA + native[k:]) == tagged
     return None
 
@@ -206,15 +292,31 @@ def orthologs_without_built_human(rows: list[dict]) -> set[str]:
     }
 
 
+def _load_core_tables() -> tuple[dict[str, str], list[dict], dict[str, dict]]:
+    """Load manifest, mapping, and tag paths with strict key uniqueness and join checks."""
+    mapping_rows = _index_unique(read(MAPPING), "candidate_id", MAPPING.name)
+    mapping = {cid: r["design_id"] for cid, r in mapping_rows.items()}
+    manifest = read(MANIFEST)
+    _index_unique(manifest, "candidate_id", MANIFEST.name)
+    unmapped = sorted(r["candidate_id"] for r in manifest if r["candidate_id"] not in mapping)
+    if unmapped:
+        raise ValueError(
+            f"{MANIFEST.name}: candidate_ids missing from {MAPPING.name}: {unmapped[:5]}"
+        )
+    paths = _index_unique(read(TAG_PATHS), "candidate_id", TAG_PATHS.name)
+    unknown_p = sorted({tp["placement"] for tp in paths.values()} - set(ARMS))
+    if unknown_p:
+        raise ValueError(f"{TAG_PATHS.name}: unrecognized placement(s): {unknown_p}")
+    return mapping, manifest, paths
+
+
 def build() -> tuple[list[dict], dict]:
     # Current designed proteins from committed tables (S3 only for an armed member they lack).
     sys.path.insert(0, str(HERE))
     import l1_consistency
 
     natives = l1_consistency.current_natives(needed=l1_consistency.armed_members())
-    mapping = {r["candidate_id"]: r["design_id"] for r in read(MAPPING)}
-    manifest = read(MANIFEST)
-    paths = {r["candidate_id"]: r for r in read(TAG_PATHS)}
+    mapping, manifest, paths = _load_core_tables()
 
     arm_index: dict[str, dict[str, list[dict]]] = {}
     missing_tables: list[str] = []
@@ -222,10 +324,12 @@ def build() -> tuple[list[dict], dict]:
         rows: list[dict] = []
         for t in tables:
             if t.exists():
-                rows += [{**r, "_table": t.name} for r in read(t)]
+                t_rows = read(t)
+                _check_arm_table_ids(t.name, t_rows)
+                rows += [{**r, "_table": t.name} for r in t_rows]
             else:
                 missing_tables.append(str(t.relative_to(HERE.parents[2])))
-        arm_index[placement] = by_design(rows)
+        arm_index[placement] = by_design(rows, strict=True)
     hold_index = {
         p: by_design([r for t in ts if t.exists() for r in read(t)]) for p, ts in HOLDS.items()
     }
@@ -241,9 +345,7 @@ def build() -> tuple[list[dict], dict]:
         for p, ts in PROPOSED_SITES.items()
     }
 
-    arm_built: set[str] = set()
-    if ARM_DECISIONS.exists():
-        arm_built = {r["design_id"] for r in read(ARM_DECISIONS) if r.get("decision") == "build"}
+    arm_built = _load_arm_built(ARM_DECISIONS)
     out = []
     shape_problems: dict[str, set[str]] = defaultdict(set)
     for m in manifest:
@@ -401,10 +503,7 @@ def build() -> tuple[list[dict], dict]:
                     if not (placement == "internal" and t.name == "constructs_l1_cterm.tsv"):
                         continue
                 if placement == "N at residue 1, multipass" and mp_refold:
-                    m = mp_refold.get(a.get("construct_id", ""))
-                    verdict = m["verdict"] if m else "pass"
-                    if m and m.get("disposition", "").startswith("keep"):
-                        verdict += " (kept as built)"
+                    verdict = _multipass_verdict(a, mp_refold, tag_verdicts)
                 elif t.name == "constructs_l1_cterm.tsv" and ct_refold:
                     verdict = ct_refold.get(
                         (a["design_id"], a.get("protein_sha256", "")), "not recorded"
@@ -480,9 +579,18 @@ def main(argv=None) -> int:
     if shape:
         print(f"arm-shape violations: {shape}", file=sys.stderr)
     orphans = summary["orthologs_without_built_human"]
-    if args.check and (gaps or summary["stale_member_id"] or shape or orphans):
+    if args.check and (
+        gaps
+        or summary["stale_member_id"]
+        or summary["stale_sequence"]
+        or summary["arm_tables_missing"]
+        or shape
+        or orphans
+    ):
         print(
             f"incomplete: {gaps} gaps, {summary['stale_member_id']} stale member ids, "
+            f"{summary['stale_sequence']} stale sequences, "
+            f"{len(summary['arm_tables_missing'])} missing tables, "
             f"{len(orphans)} orthologs built without a built human member {orphans}",
             file=sys.stderr,
         )

@@ -60,6 +60,7 @@ import argparse
 import csv
 import hashlib
 import json
+import math
 import sys
 import time
 from collections import Counter, defaultdict
@@ -125,6 +126,32 @@ def read_fasta(path: Path) -> list[tuple[str, str]]:
     return [(header, seq.upper()) for header, seq in seqtools.read_fasta(path)]
 
 
+def _index_unique(rows: list[dict[str, str]], key: str, label: str) -> dict[str, dict[str, str]]:
+    """Index ``rows`` by ``key``, failing loudly on missing/empty or duplicate keys."""
+    out: dict[str, dict[str, str]] = {}
+    for row in rows:
+        k = (row.get(key) or "").strip()
+        if not k:
+            raise ValueError(f"{label}: missing/empty {key!r}")
+        if k in out:
+            raise ValueError(f"{label}: duplicate {key} {k!r}")
+        out[k] = row
+    return out
+
+
+def _parse_nonneg_int(raw: object, field: str, ctx: str) -> int:
+    text = ("" if raw is None else str(raw)).strip()
+    if not text:
+        raise ValueError(f"{ctx}: missing/empty {field}")
+    try:
+        val = float(text)
+    except ValueError as exc:
+        raise ValueError(f"{ctx}: non-numeric {field} {raw!r}") from exc
+    if not math.isfinite(val) or val != int(val) or val < 0:
+        raise ValueError(f"{ctx}: invalid {field} {raw!r}")
+    return int(val)
+
+
 def load_inserts(order: Path | None = None) -> tuple[list[dict], list[str]]:
     """Every insert of the five rungs, with its table row and arm id.
 
@@ -134,14 +161,33 @@ def load_inserts(order: Path | None = None) -> tuple[list[dict], list[str]]:
     decisions = arm_ids.load_decisions()
     out = []
     for rung, stem in RUNGS.items():
-        rows = read_tsv(HERE / f"{stem}.tsv")
+        tsv_path, fa_path = HERE / f"{stem}.tsv", HERE / f"{stem}.fasta"
+        rows = read_tsv(tsv_path)
+        built_rows = [r for r in rows if (r.get("insert_nt") or "").strip()]
         key = "construct_id" if rows and "construct_id" in rows[0] else "candidate_id"
-        by_id = {r[key]: r for r in rows}
-        by_id.update({r["arm_id"]: r for r in rows if r.get("arm_id")})
-        for header, seq in read_fasta(HERE / f"{stem}.fasta"):
+        by_id = _index_unique(rows, key, tsv_path.name)
+        seen_arm_ids: set[str] = set()
+        for r in rows:
+            aid = (r.get("arm_id") or "").strip()
+            if aid:
+                if aid in seen_arm_ids:
+                    raise ValueError(f"{tsv_path.name}: duplicate arm_id {aid!r}")
+                seen_arm_ids.add(aid)
+                by_id[aid] = r
+        seen_fa: set[str] = set()
+        matched_rows: set[int] = set()
+        for header, seq in read_fasta(fa_path):
             ident = header.split("|")[0].split()[0]
+            if ident in seen_fa:
+                raise ValueError(f"{fa_path.name}: duplicate FASTA identifier {ident!r}")
+            seen_fa.add(ident)
+            if ident not in by_id:
+                raise ValueError(f"{fa_path.name}: {ident!r} has no row in {tsv_path.name}")
             row = by_id[ident]
-            design = row.get("design_id", "")
+            matched_rows.add(id(row))
+            design = (row.get("design_id") or "").strip()
+            if not design:
+                raise ValueError(f"{tsv_path.name}: row {ident!r} missing design_id")
             out.append(
                 {
                     "rung": rung,
@@ -153,10 +199,21 @@ def load_inserts(order: Path | None = None) -> tuple[list[dict], list[str]]:
                     "insert": seq,
                 }
             )
+        dropped = [r.get("arm_id") or r[key] for r in built_rows if id(r) not in matched_rows]
+        if dropped:
+            raise ValueError(
+                f"{tsv_path.name}: {len(dropped)} built row(s) missing from {fa_path.name}: "
+                f"{dropped[:5]}"
+            )
     arm_ids.check_unique(i["arm_id"] for i in out)
     unmatched: list[str] = []
     if order is not None:
-        ordered = {h.split()[0]: s for h, s in read_fasta(order)}
+        ordered: dict[str, str] = {}
+        for h, s in read_fasta(order):
+            aid = h.split()[0]
+            if aid in ordered:
+                raise ValueError(f"{order.name}: duplicate arm_id {aid!r}")
+            ordered[aid] = s
         for i in out:
             if i["arm_id"] in ordered:
                 i["insert"] = ordered[i["arm_id"]]
@@ -172,12 +229,14 @@ def issued_encodings() -> tuple[dict[str, str], dict[str, str], str]:
     """``(by arm_id, by C-terminal candidate_id, source)`` of issued cassette encodings."""
     by_arm: dict[str, str] = {}
     if ARM_ENCODINGS.exists():
-        by_arm = {r["arm_id"]: r["cassette_nt"] for r in read_tsv(ARM_ENCODINGS)}
+        arm_rows = _index_unique(read_tsv(ARM_ENCODINGS), "arm_id", ARM_ENCODINGS.name)
+        by_arm = {aid: r["cassette_nt"] for aid, r in arm_rows.items()}
         # an arm whose member's protein changed is built on its reissued key's encoding
         from diversify_arm_cassettes import reissues
 
         by_arm |= {old: by_arm[new] for old, new in reissues().items() if new in by_arm}
-    by_cid = {r["candidate_id"]: r["cassette_nt"] for r in read_tsv(CTERM_ENCODINGS)}
+    cid_rows = _index_unique(read_tsv(CTERM_ENCODINGS), "candidate_id", CTERM_ENCODINGS.name)
+    by_cid = {cid: r["cassette_nt"] for cid, r in cid_rows.items()}
     source = ARM_ENCODINGS.name if by_arm else f"{CTERM_ENCODINGS.name} only (no per-arm table)"
     return by_arm, by_cid, source
 
@@ -226,7 +285,9 @@ def cassette_site(ins: dict) -> int | None:
     """The cassette's 0-based residue in a plain insertion, from the arm table."""
     row = ins["row"]
     if (row.get("cassette_after_residue") or "").strip():
-        return int(float(row["cassette_after_residue"]))
+        return _parse_nonneg_int(
+            row["cassette_after_residue"], "cassette_after_residue", ins.get("arm_id", "")
+        )
     if ins["rung"] in ("multipass", "type3"):
         return 1  # after Met1
     return None
@@ -283,7 +344,7 @@ def extra_findings(ins: dict, native: str) -> list[qc.Finding]:
     protein = seqtools.translate(orf[1][:-3]) if orf else ""
     want = {row.get(c, "") for c in ("protein_sha256", "mature_sha256")} - {""}
     if not want:
-        out.append(qc.Finding("protein_matches_table", True, "no protein hash in table", "warning"))
+        out.append(qc.Finding("protein_matches_table", False, "no protein hash in table", "error"))
     else:
         out.append(
             qc.Finding(
@@ -295,7 +356,9 @@ def extra_findings(ins: dict, native: str) -> list[qc.Finding]:
             )
         )
     if not native:
-        out.append(qc.Finding("layout", True, "no committed native — not checked", "warning"))
+        out.append(
+            qc.Finding("layout", False, "no committed native — cannot verify layout", "error")
+        )
     else:
         verdict = cons.layout_check(row, protein, native)
         out.append(
@@ -359,6 +422,38 @@ TractIndex = seqtools.TractIndex
 longest_shared = seqtools.longest_shared_across_pool
 
 
+def check_pool_completeness(
+    inserts: list[dict],
+    unmatched: list[str],
+    completeness_rows: list[dict[str, str]] | None = None,
+) -> qc.Finding:
+    """Verify 1-to-1 agreement between built members in ``l1_completeness.tsv`` and pool inserts."""
+    comp_rows = read_tsv(COMPLETENESS) if completeness_rows is None else completeness_rows
+    comp_by_id = _index_unique(comp_rows, "design_id", COMPLETENESS.name)
+    built = {d: r for d, r in comp_by_id.items() if (r.get("status") or "").strip() == "built"}
+    arms_of = Counter(i["design_id"] for i in inserts)
+    missing = sorted(d for d in built if d not in arms_of)
+    stray = sorted(d for d in arms_of if d not in built)
+    wrong_n: list[str] = []
+    for d, r in sorted(built.items()):
+        if d not in arms_of:
+            continue
+        try:
+            expected_n = _parse_nonneg_int(r.get("arms"), "arms", d)
+        except ValueError:
+            wrong_n.append(d)
+            continue
+        if expected_n != arms_of[d]:
+            wrong_n.append(d)
+    return qc.Finding(
+        "completeness",
+        not (missing or stray or wrong_n or unmatched),
+        f"{len(built)} built members, {len(inserts)} inserts; missing {missing[:5]} "
+        f"({len(missing)}), not a built member {stray[:5]} ({len(stray)}), arm count off "
+        f"{wrong_n[:5]} ({len(wrong_n)}), order vs tables {unmatched[:5]} ({len(unmatched)})",
+    )
+
+
 # --------------------------------------------------------------------------- run
 
 
@@ -411,25 +506,7 @@ def run(order: Path | None = None) -> tuple[list[dict], dict]:
         )
 
     # pool-level: completeness
-    pool: list[qc.Finding] = []
-    built = {r["design_id"]: r for r in read_tsv(COMPLETENESS) if r["status"] == "built"}
-    arms_of = Counter(i["design_id"] for i in inserts)
-    missing = sorted(d for d in built if d not in arms_of)
-    stray = sorted(d for d in arms_of if d not in built)
-    wrong_n = sorted(
-        d
-        for d, r in built.items()
-        if d in arms_of and (r.get("arms") or "").isdigit() and int(r["arms"]) != arms_of[d]
-    )
-    pool.append(
-        qc.Finding(
-            "completeness",
-            not (missing or stray or wrong_n or unmatched),
-            f"{len(built)} built members, {len(inserts)} inserts; missing {missing[:5]} "
-            f"({len(missing)}), not a built member {stray[:5]} ({len(stray)}), arm count off "
-            f"{wrong_n[:5]} ({len(wrong_n)}), order vs tables {unmatched[:5]} ({len(unmatched)})",
-        )
-    )
+    pool: list[qc.Finding] = [check_pool_completeness(inserts, unmatched)]
 
     checks: list[str] = []
     for found in findings_of.values():
@@ -438,7 +515,11 @@ def run(order: Path | None = None) -> tuple[list[dict], dict]:
                 checks.append(f.check)
     counts: dict[str, Counter] = defaultdict(Counter)
     for ins in inserts:
-        found = {f.check: f for f in findings_of[ins["arm_id"]]}
+        found: dict[str, qc.Finding] = {}
+        for f in findings_of[ins["arm_id"]]:
+            if f.check in found:
+                raise ValueError(f"{ins['arm_id']}: duplicate QC check {f.check!r}")
+            found[f.check] = f
         row = {
             "arm_id": ins["arm_id"],
             "design_id": ins["design_id"],

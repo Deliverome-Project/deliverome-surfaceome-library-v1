@@ -1,23 +1,23 @@
 {
- "arms_checked": 3384,
+ "arms_checked": 3375,
  "mismatches": 0,
  "mismatches_by_owner": {},
  "dna": {
-  "ok": 3384
+  "ok": 3375
  },
  "layout": {
-  "ok": 3384
+  "ok": 3375
  },
  "fold": {
-  "folded": 3384
+  "folded": 3375
  },
  "verdict": {
-  "pass": 3181,
-  "fail": 203
+  "pass": 3173,
+  "fail": 202
  },
  "failing_arms_disposition": {
   "C-terminal decision": 9,
-  "internal arm built with flag": 82,
+  "internal arm built with flag": 81,
   "N after SP rule": 37,
   "multipass": 71,
   "type III": 4
@@ -27,6 +27,12 @@
   "constructs_l1_nterm": 1322,
   "constructs_l1_multipass": 568,
   "constructs_l1_type3": 43,
-  "constructs_l1_internal": 1090
+  "constructs_l1_internal": 1081
+ },
+ "biology_audit": {
+  "min_clearance_aa": 12,
+  "gpi_arms_checked": 6,
+  "gpi_omega_proximal_count": 0,
+  "gpi_omega_proximal_arms": []
  }
 }

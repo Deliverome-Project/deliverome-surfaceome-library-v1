@@ -73,7 +73,7 @@ from deliverome_analysis import library_design as ld
 from deliverome_analysis import plasmid_qc as qc
 from deliverome_analysis import seqtools
 
-HERE = Path(__file__).parent
+HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[2]
 AP = REPO / "library/l1/proteoform-selection"
 sys.path.insert(0, str(AP))
@@ -417,6 +417,18 @@ def cout_dispositions(review: Iterable[dict]) -> dict[str, Disposition]:
     return {r["design_id"]: cout_disposition(r, human.get(r["gene_symbol"])) for r in review}
 
 
+def _index_unique(rows: Iterable[dict], key: str, label: str) -> dict[str, dict]:
+    out: dict[str, dict] = {}
+    for row in rows:
+        k = (row.get(key) or "").strip()
+        if not k:
+            raise ValueError(f"{label}: missing/empty {key!r}")
+        if k in out:
+            raise ValueError(f"{label}: duplicate {key} {k!r}")
+        out[k] = row
+    return out
+
+
 def dispositions(
     review: Iterable[dict] | None = None,
     verdicts: dict[str, dict] | None = None,
@@ -429,15 +441,21 @@ def dispositions(
     then :func:`refold_disposition`, overridden only by :data:`RULE_EXCEPTIONS`.
     """
     review = read_table(REVIEW) if review is None else list(review)
+    _index_unique(review, "design_id", REVIEW.name)
     if verdicts is None:
-        verdicts = {r["design_id"]: r for r in read_table(REFOLD_VERDICTS)}
+        verdicts = _index_unique(read_table(REFOLD_VERDICTS), "design_id", REFOLD_VERDICTS.name)
     if stalk_verdicts is None:
-        stalk_verdicts = {r["design_id"]: r for r in read_table(STALK_REFOLD_VERDICTS)}
+        stalk_verdicts = _index_unique(
+            read_table(STALK_REFOLD_VERDICTS), "design_id", STALK_REFOLD_VERDICTS.name
+        )
     released = released_genes(review)
     couts = cout_dispositions(review)
     out, consulted = {}, set()
     for r in review:
         d = r["design_id"]
+        assert r["cterm_tag"] in ("kept", "removed"), (
+            f"{d}: unexpected cterm_tag {r['cterm_tag']!r}"
+        )
         if r["cterm_tag"] == "removed":
             out[d] = (
                 Disposition(RELOCATE, "decided_site", RELOCATED[d][0], ITM2B_REASON)
@@ -486,19 +504,24 @@ def load_inputs() -> tuple[list[dict], dict, dict, dict, dict]:
     from deliverome_analysis.s3 import processed
 
     manifest_rows = [r for r in read_table(MANIFEST) if ld.is_active(r)]
+    _index_unique(manifest_rows, "candidate_id", MANIFEST.name)
     did_of = {r["candidate_id"]: ld.design_id(r) for r in manifest_rows}
     cid_of = {d: c for c, d in did_of.items()}
     assert len(cid_of) == len(did_of), "two active members share a design id"
-    paths = {
-        did_of[r["candidate_id"]]: r for r in read_table(TAG_PATHS) if r["candidate_id"] in did_of
-    }
-    review = {r["design_id"]: r for r in read_table(REVIEW)}
+    tp_rows = read_table(TAG_PATHS)
+    _index_unique(tp_rows, "candidate_id", TAG_PATHS.name)
+    unmapped_tp = sorted(r["candidate_id"] for r in tp_rows if r["candidate_id"] not in did_of)
+    assert not unmapped_tp, (
+        f"{TAG_PATHS.name}: inactive/missing manifest members: {unmapped_tp[:5]}"
+    )
+    paths = {did_of[r["candidate_id"]]: r for r in tp_rows}
+    review = _index_unique(read_table(REVIEW), "design_id", REVIEW.name)
     cterm = sorted(d for d, r in paths.items() if r["placement"] == "C-terminal")
     assert sorted(review) == cterm, "l1_cterm_review.tsv is not the current C-terminal set"
     for d in cterm:
         assert review[d]["sequence_sha256"] == paths[d]["sequence_sha256"], d
         assert review[d]["candidate_id"] == cid_of[d], f"{d}: review carries a stale member id"
-    encodings = {r["design_id"]: r for r in read_table(ENCODINGS)}
+    encodings = _index_unique(read_table(ENCODINGS), "design_id", ENCODINGS.name)
     missing = [d for d in cterm if d not in encodings]
     assert not missing, f"C-terminal members with no issued cassette encoding: {missing}"
     manifest = {ld.design_id(r): r for r in manifest_rows}
@@ -618,11 +641,17 @@ def build_snorkels(
     must equal the design's native sequence (by SHA-256); the member must be on the internal rung.
     """
     designs = l1_snorkel.built_designs()
-    paths = {r["candidate_id"]: r for r in read_table(TAG_PATHS)}
-    cid_of = {r["design_id"]: r["candidate_id"] for r in read_table(MAPPING)}
+    paths = _index_unique(read_table(TAG_PATHS), "candidate_id", TAG_PATHS.name)
+    cid_of = {
+        did: r["candidate_id"]
+        for did, r in _index_unique(read_table(MAPPING), "design_id", MAPPING.name).items()
+    }
     rows = []
+    seen_arm_ids: set[str] = set()
     for design, d in sorted(designs.items()):
+        assert design in cid_of, f"{design}: snorkel design missing from {MAPPING.name}"
         cid = cid_of[design]
+        assert cid in paths, f"{cid}: snorkel member missing from {TAG_PATHS.name}"
         tp = paths[cid]
         assert tp["placement"] == "internal", f"{cid}: snorkel member not on the internal rung"
         assert tp["sequence_sha256"] == d["sequence_sha256"], f"{cid}: native protein changed"
@@ -641,9 +670,13 @@ def build_snorkels(
         assert row["protein_sha256"] == d["snorkel_protein_sha256"], (
             f"{cid}: translated snorkel is not the protein that was folded"
         )
+        arm_id = (d.get("arm_id") or "").strip()
+        if arm_id:
+            assert arm_id not in seen_arm_ids, f"duplicate snorkel arm_id {arm_id!r}"
+            seen_arm_ids.add(arm_id)
         row.update(
             {
-                "arm_id": d.get("arm_id", ""),
+                "arm_id": arm_id,
                 "decided_by": d["decided_by"],
                 "implemented_by": IMPLEMENTED_BY
                 + " (module DNA: l1_snorkel_module_encodings.tsv, issued per arm 2026-11-21)",
@@ -652,6 +685,7 @@ def build_snorkels(
             }
         )
         rows.append(row)
+    assert len(rows) == len(designs), f"built {len(rows)} of {len(designs)} snorkel designs"
     return rows
 
 
@@ -671,6 +705,7 @@ def swap_check(rows: list[dict], manifest: dict, constructs: dict) -> dict:
     (its cassette is upstream), exactly as ``l1_swap_risk.py`` models them.
     """
     built = {r["candidate_id"]: r["upstream_of_barcode"] for r in rows}
+    assert len(built) == len(rows), "duplicate candidate_id in C-terminal/snorkel rows"
     ids, upstream = [], []
     for cid, m in sorted(manifest.items()):
         if m["library"] != ld.LIBRARY_L1:
@@ -733,8 +768,10 @@ def build(pending_ok: bool = False) -> tuple[list[dict], dict]:
     tag_fixed = qc.p003_tag_codons()
     rows, held = [], []
     snorkel_rows = build_snorkels(manifest, constructs, encodings, proteins, tag_fixed)
-    verdicts = {r["design_id"]: r for r in read_table(REFOLD_VERDICTS)}
-    stalk_verdicts = {r["design_id"]: r for r in read_table(STALK_REFOLD_VERDICTS)}
+    verdicts = _index_unique(read_table(REFOLD_VERDICTS), "design_id", REFOLD_VERDICTS.name)
+    stalk_verdicts = _index_unique(
+        read_table(STALK_REFOLD_VERDICTS), "design_id", STALK_REFOLD_VERDICTS.name
+    )
     disposition = dispositions(review.values(), verdicts, stalk_verdicts)
 
     def hold(m: dict, design: str, flags: str) -> None:
@@ -758,11 +795,13 @@ def build(pending_ok: bool = False) -> tuple[list[dict], dict]:
         # Every verdict the rule read is for this member's own C-terminally tagged protein
         # (a relocated member's verdict is for its built, relocated protein instead).
         # (a member held before any refold, e.g. on its C-out call, may have none yet)
-        v = verdicts.get(design) or {"tagged_sha256": "", "verdict_reasons": ""}
+        v = verdicts.get(design)
         tagged = hashlib.sha256((native + CASSETTE_AA).encode()).hexdigest()
-        assert v["tagged_sha256"] in (tagged, "") or review[cid]["cterm_tag"] == "removed", (
-            f"{cid}: the C-terminal refold verdict is for a different tagged protein"
-        )
+        if v is not None and review[cid]["cterm_tag"] != "removed":
+            assert v["tagged_sha256"] == tagged, (
+                f"{cid}: the C-terminal refold verdict is for a different or missing tagged protein"
+            )
+        verdict_reasons = v["verdict_reasons"] if v is not None else ""
         after, refold = None, ""
         if d.action == RELOCATE:
             after, motif = RELOCATED[design]
@@ -785,7 +824,7 @@ def build(pending_ok: bool = False) -> tuple[list[dict], dict]:
                 "export it with --export-proteins, refold it, and add its verdict row"
             )
             after = d.site
-            refold = REFOLD_REASON.format(why=v["verdict_reasons"], site=after)
+            refold = REFOLD_REASON.format(why=verdict_reasons, site=after)
         orf = constructs[manifest[cid]["key"]]["construct"]
         m = {**m, "design_id": design, "refold_reason": refold}
         row = build_one(m, orf, native, encodings[cid]["cassette_nt"], tag_fixed, after)
@@ -799,6 +838,15 @@ def build(pending_ok: bool = False) -> tuple[list[dict], dict]:
             continue
         rows.append(row)
     rows += snorkel_rows
+    assert len({r["candidate_id"] for r in rows}) == len(rows), "duplicate candidate_id in rows"
+    assert len({r["design_id"] for r in rows}) == len(rows), "duplicate design_id in rows"
+    non_empty_arms = [r["arm_id"] for r in rows if r.get("arm_id")]
+    assert len(non_empty_arms) == len(set(non_empty_arms)), (
+        "duplicate arm_id in C-term/snorkel rows"
+    )
+    assert len(rows) + len(held) == len(members) + len(snorkel_rows), (
+        f"silent row drop: built {len(rows)} + held {len(held)} != {len(members) + len(snorkel_rows)}"
+    )
     n_bb = vector_check(rows)
     swap = swap_check(rows, manifest, constructs)
     summary = {

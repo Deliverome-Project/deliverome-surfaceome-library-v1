@@ -45,10 +45,10 @@ REPO = EXP.parents[2]
 EXP_REL = "library/l1/orf-design"
 
 #: The order of record (synthesis_compliance.FASTA_KEY), pinned by SHA-256.
-FASTA_KEY = "sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-23-pre-freeze/l1_order_inserts_recoded.fasta"
-FASTA_SHA256 = "8796cc87"  # prefix; superseded: 2026-11-13/ (d1257f0a), -one-arm/ (1f29936b), -one-arm-renamed/ (b426e433)
+FASTA_KEY = "sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-24-pre-freeze-b/l1_order_inserts_recoded.fasta"
+FASTA_SHA256 = "0d712d97"  # prefix; superseded: 2026-11-23-pre-freeze/ (8796cc87), 2026-11-13/ (d1257f0a), -one-arm/ (1f29936b), -one-arm-renamed/ (b426e433)
 #: l1-tag-refold's structure table (PR #301) at the commit checked.
-REFOLD_COMMIT = "e3336caf"  # main at the final regeneration (2026-11-14); was 3a7dfbd9 (#301)
+REFOLD_COMMIT = "7dc06001"  # pre-order biological audit cut (2026-11-24)
 STRUCTURES = f"{EXP_REL}/tag_refold_structures.tsv"
 #: A mature chain may drop at most this many N-terminal residues (leader + SP); longer
 #: differences are reported as unmatched, never silently accepted.

@@ -1,12 +1,12 @@
 {
-  "integration_ref": "e3336caf6b0e4c084cbfeec9e5d189015794284e",
-  "inserts": 3384,
+  "integration_ref": "7dc06001adfd2e6438aa3387c24f574e1a237375",
+  "inserts": 3375,
   "by_rung": {
     "C-terminal/snorkel": 361,
     "N after SP": 1322,
     "N at residue 1, multipass": 568,
     "N at residue 1, type III": 43,
-    "internal": 1090
+    "internal": 1081
   },
   "insert_checks_failed": {
     "wrapper_only": [],
@@ -15,10 +15,10 @@
     "protein_matches_table": []
   },
   "extra_type_iis_reported": {
-    "SapI": 3384,
-    "AarI": 1508,
-    "BtgZI": 1426,
-    "PaqCI": 1508
+    "SapI": 3375,
+    "AarI": 1507,
+    "BtgZI": 1419,
+    "PaqCI": 1507
   },
   "barcode_slots_not_one": [],
   "native_nt_not_verbatim": {
@@ -37,22 +37,22 @@
     "edits_new_polya": 2
   },
   "swap_tract_final_dna": {
-    "inserts_measured": 3384,
+    "inserts_measured": 3375,
     "median_nt": 50.0,
     "max_nt": 3856,
     "over_80": 326,
     "over_100": 297
   },
   "swap_tract_same_member": {
-    "pairs": 883,
-    "members": 399,
-    "inserts_in_multi_arm_members": 1040,
-    "fraction_of_inserts": 0.3073,
-    "tract_nt_median": 320.0,
+    "pairs": 867,
+    "members": 397,
+    "inserts_in_multi_arm_members": 1029,
+    "fraction_of_inserts": 0.3049,
+    "tract_nt_median": 302.0,
     "tract_nt_min": 41,
     "tract_nt_max": 3405,
-    "pairs_over_100": 615,
-    "modelled_swap_median": 0.1438,
+    "pairs_over_100": 599,
+    "modelled_swap_median": 0.137,
     "modelled_swap_max": 0.4865,
     "modelled_swap_at_100_nt_gate": 0.0503
   },
@@ -82,13 +82,13 @@
     "draw_replay_note": "replayed against the registry rows that precede the block, with today's local barcode tables"
   },
   "recoded": {
-    "recoded_fasta": "processed://sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-23-pre-freeze/l1_order_inserts_recoded.fasta",
-    "recoded_inserts": 3384,
+    "recoded_fasta": "processed://sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-24-pre-freeze-b/l1_order_inserts_recoded.fasta",
+    "recoded_inserts": 3375,
     "retired_members_still_in_order": 0,
     "rebuilt_since_order_not_compared": [],
     "not_in_original_set": 0,
-    "inserts_recoded": 207,
-    "codons_recoded": 810,
+    "inserts_recoded": 206,
+    "codons_recoded": 780,
     "problems": {
       "new unscreened Type IIS site (AarI/PaqCI/BtgZI/SapI)": 2
     },
@@ -100,6 +100,6 @@
       "inserts_whose_tract_grew": 0,
       "largest_growth_nt": 0
     },
-    "recoded_fasta_sha256": "8796cc8740196fbc041696809f4dc0b2b5bf02b63974a23f357fa3e4a3e0890a"
+    "recoded_fasta_sha256": "0d712d97e812bfc19815fe8de384d39d13282f897f9f06220641d9a31be2a9a9"
   }
 }

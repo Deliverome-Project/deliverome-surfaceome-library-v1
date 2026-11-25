@@ -404,29 +404,44 @@ def test_l1_internal_arm_decisions_hygiene_and_audit_flags():
     ):
         assert rows[aid]["veto_class"] == "none", aid
 
-    # Audited arms keep decision == "build" and carry transparent audit_flag
-    for aid in (
-        "l1-p1961-a2",
+    # Defective/redundant pre-order audit arms were cleanly dropped or swapped out (2026-11-24)
+    for dropped_or_replaced in (
+        "l1-p0113-a6",
         "l1-p1961-a3",
         "l1-p1961-a4",
         "l1-p3281-a4",
         "l1-p3281-a5",
         "l1-p0163-a2",
+        "l1-p0347-a5",
+        "l1-p0349-a2",
         "l1-p1204-a3",
         "l1-p1675-a2",
         "l1-p1181-a1",
         "l1-p0188-a2",
-        "l1-p2278-a1",
         "l1-p2278-a3",
-        "l1-p0846-a3",
         "l1-p0846-a4",
-        "l1-p2354-a4",
         "l1-p2354-a5",
         "l1-p0131-a4",
-        "l1-p0131-a5",
         "l1-p2015-a3",
-        "l1-p2015-a4",
     ):
+        assert dropped_or_replaced not in rows, dropped_or_replaced
+
+    # Replacement arms are built with passing refolds
+    for replacement in (
+        "l1-p0163-a1",
+        "l1-p0347-a4",
+        "l1-p0349-a1",
+        "l1-p1204-a2",
+        "l1-p0188-a3",
+        "l1-p1675-a3",
+        "l1-p2278-a2",
+        "l1-p2354-a3",
+    ):
+        assert rows[replacement]["decision"] == "build", replacement
+        assert rows[replacement]["refold_verdict"] == "pass", replacement
+
+    # Remaining usable=0 arms carry transparent audit_flag notes
+    for aid in ("l1-p1961-a2", "l1-p0163-a1"):
         assert rows[aid]["decision"] == "build", aid
         assert "audit_flag:" in rows[aid]["flag"], aid
 

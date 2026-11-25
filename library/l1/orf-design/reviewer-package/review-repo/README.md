@@ -28,8 +28,8 @@ You need [uv](https://docs.astral.sh/uv/) and the frozen input bundle, attached 
 repository's release
 [`bundle-2026-11-21b`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/releases/tag/bundle-2026-11-21b)
 as two tarballs (or the latest release matching [`bundle_manifest.tsv`](library/l1/orf-design/reviewer-package/bundle_manifest.tsv),
-which currently indexes **3,509 files**: **3,245** `read_by_replay=yes` files [2.95 GB uncompressed]
-and **264** `read_by_replay=no` supplement files [1.93 GB uncompressed]).
+which currently indexes **3,510 files**: **3,245** `read_by_replay=yes` files [2.95 GB uncompressed]
+and **265** `read_by_replay=no` supplement files [1.94 GB uncompressed]).
 For `bundle-2026-11-21b`: `l1-reviewer-bundle-2026-11-21b.tar.gz` holds the 3,125 replay files
 (1.38 GB compressed, SHA-256 `f34eb18f6d99beafc6607798b3bb12ffdafa54eb94e406566de453b4d43924ac`)
 and `l1-pinned-releases-2026-11-21b.tar` holds the 251 supplement files for inspection only
@@ -44,7 +44,7 @@ and a test fails if any file of the bundle is missing from it:
 |---|---|---|
 | public bucket / upstream source | the public releases whose terms allow redistribution: Ensembl 115/116 and Compara, the AlphaFold DB models, UniProt, APPRIS (CC BY-NC-ND 4.0 unmodified, non-commercial), Pfam, HPA v23 and the accessible-surfaceome release (**2,892** files on public R2 [2.84 GB] + **1** Pfam-A file [0.66 GB] at EBI's identical copy = **2,893** public files, 3.50 GB; each row names its license) | anyone, no account: <https://pub-e53f37f6fe6b4745829c2066350fe26f.r2.dev/> + the `location` column (Pfam-A, 658 MB, at EBI's identical copy instead), or `uv run --locked python public_data.py fetch --out ../l1-reviewer-bundle` (checks every SHA-256) |
 | this repository | small tables (≤ 5 MB), **198** files (0.09 GB) | already here, under `data/<bucket>/<key>` |
-| release | everything else (**418** files, 1.29 GB): our own predictions and records, and public sources whose redistribution terms are unclear or restricted (PeptideAtlas, OpenProt, ARCHS4, the Tedman et al. tables, and private `accessible-surfaceome` repo snapshots) | the release tarballs above, which also hold the complete bundle |
+| release | everything else (**419** files, 1.30 GB): our own predictions and records, and public sources whose redistribution terms are unclear or restricted (PeptideAtlas, OpenProt, ARCHS4, the Tedman et al. tables, and private `accessible-surfaceome` repo snapshots) | the release tarballs above, which also hold the complete bundle |
 
 The release tarballs alone are enough to rerun everything; the public bucket and `data/` are
 for reading or citing individual files without them.

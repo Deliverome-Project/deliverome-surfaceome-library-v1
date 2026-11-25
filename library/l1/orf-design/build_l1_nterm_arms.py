@@ -56,6 +56,7 @@ import argparse
 import csv
 import hashlib
 import json
+import math
 import sys
 import tempfile
 from collections import Counter
@@ -73,7 +74,7 @@ LEADER_AA = qc.IGK_LEADER_AA
 PLUS1 = qc.IGK_PLUS1_NT
 PLUS1_AA = qc.IGK_PLUS1_AA
 
-HERE = Path(__file__).parent
+HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[2]
 sys.path.insert(0, str(REPO / "library/l1/proteoform-selection"))
 
@@ -88,6 +89,8 @@ CONSTRUCTS_KEY = ld.CONSTRUCTS_KEY
 BARCODE_SLOT = qc.BARCODE_SLOT
 ENZYMES = list(qc.DOMESTICATION_ENZYMES)
 BUILT_ARMS = ("native_site", "igk_swap")
+NON_BUILT_ARMS = ("no_nterm_arm", "routed_internal")
+VALID_ARMS = BUILT_ARMS + NON_BUILT_ARMS
 
 COLUMNS = [
     "candidate_id",
@@ -124,22 +127,60 @@ def read_table(path: Path) -> list[dict]:
         return list(csv.DictReader(fh, delimiter="\t"))
 
 
+def _index_unique(rows: list[dict], key: str, label: str) -> dict[str, dict]:
+    out: dict[str, dict] = {}
+    for row in rows:
+        k = (row.get(key) or "").strip()
+        if not k:
+            raise ValueError(f"{label}: missing/empty {key!r}")
+        if k in out:
+            raise ValueError(f"{label}: duplicate {key} {k!r}")
+        out[k] = row
+    return out
+
+
+def _parse_int_strict(raw: object, field: str, ctx: str) -> int:
+    text = ("" if raw is None else str(raw)).strip()
+    if not text:
+        raise ValueError(f"{ctx}: missing/empty {field}")
+    try:
+        val = float(text)
+    except ValueError as exc:
+        raise ValueError(f"{ctx}: non-numeric {field} {raw!r}") from exc
+    if not math.isfinite(val) or val != int(val):
+        raise ValueError(f"{ctx}: invalid {field} {raw!r}")
+    return int(val)
+
+
 def build_one(d: dict, orf: str, protein: str, tag_fixed: dict) -> dict | str:
     """The insert for one decided member, or a reason it cannot be built as decided.
 
     ``native_site``: ORF[:3n] + cassette + ORF[3n:]. ``igk_swap``: Igκ leader + Asp codon
     replace codons 1..c, then ORF[3c:3n] + cassette + ORF[3n:] (n is the native residue).
     """
-    cid, n = d["candidate_id"], int(d["native_after_residue"])
+    cid = (d.get("candidate_id") or "").strip()
+    assert cid, "nterm decision missing candidate_id"
+    assert d.get("arm") in BUILT_ARMS, f"{cid}: unexpected arm {d.get('arm')!r}"
+    n = _parse_int_strict(d.get("native_after_residue"), "native_after_residue", cid)
+    assert 0 < n < len(protein), (
+        f"{cid}: native_after_residue {n} out of range 1..{len(protein) - 1}"
+    )
     assert seqtools.translate(orf) == protein + "*", f"{cid}: ORF does not encode its protein"
     cas = arm_cassette(cid)
     assert all(cas[3 * i : 3 * i + 3] == c for i, c in tag_fixed.items()), "not p003's tags"
     if d["arm"] == "igk_swap":
-        c = int(d["igk_replaces_residues"].split("-")[1])
+        parts = (d.get("igk_replaces_residues") or "").split("-")
+        assert len(parts) == 2, (
+            f"{cid}: malformed igk_replaces_residues {d.get('igk_replaces_residues')!r}"
+        )
+        c = _parse_int_strict(parts[1], "igk_replaces_residues", cid)
+        assert 0 < c <= n, f"{cid}: igk_replaces_residues end {c} outside 1..{n}"
         head = LEADER + PLUS1 + orf[3 * c : 3 * n]
         expect = LEADER_AA + PLUS1_AA + protein[c:n] + CASSETTE_AA + protein[n:]
         after = len(LEADER_AA) + len(PLUS1_AA) + (n - c)
-        assert after == int(d["insert_after_residue"]), f"{cid}: Igκ site does not map"
+        assert after == _parse_int_strict(
+            d.get("insert_after_residue"), "insert_after_residue", cid
+        ), f"{cid}: Igκ site does not map"
     else:
         head, expect, after = orf[: 3 * n], protein[:n] + CASSETTE_AA + protein[n:], n
     coding = head + cas + orf[3 * n :]
@@ -212,6 +253,8 @@ def seam_fix(head: str, rest: str, cas: str) -> tuple[str, str, str]:
         i = len(seq) - 3 * k if side == "before" else 3 * k
         if side == "before" and i < 3:  # never touch the start codon
             continue
+        if side == "after" and i + 3 > len(seq) - 3:  # never touch the stop codon
+            continue
         old = seq[i : i + 3]
         for codon, _ in syn[seqtools.translate(old)]:
             if codon == old:
@@ -236,21 +279,36 @@ def build() -> tuple[list[dict], dict]:
     from deliverome_analysis.s3 import processed
 
     decisions = read_table(DECISIONS)
-    manifest = {r["candidate_id"]: r for r in read_table(MANIFEST) if ld.is_active(r)}
+    _index_unique(decisions, "candidate_id", DECISIONS.name)
+    _index_unique(decisions, "design_id", DECISIONS.name)
+    bad_arms = [
+        (d["candidate_id"], d.get("arm")) for d in decisions if d.get("arm") not in VALID_ARMS
+    ]
+    assert not bad_arms, f"{DECISIONS.name}: unknown arm values: {bad_arms[:5]}"
+    manifest = _index_unique(
+        [r for r in read_table(MANIFEST) if ld.is_active(r)], "candidate_id", MANIFEST.name
+    )
     proteins = ld.designed_proteins(MANIFEST, library=ld.LIBRARY_L1)
     constructs = json.loads(Path(processed.download(CONSTRUCTS_KEY)).read_text())
     tag_fixed = qc.p003_tag_codons()
     rows, held = [], []
+    expected_built = 0
     for d in decisions:
         if d["arm"] not in BUILT_ARMS:
             continue
+        expected_built += 1
         cid = d["candidate_id"]
+        assert cid in manifest, f"{cid}: built N-after-SP decision missing from active manifest"
+        assert cid in proteins, f"{cid}: built N-after-SP decision missing designed protein"
         orf = constructs[manifest[cid]["key"]]["construct"]
         out = build_one(d, orf, proteins[cid]["sequence"], tag_fixed)
         if isinstance(out, str):
             held.append({"candidate_id": cid, "gene_symbol": d["gene_symbol"], "reason": out})
         else:
             rows.append(out)
+    assert len(rows) + len(held) == expected_built, (
+        f"silent row drop: built {len(rows)} + held {len(held)} != expected {expected_built}"
+    )
     n_bb = vector_check(rows)
     summary = {
         "tranche": "l1",

@@ -28,6 +28,10 @@ jobs:
         run: |
           uv run --locked python library/l1/orf-design/pinned_refs.py
           uv run --locked python library/l1/orf-design/reviewer-package/bundle.py audit
+      - name: Offline validation and cassette-diversity replay
+        run: |
+          uv run --locked python library/l1/orf-design/refold_check_clash_validation.py --report-only
+          uv run --locked python library/l1/orf-design/diversify_arm_cassettes.py --check
       - name: Markdown relative-link and CITATION.cff check
         run: |
           uv run --locked python - <<'PY'

@@ -51,6 +51,7 @@ import argparse
 import csv
 import hashlib
 import json
+import math
 import os
 import tempfile
 from collections import Counter
@@ -64,7 +65,7 @@ from deliverome_analysis import library_design as ld
 from deliverome_analysis import plasmid_qc as qc
 from deliverome_analysis import seqtools
 
-HERE = Path(__file__).parent
+HERE = Path(__file__).resolve().parent
 S5E13 = HERE.parents[1] / "l1" / "tag-site-benchmarking"
 
 MANIFEST = HERE / "candidate_manifest_tranches.tsv"
@@ -120,17 +121,49 @@ COLUMNS = [
 ARM_COLUMNS = ["arm_id", "arm_role", "construct_key", "order_verdict", "flag"]
 
 
+VALID_ARM_DECISIONS = frozenset({"build", "hold"})
+VALID_LOOP_VETO_CLASSES = frozenset({"none", "soft"})
+VALID_REFOLD_DISPOSITIONS = frozenset({"pass", "fail_flagged", "pending"})
+
+
 def read_table(path: Path) -> list[dict]:
     with path.open() as fh:
         return list(csv.DictReader(fh, delimiter="\t"))
+
+
+def _index_unique(rows: list[dict], key: str, label: str) -> dict[str, dict]:
+    out: dict[str, dict] = {}
+    for row in rows:
+        k = (row.get(key) or "").strip()
+        if not k:
+            raise ValueError(f"{label}: missing/empty {key!r}")
+        if k in out:
+            raise ValueError(f"{label}: duplicate {key} {k!r}")
+        out[k] = row
+    return out
+
+
+def _parse_int_strict(raw: object, field: str, ctx: str) -> int:
+    text = ("" if raw is None else str(raw)).strip()
+    if not text:
+        raise ValueError(f"{ctx}: missing/empty {field}")
+    try:
+        val = float(text)
+    except ValueError as exc:
+        raise ValueError(f"{ctx}: non-numeric {field} {raw!r}") from exc
+    if not math.isfinite(val) or val != int(val):
+        raise ValueError(f"{ctx}: invalid {field} {raw!r}")
+    return int(val)
 
 
 def decisions() -> dict[str, dict]:
     """The ranker's one decision per member, keyed by design_id."""
     out = {}
     for r in read_table(DECISIONS):
-        assert r["design_id"] not in out, f"{r['design_id']}: two decisions"
-        out[r["design_id"]] = r
+        did = (r.get("design_id") or "").strip()
+        assert did, f"{DECISIONS.name}: row missing design_id"
+        assert did not in out, f"{did}: two decisions"
+        out[did] = r
     return out
 
 
@@ -138,27 +171,44 @@ def arm_calls(path: Path | None = None) -> dict[str, list[dict]] | None:
     """The ranker's loop arms to build, per design_id, or None when there is no per-arm table.
 
     Checks the agreed invariants on the whole table: arm ids are unique and belong to their
-    design; a member has at most three loop arms to build; a snorkel row is ``build`` only if the
-    member also has a loop to build (a snorkel is never a member's only arm).
+    design; decisions are strictly ``build`` or ``hold``; built loop arms carry valid
+    ``veto_class`` (never ``hard`` or missing/NaN) and ``refold_disposition`` when those columns
+    are present; a member has at most three loop arms to build; a snorkel row is ``build`` only
+    if the member also has a loop to build (a snorkel is never a member's only arm).
     """
     path = path or ARM_DECISIONS
     if not path.exists():
         return None
     rows = read_table(path)
-    ids = [r["arm_id"] for r in rows]
+    ids = [(r.get("arm_id") or "").strip() for r in rows]
+    assert all(ids), f"{path.name}: row missing arm_id"
     assert len(ids) == len(set(ids)), "duplicate arm_id in the per-arm decisions"
     by: dict[str, list[dict]] = {}
     snorkel_build: dict[str, int] = Counter()
     for r in rows:
-        assert r["arm_id"].startswith(r["design_id"] + "-a"), f"{r['arm_id']}: not of its design"
-        if r["decision"] != "build":
+        did = (r.get("design_id") or "").strip()
+        aid = r["arm_id"].strip()
+        assert did and aid.startswith(did + "-a"), f"{aid}: not of its design {did!r}"
+        dec = (r.get("decision") or "").strip()
+        assert dec in VALID_ARM_DECISIONS, f"{aid}: unknown decision {r.get('decision')!r}"
+        if dec != "build":
             continue
         if r["arm_kind"] == "loop":
-            by.setdefault(r["design_id"], []).append(r)
+            if "veto_class" in r:
+                vc = (r.get("veto_class") or "").strip().lower()
+                assert vc in VALID_LOOP_VETO_CLASSES, (
+                    f"{aid}: invalid/hard veto_class {r.get('veto_class')!r} on built loop arm"
+                )
+            if "refold_disposition" in r:
+                rd = (r.get("refold_disposition") or "").strip()
+                assert rd in VALID_REFOLD_DISPOSITIONS, (
+                    f"{aid}: malformed refold_disposition {r.get('refold_disposition')!r}"
+                )
+            by.setdefault(did, []).append(r)
         elif r["arm_kind"] == "snorkel":
-            snorkel_build[r["design_id"]] += 1
+            snorkel_build[did] += 1
         else:
-            raise AssertionError(f"{r['arm_id']}: unknown arm_kind {r['arm_kind']!r}")
+            raise AssertionError(f"{aid}: unknown arm_kind {r['arm_kind']!r}")
     for did, arms in by.items():
         assert len(arms) <= 3, f"{did}: {len(arms)} loop arms to build (at most 3)"
     for did in snorkel_build:
@@ -168,7 +218,8 @@ def arm_calls(path: Path | None = None) -> dict[str, list[dict]] | None:
 
 def build_one(member: dict, site: dict, orf: str, protein: str, tag_fixed: dict) -> dict | str:
     """The insert for one site, or a reason it cannot be built as proposed."""
-    did, n = member["design_id"], int(float(site["insert_after_residue"]))
+    did = member["design_id"]
+    n = _parse_int_strict(site.get("insert_after_residue"), "insert_after_residue", did)
     assert seqtools.translate(orf) == protein + "*", f"{did}: ORF does not encode its protein"
     cas = arm_cassette(site.get("arm_id") or f"{did}:internal{n}")
     assert qc.keeps_p003_tag_codons(cas), "not p003's tags"
@@ -241,38 +292,62 @@ def build_one(member: dict, site: dict, orf: str, protein: str, tag_fixed: dict)
     }
 
 
+def _load_internal_members() -> tuple[list[dict], dict[str, dict]]:
+    """Active internal-rung members and manifest with strict key uniqueness checks."""
+    mapping_rows = read_table(MAPPING)
+    _index_unique(mapping_rows, "candidate_id", MAPPING.name)
+    _index_unique(mapping_rows, "design_id", MAPPING.name)
+    tp_rows = read_table(TAG_PATHS)
+    _index_unique(tp_rows, "candidate_id", TAG_PATHS.name)
+    # candidate_id has equalled design_id since the per-insert cut (final-e); a member added
+    # after the last renumbering (which runs at the cut) maps to itself.
+    design = {r["candidate_id"]: r["candidate_id"] for r in tp_rows} | {
+        r["candidate_id"]: r["design_id"] for r in mapping_rows
+    }
+    members = [
+        {**r, "design_id": design[r["candidate_id"]]}
+        for r in tp_rows
+        if r["placement"] == "internal"
+    ]
+    active_manifest = [r for r in read_table(MANIFEST) if ld.is_active(r)]
+    manifest = _index_unique(active_manifest, "candidate_id", MANIFEST.name)
+    missing_m = sorted(m["candidate_id"] for m in members if m["candidate_id"] not in manifest)
+    assert not missing_m, f"internal members missing from active manifest: {missing_m[:5]}"
+    return members, manifest
+
+
 def build() -> tuple[list[dict], dict]:
     from deliverome_analysis.s3 import processed
 
-    # candidate_id has equalled design_id since the per-insert cut (final-e); a member added
-    # after the last renumbering (which runs at the cut) maps to itself.
-    design = {r["candidate_id"]: r["design_id"] for r in read_table(MAPPING)}
-    design = {r["candidate_id"]: r["candidate_id"] for r in read_table(TAG_PATHS)} | design
-    members = [
-        {**r, "design_id": design[r["candidate_id"]]}
-        for r in read_table(TAG_PATHS)
-        if r["placement"] == "internal"
-    ]
-    manifest = {r["candidate_id"]: r for r in read_table(MANIFEST) if ld.is_active(r)}
+    members, manifest = _load_internal_members()
     proteins = ld.designed_proteins(MANIFEST, library=ld.LIBRARY_L1)
     constructs = json.loads(Path(processed.download(ld.CONSTRUCTS_KEY)).read_text())
     tag_fixed = qc.p003_tag_codons()
     calls = decisions()
     per_arm = arm_calls()
+    if per_arm is not None:
+        member_dids = {m["design_id"] for m in members}
+        orphans = sorted(set(per_arm) - member_dids)
+        assert not orphans, f"per-arm build loop decisions not on the internal rung: {orphans[:5]}"
 
     rows, held, no_site, not_built = [], [], [], []
     for m in sorted(members, key=lambda r: r["design_id"]):
         cid, did = m["candidate_id"], m["design_id"]
+        assert cid in proteins, f"{did} ({cid}): missing designed protein"
         protein = proteins[cid]["sequence"]
         assert hashlib.sha256(protein.encode()).hexdigest() == m["sequence_sha256"], (
             f"{did}: designed protein is not the tag-path sequence"
         )
         call = calls.get(did)
-        loops = (
-            [a for a in per_arm.get(did, []) if a["sequence_sha256"] == m["sequence_sha256"]]
-            if per_arm is not None
-            else None
-        )
+        if per_arm is not None:
+            raw_loops = per_arm.get(did, [])
+            stale_loops = [
+                a["arm_id"] for a in raw_loops if a["sequence_sha256"] != m["sequence_sha256"]
+            ]
+            assert not stale_loops, f"{did}: per-arm loop sequence_sha256 mismatch: {stale_loops}"
+            loops = raw_loops
+        else:
+            loops = None
         if loops:
             # Per-arm mode: the arm rows are the decision of record. A member whose one-site
             # decision was a snorkel or a hold can now carry loop arms (e.g. all_bad: two loops
@@ -329,6 +404,13 @@ def build() -> tuple[list[dict], dict]:
             held.append({"design_id": did, "gene_symbol": m["gene_symbol"], "reason": out})
         else:
             rows.append(out)
+    cids = [r["construct_id"] for r in rows]
+    assert len(cids) == len(set(cids)), "duplicate construct_id in built internal arms"
+    if per_arm is not None:
+        expected_arms = sum(len(v) for v in per_arm.values())
+        assert len(rows) + len(held) == expected_arms, (
+            f"silent arm drop: built {len(rows)} + held {len(held)} != expected {expected_arms}"
+        )
     checked = [r for r in rows if not r.get("provisional_seam")]
     n_bb = nterm.vector_check(checked) if checked else 0
     members_built = {r["design_id"] for r in rows}

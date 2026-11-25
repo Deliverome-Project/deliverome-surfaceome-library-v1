@@ -1,88 +1,88 @@
 {
-  "inserts": 3384,
+  "inserts": 3375,
   "inserts_source": "committed constructs_l1_*.fasta",
-  "inserts_sha256": "85d009b54a08e56f04e290df8d113c2ba54d4a712cac12e5cdc0c734ac499912",
+  "inserts_sha256": "76d911bf21bfdb78b784f8c7d9b89de092d5bc3b734cd42dcc2d3d51d59df0db",
   "cassette_encodings": "l1_arm_cassette_encodings.tsv",
   "checks": {
     "backbone": {
-      "pass": 3384
+      "pass": 3375
     },
     "esp3i_shuttle": {
-      "pass": 3384
+      "pass": 3375
     },
     "golden_gate_domestication": {
-      "pass": 3384
+      "pass": 3375
     },
     "insert_matches_design": {
-      "pass": 3384
+      "pass": 3375
     },
     "diversified_linker": {
-      "pass": 3384
+      "pass": 3375
     },
     "barcode": {
-      "pass": 3384
+      "pass": 3375
     },
     "proteoform": {
-      "pass": 3384
+      "pass": 3375
     },
     "membrane_anchor": {
-      "skip": 3384
+      "skip": 3375
     },
     "single_orf": {
-      "pass": 3384
+      "pass": 3375
     },
     "cassette_placement": {
-      "pass": 3384
+      "pass": 3375
     },
     "tag_codons": {
-      "pass": 3384
+      "pass": 3375
     },
     "linkers_not_shared": {
-      "pass": 3358,
+      "pass": 3349,
       "warn": 26
     },
     "type_iis_junctions": {
-      "pass": 3384
+      "pass": 3375
     },
     "shuttle_digest": {
-      "pass": 3384
+      "pass": 3375
     },
     "backbone_features": {
-      "pass": 3384
+      "pass": 3375
     },
     "extra_type_iis": {
-      "warn": 2541,
-      "pass": 843
+      "warn": 2533,
+      "pass": 842
     },
     "protein_matches_table": {
-      "pass": 3384
+      "pass": 3375
     },
     "layout": {
-      "pass": 3384
+      "pass": 3375
     },
     "insert_ends": {
-      "pass": 3384
+      "pass": 3375
     },
     "synthesis_windows": {
-      "pass": 1990,
-      "warn": 1394
+      "pass": 1983,
+      "warn": 1392
     },
     "cassette_not_shared": {
-      "pass": 3384
+      "pass": 3375
     },
     "cassette_region_tract": {
-      "pass": 2762,
+      "pass": 2753,
       "warn": 622
     }
   },
   "pool_checks": {
     "completeness": {
       "ok": true,
-      "detail": "2743 built members, 3384 inserts; missing [] (0), not a built member [] (0), arm count off [] (0), order vs tables [] (0)"
+      "detail": "2743 built members, 3375 inserts; missing [] (0), not a built member [] (0), arm count off [] (0), order vs tables [] (0)"
     }
   },
   "failing_checks": [],
-  "cassette_dna_variants": 3384,
+  "cassette_dna_variants": 3375,
   "largest_shared_cassette_group": 1,
   "cassette_region_tract_nt": {
     "median": 74.0,
@@ -109,8 +109,8 @@
     "ori"
   ],
   "runtime_s": {
-    "total": 19.9,
-    "tract": 11.4
+    "total": 21.3,
+    "tract": 12.5
   },
   "decided_by": "Becca, 2026-11-21 (\"we want the plasmid qc to run on the pool\")",
   "implemented_by": "Claude Code session l1-review-export-scope (pool QC fork)"
