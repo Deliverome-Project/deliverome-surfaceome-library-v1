@@ -82,13 +82,13 @@
     "draw_replay_note": "replayed against the registry rows that precede the block, with today's local barcode tables"
   },
   "recoded": {
-    "recoded_fasta": "processed://sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-24-pre-freeze-b/l1_order_inserts_recoded.fasta",
+    "recoded_fasta": "processed://sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-24-pre-freeze-c/l1_order_inserts_recoded.fasta",
     "recoded_inserts": 3375,
     "retired_members_still_in_order": 0,
     "rebuilt_since_order_not_compared": [],
     "not_in_original_set": 0,
-    "inserts_recoded": 206,
-    "codons_recoded": 780,
+    "inserts_recoded": 223,
+    "codons_recoded": 798,
     "problems": {
       "new unscreened Type IIS site (AarI/PaqCI/BtgZI/SapI)": 2
     },
@@ -100,6 +100,6 @@
       "inserts_whose_tract_grew": 0,
       "largest_growth_nt": 0
     },
-    "recoded_fasta_sha256": "0d712d97e812bfc19815fe8de384d39d13282f897f9f06220641d9a31be2a9a9"
+    "recoded_fasta_sha256": "ef810d1d7ae674f6d0409398d2463d6f0a476d1dd7c638e0c0cc23426027e8d2"
   }
 }

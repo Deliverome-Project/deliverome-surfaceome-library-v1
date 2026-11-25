@@ -950,6 +950,104 @@
     "per_well_inserts": 111
    }
   },
+  "subpool_strategies": {
+   "k1_per_plate": {
+    "x2.0": {
+     "subpool_tubes": 36,
+     "worst_from_target_fold": 1.34,
+     "worst_plate": 35,
+     "total_max_min_skew_fold": 1.79,
+     "p95_from_target_fold": 1.1,
+     "master_pool_ul_min": 26.84,
+     "master_pool_ul_max": 611.3,
+     "tubes_below_2ul": 0
+    },
+    "x2.5": {
+     "subpool_tubes": 36,
+     "worst_from_target_fold": 1.45,
+     "worst_plate": 35,
+     "total_max_min_skew_fold": 2.12,
+     "p95_from_target_fold": 1.13,
+     "master_pool_ul_min": 11.95,
+     "master_pool_ul_max": 655.6,
+     "tubes_below_2ul": 0
+    },
+    "x3.5": {
+     "subpool_tubes": 36,
+     "worst_from_target_fold": 1.65,
+     "worst_plate": 35,
+     "total_max_min_skew_fold": 2.72,
+     "p95_from_target_fold": 1.18,
+     "master_pool_ul_min": 3.53,
+     "master_pool_ul_max": 728.4,
+     "tubes_below_2ul": 0
+    }
+   },
+   "k2_per_plate": {
+    "x2.0": {
+     "subpool_tubes": 72,
+     "worst_from_target_fold": 1.16,
+     "worst_plate": 35,
+     "total_max_min_skew_fold": 1.35,
+     "p95_from_target_fold": 1.05,
+     "master_pool_ul_min": 13.05,
+     "master_pool_ul_max": 355.3,
+     "tubes_below_2ul": 0
+    },
+    "x2.5": {
+     "subpool_tubes": 72,
+     "worst_from_target_fold": 1.21,
+     "worst_plate": 35,
+     "total_max_min_skew_fold": 1.47,
+     "p95_from_target_fold": 1.07,
+     "master_pool_ul_min": 5.76,
+     "master_pool_ul_max": 397.8,
+     "tubes_below_2ul": 0
+    },
+    "x3.5": {
+     "subpool_tubes": 72,
+     "worst_from_target_fold": 1.3,
+     "worst_plate": 35,
+     "total_max_min_skew_fold": 1.68,
+     "p95_from_target_fold": 1.09,
+     "master_pool_ul_min": 1.68,
+     "master_pool_ul_max": 471.7,
+     "tubes_below_2ul": 1
+    }
+   },
+   "k4_per_plate": {
+    "x2.0": {
+     "subpool_tubes": 144,
+     "worst_from_target_fold": 1.1,
+     "worst_plate": 36,
+     "total_max_min_skew_fold": 1.21,
+     "p95_from_target_fold": 1.02,
+     "master_pool_ul_min": 6.31,
+     "master_pool_ul_max": 186.7,
+     "tubes_below_2ul": 0
+    },
+    "x2.5": {
+     "subpool_tubes": 144,
+     "worst_from_target_fold": 1.13,
+     "worst_plate": 36,
+     "total_max_min_skew_fold": 1.28,
+     "p95_from_target_fold": 1.03,
+     "master_pool_ul_min": 2.76,
+     "master_pool_ul_max": 212.1,
+     "tubes_below_2ul": 0
+    },
+    "x3.5": {
+     "subpool_tubes": 144,
+     "worst_from_target_fold": 1.18,
+     "worst_plate": 36,
+     "total_max_min_skew_fold": 1.39,
+     "p95_from_target_fold": 1.04,
+     "master_pool_ul_min": 0.8,
+     "master_pool_ul_max": 257.1,
+     "tubes_below_2ul": 28
+    }
+   }
+  },
   "cds_with_construct": 2743,
   "cds_with_2_or_3_constructs": 397,
   "constructs_of_cds_with_2_or_3": 1029

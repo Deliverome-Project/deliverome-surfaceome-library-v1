@@ -82,3 +82,29 @@ def test_recoder_fixes_a_gc_rich_stretch_without_changing_protein_or_cassette():
     assert new_orf[:3] == "ATG"
     assert sc.metrics(out)["max_gc50"] < before["max_gc50"]
     assert rec.edits and all(e["from_codon"] != e["to_codon"] for e in rec.edits)
+
+
+def test_recoder_rejects_new_polya_signal_and_committed_recodes_use_common_codons():
+    # Toy ORF where a candidate edit would create ATTAAA or AATAAA must be rejected by acceptable()
+    orf = "ATG" + "GCT" * 5 + "GAA" + "AAG" + _cassette_dna() + "TAA"
+    ins = _toy_insert(orf)
+    rec = sc.Recoder(ins, seqtools.synonymous_codons(min_usage=sc.MIN_USAGE))
+    # Place AAT directly upstream of AAA (codon 6 -> AAT creates AATAAA if codon 7 is AAA)
+    rec.codons[6] = "AAC"
+    rec.codons[7] = "AAA"
+    rec.polya0 = sum(rec.seq().count(p) for p in sc.POLYA)
+    assert rec.acceptable(6, "AAT") is False
+
+    # Every committed recode must use a >=10% human codon and include the 14 polya/donor fixes
+    syn_map = {
+        c: freq
+        for aa_list in seqtools.synonymous_codons(min_usage=0.0).values()
+        for c, freq in aa_list
+    }
+    with (S4E9 / "synthesis_recodes.tsv").open() as fh:
+        rows = list(csv.DictReader(fh, delimiter="\t"))
+    assert rows
+    assert all(syn_map[r["to_codon"]] >= sc.MIN_USAGE for r in rows)
+    reasons = [r["reason"] for r in rows]
+    assert reasons.count("domestication_polya") == 4
+    assert reasons.count("domestication_splice_donor") == 10

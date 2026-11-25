@@ -1,7 +1,7 @@
 {
   "main": "7dc06001adfd2e6438aa3387c24f574e1a237375",
-  "tag": "2026-11-24-pre-freeze-b",
-  "fasta_key": "sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-24-pre-freeze-b/l1_order_inserts_recoded.fasta",
-  "fasta_sha256": "0d712d97e812bfc19815fe8de384d39d13282f897f9f06220641d9a31be2a9a9",
-  "published_from": "4108066d1c4c070509d5d0ce657ca082080d67ea"
+  "tag": "2026-11-24-pre-freeze-c",
+  "fasta_key": "sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-24-pre-freeze-c/l1_order_inserts_recoded.fasta",
+  "fasta_sha256": "ef810d1d7ae674f6d0409398d2463d6f0a476d1dd7c638e0c0cc23426027e8d2",
+  "published_from": "96484ceedfacf33476b04a3b671e12c5e3174ea7"
 }

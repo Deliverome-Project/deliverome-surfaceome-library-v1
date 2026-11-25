@@ -6,7 +6,7 @@
   "pool_share_1_over": 12213,
   "min_block_nt": 20,
   "background_partners_sampled_per_barcode": 96,
-  "specific_pairs": 113014,
+  "specific_pairs": 113016,
   "same_cds_pairs": {
     "pairs": 867,
     "suffix_tract_median_nt": 302.0,
@@ -22,13 +22,13 @@
     "over_gate": 491
   },
   "library_fraction_wrong_protein": {
-    "specific_mislabel": 0.0008680298530223324,
-    "specific_chimera": 0.002156421177497718,
-    "background_mislabel": 0.021763681327555722,
-    "background_chimera": 0.031267674689927194,
-    "total": 0.056055807048002976,
-    "not_counted_leader_swap": 0.02011433305218879,
-    "total_including_leader_swap": 0.07617014010019175
+    "specific_mislabel": 0.0008680404456470044,
+    "specific_chimera": 0.002156430083942734,
+    "background_mislabel": 0.021763705421922856,
+    "background_chimera": 0.03126909748237861,
+    "total": 0.0560572734338912,
+    "not_counted_leader_swap": 0.02011277819732569,
+    "total_including_leader_swap": 0.0761700516312169
   },
   "per_barcode_impurity": {
     "median": 0.0457668290899126,
@@ -38,10 +38,10 @@
     "by_rung_median": {
       "nterm": {
         "inserts": 1322,
-        "impurity": 0.042298388026261347,
+        "impurity": 0.04230169783459482,
         "mislabel": 0.0221343460528486,
-        "chimera": 0.02023236279359341,
-        "leader_swap": 0.03257630672540873
+        "chimera": 0.02023576869266426,
+        "leader_swap": 0.03257181665192325
       },
       "type3": {
         "inserts": 43,
@@ -85,7 +85,7 @@
       1751.0,
       2540.0
     ],
-    "spearman_vs_insert_length": 0.23357618463144122,
+    "spearman_vs_insert_length": 0.23359878621405095,
     "barcodes_over_cut": {
       "cut": 0.01,
       "count": 15,
@@ -107,17 +107,17 @@
   },
   "wrong_protein_by_block_region": {
     "background|chimera|native CDS": 2.8640484485050267e-05,
-    "background|chimera|tag cassette": 0.031239034205442134,
+    "background|chimera|tag cassette": 0.03124045699789355,
     "background|leader swap|native CDS": 7.6722668432428e-06,
-    "background|leader swap|tag cassette": 0.019618464883179497,
-    "background|mislabel|3' tail": 0.021517732090125197,
+    "background|leader swap|tag cassette": 0.01961689393050587,
+    "background|mislabel|3' tail": 0.021517756184492323,
     "background|mislabel|native CDS": 2.145625346485196e-06,
     "background|mislabel|tag cassette": 0.00024380361208406966,
-    "specific|chimera|native CDS": 0.001425686231497297,
-    "specific|chimera|tag cassette": 0.000730734946000437,
+    "specific|chimera|native CDS": 0.0014256862199410402,
+    "specific|chimera|tag cassette": 0.0007307438640017106,
     "specific|leader swap|native CDS": 3.861664552232422e-06,
-    "specific|leader swap|tag cassette": 0.00048433423761382873,
-    "specific|mislabel|3' tail": 0.0004854471161925857,
+    "specific|leader swap|tag cassette": 0.00048435033542435635,
+    "specific|mislabel|3' tail": 0.00048545770881725767,
     "specific|mislabel|native CDS": 0.00036836625287147676,
     "specific|mislabel|tag cassette": 1.4216483958260334e-05
   },

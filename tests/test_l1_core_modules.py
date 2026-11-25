@@ -514,3 +514,19 @@ def test_public_data_download_is_atomic_and_does_not_retry_404(tmp_path: Path, m
     out = tmp_path / "bundle"
     assert pd_mod.fetch(out, workers=2) == 0
     assert (out / "s3" / "external" / "demo" / "item.txt").read_bytes() == good
+
+
+def test_domesticate_avoids_creating_polya_and_splice_donor_motifs() -> None:
+    # Exact contexts where naive domestication created ATTAAA (KLRB1/SLC46A1) and GTGAGT (EPHA1)
+    cases = [
+        ("ATGAGACCGGGTCTCTTAAACTAA", ("BsaI",)),  # GGTCTC + TTAAAC (ATTAAA trap)
+        ("ATGTTTGGTGAGACCTTAAAGTAA", ("BsaI",)),  # GAGACC + TTAAAG (ATTAAA trap)
+        ("ATGACCGTCTCTGAGTGGTAA", ("BsaI", "Esp3I")),  # GTCTCT + GAGTGG (GTGAGT trap)
+    ]
+    for cds, enzymes in cases:
+        dom, warnings = seqtools.domesticate(cds, list(enzymes), preserve_translation=True, seed=0)
+        assert not warnings
+        assert seqtools.translate(dom) == seqtools.translate(cds)
+        assert not seqtools.find_sites(dom, list(enzymes))
+        assert "AATAAA" not in dom and "ATTAAA" not in dom
+        assert "GTAAGT" not in dom and "GTGAGT" not in dom

@@ -300,36 +300,195 @@ def pooling_plates(rows: list[dict]) -> list[dict]:
     return out
 
 
+def subpool_strategies(rows: list[dict], *, ks: tuple[int, ...] = (1, 2, 4)) -> dict:
+    """Direct 100 ng/uL subplate pooling (2 uL/well into K contiguous subpools per plate).
+
+    Each 96-well plate is split into ``K`` contiguous length-ordered column blocks (12, 6, or 3
+    columns). Every well contributes a uniform 2 uL directly from the 100 ng/uL stock (no per-well
+    dilution); each subpool tube is then pipetted into the master pool at its geometric-mean target
+    weight (minimizing max fold error vs. ideal). Subpool tubes needing < 2.0 uL into the master
+    pool are diluted 1:10 first so every transfer stays >= 2 uL.
+    """
+    n_plates = max(r["plate"] for r in rows)
+    result: dict[str, dict] = {}
+    for k in ks:
+        by_factor: dict[str, dict] = {}
+        for f in SENSITIVITY:
+            col_ng = f"pool_ng_per_pool_x{f}"
+            ratios: list[float] = []
+            vols: list[float] = []
+            worst_plate, worst_err = 0, 0.0
+            for p in range(1, n_plates + 1):
+                pr = [r for r in rows if r["plate"] == p]
+                chunks = [pr[i * len(pr) // k : (i + 1) * len(pr) // k] for i in range(k)]
+                for ch in chunks:
+                    if not ch:
+                        continue
+                    ngs = [float(r[col_ng]) for r in ch]
+                    gmean = math.sqrt(min(ngs) * max(ngs))
+                    vols.append(gmean * len(ch) / CONC_NG_UL)
+                    for v in ngs:
+                        ratio = gmean / v  # realized / ideal
+                        ratios.append(ratio)
+                        err = max(ratio, 1.0 / ratio)
+                        if err > worst_err:
+                            worst_err, worst_plate = err, p
+            abs_err = sorted(max(x, 1.0 / x) for x in ratios)
+            by_factor[f"x{f}"] = {
+                "subpool_tubes": len(vols),
+                "worst_from_target_fold": round(worst_err, 2),
+                "worst_plate": worst_plate,
+                "total_max_min_skew_fold": round(max(ratios) / min(ratios), 2),
+                "p95_from_target_fold": round(abs_err[int(0.95 * len(abs_err))], 2),
+                "master_pool_ul_min": round(min(vols), 2),
+                "master_pool_ul_max": round(max(vols), 1),
+                "tubes_below_2ul": sum(v < 2.0 for v in vols),
+            }
+        result[f"k{k}_per_plate"] = by_factor
+    return result
+
+
 def figure(rows: list[dict]) -> None:
     from deliverome_analysis.plotting import (
         create_figure,
-        get_color,
         save_figure,
         setup_plotting_style,
     )
 
     setup_plotting_style()
-    fig, ax = create_figure(figsize=(11, 6.5))
-    x = [r["insert_nt"] for r in rows]
-    palette = (get_color("primary"), get_color("accent"), get_color("secondary"))
-    for f, color in zip(reversed(SENSITIVITY), palette, strict=False):
-        ax.scatter(
-            x,
-            [r[f"pool_ul_per_pool_x{f}"] for r in rows],
-            s=6,
-            color=color,
-            label=f"{f}\u00d7 lower titer per kb",
-            alpha=0.8,
-        )
-    ax.axhline(POOL_UL, color=get_color("neutral"), ls="--", lw=1.5)
-    ax.text(300, POOL_UL * 1.15, "one pooling well (5 \u00b5L)", color=get_color("neutral"))
-    ax.axhline(MIN_HAND_UL, color=get_color("neutral"), ls=":", lw=1.5)
-    ax.text(300, MIN_HAND_UL * 1.15, "0.5 \u00b5L", color=get_color("neutral"))
-    ax.axvline(EXTRA_THRESHOLD_NT, color=get_color("neutral"), ls="--", lw=1)
-    ax.set_yscale("log")
-    ax.set_xlabel("synthesized insert length (nt)")
-    ax.set_ylabel("\u00b5L per pool at 100 ng/\u00b5L")
-    ax.legend(loc="lower right", bbox_to_anchor=(0.76, 0.0), frameon=False, markerscale=4)
+    fig, (ax1, ax2) = create_figure(figsize=(13.2, 5.4), ncols=2)
+
+    lengths_kb = [r["insert_nt"] / 1000.0 for r in rows]
+    med_kb = lengths_kb[len(lengths_kb) // 2]
+    n_plates = max(r["plate"] for r in rows)
+
+    # Helper: realized/ideal representation ratio per construct for K subpools/plate at factor f
+    def _subpool_ratios(k: int, f: float) -> list[float]:
+        col_ng = f"pool_ng_per_pool_x{f}"
+        out_r: list[float] = []
+        for p in range(1, n_plates + 1):
+            pr = [r for r in rows if r["plate"] == p]
+            chunks = [pr[i * len(pr) // k : (i + 1) * len(pr) // k] for i in range(k)]
+            for ch in chunks:
+                if not ch:
+                    continue
+                ngs = [float(r[col_ng]) for r in ch]
+                gmean = math.sqrt(min(ngs) * max(ngs))
+                out_r.extend(gmean / v for v in ngs)
+        return out_r
+
+    # Panel A: Why calibrate slope first — expected library skew vs. ideal (true slope = 3.5x/kb)
+    equimolar_rel = [FACTOR ** (-(x - med_kb)) for x in lengths_kb]
+    overcorr_rel = [(FACTOR / 2.0) ** (x - med_kb) for x in lengths_kb]
+    k2_ratios = _subpool_ratios(2, FACTOR)
+
+    ax1.axhline(1.0, color="#6f5d5a", ls="--", lw=1.1, zorder=1)
+    ax1.axhspan(1 / 1.35, 1.35, color="#e8f3ef", alpha=0.8, zorder=0)
+    ax1.plot(
+        lengths_kb,
+        equimolar_rel,
+        color="#b83b4a",
+        lw=2.3,
+        label="No length weighting (equimolar; 495\u00d7 span)",
+        zorder=2,
+    )
+    ax1.plot(
+        lengths_kb,
+        overcorr_rel,
+        color="#d48a29",
+        lw=2.1,
+        ls="--",
+        label="Uncalibrated 3.5\u00d7/kb if true slope is 2.0\u00d7/kb (16\u00d7 overcorrection)",
+        zorder=3,
+    )
+    ax1.scatter(
+        lengths_kb,
+        k2_ratios,
+        s=6,
+        color="#2c7a72",
+        alpha=0.8,
+        label="Calibrated 2 subpools/plate (1.68\u00d7 total max/min skew)",
+        zorder=4,
+    )
+    ax1.set_yscale("log")
+    ax1.set_ylim(0.006, 22)
+    ax1.set_xlim(0.35, 5.65)
+    ax1.set_xlabel("Synthesized insert length (kb)", fontsize=12)
+    ax1.set_ylabel("Expected representation vs. ideal (fold)", fontsize=12)
+    ax1.text(
+        0.0,
+        1.03,
+        "A.  Expected library skew: uncalibrated slope vs. calibrated subplate pooling",
+        transform=ax1.transAxes,
+        fontsize=10.5,
+        fontweight="bold",
+        color="#2a2422",
+    )
+    ax1.legend(
+        loc="lower left",
+        frameon=True,
+        facecolor="white",
+        framealpha=0.92,
+        fontsize=8.6,
+        markerscale=2.5,
+    )
+
+    # Panel B: Pooling granularity comparison (1 vs 2 vs 4 subpools/plate at 3.5x/kb, 100 ng/uL)
+    plate_pos = [(r["plate"] - 1) + (WELLS.index(r["well"]) / 96.0) + 1.0 for r in rows]
+    k1_ratios = _subpool_ratios(1, FACTOR)
+    k4_ratios = _subpool_ratios(4, FACTOR)
+
+    ax2.axhline(1.0, color="#6f5d5a", ls="--", lw=1.1, zorder=1)
+    ax2.scatter(
+        plate_pos,
+        k1_ratios,
+        s=8,
+        color="#c8b9b3",
+        alpha=0.7,
+        label=f"1 pool/plate (36 tubes): worst {max(max(k1_ratios), 1 / min(k1_ratios)):.2f}\u00d7, total skew {max(k1_ratios) / min(k1_ratios):.2f}\u00d7",
+        zorder=2,
+    )
+    ax2.scatter(
+        plate_pos,
+        k2_ratios,
+        s=8,
+        color="#d48a29",
+        alpha=0.75,
+        label=f"2 subpools/plate (72 tubes): worst {max(max(k2_ratios), 1 / min(k2_ratios)):.2f}\u00d7, total skew {max(k2_ratios) / min(k2_ratios):.2f}\u00d7",
+        zorder=3,
+    )
+    ax2.scatter(
+        plate_pos,
+        k4_ratios,
+        s=7,
+        color="#2c7a72",
+        alpha=0.85,
+        label=f"4 subpools/plate (144 tubes): worst {max(max(k4_ratios), 1 / min(k4_ratios)):.2f}\u00d7, total skew {max(k4_ratios) / min(k4_ratios):.2f}\u00d7",
+        zorder=4,
+    )
+    ax2.set_xlim(0.5, n_plates + 1.2)
+    ax2.set_ylim(0.55, 1.78)
+    ax2.set_xlabel("96-well stock plate (shortest \u2192 longest)", fontsize=12)
+    ax2.set_ylabel("Realized / ideal DNA (fold, 3.5\u00d7/kb)", fontsize=12)
+    ax2.text(
+        0.0,
+        1.03,
+        "B.  Discretization error at 2 \u00b5L/well (100 ng/\u00b5L): 1 vs. 2 vs. 4 subpools/plate",
+        transform=ax2.transAxes,
+        fontsize=10.5,
+        fontweight="bold",
+        color="#2a2422",
+    )
+    ax2.legend(
+        loc="upper left",
+        frameon=True,
+        facecolor="white",
+        framealpha=0.92,
+        fontsize=8.6,
+        markerscale=2.5,
+    )
+
+    fig.tight_layout(w_pad=2.8)
     save_figure(fig, "l1_pooling_volume_by_length", output_dir=FIGURES)
 
 
@@ -358,6 +517,7 @@ def main() -> int:
         }
         for f in SENSITIVITY
     }
+    summary["subpool_strategies"] = subpool_strategies(rows)
     SUMMARY.write_text(json.dumps(summary, indent=1) + "\n")
     print(json.dumps(summary, indent=1))
     figure(rows)

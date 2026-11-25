@@ -80,6 +80,7 @@ import json
 import math
 import os
 import random
+import re
 import sys
 import time
 import urllib.error
@@ -629,11 +630,67 @@ def dnachisel_optimize(
     return problem.sequence, warnings
 
 
+_DOMESTICATION_POLYA = ("AATAAA", "ATTAAA")
+_DOMESTICATION_DONOR6 = re.compile(r"GT[AG]AGT")
+
+
+def _clean_domestication_motifs(original: str, domesticated: str, enzymes: list[str]) -> str:
+    """Replace any domestication edit that introduced a poly(A) signal or 6-mer splice donor.
+
+    Inspects only codons changed relative to ``original``; if the edit increased the count of
+    ``AATAAA``, ``ATTAAA``, or ``GT[AG]AGT`` in the local window, substitutes the highest-usage
+    synonymous human codon that keeps ``enzymes`` clear without creating any of those motifs.
+    """
+    if len(original) != len(domesticated) or len(domesticated) % 3 != 0:
+        return domesticated
+    syn = synonymous_codons(min_usage=0.10)
+    codons = split_codons(domesticated)
+    orig_codons = split_codons(original)
+    for ci, (old_c, new_c) in enumerate(zip(orig_codons, codons, strict=True)):
+        if old_c == new_c:
+            continue
+        pos = 3 * ci
+        cur_seq = "".join(codons)
+        w_orig = original[max(0, pos - 6) : pos + 9]
+        w_new = cur_seq[max(0, pos - 6) : pos + 9]
+        bad_polya = sum(w_new.count(p) for p in _DOMESTICATION_POLYA) > sum(
+            w_orig.count(p) for p in _DOMESTICATION_POLYA
+        )
+        bad_donor = len(_DOMESTICATION_DONOR6.findall(w_new)) > len(
+            _DOMESTICATION_DONOR6.findall(w_orig)
+        )
+        if not (bad_polya or bad_donor):
+            continue
+        aa = GENETIC_CODE.get(old_c, "")
+        if not aa or aa == "*":
+            continue
+        best: tuple[float, str] | None = None
+        for cand_c, freq in syn.get(aa, []):
+            if cand_c == new_c:
+                continue
+            codons[ci] = cand_c
+            cand_seq = "".join(codons)
+            w_c = cand_seq[max(0, pos - 6) : pos + 9]
+            if find_sites(w_c, enzymes):
+                continue
+            if sum(w_c.count(p) for p in _DOMESTICATION_POLYA) > sum(
+                w_orig.count(p) for p in _DOMESTICATION_POLYA
+            ):
+                continue
+            if len(_DOMESTICATION_DONOR6.findall(w_c)) > len(_DOMESTICATION_DONOR6.findall(w_orig)):
+                continue
+            if best is None or freq > best[0]:
+                best = (freq, cand_c)
+        codons[ci] = best[1] if best is not None else new_c
+    return "".join(codons)
+
+
 def domesticate(
     sequence: str,
     enzymes: list[str],
     preserve_translation: bool = True,
     seed: int | None = None,
+    avoid_harmful_motifs: bool = True,
 ) -> tuple[str, list[str]]:
     """Remove restriction sites with the fewest possible nucleotide changes.
 
@@ -644,7 +701,11 @@ def domesticate(
     (2) minimize the total number of nucleotide edits from the input via
     DNA Chisel's ``AvoidChanges`` objective. The result is the original
     sequence with the smallest possible set of point mutations needed to
-    clear every site.
+    clear every site. When ``preserve_translation=True`` and
+    ``avoid_harmful_motifs=True`` (the default), any edited codon that would
+    introduce a new ``AATAAA``/``ATTAAA`` poly(A) signal or ``GT[AG]AGT``
+    consensus splice donor is swapped to a clean synonymous codon whenever one
+    exists.
 
     Use this when you want to keep a native/original sequence as close to
     unchanged as possible — e.g. domesticating a real gene's native codon
@@ -690,7 +751,10 @@ def domesticate(
         except dc.NoSolutionError as err2:
             warnings.append(f"DNA Chisel could not re-resolve after optimization: {err2}")
 
-    return problem.sequence, warnings
+    result = problem.sequence
+    if preserve_translation and avoid_harmful_motifs:
+        result = _clean_domestication_motifs(sequence.upper(), result.upper(), enzymes)
+    return result, warnings
 
 
 def domesticate_gene(

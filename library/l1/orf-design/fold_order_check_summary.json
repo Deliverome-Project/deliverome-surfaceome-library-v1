@@ -1,6 +1,6 @@
 {
-  "order_of_record": "processed://sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-24-pre-freeze-b/l1_order_inserts_recoded.fasta",
-  "order_of_record_sha256": "0d712d97e812bfc19815fe8de384d39d13282f897f9f06220641d9a31be2a9a9",
+  "order_of_record": "processed://sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-24-pre-freeze-c/l1_order_inserts_recoded.fasta",
+  "order_of_record_sha256": "ef810d1d7ae674f6d0409398d2463d6f0a476d1dd7c638e0c0cc23426027e8d2",
   "refold_table": "library/l1/orf-design/tag_refold_structures.tsv at 7dc06001 (PR #301)",
   "inserts": 3375,
   "status": {

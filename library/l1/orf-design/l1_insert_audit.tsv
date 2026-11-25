@@ -70,7 +70,7 @@ C-terminal/snorkel	l1-p0864	l1-p0864-a1	l1-p0864	HPN	1565	2	True	SapI	True	True	
 C-terminal/snorkel	l1-p0869	l1-p0869-a1	l1-p0869	HS3ST2	1415	2	True	SapI	True	True	True	1	0		56	l1-p2252	1	0	56
 C-terminal/snorkel	l1-p0976	l1-p0976-a1	l1-p0976	ITM2B	1112	2	True	AarI;PaqCI;SapI	True	True	True	1	0		50	l1-p3246	1	0	50
 C-terminal/snorkel	l1-p1048	l1-p1048-a1	l1-p1048	KEL	2510	2	True	AarI;BtgZI;PaqCI;SapI	True	True	True	1	0		56	l1-p1569-a5	1	0	56
-C-terminal/snorkel	l1-p1069	l1-p1069-a1	l1-p1069	KLRB1	989	2	True	SapI	True	True	True	1	0		56	l1-p1165	1	0	56
+C-terminal/snorkel	l1-p1069	l1-p1069-a1	l1-p1069	KLRB1	989	2	True	SapI	True	True	True	1	0		56	l1-p1165	1	1	56
 C-terminal/snorkel	l1-p1070	l1-p1070-a1	l1-p1070	KLRF1	1007	2	True	SapI	True	True	True	1	0		50	l1-p2313	1	0	50
 C-terminal/snorkel	l1-p1071	l1-p1071-a1	l1-p1071	KLRF2	935	2	True	SapI	True	True	True	1	0		56	l1-p2345-a6	1	0	56
 C-terminal/snorkel	l1-p1072	l1-p1072-a1	l1-p1072	KLRG1	881	2	True	SapI	True	True	True	1	0		56	l1-p0413	1	0	56
@@ -1190,7 +1190,7 @@ N after SP	l1-p0039	l1-p0039-a1	l1-p0039	ADAM29	2774	2	True	AarI;PaqCI;SapI	True
 N after SP	l1-p0553	l1-p0553-a1	l1-p0553	ELFN2	2774	2	True	AarI;PaqCI;SapI	True	True	True	1	0		50	l1-p2076:igk_tag	1	2	50
 N after SP	l1-p2483	l1-p2483-a1	l1-p2483	PCDHGB6	2747	2	True	SapI	True	True	True	1	0		48	l1-p0436	1	0	48
 N after SP	l1-p0637	l1-p0637-a1	l1-p0637	FGFR2	2777	2	True	BtgZI;SapI	True	True	True	1	0		1220	l1-p2439	1	0	1220
-N after SP	l1-p0636	l1-p0636-a1	l1-p0636	FGFR1	2780	2	True	AarI;PaqCI;SapI	True	True	True	1	0		1226	l1-p3241	1	0	1226
+N after SP	l1-p0636	l1-p0636-a1	l1-p0636	FGFR1	2780	2	True	AarI;PaqCI;SapI	True	True	True	1	0		1226	l1-p3241	1	1	1226
 N after SP	l1-p2085	l1-p2085-a1	l1-p2085	SUSD2	2780	2	True	AarI;BtgZI;PaqCI;SapI	True	True	True	1	0		50	l1-p2022-a4	1	0	50
 N after SP	l1-p0063	l1-p0063-a1	l1-p0063	ADGRE2	2783	2	True	AarI;BtgZI;PaqCI;SapI	True	True	True	1	0		48	l1-p0040	1	0	48
 N after SP	l1-p0033	l1-p0033-a1	l1-p0033	ADAM17	2786	2	True	AarI;BtgZI;PaqCI;SapI	True	True	True	1	0		50	l1-p3067	1	0	50
@@ -1362,7 +1362,7 @@ N after SP	l1-p2460	l1-p2460-a1	l1-p2460	KIT	3230	2	True	AarI;PaqCI;SapI	True	Tr
 N after SP	l1-p1566	l1-p1566-a1	l1-p1566	PAM	3233	2	True	SapI	True	True	True	1	0		53	l1-p1654-a4	1	0	53
 N after SP	l1-p2023	l1-p2023-a1	l1-p2023	SLC8A1	3233	2	True	BtgZI;SapI	True	True	True	1	0		995	l1-p2514	1	0	995
 N after SP	l1-p2480	l1-p2480-a1	l1-p2480	PCDH8	3233	2	True	AarI;BtgZI;PaqCI;SapI	True	True	True	1	0		626	l1-p1581	1	0	626
-N after SP	l1-p0572	l1-p0572-a1	l1-p0572	EPHA1	3242	2	True	AarI;BtgZI;PaqCI;SapI	True	True	True	1	0		51	l1-p3156	1	0	51
+N after SP	l1-p0572	l1-p0572-a1	l1-p0572	EPHA1	3242	2	True	AarI;BtgZI;PaqCI;SapI	True	True	True	1	0		51	l1-p3156	1	1	51
 N after SP	l1-p0574	l1-p0574-a1	l1-p0574	EPHA2	3242	2	True	AarI;BtgZI;PaqCI;SapI	True	True	True	1	0		51	l1-p0037	1	0	51
 N after SP	l1-p1065	l1-p1065-a1	l1-p1065	KIT	3242	2	True	AarI;PaqCI;SapI	True	True	True	1	0		829	l1-p2460	1	0	829
 N after SP	l1-p0630	l1-p0630-a1	l1-p0630	FCRL5	3245	2	True	SapI	True	True	True	1	0		50	l1-p1819	1	6	50
@@ -1388,7 +1388,7 @@ N after SP	l1-p0815	l1-p0815-a1	l1-p0815	GRID2	3329	2	True	SapI	True	True	True	1
 N after SP	l1-p1595	l1-p1595-a1	l1-p1595	PCDHAC2	3335	2	True	SapI	True	True	True	1	0		503	l1-p1587	1	0	503
 N after SP	l1-p1745	l1-p1745-a1	l1-p1745	ROBO4	3335	2	True	AarI;BtgZI;PaqCI;SapI	True	True	True	1	0		50	l1-p1835-a3	1	0	50
 N after SP	l1-p3115	l1-p3115-a1	l1-p3115	CNTN1	3335	2	True	SapI	True	True	True	1	0		2987	l1-p0451	1	0	2987
-N after SP	l1-p0573	l1-p0573-a1	l1-p0573	EPHA10	3338	2	True	AarI;PaqCI;SapI	True	True	True	1	0		49	l1-p1023-a1	1	1	49
+N after SP	l1-p0573	l1-p0573-a1	l1-p0573	EPHA10	3338	2	True	AarI;PaqCI;SapI	True	True	True	1	0		49	l1-p1023-a1	1	2	49
 N after SP	l1-p0814	l1-p0814-a1	l1-p0814	GRID1	3341	2	True	SapI	True	True	True	1	0		74	l1-p2993	1	0	74
 N after SP	l1-p2993	l1-p2993-a1	l1-p2993	GRID1	3341	2	True	SapI	True	True	True	1	0		74	l1-p0814	1	0	74
 N after SP	l1-p1067	l1-p1067-a1	l1-p1067	KL	3350	2	True	SapI	True	True	True	1	0		48	l1-p2134	1	0	48
@@ -1623,7 +1623,7 @@ N after SP	l1-p3221	l1-p3221-a1	l1-p3221	ADGRL2	4538	2	True	BtgZI;SapI	True	True
 N after SP	l1-p3223	l1-p3223-a1	l1-p3223	ART3	1448	2	True	SapI	True	True	True	1	0		214	l1-p0138	1	0	214
 N after SP	l1-p3229	l1-p3229-a1	l1-p3229	BMPR1B	1910	2	True	SapI	True	True	True	1	0		1523	l1-p0181	1	0	1523
 N after SP	l1-p3230	l1-p3230-a1	l1-p3230	BOC	3641	2	True	AarI;BtgZI;PaqCI;SapI	True	True	True	1	0		410	l1-p0183	1	1	410
-N after SP	l1-p3241	l1-p3241-a1	l1-p3241	FGFR1	2501	2	True	AarI;PaqCI;SapI	True	True	True	1	0		1226	l1-p0636	1	0	1226
+N after SP	l1-p3241	l1-p3241-a1	l1-p3241	FGFR1	2501	2	True	AarI;PaqCI;SapI	True	True	True	1	0		1226	l1-p0636	1	1	1226
 N after SP	l1-p3244	l1-p3244-a1	l1-p3244	GLRA2	1670	2	True	AarI;PaqCI;SapI	True	True	True	1	0		1133	l1-p0726	1	0	1133
 N after SP	l1-p3246	l1-p3246-a1	l1-p3246	GRIK2	2990	2	True	SapI	True	True	True	1	0		50	l1-p0976	1	0	50
 N after SP	l1-p3255	l1-p3255-a1	l1-p3255	MELTF	2525	2	True	BtgZI;SapI	True	True	True	1	0		733	l1-p1208	1	0	733
@@ -1837,7 +1837,7 @@ N at residue 1, multipass	l1-p0866:igk_tag	l1-p0866-a1	l1-p0866	HRH2	1643	2	True
 N at residue 1, multipass	l1-p0867:igk_tag	l1-p0867-a1	l1-p0867	HRH3	1712	2	True	SapI	True	True	True	1	0		49	l1-p1820	1	1	49
 N at residue 1, multipass	l1-p0868:igk_tag	l1-p0868-a1	l1-p0868	HRH4	1547	2	True	SapI	True	True	True	1	0		49	l1-p1257-a2	1	1	49
 N at residue 1, multipass	l1-p0870:igk_tag	l1-p0870-a1	l1-p0870	HTR1A	1643	2	True	BtgZI;SapI	True	True	True	1	0		50	l1-p0002-a1	1	0	50
-N at residue 1, multipass	l1-p0871:igk_tag	l1-p0871-a1	l1-p0871	HTR1B	1547	2	True	BtgZI;SapI	True	True	True	1	0		48	l1-p2264:igk_tag	1	0	48
+N at residue 1, multipass	l1-p0871:igk_tag	l1-p0871-a1	l1-p0871	HTR1B	1547	2	True	BtgZI;SapI	True	True	True	1	0		48	l1-p2264:igk_tag	1	1	48
 N at residue 1, multipass	l1-p0872:igk_tag	l1-p0872-a1	l1-p0872	HTR1D	1508	2	True	BtgZI;SapI	True	True	True	1	0		52	l1-p0344	1	0	52
 N at residue 1, multipass	l1-p0873:igk_tag	l1-p0873-a1	l1-p0873	HTR1E	1472	2	True	AarI;PaqCI;SapI	True	True	True	1	0		49	l1-p1458:igk_tag	1	0	49
 N at residue 1, multipass	l1-p0874:igk_tag	l1-p0874-a1	l1-p0874	HTR1F	1475	2	True	BtgZI;SapI	True	True	True	1	0		47	l1-p2306	1	0	47
@@ -2001,7 +2001,7 @@ N at residue 1, multipass	l1-p1452:igk_tag	l1-p1452-a1	l1-p1452	OR4E2	1316	2	Tru
 N at residue 1, multipass	l1-p1453:igk_tag	l1-p1453-a1	l1-p1453	OR4F16	1313	2	True	BtgZI;SapI	True	True	True	1	0		48	l1-p0641	1	0	48
 N at residue 1, multipass	l1-p1454:igk_tag	l1-p1454-a1	l1-p1454	OR4F17	1292	2	True	BtgZI;SapI	True	True	True	1	0		480	l1-p1455:igk_tag	1	0	480
 N at residue 1, multipass	l1-p1455:igk_tag	l1-p1455-a1	l1-p1455	OR4F5	1355	2	True	BtgZI;SapI	True	True	True	1	0		480	l1-p1454:igk_tag	1	0	480
-N at residue 1, multipass	l1-p1456:igk_tag	l1-p1456-a1	l1-p1456	OR4F6	1313	2	True	SapI	True	True	True	1	0		53	l1-p2944	1	0	53
+N at residue 1, multipass	l1-p1456:igk_tag	l1-p1456-a1	l1-p1456	OR4F6	1313	2	True	SapI	True	True	True	1	0		53	l1-p2944	1	1	53
 N at residue 1, multipass	l1-p1457:igk_tag	l1-p1457-a1	l1-p1457	OR4K15	1349	2	True	SapI	True	True	True	1	0		48	l1-p1387:igk_tag	1	0	48
 N at residue 1, multipass	l1-p1458:igk_tag	l1-p1458-a1	l1-p1458	OR4K17	1313	2	True	SapI	True	True	True	1	0		49	l1-p0873:igk_tag	1	0	49
 N at residue 1, multipass	l1-p1459:igk_tag	l1-p1459-a1	l1-p1459	OR4K2	1319	2	True	SapI	True	True	True	1	0		49	l1-p2116:igk_tag	1	1	49
@@ -2033,7 +2033,7 @@ N at residue 1, multipass	l1-p1484:igk_tag	l1-p1484-a1	l1-p1484	OR52L1	1364	2	Tr
 N at residue 1, multipass	l1-p1485:igk_tag	l1-p1485-a1	l1-p1485	OR52N2	1340	2	True	AarI;BtgZI;PaqCI;SapI	True	True	True	1	0		50	l1-p0622	1	0	50
 N at residue 1, multipass	l1-p1486:igk_tag	l1-p1486-a1	l1-p1486	OR52N4	1340	2	True	SapI	True	True	True	1	0		51	l1-p0994-a5	1	0	51
 N at residue 1, multipass	l1-p1487:igk_tag	l1-p1487-a1	l1-p1487	OR56A3	1322	2	True	BtgZI;SapI	True	True	True	1	0		48	l1-p3067	1	0	48
-N at residue 1, multipass	l1-p1488:igk_tag	l1-p1488-a1	l1-p1488	OR56B1	1349	2	True	SapI	True	True	True	1	0		48	l1-p1713	1	0	48
+N at residue 1, multipass	l1-p1488:igk_tag	l1-p1488-a1	l1-p1488	OR56B1	1349	2	True	SapI	True	True	True	1	0		48	l1-p1713	1	1	48
 N at residue 1, multipass	l1-p1489:igk_tag	l1-p1489-a1	l1-p1489	OR56B4	1334	2	True	SapI	True	True	True	1	0		49	l1-p1817	1	0	49
 N at residue 1, multipass	l1-p1490:igk_tag	l1-p1490-a1	l1-p1490	OR5A2	1349	2	True	AarI;PaqCI;SapI	True	True	True	1	0		48	l1-p0791:igk_tag	1	0	48
 N at residue 1, multipass	l1-p1491:igk_tag	l1-p1491-a1	l1-p1491	OR5AK2	1304	2	True	SapI	True	True	True	1	0		49	l1-p1496:igk_tag	1	0	49
@@ -2258,14 +2258,14 @@ N at residue 1, type III	l1-p0836	l1-p0836-a1	l1-p0836	GYPC	698	2	True	AarI;PaqC
 N at residue 1, type III	l1-p0904	l1-p0904-a1	l1-p0904	IGSF23	890	2	True	SapI	True	True	True	1	0		50	l1-p0723	1	0	50
 N at residue 1, type III	l1-p0906	l1-p0906-a1	l1-p0906	IGSF5	1598	2	True	BtgZI;SapI	True	True	True	1	0		49	l1-p0488-a2	1	0	49
 N at residue 1, type III	l1-p1001	l1-p1001-a1	l1-p1001	KCNE2	683	2	True	SapI	True	True	True	1	0		50	l1-p0280	1	0	50
-N at residue 1, type III	l1-p1002	l1-p1002-a1	l1-p1002	KCNE3	623	2	True	SapI	True	True	True	1	0		52	l1-p2174-a4	1	0	52
+N at residue 1, type III	l1-p1002	l1-p1002-a1	l1-p1002	KCNE3	623	2	True	SapI	True	True	True	1	0		52	l1-p2174-a4	1	1	52
 N at residue 1, type III	l1-p1003	l1-p1003-a1	l1-p1003	KCNE4	824	2	True	AarI;PaqCI;SapI	True	True	True	1	0		49	l1-p0770:igk_tag	1	0	49
 N at residue 1, type III	l1-p1004	l1-p1004-a1	l1-p1004	KCNE5	740	2	True	SapI	True	True	True	1	0		48	l1-p1711	1	0	48
 N at residue 1, type III	l1-p1068	l1-p1068-a1	l1-p1068	KLB	3509	2	True	BtgZI;SapI	True	True	True	1	0		48	l1-p2244	1	0	48
 N at residue 1, type III	l1-p1078	l1-p1078-a1	l1-p1078	LAX1	1508	2	True	SapI	True	True	True	1	0		49	l1-p2062	1	0	49
 N at residue 1, type III	l1-p1238	l1-p1238-a1	l1-p1238	MRAP	830	2	True	SapI	True	True	True	1	0		156	l1-p2958	1	0	156
 N at residue 1, type III	l1-p1239	l1-p1239-a1	l1-p1239	MRAP2	929	2	True	SapI	True	True	True	1	0		48	l1-p1475:igk_tag	1	0	48
-N at residue 1, type III	l1-p1320	l1-p1320-a1	l1-p1320	NRG1	2234	2	True	AarI;BtgZI;PaqCI;SapI	True	True	True	1	0		1264	l1-p2472	1	0	1264
+N at residue 1, type III	l1-p1320	l1-p1320-a1	l1-p1320	NRG1	2234	2	True	AarI;BtgZI;PaqCI;SapI	True	True	True	1	0		1264	l1-p2472	1	1	1264
 N at residue 1, type III	l1-p1323	l1-p1323-a1	l1-p1323	NRG4	659	2	True	SapI	True	True	True	1	0		50	l1-p0880:igk_tag	1	0	50
 N at residue 1, type III	l1-p1346	l1-p1346-a1	l1-p1346	OPALIN	737	2	True	SapI	True	True	True	1	0		49	l1-p1495:igk_tag	1	0	49
 N at residue 1, type III	l1-p1666	l1-p1666-a1	l1-p1666	PMEPA1	1175	2	True	BtgZI;SapI	True	True	True	1	0		752	l1-p3340	1	0	752
@@ -2282,15 +2282,15 @@ N at residue 1, type III	l1-p2230	l1-p2230-a1	l1-p2230	TNFRSF13B	1193	2	True	Btg
 N at residue 1, type III	l1-p2231	l1-p2231-a1	l1-p2231	TNFRSF13C	866	2	True	SapI	True	True	True	1	0		47	l1-p1332	1	0	47
 N at residue 1, type III	l1-p2233	l1-p2233-a1	l1-p2233	TNFRSF17	929	2	True	SapI	True	True	True	1	0		47	l1-p0607	1	0	47
 N at residue 1, type III	l1-p2446	l1-p2446-a1	l1-p2446	GYPC	635	2	True	AarI;PaqCI;SapI	True	True	True	1	0		362	l1-p0836	1	0	362
-N at residue 1, type III	l1-p2472	l1-p2472-a1	l1-p2472	NRG1	2249	2	True	AarI;BtgZI;PaqCI;SapI	True	True	True	1	0		1264	l1-p1320	1	0	1264
-N at residue 1, type III	l1-p2591	l1-p2591-a1	l1-p2591	NRG1	2234	2	True	AarI;BtgZI;PaqCI;SapI	True	True	True	1	0		206	l1-p1320	1	0	206
+N at residue 1, type III	l1-p2472	l1-p2472-a1	l1-p2472	NRG1	2249	2	True	AarI;BtgZI;PaqCI;SapI	True	True	True	1	0		1264	l1-p1320	1	1	1264
+N at residue 1, type III	l1-p2591	l1-p2591-a1	l1-p2591	NRG1	2234	2	True	AarI;BtgZI;PaqCI;SapI	True	True	True	1	0		206	l1-p1320	1	1	206
 N at residue 1, type III	l1-p2641	l1-p2641-a1	l1-p2641	C11orf87	911	2	True	AarI;PaqCI;SapI	True	True	True	1	0		79	l1-p0201	1	0	79
 N at residue 1, type III	l1-p2958	l1-p2958-a1	l1-p2958	MRAP	830	2	True	SapI	True	True	True	1	0		156	l1-p1238	1	0	156
 N at residue 1, type III	l1-p2972	l1-p2972-a1	l1-p2972	TEX29	830	2	True	SapI	True	True	True	1	0		61	l1-p2127	1	0	61
 N at residue 1, type III	l1-p2974	l1-p2974-a1	l1-p2974	TNFRSF13B	1193	2	True	AarI;BtgZI;PaqCI;SapI	True	True	True	1	0		59	l1-p2230	1	0	59
 N at residue 1, type III	l1-p3000	l1-p3000-a1	l1-p3000	KLB	3509	2	True	BtgZI;SapI	True	True	True	1	0		49	l1-p3050-a5	1	0	49
 N at residue 1, type III	l1-p3048	l1-p3048-a1	l1-p3048	SIGIRR	1541	2	True	AarI;PaqCI;SapI	True	True	True	1	0		51	l1-p0803:igk_tag	1	0	51
-N at residue 1, type III	l1-p3087	l1-p3087-a1	l1-p3087	KCNE3	623	2	True	SapI	True	True	True	1	0		50	l1-p1102	1	0	50
+N at residue 1, type III	l1-p3087	l1-p3087-a1	l1-p3087	KCNE3	623	2	True	SapI	True	True	True	1	0		50	l1-p1102	1	1	50
 N at residue 1, type III	l1-p3228	l1-p3228-a1	l1-p3228	BMPR1B	1814	2	True	SapI	True	True	True	1	0		294	l1-p0181	1	0	294
 N at residue 1, type III	l1-p3340	l1-p3340-a1	l1-p3340	PMEPA1	1088	2	True	BtgZI;SapI	True	True	True	1	0		752	l1-p1666	1	0	752
 internal	l1-p0001-a3	l1-p0001-a3	l1-p0001	ABCA8	5177	2	True	AarI;PaqCI;SapI	True	True	True	1	0		49	l1-p2027	2	0	49
@@ -2811,8 +2811,8 @@ internal	l1-p1654-a5	l1-p1654-a5	l1-p1654	PLPP2	1178	2	True	BtgZI;SapI	True	True
 internal	l1-p1655-a5	l1-p1655-a5	l1-p1655	PLPP3	1247	2	True	SapI	True	True	True	1	0		50	l1-p1364:igk_tag	2	0	50
 internal	l1-p1656-a1	l1-p1656-a1	l1-p1656	PLPP4	1127	2	True	SapI	True	True	True	1	0		50	l1-p1856-a6	3	0	50
 internal	l1-p1656-a3	l1-p1656-a3	l1-p1656	PLPP4	1127	2	True	SapI	True	True	True	1	0		50	l1-p1856-a6	3	0	50
-internal	l1-p1657-a4	l1-p1657-a4	l1-p1657	PLPPR1	1289	2	True	SapI	True	True	True	1	0		49	l1-p1123	3	0	49
-internal	l1-p1657-a5	l1-p1657-a5	l1-p1657	PLPPR1	1289	2	True	SapI	True	True	True	1	0		49	l1-p1123	3	0	49
+internal	l1-p1657-a4	l1-p1657-a4	l1-p1657	PLPPR1	1289	2	True	SapI	True	True	True	1	0		49	l1-p1123	3	1	49
+internal	l1-p1657-a5	l1-p1657-a5	l1-p1657	PLPPR1	1289	2	True	SapI	True	True	True	1	0		49	l1-p1123	3	1	49
 internal	l1-p1657-a6	l1-p1657-a6	l1-p1657	PLPPR1	1289	2	True	SapI	True	True	True	1	0		49	l1-p1123	3	0	49
 internal	l1-p1658-a4	l1-p1658-a4	l1-p1658	PLPPR2	1670	2	True	AarI;BtgZI;PaqCI;SapI	True	True	True	1	0		51	l1-p1174	3	0	51
 internal	l1-p1658-a5	l1-p1658-a5	l1-p1658	PLPPR2	1670	2	True	AarI;BtgZI;PaqCI;SapI	True	True	True	1	0		51	l1-p1174	3	0	51
@@ -3018,9 +3018,9 @@ internal	l1-p1964-a4	l1-p1964-a4	l1-p1964	SLC44A4	2444	2	True	BtgZI;SapI	True	Tr
 internal	l1-p1965-a2	l1-p1965-a2	l1-p1965	SLC44A5	2465	2	True	SapI	True	True	True	1	0		48	l1-p2123:igk_tag	3	0	48
 internal	l1-p1965-a3	l1-p1965-a3	l1-p1965	SLC44A5	2465	2	True	SapI	True	True	True	1	0		48	l1-p2123:igk_tag	3	0	48
 internal	l1-p1965-a4	l1-p1965-a4	l1-p1965	SLC44A5	2465	2	True	SapI	True	True	True	1	0		48	l1-p2123:igk_tag	3	0	48
-internal	l1-p1966-a3	l1-p1966-a3	l1-p1966	SLC46A1	1691	2	True	SapI	True	True	True	1	0		49	l1-p1167	3	0	49
-internal	l1-p1966-a4	l1-p1966-a4	l1-p1966	SLC46A1	1691	2	True	SapI	True	True	True	1	0		49	l1-p1167	3	0	49
-internal	l1-p1966-a5	l1-p1966-a5	l1-p1966	SLC46A1	1691	2	True	SapI	True	True	True	1	0		49	l1-p1167	3	0	49
+internal	l1-p1966-a3	l1-p1966-a3	l1-p1966	SLC46A1	1691	2	True	SapI	True	True	True	1	0		49	l1-p1167	3	1	49
+internal	l1-p1966-a4	l1-p1966-a4	l1-p1966	SLC46A1	1691	2	True	SapI	True	True	True	1	0		49	l1-p1167	3	1	49
+internal	l1-p1966-a5	l1-p1966-a5	l1-p1966	SLC46A1	1691	2	True	SapI	True	True	True	1	0		49	l1-p1167	3	1	49
 internal	l1-p1967-a3	l1-p1967-a3	l1-p1967	SLC46A2	1739	2	True	AarI;BtgZI;PaqCI;SapI	True	True	True	1	0		50	l1-p0957	1	0	50
 internal	l1-p1970-a1	l1-p1970-a1	l1-p1970	SLC4A1	3047	2	True	SapI	True	True	True	1	0		50	l1-p3091	3	0	50
 internal	l1-p1970-a2	l1-p1970-a2	l1-p1970	SLC4A1	3047	2	True	SapI	True	True	True	1	0		50	l1-p3091	3	0	50

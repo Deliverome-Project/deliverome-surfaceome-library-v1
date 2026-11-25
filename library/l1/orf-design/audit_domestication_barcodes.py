@@ -759,15 +759,15 @@ def main(argv=None) -> int:
     return 0
 
 
-RECODED_KEY = "sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-24-pre-freeze-b/l1_order_inserts_recoded.fasta"
+RECODED_KEY = "sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-24-pre-freeze-c/l1_order_inserts_recoded.fasta"
 #: The Twist-compliant recoded inserts, the order of record (synthesis_compliance.py), regenerated
 #: by l1-reviewer-package from main at cdb78068 on 2026-11-14: 2,629 inserts on the five rungs,
 #: named by member id (ordered-length numbering). Superseded pins: 2026-11-13-one-arm-renamed/
 #: b426e433 (2,678 inserts, draft integration 496d3482), 2026-11-13/ d1257f0a (2,716 inserts,
 #: with the 25 retired rescue arms) and the undated #303 slice 9b1c9f55.
-RECODED_SHA256 = "0d712d97e812bfc19815fe8de384d39d13282f897f9f06220641d9a31be2a9a9"
+RECODED_SHA256 = "ef810d1d7ae674f6d0409398d2463d6f0a476d1dd7c638e0c0cc23426027e8d2"
 #: The synthesis_recodes.tsv this order was made with (l1-reviewer-package, final regeneration).
-RECODES_REF = "4108066d1c4c070509d5d0ce657ca082080d67ea"
+RECODES_REF = "96484ceedfacf33476b04a3b671e12c5e3174ea7"
 RUNG_OF_TAG = {
     "cterm": "C-terminal/snorkel",
     "nterm": "N after SP",
@@ -897,6 +897,8 @@ def recoded_check(
             re.findall("GT[AG]AGT", b)
         ):
             problems["new consensus splice donor"] += 1
+        if sum(a.count(p) for p in POLYA) > sum(b.count(p) for p in POLYA):
+            problems["new poly(A) signal"] += 1
         facts[key] = {"recoded_codons": len(diffs)}
     dup_ends = sum(n for n in terminal_blocks.values() if n > 1)
     extra = set(rec) - set(orig) - set(stale)

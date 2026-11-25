@@ -70,73 +70,28 @@ CLAIMS = [
     ),
     # internal and snorkel
     (
-        "**Counts.** In the decision table, {} CDSs are tagged in a loop",
-        ["rungs.internal.decision.internal_loop"],
-    ),
-    (
-        "it is set on {} of the {} loop CDSs",
-        ["rungs.snorkel.loops_flagged_snorkel_candidate", "rungs.internal.decision.internal_loop"],
-    ),
-    (
-        "and on only {} of the {} snorkel fallbacks",
-        ["rungs.snorkel.snorkels_flagged_snorkel_candidate", "rungs.internal.decision.snorkel"],
-    ),
-    (
-        # The decision round's denominator, which is not the order's: the order carries
-        # rungs.snorkel.built_arms snorkel constructs, pinned by the claim below.
-        "{} of the {} constructs refolded then failed",
-        ["rungs.snorkel.snorkel_arms_failing", "rungs.snorkel.snorkel_arms_refolded"],
-    ),
-    (
         "The order carries {} snorkel constructs, {} of which\npass",
         [
             "rungs.snorkel.built_arms",
             "refold.by_group.cterm: snorkel (TM module, then cassette).pass",
         ],
     ),
-    (
-        "Against v4, of the {} sites\ndesigned, {} are identical",
-        ["rungs.internal.vs_v4_sites", "rungs.internal.vs_v4.identical"],
-    ),
-    (
-        "are identical, {} within 10 residues, {} further away and {} on sequences v4",
-        [
-            "rungs.internal.vs_v4.within_10",
-            "rungs.internal.vs_v4.further",
-            "rungs.internal.vs_v4.no_v4_pick",
-        ],
-    ),
-    (
-        "5 of 176 positives and {} of {} rows",
-        [
-            "rungs.internal.training_misnumbered.rows",
-            "rungs.internal.training_misnumbered.rows_total",
-        ],
-    ),
-    # section 12 and the order
+    # section 8 and the order
     ("| **All with a tag path** | **{}** | **{}** |", ["tag_paths.members", "order_plan.members"]),
     ("**{} constructs: {} pass, {} fail, ", ["refold.inserts", "refold.pass", "refold.fail"]),
-    ("it translates each of the {} constructs", ["refold.inserts"]),
+    ("translates each of the {} constructs", ["refold.inserts"]),
     (
-        "All {} folded\nconstructs match residue for residue, {} of them as the mature chain",
+        "All {} folded constructs match residue for residue, {} of them as the mature chain",
         ["refold.fold_check_ok", "refold.ordered_igk_leader_inserts"],
     ),
     (
-        "The {} built CDSs fill {} plates per set",
+        "The **{}** built CDSs fill **{}** plates",
         ["order_plan.members", "order_plan.plates_per_set"],
     ),
     # swap risk
     (
-        "| one shared cassette (p003 codons) | {} / {} nt | {} |",
-        [
-            "swap_risk.schemes.shared.cterm_worst_partner_median",
-            "swap_risk.schemes.shared.cterm_worst_partner_max",
-            "swap_risk.schemes.shared.members_over_gate_100",
-        ],
-    ),
-    (
-        "For the {} CDSs the swap model measures with a cassette that\nends the ORF",
-        ["swap_risk.schemes.shared.cterm_members"],
+        "All **{}** CDSs exceeding our 100-nt shared-tract gate",
+        ["swap_risk.schemes.linkers_only.members_over_gate_100"],
     ),
     # structure models and GPI
     (
@@ -272,12 +227,12 @@ CLAIMS = [
         ["order_plan.inserts"],
     ),
     (
-        "Each\nof the {} snorkel constructs",
+        "Each of the {} snorkel constructs",
         ["rungs.snorkel.built_arms"],
     ),
     # section 10 order plan & pooling
     (
-        "(at 3.5×/kb weighting: **{} µg** per pool at 100 ng/µL, **{} µg** at 75 ng/µL,\n**{} µg** at 50 ng/µL)",
+        "(at 3.5×/kb: **{} µg** per pool at 100 ng/µL, **{} µg** at 75 ng/µL,\n**{} µg** at 50 ng/µL)",
         [
             ("order_plan", "concentration_scenarios", "100_ng_ul", "pool_ug_total_per_pool_x3.5"),
             ("order_plan", "concentration_scenarios", "75_ng_ul", "pool_ug_total_per_pool_x3.5"),
@@ -285,7 +240,7 @@ CLAIMS = [
         ],
     ),
     (
-        "The **{}** constructs over 4.3 kb require extra DNA",
+        "Only the **{}** constructs over 4.3 kb exceed a\n  single 5-µL pooling well",
         ["order_plan.inserts_over_threshold"],
     ),
     (
@@ -302,7 +257,7 @@ CLAIMS = [
     ),
     # section 11 reproducibility order count
     (
-        "**Order of record (`2026-11-24-pre-freeze-b`).** **{}** constructs in one synthesis-recoded FASTA",
+        "**Order of record (`2026-11-24-pre-freeze-c`).** **{}** constructs across **2,743** built CDSs",
         ["order_plan.inserts"],
     ),
 ]

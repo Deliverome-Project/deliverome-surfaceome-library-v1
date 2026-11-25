@@ -100,7 +100,8 @@ INSERT_NUMBERING = HERE / "l1_insert_numbering.tsv"
 RECODES = HERE / "synthesis_recodes.tsv"
 SUMMARY = HERE / "synthesis_compliance_summary.json"
 #: The order of record. Versioned by date: a new run writes a new key, never over an old one.
-FASTA_KEY = "sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-24-pre-freeze-b/l1_order_inserts_recoded.fasta"
+FASTA_KEY = "sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-24-pre-freeze-c/l1_order_inserts_recoded.fasta"
+DOMESTICATION_EDITS = HERE / "l1_domestication_edits.tsv"
 #: Superseded orders of record, kept unchanged: 2026-11-21-arm-linkers (sha256 8b1c4ed3…, the
 #: same inserts with the 109 snorkel arms on one shared module encoding); 2026-11-15-final-e (sha256 20e8f275…, the same
 #: 3,255 inserts with the 2,942 upstream arms on p003's one shared cassette encoding); 2026-11-13 (sha256 d1257f0a…, 2,716 inserts
@@ -124,6 +125,8 @@ MIN_USAGE = 0.10
 IGK_LEADER = qc.IGK_LEADER_AA + qc.IGK_PLUS1_AA
 SP_MARGIN = 3
 DONOR = re.compile("GT[AG]AGT")
+POLYA = ("AATAAA", "ATTAAA")
+EARLY_ATG_MAX_NT = 60
 FIVE = qc.ESP3I_5 + qc.KOZAK
 DECIDED_BY = 'l1-reviewer-package (delegated by Becca 2026-11-12, "use your best judgment")'
 IMPLEMENTED_BY = "Claude Code session l1-reviewer-package, PR #283 (synthesis_compliance.py)"
@@ -372,15 +375,16 @@ class Recoder:
         self.edits: list[dict] = []
         self.sites0 = len(seqtools.find_sites(self.seq(), list(qc.DOMESTICATION_ENZYMES)))
         self.donors0 = len(DONOR.findall(self.seq()))
+        self.polya0 = sum(self.seq().count(p) for p in POLYA)
         c = self.protein.find(P003_CASSETTE_PEPTIDE)
         self.cas_end = self.off + 3 * (c + len(P003_CASSETTE_PEPTIDE))
 
     def seq(self) -> str:
         return self.ins["five"] + "".join(self.codons) + self.ins["three"]
 
-    def options(self, ci: int) -> list[tuple[str, float]]:
+    def options(self, ci: int, *, allow_protected: bool = False) -> list[tuple[str, float]]:
         aa = seqtools.GENETIC_CODE[self.codons[ci]]
-        if ci in self.keep or aa == "*":
+        if (not allow_protected and ci in self.keep) or aa == "*":
             return []
         return [(c, f) for c, f in self.syn[aa] if c != self.codons[ci]]
 
@@ -391,12 +395,92 @@ class Recoder:
         ok = (
             len(seqtools.find_sites(s, list(qc.DOMESTICATION_ENZYMES))) <= self.sites0
             and len(DONOR.findall(s)) <= self.donors0
+            and sum(s.count(p) for p in POLYA) <= self.polya0
         )
         if ok:
             p = self.off + 3 * ci
             ok = me_distance(s[max(p - 25, 0) : p + 28]) > ME_MAX_REFUSED
         self.codons[ci] = old
         return ok
+
+    def fix_domestication_motifs(self, dom_edits: list[dict]) -> None:
+        """Eliminate poly(A), 6-mer splice-donor, and fixable early-ATG motifs created by domestication.
+
+        Operates strictly on codons already edited by upstream domestication (``l1_domestication_edits.tsv``),
+        never touching the cassette, Met1, or Igκ leader, and choosing the highest-usage synonymous human
+        codon (>= 10% usage) that preserves Type IIS clearance and introduces no harmful motif.
+        """
+        if not dom_edits:
+            return
+        prot = self.protein.rstrip("*")
+        cas_i = prot.find(P003_CASSETTE_PEPTIDE)
+        cas_range = set(range(cas_i, cas_i + len(P003_CASSETTE_PEPTIDE)))
+        sp_aa = self.ins["sp_aa"]
+        igk = prot.startswith(IGK_LEADER)
+        igk_range = set(range(len(IGK_LEADER))) if igk else set()
+        offsets = (
+            (
+                len(IGK_LEADER) + len(P003_CASSETTE_PEPTIDE),
+                len(IGK_LEADER) + len(P003_CASSETTE_PEPTIDE) - 1,
+                len(IGK_LEADER) + len(P003_CASSETTE_PEPTIDE) - sp_aa,
+            )
+            if igk
+            else (0, len(P003_CASSETTE_PEPTIDE))
+        )
+        for e in dom_edits:
+            nat_ci = int(e["codon"]) - 1
+            new_c = e["new_codon"]
+            old_c = e["old_codon"]
+            for off in sorted(set(offsets)):
+                ci = nat_ci + off
+                if (
+                    ci <= 0
+                    or ci >= len(self.codons) - 1
+                    or ci in cas_range
+                    or ci in igk_range
+                    or self.codons[ci] != new_c
+                ):
+                    continue
+                orf = "".join(self.codons)
+                pos = 3 * ci
+                w = orf[max(0, pos - 6) : pos + 9]
+                w_orig = orf[max(0, pos - 6) : pos] + old_c + orf[pos + 3 : pos + 9]
+                reason = ""
+                if e["new_polya"] == "True" and sum(w.count(p) for p in POLYA) > sum(
+                    w_orig.count(p) for p in POLYA
+                ):
+                    reason = "domestication_polya"
+                elif e["new_splice_donor"] == "True" and len(DONOR.findall(w)) > len(
+                    DONOR.findall(w_orig)
+                ):
+                    reason = "domestication_splice_donor"
+                elif (
+                    e["new_atg"] == "True"
+                    and int(e["nt_position"]) <= EARLY_ATG_MAX_NT
+                    and w.count("ATG") > w_orig.count("ATG")
+                ):
+                    reason = "domestication_early_atg"
+                if not reason:
+                    continue
+                best: tuple[float, str] | None = None
+                for cand_c, freq in self.options(ci, allow_protected=True):
+                    w_c = orf[max(0, pos - 6) : pos] + cand_c + orf[pos + 3 : pos + 9]
+                    if sum(w_c.count(p) for p in POLYA) > sum(w_orig.count(p) for p in POLYA):
+                        continue
+                    if len(DONOR.findall(w_c)) > len(DONOR.findall(w_orig)):
+                        continue
+                    if reason == "domestication_early_atg" and w_c.count("ATG") > w_orig.count(
+                        "ATG"
+                    ):
+                        continue
+                    if self.acceptable(ci, cand_c) and (best is None or freq > best[0]):
+                        best = (freq, cand_c)
+                if best is not None:
+                    self.apply(ci, best[1], reason)
+                    # Tighten baselines so subsequent recodes cannot re-introduce the cleaned motif
+                    s_now = self.seq()
+                    self.donors0 = len(DONOR.findall(s_now))
+                    self.polya0 = sum(s_now.count(p) for p in POLYA)
 
     def apply(self, ci: int, new: str, reason: str) -> None:
         self.edits.append(
@@ -526,11 +610,19 @@ class Recoder:
             edited.add(choice[0])
             self.apply(choice[0], choice[1], "direct_repeat")
 
-    def run(self) -> str:
-        self.fix_me()
-        self.fix_repeats()
-        self.fix_gc()
-        self.fix_me()
+    def run(
+        self,
+        *,
+        dom_edits: list[dict] | None = None,
+        recode_synthesis: bool = True,
+    ) -> str:
+        if dom_edits:
+            self.fix_domestication_motifs(dom_edits)
+        if recode_synthesis:
+            self.fix_me()
+            self.fix_repeats()
+            self.fix_gc()
+            self.fix_me()
         new = self.seq()
         # record the net change per codon (its last reason), not the search history
         orig = seqtools.split_codons(self.ins["orf"])
@@ -549,6 +641,22 @@ class Recoder:
         assert seqtools.translate("".join(self.codons)) == self.protein, "protein changed"
         assert new.startswith(self.ins["five"]) and new.endswith(self.ins["three"])
         return new
+
+
+def load_domestication_motif_edits() -> dict[str, list[dict]]:
+    """Load domestication edits that introduced poly(A), splice-donor, or early-ATG motifs."""
+    out: dict[str, list[dict]] = {}
+    if not DOMESTICATION_EDITS.exists():
+        return out
+    with DOMESTICATION_EDITS.open() as fh:
+        for r in csv.DictReader(fh, delimiter="\t"):
+            if (
+                r.get("new_polya") == "True"
+                or r.get("new_splice_donor") == "True"
+                or (r.get("new_atg") == "True" and int(r["nt_position"]) <= EARLY_ATG_MAX_NT)
+            ):
+                out.setdefault(r["design_id"], []).append(r)
+    return out
 
 
 def cassette_end_gc(s: str, cas_end: int) -> float:
@@ -601,13 +709,20 @@ def tsv_text(data: list[dict]) -> str:
 def run(check: bool = False) -> int:
     inserts, shas = load_inserts()
     syn = seqtools.synonymous_codons(min_usage=MIN_USAGE)
+    dom_motif_edits = load_domestication_motif_edits()
     rows, recodes, fasta = [], [], []
     for ins in inserts:
         s0 = ins["five"] + ins["orf"] + ins["three"]
         before = metrics(s0)
         rec = Recoder(ins, syn)
         cas0 = cassette_end_gc(s0, rec.cas_end)
-        s1 = rec.run() if not compliant(before) else s0
+        d_edits = dom_motif_edits.get(ins["design_id"], [])
+        need_synth = not compliant(before)
+        s1 = (
+            rec.run(dom_edits=d_edits, recode_synthesis=need_synth)
+            if (need_synth or d_edits)
+            else s0
+        )
         after = metrics(s1) if rec.edits else before
         cas1 = cassette_end_gc(s1, rec.cas_end)
         assert cassette_dna("".join(rec.codons)) == cassette_dna(ins["orf"]), "cassette changed"

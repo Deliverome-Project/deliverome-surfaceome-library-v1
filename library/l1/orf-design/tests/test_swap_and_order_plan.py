@@ -128,6 +128,15 @@ class TestOrderPlanRatios:
                 extra_assumed * order_plan.ORDERED_UG / order_plan.ASSUMED_UG, abs=0.2
             )
 
+    def test_subpool_strategies_reduce_total_skew_monotonically(self) -> None:
+        rows, _ = order_plan.plan(order_plan.inserts())
+        sub = order_plan.subpool_strategies(rows)
+        for f in order_plan.SENSITIVITY:
+            s1 = sub["k1_per_plate"][f"x{f}"]["total_max_min_skew_fold"]
+            s2 = sub["k2_per_plate"][f"x{f}"]["total_max_min_skew_fold"]
+            s4 = sub["k4_per_plate"][f"x{f}"]["total_max_min_skew_fold"]
+            assert s1 > s2 > s4 > 1.0
+
 
 def test_axl_ires_puro_gb_puror_translation_starts_with_m() -> None:
     gb_path = S4E9 / "l1_example_AXL_ires_puro.gb"

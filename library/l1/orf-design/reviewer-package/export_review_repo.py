@@ -166,7 +166,7 @@ PINNED_GIT_SNAPSHOTS: tuple[tuple[str, str], ...] = (
     ("7dc06001adfd2e6438aa3387c24f574e1a237375", f"{_S4E9}/constructs_l1_cterm.tsv"),
     ("7dc06001adfd2e6438aa3387c24f574e1a237375", f"{_S4E9}/candidate_manifest_tranches.tsv"),
     ("7dc06001adfd2e6438aa3387c24f574e1a237375", f"{_S4E9}/l1_cassette_encodings.tsv"),
-    ("4108066d1c4c070509d5d0ce657ca082080d67ea", f"{_S4E9}/synthesis_recodes.tsv"),
+    ("96484ceedfacf33476b04a3b671e12c5e3174ea7", f"{_S4E9}/synthesis_recodes.tsv"),
     # reviewer-package/fold_order_check.py
     ("7dc06001", f"{_S4E9}/tag_refold_structures.tsv"),
     # Prior cut snapshots retained for historical comparison & exporter smoke tests
