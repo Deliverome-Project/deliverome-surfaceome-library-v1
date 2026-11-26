@@ -237,8 +237,6 @@ l1-p0235	lib:CALHM5	library_reference	human	CALHM5	ENST00000368599	named transcr
 l1-p0236	lib:CASR	library_reference	human	CASR	ENST00000639785	named transcript	115	protein_coding	chromosome:GRCh38:3:122183668:122291629:1	True	3237	True	True	True	0	True	identical	0	0	P41180	True
 l1-p0237	lib:CATSPERE	library_reference	human	CATSPERE	ENST00000366534	named transcript	115	protein_coding	chromosome:GRCh38:1:244461273:244640504:1	True	2856	True	True	True	0	True	identical	0	0	Q5SY80	True
 l1-p0238	lib:CATSPERG	library_reference	human	CATSPERG	ENST00000409235	named transcript	115	protein_coding	chromosome:GRCh38:19:38335830:38370943:1	True	3480	True	True	True	0	True	identical	0	0	Q6ZRH7	True
-l1-p0239	lib:CATSPERH	library_reference	human	CATSPERH	ENST00000530719	named transcript	115	protein_coding	chromosome:GRCh38:11:65088376:65089110:-1	True	351	True	True	True	0	True	identical	0	0	E9PQX1	True
-l1-p0240	lib:CATSPERQ	library_reference	human	CATSPERQ	ENST00000696146	named transcript	115	protein_coding	chromosome:GRCh38:8:144353228:144354931:-1	True	708	True	True	True	0	True	identical	0	0	Q2WGJ8	True
 l1-p0241	lib:CCKAR	library_reference	human	CCKAR	ENST00000295589	named transcript	115	protein_coding	chromosome:GRCh38:4:26481396:26490484:-1	True	1287	True	True	True	0	True	identical	0	0	P32238	True
 l1-p0242	lib:CCKBR	library_reference	human	CCKBR	ENST00000334619	named transcript	115	protein_coding	chromosome:GRCh38:11:6259838:6272127:1	True	1344	True	True	True	0	True	identical	0	0	P32239	True
 l1-p0243	lib:CCR1	library_reference	human	CCR1	ENST00000296140	named transcript	115	protein_coding	chromosome:GRCh38:3:46201711:46208313:-1	True	1068	True	True	True	0	True	identical	0	0	P32246	True
@@ -494,7 +492,6 @@ l1-p0492	lib:CXCR3	library_reference	human	CXCR3	ENST00000373693	named transcrip
 l1-p0493	lib:CXCR4	library_reference	human	CXCR4	ENST00000241393	named transcript	115	protein_coding	chromosome:GRCh38:2:136114349:136118149:-1	True	1059	True	True	True	0	True	identical	0	0	P61073	True
 l1-p0494	lib:CXCR5	library_reference	human	CXCR5	ENST00000292174	named transcript	115	protein_coding	chromosome:GRCh38:11:118883892:118897787:1	True	1119	True	True	True	0	True	identical	0	0	P32302	True
 l1-p0495	lib:CXCR6	library_reference	human	CXCR6	ENST00000304552	named transcript	115	protein_coding	chromosome:GRCh38:3:45943464:45948351:1	True	1029	True	True	True	0	True	identical	0	0	O00574	True
-l1-p0496	lib:CXorf66	library_reference	human	CXorf66	ENST00000370540	named transcript	115	protein_coding	chromosome:GRCh38:X:139955728:139965521:-1	True	1086	True	True	True	0	True	identical	0	0	Q5JRM2	True
 l1-p0497	lib:CYBB	library_reference	human	CYBB	ENST00000378588	named transcript	115	protein_coding	chromosome:GRCh38:X:37780059:37813461:1	True	1713	True	True	True	0	True	identical	0	0	P04839	True
 l1-p0498	lib:CYBRD1	library_reference	human	CYBRD1	ENST00000321348	named transcript	115	protein_coding	chromosome:GRCh38:2:171522474:171558129:1	True	861	True	True	True	0	True	identical	0	0	Q53TN4	True
 l1-p0499	lib:CYSLTR1	library_reference	human	CYSLTR1	ENST00000373304	named transcript	115	protein_coding	chromosome:GRCh38:X:78271468:78327611:-1	True	1014	True	True	True	0	True	identical	0	0	Q9Y271	True
@@ -1254,7 +1251,6 @@ l1-p1252	lib:MS4A13	library_reference	human	MS4A13	ENST00000378186	named transcr
 l1-p1253	lib:MS4A2	library_reference	human	MS4A2	ENST00000278888	named transcript	115	protein_coding	chromosome:GRCh38:11:60088664:60098467:1	True	735	True	True	True	0	True	identical	0	0	Q01362	True
 l1-p1254	lib:MS4A3	library_reference	human	MS4A3	ENST00000278865	named transcript	115	protein_coding	chromosome:GRCh38:11:60056665:60071115:1	True	645	True	True	True	0	True	identical	0	0	Q96HJ5	True
 l1-p1255	lib:MS4A4A	library_reference	human	MS4A4A	ENST00000337908	named transcript	115	protein_coding	chromosome:GRCh38:11:60280666:60308970:1	True	720	True	True	True	0	True	identical	0	0	Q96JQ5	True
-l1-p1256	lib:MS4A5	library_reference	human	MS4A5	ENST00000300190	named transcript	115	protein_coding	chromosome:GRCh38:11:60429572:60447792:1	True	603	True	True	True	0	True	identical	0	0	Q9H3V2	True
 l1-p1257	lib:MS4A6A	library_reference	human	MS4A6A	ENST00000530839	named transcript	115	protein_coding	chromosome:GRCh38:11:60171607:60184666:-1	True	747	True	True	True	0	True	identical	0	0	Q9H2W1	True
 l1-p1258	lib:MS4A7	library_reference	human	MS4A7	ENST00000300184	named transcript	115	protein_coding	chromosome:GRCh38:11:60378532:60395948:1	True	723	True	True	True	0	True	identical	0	0	Q9GZW8	True
 l1-p1259	lib:MSLN	library_reference	human	MSLN	ENST00000545450	named transcript	115	protein_coding	chromosome:GRCh38:16:760734:768862:1	True	1869	True	True	True	0	True	identical	0	0	Q13421	True
@@ -1722,7 +1718,6 @@ l1-p1723	lib:RAET1G	library_reference	human	RAET1G	ENST00000367360	named transcr
 l1-p1724	lib:RAET1L	library_reference	human	RAET1L	ENST00000367341	named transcript	115	protein_coding	chromosome:GRCh38:6:150018334:150025532:-1	True	741	True	True	True	0	True	identical	0	0	Q5VY80	True
 l1-p1725	lib:RECK	library_reference	human	RECK	ENST00000377966	named transcript	115	protein_coding	chromosome:GRCh38:9:36036913:36124455:1	True	2916	True	True	True	0	True	identical	0	0	O95980	True
 l1-p1726	lib:RELL1	library_reference	human	RELL1	ENST00000454158	named transcript	115	protein_coding	chromosome:GRCh38:4:37610634:37686376:-1	True	816	True	True	True	0	True	identical	0	0	Q8IUW5	True
-l1-p1727	lib:RELL2	library_reference	human	RELL2	ENST00000297164	named transcript	115	protein_coding	chromosome:GRCh38:5:141636997:141641064:1	True	912	True	True	True	0	True	identical	0	0	Q8NC24	True
 l1-p1728	lib:RELT	library_reference	human	RELT	ENST00000064780	named transcript	115	protein_coding	chromosome:GRCh38:11:73376399:73397474:1	True	1293	True	True	True	0	True	identical	0	0	Q969Z4	True
 l1-p1729	lib:RET	library_reference	human	RET	ENST00000355710	named transcript	115	protein_coding	chromosome:GRCh38:10:43077069:43130351:1	True	3345	True	True	True	0	True	identical	0	0	P07949	True
 l1-p1730	lib:RGMA	library_reference	human	RGMA	ENST00000329082	named transcript	115	protein_coding	chromosome:GRCh38:15:93035271:93089211:-1	True	1353	True	True	True	0	True	identical	0	0	Q96B86	True
@@ -2049,7 +2044,6 @@ l1-p2050	lib:SLITRK4	library_reference	human	SLITRK4	ENST00000356928	named trans
 l1-p2051	lib:SLITRK5	library_reference	human	SLITRK5	ENST00000683689	named transcript	115	protein_coding	chromosome:GRCh38:13:87671371:87679616:1	True	2877	True	True	True	0	True	identical	0	0	O94991	True
 l1-p2052	lib:SLITRK6	library_reference	human	SLITRK6	ENST00000647374	named transcript	115	protein_coding	chromosome:GRCh38:13:85792790:85799419:-1	True	2526	True	True	True	0	True	identical	0	0	Q9H5Y7	True
 l1-p2053	lib:SMAGP	library_reference	human	SMAGP	ENST00000603798	named transcript	115	protein_coding	chromosome:GRCh38:12:51244558:51270415:-1	True	294	True	True	True	0	True	identical	0	0	Q0VAQ4	True
-l1-p2054	lib:SMIM7	library_reference	human	SMIM7	ENST00000487416	named transcript	115	protein_coding	chromosome:GRCh38:19:16646148:16660144:-1	True	228	True	True	True	0	True	identical	0	0	Q9BQ49	True
 l1-p2055	lib:SMO	library_reference	human	SMO	ENST00000249373	named transcript	115	protein_coding	chromosome:GRCh38:7:129188633:129213545:1	True	2364	True	True	True	0	True	identical	0	0	Q99835	True
 l1-p2056	lib:SMPDL3B	library_reference	human	SMPDL3B	ENST00000373894	named transcript	115	protein_coding	chromosome:GRCh38:1:27935000:27959152:1	True	1368	True	True	True	0	True	identical	0	0	Q92485	True
 l1-p2057	lib:SNORC	library_reference	human	SNORC	ENST00000331342	named transcript	115	protein_coding	chromosome:GRCh38:2:232870264:232878700:1	True	366	True	True	True	0	True	identical	0	0	Q6UX34	True
@@ -2123,7 +2117,6 @@ l1-p2124	lib:TCTA	library_reference	human	TCTA	ENST00000273590	named transcript	
 l1-p2125	lib:TEK	library_reference	human	TEK	ENST00000380036	named transcript	115	protein_coding	chromosome:GRCh38:9:27109225:27230174:1	True	3375	True	True	True	0	True	identical	0	0	Q02763	True
 l1-p2126	lib:TEX101	library_reference	human	TEX101	ENST00000598265	named transcript	115	protein_coding	chromosome:GRCh38:19:43414890:43418597:1	True	750	True	True	True	0	True	identical	0	0	Q9BY14	True
 l1-p2127	lib:TEX29	library_reference	human	TEX29	ENST00000283547	named transcript	115	protein_coding	chromosome:GRCh38:13:111320642:111344248:1	True	456	True	True	True	0	True	identical	0	0	Q8N6K0	True
-l1-p2128	lib:TEX38	library_reference	human	TEX38	ENST00000334122	named transcript	115	protein_coding	chromosome:GRCh38:1:46671854:46673594:1	True	621	True	True	True	0	True	identical	0	0	Q6PEX7	True
 l1-p2129	lib:TFPI	library_reference	human	TFPI	ENST00000409676	protein match	115	protein_coding	chromosome:GRCh38:2:187478578:187554431:-1	True	756	True	True	True	0	True	identical	0	0	P10646-2	False
 l1-p2130	lib:TFR2	library_reference	human	TFR2	ENST00000223051	named transcript	115	protein_coding	chromosome:GRCh38:7:100620420:100641552:-1	True	2406	True	True	True	0	True	identical	0	0	Q9UP52	True
 l1-p2131	lib:TFRC	library_reference	human	TFRC	ENST00000360110	named transcript	115	protein_coding	chromosome:GRCh38:3:196049284:196082090:-1	True	2283	True	True	True	0	True	identical	0	0	P02786	True
@@ -2166,16 +2159,12 @@ l1-p2167	lib:TMEM132A	library_reference	human	TMEM132A	ENST00000453848	named tra
 l1-p2168	lib:TMEM132B	library_reference	human	TMEM132B	ENST00000682704	named transcript	115	protein_coding	chromosome:GRCh38:12:125186386:125662369:1	True	3252	True	True	True	0	True	identical	0	0		False
 l1-p2169	lib:TMEM132D	library_reference	human	TMEM132D	ENST00000422113	named transcript	115	protein_coding	chromosome:GRCh38:12:129071726:129904025:-1	True	3300	True	True	True	0	True	identical	0	0	Q14C87	True
 l1-p2170	lib:TMEM132E	library_reference	human	TMEM132E	ENST00000631683	named transcript	115	protein_coding	chromosome:GRCh38:17:34579582:34639318:1	True	3225	True	True	True	0	True	identical	0	0	Q6IEE7	True
-l1-p2171	lib:TMEM134	library_reference	human	TMEM134	ENST00000308022	named transcript	115	protein_coding	chromosome:GRCh38:11:67461710:67469251:-1	True	588	True	True	True	0	True	identical	0	0	Q9H6X4	True
-l1-p2172	lib:TMEM139	library_reference	human	TMEM139	ENST00000359333	named transcript	115	protein_coding	chromosome:GRCh38:7:143284958:143288048:1	True	651	True	True	True	0	True	identical	0	0	Q8IV31	True
 l1-p2173	lib:TMEM145	library_reference	human	TMEM145	ENST00000301204	named transcript	115	protein_coding	chromosome:GRCh38:19:42313309:42325064:1	True	1482	True	True	True	0	True	identical	0	0	Q8NBT3	True
 l1-p2174	lib:TMEM150A	library_reference	human	TMEM150A	ENST00000334462	named transcript	115	protein_coding	chromosome:GRCh38:2:85598547:85602698:-1	True	816	True	True	True	0	True	identical	0	0	Q86TG1	True
 l1-p2175	lib:TMEM150C	library_reference	human	TMEM150C	ENST00000449862	named transcript	115	protein_coding	chromosome:GRCh38:4:82483176:82561988:-1	True	750	True	True	True	0	True	identical	0	0	B9EJG8	True
 l1-p2176	lib:TMEM154	library_reference	human	TMEM154	ENST00000304385	named transcript	115	protein_coding	chromosome:GRCh38:4:152618628:152679997:-1	True	552	True	True	True	0	True	identical	0	0	Q6P9G4	True
 l1-p2177	lib:TMEM158	library_reference	human	TMEM158	ENST00000503771	named transcript	115	protein_coding	chromosome:GRCh38:3:45224466:45226287:-1	True	903	True	True	True	0	True	identical	0	0	Q8WZ71	True
-l1-p2178	lib:TMEM169	library_reference	human	TMEM169	ENST00000437356	named transcript	115	protein_coding	chromosome:GRCh38:2:216081919:216102783:1	True	894	True	True	True	0	True	identical	0	0	Q96HH4	True
 l1-p2179	lib:TMEM170B	library_reference	human	TMEM170B	ENST00000379426	named transcript	115	protein_coding	chromosome:GRCh38:6:11537749:11583524:1	True	399	True	True	True	0	True	identical	0	0	Q5T4T1	True
-l1-p2180	lib:TMEM174	library_reference	human	TMEM174	ENST00000296776	named transcript	115	protein_coding	chromosome:GRCh38:5:73173193:73175143:1	True	732	True	True	True	0	True	identical	0	0	Q8WUU8	True
 l1-p2181	lib:TMEM181	library_reference	human	TMEM181	ENST00000684151	named transcript	115	protein_coding	chromosome:GRCh38:6:158560091:158635429:1	True	1428	True	True	True	0	True	identical	0	0	Q9P2C4	True
 l1-p2182	lib:TMEM182	library_reference	human	TMEM182	ENST00000412401	named transcript	115	protein_coding	chromosome:GRCh38:2:102762031:102817679:1	True	690	True	True	True	0	True	identical	0	0	Q6ZP80	True
 l1-p2183	lib:TMEM184A	library_reference	human	TMEM184A	ENST00000297477	named transcript	115	protein_coding	chromosome:GRCh38:7:1542235:1556205:-1	True	1242	True	True	True	0	True	identical	0	0	Q6ZMB5	True
@@ -2183,22 +2172,14 @@ l1-p2184	lib:TMEM190	library_reference	human	TMEM190	ENST00000291934	named trans
 l1-p2185	lib:TMEM198	library_reference	human	TMEM198	ENST00000373883	named transcript	115	protein_coding	chromosome:GRCh38:2:219544028:219550595:1	True	1083	True	True	True	0	True	identical	0	0	Q66K66	True
 l1-p2186	lib:TMEM204	library_reference	human	TMEM204	ENST00000566264	named transcript	115	protein_coding	chromosome:GRCh38:16:1533666:1555568:1	True	681	True	True	True	0	True	identical	0	0	Q9BSN7	True
 l1-p2187	lib:TMEM205	library_reference	human	TMEM205	ENST00000354882	named transcript	115	protein_coding	chromosome:GRCh38:19:11342778:11346268:-1	True	570	True	True	True	0	True	identical	0	0	Q6UW68	True
-l1-p2188	lib:TMEM210	library_reference	human	TMEM210	ENST00000413619	named transcript	115	protein_coding	chromosome:GRCh38:9:137170858:137172056:-1	True	444	True	True	True	0	True	identical	0	0	A6NLX4	True
 l1-p2189	lib:TMEM219	library_reference	human	TMEM219	ENST00000279396	named transcript	115	protein_coding	chromosome:GRCh38:16:29962079:29973048:1	True	723	True	True	True	0	True	identical	0	0	Q86XT9	True
-l1-p2190	lib:TMEM222	library_reference	human	TMEM222	ENST00000374076	named transcript	115	protein_coding	chromosome:GRCh38:1:27322163:27336400:1	True	627	True	True	True	0	True	identical	0	0	Q9H0R3	True
 l1-p2191	lib:TMEM225	library_reference	human	TMEM225	ENST00000375026	named transcript	115	protein_coding	chromosome:GRCh38:11:123882920:123885670:-1	True	678	True	True	True	0	True	identical	0	0	Q6GV28	True
 l1-p2192	lib:TMEM229B	library_reference	human	TMEM229B	ENST00000554480	named transcript	115	protein_coding	chromosome:GRCh38:14:67470269:67488721:-1	True	504	True	True	True	0	True	identical	0	0	Q8NBD8	True
-l1-p2193	lib:TMEM238	library_reference	human	TMEM238	ENST00000444469	named transcript	115	protein_coding	chromosome:GRCh38:19:55379244:55384292:-1	True	531	True	True	True	0	True	identical	0	0	C9JI98	True
 l1-p2194	lib:TMEM26	library_reference	human	TMEM26	ENST00000399298	named transcript	115	protein_coding	chromosome:GRCh38:10:61406642:61453381:-1	True	1107	True	True	True	0	True	identical	0	0	Q6ZUK4	True
-l1-p2195	lib:TMEM266	library_reference	human	TMEM266	ENST00000388942	named transcript	115	protein_coding	chromosome:GRCh38:15:76059985:76204963:1	True	1572	True	True	True	0	True	identical	0	0	Q2M3C6	True
-l1-p2196	lib:TMEM268	library_reference	human	TMEM268	ENST00000288502	named transcript	115	protein_coding	chromosome:GRCh38:9:114611291:114646422:1	True	1029	True	True	True	0	True	identical	0	0	Q5VZI3	True
-l1-p2197	lib:TMEM273	library_reference	human	TMEM273	ENST00000374153	named transcript	115	protein_coding	chromosome:GRCh38:10:49154736:49188391:-1	True	390	True	True	True	0	True	identical	0	0	Q5T292-4	False
 l1-p2198	lib:TMEM47	library_reference	human	TMEM47	ENST00000275954	named transcript	115	protein_coding	chromosome:GRCh38:X:34627075:34657285:-1	True	546	True	True	True	0	True	identical	0	0	Q9BQJ4	True
 l1-p2199	lib:TMEM63B	library_reference	human	TMEM63B	ENST00000323267	named transcript	115	protein_coding	chromosome:GRCh38:6:44127554:44155519:1	True	2499	True	True	True	0	True	identical	0	0	Q5T3F8	True
 l1-p2200	lib:TMEM67	library_reference	human	TMEM67	ENST00000453321	named transcript	115	protein_coding	chromosome:GRCh38:8:93754894:93818121:1	True	2988	True	True	True	0	True	identical	0	0	Q5HYA8	True
 l1-p2201	lib:TMEM81	library_reference	human	TMEM81	ENST00000367167	named transcript	115	protein_coding	chromosome:GRCh38:1:205083129:205084460:-1	True	768	True	True	True	0	True	identical	0	0	Q6P7N7	True
-l1-p2202	lib:TMEM86A	library_reference	human	TMEM86A	ENST00000280734	named transcript	115	protein_coding	chromosome:GRCh38:11:18698779:18704785:1	True	723	True	True	True	0	True	identical	0	0	Q8N2M4	True
-l1-p2203	lib:TMEM86B	library_reference	human	TMEM86B	ENST00000327042	named transcript	115	protein_coding	chromosome:GRCh38:19:55226638:55228763:-1	True	681	True	True	True	0	True	identical	0	0	Q8N661	True
 l1-p2204	lib:TMEM89	library_reference	human	TMEM89	ENST00000330862	named transcript	115	protein_coding	chromosome:GRCh38:3:48620759:48621769:-1	True	480	True	True	True	0	True	identical	0	0	A2RUT3	True
 l1-p2205	lib:TMEM8B	library_reference	human	TMEM8B	ENST00000643932	named transcript	115	protein_coding	chromosome:GRCh38:9:35829228:35865515:1	True	2775	True	True	True	0	True	identical	0	0		False
 l1-p2206	lib:TMEM95	library_reference	human	TMEM95	ENST00000576060	named transcript	115	protein_coding	chromosome:GRCh38:17:7355156:7357219:1	True	531	True	True	True	0	True	identical	0	0	Q3KNT9	True
@@ -2297,7 +2278,6 @@ l1-p2298	lib:TSPAN6	library_reference	human	TSPAN6	ENST00000373020	named transcr
 l1-p2299	lib:TSPAN7	library_reference	human	TSPAN7	ENST00000378482	named transcript	115	protein_coding	chromosome:GRCh38:X:38561542:38688918:1	True	750	True	True	True	0	True	identical	0	0	P41732	True
 l1-p2300	lib:TSPAN8	library_reference	human	TSPAN8	ENST00000247829	named transcript	115	protein_coding	chromosome:GRCh38:12:71125096:71157999:-1	True	714	True	True	True	0	True	identical	0	0	P19075	True
 l1-p2301	lib:TSPAN9	library_reference	human	TSPAN9	ENST00000011898	named transcript	115	protein_coding	chromosome:GRCh38:12:3077379:3286559:1	True	720	True	True	True	0	True	identical	0	0	O75954	True
-l1-p2302	lib:TSPO2	library_reference	human	TSPO2	ENST00000373161	named transcript	115	protein_coding	chromosome:GRCh38:6:41042467:41044337:1	True	513	True	True	True	0	True	identical	0	0	Q5TGU0	True
 l1-p2303	lib:TTYH1	library_reference	human	TTYH1	ENST00000376530	named transcript	115	protein_coding	chromosome:GRCh38:19:54415464:54436904:1	True	1353	True	True	True	0	True	identical	0	0	Q9H313	True
 l1-p2304	lib:TTYH2	library_reference	human	TTYH2	ENST00000269346	named transcript	115	protein_coding	chromosome:GRCh38:17:74213571:74262020:1	True	1605	True	True	True	0	True	identical	0	0	Q9BSA4	True
 l1-p2305	lib:TTYH3	library_reference	human	TTYH3	ENST00000258796	named transcript	115	protein_coding	chromosome:GRCh38:7:2631986:2664802:1	True	1572	True	True	True	0	True	identical	0	0	Q9C0H2	True
@@ -2476,7 +2456,6 @@ l1-p2969	ort:cyno:SLC47A1:A0A0R8GG88	ortholog	cyno	SLC47A1	ENSMFAT00000007184	al
 l1-p2970	ort:cyno:MRGPRX4:A0A7N9CJD3	ortholog	cyno	MRGPRX4	ENSMFAT00000087586	protein match	115	protein_coding	primary_assembly:Macaca_fascicularis_6.0:14:47418740:47419708:-1	False	969	True	True	True	0	True	identical	0	0		
 l1-p2971	ort:cyno:SLC9B1:ENSMFAP00000062637	ortholog	cyno	SLC9B1	ENSMFAT00000073969	Ensembl116 CDS-eligible (ortholog_cds_policy, final-v2)	115	protein_coding	primary_assembly:Macaca_fascicularis_6.0:5:100536053:100658005:-1	False	1548	True	True	True	0	True	identical	0	0		
 l1-p2972	ort:cyno:TEX29:ENSMFAP00000015918	ortholog	cyno	TEX29	ENSMFAT00000066448	Ensembl116 CDS-eligible (ortholog_cds_policy, final-v2)	115	protein_coding	primary_assembly:Macaca_fascicularis_6.0:17:92361567:92385453:1	False	456	True	True	True	0	True	identical	0	0		
-l1-p2973	ort:cyno:TMEM210:ENSMFAP00000044854	ortholog	cyno	TMEM210	ENSMFAT00000019155	Ensembl116 CDS-eligible (ortholog_cds_policy, final-v2)	115	protein_coding	primary_assembly:Macaca_fascicularis_6.0:15:1266531:1267571:1	False	444	True	True	True	0	True	identical	0	0		
 l1-p2974	ort:cyno:TNFRSF13B:ENSMFAP00000026444	ortholog	cyno	TNFRSF13B	ENSMFAT00000000625	Ensembl116 CDS-eligible (ortholog_cds_policy, final-v2)	115	protein_coding	primary_assembly:Macaca_fascicularis_6.0:16:16920283:16951130:-1	False	882	True	True	True	0	True	identical	0	0		
 l1-p2975	ort:cyno:TRPM2:ENSMFAP00000004384	ortholog	cyno	TRPM2	ENSMFAT00000023046	Ensembl116 CDS-eligible (ortholog_cds_policy, final-v2)	115	protein_coding	primary_assembly:Macaca_fascicularis_6.0:3:2265019:2347905:-1	False	4503	True	True	True	0	True	identical	0	0		
 l1-p2976	ort:cyno:ZACN:A0A2K5TZW0	ortholog	cyno	ZACN	ENSMFAT00000024296	protein match	115	protein_coding	primary_assembly:Macaca_fascicularis_6.0:16:71899131:71902462:1	False	1236	True	True	True	0	True	identical	0	0		
@@ -2561,9 +2540,6 @@ l1-p3056	ort:mouse:SLC5A4:Q9ET37	ortholog	mouse	SLC5A4	ENSMUST00000020450	protei
 l1-p3057	ort:mouse:SPINT1:Q9R097	ortholog	mouse	SPINT1	ENSMUST00000110817	Ensembl116 CDS-eligible (ortholog_cds_policy, final-v2)	115	protein_coding	chromosome:GRCm39:2:119068034:119080008:1	True	1524	True	True	True	0	True	identical	0	0		
 l1-p3058	ort:mouse:TFPI:ENSMUSP00000107340	ortholog	mouse	TFPI	ENSMUST00000111711	Ensembl116 CDS-eligible (ortholog_cds_policy, final-v2)	115	protein_coding	chromosome:GRCm39:2:84270484:84307092:-1	True	744	True	True	True	0	True	identical	0	0		
 l1-p3059	ort:mouse:TM7SF3:Q9CRG1	ortholog	mouse	TM7SF3	ENSMUST00000037709	gene symbol	115	protein_coding	chromosome:GRCm39:6:146503850:146536095:-1	True	1698	True	True	True	0	True	identical	0	4		
-l1-p3060	ort:mouse:TMEM139:ENSMUSP00000100590	ortholog	mouse	TMEM139	ENSMUST00000095987	Ensembl116 CDS-eligible (ortholog_cds_policy, final-v2)	115	protein_coding	chromosome:GRCm39:6:42238904:42241489:1	True	645	True	True	True	0	True	identical	0	0		
-l1-p3061	ort:mouse:TMEM210:Q9D2F0	ortholog	mouse	TMEM210	ENSMUST00000028340	Ensembl116 CDS-eligible (ortholog_cds_policy, final-v2)	115	protein_coding	chromosome:GRCm39:2:25178157:25179199:1	True	444	True	True	True	0	True	identical	0	0		
-l1-p3062	ort:mouse:TMEM86B:Q497J1	ortholog	mouse	TMEM86B	ENSMUST00000055085	Ensembl116 CDS-eligible (ortholog_cds_policy, final-v2)	115	protein_coding	chromosome:GRCm39:7:4631039:4633481:-1	True	681	True	True	True	0	True	identical	0	0		
 l1-p3063	ort:mouse:TMIGD1:Q9D7L8	ortholog	mouse	TMIGD1	ENSMUST00000102495	protein match	115	protein_coding	chromosome:GRCm39:11:76792985:76807413:1	True	786	True	True	True	0	True	identical	0	0		
 l1-p3064	ort:mouse:TMPRSS2:Q9JIQ8	ortholog	mouse	TMPRSS2	ENSMUST00000000395	Ensembl116 CDS-eligible (ortholog_cds_policy, final-v2)	115	protein_coding	chromosome:GRCm39:16:97365882:97412395:-1	True	1473	True	True	True	0	True	identical	0	0		
 l1-p3065	ort:mouse:VSIG2:Q9Z109	ortholog	mouse	VSIG2	ENSMUST00000002008	protein match	115	protein_coding	chromosome:GRCm39:9:37450551:37455497:1	True	987	True	True	True	0	True	identical	0	0		
@@ -2654,6 +2630,7 @@ l1-p3193	lib:C1orf159	library_reference	human	C1orf159	ENST00000421241	named tra
 l1-p3195	lib:CSF1	library_reference	human	CSF1	ENST00000329608	named transcript	115	protein_coding	chromosome:GRCh38:1:109910849:109930992:1	True	1665	True	True	True	0	True	identical	0	0	P09603	True
 l1-p3196	lib:FAM171B	library_reference	human	FAM171B	ENST00000304698	named transcript	115	protein_coding	chromosome:GRCh38:2:186694060:186765959:1	True	2481	True	True	True	0	True	identical	0	0	Q6P995	True
 l1-p3197	lib:FAM234A	library_reference	human	FAM234A	ENST00000399932	named transcript	115	protein_coding	chromosome:GRCh38:16:234821:266096:1	True	1659	True	True	True	0	True	identical	0	0	Q9H0X4	True
+l1-p3199	lib:LNPEP	library_reference	human	LNPEP	ENST00000231368	named transcript	115	protein_coding	chromosome:GRCh38:5:96936080:97037513:1	True	3078	True	True	True	0	True	identical	0	0	Q9UIQ6	False
 l1-p3200	lib:MFAP3	library_reference	human	MFAP3	ENST00000522782	named transcript	115	protein_coding	chromosome:GRCh38:5:154038967:154057450:1	True	1089	True	True	True	0	True	identical	0	0	P55082	True
 l1-p3201	lib:MYORG	library_reference	human	MYORG	ENST00000297625	named transcript	115	protein_coding	chromosome:GRCh38:9:34366666:34376898:-1	True	2145	True	True	True	0	True	identical	0	0	Q6NSJ0	True
 l1-p3203	lib:RNF149	library_reference	human	RNF149	ENST00000295317	named transcript	115	protein_coding	chromosome:GRCh38:2:101275601:101308701:-1	True	1203	True	True	True	0	True	identical	0	0	Q8NC42	True
@@ -2665,6 +2642,7 @@ l1-p3209	lib:TMEM248	library_reference	human	TMEM248	ENST00000341567	named trans
 l1-p3211	lib:FCGR2C	library_reference	human	FCGR2C	ENST00000466542	common_intact_allele	115	protein_coding_LoF	chromosome:GRCh38:1:161581340:161599803:1	True	972	True	True	True	0	True	differs by recorded edit: allele_restoration	1	1		False
 l1-p3212	lib:OR10AC1	library_reference	human	OR10AC1	ENST00000439431	common_intact_allele	115	protein_coding_LoF	chromosome:GRCh38:7:143509256:143519469:-1	True	978	True	True	True	0	True	differs by recorded edit: allele_restoration	1	0	Q8NH08	True
 l1-p3213	lib:OR4Q2	library_reference	human	OR4Q2	ENST00000710368	screened_patch_form	115	protein_coding	scaffold:GRCh38:HG2526_HG2573_PATCH:204845:205786:1	False	942	True	True	True	0	True	identical	0	0		False
+l1-p3214	lib:OR52P1	library_reference	human	OR52P1	ENST00000438474	functional_human_allele	115	protein_coding_LoF	chromosome:GRCh38:11:5726502:5727464:1	True	966	True	True	True	0	True	differs by recorded edit: allele_restoration	3	0	Q8NH57	True
 l1-p3215	iso:ACVR2A:ENST00000943650	isoform	human	ACVR2A	ENST00000943650	named transcript	115	protein_coding	chromosome:GRCh38:2:147845028:147928865:1	True	1533	True	True	True	0	True	identical	0	0		False
 l1-p3218	iso:ADGRL2:ENST00000674209	isoform	human	ADGRL2	ENST00000674209	named transcript	115	protein_coding	chromosome:GRCh38:1:81800378:81992404:1	True	4341	True	True	True	0	True	identical	0	0		False
 l1-p3219	iso:ADGRL2:ENST00000674442	isoform	human	ADGRL2	ENST00000674442	named transcript	115	protein_coding	chromosome:GRCh38:1:81800376:81992180:1	True	3492	True	True	True	0	True	identical	0	0		False
@@ -2716,7 +2694,6 @@ l1-p3283	iso:SLC6A9:P48067	isoform	human	SLC6A9	ENST00000360584	named transcript
 l1-p3284	iso:SLC8A3:P57103-7	isoform	human	SLC8A3	ENST00000528359	named transcript	115	protein_coding	chromosome:GRCh38:14:70045947:70189070:-1	True	2778	True	True	True	0	True	identical	0	0	P57103-7	False
 l1-p3285	iso:SPNS2:ENST00000947403	isoform	human	SPNS2	ENST00000947403	named transcript	115	protein_coding	chromosome:GRCh38:17:4498882:4539035:1	True	1644	True	True	True	0	True	identical	0	0		False
 l1-p3288	iso:TMEM181:Q9P2C4-1	isoform	human	TMEM181	ENST00000367090	named transcript	115	protein_coding	chromosome:GRCh38:6:158536436:158635435:1	True	1551	True	True	True	0	True	identical	0	0	Q9P2C4-1	False
-l1-p3289	iso:TMEM222:ENST00000915855	isoform	human	TMEM222	ENST00000915855	named transcript	115	protein_coding	chromosome:GRCh38:1:27322139:27336401:1	True	618	True	True	True	0	True	identical	0	0		False
 l1-p3290	iso:TMIGD2:Q96BF3	isoform	human	TMIGD2	ENST00000301272	named transcript	115	protein_coding	chromosome:GRCh38:19:4292232:4302431:-1	True	849	True	True	True	0	True	identical	0	0	Q96BF3	True
 l1-p3291	iso:TMPRSS13:Q9BYE2	isoform	human	TMPRSS13	ENST00000445164	named transcript	115	protein_coding	chromosome:GRCh38:11:117903045:117929381:-1	True	1761	True	True	True	0	True	identical	0	0	Q9BYE2	True
 l1-p3293	iso:TNFSF10:ENST00000855871	isoform	human	TNFSF10	ENST00000855871	named transcript	115	protein_coding	chromosome:GRCh38:3:172506404:172523475:-1	True	840	True	True	True	0	True	identical	0	0		False
@@ -2761,3 +2738,4 @@ l1-p3337	iso:SLC39A14:Q15043-3	isoform	human	SLC39A14	ENST00000359741	named tran
 l1-p3338	iso:NRP2:O60462-4	isoform	human	NRP2	ENST00000357118	named transcript	115	protein_coding	chromosome:GRCh38:2:205683260:205777156:1	True	2706	True	True	True	0	True	identical	0	0	O60462-4	False
 l1-p3339	iso:ATP1B3:ENST00000874841	isoform	human	ATP1B3	ENST00000874841	named transcript	115	protein_coding	chromosome:GRCh38:3:141876641:141926198:1	True	816	True	True	True	0	True	identical	0	0		False
 l1-p3340	iso:PMEPA1:Q969W9-3	isoform	human	PMEPA1	ENST00000265626	named transcript	115	protein_coding	chromosome:GRCh38:20:57648394:57711536:-1	True	714	True	True	True	0	True	identical	0	0	Q969W9-3	False
+l1-p3341	lib:PCDH11X	library_reference	human	PCDH11X	ENST00000682573	named transcript	115	protein_coding	chromosome:GRCh38:X:91779375:92623230:1	True	4044	True	True	True	0	True	identical	0	0	Q9BZA7	False

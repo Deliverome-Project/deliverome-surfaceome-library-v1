@@ -239,8 +239,8 @@ CALHM5	ENSG00000178033	1	1	0	1	intact protein_coding copy	l1-p0235
 CASR	ENSG00000036828	6	6	0	6	intact protein_coding copy	l1-p0236	
 CATSPERE	ENSG00000179397	4	4	0	4	intact protein_coding copy	l1-p0237	
 CATSPERG	ENSG00000099338	8	8	0	6	intact protein_coding copy	l1-p0238	
-CATSPERH	ENSG00000187066	4	4	0	2	intact protein_coding copy	l1-p0239	
-CATSPERQ	ENSG00000261587	6	6	0	5	intact protein_coding copy	l1-p0240	
+CATSPERH	ENSG00000187066	4	4	0	2	intact protein_coding copy		
+CATSPERQ	ENSG00000261587	6	6	0	5	intact protein_coding copy		
 CCKAR	ENSG00000163394	1	1	0	1	intact protein_coding copy	l1-p0241	
 CCKBR	ENSG00000110148	5	5	0	5	intact protein_coding copy	l1-p0242	
 CCR1	ENSG00000163823	5	5	0	5	intact protein_coding copy	l1-p0243	
@@ -503,7 +503,7 @@ CXCR3	ENSG00000186810	2	2	0	2	intact protein_coding copy	l1-p0492;l1-p3236
 CXCR4	ENSG00000121966	7	7	0	7	intact protein_coding copy	l1-p0493;l1-p2426	
 CXCR5	ENSG00000160683	1	1	0	1	intact protein_coding copy	l1-p0494	
 CXCR6	ENSG00000172215	5	5	0	5	intact protein_coding copy	l1-p0495	
-CXorf66	ENSG00000203933	1	1	0	1	intact protein_coding copy	l1-p0496	
+CXorf66	ENSG00000203933	1	1	0	1	intact protein_coding copy		
 CYBB	ENSG00000165168	6	6	0	6	intact protein_coding copy	l1-p0497	
 CYBRD1	ENSG00000071967	5	5	0	4	intact protein_coding copy	l1-p0498	
 CYSLTR1	ENSG00000173198	5	5	0	5	intact protein_coding copy	l1-p0499	
@@ -1288,7 +1288,7 @@ MS4A13	ENSG00000204979	4	4	0	4	intact protein_coding copy	l1-p1252
 MS4A2	ENSG00000149534	3	3	0	2	intact protein_coding copy	l1-p1253	
 MS4A3	ENSG00000149516	8	4	0	4	intact protein_coding copy	l1-p1254	
 MS4A4A	ENSG00000110079	20	20	0	20	intact protein_coding copy	l1-p1255	
-MS4A5	ENSG00000166930	5	5	0	5	intact protein_coding copy	l1-p1256	
+MS4A5	ENSG00000166930	5	5	0	5	intact protein_coding copy		
 MS4A6A	ENSG00000110077	18	18	0	18	intact protein_coding copy	l1-p1257	
 MS4A7	ENSG00000166927	22	22	0	21	intact protein_coding copy	l1-p1258	
 MSLN	ENSG00000102854	68	68	0	66	intact protein_coding copy	l1-p1259;l1-p2468	
@@ -1524,7 +1524,7 @@ OR52K2	ENSG00000181963	1	1	0	1	intact protein_coding copy	l1-p1483
 OR52L1	ENSG00000183313	1	1	0	1	intact protein_coding copy	l1-p1484	
 OR52N2	ENSG00000180988	3	3	0	3	intact protein_coding copy	l1-p1485	
 OR52N4	ENSG00000181074	1	1	0	1	intact protein_coding copy	l1-p1486	
-OR52P1	ENSG00000181109	1	1	1	0	no intact copy		
+OR52P1	ENSG00000181109	1	1	1	0	no intact copy	l1-p3214	
 OR56A3	ENSG00000184478	2	2	0	2	intact protein_coding copy	l1-p1487	
 OR56B1	ENSG00000181023	1	1	0	1	intact protein_coding copy	l1-p1488	
 OR56B4	ENSG00000180919	1	1	0	1	intact protein_coding copy	l1-p1489	
@@ -1767,7 +1767,7 @@ RAET1G	ENSG00000203722	4	4	0	4	intact protein_coding copy	l1-p1723
 RAET1L	ENSG00000155918	2	2	0	2	intact protein_coding copy	l1-p1724	
 RECK	ENSG00000122707	8	8	0	8	intact protein_coding copy	l1-p1725	
 RELL1	ENSG00000181826	7	7	0	6	intact protein_coding copy	l1-p1726	
-RELL2	ENSG00000164620	5	5	0	5	intact protein_coding copy	l1-p1727	
+RELL2	ENSG00000164620	5	5	0	5	intact protein_coding copy		
 RELT	ENSG00000054967	16	16	0	15	intact protein_coding copy	l1-p1728	
 RET	ENSG00000165731	15	15	0	14	intact protein_coding copy	l1-p1729	
 RGMA	ENSG00000182175	10	10	0	9	intact protein_coding copy	l1-p1730	
@@ -2101,7 +2101,7 @@ SLITRK4	ENSG00000179542	10	10	0	10	intact protein_coding copy	l1-p2050
 SLITRK5	ENSG00000165300	4	4	0	4	intact protein_coding copy	l1-p2051	
 SLITRK6	ENSG00000184564	2	2	0	2	intact protein_coding copy	l1-p2052	
 SMAGP	ENSG00000170545	10	10	0	10	intact protein_coding copy	l1-p2053	
-SMIM7	ENSG00000214046	21	21	0	21	intact protein_coding copy	l1-p2054	
+SMIM7	ENSG00000214046	21	21	0	21	intact protein_coding copy		
 SMO	ENSG00000128602	8	8	0	8	intact protein_coding copy	l1-p2055	
 SMPDL3B	ENSG00000130768	9	9	0	8	intact protein_coding copy	l1-p2056	
 SNORC	ENSG00000182600	5	5	0	4	intact protein_coding copy	l1-p2057	
@@ -2177,7 +2177,7 @@ TCTA	ENSG00000145022	3	3	0	3	intact protein_coding copy	l1-p2124
 TEK	ENSG00000120156	33	33	0	32	intact protein_coding copy	l1-p2125	
 TEX101	ENSG00000131126	4	4	0	4	intact protein_coding copy	l1-p2126	
 TEX29	ENSG00000153495	3	3	0	3	intact protein_coding copy	l1-p2127	
-TEX38	ENSG00000186118	4	4	0	3	intact protein_coding copy	l1-p2128	
+TEX38	ENSG00000186118	4	4	0	3	intact protein_coding copy		
 TFPI	ENSG00000003436	48	48	0	43	intact protein_coding copy	l1-p2129	
 TFR2	ENSG00000106327	75	75	0	75	intact protein_coding copy	l1-p2130	
 TFRC	ENSG00000072274	27	27	0	27	intact protein_coding copy	l1-p2131	
@@ -2222,16 +2222,16 @@ TMEM132A	ENSG00000006118	6	6	0	5	intact protein_coding copy	l1-p2167
 TMEM132B	ENSG00000139364	3	3	0	3	intact protein_coding copy	l1-p2168	
 TMEM132D	ENSG00000151952	2	2	0	2	intact protein_coding copy	l1-p2169	
 TMEM132E	ENSG00000181291	2	2	0	2	intact protein_coding copy	l1-p2170	
-TMEM134	ENSG00000172663	14	14	0	14	intact protein_coding copy	l1-p2171	
-TMEM139	ENSG00000178826	10	10	0	10	intact protein_coding copy	l1-p2172	
+TMEM134	ENSG00000172663	14	14	0	14	intact protein_coding copy		
+TMEM139	ENSG00000178826	10	10	0	10	intact protein_coding copy		
 TMEM145	ENSG00000167619	5	5	0	5	intact protein_coding copy	l1-p2173	
 TMEM150A	ENSG00000168890	16	16	0	16	intact protein_coding copy	l1-p2174	
 TMEM150C	ENSG00000249242	4	4	0	3	intact protein_coding copy	l1-p2175	
 TMEM154	ENSG00000170006	5	5	0	5	intact protein_coding copy	l1-p2176	
 TMEM158	ENSG00000249992	1	1	0	1	intact protein_coding copy	l1-p2177	
-TMEM169	ENSG00000163449	10	10	0	8	intact protein_coding copy	l1-p2178	
+TMEM169	ENSG00000163449	10	10	0	8	intact protein_coding copy		
 TMEM170B	ENSG00000205269	2	2	0	2	intact protein_coding copy	l1-p2179	
-TMEM174	ENSG00000164325	1	1	0	1	intact protein_coding copy	l1-p2180	
+TMEM174	ENSG00000164325	1	1	0	1	intact protein_coding copy		
 TMEM181	ENSG00000146433	17	17	0	17	intact protein_coding copy	l1-p2181;l1-p3288	
 TMEM182	ENSG00000170417	8	8	0	8	intact protein_coding copy	l1-p2182;l1-p3319	
 TMEM184A	ENSG00000164855	17	17	0	13	intact protein_coding copy	l1-p2183	
@@ -2239,23 +2239,23 @@ TMEM190	ENSG00000160472	2	2	0	2	intact protein_coding copy	l1-p2184
 TMEM198	ENSG00000188760	9	9	0	9	intact protein_coding copy	l1-p2185	
 TMEM204	ENSG00000131634	3	3	0	3	intact protein_coding copy	l1-p2186	
 TMEM205	ENSG00000105518	15	15	0	13	intact protein_coding copy	l1-p2187	
-TMEM210	ENSG00000185863	2	2	0	2	intact protein_coding copy	l1-p2188	
+TMEM210	ENSG00000185863	2	2	0	2	intact protein_coding copy		
 TMEM219	ENSG00000149932	26	26	0	25	intact protein_coding copy	l1-p2189	
-TMEM222	ENSG00000186501	11	11	0	11	intact protein_coding copy	l1-p2190;l1-p3289	
+TMEM222	ENSG00000186501	11	11	0	11	intact protein_coding copy		
 TMEM225	ENSG00000204300	2	2	0	1	intact protein_coding copy	l1-p2191	
 TMEM229B	ENSG00000198133	20	20	0	20	intact protein_coding copy	l1-p2192	
-TMEM238	ENSG00000233493	2	2	0	2	intact protein_coding copy	l1-p2193	
+TMEM238	ENSG00000233493	2	2	0	2	intact protein_coding copy		
 TMEM248	ENSG00000106609	30	30	0	28	intact protein_coding copy	l1-p3209	
 TMEM26	ENSG00000196932	4	4	0	4	intact protein_coding copy	l1-p2194	
-TMEM266	ENSG00000169758	6	6	0	6	intact protein_coding copy	l1-p2195	
-TMEM268	ENSG00000157693	11	11	0	11	intact protein_coding copy	l1-p2196	
-TMEM273	ENSG00000204161	10	10	0	10	intact protein_coding copy	l1-p2197	
+TMEM266	ENSG00000169758	6	6	0	6	intact protein_coding copy		
+TMEM268	ENSG00000157693	11	11	0	11	intact protein_coding copy		
+TMEM273	ENSG00000204161	10	10	0	10	intact protein_coding copy		
 TMEM47	ENSG00000147027	2	2	0	2	intact protein_coding copy	l1-p2198	
 TMEM63B	ENSG00000137216	29	29	0	28	intact protein_coding copy	l1-p2199	
 TMEM67	ENSG00000164953	32	32	0	31	intact protein_coding copy	l1-p2200	
 TMEM81	ENSG00000174529	1	1	0	1	intact protein_coding copy	l1-p2201	
-TMEM86A	ENSG00000151117	1	1	0	1	intact protein_coding copy	l1-p2202	
-TMEM86B	ENSG00000180089	2	2	0	2	intact protein_coding copy	l1-p2203	
+TMEM86A	ENSG00000151117	1	1	0	1	intact protein_coding copy		
+TMEM86B	ENSG00000180089	2	2	0	2	intact protein_coding copy		
 TMEM89	ENSG00000183396	1	1	0	1	intact protein_coding copy	l1-p2204	
 TMEM8B	ENSG00000137103	7	7	0	7	intact protein_coding copy	l1-p2205	
 TMEM95	ENSG00000182896	6	3	0	3	intact protein_coding copy	l1-p2206	
@@ -2356,7 +2356,7 @@ TSPAN6	ENSG00000000003	11	11	0	11	intact protein_coding copy	l1-p2298;l1-p3320
 TSPAN7	ENSG00000156298	14	14	0	14	intact protein_coding copy	l1-p2299	
 TSPAN8	ENSG00000127324	19	19	0	19	intact protein_coding copy	l1-p2300	
 TSPAN9	ENSG00000011105	28	28	0	27	intact protein_coding copy	l1-p2301	
-TSPO2	ENSG00000112212	3	3	0	3	intact protein_coding copy	l1-p2302	
+TSPO2	ENSG00000112212	3	3	0	3	intact protein_coding copy		
 TTYH1	ENSG00000167614	26	11	0	10	intact protein_coding copy	l1-p2303	
 TTYH2	ENSG00000141540	11	11	0	11	intact protein_coding copy	l1-p2304	
 TTYH3	ENSG00000136295	18	18	0	17	intact protein_coding copy	l1-p2305;l1-p3295	

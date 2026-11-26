@@ -1,10 +1,10 @@
 {
- "members_checked": 2762,
+ "members_checked": 2740,
  "by_set_species": {
-  "library_reference:human": 2412,
-  "isoform:human": 150,
-  "ortholog:cyno": 100,
-  "ortholog:mouse": 100
+  "library_reference:human": 2395,
+  "isoform:human": 149,
+  "ortholog:cyno": 99,
+  "ortholog:mouse": 97
  },
  "cds_integrity_failures": 0,
  "failures": [],
@@ -14,24 +14,25 @@
   "l1-p1525 OR8G3: source biotype protein_coding_LoF",
   "l1-p3211 FCGR2C: source biotype protein_coding_LoF",
   "l1-p3212 OR10AC1: source biotype protein_coding_LoF",
+  "l1-p3214 OR52P1: source biotype protein_coding_LoF",
   "l1-p3308 OR8J2: source biotype protein_coding_LoF",
   "l1-p3310 SIGLEC16: source biotype protein_coding_LoF"
  ],
  "ensembl_release_of_source": {
-  "115": 2756,
+  "115": 2734,
   "116": 6
  },
  "source_transcript_biotype": {
-  "protein_coding": 2755,
-  "protein_coding_LoF": 6,
+  "protein_coding": 2732,
+  "protein_coding_LoF": 7,
   "nonsense_mediated_decay": 1
  },
  "cds_vs_source_transcript": {
-  "identical": 2747,
+  "identical": 2724,
   "differs by recorded edit: trimmed_upstream_codons": 5,
   "differs by recorded edit: stop_added": 3,
   "differs by recorded edit: start_codon_replaced": 3,
-  "differs by recorded edit: allele_restoration": 4
+  "differs by recorded edit: allele_restoration": 5
  },
  "human_members_off_primary_assembly": [
   "l1-p1052 KIR2DL2 HSCHR19KIR_FH13_BA2_HAP_CTG3_1",
@@ -50,15 +51,15 @@
   "l1-p2742 OR5AL1 HG2568_PATCH",
   "l1-p3213 OR4Q2 HG2526_HG2573_PATCH"
  ],
- "human_members": 2562,
- "human_members_identical_to_a_uniprot_reviewed_sequence": 2436,
+ "human_members": 2544,
+ "human_members_identical_to_a_uniprot_reviewed_sequence": 2419,
  "human_members_variant_residues_vs_uniprot": {
-  "0": 2556,
+  "0": 2538,
   "3": 1,
   "1": 5
  },
- "references": 2412,
- "references_equal_gene_uniprot_canonical": 2223,
+ "references": 2395,
+ "references_equal_gene_uniprot_canonical": 2205,
  "library_genes": 2417,
  "genes_with_primary_LoF_transcript": 12,
  "genes_by_primary_status": {
@@ -80,7 +81,7 @@
   "OR11H7: no intact copy (members: l1-p1382)",
   "OR12D1: no intact copy (members: l1-p2741)",
   "OR4Q2: no intact copy (members: l1-p3213)",
-  "OR52P1: no intact copy (members: none)",
+  "OR52P1: no intact copy (members: l1-p3214)",
   "OR5AL1: no intact copy (members: l1-p2742)",
   "OR8G3: translates intact, but labeled protein_coding_LoF (members: l1-p1525)",
   "OR8J2: no intact copy (members: l1-p3308)",
@@ -92,7 +93,7 @@
  ],
  "inputs": {
   "manifest": "library_manifest_l1.tsv",
-  "designed_cds": "processed://sprint4/s4e9-orf-design-fg-panel/library-candidates/2026-11-23-pre-freeze/candidate_cds.json",
+  "designed_cds": "processed://sprint4/s4e9-orf-design-fg-panel/library-candidates/2026-11-25-pre-freeze-d/candidate_cds.json",
   "reference_selection": "processed://sprint4/s4e9-orf-design-fg-panel/library-design/reference-selection/2026-11-23-pre-freeze/reference_selection.tsv",
   "allele_restorations": "allele_restorations.tsv",
   "ensembl_release": "115",
