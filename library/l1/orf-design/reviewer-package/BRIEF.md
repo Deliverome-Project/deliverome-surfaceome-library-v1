@@ -1411,7 +1411,7 @@ we build and filter the final order:
    pass refold [`94.1%`], `199` built and flagged, `0` pending, **`10` held**), with **100%
    residue-for-residue match** between every folded model and the recoded synthesis FASTA.
 
-### Native and tagged structure models (`2,740 / 2,740` covered)
+### Structure models
 
 Internal-site scoring reads per-residue confidence (pLDDT), solvent accessibility (RSA), and
 membrane geometry from a native 3D model, and every ordered construct is then refolded as its own

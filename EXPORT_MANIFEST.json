@@ -1,6 +1,6 @@
 {
  "source_repository": "Deliverome-Project/deliverome-analysis",
- "source_commit": "a855470f86320641e05f5ed3c3c3a1b6ae62bd01",
+ "source_commit": "5fd41365cae121634c452045fd00f896ac2d010d",
  "source_ref": "HEAD",
  "files": {
   ".dockerignore": "b0ef20cc0ea717b6500dfefd4291a944d8f65a63047753c57eacafd71ecc000b",
@@ -847,7 +847,7 @@
   "library/l1/orf-design/review_l1_cterm_members.py": "2793c313f0d8215ced7eaf00edc2a8fb915ae5ea259c01038499c26475404abd",
   "library/l1/orf-design/review_ortholog_correspondence.py": "3f172bf210debe9ad24f6bebc7d4488bc8334a7609dafbb4476d459742759103",
   "library/l1/orf-design/review_priority_cds_forms.py": "efdcef917047a62f0b866b7dce6b2885ebeacaef4d29117c708f79f25ff5415a",
-  "library/l1/orf-design/reviewer-package/BRIEF.md": "5ecead4c1d8d1f55fb2fbbe8c40f11992e00fa507bf17967be78f050d9ab8d67",
+  "library/l1/orf-design/reviewer-package/BRIEF.md": "7bec0c0cd8bded0bc7ea990e0c349d0a9d623a441145dafcaa67ee8d12116b7c",
   "library/l1/orf-design/reviewer-package/COVER_NOTE.md": "c6ccf3e35d70e50c8125b703699b1b1737fd215ea09fe6d86fec622438058cec",
   "library/l1/orf-design/reviewer-package/DECISION_LOG.md": "6a6d321f7d487ade0dff1f7d8c650280f8dfb7e21a0a50c42d40c991dfce8568",
   "library/l1/orf-design/reviewer-package/DESIGN.md": "ee0ed593c99a0dd5cea26fb14985a600a36c12990331d06c88c2e25fbaa3ff0e",
