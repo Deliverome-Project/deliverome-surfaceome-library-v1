@@ -10,7 +10,7 @@ Three questions, three evidence sets, none of which the placement itself uses:
    experimental evidence (ECO:0000269) say which side a stretch is on. Read on the
    members whose designed protein is the UniProt canonical sequence.
 3. **How deep do tags that work sit?** The audited literature gold standard
-   (``processed://library/l1/tag-site-corpus-audit/gold_standard.tsv``): internal tag
+   (``processed://scratch/becca/tag-site-corpus-audit/gold_standard.tsv``): internal tag
    insertions confirmed at the cited residue, 120 of them with surface display shown.
    Each is placed on its protein's AlphaFold DB model with the same code as the members.
 
@@ -40,7 +40,7 @@ from placements import member_placements, place_protein  # noqa: E402
 from deliverome_analysis import membrane_side as ms  # noqa: E402
 from deliverome_analysis import topology  # noqa: E402
 
-GOLD_PREFIX = "library/l1/tag-site-corpus-audit/"
+GOLD_PREFIX = "scratch/becca/tag-site-corpus-audit/"
 EBI_FEATURES = "https://www.ebi.ac.uk/proteins/api/features/{}?categories=TOPOLOGY"
 PLDDT_BINS = [0, 50, 70, 90, 101]
 PLDDT_LABELS = ["<50", "50-70", "70-90", ">=90"]

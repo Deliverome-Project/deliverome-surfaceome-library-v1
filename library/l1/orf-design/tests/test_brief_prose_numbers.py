@@ -251,11 +251,11 @@ CLAIMS = [
         [("order_plan", "weighting", "x2.0", "extra_ug_assumed_total")],
     ),
     (
-        "| 2.5× | 30× / 41× | 94× / 152× | {} µg / 74.9 µg |",
+        "| 2.5× | 29× / 41× | 94× / 152× | {} µg / 74.9 µg |",
         [("order_plan", "weighting", "x2.5", "extra_ug_assumed_total")],
     ),
     (
-        "| 3.5× | 102× / 143× | 495× / 803× | {} µg / 112.4 µg |",
+        "| 3.5× | 101× / 141× | 495× / 801× | {} µg / 112.4 µg |",
         [("order_plan", "weighting", "x3.5", "extra_ug_assumed_total")],
     ),
     # section 11 reproducibility order count

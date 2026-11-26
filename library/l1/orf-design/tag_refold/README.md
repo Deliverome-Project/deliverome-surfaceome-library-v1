@@ -40,7 +40,7 @@ Its MSA is fetched for the tagged form anyway, so the extra fold costs about $0.
 
 ## How each protein is folded
 
-ColabFold 1.6.2 on Modal ([`scripts/fold_tagged_modal.py`](../../../../scripts/fold_tagged_modal.py)),
+ColabFold 1.6.2 on Modal (`scripts/fold_tagged_modal.py`),
 `alphafold2_ptm` model 1 only, 3 recycles, no Amber relaxation, no templates.
 
 | Choice | Reason |

@@ -82,8 +82,8 @@ def s3_inputs() -> list[dict]:
             "sprint4/s4e9-orf-design-fg-panel/library-candidates/"
             "2026-11-12-ortholog-start-trims-2/candidate_cds.json",
         ),
-        (processed, "library/l1/tag-site-corpus-audit/gold_standard.tsv"),
-        (processed, "library/l1/tag-site-corpus-audit/failed_sites.tsv"),
+        (processed, "scratch/becca/tag-site-corpus-audit/gold_standard.tsv"),
+        (processed, "scratch/becca/tag-site-corpus-audit/failed_sites.tsv"),
     ]:
         path = Path(bucket.download(key))
         rows.append(

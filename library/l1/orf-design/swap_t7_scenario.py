@@ -41,10 +41,14 @@ T7 = "TAATACGACTCACTATAGGG"
 SPLICE_DONOR = re.compile(r"GT[AG]AG")
 
 
-def insert_t7(insert: str) -> str:
+def toggle_t7(insert: str) -> tuple[str, int]:
+    """If T7 is already present before FWD_PRIMER (as in the adopted order of record), remove it
+    to model the pre-T7 baseline; otherwise insert T7 to model adding it."""
     at = insert.find(FWD_PRIMER)
     assert at > 0 and insert.find(FWD_PRIMER, at + 1) < 0, "handle not found exactly once"
-    return insert[:at] + T7 + insert[at:]
+    if at >= len(T7) and insert[at - len(T7) : at] == T7:
+        return insert[: at - len(T7)] + insert[at:], -len(T7)
+    return insert[:at] + T7 + insert[at:], len(T7)
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -53,16 +57,26 @@ def main(argv: list[str] | None = None) -> int:
     a = ap.parse_args(argv)
     rec, digest = audit.recoded_inserts(None)
     assert digest == audit.RECODED_SHA256, "order of record changed"
-    new = {r["key"]: insert_t7(r["insert"]) for r in rec}
+    toggled = {r["key"]: toggle_t7(r["insert"]) for r in rec}
+    new = {k: seq for k, (seq, _) in toggled.items()}
+    deltas = {d for _, d in toggled.values()}
+    assert len(deltas) == 1, f"mixed T7 presence across order: {deltas}"
+    delta = next(iter(deltas))
     for r in rec:
         old, ins = r["insert"], new[r["key"]]
         sites = lambda s: sorted((e, st) for e, st, _ in seqtools.find_sites(s, ENZYMES))  # noqa: E731
         assert sites(ins) == sites(old), f"{r['key']}: Type IIS sites changed"
-    at = rec[0]["insert"].find(FWD_PRIMER)
-    seam = new[rec[0]["key"]][at - 12 : at + len(T7) + 12]
+    t7_seq = rec[0]["insert"] if delta < 0 else new[rec[0]["key"]]
+    at = t7_seq.find(FWD_PRIMER)
+    seam = t7_seq[at - len(T7) - 12 : at + 12]
     donors = [m.start() for m in SPLICE_DONOR.finditer(seam)]
     seams = {
-        new[r["key"]][r["insert"].find(FWD_PRIMER) - 12 : r["insert"].find(FWD_PRIMER) + 32]
+        (r["insert"] if delta < 0 else new[r["key"]])[
+            (r["insert"] if delta < 0 else new[r["key"]]).find(FWD_PRIMER) - len(T7) - 12 : (
+                r["insert"] if delta < 0 else new[r["key"]]
+            ).find(FWD_PRIMER)
+            + 12
+        ]
         for r in rec
     }
 
@@ -79,17 +93,22 @@ def main(argv: list[str] | None = None) -> int:
     finally:
         audit.recoded_inserts = real
     summary = json.loads(model.OUT_JSON.read_text())
+    scenario_desc = (
+        "counterfactual without T7 promoter (removed 20 nt 5' of JT832; order of record carries T7)"
+        if delta < 0
+        else "forward T7 promoter (TAATACGACTCACTATAGGG) just 5' of the JT832 handle"
+    )
     out = {
-        "scenario": "forward T7 promoter (TAATACGACTCACTATAGGG) just 5' of the JT832 handle",
+        "scenario": scenario_desc,
         "order_of_record": audit.RECODED_KEY,
         "order_of_record_sha256": digest,
         "inserts": len(new),
-        "added_nt_per_insert": len(T7),
+        "added_nt_per_insert": delta,
         "distinct_seams": len(seams),
         "splice_donor_motifs_in_seam": donors,
         "library_fraction_wrong_protein": summary["library_fraction_wrong_protein"],
         "wrong_protein_by_block_region": summary["wrong_protein_by_block_region"],
-        "model": "l1_swap_pool_model.main() unchanged, on the spliced inserts",
+        "model": "l1_swap_pool_model.main() unchanged, on the counterfactual inserts",
     }
     OUT.write_text(json.dumps(out, indent=2) + "\n")
     print(

@@ -314,22 +314,22 @@ SOURCES: list[tuple[str, str, str]] = [
     ),
     # Reviewer records the brief cites; brief_numbers.py reads them, so collect records them.
     (
-        r"processed/library/l1/tag-site-corpus-audit/audit\.tsv",
+        r"processed/scratch/becca/tag-site-corpus-audit/audit\.tsv",
         "deliverome_curation",
         "audit of the 176 S5E13 literature tag-site positives against their papers (PR 236)",
     ),
     (
-        r"processed/library/l1/tag-site-corpus-audit/gold_standard\.tsv",
+        r"processed/scratch/becca/tag-site-corpus-audit/gold_standard\.tsv",
         "deliverome_curation",
         "gold standard: the audit's confirmed sites, one per (accession, residue) (PR 236)",
     ),
     (
-        r"processed/library/l1/tag-site-corpus-audit/(failed_sites|added_sites|region_labels)\.tsv",
+        r"processed/scratch/becca/tag-site-corpus-audit/(failed_sites|added_sites|region_labels)\.tsv",
         "deliverome_curation",
         "tag-site audit: failed sites, sites recovered from wrong-gene papers, region labels (PR 236)",
     ),
     (
-        r"processed/library/l1/tag-site-corpus-audit/",
+        r"processed/scratch/becca/tag-site-corpus-audit/",
         "deliverome_curation",
         "tag-site literature audit: other files in the audit folder the brief cites",
     ),

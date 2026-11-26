@@ -42,7 +42,7 @@ from placements import member_placements, place_protein  # noqa: E402
 from deliverome_analysis import membrane_side as ms  # noqa: E402
 from deliverome_analysis import topology  # noqa: E402
 
-GOLD = "library/l1/tag-site-corpus-audit/gold_standard.tsv"
+GOLD = "scratch/becca/tag-site-corpus-audit/gold_standard.tsv"
 #: Residues after the last v1 helix read for the C-terminal side.
 C_FLANK = 15
 

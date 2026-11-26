@@ -1,0 +1,19 @@
+what	value
+CDSs on the internal placement	609
+with at least one built construct	589
+held (nothing built)	20
+built loop constructs	1062
+built snorkel constructs	109
+CDSs with 1 built construct(s)	216
+CDSs with 2 built construct(s)	164
+CDSs with 3 built construct(s)	209
+CDSs with 1 built loop construct(s)	251
+CDSs with 2 built loop construct(s)	203
+CDSs with 3 built loop construct(s)	135
+built CDSs with order verdict order_1	190
+built CDSs with order verdict order_3	166
+built CDSs with order verdict order_2	109
+built CDSs with order verdict all_bad	93
+built CDSs with order verdict rescue_round	26
+built CDSs with order verdict none recorded	4
+built CDSs with order verdict 1 site(s)	1

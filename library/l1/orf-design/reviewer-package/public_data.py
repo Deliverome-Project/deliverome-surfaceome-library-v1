@@ -316,12 +316,50 @@ def fetch(out: Path, workers: int) -> int:
     return 1 if bad else 0
 
 
+def _list_r2_sizes(account: str, token: str) -> dict[str, int]:
+    """List all object sizes in ``BUCKET`` via the Cloudflare R2 API (fast, no r2.dev 429s)."""
+    import json
+
+    have: dict[str, int] = {}
+    cursor: str | None = None
+    while True:
+        url = (
+            f"https://api.cloudflare.com/client/v4/accounts/{account}"
+            f"/r2/buckets/{BUCKET}/objects?per_page=1000"
+        )
+        if cursor:
+            url += f"&cursor={cursor}"
+        req = urllib.request.Request(url, headers={"Authorization": f"Bearer {token}"})
+        data = json.loads(urllib.request.urlopen(req, timeout=30).read())
+        if not data.get("success"):
+            raise RuntimeError(f"Cloudflare R2 list failed: {data}")
+        for obj in data["result"]:
+            have[obj["key"]] = int(obj["size"])
+        ri = data.get("result_info") or {}
+        if not ri.get("is_truncated"):
+            break
+        cursor = ri.get("cursor")
+    return have
+
+
 def check(workers: int) -> int:
     """Every public file is online, at its bucket or source URL, with the manifest's size."""
     rows = locations("public_r2", "public_source")
-    with ThreadPoolExecutor(workers) as pool:
-        sizes = list(pool.map(lambda r: _head(r["location"]), rows))
-    bad = [r["location"] for r, n in zip(rows, sizes, strict=True) if n != int(r["bytes"])]
+    account = os.environ.get("CLOUDFLARE_ACCOUNT_ID")
+    token = os.environ.get("CLOUDFLARE_API_TOKEN")
+    bad: list[str] = []
+    if account and token:
+        r2_sizes = _list_r2_sizes(account, token)
+        for r in rows:
+            if r["home"] == "public_r2":
+                if r2_sizes.get(f"{r['bucket']}/{r['key']}") != int(r["bytes"]):
+                    bad.append(r["location"])
+            elif _head(r["location"]) != int(r["bytes"]):
+                bad.append(r["location"])
+    else:
+        with ThreadPoolExecutor(workers) as pool:
+            sizes = list(pool.map(lambda r: _head(r["location"]), rows))
+        bad = [r["location"] for r, n in zip(rows, sizes, strict=True) if n != int(r["bytes"])]
     print(f"{len(rows) - len(bad)} of {len(rows)} public objects online at the manifest size")
     for url in bad[:20]:
         print("  missing or wrong size: " + url, file=sys.stderr)

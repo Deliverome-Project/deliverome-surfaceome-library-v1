@@ -145,6 +145,27 @@ def test_exported_clean_paths_repo_runs_offline_tests(tmp_path: Path):
     )
     assert res.returncode == 0, f"exported offline tests failed:\n{res.stdout}\n{res.stderr}"
 
+    # Every relative markdown link in the exported repo must resolve (mirrors review-repo CI).
+    # Static root files (LICENSE, LICENSING.md, CITATION.cff) live in the destination review repo
+    # rather than being emitted by export_review_repo.py into an empty tmp_path.
+    static_review_repo_root_files = {"LICENSE", "LICENSING.md", "CITATION.cff"}
+    link_re = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
+    broken_links = []
+    for md in sorted(repo.rglob("*.md")):
+        if any(p in {".git", ".venv", "historical", "review-repo"} for p in md.parts):
+            continue
+        for raw in link_re.findall(md.read_text(errors="ignore")):
+            target = raw.split("#", 1)[0].strip().strip("<>")
+            if not target or target.startswith(("http://", "https://", "mailto:", "#")):
+                continue
+            if md == repo / "README.md" and target in static_review_repo_root_files:
+                continue
+            if not (md.parent / target).exists():
+                broken_links.append(f"{md.relative_to(repo)}: {target}")
+    assert not broken_links, "Broken relative markdown links in export:\n  " + "\n  ".join(
+        broken_links[:20]
+    )
+
     # Every materialized pinned git snapshot is present and matches SHA256SUMS.json, and
     # provenance.read_pinned_text resolves them inside the exported repo with zero .git history.
     if full_history:

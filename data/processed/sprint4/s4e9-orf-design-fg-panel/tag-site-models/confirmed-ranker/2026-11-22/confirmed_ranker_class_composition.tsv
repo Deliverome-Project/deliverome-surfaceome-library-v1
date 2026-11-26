@@ -1,0 +1,5 @@
+protein_class	test_proteins	test_fraction	l1_internal_cds	l1_fraction
+single-pass	27	0.25	22	0.0361
+multipass, 2-6 TM	38	0.3519	310	0.509
+multipass, 7+ TM	37	0.3426	273	0.4483
+no TM helix	6	0.0556	4	0.0066

@@ -86,6 +86,42 @@ def test_review_repo_tables_are_present_and_intact() -> None:
     assert not bad, f"{len(bad)} committed tables missing or changed, e.g. {bad[:5]}"
 
 
+def test_every_active_afdb_model_is_archived_and_bundled() -> None:
+    """Every active AlphaFold DB model in library_manifest_l1.tsv must be archived and bundled."""
+    s4e9 = RP.parent
+    arch_rows = list(csv.DictReader((s4e9 / "tag_refold_afdb_archive.tsv").open(), delimiter="\t"))
+    archived = {r["archive_key"].removeprefix("external://") for r in arch_rows}
+    bundled = {_key(r) for r in MANIFEST}
+    placed = {_key(r) for r in LOCATIONS}
+
+    mf_rows = list(csv.DictReader((s4e9 / "library_manifest_l1.tsv").open(), delimiter="\t"))
+    active_accs = sorted(
+        {
+            r["structure_acc"]
+            for r in mf_rows
+            if r["structure_source"] == "alphafold_db" and r["structure_acc"]
+        }
+    )
+    missing_arch, missing_bundle, missing_loc = [], [], []
+    for acc in active_accs:
+        key = f"alphafold-db/v6/AF-{acc}-F1-model_v6.pdb"
+        if key not in archived:
+            missing_arch.append(acc)
+        if ("external", key) not in bundled:
+            missing_bundle.append(acc)
+        if ("external", key) not in placed:
+            missing_loc.append(acc)
+    assert not missing_arch, (
+        f"{len(missing_arch)} active AFDB models not archived: {missing_arch[:5]}"
+    )
+    assert not missing_bundle, (
+        f"{len(missing_bundle)} active AFDB models missing from bundle_manifest.tsv: {missing_bundle[:5]}"
+    )
+    assert not missing_loc, (
+        f"{len(missing_loc)} active AFDB models missing from data_locations.tsv: {missing_loc[:5]}"
+    )
+
+
 @pytest.mark.skipif(
     os.environ.get("L1_CHECK_PUBLIC_DATA") != "1", reason="set L1_CHECK_PUBLIC_DATA=1 (network)"
 )

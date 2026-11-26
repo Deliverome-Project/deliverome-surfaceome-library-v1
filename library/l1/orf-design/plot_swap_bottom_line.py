@@ -149,7 +149,7 @@ def main() -> int:
         0.0,
         -0.3,
         "Upper bounds: every virion is assumed to carry two different constructs. "
-        "All bars: order of record 2026-11-22-rebuild, same model and tail.",
+        "All bars: order of record 2026-11-25-pre-freeze-e, same model and tail.",
         ha="left",
         va="top",
         fontsize=8.5,

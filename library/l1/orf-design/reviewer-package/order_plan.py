@@ -445,7 +445,7 @@ def figure(rows: list[dict]) -> None:
         s=8,
         color="#c8b9b3",
         alpha=0.7,
-        label=f"1 pool/plate (36 tubes): worst {max(max(k1_ratios), 1 / min(k1_ratios)):.2f}\u00d7, total skew {max(k1_ratios) / min(k1_ratios):.2f}\u00d7",
+        label=f"1 pool/plate ({n_plates} tubes): worst {max(max(k1_ratios), 1 / min(k1_ratios)):.2f}\u00d7, total skew {max(k1_ratios) / min(k1_ratios):.2f}\u00d7",
         zorder=2,
     )
     ax2.scatter(
@@ -454,7 +454,7 @@ def figure(rows: list[dict]) -> None:
         s=8,
         color="#d48a29",
         alpha=0.75,
-        label=f"2 subpools/plate (72 tubes): worst {max(max(k2_ratios), 1 / min(k2_ratios)):.2f}\u00d7, total skew {max(k2_ratios) / min(k2_ratios):.2f}\u00d7",
+        label=f"2 subpools/plate ({2 * n_plates} tubes): worst {max(max(k2_ratios), 1 / min(k2_ratios)):.2f}\u00d7, total skew {max(k2_ratios) / min(k2_ratios):.2f}\u00d7",
         zorder=3,
     )
     ax2.scatter(
@@ -463,7 +463,7 @@ def figure(rows: list[dict]) -> None:
         s=7,
         color="#2c7a72",
         alpha=0.85,
-        label=f"4 subpools/plate (144 tubes): worst {max(max(k4_ratios), 1 / min(k4_ratios)):.2f}\u00d7, total skew {max(k4_ratios) / min(k4_ratios):.2f}\u00d7",
+        label=f"4 subpools/plate ({4 * n_plates} tubes): worst {max(max(k4_ratios), 1 / min(k4_ratios)):.2f}\u00d7, total skew {max(k4_ratios) / min(k4_ratios):.2f}\u00d7",
         zorder=4,
     )
     ax2.set_xlim(0.5, n_plates + 1.2)

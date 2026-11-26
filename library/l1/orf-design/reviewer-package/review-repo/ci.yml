@@ -42,7 +42,7 @@ jobs:
           link_re = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
           broken = []
           for md in sorted(root.rglob("*.md")):
-              if any(p in {".git", ".venv", "historical"} for p in md.parts):
+              if any(p in {".git", ".venv", "historical", "review-repo"} for p in md.parts):
                   continue
               text = md.read_text(errors="ignore")
               for raw in link_re.findall(text):
@@ -68,3 +68,39 @@ jobs:
           uv run --locked python library/l1/orf-design/library_pipeline.py plan > /dev/null
           uv run --locked python library/l1/orf-design/l1_cterm_decisions.py --check
           uv run --locked python library/l1/orf-design/gate_isoform_cohort.py --help > /dev/null
+
+  public-mirror-and-release-check:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.13.6"
+          enable-cache: true
+      - name: Install locked environment
+        run: uv sync --locked --group dev --no-group flow --no-group flow-gui --no-group modal
+      - name: Verify public R2 and source mirror objects online
+        run: uv run --locked python library/l1/orf-design/reviewer-package/public_data.py check --workers 4
+      - name: Verify GitHub release tag in README exists with assets
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          uv run --locked python - <<'PY'
+          import json, re, subprocess
+          from pathlib import Path
+
+          readme = Path("README.md").read_text()
+          m = re.search(r"/releases/tag/(bundle-[0-9a-zA-Z._-]+)", readme)
+          assert m, "README.md must cite a pinned /releases/tag/bundle-... release"
+          tag = m.group(1)
+          out = subprocess.check_output(
+              ["gh", "release", "view", tag, "--json", "tagName,assets"], text=True
+          )
+          rel = json.loads(out)
+          assets = {a["name"]: a["size"] for a in rel.get("assets", [])}
+          assert len(assets) >= 2 and all(s > 0 for s in assets.values()), (
+              f"Release {tag} missing expected non-empty tarballs: {assets}"
+          )
+          print(f"Release {tag} verified: {assets}")
+          PY

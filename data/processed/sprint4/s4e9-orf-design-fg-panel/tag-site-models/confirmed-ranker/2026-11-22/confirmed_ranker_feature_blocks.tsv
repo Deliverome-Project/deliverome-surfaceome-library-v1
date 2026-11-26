@@ -1,0 +1,7 @@
+block	proteins	top1_within10	top3_within10	median_rank_pct	mean_auroc	chance_top1_within10
+none	108	0.398	0.676	0.134	0.757	0.163
+structure model (pLDDT, RSA)	108	0.333	0.611	0.161	0.696	0.163
+disorder (3 windows)	108	0.417	0.741	0.135	0.774	0.163
+sequence (hydropathy, Pro/Gly, Cys)	108	0.389	0.667	0.14	0.759	0.163
+N-glycosylation (3)	108	0.417	0.648	0.14	0.754	0.163
+categories (SS, topology, region)	108	0.426	0.676	0.13	0.759	0.163

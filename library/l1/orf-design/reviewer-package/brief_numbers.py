@@ -28,10 +28,10 @@ PREFIX = "sprint4/s4e9-orf-design-fg-panel/"
 OUT = HERE / "brief_numbers.json"
 FIGURES = HERE / "figures"
 #: The audit of the S5E13 literature positives (PR 236) and the corrected training corpus.
-AUDIT_KEY = "library/l1/tag-site-corpus-audit/audit.tsv"
+AUDIT_KEY = "scratch/becca/tag-site-corpus-audit/audit.tsv"
 CORRECTED_KEY = "sprint5/s5e13-tag-site-benchmarking/corpus_audit_corpus.tsv"
-GOLD_KEY = "library/l1/tag-site-corpus-audit/gold_standard.tsv"
-AUDIT_DIR = "library/l1/tag-site-corpus-audit/"
+GOLD_KEY = "scratch/becca/tag-site-corpus-audit/gold_standard.tsv"
+AUDIT_DIR = "scratch/becca/tag-site-corpus-audit/"
 
 PLACEMENTS = [
     "N after SP",
@@ -688,7 +688,7 @@ def _draw_candidate_sets_figure(out_dir: Path) -> None:
         )
     ax_cnt.set_yticks(y, labels, fontsize=11)
     ax_cnt.set_xlim(0, max(counts) * 1.2)
-    ax_cnt.set_xlabel("Active CDSs (total 2,762)", fontsize=11)
+    ax_cnt.set_xlabel(f"Active CDSs (total {sum(counts):,})", fontsize=11)
     ax_cnt.text(
         0.0,
         1.04,

@@ -1,0 +1,362 @@
+{
+  "estimator": "rf_shallow",
+  "features": [
+    "plddt",
+    "plddt_w5",
+    "rsa",
+    "rsa_w5",
+    "disorder",
+    "disorder_w5",
+    "disorder_w15",
+    "kd_hydropathy_w7",
+    "pro_gly_frac_w7",
+    "cys_in_w10",
+    "glyc_sequon_here",
+    "dist_to_glyc",
+    "n_glyc_w10"
+  ],
+  "draws": [
+    20261014,
+    1,
+    2
+  ],
+  "cv": "GroupKFold by gene, 5 folds, gene->fold fixed from the v4 draw",
+  "pu_bags": 50,
+  "hn_weight": 5,
+  "veto_half": 2,
+  "contact_residues_on_published_proteins": 389,
+  "literature_contacts_on_published_proteins": 0,
+  "residues_vetoed": 1013,
+  "mean_over_draws": {
+    "all 176 | rf_positive_only": {
+      "proteins": 127.0,
+      "within10_top1": 0.467,
+      "within10_top3": 0.704,
+      "exact_top1": 0.039,
+      "segment_first": 0.694,
+      "contact_proteins": 30.0,
+      "contact_top1_within2": 0.033,
+      "contact_top3_any_within2": 0.122,
+      "contact_median_percentile": 38.6
+    },
+    "exact-site 111 | rf_positive_only": {
+      "proteins": 86.0,
+      "within10_top1": 0.465,
+      "within10_top3": 0.709,
+      "exact_top1": 0.035,
+      "segment_first": 0.685,
+      "contact_proteins": 30.0,
+      "contact_top1_within2": 0.033,
+      "contact_top3_any_within2": 0.122,
+      "contact_median_percentile": 38.6
+    },
+    "all 176 | rf_hn_w5 (v5)": {
+      "proteins": 127.0,
+      "within10_top1": 0.491,
+      "within10_top3": 0.712,
+      "exact_top1": 0.037,
+      "segment_first": 0.726,
+      "contact_proteins": 30.0,
+      "contact_top1_within2": 0.033,
+      "contact_top3_any_within2": 0.156,
+      "contact_median_percentile": 37.1
+    },
+    "exact-site 111 | rf_hn_w5 (v5)": {
+      "proteins": 86.0,
+      "within10_top1": 0.496,
+      "within10_top3": 0.733,
+      "exact_top1": 0.043,
+      "segment_first": 0.709,
+      "contact_proteins": 30.0,
+      "contact_top1_within2": 0.033,
+      "contact_top3_any_within2": 0.156,
+      "contact_median_percentile": 37.1
+    },
+    "all 176 | pu_rf": {
+      "proteins": 127.0,
+      "within10_top1": 0.457,
+      "within10_top3": 0.706,
+      "exact_top1": 0.055,
+      "segment_first": 0.699,
+      "contact_proteins": 30.0,
+      "contact_top1_within2": 0.033,
+      "contact_top3_any_within2": 0.133,
+      "contact_median_percentile": 38.233
+    },
+    "exact-site 111 | pu_rf": {
+      "proteins": 86.0,
+      "within10_top1": 0.484,
+      "within10_top3": 0.729,
+      "exact_top1": 0.058,
+      "segment_first": 0.691,
+      "contact_proteins": 30.0,
+      "contact_top1_within2": 0.033,
+      "contact_top3_any_within2": 0.133,
+      "contact_median_percentile": 38.233
+    },
+    "all 176 | pu_rf_veto": {
+      "proteins": 127.0,
+      "within10_top1": 0.457,
+      "within10_top3": 0.706,
+      "exact_top1": 0.055,
+      "segment_first": 0.699,
+      "contact_proteins": 30.0,
+      "contact_top1_within2": 0.0,
+      "contact_top3_any_within2": 0.0,
+      "contact_median_percentile": 3.533
+    },
+    "exact-site 111 | pu_rf_veto": {
+      "proteins": 86.0,
+      "within10_top1": 0.484,
+      "within10_top3": 0.729,
+      "exact_top1": 0.058,
+      "segment_first": 0.691,
+      "contact_proteins": 30.0,
+      "contact_top1_within2": 0.0,
+      "contact_top3_any_within2": 0.0,
+      "contact_median_percentile": 3.533
+    },
+    "all 176 | rf_hn_w5_veto": {
+      "proteins": 127.0,
+      "within10_top1": 0.491,
+      "within10_top3": 0.714,
+      "exact_top1": 0.037,
+      "segment_first": 0.726,
+      "contact_proteins": 30.0,
+      "contact_top1_within2": 0.0,
+      "contact_top3_any_within2": 0.0,
+      "contact_median_percentile": 4.033
+    },
+    "exact-site 111 | rf_hn_w5_veto": {
+      "proteins": 86.0,
+      "within10_top1": 0.496,
+      "within10_top3": 0.733,
+      "exact_top1": 0.043,
+      "segment_first": 0.709,
+      "contact_proteins": 30.0,
+      "contact_top1_within2": 0.0,
+      "contact_top3_any_within2": 0.0,
+      "contact_median_percentile": 4.033
+    }
+  },
+  "paired_vs_v5": [
+    {
+      "cohort": "all 176",
+      "draw": 20261014,
+      "arm": "rf_positive_only",
+      "within10_top1_gained_vs_v5": 2,
+      "within10_top1_lost_vs_v5": 6,
+      "within10_top3_gained_vs_v5": 1,
+      "within10_top3_lost_vs_v5": 3
+    },
+    {
+      "cohort": "all 176",
+      "draw": 20261014,
+      "arm": "pu_rf",
+      "within10_top1_gained_vs_v5": 4,
+      "within10_top1_lost_vs_v5": 9,
+      "within10_top3_gained_vs_v5": 3,
+      "within10_top3_lost_vs_v5": 4
+    },
+    {
+      "cohort": "all 176",
+      "draw": 20261014,
+      "arm": "pu_rf_veto",
+      "within10_top1_gained_vs_v5": 4,
+      "within10_top1_lost_vs_v5": 9,
+      "within10_top3_gained_vs_v5": 3,
+      "within10_top3_lost_vs_v5": 4
+    },
+    {
+      "cohort": "all 176",
+      "draw": 20261014,
+      "arm": "rf_hn_w5_veto",
+      "within10_top1_gained_vs_v5": 0,
+      "within10_top1_lost_vs_v5": 0,
+      "within10_top3_gained_vs_v5": 0,
+      "within10_top3_lost_vs_v5": 0
+    },
+    {
+      "cohort": "all 176",
+      "draw": 1,
+      "arm": "rf_positive_only",
+      "within10_top1_gained_vs_v5": 1,
+      "within10_top1_lost_vs_v5": 3,
+      "within10_top3_gained_vs_v5": 2,
+      "within10_top3_lost_vs_v5": 3
+    },
+    {
+      "cohort": "all 176",
+      "draw": 1,
+      "arm": "pu_rf",
+      "within10_top1_gained_vs_v5": 4,
+      "within10_top1_lost_vs_v5": 8,
+      "within10_top3_gained_vs_v5": 4,
+      "within10_top3_lost_vs_v5": 2
+    },
+    {
+      "cohort": "all 176",
+      "draw": 1,
+      "arm": "pu_rf_veto",
+      "within10_top1_gained_vs_v5": 4,
+      "within10_top1_lost_vs_v5": 8,
+      "within10_top3_gained_vs_v5": 4,
+      "within10_top3_lost_vs_v5": 2
+    },
+    {
+      "cohort": "all 176",
+      "draw": 1,
+      "arm": "rf_hn_w5_veto",
+      "within10_top1_gained_vs_v5": 0,
+      "within10_top1_lost_vs_v5": 0,
+      "within10_top3_gained_vs_v5": 1,
+      "within10_top3_lost_vs_v5": 0
+    },
+    {
+      "cohort": "all 176",
+      "draw": 2,
+      "arm": "rf_positive_only",
+      "within10_top1_gained_vs_v5": 1,
+      "within10_top1_lost_vs_v5": 4,
+      "within10_top3_gained_vs_v5": 3,
+      "within10_top3_lost_vs_v5": 3
+    },
+    {
+      "cohort": "all 176",
+      "draw": 2,
+      "arm": "pu_rf",
+      "within10_top1_gained_vs_v5": 4,
+      "within10_top1_lost_vs_v5": 8,
+      "within10_top3_gained_vs_v5": 2,
+      "within10_top3_lost_vs_v5": 5
+    },
+    {
+      "cohort": "all 176",
+      "draw": 2,
+      "arm": "pu_rf_veto",
+      "within10_top1_gained_vs_v5": 4,
+      "within10_top1_lost_vs_v5": 8,
+      "within10_top3_gained_vs_v5": 2,
+      "within10_top3_lost_vs_v5": 5
+    },
+    {
+      "cohort": "all 176",
+      "draw": 2,
+      "arm": "rf_hn_w5_veto",
+      "within10_top1_gained_vs_v5": 0,
+      "within10_top1_lost_vs_v5": 0,
+      "within10_top3_gained_vs_v5": 0,
+      "within10_top3_lost_vs_v5": 0
+    },
+    {
+      "cohort": "exact-site 111",
+      "draw": 20261014,
+      "arm": "rf_positive_only",
+      "within10_top1_gained_vs_v5": 1,
+      "within10_top1_lost_vs_v5": 4,
+      "within10_top3_gained_vs_v5": 1,
+      "within10_top3_lost_vs_v5": 2
+    },
+    {
+      "cohort": "exact-site 111",
+      "draw": 20261014,
+      "arm": "pu_rf",
+      "within10_top1_gained_vs_v5": 4,
+      "within10_top1_lost_vs_v5": 5,
+      "within10_top3_gained_vs_v5": 3,
+      "within10_top3_lost_vs_v5": 3
+    },
+    {
+      "cohort": "exact-site 111",
+      "draw": 20261014,
+      "arm": "pu_rf_veto",
+      "within10_top1_gained_vs_v5": 4,
+      "within10_top1_lost_vs_v5": 5,
+      "within10_top3_gained_vs_v5": 3,
+      "within10_top3_lost_vs_v5": 3
+    },
+    {
+      "cohort": "exact-site 111",
+      "draw": 20261014,
+      "arm": "rf_hn_w5_veto",
+      "within10_top1_gained_vs_v5": 0,
+      "within10_top1_lost_vs_v5": 0,
+      "within10_top3_gained_vs_v5": 0,
+      "within10_top3_lost_vs_v5": 0
+    },
+    {
+      "cohort": "exact-site 111",
+      "draw": 1,
+      "arm": "rf_positive_only",
+      "within10_top1_gained_vs_v5": 0,
+      "within10_top1_lost_vs_v5": 2,
+      "within10_top3_gained_vs_v5": 0,
+      "within10_top3_lost_vs_v5": 3
+    },
+    {
+      "cohort": "exact-site 111",
+      "draw": 1,
+      "arm": "pu_rf",
+      "within10_top1_gained_vs_v5": 4,
+      "within10_top1_lost_vs_v5": 5,
+      "within10_top3_gained_vs_v5": 2,
+      "within10_top3_lost_vs_v5": 2
+    },
+    {
+      "cohort": "exact-site 111",
+      "draw": 1,
+      "arm": "pu_rf_veto",
+      "within10_top1_gained_vs_v5": 4,
+      "within10_top1_lost_vs_v5": 5,
+      "within10_top3_gained_vs_v5": 2,
+      "within10_top3_lost_vs_v5": 2
+    },
+    {
+      "cohort": "exact-site 111",
+      "draw": 1,
+      "arm": "rf_hn_w5_veto",
+      "within10_top1_gained_vs_v5": 0,
+      "within10_top1_lost_vs_v5": 0,
+      "within10_top3_gained_vs_v5": 0,
+      "within10_top3_lost_vs_v5": 0
+    },
+    {
+      "cohort": "exact-site 111",
+      "draw": 2,
+      "arm": "rf_positive_only",
+      "within10_top1_gained_vs_v5": 0,
+      "within10_top1_lost_vs_v5": 3,
+      "within10_top3_gained_vs_v5": 1,
+      "within10_top3_lost_vs_v5": 3
+    },
+    {
+      "cohort": "exact-site 111",
+      "draw": 2,
+      "arm": "pu_rf",
+      "within10_top1_gained_vs_v5": 3,
+      "within10_top1_lost_vs_v5": 4,
+      "within10_top3_gained_vs_v5": 2,
+      "within10_top3_lost_vs_v5": 3
+    },
+    {
+      "cohort": "exact-site 111",
+      "draw": 2,
+      "arm": "pu_rf_veto",
+      "within10_top1_gained_vs_v5": 3,
+      "within10_top1_lost_vs_v5": 4,
+      "within10_top3_gained_vs_v5": 2,
+      "within10_top3_lost_vs_v5": 3
+    },
+    {
+      "cohort": "exact-site 111",
+      "draw": 2,
+      "arm": "rf_hn_w5_veto",
+      "within10_top1_gained_vs_v5": 0,
+      "within10_top1_lost_vs_v5": 0,
+      "within10_top3_gained_vs_v5": 0,
+      "within10_top3_lost_vs_v5": 0
+    }
+  ],
+  "decided_by": "ranker-pu-segment (delegated by Becca 2026-11-12)",
+  "implemented_by": "ranker-pu-segment session (Claude Code), PR #245"
+}

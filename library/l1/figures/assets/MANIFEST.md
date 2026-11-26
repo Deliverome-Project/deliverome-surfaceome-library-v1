@@ -24,7 +24,7 @@ folder and in copies like this one. The companion files
 `…Functional Genomics Effector Platform copy.svg` and
 `…Functional Genomics Trafficking Platform.svg` are in the same position.
 
-That is the failure mode [CLAUDE.md](../../../../CLAUDE.md) names for construct
+That is the failure mode `CLAUDE.md` names for construct
 maps: a record that lives on one machine is not a record. These are the source
 art for the platform figures, so they want a durable, stated home — Drive
 beside `BrandAssets/`, or `external://` if they are to be cited from an

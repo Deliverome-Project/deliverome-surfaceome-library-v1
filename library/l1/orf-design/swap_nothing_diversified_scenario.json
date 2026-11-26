@@ -1,7 +1,7 @@
 {
   "scenario": "no codon diversification: every cassette on p003's single encoding (build_constructs.CASSETTE), every snorkel module on l1_snorkel.PREFIX_DNA",
-  "order_of_record": "sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-25-pre-freeze-d/l1_order_inserts_recoded.fasta",
-  "order_of_record_sha256": "2d049461405f27a3b9288744f56c8675b15639238a5699b101994f37d4b5e59e",
+  "order_of_record": "sprint4/s4e9-orf-design-fg-panel/synthesis/2026-11-25-pre-freeze-e/l1_order_inserts_recoded.fasta",
+  "order_of_record_sha256": "658682f876598307bc30ad5103199ef77757ca2b00dcb1b00927f6989087ceb3",
   "inserts": 3352,
   "inserts_changed": 3352,
   "snorkel_modules_replaced": 141,
@@ -13,34 +13,33 @@
   },
   "library_fraction_wrong_protein": {
     "specific_mislabel": 0.0007302997286514401,
-    "specific_chimera": 0.002040094516762778,
-    "background_mislabel": 0.02206413533892173,
-    "background_chimera": 0.04582194985046888,
-    "total": 0.07065647943480484,
-    "not_counted_leader_swap": 0.028692050732656554,
-    "total_including_leader_swap": 0.09934853016746137
+    "specific_chimera": 0.0020400945167627776,
+    "background_mislabel": 0.0220342996247686,
+    "background_chimera": 0.045588131190453914,
+    "total": 0.07039282506063675,
+    "not_counted_leader_swap": 0.028942296046392556,
+    "total_including_leader_swap": 0.09933512110702929
   },
   "wrong_protein_by_block_region": {
-    "background|chimera|native CDS": 2.719948056357669e-05,
-    "background|chimera|tag cassette": 0.04579475036990532,
-    "background|leader swap|native CDS": 1.4155737406743644e-05,
-    "background|leader swap|tag cassette": 0.028145761869084227,
-    "background|mislabel|3' tail": 0.02156644669319997,
-    "background|mislabel|native CDS": 7.895869953588097e-07,
-    "background|mislabel|tag cassette": 0.0004968990587263911,
-    "specific|chimera|native CDS": 0.001420440376829468,
-    "specific|chimera|tag cassette": 0.0006196541399333149,
-    "specific|leader swap|native CDS": 3.4877020597023403e-06,
-    "specific|leader swap|tag cassette": 0.0005286454241058922,
-    "specific|mislabel|3' tail": 0.00032950166787795325,
-    "specific|mislabel|native CDS": 0.0003662322537113583,
-    "specific|mislabel|tag cassette": 3.4565807062129764e-05
+    "background|chimera|native CDS": 2.4785294395763007e-05,
+    "background|chimera|tag cassette": 0.04556334589605811,
+    "background|leader swap|native CDS": 1.0361865165614139e-05,
+    "background|leader swap|tag cassette": 0.02839980105506135,
+    "background|mislabel|3' tail": 0.02156356795821347,
+    "background|mislabel|tag cassette": 0.0004707316665551244,
+    "specific|chimera|native CDS": 0.0014204403768294626,
+    "specific|chimera|tag cassette": 0.0006196541399333153,
+    "specific|leader swap|native CDS": 3.4877020597023394e-06,
+    "specific|leader swap|tag cassette": 0.0005286454241058889,
+    "specific|mislabel|3' tail": 0.00032950166787795395,
+    "specific|mislabel|native CDS": 0.00036623225371135767,
+    "specific|mislabel|tag cassette": 3.456580706212978e-05
   },
   "per_barcode_impurity": {
-    "median": 0.056440961566490255,
-    "max": 0.12257784530517042,
-    "specific_part_median": 0.0007488593843516671,
-    "specific_part_max": 0.028724618621011208
+    "median": 0.056411114304492194,
+    "max": 0.1225484603238936,
+    "specific_part_median": 0.0007488593843516672,
+    "specific_part_max": 0.02872461862101121
   },
   "model": "l1_swap_pool_model.main() unchanged, on the spliced inserts"
 }

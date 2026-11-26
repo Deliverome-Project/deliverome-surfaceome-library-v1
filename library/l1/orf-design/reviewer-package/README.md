@@ -12,7 +12,7 @@ in [`nterm/`](nterm/README.md).
 | Item | Notes |
 |---|---|
 | This repository, with its git history (or an exported review repo with `historical/`) | a clone, or a `git bundle` of the branch. Exported review repos ship `historical/` tarballs and `historical/git-snapshots/` so all 30 stages run with zero git history. |
-| The frozen input bundle | a folder (or tarballs) holding `s3/external/...` and `s3/processed/...`: [`bundle_manifest.tsv`](bundle_manifest.tsv) currently indexes **3,513** files (**3,247** `read_by_replay=yes`, ~2.98 GB uncompressed; plus **266** `read_by_replay=no` supplement files, ~1.94 GB uncompressed, for inspection only) |
+| The frozen input bundle | a folder (or tarballs) holding `s3/external/...` and `s3/processed/...`: [`bundle_manifest.tsv`](bundle_manifest.tsv) currently indexes **3,570** files (**3,286** `read_by_replay=yes`, ~3.00 GB uncompressed; plus **284** `read_by_replay=no` supplement files, ~1.96 GB uncompressed, for inspection only) |
 | [uv](https://docs.astral.sh/uv/) | installs the locked Python environment from `uv.lock` |
 | ~10 GB free disk, ~5 minutes | the whole run is offline |
 
@@ -45,7 +45,7 @@ uv run --locked python run_review.py --bundle /path/to/bundle --stage reference
 
 | # | Stage | Decides | Checked against |
 |---:|---|---|---|
-| 1 | `gene_list` | which genes: S1E3 filter over surfaceome release 1.3.0 + restated co-receptor & gap additions, minus exclusions and withdrawals | the 2,417 library genes exactly |
+| 1 | `gene_list` | which genes: S1E3 filter over surfaceome release 1.3.0 + restated co-receptor & gap additions, minus exclusions and withdrawals | the 2,399 library genes exactly |
 | 2 | `gpi_set` | which forms are GPI-anchored | `gpi_set.tsv`, byte for byte |
 | 3 | `reference` | each gene's reference proteoform (the ladder) | `reference_selection.tsv`, `reference_disagreements.tsv`, `reference_selection_sequences.tsv` |
 | 4 | `isoform_universe` | every alternate form and its evidence tier | summaries byte for byte; cohort table row for row (see the hash-seed limit in the brief) |
@@ -95,16 +95,16 @@ or active record constant pins is missing.
 
 | Class | Read by the replay | Rest of the pinned releases | Meaning |
 |---|---:|---:|---|
-| `public_release` | 2,820 | 37 | byte-identical to a named public release (AlphaFold DB v6 archive, Ensembl 115 and 116 including Compara homology dumps, UniProt, APPRIS, OpenProt 2.2, Pfam 39.0, HPA v23, surfaceome 1.3.0 on Zenodo, GENCODE Ribo-seq ORFs, the published GPCR screen table) |
+| `public_release` | 2,859 | 39 | byte-identical to a named public release (AlphaFold DB v6 archive, Ensembl 115 and 116 including Compara homology dumps, UniProt, APPRIS, OpenProt 2.2, Pfam 39.0, HPA v23, GTEx v10, surfaceome 1.3.0 on Zenodo, GENCODE Ribo-seq ORFs, the published GPCR screen table) |
 | `public_derived` | 19 | 47 | public data, as queried by us (PeptideAtlas build 607, ARCHS4 v2.5, MyGene.info, UniProt keyword and accession queries) |
 | `surfaceome_repo` | 15 | 1 | files of the accessible-surfaceome repository at commit f9c73691 |
 | `deliverome_curation` | 345 | 54 | internal inputs: curation calls, the compiled expression table, the vector backbone map, DeepTMHMM and NetGPI predictions, ColabFold structures, the ortholog draw inputs, and the audited S5E13 tag-site positives the brief cites |
-| `deliverome_record` | 46 | 126 | published library records: what the replay is compared with, the Compara 116 ortholog draw and its verification, and the ortholog correspondence review |
+| `deliverome_record` | 48 | 143 | published library records: what the replay is compared with, the Compara 116 ortholog draw and its verification, the ortholog correspondence review, and the Section 8 confirmed-site ranker benchmark tables |
 
-Data homes in [`data_locations.tsv`](data_locations.tsv) mirror the same 3,513 files: **2,892**
+Data homes in [`data_locations.tsv`](data_locations.tsv) mirror the same 3,570 files: **2,932**
 public files on R2 (including APPRIS under CC BY-NC-ND 4.0 unmodified) + **1** upstream Pfam-A file
-at EBI (3.50 GB total), **198** small tables committed in the review repo (`data/`, 0.09 GB), and
-**422** files in the private release tarballs (1.33 GB). Reviewers receive the full bundle, all five
+at EBI (3.52 GB total), **210** small tables committed in the review repo (`data/`, 0.09 GB), and
+**427** files in the private release tarballs (1.34 GB). Reviewers receive the full bundle, all five
 classes (Becca, 2026-11-04). A bundle can still be packed without a class
 (`bundle.py pack --exclude-class ...`); the stages that read the missing files then fail with a
 message naming the absent key.
@@ -151,14 +151,14 @@ generated from this one by `export_review_repo.py`. It contains:
 - in `historical/`, the old script versions that stages 4 and 5 rerun.
 
 The latest published GitHub release on that repository is
-[`bundle-2026-11-21b`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/releases/tag/bundle-2026-11-21b)
-as two tarballs: `l1-reviewer-bundle-2026-11-21b.tar.gz` (3,125 replay files, 1.38 GB compressed,
-SHA-256 `f34eb18f6d99beafc6607798b3bb12ffdafa54eb94e406566de453b4d43924ac`; gzipped to stay under
-GitHub's 2 GiB asset limit) and `l1-pinned-releases-2026-11-21b.tar` (the rest of every pinned
-release and every S3 file the brief cites, 251 files, 1.85 GB, SHA-256
-`88757386561c991e30591c703447fc6b328f64831927797db629a9cacee0c645`). The working
-[`bundle_manifest.tsv`](bundle_manifest.tsv) currently indexes **3,509** files (**3,245** replay /
-**264** supplement) ahead of the next `bundle.py collect` & release cut for `2026-11-23-pre-freeze`.
+[`bundle-2026-11-26`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/releases/tag/bundle-2026-11-26)
+as two tarballs: `l1-reviewer-bundle-2026-11-26.tar.gz` (3,286 replay files, 1.45 GB compressed,
+SHA-256 `281b15519be77a1732a3b9770c342cf2cbc991f1231f381aaefdd63f77c84c90`; gzipped to stay under
+GitHub's 2 GiB asset limit) and `l1-pinned-releases-2026-11-26.tar` (the rest of every pinned
+release and every S3 file the brief cites, 284 files, 1.96 GB, SHA-256
+`cd3685894209a9d559091b64450729e9de9f3de65c91266305c85f54b004cc8f`). The working
+[`bundle_manifest.tsv`](bundle_manifest.tsv) indexes those exact **3,570** files (**3,286** replay /
+**284** supplement) matching order of record `2026-11-25-pre-freeze-e`.
 `tar -xf` reads both.
 A rebuilt bundle goes on a new release with a new date, never over an existing one; earlier
 releases are `bundle-2026-11-02` (before l1-p2740..2742), `bundle-2026-11-05` (before the
@@ -167,8 +167,9 @@ designed CDS and the extended audit), `bundle-2026-11-05-r3` (before the tag-sit
 standard), `bundle-2026-11-05-r4` (before the final audit refresh), `bundle-2026-11-05-r5`
 (before the universe-coverage stage and its Compara dumps), `bundle-2026-11-05-r6` (before
 the Compara 116 ortholog panel was adopted and every pinned release was bundled whole),
-`bundle-2026-11-10` (before the 2026-11-14 order of record and the files the brief cites), and
-`bundle-2026-11-20` (3,120 replay / 246 supplement files).
+`bundle-2026-11-10` (before the 2026-11-14 order of record and the files the brief cites),
+`bundle-2026-11-20` (3,120 replay / 246 supplement files), and
+`bundle-2026-11-21b` (3,125 replay / 251 supplement files).
 
 `EXPORT_MANIFEST.json` there records the source commit and a SHA-256 per managed file. To
 update it after changes here:

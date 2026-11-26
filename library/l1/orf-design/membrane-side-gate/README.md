@@ -351,7 +351,7 @@ before S5E13's proteoform-numbering fix. It differs from `c7be01a4` in 15 picks 
 CLRN1's ranks 2 and 3. Read on `main`'s table, the gate would change 4 shipped verdicts, in
 each case to a site the fix had removed: ASIC1 465 and TMEM181 431 (cytoplasmic),
 SCNN1D 142 (interface) and BEST3 69 (membrane). The other two files are byte-identical on both.
-So the three files are vendored from `c7be01a4` in [`s5e13-c7be01a4/`](s5e13-c7be01a4/), with
+So the three files are vendored from `c7be01a4` in `s5e13-c7be01a4/`, with
 their SHA-256 in `SOURCE.json`, and the gate refuses a copy whose hash differs. The committed
 tables reproduce byte for byte from the vendored copies. Since 2026-11-12 the ranker's designs
 of record on `main` are v5 (`tag_sites_v5_adopted.tsv`); the gate still checks the v4 picks,

@@ -1704,7 +1704,7 @@ and its EFS transcript, from the EFS end to the 3' LTR R end, is scanned for the
 RNA-binding proteins read to lower expression: Pumilio PRE `TGTA[ACT]ATA`, CFIm `TGTA`
 clusters, AREs, CPEs, cryptic poly(A) signals and splice sites. The motif panel, its flag
 rules and the reason for the screen (four tiled PREs in the miR-L no-target arms) are in
-[the construct screen](../../../scratch/becca/rbp-motif-screen/README.md). Natural CDSs carry
+the construct RBP-motif screen ([`rbp_motif_screen.py`](rbp_motif_screen.py)). Natural CDSs carry
 some of these motifs, so hits are split by where they sit:
 
 | Where | Result | Table |

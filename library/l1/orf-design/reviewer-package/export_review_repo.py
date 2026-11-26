@@ -67,6 +67,7 @@ ALWAYS = [
     "library/l1/tag-site-benchmarking/compare_internal_policies.py",
     "library/l1/tag-site-benchmarking/hard_negative_benchmark.py",
     "library/l1/tag-site-benchmarking/isoform_fix_redesign.tsv",
+    "library/l1/tag-site-benchmarking/compare_internal_policies.json",
     "library/l1/tag-site-benchmarking/l1_internal_additions.py",
     "library/l1/tag-site-benchmarking/l1_internal_arm_decisions.tsv",
     "library/l1/tag-site-benchmarking/l1_internal_arm_ids.tsv",
@@ -77,6 +78,7 @@ ALWAYS = [
     "library/l1/tag-site-benchmarking/ortholog_member_disorder_modal.py",
     "library/l1/tag-site-benchmarking/snorkel_design.py",
     "library/l1/tag-site-benchmarking/snorkel_spacer_test.json",
+    "library/l1/tag-site-benchmarking/tag_site_model_v5.json",
     "library/l1/tag-site-benchmarking/tag_site_model_v6.py",
     "library/l1/tag-site-benchmarking/training_gene_families.tsv",
     "library/l1/tag-site-benchmarking/uniprot_site_features.tsv",
@@ -143,6 +145,24 @@ _CLEAN_MD_REL_SUBS: tuple[tuple[str, str], ...] = (
 _CLEAN_SUBDIR_MAP: dict[str, str] = {
     "ranker-c7be01a4": "ranker-c7be01a4",
 }
+#: S3 keys under ``processed://scratch/becca/tag-site-corpus-audit/`` must keep their
+#: original S3 prefix so the offline bundle replays, while repo-relative paths like
+#: ``REPO / "library/l1/tag-site-corpus-audit"`` remain remapped.
+_RESTORE_S3_SUBS: tuple[tuple[str, str], ...] = (
+    (
+        "processed/scratch/becca/tag-site-corpus-audit",
+        "processed/scratch/becca/tag-site-corpus-audit",
+    ),
+    (
+        "processed://scratch/becca/tag-site-corpus-audit",
+        "processed://scratch/becca/tag-site-corpus-audit",
+    ),
+    ('= "scratch/becca/tag-site-corpus-audit/', '= "scratch/becca/tag-site-corpus-audit/'),
+    (
+        '(processed, "scratch/becca/tag-site-corpus-audit/',
+        '(processed, "scratch/becca/tag-site-corpus-audit/',
+    ),
+)
 _REWRITE_SUFFIXES = (".py", ".md", ".txt", ".json")
 
 _S4E9 = "library/l1/orf-design"
@@ -461,7 +481,7 @@ def _ruff_format_bytes(path: str, data: bytes) -> bytes:
     if not ruff:
         return data
     proc = subprocess.run(
-        [ruff, "format", "--stdin-filename", path, "-"],
+        [ruff, "format", "--config", str(REPO / "pyproject.toml"), "--stdin-filename", path, "-"],
         input=data,
         capture_output=True,
         check=False,
@@ -486,6 +506,8 @@ def apply_clean_paths(files: dict[str, bytes]) -> dict[str, bytes]:
                 text = text.replace(old, new)
             if dest.endswith(".py"):
                 for old, new in _CLEAN_REL_SUBS:
+                    text = text.replace(old, new)
+                for old, new in _RESTORE_S3_SUBS:
                     text = text.replace(old, new)
             elif dest.endswith(".md"):
                 for old, new in _CLEAN_MD_REL_SUBS:
