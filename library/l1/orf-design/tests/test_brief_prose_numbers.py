@@ -42,7 +42,7 @@ CLAIMS = [
         # Reworded 2026-11-22: the brief now counts the decisions, not the built ones; built is
         # pinned by the tag-path table claim below (rungs.n_after_sp.built).
         "Of the {} CDSs decided here, {} keep their own signal\npeptide, {} have it replaced by "
-        "the Igκ leader, {} get no N-terminal construct",
+        "the Igκ leader, {} gets no N-terminal construct",
         [
             "rungs.n_after_sp.decisions",
             "rungs.n_after_sp.arm.native_site",
