@@ -223,6 +223,7 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`review_ortholog_correspondence.py`](review_ortholog_correspondence.py) | stage | Biological-correspondence review of the 200-member CDS-eligible ortholog review panel. | — |
 | [`review_priority_cds_forms.py`](review_priority_cds_forms.py) | called | Read-only, evidence-bound recommendations for seven priority L1 forms. | — |
 | [`reviewer-package/brief_numbers.py`](reviewer-package/brief_numbers.py) | called | Every number in the L1 design brief, measured from the library's tables, plus its figures. | `brief_numbers.json` |
+| [`reviewer-package/build_l1_order_catalog.py`](reviewer-package/build_l1_order_catalog.py) | documented | Build a single flat reviewer construct catalog for the L1 order of record. | — |
 | [`reviewer-package/bundle.py`](reviewer-package/bundle.py) | called | Build the frozen input bundle that ``run_review.py`` replays. Lab-side: needs S3 credentials. | — |
 | [`reviewer-package/export_review_repo.py`](reviewer-package/export_review_repo.py) | called | Export the L1 review repository from a commit of this one. | — |
 | [`reviewer-package/export_twist_draft.py`](reviewer-package/export_twist_draft.py) | one-off | Write the L1 draft library as full p0039 plasmids, in plate order, for a vendor quote. | — |
@@ -252,7 +253,7 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`reviewer-package/nterm/sp_disagree_review.py`](reviewer-package/nterm/sp_disagree_review.py) | called | Second-source review of members whose signal peptide only DeepTMHMM v1 calls. | `sp_disagree_review.tsv` |
 | [`reviewer-package/nterm/weak_sp.py`](reviewer-package/nterm/weak_sp.py) | called | Native arms with a weak predicted signal peptide, and the Igκ form that would replace each. | `weak_sp.tsv` |
 | [`reviewer-package/order_plan.py`](reviewer-package/order_plan.py) | called | How the L1 library is ordered: plate layout, volumes, and length-weighted pooling amounts. | `l1_order_plan.tsv`, `l1_order_plan_summary.json` |
-| [`reviewer-package/plot_placement_rules_schematic.py`](reviewer-package/plot_placement_rules_schematic.py) | one-off | Five-panel schematic of L1 tag placement rules by membrane topology. | — |
+| [`reviewer-package/plot_placement_rules_schematic.py`](reviewer-package/plot_placement_rules_schematic.py) | documented | Five-panel schematic of L1 tag placement rules by membrane topology. | — |
 | [`reviewer-package/public_data.py`](reviewer-package/public_data.py) | called | Where every file of the reviewer bundle lives for a reviewer, and the public copies. | — |
 | [`reviewer-package/render_brief.py`](reviewer-package/render_brief.py) | called | Render the brief and the cover note to self-contained PDF and Word files, and copy them out. | — |
 | [`reviewer-package/review_fingerprint.py`](reviewer-package/review_fingerprint.py) | called | Fingerprint every L1 member's protein sequence and tag location for review freshness. | — |
@@ -322,4 +323,4 @@ Status: `stage` (a pipeline stage runs it), `test` (a pytest module), `called` (
 | [`write_panels_of_record.py`](write_panels_of_record.py) | called | Write the L1 panel tables of record from the panels as applied on 2026-11-22. | — |
 | [`write_structure_baseline.py`](write_structure_baseline.py) | documented | Regenerate the structure-coverage baseline the repo tests assert against. | `structure_coverage_baseline.json` |
 
-Totals: called 183, documented 30, one-off 29, stage 30, test 6
+Totals: called 183, documented 32, one-off 28, stage 30, test 6

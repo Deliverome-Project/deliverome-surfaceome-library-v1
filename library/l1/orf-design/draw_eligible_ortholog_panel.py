@@ -386,16 +386,21 @@ def run(args):
         "input_sha256": {name: digest(path) for name, path in inputs.items()},
         "command_argv": sys.argv,
         "script_sha256": digest(__file__),
-        "source_commit": subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
-        "source_dirty": bool(
-            subprocess.check_output(["git", "status", "--porcelain"], text=True).strip()
-        ),
+        "source_commit": _git_output("rev-parse", "HEAD"),
+        "source_dirty": bool(_git_output("status", "--porcelain")),
     }
     result["output_sha256"] = {p.name: digest(p) for p in sorted(args.out.iterdir())}
     (args.out / "ortholog_eligible_panel_summary.json").write_text(
         json.dumps(result, indent=2) + "\n"
     )
     return result
+
+
+def _git_output(*args: str) -> str:
+    try:
+        return subprocess.check_output(["git", *args], text=True, stderr=subprocess.DEVNULL).strip()
+    except FileNotFoundError, subprocess.CalledProcessError:
+        return ""
 
 
 def main():
