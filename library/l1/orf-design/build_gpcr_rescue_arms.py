@@ -106,8 +106,8 @@ from pathlib import Path
 import build_constructs as bc
 from build_loop_inserts import LOOP_TAG_AA
 
-from deliverome_analysis import plasmid_qc as qc
-from deliverome_analysis import seqtools
+from deliverome_analysis.cloning import plasmid_qc as qc
+from deliverome_analysis.cloning import seqtools
 
 HERE = Path(__file__).parent
 SEED = 20261011
@@ -235,8 +235,8 @@ def _l1_cds() -> dict[str, str]:
     """
     import json
 
-    from deliverome_analysis import library_design as ld
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.cloning import library_design as ld
+    from deliverome_analysis.core.s3 import processed
 
     with open(processed.download(ld.CDS_KEY)) as fh:
         raw = json.load(fh)

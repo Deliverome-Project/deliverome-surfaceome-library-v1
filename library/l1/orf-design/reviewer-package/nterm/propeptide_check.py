@@ -61,7 +61,7 @@ def _spans(text: str, kind: str) -> list[tuple[int, int]]:
 
 def snapshot() -> int:
     """Query UniProt (human, reviewed) for every gene on the rung and publish the rows."""
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     with (HERE / "nterm_decisions.tsv").open() as fh:
         genes = sorted({r["gene_symbol"] for r in csv.DictReader(fh, delimiter="\t")})
@@ -119,7 +119,7 @@ def snapshot() -> int:
 
 def _download(key: str, dest: str) -> str:
     """``external://…`` keys read the append-only external bucket; bare keys read processed."""
-    from deliverome_analysis.s3 import external, processed
+    from deliverome_analysis.core.s3 import external, processed
 
     if key.startswith("external://"):
         return external.download(key.removeprefix("external://"), dest)
@@ -233,7 +233,7 @@ def native_cleavage(r: dict) -> int:
 
 
 def check() -> int:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     members, _ = npl.load_members(processed)
     entries = entries_by_gene()

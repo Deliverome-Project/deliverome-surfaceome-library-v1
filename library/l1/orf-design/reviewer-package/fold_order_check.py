@@ -104,7 +104,7 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--workers", type=int, default=WORKERS, help="parallel download/check threads")
     args = ap.parse_args(argv)
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     fasta_bytes = Path(processed.download(FASTA_KEY)).read_bytes()
     fasta_sha = sha(fasta_bytes)
@@ -117,7 +117,7 @@ def main(argv: list[str] | None = None) -> int:
         elif line:
             inserts[-1][1] += line.strip().upper()
 
-    from deliverome_analysis.provenance import read_pinned_text
+    from deliverome_analysis.core.provenance import read_pinned_text
 
     table = read_pinned_text(REFOLD_COMMIT, STRUCTURES, repo=REPO)
     folds: dict[str, dict[str, str]] = {}

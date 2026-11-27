@@ -43,8 +43,8 @@ from pathlib import Path
 
 from Bio.Seq import Seq
 
-from deliverome_analysis import library_design as ld
-from deliverome_analysis.s3 import external, processed
+from deliverome_analysis.cloning import library_design as ld
+from deliverome_analysis.core.s3 import external, processed
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[2]

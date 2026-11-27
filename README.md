@@ -1,5 +1,7 @@
 # Deliverome surfaceome library v1
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24570263.svg)](https://doi.org/10.5281/zenodo.24570263)
+
 The Deliverome surfaceome library v1 (L1 in the code) is a pooled, barcoded lentiviral library of
 human cell-surface proteins, each expressed from its own open reading frame (ORF) with an
 extracellular epitope tag: SpyTag003 and ALFA in one 51-amino-acid cassette. It is built to screen
@@ -8,14 +10,16 @@ every cell carries one construct, the tag reports display and uptake, and a 20-n
 says which protein the cell expressed.
 
 This repository holds the library's design for external review, and the code and frozen inputs
-to rerun every design decision offline.
+to rerun every design decision offline. Explore all 2,740 members interactively at
+[surfaceome.deliverome.org/v1-review](https://surfaceome.deliverome.org/v1-review/).
 
 ## Where to start
 
 | Read | What it gives you |
 |---|---|
 | [Design brief](library/l1/orf-design/reviewer-package/BRIEF.md) | the design as one argument: which genes, which protein form of each, where the tag goes and why, the construct and vector, barcodes and readout, and the questions we would like reviewers to weigh in on (section 12) |
-| [Cover note](library/l1/orf-design/reviewer-package/COVER_NOTE.md) | what is still being worked on before the order, with links to the open issues |
+| [Flat construct catalog](library/l1/orf-design/reviewer-package/l1_order_catalog.tsv.gz) ([data dictionary](library/l1/orf-design/reviewer-package/DATA_DICTIONARY.md)) | single plate-ordered TSV of all **3,352** ordered constructs across **2,730** built CDSs and **35** plates, with gene/species/topology/tag-site metadata, ColabFold refold metrics, `decided_by`/`reason`, protein sequences, and synthesis-recoded DNA inserts |
+| [Provenance & versions](library/l1/orf-design/reviewer-package/PROVENANCE_VERSIONS.md) | exact pinned container digests, Python lockfile, ColabFold/DeepTMHMM/SignalP 6/NetGPI/ProDomino versions and weight checksums, and upstream database releases |
 | [Library layout map](library/l1/orf-design/l1_example_AXL_ires_puro.gb) | one complete construct (AXL as the example ORF) in the library vector, EFS – ORF – IRES2 – PuroR, annotated element by element (GenBank) |
 | [Alternative layout map](library/l1/orf-design/l1_example_AXL_sv40_puro.gb) | the same insert with PuroR from its own SV40 promoter, the layout we did not use (GenBank) |
 | [Decision log](library/l1/orf-design/reviewer-package/DECISION_LOG.md) | every design decision, dated, with who made it and why |

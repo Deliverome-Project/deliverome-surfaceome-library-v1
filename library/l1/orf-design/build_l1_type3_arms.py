@@ -64,9 +64,9 @@ from pathlib import Path
 from build_constructs import CASSETTE_AA
 from diversify_arm_cassettes import arm_cassette
 
-from deliverome_analysis import library_design as ld
-from deliverome_analysis import plasmid_qc as qc
-from deliverome_analysis import seqtools
+from deliverome_analysis.cloning import library_design as ld
+from deliverome_analysis.cloning import plasmid_qc as qc
+from deliverome_analysis.cloning import seqtools
 
 LEADER = qc.IGK_LEADER_NT
 LEADER_AA = qc.IGK_LEADER_AA
@@ -263,7 +263,7 @@ def read_table(path: Path) -> list[dict]:
 
 
 def build() -> list[dict]:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     paths = {r["candidate_id"]: r for r in read_table(TAG_PATHS)}
     calls = read_table(CALLS)
@@ -352,7 +352,7 @@ def build() -> list[dict]:
 
 
 def topology_sha(aa: str) -> str:
-    from deliverome_analysis import topology
+    from deliverome_analysis.surfaceome import topology
 
     return topology.sequence_sha256(aa)
 
@@ -431,7 +431,7 @@ def attach_refold(rows: list[dict]) -> None:
     """Copy each built member's refold verdict onto its row (blank until the file exists)."""
     import pandas as pd
 
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     # Matched on the folded sequence's sha256 (tagged_sha256): the precursor for tag_alone,
     # the mature chain for igk_tag. Member ids drift with renumbering; sequences do not.

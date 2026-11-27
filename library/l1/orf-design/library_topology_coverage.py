@@ -7,7 +7,7 @@ been conflated before, each time producing a plausible wrong answer.
 The protein is the designed CDS translated, which is an Ensembl-transcript product and
 usually corresponds to a UniProt *isoform* rather than the canonical record. So a topology
 row fetched by canonical accession is frequently about a different protein. Matching is on
-the sequence throughout; see :mod:`deliverome_analysis.library_design`.
+the sequence throughout; see :mod:`deliverome_analysis.cloning.library_design`.
 
     uv run --locked python library_topology_coverage.py --library l1
     uv run --locked python library_topology_coverage.py --library l2 --tool deeptmhmm2
@@ -18,8 +18,8 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from deliverome_analysis import library_design as ld
-from deliverome_analysis import topology
+from deliverome_analysis.cloning import library_design as ld
+from deliverome_analysis.surfaceome import topology
 
 HERE = Path(__file__).parent
 MANIFEST = HERE / "candidate_manifest_tranches.tsv"

@@ -3,7 +3,7 @@
 Every internal tag site proposed for an L1 member -- the S5E13 v4 ranker's picks, the
 built panel loop arms, and the tag-site API's deterministic ``disorder`` and
 ``surface_loop`` lanes -- is placed on the member's own structure model, in a membrane
-fitted to that model (``deliverome_analysis.membrane_side``), and given a verdict from
+fitted to that model (``deliverome_analysis.surfaceome.membrane_side``), and given a verdict from
 the junction's height above the mid-plane. Thresholds come from ``calibration.json``,
 which ``calibrate.py`` derives from TMDET placements, UniProt experimental topology and
 the depths of published working tag sites; none is set here.
@@ -44,7 +44,7 @@ sys.path.insert(0, str(HERE))
 import gate_inputs as gi  # noqa: E402
 from placements import member_placements  # noqa: E402
 
-from deliverome_analysis import membrane_side as ms  # noqa: E402
+from deliverome_analysis.surfaceome import membrane_side as ms  # noqa: E402
 
 #: Who implemented this gate, written into every output row (Becca's 2026-11-10 rule:
 #: "for any manual fixes please note the agent who made the fix / adjustment and reasoning").

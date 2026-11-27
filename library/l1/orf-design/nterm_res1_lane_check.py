@@ -37,7 +37,7 @@ helix 8.
 **Structure check.** A planar membrane is fitted to the member's model: the normal is the mean
 axis of the helices that v1 or v2 places (positions only, never their sides), using C-alpha atoms
 at pLDDT >= 70; the mid-plane passes through their centroid. The same construction as
-`deliverome_analysis.membrane_side.fit_helix_axis` on the open PR #291; it is written out here
+`deliverome_analysis.surfaceome.membrane_side.fit_helix_axis` on the open PR #291; it is written out here
 because that module is not on `main`. Switch to it once it lands. Then, independently of any
 topology string:
 
@@ -97,9 +97,9 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from deliverome_analysis import library_design as ld
-from deliverome_analysis import topology
-from deliverome_analysis.s3 import processed
+from deliverome_analysis.cloning import library_design as ld
+from deliverome_analysis.core.s3 import processed
+from deliverome_analysis.surfaceome import topology
 
 HERE = Path(__file__).parent
 TAG_PATHS = HERE / "l1_tag_paths.tsv"

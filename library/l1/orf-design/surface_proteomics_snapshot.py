@@ -66,7 +66,7 @@ def sha256(path: Path) -> str:
 
 
 def fetch(entry: dict, dest: Path, pin: bool) -> Path:
-    from deliverome_analysis import s3
+    from deliverome_analysis.core import s3
 
     bucket, key = entry["key"].split("://", 1)
     dest.parent.mkdir(parents=True, exist_ok=True)

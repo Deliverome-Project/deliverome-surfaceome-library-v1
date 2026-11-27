@@ -43,7 +43,7 @@ def pinned(processed) -> dict[str, dict]:
 
 
 def write_fasta(out: Path) -> int:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     members, _ = npl.load_members(processed)
     pins = pinned(processed)
@@ -63,7 +63,7 @@ def write_fasta(out: Path) -> int:
 
 
 def compare(results: Path) -> int:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     pins = pinned(processed)
     seen = same_call = same_site = 0

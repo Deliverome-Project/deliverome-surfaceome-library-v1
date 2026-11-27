@@ -47,7 +47,7 @@ from Bio.Seq import Seq
 from Bio.SeqFeature import FeatureLocation, SeqFeature
 from Bio.SeqRecord import SeqRecord
 
-from deliverome_analysis import constructs
+from deliverome_analysis.cloning import constructs
 
 HERE = Path(__file__).parent
 TABLE = HERE / "p0050_set.tsv"
@@ -96,7 +96,7 @@ def _fetch(name: str, workdir: Path) -> Path:
     key = constructs.map_key(name)
     dest = workdir / f"{name}.gb"
     try:
-        from deliverome_analysis import s3
+        from deliverome_analysis.core import s3
 
         s3.processed.download(key, dest)
         return dest
@@ -206,7 +206,7 @@ def main(argv: list[str] | None = None) -> int:
             f"  {row['source']} -> {row['plasmid']}  {len(rec.seq):>6} bp  {row['genscript_item_name']}"
         )
         if args.upload:
-            from deliverome_analysis import s3
+            from deliverome_analysis.core import s3
 
             s3.processed.upload(out, constructs.map_key(row["plasmid"]), content_type="text/plain")
     with (args.out_dir / "MANIFEST.tsv").open("w") as fh:

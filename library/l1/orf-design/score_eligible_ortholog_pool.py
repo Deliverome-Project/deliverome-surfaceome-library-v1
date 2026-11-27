@@ -25,8 +25,9 @@ import rebuild_ortholog_pool as pool
 import score_ortholog_pool as legacy
 import validated_v1_supplements as v1_supplements
 
-from deliverome_analysis import seqtools, topology
-from deliverome_analysis.provenance import provenance
+from deliverome_analysis.cloning import seqtools
+from deliverome_analysis.core.provenance import provenance
+from deliverome_analysis.surfaceome import topology
 
 FROZEN_TOPOLOGY_SHA256 = "604521dcbc920f520ea566aee3da638dad6540772c0f38d1792a631ca301e048"
 SURFACE_LABELS = {"TM", "SP+TM", "BETA"}

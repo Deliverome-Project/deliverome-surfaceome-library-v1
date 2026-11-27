@@ -186,9 +186,7 @@ def main() -> None:
     )
 
     if not args.no_s3:
-        from deliverome_analysis.s3 import (
-            processed,  # scientist .env creds; write scoped to processed
-        )
+        from deliverome_analysis.core.s3 import processed
 
         for fname, ctype in (
             ("library_membership.tsv", "text/tab-separated-values"),

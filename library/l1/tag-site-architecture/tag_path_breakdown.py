@@ -27,7 +27,11 @@ from __future__ import annotations
 import csv
 from pathlib import Path
 
-from deliverome_analysis.plotting import get_categorical_colors, save_figure, setup_plotting_style
+from deliverome_analysis.core.plotting import (
+    get_categorical_colors,
+    save_figure,
+    setup_plotting_style,
+)
 
 HERE = Path(__file__).parent
 ROWS = HERE / "tag_path_assignments.tsv"

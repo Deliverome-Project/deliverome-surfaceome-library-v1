@@ -83,7 +83,7 @@ def near_miss(v: dict) -> bool:
 
 
 def main() -> int:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     calls = no.prior_calls(processed)
     members, _ = npl.load_members(processed)

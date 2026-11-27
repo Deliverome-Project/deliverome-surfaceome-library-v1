@@ -139,7 +139,7 @@ from pathlib import Path
 
 import build_constructs as bc
 
-from deliverome_analysis import seqtools
+from deliverome_analysis.cloning import seqtools
 
 HERE = Path(__file__).resolve().parent
 

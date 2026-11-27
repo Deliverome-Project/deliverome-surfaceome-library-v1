@@ -39,7 +39,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from deliverome_analysis import topology
+from deliverome_analysis.surfaceome import topology
 
 HERE = Path(__file__).resolve().parent
 RUNS = HERE / "topology_runs"
@@ -55,7 +55,7 @@ def sha256_file(path: Path) -> str:
 
 
 def load_base(key: str | None, sha: str | None) -> tuple[pd.DataFrame, str, str]:
-    from deliverome_analysis.s3 import external
+    from deliverome_analysis.core.s3 import external
 
     key = key or topology.SNAPSHOT_KEY
     sha = sha or topology.SNAPSHOT_SHA256
@@ -134,7 +134,7 @@ def parse_3line(text: str) -> list[dict]:
 def publish(args) -> int:
     from publish_topology_supplement import derive
 
-    from deliverome_analysis.s3 import external, processed
+    from deliverome_analysis.core.s3 import external, processed
 
     meta = json.loads((RUNS / f"{args.run}.json").read_text())
     fasta, three = RUNS / f"{args.run}.fasta", RUNS / f"{args.run}.3line"

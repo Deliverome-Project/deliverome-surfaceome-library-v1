@@ -112,7 +112,7 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--from", dest="ref", required=True, help="git ref of the previous numbering")
     args = ap.parse_args(argv)
-    from deliverome_analysis.provenance import read_pinned_text
+    from deliverome_analysis.core.provenance import read_pinned_text
 
     before = mapping(read_pinned_text(args.ref, f"{REL}/{MAPPING}", repo=REPO))
     now = mapping((HERE / MAPPING).read_text())

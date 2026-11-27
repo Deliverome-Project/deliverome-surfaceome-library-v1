@@ -54,7 +54,7 @@ sys.path.insert(0, str(HERE.parents[3] / "src"))
 from fetch_uniprot_site_features import ACCESSION  # noqa: E402
 from fetch_uniprot_site_features import fetch as fetch_features  # noqa: E402
 
-from deliverome_analysis.gene_resolver import to_canonical  # noqa: E402
+from deliverome_analysis.surfaceome.gene_resolver import to_canonical  # noqa: E402
 
 CDS_KEY = "sprint4/s4e9-orf-design-fg-panel/library-candidates/candidate_cds.json"
 OUT = HERE / "member_interface_contacts.tsv"
@@ -65,7 +65,7 @@ SEARCH = "https://www.ebi.ac.uk/proteins/api/proteins?gene={g}&taxid=9606&review
 def ordered_proteins() -> dict[str, str]:
     local = HERE / "data" / "candidate_cds.json"
     if not local.is_file():
-        from deliverome_analysis import s3
+        from deliverome_analysis.core import s3
 
         local.parent.mkdir(parents=True, exist_ok=True)
         s3.processed.download(CDS_KEY, str(local))

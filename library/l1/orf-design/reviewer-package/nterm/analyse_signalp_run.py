@@ -32,7 +32,7 @@ PARENT = {"tagged": "native", "igk_tagged": "igk_native"}
 
 
 def main() -> int:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     with (HERE / "signalp_inputs.tsv").open() as fh:
         rows = list(csv.DictReader(fh, delimiter="\t"))

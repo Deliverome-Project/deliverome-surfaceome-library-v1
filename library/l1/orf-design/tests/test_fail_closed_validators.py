@@ -34,7 +34,7 @@ import l1_consistency as cons  # noqa: E402
 import l1_pool_qc as pool  # noqa: E402
 import order_plan  # noqa: E402
 
-from deliverome_analysis import seqtools  # noqa: E402
+from deliverome_analysis.cloning import seqtools  # noqa: E402
 
 # --------------------------------------------------------------------------- helpers
 

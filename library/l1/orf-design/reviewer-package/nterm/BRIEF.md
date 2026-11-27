@@ -148,7 +148,7 @@ position before the predicted fold at all.
 
 **Where disorder ranks the site inside the interval.** An earlier rule took the residue with
 the highest mean within-protein disorder percentile in the window `c + 1 … c + 20`
-([`tag_placement.post_sp_junction`](../../../../../src/deliverome_analysis/tag_placement.py)).
+([`tag_placement.post_sp_junction`](../../../../../src/deliverome_analysis/cloning/tag_placement.py)).
 For 1,078 of the 1,122 members with an interval, its pick is one of the candidates; for 44 it
 falls outside the interval. Section 7 gives the rule that chooses among them.
 

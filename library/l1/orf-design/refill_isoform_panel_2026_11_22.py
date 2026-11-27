@@ -106,9 +106,10 @@ def plan(work: Path, rows: list[dict]) -> tuple[list[dict], list[dict]]:
     """(refill decisions, change-log rows) for the slots emptied on ``rows``."""
     from redraw_panels import iso_keys
 
-    from deliverome_analysis import library_design as ld
-    from deliverome_analysis import seqtools, topology
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.cloning import library_design as ld
+    from deliverome_analysis.cloning import seqtools
+    from deliverome_analysis.core.s3 import processed
+    from deliverome_analysis.surfaceome import topology
 
     summary = json.loads(rd.OUT_SUMMARY.read_text())
     extra = summary["rejected_as_unbuildable_in_redraw"]

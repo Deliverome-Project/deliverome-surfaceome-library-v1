@@ -61,7 +61,7 @@ from Bio.Seq import Seq
 from Bio.SeqFeature import FeatureLocation, SeqFeature
 from puro_only_backbone import NATIVE_PURO_END, NATIVE_PURO_START, P003
 
-from deliverome_analysis import seqtools
+from deliverome_analysis.cloning import seqtools
 
 HERE = Path(__file__).parent
 

@@ -90,7 +90,7 @@ def main() -> None:
     )
     args = ap.parse_args()
 
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     folds = Path(args.folds).expanduser()
     base = f"{PREFIX}/{args.date}"

@@ -17,8 +17,8 @@ from pathlib import Path
 
 import numpy as np
 
-from deliverome_analysis import seqtools
-from deliverome_analysis.plotting import (
+from deliverome_analysis.cloning import seqtools
+from deliverome_analysis.core.plotting import (
     COLORS,
     create_figure,
     get_color,

@@ -9,7 +9,7 @@ import final_library as F  # reuses the final cut + per-tier aggregation (F.agg)
 import matplotlib.pyplot as plt
 import numpy as np
 
-from deliverome_analysis.plotting import CATEGORICAL_PALETTE, save_figure, setup_plotting_style
+from deliverome_analysis.core.plotting import CATEGORICAL_PALETTE, save_figure, setup_plotting_style
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 setup_plotting_style()

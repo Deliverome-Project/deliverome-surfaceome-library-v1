@@ -721,7 +721,7 @@ def make_figures(
     """House style only: setup_plotting_style() then save_figure()."""
     import matplotlib.pyplot as plt
 
-    from deliverome_analysis.plotting import save_figure, setup_plotting_style
+    from deliverome_analysis.core.plotting import save_figure, setup_plotting_style
 
     setup_plotting_style()
     figdir = HERE / "figures"

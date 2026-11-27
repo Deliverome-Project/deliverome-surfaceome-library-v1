@@ -1,7 +1,0 @@
-gene	basis	pmid	note
-CACNA2D1	literature	20080692	alpha2delta-1; Davies 2010 PNAS shows GPI anchoring directly (PI-PLC release, CRD epitope, anchor-site mutation)
-CACNA2D2	literature	20080692	alpha2delta-2; covered explicitly by the same study
-CACNA2D3	literature	20080692	alpha2delta-3; covered explicitly by the same study. UniProt still annotates single-pass type I, the description the paper supersedes
-PRSS8	literature	29617460	prostasin; described as a GPI-anchored serine protease in the primary literature (Szabo & Bugge 2018; Chen 2009 PMID 19849847). UniProt annotates a single-pass TM feature, the same stale-annotation pattern as the alpha2delta subunits
-NYX	experiment	15905181	nyctalopin; O'Connor 2005 shows human nyctalopin is GPI-anchored experimentally, confirming the prediction in both CSNB1 papers (PMID 11062471, 11062472). Human-specific: the same study shows mouse and rat nyctalopin are NOT GPI-anchored, so this row must not be read as an ortholog claim
-IGLON5	review	37895235	IgLON5; all five IgLON family members (OPCML, LSAMP, NTM, NEGR1, IGLON5) carry a GPI anchor. Review rather than a primary IgLON5 anchor experiment

@@ -110,7 +110,7 @@ def pinned_inputs() -> tuple[pd.DataFrame, pd.DataFrame]:
     for name, want in INPUT_SHA256.items():
         p = data / name
         if not p.is_file():
-            from deliverome_analysis.s3 import processed
+            from deliverome_analysis.core.s3 import processed
 
             processed.download(S3_INPUTS + name, p)
         got = hashlib.sha256(p.read_bytes()).hexdigest()
@@ -423,7 +423,7 @@ def report() -> None:
 def figure() -> None:
     import matplotlib.pyplot as plt
 
-    from deliverome_analysis.plotting import (
+    from deliverome_analysis.core.plotting import (
         CATEGORICAL_PALETTE,
         COLORS,
         save_figure,
@@ -491,7 +491,7 @@ def figure() -> None:
 
 def upload() -> None:
     """Publish each output under its own key (never a folder-wide upload)."""
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     names = ["queue.tsv", "metrics_afdb_ref.tsv", "metrics_own_ref.tsv", "pass_rates.tsv",
              "auroc.tsv", "within_protein.tsv"]  # fmt: skip

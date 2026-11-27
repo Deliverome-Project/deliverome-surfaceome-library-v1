@@ -37,7 +37,7 @@ from typing import Any
 
 import requests
 
-from deliverome_analysis.env import load_env
+from deliverome_analysis.core.env import load_env
 
 ZENODO_API = "https://zenodo.org/api"
 ZENODO_SANDBOX_API = "https://sandbox.zenodo.org/api"

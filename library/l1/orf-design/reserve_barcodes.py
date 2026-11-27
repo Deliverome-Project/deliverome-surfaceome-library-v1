@@ -44,8 +44,8 @@ from pathlib import Path
 from barcode_prefix_screen import PrefixScreen
 from build_constructs import CS1, ENZYMES, FWD_PRIMER, REV_PRIMER
 
-from deliverome_analysis import seqtools
-from deliverome_analysis.s3 import processed
+from deliverome_analysis.cloning import seqtools
+from deliverome_analysis.core.s3 import processed
 
 HERE = Path(__file__).parent
 REGISTRY_KEY = "sprint1/s1e2-fragmid-vector-design/barcode_assignments.tsv"

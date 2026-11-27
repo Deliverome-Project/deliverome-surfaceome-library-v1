@@ -32,7 +32,7 @@ import audit_domestication_barcodes as audit
 import l1_swap_pool_model as model
 from build_constructs import ENZYMES, FWD_PRIMER
 
-from deliverome_analysis import seqtools
+from deliverome_analysis.cloning import seqtools
 
 HERE = Path(__file__).parent
 OUT = HERE / "swap_t7_scenario.json"

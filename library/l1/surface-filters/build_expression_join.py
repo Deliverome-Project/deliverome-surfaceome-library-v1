@@ -27,7 +27,7 @@ import json
 import os
 import re
 
-from deliverome_analysis.gene_resolver import resolve
+from deliverome_analysis.surfaceome.gene_resolver import resolve
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 TPM_CSV = os.path.join(HERE, "external/expression_tpm/genomewide_expression_tpm.csv")

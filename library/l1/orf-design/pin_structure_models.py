@@ -79,7 +79,7 @@ def problems(deep: bool = False) -> tuple[list[str], int]:
         out.append(f"archive rows without an external:// key or a SHA-256: {bad[:5]}")
     if out:
         return out, len(archive)
-    from deliverome_analysis.s3 import client, external
+    from deliverome_analysis.core.s3 import client, external
 
     to_check = [archive[u] for u in afdb_urls() if u in archive]
     mirror_root = external._mirror_path("")

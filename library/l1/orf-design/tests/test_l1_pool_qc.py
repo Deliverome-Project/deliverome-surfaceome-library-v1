@@ -22,8 +22,8 @@ sys.path.insert(0, str(HERE))
 
 import l1_pool_qc as pool  # noqa: E402
 
-from deliverome_analysis import plasmid_qc as qc  # noqa: E402
-from deliverome_analysis import seqtools  # noqa: E402
+from deliverome_analysis.cloning import plasmid_qc as qc  # noqa: E402
+from deliverome_analysis.cloning import seqtools  # noqa: E402
 
 
 def _rand(n: int, rng: random.Random) -> str:

@@ -39,7 +39,7 @@ import hashlib
 import shutil
 from pathlib import Path
 
-from deliverome_analysis import constructs
+from deliverome_analysis.cloning import constructs
 
 HERE = Path(__file__).parent
 #: Where rebuild_order_maps.py leaves the assembled maps.

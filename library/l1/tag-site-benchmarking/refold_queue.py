@@ -41,7 +41,7 @@ OUT = HERE / "l1_internal_refold_queue.tsv"
 
 
 def ortholog_designs() -> tuple[pd.DataFrame, str]:
-    from deliverome_analysis.provenance import read_pinned_text
+    from deliverome_analysis.core.provenance import read_pinned_text
 
     repo = HERE.parents[2]
     txt = read_pinned_text(ORTHOLOG_COMMIT, ORTHOLOG_PATH, repo=repo)
@@ -57,7 +57,7 @@ def current_ordered_proteins() -> dict[str, str]:
 
     local = HERE / "data" / "candidate_cds_current.json"
     if not local.is_file():
-        from deliverome_analysis import s3
+        from deliverome_analysis.core import s3
 
         s3.processed.download(
             "sprint4/s4e9-orf-design-fg-panel/library-candidates/"

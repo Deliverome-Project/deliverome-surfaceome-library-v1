@@ -33,7 +33,7 @@ from pathlib import Path
 from Bio import SeqIO
 from Bio.Seq import Seq
 
-from deliverome_analysis.s3 import processed
+from deliverome_analysis.core.s3 import processed
 
 KEY = "constructs/ordered/p004.gb"
 DEFAULT_AS_BUILT = (

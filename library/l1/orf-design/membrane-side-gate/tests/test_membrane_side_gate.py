@@ -16,7 +16,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from deliverome_analysis import membrane_side as ms
+from deliverome_analysis.surfaceome import membrane_side as ms
 
 HERE = Path(__file__).resolve().parent
 GATE = HERE.parent

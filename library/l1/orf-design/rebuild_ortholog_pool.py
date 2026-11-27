@@ -47,7 +47,7 @@ def verify_inputs(inputs: Path, manifest: Path = MANIFEST) -> dict:
 
 
 def stage_inputs(inputs: Path, manifest: Path = MANIFEST) -> None:
-    from deliverome_analysis import s3
+    from deliverome_analysis.core import s3
 
     spec = json.loads(manifest.read_text())
     inputs.mkdir(parents=True, exist_ok=True)

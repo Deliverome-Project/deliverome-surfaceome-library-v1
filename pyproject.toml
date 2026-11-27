@@ -96,7 +96,6 @@ dev = [
     "pytest-cov>=5.0",
     "pre-commit>=3.7",
     "mypy>=2.4.1",
-    "ty==0.0.102",
 ]
 domains = [
     "pyhmmer>=0.12.3",
@@ -193,6 +192,9 @@ ignore = [
     "B008",  # function-call-in-default-argument: pandas patterns trip this
 ]
 
+[tool.ruff.lint.isort]
+known-first-party = ["deliverome_analysis"]
+
 [tool.ruff.lint.per-file-ignores]
 "tests/*" = ["B011"]
 # marimo files (.py with @app.cell decorators) shadow names across cells by
@@ -213,11 +215,9 @@ markers = [
 ]
 
 [tool.mypy]
-# Strict static typing for shared modules, checked by
+# Strict static typing for shared proteomics/topology modules, checked by
 # tests/test_peptide_metrics.py::test_strict_modules_type_check, which runs mypy on every module
 # listed in a `strict = true` override below. Add modules as they are typed.
-# test_strict_modules_ty_check also runs ty (dev group, pinned) on the same modules; ty has no
-# strict mode, so mypy strict remains the check that every function is annotated.
 # Third-party packages without stubs or a py.typed marker are listed under
 # `ignore_missing_imports` below (they type as Any); Biopython ships a py.typed marker but most
 # of its functions are unannotated, so its calls are exempt from disallow_untyped_calls instead.
@@ -229,23 +229,23 @@ untyped_calls_exclude = ["Bio"]
 # The shared modules the L1 library review repository exports.
 [[tool.mypy.overrides]]
 module = [
-    "deliverome_analysis.constructs",
-    "deliverome_analysis.env",
-    "deliverome_analysis.gene_resolver",
-    "deliverome_analysis.genscript",
-    "deliverome_analysis.library_design",
-    "deliverome_analysis.membrane_side",
-    "deliverome_analysis.plasmid_qc",
-    "deliverome_analysis.plotting",
-    "deliverome_analysis.primers",
-    "deliverome_analysis.provenance",
-    "deliverome_analysis.rbp_motifs",
-    "deliverome_analysis.s3",
-    "deliverome_analysis.seqtools",
-    "deliverome_analysis.surfaceome",
-    "deliverome_analysis.tag_placement",
-    "deliverome_analysis.topology",
-    "deliverome_analysis.trust_store",
+    "deliverome_analysis.cloning.constructs",
+    "deliverome_analysis.cloning.genscript",
+    "deliverome_analysis.cloning.library_design",
+    "deliverome_analysis.cloning.plasmid_qc",
+    "deliverome_analysis.cloning.primers",
+    "deliverome_analysis.cloning.rbp_motifs",
+    "deliverome_analysis.cloning.seqtools",
+    "deliverome_analysis.cloning.tag_placement",
+    "deliverome_analysis.core.env",
+    "deliverome_analysis.core.plotting",
+    "deliverome_analysis.core.provenance",
+    "deliverome_analysis.core.s3",
+    "deliverome_analysis.core.trust_store",
+    "deliverome_analysis.surfaceome.gene_resolver",
+    "deliverome_analysis.surfaceome.membrane_side",
+    "deliverome_analysis.surfaceome.surfaceome",
+    "deliverome_analysis.surfaceome.topology",
 ]
 strict = true
 

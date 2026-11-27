@@ -33,8 +33,8 @@ import matplotlib.pyplot as plt
 from Bio import SeqIO
 from matplotlib.patches import FancyArrowPatch, Rectangle
 
-from deliverome_analysis import s3
-from deliverome_analysis.plotting import (
+from deliverome_analysis.core import s3
+from deliverome_analysis.core.plotting import (
     COLORS,
     SEQUENTIAL_PALETTES,
     save_figure,

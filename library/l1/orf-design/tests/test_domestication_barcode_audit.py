@@ -22,7 +22,7 @@ from pathlib import Path
 
 import numpy as np
 
-from deliverome_analysis import seqtools
+from deliverome_analysis.cloning import seqtools
 
 S4E9 = Path(__file__).resolve().parents[1]
 GATE = 100

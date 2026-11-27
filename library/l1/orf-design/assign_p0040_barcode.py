@@ -32,8 +32,8 @@ from Bio.Seq import Seq
 sys.path.insert(0, str(Path(__file__).parent))
 from reserve_barcodes import POOL_KEY, REGISTRY_KEY, read_registry, screens_pass
 
-from deliverome_analysis import constructs, seqtools
-from deliverome_analysis.s3 import processed
+from deliverome_analysis.cloning import constructs, seqtools
+from deliverome_analysis.core.s3 import processed
 
 CONSTRUCT = "p0040"
 PARENT = "p0016"

@@ -13,7 +13,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from deliverome_analysis.s3 import external
+from deliverome_analysis.core.s3 import external
 
 TOOL_VERSIONS = ("deeptmhmm-1.0.24", "deeptmhmm-1.0-academic")
 

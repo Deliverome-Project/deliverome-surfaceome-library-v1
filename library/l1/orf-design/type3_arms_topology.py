@@ -21,7 +21,7 @@ import argparse
 import csv
 from pathlib import Path
 
-from deliverome_analysis.s3 import processed
+from deliverome_analysis.core.s3 import processed
 
 HERE = Path(__file__).parent
 FEATURES = HERE / "type3_nterm_features.tsv"

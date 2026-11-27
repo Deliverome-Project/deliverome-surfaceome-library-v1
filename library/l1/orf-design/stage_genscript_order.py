@@ -21,8 +21,8 @@ from pathlib import Path
 from Bio import SeqIO
 from Bio.Seq import Seq
 
-from deliverome_analysis import constructs, seqtools
-from deliverome_analysis.s3 import processed
+from deliverome_analysis.cloning import constructs, seqtools
+from deliverome_analysis.core.s3 import processed
 
 HERE = Path(__file__).parent
 GG = ("BbsI", "Esp3I", "BsaI")

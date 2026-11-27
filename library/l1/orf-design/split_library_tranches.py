@@ -26,7 +26,7 @@ import csv
 import json
 from pathlib import Path
 
-from deliverome_analysis.s3 import processed
+from deliverome_analysis.core.s3 import processed
 
 PREFIX = "sprint4/s4e9-orf-design-fg-panel/"
 MANIFEST = PREFIX + "library-candidates/candidate_manifest.tsv"

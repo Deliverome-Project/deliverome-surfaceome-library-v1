@@ -20,7 +20,7 @@ import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
-from deliverome_analysis import seqtools
+from deliverome_analysis.cloning import seqtools
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from member_id_allocations import to_design_space

@@ -42,8 +42,8 @@ import snapshot_inputs as si  # noqa: E402
 
 
 def snapshot(ids: list[str], date: str, out: Path) -> int:
-    from deliverome_analysis import topology
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
+    from deliverome_analysis.surfaceome import topology
 
     lane = {c: m for c, m in si.members().items() if c in ids}
     missing = sorted(set(ids) - set(lane))

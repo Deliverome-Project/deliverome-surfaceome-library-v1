@@ -133,8 +133,8 @@ def refused(cls: str) -> dict[str, dict]:
 
 
 def snapshot(publish: bool) -> int:
-    from deliverome_analysis import topology
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
+    from deliverome_analysis.surfaceome import topology
 
     lane = si.members()
     shas = {lane[c]["sha"] for c in refused("refused_no_signalp_row")}
@@ -307,7 +307,7 @@ def prior_calls(processed, include_new: bool = True) -> dict:
 
 def inputs() -> int:
     """Group every held or refused member from the current tables; write only unseen sequences."""
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     members, _ = npl.load_members(processed)
     base = npl.load_snapshot(processed)
@@ -440,7 +440,7 @@ def _pick(tagged: list[dict], parent_cp: float) -> dict | None:
 
 def analyse(only: set[str] | None = None) -> int:
     """Verdicts against each parent in the same calls store, and one proposed site per member."""
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     members, _ = npl.load_members(processed)
     calls = prior_calls(processed, include_new=True)

@@ -153,7 +153,7 @@ def inputs() -> tuple[pd.DataFrame, pd.DataFrame]:
     for name, want in INPUT_SHA256.items():
         p = DATA / name
         if not p.is_file():
-            from deliverome_analysis.s3 import processed
+            from deliverome_analysis.core.s3 import processed
 
             processed.download(S3_INPUTS + name, p)
         got = sha256(p)
@@ -482,7 +482,7 @@ def check_shipped(tr: pd.DataFrame) -> float:
 def figures(pp_all: pd.DataFrame, summary: pd.DataFrame, ablation: pd.DataFrame) -> list[Path]:
     import matplotlib.pyplot as plt
 
-    from deliverome_analysis.plotting import save_figure, setup_plotting_style
+    from deliverome_analysis.core.plotting import save_figure, setup_plotting_style
 
     setup_plotting_style()
     colors = plt.rcParams["axes.prop_cycle"].by_key()["color"]

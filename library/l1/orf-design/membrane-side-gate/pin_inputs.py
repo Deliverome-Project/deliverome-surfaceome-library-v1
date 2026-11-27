@@ -69,7 +69,7 @@ def s3_inputs() -> list[dict]:
     """The S3 objects the gate reads, with the SHA-256 of the copy read."""
     import gate_inputs as gi
 
-    from deliverome_analysis.s3 import external, processed
+    from deliverome_analysis.core.s3 import external, processed
 
     rows = []
     for bucket, key in [
@@ -125,7 +125,7 @@ def pin(upload_to: str | None) -> int:
     digest = sha256(bundle)
     pointer = dict(bundle_sha256=digest, files=len(files), bytes=bundle.stat().st_size)
     if upload_to:
-        from deliverome_analysis.s3 import processed
+        from deliverome_analysis.core.s3 import processed
 
         key = upload_to.rstrip("/") + "/inputs_bundle.tar.gz"
         if processed.list_keys(prefix=key):
@@ -138,7 +138,7 @@ def pin(upload_to: str | None) -> int:
 
 
 def restore() -> int:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     pointer = json.loads(BUNDLE_POINTER.read_text())
     CACHE.mkdir(parents=True, exist_ok=True)

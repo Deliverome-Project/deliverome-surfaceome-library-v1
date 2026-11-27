@@ -59,7 +59,7 @@ image = (
     .pip_install(*PIP_PINS)
 )
 if modal.is_local():  # the image is built from the laptop; containers only re-import this file
-    from deliverome_analysis.trust_store import harden
+    from deliverome_analysis.core.trust_store import harden
 
     image = harden(image)
 
@@ -307,7 +307,7 @@ def run(fasta: str, run_id: str, out: str):
 @app.local_entrypoint()
 def validate(out: str = "signalp6_validate", shard: str = "s0000"):
     """Rerun one shard of sweep_rp_1792381414 in its original order; every call must match."""
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     pre = "sprint4/s4e9-orf-design-fg-panel/reprediction/sweep_rp_1792381414/"
     sub = {

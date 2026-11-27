@@ -23,8 +23,9 @@ import rebuild_ortholog_pool as pool
 from draw_rebuilt_ortholog_panel import classify
 from export_ortholog_predictions import fasta
 
-from deliverome_analysis import library_design as ld
-from deliverome_analysis import seqtools, topology
+from deliverome_analysis.cloning import library_design as ld
+from deliverome_analysis.cloning import seqtools
+from deliverome_analysis.surfaceome import topology
 
 RULE_VERSION = "ortholog-cds-draw-v1"
 

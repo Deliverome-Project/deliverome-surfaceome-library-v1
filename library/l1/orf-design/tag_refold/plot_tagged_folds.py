@@ -24,7 +24,7 @@ sys.path.insert(0, str(HERE))
 
 from score_tagged_folds import EPITOPE_RSA_PASS, LDDT_PASS, LOCAL_LDDT_PASS  # noqa: E402
 
-from deliverome_analysis.plotting import (  # noqa: E402
+from deliverome_analysis.core.plotting import (  # noqa: E402
     CATEGORICAL_PALETTE,
     COLORS,
     save_figure,

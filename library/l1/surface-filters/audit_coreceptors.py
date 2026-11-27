@@ -70,7 +70,7 @@ def main():
     parser.add_argument("--hydrate", action="store_true", help="Download the frozen audit inputs")
     args = parser.parse_args()
     if args.hydrate:
-        from deliverome_analysis.s3 import processed
+        from deliverome_analysis.core.s3 import processed
 
         manifest = json.loads(
             processed.download(f"{SNAPSHOT_PREFIX}/coreceptor_audit_summary.json").read_text()
@@ -82,7 +82,7 @@ def main():
     sys.path.insert(0, str(HERE))
     from coreceptor_rules import REVIEWED_RULES
 
-    from deliverome_analysis.provenance import read_pinned_text
+    from deliverome_analysis.core.provenance import read_pinned_text
 
     baseline_source = read_pinned_text(
         BASELINE_REF, (HERE / "final_library.py").relative_to(ROOT).as_posix(), repo=ROOT

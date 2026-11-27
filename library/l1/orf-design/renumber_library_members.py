@@ -63,8 +63,9 @@ import sys
 from collections import Counter
 from pathlib import Path
 
-from deliverome_analysis import library_design as ld
-from deliverome_analysis import seqtools, topology
+from deliverome_analysis.cloning import library_design as ld
+from deliverome_analysis.cloning import seqtools
+from deliverome_analysis.surfaceome import topology
 
 HERE = Path(__file__).resolve().parent
 AP = HERE.parents[2] / "library/l1/proteoform-selection"
@@ -172,7 +173,7 @@ def designed_cds() -> dict[str, str]:
     """Designed CDS per manifest ``key``: the candidate CDS record, plus the 25
     expression-rescue arms, whose designed coding sequence is the leader + receptor
     construct (they are not in ``candidate_cds.json``)."""
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     with open(processed.download(ld.CDS_KEY)) as fh:
         out = {k: v["cds"] for k, v in json.load(fh).items()}

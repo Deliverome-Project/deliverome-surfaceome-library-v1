@@ -6,10 +6,10 @@ verbatim; his ORFs are nucleotide-identical to today's Ensembl canonical CDS).
 
 What this does, per gene:
 
-1. Canonicalize the symbol through ``deliverome_analysis.gene_resolver`` (MyGene),
+1. Canonicalize the symbol through ``deliverome_analysis.surfaceome.gene_resolver`` (MyGene),
    giving the Ensembl **gene** id. Symbols are never the join key.
 2. Resolve that gene to its Ensembl **canonical transcript** and pull the native CDS
-   (``deliverome_analysis.seqtools``).
+   (``deliverome_analysis.cloning.seqtools``).
 3. Cross-check the translated protein against the reviewed UniProt entry reached from
    the same ENSG — identity of the *sequence*, not agreement of two labels. A mismatch
    is a hard stop, not a warning.
@@ -44,7 +44,8 @@ from datetime import UTC, datetime
 from importlib.metadata import version
 from pathlib import Path
 
-from deliverome_analysis import gene_resolver, seqtools
+from deliverome_analysis.cloning import seqtools
+from deliverome_analysis.surfaceome import gene_resolver
 
 # Brenna's panel minus TFRC (already ordered as p003).
 PANEL = [

@@ -128,7 +128,7 @@ def sha256(path: Path) -> str:
 
 def library_genes() -> list[str]:
     """The current library: the committed list plus active L1 reference genes it lacks."""
-    from deliverome_analysis import library_design as ld
+    from deliverome_analysis.cloning import library_design as ld
 
     listed = set(json.loads(LIBRARY_FILE.read_text()))
     built = {
@@ -253,7 +253,7 @@ def write_fasta(args) -> int:
 
 # ---- step 3: cohort, gate, draw ----------------------------------------------------------
 def v1_calls(inp: dict, seqs: dict[str, str]) -> dict[str, dict]:
-    from deliverome_analysis import topology
+    from deliverome_analysis.surfaceome import topology
 
     rep_ = topology.resolve(seqs, tool=topology.TOOL_V1, snapshot=inp["snapshot"])
     out = {}

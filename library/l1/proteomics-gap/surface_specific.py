@@ -11,7 +11,8 @@ publications. Library join: Ensembl gene id via gene_resolver; accession -> symb
 import sys, csv
 from collections import defaultdict
 import pandas as pd
-from deliverome_analysis import gene_resolver, library_design as ld, surfaceome
+from deliverome_analysis.cloning import library_design as ld
+from deliverome_analysis.surfaceome import gene_resolver, surfaceome
 D, S = sys.argv[1], sys.argv[2]
 man = pd.read_csv(f"{D}/manifest.tsv", sep="\t", dtype=str)
 man = man[man.species.eq("human") & man.retired_reason.fillna("").eq("")]

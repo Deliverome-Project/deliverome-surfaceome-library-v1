@@ -34,7 +34,7 @@ import sys
 from collections import Counter
 from pathlib import Path
 
-from deliverome_analysis import plasmid_qc as qc
+from deliverome_analysis.cloning import plasmid_qc as qc
 
 HERE = Path(__file__).resolve().parent
 S4E9 = HERE.parent
@@ -326,7 +326,7 @@ SNORKEL_TRIGGERS = {
 
 
 def internal() -> dict:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     d = _tsv(S5E13 / "l1_internal_decisions.tsv")
     model = json.loads((S5E13 / "tag_site_model_v5.json").read_text())

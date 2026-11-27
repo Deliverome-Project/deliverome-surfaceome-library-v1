@@ -28,7 +28,7 @@ import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
-from deliverome_analysis import surfaceome
+from deliverome_analysis.surfaceome import surfaceome
 
 HERE = Path(__file__).parent
 MANIFEST = HERE / "candidate_manifest_tranches.tsv"

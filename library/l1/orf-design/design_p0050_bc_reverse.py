@@ -8,7 +8,7 @@ O-0014 in WPRE, gives a 1,145-bp product that spans the whole SV40-PuroR unit.
 This picks a reverse primer inside the SV40 enhancer/promoter, which is byte-identical in all
 25 members, in p0050 itself and in P-0008, so one pair reads every construct and the amplicon
 differs only by barcode. Every candidate window in the first 200 nt after AscI is scored
-with ``deliverome_analysis.primers.check_pair`` against O-0013 on the p0053 (AXL) map: it must
+with ``deliverome_analysis.cloning.primers.check_pair`` against O-0013 on the p0053 (AXL) map: it must
 trip no threshold on its own, keep the pair's Tm difference inside NEB's 5 degC limit, give one
 product on every one of the 25 maps, and the product must be short enough for a 150-cycle
 read (150-250 bp preferred). Ties go to the shortest amplicon.
@@ -29,8 +29,8 @@ from pathlib import Path
 
 from Bio import SeqIO
 
-from deliverome_analysis import constructs, primers
-from deliverome_analysis.seqtools import reverse_complement
+from deliverome_analysis.cloning import constructs, primers
+from deliverome_analysis.cloning.seqtools import reverse_complement
 
 HERE = Path(__file__).parent
 OUT = HERE / "p0050_bc_reverse_primer.json"
@@ -47,7 +47,7 @@ def _load(name: str, maps: Path | None, work: Path) -> str:
     if maps and (maps / f"{name}.gb").exists():
         path = maps / f"{name}.gb"
     else:
-        from deliverome_analysis import s3
+        from deliverome_analysis.core import s3
 
         path = work / f"{name}.gb"
         s3.processed.download(constructs.map_key(name), path)

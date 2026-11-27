@@ -3,7 +3,7 @@
 Every active L1 member is assembled in silico into the p0039 backbone with the order-time
 insert grammar (Esp3I | Kozak | designed CDS + stop | pad | 5' handle | barcode | gap + RT |
 10x CS1 | Esp3I), and its EFS transcript (EFS end to the 3' LTR R end) is scanned with
-``deliverome_analysis.rbp_motifs`` -- the same code path the construct gate runs on a real
+``deliverome_analysis.cloning.rbp_motifs`` -- the same code path the construct gate runs on a real
 map. Hits are split three ways, because natural CDSs carry some motifs and the question for
 the order is different for each:
 
@@ -41,7 +41,8 @@ from Bio.Seq import Seq
 from Bio.SeqFeature import FeatureLocation, SeqFeature
 from Bio.SeqRecord import SeqRecord
 
-from deliverome_analysis import library_design, plasmid_qc, rbp_motifs, s3
+from deliverome_analysis.cloning import library_design, plasmid_qc, rbp_motifs
+from deliverome_analysis.core import s3
 
 HERE = Path(__file__).parent
 PREFIX = "sprint4/s4e9-orf-design-fg-panel/"

@@ -37,7 +37,7 @@ import nterm_overnight as no  # noqa: E402
 import nterm_placement as npl  # noqa: E402
 import propeptide_check as ppc  # noqa: E402
 
-from deliverome_analysis import library_design as ld  # noqa: E402
+from deliverome_analysis.cloning import library_design as ld  # noqa: E402
 
 OUT = HERE / "decision_inputs.json"
 FROZEN = npl.PREFIX + "reviewer-package/nterm/refold-verdicts/"
@@ -48,7 +48,7 @@ def _sha(path: str) -> str:
 
 
 def _get(key: str) -> str:
-    from deliverome_analysis.s3 import external, processed
+    from deliverome_analysis.core.s3 import external, processed
 
     if key.startswith("external://"):
         return external.download(key.removeprefix("external://"))
@@ -82,7 +82,7 @@ def keys() -> dict[str, str]:
 
 
 def main(verify: bool) -> int:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     if verify:
         pinned = json.loads(OUT.read_text())["inputs"]

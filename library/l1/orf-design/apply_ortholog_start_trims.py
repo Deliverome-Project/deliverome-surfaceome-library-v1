@@ -51,8 +51,9 @@ import candidate_inputs  # noqa: E402
 import domesticate_candidates  # noqa: E402
 from Bio import SeqIO  # noqa: E402
 
-from deliverome_analysis import library_design as ld  # noqa: E402
-from deliverome_analysis import seqtools, topology  # noqa: E402
+from deliverome_analysis.cloning import library_design as ld  # noqa: E402
+from deliverome_analysis.cloning import seqtools  # noqa: E402
+from deliverome_analysis.surfaceome import topology  # noqa: E402
 
 MANIFEST = HERE / "candidate_manifest_tranches.tsv"
 LEDGER = HERE / "ortholog_start_trims.tsv"
@@ -114,7 +115,7 @@ def restarted(entry: dict, row: dict) -> dict:
 
 
 def reproduce(work: Path) -> dict:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     prev_cds = json.loads(
         Path(processed.download(PREV + "candidate_cds.json", work / "c")).read_text()
@@ -220,7 +221,7 @@ def published(r: dict) -> dict[str, bytes]:
 
 
 def verify(work: Path) -> str:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     r = reproduce(work)
     assert SUMMARY.read_text() == json.dumps(r["summary"], indent=2) + "\n", "summary differs"
@@ -258,7 +259,7 @@ def main(argv=None) -> int:
         print(f"wrote {SUMMARY.name}, {MANIFEST.name}")
         print(RENUMBER_HINT)
     if args.publish:
-        from deliverome_analysis.s3 import processed
+        from deliverome_analysis.core.s3 import processed
 
         if SUMMARY.read_text() != json.dumps(r["summary"], indent=2) + "\n":
             raise SystemExit("summary differs from the rerun; --write and commit first")

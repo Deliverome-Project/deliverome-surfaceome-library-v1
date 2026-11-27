@@ -28,8 +28,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from build_constructs import ENZYMES, L1_AFTER_BARCODE, L1_BEFORE_BARCODE, STOP
 
-from deliverome_analysis import seqtools
-from deliverome_analysis.s3 import processed
+from deliverome_analysis.cloning import seqtools
+from deliverome_analysis.core.s3 import processed
 
 HERE = Path(__file__).parent
 REGISTRY_KEY = "sprint1/s1e2-fragmid-vector-design/barcode_assignments.tsv"

@@ -1,15 +1,13 @@
 """deliverome-analysis — scientist-driven analyses for the Deliverome project.
 
-Common imports:
+Domain subpackages:
 
-    from deliverome_analysis.plotting import setup_plotting_style, save_figure
-    from deliverome_analysis.s3 import read_tsv, read_parquet, download, list_keys
-    from deliverome_analysis.env import load_env
-    from deliverome_analysis.surfaceome import surface_accessions, canonical_accessions
-    from deliverome_analysis.seqtools import domesticate_gene, recode_gene, generate_barcode
-    from deliverome_analysis import cellosaurus, orcs  # public-dataset readers (CVCL, BioGRID ORCS)
-
-See ``docs/`` for the full guide.
+* :mod:`deliverome_analysis.core` — environment, S3, plotting, provenance, QC index, egress, trust store
+* :mod:`deliverome_analysis.proteomics` — DIA trimming, limpa, QC dashboards/pipelines, raw MS, FASTA, libraries
+* :mod:`deliverome_analysis.flow` — Agentflow runs, FCS import/records, FlowDB, cytometry, MA900
+* :mod:`deliverome_analysis.surfaceome` — curated surfaceome catalog, topology, membrane side, external datasets
+* :mod:`deliverome_analysis.cloning` — constructs, library design, plasmid QC, primers, RBP motifs, seqtools, tags
+* :mod:`deliverome_analysis.assays` — Western blot and Lowry assay helpers
 """
 
 __version__ = "0.1.0"

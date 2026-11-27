@@ -68,9 +68,9 @@ from build_constructs import CASSETTE_AA
 from build_gpcr_rescue_arms import LEADER_AA
 from scipy.stats import spearmanr
 
-from deliverome_analysis import gene_resolver, topology
-from deliverome_analysis import library_design as ld
-from deliverome_analysis.s3 import external
+from deliverome_analysis.cloning import library_design as ld
+from deliverome_analysis.core.s3 import external
+from deliverome_analysis.surfaceome import gene_resolver, topology
 
 HERE = Path(__file__).parent
 TAG_PATHS = HERE / "l1_tag_paths.tsv"

@@ -37,7 +37,7 @@ afd_image = (
     .pip_install("biopython", "numpy<2")
 )
 if modal.is_local():  # the image is built from the laptop; containers only re-import this file
-    from deliverome_analysis.trust_store import harden
+    from deliverome_analysis.core.trust_store import harden
 
     metapredict_image = harden(metapredict_image)  # no compromised eMudhra roots
     afd_image = harden(afd_image)

@@ -89,7 +89,7 @@ def literature_table(
     download: bool = True, classes: set[str] | frozenset[str] = frozenset(LIGAND_CLASSES)
 ) -> pd.DataFrame | None:
     if not LITERATURE_LOCAL.is_file() and download:
-        from deliverome_analysis import s3
+        from deliverome_analysis.core import s3
 
         if not s3.processed.exists(LITERATURE_KEY):
             return None
@@ -274,7 +274,7 @@ def member_contacts(
 def literature_searched(download: bool = True) -> set[str] | None:
     """sequence_sha256 of members whose gene had a literature run (None: no coverage table)."""
     if not COVERAGE_LOCAL.is_file() and download:
-        from deliverome_analysis import s3
+        from deliverome_analysis.core import s3
 
         if not s3.processed.exists(COVERAGE_KEY):
             return None

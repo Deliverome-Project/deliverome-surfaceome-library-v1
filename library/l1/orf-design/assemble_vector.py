@@ -45,7 +45,7 @@ from empty_backbone import (
 )
 from shuttle import DOWNSTREAM, PAD, UPSTREAM, add_shuttle, digest
 
-from deliverome_analysis import seqtools
+from deliverome_analysis.cloning import seqtools
 
 HERE = Path(__file__).parent
 BACKBONE = HERE / "p0039_EFS_IRES_puro_backbone.gb"

@@ -127,7 +127,7 @@ def main() -> None:
     print(f"wrote {out}")
 
     if args.publish:
-        from deliverome_analysis import s3
+        from deliverome_analysis.core import s3
 
         for rec in records:
             if rec["dataset"] != "appris":

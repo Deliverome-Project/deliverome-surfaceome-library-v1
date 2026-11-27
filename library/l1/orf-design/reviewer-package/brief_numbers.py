@@ -49,7 +49,7 @@ def _tsv(path: Path) -> list[dict]:
 
 
 def reference_selection() -> list[dict]:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     # The current record, read through the pipeline's own constant so the two cannot diverge.
     # (Until 2026-11-13 this named the round-1 record, "2026-11-12-reference-fixes/", and so
@@ -416,7 +416,7 @@ def measure() -> dict:
     }
 
     # --- literature tag-site positives behind the S5E13 ranker, read against their papers
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     rows = _tsv(processed.download(AUDIT_KEY))
     corrected = _tsv(processed.download(CORRECTED_KEY))
@@ -548,7 +548,7 @@ def measure() -> dict:
 def figures(n: dict) -> None:
     import numpy as np
 
-    from deliverome_analysis.plotting import (
+    from deliverome_analysis.core.plotting import (
         create_figure,
         get_color,
         save_figure,
@@ -653,7 +653,7 @@ def _draw_candidate_sets_figure(out_dir: Path) -> None:
     import matplotlib.pyplot as plt
     import numpy as np
 
-    from deliverome_analysis.plotting import get_color, save_figure
+    from deliverome_analysis.core.plotting import get_color, save_figure
 
     rows = _tsv(S4E9 / "l1_tag_paths.tsv")
     groups = [
@@ -990,7 +990,7 @@ def _draw_promoter_comparison_figure(out_dir: Path) -> None:
     """Three-panel promoter and selection comparison in the SAB-deck style."""
     import matplotlib.pyplot as plt
 
-    from deliverome_analysis.plotting import save_figure
+    from deliverome_analysis.core.plotting import save_figure
 
     fig, (ax_a, ax_b, ax_c) = plt.subplots(
         1, 3, figsize=(16.5, 5.2), gridspec_kw={"width_ratios": [1.25, 1.0, 1.0]}

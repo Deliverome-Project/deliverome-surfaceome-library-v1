@@ -36,9 +36,9 @@ from pathlib import Path
 
 from build_gpcr_rescue_arms import LEADER_AA, PLUS1_AA
 
-from deliverome_analysis import library_design as ld
-from deliverome_analysis import plasmid_qc as qc
-from deliverome_analysis import topology
+from deliverome_analysis.cloning import library_design as ld
+from deliverome_analysis.cloning import plasmid_qc as qc
+from deliverome_analysis.surfaceome import topology
 
 HERE = Path(__file__).parent
 TAG_PATHS = HERE / "l1_tag_paths.tsv"

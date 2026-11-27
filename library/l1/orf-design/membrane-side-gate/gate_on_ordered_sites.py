@@ -56,7 +56,7 @@ LOOP_DECISIONS = ("internal_loop", "internal_loop_orientation_unconfirmed")
 
 
 def load_decisions(commit: str = DECISIONS_COMMIT, sha: str = DECISIONS_SHA256) -> pd.DataFrame:
-    from deliverome_analysis.provenance import read_pinned_bytes
+    from deliverome_analysis.core.provenance import read_pinned_bytes
 
     raw = read_pinned_bytes(commit, DECISIONS_PATH, repo=gi.REPO)
     digest = hashlib.sha256(raw).hexdigest()

@@ -41,7 +41,7 @@ from build_constructs import ENZYMES, read_fasta
 from build_gpcr_rescue_arms import arm_flanks
 from build_loop_inserts import LOOP_TAG, LOOP_TAG_AA, VARIANTS
 
-from deliverome_analysis import seqtools
+from deliverome_analysis.cloning import seqtools
 
 HERE = Path(__file__).parent
 OUT = HERE / "loop_cassette_encodings.tsv"

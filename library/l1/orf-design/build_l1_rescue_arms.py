@@ -47,9 +47,9 @@ from build_l1_multipass_arms import (
     vector_check,
 )
 
-from deliverome_analysis import library_design as ld
-from deliverome_analysis import plasmid_qc as qc
-from deliverome_analysis import seqtools
+from deliverome_analysis.cloning import library_design as ld
+from deliverome_analysis.cloning import plasmid_qc as qc
+from deliverome_analysis.cloning import seqtools
 
 HERE = Path(__file__).parent
 MANIFEST = HERE / "candidate_manifest_tranches.tsv"
@@ -133,7 +133,7 @@ def issue_linker_encodings(flanks: dict[str, tuple[str, str]]) -> dict[str, str]
 
 
 def build() -> list[dict]:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     # All 25 are retired (one arm per gene, Becca 2026-11-13); the record still builds them.
     rescue = [r for r in read_table(MANIFEST) if r["set"] == "expression_rescue"]

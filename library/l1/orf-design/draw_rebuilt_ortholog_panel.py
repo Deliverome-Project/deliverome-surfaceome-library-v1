@@ -25,8 +25,9 @@ import pandas as pd
 import rebuild_ortholog_pool as pool
 from export_ortholog_predictions import fasta
 
-from deliverome_analysis import library_design as ld
-from deliverome_analysis import seqtools, topology
+from deliverome_analysis.cloning import library_design as ld
+from deliverome_analysis.cloning import seqtools
+from deliverome_analysis.surfaceome import topology
 
 AP = Path(__file__).resolve().parents[3] / "library/l1/proteoform-selection"
 sys.path.insert(0, str(AP))

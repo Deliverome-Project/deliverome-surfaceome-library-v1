@@ -23,8 +23,8 @@ from pathlib import Path
 
 from Bio import BiopythonWarning, SeqIO
 
-from deliverome_analysis import constructs
-from deliverome_analysis.s3 import processed
+from deliverome_analysis.cloning import constructs
+from deliverome_analysis.core.s3 import processed
 
 REGISTRY_KEY = "sprint1/s1e2-fragmid-vector-design/barcode_assignments.tsv"
 # notes that no longer describe the design, keyed by construct

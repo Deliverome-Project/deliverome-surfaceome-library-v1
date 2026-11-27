@@ -51,7 +51,7 @@ import gate_inputs as gi  # noqa: E402
 import membrane_side_gate as g  # noqa: E402
 from placements import place_protein  # noqa: E402
 
-from deliverome_analysis import membrane_side as ms  # noqa: E402
+from deliverome_analysis.surfaceome import membrane_side as ms  # noqa: E402
 
 PREFIX = "sprint5/s5e13-tag-site-benchmarking/rescue_round/2026-11-14b/"
 INPUTS = (
@@ -66,7 +66,7 @@ IMPLEMENTED_BY = "l1-membrane-side-gate session (Claude Code)"
 
 
 def read_inputs() -> tuple[dict[str, pd.DataFrame], dict[str, str]]:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     out, shas = {}, {}
     for name in INPUTS:
@@ -95,7 +95,7 @@ def model_for(feat: pd.Series) -> Path:
     ref = str(feat["model_ref"])
     if feat["model_source"] == "alphafold_db":
         return gi.fetch(ref, gi.CACHE / "models" / Path(ref).name)
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     key = ref.removeprefix("processed://")
     dest = gi.CACHE / "models" / ("colabfold_" + key.replace("/", "_"))

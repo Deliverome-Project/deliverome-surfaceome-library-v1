@@ -59,10 +59,10 @@ sys.path.insert(0, str(EXP))
 
 import build_gpcr_rescue_arms as gpcr_arms  # noqa: E402
 
-from deliverome_analysis import library_design as ld  # noqa: E402
-from deliverome_analysis import plasmid_qc as qc  # noqa: E402
-from deliverome_analysis import seqtools  # noqa: E402
-from deliverome_analysis.provenance import read_pinned_text  # noqa: E402
+from deliverome_analysis.cloning import library_design as ld  # noqa: E402
+from deliverome_analysis.cloning import plasmid_qc as qc  # noqa: E402
+from deliverome_analysis.cloning import seqtools  # noqa: E402
+from deliverome_analysis.core.provenance import read_pinned_text  # noqa: E402
 
 OUT = EXP / "tag_refold_queue.tsv"  # tables live at the experiment root (.gitignore)
 SOURCES_OUT = EXP / "tag_refold_sources.tsv"
@@ -273,7 +273,7 @@ def resolve_inputs(inputs_dir: Path | None) -> dict[str, list[Path]]:
     With ``inputs_dir`` each file is snapshotted to a write-once S3 key and recorded in
     ``tag_refold_inputs.tsv``; without it, the recorded snapshots are read back.
     """
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     SNAPSHOT.mkdir(parents=True, exist_ok=True)
     rows = tsv(INPUTS_TABLE) if INPUTS_TABLE.exists() else []
@@ -335,7 +335,7 @@ def fasta_of(paths: list[Path]) -> dict[str, str]:
 def native_lookup() -> tuple[dict[str, str], dict[str, str]]:
     """(design_id -> protein under the current CDS record, sha256 -> protein, any record)."""
 
-    from deliverome_analysis import library_design as ld
+    from deliverome_analysis.cloning import library_design as ld
 
     manifest = SNAPSHOT / f"candidate_manifest_tranches.{RP_COMMIT[:8]}.tsv"
     SNAPSHOT.mkdir(parents=True, exist_ok=True)

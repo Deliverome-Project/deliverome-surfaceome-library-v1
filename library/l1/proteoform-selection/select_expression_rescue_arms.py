@@ -45,7 +45,7 @@ from collections import defaultdict
 
 import pandas as pd
 
-from deliverome_analysis.s3 import external
+from deliverome_analysis.core.s3 import external
 from library import library_members
 from sample_isoform_panel import _topology_sources
 

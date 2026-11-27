@@ -31,7 +31,7 @@ import csv
 import hashlib
 from pathlib import Path
 
-from deliverome_analysis import seqtools
+from deliverome_analysis.cloning import seqtools
 
 #: The ranker publishes each snorkel list at its own dated key, which never changes. To adopt a
 #: new list, move DESIGNS_KEY and DESIGNS_SHA256 together to the ranker's new dated key.
@@ -87,7 +87,7 @@ def committed_copy(key: str) -> Path:
 def _read(key: str, expected_sha256: str) -> dict[str, dict]:
     path = committed_copy(key)
     if not path.exists():
-        from deliverome_analysis.s3 import processed
+        from deliverome_analysis.core.s3 import processed
 
         path = Path(processed.download(key))
     digest = hashlib.sha256(path.read_bytes()).hexdigest()

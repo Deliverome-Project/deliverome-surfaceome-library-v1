@@ -45,8 +45,9 @@ from build_constructs import l1_readout
 from matplotlib.patches import FancyArrowPatch, Polygon, Rectangle
 from PIL import Image
 
-from deliverome_analysis import constructs, s3
-from deliverome_analysis.plotting import (
+from deliverome_analysis.cloning import constructs
+from deliverome_analysis.core import s3
+from deliverome_analysis.core.plotting import (
     COLORS,
     SEQUENTIAL_PALETTES,
     save_figure,

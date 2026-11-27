@@ -49,7 +49,7 @@ import re
 import sys
 from pathlib import Path
 
-from deliverome_analysis.provenance import sha256_file, verify_s3_objects
+from deliverome_analysis.core.provenance import sha256_file, verify_s3_objects
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[2]

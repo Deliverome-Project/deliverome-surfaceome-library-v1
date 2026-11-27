@@ -90,7 +90,7 @@ DISORDER_FIELDS = (
 
 def d1_query():
     """Read-only SELECT against the surfaceome public D1 database, from the repo ``.env``."""
-    from deliverome_analysis.env import load_env
+    from deliverome_analysis.core.env import load_env
 
     load_env()
     account = os.environ["CLOUDFLARE_ACCOUNT_ID"]
@@ -130,8 +130,8 @@ def _chunks(items, n):
 
 def members() -> dict[str, dict]:
     """Current L1 "N after SP" members with their designed protein and its SHA-256."""
-    from deliverome_analysis import library_design as ld
-    from deliverome_analysis import topology
+    from deliverome_analysis.cloning import library_design as ld
+    from deliverome_analysis.surfaceome import topology
 
     proteins = ld.designed_proteins(S4E9 / "candidate_manifest_tranches.tsv", library="l1")
     with (S4E9 / "l1_tag_paths.tsv").open() as fh:
@@ -147,8 +147,8 @@ def members() -> dict[str, dict]:
 
 def accessions_to_fetch(lane: dict[str, dict]) -> set[str]:
     """Census lookup keys, plus every human accession whose sequence is a member's protein."""
-    from deliverome_analysis import topology
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
+    from deliverome_analysis.surfaceome import topology
 
     with open(processed.download(CENSUS_KEY)) as fh:
         census = list(csv.DictReader(fh, delimiter="\t"))
@@ -277,7 +277,7 @@ def copy_canary(dest: Path) -> None:
 
 
 def publish(out: Path, date: str) -> None:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     for name in (ROWS_NAME, CANARY_NAME):
         key = f"{PUBLISH_PREFIX}{date}/{name}"

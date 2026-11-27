@@ -19,7 +19,7 @@ import io
 import re
 from pathlib import Path
 
-from deliverome_analysis import library_design as ld
+from deliverome_analysis.cloning import library_design as ld
 
 HERE = Path(__file__).parent
 OUT = HERE / "library_structure_payload.tsv"
@@ -63,7 +63,7 @@ def fold_locations() -> dict[str, list[str]]:
     this on 2026-11-12, PR #283, after the membrane-side gate found five keys that did not
     exist).
     """
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     out: dict[str, list[str]] = {}
     for key in processed.list_keys(prefix=S3_FOLDS):
@@ -107,7 +107,7 @@ def plddt_map() -> dict[str, float]:
     so the public gene page offered 182 genes a chosen structure with no confidence to
     judge it by. S3 is authoritative where a name appears in both.
     """
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     out: dict[str, float] = {}
 
@@ -203,7 +203,7 @@ def native_models() -> dict[str, dict]:
 
 def _fold_plddt(ref: str) -> str:
     """Mean CA pLDDT of a published fold, read from its PDB (B-factor column)."""
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     path = Path(processed.download(ref.removeprefix("processed://")))
     b = [

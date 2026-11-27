@@ -83,8 +83,8 @@ sys.path.insert(0, str(lp.AP))
 import candidate_inputs  # noqa: E402
 from Bio.Align import PairwiseAligner, substitution_matrices  # noqa: E402
 
-from deliverome_analysis import library_design as ld  # noqa: E402
-from deliverome_analysis import topology  # noqa: E402
+from deliverome_analysis.cloning import library_design as ld  # noqa: E402
+from deliverome_analysis.surfaceome import topology  # noqa: E402
 
 csv.field_size_limit(sys.maxsize)
 
@@ -245,7 +245,7 @@ def refresh_signalp_cache(manifest_text: str) -> int:
     sys.path.insert(0, str(NTERM))
     import nterm_overnight as no
 
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     with tempfile.NamedTemporaryFile("w", suffix=".tsv", delete=False) as fh:
         fh.write(manifest_text)

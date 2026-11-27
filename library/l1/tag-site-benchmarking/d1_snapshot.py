@@ -99,7 +99,7 @@ def live_query(sql: str, params: list | None = None, tries: int = 4) -> list[dic
     if not live():
         raise RuntimeError(f"live D1 is off; set {LIVE_ENV}=1 to query it")
     _src()
-    from deliverome_analysis.env import load_env
+    from deliverome_analysis.core.env import load_env
 
     load_env()
     acct = os.environ["CLOUDFLARE_ACCOUNT_ID"]
@@ -162,7 +162,7 @@ def query(sql: str, params: list | None = None) -> list[dict]:
 def restore() -> Path:
     """Download the saved copy, check both SHA-256s, unpack into data/."""
     _src()
-    from deliverome_analysis import s3
+    from deliverome_analysis.core import s3
 
     m = _manifest()
     gz = LOCAL.with_suffix(".sqlite.gz")
@@ -254,7 +254,7 @@ def build() -> None:
 def publish() -> None:
     """Upload the gzip to its append-only key; refuses if the key already exists."""
     _src()
-    from deliverome_analysis import s3
+    from deliverome_analysis.core import s3
 
     gz = LOCAL.with_suffix(".sqlite.gz")
     if _sha256(gz) != _manifest()["gz_sha256"]:

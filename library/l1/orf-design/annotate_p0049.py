@@ -41,7 +41,7 @@ from Bio.Seq import Seq
 from Bio.SeqFeature import FeatureLocation, SeqFeature
 from Bio.SeqRecord import SeqRecord
 
-from deliverome_analysis import constructs
+from deliverome_analysis.cloning import constructs
 
 HERE = Path(__file__).parent
 #: 1-based inclusive coding segments GenScript was asked to optimise (Becca to Mike, 2026-10-21).
@@ -50,7 +50,7 @@ KOZAK_ATG = 4838
 
 
 def _get(name: str, work: Path) -> SeqRecord:
-    from deliverome_analysis import s3
+    from deliverome_analysis.core import s3
 
     dest = work / f"{name}.gb"
     s3.processed.download(constructs.map_key(name), dest)
@@ -130,7 +130,7 @@ def main(argv: list[str] | None = None) -> int:
         f"p0049: {len(rec.seq)} bp, {n_diff} nt recoded, {len(rec.features)} features; flagged: {added}"
     )
     if args.upload:
-        from deliverome_analysis import s3
+        from deliverome_analysis.core import s3
 
         s3.processed.upload(args.out, constructs.map_key("p0049"), content_type="text/plain")
         print("uploaded processed://" + constructs.map_key("p0049"))

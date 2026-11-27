@@ -95,8 +95,8 @@ import l1_arm_ids as arm_ids
 import numpy as np
 from build_constructs import CASSETTE_AA, KOZAK, L1_AFTER_BARCODE, L1_BEFORE_BARCODE, STOP
 
-from deliverome_analysis import library_design as ld
-from deliverome_analysis import seqtools
+from deliverome_analysis.cloning import library_design as ld
+from deliverome_analysis.cloning import seqtools
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[2]
@@ -154,7 +154,7 @@ OUT_JSON = HERE / "l1_domestication_barcode_audit.json"
 
 
 def git_show(path: str, ref: str = INTEGRATION_REF) -> str:
-    from deliverome_analysis.provenance import read_pinned_text
+    from deliverome_analysis.core.provenance import read_pinned_text
 
     return read_pinned_text(ref, f"{REL}/{path}", repo=REPO)
 
@@ -498,7 +498,7 @@ def barcode_audit(inserts: list[dict], backbone: str) -> dict:
     joined = "|".join(hay)
     in_dna = [c for c, r in zip(codes, rc, strict=True) if c in joined or r in joined]
 
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     text = Path(processed.download(rb.REGISTRY_KEY)).read_text()
     body = [ln for ln in text.splitlines() if ln and not ln.startswith("#")]
@@ -638,7 +638,7 @@ def main(argv=None) -> int:
     import candidate_inputs
     from Bio import SeqIO
 
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     inserts = load_inserts(args.ref)
     cds = json.loads(Path(processed.download(ld.CDS_KEY)).read_text())
@@ -783,7 +783,7 @@ def recoded_inserts(path: Path | None) -> tuple[list[dict], str]:
     import hashlib
 
     if path is None:
-        from deliverome_analysis.s3 import processed
+        from deliverome_analysis.core.s3 import processed
 
         path = Path(processed.download(RECODED_KEY))
     raw = path.read_bytes()

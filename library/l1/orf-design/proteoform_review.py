@@ -62,8 +62,9 @@ sys.path.insert(0, str(lp.AP))
 import select_reference as sr  # noqa: E402
 from select_principal import load_uniprot_proteoforms  # noqa: E402
 
-from deliverome_analysis import library_design as ld  # noqa: E402
-from deliverome_analysis import seqtools, topology  # noqa: E402
+from deliverome_analysis.cloning import library_design as ld  # noqa: E402
+from deliverome_analysis.cloning import seqtools  # noqa: E402
+from deliverome_analysis.surfaceome import topology  # noqa: E402
 
 OUT = HERE / "proteoform_review_2026-11-22.tsv"
 COUNTS = HERE / "proteoform_review_2026-11-22_counts.json"
@@ -470,7 +471,7 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("--fetch", action="store_true", help="query missing accessions and publish")
     a = ap.parse_args(argv)
-    from deliverome_analysis.s3 import external, processed
+    from deliverome_analysis.core.s3 import external, processed
 
     work = HERE / "data" / "proteoform_review"  # gitignored
     work.mkdir(parents=True, exist_ok=True)

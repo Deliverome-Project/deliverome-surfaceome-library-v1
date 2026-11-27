@@ -26,7 +26,7 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
-from deliverome_analysis import library_design as ld
+from deliverome_analysis.cloning import library_design as ld
 
 HERE = Path(__file__).parent
 MANIFEST = HERE / "candidate_manifest_tranches.tsv"

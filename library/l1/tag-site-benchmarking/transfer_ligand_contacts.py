@@ -71,7 +71,7 @@ K = 3
 def donor_contacts() -> pd.DataFrame:
     if DONORS.is_file():
         return pd.read_csv(DONORS, sep="\t")
-    from deliverome_analysis.env import load_env
+    from deliverome_analysis.core.env import load_env
 
     load_env()
     from fetch_interface_contacts import classify

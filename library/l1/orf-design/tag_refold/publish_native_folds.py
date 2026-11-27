@@ -62,9 +62,9 @@ def main() -> None:
     ap.add_argument("--members", required=True, help="candidate ids to give a payload row")
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
-    from deliverome_analysis import library_design as ld
-    from deliverome_analysis import topology
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.cloning import library_design as ld
+    from deliverome_analysis.core.s3 import processed
+    from deliverome_analysis.surfaceome import topology
 
     folds = Path(a.folds).expanduser()
     natives = {}

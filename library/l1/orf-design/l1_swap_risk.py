@@ -55,9 +55,9 @@ from diversify_cassettes import (
     WHOLE_CASSETTE_JUNCTION_IDENTITY,
 )
 
-from deliverome_analysis import library_design as ld
-from deliverome_analysis import plasmid_qc as qc
-from deliverome_analysis import seqtools
+from deliverome_analysis.cloning import library_design as ld
+from deliverome_analysis.cloning import plasmid_qc as qc
+from deliverome_analysis.cloning import seqtools
 
 HERE = Path(__file__).parent
 MANIFEST = HERE / "candidate_manifest_tranches.tsv"
@@ -173,7 +173,7 @@ def load_members(with_retired_holders: bool = False) -> tuple[list[dict], list[s
             assert paths[r["candidate_id"]]["placement"] != "C-terminal", f"{did} is C-terminal"
             released.add(r["candidate_id"])
             if with_retired_holders:
-                from deliverome_analysis.s3 import processed
+                from deliverome_analysis.core.s3 import processed
 
                 with open(processed.download(RELEASED[did])) as fh:
                     holders[r["candidate_id"]] = json.load(fh)[r["key"]]["cds"]

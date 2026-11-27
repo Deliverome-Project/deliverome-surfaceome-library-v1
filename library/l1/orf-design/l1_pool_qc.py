@@ -75,8 +75,8 @@ sys.path.insert(0, str(HERE))
 import l1_arm_ids as arm_ids  # noqa: E402
 import l1_consistency as cons  # noqa: E402
 
-from deliverome_analysis import plasmid_qc as qc  # noqa: E402
-from deliverome_analysis import seqtools  # noqa: E402
+from deliverome_analysis.cloning import plasmid_qc as qc  # noqa: E402
+from deliverome_analysis.cloning import seqtools  # noqa: E402
 
 #: Short rung name -> arm table stem (the five rungs of the order; the retired rescue rung is
 #: kept as a record and not ordered).

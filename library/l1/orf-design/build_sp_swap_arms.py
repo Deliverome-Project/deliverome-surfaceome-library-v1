@@ -79,7 +79,7 @@ from pathlib import Path
 import build_constructs as bc
 from build_gpcr_rescue_arms import LEADER, LEADER_AA, PLUS1, PLUS1_AA
 
-from deliverome_analysis import seqtools
+from deliverome_analysis.cloning import seqtools
 
 HERE = Path(__file__).parent
 SEED = 20261018

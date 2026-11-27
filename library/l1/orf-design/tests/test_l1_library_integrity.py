@@ -26,7 +26,7 @@ from pathlib import Path
 
 import pytest
 
-from deliverome_analysis import seqtools
+from deliverome_analysis.cloning import seqtools
 
 S4E9 = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(S4E9))
@@ -243,7 +243,7 @@ def test_every_active_member_was_measured(swap):
 
 
 def _credentials() -> bool:
-    from deliverome_analysis import s3
+    from deliverome_analysis.core import s3
 
     return s3.credentials_available()
 
@@ -274,7 +274,7 @@ def test_snorkel_lists_match_s3():
 
     import l1_snorkel
 
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     for key, sha in (
         (l1_snorkel.DESIGNS_KEY, l1_snorkel.DESIGNS_SHA256),
@@ -302,7 +302,7 @@ def test_the_cassette_constant_is_p003s_own_dna(tmp_path):
     """The codons every L1 tag keeps are the ones in the built, validated p003 plasmid."""
     from Bio import SeqIO
 
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     path = processed.download("constructs/ordered/p003.gb", tmp_path / "p003.gb")
     p003 = str(SeqIO.read(path, "genbank").seq).upper()

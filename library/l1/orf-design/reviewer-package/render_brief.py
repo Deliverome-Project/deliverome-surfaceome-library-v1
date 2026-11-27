@@ -84,7 +84,6 @@ SOURCE_REPO = "deliverome-analysis"
 DOCS = {
     "DESIGN.md": "L1_design_overview",
     "BRIEF.md": "L1_design_brief",
-    "COVER_NOTE.md": "L1_design_brief_cover_note",
 }
 CHROME_CANDIDATES = (
     "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",

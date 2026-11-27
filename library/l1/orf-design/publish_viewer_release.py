@@ -30,7 +30,7 @@ from collections import Counter
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
-from deliverome_analysis.s3 import processed
+from deliverome_analysis.core.s3 import processed
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[2]

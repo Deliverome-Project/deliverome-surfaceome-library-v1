@@ -20,7 +20,7 @@ import audit_non_atg_alternatives as alternatives
 import resolve_compara116_cds as resolver
 from Bio.Seq import Seq
 
-from deliverome_analysis.provenance import provenance
+from deliverome_analysis.core.provenance import provenance
 
 HUMAN = {"lib:OR8G3": "P0DMU2", "lib:SLC22A17": "Q8WUG5-2", "lib:TRPV6": "Q9H1D0"}
 KEYS = [

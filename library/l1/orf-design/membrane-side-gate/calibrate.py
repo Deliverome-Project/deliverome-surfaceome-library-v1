@@ -37,8 +37,8 @@ sys.path.insert(0, str(HERE))
 import gate_inputs as gi  # noqa: E402
 from placements import member_placements, place_protein  # noqa: E402
 
-from deliverome_analysis import membrane_side as ms  # noqa: E402
-from deliverome_analysis import topology  # noqa: E402
+from deliverome_analysis.surfaceome import membrane_side as ms  # noqa: E402
+from deliverome_analysis.surfaceome import topology  # noqa: E402
 
 GOLD_PREFIX = "scratch/becca/tag-site-corpus-audit/"
 EBI_FEATURES = "https://www.ebi.ac.uk/proteins/api/features/{}?categories=TOPOLOGY"
@@ -165,7 +165,7 @@ def uniprot_side(members: pd.DataFrame, placed: dict, z_side: float) -> pd.DataF
 
 
 def published_sites() -> pd.DataFrame:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     gold = pd.read_csv(processed.download(GOLD_PREFIX + "gold_standard.tsv"), sep="\t")
     failed = pd.read_csv(processed.download(GOLD_PREFIX + "failed_sites.tsv"), sep="\t")
@@ -370,7 +370,7 @@ def derive(
 def figure(res: pd.DataFrame, pub: pd.DataFrame, cal: dict) -> None:
     import matplotlib.pyplot as plt
 
-    from deliverome_analysis.plotting import save_figure, setup_plotting_style
+    from deliverome_analysis.core.plotting import save_figure, setup_plotting_style
 
     setup_plotting_style()
     th = cal["thresholds"]

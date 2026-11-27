@@ -13,7 +13,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from deliverome_analysis import s3
+from deliverome_analysis.core import s3
 
 CACHE = Path("~/.cache/deliverome/library-candidates").expanduser()
 

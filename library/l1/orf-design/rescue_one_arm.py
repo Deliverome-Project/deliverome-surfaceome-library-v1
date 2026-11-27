@@ -31,8 +31,8 @@ from pathlib import Path
 
 import pandas as pd
 
-from deliverome_analysis import library_design as ld
-from deliverome_analysis.s3 import processed
+from deliverome_analysis.cloning import library_design as ld
+from deliverome_analysis.core.s3 import processed
 
 HERE = Path(__file__).parent
 MANIFEST = HERE / "candidate_manifest_tranches.tsv"

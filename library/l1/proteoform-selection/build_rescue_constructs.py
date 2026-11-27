@@ -18,7 +18,7 @@ import csv
 import json
 from pathlib import Path
 
-from deliverome_analysis import seqtools
+from deliverome_analysis.cloning import seqtools
 
 ENZYMES = ["BbsI", "Esp3I", "BsaI"]
 LEADER = "ATGGAGACAGACACACTCCTGCTATGGGTACTGCTGCTCTGGGTTCCAGGTTCCACTGGT"

@@ -53,7 +53,7 @@ from build_constructs import (
     read_fasta,
 )
 
-from deliverome_analysis import seqtools
+from deliverome_analysis.cloning import seqtools
 
 HERE = Path(__file__).parent
 

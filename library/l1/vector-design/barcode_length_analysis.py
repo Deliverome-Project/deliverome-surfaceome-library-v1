@@ -32,11 +32,7 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 
-from deliverome_analysis.plotting import (
-    CATEGORICAL_PALETTE,
-    save_figure,
-    setup_plotting_style,
-)
+from deliverome_analysis.core.plotting import CATEGORICAL_PALETTE, save_figure, setup_plotting_style
 
 HERE = Path(__file__).resolve().parent
 

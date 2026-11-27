@@ -38,7 +38,7 @@ def bound_file(record_path, spec):
 
 
 def committed_runner_blob(commit):
-    from deliverome_analysis.provenance import read_pinned_bytes
+    from deliverome_analysis.core.provenance import read_pinned_bytes
 
     if not re.fullmatch(r"[0-9a-f]{40}", commit):
         raise ValueError("Runner provenance requires its full committed Git revision")

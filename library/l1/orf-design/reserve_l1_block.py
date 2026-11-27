@@ -77,8 +77,8 @@ from reserve_barcodes import (
     read_registry,
 )
 
-from deliverome_analysis import rbp_motifs
-from deliverome_analysis.s3 import processed
+from deliverome_analysis.cloning import rbp_motifs
+from deliverome_analysis.core.s3 import processed
 
 HERE = Path(__file__).parent
 OUT = HERE / "l1_barcode_block_provisional.tsv"
@@ -97,7 +97,7 @@ COLUMNS = [
 ]
 
 #: RNA-binding-protein motifs, transcript sense, from the shared screen
-#: (``deliverome_analysis.rbp_motifs``): Pumilio PRE, AU-rich element (``ATTTA`` and the
+#: (``deliverome_analysis.cloning.rbp_motifs``): Pumilio PRE, AU-rich element (``ATTTA`` and the
 #: ``TTATTTA[AT][AT]`` nonamer, which contains it), CPEB element, poly(A) signal, and CFIm25
 #: ``TGTA``. The shared screen's splice-site motifs are left out: splice donors are already
 #: screened by ``l1_screens_pass``, and its acceptor check is a heuristic that would reject

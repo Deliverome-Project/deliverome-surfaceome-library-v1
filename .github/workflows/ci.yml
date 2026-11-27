@@ -104,3 +104,26 @@ jobs:
           )
           print(f"Release {tag} verified: {assets}")
           PY
+
+  docker-offline-smoke:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build digest-pinned offline replay image
+        run: docker build -t deliverome-surfaceome-library-v1:frozen .
+      - name: Verify zero-network container CLI and offline replay against release bundle
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          docker run --rm --network=none deliverome-surfaceome-library-v1:frozen --help > /dev/null
+          TAG=$(python3 -c 'import re; from pathlib import Path; print(re.search(r"/releases/tag/(bundle-[0-9a-zA-Z._-]+)", Path("README.md").read_text()).group(1))')
+          BUNDLE_DIR=$(mktemp -d)
+          gh release download "$TAG" --pattern "l1-reviewer-bundle-*.tar.gz" --pattern "l1-pinned-releases-*.tar" --dir "$BUNDLE_DIR"
+          mkdir -p "$BUNDLE_DIR/unpacked"
+          tar -xzf "$BUNDLE_DIR"/l1-reviewer-bundle-*.tar.gz -C "$BUNDLE_DIR/unpacked"
+          tar -xf "$BUNDLE_DIR"/l1-pinned-releases-*.tar -C "$BUNDLE_DIR/unpacked"
+          docker run --rm --network=none \
+            -v "$BUNDLE_DIR/unpacked:/bundle:ro" \
+            deliverome-surfaceome-library-v1:frozen --bundle /bundle
+          rm -rf "$BUNDLE_DIR"

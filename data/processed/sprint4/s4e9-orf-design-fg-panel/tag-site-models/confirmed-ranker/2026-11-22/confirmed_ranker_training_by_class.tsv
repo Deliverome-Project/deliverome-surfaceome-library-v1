@@ -1,5 +1,0 @@
-protein_class	proteins_with_a_confirmed_site	confirmed_sites	unlabelled_residues	hard_negatives
-single-pass	27	39	15673	888
-multipass, 2-6 TM	38	48	4426	352
-multipass, 7+ TM	37	56	6701	579
-no TM helix	6	6	3959	195

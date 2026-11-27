@@ -55,8 +55,9 @@ import domesticate_candidates  # noqa: E402
 from Bio import SeqIO  # noqa: E402
 from select_principal import load_uniprot_proteoforms  # noqa: E402
 
-from deliverome_analysis import library_design as ld  # noqa: E402
-from deliverome_analysis import seqtools, topology  # noqa: E402
+from deliverome_analysis.cloning import library_design as ld  # noqa: E402
+from deliverome_analysis.cloning import seqtools  # noqa: E402
+from deliverome_analysis.surfaceome import topology  # noqa: E402
 
 TAG = "2026-11-22-mane-gtf"
 DECISIONS = HERE / "mane_gtf_decisions_2026-11-22.tsv"
@@ -142,7 +143,7 @@ def stage(work: Path) -> dict:
 
 
 def evidence(work: Path) -> list[dict]:
-    from deliverome_analysis.s3 import external, processed
+    from deliverome_analysis.core.s3 import external, processed
 
     got = stage(work)
     pep = {}
@@ -312,7 +313,7 @@ def overrides(publish: bool) -> int:
     now = {r["gene"]: r for r in read_tsv(OVERRIDES)}
     assert all(now[g]["form"] == r["form"] for g, r in want.items()), "an override row differs"
     if publish:
-        from deliverome_analysis.s3 import processed
+        from deliverome_analysis.core.s3 import processed
 
         spec = json.loads(lp.INPUTS.read_text())
         entry = spec["files"]["reference_overrides.tsv"]
@@ -402,7 +403,7 @@ def _retired_duplicates(dups: list[tuple[str, str]], active: dict) -> dict:
 
 
 def build(work: Path, snapshot_key: str | None) -> dict:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     if snapshot_key:
         topology.SNAPSHOT_KEY = snapshot_key  # a supplement not yet adopted in topology.py
@@ -656,7 +657,7 @@ def main(argv=None) -> int:
             w.writerows(rows)
         print(f"wrote {LEDGER.name}, {SUMMARY.name}; {hit} manifest row(s) updated in place")
     if a.publish:
-        from deliverome_analysis.s3 import processed
+        from deliverome_analysis.core.s3 import processed
 
         for prefix in (REF_PREFIX, CAND_PREFIX):
             if processed.list_keys(prefix=prefix):

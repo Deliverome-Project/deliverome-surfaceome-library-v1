@@ -402,7 +402,7 @@ def classify(rel: str) -> tuple[str, str]:
 
 
 def sha256(path: Path) -> str:
-    from deliverome_analysis.provenance import sha256_file
+    from deliverome_analysis.core.provenance import sha256_file
 
     return sha256_file(path)
 
@@ -484,7 +484,7 @@ def manifest_pins() -> dict[tuple[str, str], dict]:
 
 
 #: Documents a reviewer reads; every S3 file they cite is bundled, so it opens offline.
-CITED_DOCS = ("DESIGN.md", "BRIEF.md", "COVER_NOTE.md")
+CITED_DOCS = ("DESIGN.md", "BRIEF.md")
 #: An S3 location cited in prose, e.g. ``processed://sprint5/.../corpus_audit_corpus.tsv``.
 S3_CITATION = re.compile(r"\b(raw|processed|external)://([^\s`'\")<>|,]+)")
 #: The same location written as its path inside the bundle, ``s3/<bucket>/<key>``.
@@ -523,7 +523,7 @@ def release_of(bucket: str, key: str) -> tuple[str, str, str]:
 
 def add_pinned(out: Path) -> int:
     """Copy every pinned release and manifest-pinned file into the mirror; check SHA-256 pins."""
-    from deliverome_analysis import s3
+    from deliverome_analysis.core import s3
 
     mirror = out / "s3"
     # What the replay read is recorded once, right after collect's replay; a later add-pinned
@@ -576,8 +576,8 @@ def active_record_pins() -> dict[tuple[str, str], dict]:
     import library_pipeline as lp
     import synthesis_compliance as sc
 
-    from deliverome_analysis import library_design as ld
-    from deliverome_analysis import topology
+    from deliverome_analysis.cloning import library_design as ld
+    from deliverome_analysis.surfaceome import topology
 
     sc_summary = json.loads((S4E9 / "synthesis_compliance_summary.json").read_text())
     return {
@@ -646,7 +646,7 @@ def releases(out: Path) -> int:
     One row per release prefix in ``PINNED``: release, version, the date the copy was pinned
     on S3 (earliest upload of its files), file count and size, and where it sits in the bundle.
     """
-    from deliverome_analysis import s3
+    from deliverome_analysis.core import s3
 
     with MANIFEST.open() as fh:
         rows = list(csv.DictReader(fh, delimiter="\t"))
@@ -762,7 +762,7 @@ def pack(bundle: Path, out: Path, exclude: list[str], part: str = "all") -> int:
 
 def stage(tar: Path, date: str) -> int:
     """Upload the tarball under this experiment's prefix only; never anywhere public."""
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     key = f"{STAGE_PREFIX}{date}/{tar.name}"
     if processed.exists(key):

@@ -3,7 +3,7 @@
 Builds each plasmid's spec from the CURRENT design files -- the disorder-anchored
 N-terminal rebuild, the loop constructs, the issued cassette encodings, the barcode
 registry and the domesticated ORFs -- then checks the map on S3 against it with
-``deliverome_analysis.plasmid_qc``. A map built from a superseded design passes every
+``deliverome_analysis.cloning.plasmid_qc``. A map built from a superseded design passes every
 structural check and fails only the comparison against the design, which is the point.
 
     uv run --locked python audit_order_maps.py
@@ -14,9 +14,9 @@ from __future__ import annotations
 import csv
 from pathlib import Path
 
-from deliverome_analysis import constructs, seqtools
-from deliverome_analysis import plasmid_qc as qc
-from deliverome_analysis.s3 import processed
+from deliverome_analysis.cloning import constructs, seqtools
+from deliverome_analysis.cloning import plasmid_qc as qc
+from deliverome_analysis.core.s3 import processed
 
 HERE = Path(__file__).parent
 BACKBONE = HERE / "p0039_EFS_IRES_puro_backbone.fasta"

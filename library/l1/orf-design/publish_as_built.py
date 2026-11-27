@@ -23,8 +23,8 @@ from pathlib import Path
 
 from Bio import SeqIO
 
-from deliverome_analysis import genscript
-from deliverome_analysis.s3 import processed
+from deliverome_analysis.cloning import genscript
+from deliverome_analysis.core.s3 import processed
 
 PREFIX = "constructs/as-built/"
 MANIFEST = PREFIX + "MANIFEST.tsv"

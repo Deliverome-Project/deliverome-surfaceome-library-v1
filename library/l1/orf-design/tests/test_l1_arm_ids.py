@@ -17,7 +17,7 @@ sys.path.insert(0, str(HERE))
 
 import l1_arm_ids as arms  # noqa: E402
 
-from deliverome_analysis import library_design as ld  # noqa: E402
+from deliverome_analysis.cloning import library_design as ld  # noqa: E402
 
 COLS = ["arm_id", "construct_key", "design_id", "arm_role", "arm_kind", "decision"]
 

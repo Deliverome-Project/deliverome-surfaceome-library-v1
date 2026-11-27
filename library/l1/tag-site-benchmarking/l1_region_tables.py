@@ -44,7 +44,7 @@ from redesign_all import frames  # noqa: E402
 from rescue_round import score  # noqa: E402
 from v5_region_table import SEPARATION, features, ranges  # noqa: E402
 
-from deliverome_analysis import topology  # noqa: E402
+from deliverome_analysis.surfaceome import topology  # noqa: E402
 
 ARMS = HERE / "l1_internal_arm_decisions.tsv"
 MEMBERS = HERE / "l1_internal_arm_members.tsv"

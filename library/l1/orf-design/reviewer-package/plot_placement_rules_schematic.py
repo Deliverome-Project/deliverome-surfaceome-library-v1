@@ -17,7 +17,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.patches import FancyBboxPatch, Rectangle
 
-from deliverome_analysis.plotting import (
+from deliverome_analysis.core.plotting import (
     COLORS,
     SEQUENTIAL_PALETTES,
     save_figure,

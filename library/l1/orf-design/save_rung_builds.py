@@ -64,7 +64,7 @@ def sha256(data: bytes) -> str:
 
 
 def files_at(commit: str) -> dict[str, bytes]:
-    from deliverome_analysis.provenance import read_pinned_bytes
+    from deliverome_analysis.core.provenance import read_pinned_bytes
 
     out = {}
     for rung in RUNGS:
@@ -85,7 +85,7 @@ def pack(files: dict[str, bytes]) -> bytes:
 
 
 def save() -> int:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     record = {"bundles": {}}
     for commit, what in COMMITS.items():
@@ -110,7 +110,7 @@ def save() -> int:
 
 
 def check() -> str:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     record = json.loads(RECORD.read_text())["bundles"]
     for rec in record.values():

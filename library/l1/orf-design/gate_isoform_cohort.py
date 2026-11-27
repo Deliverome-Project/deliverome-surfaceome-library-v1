@@ -159,9 +159,9 @@ def load_inputs(
     from gpi import gpi_genes
     from panel_inputs import stage
 
-    from deliverome_analysis import library_design as ld
-    from deliverome_analysis import seqtools
-    from deliverome_analysis.s3 import external, processed
+    from deliverome_analysis.cloning import library_design as ld
+    from deliverome_analysis.cloning import seqtools
+    from deliverome_analysis.core.s3 import external, processed
 
     snap = stage(work / "panel")
     with (cohort_path or snap / "isoform_cohorts.tsv").open() as fh:
@@ -238,7 +238,7 @@ def gate(
     relax_nterm_tm1: bool = False,
     reject_short_fragments: bool = False,
 ) -> list[dict]:
-    from deliverome_analysis import topology
+    from deliverome_analysis.surfaceome import topology
 
     cohort, refs = inp["cohort"], inp["refs"]
     proteins = form_proteins(inp)
@@ -431,7 +431,7 @@ def main(argv=None) -> int:
         print(f"{args.out.name} reproduces ({len(rows)} forms)")
         return 0
     if args.publish:
-        from deliverome_analysis.s3 import processed
+        from deliverome_analysis.core.s3 import processed
 
         if args.out.read_text() != text:
             raise SystemExit(f"{args.out.name} differs from the rerun; write and commit first")

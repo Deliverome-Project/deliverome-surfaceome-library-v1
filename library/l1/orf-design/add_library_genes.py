@@ -61,8 +61,9 @@ import candidate_inputs  # noqa: E402
 import domesticate_candidates  # noqa: E402
 from Bio import SeqIO  # noqa: E402
 
-from deliverome_analysis import library_design as ld  # noqa: E402
-from deliverome_analysis import seqtools, topology  # noqa: E402
+from deliverome_analysis.cloning import library_design as ld  # noqa: E402
+from deliverome_analysis.cloning import seqtools  # noqa: E402
+from deliverome_analysis.surfaceome import topology  # noqa: E402
 
 MANIFEST = HERE / "candidate_manifest_tranches.tsv"
 COVERAGE = lp.AP / "candidate_cds_coverage.tsv"
@@ -312,7 +313,7 @@ PEPTIDES = "peptideatlas_build607_pools.json"
 
 def fetch_peptides(work: Path, snapshot: str) -> int:
     """Extend the pinned PeptideAtlas cache with the added genes' accessions (append-only)."""
-    from deliverome_analysis.s3 import external
+    from deliverome_analysis.core.s3 import external
 
     out = lp.run_reference(work / "ref", offline=False)
     print(f"reference ladder ran online: {out}")
@@ -387,7 +388,7 @@ def main(argv=None) -> int:
         # Records are versioned under dated keys (library_pipeline.REFERENCE_RECORD,
         # library_design.CDS_KEY / CONSTRUCTS_KEY): publish the next version, every earlier
         # entry unchanged plus the additions, then move the three constants to it.
-        from deliverome_analysis.s3 import processed
+        from deliverome_analysis.core.s3 import processed
 
         tag = args.tag
         ref_prefix = f"{lp.PREFIX}{DESIGN}reference-selection/{tag}/"

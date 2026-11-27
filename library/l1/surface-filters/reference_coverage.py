@@ -22,7 +22,7 @@ import final_library as F  # single source of truth for gates + membership
 import matplotlib.pyplot as plt
 import numpy as np
 
-from deliverome_analysis.plotting import CATEGORICAL_PALETTE, save_figure, setup_plotting_style
+from deliverome_analysis.core.plotting import CATEGORICAL_PALETTE, save_figure, setup_plotting_style
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REF = os.path.join(HERE, "external", "accessible_surfaceome_refs")

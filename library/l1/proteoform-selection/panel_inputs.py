@@ -28,7 +28,7 @@ def _sha256(path: Path) -> str:
 
 def stage(dest: str | Path) -> Path:
     """Download every pinned input into ``dest`` and verify its checksum."""
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     spec = json.loads(MANIFEST.read_text())
     dest = Path(dest)
@@ -49,7 +49,7 @@ def main(argv=None) -> int:
     args = ap.parse_args(argv)
     spec = json.loads(MANIFEST.read_text())
     if args.publish:
-        from deliverome_analysis.s3 import processed
+        from deliverome_analysis.core.s3 import processed
 
         for name, entry in spec["files"].items():
             path = args.publish / name

@@ -77,7 +77,7 @@ sys.path.insert(0, str(HERE.parents[3] / "src"))
 import tag_site_model_v4 as V4  # noqa: E402
 import tag_site_model_v5 as V5  # noqa: E402
 
-from deliverome_analysis import plasmid_qc as qc  # noqa: E402
+from deliverome_analysis.cloning import plasmid_qc as qc  # noqa: E402
 
 PANEL = HERE.parents[1] / "l1" / "orf-design"
 DECISIONS = HERE / "l1_internal_decisions.tsv"
@@ -183,7 +183,7 @@ def members() -> pd.DataFrame:
 
 
 def protein_of(m) -> str:
-    from deliverome_analysis import library_design as ld
+    from deliverome_analysis.cloning import library_design as ld
 
     prot = ld.designed_proteins(PANEL / "candidate_manifest_tranches.tsv", library=ld.LIBRARY_L1)
     seq = prot[m["design_id"]]["sequence"]

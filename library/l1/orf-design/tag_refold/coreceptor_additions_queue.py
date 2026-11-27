@@ -72,7 +72,7 @@ sys.path.insert(0, str(EXP))
 
 from build_refold_inputs import CASSETTE, construct, fasta, sha, translate_insert  # noqa: E402
 
-from deliverome_analysis import library_design as ld  # noqa: E402
+from deliverome_analysis.cloning import library_design as ld  # noqa: E402
 
 QUEUE = EXP / "tag_refold_queue.tsv"
 NATIVES = EXP / "tag_refold_natives.tsv"

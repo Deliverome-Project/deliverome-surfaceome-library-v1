@@ -17,7 +17,12 @@ from pathlib import Path
 import numpy as np
 from matplotlib.patches import Patch
 
-from deliverome_analysis.plotting import create_figure, get_color, save_figure, setup_plotting_style
+from deliverome_analysis.core.plotting import (
+    create_figure,
+    get_color,
+    save_figure,
+    setup_plotting_style,
+)
 
 HERE = Path(__file__).resolve().parent
 FIGURES = HERE / "figures"

@@ -37,7 +37,7 @@ def read_tedman(path):
 def prepare_inputs(directory, fetch=False):
     """Refuse changed inputs; download only on explicit --fetch."""
     if fetch:
-        from deliverome_analysis.s3 import processed
+        from deliverome_analysis.core.s3 import processed
 
         directory.mkdir(parents=True, exist_ok=True)
         for name, metadata in MANIFEST["inputs"].items():

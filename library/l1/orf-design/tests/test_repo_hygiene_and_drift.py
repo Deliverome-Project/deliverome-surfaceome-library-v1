@@ -453,7 +453,8 @@ def test_markdown_docs_have_no_broken_relative_links() -> None:
     targets: list[tuple[Path, Path, set[str]]] = [
         (RP / "BRIEF.md", RP, set()),
         (RP / "README.md", RP, set()),
-        (RP / "COVER_NOTE.md", RP, set()),
+        (RP / "DATA_DICTIONARY.md", RP, set()),
+        (RP / "PROVENANCE_VERSIONS.md", RP, set()),
         (RP / "DESIGN.md", RP, set()),
         (S4E9 / "REBUILD.md", S4E9, set()),
     ]
@@ -552,7 +553,7 @@ def test_s3_exists_is_fail_closed_on_non_not_found_errors(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     """s3.py exists() must check 404/NoSuchKey and re-raise non-404 errors."""
-    s3_path = REPO / "src" / "deliverome_analysis" / "s3.py"
+    s3_path = REPO / "src" / "deliverome_analysis" / "core" / "s3.py"
     tree = ast.parse(s3_path.read_text(encoding="utf-8"), filename=str(s3_path))
 
     exists_fns = [
@@ -592,7 +593,7 @@ def test_s3_exists_is_fail_closed_on_non_not_found_errors(
     }
     assert {"404", "NoSuchKey"} <= helper_consts
 
-    from deliverome_analysis import s3 as s3_mod
+    from deliverome_analysis.core import s3 as s3_mod
 
     monkeypatch.delenv("DELIVEROME_S3_MIRROR", raising=False)
 
@@ -623,7 +624,7 @@ def test_s3_exists_is_fail_closed_on_non_not_found_errors(
 
 def test_membrane_side_site_verdict_rejects_non_finite_inputs() -> None:
     """membrane_side.py site_verdict() must check isfinite and reject NaN/Inf."""
-    ms_path = REPO / "src" / "deliverome_analysis" / "membrane_side.py"
+    ms_path = REPO / "src" / "deliverome_analysis" / "surfaceome" / "membrane_side.py"
     tree = ast.parse(ms_path.read_text(encoding="utf-8"), filename=str(ms_path))
 
     fns = [n for n in ast.walk(tree) if isinstance(n, ast.FunctionDef) and n.name == "site_verdict"]
@@ -635,7 +636,7 @@ def test_membrane_side_site_verdict_rejects_non_finite_inputs() -> None:
     }
     assert "isfinite" in called, "membrane_side.site_verdict() must check isfinite"
 
-    from deliverome_analysis import membrane_side as ms
+    from deliverome_analysis.surfaceome import membrane_side as ms
 
     th = ms.GateThresholds(
         outside=12.0,

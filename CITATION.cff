@@ -17,6 +17,11 @@ authors:
 repository-code: >-
   https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1
 url: 'https://surfaceome.deliverome.org/v1-review/'
+doi: 10.5281/zenodo.24570263
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.24570263
+    description: Concept DOI (always resolves to the latest Zenodo release)
 abstract: >-
   Design pipeline, construct tables, verification tests, and external
   review brief for the Deliverome v1 pooled, barcoded lentiviral

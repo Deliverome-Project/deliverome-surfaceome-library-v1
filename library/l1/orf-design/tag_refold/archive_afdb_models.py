@@ -142,7 +142,7 @@ def main() -> None:
         print(f"{len(miss)} of {len(readers)} models have no local copy -> {args.missing}")
         return
 
-    from deliverome_analysis.s3 import external
+    from deliverome_analysis.core.s3 import external
 
     existing = set(external.list_keys(PREFIX + "/"))
     previous = {r["afdb_url"]: r for r in tsv(OUT)} if OUT.exists() else {}

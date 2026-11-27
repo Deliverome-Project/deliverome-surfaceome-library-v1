@@ -40,7 +40,7 @@ from build_constructs import ENZYMES
 from diversify_arm_cassettes import read_fasta
 from diversify_cassettes import LINKER_ONLY_JUNCTION_IDENTITY
 
-from deliverome_analysis import seqtools
+from deliverome_analysis.cloning import seqtools
 
 HERE = Path(__file__).parent
 OUT = HERE / "l1_snorkel_module_encodings.tsv"

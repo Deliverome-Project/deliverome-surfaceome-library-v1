@@ -110,7 +110,7 @@ def sha(text: str) -> str:
 
 def fasta(path: Path) -> dict[str, str]:
     """Insert DNA keyed by the first token of the header (split on '|' or whitespace)."""
-    from deliverome_analysis import seqtools
+    from deliverome_analysis.cloning import seqtools
 
     out: dict[str, str] = {}
     for header, seq in seqtools.read_fasta(path):
@@ -125,7 +125,7 @@ def fasta(path: Path) -> dict[str, str]:
 
 def translate_insert(insert: str) -> str:
     """Protein encoded from the Kozak ATG to the first in-frame stop."""
-    from deliverome_analysis import plasmid_qc as qc
+    from deliverome_analysis.cloning import plasmid_qc as qc
 
     try:
         return qc.translate_insert(insert)
@@ -159,8 +159,8 @@ def current_natives(needed: set[str] | None = None) -> dict[str, str]:
             gaps[tp["candidate_id"]] = tp["sequence_sha256"]
     want = {c: s for c, s in gaps.items() if needed is None or c in needed}
     if want:
-        from deliverome_analysis import library_design as ld
-        from deliverome_analysis import s3
+        from deliverome_analysis.cloning import library_design as ld
+        from deliverome_analysis.core import s3
 
         if not s3.credentials_available():
             raise NativesUnavailable(

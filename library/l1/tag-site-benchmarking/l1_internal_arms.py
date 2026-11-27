@@ -480,7 +480,7 @@ def assign_arm_ids(arms: list) -> list:
         # every construct already there keeps its id and a dropped arm's K is retired
         import io
 
-        from deliverome_analysis.provenance import read_pinned_text
+        from deliverome_analysis.core.provenance import read_pinned_text
 
         rel = "library/l1/tag-site-benchmarking/l1_internal_arm_decisions.tsv"
         txt = read_pinned_text(PROVISIONAL_COMMIT, rel, repo=HERE.parents[2])

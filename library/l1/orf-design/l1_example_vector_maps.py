@@ -52,7 +52,7 @@ from build_constructs import (
 )
 from shuttle import DOWNSTREAM, UPSTREAM
 
-from deliverome_analysis import constructs, seqtools
+from deliverome_analysis.cloning import constructs, seqtools
 
 HERE = Path(__file__).parent
 MEMBER, GENE = "l1-p0168", "AXL"
@@ -283,7 +283,7 @@ def main(argv=None) -> int:
         print(f"  WARN {w}")
 
     if args.upload:
-        from deliverome_analysis import s3
+        from deliverome_analysis.core import s3
 
         for kind, key in KEYS.items():
             if s3.processed.exists(key):

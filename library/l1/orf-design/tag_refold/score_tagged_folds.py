@@ -160,7 +160,7 @@ def archived_afdb(url: str) -> Path:
     if cached:
         path = cached[-1]
     else:
-        from deliverome_analysis.s3 import external
+        from deliverome_analysis.core.s3 import external
 
         path = Path(external.download(key))
     if hashlib.sha256(path.read_bytes()).hexdigest() != row["sha256"]:
@@ -198,7 +198,7 @@ def native_model_for(
                 path = archived_afdb(ref)
                 label = f"AFDB {Path(ref).stem}"
             else:
-                from deliverome_analysis.s3 import processed
+                from deliverome_analysis.core.s3 import processed
 
                 path = processed.download(ref.removeprefix("processed://"))
                 label = ref
@@ -465,7 +465,7 @@ def main() -> None:
     # stays unreachable.
     import time
 
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     unreachable = []
     local_of: dict[str, str] = {}

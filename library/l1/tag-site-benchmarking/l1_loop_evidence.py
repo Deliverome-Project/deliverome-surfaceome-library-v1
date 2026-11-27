@@ -184,7 +184,7 @@ def tag_paths() -> pd.DataFrame:
     """The 2026-11-07 tag-path table: current member ids, and every internal-placement member."""
     local = HERE / "data" / "l1_tag_paths_2026-11-07.tsv"
     if not local.is_file():
-        from deliverome_analysis import s3
+        from deliverome_analysis.core import s3
 
         local.parent.mkdir(parents=True, exist_ok=True)
         s3.processed.download(TAG_PATHS_KEY, str(local))

@@ -70,8 +70,8 @@ from build_constructs import (
 from build_gpcr_rescue_arms import arm_flanks
 from build_sp_swap_arms import sp_swap_flanks
 
-from deliverome_analysis import plasmid_qc as qc
-from deliverome_analysis import seqtools
+from deliverome_analysis.cloning import plasmid_qc as qc
+from deliverome_analysis.cloning import seqtools
 
 HERE = Path(__file__).parent
 OUT = HERE / "cassette_encodings.tsv"

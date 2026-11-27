@@ -58,7 +58,7 @@ import audit_domestication_barcodes as audit
 import numpy as np
 from build_constructs import CASSETTE_AA
 
-from deliverome_analysis import seqtools
+from deliverome_analysis.cloning import seqtools
 
 HERE = Path(__file__).resolve().parent
 PLAN = HERE / "reviewer-package" / "l1_order_plan.tsv"
@@ -523,7 +523,7 @@ def length_summary(ins: list[dict], spec_imp: np.ndarray, cut: float = 0.01) -> 
 def plot(ins, p, same, spec_imp, bg_mis, bg_chi, lead, summary) -> None:
     import matplotlib.pyplot as plt
 
-    from deliverome_analysis.plotting import get_color, save_figure, setup_plotting_style
+    from deliverome_analysis.core.plotting import get_color, save_figure, setup_plotting_style
 
     setup_plotting_style()
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 8))

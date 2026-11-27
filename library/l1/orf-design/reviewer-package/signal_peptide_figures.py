@@ -42,7 +42,7 @@ import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 from matplotlib.patches import FancyBboxPatch, Patch
 
-from deliverome_analysis.plotting import get_color, save_figure, setup_plotting_style
+from deliverome_analysis.core.plotting import get_color, save_figure, setup_plotting_style
 
 HERE = Path(__file__).resolve().parent
 S4E9 = HERE.parent
@@ -884,7 +884,7 @@ def main(argv: list[str] | None = None) -> int:
         save_figure(fig, "signal_peptide_rule_simple", output_dir=FIGURES)
         plt.close(fig)
     if only in (None, "examples"):
-        from deliverome_analysis.s3 import processed
+        from deliverome_analysis.core.s3 import processed
 
         setup_plotting_style()
         fig = draw_examples(example_data(processed))

@@ -112,7 +112,7 @@ def subgroup(m: dict, positions: list[dict]) -> str:
 
 
 def main() -> int:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     members = _tsv(HERE / "nterm_members.tsv")
     by_member = collections.defaultdict(list)

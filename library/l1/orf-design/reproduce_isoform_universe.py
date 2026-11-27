@@ -83,7 +83,7 @@ def sha256(path: Path) -> str:
 
 def stage(work: Path) -> dict[str, Path]:
     """Download every pinned input into ``work/in`` and check its SHA-256."""
-    from deliverome_analysis import s3
+    from deliverome_analysis.core import s3
 
     spec = json.loads(INPUTS.read_text())
     got = {}
@@ -156,7 +156,7 @@ def layout(work: Path, got: dict[str, Path]) -> tuple[Path, Path]:
 
 
 def record(key: str, dest: Path) -> Path:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     return Path(processed.download(key, dest))
 

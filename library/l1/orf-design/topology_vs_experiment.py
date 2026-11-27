@@ -79,9 +79,9 @@ import pandas as pd
 from Bio import Align
 from Bio.Align import substitution_matrices
 
-from deliverome_analysis import library_design as ld
-from deliverome_analysis import topology
-from deliverome_analysis.s3 import external
+from deliverome_analysis.cloning import library_design as ld
+from deliverome_analysis.core.s3 import external
+from deliverome_analysis.surfaceome import topology
 
 HERE = Path(__file__).parent
 MANIFEST = HERE / "candidate_manifest_tranches.tsv"

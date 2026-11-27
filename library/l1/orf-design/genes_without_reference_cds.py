@@ -186,7 +186,7 @@ def main(argv=None) -> int:
     sv = json.loads((s1e3 / "willow_screen_rescue_genes.json").read_text())
     recs = {r["gene"]: r for r in F.recs}
 
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     refsel = {r["symbol"]: r for r in read_tsv(processed.download(REFERENCE_RECORD))}
     manifest = {r["key"]: r for r in read_tsv(HERE / "candidate_manifest_tranches.tsv")}

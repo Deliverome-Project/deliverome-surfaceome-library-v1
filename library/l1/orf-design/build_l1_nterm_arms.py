@@ -65,9 +65,9 @@ from pathlib import Path
 from build_constructs import CASSETTE_AA
 from diversify_arm_cassettes import arm_cassette
 
-from deliverome_analysis import library_design as ld
-from deliverome_analysis import plasmid_qc as qc
-from deliverome_analysis import seqtools
+from deliverome_analysis.cloning import library_design as ld
+from deliverome_analysis.cloning import plasmid_qc as qc
+from deliverome_analysis.cloning import seqtools
 
 LEADER = qc.IGK_LEADER_NT
 LEADER_AA = qc.IGK_LEADER_AA
@@ -276,7 +276,7 @@ def vector_check(rows: list[dict]) -> int:
 
 
 def build() -> tuple[list[dict], dict]:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     decisions = read_table(DECISIONS)
     _index_unique(decisions, "candidate_id", DECISIONS.name)

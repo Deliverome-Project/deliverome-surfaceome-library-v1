@@ -120,7 +120,7 @@ def main():
     for item in manifest["inputs"]:
         path = args.input_dir / item["name"]
         if not path.exists() and args.download_inputs:
-            from deliverome_analysis.s3 import external
+            from deliverome_analysis.core.s3 import external
 
             path.parent.mkdir(parents=True, exist_ok=True)
             external.download(item["source"].removeprefix("external://"), path)

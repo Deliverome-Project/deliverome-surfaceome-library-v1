@@ -39,7 +39,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.colors import LinearSegmentedColormap
 
-from deliverome_analysis.plotting import (
+from deliverome_analysis.core.plotting import (
     COLORS,
     get_sequential_palette,
     save_figure,

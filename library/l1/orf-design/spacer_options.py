@@ -31,8 +31,8 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from deliverome_analysis.primers import load_mirna_seed_sites
-from deliverome_analysis.seqtools import gc_content, reverse_complement
+from deliverome_analysis.cloning.primers import load_mirna_seed_sites
+from deliverome_analysis.cloning.seqtools import gc_content, reverse_complement
 
 REPO = Path(__file__).resolve().parents[3]
 SEED_TSV = REPO / "library/l1/vector-design/mirna_seed_sites.tsv"

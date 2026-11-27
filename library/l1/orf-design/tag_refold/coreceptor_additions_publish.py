@@ -71,7 +71,7 @@ def main() -> None:
     )
     a = ap.parse_args()
     PREFIX = a.prefix
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     folds = Path(a.folds).expanduser()
     queue = {r["fold_id"]: r for r in tsv(Path(a.queue))[1]}

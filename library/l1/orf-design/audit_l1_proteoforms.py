@@ -68,8 +68,10 @@ import library_pipeline as lp  # noqa: E402
 import pandas as pd  # noqa: E402
 import review_ortholog_correspondence as roc  # noqa: E402
 
-from deliverome_analysis import library_design as ld  # noqa: E402
-from deliverome_analysis import s3, seqtools, topology  # noqa: E402
+from deliverome_analysis.cloning import library_design as ld  # noqa: E402
+from deliverome_analysis.cloning import seqtools  # noqa: E402
+from deliverome_analysis.core import s3  # noqa: E402
+from deliverome_analysis.surfaceome import topology  # noqa: E402
 
 MANIFEST = HERE / "candidate_manifest_tranches.tsv"
 RENUMBERING = HERE / "l1_member_renumbering.tsv"

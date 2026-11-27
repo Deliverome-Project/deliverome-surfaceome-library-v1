@@ -35,7 +35,7 @@ sys.path.insert(0, str(HERE / "tag_refold"))
 import score_tagged_folds as stf  # noqa: E402
 from build_refold_inputs import CASSETTE  # noqa: E402
 
-from deliverome_analysis import library_design as ld  # noqa: E402
+from deliverome_analysis.cloning import library_design as ld  # noqa: E402
 
 DECIDED_BY = "Becca Carlson, 2026-11-24 (pre-order audit)"
 IMPLEMENTED_BY = "pre-order biological audit (2026-11-24)"

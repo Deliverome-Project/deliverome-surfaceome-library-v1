@@ -457,7 +457,7 @@ input outside the 2026-11-14 bundle; the decisions table is pinned by commit and
 | `calibration.json`, `calibration_*.tsv` | The thresholds, and every number they rest on |
 | `gate_summary.json` | The counts quoted on this page |
 | [`tests/test_membrane_side_gate.py`](tests/test_membrane_side_gate.py) | Seeded cases ANO1 698 and XKR5 62, placed offline from C-α copies of their AlphaFold DB models (CC BY 4.0); plus consistency of the committed tables |
-| [`membrane_side.py`](../../../../src/deliverome_analysis/membrane_side.py) | Shared placement and verdict code, tested in `tests/test_membrane_side.py` |
+| [`membrane_side.py`](../../../../src/deliverome_analysis/surfaceome/membrane_side.py) | Shared placement and verdict code, tested in `tests/test_membrane_side.py` |
 
 ## Provenance
 

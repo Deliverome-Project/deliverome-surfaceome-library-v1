@@ -27,8 +27,8 @@ AP = REPO / "library/l1/proteoform-selection"
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(AP))
 
-from deliverome_analysis import plasmid_qc as qc  # noqa: E402
-from deliverome_analysis import seqtools  # noqa: E402
+from deliverome_analysis.cloning import plasmid_qc as qc  # noqa: E402
+from deliverome_analysis.cloning import seqtools  # noqa: E402
 
 #: The six rung tables; every built L1 insert is in exactly one.
 RUNG_FASTAS = sorted(HERE.glob("constructs_l1_*.fasta"))

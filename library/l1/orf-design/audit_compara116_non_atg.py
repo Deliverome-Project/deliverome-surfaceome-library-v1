@@ -141,7 +141,7 @@ def main():
     for name, item in manifest["files"].items():
         path = args.input_dir / name
         if not path.exists() and args.download_inputs:
-            from deliverome_analysis import s3
+            from deliverome_analysis.core import s3
 
             bucket, key = item["source"].split(":", 1)
             path.parent.mkdir(parents=True, exist_ok=True)

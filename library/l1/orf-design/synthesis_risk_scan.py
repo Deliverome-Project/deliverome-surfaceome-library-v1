@@ -41,7 +41,7 @@ from pathlib import Path
 
 from Bio import BiopythonWarning, SeqIO
 
-from deliverome_analysis import constructs, seqtools
+from deliverome_analysis.cloning import constructs, seqtools
 
 DESIGNED = (
     "p0016",
@@ -74,7 +74,7 @@ MAX_STEM_MISMATCHES = 4
 
 def proven_sequences() -> dict[str, str]:
     """Both strands of every sequence we know has been built, keyed by name."""
-    from deliverome_analysis.s3 import external, processed
+    from deliverome_analysis.core.s3 import external, processed
 
     out: dict[str, str] = {}
     for prefix in PROVEN_PROCESSED:
@@ -260,7 +260,7 @@ def main(argv=None) -> int:
     )
     args = ap.parse_args(argv)
 
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     keys = args.key or [constructs.map_key(n) for n in DESIGNED]
     paths = [(Path(k).stem, Path(processed.download(k))) for k in keys]

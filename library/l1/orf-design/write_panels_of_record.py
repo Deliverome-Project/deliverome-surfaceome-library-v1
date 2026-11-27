@@ -185,7 +185,7 @@ def check_manifest(manifest: list[dict], iso: list[dict], ort: list[dict]) -> No
     # (``ortholog_start_trims.tsv``) are built shorter than the panel's drawn protein.
     import hashlib
 
-    from deliverome_analysis import library_design as ld
+    from deliverome_analysis.cloning import library_design as ld
 
     designed = ld.designed_proteins(MANIFEST, library=ld.LIBRARY_L1)
     ort_active = {m["key"]: m for m in active if m["set"] == "ortholog"}

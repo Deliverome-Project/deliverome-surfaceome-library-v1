@@ -154,8 +154,8 @@ def main() -> int:
     from panel_inputs import stage
     from redraw_isoform_panel_2026_11_22 import split_classify
 
-    from deliverome_analysis import library_design as ld
-    from deliverome_analysis import topology
+    from deliverome_analysis.cloning import library_design as ld
+    from deliverome_analysis.surfaceome import topology
 
     work = Path(tempfile.mkdtemp(prefix="isoform-classes-"))
     snap = stage(work / "panel")
@@ -282,7 +282,7 @@ def plot(rows: list[dict]) -> None:
     import matplotlib.pyplot as plt
     import numpy as np
 
-    from deliverome_analysis.plotting import (
+    from deliverome_analysis.core.plotting import (
         get_categorical_colors,
         save_figure,
         setup_plotting_style,

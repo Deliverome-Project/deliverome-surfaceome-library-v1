@@ -27,7 +27,7 @@ The brief is organized vector-first: **sections 1–3** cover the construct, vec
 
 ## Decisions we would like reviewers to weigh in on
 
-All six questions below remain open before order placement (`3,352` constructs across `2,730` built CDSs). Remaining operational items are tracked in the accompanying [cover note](COVER_NOTE.md).
+All six questions below remain open before order placement (`3,352` constructs across `2,730` built CDSs).
 
 | Question | Why it matters | What would resolve it |
 |---|---|---|
@@ -428,7 +428,7 @@ construct's barcode beside the other's ORF.
 [Walton et al. (2024)](https://pubmed.ncbi.nlm.nih.gov/38558968/) fit this as a per-base switch
 rate *k* = 5.3 × 10⁻⁴ per bp of shared sequence, so a particle carrying two constructs that share
 an identical block of *L* bp gives a discordant barcode with probability
-*Y*(*L*) = ½ (1 − e^(−2*kL*)) ([`seqtools.barcode_swap_rate`](../../../../src/deliverome_analysis/seqtools.py)).
+*Y*(*L*) = ½ (1 − e^(−2*kL*)) ([`seqtools.barcode_swap_rate`](../../../../src/deliverome_analysis/cloning/seqtools.py)).
 That is a rate for a particle that carries both constructs. In the pool, a construct's
 co-packaged partner is any other construct with probability equal to that construct's share of the
 pool. The pool has 3,352 constructs, so the average share is 1 in 3,352, but the
@@ -1737,7 +1737,7 @@ spanning 10 inserts), and **13** early (`≤ 60 nt`) internal ATGs. Rather than 
 hazardous motifs in place, [`synthesis_compliance.py`](../synthesis_compliance.py) swaps all
 **18** fixable motif codons (all `4/4` poly(A) inserts, all `10/10` 6-mer splice-donor inserts,
 and `4` fixable early-ATG inserts: `EPHA10`, `HTR1B`, `KCNE3` ×2) to common synonymous human
-codons (`≥ 24%` usage), and [`seqtools.domesticate()`](../../../../src/deliverome_analysis/seqtools.py)
+codons (`≥ 24%` usage), and [`seqtools.domesticate()`](../../../../src/deliverome_analysis/cloning/seqtools.py)
 is now hardened to avoid creating `AATAAA`, `ATTAAA`, or `GT[AG]AGT` at source. As a result,
 **0** domestication- or recoding-introduced poly(A) signals and **0** 6-mer `GT[AG]AGT` splice
 donors remain anywhere in the 3,352 ordered inserts (the remaining 44 5-mer-only `GT[AG]AG[ACG]`

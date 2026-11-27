@@ -15,7 +15,7 @@ from pathlib import Path
 import pytest
 
 RP = Path(__file__).resolve().parents[1] / "reviewer-package"
-DOCS = ["BRIEF.md", "COVER_NOTE.md", "DESIGN.md", "nterm/BRIEF.md"]
+DOCS = ["BRIEF.md", "DESIGN.md", "nterm/BRIEF.md"]
 EXPERIMENT_ID = re.compile(r"\bs\d+e\d+\b", re.IGNORECASE)
 LINK_TARGET = re.compile(r"\]\([^)]*\)")
 FENCED = re.compile(r"^```.*?^```", re.MULTILINE | re.DOTALL)

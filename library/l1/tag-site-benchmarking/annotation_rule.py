@@ -204,7 +204,7 @@ def blocked(ann: dict, seq: str, n: int, mask: str | None = None) -> bool:
 def pinned_arms() -> pd.DataFrame:
     import io
 
-    from deliverome_analysis.provenance import read_pinned_text
+    from deliverome_analysis.core.provenance import read_pinned_text
 
     txt = read_pinned_text(ARMS_COMMIT, ARMS_REL, repo=HERE.parents[2])
     return pd.read_csv(io.StringIO(txt), sep="\t")
@@ -240,7 +240,7 @@ class Checker:
 
     def _ann(self, sha: str) -> dict:
         if sha not in self.ann:
-            from deliverome_analysis import topology
+            from deliverome_analysis.surfaceome import topology
 
             t = topology.resolve({"m": self.prot[sha]}).iloc[0]
             found = bool(t["found"])
@@ -277,7 +277,7 @@ def main() -> int:
     from rescue_round import score
     from v5_region_table import features
 
-    from deliverome_analysis import topology
+    from deliverome_analysis.surfaceome import topology
 
     arms = pinned_arms()
     built = arms[(arms["decision"] == "build") & (arms["arm_kind"] == "loop")].copy()

@@ -266,7 +266,7 @@ def main() -> int:
     np.random.seed(args.seed)
 
     try:
-        from deliverome_analysis.env import load_env
+        from deliverome_analysis.core.env import load_env
 
         load_env()
     except Exception:

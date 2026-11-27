@@ -26,7 +26,7 @@ from pathlib import Path
 
 from reserve_barcodes import REGISTRY_KEY
 
-from deliverome_analysis.s3 import processed
+from deliverome_analysis.core.s3 import processed
 
 HERE = Path(__file__).parent
 #: (table, gate column) -- the gate drops arms parked out of the order batch.

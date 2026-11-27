@@ -72,9 +72,9 @@ REPO = HERE.parents[2]
 sys.path.insert(0, str(HERE))
 import l1_arm_ids as arm_ids  # noqa: E402
 
-from deliverome_analysis import plasmid_qc as qc  # noqa: E402
-from deliverome_analysis import seqtools  # noqa: E402
-from deliverome_analysis.plasmid_qc import P003_CASSETTE_PEPTIDE  # noqa: E402
+from deliverome_analysis.cloning import plasmid_qc as qc  # noqa: E402
+from deliverome_analysis.cloning import seqtools  # noqa: E402
+from deliverome_analysis.cloning.plasmid_qc import P003_CASSETTE_PEPTIDE  # noqa: E402
 
 #: Integration commit (PR #299) whose rung builds this stage checks. Bump to re-run on a newer build.
 #: 496d3482 (2026-11-13) carries #312: the 23 rescue genes' GPCR references built Igκ + tag and
@@ -258,7 +258,7 @@ def compliant(m: dict) -> bool:
 
 
 def git_show(path: str, ref: str = INPUT_REF) -> str:
-    from deliverome_analysis.provenance import read_pinned_text
+    from deliverome_analysis.core.provenance import read_pinned_text
 
     return read_pinned_text(ref, path, repo=REPO)
 
@@ -844,8 +844,8 @@ def calibrate() -> int:
     """Local rules against Twist's calls on the rebuilt draft inserts."""
     import twist_complexity_map as tcm
 
-    from deliverome_analysis import library_design as ld
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.cloning import library_design as ld
+    from deliverome_analysis.core.s3 import processed
 
     twist = tcm.load_twist()
     man = {}
@@ -875,7 +875,7 @@ def calibrate() -> int:
 
 
 def publish() -> int:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     local = HERE / "_synthesis_recoded.fasta"
     summ = json.loads(SUMMARY.read_text())

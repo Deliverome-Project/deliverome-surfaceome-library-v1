@@ -34,9 +34,9 @@ import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
-from deliverome_analysis import library_design as ld
-from deliverome_analysis import seqtools
-from deliverome_analysis.s3 import processed
+from deliverome_analysis.cloning import library_design as ld
+from deliverome_analysis.cloning import seqtools
+from deliverome_analysis.core.s3 import processed
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from member_id_allocations import RENUMBER_HINT, to_design_space

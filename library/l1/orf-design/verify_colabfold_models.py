@@ -30,9 +30,9 @@ import tempfile
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
-from deliverome_analysis import library_design as ld
-from deliverome_analysis.membrane_side import read_model
-from deliverome_analysis.s3 import client
+from deliverome_analysis.cloning import library_design as ld
+from deliverome_analysis.core.s3 import client
+from deliverome_analysis.surfaceome.membrane_side import read_model
 
 HERE = Path(__file__).parent
 EXP = "sprint4/s4e9-orf-design-fg-panel"

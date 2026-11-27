@@ -93,7 +93,7 @@ def structure_features() -> pd.DataFrame:
     """PR #223's per-residue structure table (d_oligomer_partner), cached under data/."""
     local = HERE / "data" / "structure_global_features.tsv"
     if not local.is_file():
-        from deliverome_analysis import s3
+        from deliverome_analysis.core import s3
 
         local.parent.mkdir(parents=True, exist_ok=True)
         s3.processed.download(STRUCTURE_KEY, str(local))

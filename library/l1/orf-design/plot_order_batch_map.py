@@ -22,7 +22,7 @@ from pathlib import Path
 from annotate_insert import SOURCES, blocks
 from build_constructs import read_fasta
 
-from deliverome_analysis.plotting import (
+from deliverome_analysis.core.plotting import (
     CATEGORICAL_PALETTE,
     create_figure,
     get_color,

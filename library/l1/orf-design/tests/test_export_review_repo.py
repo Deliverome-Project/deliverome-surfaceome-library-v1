@@ -51,18 +51,19 @@ def test_exported_scripts_are_import_closed_at_head():
         assert helper in exported, f"expected {helper} in review export"
 
     # 3. Every deliverome_analysis module imported by any exported script is exported.
-    pkg_mods = {
-        p[len(err.PKG) + 1 :].split("/")[0].removesuffix(".py")
-        for p in exported
-        if p.startswith(err.PKG + "/")
+    pkg_mods = {err._pkg_module_name(p) for p in exported if p.startswith(err.PKG + "/")}
+    tracked_pkg_mods = {
+        err._pkg_module_name(p)
+        for p in tracked
+        if p.startswith(err.PKG + "/") and p.endswith(".py")
     }
     missing_pkg: dict[str, list[str]] = {}
     for path, data in sorted(files.items()):
         if not path.endswith(".py"):
             continue
         in_pkg = path.startswith(err.PKG + "/")
-        needed = err._imported_modules(data, in_package=in_pkg)
-        miss = sorted(m for m in needed if m not in pkg_mods and f"{err.PKG}/{m}.py" in tracked)
+        needed = err._imported_modules(data, in_package=in_pkg, pkg_rel_path=path)
+        miss = sorted(m for m in needed if m not in pkg_mods and m in tracked_pkg_mods)
         if miss:
             missing_pkg[path] = miss
     assert not missing_pkg, f"exported scripts miss package modules: {missing_pkg}"
@@ -193,7 +194,7 @@ def test_exported_clean_paths_repo_runs_offline_tests(tmp_path: Path):
                 "-c",
                 (
                     "from pathlib import Path; "
-                    "from deliverome_analysis.provenance import read_pinned_text; "
+                    "from deliverome_analysis.core.provenance import read_pinned_text; "
                     "t1 = read_pinned_text('8432c010', 'library/l1/orf-design/tag_refold_structures.tsv', repo=Path('.')); "
                     "t2 = read_pinned_text('8432c0104c8fdaa57e78173d18fc5bb7064d91bd', 'library/l1/orf-design/constructs_l1_cterm.tsv', repo=Path('.')); "
                     "assert len(t1) > 100 and len(t2) > 100"
@@ -223,7 +224,7 @@ def test_no_exported_script_calls_raw_git_show():
     raw_git_show = re.compile(r'["\']git["\'][^\n]*["\']show["\']')
     allowed = {
         "library/l1/orf-design/reviewer-package/export_review_repo.py",
-        "src/deliverome_analysis/provenance.py",
+        "src/deliverome_analysis/core/provenance.py",
     }
     offenders: list[str] = []
     for path, data in sorted(files.items()):

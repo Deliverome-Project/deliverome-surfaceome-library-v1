@@ -59,8 +59,8 @@ from pathlib import Path
 from build_constructs import CASSETTE, CASSETTE_AA, ENZYMES
 from diversify_cassettes import LINKER_ONLY_JUNCTION_IDENTITY
 
-from deliverome_analysis import plasmid_qc as qc
-from deliverome_analysis import seqtools
+from deliverome_analysis.cloning import plasmid_qc as qc
+from deliverome_analysis.cloning import seqtools
 
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "l1_arm_cassette_encodings.tsv"

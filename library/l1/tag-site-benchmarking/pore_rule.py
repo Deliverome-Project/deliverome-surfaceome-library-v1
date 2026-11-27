@@ -151,7 +151,7 @@ def spans(acc: str, member: str) -> dict[str, list[tuple[int, int, str]]]:
 def main() -> int:
     import l1_internal_decisions as L
 
-    from deliverome_analysis import topology
+    from deliverome_analysis.surfaceome import topology
 
     tabs = [pd.read_csv(ARMS, sep="\t").assign(table="canonical")]
     if PENDING.is_file():

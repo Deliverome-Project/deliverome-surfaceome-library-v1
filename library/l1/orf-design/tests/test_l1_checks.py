@@ -21,7 +21,7 @@ import l1_completeness  # noqa: E402
 import l1_consistency  # noqa: E402
 from build_constructs import CASSETTE_AA, KOZAK  # noqa: E402
 
-from deliverome_analysis import seqtools  # noqa: E402
+from deliverome_analysis.cloning import seqtools  # noqa: E402
 
 CODON = {aa: c for c, aa in seqtools.GENETIC_CODE.items() if aa != "*"}
 

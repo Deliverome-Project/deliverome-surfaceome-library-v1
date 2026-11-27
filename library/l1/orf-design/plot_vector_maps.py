@@ -32,9 +32,13 @@ import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 from Bio import BiopythonWarning, SeqIO
 
-from deliverome_analysis import constructs
-from deliverome_analysis.plotting import get_categorical_colors, save_figure, setup_plotting_style
-from deliverome_analysis.s3 import processed
+from deliverome_analysis.cloning import constructs
+from deliverome_analysis.core.plotting import (
+    get_categorical_colors,
+    save_figure,
+    setup_plotting_style,
+)
+from deliverome_analysis.core.s3 import processed
 
 HERE = Path(__file__).parent
 

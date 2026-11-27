@@ -262,4 +262,4 @@ and the co-receptor host line.
 
 Decisions that are ours to make before the order (the cassette encoding, the host for the
 factor-dependent CDSs, the co-receptor rule, the gap genes, the isoform redraw) are listed with
-what each changes in the [cover note](COVER_NOTE.md).
+what each changes in the [design brief](BRIEF.md).

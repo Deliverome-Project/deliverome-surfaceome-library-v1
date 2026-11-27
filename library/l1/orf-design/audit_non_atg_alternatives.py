@@ -19,7 +19,7 @@ from Bio import Align
 from Bio.Align import substitution_matrices
 from Bio.Seq import Seq
 
-from deliverome_analysis import topology
+from deliverome_analysis.surfaceome import topology
 
 
 def compare(reference, query):

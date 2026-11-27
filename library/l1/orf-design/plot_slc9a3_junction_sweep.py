@@ -39,8 +39,8 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 
-from deliverome_analysis.plotting import CATEGORICAL_PALETTE, save_figure, setup_plotting_style
-from deliverome_analysis.s3 import processed
+from deliverome_analysis.core.plotting import CATEGORICAL_PALETTE, save_figure, setup_plotting_style
+from deliverome_analysis.core.s3 import processed
 
 HERE = Path(__file__).parent
 KEY = "sprint4/s4e9-orf-design-fg-panel/reprediction/canary_rp_1792374944/results.json"

@@ -68,8 +68,9 @@ import domesticate_candidates  # noqa: E402
 import resolve_candidate_cds as rcd  # noqa: E402
 from Bio import SeqIO  # noqa: E402
 
-from deliverome_analysis import library_design as ld  # noqa: E402
-from deliverome_analysis import seqtools, topology  # noqa: E402
+from deliverome_analysis.cloning import library_design as ld  # noqa: E402
+from deliverome_analysis.cloning import seqtools  # noqa: E402
+from deliverome_analysis.surfaceome import topology  # noqa: E402
 
 MANIFEST = HERE / "candidate_manifest_tranches.tsv"
 DECISIONS = HERE / "library_cds_boundary_decisions.tsv"
@@ -280,7 +281,7 @@ def _run_historical_reference(work: Path) -> Path:
 
 
 def reproduce(work: Path) -> dict:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     uniprot = rcd.load_uniprot("human")
     prev_cds = json.loads(Path(processed.download(PREV_CDS_KEY, work / "pc.json")).read_text())
@@ -469,7 +470,7 @@ def published(r: dict) -> dict[str, tuple[str, bytes]]:
 def verify(work: Path) -> str:
     """Rerun from pinned inputs; the ledger, summary and every published record must match,
     and each changed member's manifest design columns must be the rebuilt ones."""
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     r = reproduce(work)
     assert LEDGER.read_text() == tsv_text(r["ledger"], LEDGER_COLS), f"{LEDGER.name} differs"
@@ -527,7 +528,7 @@ def main(argv=None) -> int:
         print(f"wrote {LEDGER.name}, {SUMMARY.name}, {MANIFEST.name}")
         print(RENUMBER_HINT)
     if args.publish:
-        from deliverome_analysis.s3 import processed
+        from deliverome_analysis.core.s3 import processed
 
         if LEDGER.read_text() != tsv_text(r["ledger"], LEDGER_COLS):
             raise SystemExit("ledger differs from the rerun; --write and commit first")

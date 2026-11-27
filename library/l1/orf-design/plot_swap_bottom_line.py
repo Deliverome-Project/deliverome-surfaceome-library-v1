@@ -32,7 +32,7 @@ from pathlib import Path
 
 from matplotlib.patches import Patch
 
-from deliverome_analysis.plotting import (
+from deliverome_analysis.core.plotting import (
     COLORS,
     SEQUENTIAL_PALETTES,
     create_figure,

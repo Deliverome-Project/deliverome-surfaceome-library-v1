@@ -369,7 +369,7 @@ def _ablation_figure(ablation: pd.DataFrame, colors: list) -> None:
     """Figure 11: the change in each measure when one feature block is removed."""
     import matplotlib.pyplot as plt
 
-    from deliverome_analysis.plotting import save_figure
+    from deliverome_analysis.core.plotting import save_figure
 
     fig, axes = plt.subplots(1, 2, figsize=(11, 3.6), sharey=True)
     ab = ablation[ablation["block"] != "none"].set_index("block")
@@ -397,7 +397,7 @@ def _ablation_figure(ablation: pd.DataFrame, colors: list) -> None:
 def figures(summary, cls_tab, ablation, wtd, comp_tab) -> list[Path]:
     import matplotlib.pyplot as plt
 
-    from deliverome_analysis.plotting import save_figure, setup_plotting_style
+    from deliverome_analysis.core.plotting import save_figure, setup_plotting_style
 
     setup_plotting_style()
     colors = plt.rcParams["axes.prop_cycle"].by_key()["color"]
@@ -614,7 +614,7 @@ def main() -> int:
     tr, allx = B.inputs()
     p = B.DATA / MEMBER_FEATURES
     if not p.is_file():
-        from deliverome_analysis.s3 import processed
+        from deliverome_analysis.core.s3 import processed
 
         processed.download(B.S3_INPUTS + MEMBER_FEATURES, p)
     assert sha256(p) == MEMBER_SHA256, f"{MEMBER_FEATURES} does not match its pinned SHA-256"

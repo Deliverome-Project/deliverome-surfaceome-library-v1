@@ -382,7 +382,7 @@ def main(argv: list[str] | None = None) -> int:
     if a.cmd == "plan":
         return plan()
     if a.cmd == "upload":
-        from deliverome_analysis.env import load_env
+        from deliverome_analysis.core.env import load_env
 
         load_env()
         return upload(a.bundle.expanduser(), a.workers)

@@ -39,7 +39,7 @@ import membrane_mask  # noqa: E402
 from map_contacts_to_members import ordered_proteins  # noqa: E402
 from tag_site_model_v5 import ADOPTED_COMMIT  # noqa: E402
 
-from deliverome_analysis import plasmid_qc as qc  # noqa: E402
+from deliverome_analysis.cloning import plasmid_qc as qc  # noqa: E402
 
 CASSETTE_AA = qc.P003_CASSETTE_PEPTIDE
 DESIGNS = HERE / "tag_sites_v5_adopted.tsv"

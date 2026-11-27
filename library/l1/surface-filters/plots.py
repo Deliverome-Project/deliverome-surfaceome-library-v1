@@ -10,11 +10,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-from deliverome_analysis.plotting import (
-    CATEGORICAL_PALETTE,
-    save_figure,
-    setup_plotting_style,
-)
+from deliverome_analysis.core.plotting import CATEGORICAL_PALETTE, save_figure, setup_plotting_style
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 iso = pd.read_csv(os.path.join(HERE, "isoform_candidates.tsv"), sep="\t")

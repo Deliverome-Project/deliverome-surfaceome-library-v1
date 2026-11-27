@@ -45,8 +45,8 @@ import collections
 import csv
 from pathlib import Path
 
-from deliverome_analysis import library_design as ld
-from deliverome_analysis import topology
+from deliverome_analysis.cloning import library_design as ld
+from deliverome_analysis.surfaceome import topology
 
 HERE = Path(__file__).parent
 MANIFEST = HERE / "candidate_manifest_tranches.tsv"

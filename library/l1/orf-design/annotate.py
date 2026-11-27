@@ -3,7 +3,7 @@
 Everything a placement decision needs, fetched rather than typed. Built to run over the
 whole surfaceome, not a hand-listed panel — so nothing here is keyed to a gene name.
 
-Per gene it resolves the symbol through ``deliverome_analysis.gene_resolver``, takes the
+Per gene it resolves the symbol through ``deliverome_analysis.surfaceome.gene_resolver``, takes the
 Ensembl canonical transcript, and reads the reviewed UniProt entry reached from the same
 stable id. It never joins on a display symbol.
 
@@ -27,7 +27,8 @@ import urllib.request
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
-from deliverome_analysis import gene_resolver, seqtools
+from deliverome_analysis.cloning import seqtools
+from deliverome_analysis.surfaceome import gene_resolver
 
 HERE = Path(__file__).parent
 UNIPROT = "https://rest.uniprot.org/uniprotkb/search"

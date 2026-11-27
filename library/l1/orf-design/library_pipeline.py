@@ -57,7 +57,7 @@ def sha256(path: Path) -> str:
 
 def stage_inputs(names: list[str], dest: Path) -> dict[str, Path]:
     """Fetch named inputs from the snapshot (or their pinned S3 key) and verify each."""
-    from deliverome_analysis import s3
+    from deliverome_analysis.core import s3
 
     spec = json.loads(INPUTS.read_text())
     out = {}
@@ -76,7 +76,7 @@ def stage_inputs(names: list[str], dest: Path) -> dict[str, Path]:
 
 
 def record(key: str, dest: Path) -> Path:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     return Path(processed.download(PREFIX + key, dest))
 
@@ -325,7 +325,7 @@ def run_reference(
         stage_names = [n for n in stage_names if n != "reference_overrides.tsv"]
     got = stage_inputs(stage_names, work / "in")
     if overrides_override is not None:
-        from deliverome_analysis import s3
+        from deliverome_analysis.core import s3
 
         src, want_sha = overrides_override
         bucket, _, key = src.partition(":")
@@ -398,7 +398,7 @@ def verify_isoform_gate(work: Path) -> str:
     run([str(HERE / "gate_isoform_cohort.py"), "--check"], HERE)
     spec = json.loads((AP / "panel_inputs.json").read_text())["isoform_gate"]
     assert sha256(HERE / "isoform_gate.tsv") == spec["sha256"], "gate table differs from its pin"
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     pinned = Path(processed.download(spec["key"], work / "isoform_gate.tsv"))
     assert sha256(pinned) == spec["sha256"], "pinned gate key differs from panel_inputs.json"
@@ -461,7 +461,7 @@ def run_candidate_cds(work: Path, reference: Path | None = None) -> dict:
     """Resolve every candidate's CDS from the panel snapshot and a reference table (default:
     the published record)."""
     snap = json.loads((AP / "panel_inputs.json").read_text())
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     for name in ("isoform_cohorts.tsv", "ortholog_repick_mouse.tsv", "ortholog_repick_cyno.tsv"):
         processed.download(snap["prefix"] + name, work / name)
@@ -476,8 +476,8 @@ def run_candidate_cds(work: Path, reference: Path | None = None) -> dict:
 def verify_candidate_cds(work: Path) -> str:
     import apply_reference_fixes as fixes
 
-    from deliverome_analysis import library_design as ld
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.cloning import library_design as ld
+    from deliverome_analysis.core.s3 import processed
 
     # Rerun against the current reference record (named references of 2026-11-12).
     new = run_candidate_cds(work)
@@ -601,9 +601,9 @@ def verify_constructs(work: Path) -> str:
     import domesticate_candidates
     from Bio import SeqIO
 
-    from deliverome_analysis import library_design as ld
-    from deliverome_analysis import seqtools
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.cloning import library_design as ld
+    from deliverome_analysis.cloning import seqtools
+    from deliverome_analysis.core.s3 import processed
 
     cds = json.loads(Path(processed.download(ld.CDS_KEY, work / "c.json")).read_text())
     con = json.loads(Path(processed.download(ld.CONSTRUCTS_KEY, work / "k.json")).read_text())
@@ -753,7 +753,7 @@ def verify_giants(work: Path) -> str:
 
     got = stage_inputs(["giant_features.json"], work / "in")
     feats = json.loads(got["giant_features.json"].read_text())
-    from deliverome_analysis.s3 import external
+    from deliverome_analysis.core.s3 import external
 
     table = external.download(
         "uniprot/2026-10-11/uniprot_human_reviewed.tsv.gz", work / "uniprot.tsv.gz"
@@ -792,7 +792,7 @@ def verify_rescue(work: Path) -> str:
         shutil.copy(got[n], repo / n)
     shutil.copy(got[names[2]], work / names[2])
     snap = json.loads((AP / "panel_inputs.json").read_text())
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     processed.download(snap["prefix"] + "reference_selection.tsv", work / "reference_selection.tsv")
     run(
@@ -900,7 +900,7 @@ def verify_ortholog_adoption(work: Path) -> str:
     import review_ortholog_correspondence as review
     import write_panels_of_record as wpr
 
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     rows, _, _ = review.replay_draw(work / "draw")  # asserts the committed panel back
     r = adopt.reproduce(work / "adopt")
@@ -941,8 +941,8 @@ def verify_tranches(work: Path) -> str:
 
 
 def verify_topology(work: Path) -> str:
-    from deliverome_analysis import topology
-    from deliverome_analysis.s3 import external
+    from deliverome_analysis.core.s3 import external
+    from deliverome_analysis.surfaceome import topology
 
     snap = Path(external.download(topology.SNAPSHOT_KEY, work / "topology.parquet"))
     assert sha256(snap) == topology.SNAPSHOT_SHA256, "topology snapshot differs from its pin"

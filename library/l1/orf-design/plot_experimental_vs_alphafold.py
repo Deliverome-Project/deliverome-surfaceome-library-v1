@@ -20,7 +20,7 @@ from pathlib import Path
 
 from matplotlib.patches import Rectangle
 
-from deliverome_analysis.plotting import (
+from deliverome_analysis.core.plotting import (
     COLORS,
     create_figure,
     get_color,

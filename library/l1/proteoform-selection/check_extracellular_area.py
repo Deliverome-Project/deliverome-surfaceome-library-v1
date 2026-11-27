@@ -14,7 +14,7 @@ import csv
 import json
 from pathlib import Path
 
-from deliverome_analysis import surfaceome
+from deliverome_analysis.surfaceome import surfaceome
 
 MIN_LOOP = 8        # the tag-site screen needs a contiguous run of at least this
 MIN_TOTAL = 50      # below this there is no meaningful antigen to display

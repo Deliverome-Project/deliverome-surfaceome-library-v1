@@ -263,7 +263,7 @@ def rekey_to_head(out, designs, orth, unconf):
 
 def v1_c_terminal_side(seq: str) -> str | None:
     """DeepTMHMM v1 label of the last residue of exactly this sequence (None if no v1 row)."""
-    from deliverome_analysis import topology
+    from deliverome_analysis.surfaceome import topology
 
     t = topology.for_sequence(seq)
     if t is None:
@@ -292,7 +292,7 @@ def apply_late_designs(out: pd.DataFrame) -> pd.DataFrame:
     """Members designed after the main run take their v5 rank-1 pick, as every other does."""
     local = HERE / "data" / "tag_sites_v5_start_trims.tsv"
     if not local.is_file():
-        from deliverome_analysis import s3
+        from deliverome_analysis.core import s3
 
         s3.processed.download(START_TRIMS_KEY, str(local))
     late = pd.read_csv(local, sep="\t")
@@ -446,7 +446,7 @@ def full_head_paths() -> pd.DataFrame:
     base = "library/l1/orf-design/"
 
     def show(path):
-        from deliverome_analysis.provenance import read_pinned_text
+        from deliverome_analysis.core.provenance import read_pinned_text
 
         return pd.read_csv(
             io.StringIO(read_pinned_text(MEMBERSHIP_COMMIT, f"{base}{path}", repo=repo)),
@@ -523,7 +523,7 @@ def nterm_fallback(out: pd.DataFrame) -> pd.DataFrame:
     """Snorkel the N-after-SP members that have no signal peptide, if the C-terminus is inside."""
     import re
 
-    from deliverome_analysis import topology
+    from deliverome_analysis.surfaceome import topology
 
     _internal, _ids, prot = head_tables()
     for i in out.index[
@@ -616,7 +616,7 @@ def _cyto_c_terminus(seq: str, gate_ok: bool = False) -> tuple[bool, str]:
     its structure or the positive-inside flank (>= 3 K/R in 15 residues) agrees."""
     import re
 
-    from deliverome_analysis import topology
+    from deliverome_analysis.surfaceome import topology
 
     t = topology.for_sequence(seq)
     if t is None:
@@ -738,7 +738,7 @@ def apply_contact_veto(
 def apply_refold(out: pd.DataFrame, alternatives: pd.DataFrame) -> pd.DataFrame:
     """Fold verdicts in: a failed pick moves to a passing alternative, waits on an unfolded one,
     or, with none left, becomes a snorkel when the C-terminus is cytoplasmic."""
-    from deliverome_analysis import s3
+    from deliverome_analysis.core import s3
 
     local = HERE / "data" / "verdicts_loop.tsv"
     if OFFLINE:
@@ -887,7 +887,7 @@ def apply_snorkel_verdicts(out: pd.DataFrame) -> pd.DataFrame:
 
     local = HERE / "data" / "verdicts_cterm.tsv"
     if not OFFLINE:
-        from deliverome_analysis import s3
+        from deliverome_analysis.core import s3
 
         s3.processed.download(SNORKEL_VERDICTS_KEY, str(local))
         latest = pd.read_csv(local, sep="\t")
@@ -964,7 +964,7 @@ def gate_check(out: pd.DataFrame) -> pd.DataFrame:
     """Hold fallback rows (transferred sites, fallback snorkels) the r5 gate contradicts."""
     local = HERE / "data" / "mask_r8" / "l1_extracellular_mask_residues.tsv"
     if not local.is_file():
-        from deliverome_analysis import s3
+        from deliverome_analysis.core import s3
 
         local.parent.mkdir(parents=True, exist_ok=True)
         s3.processed.download(GATE_R5_KEY, str(local))
@@ -1020,7 +1020,7 @@ ORTHOLOG_COMMIT = "dc0ab0fc"
 
 
 def ortholog_designs() -> pd.DataFrame:
-    from deliverome_analysis.provenance import read_pinned_text
+    from deliverome_analysis.core.provenance import read_pinned_text
 
     repo = HERE.parents[2]
     txt = read_pinned_text(ORTHOLOG_COMMIT, ORTHOLOG_PATH, repo=repo)
@@ -1049,7 +1049,7 @@ def head_tables():
 
     from Bio.Seq import Seq
 
-    from deliverome_analysis.provenance import read_pinned_text
+    from deliverome_analysis.core.provenance import read_pinned_text
 
     repo = HERE.parents[2]
     base = "library/l1/orf-design/"
@@ -1066,7 +1066,7 @@ def head_tables():
     )
     local = HERE / "data" / "candidate_cds_2026-11-12.json"
     if not local.is_file():
-        from deliverome_analysis import s3
+        from deliverome_analysis.core import s3
 
         s3.processed.download(CDS_FINAL_KEY, str(local))
     prot = {}
@@ -1086,7 +1086,7 @@ def head_tables():
     # The CDS record of record (library_design.CDS_KEY): proteins of members whose reference
     # moved since the saved inputs (the 2026-11-22 GTF MANE switches, e.g. P2RX5), so their own
     # 2026-11-07 contacts can still be carried onto the protein now ordered.
-    from deliverome_analysis import library_design as ld
+    from deliverome_analysis.cloning import library_design as ld
 
     for v in ld.load_designed_cds().values():
         if v.get("cds"):
@@ -1162,7 +1162,7 @@ def _sha256(path: Path) -> str:
 
 
 def _topology_snapshot() -> str:
-    from deliverome_analysis import topology
+    from deliverome_analysis.surfaceome import topology
 
     return str(getattr(topology, "SNAPSHOT_KEY", "unknown"))
 
@@ -1189,7 +1189,7 @@ def require_inputs() -> None:
 
 def restore_inputs() -> int:
     """Fetch every data/ input from its saved key and check it against the manifest."""
-    from deliverome_analysis import s3
+    from deliverome_analysis.core import s3
 
     man = pd.read_csv(INPUTS_MANIFEST, sep="\t", dtype=str).fillna("")
     bad = []

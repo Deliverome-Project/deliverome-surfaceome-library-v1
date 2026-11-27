@@ -57,7 +57,9 @@ from Bio.Align import PairwiseAligner, substitution_matrices
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from deliverome_analysis import s3, seqtools, topology  # noqa: E402
+from deliverome_analysis.cloning import seqtools  # noqa: E402
+from deliverome_analysis.core import s3  # noqa: E402
+from deliverome_analysis.surfaceome import topology  # noqa: E402
 
 RULE_VERSION = "ortholog-correspondence-review-v1"
 FINAL = (
@@ -993,7 +995,7 @@ def plot(reviewed: list[dict], out_dir: Path) -> None:
     """One dot per panel member: aligned fraction of the human protein vs length ratio."""
     import matplotlib.pyplot as plt
 
-    from deliverome_analysis.plotting import get_color, save_figure, setup_plotting_style
+    from deliverome_analysis.core.plotting import get_color, save_figure, setup_plotting_style
 
     setup_plotting_style()
     colors = {

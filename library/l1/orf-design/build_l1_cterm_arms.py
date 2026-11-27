@@ -69,9 +69,9 @@ from synthesis_risk_scan import (
     homopolymers,
 )
 
-from deliverome_analysis import library_design as ld
-from deliverome_analysis import plasmid_qc as qc
-from deliverome_analysis import seqtools
+from deliverome_analysis.cloning import library_design as ld
+from deliverome_analysis.cloning import plasmid_qc as qc
+from deliverome_analysis.cloning import seqtools
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[2]
@@ -501,7 +501,7 @@ def load_inputs() -> tuple[list[dict], dict, dict, dict, dict]:
     and is checked against the review's protein hash. The returned dicts are keyed by the
     current member id for the builder below.
     """
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     manifest_rows = [r for r in read_table(MANIFEST) if ld.is_active(r)]
     _index_unique(manifest_rows, "candidate_id", MANIFEST.name)
@@ -990,7 +990,7 @@ def main(argv=None) -> int:
     for h in summary["held"]:
         print(f"HELD {h['candidate_id']} {h['gene_symbol']}: {h['flags']}")
     if args.publish:
-        from deliverome_analysis.s3 import processed
+        from deliverome_analysis.core.s3 import processed
 
         for path in (OUT_TSV, OUT_FASTA, OUT_JSON, REVIEW):
             processed.upload(path, PUBLISH_PREFIX + path.name)

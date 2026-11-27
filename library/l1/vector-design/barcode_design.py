@@ -42,7 +42,7 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 
-from deliverome_analysis.plotting import (
+from deliverome_analysis.core.plotting import (
     CATEGORICAL_PALETTE,
     COLORS,
     save_figure,

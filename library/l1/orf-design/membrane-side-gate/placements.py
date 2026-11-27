@@ -30,7 +30,7 @@ import numpy as np
 import pandas as pd
 from gate_inputs import CACHE, chosen_models, model_path, tmalphafold
 
-from deliverome_analysis import membrane_side as ms
+from deliverome_analysis.surfaceome import membrane_side as ms
 
 PLACEMENT_CACHE = CACHE / "placements_v9.pkl"
 #: Largest C-alpha RMSD (A) at which our AlphaFold DB model and TmAlphaFold's count as

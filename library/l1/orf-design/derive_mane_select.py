@@ -69,7 +69,7 @@ def main(argv=None) -> int:
     out.write_text(text)
     print(f"sha256 {lp.sha256(out)}")
     if a.publish:
-        from deliverome_analysis.s3 import external
+        from deliverome_analysis.core.s3 import external
 
         spec = json.loads(lp.INPUTS.read_text())
         if NAME in spec["files"]:

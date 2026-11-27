@@ -35,11 +35,7 @@ import matplotlib.pyplot as plt
 import RNA
 from Bio import Align, Entrez, SeqIO
 
-from deliverome_analysis.plotting import (
-    COLORS,
-    save_figure,
-    setup_plotting_style,
-)
+from deliverome_analysis.core.plotting import COLORS, save_figure, setup_plotting_style
 
 HERE = Path(__file__).parent
 CACHE = Path.home() / ".cache" / "deliverome" / "emcv_genomes.fa"

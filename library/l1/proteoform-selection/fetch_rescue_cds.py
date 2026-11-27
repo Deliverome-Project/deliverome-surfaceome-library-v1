@@ -16,7 +16,7 @@ import json
 import re
 from pathlib import Path
 
-from deliverome_analysis import seqtools
+from deliverome_analysis.cloning import seqtools
 
 
 def offline_records(symbols: list[str]) -> dict[str, dict]:

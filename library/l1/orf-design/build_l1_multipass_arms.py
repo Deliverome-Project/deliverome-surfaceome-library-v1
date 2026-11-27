@@ -46,9 +46,10 @@ from pathlib import Path
 from build_constructs import CASSETTE_AA
 from diversify_arm_cassettes import arm_cassette
 
-from deliverome_analysis import library_design as ld
-from deliverome_analysis import plasmid_qc as qc
-from deliverome_analysis import seqtools, topology
+from deliverome_analysis.cloning import library_design as ld
+from deliverome_analysis.cloning import plasmid_qc as qc
+from deliverome_analysis.cloning import seqtools
+from deliverome_analysis.surfaceome import topology
 
 LEADER = qc.IGK_LEADER_NT
 LEADER_AA = qc.IGK_LEADER_AA
@@ -255,7 +256,7 @@ def design_for(row: dict, rescue_genes: set[str]) -> tuple[str, str, str, str, s
 
 
 def build() -> list[dict]:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     paths = {r["candidate_id"]: r for r in read_table(TAG_PATHS)}
     plan = read_table(PLAN)

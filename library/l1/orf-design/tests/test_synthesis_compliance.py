@@ -13,7 +13,7 @@ sys.path.insert(0, str(S4E9))
 
 import synthesis_compliance as sc  # noqa: E402
 
-from deliverome_analysis import seqtools  # noqa: E402
+from deliverome_analysis.cloning import seqtools  # noqa: E402
 
 # Twist's own refusals on the draft (issue_regions), quoted from its report.
 TWIST_ME_HITS = [

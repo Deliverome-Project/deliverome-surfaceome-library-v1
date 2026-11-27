@@ -42,7 +42,7 @@ NEEDS_HISTORY = {"isoform_universe": "88786350", "ortholog_repick": "c4dbe752"}
 
 
 def sha256(path: Path) -> str:
-    from deliverome_analysis.provenance import sha256_file
+    from deliverome_analysis.core.provenance import sha256_file
 
     return sha256_file(Path(path))
 

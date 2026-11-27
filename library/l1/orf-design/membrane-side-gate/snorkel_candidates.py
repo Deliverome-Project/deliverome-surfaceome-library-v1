@@ -39,8 +39,8 @@ import gate_inputs as gi  # noqa: E402
 from membrane_side_gate import junction, thresholds  # noqa: E402
 from placements import member_placements, place_protein  # noqa: E402
 
-from deliverome_analysis import membrane_side as ms  # noqa: E402
-from deliverome_analysis import topology  # noqa: E402
+from deliverome_analysis.surfaceome import membrane_side as ms  # noqa: E402
+from deliverome_analysis.surfaceome import topology  # noqa: E402
 
 GOLD = "scratch/becca/tag-site-corpus-audit/gold_standard.tsv"
 #: Residues after the last v1 helix read for the C-terminal side.
@@ -89,7 +89,7 @@ def c_terminal_side(top: str, z: np.ndarray, plddt: np.ndarray) -> float:
 
 
 def published_loop_runs(th) -> pd.DataFrame:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     gold = pd.read_csv(processed.download(GOLD), sep="\t")
     gold = gold[gold["surface_shown"] == "yes"]

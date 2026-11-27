@@ -85,8 +85,8 @@ sys.path.insert(0, str(HERE))
 import admissible_interval as ai  # noqa: E402
 import build_constructs as bc  # noqa: E402
 
-from deliverome_analysis import library_design as ld  # noqa: E402
-from deliverome_analysis import seqtools, tag_placement  # noqa: E402
+from deliverome_analysis.cloning import library_design as ld  # noqa: E402
+from deliverome_analysis.cloning import seqtools, tag_placement  # noqa: E402
 
 PREFIX = "sprint4/s4e9-orf-design-fg-panel/"
 #: 2026-11-21: the 2026-11-12b rows unchanged, plus the D1 rows (same pinned versions) for the 20
@@ -438,7 +438,7 @@ def load_members(processed) -> dict[str, dict]:
 
 
 def run(out_dir: Path) -> dict:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     members, rungs = load_members(processed)
     snap = load_snapshot(processed)

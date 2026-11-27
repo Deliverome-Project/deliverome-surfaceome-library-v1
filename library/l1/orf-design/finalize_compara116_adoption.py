@@ -13,7 +13,7 @@ import hashlib
 import json
 from pathlib import Path
 
-from deliverome_analysis import seqtools
+from deliverome_analysis.cloning import seqtools
 
 
 def read(path):

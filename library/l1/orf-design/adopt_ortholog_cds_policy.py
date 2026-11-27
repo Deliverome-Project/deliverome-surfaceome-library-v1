@@ -61,8 +61,8 @@ sys.path.insert(0, str(AP))
 
 from member_id_allocations import COMPARA116_RESERVATIONS, next_l1_member_number  # noqa: E402
 
-from deliverome_analysis import library_design as ld  # noqa: E402
-from deliverome_analysis import seqtools  # noqa: E402
+from deliverome_analysis.cloning import library_design as ld  # noqa: E402
+from deliverome_analysis.cloning import seqtools  # noqa: E402
 
 PREFIX = "sprint4/s4e9-orf-design-fg-panel/"
 FINAL = PREFIX + "library-design/ortholog-cds-eligibility/2026-11-05/final-v2/"
@@ -197,7 +197,7 @@ def write_tsv(path: Path, rows: list[dict], columns: list[str]) -> None:
 
 def fetch(name: str, cache: Path) -> Path:
     """Download one pinned input to ``cache`` and verify it; gunzip if it is compressed."""
-    from deliverome_analysis import s3
+    from deliverome_analysis.core import s3
 
     bucket, key, stored, decompressed = INPUTS[name]
     cache.mkdir(parents=True, exist_ok=True)
@@ -675,7 +675,7 @@ def unnumbered(text: str) -> str:
     import csv
     import io
 
-    from deliverome_analysis import library_design as ld
+    from deliverome_analysis.cloning import library_design as ld
 
     rows = list(csv.DictReader(io.StringIO(text), delimiter="\t"))
     if not rows or ld.DESIGN_ID_COLUMN not in rows[0]:
@@ -723,7 +723,7 @@ def masked_trims(text: str) -> str:
 
 def verify(work: Path) -> str:
     """Rerun the adoption from pinned inputs; every committed output and record must match."""
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     r = reproduce(work)
     for path, text in outputs(r).items():
@@ -771,7 +771,7 @@ def main(argv=None) -> int:
             path.write_text(text)
             print(f"wrote {path.name}")
     if args.publish:
-        from deliverome_analysis.s3 import processed
+        from deliverome_analysis.core.s3 import processed
 
         for path, text in outputs(r).items():
             if path.read_text() != text:

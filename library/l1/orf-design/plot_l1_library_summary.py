@@ -22,13 +22,9 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 
-from deliverome_analysis import library_design as ld
-from deliverome_analysis.plotting import (
-    COLORS,
-    save_figure,
-    setup_plotting_style,
-)
-from deliverome_analysis.s3 import processed
+from deliverome_analysis.cloning import library_design as ld
+from deliverome_analysis.core.plotting import COLORS, save_figure, setup_plotting_style
+from deliverome_analysis.core.s3 import processed
 
 HERE = Path(__file__).parent
 FIGURES = HERE / "figures"

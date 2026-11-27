@@ -43,7 +43,7 @@ from fetch_uniprot_site_features import ACCESSION, fetch  # noqa: E402
 from ranker_pu_segment import load_screens  # noqa: E402
 from rescue_round import position_map  # noqa: E402
 
-from deliverome_analysis import topology  # noqa: E402
+from deliverome_analysis.surfaceome import topology  # noqa: E402
 
 ARMS = HERE / "l1_internal_arm_decisions.tsv"
 OUT = HERE / "annotation_adjacency.tsv"

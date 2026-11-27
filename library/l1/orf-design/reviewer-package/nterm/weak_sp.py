@@ -57,7 +57,7 @@ def sha(s: str) -> str:
 
 
 def rows() -> list[dict]:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     snap = npl.load_snapshot(processed)
     calls = no.prior_calls(processed)
@@ -137,7 +137,7 @@ def rows() -> list[dict]:
 def main() -> int:
     rs = rows()
     if sys.argv[1:2] == ["fasta"]:
-        from deliverome_analysis.s3 import processed
+        from deliverome_analysis.core.s3 import processed
 
         calls = no.prior_calls(processed)
         seqs = {}

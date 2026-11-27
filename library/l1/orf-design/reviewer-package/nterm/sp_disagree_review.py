@@ -73,7 +73,7 @@ def _native_not_sp() -> set[str]:
 
     import nterm_overnight as no
 
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     calls = no.prior_calls(processed)
     seqs, _ = npl.load_members(processed)
@@ -98,7 +98,7 @@ def members() -> list[dict]:
 
 
 def snapshot() -> int:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     genes = sorted({r["gene_symbol"] for r in members()})
     q = " OR ".join(f"gene_exact:{g}" for g in genes)
@@ -165,7 +165,7 @@ def _spans(text: str, kind: str) -> list[tuple[int, int, str]]:
 
 
 def _load_uniprot() -> dict[str, list[dict]]:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     meta = json.loads(SNAP_META.read_text())
     if not SNAP_LOCAL.exists():
@@ -181,7 +181,7 @@ def _load_uniprot() -> dict[str, list[dict]]:
 
 def dtm2(seq: str) -> dict | None:
     """DeepTMHMM v2 on exactly this sequence: SP end, TM helices, N- and C-terminus side."""
-    from deliverome_analysis import topology as topo
+    from deliverome_analysis.surfaceome import topology as topo
 
     row = topo.for_sequence(seq, tool=topo.TOOL_V2)
     if not row:
@@ -272,7 +272,7 @@ def route(n_side: str, c_side: str, n_tm: int) -> str:
 
 
 def review() -> int:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     seqs, _ = npl.load_members(processed)
     uni = _load_uniprot()

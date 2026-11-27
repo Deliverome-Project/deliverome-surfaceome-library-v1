@@ -16,8 +16,8 @@ import csv
 import json
 from pathlib import Path
 
-from deliverome_analysis import library_design as ld
-from deliverome_analysis.s3 import processed
+from deliverome_analysis.cloning import library_design as ld
+from deliverome_analysis.core.s3 import processed
 
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "stop_codon_fix.tsv"

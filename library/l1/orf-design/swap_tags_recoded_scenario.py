@@ -45,7 +45,7 @@ import l1_swap_pool_model as model
 from build_constructs import CASSETTE_AA, ENZYMES
 from diversify_cassettes import LINKER_ONLY_JUNCTION_IDENTITY
 
-from deliverome_analysis import seqtools
+from deliverome_analysis.cloning import seqtools
 
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "swap_tags_recoded_scenario.json"

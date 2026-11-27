@@ -54,7 +54,7 @@ def _sibling(name: str):
 
 read_queue = _sibling("refold_queue").read_queue
 
-from deliverome_analysis import seqtools  # noqa: E402
+from deliverome_analysis.cloning import seqtools  # noqa: E402
 
 #: Draft-L1 integration branch (PR #299) at the commit verified, and l1-reviewer-package's
 #: encodings table (PR #283) with the member-specific diversified cassettes.
@@ -79,7 +79,7 @@ def sha(s: str) -> str:
 
 
 def show(commit: str, rel: str) -> str:
-    from deliverome_analysis.provenance import read_pinned_text
+    from deliverome_analysis.core.provenance import read_pinned_text
 
     return read_pinned_text(commit, f"{EXP_REL}/{rel}", repo=REPO)
 
@@ -184,7 +184,7 @@ def check_order_of_record(folds: Path) -> None:
     """Every insert in the order of record: protein translated, cassette amino acids exactly
     once, and a LIVE (non-superseded) fold of that protein -- the precursor, or the mature
     chain of an Igk design -- with a verdict."""
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     path = Path(processed.download(ORDER_KEY))
     digest = hashlib.sha256(path.read_bytes()).hexdigest()

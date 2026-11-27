@@ -74,7 +74,7 @@ import nterm_placement as npl  # noqa: E402
 import propeptide_check as ppc  # noqa: E402
 from build_gpcr_rescue_arms import LEADER_AA, PLUS1_AA  # noqa: E402
 
-from deliverome_analysis import tag_placement  # noqa: E402
+from deliverome_analysis.cloning import tag_placement  # noqa: E402
 
 INPUTS_TSV = HERE / "round2_inputs.tsv"
 NEW_FASTA = HERE / "round2_inputs_new.fasta"
@@ -111,7 +111,7 @@ def all_members(processed) -> dict[str, dict]:
     members, _ = npl.load_members(processed)
     import nterm_placement as _np  # noqa: F401  (already imported; keeps load_members cached)
 
-    from deliverome_analysis import library_design as ld
+    from deliverome_analysis.cloning import library_design as ld
 
     proteins = ld.designed_proteins(S4E9 / "candidate_manifest_tranches.tsv", library=ld.LIBRARY_L1)
     cds = ld.designed_cds(S4E9 / "candidate_manifest_tranches.tsv", library=ld.LIBRARY_L1)
@@ -138,7 +138,7 @@ def all_members(processed) -> dict[str, dict]:
 
 
 def inputs() -> int:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     members = all_members(processed)
     opts = {r["candidate_id"]: r for r in _tsv(HERE / "nterm_build_options.tsv")}
@@ -245,7 +245,7 @@ def junction_disorder(m: dict, base: dict, n: int) -> float | None:
 
 
 def decide() -> int:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     members = all_members(processed)
     base = npl.load_snapshot(processed)
@@ -742,7 +742,7 @@ def apply_refold(out, members, base, calls, positions, r2, replaced, row):
     SignalP-passing alternative not already failed takes its place, pending its own refold
     (``refold_requests.tsv``). A member with nothing left gets ``no_nterm_arm``.
     """
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     verdicts = load_verdicts(processed)
     requests, result = [], []
@@ -1089,7 +1089,7 @@ _VERDICTS_CACHE: dict = {}
 
 def load_verdicts_cached() -> dict:
     if "v" not in _VERDICTS_CACHE:
-        from deliverome_analysis.s3 import processed
+        from deliverome_analysis.core.s3 import processed
 
         _VERDICTS_CACHE["v"] = load_verdicts(processed)
     return _VERDICTS_CACHE["v"]
@@ -1516,7 +1516,7 @@ def apply_propeptides(out, members, calls, row):
     """
     import build_constructs as bc
 
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     entries = ppc.entries_by_gene()
     verdicts = load_verdicts(processed)

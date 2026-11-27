@@ -27,7 +27,7 @@ import csv
 import tempfile
 from pathlib import Path
 
-from deliverome_analysis.s3 import processed
+from deliverome_analysis.core.s3 import processed
 
 POOL_KEY = "sprint1/s1e2-fragmid-vector-design/barcodes_20nt_30k.tsv"
 REGISTRY_KEY = "sprint1/s1e2-fragmid-vector-design/barcode_assignments.tsv"

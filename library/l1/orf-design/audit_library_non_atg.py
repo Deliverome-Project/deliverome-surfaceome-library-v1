@@ -102,7 +102,7 @@ def load_paths(manifest, folder, download):
     for name, item in manifest["files"].items():
         path = folder / name
         if not path.exists() and download:
-            from deliverome_analysis import s3
+            from deliverome_analysis.core import s3
 
             bucket, key = item["source"].split(":", 1)
             path.parent.mkdir(parents=True, exist_ok=True)

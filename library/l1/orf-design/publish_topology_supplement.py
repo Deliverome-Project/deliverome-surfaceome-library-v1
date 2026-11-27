@@ -1,7 +1,7 @@
 """Give every active library member a DeepTMHMM v1 topology, reproducibly.
 
 A member whose exact designed protein has no v1 row in the pinned topology snapshot
-(``deliverome_analysis.topology.SNAPSHOT_KEY``) cannot be placed: ``l1_tag_paths.py`` skips
+(``deliverome_analysis.surfaceome.topology.SNAPSHOT_KEY``) cannot be placed: ``l1_tag_paths.py`` skips
 it, and nothing may substitute the canonical's topology. This closes that gap in three
 committed, rerunnable steps:
 
@@ -41,8 +41,8 @@ from pathlib import Path
 
 import pandas as pd
 
-from deliverome_analysis import library_design as ld
-from deliverome_analysis import topology
+from deliverome_analysis.cloning import library_design as ld
+from deliverome_analysis.surfaceome import topology
 
 HERE = Path(__file__).parent
 MANIFEST = HERE / "candidate_manifest_tranches.tsv"
@@ -128,7 +128,7 @@ def held_restarts() -> dict[str, str]:
 
 
 def publish(run: str, write: bool) -> int:
-    from deliverome_analysis.s3 import external, processed
+    from deliverome_analysis.core.s3 import external, processed
 
     meta = json.loads((RUNS / f"{run}.json").read_text())
     fasta, three = RUNS / f"{run}.fasta", RUNS / f"{run}.3line"

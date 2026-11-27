@@ -61,9 +61,9 @@ import build_l1_nterm_arms as nterm
 from build_constructs import CASSETTE, CASSETTE_AA
 from diversify_arm_cassettes import PROVISIONAL_ENV, arm_cassette
 
-from deliverome_analysis import library_design as ld
-from deliverome_analysis import plasmid_qc as qc
-from deliverome_analysis import seqtools
+from deliverome_analysis.cloning import library_design as ld
+from deliverome_analysis.cloning import plasmid_qc as qc
+from deliverome_analysis.cloning import seqtools
 
 HERE = Path(__file__).resolve().parent
 S5E13 = HERE.parents[1] / "l1" / "tag-site-benchmarking"
@@ -317,7 +317,7 @@ def _load_internal_members() -> tuple[list[dict], dict[str, dict]]:
 
 
 def build() -> tuple[list[dict], dict]:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     members, manifest = _load_internal_members()
     proteins = ld.designed_proteins(MANIFEST, library=ld.LIBRARY_L1)

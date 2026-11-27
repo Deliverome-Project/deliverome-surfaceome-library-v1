@@ -30,7 +30,7 @@ sys.path.insert(0, str(HERE / "tag_refold"))
 import refold_check_validation as rcv  # noqa: E402
 import structure_metrics as sm  # noqa: E402
 
-from deliverome_analysis import membrane_side as ms  # noqa: E402
+from deliverome_analysis.surfaceome import membrane_side as ms  # noqa: E402
 
 CLASH_CUTOFF_A = 2.5
 SITE_WINDOW_SHORT = 8

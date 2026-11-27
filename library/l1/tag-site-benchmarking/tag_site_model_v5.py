@@ -186,7 +186,7 @@ def fit():
 
 
 def adopted_tag_paths() -> pd.DataFrame:
-    from deliverome_analysis.provenance import read_pinned_text
+    from deliverome_analysis.core.provenance import read_pinned_text
 
     local = HERE / "data" / f"l1_tag_paths_adopted_{ADOPTED_COMMIT}.tsv"
     if not local.is_file():

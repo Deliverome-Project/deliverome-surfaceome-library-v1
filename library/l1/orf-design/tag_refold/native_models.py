@@ -55,7 +55,7 @@ MAIN_COMMIT = "5b133d0b"
 def _at_main(rel: str) -> Path:
     import tempfile
 
-    from deliverome_analysis.provenance import read_pinned_text
+    from deliverome_analysis.core.provenance import read_pinned_text
 
     out = Path(tempfile.mkdtemp()) / Path(rel).name
     out.write_text(
@@ -65,8 +65,8 @@ def _at_main(rel: str) -> Path:
 
 
 def build() -> list[dict[str, str]]:
-    from deliverome_analysis import library_design as ld
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.cloning import library_design as ld
+    from deliverome_analysis.core.s3 import processed
 
     rows: dict[str, dict[str, str]] = {}
     designed = ld.designed_proteins(

@@ -295,33 +295,66 @@ def archive(ref: str, paths: list[str]) -> dict[str, bytes]:
     return out
 
 
-def _imported_modules(source: bytes, in_package: bool) -> set[str]:
-    """Top-level ``deliverome_analysis`` modules a Python file imports, at any depth."""
+def _pkg_module_name(path: str) -> str:
+    """``src/deliverome_analysis/core/s3.py`` -> ``core.s3``; ``__init__.py`` -> package name."""
+    rel = path[len(PKG) + 1 :]
+    parts = rel.removesuffix(".py").split("/")
+    if parts[-1] == "__init__":
+        parts = parts[:-1]
+    return ".".join(parts)
+
+
+def _imported_modules(source: bytes, in_package: bool, *, pkg_rel_path: str = "") -> set[str]:
+    """``deliverome_analysis`` module names (e.g. ``core.s3``) a Python file imports."""
     try:
         tree = ast.parse(source)
     except SyntaxError:
         return set()
+    cur_parts: list[str] = []
+    if in_package and pkg_rel_path:
+        rel = pkg_rel_path[len(PKG) + 1 :] if pkg_rel_path.startswith(PKG + "/") else pkg_rel_path
+        parts = rel.removesuffix(".py").split("/")
+        cur_parts = parts[:-1]  # containing package inside deliverome_analysis
     found: set[str] = set()
     for node in ast.walk(tree):
         if isinstance(node, ast.Import):
             for a in node.names:
                 if a.name.startswith("deliverome_analysis."):
-                    found.add(a.name.split(".")[1])
+                    sub = a.name.removeprefix("deliverome_analysis.").split(".")
+                    found.add(".".join(sub[:2]))
         elif isinstance(node, ast.ImportFrom):
             if node.level == 0 and node.module == "deliverome_analysis":
-                found |= {a.name for a in node.names}
+                found |= {a.name for a in node.names if a.name != "*"}
             elif node.level == 0 and (node.module or "").startswith("deliverome_analysis."):
-                found.add(node.module.split(".")[1])
-            elif node.level == 1 and in_package:
-                found |= (
-                    {node.module.split(".")[0]} if node.module else {a.name for a in node.names}
-                )
+                sub = (node.module or "").removeprefix("deliverome_analysis.").split(".")
+                if len(sub) == 1:
+                    found.add(sub[0])
+                    found |= {f"{sub[0]}.{a.name}" for a in node.names if a.name != "*"}
+                else:
+                    found.add(".".join(sub[:2]))
+            elif node.level >= 1 and in_package:
+                up = node.level - 1
+                base = cur_parts[: len(cur_parts) - up] if up <= len(cur_parts) else []
+                if node.module:
+                    mod_parts = base + node.module.split(".")
+                    if len(mod_parts) == 1:
+                        found.add(mod_parts[0])
+                        found |= {f"{mod_parts[0]}.{a.name}" for a in node.names if a.name != "*"}
+                    elif mod_parts:
+                        found.add(".".join(mod_parts[:2]))
+                else:
+                    for a in node.names:
+                        if a.name == "*":
+                            continue
+                        mod_parts = [*base, a.name]
+                        found.add(".".join(mod_parts[:2]))
     return found
 
 
 def package_modules(ref: str, files: dict[str, bytes]) -> dict[str, bytes]:
-    """The package files the exported code needs: ``__init__.py`` and every module reachable
-    by import from ``files`` (the non-package exports), followed through the package itself.
+    """The package files the exported code needs: ``__init__.py`` (root and needed domain
+    subpackages) and every module reachable by import from ``files`` (the non-package exports),
+    followed through the package itself.
 
     Found by parsing imports rather than listed by hand, so a new import in an L1 script
     brings its module along and a module L1 stops using drops out. A module named by a
@@ -330,9 +363,9 @@ def package_modules(ref: str, files: dict[str, bytes]) -> dict[str, bytes]:
     pkg = archive(ref, [PKG])
     by_name: dict[str, list[str]] = {}
     for path in pkg:
-        name = path[len(PKG) + 1 :].split("/")[0].removesuffix(".py")
+        name = _pkg_module_name(path)
         by_name.setdefault(name, []).append(path)
-    todo = set()
+    todo: set[str] = set()
     for path, data in files.items():
         if path.endswith(".py") and b"deliverome_analysis" in data:
             todo |= _imported_modules(data, in_package=False)
@@ -342,10 +375,15 @@ def package_modules(ref: str, files: dict[str, bytes]) -> dict[str, bytes]:
         if name in needed or name not in by_name:
             continue
         needed.add(name)
+        if "." in name:
+            # Ensure the containing domain subpackage's __init__.py is also exported.
+            parent_pkg = name.split(".", 1)[0]
+            if parent_pkg in by_name and parent_pkg not in needed:
+                todo.add(parent_pkg)
         for path in by_name[name]:
             if path.endswith(".py"):
-                todo |= _imported_modules(pkg[path], in_package=True)
-    keep = {"__init__"} | needed
+                todo |= _imported_modules(pkg[path], in_package=True, pkg_rel_path=path)
+    keep = {""} | needed
     return {p: d for name in sorted(keep) for p, d in ((p, pkg[p]) for p in by_name.get(name, []))}
 
 
@@ -439,15 +477,18 @@ _CLEAN_SCRATCH_EXCLUDES: tuple[str, ...] = tuple(
 
 _DEAD_MYPY_OVERRIDES: tuple[str, ...] = (
     "[[tool.mypy.overrides]]\n"
-    'module = ["deliverome_analysis.peptide_metrics", "deliverome_analysis.alphadia_trim"]\n'
+    "module = [\n"
+    '    "deliverome_analysis.proteomics.peptide_metrics",\n'
+    '    "deliverome_analysis.proteomics.alphadia_trim",\n'
+    "]\n"
     "strict = true\n\n",
-    '[[tool.mypy.overrides]]\nmodule = "deliverome_analysis.raw_provenance"\nstrict = true\n\n',
+    '[[tool.mypy.overrides]]\nmodule = "deliverome_analysis.proteomics.raw_provenance"\nstrict = true\n\n',
     "[[tool.mypy.overrides]]\n"
     "# QC metric modules: chromatography (TIC, spray, LC), surface topology, and the pipeline\n"
     "module = [\n"
-    '    "deliverome_analysis.raw_chromatography",\n'
-    '    "deliverome_analysis.surface_topology",\n'
-    '    "deliverome_analysis.dia_qc_pipeline",\n'
+    '    "deliverome_analysis.proteomics.raw_chromatography",\n'
+    '    "deliverome_analysis.surfaceome.surface_topology",\n'
+    '    "deliverome_analysis.proteomics.dia_qc_pipeline",\n'
     "]\n"
     "strict = true\n\n",
 )
@@ -666,7 +707,11 @@ def export(
         },
     }
     (dest / MANIFEST).write_text(json.dumps(manifest, indent=1) + "\n")
-    mods = sorted(Path(r).stem for r in files if r.startswith(PKG + "/") and r.endswith(".py"))
+    mods = sorted(
+        _pkg_module_name(r)
+        for r in files
+        if r.startswith(PKG + "/") and r.endswith(".py") and Path(r).name != "__init__.py"
+    )
     print(f"package modules exported ({len(mods)}): {', '.join(mods)}")
     print(
         f"exported {len(files)} managed files from {commit[:10]} to {dest}: "

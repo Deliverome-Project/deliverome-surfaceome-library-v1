@@ -5,7 +5,7 @@ places AXL's cassette inside AXL's own signal peptide, and seven of the eight N-
 junctions have since moved. ``annotate_insert.SOURCES`` now points at the disorder-anchored
 rebuild, so re-running the assembler produces the corrected maps.
 
-Every map is checked with ``deliverome_analysis.plasmid_qc`` against a spec built from the
+Every map is checked with ``deliverome_analysis.cloning.plasmid_qc`` against a spec built from the
 current design files **before** it is uploaded. A map that fails is written locally and
 reported, never published: publishing an unchecked map is how the stale ones got there.
 
@@ -21,9 +21,9 @@ import subprocess
 import sys
 from pathlib import Path
 
-from deliverome_analysis import constructs, seqtools
-from deliverome_analysis import plasmid_qc as qc
-from deliverome_analysis.s3 import processed
+from deliverome_analysis.cloning import constructs, seqtools
+from deliverome_analysis.cloning import plasmid_qc as qc
+from deliverome_analysis.core.s3 import processed
 
 HERE = Path(__file__).parent
 #: Outside the experiment folder: upload-experiment-outputs.sh walks every file under

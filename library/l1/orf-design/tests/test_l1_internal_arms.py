@@ -15,7 +15,7 @@ import pytest
 HERE = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(HERE))
 
-from deliverome_analysis import s3  # noqa: E402
+from deliverome_analysis.core import s3  # noqa: E402
 
 pytestmark = pytest.mark.skipif(
     not s3.credentials_available(), reason="rebuild reads the domesticated ORFs from S3"

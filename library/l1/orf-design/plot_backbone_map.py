@@ -15,8 +15,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 from Bio import SeqIO
 
-from deliverome_analysis import seqtools
-from deliverome_analysis.plotting import (
+from deliverome_analysis.cloning import seqtools
+from deliverome_analysis.core.plotting import (
     get_categorical_colors,
     save_figure,
     setup_plotting_style,

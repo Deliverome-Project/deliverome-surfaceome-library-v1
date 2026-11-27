@@ -9,7 +9,7 @@ canonical has 13; TRPV1's has 3 against 6; KCNN2's has 1 against 6. A rung assig
 the canonical is therefore the wrong rung for a substantial number of the things we build.
 
 Every member is classified from the v1 topology of its **own ordered sequence**, matched by
-sequence hash through `deliverome_analysis.topology`, so the rung describes the protein the
+sequence hash through `deliverome_analysis.surfaceome.topology`, so the rung describes the protein the
 construct encodes. Accession-keyed lookups cannot do this: an Ensembl-transcript ORF often
 corresponds to a UniProt isoform record, so the canonical accession returns a different
 protein's topology.
@@ -48,8 +48,8 @@ import collections
 import csv
 from pathlib import Path
 
-from deliverome_analysis import library_design as ld
-from deliverome_analysis import topology
+from deliverome_analysis.cloning import library_design as ld
+from deliverome_analysis.surfaceome import topology
 
 HERE = Path(__file__).parent
 MANIFEST = HERE / "candidate_manifest_tranches.tsv"

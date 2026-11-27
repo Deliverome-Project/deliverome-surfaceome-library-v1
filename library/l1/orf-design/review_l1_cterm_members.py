@@ -61,7 +61,7 @@ structured-terminus calls (``l1_cterm_decisions.py``):
     of 10 residues at pLDDT >= 70, and its midpoint when it is at least 8 residues long. That
     midpoint is the internal site a member would move to if its C-terminal refold fails.
 
-Sources: the pinned v1/v2 topology snapshot (``deliverome_analysis.topology``), UniProt
+Sources: the pinned v1/v2 topology snapshot (``deliverome_analysis.surfaceome.topology``), UniProt
 entries (REST, saved once to S3 and read back with ``--offline``), the member's structure
 model from ``library_structure_payload.tsv`` (the archived AlphaFold DB v6 copy at
 ``external://alphafold-db/v6/`` or our ColabFold run on S3; never a live download),
@@ -93,8 +93,8 @@ import urllib.request
 from collections import Counter
 from pathlib import Path
 
-from deliverome_analysis import library_design as ld
-from deliverome_analysis import topology
+from deliverome_analysis.cloning import library_design as ld
+from deliverome_analysis.surfaceome import topology
 
 HERE = Path(__file__).parent
 MANIFEST = HERE / "candidate_manifest_tranches.tsv"
@@ -228,7 +228,7 @@ def load_uniprot(
     change adds entries without refreshing everyone else's. ``refetch`` (candidate ids) are
     fetched again even when the previous snapshot has them: members whose protein changed.
     """
-    from deliverome_analysis.s3 import external, processed
+    from deliverome_analysis.core.s3 import external, processed
 
     design = design_ids()
     if fetch_new:
@@ -300,7 +300,7 @@ def member_model(
     cid: str, payload: dict[str, dict], cache: Path
 ) -> tuple[list[float | None], list[tuple | None], str] | None:
     """Per-residue pLDDT and CA coordinates in the member's own numbering, and the source."""
-    from deliverome_analysis.s3 import external, processed
+    from deliverome_analysis.core.s3 import external, processed
 
     row = payload.get(cid)
     if row is None:

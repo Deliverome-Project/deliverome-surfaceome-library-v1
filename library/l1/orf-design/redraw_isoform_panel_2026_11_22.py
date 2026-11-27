@@ -181,9 +181,9 @@ def draw_buildable(
 
     from redraw_panels import iso_keys
 
-    from deliverome_analysis import library_design as ld
-    from deliverome_analysis import seqtools
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.cloning import library_design as ld
+    from deliverome_analysis.cloning import seqtools
+    from deliverome_analysis.core.s3 import processed
 
     with open(processed.download(ld.CDS_KEY)) as fh:
         cds = _json.load(fh)
@@ -247,7 +247,7 @@ def rebuild_snapshot(work: Path, key: str, sha: str):
 
     import pandas as pd
 
-    from deliverome_analysis.s3 import external
+    from deliverome_analysis.core.s3 import external
 
     path = Path(external.download(key, work / "gate-topology.parquet"))
     if hashlib.sha256(path.read_bytes()).hexdigest() != sha:
@@ -348,7 +348,7 @@ def build(work: Path, per_stratum: bool = False) -> tuple[list[dict], dict]:
     from member_id_allocations import next_l1_member_number
     from redraw_panels import iso_keys
 
-    from deliverome_analysis import topology
+    from deliverome_analysis.surfaceome import topology
 
     fid = gate_mod.form_id
     unsplit, _, _ = draw(work, split=False)

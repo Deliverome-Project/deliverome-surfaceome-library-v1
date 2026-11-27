@@ -40,7 +40,7 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
-from deliverome_analysis.s3 import external
+from deliverome_analysis.core.s3 import external
 
 CATALOG = "accessible-surfaceome/api-catalog/2026-08-26/catalog.json"
 UNIPROT = "https://rest.uniprot.org/uniprotkb/search"

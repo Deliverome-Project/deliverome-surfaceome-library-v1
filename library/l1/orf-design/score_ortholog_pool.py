@@ -37,7 +37,8 @@ sys.path.insert(0, str(AP))
 from repick_orthologs import score  # noqa: E402
 from select_principal import parse_appris, parse_uniprot_fasta, select_principal  # noqa: E402
 
-from deliverome_analysis import seqtools, topology  # noqa: E402
+from deliverome_analysis.cloning import seqtools  # noqa: E402
+from deliverome_analysis.surfaceome import topology  # noqa: E402
 
 
 def read_tsv(path):

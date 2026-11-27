@@ -43,7 +43,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parents[3] / "src"))
 
-from deliverome_analysis.env import load_env  # noqa: E402
+from deliverome_analysis.core.env import load_env  # noqa: E402
 
 load_env()
 

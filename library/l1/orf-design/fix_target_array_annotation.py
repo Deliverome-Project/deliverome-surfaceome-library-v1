@@ -28,8 +28,8 @@ from typing import NamedTuple
 from Bio import SeqIO
 from Bio.SeqFeature import FeatureLocation, SeqFeature
 
-from deliverome_analysis import constructs, seqtools
-from deliverome_analysis.s3 import processed
+from deliverome_analysis.cloning import constructs, seqtools
+from deliverome_analysis.core.s3 import processed
 
 DESIGNS = ("p0016", "p0017", "p0018", "p0019", "p0020", "p0021")
 FLANK5, FLANK3 = ("GCGATCGC", "AsiSI"), ("GTTTAAAC", "PmeI")

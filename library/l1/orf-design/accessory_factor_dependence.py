@@ -41,8 +41,8 @@ from pathlib import Path
 
 import pandas as pd
 
-from deliverome_analysis import gene_resolver
-from deliverome_analysis.s3 import external, processed
+from deliverome_analysis.core.s3 import external, processed
+from deliverome_analysis.surfaceome import gene_resolver
 
 HERE = Path(__file__).parent
 CACHE = HERE / "data"  # gitignored

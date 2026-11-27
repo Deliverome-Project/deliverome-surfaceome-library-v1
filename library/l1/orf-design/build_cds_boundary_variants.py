@@ -17,7 +17,8 @@ from pathlib import Path
 import pandas as pd
 from Bio import SeqIO
 
-from deliverome_analysis import seqtools, topology
+from deliverome_analysis.cloning import seqtools
+from deliverome_analysis.surfaceome import topology
 
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE.parents[2] / "library/l1/proteoform-selection"))

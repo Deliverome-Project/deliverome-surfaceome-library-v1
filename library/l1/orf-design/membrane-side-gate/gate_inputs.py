@@ -36,7 +36,8 @@ from pathlib import Path
 
 import pandas as pd
 
-from deliverome_analysis import seqtools, topology
+from deliverome_analysis.cloning import seqtools
+from deliverome_analysis.surfaceome import topology
 
 HERE = Path(__file__).resolve().parent
 EXPERIMENT = HERE.parent
@@ -120,7 +121,7 @@ UNIPROT_FASTA = "https://rest.uniprot.org/uniprotkb/{}.fasta"
 
 
 def git_show(commit: str, path: str) -> str:
-    from deliverome_analysis.provenance import read_pinned_text
+    from deliverome_analysis.core.provenance import read_pinned_text
 
     return read_pinned_text(commit, path, repo=REPO)
 
@@ -168,8 +169,8 @@ def fetch(
 
 
 def use_panel_topology() -> None:
-    """Point :mod:`deliverome_analysis.topology` at the panel's snapshot, checking its hash."""
-    from deliverome_analysis.s3 import external
+    """Point :mod:`deliverome_analysis.surfaceome.topology` at the panel's snapshot, checking its hash."""
+    from deliverome_analysis.core.s3 import external
 
     path = external.download(TOPOLOGY_SNAPSHOT_KEY)
     digest = hashlib.sha256(Path(path).read_bytes()).hexdigest()
@@ -191,7 +192,7 @@ def internal_members(extra: set[str] | frozenset[str] = frozenset()) -> pd.DataF
     The protein's hash must equal the tag-path table's, and the v1 row must be the one
     :func:`topology.for_sequence` returns for it.
     """
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     use_panel_topology()
     tp = git_tsv(PANEL_COMMIT, f"{PANEL_DIR}/l1_tag_paths.tsv")
@@ -281,7 +282,7 @@ def chosen_models() -> pd.DataFrame:
 
 def model_path(row: pd.Series) -> Path | None:
     """Local copy of a member's chosen model (AlphaFold DB file, or our ColabFold fold)."""
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     d = CACHE / "models"
     if row["source"] == "colabfold":
@@ -336,7 +337,7 @@ EXTRA_FOLDS_PREFIXES = (
 
 def extra_folds() -> dict[str, Path]:
     """Local copies of the 2026-11-10 ortholog folds (both folders), keyed by the S3 key."""
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     out = {}
     keys = [k for pre in EXTRA_FOLDS_PREFIXES for k in processed.list_keys(prefix=pre)]

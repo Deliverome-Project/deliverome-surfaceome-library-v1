@@ -31,7 +31,7 @@ from pathlib import Path
 import audit_domestication_barcodes as audit
 import numpy as np
 
-from deliverome_analysis import library_design as ld
+from deliverome_analysis.cloning import library_design as ld
 
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "l1_insert_lengths_summary.json"

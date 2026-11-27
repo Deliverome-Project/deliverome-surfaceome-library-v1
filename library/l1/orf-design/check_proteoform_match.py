@@ -35,9 +35,9 @@ import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
-from deliverome_analysis import library_design as ld
-from deliverome_analysis import seqtools
-from deliverome_analysis.s3 import external, processed
+from deliverome_analysis.cloning import library_design as ld
+from deliverome_analysis.cloning import seqtools
+from deliverome_analysis.core.s3 import external, processed
 
 HERE = Path(__file__).parent
 GAP = HERE / "l1_structure_gap.tsv"

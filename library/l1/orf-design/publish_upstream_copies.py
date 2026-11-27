@@ -101,7 +101,7 @@ def sha256(path: Path) -> str:
 
 
 def publish() -> int:
-    from deliverome_analysis.s3 import external, processed
+    from deliverome_analysis.core.s3 import external, processed
 
     rows = []
     for src, (dst, what) in COPIES.items():
@@ -125,7 +125,7 @@ def publish() -> int:
 
 
 def check() -> str:
-    from deliverome_analysis.s3 import external
+    from deliverome_analysis.core.s3 import external
 
     with OUT.open() as fh:
         rows = list(csv.DictReader(fh, delimiter="\t"))

@@ -165,7 +165,7 @@ def audit(replay: Path, out: Path) -> dict:
 
 def publish(out: Path, prefix: str) -> None:
     """Create an immutable task-scoped review bundle; never update shared records."""
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     root = "sprint4/s4e9-orf-design-fg-panel/library-design/isoform-coverage-audit/"
     if not prefix.startswith(root) or not prefix.endswith("/") or prefix == root:

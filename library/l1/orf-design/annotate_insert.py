@@ -34,8 +34,8 @@ from build_constructs import (
     read_fasta,
 )
 
-from deliverome_analysis import plasmid_qc as qc
-from deliverome_analysis import seqtools
+from deliverome_analysis.cloning import plasmid_qc as qc
+from deliverome_analysis.cloning import seqtools
 
 HERE = Path(__file__).parent
 #: The N-terminal entry is the disorder-anchored rebuild, NOT constructs_nterm.fasta.

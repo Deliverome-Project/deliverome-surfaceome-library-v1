@@ -18,7 +18,7 @@ from pathlib import Path
 
 from Bio import SeqIO
 
-from deliverome_analysis import seqtools
+from deliverome_analysis.cloning import seqtools
 
 HERE = Path(__file__).resolve().parent
 AP = HERE.parents[2] / "library/l1/proteoform-selection"

@@ -20,8 +20,8 @@ from pathlib import Path
 
 from Bio import SeqIO
 
-from deliverome_analysis import plasmid_qc as qc
-from deliverome_analysis import seqtools
+from deliverome_analysis.cloning import plasmid_qc as qc
+from deliverome_analysis.cloning import seqtools
 
 KOZAK = qc.KOZAK
 ESP3I_5 = qc.ESP3I_5

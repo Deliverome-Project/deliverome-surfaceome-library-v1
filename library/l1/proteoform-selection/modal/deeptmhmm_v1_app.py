@@ -57,7 +57,7 @@ image = (
     )
 )
 if modal.is_local():  # the image is built from the laptop; containers only re-import this file
-    from deliverome_analysis.trust_store import harden
+    from deliverome_analysis.core.trust_store import harden
 
     image = harden(image)  # no compromised eMudhra roots: docs/security/emudhra-trust-store-audit.md
 

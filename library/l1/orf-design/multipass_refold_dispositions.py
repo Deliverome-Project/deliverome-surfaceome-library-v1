@@ -59,7 +59,7 @@ from pathlib import Path
 import pandas as pd
 from scipy.stats import fisher_exact
 
-from deliverome_analysis.s3 import processed
+from deliverome_analysis.core.s3 import processed
 
 HERE = Path(__file__).parent
 TAGGED = "sprint4/s4e9-orf-design-fg-panel/predicted-structures/tagged/2026-11-12/"

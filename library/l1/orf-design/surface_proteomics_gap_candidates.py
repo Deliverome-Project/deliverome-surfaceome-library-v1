@@ -61,7 +61,7 @@ OUT = HERE / "surface_proteomics_gap_candidates.tsv"
 sys.path.insert(0, str(HERE))
 import library_pipeline as L  # noqa: E402
 
-from deliverome_analysis import topology  # noqa: E402
+from deliverome_analysis.surfaceome import topology  # noqa: E402
 
 
 def gap_accessions() -> dict[str, dict]:
@@ -90,7 +90,7 @@ def canonical_sequences(dest: Path) -> dict[str, str]:
     import hashlib
     import json
 
-    from deliverome_analysis import s3
+    from deliverome_analysis.core import s3
 
     pin = json.loads(INPUTS.read_text())["canonical_sequences"]
     s3.external.download(pin["key"].split("://", 1)[1], dest / "human.fasta")

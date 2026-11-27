@@ -65,7 +65,7 @@ class MaskMissing(RuntimeError):
 
 def load() -> pd.DataFrame:
     if not LOCAL.is_file():
-        from deliverome_analysis import s3
+        from deliverome_analysis.core import s3
 
         LOCAL.parent.mkdir(parents=True, exist_ok=True)
         s3.processed.download(MASK_KEY, str(LOCAL))

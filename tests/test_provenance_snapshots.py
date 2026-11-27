@@ -8,7 +8,7 @@ from pathlib import Path
 
 import pytest
 
-from deliverome_analysis import provenance as prov
+from deliverome_analysis.core import provenance as prov
 
 
 def test_read_pinned_bytes_from_materialized_snapshot_without_git(tmp_path: Path) -> None:
@@ -80,7 +80,7 @@ def test_sha256_file_and_verify_s3_objects(tmp_path: Path, monkeypatch: pytest.M
                 raise FileNotFoundError(key)
             return self._files[key]
 
-    import deliverome_analysis.s3 as s3_mod
+    import deliverome_analysis.core.s3 as s3_mod
 
     monkeypatch.setattr(s3_mod, "external", _FakeBucket({"ok": good, "tampered": bad}))
     monkeypatch.setattr(s3_mod, "processed", _FakeBucket({}))

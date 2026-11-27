@@ -108,7 +108,7 @@ def ids_only(sha: str) -> list[str]:
     def norm(text: str) -> Counter:
         return Counter(any_id.sub("ID", ln).rstrip(",") for ln in text.splitlines())
 
-    from deliverome_analysis.provenance import read_pinned_text
+    from deliverome_analysis.core.provenance import read_pinned_text
 
     bad = []
     for name in REKEYED:

@@ -349,7 +349,7 @@ def subpool_strategies(rows: list[dict], *, ks: tuple[int, ...] = (1, 2, 4)) -> 
 
 
 def figure(rows: list[dict]) -> None:
-    from deliverome_analysis.plotting import (
+    from deliverome_analysis.core.plotting import (
         create_figure,
         save_figure,
         setup_plotting_style,

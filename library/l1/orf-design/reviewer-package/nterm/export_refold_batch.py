@@ -64,7 +64,7 @@ def write_batch(name: str, rows: list[dict]) -> None:
 
 
 def main() -> int:
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.core.s3 import processed
 
     members, _ = npl.load_members(processed)
     with (HERE / "nterm_site_picks.tsv").open() as fh:

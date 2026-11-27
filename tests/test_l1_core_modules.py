@@ -16,9 +16,10 @@ from unittest.mock import MagicMock, patch
 import numpy as np
 import pytest
 
-from deliverome_analysis import membrane_side as ms
-from deliverome_analysis import plasmid_qc as qc
-from deliverome_analysis import s3, seqtools
+from deliverome_analysis.cloning import plasmid_qc as qc
+from deliverome_analysis.cloning import seqtools
+from deliverome_analysis.core import s3
+from deliverome_analysis.surfaceome import membrane_side as ms
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 REVIEWER_PKG = REPO_ROOT / "library" / "l1" / "orf-design" / "reviewer-package"

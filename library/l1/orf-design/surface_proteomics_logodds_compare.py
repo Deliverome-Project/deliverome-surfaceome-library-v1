@@ -50,7 +50,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import pandas as pd
 
-from deliverome_analysis.plotting import save_figure, setup_plotting_style
+from deliverome_analysis.core.plotting import save_figure, setup_plotting_style
 
 HERE = Path(__file__).resolve().parent
 COUNTS = HERE / "surface_proteomics_counts.tsv"

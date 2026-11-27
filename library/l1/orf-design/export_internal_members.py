@@ -76,8 +76,8 @@ def resolve_unindexed(rows: list[dict]) -> list[str]:
     todo = {r["candidate_id"]: r for r in rows if not r["topology_acc"]}
     if not todo:
         return []
-    from deliverome_analysis import library_design as ld
-    from deliverome_analysis import topology
+    from deliverome_analysis.cloning import library_design as ld
+    from deliverome_analysis.surfaceome import topology
 
     libraries = {r["library"] for r in todo.values()}
     members: dict[str, dict[str, str]] = {}

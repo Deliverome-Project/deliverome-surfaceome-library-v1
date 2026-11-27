@@ -224,8 +224,8 @@ def apply(rows: list[dict]) -> tuple[list[dict], int]:
 
 def verify_records(rows: list[dict], log: list[dict]) -> None:
     """Every added member's key is in the designed-CDS and construct records."""
-    from deliverome_analysis import library_design as ld
-    from deliverome_analysis.s3 import processed
+    from deliverome_analysis.cloning import library_design as ld
+    from deliverome_analysis.core.s3 import processed
 
     with open(processed.download(ld.CDS_KEY)) as fh:
         cds = json.load(fh)

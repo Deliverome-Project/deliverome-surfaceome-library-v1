@@ -6,7 +6,7 @@ order, the plate map, the synthesis FASTA, the fold check and swap risk therefor
 arm, not the member. The arm id is permanent: K is assigned once, in creation order, by the
 session that designs the arm, and never reused or re-ranked (schema agreed 2026-11-14/15 by
 the coordinator, l1-integration, ranker-pu-segment and l1-reviewer-package; see
-``deliverome_analysis.library_design``).
+``deliverome_analysis.cloning.library_design``).
 
 Where each arm id comes from:
 
@@ -31,7 +31,7 @@ import csv
 from collections.abc import Iterable, Mapping
 from pathlib import Path
 
-from deliverome_analysis import library_design as ld
+from deliverome_analysis.cloning import library_design as ld
 
 HERE = Path(__file__).resolve().parent
 ARM_DECISIONS = HERE.parents[1] / "l1/tag-site-benchmarking" / "l1_internal_arm_decisions.tsv"

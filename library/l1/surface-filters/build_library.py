@@ -23,11 +23,7 @@ import pandas as pd
 from presets_pr137 import passes_canonical as _preset_canonical
 from presets_pr137 import passes_likely as _preset_likely
 
-from deliverome_analysis.plotting import (
-    CATEGORICAL_PALETTE,
-    save_figure,
-    setup_plotting_style,
-)
+from deliverome_analysis.core.plotting import CATEGORICAL_PALETTE, save_figure, setup_plotting_style
 
 
 def passes_canonical(f):

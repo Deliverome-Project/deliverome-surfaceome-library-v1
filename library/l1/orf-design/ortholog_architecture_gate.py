@@ -49,7 +49,8 @@ sys.path.insert(0, str(HERE))
 
 import review_ortholog_correspondence as review  # noqa: E402
 
-from deliverome_analysis import seqtools, topology  # noqa: E402
+from deliverome_analysis.cloning import seqtools  # noqa: E402
+from deliverome_analysis.surfaceome import topology  # noqa: E402
 
 RULE_VERSION = "ortholog-architecture-gate-proposal-v1"
 GATE = {"keep": "pass", "ask": "review", "replace": "fail"}
@@ -623,7 +624,7 @@ def plot(feasibility: list[dict], out_dir: Path) -> None:
     """Share of each stratum's sampleable forms that pass, need review or fail the gate."""
     import matplotlib.pyplot as plt
 
-    from deliverome_analysis.plotting import get_color, save_figure, setup_plotting_style
+    from deliverome_analysis.core.plotting import get_color, save_figure, setup_plotting_style
 
     setup_plotting_style()
     order = sorted(

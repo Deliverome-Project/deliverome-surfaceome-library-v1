@@ -10,7 +10,7 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from deliverome_analysis import s3
+from deliverome_analysis.core import s3
 
 
 @pytest.fixture

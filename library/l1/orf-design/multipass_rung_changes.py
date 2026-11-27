@@ -32,7 +32,7 @@ DELEGATED = 'l1-nterm-res1-multipass (delegated by Becca 2026-11-12, "use your b
 
 
 def at(commit: str, name: str) -> list[dict]:
-    from deliverome_analysis.provenance import read_pinned_text
+    from deliverome_analysis.core.provenance import read_pinned_text
 
     text = read_pinned_text(commit, f"{REL}{name}", repo=HERE.parents[2])
     return list(csv.DictReader(io.StringIO(text), delimiter="\t"))
