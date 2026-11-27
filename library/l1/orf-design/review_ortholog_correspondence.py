@@ -954,15 +954,9 @@ def run(args) -> dict:
     counts = defaultdict(int)
     for m in reviewed:
         counts[m["recommendation"]] += 1
-    try:
-        source_commit = subprocess.run(
-            ["git", "rev-parse", "HEAD"], capture_output=True, text=True, check=False
-        ).stdout.strip()
-    except FileNotFoundError:
-        source_commit = ""
     summary = {
         "rule_version": RULE_VERSION,
-        "source_commit": source_commit,
+        "source_commit": _git_head(),
         "panel": str(PANEL.relative_to(HERE.parents[2])),
         "panel_sha256": sha256_file(PANEL),
         "inputs": {
@@ -1042,6 +1036,15 @@ def plot(reviewed: list[dict], out_dir: Path) -> None:
     ax.legend(fontsize=12, loc="lower right", frameon=False)
     save_figure(fig, "ortholog_correspondence_review", output_dir=out_dir / "figures")
     plt.close(fig)
+
+
+def _git_head() -> str:
+    try:
+        return subprocess.run(
+            ["git", "rev-parse", "HEAD"], capture_output=True, text=True, check=False
+        ).stdout.strip()
+    except FileNotFoundError:
+        return ""
 
 
 def write(path: Path, rows: list[dict], columns: list[str]) -> None:
