@@ -119,10 +119,10 @@
   "library_genes": 2399
  },
  "reference": {
-  "genes": 2417,
+  "genes": 2399,
   "decision": {
-   "mane_appris_agree": 2215,
-   "unresolved_default_mane": 123,
+   "mane_appris_agree": 2198,
+   "unresolved_default_mane": 122,
    "weak_evidence_mane": 25,
    "resolved_mane": 21,
    "appris_only": 15,
@@ -130,16 +130,16 @@
    "weak_evidence_appris": 8,
    "both_observed": 1
   },
-  "mane_appris_disagreements": 177,
+  "mane_appris_disagreements": 176,
   "final_source": {
-   "mane": 2365,
+   "mane": 2347,
    "named": 31,
    "appris": 12,
    "uniprot_canonical": 9
   },
   "decision_by_source": {
    "mane_appris_agree": {
-    "mane": 2209,
+    "mane": 2192,
     "named": 6
    },
    "resolved_mane": {
@@ -147,7 +147,7 @@
     "named": 5
    },
    "unresolved_default_mane": {
-    "mane": 109,
+    "mane": 108,
     "named": 14
    },
    "weak_evidence_mane": {
@@ -169,7 +169,7 @@
    }
   },
   "needs_review": 34,
-  "changes_uniprot_canonical": 188,
+  "changes_uniprot_canonical": 187,
   "named_overrides": [
    "ACHE",
    "ADGRF3",
@@ -266,7 +266,7 @@
    "ortholog": 196,
    "isoform": 149
   },
-  "l2_active": 4001,
+  "l2_active": 3969,
   "all_rows_with_orf": 7492,
   "l1_active_orf_nt_median": 1419,
   "genes_without_reference_member": {
@@ -276,28 +276,7 @@
     "OR2A42",
     "UPK3BL2"
    ],
-   "no_designed_cds": [
-    "CATSPERH",
-    "CATSPERQ",
-    "CXorf66",
-    "MS4A5",
-    "RELL2",
-    "SMIM7",
-    "TEX38",
-    "TMEM134",
-    "TMEM139",
-    "TMEM169",
-    "TMEM174",
-    "TMEM210",
-    "TMEM222",
-    "TMEM238",
-    "TMEM266",
-    "TMEM268",
-    "TMEM273",
-    "TMEM86A",
-    "TMEM86B",
-    "TSPO2"
-   ]
+   "no_designed_cds": []
   },
   "isoform_panel": {
    "seed": 20261009,
@@ -378,16 +357,16 @@
   "untagged_draft_igk_leader_members": 0
  },
  "panel_pool": {
-  "library_genes": 2417,
-  "library_genes_in_april_set": 1816,
-  "mouse_eligible": 1910,
-  "mouse_listed": 1486,
-  "mouse_never_queried": 424,
-  "cyno_eligible": 1887,
-  "cyno_listed": 1465,
-  "cyno_never_queried": 422,
+  "library_genes": 2399,
+  "library_genes_in_april_set": 1818,
+  "mouse_eligible": 1894,
+  "mouse_listed": 1487,
+  "mouse_never_queried": 407,
+  "cyno_eligible": 1873,
+  "cyno_listed": 1466,
+  "cyno_never_queried": 407,
   "isoform_genes_not_in_cohort": 479,
-  "isoform_genes_outside_april_set": 95,
+  "isoform_genes_outside_april_set": 93,
   "recorded_pairs_checked": {
    "mouse": 1972,
    "cyno": 1927

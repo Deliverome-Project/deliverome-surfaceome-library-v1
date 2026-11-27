@@ -239,8 +239,6 @@ CALHM5	ENSG00000178033	True	True	True	True	True	False	False
 CASR	ENSG00000036828	True	True	True	True	True	True	False
 CATSPERE	ENSG00000179397	True	False	False	True	True	True	True
 CATSPERG	ENSG00000099338	True	False	False	True	True	False	False
-CATSPERH		False	False	False	False	False	False	False
-CATSPERQ		False	False	False	False	False	False	False
 CCKAR	ENSG00000163394	True	True	True	True	True	False	False
 CCKBR	ENSG00000110148	True	True	True	False	False	True	True
 CCR1	ENSG00000163823	True	False	False	True	True	False	False
@@ -503,7 +501,6 @@ CXCR3	ENSG00000186810	True	True	True	True	True	True	True
 CXCR4	ENSG00000121966	True	True	True	True	True	True	True
 CXCR5	ENSG00000160683	True	True	True	True	True	True	False
 CXCR6	ENSG00000172215	True	True	True	True	True	False	False
-CXorf66	ENSG00000203933	False	False	False	True	False	False	False
 CYBB	ENSG00000165168	True	True	True	True	True	False	False
 CYBRD1	ENSG00000071967	False	True	False	True	False	True	True
 CYSLTR1	ENSG00000173198	True	True	True	True	True	False	False
@@ -1138,6 +1135,7 @@ LINGO4	ENSG00000213171	True	True	True	True	True	False	False
 LMBR1L	ENSG00000139636	True	True	True	True	True	True	True
 LMBRD2	ENSG00000164187	True	True	True	True	True	False	True
 LMLN	ENSG00000185621	False	True	False	True	False	True	True
+LNPEP	ENSG00000113441	True	True	True	True	True	True	False
 LPAR1	ENSG00000198121	True	True	True	False	False	True	False
 LPAR2	ENSG00000064547	True	True	True	True	True	False	False
 LPAR3	ENSG00000171517	True	True	True	True	True	False	False
@@ -1288,7 +1286,6 @@ MS4A13	ENSG00000204979	False	False	False	True	False	True	False
 MS4A2	ENSG00000149534	False	True	False	True	False	False	False
 MS4A3	ENSG00000149516	False	True	False	False	False	True	False
 MS4A4A	ENSG00000110079	False	False	False	True	False	True	True
-MS4A5	ENSG00000166930	False	True	False	True	False	False	False
 MS4A6A	ENSG00000110077	True	False	False	True	True	True	False
 MS4A7	ENSG00000166927	False	False	False	True	False	True	False
 MSLN	ENSG00000102854	True	True	True	False	False	True	True
@@ -1616,6 +1613,7 @@ PAQR8	ENSG00000170915	False	True	False	True	False	False	False
 PAQR9	ENSG00000188582	False	True	False	True	False	False	False
 PCDH1	ENSG00000156453	True	True	True	True	True	True	True
 PCDH10	ENSG00000138650	True	True	True	True	True	True	True
+PCDH11X	ENSG00000102290	True	False	False	False	False	True	False
 PCDH12	ENSG00000113555	True	True	True	True	True	False	False
 PCDH17	ENSG00000118946	True	True	True	True	True	True	False
 PCDH18	ENSG00000189184	True	True	True	True	True	True	True
@@ -1767,7 +1765,6 @@ RAET1G	ENSG00000203722	True	False	False	False	False	True	False
 RAET1L	ENSG00000155918	True	False	False	False	False	False	False
 RECK	ENSG00000122707	True	True	True	True	True	False	False
 RELL1	ENSG00000181826	True	True	True	True	True	False	False
-RELL2	ENSG00000164620	False	True	False	True	False	False	False
 RELT	ENSG00000054967	True	True	True	True	True	False	True
 RET	ENSG00000165731	True	True	True	True	True	True	True
 RGMA	ENSG00000182175	True	True	True	True	True	True	True
@@ -2101,7 +2098,6 @@ SLITRK4	ENSG00000179542	True	True	True	True	True	False	False
 SLITRK5	ENSG00000165300	True	True	True	True	True	True	False
 SLITRK6	ENSG00000184564	True	True	True	True	True	False	False
 SMAGP	ENSG00000170545	False	True	False	True	False	False	True
-SMIM7	ENSG00000214046	False	True	False	True	False	False	True
 SMO	ENSG00000128602	True	True	True	True	True	False	True
 SMPDL3B	ENSG00000130768	False	True	False	True	False	True	False
 SNORC	ENSG00000182600	False	True	False	True	False	False	False
@@ -2177,7 +2173,6 @@ TCTA	ENSG00000145022	False	True	False	True	False	False	True
 TEK	ENSG00000120156	True	True	True	True	True	True	True
 TEX101	ENSG00000131126	True	True	True	True	True	True	False
 TEX29	ENSG00000153495	False	False	False	True	False	False	False
-TEX38	ENSG00000186118	False	True	False	True	False	False	False
 TFPI	ENSG00000003436	False	True	False	True	False	True	True
 TFR2	ENSG00000106327	False	True	False	True	False	True	True
 TFRC	ENSG00000072274	True	True	True	True	True	False	True
@@ -2222,16 +2217,12 @@ TMEM132A	ENSG00000006118	True	True	True	False	False	True	True
 TMEM132B	ENSG00000139364	True	True	True	True	True	True	False
 TMEM132D	ENSG00000151952	True	True	True	True	True	True	False
 TMEM132E	ENSG00000181291	True	True	True	True	True	False	False
-TMEM134	ENSG00000172663	False	True	False	True	False	True	True
-TMEM139	ENSG00000178826	False	True	False	False	False	False	False
 TMEM145	ENSG00000167619	True	True	True	True	True	False	True
 TMEM150A	ENSG00000168890	True	True	True	True	True	True	True
 TMEM150C	ENSG00000249242	False	True	False	True	False	True	False
 TMEM154	ENSG00000170006	True	True	True	True	True	False	False
 TMEM158	ENSG00000249992	True	True	True	True	True	True	False
-TMEM169	ENSG00000163449	False	True	False	True	False	False	False
 TMEM170B	ENSG00000205269	False	True	False	True	False	False	False
-TMEM174	ENSG00000164325	False	True	False	True	False	True	False
 TMEM181	ENSG00000146433	False	True	False	True	False	False	True
 TMEM182	ENSG00000170417	True	True	True	True	True	True	True
 TMEM184A	ENSG00000164855	True	True	True	True	True	False	True
@@ -2239,23 +2230,15 @@ TMEM190	ENSG00000160472	False	True	False	True	False	False	False
 TMEM198	ENSG00000188760	False	True	False	True	False	False	False
 TMEM204	ENSG00000131634	True	True	True	True	True	False	False
 TMEM205	ENSG00000105518	False	True	False	True	False	False	False
-TMEM210	ENSG00000185863	False	True	False	True	False	False	False
 TMEM219	ENSG00000149932	True	True	True	True	True	False	True
-TMEM222	ENSG00000186501	False	True	False	True	False	True	True
 TMEM225	ENSG00000204300	True	False	False	True	True	False	False
 TMEM229B	ENSG00000198133	False	True	False	True	False	False	False
-TMEM238	ENSG00000233493	False	True	False	False	False	False	False
 TMEM248	ENSG00000106609	False	True	False	True	False	True	False
 TMEM26	ENSG00000196932	True	True	True	True	True	True	False
-TMEM266	ENSG00000169758	False	True	False	True	False	False	False
-TMEM268	ENSG00000157693	False	True	False	True	False	True	True
-TMEM273	ENSG00000204161	False	True	False	True	False	True	True
 TMEM47	ENSG00000147027	False	True	False	True	False	False	False
 TMEM63B	ENSG00000137216	True	True	True	True	True	True	True
 TMEM67	ENSG00000164953	True	True	True	True	True	False	True
 TMEM81	ENSG00000174529	False	True	False	False	False	False	False
-TMEM86A	ENSG00000151117	False	True	False	True	False	False	False
-TMEM86B	ENSG00000180089	False	True	False	False	False	False	False
 TMEM89	ENSG00000183396	False	True	False	True	False	False	False
 TMEM8B	ENSG00000137103	True	True	True	True	True	True	True
 TMEM95	ENSG00000182896	True	True	True	True	True	True	True
@@ -2356,7 +2339,6 @@ TSPAN6	ENSG00000000003	True	True	True	True	True	False	True
 TSPAN7	ENSG00000156298	True	True	True	True	True	False	True
 TSPAN8	ENSG00000127324	True	True	True	True	True	False	False
 TSPAN9	ENSG00000011105	True	True	True	False	False	False	True
-TSPO2	ENSG00000112212	False	True	False	True	False	True	False
 TTYH1	ENSG00000167614	True	True	True	True	True	True	True
 TTYH2	ENSG00000141540	True	True	True	True	True	True	True
 TTYH3	ENSG00000136295	True	True	True	False	False	True	True

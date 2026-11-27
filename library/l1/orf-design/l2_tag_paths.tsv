@@ -41,7 +41,6 @@ l2-p0101	l2	isoform	human	ADGRG6	N after SP	N after SP	0		7	37	1250	26	831	38	n_
 l2-p0103	l2	isoform	human	ADGRL1	N after SP	N after SP	0		7	20	1474	18	844	21	n_terminal	moderate	moderate	human_canonical	topo_2026_05_16	7d208c83cbd2cc8c0f463c8cbc6016c4201539d407cf0d1c57695878fa319ce8
 l2-p0114	l2	isoform	human	ADGRL2	N after SP	N after SP	0		7	25	1416	18	826	26	n_terminal	low	weak	human_isoforms	topo_2026_05_25	df90482305360d10181b9d3efbc218779cbb021054774efb1d13d135f62366a8
 l2-p0115	l2	isoform	human	ADGRL2	N after SP	N after SP	0		7	25	1461	18	813	26	n_terminal	low	weak	human_isoforms	topo_2026_05_25	b0c37d2f3ea960ff3cdb154f528bd205d3789fb477a298281c71f13a9f8248bb
-l2-p0119	l2	isoform	human	ADGRL3	N after SP	N after SP	0		7	19	1543	18	930	20	n_terminal	moderate	strong	library_designed_orf	topo_2026_11_22_mane_gtf	0c7b9d6c8e0598ed50a4deb481d2eb6011718c7c4c8570ee7a8a04eac0bbb957
 l2-p0126	l2	isoform	human	ADRA1A	N at residue 1, multipass	N at residue 1	0		7	0	429	20	25	1	n_terminal			human_isoforms	topo_2026_05_25	5839e6d421e237b0a6041a08ba2e3434d467d396e008bd035b793e753f238e23
 l2-p0127	l2	isoform	human	ADTRP	internal	internal	0		6	0	248	41	41	25	inter_tm			human_isoforms	topo_2026_05_25	1ae7cab5703ea9946f9ec81220cd888df3e09b88f2fc03020e94d823ea9e5f2d
 l2-p0132	l2	isoform	human	ALCAM	N after SP	N after SP	0		1	27	570	0	487	28	n_terminal	high	strong	human_isoforms	topo_2026_05_25	f4487f682b5602d63552e2936f8abd18a4a51aae69c6160f9dd4fde5afc5738c
@@ -49,13 +48,11 @@ l2-p0133	l2	isoform	human	ALPL	N at residue 1, single-pass (type III)	N at resid
 l2-p0138	l2	isoform	human	ANO2	internal	internal	0		8	0	1003	104	104	645	inter_tm			human_isoforms	topo_2026_05_25	a3a385a3123a1c6b58359df5d4050c57f6b8bedaeb183468c332b97e2f5c4b3e
 l2-p0139	l2	isoform	human	ANO2	internal	internal	0		8	0	999	104	104	641	inter_tm			human_isoforms	topo_2026_05_25	89fd3f6e692e699b06968cb97d5d796a15543e92c20850a6258a7bc8af58af11
 l2-p0141	l2	isoform	human	ANO3	internal	internal	0		8	0	835	98	98	514	inter_tm			human_isoforms	topo_2026_05_25	a10390d5ebe9315cc8298a9c87d2db03a3e963bd86b5e3840f298902d6de81e9
-l2-p0143	l2	isoform	human	ANO4	internal	internal	0		8	0	955	102	102	614	inter_tm			human_canonical	topo_2026_05_16	1509fe9c1f8bc231fb8b6bee7070312a7759cc9725e678dfb6365b74bbd00365
 l2-p0144	l2	isoform	human	ANO6	internal	internal	0		8	0	931	97	97	594	inter_tm			human_isoforms	topo_2026_05_25	cdd8964ebdfabb44b91fb464d38743b36e0872c0f0199682e133fd9cfb3aa8a8
 l2-p0157	l2	isoform	human	APLP1	N after SP	N after SP	0		1	38	650	0	545	39	n_terminal	high	strong	human_canonical	topo_2026_05_16	6560a96277b027f926afadbd9a9f3b276dde084bef9441643dcc5b30d15cf0d1
 l2-p0158	l2	isoform	human	APLP2	N after SP	N after SP	0		1	31	763	0	662	32	n_terminal	moderate	strong	human_canonical	topo_2026_05_16	5e39c56a1fdad208fc2c22ce819670640707e6a43e661f765a15b41c8efc0f0b
 l2-p0159	l2	isoform	human	APLP2	N after SP	N after SP	0		1	31	695	0	594	32	n_terminal	moderate	strong	human_isoforms	topo_2026_05_25	ad5fac5af0124722f8e3da299ebc9be3c43c891eae549d8a9894671bf9f00a4d
 l2-p0160	l2	isoform	human	APLP2	N after SP	N after SP	0		1	21	761	0	670	22	n_terminal	moderate	strong	human_isoforms	topo_2026_05_25	6e6b9fc1d1d39780ce0ec075bd5788469b85bcaaf88bd4e55dc9ced675e074bb
-l2-p0163	l2	isoform	human	APP	N after SP	N after SP	0		1	17	770	0	683	18	n_terminal	high	strong	human_canonical	topo_2026_05_16	0f79dd8c1ea278edbe797ca3ccb235de12e8d482492499a37a977a0692d3e49b
 l2-p0165	l2	isoform	human	APP	N after SP	N after SP	0		1	19	746	0	658	20	n_terminal	high	strong	human_isoforms	topo_2026_05_25	76ad7cc8d38c6c3868496161979ff318c5395eaddd81c11095447878790892f9
 l2-p0166	l2	isoform	human	APP	N after SP	N after SP	0		1	17	695	0	608	18	n_terminal	high	strong	human_isoforms	topo_2026_05_25	5f311b5f161023c74ab4c2b98938f4dd52948c2d4bd828cfd913120b20072d09
 l2-p0167	l2	isoform	human	APP	N after SP	N after SP	0		1	17	733	0	647	18	n_terminal	high	strong	human_isoforms	topo_2026_05_25	adcdc316541556a7c744a69b938eef863986ff1306e21167e95c3d9865936c39
@@ -142,7 +139,6 @@ l2-p0336	l2	isoform	human	CD84	N after SP	N after SP	0		1	21	272	0	204	22	n_term
 l2-p0337	l2	isoform	human	CD86	N after SP	N after SP	0		1	19	323	0	222	20	n_terminal	moderate	moderate	human_isoforms	topo_2026_05_25	83257381f8eee1ca7f6bdaaf3a8209d4aa41c4d3743d9eba86e68e643756fa08
 l2-p0339	l2	isoform	human	CD96	N after SP	N after SP	0		1	21	585	0	499	22	n_terminal			human_canonical	topo_2026_05_16	c3f8d02e406c92cd3383b809d83bcf884dab5fe9cf103dd8fc0ff52b1be8e2b8
 l2-p0342	l2	isoform	human	CD99	N after SP	N after SP	0		1	20	160	0	117	21	n_terminal			human_isoforms	topo_2026_05_25	892cfb50e779dd64a152d65a37de61cdbb1ea2d8661b7b72da0b4777b8b09a80
-l2-p0343	l2	isoform	human	CD99L2	N after SP	N after SP	0		1	25	262	0	160	26	n_terminal			human_canonical	topo_2026_05_16	25306323480a8ba45b26f8002c835417d9f5c5737658aa6a9838e668105a1576
 l2-p0344	l2	isoform	human	CD99L2	N after SP	N after SP	0		1	25	190	0	89	26	n_terminal			human_isoforms	topo_2026_05_25	0785d25a266f9ad643752cb42c33e33faf8f6a2f9f79eaa66b9c551cfb168cf0
 l2-p0353	l2	isoform	human	CDH24	N after SP	N after SP	0		1	27	819	0	614	28	n_terminal			human_canonical	topo_2026_05_16	748961958721671ae94a914ccee86fdb05ac094323b2f32994991e01a9ee781f
 l2-p0356	l2	isoform	human	CDH3	N after SP	N after SP	0		1	23	784	0	632	24	n_terminal			human_isoforms	topo_2026_05_25	5bf54c2cd39a37eae5bca4a81834f96cf3bc313f0630f9d287cd43652bdc22ba
@@ -156,7 +152,6 @@ l2-p0366	l2	isoform	human	CEACAM21	N after SP	N after SP	0		1	34	292	0	203	35	n_
 l2-p0367	l2	isoform	human	CEACAM5	N after SP	N after SP	0		1	34	701	0	655	35	n_terminal	high	strong	human_isoforms	topo_2026_05_25	dd438cce3a11cc4d62002a9ebef28f4ac9994cf13a26e5472a651fca8390a3ce
 l2-p0370	l2	isoform	human	CHL1	N after SP	N after SP	0		1	24	1208	0	1058	25	n_terminal	moderate	moderate	human_canonical	topo_2026_05_16	abf5a7d2b3ced16a80897177921794834cb0d57af9b7982ff0bdccab6c6b4c76
 l2-p0374	l2	isoform	human	CLDN10	internal	internal	0		4	0	226	53	53	26	inter_tm			human_isoforms	topo_2026_05_25	4e4abe31c14ba873111f36a3ee276410902a4321d92614220ce0460a7d035865
-l2-p0376	l2	isoform	human	CLDN19	internal	internal	0		4	0	224	54	54	28	inter_tm			human_canonical	topo_2026_05_16	a0ae04f832f8522820c42d92b2fa587b870fc8a830577ebabbdff385607620d0
 l2-p0381	l2	isoform	human	CLEC10A	C-terminal	C-terminal	0		1	0	316	0	259	58	c_terminal			human_canonical	topo_2026_05_16	88e087df8ea3928ad3d4f45eb63f95f18b5c27f7aa597b133e8dfb1200a8fa64
 l2-p0384	l2	isoform	human	CLEC2D	C-terminal	C-terminal	0		1	0	194	0	139	56	c_terminal	moderate	moderate	human_isoforms	topo_2026_05_25	a7b169f2d613b0dc5a3c26e843052d6980a661c64ea0d2291abc17a6611d2631
 l2-p0385	l2	isoform	human	CLEC4A	C-terminal	C-terminal	0		1	0	204	0	139	66	c_terminal			human_isoforms	topo_2026_05_25	f3eb90fb507f00e2635b02fc6e623b888091983144b4b99313beceb9711bf282
@@ -231,19 +226,16 @@ l2-p0569	l2	isoform	human	GABRR1	N at residue 1, multipass	N at residue 1	0		4	0
 l2-p0579	l2	isoform	human	GDPD5	N at residue 1, multipass	N at residue 1	0		3	0	467	291	291	69	inter_tm			human_isoforms	topo_2026_05_25	30aba7c3843d359187e7d3a30edce55b666b85b73680c2b84b891d9e92b5cf26
 l2-p0580	l2	isoform	human	GFRA1	N after SP	N after SP	0		0	23	460	0	437	24	no_tm	moderate	moderate	human_isoforms	topo_2026_05_25	3a0926d056318a132127752f8c7ad4ea34cf9efa05a720ef02530f7dc7af64a2
 l2-p0581	l2	isoform	human	GFRA4	N after SP	N after SP	0		0	20	299	0	279	21	no_tm			human_canonical	topo_2026_05_16	821492842e2f6e6620172dbdf8aed4672de020076c7afe6490f758be5f0e7cee
-l2-p0582	l2	isoform	human	GGT5	C-terminal	C-terminal	0		1	0	586	0	557	30	c_terminal			human_canonical	topo_2026_05_16	3e522460abccf995f0eab70543f2ffa1ab936f105b348e23dd269faa36c71a5c
 l2-p0583	l2	isoform	human	GGT5	C-terminal	C-terminal	0		1	0	587	0	558	30	c_terminal			human_isoforms	topo_2026_05_25	9eda4e39cac87eee724b4e24fd7e5d7831c7b265c542b04acf7b662bf74a24d7
 l2-p0584	l2	isoform	human	GGT6	C-terminal	C-terminal	0		1	0	493	0	418	76	c_terminal			human_canonical	topo_2026_05_16	1cf3efb416ba68902eb927ad6e0740c66bae382a31c872c7526d3a450b8d97ce
 l2-p0588	l2	isoform	human	GHR	N after SP	N after SP	0		1	18	616	0	226	19	n_terminal			human_isoforms	topo_2026_05_25	e7f12e9eabe7e73d1505480de23a99344d141b53226c2907b51522a549e0ade2
 l2-p0590	l2	isoform	human	GLIPR1L1	N after SP	N after SP	0		0	23	233	0	210	24	no_tm			human_isoforms	topo_2026_05_25	e4c1ce6213a7a7023228ff89966125b3011f5dd28e29f698d7b6d09a4e80e45f
 l2-p0591	l2	isoform	human	GLRA1	N after SP	N after SP	0		4	23	457	11	227	24	n_terminal			human_canonical	topo_2026_05_16	5645505093f8ea76ad40131dc69570dc609e370ff3e1fdddc7db1d4685abb9e7
-l2-p0593	l2	isoform	human	GLRA3	N after SP	N after SP	0		4	28	464	11	227	29	n_terminal			human_canonical	topo_2026_05_16	8c08ff1105d5b550cdffcf4fe4703dcb010bb038622b33f29a888f2ce22e8ff2
 l2-p0594	l2	isoform	human	GP6	N after SP	N after SP	0		1	20	321	0	231	21	n_terminal	moderate	strong	human_isoforms	topo_2026_05_25	831a28788ce984c68aad184514a2b6373aacaa968f715838f7766b5201241237
 l2-p0595	l2	isoform	human	GP6	N after SP	N after SP	0		1	20	620	0	494	21	n_terminal	moderate	strong	human_isoforms	topo_2026_05_25	404c7be9de54655cd081198b4aa9e446f787249f8186804cfef05b2c7df161f6
 l2-p0600	l2	isoform	human	GPM6B	internal	internal	0		4	0	265	64	64	160	inter_tm			human_canonical	topo_2026_05_16	edd9839c5e3d84adbcaca1ba5053cce37ea2d23909ea5b24f0f88327e53d6c01
 l2-p0602	l2	isoform	human	GPM6B	internal	internal	0		4	0	305	62	62	202	inter_tm			human_isoforms	topo_2026_05_25	c180ac56fbd22bab54578538ca12e249d27d8a73c056f15377d44c16c8dd31cf
 l2-p0603	l2	isoform	human	GPNMB	N after SP	N after SP	0		1	21	572	0	478	22	n_terminal	high	strong	human_canonical	topo_2026_05_16	cfd3e0e603ce30feea8cb0df1377e9cbb69426a90675883f8b3a0aeb91c6a2c6
-l2-p0604	l2	isoform	human	GPNMB	N after SP	N after SP	0		1	21	560	0	466	22	n_terminal	high	strong	human_isoforms	topo_2026_05_25	4bd95673fe43f7b9da827bb790e253a1c3f478894de9056ee8e6558604441561
 l2-p0605	l2	isoform	human	GPR132	N at residue 1, multipass	N at residue 1	0		7	0	371	20	33	1	n_terminal			human_isoforms	topo_2026_05_25	433be3e7c04ac335c2aa91dee8d2eac207bb3a7ab252a0f53c484fb5725cd81d
 l2-p0606	l2	isoform	human	GPR156	N at residue 1, multipass	N at residue 1	0		7	0	810	29	47	1	n_terminal			human_isoforms	topo_2026_05_25	c360e6d68780c7ea9045555380915645c79049ff3f4c55acca893b9351b68ebb
 l2-p0611	l2	isoform	human	GPR17	N at residue 1, multipass	N at residue 1	0		7	0	367	23	61	1	n_terminal			human_canonical	topo_2026_05_16	f93a66452661481ed57014021c29c066900968aeba9e8d79f4d87ed69987d9b7
@@ -264,9 +256,7 @@ l2-p0646	l2	isoform	human	HEPACAM2	N after SP	N after SP	0		1	19	450	0	319	20	n_
 l2-p0649	l2	isoform	human	HEPH	N after SP	N after SP	0		1	23	1157	0	1086	24	n_terminal			human_isoforms	topo_2026_05_25	20be2fb4de5f0c33ba030877c16d28fe7282d729ed7adfd660dc37f4689f8d5f
 l2-p0652	l2	isoform	human	HFE	N after SP	N after SP	0		1	22	246	0	184	23	n_terminal			human_isoforms	topo_2026_05_25	de5ed8279a2f7385ba302214279501e0bd99f36f835839433a96fab68e92310b
 l2-p0666	l2	isoform	human	HTR3A	N after SP	N after SP	0		4	19	510	45	222	20	n_terminal			human_isoforms	topo_2026_05_25	e29b76c87e7f5c68e96e79ea1debfd27331c867ff5cff10de77a8eb69081e3c7
-l2-p0667	l2	isoform	human	HTR4	N at residue 1, multipass	N at residue 1	0		7	0	388	34	34	159	inter_tm			human_canonical	topo_2026_05_16	eaa5a3ef4622fb5fa4bba8d644b54c0d84564e76cc6702d0981df65670423866
 l2-p0668	l2	isoform	human	HTR4	N at residue 1, multipass	N at residue 1	0		7	0	378	34	34	159	inter_tm			human_isoforms	topo_2026_05_25	05c7b2a7dc9d30c22b369c3a81c8441ebb849f114e51be7dfdcdcb4700be0b13
-l2-p0669	l2	isoform	human	HTR7	N at residue 1, multipass	N at residue 1	0		7	0	479	19	81	1	n_terminal			human_canonical	topo_2026_05_16	987e15538f0f1ab2fdac22de66091cf0a704c2a7eae4e9af9419d590682c51d7
 l2-p0674	l2	isoform	human	ICOSLG	N after SP	N after SP	0		1	18	309	0	240	19	n_terminal	moderate	moderate	human_isoforms	topo_2026_05_25	15934ba88e7b4a57411f0adea8e6b7908092593bd7b62a38097e16bd8f31c849
 l2-p0676	l2	isoform	human	IFNAR1	N at residue 1, single-pass (type III)	N at residue 1	0		1	0	488	0	367	1	n_terminal			human_isoforms	topo_2026_05_25	f269ddc31c7dd16db615282c9583a0541323313b8a5552a8aa25f35489e6b614
 l2-p0677	l2	isoform	human	IFNAR2	N after SP	N after SP	0		1	26	331	0	217	27	n_terminal	moderate	moderate	human_isoforms	topo_2026_05_25	004b494c2a3d1b05ec69879d5cc514c8829d05070b1cf2907debbfd6c5004c31
@@ -287,7 +277,6 @@ l2-p0719	l2	isoform	human	IL31RA	N after SP	N after SP	0		1	32	745	0	500	33	n_te
 l2-p0720	l2	isoform	human	IL31RA	N after SP	N after SP	0		1	51	681	0	500	52	n_terminal			human_isoforms	topo_2026_05_25	32ed6e68509ad75f529b2baab2e2d4c1f96b9d8aca37d6678195b8da433bdd36
 l2-p0726	l2	isoform	human	IL6ST	N after SP	N after SP	0		1	22	857	0	534	23	n_terminal	moderate	strong	human_isoforms	topo_2026_05_25	970a6ee04f0671f22d2de6a09d2e82e87932612c598a605a16f40a3e591e39ee
 l2-p0728	l2	isoform	human	ILDR1	N after SP	N after SP	0		1	23	502	0	147	24	n_terminal			human_isoforms	topo_2026_05_25	33a781234c0f3fdad01922f3e540e5bcce6d69bcb5dc70b95eafa1015a96d0c5
-l2-p0729	l2	isoform	human	ILDR2	N after SP	N after SP	0		1	20	639	0	167	21	n_terminal			human_canonical	topo_2026_05_16	794b1fa8f5f450ff59268fbeb8bb106e139862161969ebcea6496ccee21cbdf8
 l2-p0732	l2	isoform	human	INSR	N after SP	N after SP	0		1	27	1370	0	918	28	n_terminal	moderate	strong	human_isoforms	topo_2026_05_25	bca7437fd3ecebb4579c5f63f8cfc116c82824a7d0befd7318fa2dd34183a1b6
 l2-p0734	l2	isoform	human	ITGA11	N after SP	N after SP	0		1	22	1189	0	1120	23	n_terminal			human_isoforms	topo_2026_05_25	be55dd254833bc5d3e9cfa31f79d456ae6ed64a0828d34b1e7a8a2feb5ec8764
 l2-p0735	l2	isoform	human	ITGA3	N after SP	N after SP	0		1	32	1066	0	959	33	n_terminal			human_isoforms	topo_2026_05_25	8d4ab97491301bfa3e2e866099e50364a7b2985ff1e5d302e43d5645c1c207db
@@ -298,22 +287,17 @@ l2-p0750	l2	isoform	human	ITGAV	N after SP	N after SP	0		1	30	1012	0	928	31	n_te
 l2-p0757	l2	isoform	human	ITGB1	N after SP	N after SP	0		1	20	819	0	708	21	n_terminal			human_isoforms	topo_2026_05_25	08b89242cf540a51d0e7f38c155053a3f168e4aa8f8c03c45f87b90ca9971dbe
 l2-p0766	l2	isoform	human	ITGB8	N at residue 1, single-pass (type III)	N at residue 1	0		1	0	634	0	549	1	n_terminal			human_isoforms	topo_2026_05_25	22bb64f3ff3efa8c6a22bf096199adc5201a252ca1f24f1a7ba9276558143a25
 l2-p0767	l2	isoform	human	ITM2B	C-terminal	C-terminal	0		1	0	160	0	85	76	c_terminal	moderate	strong	human_isoforms	topo_2026_05_25	74b7d52920ce2540bcd68c8ba7b9d158290a9af83d9fe61efb617402551b5528
-l2-p0768	l2	isoform	human	IZUMO1R	N after SP	N after SP	0		0	19	250	0	231	20	no_tm	moderate	strong	human_canonical	topo_2026_05_16	c6c260ca47e9594568f667143caa4be181668cfd348c210004e7e83853f7ab9d
 l2-p0771	l2	isoform	human	JAG2	N after SP	N after SP	0		1	26	1200	0	1018	27	n_terminal			human_isoforms	topo_2026_05_25	b80ee7b645dde15b737631a05d0e5bbe5ef83bee7aaa0e05c21c2e9edfd5eb61
 l2-p0772	l2	isoform	human	JAM2	N after SP	N after SP	0		1	28	312	0	211	29	n_terminal			human_isoforms	topo_2026_05_25	8760b38440b68d2a48fe498736ee5457d0ec316c791c95c94a0371db1be7858a
 l2-p0778	l2	isoform	human	KCNC2	internal	internal	0		6	0	558	49	49	403	inter_tm			human_isoforms	topo_2026_05_25	eb699ecdfe738a68cccd5cb2f4669115899c708ebf3aa708336fee6bad21c086
 l2-p0779	l2	isoform	human	KCNC2	internal	internal	0		6	0	618	49	49	403	inter_tm			human_isoforms	topo_2026_05_25	ab7513add555403b10ebd7da71ba8e37df4b7ec714b72f3315365933eac3bb60
-l2-p0781	l2	isoform	human	KCNC3	internal	internal	0		6	0	757	49	49	469	inter_tm			human_canonical	topo_2026_05_16	13861e58e23017a065aa74d3a4e930667e3a275a0d8eaae7e155a63fb34264ad
 l2-p0783	l2	isoform	human	KCNC4	internal	internal	0		6	0	635	49	49	402	inter_tm			human_canonical	topo_2026_05_16	b9f9504bdc715c51aa948dc5dd79db69e6adf5bd974c4298dd73b047db124fc4
 l2-p0787	l2	isoform	human	KCND3	internal	internal	0		6	0	636	35	35	343	inter_tm			human_isoforms	topo_2026_05_25	1e8f475c96880c0326402303af16efd306d231a8bdb5feb564cdb36a587068c9
-l2-p0788	l2	isoform	human	KCNH1	internal	internal	0		6	0	989	80	80	398	inter_tm			human_canonical	topo_2026_05_16	9b003c04637e5c30926a40a89d17b8e36e7ec8a943b37a317411daf0ca3af4bd
 l2-p0789	l2	isoform	human	KCNH2	internal	internal	0		6	0	819	70	70	229	inter_tm			human_isoforms	topo_2026_05_25	fc916ad29cddbee859095a33dacfe45219dc30999c0e5d215d97ba80a146ab29
 l2-p0790	l2	isoform	human	KCNH6	internal	internal	0		6	0	994	71	71	420	inter_tm			human_isoforms	topo_2026_05_25	f392e1bb44e5e6868617d5a86986becef625ac9b7bd0cf0c13960efaf70d5116
 l2-p0792	l2	isoform	human	KCNK10	internal	internal	0		4	0	538	91	91	91	inter_tm			human_canonical	topo_2026_05_16	87932b006a468d0082ca6d023f78fb2ddccafe498ce651b71fcda079d3627856
 l2-p0793	l2	isoform	human	KCNK10	internal	internal	0		4	0	543	91	91	96	inter_tm			human_isoforms	topo_2026_05_25	a2cf25367741728b6c21b1bea36dfa4c47c4ae51635b2ad12f8714192d72e362
 l2-p0795	l2	isoform	human	KCNK17	C-terminal	C-terminal	0		3	0	271	87	87	44	inter_tm			human_isoforms	topo_2026_05_25	318f5af27937f360e94fe31999f1b7c9bc30229254ff71c4385baf21538ec351
-l2-p0796	l2	isoform	human	KCNK2	internal	internal	0		4	0	426	91	91	81	inter_tm			human_canonical	topo_2026_05_16	438dc726c30d0ff5ba1dfed88531d0758ecfa43be6730b09dce8957af6ef8e39
-l2-p0810	l2	isoform	human	KCNMA1	N at residue 1, multipass	N at residue 1	0		7	0	1236	46	86	1	n_terminal			human_canonical	topo_2026_05_16	d4e6b670eb793c48c392c9c64f22329115e774a583534592d95c3da5ba283e65
 l2-p0812	l2	isoform	human	KCNMA1	N at residue 1, multipass	N at residue 1	0		7	0	1178	46	86	1	n_terminal			human_isoforms	topo_2026_05_25	e050f9fafe8d1ebc7bda3473113cd30d63ec6b8c016df23e73e644864ffe1c32
 l2-p0813	l2	isoform	human	KCNMA1	N at residue 1, single-pass (type III)	N at residue 1	0		1	0	168	0	87	1	n_terminal			human_isoforms	topo_2026_05_25	de3ff46950884066faa373e2231760ef28d63cfc4a9ab29eb1b6a2efd386e641
 l2-p0818	l2	isoform	human	KCNN3	N at residue 1, multipass	N at residue 1	0		5	0	426	43	43	174	inter_tm			human_isoforms	topo_2026_05_25	3cdf471437ad20734651ecd384c86adeb37c111acf3df543e6d1b614e6ee1fba
@@ -345,7 +329,6 @@ l2-p0880	l2	isoform	human	LILRA1	N after SP	N after SP	0		1	23	289	0	238	24	n_te
 l2-p0882	l2	isoform	human	LILRA2	N after SP	N after SP	0		1	23	466	0	406	24	n_terminal			human_isoforms	topo_2026_05_25	f567d45fc2d653fc107bce30e217652c4a2f125e85898371a7238ce668125b38
 l2-p0884	l2	isoform	human	LILRB2	N after SP	N after SP	0		1	21	598	0	439	22	n_terminal	low	weak	human_isoforms	topo_2026_05_25	e0de9bfd4e21fe01c5e9c8682fee2951417f649f4a90ac9ef4f606062ca7d367
 l2-p0890	l2	isoform	human	LILRB5	N after SP	N after SP	0		1	23	590	0	433	24	n_terminal			human_canonical	topo_2026_05_16	32580fafd6c81d3996869a548716036b75f46c3b6d97162868870812f4d97127
-l2-p0891	l2	isoform	human	LINGO1	N after SP	N after SP	0		1	39	620	0	518	40	n_terminal			human_canonical	topo_2026_05_16	db3cd1c70a7409b0691ee8155963c2547ae25717997c3e0be43e289171ee3d23
 l2-p0896	l2	isoform	human	LRP12	N after SP	N after SP	0		1	27	840	0	446	28	n_terminal			human_isoforms	topo_2026_05_25	13c5bb1dccfbf46400de89bf88ea9617a3d75c721f21608d5ce0b59c8e9326ac
 l2-p0904	l2	isoform	human	LRP8	N after SP	N after SP	0		1	32	700	0	590	33	n_terminal	moderate	moderate	human_isoforms	topo_2026_05_25	373fe57b30d327e40971ad3c83c1a6b91ec562f0def7d8030805f90b4f7ccf6b
 l2-p0905	l2	isoform	human	LRP8	N after SP	N after SP	0		1	32	904	0	793	33	n_terminal	moderate	moderate	human_isoforms	topo_2026_05_25	e5d2b100c50bdd1f9887af37dbef4da75076eb3f468932983acc6f82f0bdd3c9
@@ -354,7 +337,6 @@ l2-p0909	l2	isoform	human	LRRC37B	N after SP	N after SP	0		1	27	896	0	827	28	n_t
 l2-p0915	l2	isoform	human	LSR	internal	internal	0		2	0	649	180	180	80	inter_tm			human_canonical	topo_2026_05_16	619ada190c28c3ee0553141e235ad1f74ab19488062e685c6d11069bf3d11b18
 l2-p0916	l2	isoform	human	LSR	N at residue 1, single-pass (type III)	N at residue 1	0		1	0	591	0	223	1	n_terminal			human_isoforms	topo_2026_05_25	b7cb72b327f471aa365a6bfee7f53ac7fd088261aec28cf69bccb4d5ff720265
 l2-p0918	l2	isoform	human	LY6G6F	N after SP	N after SP	0		2	17	382	0	217	18	n_terminal			human_isoforms	topo_2026_05_25	cd8ec05514dc559b3b00ae0bcf390108ebf2243863e1fe0462162a307b56f284
-l2-p0919	l2	isoform	human	LY6H	N after SP	N after SP	0		0	25	140	0	115	26	no_tm			human_canonical	topo_2026_05_16	0c220c543f78a614f79d151838fc81574c44353b5b8e4bc9c1d70f2737e27aef
 l2-p0921	l2	isoform	human	LY9	N after SP	N after SP	0		1	45	641	0	409	46	n_terminal			human_isoforms	topo_2026_05_25	2b15f85db3785384cb900648507361118dc7a0101055e0ae467a9053e23964a5
 l2-p0923	l2	isoform	human	LYPD6B	N after SP	N after SP	0		0	39	183	0	144	40	no_tm			human_canonical	topo_2026_05_16	b3e96d76debd78e4a7e6a092868c0d48a7c0a0354e99d9f52d0a8f9c5a26bc29
 l2-p0927	l2	isoform	human	MAG	N after SP	N after SP	0		1	18	582	0	495	19	n_terminal			human_isoforms	topo_2026_05_25	f0029a81e87d8b6495d7f3d199c878af97d677a4bb48e0090ff7bf4fbb7ffa1a
@@ -378,7 +360,6 @@ l2-p0981	l2	isoform	human	NETO2	N after SP	N after SP	0		1	26	518	0	316	27	n_ter
 l2-p0983	l2	isoform	human	NFASC	N after SP	N after SP	0		1	24	1157	0	1002	25	n_terminal			human_isoforms	topo_2026_05_25	12825e5db1ba6f50f4e0ba5d6203c3cb076e0dc891343836e5d1a13b547900b5
 l2-p0984	l2	isoform	human	NFASC	N after SP	N after SP	0		1	24	1189	0	1034	25	n_terminal			human_isoforms	topo_2026_05_25	8cdcd566408f152fcaaf107a16926987f6dadd721bf2166d6d03b020cb520630
 l2-p0985	l2	isoform	human	NFASC	N after SP	N after SP	0		1	24	1174	0	1019	25	n_terminal			human_isoforms	topo_2026_05_25	7c0d35f7412373ccf24207f25e9489c63c58d971371ac9cd1171930c933e255a
-l2-p0986	l2	isoform	human	NFASC	N after SP	N after SP	0		1	24	1240	0	1086	25	n_terminal			human_isoforms	topo_2026_05_25	fd28eb95fbb97ae4cd0c13ff625e69941e59750496fb6e4340f2da537255f9bc
 l2-p0987	l2	isoform	human	NLGN1	N after SP	N after SP	0		1	45	863	0	670	46	n_terminal	moderate	strong	human_canonical	topo_2026_05_16	888c9719c74962bf6a92e14a28b95ccad9b15b1c7d6560d7d5048243decb0e43
 l2-p0988	l2	isoform	human	NLGN1	N after SP	N after SP	0		1	45	823	0	630	46	n_terminal	moderate	strong	human_isoforms	topo_2026_05_25	3c0281a81816ffdea1a7ac2b90105ed491c677910ba4a5645f88decd24319271
 l2-p0989	l2	isoform	human	NLGN3	N after SP	N after SP	0		1	37	828	0	652	38	n_terminal	high	strong	human_isoforms	topo_2026_05_25	9902fcea96469e8d5032df734b4f947ea7ab7d2cebc90ddae9c7dd01250fdfd0
@@ -407,16 +388,12 @@ l2-p1047	l2	isoform	human	NRXN2	N after SP	N after SP	0		1	26	1642	0	1541	27	n_t
 l2-p1050	l2	isoform	human	NRXN3	N after SP	N after SP	0		1	35	637	0	528	36	n_terminal	moderate	strong	human_canonical	topo_2026_05_16	173b34b0f0b99b88f4abd42cb5c5875b029a2eddb18740d1a26603d0914bc938
 l2-p1051	l2	isoform	human	NRXN3	N after SP	N after SP	0		1	35	432	0	323	36	n_terminal	moderate	strong	human_isoforms	topo_2026_05_25	45ab87e5c985a0c24f254522241969c0c2e6052dbb7a8cb1b44e76c876e27b31
 l2-p1052	l2	isoform	human	NRXN3	N after SP	N after SP	0		1	35	459	0	350	36	n_terminal	moderate	strong	human_isoforms	topo_2026_05_25	1bc6e3cdc3200de0cf969b145c072673c25194af7535a2866820a6d90ec8e916
-l2-p1055	l2	isoform	human	NTM	N after SP	N after SP	0		0	33	355	0	322	34	no_tm	moderate	moderate	library_designed_orf	topo_2026_11_22_mane_gtf	92f1c3421cae99c0eb838e02e1bf556f3579ae4f6eb82a210041c6cf9dcb63d9
 l2-p1057	l2	isoform	human	NTNG1	N after SP	N after SP	0		0	28	438	0	410	29	no_tm			human_isoforms	topo_2026_05_25	db908e173d336c7dca6addfb352a6d57a657a94c793b90439ef8969d18d2f215
 l2-p1059	l2	isoform	human	NTRK2	N after SP	N after SP	0		1	31	822	0	402	32	n_terminal	moderate	moderate	human_canonical	topo_2026_05_16	5700fd20b890228dc7e812e55ae9c8c398a6acd114445a1139ed0655f81a77ad
 l2-p1060	l2	isoform	human	NTRK2	N after SP	N after SP	0		1	31	477	0	403	32	n_terminal	moderate	moderate	human_isoforms	topo_2026_05_25	8a4527a70ea1f42db417402ec2f9f78503950cbaab92b1808fc47ac35724e5fa
-l2-p1062	l2	isoform	human	NTRK3	N after SP	N after SP	0		1	31	839	0	402	32	n_terminal			human_canonical	topo_2026_05_16	3394a44c77135f9edf6d1f3be38c64fdbf7e38bad6cdbf742241f2c25025b7c1
 l2-p1063	l2	isoform	human	NTRK3	N after SP	N after SP	0		1	31	817	0	394	32	n_terminal			human_isoforms	topo_2026_05_25	d90c0de9dc024bb8f23f7f1a4ac1e0bc80f35e79d14f2c9c7ed4f8b5dac3df6f
-l2-p1066	l2	isoform	human	OPCML	N after SP	N after SP	0		0	26	338	0	312	27	no_tm	moderate	strong	human_isoforms	topo_2026_05_25	dcce05a096105dc0bed6dd56da15c50956dceaa8b39c055050c5ffca1ef78140
 l2-p1070	l2	isoform	human	OPRL1	N at residue 1, multipass	N at residue 1	0		7	0	365	24	51	1	n_terminal			human_isoforms	topo_2026_05_25	2f29260bb6396cfba1f833807fa927c133c2bef7dc40a56688530f29da06af9a
 l2-p1071	l2	isoform	human	OPRM1	N at residue 1, multipass	N at residue 1	0		7	0	389	24	69	1	n_terminal			human_isoforms	topo_2026_05_25	8b46bdb8e4c9e389b25e465a71cc4a47b4ce9ddb818c75e76b029837e000934f
-l2-p1077	l2	isoform	human	OSMR	N after SP	N after SP	0		1	23	979	0	716	24	n_terminal			human_canonical	topo_2026_05_16	165917db3e001410759a2b5a6b66a628f36704f3d3fd62f8dee94a3a6137148d
 l2-p1078	l2	isoform	human	P2RX2	internal	internal	0		2	0	404	279	279	63	inter_tm			human_isoforms	topo_2026_05_25	7ac883830f11fa2290bf9bd98fafe27d6fd3806f7a71f56b86951abbcd6bb6fd
 l2-p1095	l2	isoform	human	PAM	N after SP	N after SP	0		1	20	866	0	739	21	n_terminal			human_isoforms	topo_2026_05_25	bcbe44514ba4aefd09ec9b5153f05a48332d497d996ae65f24f05718880b43ea
 l2-p1096	l2	isoform	human	PAM	N after SP	N after SP	0		1	20	974	0	846	21	n_terminal			human_isoforms	topo_2026_05_25	433255c37828fb7e7ec009143ca8c0f8d01abedba3b8f0dc749f40472f047e58
@@ -448,7 +425,6 @@ l2-p1133	l2	isoform	human	PCDHGB4	N after SP	N after SP	0		1	30	803	0	659	31	n_t
 l2-p1139	l2	isoform	human	PDPN	N at residue 1, single-pass (type III)	N at residue 1	0		1	0	238	0	207	1	n_terminal	moderate	moderate	human_isoforms	topo_2026_05_25	e4b47030c0c84cc60a355f892185c603db251c6aa3a64e9a82da51ed13cfbac8
 l2-p1140	l2	isoform	human	PDPN	N at residue 1, single-pass (type III)	N at residue 1	0		1	0	236	0	207	1	n_terminal	moderate	moderate	human_isoforms	topo_2026_05_25	b295f8a041cd6a99fe2b76c79996fa3d1b46111a12f63c285a008598495246a8
 l2-p1141	l2	isoform	human	PDPN	N at residue 1, single-pass (type III)	N at residue 1	0		1	0	120	0	89	1	n_terminal	moderate	moderate	human_isoforms	topo_2026_05_25	48caa189d89fb343c06bff54560ee774640fbe38c7fab3780412703972ede331
-l2-p1147	l2	isoform	human	PIANP	N after SP	N after SP	0		1	31	276	0	148	32	n_terminal	high	strong	human_isoforms	topo_2026_05_25	f1c1d5f5265a2e128230342d69f00ca89c14a07019563e6d0b50066e526c8756
 l2-p1153	l2	isoform	human	PLPP1	internal	internal	0		6	0	285	52	52	123	inter_tm			human_isoforms	topo_2026_05_25	0c6fd4656223426c4e3159bc2a191b0cb46de546f897859e7762a6eb428d097a
 l2-p1155	l2	isoform	human	PLPPR2	internal	internal	0		6	0	343	59	59	151	inter_tm			human_canonical	topo_2026_05_16	da6e8fcad2358036d4660557b9f4bbdc5b01efa6c3ba8c90ed07efe37d48778b
 l2-p1156	l2	isoform	human	PLPPR2	N at residue 1, multipass	N at residue 1	0		5	0	427	59	59	126	inter_tm			human_isoforms	topo_2026_05_25	e27debf10505aaf30a33bee473f02ccb8488d1bcdae6d179de03310b26e9254d
@@ -472,7 +448,6 @@ l2-p1191	l2	isoform	human	PTPRC	N after SP	N after SP	0		1	25	1145	0	391	26	n_te
 l2-p1192	l2	isoform	human	PTPRG	N after SP	N after SP	0		1	26	1416	0	711	27	n_terminal	moderate	moderate	human_isoforms	topo_2026_05_25	68340470222da2ed0fd6e782072cdfba9aa9cd5547557b7018225031df4fae73
 l2-p1196	l2	isoform	human	PTPRK	N after SP	N after SP	0		1	27	1439	0	725	28	n_terminal	moderate	moderate	human_canonical	topo_2026_05_16	201ea963dd817eabe24d00fc0213b7065cc04b7aff59cf2805176e0633fe313e
 l2-p1197	l2	isoform	human	PTPRK	N after SP	N after SP	0		1	27	1446	0	726	28	n_terminal	moderate	moderate	human_isoforms	topo_2026_05_25	0e698b42efd334fe9ff646ea9e0eb4afc81b75e3a93a1ba165b0f2695370efd7
-l2-p1198	l2	isoform	human	PTPRM	N after SP	N after SP	0		1	20	1452	0	722	21	n_terminal	moderate	strong	human_canonical	topo_2026_05_16	df563f7892d7a8dd8b5e4f02650ab5ee7c5bb678c6bb4f7854fe8e51b62a1119
 l2-p1199	l2	isoform	human	PTPRO	N after SP	N after SP	0		1	29	1188	0	790	30	n_terminal			human_isoforms	topo_2026_05_25	04c3eab67bcc78f42c46a8fb0a3fa50a65731521c41a68ab0abbbe29679c66c6
 l2-p1200	l2	isoform	human	PTPRO	N at residue 1, single-pass (type III)	N at residue 1	0		1	0	405	0	8	1	n_terminal			human_isoforms	topo_2026_05_25	2ad782dee7ebd499db3e808abf5fd1e58fa26f6c44f721424c8c5f346fe8c2bb
 l2-p1209	l2	isoform	human	PTPRU	N after SP	N after SP	0		1	18	1446	0	728	19	n_terminal			human_canonical	topo_2026_05_16	0ae26f046d3196ecbacd5f9c9d84413951aa3ddf64d3bc92f544325448d3b2e6
@@ -510,7 +485,6 @@ l2-p1298	l2	isoform	human	SEZ6L	N after SP	N after SP	0		1	28	1023	0	929	29	n_te
 l2-p1299	l2	isoform	human	SEZ6L	N after SP	N after SP	0		1	28	1013	0	919	29	n_terminal	high	strong	human_isoforms	topo_2026_05_25	393e79e6ca7fd1ad1aa9dd4ecd48a5c2e43b663df54ee767530f24797f3ce141
 l2-p1300	l2	isoform	human	SHISA9	N after SP	N after SP	0		1	23	221	0	129	24	n_terminal			human_isoforms	topo_2026_05_25	b074a7180e7ab3db111bd47f0f0eea544be54ea035a1b02fab53fe1732fdfd36
 l2-p1304	l2	isoform	human	SIGLEC9	N after SP	N after SP	0		1	17	479	0	332	18	n_terminal	moderate	moderate	human_isoforms	topo_2026_05_25	9cb6fb30dd63a5270e611f2a0f5daf1f3a6ee9da433193fed84ba665c52fc66e
-l2-p1305	l2	isoform	human	SIRPA	N after SP	N after SP	0		1	30	504	0	343	31	n_terminal	moderate	strong	human_canonical	topo_2026_05_16	ecd86acf19d5f96b9d954f3fce2654aff016711b0a0450e610a6502cb77e83d5
 l2-p1306	l2	isoform	human	SLAMF1	N after SP	N after SP	0		1	20	305	0	200	21	n_terminal			human_isoforms	topo_2026_05_25	eed92f4f2c7d7dcb344c6c23b854bdc20ddb8cf62e8dc0c4ffe2bf44df5786d8
 l2-p1310	l2	isoform	human	SLAMF7	N after SP	N after SP	0		1	22	296	0	204	23	n_terminal	moderate	strong	human_isoforms	topo_2026_05_25	dddb86aba64b006480ae9b6dc2715ecfa39500369a59afed1400f82f246f5ce3
 l2-p1317	l2	isoform	human	SLC12A3	internal	internal	0		12	0	1021	59	59	395	inter_tm			human_canonical	topo_2026_05_16	88a8c1a1f2cf753a5c462e5f24930bbc0dd9ff72cc88a4aafa5800d2e014f52f
@@ -541,7 +515,6 @@ l2-p1383	l2	isoform	human	SLC26A7	internal	internal	0		12	0	663	32	32	196	inter_
 l2-p1385	l2	isoform	human	SLC28A1	internal	internal	0		2	0	175	4	4	105	inter_tm			human_isoforms	topo_2026_05_25	246ee7f1ec4834d055d612fd86363de8ebd150e99a8020d0593703a0883baf93
 l2-p1389	l2	isoform	human	SLC29A2	internal	internal	0		6	0	361	36	36	34	inter_tm			human_isoforms	topo_2026_05_25	cd8eb4cb144ffe4d335956d9f52f56d13493ea0cb43302cbb3260d5d78507800
 l2-p1390	l2	isoform	human	SLC29A4	C-terminal	C-terminal	0		11	0	516	19	28	489	c_terminal			human_isoforms	topo_2026_05_25	b3665069078b0607d6ef7bb7c172a083fe94c3dec30b5db1edd049a9b26bfb7c
-l2-p1392	l2	isoform	human	SLC2A11	internal	internal	0		12	0	499	27	27	41	inter_tm			human_isoforms	topo_2026_05_25	1a93751a519e4c4d0039a18c0d83336cbf48146dc7454bc85903d455384b3a4c
 l2-p1393	l2	isoform	human	SLC2A11	internal	internal	0		12	0	503	29	29	43	inter_tm			human_isoforms	topo_2026_05_25	0dee0cf31d9fd083a4efeee97790709672ce2003fff34da8ad10a5a4064c1868
 l2-p1394	l2	isoform	human	SLC2A14	internal	internal	0		12	0	535	32	32	71	inter_tm			human_isoforms	topo_2026_05_25	13c7f0ab1638d26c0fcf301514f8c6bb87ceab7731284cd77ac5349e9db08c03
 l2-p1400	l2	isoform	human	SLC2A9	internal	internal	0		12	0	511	32	32	50	inter_tm			human_isoforms	topo_2026_05_25	1268a017df5a8c1f34b7afae6243294e4788308d1b025474b87474d1b07b15e3
@@ -549,7 +522,6 @@ l2-p1403	l2	isoform	human	SLC34A2	internal	internal	0		10	0	689	128	128	234	inte
 l2-p1415	l2	isoform	human	SLC38A6	C-terminal	C-terminal	0		11	0	521	37	75	447	c_terminal			human_isoforms	topo_2026_05_25	87ba7b35a4052ac92037117c514d43a997d25c8c1e9048d9a76897a8dceca222
 l2-p1419	l2	isoform	human	SLC39A12	N after SP	N after SP	0		6	23	654	20	345	24	n_terminal			human_isoforms	topo_2026_05_25	1606719529f1614a12b4c02d24fe3207877572c04f7251b19dbfd55cf4301b27
 l2-p1420	l2	isoform	human	SLC39A12	N after SP	N after SP	0		6	23	690	20	345	24	n_terminal			human_isoforms	topo_2026_05_25	6804a254b1b303c3f6ee5746976f4f07cd1feb93e4b0aee48e4ddb7098c9e910
-l2-p1421	l2	isoform	human	SLC39A14	N after SP	N after SP	0		6	30	492	16	124	31	n_terminal			human_canonical	topo_2026_05_16	bf4c246302ec91843b170a557bad9b5be6fe8e42da200166ca75d39f1129b0ca
 l2-p1422	l2	isoform	human	SLC39A14	N after SP	N after SP	0		5	23	481	16	130	24	n_terminal			human_isoforms	topo_2026_05_25	d9fe547c6eeed98d6c29989e2a63ba9ab3c7a65c8e673a167c3b81709fa476e3
 l2-p1425	l2	isoform	human	SLC39A3	N at residue 1, multipass	N at residue 1	0		2	0	105	0	41	65	c_terminal			human_isoforms	topo_2026_05_25	8e5b9cf7c0ab78eba470d66f5a9b10b16d64579cdae578af96ba377c015ed268
 l2-p1426	l2	isoform	human	SLC39A6	N at residue 1, multipass	N at residue 1	0		5	0	433	47	49	1	n_terminal	moderate	moderate	human_isoforms	topo_2026_05_25	656555580a36303f7165ae7aecc9d790d3e5629e352771c69ced7fd9a9ebeff5
@@ -560,7 +532,6 @@ l2-p1441	l2	isoform	human	SLC43A2	internal	internal	0		12	0	573	53	53	34	inter_t
 l2-p1446	l2	isoform	human	SLC44A1	internal	internal	0		10	0	652	162	162	51	inter_tm			human_isoforms	topo_2026_05_25	7ded8effea0fa740d5250672d15ca77f6cd1a1363f6183cee3d691df23810d52
 l2-p1450	l2	isoform	human	SLC44A2	internal	internal	0		10	0	704	177	177	54	inter_tm			human_isoforms	topo_2026_05_25	de5ee4a52f82171a71f56f040d26319f79fbcf2366e9b46d0edcf9a3265306f7
 l2-p1454	l2	isoform	human	SLC44A5	internal	internal	0		10	0	719	182	182	61	inter_tm			human_canonical	topo_2026_05_16	b5162c9f025ad0f6dff5bf534b6348849f47b58c91fc63ee91dfab471980c1d8
-l2-p1456	l2	isoform	human	SLC4A10	internal	internal	0		14	0	1118	79	79	646	inter_tm			human_canonical	topo_2026_05_16	d4b4aca2b49b5d3d8a9772d20182f36131e0d5edf9103a31377b065e8bd3c32a
 l2-p1457	l2	isoform	human	SLC4A11	internal	internal	0		14	0	891	69	69	505	inter_tm			human_isoforms	topo_2026_05_25	c38be6d3fa9a5972ba662070c721735097d371a73ae51201ab256e51e962bf3f
 l2-p1458	l2	isoform	human	SLC4A11	internal	internal	0		14	0	918	69	69	532	inter_tm			human_isoforms	topo_2026_05_25	4bb788e4f6f5a1292a62176274f18678c812adf4f5166e1e1c8c49c7ab4f4641
 l2-p1460	l2	isoform	human	SLC4A2	internal	internal	0		14	0	1232	58	58	833	inter_tm			human_isoforms	topo_2026_05_25	1a96002800cb0353a07f33d1698f95fc45837b97218ed3128648de7fcd0cec7b
@@ -606,7 +577,6 @@ l2-p1579	l2	isoform	human	TMC4	internal	internal	0		10	0	706	65	65	181	inter_tm	
 l2-p1584	l2	isoform	human	TMEM132A	N after SP	N after SP	0		1	36	1024	0	812	37	n_terminal			human_isoforms	topo_2026_05_25	2eb7d19d543149869ad95be3ba95b500e595e81a921741349dcb2de3fdc6a3bd
 l2-p1587	l2	isoform	human	TMEM134	internal	internal	0		2	0	180	1	1	145	inter_tm			human_isoforms	topo_2026_05_25	559a276b74ed37e4e750ef72125c6b423d3b901a59e342ef8122e926c3aae0da
 l2-p1600	l2	isoform	human	TMEM268	internal	internal	0		2	0	343	7	7	126	inter_tm			human_isoforms	topo_2026_05_25	eec15ceed7da7c4f4c4c951ec4ef3064b2aab8d8bf1709dfd7ae785086fb78e3
-l2-p1602	l2	isoform	human	TMEM8B	internal	internal	0		8	0	924	515	515	167	inter_tm			library_designed_orf	topo_2026_11_22_mane_gtf	6964aa964e28428dab2ca8fab8fa2dac0fa22f99a106245e3141ed5142f707c1
 l2-p1603	l2	isoform	human	TMEM95	N after SP	N after SP	0		1	16	184	0	135	17	n_terminal			human_isoforms	topo_2026_05_25	535a17b80dfe51caa807797aca7cd63911232cbbd8ed1cb4f534e5d91530c101
 l2-p1605	l2	isoform	human	TMPRSS11A	C-terminal	C-terminal	0		1	0	421	0	382	40	c_terminal			human_isoforms	topo_2026_05_25	4b4b80968a6ddc82edf0c8e884cbfa96d8d54d99d1c4be04228b31dfb73f8f77
 l2-p1611	l2	isoform	human	TMPRSS3	C-terminal	C-terminal	0		1	0	454	0	385	70	c_terminal			human_canonical	topo_2026_05_16	ba97f0327233610b63ff0386ff96c45b33125661b23bd2f6ed71d0b3924c8f12
@@ -621,9 +591,7 @@ l2-p1628	l2	isoform	human	TRPC3	internal	internal	0		8	0	848	49	49	600	inter_tm	
 l2-p1629	l2	isoform	human	TRPC4	internal	internal	0		8	0	982	58	58	537	inter_tm			human_isoforms	topo_2026_05_25	2c84b5bb46f929f318bba17d9ab871fbd5e824059538ca260df9711bc4c6b63e
 l2-p1633	l2	isoform	human	TRPV3	internal	internal	0		6	0	791	43	43	610	inter_tm			human_isoforms	topo_2026_05_25	789c62efd427c32722dddd21c5608dcff863720779b8926f2763b1b256f277a6
 l2-p1640	l2	isoform	human	TSPAN17	internal	internal	0		2	0	188	76	76	51	inter_tm			human_isoforms	topo_2026_05_25	c43418583e740ae7006b381a105b694f91fb6bbb56364a898ffeb08d68b97193
-l2-p1650	l2	isoform	human	TSPAN7	internal	internal	0		4	0	249	100	100	113	inter_tm			human_canonical	topo_2026_05_16	24c8d6e38239d72cd6bfc0972e2d80b46275fe8e5743e0e5908217413f220592
 l2-p1653	l2	isoform	human	TTYH1	N at residue 1, multipass	N at residue 1	0		5	0	460	128	128	264	inter_tm			human_isoforms	topo_2026_05_25	2cf8c675086b3b7ff0509ef8dafd48ab131a5493f262fa12a45bf085378492c6
-l2-p1663	l2	isoform	human	UNC5A	N after SP	N after SP	0		1	25	842	0	279	26	n_terminal			human_canonical	topo_2026_05_16	65353e657b85f3731c1376afe615ab1f8176307faf7d5d8d71e578d5c7c2d1ab
 l2-p1666	l2	isoform	human	UNC5B	N after SP	N after SP	0		1	26	934	0	340	27	n_terminal	moderate	moderate	human_isoforms	topo_2026_05_25	f57f256c85f51ee436e505784c1976b5b07c76f322128cabf8dc8b73a20a7b5f
 l2-p1667	l2	isoform	human	UNC5C	N after SP	N after SP	0		1	33	597	0	366	34	n_terminal			human_isoforms	topo_2026_05_25	52feadcb1d6620aa6020d8350fea0687d3f35bbc441bce4159a241548d7c07fd
 l2-p1673	l2	isoform	human	VANGL1	internal	internal	0		4	0	522	18	18	132	inter_tm			human_isoforms	topo_2026_05_25	10223a9edf38869272eb275470c3fcb7a935a9b26e44ff3f4beb7669a1e0dd68

@@ -31,12 +31,20 @@ def _on_sigint(_sig, _frm):
     print("\n  interrupt received - finishing the current construct, then saving")
 
 
-def domesticate_one(entry: dict) -> dict | None:
+def domesticate_one(entry: dict, *, avoid_harmful_motifs: bool = False) -> dict | None:
     """The construct record for one resolved CDS, or None if domestication would change
-    its protein."""
+    its protein.
+
+    ``avoid_harmful_motifs`` defaults to False because ``candidate_constructs.json`` was
+    domesticated before ``seqtools.domesticate`` added post-domestication motif scrubbing
+    (2026-11-24); motif checks for the ordered library run downstream in
+    ``synthesis_compliance.py``.
+    """
     raw = entry["cds"]
     sites_before = len(seqtools.find_sites(raw, ENZYMES))
-    seq, warnings = seqtools.domesticate(raw, ENZYMES, seed=SEED)
+    seq, warnings = seqtools.domesticate(
+        raw, ENZYMES, seed=SEED, avoid_harmful_motifs=avoid_harmful_motifs
+    )
     if seqtools.translate(raw) != seqtools.translate(seq):
         return None
     return {

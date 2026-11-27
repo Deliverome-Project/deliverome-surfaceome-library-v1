@@ -125,12 +125,22 @@ def reproduce(work: Path) -> dict:
     with MANIFEST.open() as fh:
         reader = csv.DictReader(fh, delimiter="\t")
         cols, rows = list(reader.fieldnames or []), to_design_space(list(reader))
-    active = {
-        r["key"]: r
-        for r in rows
-        if r["library"] == ld.LIBRARY_L1 and r["set"] == "ortholog" and ld.is_active(r)
-    }
-    assert len(active) == 200, f"{len(active)} active L1 orthologs, not 200"
+    excl = lp.exclusions()
+
+    def _adopted_member(r: dict) -> bool:
+        if r["library"] != ld.LIBRARY_L1 or r["set"] != "ortholog":
+            return False
+        if ld.is_active(r):
+            return True
+        ret = (r.get(ld.RETIRED_COLUMN) or "").strip()
+        if ret.startswith("parent_gene_dropped_ectodomain_below_30aa:"):
+            gene = ret.split(":", 1)[1].split(" ", 1)[0]
+            assert gene in excl, f"{r['candidate_id']}: unexpected parent-gene retirement ({gene})"
+            return True
+        return False
+
+    active = {r["key"]: r for r in rows if _adopted_member(r)}
+    assert len(active) == 200, f"{len(active)} adopted L1 orthologs, not 200"
     before = {k: "\t".join(r[c] for c in cols) for k, r in active.items()}
 
     bb = str(SeqIO.read(candidate_inputs.backbone(), "genbank").seq).upper()
@@ -138,7 +148,11 @@ def reproduce(work: Path) -> dict:
     changed, new_con, fasta, report = {}, {}, [], []
     for row in ledger():
         key = row["key"]
-        assert key in active and active[key]["candidate_id"] == row["design_id"], key
+        assert (
+            key in active
+            and ld.is_active(active[key])
+            and active[key]["candidate_id"] == row["design_id"]
+        ), key
         e = restarted(prev_cds[key], row)  # every row is checked, applied or held
         hit = topology.for_sequence(seqtools.translate(e["cds"]).rstrip("*"), tool=topology.TOOL_V1)
         v1 = hit["topology_version"] if hit else ""

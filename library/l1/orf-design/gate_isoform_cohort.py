@@ -60,6 +60,14 @@ GATE_KEY = (
     "sprint4/s4e9-orf-design-fg-panel/library-design/panel-inputs/"
     "2026-11-12-isoform-gate-2/isoform_gate.tsv"
 )
+#: The 2026-11-12 reference CDS and topology snapshot that ``isoform_gate.tsv`` was computed
+#: against (before later MANE switches, additions, exclusions, and topology supplements).
+GATE_CDS_KEY = (
+    "sprint4/s4e9-orf-design-fg-panel/library-candidates/"
+    "2026-11-12-reference-fixes-2/candidate_cds.json"
+)
+GATE_TOPOLOGY_KEY = "accessible-surfaceome/topology/2026-11-12-cyno-restarts/topology.parquet"
+GATE_TOPOLOGY_SHA256 = "c8fb5874437acd0677da76e2864aa76089ac7fa072f3defd2338f15f3890292e"
 
 DECIDED_BY = "Becca Carlson, 2026-11-12 (Gate cohort, redraw)"
 IMPLEMENTED_BY = "Claude Code session l1-reviewer-package (subagent), PR #283"
@@ -137,12 +145,14 @@ def load_inputs(
     cohort_path: Path | None = None,
     snapshot_key: str | None = None,
     snapshot_sha256: str | None = None,
+    cds_key: str | None = None,
 ) -> dict:
-    """Everything the gate reads. Defaults are the pinned inputs of the panel of record.
+    """Everything the gate reads. Defaults are the pinned inputs of the 2026-11-12 gate of record.
 
-    ``cohort_path`` replaces the pinned ``isoform_cohorts.tsv`` and ``snapshot_key`` /
-    ``snapshot_sha256`` the pinned topology snapshot; ``regate_isoform_forms.py`` uses them
-    to gate the same cohort against new DeepTMHMM v1 rows, and a rebuilt cohort.
+    ``cohort_path`` replaces the pinned ``isoform_cohorts.tsv``, ``cds_key`` replaces the
+    2026-11-12 reference CDS record, and ``snapshot_key`` / ``snapshot_sha256`` replace the
+    2026-11-12 topology snapshot; ``regate_isoform_forms.py`` uses them to gate the same cohort
+    against new DeepTMHMM v1 rows, and a rebuilt cohort.
     """
     import candidate_inputs
     import resolve_candidate_cds as rcd
@@ -150,8 +160,8 @@ def load_inputs(
     from panel_inputs import stage
 
     from deliverome_analysis import library_design as ld
-    from deliverome_analysis import topology
-    from deliverome_analysis.s3 import external
+    from deliverome_analysis import seqtools
+    from deliverome_analysis.s3 import external, processed
 
     snap = stage(work / "panel")
     with (cohort_path or snap / "isoform_cohorts.tsv").open() as fh:
@@ -167,15 +177,30 @@ def load_inputs(
             prot = seq.rstrip("*").upper()
             by_protein[prot].append(tx)
             pep_of[tx] = prot
-    # Keyed on the design id, which renumbering never changes.
-    did = ld.design_ids(MANIFEST)
-    refs = {
-        m["gene_symbol"]: (did[cid], m["sequence"])
-        for cid, m in ld.designed_proteins(MANIFEST, library=ld.LIBRARY_L1).items()
-        if m["candidate_set"] == "library_reference"
-    }
-    key = snapshot_key or topology.SNAPSHOT_KEY
-    want = snapshot_sha256 or topology.SNAPSHOT_SHA256
+    # Keyed on the design id, which renumbering never changes. Default to the 2026-11-12
+    # reference CDS record so the historical 2026-11-12 gate reproduces identically even after
+    # later MANE switches and post-freeze gene exclusions.
+    ref_cds = json.loads(
+        Path(processed.download(cds_key or GATE_CDS_KEY, work / "cds.json")).read_text()
+    )
+    refs: dict[str, tuple[str, str]] = {}
+    with MANIFEST.open() as fh:
+        for r in csv.DictReader(fh, delimiter="\t"):
+            if r["library"] != ld.LIBRARY_L1 or r["set"] != "library_reference":
+                continue
+            if r["key"] not in ref_cds:
+                continue
+            ret = (r.get(ld.RETIRED_COLUMN) or "").strip()
+            if ret.startswith("duplicate_of:"):
+                continue  # identical paralogs retired before the 2026-11-12 gate
+            if cds_key is not None and ret:
+                continue
+            refs[ld.gene_from_key(r["key"])] = (
+                ld.design_id(r),
+                seqtools.translate(ref_cds[r["key"]]["cds"]).rstrip("*"),
+            )
+    key = snapshot_key or GATE_TOPOLOGY_KEY
+    want = snapshot_sha256 or GATE_TOPOLOGY_SHA256
     snap_path = Path(external.download(key, work / "topology.parquet"))
     if sha256(snap_path) != want:
         raise SystemExit(f"topology snapshot {key} differs from its pinned SHA-256")

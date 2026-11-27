@@ -94,6 +94,12 @@ REFERENCE_RECORDS = (
     "sprint4/s4e9-orf-design-fg-panel/library-design/reference-selection/"
     "2026-11-12-reference-fixes-2/"
 )
+#: The 2026-11-12 round-two overrides pin (before post-2026-11-12 additions and GTF MANE).
+ROUND2B_OVERRIDES = (
+    "processed:sprint4/s4e9-orf-design-fg-panel/library-design/pipeline-inputs/"
+    "2026-11-12-round2b/reference_overrides.tsv",
+    "3537db7ad39fa1f0eb2a502d5d3e6363db60fdaea0e04dc22f53232e14f46d68",
+)
 
 SP_SWAP = {
     "decided_by": "Becca Carlson, 2026-11-11 (Apply all; tIII only for now); reviewed by "
@@ -267,6 +273,12 @@ def trimmed(entry: dict, spec: dict) -> dict:
     return {**entry, "cds": cds, "trimmed_upstream_codons": spec["codons"]}
 
 
+def _run_historical_reference(work: Path) -> Path:
+    return lp.run_reference(
+        work, as_of="2026-11-12", overrides_override=ROUND2B_OVERRIDES, use_mane_table=False
+    )
+
+
 def reproduce(work: Path) -> dict:
     from deliverome_analysis.s3 import processed
 
@@ -277,8 +289,8 @@ def reproduce(work: Path) -> dict:
     )
     base = json.loads(Path(processed.download(ld.BASE_CDS_KEY, work / "bc.json")).read_text())
 
-    # 1. reference ladder with the named rows; only the named genes may move.
-    out = lp.run_reference(work / "ref")
+    # 1. reference ladder with the 2026-11-12 round-two named rows (2,368 root + SLC67A1).
+    out = _run_historical_reference(work / "ref")
     rec = unix(lp.record(PREV_REFERENCE + "reference_selection.tsv", work / "rec_ref.tsv"))
     new = unix(out / "reference_selection.tsv")
     assert new[0] == rec[0], "reference_selection.tsv header changed"

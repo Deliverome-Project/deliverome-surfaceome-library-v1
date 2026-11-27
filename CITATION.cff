@@ -20,13 +20,13 @@ url: 'https://surfaceome.deliverome.org/v1-review/'
 abstract: >-
   Design pipeline, construct tables, verification tests, and external
   review brief for the Deliverome v1 pooled, barcoded lentiviral
-  surface-protein ORF library (L1 in code). The library covers 2,762
-  active cell-surface protein CDSs (2,412 human reference proteins,
-  150 human isoforms, and 200 mouse and cynomolgus orthologs; 3,384
-  ordered constructs), each carrying a 51-aa extracellular SpyTag003
-  and ALFA dual-epitope tag cassette and a 20-nt barcode compatible
-  with FACS, optical pooled screening, and 10x Genomics Feature
-  Barcoding.
+  surface-protein ORF library (L1 in code). The library covers 2,399
+  genes and 2,740 active cell-surface protein CDSs (2,395 human
+  reference proteins, 149 human isoforms, and 196 mouse and cynomolgus
+  orthologs; 2,730 built CDSs and 3,352 ordered constructs across 35
+  plates), each carrying a 51-aa extracellular SpyTag003 and ALFA
+  dual-epitope tag cassette and a 20-nt barcode compatible with FACS,
+  optical pooled screening, and 10x Genomics Feature Barcoding.
 keywords:
   - surfaceome
   - cell surface proteins
@@ -38,7 +38,7 @@ keywords:
   - bioinformatics
 license: MIT
 version: 1.0.0-review
-date-released: '2026-11-24'
+date-released: '2026-11-26'
 references:
   - type: article
     title: The accessible human surfaceome

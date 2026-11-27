@@ -1,5 +1,22 @@
 {
   "bundles": {
+    "4422a9c4c6e2a5569e8a38a7190ef12046e5ddf2": {
+      "made": "order of record 2026-11-25-pre-freeze-e (built from pre-freeze-d rung arms)",
+      "key": "processed://sprint4/s4e9-orf-design-fg-panel/pinned-inputs/rung-builds/4422a9c4/rung_builds.tar",
+      "sha256": "3c17f461386b7cc4e8b1e358b44a2da2781de9f6ea77bd1cb1963d9267fa83d7",
+      "files": {
+        "constructs_l1_cterm.fasta": "8a36310fbc5af15c3a99d69f55919fb799d385ef8adabe99a91f040df28bca76",
+        "constructs_l1_cterm.tsv": "8a28aa22709af166f1763a5145b9c52e318f72097d31f10e3dcf0a7a48d04f0c",
+        "constructs_l1_internal.fasta": "0464812992c4ab7b1995f1627f1879d782438046b6962038b1215ff67c7d45b5",
+        "constructs_l1_internal.tsv": "fb99488d738b6524a1920e608952d1daf492587a47cb6646dd5ed94ab5fea046",
+        "constructs_l1_multipass.fasta": "a92e291588fcc6292c5f5961e6ee9ba7f728781e1bd65589c829994874ce413e",
+        "constructs_l1_multipass.tsv": "2adabfb67c02fd92880df9383e1610619f6a6ad3d16f345b5433cd98b8e9f31d",
+        "constructs_l1_nterm.fasta": "ffe988dbbb3c43f517ebdb9a284874758a82f6e10745b67efadf5ab2614aa675",
+        "constructs_l1_nterm.tsv": "87b4af66a9d7aaadc8b9637d7d39a2fe7013c559b2f4cf3e5667a09f2648988b",
+        "constructs_l1_type3.fasta": "c3c20e57270032971ecc1290b56a30c9c2cb3956e8508d934ceb0d6e644e828a",
+        "constructs_l1_type3.tsv": "7b55bd84947cf2278883323611d78f7d0f88bcb7ce6afee8ad62968a378c9b22"
+      }
+    },
     "e3336caf6b0e4c084cbfeec9e5d189015794284e": {
       "made": "order of record 2026-11-23-pre-freeze (cut in its PR)",
       "key": "processed://sprint4/s4e9-orf-design-fg-panel/pinned-inputs/rung-builds/e3336caf/rung_builds.tar",

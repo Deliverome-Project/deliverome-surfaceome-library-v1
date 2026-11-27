@@ -218,8 +218,7 @@ def load_members(with_retired_holders: bool = False) -> tuple[list[dict], list[s
     # the C-terminal rung their cassette sits right before the barcode and needs an issued,
     # unique encoding. Keyed by design_id in the design table, mapped to candidate_id here.
     design_of = {
-        r["candidate_id"]: r["design_id"]
-        for r in csv.DictReader((HERE / "l1_member_renumbering.tsv").open(), delimiter="\t")
+        r["candidate_id"]: ld.design_id(r) for r in csv.DictReader(MANIFEST.open(), delimiter="\t")
     }
     snorkels = set(l1_snorkel.built_designs())
     # Every arm ever issued a snorkel module (l1_snorkel_module_encodings.tsv) is a snorkel,
@@ -357,6 +356,38 @@ def summarize(members: list[dict], upstream: list[str]) -> tuple[dict, np.ndarra
     )
 
 
+#: Historical issuance notes for ``verify_issuance`` (every active encoding is unchanged):
+#: 1. ``l1-p2190`` (TMEM222, now retired for <30 aa ectodomain) was issued in batch 1 and stayed
+#:    in ``l1_cassette_encodings.tsv`` through batch 14 (2e16bfa0), then was removed from the TSV
+#:    in d187d271 just before batch 15 was drawn. Replaying batches 1..14 therefore includes it;
+#:    batch 15 replays without it.
+#: 2. When batch 14 (2e16bfa0) was drawn, the 9 batch-10 snorkel isoforms retired in the
+#:    2026-11-22 redraw had left ``l1_member_renumbering.tsv``, so the issuer passed their native
+#:    ORF flank rather than ``l1_snorkel.PREFIX_DNA`` into ``pair5`` for batches 14..15; likewise
+#:    ``l1-p3278`` (retired in the 2026-11-23 redraw) before batch 15 (d187d271).
+_DROPPED_BATCH1_HOLDER: dict[str, tuple[str, int]] = {
+    "l1-p2190": (
+        "GGAGGTGGAGGTAGCAGAGGCGTGCCACACATCGTGATGGTGGATGCCTACAAGAGATACAAGGGTGGTGGAGGGTCT"
+        "GGCGGAGGAGGATCTCCCAGTCGCCTCGAAGAAGAGCTCAGGCGGAGACTGACAGAGCCTGGCGGCGGTGGGTCC",
+        1,
+    ),
+}
+_PRE_BATCH14_RETIRED_SNORKELS = frozenset(
+    {
+        "l1-p2416",
+        "l1-p2459",
+        "l1-p2485",
+        "l1-p2501",
+        "l1-p2503",
+        "l1-p2504",
+        "l1-p2512",
+        "l1-p2513",
+        "l1-p2522",
+    }
+)
+_PRE_BATCH15_RETIRED_SNORKELS = _PRE_BATCH14_RETIRED_SNORKELS | {"l1-p3278"}
+
+
 def verify_issuance() -> str:
     """Replay every issued batch from scratch and require the recorded encodings back."""
     members, _ = load_members(with_retired_holders=True)
@@ -369,10 +400,57 @@ def verify_issuance() -> str:
         f"issued encodings held by neither a C-terminal nor a retired member: {stale[:5]}"
     )
     assert not missing, f"C-terminal members with no issued encoding: {missing[:5]}"
-    for k in sorted({b for _, b in batches.values()}):
-        upto = {cid for cid, (_, b) in batches.items() if b <= k}
-        pins = {cid: nt for cid, (nt, b) in batches.items() if b < k}
-        drawn = [m for m in members if not m["cterm"] or m["id"] in upto]
+
+    # Include the dropped batch-1 retired holder (l1-p2190) for replaying batches 1..14.
+    replay_members = list(members)
+    have_ids = {m["id"] for m in replay_members}
+    extra_batches = {k: v for k, v in _DROPPED_BATCH1_HOLDER.items() if k not in batches}
+    if extra_batches:
+        record = ld.load_designed_cds()
+        manifest_rows = [
+            r
+            for r in csv.DictReader(MANIFEST.open(), delimiter="\t")
+            if r["library"] == ld.LIBRARY_L1
+        ]
+        pos = {r["candidate_id"]: i for i, r in enumerate(manifest_rows)}
+        key_of = {r["candidate_id"]: r["key"] for r in manifest_rows}
+        for cid in extra_batches:
+            if cid not in have_ids:
+                seq = record[key_of[cid]]["cds"]
+                body = seq[:-3] if seqtools.translate(seq[-3:]) == "*" else seq
+                body, edit = domesticate_junction(body)
+                replay_members.append(
+                    {
+                        "id": cid,
+                        "gene": "",
+                        "set": "retired",
+                        "placement": "C-terminal",
+                        "cterm": True,
+                        "body": body,
+                        "junction_edit": edit,
+                        "retired": True,
+                    }
+                )
+        replay_members.sort(key=lambda m: pos[m["id"]])
+
+    all_batches = {**batches, **extra_batches}
+    prefix_dna = l1_snorkel.PREFIX_DNA
+    for k in sorted({b for _, b in all_batches.values()}):
+        cur_batches = batches if k >= 15 else all_batches
+        strip_snorkels = (
+            _PRE_BATCH15_RETIRED_SNORKELS
+            if k >= 15
+            else (_PRE_BATCH14_RETIRED_SNORKELS if k == 14 else frozenset())
+        )
+        upto = {cid for cid, (_, b) in cur_batches.items() if b <= k}
+        pins = {cid: nt for cid, (nt, b) in cur_batches.items() if b < k}
+        drawn = []
+        for m in replay_members:
+            if m["cterm"] and m["id"] not in upto:
+                continue
+            if m["id"] in strip_snorkels and m["body"].endswith(prefix_dna):
+                m = {**m, "body": m["body"][: -len(prefix_dna)]}
+            drawn.append(m)
         plan, note = draw(
             drawn,
             fixed=tag_fixed,
@@ -381,7 +459,7 @@ def verify_issuance() -> str:
         )
         assert plan, f"batch {k}: {note}"
         for cid in sorted(upto - set(pins)):
-            assert plan.variants[cid].sequence == batches[cid][0], f"batch {k}: {cid} differs"
+            assert plan.variants[cid].sequence == cur_batches[cid][0], f"batch {k}: {cid} differs"
     n = len({b for _, b in batches.values()})
     return f"all {len(batches)} linker encodings replay from scratch in {n} issued batch(es)"
 

@@ -46,7 +46,9 @@ PREFIX = "sprint4/s4e9-orf-design-fg-panel/"
 #: Second round (LMLN, DISP2, TSPAN10 named) at its own key; the first round's is kept.
 #: 2026-11-21: plus the co-receptor additions (add_library_genes.py --publish); every earlier row
 #: unchanged, and the 2026-11-12 record stays at its key.
-REFERENCE_RECORD = "library-design/reference-selection/2026-11-23-pre-freeze/"
+#: 2026-11-25-pre-freeze-e: minus the 20 <30 aa LL-tier exclusions, plus LNPEP and PCDH11X
+#: (2,399 library genes; every shared gene's row unchanged from 2026-11-23-pre-freeze).
+REFERENCE_RECORD = "library-design/reference-selection/2026-11-25-pre-freeze-e/"
 
 
 def sha256(path: Path) -> str:
@@ -228,32 +230,47 @@ def verify_gene_list(work: Path) -> str:
     )
 
 
-def additions(withdrawn: bool = False) -> list[str]:
+def additions(withdrawn: bool = False, *, as_of: str | None = None) -> list[str]:
     """Genes in ``gene_list_additions.tsv``: the active ones, or with ``withdrawn=True`` the
     ones a later decision took off the gene list (dated in the ``withdrawn`` column). A
-    withdrawn gene keeps its row, and its member keeps its records, retired in the manifest."""
+    withdrawn gene keeps its row, and its member keeps its records, retired in the manifest.
+    When ``as_of`` (YYYY-MM-DD) is given, returns additions with ``added <= as_of`` (not yet
+    withdrawn on or before ``as_of``)."""
     import csv
 
     with ADDITIONS.open() as fh:
         rows = list(csv.DictReader(fh, delimiter="\t"))
+    if as_of is not None:
+        return [
+            r["gene"]
+            for r in rows
+            if (r.get("added") or "").strip() <= as_of
+            and (
+                not (r.get("withdrawn") or "").strip()
+                or (r.get("withdrawn") or "").strip()[:10] > as_of
+            )
+        ]
     return [r["gene"] for r in rows if bool((r.get("withdrawn") or "").strip()) == withdrawn]
 
 
-def exclusions() -> set[str]:
+def exclusions(*, as_of: str | None = None) -> set[str]:
     """Genes in ``gene_list_exclusions.tsv`` (post-filter or post-freeze removals)."""
     import csv
 
     with EXCLUSIONS.open() as fh:
-        return {r["gene"] for r in csv.DictReader(fh, delimiter="\t")}
+        rows = list(csv.DictReader(fh, delimiter="\t"))
+    if as_of is not None:
+        return {r["gene"] for r in rows if (r.get("removed_on") or "").strip() <= as_of}
+    return {r["gene"] for r in rows}
 
 
-def gene_list(dest: Path) -> Path:
+def gene_list(dest: Path, *, as_of: str | None = None) -> Path:
     """The library's gene list: frozen root minus ``gene_list_exclusions.tsv`` plus active ``gene_list_additions.tsv``."""
 
     root = stage_inputs(["library_members.json"], dest / "root")["library_members.json"]
-    excluded = exclusions()
+    excluded = exclusions(as_of=as_of)
     genes = [g for g in json.loads(root.read_text()) if g not in excluded]
-    added = additions()
+    added = additions(as_of=as_of)
     clash = sorted(set(added) & set(genes))
     if clash:
         raise SystemExit(f"gene_list_additions.tsv repeats root genes: {clash}")
@@ -262,13 +279,25 @@ def gene_list(dest: Path) -> Path:
     return out
 
 
-def run_reference(work: Path, offline: bool = True) -> Path:
+def run_reference(
+    work: Path,
+    offline: bool = True,
+    *,
+    as_of: str | None = None,
+    overrides_override: tuple[str, str] | None = None,
+    use_mane_table: bool = True,
+) -> Path:
     """Rerun the reference ladder over the gene list; returns the output folder.
 
     Offline (the default) reads only the pinned PeptideAtlas cache and fails on an accession it
     lacks. ``offline=False`` is for extending that cache for genes added to the list
     (``add_library_genes.py --fetch-peptides``): missing accessions are queried and appended
-    to ``work/cache``, which is then published as a new dated snapshot and repinned."""
+    to ``work/cache``, which is then published as a new dated snapshot and repinned.
+
+    Historical replay stages (``apply_reference_fixes.py``, 2026-11-12) pass
+    ``as_of="2026-11-12"``, ``overrides_override=(source, sha256)``, and
+    ``use_mane_table=False`` to replay the ladder against the 2026-11-12 pinned inputs.
+    """
     names = [
         "appris_homo_sapiens_e115v50.txt",
         "Homo_sapiens.GRCh38.pep.all.fa.gz",
@@ -291,8 +320,22 @@ def run_reference(work: Path, offline: bool = True) -> Path:
         # MANE Select read from the Ensembl 115 GTF (derive_mane_select.py), 2026-11-22.
         "mane_select_ensembl115.tsv",
     ]
-    got = stage_inputs(names, work / "in")
-    got["library_members.json"] = gene_list(work / "genes")
+    stage_names = [n for n in names if use_mane_table or n != "mane_select_ensembl115.tsv"]
+    if overrides_override is not None:
+        stage_names = [n for n in stage_names if n != "reference_overrides.tsv"]
+    got = stage_inputs(stage_names, work / "in")
+    if overrides_override is not None:
+        from deliverome_analysis import s3
+
+        src, want_sha = overrides_override
+        bucket, _, key = src.partition(":")
+        ov_path = work / "in" / "reference_overrides.tsv"
+        ov_path.parent.mkdir(parents=True, exist_ok=True)
+        getattr(s3, bucket).download(key, ov_path)
+        if sha256(ov_path) != want_sha:
+            raise SystemExit("reference_overrides.tsv: SHA-256 does not match historical pin")
+        got["reference_overrides.tsv"] = ov_path
+    got["library_members.json"] = gene_list(work / "genes", as_of=as_of)
     cache, ribo, repo = work / "cache", work / "riboseq", work / "repo"
     for n in names[:4]:
         (cache / n).parent.mkdir(parents=True, exist_ok=True)
@@ -310,7 +353,8 @@ def run_reference(work: Path, offline: bool = True) -> Path:
         (repo / sub).mkdir(parents=True, exist_ok=True)
         shutil.copy(got[n], repo / sub / n)
     for n in names[15:]:
-        shutil.copy(got[n], work / n)
+        if n in got:
+            shutil.copy(got[n], work / n)
     out = work / "out"
     out.mkdir()
     run(
@@ -448,10 +492,25 @@ def verify_candidate_cds(work: Path) -> str:
 
         with mane_gtf.open() as fh:
             named |= {r["key"] for r in csv.DictReader(fh, delimiter="\t")}
-    differ = sorted(k for k in rec if k not in new or new[k]["cds"] != rec[k]["cds"])
+    # Plus the 5 open-decision MANE switches applied in 2026-11-23-pre-freeze (Becca Carlson,
+    # 2026-11-23: removed APP, GRIN1, KCNMA1, NFASC, SIRPA from reference_overrides.tsv).
+    cut_23 = HERE / "cut_2026_11_23_membership_changes.json"
+    if cut_23.exists():
+        named |= {f"lib:{g}" for g in json.loads(cut_23.read_text()).get("mane_switched", [])}
+    # Genes excluded from the gene list after the base record (gene_list_exclusions.tsv) are
+    # no longer in the reference rerun; their historical CDS entries stay in the record.
+    excluded_keys = {f"lib:{g}" for g in exclusions()}
+    missing_excluded = sorted(k for k in (set(rec) & excluded_keys) if k in new)
+    assert not missing_excluded, f"excluded genes still in reference rerun: {missing_excluded}"
+    differ = sorted(
+        k
+        for k in rec
+        if k not in excluded_keys and (k not in new or new[k]["cds"] != rec[k]["cds"])
+    )
     # (a gene added after the resolver's record is checked with the other additions below)
-    assert set(differ) == named & set(rec), (
-        f"designed CDS does not reproduce for {sorted(set(differ) ^ (named & set(rec)))}"
+    expected_differ = (named & set(rec)) - excluded_keys
+    assert set(differ) == expected_differ, (
+        f"designed CDS does not reproduce for {sorted(set(differ) ^ expected_differ)}"
     )
     cur = json.loads(Path(processed.download(ld.CDS_KEY, work / "cur.json")).read_text())
     starts = {k: d for k, d in fixes.approved_starts().items() if k in cur and k.startswith("lib:")}
@@ -469,7 +528,10 @@ def verify_candidate_cds(work: Path) -> str:
     moved = sorted(k for k in rec if cur.get(k) != rec[k])
     allowed = (named & set(rec)) | set(starts) | set(trims) | set(restarts)
     assert set(moved) == allowed, f"unexpected changed entries {sorted(set(moved) ^ allowed)}"
-    assert all(cur[k] == new[k] for k in named), "a named reference's CDS is not the rerun's"
+    withdrawn_keys = {f"lib:{g}" for g in additions(withdrawn=True)}
+    assert all(cur[k] == new[k] for k in named - excluded_keys - withdrawn_keys), (
+        "a named reference's CDS is not the rerun's"
+    )
     assert all(cur[k] == fixes.start_replaced(rec[k], d) for k, d in starts.items()), (
         "an ATG start replacement is not the approved one"
     )
@@ -499,7 +561,7 @@ def verify_candidate_cds(work: Path) -> str:
     # A withdrawn addition (SCNN1B) keeps its record entry but is no longer on the gene list,
     # so the rerun no longer produces it.
     active_added = {f"lib:{g}" for g in additions()}
-    assert all(cur[k] == new[k] for k in appended if k in active_added), (
+    assert all(cur[k] == new[k] for k in appended if k in active_added and k not in restored), (
         "an added gene's CDS is not the rerun's"
     )
     extra = sorted(set(new) - set(rec))
@@ -549,7 +611,27 @@ def verify_constructs(work: Path) -> str:
     # historical intermediate (positional ids, and it predates MICA's repoint).
     with (HERE / "candidate_manifest_tranches.tsv").open() as fh:
         rows = {r["key"]: r for r in csv.DictReader(fh, delimiter="\t")}
-    differ = [k for k in cds if domesticate_candidates.domesticate_one(cds[k]) != con.get(k)]
+    # apply_mane_gtf.py (2026-11-22) updated the route provenance label from "protein match" to
+    # "named transcript" in candidate_cds.json for 4 previously-named references whose CDS DNA
+    # did not change, leaving candidate_constructs.json untouched. Every sequence, edit, site,
+    # and transcript field must still match identically.
+    mane_route_label_only = {"lib:CACHD1", "lib:DISP2", "lib:RGMB", "lib:TSPAN10"}
+    differ = []
+    for k in cds:
+        rebuilt = domesticate_candidates.domesticate_one(cds[k])
+        recorded = con.get(k)
+        if rebuilt == recorded:
+            continue
+        if (
+            k in mane_route_label_only
+            and rebuilt is not None
+            and recorded is not None
+            and recorded.get("route") == "protein match"
+            and rebuilt.get("route") == "named transcript"
+            and {**rebuilt, "route": "protein match"} == recorded
+        ):
+            continue
+        differ.append(k)
     assert not differ, f"{len(differ)} ORF(s) do not re-domesticate to the record: {differ[:5]}"
     bb = str(SeqIO.read(candidate_inputs.backbone(), "genbank").seq).upper()
     bb_sites = seqtools.find_sites(bb, assemble_candidates.ENZYMES)
@@ -785,6 +867,7 @@ def _strip_ortholog_rule_2026_11_22(manifest_tsv: str) -> str:
     cid_col = header.index("candidate_id")
     ret_col = header.index("retired_reason")
     out = [lines[0]]
+    excl = exclusions()
     for line in lines[1:]:
         fields = line.rstrip("\r\n").split("\t")
         cid = fields[cid_col]
@@ -797,6 +880,13 @@ def _strip_ortholog_rule_2026_11_22(manifest_tsv: str) -> str:
             fields[ret_col] = ""
             line = "\t".join(fields) + "\n"
         elif fields[ret_col] in moved_reasons:
+            fields[ret_col] = ""
+            line = "\t".join(fields) + "\n"
+        elif fields[ret_col].startswith("parent_gene_dropped_ectodomain_below_30aa:"):
+            # 2026-11-25-pre-freeze-d: orthologs whose human parent gene is in
+            # gene_list_exclusions.tsv (<30 aa ectodomain) were retired post-adoption.
+            gene = fields[ret_col].split(":", 1)[1].split(" ", 1)[0]
+            assert gene in excl, f"{cid}: unexpected parent-gene retirement for {gene}"
             fields[ret_col] = ""
             line = "\t".join(fields) + "\n"
         out.append(line)

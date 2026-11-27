@@ -2842,7 +2842,7 @@ l2-p0115	l2-p0115	iso:ADGRL2:O95490-7	isoform	human	ENST00000370723	named transc
 l2-p0116	l2-p0116	iso:ADGRL3:ENST00000506700	isoform	human	ENST00000506700	named transcript	0	3696	11263	5	6	6	2	3786	False	deferred	not reserved	l2		l1-p2483		
 l2-p0117	l2-p0117	iso:ADGRL3:ENST00000506720	isoform	human	ENST00000506720	named transcript	0	4743	12310	6	7	6	2	4833	False	deferred	not reserved	l2		l1-p2484		
 l2-p0118	l2-p0118	iso:ADGRL3:ENST00000507625	isoform	human	ENST00000507625	named transcript	0	4587	12154	6	7	6	2	4677	False	deferred	not reserved	l2		l1-p2485		
-l2-p0119	l2-p0119	iso:ADGRL3:ENST00000683033	isoform	human	ENST00000683033	named transcript	0	4632	12199	6	7	6	2	4722	False	deferred	not reserved	l2		l1-p2486		
+l2-p0119	l2-p0119	iso:ADGRL3:ENST00000683033	isoform	human	ENST00000683033	named transcript	0	4632	12199	6	7	6	2	4722	False	deferred	not reserved	l2		l1-p2486	duplicate_of:l1-p0076 (isoform_is_reference)	
 l2-p0120	l2-p0120	iso:ADGRL3:ENST00000882181	isoform	human	ENST00000882181	named transcript	0	4383	11950	6	7	6	2	4473	False	deferred	not reserved	l2		l1-p2487		
 l2-p0121	l2-p0121	iso:ADIPOR1:ENST00000855709	isoform	human	ENST00000855709	named transcript	0	1107	8674	1	2	6	2	1197	False	deferred	not reserved	l2		l1-p2488		
 l2-p0122	l2-p0122	iso:ADIPOR1:ENST00000940205	isoform	human	ENST00000940205	named transcript	0	1122	8689	2	3	6	2	1212	False	deferred	not reserved	l2		l1-p2489		
@@ -2866,7 +2866,7 @@ l2-p0139	l2-p0139	iso:ANO2:Q9NQ90-2	isoform	human	ENST00000356134	named transcri
 l2-p0140	l2-p0140	iso:ANO3:ENST00000672621	isoform	human	ENST00000672621	named transcript	0	3129	10696	5	6	6	2	3219	False	deferred	not reserved	l2		l1-p2508		
 l2-p0141	l2-p0141	iso:ANO3:Q9BYT9-2	isoform	human	ENST00000531568	named transcript	0	2508	10075	3	4	6	2	2598	False	deferred	not reserved	l2		l1-p2509		
 l2-p0142	l2-p0142	iso:ANO4:ENST00000644049	isoform	human	ENST00000644049	named transcript	0	3366	10933	5	6	6	2	3456	False	deferred	not reserved	l2		l1-p2510		
-l2-p0143	l2-p0143	iso:ANO4:Q32M45	isoform	human	ENST00000392977	named transcript	0	2868	10435	4	4	6	2	2958	False	deferred	not reserved	l2		l1-p2511		
+l2-p0143	l2-p0143	iso:ANO4:Q32M45	isoform	human	ENST00000392977	named transcript	0	2868	10435	4	4	6	2	2958	False	deferred	not reserved	l2		l1-p2511	duplicate_of:l1-p0113 (isoform_is_reference)	
 l2-p0144	l2-p0144	iso:ANO6:Q4KMQ2-2	isoform	human	ENST00000423947	named transcript	0	2796	10363	3	4	6	2	2886	False	deferred	not reserved	l2		l1-p2512		
 l2-p0145	l2-p0145	iso:ANO7:ENST00000880340	isoform	human	ENST00000880340	named transcript	0	2637	10204	2	2	6	2	2727	False	deferred	not reserved	l2		l1-p2513		
 l2-p0146	l2-p0146	iso:ANTXR2:ENST00000680913	isoform	human	ENST00000680913	named transcript	0	1518	9085	0	0	6	2	1608	False	deferred	not reserved	l2		l1-p2515		
@@ -2886,7 +2886,7 @@ l2-p0159	l2-p0159	iso:APLP2:Q06481-4	isoform	human	ENST00000528499	named transcr
 l2-p0160	l2-p0160	iso:APLP2:Q06481-6	isoform	human	ENST00000278756	named transcript	0	2286	9853	5	5	6	2	2376	False	deferred	not reserved	l2		l1-p2530		
 l2-p0161	l2-p0161	iso:APP:ENST00000872530	isoform	human	ENST00000872530	named transcript	0	2247	9814	2	2	6	2	2337	False	deferred	not reserved	l2		l1-p2531		
 l2-p0162	l2-p0162	iso:APP:ENST00000965081	isoform	human	ENST00000965081	named transcript	0	2244	9811	2	2	6	2	2334	False	deferred	not reserved	l2		l1-p2532		
-l2-p0163	l2-p0163	iso:APP:P05067	isoform	human	ENST00000346798	named transcript	0	2313	9880	2	2	6	2	2403	False	deferred	not reserved	l2		l1-p2533		
+l2-p0163	l2-p0163	iso:APP:P05067	isoform	human	ENST00000346798	named transcript	0	2313	9880	2	2	6	2	2403	False	deferred	not reserved	l2		l1-p2533	duplicate_of:l1-p0125 (isoform_is_reference)	
 l2-p0164	l2-p0164	iso:APP:P05067-10	isoform	human	ENST00000354192	named transcript	0	1920	9487	1	1	6	2	2010	False	deferred	not reserved	l2		l1-p2534	moved_to:l1-p3323	
 l2-p0165	l2-p0165	iso:APP:P05067-11	isoform	human	ENST00000440126	named transcript	0	2241	9808	2	2	6	2	2331	False	deferred	not reserved	l2		l1-p2535		
 l2-p0166	l2-p0166	iso:APP:P05067-4	isoform	human	ENST00000348990	named transcript	0	2088	9655	1	1	6	2	2178	False	deferred	not reserved	l2		l1-p2536		
@@ -3066,7 +3066,7 @@ l2-p0339	l2-p0339	iso:CD96:P40200	isoform	human	ENST00000283285	named transcript
 l2-p0340	l2-p0340	iso:CD99:ENST00000381184	isoform	human	ENST00000381184	named transcript	0	534	8101	0	0	6	2	624	False	deferred	not reserved	l2		l1-p2730		
 l2-p0341	l2-p0341	iso:CD99:ENST00000624481	isoform	human	ENST00000624481	named transcript	0	555	8122	0	0	6	2	645	False	deferred	not reserved	l2		l1-p2731		
 l2-p0342	l2-p0342	iso:CD99:P14209-2	isoform	human	ENST00000482405	named transcript	0	483	8050	0	0	6	2	573	False	deferred	not reserved	l2		l1-p2732		
-l2-p0343	l2-p0343	iso:CD99L2:Q8TCZ2	isoform	human	ENST00000370377	named transcript	0	789	8356	3	4	6	2	879	False	deferred	not reserved	l2		l1-p2733		
+l2-p0343	l2-p0343	iso:CD99L2:Q8TCZ2	isoform	human	ENST00000370377	named transcript	0	789	8356	3	4	6	2	879	False	deferred	not reserved	l2		l1-p2733	duplicate_of:l1-p0329 (isoform_is_reference)	
 l2-p0344	l2-p0344	iso:CD99L2:Q8TCZ2-3	isoform	human	ENST00000355149	named transcript	0	573	8140	3	4	6	2	663	False	deferred	not reserved	l2		l1-p2734		
 l2-p0345	l2-p0345	iso:CD9:ENST00000610354	isoform	human	ENST00000610354	named transcript	0	768	8335	1	1	6	2	858	False	deferred	not reserved	l2		l1-p2736		
 l2-p0346	l2-p0346	iso:CD9:ENST00000894341	isoform	human	ENST00000894341	named transcript	0	678	8245	1	1	6	2	768	False	deferred	not reserved	l2		l1-p2737		
@@ -3099,7 +3099,7 @@ l2-p0372	l2-p0372	iso:CLCN2:ENST00000881270	isoform	human	ENST00000881270	named 
 l2-p0373	l2-p0373	iso:CLCN2:ENST00000881273	isoform	human	ENST00000881273	named transcript	0	2691	10258	6	6	6	2	2781	False	deferred	not reserved	l2		l1-p2766		
 l2-p0374	l2-p0374	iso:CLDN10:P78369-2	isoform	human	ENST00000376873	named transcript	0	681	8248	1	2	6	2	771	False	deferred	not reserved	l2		l1-p2767		
 l2-p0375	l2-p0375	iso:CLDN18:P56856-2	isoform	human	ENST00000343735	named transcript	0	786	8353	0	0	6	2	876	False	deferred	not reserved	l2		l1-p2768	moved_to:l1-p3314	
-l2-p0376	l2-p0376	iso:CLDN19:Q8N6F1	isoform	human	ENST00000296387	named transcript	0	675	8242	2	3	6	2	765	False	deferred	not reserved	l2		l1-p2769		
+l2-p0376	l2-p0376	iso:CLDN19:Q8N6F1	isoform	human	ENST00000296387	named transcript	0	675	8242	2	3	6	2	765	False	deferred	not reserved	l2		l1-p2769	duplicate_of:l1-p0398 (isoform_is_reference)	
 l2-p0377	l2-p0377	iso:CLDN5:ENST00000403084	isoform	human	ENST00000403084	named transcript	0	912	8479	1	3	6	2	1002	False	deferred	not reserved	l2		l1-p2770		
 l2-p0378	l2-p0378	iso:CLDND1:ENST00000394181	isoform	human	ENST00000394181	named transcript	0	831	8398	1	1	6	2	921	False	deferred	not reserved	l2		l1-p2771	moved_to:l1-p3235	
 l2-p0379	l2-p0379	iso:CLEC10A:ENST00000874074	isoform	human	ENST00000874074	named transcript	0	858	8425	1	1	6	2	948	False	deferred	not reserved	l2		l1-p2772		
@@ -3305,7 +3305,7 @@ l2-p0578	l2-p0578	iso:GDPD5:ENST00000953509	isoform	human	ENST00000953509	named 
 l2-p0579	l2-p0579	iso:GDPD5:Q8WTR4-3	isoform	human	ENST00000526177	named transcript	0	1404	8971	3	5	6	2	1494	False	deferred	not reserved	l2		l1-p2993		
 l2-p0580	l2-p0580	iso:GFRA1:P56159-2	isoform	human	ENST00000369236	named transcript	0	1383	8950	3	4	6	2	1473	False	deferred	not reserved	l2		l1-p2994		
 l2-p0581	l2-p0581	iso:GFRA4:Q9GZZ7	isoform	human	ENST00000319242	named transcript	0	900	8467	3	4	6	2	990	False	deferred	not reserved	l2		l1-p2995		
-l2-p0582	l2-p0582	iso:GGT5:P36269	isoform	human	ENST00000327365	named transcript	0	1761	9328	6	8	6	2	1851	False	deferred	not reserved	l2		l1-p2996		
+l2-p0582	l2-p0582	iso:GGT5:P36269	isoform	human	ENST00000327365	named transcript	0	1761	9328	6	8	6	2	1851	False	deferred	not reserved	l2		l1-p2996	duplicate_of:l1-p0696 (isoform_is_reference)	
 l2-p0583	l2-p0583	iso:GGT5:P36269-3	isoform	human	ENST00000398292	named transcript	0	1764	9331	6	8	6	2	1854	False	deferred	not reserved	l2		l1-p2997		
 l2-p0584	l2-p0584	iso:GGT6:Q6P531	isoform	human	ENST00000574154	named transcript	0	1482	9049	1	1	6	2	1572	False	deferred	not reserved	l2		l1-p2998		
 l2-p0585	l2-p0585	iso:GGT7:ENST00000885992	isoform	human	ENST00000885992	named transcript	0	1974	9541	6	6	6	2	2064	False	deferred	not reserved	l2		l1-p3000	moved_to:l1-p3243	
@@ -3316,7 +3316,7 @@ l2-p0589	l2-p0589	iso:GJA10:ENST00000638915	isoform	human	ENST00000638915	named 
 l2-p0590	l2-p0590	iso:GLIPR1L1:Q6UWM5-2	isoform	human	ENST00000312442	named transcript	0	702	8269	0	0	6	2	792	False	deferred	not reserved	l2		l1-p3006		
 l2-p0591	l2-p0591	iso:GLRA1:P23415	isoform	human	ENST00000455880	named transcript	0	1374	8941	1	1	6	2	1464	False	deferred	not reserved	l2		l1-p3007		
 l2-p0592	l2-p0592	iso:GLRA2:P23416-2	isoform	human	ENST00000355020	named transcript	0	1359	8926	4	6	6	2	1449	False	deferred	not reserved	l2		l1-p3008	moved_to:l1-p3244	
-l2-p0593	l2-p0593	iso:GLRA3:O75311	isoform	human	ENST00000274093	named transcript	0	1395	8962	1	1	6	2	1485	False	deferred	not reserved	l2		l1-p3009		
+l2-p0593	l2-p0593	iso:GLRA3:O75311	isoform	human	ENST00000274093	named transcript	0	1395	8962	1	1	6	2	1485	False	deferred	not reserved	l2		l1-p3009	duplicate_of:l1-p0727 (isoform_is_reference)	
 l2-p0594	l2-p0594	iso:GP6:Q9HCN6-2	isoform	human	ENST00000333884	named transcript	0	966	8533	2	4	6	2	1056	False	deferred	not reserved	l2		l1-p3011		
 l2-p0595	l2-p0595	iso:GP6:Q9HCN6-3	isoform	human	ENST00000310373	named transcript	0	1863	9430	4	7	6	2	1953	False	deferred	not reserved	l2		l1-p3012		
 l2-p0596	l2-p0596	iso:GPC3:P51654-3	isoform	human	ENST00000394299	named transcript	0	1812	9379	1	1	6	2	1902	False	deferred	not reserved	l2		l1-p3013	moved_to:l1-p3141	
@@ -3327,7 +3327,7 @@ l2-p0600	l2-p0600	iso:GPM6B:Q13491	isoform	human	ENST00000356942	named transcrip
 l2-p0601	l2-p0601	iso:GPM6B:Q13491-2	isoform	human	ENST00000454189	named transcript	0	741	8308	0	0	6	2	831	False	deferred	not reserved	l2		l1-p3020	moved_to:l1-p3121	
 l2-p0602	l2-p0602	iso:GPM6B:Q13491-3	isoform	human	ENST00000355135	named transcript	0	918	8485	0	0	6	2	1008	False	deferred	not reserved	l2		l1-p3021		
 l2-p0603	l2-p0603	iso:GPNMB:Q14956	isoform	human	ENST00000381990	named transcript	0	1719	9286	6	7	6	2	1809	False	deferred	not reserved	l2		l1-p3022		
-l2-p0604	l2-p0604	iso:GPNMB:Q14956-2	isoform	human	ENST00000258733	named transcript	0	1683	9250	6	7	6	2	1773	False	deferred	not reserved	l2		l1-p3023		
+l2-p0604	l2-p0604	iso:GPNMB:Q14956-2	isoform	human	ENST00000258733	named transcript	0	1683	9250	6	7	6	2	1773	False	deferred	not reserved	l2		l1-p3023	duplicate_of:l1-p0744 (isoform_is_reference)	
 l2-p0605	l2-p0605	iso:GPR132:Q9UNW8-3	isoform	human	ENST00000392585	named transcript	0	1116	8683	3	3	6	2	1206	False	deferred	not reserved	l2		l1-p3024		
 l2-p0606	l2-p0606	iso:GPR156:Q8NFN8-2	isoform	human	ENST00000461057	named transcript	0	2433	10000	4	5	6	2	2523	False	deferred	not reserved	l2		l1-p3025		
 l2-p0607	l2-p0607	iso:GPR161:ENST00000271357	isoform	human	ENST00000271357	named transcript	0	1641	9208	2	3	6	2	1731	False	deferred	not reserved	l2		l1-p3026		
@@ -3390,9 +3390,9 @@ l2-p0663	l2-p0663	iso:HPN:ENST00000863199	isoform	human	ENST00000863199	named tr
 l2-p0664	l2-p0664	iso:HRH2:ENST00000624694	isoform	human	ENST00000624694	named transcript	0	1092	8659	2	2	6	2	1182	False	deferred	not reserved	l2		l1-p3087		
 l2-p0665	l2-p0665	iso:HTR3A:ENST00000936751	isoform	human	ENST00000936751	named transcript	0	1434	9001	4	5	6	2	1524	False	deferred	not reserved	l2		l1-p3088		
 l2-p0666	l2-p0666	iso:HTR3A:P46098-2	isoform	human	ENST00000506841	named transcript	0	1533	9100	4	5	6	2	1623	False	deferred	not reserved	l2		l1-p3089		
-l2-p0667	l2-p0667	iso:HTR4:Q13639	isoform	human	ENST00000377888	named transcript	0	1167	8734	3	3	6	2	1257	False	deferred	not reserved	l2		l1-p3091		
+l2-p0667	l2-p0667	iso:HTR4:Q13639	isoform	human	ENST00000377888	named transcript	0	1167	8734	3	3	6	2	1257	False	deferred	not reserved	l2		l1-p3091	duplicate_of:l1-p0879 (isoform_is_reference)	
 l2-p0668	l2-p0668	iso:HTR4:Q13639-5	isoform	human	ENST00000521735	named transcript	0	1137	8704	3	3	6	2	1227	False	deferred	not reserved	l2		l1-p3092		
-l2-p0669	l2-p0669	iso:HTR7:P34969	isoform	human	ENST00000336152	named transcript	0	1440	9007	3	3	6	2	1530	False	deferred	not reserved	l2		l1-p3093		
+l2-p0669	l2-p0669	iso:HTR7:P34969	isoform	human	ENST00000336152	named transcript	0	1440	9007	3	3	6	2	1530	False	deferred	not reserved	l2		l1-p3093	duplicate_of:l1-p0882 (isoform_is_reference)	
 l2-p0670	l2-p0670	iso:HTR7:P34969-2	isoform	human	ENST00000277874	named transcript	0	1338	8905	2	2	6	2	1428	False	deferred	not reserved	l2		l1-p3094	moved_to:l1-p3123	
 l2-p0671	l2-p0671	iso:HYAL2:ENST00000945863	isoform	human	ENST00000945863	named transcript	0	1419	8986	1	1	6	2	1509	False	deferred	not reserved	l2		l1-p3095		
 l2-p0672	l2-p0672	iso:ICOSLG:ENST00000700355	isoform	human	ENST00000700355	named transcript	0	915	8482	1	1	6	2	1005	False	deferred	not reserved	l2		l1-p3096		
@@ -3452,7 +3452,7 @@ l2-p0725	l2-p0725	iso:IL6ST:ENST00000868547	isoform	human	ENST00000868547	named 
 l2-p0726	l2-p0726	iso:IL6ST:P40189-3	isoform	human	ENST00000381294	named transcript	0	2574	10141	5	7	6	2	2664	False	deferred	not reserved	l2		l1-p3151		
 l2-p0727	l2-p0727	iso:ILDR1:ENST00000891214	isoform	human	ENST00000891214	named transcript	0	1635	9202	3	4	6	2	1725	False	deferred	not reserved	l2		l1-p3153		
 l2-p0728	l2-p0728	iso:ILDR1:Q86SU0-2	isoform	human	ENST00000273691	named transcript	0	1509	9076	3	4	6	2	1599	False	deferred	not reserved	l2		l1-p3154		
-l2-p0729	l2-p0729	iso:ILDR2:Q71H61	isoform	human	ENST00000271417	named transcript	0	1920	9487	2	2	6	2	2010	False	deferred	not reserved	l2		l1-p3156		
+l2-p0729	l2-p0729	iso:ILDR2:Q71H61	isoform	human	ENST00000271417	named transcript	0	1920	9487	2	2	6	2	2010	False	deferred	not reserved	l2		l1-p3156	duplicate_of:l1-p0950 (isoform_is_reference)	
 l2-p0730	l2-p0730	iso:INSR:ENST00000904790	isoform	human	ENST00000904790	named transcript	0	4110	11677	16	19	6	2	4200	False	deferred	not reserved	l2		l1-p3157		
 l2-p0731	l2-p0731	iso:INSR:ENST00000904791	isoform	human	ENST00000904791	named transcript	0	4146	11713	16	19	6	2	4236	False	deferred	not reserved	l2		l1-p3158		
 l2-p0732	l2-p0732	iso:INSR:P06213-2	isoform	human	ENST00000341500	named transcript	0	4113	11680	16	19	6	2	4203	False	deferred	not reserved	l2		l1-p3159		
@@ -3491,7 +3491,7 @@ l2-p0764	l2-p0764	iso:ITGB7:ENST00000851177	isoform	human	ENST00000851177	named 
 l2-p0765	l2-p0765	iso:ITGB8:ENST00000897608	isoform	human	ENST00000897608	named transcript	0	2307	9874	2	2	6	2	2397	False	deferred	not reserved	l2		l1-p3196		
 l2-p0766	l2-p0766	iso:ITGB8:P26012-2	isoform	human	ENST00000537992	named transcript	0	1905	9472	1	1	6	2	1995	False	deferred	not reserved	l2		l1-p3197		
 l2-p0767	l2-p0767	iso:ITM2B:Q9Y287-2	isoform	human	ENST00000378549	named transcript	0	483	8050	0	0	6	2	573	False	deferred	not reserved	l2		l1-p3198		
-l2-p0768	l2-p0768	iso:IZUMO1R:A6ND01	isoform	human	ENST00000328458	named transcript	0	753	8320	3	3	6	2	843	False	deferred	not reserved	l2		l1-p3199		
+l2-p0768	l2-p0768	iso:IZUMO1R:A6ND01	isoform	human	ENST00000328458	named transcript	0	753	8320	3	3	6	2	843	False	deferred	not reserved	l2		l1-p3199	duplicate_of:l1-p0977 (isoform_is_reference)	
 l2-p0769	l2-p0769	iso:JAG1:ENST00000913738	isoform	human	ENST00000913738	named transcript	0	3651	11218	8	12	6	2	3741	False	deferred	not reserved	l2		l1-p3200		
 l2-p0770	l2-p0770	iso:JAG2:ENST00000938643	isoform	human	ENST00000938643	named transcript	0	3720	11287	4	4	6	2	3810	False	deferred	not reserved	l2		l1-p3201		
 l2-p0771	l2-p0771	iso:JAG2:Q9Y219-2	isoform	human	ENST00000347004	named transcript	0	3603	11170	4	4	6	2	3693	False	deferred	not reserved	l2		l1-p3202		
@@ -3504,14 +3504,14 @@ l2-p0777	l2-p0777	iso:KCNC2:Q96PR1-3	isoform	human	ENST00000298972	named transcr
 l2-p0778	l2-p0778	iso:KCNC2:Q96PR1-4	isoform	human	ENST00000350228	named transcript	0	1677	9244	4	4	6	2	1767	False	deferred	not reserved	l2		l1-p3209		
 l2-p0779	l2-p0779	iso:KCNC2:Q96PR1-6	isoform	human	ENST00000393288	named transcript	0	1857	9424	4	4	6	2	1947	False	deferred	not reserved	l2		l1-p3210		
 l2-p0780	l2-p0780	iso:KCNC3:ENST00000376959	isoform	human	ENST00000376959	named transcript	0	2187	9754	6	8	6	2	2277	False	deferred	not reserved	l2		l1-p3211		
-l2-p0781	l2-p0781	iso:KCNC3:Q14003	isoform	human	ENST00000477616	named transcript	0	2274	9841	6	8	6	2	2364	False	deferred	not reserved	l2		l1-p3212		
+l2-p0781	l2-p0781	iso:KCNC3:Q14003	isoform	human	ENST00000477616	named transcript	0	2274	9841	6	8	6	2	2364	False	deferred	not reserved	l2		l1-p3212	duplicate_of:l1-p0997 (isoform_is_reference)	
 l2-p0782	l2-p0782	iso:KCNC4:ENST00000413138	isoform	human	ENST00000413138	named transcript	0	1875	9442	6	7	6	2	1965	False	deferred	not reserved	l2		l1-p3213		
 l2-p0783	l2-p0783	iso:KCNC4:Q03721	isoform	human	ENST00000369787	named transcript	0	1908	9475	6	7	6	2	1998	False	deferred	not reserved	l2		l1-p3214		
 l2-p0784	l2-p0784	iso:KCND1:ENST00000935975	isoform	human	ENST00000935975	named transcript	0	1956	9523	5	9	6	2	2046	False	deferred	not reserved	l2		l1-p3215		
 l2-p0785	l2-p0785	iso:KCND1:ENST00000935976	isoform	human	ENST00000935976	named transcript	0	1941	9508	5	9	6	2	2031	False	deferred	not reserved	l2		l1-p3216		
 l2-p0786	l2-p0786	iso:KCND3:ENST00000896065	isoform	human	ENST00000896065	named transcript	0	1908	9475	7	8	6	2	1998	False	deferred	not reserved	l2		l1-p3217		
 l2-p0787	l2-p0787	iso:KCND3:Q9UK17-2	isoform	human	ENST00000369697	named transcript	0	1911	9478	7	8	6	2	2001	False	deferred	not reserved	l2		l1-p3218		
-l2-p0788	l2-p0788	iso:KCNH1:O95259	isoform	human	ENST00000271751	named transcript	0	2970	10537	3	3	6	2	3060	False	deferred	not reserved	l2		l1-p3219		
+l2-p0788	l2-p0788	iso:KCNH1:O95259	isoform	human	ENST00000271751	named transcript	0	2970	10537	3	3	6	2	3060	False	deferred	not reserved	l2		l1-p3219	duplicate_of:l1-p1005 (isoform_is_reference)	
 l2-p0789	l2-p0789	iso:KCNH2:Q12809-2	isoform	human	ENST00000330883	named transcript	0	2460	10027	5	6	6	2	2550	False	deferred	not reserved	l2		l1-p3220		
 l2-p0790	l2-p0790	iso:KCNH6:Q9H252-1	isoform	human	ENST00000583023	named transcript	0	2985	10552	8	8	6	2	3075	False	deferred	not reserved	l2		l1-p3221		
 l2-p0791	l2-p0791	iso:KCNJ1:P48048	isoform	human	ENST00000392664	named transcript	0	1176	8743	5	5	6	2	1266	False	deferred	not reserved	l2		l1-p3222	moved_to:l1-p3249	
@@ -3519,7 +3519,7 @@ l2-p0792	l2-p0792	iso:KCNK10:P57789	isoform	human	ENST00000340700	named transcri
 l2-p0793	l2-p0793	iso:KCNK10:P57789-4	isoform	human	ENST00000312350	named transcript	0	1632	9199	6	6	6	2	1722	False	deferred	not reserved	l2		l1-p3224		
 l2-p0794	l2-p0794	iso:KCNK17:ENST00000884807	isoform	human	ENST00000884807	named transcript	0	987	8554	2	2	6	2	1077	False	deferred	not reserved	l2		l1-p3225		
 l2-p0795	l2-p0795	iso:KCNK17:Q96T54-4	isoform	human	ENST00000453413	named transcript	0	816	8383	0	0	6	2	906	False	deferred	not reserved	l2		l1-p3226		
-l2-p0796	l2-p0796	iso:KCNK2:O95069	isoform	human	ENST00000444842	named transcript	0	1281	8848	4	5	6	2	1371	False	deferred	not reserved	l2		l1-p3227		
+l2-p0796	l2-p0796	iso:KCNK2:O95069	isoform	human	ENST00000444842	named transcript	0	1281	8848	4	5	6	2	1371	False	deferred	not reserved	l2		l1-p3227	duplicate_of:l1-p1028 (isoform_is_reference)	
 l2-p0797	l2-p0797	iso:KCNK2:O95069-3	isoform	human	ENST00000391895	named transcript	0	1269	8836	3	4	6	2	1359	False	deferred	not reserved	l2		l1-p3228	moved_to:l1-p3315	
 l2-p0798	l2-p0798	iso:KCNK5:ENST00000907345	isoform	human	ENST00000907345	named transcript	0	1491	9058	6	6	6	2	1581	False	deferred	not reserved	l2		l1-p3230		
 l2-p0799	l2-p0799	iso:KCNMA1:ENST00000372440	isoform	human	ENST00000372440	named transcript	0	3702	11269	3	3	6	2	3792	False	deferred	not reserved	l2		l1-p3231		
@@ -3533,7 +3533,7 @@ l2-p0806	l2-p0806	iso:KCNMA1:ENST00000639544	isoform	human	ENST00000639544	named
 l2-p0807	l2-p0807	iso:KCNMA1:ENST00000639601	isoform	human	ENST00000639601	named transcript	0	3537	11104	3	3	6	2	3627	False	deferred	not reserved	l2		l1-p3239		
 l2-p0808	l2-p0808	iso:KCNMA1:ENST00000640523	isoform	human	ENST00000640523	named transcript	0	3729	11296	4	4	6	2	3819	False	deferred	not reserved	l2		l1-p3240		
 l2-p0809	l2-p0809	iso:KCNMA1:ENST00000640605	isoform	human	ENST00000640605	named transcript	0	3717	11284	3	3	6	2	3807	False	deferred	not reserved	l2		l1-p3241		
-l2-p0810	l2-p0810	iso:KCNMA1:Q12791	isoform	human	ENST00000286628	named transcript	0	3711	11278	4	4	6	2	3801	False	deferred	not reserved	l2		l1-p3242		
+l2-p0810	l2-p0810	iso:KCNMA1:Q12791	isoform	human	ENST00000286628	named transcript	0	3711	11278	4	4	6	2	3801	False	deferred	not reserved	l2		l1-p3242	duplicate_of:l1-p1033 (isoform_is_reference)	
 l2-p0811	l2-p0811	iso:KCNMA1:Q12791-4	isoform	human	ENST00000434208	named transcript	0	3624	11191	3	3	6	2	3714	False	deferred	not reserved	l2		l1-p3243	moved_to:l1-p3250	
 l2-p0812	l2-p0812	iso:KCNMA1:Q12791-5	isoform	human	ENST00000286627	named transcript	0	3537	11104	3	3	6	2	3627	False	deferred	not reserved	l2		l1-p3244		
 l2-p0813	l2-p0813	iso:KCNMA1:Q12791-6	isoform	human	ENST00000480683	named transcript	0	507	8074	1	2	6	2	597	False	deferred	not reserved	l2		l1-p3245		
@@ -3614,7 +3614,7 @@ l2-p0887	l2-p0887	iso:LILRB4:ENST00000391733	isoform	human	ENST00000391733	named
 l2-p0888	l2-p0888	iso:LILRB4:ENST00000430952	isoform	human	ENST00000430952	named transcript	0	1344	8911	3	6	6	2	1434	False	deferred	not reserved	l2		l1-p3323	moved_to:l1-p3254	
 l2-p0889	l2-p0889	iso:LILRB5:ENST00000610568	isoform	human	ENST00000610568	named transcript	0	1932	9499	4	8	6	2	2022	False	deferred	not reserved	l2		l1-p3324		
 l2-p0890	l2-p0890	iso:LILRB5:O75023	isoform	human	ENST00000316219	named transcript	0	1773	9340	3	7	6	2	1863	False	deferred	not reserved	l2		l1-p3325		
-l2-p0891	l2-p0891	iso:LINGO1:Q96FE5	isoform	human	ENST00000355300	named transcript	0	1863	9430	6	8	6	2	1953	False	deferred	not reserved	l2		l1-p3327		
+l2-p0891	l2-p0891	iso:LINGO1:Q96FE5	isoform	human	ENST00000355300	named transcript	0	1863	9430	6	8	6	2	1953	False	deferred	not reserved	l2		l1-p3327	duplicate_of:l1-p1100 (isoform_is_reference)	
 l2-p0892	l2-p0892	iso:LMBR1L:ENST00000892065	isoform	human	ENST00000892065	named transcript	0	1458	9025	7	9	6	2	1548	False	deferred	not reserved	l2		l1-p3328		
 l2-p0893	l2-p0893	iso:LMBRD2:ENST00000955895	isoform	human	ENST00000955895	named transcript	0	2085	9652	2	2	6	2	2175	False	deferred	not reserved	l2		l1-p3329		
 l2-p0894	l2-p0894	iso:LMLN:Q96KR4-3	isoform	human	ENST00000420910	named transcript	0	2055	9622	2	3	6	2	2145	False	deferred	not reserved	l2		l1-p3330	moved_to:l1-p3142	
@@ -3642,7 +3642,7 @@ l2-p0915	l2-p0915	iso:LSR:Q86X29	isoform	human	ENST00000621372	named transcript	
 l2-p0916	l2-p0916	iso:LSR:Q86X29-2	isoform	human	ENST00000347609	named transcript	0	1776	9343	7	9	6	2	1866	False	deferred	not reserved	l2		l1-p3355		
 l2-p0917	l2-p0917	iso:LY6G6F:ENST00000383420	isoform	human	ENST00000383420	named transcript	0	894	8461	1	1	6	2	984	False	deferred	not reserved	l2		l1-p3356		
 l2-p0918	l2-p0918	iso:LY6G6F:Q5SQ64-2	isoform	human	ENST00000503322	protein match	0	1149	8716	3	3	6	2	1239	False	deferred	not reserved	l2		l1-p3357		
-l2-p0919	l2-p0919	iso:LY6H:O94772	isoform	human	ENST00000430474	named transcript	0	423	7990	0	0	6	2	513	False	deferred	not reserved	l2		l1-p3358		
+l2-p0919	l2-p0919	iso:LY6H:O94772	isoform	human	ENST00000430474	named transcript	0	423	7990	0	0	6	2	513	False	deferred	not reserved	l2		l1-p3358	duplicate_of:l1-p1171 (isoform_is_reference)	
 l2-p0920	l2-p0920	iso:LY9:ENST00000873847	isoform	human	ENST00000873847	named transcript	0	1701	9268	2	4	6	2	1791	False	deferred	not reserved	l2		l1-p3359		
 l2-p0921	l2-p0921	iso:LY9:Q9HBG7-2	isoform	human	ENST00000368037	named transcript	0	1926	9493	2	4	6	2	2016	False	deferred	not reserved	l2		l1-p3361		
 l2-p0922	l2-p0922	iso:LYPD5:Q6UWN5-2	isoform	human	ENST00000414615	named transcript	0	627	8194	0	0	6	2	717	False	deferred	not reserved	l2		l1-p3362	moved_to:l1-p2727	
@@ -3708,7 +3708,7 @@ l2-p0982	l2-p0982	iso:NFASC:ENST00000903184	isoform	human	ENST00000903184	named 
 l2-p0983	l2-p0983	iso:NFASC:O94856-10	isoform	human	ENST00000404076	named transcript	0	3474	11041	9	10	6	2	3564	False	deferred	not reserved	l2		l1-p3428		
 l2-p0984	l2-p0984	iso:NFASC:O94856-11	isoform	human	ENST00000539706	named transcript	0	3570	11137	9	10	6	2	3660	False	deferred	not reserved	l2		l1-p3429		
 l2-p0985	l2-p0985	iso:NFASC:O94856-8	isoform	human	ENST00000430393	named transcript	0	3525	11092	9	10	6	2	3615	False	deferred	not reserved	l2		l1-p3430		
-l2-p0986	l2-p0986	iso:NFASC:O94856-9	isoform	human	ENST00000339876	named transcript	0	3723	11290	8	9	6	2	3813	False	deferred	not reserved	l2		l1-p3431		
+l2-p0986	l2-p0986	iso:NFASC:O94856-9	isoform	human	ENST00000339876	named transcript	0	3723	11290	8	9	6	2	3813	False	deferred	not reserved	l2		l1-p3431	duplicate_of:l1-p1289 (isoform_is_reference)	
 l2-p0987	l2-p0987	iso:NLGN1:Q8N2Q7	isoform	human	ENST00000415045	named transcript	0	2592	10159	2	2	6	2	2682	False	deferred	not reserved	l2		l1-p3432		
 l2-p0988	l2-p0988	iso:NLGN1:Q8N2Q7-2	isoform	human	ENST00000361589	named transcript	0	2472	10039	2	2	6	2	2562	False	deferred	not reserved	l2		l1-p3433		
 l2-p0989	l2-p0989	iso:NLGN3:Q9NZ94-2	isoform	human	ENST00000374051	named transcript	0	2487	10054	9	10	6	2	2577	False	deferred	not reserved	l2		l1-p3434		
@@ -3777,18 +3777,18 @@ l2-p1051	l2-p1051	iso:NRXN3:Q9HDB5-2	isoform	human	ENST00000281127	named transcr
 l2-p1052	l2-p1052	iso:NRXN3:Q9HDB5-4	isoform	human	ENST00000428277	named transcript	0	1380	8947	5	5	6	2	1470	False	deferred	not reserved	l2		l1-p3501		
 l2-p1053	l2-p1053	iso:NT5E:ENST00000954716	isoform	human	ENST00000954716	named transcript	0	1713	9280	0	0	6	2	1803	False	deferred	not reserved	l2		l1-p3502		
 l2-p1054	l2-p1054	iso:NT5E:P21589-2	isoform	human	ENST00000369651	named transcript	0	1575	9142	0	0	6	2	1665	False	deferred	not reserved	l2		l1-p3503	moved_to:l1-p3260	
-l2-p1055	l2-p1055	iso:NTM:ENST00000683400	isoform	human	ENST00000683400	named transcript	0	1068	8635	1	1	6	2	1158	False	deferred	not reserved	l2		l1-p3504		
+l2-p1055	l2-p1055	iso:NTM:ENST00000683400	isoform	human	ENST00000683400	named transcript	0	1068	8635	1	1	6	2	1158	False	deferred	not reserved	l2		l1-p3504	duplicate_of:l1-p1333 (isoform_is_reference)	
 l2-p1056	l2-p1056	iso:NTM:Q9P121-2	isoform	human	ENST00000374791	named transcript	0	1035	8602	1	1	6	2	1125	False	deferred	not reserved	l2		l1-p3505	moved_to:l1-p3261	
 l2-p1057	l2-p1057	iso:NTNG1:Q9Y2I2-1	isoform	human	ENST00000370074	named transcript	0	1317	8884	3	3	6	2	1407	False	deferred	not reserved	l2		l1-p3507		
 l2-p1058	l2-p1058	iso:NTRK1:P04629-2	isoform	human	ENST00000368196	named transcript	0	2373	9940	9	13	6	2	2463	False	deferred	not reserved	l2		l1-p3508	moved_to:l1-p3133	
 l2-p1059	l2-p1059	iso:NTRK2:Q16620	isoform	human	ENST00000376213	named transcript	0	2469	10036	1	1	6	2	2559	False	deferred	not reserved	l2		l1-p3509		
 l2-p1060	l2-p1060	iso:NTRK2:Q16620-2	isoform	human	ENST00000359847	named transcript	0	1434	9001	0	0	6	2	1524	False	deferred	not reserved	l2		l1-p3510		
 l2-p1061	l2-p1061	iso:NTRK3:ENST00000626019	isoform	human	ENST00000626019	named transcript	0	2595	10162	6	6	6	2	2685	False	deferred	not reserved	l2		l1-p3511		
-l2-p1062	l2-p1062	iso:NTRK3:Q16288	isoform	human	ENST00000629765	named transcript	0	2520	10087	6	6	6	2	2610	False	deferred	not reserved	l2		l1-p3512		
+l2-p1062	l2-p1062	iso:NTRK3:Q16288	isoform	human	ENST00000629765	named transcript	0	2520	10087	6	6	6	2	2610	False	deferred	not reserved	l2		l1-p3512	duplicate_of:l1-p1338 (isoform_is_reference)	
 l2-p1063	l2-p1063	iso:NTRK3:Q16288-5	isoform	human	ENST00000557856	named transcript	0	2454	10021	6	6	6	2	2544	False	deferred	not reserved	l2		l1-p3513		
 l2-p1064	l2-p1064	iso:OCLN:ENST00000613193	isoform	human	ENST00000613193	named transcript	0	393	7960	0	0	6	2	483	False	deferred	not reserved	l2		l1-p3514		
 l2-p1065	l2-p1065	iso:OCLN:ENST00000680098	isoform	human	ENST00000680098	named transcript	0	972	8539	1	2	6	2	1062	False	deferred	not reserved	l2		l1-p3515		
-l2-p1066	l2-p1066	iso:OPCML:Q14982-2	isoform	human	ENST00000524381	named transcript	0	1017	8584	2	2	6	2	1107	False	deferred	not reserved	l2		l1-p3516		
+l2-p1066	l2-p1066	iso:OPCML:Q14982-2	isoform	human	ENST00000524381	named transcript	0	1017	8584	2	2	6	2	1107	False	deferred	not reserved	l2		l1-p3516	duplicate_of:l1-p1347 (isoform_is_reference)	
 l2-p1067	l2-p1067	iso:OPCML:Q14982-4	isoform	human	ENST00000541867	named transcript	0	1065	8632	1	1	6	2	1155	False	deferred	not reserved	l2		l1-p3518	moved_to:l1-p3138	
 l2-p1068	l2-p1068	iso:OPN5:ENST00000393699	isoform	human	ENST00000393699	named transcript	0	1062	8629	3	5	6	2	1152	False	deferred	not reserved	l2		l1-p3520		
 l2-p1069	l2-p1069	iso:OPRK1:ENST00000522508	isoform	human	ENST00000522508	named transcript	0	351	7918	1	1	6	2	441	False	deferred	not reserved	l2		l1-p3521		
@@ -3799,7 +3799,7 @@ l2-p1073	l2-p1073	iso:OR10C1:ENST00000546473	isoform	human	ENST00000546473	named
 l2-p1074	l2-p1074	iso:OR10R2:ENST00000641400	isoform	human	ENST00000641400	named transcript	0	975	8542	1	1	6	2	1065	False	deferred	not reserved	l2		l1-p3526		
 l2-p1075	l2-p1075	iso:OR7E24:ENST00000641946	isoform	human	ENST00000641946	named transcript	0	1008	8575	0	0	6	2	1098	False	deferred	not reserved	l2		l1-p3527		
 l2-p1076	l2-p1076	iso:OSMR:ENST00000959611	isoform	human	ENST00000959611	named transcript	0	2937	10504	1	1	6	2	3027	False	deferred	not reserved	l2		l1-p3528		
-l2-p1077	l2-p1077	iso:OSMR:Q99650	isoform	human	ENST00000274276	named transcript	0	2940	10507	1	1	6	2	3030	False	deferred	not reserved	l2		l1-p3529		
+l2-p1077	l2-p1077	iso:OSMR:Q99650	isoform	human	ENST00000274276	named transcript	0	2940	10507	1	1	6	2	3030	False	deferred	not reserved	l2		l1-p3529	duplicate_of:l1-p1541 (isoform_is_reference)	
 l2-p1078	l2-p1078	iso:P2RX2:Q9UBL9-2	isoform	human	ENST00000348800	named transcript	0	1215	8782	2	2	6	2	1305	False	deferred	not reserved	l2		l1-p3530		
 l2-p1079	l2-p1079	iso:P2RX3:ENST00000892409	isoform	human	ENST00000892409	named transcript	0	1188	8755	2	2	6	2	1278	False	deferred	not reserved	l2		l1-p3531		
 l2-p1080	l2-p1080	iso:P2RX5:ENST00000552050	isoform	human	ENST00000552050	named transcript	0	1089	8656	4	4	6	2	1179	False	deferred	not reserved	l2		l1-p3532		
@@ -3869,7 +3869,7 @@ l2-p1143	l2-p1143	iso:PECAM1:ENST00000904882	isoform	human	ENST00000904882	named
 l2-p1144	l2-p1144	iso:PECAM1:ENST00000951542	isoform	human	ENST00000951542	named transcript	0	2214	9781	2	2	6	2	2304	False	deferred	not reserved	l2		l1-p3603		
 l2-p1145	l2-p1145	iso:PECAM1:P16284-3	isoform	human	ENST00000904879	named transcript	0	2154	9721	2	2	6	2	2244	False	deferred	not reserved	l2		l1-p3604	moved_to:l1-p3134	
 l2-p1146	l2-p1146	iso:PECAM1:P16284-4	isoform	human	ENST00000904876	named transcript	0	2160	9727	2	2	6	2	2250	False	deferred	not reserved	l2		l1-p3605	moved_to:l1-p3151	
-l2-p1147	l2-p1147	iso:PIANP:Q8IYJ0-2	isoform	human	ENST00000534837	named transcript	0	831	8398	0	0	6	2	921	False	deferred	not reserved	l2		l1-p3606		
+l2-p1147	l2-p1147	iso:PIANP:Q8IYJ0-2	isoform	human	ENST00000534837	named transcript	0	831	8398	0	0	6	2	921	False	deferred	not reserved	l2		l1-p3606	duplicate_of:l1-p1642 (isoform_is_reference)	
 l2-p1148	l2-p1148	iso:PILRA:Q9UKJ1	isoform	human	ENST00000198536	named transcript	0	912	8479	2	2	6	2	1002	False	deferred	not reserved	l2		l1-p3607	duplicate_of:l1-p1645 (isoform_is_reference)	
 l2-p1149	l2-p1149	iso:PLA2R1:ENST00000890090	isoform	human	ENST00000890090	named transcript	0	4386	11953	2	2	6	2	4476	False	deferred	not reserved	l2		l1-p3608		
 l2-p1150	l2-p1150	iso:PLLP:ENST00000938962	isoform	human	ENST00000938962	named transcript	0	546	8113	1	1	6	2	636	False	deferred	not reserved	l2		l1-p3609		
@@ -3920,7 +3920,7 @@ l2-p1194	l2-p1194	iso:PTPRK:ENST00000950858	isoform	human	ENST00000950858	named 
 l2-p1195	l2-p1195	iso:PTPRK:ENST00000950863	isoform	human	ENST00000950863	named transcript	0	4296	11863	5	5	6	2	4386	False	deferred	not reserved	l2		l1-p3663		
 l2-p1196	l2-p1196	iso:PTPRK:Q15262	isoform	human	ENST00000368215	named transcript	0	4320	11887	5	5	6	2	4410	False	deferred	not reserved	l2		l1-p3664		
 l2-p1197	l2-p1197	iso:PTPRK:Q15262-3	isoform	human	ENST00000368213	named transcript	0	4341	11908	5	5	6	2	4431	False	deferred	not reserved	l2		l1-p3665		
-l2-p1198	l2-p1198	iso:PTPRM:P28827	isoform	human	ENST00000332175	named transcript	0	4359	11926	8	10	6	2	4449	False	deferred	not reserved	l2		l1-p3667		
+l2-p1198	l2-p1198	iso:PTPRM:P28827	isoform	human	ENST00000332175	named transcript	0	4359	11926	8	10	6	2	4449	False	deferred	not reserved	l2		l1-p3667	duplicate_of:l1-p1714 (isoform_is_reference)	
 l2-p1199	l2-p1199	iso:PTPRO:Q16827-2	isoform	human	ENST00000348962	named transcript	0	3567	11134	2	4	6	2	3657	False	deferred	not reserved	l2		l1-p3668		
 l2-p1200	l2-p1200	iso:PTPRO:Q16827-3	isoform	human	ENST00000442921	named transcript	0	1218	8785	0	0	6	2	1308	False	deferred	not reserved	l2		l1-p3669		
 l2-p1201	l2-p1201	iso:PTPRT:ENST00000356100	isoform	human	ENST00000356100	named transcript	0	4353	11920	11	14	6	2	4443	False	deferred	not reserved	l2		l1-p3670		
@@ -4027,7 +4027,7 @@ l2-p1301	l2-p1301	iso:SIGIRR:ENST00000526395	isoform	human	ENST00000526395	named
 l2-p1302	l2-p1302	iso:SIGIRR:Q6IA17-2	isoform	human	ENST00000531205	allele variant	2	1515	9082	8	9	6	2	1605	False	deferred	not reserved	l2		l1-p3778		
 l2-p1303	l2-p1303	iso:SIGLEC10:Q96LC7-8	isoform	human	ENST00000442846	named transcript	0	1365	8932	5	8	6	2	1455	False	deferred	not reserved	l2		l1-p3779	moved_to:l1-p3334	
 l2-p1304	l2-p1304	iso:SIGLEC9:Q9Y336-2	isoform	human	ENST00000440804	named transcript	0	1440	9007	4	5	6	2	1530	False	deferred	not reserved	l2		l1-p3781		
-l2-p1305	l2-p1305	iso:SIRPA:P78324	isoform	human	ENST00000356025	named transcript	0	1515	9082	2	4	6	2	1605	False	deferred	not reserved	l2		l1-p3782		
+l2-p1305	l2-p1305	iso:SIRPA:P78324	isoform	human	ENST00000356025	named transcript	0	1515	9082	2	4	6	2	1605	False	deferred	not reserved	l2		l1-p3782	duplicate_of:l1-p1820 (isoform_is_reference)	
 l2-p1306	l2-p1306	iso:SLAMF1:Q13291-3	isoform	human	ENST00000878659	named transcript	0	918	8485	1	2	6	2	1008	False	deferred	not reserved	l2		l1-p3783		
 l2-p1307	l2-p1307	iso:SLAMF1:Q13291-4	isoform	human	ENST00000538290	named transcript	0	1074	8641	1	2	6	2	1164	False	deferred	not reserved	l2		l1-p3784	moved_to:l1-p3136	
 l2-p1308	l2-p1308	iso:SLAMF6:Q96DU3-2	isoform	human	ENST00000368059	named transcript	0	996	8563	3	3	6	2	1086	False	deferred	not reserved	l2		l1-p3785	moved_to:l1-p3272	
@@ -4114,7 +4114,7 @@ l2-p1388	l2-p1388	iso:SLC29A2:ENST00000932628	isoform	human	ENST00000932628	name
 l2-p1389	l2-p1389	iso:SLC29A2:Q14542-4	isoform	human	ENST00000311161	named transcript	0	1086	8653	6	6	6	2	1176	False	deferred	not reserved	l2		l1-p3868		
 l2-p1390	l2-p1390	iso:SLC29A4:Q7RTT9-2	isoform	human	ENST00000406453	named transcript	0	1551	9118	1	1	6	2	1641	False	deferred	not reserved	l2		l1-p3869		
 l2-p1391	l2-p1391	iso:SLC2A11:ENST00000611880	isoform	human	ENST00000611880	named transcript	0	1608	9175	2	2	6	2	1698	False	deferred	not reserved	l2		l1-p3870	moved_to:l1-p3279	
-l2-p1392	l2-p1392	iso:SLC2A11:Q9BYW1-3	isoform	human	ENST00000316185	named transcript	0	1500	9067	2	2	6	2	1590	False	deferred	not reserved	l2		l1-p3871		
+l2-p1392	l2-p1392	iso:SLC2A11:Q9BYW1-3	isoform	human	ENST00000316185	named transcript	0	1500	9067	2	2	6	2	1590	False	deferred	not reserved	l2		l1-p3871	duplicate_of:l1-p1916 (isoform_is_reference)	
 l2-p1393	l2-p1393	iso:SLC2A11:Q9BYW1-4	isoform	human	ENST00000398356	named transcript	0	1512	9079	2	2	6	2	1602	False	deferred	not reserved	l2		l1-p3872		
 l2-p1394	l2-p1394	iso:SLC2A14:Q8TDB8-5	isoform	human	ENST00000539924	named transcript	0	1608	9175	3	3	6	2	1698	False	deferred	not reserved	l2		l1-p3873		
 l2-p1395	l2-p1395	iso:SLC2A1:ENST00000889577	isoform	human	ENST00000889577	named transcript	0	1476	9043	2	2	6	2	1566	False	deferred	not reserved	l2		l1-p3874		
@@ -4143,7 +4143,7 @@ l2-p1417	l2-p1417	iso:SLC39A10:ENST00000919588	isoform	human	ENST00000919588	nam
 l2-p1418	l2-p1418	iso:SLC39A10:ENST00000919589	isoform	human	ENST00000919589	named transcript	0	2487	10054	3	3	6	2	2577	False	deferred	not reserved	l2		l1-p3898		
 l2-p1419	l2-p1419	iso:SLC39A12:Q504Y0-3	isoform	human	ENST00000377374	named transcript	0	1965	9532	1	1	6	2	2055	False	deferred	not reserved	l2		l1-p3899		
 l2-p1420	l2-p1420	iso:SLC39A12:Q504Y0-4	isoform	human	ENST00000377371	named transcript	0	2073	9640	1	1	6	2	2163	False	deferred	not reserved	l2		l1-p3900		
-l2-p1421	l2-p1421	iso:SLC39A14:Q15043	isoform	human	ENST00000289952	named transcript	0	1479	9046	3	4	6	2	1569	False	deferred	not reserved	l2		l1-p3902		
+l2-p1421	l2-p1421	iso:SLC39A14:Q15043	isoform	human	ENST00000289952	named transcript	0	1479	9046	3	4	6	2	1569	False	deferred	not reserved	l2		l1-p3902	duplicate_of:l1-p1947 (isoform_is_reference)	
 l2-p1422	l2-p1422	iso:SLC39A14:Q15043-2	isoform	human	ENST00000240095	named transcript	0	1446	9013	3	4	6	2	1536	False	deferred	not reserved	l2		l1-p3903		
 l2-p1423	l2-p1423	iso:SLC39A14:Q15043-3	isoform	human	ENST00000359741	named transcript	0	1479	9046	1	2	6	2	1569	False	deferred	not reserved	l2		l1-p3904	moved_to:l1-p3337	
 l2-p1424	l2-p1424	iso:SLC39A3:ENST00000909983	isoform	human	ENST00000909983	named transcript	0	939	8506	3	3	6	2	1029	False	deferred	not reserved	l2		l1-p3905		
@@ -4178,7 +4178,7 @@ l2-p1452	l2-p1452	iso:SLC44A4:ENST00000882849	isoform	human	ENST00000882849	name
 l2-p1453	l2-p1453	iso:SLC44A4:ENST00000882850	isoform	human	ENST00000882850	named transcript	0	2118	9685	6	6	6	2	2208	False	deferred	not reserved	l2		l1-p3934		
 l2-p1454	l2-p1454	iso:SLC44A5:Q8NCS7	isoform	human	ENST00000370855	named transcript	0	2160	9727	3	3	6	2	2250	False	deferred	not reserved	l2		l1-p3935		
 l2-p1455	l2-p1455	iso:SLC47A2:ENST00000909299	isoform	human	ENST00000909299	named transcript	0	1698	9265	5	9	6	2	1788	False	deferred	not reserved	l2		l1-p3936		
-l2-p1456	l2-p1456	iso:SLC4A10:Q6U841	isoform	human	ENST00000446997	named transcript	0	3357	10924	0	0	6	2	3447	False	deferred	not reserved	l2		l1-p3937		
+l2-p1456	l2-p1456	iso:SLC4A10:Q6U841	isoform	human	ENST00000446997	named transcript	0	3357	10924	0	0	6	2	3447	False	deferred	not reserved	l2		l1-p3937	duplicate_of:l1-p1971 (isoform_is_reference)	
 l2-p1457	l2-p1457	iso:SLC4A11:Q8NBS3-1	isoform	human	ENST00000380056	named transcript	0	2676	10243	5	6	6	2	2766	False	deferred	not reserved	l2		l1-p3940		
 l2-p1458	l2-p1458	iso:SLC4A11:Q8NBS3-4	isoform	human	ENST00000380059	named transcript	0	2757	10324	5	6	6	2	2847	False	deferred	not reserved	l2		l1-p3941		
 l2-p1459	l2-p1459	iso:SLC4A2:P04920-2	isoform	human	ENST00000461735	named transcript	0	3684	11251	9	11	6	2	3774	False	deferred	not reserved	l2		l1-p3942	moved_to:l1-p3282	
@@ -4324,7 +4324,7 @@ l2-p1598	l2-p1598	iso:TMEM222:ENST00000915855	isoform	human	ENST00000915855	name
 l2-p1599	l2-p1599	iso:TMEM222:ENST00000915856	isoform	human	ENST00000915856	named transcript	0	624	8191	2	2	6	2	714	False	deferred	not reserved	l2		l1-p4096		
 l2-p1600	l2-p1600	iso:TMEM268:Q5VZI3-3	isoform	human	ENST00000374049	named transcript	0	1032	8599	1	1	6	2	1122	False	deferred	not reserved	l2		l1-p4097		
 l2-p1601	l2-p1601	iso:TMEM273:ENST00000374156	isoform	human	ENST00000374156	named transcript	0	432	7999	0	0	6	2	522	False	deferred	not reserved	l2		l1-p4098		
-l2-p1602	l2-p1602	iso:TMEM8B:ENST00000643932	isoform	human	ENST00000643932	named transcript	0	2775	10342	2	2	6	2	2865	False	deferred	not reserved	l2		l1-p4100		
+l2-p1602	l2-p1602	iso:TMEM8B:ENST00000643932	isoform	human	ENST00000643932	named transcript	0	2775	10342	2	2	6	2	2865	False	deferred	not reserved	l2		l1-p4100	duplicate_of:l1-p2205 (isoform_is_reference)	
 l2-p1603	l2-p1603	iso:TMEM95:Q3KNT9-2	isoform	human	ENST00000330767	named transcript	0	555	8122	2	2	6	2	645	False	deferred	not reserved	l2		l1-p4101		
 l2-p1604	l2-p1604	iso:TMIGD2:Q96BF3	isoform	human	ENST00000301272	named transcript	0	849	8416	3	5	6	2	939	False	deferred	not reserved	l2		l1-p4102	moved_to:l1-p3290	
 l2-p1605	l2-p1605	iso:TMPRSS11A:Q6ZMR5-1	isoform	human	ENST00000334830	named transcript	0	1266	8833	3	4	6	2	1356	False	deferred	not reserved	l2		l1-p4103		
@@ -4372,7 +4372,7 @@ l2-p1646	l2-p1646	iso:TSPAN4:ENST00000527644	isoform	human	ENST00000527644	named
 l2-p1647	l2-p1647	iso:TSPAN5:ENST00000508798	isoform	human	ENST00000508798	named transcript	0	582	8149	0	0	6	2	672	False	deferred	not reserved	l2		l1-p4150		
 l2-p1648	l2-p1648	iso:TSPAN5:ENST00000935829	isoform	human	ENST00000935829	named transcript	0	801	8368	0	0	6	2	891	False	deferred	not reserved	l2		l1-p4151		
 l2-p1649	l2-p1649	iso:TSPAN6:ENST00000612152	isoform	human	ENST00000612152	named transcript	0	390	7957	0	0	6	2	480	False	deferred	not reserved	l2		l1-p4152	moved_to:l1-p3320	
-l2-p1650	l2-p1650	iso:TSPAN7:P41732	isoform	human	ENST00000378482	named transcript	0	750	8317	2	2	6	2	840	False	deferred	not reserved	l2		l1-p4153		
+l2-p1650	l2-p1650	iso:TSPAN7:P41732	isoform	human	ENST00000378482	named transcript	0	750	8317	2	2	6	2	840	False	deferred	not reserved	l2		l1-p4153	duplicate_of:l1-p2299 (isoform_is_reference)	
 l2-p1651	l2-p1651	iso:TSPAN9:ENST00000865934	isoform	human	ENST00000865934	named transcript	0	741	8308	0	0	6	2	831	False	deferred	not reserved	l2		l1-p4154		
 l2-p1652	l2-p1652	iso:TTYH1:Q9H313-2	isoform	human	ENST00000301194	named transcript	0	1356	8923	4	5	6	2	1446	False	deferred	not reserved	l2		l1-p4155	moved_to:l1-p3303	
 l2-p1653	l2-p1653	iso:TTYH1:Q9H313-3	isoform	human	ENST00000376531	named transcript	0	1383	8950	5	6	6	2	1473	False	deferred	not reserved	l2		l1-p4156		
@@ -4385,7 +4385,7 @@ l2-p1659	l2-p1659	iso:TYRO3:ENST00000559066	isoform	human	ENST00000559066	named 
 l2-p1660	l2-p1660	iso:TYRO3:ENST00000938082	isoform	human	ENST00000938082	named transcript	0	2670	10237	6	8	6	2	2760	False	deferred	not reserved	l2		l1-p4163		
 l2-p1661	l2-p1661	iso:UMOD:ENST00000863077	isoform	human	ENST00000863077	named transcript	0	2085	9652	4	4	6	2	2175	False	deferred	not reserved	l2		l1-p4164		
 l2-p1662	l2-p1662	iso:UMOD:P07911-5	isoform	human	ENST00000396134	named transcript	0	2022	9589	4	4	6	2	2112	False	deferred	not reserved	l2		l1-p4165	moved_to:l1-p3313	
-l2-p1663	l2-p1663	iso:UNC5A:Q6ZN44	isoform	human	ENST00000329542	named transcript	0	2529	10096	3	4	6	2	2619	False	deferred	not reserved	l2		l1-p4166		
+l2-p1663	l2-p1663	iso:UNC5A:Q6ZN44	isoform	human	ENST00000329542	named transcript	0	2529	10096	3	4	6	2	2619	False	deferred	not reserved	l2		l1-p4166	duplicate_of:l1-p2311 (isoform_is_reference)	
 l2-p1664	l2-p1664	iso:UNC5B:ENST00000935474	isoform	human	ENST00000935474	named transcript	0	2835	10402	4	4	6	2	2925	False	deferred	not reserved	l2		l1-p4167		
 l2-p1665	l2-p1665	iso:UNC5B:ENST00000935475	isoform	human	ENST00000935475	named transcript	0	2835	10402	4	4	6	2	2925	False	deferred	not reserved	l2		l1-p4168		
 l2-p1666	l2-p1666	iso:UNC5B:Q8IZJ1-2	isoform	human	ENST00000373192	named transcript	0	2805	10372	4	4	6	2	2895	False	deferred	not reserved	l2		l1-p4169		

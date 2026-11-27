@@ -537,6 +537,28 @@ def pinned_git_snapshots(*, clean_paths: bool = False) -> dict[str, bytes]:
     return out
 
 
+def _remap_tar_paths(blob: bytes) -> bytes:
+    """Remap file paths inside ``historical/<commit>.tar`` using :func:`_remap_path` so
+    ``run_stage.py`` resolves ``dest / riu.AP`` in a clean-paths exported review repo."""
+    buf = io.BytesIO()
+    with (
+        tarfile.open(fileobj=io.BytesIO(blob)) as src,
+        tarfile.open(fileobj=buf, mode="w", format=tarfile.PAX_FORMAT) as dst,
+    ):
+        for m in src.getmembers():
+            if not m.isfile():
+                continue
+            fh = src.extractfile(m)
+            assert fh is not None
+            data = fh.read()
+            info = tarfile.TarInfo(_remap_path(m.name))
+            info.size = len(data)
+            info.mtime = 0
+            info.mode = m.mode
+            dst.addfile(info, io.BytesIO(data))
+    return buf.getvalue()
+
+
 def collect(
     ref: str, *, clean_paths: bool = False, include_historical: bool = True
 ) -> dict[str, bytes]:
@@ -550,12 +572,15 @@ def collect(
         import reproduce_isoform_universe as riu
 
         for commit in commits:
-            out[f"historical/{commit}.tar"] = git(
+            tar_blob = git(
                 "archive",
                 commit,
                 riu.AP,
                 "library/l1/tag-site-architecture/library_members.json",
             )
+            if clean_paths:
+                tar_blob = _remap_tar_paths(tar_blob)
+            out[f"historical/{commit}.tar"] = tar_blob
     gen_items = list(GENERATED.items())
     gen_specs = [f"{ref}:{(TEMPLATES / tpl).relative_to(REPO).as_posix()}" for _, tpl in gen_items]
     for (dest, _), data in zip(gen_items, git_cat_batch(gen_specs), strict=True):

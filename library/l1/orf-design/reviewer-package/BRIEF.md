@@ -557,7 +557,7 @@ raw HPA v23 cell-line & tissue TPM (`s3/external/hpa/v23/`), raw GTEx v10 median
 (`s3/external/gtex/v10/`), and the compiled GTEx v10 / HPA v23 / TCGA per-gene table
 ([`data/external/expression-tpm/`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/tree/main/data/external/expression-tpm),
 built by [`build_expression_join.py`](../../surface-filters/build_expression_join.py)
-from the public [UCSC Xena TCGA/TARGET/GTEx Toil RSEM matrix](https://toil-xena-hub.s3.us-east-1.amazonaws.com/download/TcgaTargetGtex_rsem_gene_tpm.gz),
+from the public [UCSC Xena TCGA/TARGET/GTEx Toil RSEM matrix](https://xenabrowser.net/datapages/?dataset=TcgaTargetGtex_rsem_gene_tpm&host=https%3A%2F%2Ftoil.xenahubs.net),
 `1.32 GB`, SHA-256 `a8c36cb16ef82eccb0b6e1e62a2af3ab9d54c1f56735bc9dfac4cbbe2391d4d`, archived on lab S3
 outside the 2 GiB GitHub release cap).
 
@@ -742,7 +742,7 @@ the exact protein they encode:
   representative transcript per gene jointly agreed between NCBI RefSeq and Ensembl/GENCODE, read
   directly from the pinned Ensembl 115 GTF ([Dyer et al., 2025](https://pubmed.ncbi.nlm.nih.gov/39656687/);
   [`Homo_sapiens.GRCh38.115.gtf.gz`](https://pub-e53f37f6fe6b4745829c2066350fe26f.r2.dev/external/ensembl/release-115/gtf/Homo_sapiens.GRCh38.115.gtf.gz),
-  parsed by [`derive_mane_select.py`](../derive_mane_select.py) into [`mane_select_ensembl115.tsv`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/blob/main/data/processed/sprint4/s4e9-orf-design-fg-panel/library-design/mane_select_ensembl115.tsv)).
+  parsed by [`derive_mane_select.py`](../derive_mane_select.py) into [`mane_select_ensembl115.tsv`](https://pub-e53f37f6fe6b4745829c2066350fe26f.r2.dev/external/ensembl/release-115/derived/mane-select-from-gtf/mane_select_ensembl115.tsv)).
 - **APPRIS principal** ([Rodriguez et al., 2022](https://pubmed.ncbi.nlm.nih.gov/34755885/),
   e115v50; [`appris_homo_sapiens_e115v50.txt`](https://pub-e53f37f6fe6b4745829c2066350fe26f.r2.dev/external/appris/e115v50/appris_homo_sapiens_e115v50.txt)):
   a structural-domain and evolutionary-conservation principal call (`PRINCIPAL:1` highest to
@@ -888,7 +888,7 @@ are in [section 11](#11-reproducibility-and-provenance)).
    cohort has two evidence tiers: **observed** (a distinguishing PeptideAtlas build 607 peptide in
    [`peptideatlas_build607_pools.json`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/blob/main/data/external/peptideatlas/build-607/queries-2026-11-22-isoforms/peptideatlas_build607_pools.json),
    or an [OpenProt 2.2](https://www.openprot.org/) translation-evidence score > 0 from
-   [`human-openprot-2_2-refprots+altprots+isoforms-min_2_pep-uniprot2022_06_01.tsv.zip`](https://www.openprot.org/p/download),
+   [`human-openprot-2_2-refprots+altprots+isoforms-min_2_pep-uniprot2022_06_01.tsv.zip`](https://www.openprot.org/),
    processed by [`openprot_evidence.py`](../../../../library/l1/proteoform-selection/openprot_evidence.py),
    pinned in [`bundle_manifest.tsv`](bundle_manifest.tsv)) and **prediction-only** (no MS evidence,
    TRIFID > 0.5, read from
@@ -1901,8 +1901,8 @@ GitHub review repository
 see [`README.md`](README.md), [`REBUILD.md`](../REBUILD.md), [`CODE_MAP.md`](../CODE_MAP.md),
 [`EXPORT_MANIFEST.json`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/blob/main/EXPORT_MANIFEST.json),
 and [`bundle_manifest.tsv`](bundle_manifest.tsv)). Public external datasets (Ensembl 115/116,
-AlphaFold DB v6, UniProt, Pfam 39.0, HPA v23, accessible-surfaceome v1.3.0; `2,932` files / `2.86 GB`
-on public R2 + `0.66 GB` Pfam-A at EBI = `3.52 GB` public, `4.95 GB` total bundle) are mirrored on
+AlphaFold DB v6, UniProt, Pfam 39.0, HPA v23, accessible-surfaceome v1.3.0; `2,946` files / `2.87 GB`
+on public R2 + `0.66 GB` Pfam-A at EBI = `3.53 GB` public, `5.00 GB` total bundle) are mirrored on
 our public R2 bucket (`https://pub-e53f37f6fe6b4745829c2066350fe26f.r2.dev/<bucket>/<key>`), and
 the full pinned reviewer bundle is published as the
 [latest GitHub release](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/releases/latest).

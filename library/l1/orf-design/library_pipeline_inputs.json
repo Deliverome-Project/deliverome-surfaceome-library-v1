@@ -78,9 +78,9 @@
    "origin": "library/l1/proteoform-selection/ (committed)"
   },
   "peptideatlas_build607_pools.json": {
-   "source": "external:peptideatlas/build-607/queries-2026-11-22-mane-gtf/peptideatlas_build607_pools.json",
-   "sha256": "15ad736abe2b647132c465e1437f1b54c38179e2eb0eeb056b850eb09b05554b",
-   "origin": "PeptideAtlas GetPeptides CGI, atlas_build_id 607 (Human 2026-01): the queries-2026-11-22-additions queries (sha256 db1e465d…) unchanged, plus 66 accession(s) queried 2026-11-22 by select_reference.fetch_peptides for the MANE/APPRIS disagreements the GTF MANE Select table exposes (derive_mane_select.py) (A6ND01, A6NDV4, A7MBM2, O43526, O60241, O75311, O94856, O95069, O95196, O95259, O95490, P05067, P08174, P13637, P22223, P34969, P36269, P41732, P42658, P42892, P55017, P78324, Q05586, Q12767, Q12791, Q13639, Q14003, Q14956, Q14982, Q15043, Q16288, Q32M45, Q5BKX6, Q5T292, Q5VU97, Q658P3, Q6NW40, Q6U841, Q6ZN44, Q6ZSJ9, Q71H61, Q86SQ4, Q86X29, Q8IYJ0, Q8N387, Q8N608, Q8N6F1, Q8NBT3, Q8TCZ2, Q92537, Q93086, Q96FE5, Q96KR4, Q99650, Q9BYW1, Q9C0C4, Q9H1Z9, Q9H2W1, Q9H3R2, Q9H6X4, Q9HAR2, Q9HC56, Q9HCK4, Q9P121, Q9UKJ1, Q9Y6M7)"
+   "source": "external:peptideatlas/build-607/queries-2026-11-26-pre-freeze-e/peptideatlas_build607_pools.json",
+   "sha256": "b68344e0b00a49e6d74c885081a7659795a88fe04220e22f12f8f1794fc628c6",
+   "origin": "PeptideAtlas GetPeptides CGI, atlas_build_id 607 (Human 2026-01): the queries-2026-11-22-mane-gtf queries (sha256 15ad736a…) unchanged, plus 1 accession(s) queried 2026-11-26 by select_reference.fetch_peptides for the genes added to the list (Q9BZA7)"
   },
   "reference_overrides.tsv": {
    "source": "processed:sprint4/s4e9-orf-design-fg-panel/library-design/pipeline-inputs/2026-11-23-pre-freeze/reference_overrides.tsv",

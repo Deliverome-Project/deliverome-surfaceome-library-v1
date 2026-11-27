@@ -94,6 +94,17 @@ def test_clean_paths_export_strips_internal_markers_and_stays_valid():
     assert '"l1" / "tag-site-benchmarking"' in internal_arms
     assert "s5e13-tag-site-benchmarking" not in internal_arms
 
+    # Historical commit tarballs also remap member paths so run_stage.py resolves dest / riu.AP.
+    if not _is_shallow():
+        import io
+        import tarfile
+
+        with tarfile.open(fileobj=io.BytesIO(files["historical/88786350.tar"])) as tar:
+            names = set(tar.getnames())
+        assert "library/l1/proteoform-selection/isoform_universe.py" in names
+        assert "library/l1/tag-site-architecture/library_members.json" in names
+        assert not [n for n in names if "scratch/becca/" in n]
+
 
 @pytest.mark.skipif(
     _is_exported_review_repo(), reason="exporter self-test requires the source repository"

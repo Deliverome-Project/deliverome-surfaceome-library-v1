@@ -26,14 +26,14 @@ Comments are welcome as issues on this repository, or as comments on the brief.
 
 You need [uv](https://docs.astral.sh/uv/) and the frozen input bundle, attached to this
 repository's release
-[`bundle-2026-11-26`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/releases/tag/bundle-2026-11-26)
+[`bundle-2026-11-26b`](https://github.com/Deliverome-Project/deliverome-surfaceome-library-v1/releases/tag/bundle-2026-11-26b)
 as two tarballs matching [`bundle_manifest.tsv`](library/l1/orf-design/reviewer-package/bundle_manifest.tsv),
-which indexes **3,570 files**: **3,286** `read_by_replay=yes` files [3.00 GB uncompressed]
-and **284** `read_by_replay=no` supplement files [1.96 GB uncompressed].
-For `bundle-2026-11-26`: `l1-reviewer-bundle-2026-11-26.tar.gz` holds all 3,286 replay files
-(1.45 GB compressed, SHA-256 `281b15519be77a1732a3b9770c342cf2cbc991f1231f381aaefdd63f77c84c90`)
-and `l1-pinned-releases-2026-11-26.tar` holds the 284 supplement files for inspection only
-(1.96 GB, SHA-256 `cd3685894209a9d559091b64450729e9de9f3de65c91266305c85f54b004cc8f`).
+which indexes **3,591 files**: **3,310** `read_by_replay=yes` files [3.04 GB uncompressed]
+and **281** `read_by_replay=no` supplement files [1.96 GB uncompressed].
+For `bundle-2026-11-26b`: `l1-reviewer-bundle-2026-11-26b.tar.gz` holds the replay files
+(1.46 GB compressed, SHA-256 `a18660e48f6accf9ae10a2530abad6c8cbd07c4b0172707a9d0818dcdda3a3ae`)
+and `l1-pinned-releases-2026-11-26b.tar` holds the supplement files for inspection only
+(1.96 GB, SHA-256 `a86c270e2fc2b53315d4f7ceaa2a63dd94bc600bdd4a2f6e0b785818af9cde80`).
 After the download, no credentials or network access are used.
 
 **Where the data lives.** Every bundle file has one listed home in
@@ -42,25 +42,25 @@ and a test fails if any file of the bundle is missing from it:
 
 | Home | What | How to get it |
 |---|---|---|
-| public bucket / upstream source | the public releases whose terms allow redistribution: Ensembl 115/116 and Compara, the AlphaFold DB models, UniProt, APPRIS (CC BY-NC-ND 4.0 unmodified, non-commercial), Pfam, HPA v23 and the accessible-surfaceome release (**2,932** files on public R2 [2.86 GB] + **1** Pfam-A file [0.66 GB] at EBI's identical copy = **2,933** public files, 3.52 GB; each row names its license) | anyone, no account: <https://pub-e53f37f6fe6b4745829c2066350fe26f.r2.dev/> + the `location` column (Pfam-A, 658 MB, at EBI's identical copy instead), or `uv run --locked python public_data.py fetch --out ../l1-reviewer-bundle` (checks every SHA-256) |
-| this repository | small tables (≤ 5 MB), **210** files (0.09 GB) | already here, under `data/<bucket>/<key>` |
-| release | everything else (**427** files, 1.34 GB): our own predictions and records, and public sources whose redistribution terms are unclear or restricted (PeptideAtlas, OpenProt, ARCHS4, the Tedman et al. tables, GTEx v10 summary TPMs, and private `accessible-surfaceome` repo snapshots) | the release tarballs above, which also hold the complete bundle |
+| public bucket / upstream source | the public releases whose terms allow redistribution: Ensembl 115/116 and Compara, the AlphaFold DB models, UniProt, APPRIS (CC BY-NC-ND 4.0 unmodified, non-commercial), Pfam, HPA v23 and the accessible-surfaceome release (**2,946** files on public R2 [2.87 GB] + **1** Pfam-A file [0.66 GB] at EBI's identical copy = **2,947** public files, 3.53 GB; each row names its license) | anyone, no account: <https://pub-e53f37f6fe6b4745829c2066350fe26f.r2.dev/> + the `location` column (Pfam-A, 658 MB, at EBI's identical copy instead), or `uv run --locked python public_data.py fetch --out ../l1-reviewer-bundle` (checks every SHA-256) |
+| this repository | small tables (≤ 5 MB), **213** files (0.09 GB) | already here, under `data/<bucket>/<key>` |
+| release | everything else (**431** files, 1.38 GB): our own predictions and records, and public sources whose redistribution terms are unclear or restricted (PeptideAtlas, OpenProt, ARCHS4, the Tedman et al. tables, GTEx v10 summary TPMs, and private `accessible-surfaceome` repo snapshots) | the release tarballs above, which also hold the complete bundle |
 
 The release tarballs alone are enough to rerun everything; the public bucket and `data/` are
 for reading or citing individual files without them.
 
 ```bash
-gh release download bundle-2026-11-26 --repo Deliverome-Project/deliverome-surfaceome-library-v1 --dir ..
+gh release download bundle-2026-11-26b --repo Deliverome-Project/deliverome-surfaceome-library-v1 --dir ..
 ```
 
 ```bash
-mkdir -p ../l1-reviewer-bundle && tar -xf ../l1-reviewer-bundle-2026-11-26.tar.gz -C ../l1-reviewer-bundle
+mkdir -p ../l1-reviewer-bundle && tar -xf ../l1-reviewer-bundle-2026-11-26b.tar.gz -C ../l1-reviewer-bundle
 ```
 
 To inspect the full releases as well, unpack the second tarball into the same folder:
 
 ```bash
-tar -xf ../l1-pinned-releases-2026-11-26.tar -C ../l1-reviewer-bundle
+tar -xf ../l1-pinned-releases-2026-11-26b.tar -C ../l1-reviewer-bundle
 ```
 
 ```bash
